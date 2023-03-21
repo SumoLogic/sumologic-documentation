@@ -31,8 +31,8 @@ This section provides instructions for configuring log collection for IIS runnin
 
 This section covers the following default log formats for IIS 10 and IIS 8.5:
 
--   IIS Access Logs (W3C format)
--   HTTP Error Logs
+- IIS Access Logs (W3C format)
+- HTTP Error Logs
 
 Default log formats are used by IIS App. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 
@@ -42,13 +42,13 @@ For example: `c:\inetpub\logs\LogFiles\`.
 
 Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
 
--   IIS Access Logs (W3C default format) Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields:
+- IIS Access Logs (W3C default format) Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields:
 ```sql
 #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
 ```
 IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 
--   HTTP Error Logs Sumo Logic expects Error logs in following format :
+- HTTP Error Logs Sumo Logic expects Error logs in following format :
 ```sql
 #Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query protocol_status siteId Reason_Phrase Queue_Name
 ```
@@ -59,13 +59,13 @@ For information on how to configure HTTP Error Logs, and for explanations on the
 
 Perform the following task, if logging on your IIS Server is not already enabled. To enable logging on your IIS Server, do the following:
 
-1.  Open IIS Manager.
-2.  Select the site or server in the Connections pane, then double-click Logging.
+1. Open IIS Manager.
+2. Select the site or server in the Connections pane, then double-click Logging.
 
 Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
 
-1.  In the Format field under Log File, select W3C and then click Select Fields. IIS App works on default fields selection.
-2.  Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default:
+1. In the Format field under Log File, select W3C and then click Select Fields. IIS App works on default fields selection.
+2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default:
 ```sh
 date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
 ```
@@ -111,8 +111,8 @@ Click on the **Download YAML File** button to get the yaml file.
 
 Once you have the yaml file downloaded in step 2, follow the below steps :
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
 ```

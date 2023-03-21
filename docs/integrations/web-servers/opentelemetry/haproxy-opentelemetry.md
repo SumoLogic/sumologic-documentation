@@ -23,14 +23,14 @@ HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
 
-The HAProxy logs are generated in files as configured in the configuration file /etc/haproxy/haproxy.cfg ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
+The HAProxy logs are generated in files as configured in the configuration file `/etc/haproxy/haproxy.cfg` ([learn more](https://www.haproxy.com/blog/introduction-to-haproxy-logging/)).
 
 ## Fields Create in Sumo Logic for HAProxy
 
 Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
 - **webengine.cluster.name** - User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`** - Has fixed value of **haproxy**
+- **webengine.system** - Has fixed value of **haproxy**
 - **sumo.datasource** - Has fixed value of **haproxy**
 
 ## Prerequisites
@@ -41,47 +41,39 @@ By default, HAProxy logs are forwarded to Syslog. This needs to be changed to se
 
 HAProxy logs have six levels of verbosity. To select a level, set loglevel to one of:
 
--   emerg - Errors such as running out of operating system file descriptors.
--   alert - Some rare cases where something unexpected has happened, such as being unable to cache a response.
--   info - TCP connection and http request details and errors.
--   err - Errors such as being unable to parse a map file, being unable to parse the HAProxy configuration file, and when an operation on a stick table fails.
--   warning - Certain important, but non-critical, errors such as failing to set a request header or failing to connect to a DNS nameserver.
--   notice - Changes to a server's state, such as being UP or DOWN or when a server is disabled. Other events at startup, such as starting proxies and loading modules are also included. Health check logging, if enabled, also uses this level.
--   debug - Complete information, useful for development/testing.
+- emerg - Errors such as running out of operating system file descriptors.
+- alert - Some rare cases where something unexpected has happened, such as being unable to cache a response.
+- info - TCP connection and http request details and errors.
+- err - Errors such as being unable to parse a map file, being unable to parse the HAProxy configuration file, and when an operation on a stick table fails.
+- warning - Certain important, but non-critical, errors such as failing to set a request header or failing to connect to a DNS nameserver.
+- notice - Changes to a server's state, such as being UP or DOWN or when a server is disabled. Other events at startup, such as starting proxies and loading modules are also included. Health check logging, if enabled, also uses this level.
+- debug - Complete information, useful for development/testing.
 
-All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/).
-For the dashboards to work properly, you'll need to set the log format.
+All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/). For the dashboards to work properly, you'll need to set the log format.
 
-```
+```bash
 %ci:%cp\ [%tr]\ %ft\ %b/%s\ %TR/%Tw/%Tc/%Tr/%Ta\ %ST\ %B\ %CC\ %CS\ %tsc\ %ac/%fc/%bc/%sc/%rc\ %sq/%bq\ %hr\ %hs\ %{+Q}r
 ```
 
-1.  You can enable HAProxy logs to syslog by adding the following line in the global section of /etc/haproxy/haproxy.cfg file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
-
-```
-global
-   log 127.0.0.1  local2
-```
-
-1.  Now create a /`etc/rsyslog.d/haproxy.conf` file containing below lines.
-
-```
-local2.*    /var/log/haproxy.log
-```
-
-You can of course be more specific and create separate log files according to the level of messages:
-
-```
-local2.=info     /var/log/haproxy-info.log
-local2.=notice     /var/log/haproxy-notice.log
-```
-
-1.  Restart HAProxy and rsyslog server to enforce configuration changes.
-
-```
-sudo service rsyslog restart
-sudo service haproxy reload
-```
+1. You can enable HAProxy logs to syslog by adding the following line in the global section of `/etc/haproxy/haproxy.cfg` file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
+  ```bash
+  global
+     log 127.0.0.1  local2
+  ```
+1. Now create an `etc/rsyslog.d/haproxy.conf` file containing below lines.
+  ```bash
+  local2.*    /var/log/haproxy.log
+  ```
+   * You can, of course, be more specific and create separate log files according to the level of messages:
+    ```bash
+    local2.=info   /var/log/haproxy-info.log
+    local2.=notice   /var/log/haproxy-notice.log
+    ```
+1. Restart HAProxy and rsyslog server to enforce configuration changes.
+  ```bash
+  sudo service rsyslog restart
+  sudo service haproxy reload
+  ```
 
 ## Collecting Logs, Metrics and installing HAProxy app
 
@@ -93,11 +85,10 @@ Here are the steps for Collecting Logs and installing the app:
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
 :::
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
+To create a new Collector:
 
-If you want to create a new Collector please select **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
+1. Select the **Add a new Collector** option.
+1. Select the platform for which you want to install the Sumo Logic OpenTelemetry Collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
 
@@ -111,6 +102,7 @@ Path of the log file configured to capture haproxy logs is needed to be given he
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information.
 You can add any custom fields which you want to tag along with the data ingested in sumo.
+
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png')} alt="YAML" />
@@ -129,8 +121,8 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
-2.  restart the collector using
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
+2. Restart the collector using:
 ```sh
 sudo systemctl restart otelcol-sumo
 ```
@@ -138,8 +130,8 @@ sudo systemctl restart otelcol-sumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
+2. Restart the otelcol-sumo process using:
 ```sh
 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
@@ -155,7 +147,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Sample Log Messages
 
-```
+```bash
 May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
@@ -191,8 +183,8 @@ The **HAProxy - Overview** dashboard provides an at-a-glance view of HAProxy vis
 
 Use this dashboard to:
 
--   Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
--   Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
+- Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
+- Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Overview.png')} alt="Overview" />
 
@@ -202,9 +194,9 @@ The **HAProxy - Error Logs Analysis** dashboard provides a high-level view of lo
 
 Use this dashboard to:
 
--   Track requests from clients. A request is a message asking for a resource, such as a page or an image.
--   To track and view client geographic locations generating errors.
--   Track critical alerts and emergency error alerts.
+- Track requests from clients. A request is a message asking for a resource, such as a page or an image.
+- To track and view client geographic locations generating errors.
+- Track critical alerts and emergency error alerts.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Error-Log-Analysis.png')} alt="Error Log Analysis" />
 
@@ -214,8 +206,8 @@ The **HAProxy - Outlier Analysis** dashboard provides a high-level view of HAPro
 
 Use this dashboard to:
 
--   Detect the outliers in your infrastructure with Sumo Logic's machine learning algorithm.
--   To identify outliers in incoming traffic and the number of errors encountered by your servers.
+- Detect the outliers in your infrastructure with Sumo Logic's machine learning algorithm.
+- To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Outlier-Analysis.png')} alt="Outlier Analysis" />
 
@@ -225,7 +217,7 @@ The **HAProxy - Threat Analysis** dashboard provides an at-a-glance view of thre
 
 Use this dashboard to:
 
--   To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png')} alt="Threat Analysis" />
 
@@ -241,7 +233,7 @@ The **HAProxy - Visitor Access Types** dashboard provides insights into visitor 
 
 Use this dashboard to:
 
--   Understand which platform and browsers are used to gain access to your infrastructure. These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
+- Understand which platform and browsers are used to gain access to your infrastructure. These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Access-Types.png')} alt="Visitor Access Types" />
 
@@ -251,7 +243,7 @@ The **HAProxy - Visitor Locations** dashboard provides a high-level view of HAPr
 
 Use this dashboard to:
 
--   Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
+- Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Locations.png')} alt="Visitor Locations" />
 
@@ -261,8 +253,8 @@ The **HAProxy - Visitor Traffic Insight** dashboard provides detailed informatio
 
 Use this dashboard to:
 
--   To understand the type of content that is frequently requested by users.
--   It helps in allocating IT resources according to the content types.
+- To understand the type of content that is frequently requested by users.
+- It helps in allocating IT resources according to the content types.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Traffic-Insight.png')} alt="Visitor Traffic Insight" />
 
@@ -272,7 +264,7 @@ The **HAProxy - Web Server Operations** dashboard provides a high-level view com
 
 Use this dashboard to:
 
--   Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
--   To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
+- Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
+- To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png')} alt="Web Server Operations" />

@@ -25,8 +25,8 @@ The diagram below illustrates the components of the Nginx collection for each we
 
 The Sumo Logic App for Nginx assumes:
 
--   Nginx app supports the default access logs and error logs format.
--   For a list of metrics that are collected and used by the app, see [Nginx Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/nginxreceiver/documentation.md).
+- Nginx app supports the default access logs and error logs format.
+- For a list of metrics that are collected and used by the app, see [Nginx Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/nginxreceiver/documentation.md).
 
 ## Fields Creation in Sumo Logic for Nginx
 
@@ -39,10 +39,9 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Prerequisites
 
-1.  Configuring Nginx server to expose status endpoint for collecting metrics:
+1. Configuring Nginx server to expose status endpoint for collecting metrics:
 The receiver used, gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
-
-1.  Configuring and retrieving access and error log files: 
+1. Configuring and retrieving access and error log files: 
 Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 
 ## Collecting Logs, Metrics & Installing App for Nginx
@@ -54,8 +53,6 @@ The process to set up collection for Nginx data is done through the following st
 :::note
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
 :::
-
-If you want to use an existing OpenTelemetry Collector then this step can be skipped by selecting the option of using an existing Collector.
 
 If you want to create a new Collector please select **Add a new Collector** option.
 
@@ -71,10 +68,10 @@ In this step we will be configuring the yaml required for Nginx Collection.
 
 Below are the input required :
 
--   **Endpoint** - (default: 127.0.0.1:3306): The URL of the status endpoint.
--   **Access File log Path** - Enter the path to the Access log file for your nginx instance.
--   **Error file log path** - Enter the path to the error log file for your nginx instance.
--   **Fields**: `webengine.cluster.name` - User configured. Enter a name to identify this nginx cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **Endpoint** - (default: 127.0.0.1:3306): The URL of the status endpoint.
+- **Access File log Path** - Enter the path to the Access log file for your nginx instance.
+- **Error file log path** - Enter the path to the error log file for your nginx instance.
+- **Fields**: `webengine.cluster.name` - User configured. Enter a name to identify this nginx cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -95,7 +92,7 @@ Once you download the yaml file, please follow the below steps based on your pla
 
 <TabItem value="Linux">
 
-1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Nginx instance which needs to be monitored.
+1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Nginx instance which needs to be monitored.
 2.  restart the collector using
 ```sh
 sudo systemctl restart otelcol-sumo
@@ -104,7 +101,7 @@ sudo systemctl restart otelcol-sumo
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the yaml to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2.  Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
@@ -113,7 +110,7 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder in the Nginx instance which needs to be monitored.
+1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder in the Nginx instance which needs to be monitored.
 2.  Restart the otelcol-sumo process using the below command 
 ```sh
 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
@@ -136,9 +133,9 @@ The **Nginx - Overview** dashboard provides an at-a-glance view of the NGINX ser
 
 Use this dashboard to:
 
--   Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
--   Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
--   Get insights into Active and dropped connection.
+- Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
+- Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
+- Get insights into Active and dropped connection.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Overview.png')} alt="Access" />
 
@@ -148,9 +145,9 @@ The **Nginx - Error Logs** Analysis dashboard provides a high-level view of log 
 
 Use this dashboard to:
 
--   Track requests from clients. A request is a message asking for a resource, such as a page or an image.
--   Track and view client geographic locations generating errors.
--   Track critical alerts and emergency error alerts.
+- Track requests from clients. A request is a message asking for a resource, such as a page or an image.
+- Track and view client geographic locations generating errors.
+- Track critical alerts and emergency error alerts.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Error-Logs.png')} alt="Access" />
 
@@ -160,8 +157,8 @@ The **Nginx - Trends** dashboard provides a high-level view of the activity and 
 
 Use this dashboard to:
 
--   To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
--   Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
+- To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
+- Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Trends.png')} alt="Access" />
 
@@ -171,8 +168,8 @@ The **Nginx - Outlier Analysis** dashboard provides a high-level view of Nginx s
 
 Use this dashboard to:
 
--   Detect outliers in your infrastructure with Sumo Logic's machine learning algorithm.
--   To identify outliers in incoming traffic and the number of errors encountered by your servers.
+- Detect outliers in your infrastructure with Sumo Logic's machine learning algorithm.
+- To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
 
@@ -184,7 +181,7 @@ The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats t
 
 Use this dashboard to:
 
--   To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Threat-Intel.png')} alt="Access" />
 
@@ -194,8 +191,8 @@ The **Nginx - Web Server Operations** dashboard provides a high-level view combi
 
 Use this dashboard to:
 
--   Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
--   To identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
+- Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
+- To identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Web-Server-Operations.png')} alt="Access" />
 
@@ -205,8 +202,8 @@ The **Nginx - Visitor Access Types** dashboard provides insights into visitor pl
 
 Use this dashboard to:
 
--   Understand which platform and browsers are used to gain access to your infrastructure.
--   These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
+- Understand which platform and browsers are used to gain access to your infrastructure.
+- These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Access-Types.png')} alt="Access" />
 
@@ -216,7 +213,7 @@ The **Nginx - Visitor Locations** dashboard provides a high-level view of Nginx 
 
 Use this dashboard to:
 
--   Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
+- Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Locations.png')} alt="Access" />
 
@@ -226,8 +223,8 @@ The **Nginx - Visitor Traffic Insight** dashboard provides detailed information 
 
 Use this dashboard to:
 
--   To understand the type of content that is frequently requested by users.
--   It helps in allocating IT resources according to the content types.
+- To understand the type of content that is frequently requested by users.
+- It helps in allocating IT resources according to the content types.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Traffic-Insight.png')} alt="Access" />
 
@@ -237,7 +234,7 @@ The **Nginx - Connections and Requests Metrics** dashboard provides insight into
 
 Use this dashboard to:
 
--   Gain information about active and dropped connections. This helps you identify the connection rejected by Nginx Server.
--   Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
+- Gain information about active and dropped connections. This helps you identify the connection rejected by Nginx Server.
+- Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Connections-and-Requests-Metrics.png')} alt="Connections and Requests Metrics" />

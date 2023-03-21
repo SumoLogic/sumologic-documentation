@@ -145,9 +145,9 @@ The **Apache Tomcat - Overview** Dashboard provides a high-level view of informa
 
 Use this dashboard to:
 
--   Analyze http request about status code
--   Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
--   Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
+- Analyze http request about status code
+- Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
+- Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Overview.png')} alt="Overview" />
 
@@ -155,10 +155,10 @@ Use this dashboard to:
 
 The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
--   Worldwide. Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
--   Visits by Country Over Time. Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
--   United States. Uses a geo lookup operation to display US visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
--   Visits by US State Over Time. Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
+- Worldwide. Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
+- Visits by Country Over Time. Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
+- United States. Uses a geo lookup operation to display US visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
+- Visits by US State Over Time. Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Visitor-Locations.png')} alt="Locations" />
 
@@ -204,8 +204,8 @@ The **Apache Tomcat - Logs Timeline Analysis** dashboard provides a high-level v
 
 Use this dashboard to:
 
--   To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
--   Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
+- To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
+- Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Logs-Timeline-Analysis.png')} alt="Logs Timeline Analysis" />
 
@@ -215,8 +215,8 @@ The **Apache Tomcat - Outlier Analysis** dashboard provides a high-level view of
 
 Use this dashboard to:
 
--   Detect outliers in your infrastructure with Sumo Logic's machine learning algorithm.
--   To identify outliers in incoming traffic and the number of errors encountered by your servers.
+- Detect outliers in your infrastructure with Sumo Logic's machine learning algorithm.
+- To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Outlier-Analysis.png')} alt="Outlier Analysis" />
 
@@ -270,6 +270,6 @@ The **Apache Tomcat - Threat Intel** dashboard provides an at-a-glance view of t
 
 Use this dashboard to:
 
--   To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png')} alt="Threat intel" />

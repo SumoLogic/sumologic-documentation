@@ -19,7 +19,7 @@ The diagram below illustrates the components of the Apache collection for each w
 
 The Sumo Logic App for Apache assumes:
 
--   The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
+- The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
 
 ## Fields Creation in Sumo Logic for Apache
 
@@ -43,11 +43,11 @@ Configure Apache to log to a local files. Before you can configure Sumo Logic to
 To configure the Apache log files, locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
 
 For access logs, the following directive is to be noted:
--   CustomLog: access log file path and format (standard common and combined)
+- CustomLog: access log file path and format (standard common and combined)
 
 For error logs, following directives are to be noted:
--   ErrorLog: error log file path
--   LogLevel: to control the number of messages logged to the `error_log`
+- ErrorLog: error log file path
+- LogLevel: to control the number of messages logged to the `error_log`
 
 ## Collecting Logs, Metrics & Installing App for Apache
 
@@ -77,10 +77,10 @@ In this step, we will be configuring the yaml required for Apache Collection.
 
 Below are the inputs required:
 
--   **Endpoint** - (default: `http://localhost:8080/server-status?auto`): The URL of the httpd status endpoint
--   **Access File log Path** - Enter the path to the Access log file for your mysql instance.
--   **Error file log path** - Enter the path to the error log file for your mysql instance.
--   Fields - **webengine.cluster.name**
+- **Endpoint** - (default: `http://localhost:8080/server-status?auto`): The URL of the httpd status endpoint
+- **Access File log Path** - Enter the path to the Access log file for your mysql instance.
+- **Error file log path** - Enter the path to the error log file for your mysql instance.
+- Fields - **webengine.cluster.name**
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -207,9 +207,9 @@ The **Apache - Overview** Dashboard provides an at-a-glance view of the activity
 
 Use this dashboard to:
 
--   Get an at-a-glance view of the state of all your Apache web servers
--   Identify the top URLs causing errors
--   Identify the top critical error messages
+- Get an at-a-glance view of the state of all your Apache web servers
+- Identify the top URLs causing errors
+- Identify the top critical error messages
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Overview.png')} alt="Overview" />
 
@@ -219,10 +219,10 @@ The **Apache - Error Log Analysis** dashboard provides a high-level view of erro
 
 Use this dashboard to:
 
--   Quickly identify critical errors affecting your Apache web servers
--   Analyze types and patterns of log messages in your Apache web servers
--   Identify clients causing the most errors
--   Monitor trends in error logs and identify outliers
+- Quickly identify critical errors affecting your Apache web servers
+- Analyze types and patterns of log messages in your Apache web servers
+- Identify clients causing the most errors
+- Monitor trends in error logs and identify outliers
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Error-Log-Analysis.png')} alt="Error Log Analysis" />
 
@@ -232,7 +232,7 @@ The **Apache - Trends** dashboard provides trends around HTTP responses, server 
 
 Use this dashboard to:
 
--   Monitor trends and identify outliers
+- Monitor trends and identify outliers
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Trends.png')} alt="Trends" />
 
@@ -242,7 +242,7 @@ The **Apache - Outlier Analysis** dashboard helps you quickly identify outliers 
 
 Use this dashboard to:
 
--   Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed
+- Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Outlier-Analysis.png')} alt="Outlier Analysis" />
 
@@ -254,7 +254,7 @@ Dashboard panels show threat counts, geographic locations, actors, threat severi
 
 Use this dashboard to:
 
--   Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs
+- Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Threat-Analysis.png')} alt="Threat Analysis" />
 
@@ -264,7 +264,7 @@ The **Apache - Visitor Locations** dashboard provides a high-level view of Apach
 
 Use this dashboard to:
 
--   Get insights into geographic locations of your user base
+- Get insights into geographic locations of your user base
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Locations.png')} alt="Visitor Locations" />
 
@@ -274,7 +274,7 @@ The **Apache - Visitor Access Types** dashboard provides insights into visitor p
 
 Use this dashboard to:
 
--   Understand which platform and browsers are being used to access your applications
+- Understand which platform and browsers are being used to access your applications
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Access-Types.png')} alt="Visitor Access Types" />
 
@@ -284,7 +284,7 @@ The **Apache - Visitor Traffic Insight** dashboard provides summarized informati
 
 Use this dashboard to:
 
--   Understand content types of content that are frequently requested by users.
+- Understand content types of content that are frequently requested by users.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Traffic-Insight.png')} alt="Visitor Traffic Insight" />
 
@@ -294,7 +294,7 @@ The **Apache - Web Server Operations** dashboard provides an at-a-glance view of
 
 Use this dashboard to:
 
--   Get insights into client locations, bots and response codes
+- Get insights into client locations, bots and response codes
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Web-Server-Operations.png')} alt="Web Server Operations" />
 
@@ -304,7 +304,7 @@ The **Apache - Request State Analysis** dashboard shows trends around the state 
 
 Use this dashboard to:
 
--   Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed
+- Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Request-State-Analysis.png')} alt="Request State Analysis" />
 
@@ -314,7 +314,7 @@ The **Apache - Server Status** dashboard shows information related to the state 
 
 Use this dashboard to:
 
--   Monitor server uptime
--   Monitor web server performance
+- Monitor server uptime
+- Monitor web server performance
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Server-Status.png')} alt="Server Status" />
