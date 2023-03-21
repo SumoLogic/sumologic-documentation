@@ -70,7 +70,7 @@ Enhanced logging is only available for site-level logging. If you select the ser
 date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
 ```
 
-For more information about IIS log format and log configuration refer [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
+For more information about IIS log format and log configuration refer to this [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
 Once the logs are configured to be written into a local file follow the below step to configure collection in sumo.
 
