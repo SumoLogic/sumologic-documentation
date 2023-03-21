@@ -183,7 +183,7 @@ To exclude a specific domain or IP address from using the proxy, you can add it 
 
 We currently do not build FIPS binary for macOS.
 
-Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more detauls.
+Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
 ## Uninstall
 
