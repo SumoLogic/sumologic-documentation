@@ -43,13 +43,13 @@ To work with SLOs, you need the following Sumo Logic capabilities: View SLOs (`v
 
 Reliability is essentially the uptime of systems and services. This includes the following concepts:
 
-**Service-Level Objective (SLO)**: The software provider's performance promise made to end users. This goal defined by the _SLI_ for a _compliance period_.
+**Service-Level Objective (SLO)**. The software provider's performance promise made to end users. This goal defined by the _SLI_ for a _compliance period_.
 
-**Service-Level Indicator (SLI)**: Quantitative measurements of a system/service availability within a specific time period. These performance figures are used to determine that the _SLO_  &#8212; the quality promised to end users &#8212; is being met.
+**Service-Level Indicator (SLI)**. Quantitative measurements of a system/service availability within a specific time period. These performance figures are used to determine that the _SLO_  &#8212; the quality promised to end users &#8212; is being met.
 
-**Error Budget**: The tolerable amount/level of system unavailability in the _compliance period_.
+**Error Budget**. The tolerable amount/level of system unavailability in the _compliance period_.
 
-**Compliance period**: The duration of time used to monitor and score your system/service availability. Breaking down your organization's quantitative success rate over consistent time periods is useful internally and can be communicated to customers that you're meeting your goals. See the following information for the max compliance period:
+**Compliance period**. The duration of time used to monitor and score your system/service availability. Breaking down your organization's quantitative success rate over consistent time periods is useful internally and can be communicated to customers that you're meeting your goals. See the following information for the max compliance period:
 
 <table>
   <tr>
@@ -95,8 +95,8 @@ SLOs include all historical data. For example, when you create an SLO with a mon
 
 SLOs can be calculated and tracked using windows-based or request-based data.
 
-* **Window-based SLOs** track on a given window of time or interval, such as 5m, 1h, and so on. An SLI calculated against this time will include the percentage of good and bad windows.
-* **Request-based SLOs** track the percentage of good requests within a compliance period. Request-based SLOs can exhaust the error budget very quickly if you have severe incidents. However, they smooth over SLIs that are unpredictable by focussing SLOs on a longer time range than a windows-based SLO.
+* **Window-based SLOs**. Track on a given window of time or interval, such as 5m, 1h, and so on. An SLI calculated against this time will include the percentage of good and bad windows.
+* **Request-based SLOs**. Track the percentage of good requests within a compliance period. Request-based SLOs can exhaust the error budget very quickly if you have severe incidents. However, they smooth over SLIs that are unpredictable by focussing SLOs on a longer time range than a windows-based SLO.
 
 
 ### Golden Signal Types
@@ -107,9 +107,9 @@ SLIs can be defined by signals such as latency, load, error, bottleneck, through
 
 Latency is considered the speed of a service. This is the response of the service to users for different types of actions, including:
 
-* Interactions: How long a user waits for a response after clicking something, sometimes a read action
-* Write: Saving and changing underlying data to a server, database, or distributed system
-* Background: Backend actions that may not readily be seen or recognized by users, typically for refreshes of data or asynchronous actions
+* **Interactions**. How long a user waits for a response after clicking something, sometimes a read action.
+* **Write**. Saving and changing underlying data to a server, database, or distributed system.
+* **Background**. Backend actions that may not readily be seen or recognized by users, typically for refreshes of data or asynchronous actions.
 
 Each of these actions may have different latencies and thresholds for good and bad thresholds. A user may not expect a faster response when writing data versus an interaction to read or retrieve data. You may also have defined latencies for each of these actions, such as a defined median of speed, typical latency, and tail latency.
 
