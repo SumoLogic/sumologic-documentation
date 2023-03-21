@@ -1,5 +1,5 @@
 ---
-id: install-collector-on-linux
+id: install-collector-linux
 title: Installing Collector on Linux
 sidebar_label: Install Collector on Linux
 description: Learn how to install the Sumo Logic OpenTelemetry Collector.
@@ -408,11 +408,11 @@ After an upgrade, you should make sure that your config for OpenTelemetry Collec
 
 To see changes in upstream OpenTelemetry components, refer to the [core changelog](https://github.com/open-telemetry/opentelemetry-collector/releases) and [contrib changelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases).
 
-List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
+List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
 
 ## Troubleshooting
 
-To know about troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-faq)
+To know about troubleshooting and solutions, refer to the [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq)
 
 [sumologic extension]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/extension/sumologicextension#configuration
 [service file]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/systemd/otelcol-sumo.service

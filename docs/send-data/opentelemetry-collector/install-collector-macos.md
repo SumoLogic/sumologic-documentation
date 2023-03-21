@@ -1,5 +1,5 @@
 ---
-id: install-collector-on-macos
+id: install-collector-macos
 title: Installing Collector on macOS
 sidebar_label: Install Collector on macOS
 description: Learn how to install the Sumo Logic OpenTelemetry Collector on macOS.
@@ -242,7 +242,7 @@ After an upgrade, you should make sure that your config for OpenTelemetry Collec
 
 To see changes in upstream OpenTelemetry components, refer to the [core changelog](https://github.com/open-telemetry/opentelemetry-collector/releases) and [contrib changelog](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases).
 
-List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
+List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Collector can be found [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/upgrading.md).
 
 ## Troubleshooting
 

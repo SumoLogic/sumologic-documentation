@@ -1,8 +1,8 @@
 ---
 id: sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship
-title: Sumo Logic Open Telemetry vs Open Telemetry Upstream Relationship
-sidebar_label: Sumo Logic Open Telemetry vs Open Telemetry Upstream Relationship
-description: Learn about Sumo Logic Open Telemetry vs Open Telemetry Upstream Relationship
+title: Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship
+sidebar_label: Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship
+description: Learn about Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship
 ---
 
 This document explains the purpose of Sumo Logic Distribution for OpenTelemetry Collector, why we offer an alternative distribution of OpenTelemetry Collector, and our approach to versioning and handling breaking changes.

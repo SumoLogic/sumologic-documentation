@@ -1,8 +1,8 @@
 ---
-id: collect-tracing
-title: Collect Tracing
-sidebar_label: Collect Tracing
-description: Learn how to collecting tracing
+id: collect-traces
+title: Collect Traces
+sidebar_label: Collect Traces
+description: Learn how to collecting traces using the Sumo Logic OpenTelemetry Collector.
 ---
 
 Default installation of Sumo Logic Distribution for OpenTelemetry Collector goes with default endpoints for tracing collection in OTLP format:
