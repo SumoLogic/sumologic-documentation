@@ -73,7 +73,7 @@ When you configure the webhook, enter the URL for the HTTP source you created in
 
 ## Logs Collection Configuration & App Installation
 
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click on **Install App**. Please follow the steps below:
+As part of setting up the collection and app installation process, you can select the App from **App Catalog** and click on **Install App**.  Follow the steps below:
 
 ### Step 1: Set up Collector
 
