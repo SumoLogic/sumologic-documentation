@@ -1,7 +1,7 @@
 ---
-id: collect-tracing
-title: Collect Tracing
-sidebar_label: Collect Tracing
+id: collect-traces
+title: Collect Traces
+sidebar_label: Collect Traces
 description: Learn how to collecting tracing
 ---
 

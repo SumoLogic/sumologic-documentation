@@ -27,7 +27,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div class="box smallbox3 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/collect-tracing"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Tracing</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/collect-traces"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Tracing</h4></a>
   <p>Instructions for collecting tracing data with the OpenTelemetry collector.</p>
   </div>
 </div>

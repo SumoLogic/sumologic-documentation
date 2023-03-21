@@ -153,7 +153,7 @@ module.exports = {
               items:[
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
-                'send-data/opentelemetry-collector/data-source-configurations/collect-tracing',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
