@@ -29,7 +29,7 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 - **`webengine.system`**  - Has a fixed value of **squidproxy**.
 - **`sumo.datasource`** - Has a fixed value of **squidproxy**.
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
 As part of setting up the collection process and app installation user can select the App from App Catalog and follow the steps below:
 
@@ -52,17 +52,18 @@ Open Telemetry works with a [configuration](https://opentelemetry.io/docs/collec
 
 In this step we will be configuring the yaml required for Squid Collection.
 
-Path of the log file configured to capture Squid logs is needed to be given here.
+The path of the log file configured to capture Squid logs is needed to be given here.
 
-The files are typically located in /var/log/squid/access.log. Please refer "Prerequisite" section for more details.
-You can add any custom fields which you want to tag along with the data ingested in sumo.
+The files are typically located in `/var/log/squid/access.log`. Refer to the [Prerequisites](#prerequisites) section for more details.
+
+You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png')} alt="YAML" />
 
 ## Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps based on your environment
+Once you have the yaml file downloaded in step 2, please follow the below steps based on your environment.
 
 <Tabs
   className="unique-tabs"
@@ -74,20 +75,20 @@ Once you have the yaml file downloaded in step 2, please follow the below steps 
 
 <TabItem value="Linux">
 
-1.  Copy the yaml at /etc/otelcol-sumo/conf.d/ folder in the Squid instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
-```sh
-sudo systemctl restart otelcol-sumo
-```
+1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Squid instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command:
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Squid instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Squid instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
@@ -136,12 +137,12 @@ The **Squid Proxy - Overview** Dashboard provides an at-a-glance view of the act
 
 ### Squid Proxy - HTTP Response Analysis
 
-**The Squid Proxy -  HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
+**The Squid Proxy - HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-HTTP-Response-Analysis.png')} alt="HTTP Response Analysis" />
 
 ### Squid Proxy - Quality of Service
 
-The **Squid Proxy -  Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
+The **Squid Proxy - Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Quality-of-Service.png')} alt="Quality of Service" />

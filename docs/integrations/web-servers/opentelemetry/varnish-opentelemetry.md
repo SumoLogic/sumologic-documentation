@@ -19,18 +19,17 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 ## Fields creation in Sumo Logic for Varnish
 
-- **`webengine.cluster.name`** - User configured. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`**  - Has a fixed value of **varnish**.
-- **`sumo.datasource`** - Has a fixed value of **varnish**.
+- **`webengine.cluster.name`**. User configured. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`webengine.system`**. Has a fixed value of **varnish**.
+- **`sumo.datasource`**. Has a fixed value of **varnish**.
 
 ## Prerequisites
 
-1.  Configure logging in Varnish. Varnish supports logging via local text log files. For details please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, please set the Varnish log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
-```
-%h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-agent}i\"
-```
-
-1.  Configure Varnish to log to a local file. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in /var/log/varnish/varnishncsa.log. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1).
+* Configure logging in Varnish. Varnish supports logging via local text log files. For details please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, set the Varnish log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
+  ```bash
+  %h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-agent}i\"
+  ```
+* Configure Varnish to log to a local file. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in /var/log/varnish/varnishncsa.log. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1).
 
 ## Collection Configuration and App installation
 
@@ -42,14 +41,10 @@ As part of setting up the collection process and app installation user can selec
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
 :::
 
-If you want to use an existing OTel Collector then this step can be skipped by selecting the option of using an existing Collector.
-
 To create a new Collector:
 
 1. Select the **Add a new Collector** option.
 2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
 
@@ -59,9 +54,7 @@ This will generate a command which can be executed in the machine which needs to
 
 OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file which has all the details with respect to the data which needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
 
-In this step we will be configuring the yaml required for Varnish Collection.
-
-Path of the log file configured to capture Varnish logs needs to be given here.
+In this step, you'll configure the yaml required for Varnish Collection. You'll need to provide the path of the log file configured to capture Varnish logs.
 
 The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details please refer "Prerequisite" section of this page.
 You can add any custom fields which you want to tag along with the data ingested in sumo.
@@ -83,8 +76,8 @@ Once you have the yaml file downloaded in step 2, please follow the below steps 
 
 <TabItem value="Linux">
 
-1.  Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
 sudo systemctl restart otelcol-sumo
 ```
@@ -92,8 +85,8 @@ sudo systemctl restart otelcol-sumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
@@ -115,11 +108,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Sample Query
 
-This sample Query is from the Varnish Overview- Traffic Volume and MB Served Over Time panel.
+This sample Query is from the Varnish Overview - Traffic Volume dashbaord > MB Served Over Time panel.
 
-Query String
-
-```
+```sql title="Query String"
 %"sumo.datasource"=varnish %"webengine.system"=varnish %"webengine.cluster.name"=* | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+(?<logname>\S+)\s+(?<user>[\S]+)\s+\[" nodrop

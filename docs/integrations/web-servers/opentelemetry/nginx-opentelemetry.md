@@ -39,16 +39,15 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Prerequisites
 
-1. Configuring Nginx server to expose status endpoint for collecting metrics:
-The receiver used, gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
-1. Configuring and retrieving access and error log files: 
-Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
+* Configuring Nginx server to expose status endpoint for collecting metrics:
+The receiver used gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
+* Configuring and retrieving access and error log files: Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 
-## Collecting Logs, Metrics & Installing App for Nginx
+## Collecting Logs, Metrics, and Installing Nginx App
 
 The process to set up collection for Nginx data is done through the following steps.
 
-### Step1: Set up OpenTelemetry Collector
+### Step 1: Set up OpenTelemetry Collector
 
 :::note
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
@@ -93,28 +92,28 @@ Once you download the yaml file, please follow the below steps based on your pla
 <TabItem value="Linux">
 
 1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Nginx instance which needs to be monitored.
-2.  restart the collector using
-```sh
-sudo systemctl restart otelcol-sumo
-```
+2. Restart the collector using:
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
 1. Copy the yaml to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+2. Restart the collector using 
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
 1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder in the Nginx instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
-```sh
-otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+2. Restart the otelcol-sumo process using the below command:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>

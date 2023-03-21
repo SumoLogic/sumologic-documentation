@@ -98,7 +98,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml required for HAProxy Collection.
 
-Path of the log file configured to capture haproxy logs is needed to be given here.
+The path of the log file configured to capture haproxy logs is needed to be given here.
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information.
 You can add any custom fields which you want to tag along with the data ingested in sumo.

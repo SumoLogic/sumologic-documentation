@@ -74,9 +74,9 @@ For more information about IIS log format and log configuration refer [link](htt
 
 Once the logs are configured to be written into a local file follow the below step to configure collection in sumo.
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click on Install App. Please follow the steps below:
+As part of collection setup and app installation, you can select the App from App Catalog and click on Install App. Follow the steps below.
 
 ### Step 1: Set up Collector
 
@@ -84,14 +84,10 @@ As part of the setting up the collection process and app installation user can s
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
 :::
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
-
 To create a new Collector:
 
 1. Select the **Add a new Collector** option.
 1. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
@@ -121,7 +117,7 @@ After successful execution of the above command, Sumo will start receiving the d
 
 Click **Next**. This will install the app to your Sumo Logic Org. The app consists of dashboards.
 
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
+Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
 ### Sample Log Messages in Non-Kubernetes environments
 
