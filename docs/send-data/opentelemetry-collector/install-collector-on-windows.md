@@ -131,7 +131,7 @@ Restart `Sumo Logic OpenTelemetry Collector` (`OtelcolSumo`) service to apply th
 
 We currently do not build FIPS binary for Windows.
 
-Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more detauls.
+Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
 ### Uninstall
 
