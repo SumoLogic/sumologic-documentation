@@ -72,7 +72,7 @@ This will generate a command that can be executed in the machine that needs to g
 
 In this step, we will be configuring the yaml required for Apache Collection.
 
-Below are the input required:
+Below are the inputs required:
 
 -   **Endpoint** - (default: http://localhost:8080/server-status?auto): The URL of the httpd status endpoint
 -   **Access File log Path** - Enter the path to the Access log file for your mysql instance.
