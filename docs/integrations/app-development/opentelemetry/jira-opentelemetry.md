@@ -30,42 +30,42 @@ This section provides instructions for configuring log collection for Jira runni
 Follow the instructions to set up log collection.
 
 The Jira app uses the following log types:
--   **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`,  in your JIRA Installation Directory.
--   **Jira Security Logs**. Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
--   **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your JIRA Installation Directory.
--   **Jira Webhooks**. Webhook events of types:
-    -   Issue
-    -   User
-    -   Sprint
+- **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`,  in your JIRA Installation Directory.
+- **Jira Security Logs**. Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
+- **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your JIRA Installation Directory.
+- **Jira Webhooks**. Webhook events of types:
+    - Issue
+    - User
+    - Sprint
 
 ## Configure hosted collector to receive Webhooks
 
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
 1. Configure a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
 2. Configure an [HTTP source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
-    -   For Source Category, specify Atlassian/Jira/Events
-    -   Add `sumo.datasource` as File to this source and assign the value **jira** for it.
+    - For Source Category, specify Atlassian/Jira/Events
+    - Add `sumo.datasource` as File to this source and assign the value **jira** for it.
     <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Datasource.png' alt="Datasource" />
-    -   Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
+    - Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
 
 ## Register webhook in Jira
 
 Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help to register a webhook for the following events:
--   Issue related:
-    -   created (jira:issue_created)
-    -   updated (jira:issue_updated)
-    -   deleted (jira:issue_deleted)
-    -   worklog changed (jira:worklog_updated)
--   User related:
-    -   created (user_created)
-    -   updated (user_updated)
-    -   deleted (user_deleted)
--   Sprint related:
-    -   created (sprint_created)
-    -   deleted (sprint_deleted)
-    -   updated (sprint_updated)
-    -   started (sprint_started)
-    -   closed (sprint_closed)
+- Issue related:
+    - created (jira:issue_created)
+    - updated (jira:issue_updated)
+    - deleted (jira:issue_deleted)
+    - worklog changed (jira:worklog_updated)
+- User related:
+    - created (user_created)
+    - updated (user_updated)
+    - deleted (user_deleted)
+- Sprint related:
+    - created (sprint_created)
+    - deleted (sprint_deleted)
+    - updated (sprint_updated)
+    - started (sprint_started)
+    - closed (sprint_closed)
 
 When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
@@ -92,9 +92,9 @@ This will generate a command which can be executed in the machine which needs to
 In this step, we will be configuring the yaml file required for the Jira Collection.
 
 Path of the different log file configured to capture Jira logs is needed to be given here:
--   Jira Access Logs. Apache HTTP server log files. Default path `/var/log/apache2/*.log`.
--   Jira Security Logs. Security-related information. Default path `/home/jira/atlassian/application-data/jira/log/atlassian-jira-security.log`.
--   Jira Catalina Logs. The application server log file. Default path `/home/jira/atlassian/application-data/jira/log/*.log`.
+- Jira Access Logs. Apache HTTP server log files. Default path `/var/log/apache2/*.log`.
+- Jira Security Logs. Security-related information. Default path `/home/jira/atlassian/application-data/jira/log/atlassian-jira-security.log`.
+- Jira Catalina Logs. The application server log file. Default path `/home/jira/atlassian/application-data/jira/log/*.log`.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -116,32 +116,32 @@ Once you have the yaml file downloaded in the previous step, follow the below st
 <TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance that needs to be monitored.
-2. Place Env file in the following directory
-```sh
-/etc/otelcol-sumo/env/
-```
-3. restart the collector using
-```sh
- sudo systemctl restart otelcol-sumo
-```
+2. Place Env file in the following directory:
+  ```sh
+  /etc/otelcol-sumo/env/
+  ```
+3. Restart the collector using:
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
-2. Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+2. Restart the collector using:
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance that needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+2. Restart the otelcol-sumo process using:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>

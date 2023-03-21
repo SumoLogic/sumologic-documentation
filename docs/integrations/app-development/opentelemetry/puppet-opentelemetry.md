@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic App for Puppet helps you monitor Puppet events. Puppet logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Puppet
 
@@ -132,7 +132,7 @@ Select the platform for which you want to install the Sumo OpenTelemetry Collect
 
 This will generate a command which can be executed in the machine that needs to be monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -142,7 +142,7 @@ Path of the log file configured to capture puppet access logs and puppet report 
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -204,7 +204,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Sample Query
 
-This sample Query is from the Puppet - Puppet - Overview > Node Requests Summary Over Time
+This sample Query is from the Puppet - Overview dashboard > Node Requests Summary Over Time panel.
 
 ```
 %"sumo.datasource"=puppet
