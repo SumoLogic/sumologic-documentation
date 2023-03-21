@@ -23,6 +23,8 @@ To collect device data from the CrowdStrike platform, you must have an authorize
 
 CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The source will fetch device information that was seen in the last 30 days for the first time. Afterward, it will only fetch information about devices that have been modified.
 
+Device data from this source could be used to augment AID data from the [CrowdStrike FDR source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) via a lookup table [Create a Lookup Table](https://help.sumologic.com/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables)
+
 ## Metadata Field
 
 Metadata fields will be set. See **Metadata Fields** table below:
@@ -86,7 +88,7 @@ When you create a CrowdStrike FDR Host Inventory Source, you add it to a Hosted 
 To configure the CrowdStrike FDR Host Inventory API:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **CrowdStrike Inventory** icon.<br/><img src={useBaseUrl('/img/send-data/crowdstrike-icon.png')} alt="crowdstrike-icon.png" width="120" />
+3. Select **CrowdStrike FDR Host Inventory** icon.<br/><img src={useBaseUrl('/img/send-data/crowdstrike-fdr-host-inventory-icon.png')} alt="crowdstrike-fdr-host-inventory-icon.png" width="120" />
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-config-main.png')} alt="crowdstrike-fdr-host-inventory-config-main.png" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
