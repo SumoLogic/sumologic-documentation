@@ -29,7 +29,7 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 
 The Sumo Logic App for Apache Tomcat uses three types of logs:
 
-1.  Tomcat Access logs \ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html \ ](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html)Recommended pattern used is pattern="common"
+1.  Tomcat Access logs \ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html) Recommended pattern used is pattern="common"
 2.  Tomcat Catalina.out logs \ Log format description: <https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html>
 3.  Tomcat Garbage Collection (GC) logs \ Log format description: <https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements>
 
