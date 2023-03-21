@@ -14,7 +14,7 @@ The SentinelOne App for Sumo Logic provides security professionals with a compre
 With the SentinelOne App, you can gain valuable insights into your endpoint security data, including threat intelligence, endpoint activity, and system health. You can monitor your endpoints for suspicious behavior and quickly respond to any security incidents that may arise. 
 
 The app provides pre-built dashboards that enable you to quickly visualize your SentinelOne data and gain insights into your organization's security posture. You can customize these dashboards to meet your specific needs and monitor the metrics that matter most. With the SentinelOne App for Sumo Logic, you can:
-* Ingest data from SentinelOne agents into Sumo Logic for real-time analysis and response.
+* Ingest data from SentinelOne agents into Sumo Logic for real-time analysis and response
 * Monitor your endpoints for suspicious behavior and respond to security incidents in real-time
 * Gain valuable insights into your organization's security posture with pre-built dashboards
 * Customize dashboards to meet your specific needs and monitor the metrics that matter most to you
