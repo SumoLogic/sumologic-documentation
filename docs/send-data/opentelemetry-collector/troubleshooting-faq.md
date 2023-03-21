@@ -323,20 +323,13 @@ otelcol_1   | 2022-02-11T12:10:06.755Z  error   exporterhelper/queued_retry.go:9
 otelcol_1   | 2022-02-11T12:24:42.437Z  warn    batchprocessor/batch_processor.go:185   Sender failed   {"kind": "processor", "name": "batch", "error": "sending_queue is full"}
 ```
 
-This means that the `sumologicexporter` is not able to send data as quickly as it receives new data.
-There may be a couple ways to fix this is, depending on the root cause.
+This means that the `sumologicexporter` is not able to send data as quickly as it receives new data. There may be a couple ways to fix this is, depending on the root cause.
 
-If the problem is intermittent and caused by temporary spike in data volume,
-increasing the queue size for the exporter with `sending_queue.queue_size` property
-might be enough to accommodate temporary additional load.
+If the problem is intermittent and caused by temporary spike in data volume, increasing the queue size for the exporter with `sending_queue.queue_size` property might be enough to accommodate temporary additional load.
 
-If you see `429 Too Many Requests` HTTP response codes from Sumo in exporter logs,
-this means the exporter is being throttled by Sumo backend.
-In this case, you need to either decrease the volume of data sent,
-or reach out to Sumo support to increase the quota.
+If you see `429 Too Many Requests` HTTP response codes from Sumo in exporter logs, this means the exporter is being throttled by Sumo backend. In this case, you need to either decrease the volume of data sent, or reach out to Sumo support to increase the quota.
 
-If the exporter is not being throttled the best option might be
-to increase the number of consumers sending data from queue to Sumo with `sending_queue.num_consumers`.
+If the exporter is not being throttled the best option might be to increase the number of consumers sending data from queue to Sumo with `sending_queue.num_consumers`.
 
 The `sumologicexporter` sends data to Sumo in batches. If the batches are small, more requests need to be performed to send data. If you have set the `max_request_body_size` setting to a low value, consider increasing it to make batches bigger and in effect make sending more efficient.
 
@@ -377,10 +370,10 @@ After running the collector for the first time, changes to collector properties 
 To work around this, you need to delete the existing collector registration and register the collector again. To do this, you need to do two things:
 
 1. Remove the collector in Sumo Logic UI.
-   - Log in to your Sumo Logic UI
-   - Go to `Manage Data` - `Collection`
-   - Find your collector
-   - Click `Delete` on the right-hand side of the collector
+   1. Log in to Sumo Logic.
+   1. Go to `Manage Data` - `Collection`.
+   1. Find your collector.
+   1. Click `Delete` on the right-hand side of the collector.
 2. Delete local collector registration file in `~/.sumologic-otel-collector/`.
 
 After that, the collector will register on next run.
