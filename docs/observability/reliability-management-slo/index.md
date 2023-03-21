@@ -107,9 +107,9 @@ SLIs can be defined by signals such as latency, load, error, bottleneck, through
 
 Latency is considered the speed of a service. This is the response of the service to users for different types of actions, including:
 
-* **Interactions.** How long a user waits for a response after clicking something, sometimes a read action
-* **Write.** Saving and changing underlying data to a server, database, or distributed system
-* **Background.** Backend actions that may not readily be seen or recognized by users, typically for refreshes of data or asynchronous actions
+* **Interactions**. How long a user waits for a response after clicking something, sometimes a read action.
+* **Write**. Saving and changing underlying data to a server, database, or distributed system.
+* **Background**. Backend actions that may not readily be seen or recognized by users, typically for refreshes of data or asynchronous actions.
 
 Each of these actions may have different latencies and thresholds for good and bad thresholds. A user may not expect a faster response when writing data versus an interaction to read or retrieve data. You may also have defined latencies for each of these actions, such as a defined median of speed, typical latency, and tail latency.
 
