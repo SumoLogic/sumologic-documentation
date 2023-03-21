@@ -47,7 +47,7 @@ artifactory.traffic.collectionActive=true
 
 A restart is required for traffic collection to take effect.
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on Install App. Please follow the steps below:
 
