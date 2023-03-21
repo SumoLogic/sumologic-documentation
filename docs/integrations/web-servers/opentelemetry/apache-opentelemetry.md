@@ -281,7 +281,7 @@ The **Apache - Visitor Traffic Insight** dashboard provides summarized informati
 
 Use this dashboard to:
 
--   To understand content types of content that are frequently requested by users.
+-   Understand content types of content that are frequently requested by users.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Traffic-Insight.png')} alt="Visitor Traffic Insight" />
 
