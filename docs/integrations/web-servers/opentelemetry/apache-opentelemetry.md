@@ -117,7 +117,7 @@ Restart-Service -Name OtelcolSumo
 <TabItem value="macOS">
 
 1.  Copy the yaml to /etc/otelcol-sumo/conf.d/ folder in the Apache instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+2.  Restart the otelcol-sumo process using the below command:
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
