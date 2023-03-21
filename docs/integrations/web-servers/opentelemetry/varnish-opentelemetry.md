@@ -105,7 +105,7 @@ After successful execution of the above command, Sumo will start receiving the d
 
 This will install the app to your Sumo Logic Org. The app consists of Dashboards.
 
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available. Your data should appear in the dashboard within 20 minutes and you'll see full graphs and map.
+Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available. Your data should appear in the dashboard within 20 minutes and you'll see full graphs and maps.
 
 ### Sample Log Messages in Non-Kubernetes environments
 
