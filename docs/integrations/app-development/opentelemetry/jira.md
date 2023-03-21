@@ -41,7 +41,6 @@ The Jira app uses the following log types:
 ## Configure hosted collector to receive Webhooks
 
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
-
 1.  Configure a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
 2.  Configure an [HTTP source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
     -   For Source Category, specify Atlassian/Jira/Events
