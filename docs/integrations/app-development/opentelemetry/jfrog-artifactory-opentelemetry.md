@@ -21,7 +21,7 @@ Following are the Tags which will be created as part of Artifactory App install 
 
 **sumo.datasource** - Has fixed value of **artifactory**
 
-## Prerequisite
+## Prerequisites
 
 This section provides instructions for configuring log collection for Artifactory for the Sumo Logic App.
 
