@@ -110,7 +110,7 @@ done
 echo "Conversion Completed. End Time: $(date)" >> "$log_file_name"
 ```
 
-Please copy this script to `/opt/puppetlabs/server/data/puppetserver/reports` with the name puppetReport.sh. If Puppet is installed in a different location, copy the script to the correct path.
+Copy this script to `/opt/puppetlabs/server/data/puppetserver/reports` with the name `puppetReport.sh`. If Puppet is installed in a different location, copy the script to the correct path.
 
 Configure a cron job to trigger the python script using crontab. Frequency of this job can be set following the instructions from [here](https://www.python-engineer.com/posts/cron-jobs-for-python/#crontab). Here is the command which needs to be configured as part of cron to trigger the script:
 ```sh
