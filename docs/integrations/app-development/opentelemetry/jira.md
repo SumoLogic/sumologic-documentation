@@ -181,7 +181,7 @@ The **Jira - Access** dashboard provides information about Jira user access, inc
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Access.png')} alt="Access" />
 
-### Jira - Catalina:
+### Jira - Catalina
 
 The **Jira - Catalina** dashboard provides information on the Jira internal web server. Panels display analytics for errors, failures, exceptions, request trends, and top ranked URLs
 
