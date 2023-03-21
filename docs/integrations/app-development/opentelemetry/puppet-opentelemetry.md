@@ -21,7 +21,7 @@ Following are the tags which will be created as part of Puppet App install if no
 
 - **`sumo.datasource`** - Has a fixed value of **Puppet**.
 
-## Prerequisite
+## Prerequisites
 
 This section provides instructions for configuring log collection for Puppet running on a non-Kubernetes environment for the Sumo Logic App for Puppet.
 
@@ -29,15 +29,15 @@ Follow the instructions to set up log collection:
 
 We use OpenTelemetry collector to gather the following data from Puppet:
 
--   Puppet Server logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
+-   **Puppet Server logs**.  For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 
--   Puppet Server Access logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
+-   **Puppet Server Access logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 
 -   Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
 
 The default Puppet Server Access log file is: `/var/log/puppetlabs/puppetserver/puppetserver-access.log`. If your Puppet Server Access logs are located elsewhere, please note the path this will be used later while app installation.
 
-Puppet reports are in YAML format. They must be converted into JSON format before Sumo ingests them. You can convert the YAML files using the sumo provided shell script below:
+Puppet reports are in YAML format. They must be converted into JSON format before Sumo ingests them. You can convert the YAML files using the Sumo-provided shell script below:
 
 ```json
 MaxFileSize=20
@@ -110,7 +110,7 @@ done
 echo "Conversion Completed. End Time: $(date)" >> "$log_file_name"
 ```
 
-Please copy this script to `/opt/puppetlabs/server/data/puppetserver/reports` with the name puppetReport.sh. If Puppet is installed in a different location, copy the script to the correct path.
+Copy this script to `/opt/puppetlabs/server/data/puppetserver/reports` with the name `puppetReport.sh`. If Puppet is installed in a different location, copy the script to the correct path.
 
 Configure a cron job to trigger the python script using crontab. Frequency of this job can be set following the instructions from [here](https://www.python-engineer.com/posts/cron-jobs-for-python/#crontab). Here is the command which needs to be configured as part of cron to trigger the script:
 ```sh
@@ -118,7 +118,7 @@ Configure a cron job to trigger the python script using crontab. Frequency of th
 ```
 Please modify the location of the `puppetReport.sh` if required in the above command. The execution of the script above will generate a log file named `puppet_rpt_conversion.log`. The path to this log file needs to be provided during the app installation.
 
-## Collection configuration & App installation
+## Collection configuration and App installation
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on **Install App**. Please follow the steps below.
 
@@ -138,7 +138,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml required for Puppet collection.
 
-Path of the log file configured to capture puppet access logs and puppet report are needed to be given here - please refer to the prerequisite section of this document.
+Path of the log file configured to capture puppet access logs and puppet report are needed to be given here. Refer to the Prerequisites section of this document.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -160,11 +160,11 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 <TabItem value="Linux">
 
 1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance which needs to be monitored.
-2.  Place Env file in the following directory
+2.  Place Env file in the following directory:
 ```sh
 /etc/otelcol-sumo/env/
 ```
-3.  restart the collector using
+3.  Restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -172,7 +172,7 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
+1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2.  Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
@@ -181,9 +181,9 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the Puppet instance which needs to be monitored.
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance which needs to be monitored.
 
-2.  Restart the otelcol-sumo process using the below command 
+2.  Restart the otelcol-sumo process using the below command:
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```

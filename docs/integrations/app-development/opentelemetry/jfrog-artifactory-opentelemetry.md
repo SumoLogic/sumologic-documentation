@@ -21,7 +21,7 @@ Following are the Tags which will be created as part of Artifactory App install 
 
 **sumo.datasource** - Has fixed value of **artifactory**
 
-## Prerequisite
+## Prerequisites
 
 This section provides instructions for configuring log collection for Artifactory for the Sumo Logic App.
 
@@ -47,11 +47,11 @@ artifactory.traffic.collectionActive=true
 
 A restart is required for traffic collection to take effect.
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on Install App. Please follow the steps below:
 
-### Step1: Set up Collector
+### Step 1: Set up Collector
 
 If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
 
@@ -63,7 +63,7 @@ This will generate a command which can be executed in the machine which needs to
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png')} alt="Artifactory-Collector" />
 
-### Step2: Configure integration
+### Step 2: Configure integration
 
 In this step we will be configuring the yaml required for the Artifactory Collection.
 
@@ -80,9 +80,9 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png')} alt="Artifactory-YAML" />
 
-### Step3: Sending logs to Sumo
+### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps based on your platform
+Once you have the yaml file downloaded in step 2, follow the below steps based on your platform.
 
 <Tabs
   className="unique-tabs"
@@ -95,8 +95,8 @@ Once you have the yaml file downloaded in step 2, please follow the below steps 
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the Artifactory instance which needs to be monitored.
-2.  restart the collector using
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance which needs to be monitored.
+2.  Restart the collector using:
 ```sh
 sudo systemctl restart otelcol-sumo
 ```
@@ -122,7 +122,7 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelc
 
 After successful execution of the above command, Sumo will start receiving the data from your host machine.
 
-Press **Next** .This will install the app to your Sumo Logic Org. The app consists of Dashboards.
+Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
 

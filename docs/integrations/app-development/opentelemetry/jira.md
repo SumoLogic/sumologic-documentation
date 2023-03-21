@@ -31,7 +31,7 @@ Follow the instructions to set up log collection.
 
 The Jira app uses the following log types:
 -   **Jira Access Logs**. HTTP server access log files, in `logs/access_logs`,  in your JIRA Installation Directory.
--   **Jira Security Logs**.Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
+-   **Jira Security Logs**. Security-related information, such as logins, logouts, session creation/destruction, and security denials from `atlassian-jira-security.log`.
 -   **Jira Catalina Logs**. The application catalina log file, `logs/catalina.out`, in your JIRA Installation Directory.
 -   **Jira Webhooks**. Webhook events of types:
     -   Issue
@@ -41,7 +41,6 @@ The Jira app uses the following log types:
 ## Configure hosted collector to receive Webhooks
 
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
-
 1.  Configure a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
 2.  Configure an [HTTP source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
     -   For Source Category, specify Atlassian/Jira/Events
@@ -51,9 +50,7 @@ In this step, you create a host collector to receive webhooks from Jira, and set
 
 ## Register webhook in Jira
 
-
 Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help to register a webhook for the following events:
-
 -   Issue related:
     -   created (jira:issue_created)
     -   updated (jira:issue_updated)
@@ -70,15 +67,15 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     -   started (sprint_started)
     -   closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the HTTP source you created in [step 2](https://help.sumologic.com/docs/integrations/app-development/jira/#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
-## Logs Collection Configuration & App installation
+## Logs Collection Configuration & App Installation
 
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click on **Install App**. Please follow the steps below:
+As part of setting up the collection and app installation process, you can select the App from **App Catalog** and click on **Install App**.  Follow the steps below:
 
 ### Step 1: Set up Collector
 
-If you want to create a new Collector please select **Add a new Collector** option.
+ To create a new Collector, select **Add a new Collector** option.
 
 :::note
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
@@ -92,10 +89,9 @@ This will generate a command which can be executed in the machine which needs to
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for the Jira Collection.
+In this step, we will be configuring the yaml file required for the Jira Collection.
 
 Path of the different log file configured to capture Jira logs is needed to be given here:
-
 -   Jira Access Logs. Apache HTTP server log files. Default path `/var/log/apache2/*.log`.
 -   Jira Security Logs. Security-related information. Default path `/home/jira/atlassian/application-data/jira/log/atlassian-jira-security.log`.
 -   Jira Catalina Logs. The application server log file. Default path `/home/jira/atlassian/application-data/jira/log/*.log`.
@@ -104,7 +100,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png')} alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Sending logs to Sumo Logic
 
 Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
 
@@ -182,7 +178,7 @@ The **Jira - Access** dashboard provides information about Jira user access, inc
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Access.png')} alt="Access" />
 
-### Jira - Catalina:
+### Jira - Catalina
 
 The **Jira - Catalina** dashboard provides information on the Jira internal web server. Panels display analytics for errors, failures, exceptions, request trends, and top ranked URLs
 
@@ -200,7 +196,7 @@ The **Jira - Issue Overview** dashboard provides a high-level view of Jira issue
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Overview.png')} alt="Issue Overview" />
 
-### Jira - Recent Issue Changes :
+### Jira - Recent Issue Changes
 
 The **Jira - Recent Issue Changes** dashboard tracks recent progress of Jira issues. You can view detailed information on the type of issue, including when it was created, its status, assignee, and a summary of the issue.
 
