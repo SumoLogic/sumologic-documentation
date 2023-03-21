@@ -164,7 +164,7 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 ```sh
 /etc/otelcol-sumo/env/
 ```
-3.  restart the collector using
+3.  Restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
