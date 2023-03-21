@@ -55,7 +55,7 @@ IIS allows you to choose fields to log in IIS access logs. For explanations on t
 
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
-## Enable logging on your IIS Server.
+## Enable logging on your IIS Server
 
 Perform the following task, if logging on your IIS Server is not already enabled. To enable logging on your IIS Server, do the following:
 

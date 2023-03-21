@@ -84,29 +84,29 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
-2.  restart the collector using
-```sh
-sudo systemctl restart otelcol-sumo
-```
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
+2. Restart the collector using:
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using:
-```sh
-Restart-Service -Name OtelcolSumo
-```
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using:
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Tomcat instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
@@ -115,7 +115,7 @@ After successful execution of the above command, Sumo will start receiving the d
 
 Click **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
 
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
+Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
 ### Sample Log Messages
 
