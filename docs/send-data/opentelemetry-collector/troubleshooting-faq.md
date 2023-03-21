@@ -147,9 +147,9 @@ On Windows, the Collector installation command must be run in PowerShell.
 
 To install the script manually on your OS, refer to one of the following documentations:
 
-* [Linux](/docs/send-data/opentelemetry-collector/install-collector-on-linux#manual-step-by-step-installation)
-* [MacOS](/docs/send-data/opentelemetry-collector/install-collector-on-macos#manual-step-by-step-installation)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector-on-windows#manual-step-by-step-installation)
+* [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux#manual-step-by-step-installation)
+* [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos#manual-step-by-step-installation)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows#manual-step-by-step-installation)
 
 You will need to manage configuration files on your own.
 
