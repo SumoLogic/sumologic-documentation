@@ -349,6 +349,8 @@ To install FIPS compliant binary, you should add `--fips` switch to installation
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
 
+Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more detauls.
+
 ## Uninstall
 
 The recommended way to uninstall the OpenTelemetry Collector depends on how you installed it.
