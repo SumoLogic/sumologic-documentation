@@ -63,7 +63,7 @@ In this step we will be configuring the yaml required for Tomcat Collection.
 
 Path of the log file configured to capture tomcat logs is needed to be given here.
 
-The files are typically located in /usr/share/tomcat/logs/*. If you're using a customized path, check the Tomcat.conf file for this information.
+The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a customized path, check the Tomcat.conf file for this information.
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
