@@ -50,7 +50,6 @@ In this step, you create a host collector to receive webhooks from Jira, and set
 
 ## Register webhook in Jira
 
-
 Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help to register a webhook for the following events:
 -   Issue related:
     -   created (jira:issue_created)
