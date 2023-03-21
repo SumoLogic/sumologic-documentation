@@ -157,7 +157,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference',
               ]
             },
-            'send-data/opentelemetry-collector/troubleshooting-and-faqs',
+            'send-data/opentelemetry-collector/troubleshooting-faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
