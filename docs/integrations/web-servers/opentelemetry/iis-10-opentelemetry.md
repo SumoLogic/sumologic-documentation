@@ -74,7 +74,7 @@ For more information about IIS log format and log configuration refer to this [l
 
 Once the logs are configured to be written into a local file follow the below step to configure collection in sumo.
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on Install App. Please follow the steps below:
 
