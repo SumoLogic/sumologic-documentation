@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Configuration Location
 
-All Sumo Logic preconfigured components are stored in the `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
+All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
 
 * It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`.
 * Specific configurations should be grouped by pipelines in meaningfully named files in the `conf.d` directory.
