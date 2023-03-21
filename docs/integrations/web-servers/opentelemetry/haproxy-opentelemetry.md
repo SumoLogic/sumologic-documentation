@@ -33,7 +33,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 - **`webengine.system`** - Has fixed value of **haproxy**
 - **sumo.datasource** - Has fixed value of **haproxy**
 
-## Prerequisite
+## Prerequisites
 
 This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic App for HAProxy.
 
