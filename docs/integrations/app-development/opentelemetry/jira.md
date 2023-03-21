@@ -71,7 +71,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
 
 When you configure the webhook, enter the URL for the HTTP source you created in [step 2](https://help.sumologic.com/docs/integrations/app-development/jira/#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
 
-## Logs Collection Configuration & App installation
+## Logs Collection Configuration & App Installation
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on **Install App**. Please follow the steps below:
 
