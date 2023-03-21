@@ -32,7 +32,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Prerequisites
 
-The receiver used, gets stats from an Apache Web Server instance using the server-status?auto endpoint.
+The receiver used gets stats from an Apache Web Server instance using the `server-status?auto` endpoint.
 
 This receiver supports Apache Web Server version 2.4+
 
