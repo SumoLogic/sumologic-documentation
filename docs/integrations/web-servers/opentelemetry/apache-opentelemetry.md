@@ -164,7 +164,28 @@ webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* 
 ### Sample Metric 
 
 ```
-{"queryId":"A","server_name":"localhost","_source":"apache-otel-metric","state":"dnslookup","webengine.cluster":"apache_otel_cluster","sumo.datasource":"apache","deployment.environment":"user_apache_env","_contentType":"Carbon2","metric":"apache.scoreboard","_collectorId":"000000000C9802CD","_sourceId":"0000000042E3AAB3","webengine.system":"apache","unit":"{workers}","_collector":"Labs - apache-otel","max":100,"min":0,"avg":18.64,"sum":1100,"latest":1,"count":59}
+{
+	"queryId":"A",
+	"server_name":"localhost",
+	"_source":"apache-otel-metric",
+	"state":"dnslookup",
+	"webengine.cluster":"apache_otel_cluster",
+	"sumo.datasource":"apache",
+	"deployment.environment":"user_apache_env",
+	"_contentType":"Carbon2",
+	"metric":"apache.scoreboard",
+	"_collectorId":"000000000C9802CD",
+	"_sourceId":"0000000042E3AAB3",
+	"webengine.system":"apache",
+	"unit":"{workers}",
+	"_collector":"Labs - apache-otel",
+	"max":100,
+	"min":0,
+	"avg":18.64,
+	"sum":1100,
+	"latest":1,
+	"count":59
+}
 ```
 
 ### Sample Metric query
