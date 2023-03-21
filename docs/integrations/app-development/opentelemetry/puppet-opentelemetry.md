@@ -29,7 +29,7 @@ Follow the instructions to set up log collection:
 
 We use OpenTelemetry collector to gather the following data from Puppet:
 
--   Puppet Server logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
+-   **Puppet Server logs**.  For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 
 -   **Puppet Server Access logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 
