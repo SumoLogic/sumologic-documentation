@@ -93,7 +93,6 @@ This will generate a command which can be executed in the machine which needs to
 In this step, we will be configuring the yaml file required for the Jira Collection.
 
 Path of the different log file configured to capture Jira logs is needed to be given here:
-
 -   Jira Access Logs. Apache HTTP server log files. Default path `/var/log/apache2/*.log`.
 -   Jira Security Logs. Security-related information. Default path `/home/jira/atlassian/application-data/jira/log/atlassian-jira-security.log`.
 -   Jira Catalina Logs. The application server log file. Default path `/home/jira/atlassian/application-data/jira/log/*.log`.
