@@ -91,7 +91,7 @@ This will generate a command which can be executed in the machine which needs to
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for the Jira Collection.
+In this step, we will be configuring the yaml file required for the Jira Collection.
 
 Path of the different log file configured to capture Jira logs is needed to be given here:
 
