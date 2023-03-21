@@ -45,7 +45,6 @@ Here are the steps for Collecting Logs and installing the app:
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
 :::
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
 
 To create a new Collector:
 
