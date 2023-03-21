@@ -19,7 +19,7 @@ Tomcat logs are sent to Sumo Logic through Opentelemetry [filelog receiver](http
 
 ## Fields Created in Sumo Logic for Tomcat
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Tomcat App install if not already present.
+The following are the [Fields](/docs/manage/fields) that will be created as part of the Tomcat App install, if not already present.
 
 - **`webengine.cluster.name`** - User configured. Set a value of the cluster where your tomcat instance resides. This will be tagged along with the data sent to sumo.
 - **`webengine.system`** - Has a fixed value of **tomcat**.
