@@ -35,7 +35,7 @@ The Sumo Logic App for Apache Tomcat uses three types of logs:
 
 By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default directory for log files is listed in the `/usr/share/tomcat/conf/logging.properties` file.
 
-## Collecting Logs & installing Tomcat app
+## Collecting Logs and Installing the Apache Tomcat app
 
 Here are the steps for Collecting Logs and installing the app:
 
