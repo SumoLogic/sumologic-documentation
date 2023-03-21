@@ -2,7 +2,7 @@
 id: dropbox
 title: Sumo Logic App for Dropbox
 sidebar_label: Dropbox
-description: The Dropbox App for Sumo Logic allows organizations to monitor and analyze their Dropbox usage data
+description: The Dropbox App for Sumo Logic allows organizations to monitor and analyze their Dropbox usage data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

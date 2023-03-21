@@ -2,6 +2,7 @@
 id: box-source
 title: Box Source
 sidebar_label: Box
+description: The Box API integration ingests events from the Get Events API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

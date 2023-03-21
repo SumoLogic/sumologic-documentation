@@ -2,6 +2,7 @@
 id: workday-source
 title: Workday Source
 sidebar_label: Workday
+description: The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Workday is a cloud-based enterprise resource planning (ERP) system that enables organizations to manage their financial, human resources, payroll, and procurement processes in one central platform. It offers a range of features such as analytics, reporting, and workflow automation to help businesses make informed decisions and streamline their operations. Workday is a comprehensive solution for businesses looking to improve their efficiency, productivity, and financial management.
 
-This integration facilitates retrieving sign-on logs and activity logs from the Workday API.
+The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
 ## Data Sources
 

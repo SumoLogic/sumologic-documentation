@@ -2,6 +2,7 @@
 id: sophos-central-source
 title: Sophos Central Source
 sidebar_label: Sophos Central
+description: The Sophos Central Source provides a secure endpoint to receive authentication logs from the Sophos Central APIs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
