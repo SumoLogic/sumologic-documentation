@@ -23,7 +23,7 @@ To collect device data from the CrowdStrike platform, you must have an authorize
 
 CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The source will fetch device information that was seen in the last 30 days for the first time. Afterward, it will only fetch information about devices that have been modified.
 
-Device data from this source could be used to augment AID data from the [CrowdStrike FDR source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) via a lookup table [Create a Lookup Table](https://help.sumologic.com/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables)
+Device data from this source could be used to augment AID data from the [CrowdStrike FDR source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) via a [lookup table](/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables)
 
 ## Metadata Field
 
