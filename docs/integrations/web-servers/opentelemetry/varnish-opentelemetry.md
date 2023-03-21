@@ -128,7 +128,7 @@ This sample Query is from the Varnish Overview - Traffic Volume dashbaord > MB S
 
 ### Varnish - Overview
 
-The **Varnish - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and  uptime, cache hit, requests, VLC
+The **Varnish - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and uptime, cache hit, requests, and VLC.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Overview.png')} alt="Overview" />
 
