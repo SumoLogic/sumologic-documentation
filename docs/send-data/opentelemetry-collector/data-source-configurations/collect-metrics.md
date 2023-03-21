@@ -2,7 +2,7 @@
 id: collect-metrics
 title: Collect Metrics
 sidebar_label: Collect Metrics
-description: Learn how to collecting metrics
+description: Learn how to collect metrics using the Sumo Logic OpenTelemetry Collector.
 ---
 
 Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for metrics collection. The full list of them is available in [our repository].
