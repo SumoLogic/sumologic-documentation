@@ -78,7 +78,7 @@ As part of the setting up the collection process and app installation user can s
 
 ### Step 1: Set up Collector
 
-If you want to create a new Collector please select **Add a new Collector** option.
+ To create a new Collector, select **Add a new Collector** option.
 
 :::note
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
