@@ -74,7 +74,7 @@ In this step, we will be configuring the yaml required for Apache Collection.
 
 Below are the inputs required:
 
--   **Endpoint** - (default: http://localhost:8080/server-status?auto): The URL of the httpd status endpoint
+-   **Endpoint** - (default: `http://localhost:8080/server-status?auto`): The URL of the httpd status endpoint
 -   **Access File log Path** - Enter the path to the Access log file for your mysql instance.
 -   **Error file log path** - Enter the path to the error log file for your mysql instance.
 -   Fields - **webengine.cluster.name**
