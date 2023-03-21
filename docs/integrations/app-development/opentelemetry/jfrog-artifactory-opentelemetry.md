@@ -80,7 +80,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png')} alt="Artifactory-YAML" />
 
-### Step3: Sending logs to Sumo
+### Step 3: Sending logs to Sumo
 
 Once you have the yaml file downloaded in step 2, follow the below steps based on your platform.
 
