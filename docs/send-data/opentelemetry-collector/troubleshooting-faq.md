@@ -5,6 +5,8 @@ description: Frequently asked questions about Sumo Logic OpenTelemetry Collector
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 This document contains common troubleshooting scenarios and frequently asked questions about Sumo Logic OpenTelemetry Collector from our customers and field teams (SE, TAM, Support Engineers).
 
@@ -43,56 +45,10 @@ The default cache size for the Sumo Logic OpenTelemetry Collector is 5000 batche
 
 The collector caches data when it’s unable to send it to the Sumo backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo, and others.
 
-## General troubleshooting
-
-### Accessing the collector's logs
-
-#### Systemd
-
-On systems with systemd, the logs are available in journald:
-
-```sh
-journalctl --unit otelcol-sumo
-```
-
-#### Standalone Binary
-
-On systems without systemd, the logs are available in the console output of the running process.
-
-#### Windows
-
-On Windows the logs are available in event viewer, or they can be listed using PowerShell:
-
-```powershell
-Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Object -Property ReplacementStrings
-```
-
-### Accessing the collector's metrics
-
-By default, the collector's own metrics are available in Prometheus format at `http://localhost:8888/metrics`.
-
-To access them, use a tool like `curl` or just open the URL in a browser running on the same host as the collector.
-
-```sh
-curl http://localhost:8888/metrics
-```
-
-To modify the port, use the `service.telemetry.metrics.address` property:
-
-```yaml
-service:
-  telemetry:
-    metrics:
-      address: ":8889"
-```
-
-### Accessing the collector's configuration
-
-By default, the collector's configuration can be found in `/etc/otelcol-sumo/` directory.
 
 ## Collector connection failure
 
-#### How can I provide a proxy setting for the Sumo Logic OpenTelemetry Collector to connect to the Sumo Logic backend?
+#### How do I provide a proxy setting for the Sumo Logic OpenTelemetry Collector to connect to the Sumo Logic backend?
 
 * For Linux
 * For Windows
@@ -139,13 +95,74 @@ The collector sends a heartbeat message every 15 seconds (by default).
 
 ## Collector installation errors
 
+### Accessing the collector's logs
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Systemd"
+  values={[
+    {label: 'Systemd', value: 'Systemd'},
+    {label: 'Standalone Binary', value: 'Standalone Binary'},
+    {label: 'Windows', value: 'Windows'},
+  ]}>
+
+<TabItem value="Systemd">
+
+On systems with systemd, the logs are available in journald:
+
+```sh
+journalctl --unit otelcol-sumo
+```
+
+</TabItem>
+<TabItem value="Standalone Binary">
+
+On systems without systemd, the logs are available in the console output of the running process.
+
+</TabItem>
+<TabItem value="Windows">
+
+On Windows, the logs are available in event viewer, or they can be listed using PowerShell:
+
+```powershell
+Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Object -Property ReplacementStrings
+```
+
+</TabItem>
+</Tabs>
+
+
+### Accessing the collector's metrics
+
+By default, the collector's own metrics are available in Prometheus format at `http://localhost:8888/metrics`.
+
+To access them, use a tool like `curl` or just open the URL in a browser running on the same host as the collector.
+
+```sh
+curl http://localhost:8888/metrics
+```
+
+To modify the port, use the `service.telemetry.metrics.address` property:
+
+```yaml
+service:
+  telemetry:
+    metrics:
+      address: ":8889"
+```
+
+### Accessing the collector's configuration
+
+By default, the collector's configuration can be found in `/etc/otelcol-sumo/` directory.
+
+
 #### On Windows, I am running the Collector install command on CMD. Why does it fail?
 
 On Windows, the Collector installation command must be run in PowerShell.
 
 #### How can I install the Sumo Logic Collector on my operating system if the install script is not working?
 
-To install the script manually on your OS, refer to one of the following documentations:
+To install the script manually on your OS, refer to one of the following docs:
 
 * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux#manual-step-by-step-installation)
 * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos#manual-step-by-step-installation)
