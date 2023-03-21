@@ -118,7 +118,7 @@ Configure a cron job to trigger the python script using crontab. Frequency of th
 ```
 Please modify the location of the `puppetReport.sh` if required in the above command. The execution of the script above will generate a log file named `puppet_rpt_conversion.log`. The path to this log file needs to be provided during the app installation.
 
-## Collection configuration & App installation
+## Collection configuration and App installation
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on **Install App**. Please follow the steps below.
 
