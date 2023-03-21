@@ -2,7 +2,7 @@
 id: collect-logs
 title: Collect Logs
 sidebar_label: Collect Logs
-description: Learn how to collecting logs
+description: Learn how to collect logs using the Sumo Logic OpenTelemetry Collector.
 ---
 
 Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for log collection. You can find the full list in [our repository].
