@@ -99,7 +99,7 @@ Once you download the yaml file, please follow the below steps based on your pla
 <TabItem value="Linux">
 
 1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Apache instance which needs to be monitored.
-2.  restart the collector using
+2.  Restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
