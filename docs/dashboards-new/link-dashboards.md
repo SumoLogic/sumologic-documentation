@@ -2,7 +2,7 @@
 id: link-dashboards
 title: Linking Multiple Dashboards (New)
 sidebar_label: Linking Dashboards (New)
-description: Easily link dashboards together to quickly view related data.
+description: Learn how to quickly link dashboards together to view related data.
 ---
 
 ## Link Multiple Dashboards Together

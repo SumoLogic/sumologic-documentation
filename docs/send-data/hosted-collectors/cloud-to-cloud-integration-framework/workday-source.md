@@ -2,13 +2,16 @@
 id: workday-source
 title: Workday Source
 sidebar_label: Workday
+description: The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
+
 Workday is a cloud-based enterprise resource planning (ERP) system that enables organizations to manage their financial, human resources, payroll, and procurement processes in one central platform. It offers a range of features such as analytics, reporting, and workflow automation to help businesses make informed decisions and streamline their operations. Workday is a comprehensive solution for businesses looking to improve their efficiency, productivity, and financial management.
 
-This integration facilitates retrieving sign-on logs and activity logs from the Workday API.
+The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
 ## Data Sources
 
@@ -20,10 +23,10 @@ The Workday integration ingests the user activity logs and sign-on activity repo
 
 Metadata fields will be set if the integration is configured with the SIEM forward option. See the **Metadata Fields** table below:
 
-| Field Name | Value | 
+| Field Name | Value |
 | :--- | :--- |
-| `_siemVendor` | Workday | 
-| `_siemProduct` | Workday | 
+| `_siemVendor` | Workday |
+| `_siemProduct` | Workday |
 | `_siemFormat` | JSON |
 | `_parser` | /Parsers/System/Workday/Workday |
 

@@ -1,13 +1,13 @@
 ---
 id: armis-api-source
-title: Armis API Integration
-sidebar_label: Armis API Source
-description: This document explains how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
+title: Armis API Integration Source
+sidebar_label: Armis API
+description: Learn how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="150" />
+<img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
 
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
 The Source integration ingests alert and device data from the Armis platform.

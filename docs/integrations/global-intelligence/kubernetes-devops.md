@@ -5,6 +5,10 @@ sidebar_label: Global Intelligence for Kubernetes DevOps
 description: The Global Intelligence for Kubernetes DevOps application helps infrastructure engineers and DevOps users benchmark the maturity of their Kubernetes adoption and minimize risk of Kubernetes infrastructure incidents by optimizing resource requests and limits for containers.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="50"/>
+
 The Global Intelligence for Kubernetes DevOps application helps infrastructure engineers and DevOps users benchmark the maturity of their Kubernetes adoption and minimize risk of Kubernetes infrastructure incidents by optimizing resource requests and limits for containers.
 
 ## Availability
