@@ -18,9 +18,9 @@ To send your data to Sumo Logic, you have a few options. We have two types of in
 
 The Sumo Logic Distribution for [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector) is built with the [opentelemetry-collector-builder](https://github.com/open-telemetry/opentelemetry-collector-builder) and provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
 
-See the [Deployment Guide](https://github.com/SumoLogic/sumologic-otel-collector#readme) in our sumologic-otel-collector GitHub repository for detailed instructions on how to configure and migrate your existing collection.
+Refer to [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) documentation for more information.
 
-It's supported on *Linux*, *MacOS*, and *Kubernetes* environments and can use any of the following Sources:
+It's supported on Linux, macOS, Windows, and Kubernetes environments and can use any of the following Sources:
 
 * Local File
 * Host/Process Metrics
