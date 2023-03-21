@@ -54,7 +54,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox7 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/citrix"><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/><h4>Citrix</h4></a>
+  <a href="/docs/integrations/saas-cloud/citrix-cloud"><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/><h4>Citrix</h4></a>
   <p>Track configuration modifications impacting your environment and admins.</p>
   </div>
 </div>
