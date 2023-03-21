@@ -198,7 +198,7 @@ The **Jira - Issue Overview** dashboard provides a high-level view of Jira issue
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Overview.png')} alt="Issue Overview" />
 
-### Jira - Recent Issue Changes :
+### Jira - Recent Issue Changes
 
 The **Jira - Recent Issue Changes** dashboard tracks recent progress of Jira issues. You can view detailed information on the type of issue, including when it was created, its status, assignee, and a summary of the issue.
 
