@@ -160,7 +160,7 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 <TabItem value="Linux">
 
 1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance which needs to be monitored.
-2.  Place Env file in the following directory
+2.  Place Env file in the following directory:
 ```sh
 /etc/otelcol-sumo/env/
 ```
