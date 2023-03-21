@@ -59,7 +59,6 @@ Here are the steps for Collecting Logs, metric and installing the app:
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
 :::
 
-If you want to use an existing OpenTelemetry Collector then this step can be skipped by selecting the option of using an existing Collector.
 
 If you want to create a new Collector please select **Add a new Collector** option.
 
