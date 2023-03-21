@@ -181,7 +181,7 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the Puppet instance which needs to be monitored.
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance which needs to be monitored.
 
 2.  Restart the otelcol-sumo process using the below command:
 ```sh
