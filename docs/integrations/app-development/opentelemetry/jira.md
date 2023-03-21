@@ -103,7 +103,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png')} alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Sending logs to Sumo Logic
 
 Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
 
