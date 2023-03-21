@@ -82,7 +82,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps based on your platform
+Once you have the yaml file downloaded in step 2, follow the below steps based on your platform.
 
 <Tabs
   className="unique-tabs"
