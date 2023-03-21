@@ -31,7 +31,7 @@ Although our OpenTelemetry Collector may work on other OS platforms and versions
 
 #### How does an OpenTelemetry Collector send information to the Sumo Logic service?
 
-The OpenTelemetry Collector uses the [OTLP protocol](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/otlp.md.an) to send data to the Sumo Logic service.
+The OpenTelemetry Collector uses the [OTLP protocol](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/otlp.md) to send data to the Sumo Logic service.
 
 #### How frequently does OpenTelemetry Collector flush data to the Sumo Logic backend?
 
@@ -145,8 +145,13 @@ On Windows, the Collector installation command must be run in PowerShell.
 
 #### How can I install the Sumo Logic Collector on my operating system if the install script is not working?
 
-To install the script on your OS, refer to the [Installation Script documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation). You will need to manage configuration files on your own.
+To install the script manually on your OS, refer to one of the following documentations:
 
+* [Linux](/docs/send-data/opentelemetry-collector/install-collector-on-linux#manual-step-by-step-installation)
+* [MacOS](/docs/send-data/opentelemetry-collector/install-collector-on-macos#manual-step-by-step-installation)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector-on-windows#manual-step-by-step-installation)
+
+You will need to manage configuration files on your own.
 
 #### Why is the Sumo OpenTelemetry Collector not starting up after I updated or added a new config file?
 
