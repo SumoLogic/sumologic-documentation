@@ -354,9 +354,9 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
 
 * Install sumologic-otel-collector by following the instructions for your operating system:
 
-  * [Linux](/docs/send-data/opentelemetry-collector/install-collector-on-linux)
-  * [MacOS](/docs/send-data/opentelemetry-collector/install-collector-on-macos)
-  * [Windows](/docs/send-data/opentelemetry-collector/install-collector-on-windows)
+  * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux)
+  * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos)
+  * [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows)
 
 * Configure and start `sumologic-otel-collector`.
 
