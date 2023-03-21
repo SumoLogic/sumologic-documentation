@@ -2,6 +2,7 @@
 id: carbon-black-inventory-source
 title: Carbon Black Inventory Source
 sidebar_label: Carbon Black Inventory
+description: The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
