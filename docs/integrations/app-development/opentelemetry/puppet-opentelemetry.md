@@ -183,7 +183,7 @@ Restart-Service -Name OtelcolSumo
 
 1.  Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the Puppet instance which needs to be monitored.
 
-2.  Restart the otelcol-sumo process using the below command 
+2.  Restart the otelcol-sumo process using the below command:
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
