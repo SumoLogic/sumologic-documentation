@@ -130,7 +130,7 @@ If you want to create a new Collector please select **Add a new Collector** opti
 
 Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
-This will generate a command which can be executed in the machine which needs to be monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+This will generate a command which can be executed in the machine that needs to be monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Collector.png')} alt="Collector" />
 
@@ -159,34 +159,33 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance which needs to be monitored.
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance that needs to be monitored.
 2.  Place Env file in the following directory:
-```sh
-/etc/otelcol-sumo/env/
-```
+  ```sh
+  /etc/otelcol-sumo/env/
+  ```
 3.  Restart the collector using:
-```sh
- sudo systemctl restart otelcol-sumo
-```
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2.  Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance which needs to be monitored.
-
-2.  Restart the otelcol-sumo process using the below command:
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance that needs to be monitored.
+2.  Restart the otelcol-sumo process using:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
@@ -207,7 +206,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 This sample Query is from the Puppet - Puppet - Overview > Node Requests Summary Over Time
 
-```sql
+```
 %"sumo.datasource"=puppet
 | parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
 | parse regex "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*"
@@ -219,16 +218,16 @@ This sample Query is from the Puppet - Puppet - Overview > Node Requests Summary
 | sum(successes) as successes, sum(redirects) as redirects, sum(client_errors) as client_errors, sum(server_errors) as server_errors by _timeslice
 ```
 
-## Viewing IIS Dashboards
+## Viewing Puppet Dashboards
 
 ### Puppet - Overview
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Overview.png' alt="Overview" />
 
 ### Puppet - Error Analysis: Puppet Server and Node Error Analysis
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Error-Analysis.png')} alt="Error Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Error-Analysis.png' alt="Error Analysis" />
 
 ### Puppet - Node Puppet Runs Analysis: Puppet Node Runs Analysis
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Node-Puppet-Runs-Analysis.png')} alt="Node Puppet Runs Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Node-Puppet-Runs-Analysis.png' alt="Node Puppet Runs Analysis" />

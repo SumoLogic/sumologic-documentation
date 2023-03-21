@@ -95,7 +95,7 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance which needs to be monitored.
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
 2.  Restart the collector using:
 ```sh
 sudo systemctl restart otelcol-sumo
@@ -103,7 +103,7 @@ sudo systemctl restart otelcol-sumo
  </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2.  Restart the collector using
 ```sh
 Restart-Service -Name OtelcolSumo
@@ -111,7 +111,7 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance which needs to be monitored.
+1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
 2.  Restart the otelcol-sumo process using the below command
 ```sh
 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"

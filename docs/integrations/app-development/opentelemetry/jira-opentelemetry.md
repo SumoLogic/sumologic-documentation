@@ -15,7 +15,7 @@ The Sumo Logic App for Jira provides insight into Jira usage, request activity, 
 
 Jira logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Jira
 
@@ -41,11 +41,11 @@ The Jira app uses the following log types:
 ## Configure hosted collector to receive Webhooks
 
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
-1.  Configure a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
-2.  Configure an [HTTP source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
+1. Configure a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
+2. Configure an [HTTP source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
     -   For Source Category, specify Atlassian/Jira/Events
     -   Add `sumo.datasource` as File to this source and assign the value **jira** for it.
-    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Datasource.png')} alt="Datasource" />
+    <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Datasource.png' alt="Datasource" />
     -   Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
 
 ## Register webhook in Jira
@@ -75,7 +75,7 @@ As part of setting up the collection and app installation process, you can selec
 
 ### Step 1: Set up Collector
 
- To create a new Collector, select **Add a new Collector** option.
+To create a new Collector, select **Add a new Collector** option.
 
 :::note
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
@@ -85,7 +85,7 @@ Select the platform for which you want to install the Sumo OpenTelemetry Collect
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -98,39 +98,53 @@ Path of the different log file configured to capture Jira logs is needed to be g
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo Logic
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
+Once you have the yaml file downloaded in the previous step, follow the below steps based on the platform of the machine.
 
-Linux:
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Windows', value: 'Windows'},
+    {label: 'macOS', value: 'macOS'},
+  ]}>
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance which needs to be monitored.
-2.  Place Env file in the following directory
+<TabItem value="Linux">
+
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance that needs to be monitored.
+2. Place Env file in the following directory
 ```sh
 /etc/otelcol-sumo/env/
 ```
-3.  restart the collector using
+3. restart the collector using
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
 
-Windows:
+</TabItem>
+<TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
+2. Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
 
-Mac
+</TabItem>
+<TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance that needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
+
+</TabItem>
+</Tabs>
 
 After successful execution of the above command, Sumo will start receiving the data from your host machine.
 
@@ -166,56 +180,56 @@ This sample Query is from the Jira - Jira - Overview > Catalina Requests panel.
 
 ## Viewing Jira Dashboards
 
-### Jira - Overview:
+### Jira - Overview
 
 The **Jira - Overview** dashboard provides a high-level view of Jira activities, including the location of event authentications, login comparisons, Jira requests, errors and error trends, and data usage.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Overview.png' alt="Overview" />
 
-### Jira - Access:
+### Jira - Access
 
 The **Jira - Access** dashboard provides information about Jira user access, including request trends, average response times, issues by project, response codes, and errors.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Access.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Access.png' alt="Access" />
 
 ### Jira - Catalina
 
 The **Jira - Catalina** dashboard provides information on the Jira internal web server. Panels display analytics for errors, failures, exceptions, request trends, and top ranked URLs
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />
 
-### Jira - Issue Details:
+### Jira - Issue Details
 
 The **Jira - Issues Details** dashboard provides insights into Jira issues, showing analytics on open, closed, and reopened issues. Panels also display details on issue assignments and escalations and the average time to close issues, allowing you to prioritize and strategize issue management.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Details.png')} alt="Issue Details" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Details.png' alt="Issue Details" />
 
-### Jira - Issue Overview:
+### Jira - Issue Overview
 
 The **Jira - Issue Overview** dashboard provides a high-level view of Jira issue activities, so you can monitor work from creation to completion. The panels display analytics for issues that have been created, closed, reopened, and still in progress.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Overview.png')} alt="Issue Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Overview.png' alt="Issue Overview" />
 
 ### Jira - Recent Issue Changes
 
 The **Jira - Recent Issue Changes** dashboard tracks recent progress of Jira issues. You can view detailed information on the type of issue, including when it was created, its status, assignee, and a summary of the issue.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Recent-Issue-Changes.png')} alt="Recent Issue Changes" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Recent-Issue-Changes.png' alt="Recent Issue Changes" />
 
-### Jira - Security:
+### Jira - Security
 
 The **Jira - Security** dashboard provides information on security in Jira. The panels show analytics for the location of successful and failed logins, successful and failed logins for active users, comparisons of successful and failed logins, and session trends.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Security.png')} alt="RSecurity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Security.png' alt="Security" />
 
-### Jira - Sprints Events:
+### Jira - Sprints Events
 
 The **Jira - Sprints Events** dashboard provides insights on sprint events in Jira, including the number of sprint events, event trends, and sprints closed and created.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Sprints-Events.png')} alt="Sprints Events" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Sprints-Events.png' alt="Sprints Events" />
 
-### Jira - User Events:
+### Jira - User Events
 
 The **Jira - User Events** dashboard provides information about user events in Jira, including the number of user events, trends, and users that have been updated, created, and deleted.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-User-Events.png')} alt="User Events" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-User-Events.png' alt="User Events" />
