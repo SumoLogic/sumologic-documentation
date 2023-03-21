@@ -21,7 +21,7 @@ Following are the tags which will be created as part of Puppet App install if no
 
 - **`sumo.datasource`** - Has a fixed value of **Puppet**.
 
-## Prerequisite
+## Prerequisites
 
 This section provides instructions for configuring log collection for Puppet running on a non-Kubernetes environment for the Sumo Logic App for Puppet.
 
