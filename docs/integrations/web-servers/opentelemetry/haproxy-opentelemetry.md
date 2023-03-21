@@ -83,7 +83,7 @@ sudo service rsyslog restart
 sudo service haproxy reload
 ```
 
-## Collecting Logs, Metrics & installing HAProxy app
+## Collecting Logs, Metrics and installing HAProxy app
 
 Here are the steps for Collecting Logs and installing the app:
 
