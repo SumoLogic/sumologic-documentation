@@ -138,7 +138,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml required for Puppet collection.
 
-Path of the log file configured to capture puppet access logs and puppet report are needed to be given here - please refer to the prerequisite section of this document.
+Path of the log file configured to capture puppet access logs and puppet report are needed to be given here. Refer to the Prerequisites section of this document.
 
 Click on the **Download YAML File** button to get the yaml file.
 
