@@ -40,7 +40,7 @@ In order to receive server statistics, you must configure the server's `httpd.co
 
 Configure Apache to log to a local files. Before you can configure Sumo Logic to ingest logs, you must configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
 
-To configure the Apache log files, locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the httpd.conf configuration file logging parameters if required.
+To configure the Apache log files, locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
 
 For access logs, the following directive is to be noted:
 -   CustomLog: access log file path and format (standard common and combined)
