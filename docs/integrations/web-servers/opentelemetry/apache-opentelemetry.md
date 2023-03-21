@@ -36,7 +36,7 @@ The receiver used gets stats from an Apache Web Server instance using the `serve
 
 This receiver supports Apache Web Server version 2.4+
 
-In order to receive server statistics, you must configure the server's httpd.conf file to [enable status support.](https://httpd.apache.org/docs/2.4/mod/mod_status.html)
+In order to receive server statistics, you must configure the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
 
 Configure Apache to log to a local files. Before you can configure Sumo Logic to ingest logs, you must configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
 
