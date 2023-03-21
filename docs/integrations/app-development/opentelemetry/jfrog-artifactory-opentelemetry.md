@@ -63,7 +63,7 @@ This will generate a command which can be executed in the machine which needs to
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png')} alt="Artifactory-Collector" />
 
-### Step2: Configure integration
+### Step 2: Configure integration
 
 In this step we will be configuring the yaml required for the Artifactory Collection.
 
