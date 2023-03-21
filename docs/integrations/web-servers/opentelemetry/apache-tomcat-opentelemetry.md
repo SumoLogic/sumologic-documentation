@@ -27,7 +27,7 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 
 ## Prerequisites
 
-The Sumo Logic App for Apache Tomcat uses three types of logs
+The Sumo Logic App for Apache Tomcat uses three types of logs:
 
 1.  Tomcat Access logs \ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html \ ](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html)Recommended pattern used is pattern="common"
 2.  Tomcat Catalina.out logs \ Log format description: <https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html>
