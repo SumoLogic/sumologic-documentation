@@ -141,23 +141,23 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
-            'send-data/opentelemetry-collector/install-collector-on-linux',
-            'send-data/opentelemetry-collector/install-collector-on-macos',
-            'send-data/opentelemetry-collector/install-collector-on-windows',
+            'send-data/opentelemetry-collector/install-collector-linux',
+            'send-data/opentelemetry-collector/install-collector-macos',
+            'send-data/opentelemetry-collector/install-collector-windows',
             {
               type: 'category',
               label: 'Data Source and Configurations',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-and-configurations/index'},
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
               items:[
-                'send-data/opentelemetry-collector/data-source-and-configurations/collect-logs',
-                'send-data/opentelemetry-collector/data-source-and-configurations/collect-metrics',
-                'send-data/opentelemetry-collector/data-source-and-configurations/collect-tracing',
-                'send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-tracing',
+                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
-            'send-data/opentelemetry-collector/troubleshooting-and-faqs',
+            'send-data/opentelemetry-collector/troubleshooting-faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
