@@ -2,6 +2,7 @@
 id: symantec-web-security-service-source
 title: Symantec Web Security Service Source
 sidebar_label: Symantec Web Security Service
+description: The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,9 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 
- * See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.
- * Logs are ingested in batches of 1,000.
- * Logs are polled every five minutes.
+* See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.
+* Logs are ingested in batches of 1,000.
+* Logs are polled every five minutes.
 
 ## Prerequisite
 
