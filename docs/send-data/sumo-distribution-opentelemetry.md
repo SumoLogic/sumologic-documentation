@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 OpenTelemetry is the future of agent-based collection for Sumo Logic and the Sumo Logic Distribution for OpenTelemetry Collector is our next generation collector built on OpenTelemetry. It provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
 
-Refer to [OpenTelemetry Collector document](/docs/send-data/opentelemetry-collector/) for more information about the Sumo Logic Distribution for OpenTelemetry Collector.
+Refer to [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) for more information.
 
 ## Download
 
