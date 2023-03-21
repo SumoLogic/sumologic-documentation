@@ -51,7 +51,7 @@ A restart is required for traffic collection to take effect.
 
 As part of the setting up the collection process and app installation user can select the App from App Catalog and click on Install App. Please follow the steps below:
 
-### Step1: Set up Collector
+### Step 1: Set up Collector
 
 If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
 
