@@ -20,7 +20,7 @@ The Sumo Logic Distribution for [OpenTelemetry Collector](https://github.com/op
 
 Refer to [OpenTelemetry Collector document](/docs/send-data/opentelemetry-collector/) for more information about the Sumo Logic Distribution for OpenTelemetry Collector.
 
-It's supported on *Linux*, *MacOS*, *Windows* and *Kubernetes* environments and can use any of the following Sources:
+It's supported on Linux, macOS, Windows, and Kubernetes environments and can use any of the following Sources:
 
 * Local File
 * Host/Process Metrics
