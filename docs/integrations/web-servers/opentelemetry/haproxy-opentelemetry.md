@@ -37,7 +37,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic App for HAProxy.
 
-By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file /etc/haproxy/haproxy.cfg is needed to be modified to send logs to files.
+By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file `/etc/haproxy/haproxy.cfg` is needed to be modified to send logs to files.
 
 HAProxy logs have six levels of verbosity. To select a level, set loglevel to one of:
 
