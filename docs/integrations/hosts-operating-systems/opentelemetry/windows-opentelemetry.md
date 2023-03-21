@@ -40,7 +40,7 @@ Standard Windows event channels include:
 ## Collection Configuration & App installation
 
 
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click **Install App**. Please follow the steps below :
+As part of the setting up the collection process and app installation user can select the App from App Catalog and click **Install App**. Follow the steps below:
 
 ### Step 1: Set up Collector
 
