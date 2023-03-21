@@ -65,7 +65,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml required for Nginx Collection.
 
-Below are the input required :
+Below are the inputs required:
 
 - **Endpoint** - (default: 127.0.0.1:3306): The URL of the status endpoint.
 - **Access File log Path** - Enter the path to the Access log file for your nginx instance.
@@ -120,7 +120,7 @@ Once you download the yaml file, please follow the below steps based on your pla
 
 After successful execution of the above command, Sumo will start receiving the data from your host machine.
 
-This will install the app to your Sumo Logic Org. The app consists of Dashboard and monitors
+This will install the app to your Sumo Logic Org. The app consists of Dashboards and monitors.
 
 Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
@@ -156,7 +156,7 @@ The **Nginx - Trends** dashboard provides a high-level view of the activity and 
 
 Use this dashboard to:
 
-- To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
+- Understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 - Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Trends.png')} alt="Access" />
@@ -168,7 +168,7 @@ The **Nginx - Outlier Analysis** dashboard provides a high-level view of Nginx s
 Use this dashboard to:
 
 - Detect outliers in your infrastructure with Sumo Logic's machine learning algorithm.
-- To identify outliers in incoming traffic and the number of errors encountered by your servers.
+- Identify outliers in incoming traffic and the number of errors encountered by your servers.
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
 
@@ -180,7 +180,7 @@ The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats t
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- Gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Threat-Intel.png')} alt="Access" />
 
@@ -191,7 +191,7 @@ The **Nginx - Web Server Operations** dashboard provides a high-level view combi
 Use this dashboard to:
 
 - Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
-- To identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
+- Identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Web-Server-Operations.png')} alt="Access" />
 
@@ -222,7 +222,7 @@ The **Nginx - Visitor Traffic Insight** dashboard provides detailed information 
 
 Use this dashboard to:
 
-- To understand the type of content that is frequently requested by users.
+- Understand the type of content that is frequently requested by users.
 - It helps in allocating IT resources according to the content types.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Traffic-Insight.png')} alt="Access" />

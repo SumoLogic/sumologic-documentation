@@ -59,12 +59,10 @@ Here are the steps for Collecting Logs, metric and installing the app:
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
 :::
 
-
 To create a new Collector:
 
 1. Select the **Add a new Collector** option.
 1. Select the platform for which you want to install the Sumo Logic OpenTelemetry Collector.
-
 
 This will generate a command that can be executed in the machine that needs to get monitored. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent.
 
@@ -76,7 +74,7 @@ In this step, we will be configuring the yaml required for Apache Collection.
 
 Below are the inputs required:
 
-- **Endpoint** - (default: `http://localhost:8080/server-status?auto`): The URL of the httpd status endpoint
+- **Endpoint** (default: `http://localhost:8080/server-status?auto`): The URL of the httpd status endpoint
 - **Access File log Path** - Enter the path to the Access log file for your mysql instance.
 - **Error file log path** - Enter the path to the error log file for your mysql instance.
 - Fields - **webengine.cluster.name**
@@ -100,36 +98,36 @@ Once you download the yaml file, please follow the below steps based on your pla
 
 <TabItem value="Linux">
 
-1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Apache instance which needs to be monitored.
-2.  Restart the collector using:
-```sh
- sudo systemctl restart otelcol-sumo
-```
+1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Apache instance which needs to be monitored.
+2. Restart the collector using:
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+1. Copy the yaml to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using 
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml to /etc/otelcol-sumo/conf.d/ folder in the Apache instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command:
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+1. Copy the yaml to /etc/otelcol-sumo/conf.d/ folder in the Apache instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
 
 After successful execution of the above command, Sumo will start receiving the data from your host machine.
 
-Press **Next**. This will install the app to your Sumo Logic Org. The app consists of a Dashboard and monitors.
+Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards and monitors.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes you'll see full graphs and maps.
 
