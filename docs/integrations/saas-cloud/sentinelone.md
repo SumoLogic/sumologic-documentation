@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The SentinelOne App for Sumo Logic provides security professionals with a comprehensive view of their organization's security posture. The app, based on Sumo Logic’s SentinelOne Source, allows you to quickly ingest data from your SentinelOne agents into Sumo Logic for real-time analysis.
 
-With the SentinelOne App, you can gain valuable insights into your endpoint security data, including threat intelligence, endpoint activity, and system health. You can monitor your endpoints for suspicious behavior and quickly respond to any security incidents that may arise. 
+With the SentinelOne App, you can gain valuable insights into your endpoint security data, including threat intelligence, endpoint activity, and system health. You can monitor your endpoints for suspicious behavior and quickly respond to any security incidents that may arise.
 
 The app provides pre-built dashboards that enable you to quickly visualize your SentinelOne data and gain insights into your organization's security posture. You can customize these dashboards to meet your specific needs and monitor the metrics that matter most. With the SentinelOne App for Sumo Logic, you can:
 * Ingest data from SentinelOne agents into Sumo Logic for real-time analysis and response
@@ -25,8 +25,7 @@ In summary, the SentinelOne App for Sumo Logic provides security professionals w
 
 The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to the [Threats](https://usea1-partners.sentinelone.net/api-doc/api-details?category=threats&api=get-threats) and [Agents](https://usea1-partners.sentinelone.net/api-doc/api-details?category=agents&api=get-agents) documentation.
 
-### Sample Log Messages
-
+## Sample Log Messages
 
 ```json title="Sample Threats Log Messages"
 {
@@ -205,21 +204,6 @@ The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to th
 }
 ```
 
-### Sample Query for Threats
-
-```sql title="Suspicious threats detected"
-_sourceCategory=sentinelone  threatInfo
-| json "id", "threatInfo.incidentStatus", "threatInfo.classificationSource", "threatInfo.confidenceLevel", "threatInfo.detectionEngines", "threatInfo.initiatedBy", "threatInfo.rebootRequired", "threatInfo.createdAt", "threatInfo.detectionType", "threatInfo.mitigationStatus", "threatInfo.analystVerdict", "threatInfo.threatName", "agentRealtimeInfo.siteName","agentRealtimeInfo.agentOsType", "agentRealtimeInfo.agentMachineType" as id, incidentStatus, classificationSource, confidenceLevel, detectionEngines, initiatedBy, rebootRequired, createdAt, detectionType, mitigationStatus, analystVerdict, threatName, siteName, agentOsType, agentMachineType nodrop
-| where siteName matches "{{site}}" or isNull(siteName)
-| where mitigationStatus matches "{{mitigation_status}}" or isNull(mitigationStatus)
-| where agentOsType matches "{{os}}" or isNull(agentOsType)
-| where agentMachineType matches "{{machine}}" or isNull(agentMachineType)
-| where confidenceLevel matches "{{confidence_level}}" or isNull(confidenceLevel)
-| where confidenceLevel = "suspicious"
-| count_distinct(id)
-```
-
-
 ```json title="Sample Agents Log Messages"
 {
     "accountId": "113841926404",
@@ -327,7 +311,21 @@ _sourceCategory=sentinelone  threatInfo
 }
 ```
 
-### Sample Query for Agents
+
+## Sample Queries
+
+```sql title="Suspicious threats detected"
+_sourceCategory=sentinelone  threatInfo
+| json "id", "threatInfo.incidentStatus", "threatInfo.classificationSource", "threatInfo.confidenceLevel", "threatInfo.detectionEngines", "threatInfo.initiatedBy", "threatInfo.rebootRequired", "threatInfo.createdAt", "threatInfo.detectionType", "threatInfo.mitigationStatus", "threatInfo.analystVerdict", "threatInfo.threatName", "agentRealtimeInfo.siteName","agentRealtimeInfo.agentOsType", "agentRealtimeInfo.agentMachineType" as id, incidentStatus, classificationSource, confidenceLevel, detectionEngines, initiatedBy, rebootRequired, createdAt, detectionType, mitigationStatus, analystVerdict, threatName, siteName, agentOsType, agentMachineType nodrop
+| where siteName matches "{{site}}" or isNull(siteName)
+| where mitigationStatus matches "{{mitigation_status}}" or isNull(mitigationStatus)
+| where agentOsType matches "{{os}}" or isNull(agentOsType)
+| where agentMachineType matches "{{machine}}" or isNull(agentMachineType)
+| where confidenceLevel matches "{{confidence_level}}" or isNull(confidenceLevel)
+| where confidenceLevel = "suspicious"
+| count_distinct(id)
+```
+
 
 ```sql title="Total Agents"
 _sourceCategory=sentinelone  uuid
