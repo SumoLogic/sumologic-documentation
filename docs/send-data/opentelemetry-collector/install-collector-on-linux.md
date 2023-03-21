@@ -410,7 +410,7 @@ List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-To know about troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/)
+To know about troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-faq)
 
 [sumologic extension]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/extension/sumologicextension#configuration
 [service file]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/systemd/otelcol-sumo.service

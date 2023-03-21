@@ -161,4 +161,4 @@ At line:1 char:1
 
 Ensure that you run **PowerShell** as an Administrator.
 
-To know more troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/).
+To know more troubleshooting and solutions, refer to the [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-faq).

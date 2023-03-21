@@ -174,9 +174,9 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox6 card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs">
+      <a href="/docs/send-data/opentelemetry-collector/troubleshooting-faq">
         <img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" />
-        <h4>Troubleshooting and FAQs</h4>
+        <h4>Troubleshooting and FAQ</h4>
       </a>
       <p>Find solutions to common issues and answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>

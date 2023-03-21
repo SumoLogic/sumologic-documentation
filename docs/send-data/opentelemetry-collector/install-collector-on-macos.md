@@ -244,4 +244,4 @@ List of breaking changes specific to Sumo Logic distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-To know about troubleshooting and solutions, refer to [Troubleshooting and Faqs](/docs/send-data/opentelemetry-collector/troubleshooting-and-faqs/)
+To know about troubleshooting and solutions, refer to [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq)
