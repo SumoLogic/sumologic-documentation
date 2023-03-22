@@ -50,7 +50,7 @@ This section has instructions for configuring an Outlier rule.
 The settings in the **If triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
 
 **Baseline Configuration**
-1.  **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
+1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
 1. **for the entity(ies)**. Select one or more Record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. Set the baseline and retention settings:
