@@ -26,7 +26,7 @@ If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse
 :::
 
 ## About Outlier rules
-Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. For example, an  Outlier rule might look for the events like the following:
+Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. For example, an Outlier rule might look for the events like the following:
 
 * Spike in login failures from a user
 * Abnormal number of high severity endpoint alerts
