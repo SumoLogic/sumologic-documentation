@@ -6,6 +6,8 @@ description: Learn how to install the Sumo Logic OpenTelemetry Collector on macO
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on macOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
@@ -20,7 +22,7 @@ Minimal resource requirements are the following:
 
 ## Install
 
-You can install our OpenTelemetry Collector using either of the following methods:
+You can install our OpenTelemetry Collector using one of the following methods:
 
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
@@ -40,14 +42,11 @@ export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
 
 You can run the script in two ways:
 
-* by piping `curl` straight into `bash`:
-
+* By piping `curl` straight into `bash`:
    ```bash
    sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -d
    ```
-
-* by first downloading the script, inspecting its contents for security, and then running it:
-
+* Or by first downloading the script, inspecting its contents for security, and then running it:
    ```bash
    curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh -d
@@ -59,7 +58,7 @@ The `-d` argument to the script is needed on macOS. It will skip Systemd install
 
 It will perform the following operations:
 
-* install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`,
+* install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`
 * get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
 * create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
 
@@ -67,17 +66,17 @@ It will perform the following operations:
 
 The following arguments can be passed to the script:
 
-| long name                   | short name | description                                                                                                                                                                  | takes value                |
-|:----------------------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------|
-| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.                                                                         | no                         |
-| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.                                                                                                | yes, in `key=value` format |
-| `--download-only`           | `w`        | Download new binary only and skip configuration part.                                                                                                                        | no                         |
+| long name     | short name | description    | takes value                |
+|:----------------|:-----------|:------------|:---------------------------|
+| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.           | no      |
+| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.               | yes, in `key=value` format |
+| `--download-only`           | `w`        | Download new binary only and skip configuration part.                                       | no                         |
 | `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | yes, e.g. `0.71.0-sumo-0`  |
-| `--skip-config`             | `s`        | Do not create default configuration                                                                                                                                          | no                         |
-| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                                                                                                                 | no                         |
-| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.                                                                                               | no                         |
-| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                                                                                                               | no                         |
-| `--yes`                     | `y`        | Disable confirmation asks.                                                                                                                                                   | no                         |
+| `--skip-config`             | `s`        | Do not create default configuration        | no                         |
+| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                               | no        |
+| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.              | no                         |
+| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                         | no                         |
+| `--yes`                     | `y`        | Disable confirmation asks.      | no                         |
 | `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | no                         |
 | `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                                     | no                         |
 | `--help`                    | `h`        | Prints help and usage.                                                                                                                                                       | no                         |
@@ -85,7 +84,7 @@ The following arguments can be passed to the script:
 The following env variables can be used along with script:
 
 | name                           | description        |
-|--------------------------------|--------------------|
+|:-------------------------------|:-------------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
 
 ### Manual step-by-step Installation
@@ -94,21 +93,34 @@ The following env variables can be used along with script:
 
 Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
 
-##### amd64 (x86-64)
+<Tabs
+  className="unique-tabs"
+  defaultValue="amd64 (x86-64)"
+  values={[
+    {label: 'amd64 (x86-64)', value: 'amd64 (x86-64)'},
+    {label: 'arm64 (Apple Silicon)', value: 'arm64 (Apple Silicon)'},
+  ]}>
+
+<TabItem value="amd64 (x86-64)">
 
 ```bash
 curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_amd64"
 ```
 
-##### arm64 (Apple Silicon)
+</TabItem>
+<TabItem value="arm64 (Apple Silicon)">
 
 ```bash
 curl -sLo otelcol-sumo "https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-darwin_arm64"
 ```
 
+
+</TabItem>
+</Tabs>
+
 #### Step 2. Move the binary to your `PATH` environment
 
-Move the downloaded binary into a directory from your `PATH` environment, so that it can be used by simply invoking `otelcol-sumo`.
+Move the downloaded binary into a directory from your `PATH` environment so that it can be used by simply invoking `otelcol-sumo`.
 
 ```bash
 chmod +x otelcol-sumo
@@ -117,7 +129,7 @@ sudo mv otelcol-sumo /usr/local/bin/otelcol-sumo
 
 #### Step 3. Verify the Installation
 
-To verify installation, run OpenTelemetry Collector.
+To verify installation, run the OpenTelemetry Collector.
 
 ```bash
 otelcol-sumo --version
@@ -125,7 +137,7 @@ otelcol-sumo --version
 
 #### Step 4. Running Binary
 
-As for now we do not support installation of OpenTelemetry Collector as service for macOS. It needs to be run manually.
+As for now, we do not support installation of OpenTelemetry Collector as service for macOS. It needs to be run manually.
 
 ```bash
 sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
@@ -133,7 +145,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### UI Installation via App Catalog
 
-1. Go to app catalog and select **macOS - OpenTelemetry application**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" />
+1. Go to the **App Catalog** and select **macOS - OpenTelemetry application**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" width="350" />
 1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-overview.png')} alt="macOS app overview" width="550" />
 1. Select **Add New Collector** and click **Next**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
 1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
@@ -157,7 +169,7 @@ Exporters leverage the HTTP communication and respect the following proxy enviro
 * `HTTPS_PROXY`
 * `NO_PROXY`
 
-You may either export proxy environment variables locally e.g.
+You can either export proxy environment variables locally, e.g.
 
 ```bash
 export FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
@@ -177,13 +189,13 @@ END
 
 To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following command:
 
-`export NO_PROXY=sumologic.com`
+```bash
+export NO_PROXY=sumologic.com
+```
 
 #### FIPS
 
-We currently do not build FIPS binary for macOS.
-
-Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
+We currently do not build FIPS binary for macOS. Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
 ## Uninstall
 
@@ -226,7 +238,7 @@ sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/lat
 ```
 
 :::note
-You need to restart collector process manually in order to apply changes
+You'll need to restart the collector process manually in order to apply changes.
 :::
 
 #### Manual step-by-step installation
@@ -246,4 +258,4 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-To know about troubleshooting and solutions, refer to [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq)
+For information on troubleshooting and solutions, refer to [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq).
