@@ -2,7 +2,7 @@
 id: istio
 title: Istio
 sidebar_label: Istio
-description: This Sumo Logic App for Istio  provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy.
+description: This Sumo Logic App for Istio provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -302,7 +302,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox42 card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source"><img src={useBaseUrl('img/send-data/sentinelone-logo.svg')} alt="icon" width="180"/><h4>SentinelOne Mgmt API</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source"><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" /><h4>SentinelOne Mgmt API</h4></a>
         <p>Collects data from the SentinelOne Management Console.</p>
         </div>
       </div>
