@@ -8,7 +8,9 @@ description: Get started with our Kubernetes solution in minutes.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in two easy steps. This will:
+This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in easy steps. This will:
+
+* Install the [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) in your Kubernetes environment
 * Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data)
 * Install the relevant app dashboards to view data from your Kubernetes environment, and share it with others in your org
 * Install the necessary alert monitors to get alerted of any issues
@@ -18,9 +20,34 @@ As an alternative to this quickstart, you can use our Kubernetes Setup Quickstar
 :::
 
 ## Before you begin
+
 * A Sumo Logic account (if you don't have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account))
 * Your Sumo Logic [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys)
 
+### Supported versions
+
+A list of supported platforms for the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
+
+### Resource requirements
+
+The [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) uses less than 1 CPU and
+less than 2 Gi memory deployed in default configuration in single-node Kubernetes environment where only the Sumo Logic Kubernetes Helm Chart is deployed, however [resource requests](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core)
+for components of the Sumo Logic Kubernetes Helm Chart are set to higher level (about 7 CPU and 10 Gi memory) so to deploy the Sumo Logic Kubernetes Helm Chart in the cluster with very limited resources
+you need to modify default configuration and decrease resource requests and number of replicas,
+for example to decrease resource requests and number of replicas for `otelcol-metrics` you need to add following configuration to your `values.yaml` :
+
+```yaml
+metadata:
+  metrics:
+    statefulset:
+      replicaCount: 1
+      resources:
+        requests:
+          memory: 100Mi
+          cpu: 50m
+```
+
+Please notice that resource consumption depends on data traffic in your cluster. In clusters with huge data traffic you will need to increase [resource limits](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) and/or increase number of replicas for components.
 
 ## Installation
 
