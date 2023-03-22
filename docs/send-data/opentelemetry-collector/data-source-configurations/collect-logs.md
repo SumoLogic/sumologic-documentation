@@ -184,7 +184,7 @@ Refer to [OpenTelemetry documentation][windowseventlogreceiver] for more informa
 :::
 
 :::note
-Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
+Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
 :::
 
 [json_parser]: https://github.com/open-telemetry/opentelemetry-log-collection/blob/main/docs/operators/json_parser.md

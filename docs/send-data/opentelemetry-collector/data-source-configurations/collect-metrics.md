@@ -70,7 +70,7 @@ service:
 ```
 
 :::note
-Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
+Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
 :::
 
 [our repository]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components

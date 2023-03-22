@@ -49,7 +49,7 @@ service:
 :::
 
 :::note
-Refer to the [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
+Refer to the [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
 :::
 
 ## Instrument your application with OpenTelemetry

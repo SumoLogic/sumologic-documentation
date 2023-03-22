@@ -15,25 +15,25 @@ In this section, we'll introduce the following concepts:
 <div class="box-wrapper" markdown="1">
 <div class="box smallbox1 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/collect-logs"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Logs</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-logs"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Logs</h4></a>
   <p>Instructions for collecting logs with the OpenTelemetry collector.</p>
   </div>
 </div>
 <div class="box smallbox2 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/collect-metrics"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Metrics</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-metrics"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Metrics</h4></a>
   <p>Instructions for collecting metrics with the OpenTelemetry collector.</p>
   </div>
 </div>
 <div class="box smallbox3 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/collect-traces"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Tracing</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-traces"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Tracing</h4></a>
   <p>Instructions for collecting tracing data with the OpenTelemetry collector.</p>
   </div>
 </div>
 <div class="box smallbox4 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations Reference</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations Reference</h4></a>
   <p>Reference for additional configurations you can use with the OpenTelemetry collector.</p>
   </div>
   </div>

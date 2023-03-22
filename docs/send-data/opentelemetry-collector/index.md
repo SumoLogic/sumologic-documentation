@@ -38,7 +38,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox4 card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/data-source-and-configurations">
+      <a href="/docs/send-data/opentelemetry-collector/data-source-configurations">
         <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
         <h4>Data Source and Configurations</h4>
       </a>
