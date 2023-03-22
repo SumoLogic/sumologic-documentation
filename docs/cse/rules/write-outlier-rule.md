@@ -82,9 +82,7 @@ On the Rule detail page, if you hover over the degraded message, you will usuall
 This section shows how an Outlier rule would function with a daily baseline.
 
 **Baseline Configuration**
-*  Our example rule expression is:
-
-      `normalizedAction=logon AND success=false`
+*  Our example rule expression is: `normalizedAction=logon AND success=false`
 * **To build a** `daily` **baseline**
 * **for the entity(ies)**: `user_username`
 
