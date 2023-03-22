@@ -4,7 +4,6 @@ title: Write an Outlier rule
 sidebar_label: Outlier Rule
 description: Outlier rules allow you to generate a Signal when behavior by an Entity (user) is encountered that qualifies as an outlier from expected behavior.
 keywords:
-  - sumo logic
   - cloud siem
   - cse
   - outlier rule
