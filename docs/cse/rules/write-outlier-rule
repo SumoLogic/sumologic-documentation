@@ -11,6 +11,9 @@ keywords:
   - ueba
   - behavioral analytics
 ---
+<head>
+  <meta name="robots" content="noindex" />
+</head>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
