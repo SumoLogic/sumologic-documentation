@@ -68,14 +68,14 @@ It will perform the following operations:
 The following arguments can be passed to the script:
 
 | long name                   | short name | description                                                                                                                                                                  | takes value                |
-|:----------------------------|:------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------|
+|:----------------------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------|
 | `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.                                                                         | no                         |
 | `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.                                                                                                | yes, in `key=value` format |
 | `--download-only`           | `w`        | Download new binary only and skip configuration part.                                                                                                                        | no                         |
 | `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | yes, e.g. `0.71.0-sumo-0`  |
 | `--skip-config`             | `s`        | Do not create default configuration                                                                                                                                          | no                         |
 | `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                                                                                                                 | no                         |
-| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [this document](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) for more details.                       | no                         |
+| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.                                                                                               | no                         |
 | `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                                                                                                               | no                         |
 | `--yes`                     | `y`        | Disable confirmation asks.                                                                                                                                                   | no                         |
 | `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | no                         |
@@ -182,6 +182,8 @@ To exclude a specific domain or IP address from using the proxy, you can add it 
 #### FIPS
 
 We currently do not build FIPS binary for macOS.
+
+Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
 ## Uninstall
 
