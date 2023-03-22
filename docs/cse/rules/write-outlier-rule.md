@@ -50,7 +50,7 @@ This section has instructions for configuring an Outlier rule.
 ### If triggered
 The settings in the **If triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
 
-**Baseline Configuration**:
+**Baseline Configuration**
 1.  **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
 1. **for the entity(ies)**. Select one or more Record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
@@ -58,11 +58,11 @@ The settings in the **If triggered** section are divided into two subsections, o
    1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
    1. **Baseline Learning Period (days)**. The minimum amount of time for which data points should be collected before firing a Signal. The default is 30 days.
    :::note
-   The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods can potentially generate false positive Signals.
+   The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods may generate false positive Signals.
    :::
 
 **Outlier Model Configuration**
-1. **Detect an outlier for**. Select the aggregate function that applies to the field within the matched Records to build a normal behavior baseline on and look for Outliers.
+1. **Detect an outlier for**. Select the aggregate function that applies to the field in the matched Records to build a normal behavior baseline on.
 1. **of the Record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
 1. **Advanced Expression** (optional). When selected, disables the record field selector and allows defining Record fields within the field window.
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
@@ -92,17 +92,18 @@ This section shows how an Outlier rule would function with a daily baseline.
 **Outlier Model Configuration**
 * **Detect an outlier for the** `count`
 
-   When the aggregation is selected to run for `count`, the count of the occurrences of the rule expression aggregated against the entity defined in the baseline configuration is used to build the normal behavior baseline and look for Outlier. For all the other aggregation types, the Record field is an expected input. The allowed aggregation options are below:
-      * count
-      * min
-      * max
-      * sum
-      * count_distinct
-      * avg
-      * Min
+   When the aggregation is selected to run for `count`, the count of the occurrences of the rule expression aggregated against the entity defined in the baseline configuration is used to build the normal behavior baseline and look for Outlier. For all the other aggregation types, the Record field is an expected input. The allowed aggregation options are:
+   * `count`
+   * `min`
+   * `max`
+   * `sum`
+   * `count_distinct`
+   * `avg`
+
 * **Model Sensitivity Threshold**: 3
 * **Minimum Count Value**: 10
 
-   :::tip
-   If you are unsure what to set the minimum count value to from the default value of 1, consider providing the value which is beyond the normal acceptable behavior for a given time window for a particular entity. The **Minimum Count Value** is geared towards false positive reduction and improving the fidelity of Signals generated, and will vary based upon the use case and type of logs collected.
-:::
+ :::tip
+ If you are unsure what to set the minimum count value to from the default value of 1, consider providing the value which is beyond the normal acceptable behavior for a given time window for a particular entity. The **Minimum Count Value** is geared towards false positive reduction and improving the fidelity of Signals generated, and will vary based upon the use case and type of logs collected.
+ :::
+
