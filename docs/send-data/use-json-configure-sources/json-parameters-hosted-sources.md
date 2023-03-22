@@ -23,7 +23,7 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-The G Suite Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
+The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
 
 ## Log Sources for Installed Collectors
 

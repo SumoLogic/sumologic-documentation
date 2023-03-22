@@ -258,9 +258,9 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/hosted-collectors/google-source/index'},
               items: [
-                'send-data/hosted-collectors/google-source/g-suite-apps-audit-source',
-                'send-data/hosted-collectors/google-source/gcp-metrics-source',
+                'send-data/hosted-collectors/google-source/google-workspace-apps-audit-source',
                 'send-data/hosted-collectors/google-source/google-cloud-platform-source',
+                'send-data/hosted-collectors/google-source/gcp-metrics-source',
               ],
             },
             {
@@ -1984,6 +1984,7 @@ integrations: [
           'integrations/saas-cloud/pagerduty-v3',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
+          'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
@@ -2139,7 +2140,7 @@ integrations: [
             'cse/ingestion/cisco-meraki',
             'cse/ingestion/corelight-zeek',
             'cse/ingestion/fortigate-firewall',
-            'cse/ingestion/google-g-suite-apps-audit',
+            'cse/ingestion/google-workspace-apps-audit',
             'cse/ingestion/g-suite-alert-center',
             'cse/ingestion/kemp-loadmaster',
             'cse/ingestion/linux-os-syslog',

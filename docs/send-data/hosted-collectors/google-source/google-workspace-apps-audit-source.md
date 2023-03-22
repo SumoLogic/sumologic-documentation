@@ -1,13 +1,15 @@
 ---
-id: g-suite-apps-audit-source
-title: G Suite Apps Audit Source
-sidebar_label: G Suite Apps Audit
-description: Add a Google Apps Audit Source to ingest audit logs from Google apps.
+id: google-workspace-apps-audit-source
+title: Google Workspace Apps Audit Source
+sidebar_label: Google Workspace Apps Audit
+description: Add a Google Workspace Apps Audit Source to ingest audit logs from Google apps.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A G Suite Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
+<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="40"/>
+
+A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 
  * Admin
  * Calendar
@@ -35,7 +37,7 @@ This Source uses OAuth to integrate with the Google Apps Reports API. Therefore,
 When creating or modifying a Google Apps Audit Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
 
 :::important
-Authentication must be with a new G Suite Apps Audit Source. We do not support re-authenticating existing sources.
+Authentication must be with a new Google Workspace Apps Audit Source. We do not support re-authenticating existing sources.
 :::
 
 ### Manage Third party app access
@@ -47,17 +49,17 @@ In order to provide Sumo logic access to google services, please follow the mana
 1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
 1. Click **Change**.
 
-## Configuring a G Suite Apps Audit Source
+## Configuring a Google Workspace Apps Audit Source
 
-Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source. Each G Suite App must have its own source. For each G Suite App you wish to collect, follow the steps below.
+Once you've set up a Hosted Collector and have your credentials ready, you're all set to configure the Source. Each Google Workspace App must have its own source. For each Google Workspace App you wish to collect, follow the steps below.
 
-To configure a G Suite Apps Audit Source:
+To configure a Google Workspace Apps Audit Source:
 
 1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **G Suite Apps Audit**.
+1. Select **Google Workspace Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.
-1. For **Application**, select the G Suite app that you’d like this Source to collect data from. Steps may be repeated for each G Suite app you want to collect data from.
+1. For **Application**, select the Google Workspace app that you’d like this Source to collect data from. Steps may be repeated for each Google Workspace app you want to collect data from.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
@@ -87,7 +89,7 @@ To provide feedback on these limitations, and known issues, contact Google sup
 
 ### Access Tokens
 
-An access token is granted by a third party service, such as G Suite, to Sumo for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo will continue to try to update a token for about a week. After several failures, we recommend recreating the G Suite Apps Audit Source.
+An access token is granted by a third party service, such as Google Workspace, to Sumo for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo will continue to try to update a token for about a week. After several failures, we recommend recreating the Google Workspace Apps Audit Source.
 
 ### Subscription Watchpoints
 
