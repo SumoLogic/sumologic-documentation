@@ -156,7 +156,7 @@ The maximum number of Sources allowed on a Collector is 1,000.
         allowfullscreen
         />
 
-### Allow listing Sources that collect from AWS 
+### Allowlisting Sources that collect from AWS 
 
 If you're configuring a Source that collects from Amazon Web Services (AWS), you may need to allowlist AWS IP addresses. AWS makes current IP address ranges available in JSON format. Amazon advises that this file changes several times a week.
 
