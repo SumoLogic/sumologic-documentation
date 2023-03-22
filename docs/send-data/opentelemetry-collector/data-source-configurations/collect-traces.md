@@ -5,7 +5,7 @@ sidebar_label: Collect Traces
 description: Learn how to collecting traces using the Sumo Logic OpenTelemetry Collector.
 ---
 
-Default installation of Sumo Logic Distribution for OpenTelemetry Collector goes with default endpoints for tracing collection in OTLP format:
+Default installation of the Sumo Logic Distribution for OpenTelemetry Collector goes with default endpoints for tracing collection in OTLP format:
 
 * `localhost:4317` for GRPC
 * `localhost:4318` for HTTP
