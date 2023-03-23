@@ -56,7 +56,9 @@ This is possible because:
 1. The scope of this search (`_sourceCategory=prod/security/snort`) falls within the scope of the Partition (`_sourceCategory=prod/*`).
 
 Therefore, defining a broad scope for your Partitions (for example, `_sourceCategory=prod/*`), and searching with `_sourceCategory` allows you to take advantage of query rewriting, and it allows you to potentially not have to manually rewrite your existing queries.
-Note that we have used a simple example of non-overlapping partitions all defined on `_sourceCategory`. Your data organization needs might be more complex, and in those cases we try to do a best effort query re-writing.
+:::note 
+We have used a simple example of non-overlapping partitions all defined on `_sourceCategory`. Your data organization needs may be more complex, and in those cases we try to do a best effort query re-writing.
+:::
 
 
 ## Create a Partition
