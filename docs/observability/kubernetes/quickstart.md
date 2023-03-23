@@ -30,11 +30,7 @@ A list of supported platforms for the [Sumo Logic Kubernetes solution](https://g
 
 ### Resource requirements
 
-The [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) uses less than 1 CPU and
-less than 2 Gi memory deployed in default configuration in single-node Kubernetes environment where only the Sumo Logic Kubernetes Helm Chart is deployed, however [resource requests](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core)
-for components of the Sumo Logic Kubernetes Helm Chart are set to higher level (about 7 CPU and 10 Gi memory) so to deploy the Sumo Logic Kubernetes Helm Chart in the cluster with very limited resources
-you need to modify default configuration and decrease resource requests and number of replicas,
-for example to decrease resource requests and number of replicas for `otelcol-metrics` you need to add following configuration to your `values.yaml` :
+The [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) uses less than 1 CPU and less than 2 Gi memory deployed in default configuration in single-node Kubernetes environment where only the Sumo Logic Kubernetes Helm Chart is deployed. However, [resource requests](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) for components of the Sumo Logic Kubernetes Helm Chart are set to a higher level (about 7 CPU and 10 Gi memory). To deploy the Sumo Logic Kubernetes Helm Chart in the cluster with very limited resources, you need to modify default configuration and decrease resource requests and number of replicas. For example, to decrease resource requests and number of replicas for `otelcol-metrics`, you'd need to add the following configuration to your `values.yaml`:
 
 ```yaml
 metadata:
