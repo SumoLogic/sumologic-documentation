@@ -132,7 +132,7 @@ Log query from  the panel : Total Event Distribution
 
 Metric query from the panel : CPU Utilization Over Time
 ```sql
-sumo.datasource=linux     host=*  metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host | outlier
+sumo.datasource=linux     host.name=*  metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 
 ## Viewing Linux Dashboards
