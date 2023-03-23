@@ -2,9 +2,12 @@
 id: crowdstrike-source
 title: CrowdStrike Source
 sidebar_label: CrowdStrike
+description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
 The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike [Streams API](https://falcon.crowdstrike.com/support/documentation/89/event-streams-apis). It securely stores the required authentication, scheduling, and state tracking information.
 

@@ -47,7 +47,7 @@ Next, we need to download instrumented versions of libraries and put them into t
 go.opentelemetry.io/contrib/instrumentation/{IMPORT_PATH}/otel{PACKAGE_NAME}@{VERSION}
 ```
 
-For example net/http package, which will be used in the example HTTP client code below:
+For example, net/http package, which will be used in the example HTTP client code below:
 
 ```bash
 go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.29.0

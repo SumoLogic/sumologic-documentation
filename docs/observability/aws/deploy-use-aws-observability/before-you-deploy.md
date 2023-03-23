@@ -10,10 +10,9 @@ This page describes prerequisites and guidelines for deploying Sumo Logic’s AW
 ## Prerequisites
 
 * **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with Explore by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) for CloudFormation Template.
-* **Sumo Logic Collectors and Sources**. The AWS Observability Solution relies upon an Installed Collector with a Host Metrics Source on each of your AWS EC2 hosts. The solution relies upon host metrics collection rather than AWS CloudWatch EC2 metrics because AWS EC2 metrics from Cloudwatch have high latency and can increase the costs of your AWS account. Host metrics have the advantage of near-zero latency and more information at a lower cost. Instructions are provided in [Configure Host Metric Source](#before-you-deploy) below.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * **Role capabilities**. Make sure you have a Sumo Logic role that have the following capabilities:
-* Manage field extraction rules
+  * Manage field extraction rules
   * Manage connections
   * View Account Overview
   * View Fields

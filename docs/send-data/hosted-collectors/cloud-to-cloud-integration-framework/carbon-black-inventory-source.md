@@ -2,9 +2,12 @@
 id: carbon-black-inventory-source
 title: Carbon Black Inventory Source
 sidebar_label: Carbon Black Inventory
+description: The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
 
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 

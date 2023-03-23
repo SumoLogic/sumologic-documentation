@@ -20,7 +20,7 @@ Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**.
 
 ![example-match-list.png](/img/cse/example-match-list.png)
 
-Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
+Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
 
 ## Built-in rules refer to standard Match List names
 

@@ -1,13 +1,13 @@
 ---
 id: cyberark-source
-title: CyberArk EPM
+title: CyberArk EPM Source
 sidebar_label: CyberArk EPM
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cyberark-icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
 
 The CyberArk Endpoint Privilege Manager (EPM) is a security solution that helps organizations reduce the risk of information theft or ransomware attacks by enforcing the principle of least privilege and preventing unauthorized access to critical systems and data. The solution employs a combination of privilege security, application control, and credential theft prevention to reduce the likelihood of malware infections.
 

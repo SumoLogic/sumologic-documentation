@@ -13,7 +13,7 @@ This section has information about the Sumo Logic partitions that contain CSE da
 
 ### Partitions for CSE Records
 
-In CSE, normalized Records are categorized by [Record type](../schema/cse-record-types.md), for example Audit, Authentication, Network, NetworkDHCP, and so on.
+In CSE, normalized Records are categorized by [Record type](../schema/cse-record-types.md), for example, Audit, Authentication, Network, NetworkDHCP, and so on.
 
 In Sumo Logic, Records are stored in partitions, which are indexes that enable better search performance. The table below shows which partition each Record type is stored in. Note that some partitions contain multiple Record types.
 
@@ -153,7 +153,7 @@ You can search CSE fields by keyword, for example:
 
 ### Referencing nested JSON fields
 
-The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](../schema/schema-attributes.md) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
+The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
 
 ![nested-fields.png](/img/cse/nested-fields.png)
 

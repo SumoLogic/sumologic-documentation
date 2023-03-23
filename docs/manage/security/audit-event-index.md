@@ -38,7 +38,7 @@ Select the documentation link for your deployment:
 Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
-* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example throttling events, rules triggered, and so on.  
+* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example, throttling events, rules triggered, and so on.  
 
 For example, to search for user action events:
 

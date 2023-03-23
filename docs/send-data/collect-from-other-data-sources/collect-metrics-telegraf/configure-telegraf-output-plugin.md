@@ -109,7 +109,7 @@ url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 
 ### data_format
 
-The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors/http-source/upload-metrics.md) section of the *Upload Metrics to an HTTP Source* topic.
+The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors/http-source/logs-metrics/upload-metrics.md) section of the *Upload Metrics to an HTTP Source* topic.
 
 Supported values for `data_format` are: 
 
