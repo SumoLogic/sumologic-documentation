@@ -15,7 +15,7 @@ The Sumo Logic App for Windows allows you to monitor the performance and resourc
 
 In addition to that the Windows App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows App is based on the Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
-Windows metrics are sent to Sumo Logic through OpenTelemetry [Event Log receiver. ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver)
+Windows event logs are sent to Sumo Logic through OpenTelemetry [Event Log receiver. ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver)
 
 Windows Host metrics are sent to Sumo Logic through OpenTelemetry [HostMetric receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver).
 
@@ -23,7 +23,7 @@ Windows Host metrics are sent to Sumo Logic through OpenTelemetry [HostMetric re
 
 ## Fields Created in Sumo Logic for Windows
 
-Following are the tags which will be created as part of Windows App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
 
 - **`sumo.datasource`** - Has a fixed value of **windows**.
 
@@ -111,7 +111,7 @@ This sample Query is from the Windows - Overview > System Restarts
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id
 | parse regex field=msg_summary "(?<msg_summary>.*\.*)" nodrop
-| where event_id = "4608" and channel = "Security" and host matches "{{host}}"
+| where event_id = "4608" and channel = "Security" and host.name matches "{{host.name}}"
 | count as Restarts
 ```
 
