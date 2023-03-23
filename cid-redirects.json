@@ -277,6 +277,8 @@
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source": "/docs/send-data/hosted-collectors/http-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Data-to-an-HTTP-Source": "/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Metrics-to-an-HTTP-Source": "/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics",
+  "/docs/send-data/hosted-collectors/http-source/upload-metrics": "/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics",
+  "/docs/send-data/hosted-collectors/http-source/upload-logs": "/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Metrics-to-an-HTTP-Source/Types_of_Prometheus_Metrics_not_Accepted_by_Sumo": "/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Troubleshooting-HTTP-Sources": "/docs/send-data/hosted-collectors/http-source/troubleshooting",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source": "/docs/send-data/hosted-collectors/http-source/generate-new-url",
