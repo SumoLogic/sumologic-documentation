@@ -72,11 +72,11 @@ process:
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
-2.  Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+1. Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
+2. Restart the collector using:
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
@@ -119,7 +119,7 @@ This sample Query is from the Windows - Overview > System Restarts
 
 ### Windows - Overview
 
-The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, and system restarts
+The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, and system restarts.
 
 Use this dashboard to:
 

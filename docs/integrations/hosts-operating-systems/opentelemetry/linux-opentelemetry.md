@@ -27,7 +27,7 @@ Following are the [fields](/docs/manage/fields) that will be created as part of 
 
 - **`sumo.datasource`** - has a fixed value of **linux**.
 
-## Collecting logs, metrics & installing Linux app
+## Collecting logs, metrics, and Linux app installation
 
 Here are the steps for collecting logs, metrics, and app installation.
 
@@ -39,7 +39,7 @@ Here are the steps for collecting logs, metrics, and app installation.
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for Linux Collection.
+In this step, we will be configuring the yaml file required for Linux Collection.
 
 The app requires path for system log file, based on the Linux version used.
 
@@ -61,20 +61,20 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 - Messages
 - yum.log
 
-Click on the **Download YAML File** button to get the yaml file.
-
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png')} alt="YAML" />
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png')} alt="YAML" />
 
 :::note 
-- By default the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt - you can leave the default file paths values.  
-- By default the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
 
+By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt - you can leave the default file paths values.  
+
+By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
 ```sh
 process:
   include:
     names: [ <process name1>, <process name2> ... ]
     match_type: <strict|regexp>
 ```
+
 :::
 
 ### Step 3: Sending logs and metrics to Sumo
@@ -83,9 +83,9 @@ process:
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
 2. Restart the collector using:
-```sh
- sudo systemctl restart otelcol-sumo
-```
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
