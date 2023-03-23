@@ -93,7 +93,7 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol
 
 ### Sample Query
 
-This sample Query is from the Varnish Overview - Traffic Volume dashbaord > MB Served Over Time panel.
+This sample query is from the Varnish Overview - Traffic Volume dashboard > MB Served Over Time panel.
 
 ```sql title="Query String"
 %"sumo.datasource"=varnish %"webengine.system"=varnish %"webengine.cluster.name"=* | json "log" as _rawlog nodrop 
