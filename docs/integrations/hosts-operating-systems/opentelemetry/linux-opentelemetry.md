@@ -21,7 +21,7 @@ We use the OpenTelemetry collector for Linux metric collection and for collectin
 
 ## Fields Created in Sumo Logic for Linux
 
-Following are the tags which will be created as part of Linux App install if not already present. 
+Following are the [fields](/docs/manage/fields) that will be created as part of Linux App install if not already present. 
 
 ### Across apps
 
@@ -118,7 +118,7 @@ Log query from the panel: Total Event Distribution
 
 Metric query from the CPU Utilization Over Time panel.
 ```sql
-sumo.datasource=linux     host=*  metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host | outlier
+sumo.datasource=linux     host.name=*  metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 
 ## Viewing Linux Dashboards
