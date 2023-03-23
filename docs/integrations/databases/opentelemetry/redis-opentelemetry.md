@@ -32,7 +32,7 @@ The following are [Fields](https://help.sumologic.com/docs/manage/fields/) that 
 * **`deployment.environment`** - User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
 * **`sumo.datasource`** - Has fixed value of redis.
 
-## Prerequisite
+## Prerequisites
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment. By default, Redis logs are stored in a log file.
 
