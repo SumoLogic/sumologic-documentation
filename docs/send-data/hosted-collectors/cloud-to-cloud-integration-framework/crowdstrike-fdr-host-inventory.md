@@ -27,7 +27,7 @@ Device data from this source could be used to augment AID data from the [CrowdSt
 
 ## Metadata Field
 
-Metadata fields will be set. See **Metadata Fields** table below:
+If you've configured your integration with the Cloud SIEM forward option, metadata fields will be set. See **Metadata Fields** table below:
 
 | Fields     |    Value                    |
 | :-------    |  :------------------------ |
@@ -91,13 +91,17 @@ To configure the CrowdStrike FDR Host Inventory API:
 3. Select **CrowdStrike FDR Host Inventory** icon.<br/><img src={useBaseUrl('/img/send-data/crowdstrike-fdr-host-inventory-icon.png')} alt="crowdstrike-fdr-host-inventory-icon.png" width="120" />
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-config-main.png')} alt="crowdstrike-fdr-host-inventory-config-main.png" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
+6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise as inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
+  * `_siemVendor`: CrowdStrike
+  * `_siemProduct`: FDR Host Inventory
+  * `_siemDataType`: Inventory  
+7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-7. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
-8. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
-9. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
-10. When you are finished configuring the Source, click **Save**.
+8. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
+9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
+10. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
+11. When you are finished configuring the Source, click **Save**.
 
 ## Error types
 
