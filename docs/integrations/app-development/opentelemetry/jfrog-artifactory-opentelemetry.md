@@ -29,8 +29,8 @@ The Sumo Logic App for Artifactory collects data from the following logs:
 
 - **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
 - **access.log**.  The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
-- **request.log**.  Generic HTTP traffic information similar to the Apache HTTPd request log.
-- **traffic.log**.  A log that contains information about site traffic and file sizes.
+- **request.log**. Generic HTTP traffic information similar to the Apache HTTPd request log.
+- **traffic.log**. A log that contains information about site traffic and file sizes.
 
 For more details about Artifactory logs, refer to [JFrog Logging](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
@@ -42,6 +42,7 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 - `traffic.*.log`
 
 To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/etc`:
+
 ```
 artifactory.traffic.collectionActive=true
 ```
@@ -49,7 +50,7 @@ A restart is required for traffic collection to take effect.
 
 ## Collection Configuration and App installation
 
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click on Install App. Please follow the steps below:
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
@@ -59,7 +60,7 @@ As part of the setting up the collection process and app installation user can s
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for the Artifactory Collection.
+In this step we will configure the yaml required for the Artifactory Collection.
 
 Path of the different log file configured to capture Artifactory logs is needed to be given here:
 
@@ -76,7 +77,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on your platform.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -116,11 +117,7 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
-
-Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 
@@ -130,7 +127,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Sample Query
 
-This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys** by Geolocation panel.
+This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys by Geolocation** panel.
 
 ```sql title="Query String"
 " %"sumo.datasource"=artifactory "ACCEPTED DEPLOY" "-cache"

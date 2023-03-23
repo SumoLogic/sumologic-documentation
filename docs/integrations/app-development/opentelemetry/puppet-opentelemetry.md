@@ -15,6 +15,7 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Schematics.png' alt="Schematics" />
 
+
 ## Fields creation in Sumo Logic for Puppet
 
 Following are the tags which will be created as part of Puppet App install if not already present. 
@@ -136,9 +137,9 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Sending logs to Sumo Logic
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -151,12 +152,12 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance that needs to be monitored.
-2.  Place Env file in the following directory:
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance that needs to be monitored.
+2. Place your Env file in the following directory:
   ```sh
   /etc/otelcol-sumo/env/
   ```
-3.  Restart the collector using:
+3. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
@@ -164,8 +165,8 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
+2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
@@ -173,30 +174,29 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance that needs to be monitored.
-2.  Restart the otelcol-sumo process using:
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Puppet instance that needs to be monitored.
+2. Restart the otelcol-sumo process using:
   ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
 </TabItem>
 </Tabs>
 
-After the successful execution of the above command, Sumo will start receiving the data from your host machine. 
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Click **Next**. This will install the app to your Sumo Logic Org. 
 
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+## Sample Log Messages
 
-### Sample Log Messages in Non-Kubernetes environments
+This is a sample log message for non-Kubernetes environments.
 
 ```sql
 5.35.225.115 - - [2023-01-16 06:49:18.751 +0000] "POST /puppet/v3/file_content/plugins/facter/sources_dir_exists_win.rb?environment=production& HTTP/1.1" 500 4484 "-" "Puppet/5.5.2 Ruby/2.4.4-p296 (x86_64-linux)" 5
 ```
 
-### Sample Query
+## Sample Queries
 
-This sample Query is from the Puppet - Overview dashboard > Node Requests Summary Over Time panel.
+This sample query is from the Puppet - Overview dashboard > Node Requests Summary Over Time panel.
 
 ```
 %"sumo.datasource"=puppet
@@ -209,6 +209,7 @@ This sample Query is from the Puppet - Overview dashboard > Node Requests Summar
 | timeslice by 1h
 | sum(successes) as successes, sum(redirects) as redirects, sum(client_errors) as client_errors, sum(server_errors) as server_errors by _timeslice
 ```
+
 
 ## Viewing Puppet Dashboards
 

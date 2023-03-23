@@ -69,9 +69,9 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
 
 When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
-## Logs Collection Configuration & App Installation
+## Logs Collection Configuration and App Installation
 
-As part of setting up the collection and app installation process, you can select the App from **App Catalog** and click on **Install App**.  Follow the steps below:
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
@@ -81,7 +81,7 @@ As part of setting up the collection and app installation process, you can selec
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for the Jira Collection.
+In this step, we will configure the yaml file required for the Jira Collection.
 
 Path of the different log file configured to capture Jira logs is needed to be given here:
 - Jira Access Logs. Apache HTTP server log files. Default path `/var/log/apache2/*.log`.
@@ -138,23 +138,17 @@ Once you have the yaml file downloaded in the previous step, follow the below st
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
-
-### Sample Log Messages in Non-Kubernetes environments
+### Sample Log Messages (Non-Kubernetes environments)
 
 ```
 bluechip-office - - 19/01/2023:05:02:10 Z "GET /jira/rest/gadget/1.0/averageage/generate?projectOrFilterId=filter-16392&periodName=monthly&daysprevious=730&width=428&height=285&inline=true&_=1541539601115 HTTP/1.1" 401 8509 "https://jira.kumoroku.com/jira/plugins/servlet/gadgets/ifr?container=atlassian&mid=17024&country=US&lang=en&view=default&view-params=%7B%22writable%22%3A%22true%22%7D&st=atlassian%3A7udmdg9B2kTj%2FIang%2FZBXDM3COYkLIHJIzAUYmw9QDAiuHR4StJpZph6bTEtMMfxwx46%2B7cTTIjSGz%2B%2FNBJa4GLMS7e3ijRtWhIEIi4u19i2WXZsBZ8ZP8AekcT1JzwwkH9lGt9IRgXmL05epIw8kYAzDpKI1E%2FdHLFYtwo7m1M%2FRSsPMdoYGmwUfuIHM6%2FKGMsCDzToTKRzay85Sw9O7Db6%2B7A9MkQm0BxSmX3hMpV%2BPWgw%2BKDuNwPC0HCzrkMb4V2M3pJE0qBbvJqM2O6ezII938KZBz0%2B1zKnC9Rw2ePrbrm7TjCWGiR77NxKFtowNo3Xfg%3D%3D&up_isConfigured=true&up_isPopup=false&up_refresh=15&up_projectOrFilterId=filter-
 ```
 
-### Sample Query
+## Sample Queries
 
-This sample Query is from the Jira - Jira - Overview > Catalina Requests panel.
-
-### Query String
+This sample query is from the Jira - Overview > Catalina Requests panel.
 
 ```sql
 "%"sumo.datasource"=jira
