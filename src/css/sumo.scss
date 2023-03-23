@@ -220,6 +220,7 @@ html[data-theme='light'] {
 
 .DocSearch-Button-Placeholder {
   font-size: .85rem !important;
+  min-width: 85px;
 }
 
 .header-github-link:hover {
@@ -248,27 +249,27 @@ html[data-theme='light'] {
 
 
 
-.header-login:hover {
+.header-trial:hover {
   opacity: 0.85;
 }
 
-.header-login::before {
+.header-trial::before {
   content: 'Start free trial';
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 5px 10px;
+  padding: 4px 10px;
   font-size: 14px;
   display: inline-flex;
   background: #2aa1e6;
 }
 
-.header-login::after {
+.header-trial::after {
     display: none !important;
     content: none !important;
 }
 
-[data-theme='dark'] .header-login::before {
+[data-theme='dark'] .header-trial::before {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;
@@ -276,26 +277,6 @@ html[data-theme='light'] {
   background: #2aa1e6;
 }
 
-
-
-.header-search-link:hover {
-  opacity: 0.6;
-}
-
-.header-search-link::before {
-  content: '';
-  width: 30px;
-  height: 30px;
-  margin-top: 9px;
-  display: inline-flex;
-  background: url("../../static/img/icons/magnifying-glass-header.png")
-    no-repeat;
-}
-
-.header-search-link::after {
-    display: none !important;
-    content: none !important;
-}
 
 .markdown {
   h1 {
@@ -1082,7 +1063,8 @@ html[data-theme='dark'] .node polygon {
 .smallbox43 h4,
 .smallbox44 h4,
 .smallbox45 h4,
-.smallbox46 h4, {
+.smallbox46 h4,
+.smallbox47 h4, {
   margin-top: 10px;
 }
 
@@ -1131,7 +1113,8 @@ html[data-theme='dark'] .node polygon {
 .smallbox43 img,
 .smallbox44 img,
 .smallbox45 img,
-.smallbox46 img, {
+.smallbox46 img,
+.smallbox47 img, {
   margin-top: 16px;
 }
 
@@ -1501,6 +1484,14 @@ html[data-theme='dark'] .node polygon {
   font-size: .9rem;
 }
 
+.smallbox47 {
+  grid-column: 2;
+  grid-row: 16;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
 .card {
   transition: 0.3s;
   border-radius: 4px;
@@ -1810,4 +1801,74 @@ html[data-theme='dark'] .featureImage {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+
+
+
+/* The container */
+.label-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.label-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.label-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.label-container input:checked ~ .checkmark {
+  background-color: #007E33;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.label-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

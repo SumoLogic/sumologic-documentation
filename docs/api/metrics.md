@@ -158,7 +158,7 @@ To execute a metrics query, send a JSON request to the endpoint.
    </td>
    <td>No
    </td>
-   <td>Desired granularity of temporal quantization (DAVID A TODO LINK), in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
+   <td>Desired granularity of temporal quantization in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
    </td>
   </tr>
 </table>

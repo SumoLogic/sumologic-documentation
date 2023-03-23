@@ -189,7 +189,7 @@ For some chart types, you can use the **Thresholds** tab in the **Display Settin
     * **includes.** Any value between the two values you specify will violate the threshold.
     * **excludes**. Every value NOT between the two values you specify will violate the threshold.
 5. Threshold bands appear on the chart. The red band shows the Critical threshold, the yellow band is Warning. <br/>
-  The chart type in the screenshot below is a line chart. For other chart types, the threshold visualization may vary. For example in bar and column charts, the bars and columns are shaded yellow, red, and green  in accordance with the thresholds defined.<br/>
+  The chart type in the screenshot below is a line chart. For other chart types, the threshold visualization may vary. For example, in bar and column charts, the bars and columns are shaded yellow, red, and green  in accordance with the thresholds defined.<br/>
   The critical threshold has higher priority than the warning threshold. If the thresholds you define overlap, only the Critical shading (red) is applied to the overlapping area. fill-green.png
 6. If you toggle the **Fill remaining area as green** option, the portion of the chart with no thresholds is shaded in green. <br/><img src={useBaseUrl('img/metrics/fill-green.png')} alt="fill-green.png"/>
 7. If you toggle the **Highlight Violations** option, the horizontal threshold shading is removed. Instead you’ll see vertical red and yellow highlighting in the timelices where those thresholds were violated. <br/> <img src={useBaseUrl('img/metrics/highlight-mode.png')} alt="highlig-mode.png"/>

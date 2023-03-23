@@ -571,7 +571,7 @@ cluster_config_file         = /opt/trident/sensor/bro/etc/node.cfg
 
 The `/opt/trident/sensor/bro/etc/node.cfg` file is automatically generated, based on the choices you make when running the configuration wizard at installation time. 
 
-Typically you should not edit `node.cfg` without consulting CSE support. Under some circumstances, edits may be necessary, for example if you want to monitor more than one capture interface.
+Typically you should not edit `node.cfg` without consulting CSE support. Under some circumstances, edits may be necessary, for example, if you want to monitor more than one capture interface.
 
 If you do make manual updates to `node.cfg`, you must restart the Network Sensor for the changes to take effect with this command:
 `sudo service trident_sensor restart`
