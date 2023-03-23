@@ -15,7 +15,7 @@ The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app 
 
 This App is tested with the following Oracle versions:
 
--   Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
+- Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 
 Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -23,9 +23,9 @@ Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](http
 
 ## Log Types
 
--   Alert Logs
--   Listener Logs
--   Audit Logs
+- Alert Logs
+- Listener Logs
+- Audit Logs
 
 ## Fields creation in Sumo Logic for Oracle
 
@@ -41,27 +41,26 @@ This section provides instructions for configuring log collection for Oracle run
 
 Steps required to configure Oracle log collection:
 
-1.  Enable Oracle logging.
-2.  Verify log files path.
-3.  Configure three local log file Sources.
-4.  Set up Oracle performance metrics script
+1. Enable Oracle logging.
+2. Verify log files path.
+3. Configure three local log file Sources.
+4. Set up Oracle performance metrics script
 
 ### Step 1. Enable Oracle logging
 
 If logging is not enabled you can configure it by following the steps below:
 
--   **Alert log** - Alert logs contain important information about error messages and exceptions that occur during database operations.
--   **Listener log** - To enable listener log run the following commands from `ORACLE_HOME/bin` :
-```sh
-lsnrctl command  [listener_name]
-
-lsnrctl set log_status on
-```
--   **Audit Log** - Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
+- **Alert log** - Alert logs contain important information about error messages and exceptions that occur during database operations.
+- **Listener log** - To enable listener log run the following commands from `ORACLE_HOME/bin`:
+   ```sh
+   lsnrctl command  [listener_name]
+   lsnrctl set log_status on
+   ```
+- **Audit Log** - Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
 
 ### Step 2. Verify local logs file directories and path.
 
--   **Oracle Alert Logs**
+- **Oracle Alert Logs**
 
 For 11g and later releases (12c, 18c, 19c)
 
@@ -72,13 +71,14 @@ The default directory for log files is stored in `BACKGROUND_DUMP_DEST` paramete
 
 SQL> show parameter background_dump_dest;
 
--   **Oracle Listener Logs**
-    You can check listener log file with the following command
-    `[oracle@sumolab alert]$ lsnrctl status`
-
--   **Oracle Audit Logs**
-    By default, Oracle logs are stored in
-    `$ORACLE_BASE/app/oracle/admin/orcl/adump`
+- **Oracle Listener Logs**. You can check listener log file with the following command:
+    ```
+    [oracle@sumolab alert]$ lsnrctl status
+    ```
+- **Oracle Audit Logs**. By default, Oracle logs are stored in
+    ```
+    $ORACLE_BASE/app/oracle/admin/orcl/adump
+    ```
 
 The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command:SQL> show parameter audit
 
@@ -108,11 +108,13 @@ As per the above instruction once the python script is available locally we need
 
 Configure a cron job to trigger the python script using crontab. Frequency of this job can be set following the instructions from [here](https://www.python-engineer.com/posts/cron-jobs-for-python/#crontab).
 
-For finding the path of python3 you can execute the command 
+For finding the path of python3 you can execute the command: 
 
-`which python3`
+```
+which python3
+```
 
-Here is the command which needs to be configured as part of cron to trigger the script. :
+Here is the command which needs to be configured as part of cron to trigger the script:
 ```sh
 <frequency_expression> <output_of_which_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
 ```
@@ -136,22 +138,13 @@ The `.bat` file created above can then be triggered periodically using windows T
 </TabItem>
 </Tabs>
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
-As part of setting up the collection process and app installation user can select the App from App Catalog and click "Install App". Please follow the steps below :
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up the Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-To create a new Collector:
-
-1. Select the Add a new Collector option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command that can be executed in the machine that needs to be monitored. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Collector.png')} alt="Collector" />
 
@@ -161,10 +154,10 @@ In this step we will be configuring the yaml required for Oracle Collection.
 
 Path of the log file configured to capture oracle logs needs to be given here. Here is the list of logs which are required by the application. 
 
--   Alert Logs.
--   Listener Logs.
--   Audit Logs.
--   Performance metric script based logs.
+- Alert Logs.
+- Listener Logs.
+- Audit Logs.
+- Performance metric script based logs.
 
 You can get the location of these logs by following the instructions in the prerequisite step.
 
@@ -174,7 +167,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -187,46 +180,42 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Oracle instance which needs to be monitored.
-2.  Place Env file in the following directory:
-```sh
-/etc/otelcol-sumo/env/
-```
-3.  Restart the collector using:
-```sh
- sudo systemctl restart otelcol-sumo
-```
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Oracle instance which needs to be monitored.
+2. Place Env file in the following directory:
+   ```sh
+   /etc/otelcol-sumo/env/
+   ```
+3. Restart the collector using:
+   ```sh
+   sudo systemctl restart otelcol-sumo
+   ```
 
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
-2.  Restart the collector using: 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+1. Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
+2. Restart the collector using: 
+   ```sh
+   Restart-Service -Name OtelcolSumo
+   ```
 
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Oracle instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command:
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Oracle instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command:
+   ```sh
+   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+   ```
 
 </TabItem>
 </Tabs>
 
-After the successful execution of the above command, Sumo will start receiving the data from your host machine. 
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Click **Next**. This will install the app to your Sumo Logic Org. 
+## Sample Log Messages in Non-Kubernetes environments
 
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-### Sample Log Messages in Non-Kubernetes environments
-
-#### Time
+### Time
 
 ```
 20-Jan-2023 11:02:56 * (CONNECT_DATA=(CID=(PROGRAM=null)(HOST=__jdbc__)(USER=null))(SERVICE_NAME=sumo.cmdb01.com)) * (ADDRESS=(PROTOCOL=TCP)(HOST=124.243.25.82)(PORT=56486)) * establish * sumo.cmdb01.com * 12514
@@ -234,13 +223,11 @@ Panels will start to fill automatically. It's important to note that each panel 
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
 ```
 
-### Sample Query
+## Sample Queries
 
 This sample Query is from the Oracle - Overview > DB Connection panel.
 
-Query String:
-
-```sql
+```sql title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as oracle_log_message 
 | parse regex field=oracle_log_message "CONNECT_DATA[\s\S]+?SERVICE_NAME=(?<serviceName>[^)]*)\)[\s\S]+establish" nodrop

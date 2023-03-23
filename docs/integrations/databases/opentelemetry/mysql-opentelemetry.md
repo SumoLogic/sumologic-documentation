@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic App for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins and error logs.
 
-This App supports MySQL version 8.0
+This App supports MySQL version 8.0.
 
 We use the OpenTelemetry collector for MySQL metric collection and for collecting MySQL logs.
 
@@ -25,18 +25,18 @@ The diagram below illustrates the components of the MySQL collection for each da
 
 The Sumo Logic App for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/mysqlreceiver/documentation.md).
 
--   The MySQL - Overview dashboard is based on logs from both the Error and Slow Query log formats, so as to correlate information between the two.
--   Dashboards in the Metrics folder are based on MySQL metrics.
--   Dashboards in the Logs folder are based on MySQL logs from both the Error and Slow Query log formats.
-    -   Dashboards based on the Error format:
-        -   MySQL - Error Logs
-        -   MySQL - Failed Logins
-        -   MySQL - Replication
-    -   Dashboard based on Slow Query format:
-        -   MySQL - Slow Queries
--   MySQL General Health is based on logs from the MySQL Error log format.
--   MySQL Replication is based on logs from the MySQL Error log format.
--   MySQL Slow Queries is based on logs from the MySQL Slow Queries log format.
+- The MySQL - Overview dashboard is based on logs from both the Error and Slow Query log formats, so as to correlate information between the two.
+- Dashboards in the Metrics folder are based on MySQL metrics.
+- Dashboards in the Logs folder are based on MySQL logs from both the Error and Slow Query log formats.
+    - Dashboards based on the Error format:
+        - MySQL - Error Logs
+        - MySQL - Failed Logins
+        - MySQL - Replication
+    - Dashboard based on Slow Query format:
+        - MySQL - Slow Queries
+- MySQL General Health is based on logs from the MySQL Error log format.
+- MySQL Replication is based on logs from the MySQL Error log format.
+- MySQL Slow Queries is based on logs from the MySQL Slow Queries log format.
 
 The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see <http://dev.mysql.com/doc/refman/5.5/en/server-logs.html>.
 
@@ -51,15 +51,12 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Prerequisites
 
-**For metric collection** 
-For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
+**For metric collection**: For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
 
-**For log collection** 
+**For log collection**: Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
 
-Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
-
-1.  Open `my.cnf` in a text editor.
-2.  Set the following parameters in the `[mysqld]` section:
+1. Open `my.cnf` in a text editor.
+2. Set the following parameters in the `[mysqld]` section:
 ```sql
 [mysqld]
     log_error = /var/log/mysql/error.log
@@ -75,27 +72,16 @@ Configure MySQL to log to a local file(s). MySQL logs written to a log file can 
 
 [General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MySQL App.
 
-1.  Save the `my.cnf` file.
-2.  Restart the MySQL server: `sudo mysql.server restart`
+1. Save the `my.cnf` file.
+2. Restart the MySQL server: `sudo mysql.server restart`
 
 ## Collecting Logs, Metrics & installing App for MySQL
 
-Here are the steps for collecting logs, metric and installing the app:
+Here are the steps for collecting logs, metrics, and installing the app.
 
 ### Step 1 : Set up collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
-
-To create a new Collector:
-	
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-	
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
-
-
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Collector.png')} alt="Collector" />
 
@@ -105,13 +91,13 @@ In this step we will be configuring the yaml required for Mysql collection.
 
 Below is the required input:
 
--   **Endpoint** - enter the url of the server which needs to be monitored
--   **User Name** - enter the Mysql username.
--   **Error File log Path** - enter the path to the error log file for your mysql instance.
--   **Slow Transaction file log path** - enter the path to the slow log file for your mysql instance.
--   **Tags** : `db.cluster.name`
+- **Endpoint** - enter the url of the server which needs to be monitored
+- **User Name** - enter the Mysql username.
+- **Error File log Path** - enter the path to the error log file for your mysql instance.
+- **Slow Transaction file log path** - enter the path to the slow log file for your mysql instance.
+- **Tags** : `db.cluster.name`
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
+You can add any custom fields which you want to tag along with the data ingested in Sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -121,7 +107,7 @@ For linux platform - Click on **Download Environment Variables File** button to 
 
 ### Step 3: Sending logs and metric to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -134,12 +120,12 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySql instance which needs to be monitored.
-2.  Place Env file in the following directory
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySql instance which needs to be monitored.
+2. Place Env file in the following directory
 ```sh
 /etc/otelcol-sumo/env/
 ```
-3.  restart the collector using
+3. restart the collector using
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -147,8 +133,8 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
@@ -156,8 +142,8 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySql instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySql instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
@@ -165,11 +151,7 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelc
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. 
-
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Sample Logs
 
@@ -216,7 +198,7 @@ The **MySql - Overview** dashboard gives you an at-a-glance view of the state of
 
 Use this dashboard to:
 
--   Quickly identify the state of a given database cluster
+- Quickly identify the state of a given database cluster
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Overview.png')} alt="Overview" />
 
@@ -226,10 +208,10 @@ The **MySql - Error Logs** dashboard provides insight into database error logs b
 
 Use this dashboard to:
 
--   Quickly identify errors and patterns in logs for troubleshooting
--   Monitor trends in error logs and identify outliers
--   Ensure that server start, server stop and crash recovery events are in line with expectations
--   Dashboard filters allow you to narrow a search for database cluster.
+- Quickly identify errors and patterns in logs for troubleshooting
+- Monitor trends in error logs and identify outliers
+- Ensure that server start, server stop and crash recovery events are in line with expectations
+- Dashboard filters allow you to narrow a search for database cluster.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Error-Logs.png')} alt="Error Logs" />
 
@@ -239,7 +221,7 @@ The **MySql - Failed Logins** dashboard provides insights into all failed login 
 
 Use this dashboard to:
 
--   Monitor all failed login attempts and identify any unusual or suspicious activity
+- Monitor all failed login attempts and identify any unusual or suspicious activity
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Failed-Logins.png')} alt="Failed Logins" />
 
@@ -249,8 +231,8 @@ The **MySql - Replication** dashboard provides insights into the state of databa
 
 Use this dashboard to:
 
--   Quickly determine reasons for replication failures
--   Monitor replication status trends
+- Quickly determine reasons for replication failures
+- Monitor replication status trends
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Replication.png')} alt="Replication" />
 
@@ -262,11 +244,11 @@ Note: Slow queries are queries that take 10 seconds or more to execute (default 
 
 Use this dashboard to:
 
--   Identify all slow queries
--   Quickly determine which queries have been identified as slow or excessive slow queries
--   Monitor users and hosts running slow queries
--   Determine which SQL commands are slower than others
--   Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
+- Identify all slow queries
+- Quickly determine which queries have been identified as slow or excessive slow queries
+- Monitor users and hosts running slow queries
+- Determine which SQL commands are slower than others
+- Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Slow-Queries.png')} alt="Slow Queries" />
 
@@ -276,9 +258,9 @@ The **MySql - Performance and Resource Metrics** dashboard allows you to monitor
 
 Use this dashboard to:
 
--   Understand the behavior and performance of your database clusters
--   Monitor key operational metrics around threads running, innodb waits and locks.
--   Monitor query execution trends to ensure they match up with expectations
--   Dashboard filters allow you to narrow a search for a specific database cluster
+- Understand the behavior and performance of your database clusters
+- Monitor key operational metrics around threads running, innodb waits and locks.
+- Monitor query execution trends to ensure they match up with expectations
+- Dashboard filters allow you to narrow a search for a specific database cluster
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Performance-and-Resource-Metrics.png')} alt="Performance and Resource Metrics" />

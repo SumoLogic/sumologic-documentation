@@ -48,20 +48,13 @@ Once the logs are configured to write to a local file, follow the steps below to
 
 ## Configuring Collection and Installing the Redis App
 
-As part of setting up the collection process and app installation, you can select the App from **App Catalog** and click **Install App**. Follow the steps below:
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-1. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command that can be executed in the machine that needs monitoring. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/collector-screenshot.png')} alt="Collector" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/collector-screenshot.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -70,15 +63,15 @@ OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collect
 In this step, you will configure the yaml file required for Redis Collection.
 
 The log file path configured to capture redis logs must be given here. The files are typically located in `/var/log/redis/redis-server.log`. If you are using a customized path, check the [`redis.conf`](https://download.redis.io/redis-stable/redis.conf) file for this information.
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-Click on the **Download YAML File** button to get the yaml file.
+
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/configuration-screenshot.png')} alt="Configuration" />
 
 
 ### Step 3: Sending logs to Sumo Logic
 
-Once you've downloaded the yaml file (in step 2), follow the below steps based on your environment.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -108,10 +101,7 @@ Once you've downloaded the yaml file (in step 2), follow the below steps based o
 </TabItem>
 </Tabs>
 
-Sumo Logic will start receiving data from your host machine when the above command is successfully executed. 
-Press **Next** . This will install the app and dashboards to your Sumo Logic org.
-
-Results will be available after a while. It is important to note that each panel slowly and automatically fills with data matching the time range query received since the panel was created. Your data should appear in the dashboard within 20 minutes, and you will see complete graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Message
 

@@ -21,7 +21,7 @@ The diagram below illustrates the components of the Elasticsearch collection for
 
 ## Fields Create in Sumo Logic for Elasticsearch
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Elasticsearch App install if not already present:
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Elasticsearch App install if not already present:
 
 - **db.cluster.name** - User configured. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **db.system** - Has a fixed value of **elasticsearch**.
@@ -34,58 +34,45 @@ This receiver supports Elasticsearch versions 7.9+
 
 If Elasticsearch security features are enabled, you must have either the monitor or manage cluster privilege. See the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html) for more information on authorization and [Security privileges](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html).
 
-**Configure logging in Elasticsearch.** Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
+**Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
 
-1.  debug: a lot of information, useful for development/testing
-2.  verbose: includes information not often needed, but logs less than debug
-3.  notice (default value): moderately verbose, ideal for production environments
-4.  warning: only very important/critical messages are logged
+* debug: a lot of information, useful for development/testing
+* verbose: includes information not often needed, but logs less than debug
+* notice (default value): moderately verbose, ideal for production environments
+* warning: only very important/critical messages are logged
 
 All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
 
 ## Collecting Logs, Metrics & installing Elasticsearch app
 
-Here are the steps for Collecting Logs, metric and installing the app:
+Here are the steps for collecting logs, metrics, and installing the app.
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
-
-To create a new Collector:
-	
-	1. Select the **Add a new Collector** option.
-	2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-	
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
-
-
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Elasticsearch Collection.
+In this step, we will be configuring the yaml required for Elasticsearch Collection.
 
 Below are the input required:
 
--   **Endpoint** - Enter the url of the server which needs to be monitored. Example: http://localhost:9200
--   **User Name** - Enter the Elasticsearch Username.
--   **Elasticsearch cluster log path** : By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`.
--   **Tags** : `db.cluster.name`.
+- **Endpoint** - Enter the url of the server which needs to be monitored. Example: http://localhost:9200
+- **User Name** - Enter the Elasticsearch Username.
+- **Elasticsearch cluster log path** : By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`.
+- **Tags** : `db.cluster.name`.
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-Click on the **Download YAML File** button to get the yaml file.
-
-For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
+For Linux platform, click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs and metric to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -98,12 +85,12 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
-2.  Place Env file in the following directory
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
+2. Place Env file in the following directory
 ```sh
 /etc/otelcol-sumo/env/
 ```
-3.  restart the collector using
+3. Testart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -111,8 +98,8 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using:
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
@@ -120,8 +107,8 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
+2. Restart the otelcol-sumo process using: 
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
@@ -129,14 +116,11 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. 
-Click **Next**. This will install the app to your Sumo Logic Org. 
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 
-```sql
+```json
 {
    "type":"server",
    "timestamp":"2021-07-12T11:42:25,862+07:00",
@@ -148,13 +132,15 @@ Panels will start to fill automatically. It's important to note that each panel 
 }
 ```
 
-## Sample Open Telemetry metric 
+## Sample OpenTelemetry metrics
 
 ```sql
 {"queryId":"A","_source":"sumo_hosted_collector_otel_elasticsearch","state":"completed","thread_pool_name":"analyze","elasticsearch.node.name":"ip-172-31-86-95","elasticsearch.cluster.name":"elasticsearch","metric":"elasticsearch.node.thread_pool.tasks.finished","db.cluster.name":"elastic_otel_cluster","_collectorId":"000000000C5B7100","deployment.environment":"otel_elastic_dev","_sourceId":"0000000000000000","unit":"{tasks}","db.system":"elasticsearch","_sourceHost":"sumoOtelelasticsearch","_collector":"sumo_hosted_collector_otel_elasticsearch","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":2}
 ```
 
-## Sample Log Query
+## Sample Queries
+
+### Log Query
 
 ```sql
 Log query from  the panel : Errors
@@ -168,9 +154,10 @@ Log query from  the panel : Errors
 | count
 ```
 
-## Sample Metric Query
+### Metric Query
 
-Metric query from the panel : JVM Memory Used (MB)
+Metric query from the JVM Memory Used (MB) panel.
+
 ```sql
  deployment.environment=* metric=jvm.memory.heap.used  db.cluster.name=* db.node.name=* | sum by db.cluster.name, db.node.name
 ```

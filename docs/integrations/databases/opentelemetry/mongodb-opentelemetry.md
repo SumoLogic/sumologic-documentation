@@ -23,7 +23,7 @@ The MongoDB logs are generated in files as configured in the configuration file 
 
 ## Fields creation in Sumo Logic for MongoDB
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of MongoDB App install if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of MongoDB App install if not already present.
 
 - **`db.cluster.name`** - User configured. Enter a name to identify this MongoDb cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`db.system`** - Has fixed value of **mongodb**.
@@ -34,36 +34,20 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 By default, MongoDB logs are stored in a log file.
 
-1.  Configure logging verbosity in MongoDB : MongoDB logs have six levels of verbosity. All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/). To select a level, set loglevel to one of:
-
--   0 is the MongoDB's default log verbosity level, to include [Informational](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
--   1 to 5 increases the verbosity level to include[ Debug](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
-
-2.  Configure MongoDB to log to a Local file :
-
-Configuring MongoDB logs to go to log files. By default, MongoDB logs are stored in `/var/log/mongodb/mongodb.log`. The default directory for log files is listed in the MongoDB.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
-
--   Configuration file: The [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for file.
--   Command-line:
-      -   The [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for file.
-      -   The [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for file.
+1. Configure logging verbosity in MongoDB : MongoDB logs have six levels of verbosity. All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/). To select a level, set loglevel to one of:
+   - 0 is the MongoDB's default log verbosity level, to include [Informational](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
+   - 1 to 5 increases the verbosity level to include[ Debug](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
+2. Configure MongoDB to log to a Local file: Configuring MongoDB logs to go to log files. By default, MongoDB logs are stored in `/var/log/mongodb/mongodb.log`. The default directory for log files is listed in the MongoDB.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
+   - Configuration file: The [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for file.
+      - Command-line:
+         - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for file.
+         - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for file.
 
 ## Configure MongoDB Logs Collection
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
-
-To create a new Collector:
-	
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-	
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
-
-
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Collector.png')} alt="Collector" />
 
@@ -71,15 +55,13 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step the user needs to provide the path to the mongo db log file configured as part of above steps. Typically the logs are located at the location: `/var/log/mongodb/mongodb.log`.
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, you can copy it to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -92,8 +74,8 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
-2.  restart the collector using
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
+2. restart the collector using
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -101,8 +83,8 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
@@ -110,8 +92,8 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
 ```
@@ -119,11 +101,7 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
-
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Message
 

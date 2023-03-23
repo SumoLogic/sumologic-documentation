@@ -61,14 +61,14 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 * For Access Log: `/opt/couchbase/var/lib/couchbase/logs/http_access.log`
 * For Query Log: `/opt/couchbase/var/lib/couchbase/logs/query.log`
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
+You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Download-YAML-File.png')} alt="Configuration" />
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, you can copy the same to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -81,8 +81,8 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Couchbase instance which needs to be monitored.
-2.  restart the collector using
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Couchbase instance which needs to be monitored.
+2. restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
@@ -90,8 +90,8 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
@@ -99,8 +99,8 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to **/etc/otelcol-sumo/conf.d/** folder in the Couchbase instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Couchbase instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
@@ -108,19 +108,17 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
 </TabItem>
 </Tabs>
 
-Press **Next** .This will install the app to your Sumo Logic Org. The app consists of Dashboards.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-Sample Logs:
+## Sample Logs
 
 ```
 _time=09/Jan/2023:04:50:03 +0000+07:00 _level=ERROR _msg=Failed to perform INSERT on key <ud>key1</ud> for Keyspace default:beer-sample.inventory.hotel. Error - <ud>Duplicate Key key1</ud>
 ```
 
-Sample Query:
+## Sample Queries
 
-Following query is from **Average Latency of All HTTP Requests** panel from overview dashboard of the Couchbase Application :
+Following query is from **Average Latency of All HTTP Requests** panel from Couchbase Overview dashboard:
 
 ```sql
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"="couchbase"

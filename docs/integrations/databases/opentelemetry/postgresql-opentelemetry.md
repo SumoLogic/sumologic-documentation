@@ -38,10 +38,10 @@ Following are the tags which will be created as part of PostgreSQL App install i
 
 Configure logging in PostgreSQL
 
-1.  Locate your local PostgreSQL postgresql.conf configuration file in the database data_directory. For more information, see the [PostgreSQL File Locations documentation](https://www.postgresql.org/docs/9.1/static/runtime-config-file-locations.html). By default it's located in `/var/lib/pgsql/<version>/data/postgresql.conf`. You can run SHOW config_file command inside your server's psql shell to get the location. After determining the location of conf file, modify the PostgreSQL postgresql.conf configuration file logging parameters
-2.  Connect to the database server (using SSH) in a terminal window.
-3.  Open `postgresql.conf` configuration file.
-4.  Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
+1. Locate your local PostgreSQL postgresql.conf configuration file in the database data_directory. For more information, see the [PostgreSQL File Locations documentation](https://www.postgresql.org/docs/9.1/static/runtime-config-file-locations.html). By default it's located in `/var/lib/pgsql/<version>/data/postgresql.conf`. You can run SHOW config_file command inside your server's psql shell to get the location. After determining the location of conf file, modify the PostgreSQL postgresql.conf configuration file logging parameters
+2. Connect to the database server (using SSH) in a terminal window.
+3. Open `postgresql.conf` configuration file.
+4. Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
 ```sql
     log_destination = 'stderr'
     logging_collector = on
@@ -58,42 +58,26 @@ Configure logging in PostgreSQL
 ```
 5.  Save the `postgresql.conf` file and restart the postgresql server: `sudo  service postgresql restart`
 
-## Collecting Logs, Metrics & installing App for Postgresql
-
-
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
+## Collecting logs, metrics, and Postgresql app installation
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
-To create a new Collector:
-	
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-	
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
-
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for Mysql collection.
+In this step, we will be configuring the yaml file required for Mysql collection.
 
 Below is the required input:
 
--   **Error Log Path** - enter the path of the error log file for your PostgreSQL instance.
--   **Endpoint** - enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`
--   **UserName** - enter the PostgreSQL username.
--   **Password** - password for the user name which is being used for scrapping the PostgreSQL metrics.
+- **Error Log Path** - enter the path of the error log file for your PostgreSQL instance.
+- **Endpoint** - enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`
+- **UserName** - enter the PostgreSQL username.
+- **Password** - password for the user name which is being used for scrapping the PostgreSQL metrics.
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
@@ -101,7 +85,7 @@ For linux platform - Click on **Download Environment Variables File** button to 
 
 ### Step 3: Sending logs and metric to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -114,12 +98,12 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Postgresql instance which needs to be monitored.
-2.  Place Env file in the following directory
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Postgresql instance which needs to be monitored.
+2. Place Env file in the following directory
 ```sh
 /etc/otelcol-sumo/env/
 ```
-3.  restart the collector using
+3. restart the collector using
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -127,8 +111,8 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using 
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
@@ -136,8 +120,8 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Postgresql instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Postgresql instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
@@ -145,22 +129,17 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. 
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-### Sample Logs
+## Sample Logs
 
 ```sql
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
 
+## Sample Queries
 
-### Log Query String
 This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
-
 
 ```sql
 sumo.datasource=postgresql db.cluster.name=*
@@ -171,20 +150,18 @@ sumo.datasource=postgresql db.cluster.name=*
 | count by date, time, severity, db, user, msg
 ```
 
-### Sample Metric
-
-```sql
-{"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
-```
-
-
-### Query String
-
 This sample query is from the **Number of Active Databases** panel of the **PostgreSQL - Database Metrics dashboard**.
 
 ```sql
 sumo.datasource=postgresql deployment.environment=* db.cluster.name=* metric=postgresql.backends postgresql.database.name=* db.node.name=* | count by postgresql.database.name | count
 ```
+
+## Sample Metrics
+
+```sql
+{"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
+```
+
 
 ## Viewing PostgreSQL Dashboards
 
@@ -194,9 +171,9 @@ The **PostgreSQL - Overview** dashboard gives you an at-a-glance view of the sta
 
 Use this dashboard to:
 
--   Determine the number of active databases and clusters.
--   Drill-down into database errors, failed logins and slow queries.
--   Determine if your database or queries need to be tuned based on comparing the number of slow queries.
+- Determine the number of active databases and clusters.
+- Drill-down into database errors, failed logins and slow queries.
+- Determine if your database or queries need to be tuned based on comparing the number of slow queries.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Overview.png')} alt="Overview" />
 
@@ -206,8 +183,8 @@ The **PostgreSQL - Query Execution** dashboard gives you insights into the numbe
 
 Use this dashboard to:
 
--   Monitor query performance and identify slow queries.
--   Examine query execution trends.
+- Monitor query performance and identify slow queries.
+- Examine query execution trends.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Query-Execution.png')} alt="Query Execution" />
 
@@ -217,9 +194,9 @@ The **PostgreSQL - Database Metrics** dashboard allows you to monitor the databa
 
 Use this dashboard to:
 
--   Understand the behavior and performance of your database clusters.
--   Monitor database size and disk usage.
--   Identify top 5 and least 5 frequently scanned indexes.
+- Understand the behavior and performance of your database clusters.
+- Monitor database size and disk usage.
+- Identify top 5 and least 5 frequently scanned indexes.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Database-Metrics.png')} alt="Database Metrics" />
 
@@ -229,9 +206,9 @@ The **PostgreSQL - Schema Metrics** dashboard allows you to view and analyze the
 
 Use this dashboard to view:
 
--   Head Only Tuple updated by schema.
--   Disk block reads and Disk usage by schema.
--   Buffer hits and rows inserted, updated and deleted by schema.
+- Head Only Tuple updated by schema.
+- Disk block reads and Disk usage by schema.
+- Buffer hits and rows inserted, updated and deleted by schema.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schema-Metrics.png')} alt="Schema Metrics" />
 
@@ -245,8 +222,8 @@ The **PostgreSQL - Security** dashboard provides insight into locations of incom
 
 Use this dashboard to:
 
--   Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
--   Identify known malicious IPs that are accessing your databases and use firewall access control lists to prevent them from sending you traffic going forward.
+- Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
+- Identify known malicious IPs that are accessing your databases and use firewall access control lists to prevent them from sending you traffic going forward.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Security.png')} alt="Security" />
 
@@ -256,9 +233,9 @@ The **PostgreSQL - Error Logs** dashboard provides insight into database error l
 
 Use this dashboard to:
 
--   Quickly identify errors and patterns in logs for troubleshooting.
--   Monitor error trends and quickly identify outliers.
--   Identify unexpected database or user activity.
+- Quickly identify errors and patterns in logs for troubleshooting.
+- Monitor error trends and quickly identify outliers.
+- Identify unexpected database or user activity.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Error-Logs.png')} alt="Error Logs" />
 
@@ -268,10 +245,10 @@ The **PostgreSQL - Slow Queries** dashboard provides insights into all slow quer
 
 Use this dashboard to:
 
--   Identify all slow queries.
--   Monitor users and databases running slow queries.
--   Determine which SQL commands are slower than others.
--   Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
+- Identify all slow queries.
+- Monitor users and databases running slow queries.
+- Determine which SQL commands are slower than others.
+- Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Slow-Queries.png')} alt="Slow Queries" />
 
@@ -281,8 +258,8 @@ The **PostgreSQL - Relation Metrics** dashboard allows you to view and analyze t
 
 Use this dashboard to:
 
--   Monitor PostgreSQL relation metrics (disk blocks, buffer hits, hot updates etc) trends over time.
--   Monitor index scans and size to determine if executed queries are accessing them for a relation.
--   Track index utilization of existing indexes in a relation.
+- Monitor PostgreSQL relation metrics (disk blocks, buffer hits, hot updates etc) trends over time.
+- Monitor index scans and size to determine if executed queries are accessing them for a relation.
+- Track index utilization of existing indexes in a relation.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Relation-Metrics.png')} alt="Relation Metrics" />

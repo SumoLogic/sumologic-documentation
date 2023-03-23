@@ -17,7 +17,7 @@ The app supports Logs from the open-source version of Cassandra. The App is test
 
 ## Fields creation in Sumo Logic for Cassandra
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Cassandra App install if not already present:
+Following are the [Fields](/docs/manage/fields/) which will be created as part of Cassandra App install if not already present:
 
 - **`db.cluster.name`** - User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **`db.system`** - Has fixed value of **cassandra**.
@@ -33,55 +33,38 @@ These logs by default live in ${CASSANDRA_HOME}/logs, but most Linux distributio
 
 ## Configure Cassandra Logs Collection
 
-### Step1: Set up Collector
+### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
-
-
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Cassandra Collection.
+In this step, we will be configuring the yaml required for Cassandra Collection.
 Path of the log file configured to capture Cassandra logs needs to be given here.
 
 In this step we will be configuring the yaml required for Cassandra Collection.
-Below are the input required :
--   The path to system.log is required here. This file is typically located in /var/log/cassandra. If you're using a customized path, check the respective conf file for this information.
+Below are the input required:
+- The path to system.log is required here. This file is typically located in /var/log/cassandra. If you're using a customized path, check the respective conf file for this information.
 
-You can add any custom fields which you want to be tagged with the data ingested in sumo.
-
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps based on your platform
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 Linux:
 
-1.  Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Cassandra instance which needs to be monitored.
-2.  restart the collector using
-```sh
- sudo systemctl restart otelcol-sumo
-```
+1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Cassandra instance which needs to be monitored.
+2. Restart the collector using
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
-
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Sample Log
 
@@ -111,9 +94,9 @@ The **Cassandra - Overview** dashboard provides an at-a-glance view of Cassandra
 
 Use this dashboard to:
 
--   Identify number of nodes which are up and down
--   Gain insights into Memory - Init, used, Max and committed
--   Gain insights into the error and warning logs by thread & Node activity
+- Identify number of nodes which are up and down
+- Gain insights into Memory - Init, used, Max and committed
+- Gain insights into the error and warning logs by thread & Node activity
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Overview.png')} alt="Collector" />
 
@@ -123,8 +106,8 @@ The **Cassandra - Cache Stats** dashboard provides insight into the database cac
 
 Use this dashboard to:
 
--   Monitor Cache performance.
--   Identify Cache usage statistics.
+- Monitor Cache performance.
+- Identify Cache usage statistics.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Cache-Stats.png')} alt="Cache Stats" />
 
@@ -134,8 +117,8 @@ The **Cassandra - Errors and Warnings** dashboard provides details of the databa
 
 Use this dashboard to:
 
--   Review errors and warnings generated by the server.
--   Review the Threads errors and warning events.
+- Review errors and warnings generated by the server.
+- Review the Threads errors and warning events.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Errors-and-Warnings.png')} alt="Errors and Warnings" />
 
@@ -145,8 +128,8 @@ The **Cassandra - Gossip** dashboard provides details about communication betwee
 
 Use this dashboard to:
 
--   Determine nodes with errors resulting in failures.
--   Review the node activity and pending tasks.
+- Determine nodes with errors resulting in failures.
+- Review the node activity and pending tasks.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Gossip.png')} alt="Gossip" />
 
@@ -156,7 +139,7 @@ The **Cassandra - Memtable** dashboard provides insights into memtable statistic
 
 Use this dashboard to:
 
--   Review flush activity and memtable status.
+- Review flush activity and memtable status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Memtable.png')} alt="Memtable" />
 
@@ -166,6 +149,6 @@ The **Cassandra - Resource Usage** dashboard provides details of resource utiliz
 
 Use this dashboard to:
 
--   Identify resource utilization. This can help you to determine whether resources are over-allocated or under-allocated.
+- Identify resource utilization. This can help you to determine whether resources are over-allocated or under-allocated.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Resource-Usage.png')} alt="Resource Usage" />
