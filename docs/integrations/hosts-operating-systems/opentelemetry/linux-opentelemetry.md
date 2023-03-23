@@ -21,7 +21,7 @@ We use the OpenTelemetry collector for Linux metric collection and for collectin
 
 ## Fields Created in Sumo Logic for Linux
 
-Following are the tags which will be created as part of Linux App install if not already present. 
+Following are the [fields](/docs/manage/fields) that will be created as part of Linux App install if not already present. 
 
 ### Across apps
 
