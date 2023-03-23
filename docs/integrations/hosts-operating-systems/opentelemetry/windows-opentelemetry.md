@@ -15,7 +15,7 @@ The Sumo Logic App for Windows allows you to monitor the performance and resourc
 
 In addition to that the Windows App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows App is based on the Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
-Windows metrics are sent to Sumo Logic through OpenTelemetry [Event Log receiver. ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver)
+Windows event logs are sent to Sumo Logic through OpenTelemetry [Event Log receiver. ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver)
 
 Windows Host metrics are sent to Sumo Logic through OpenTelemetry [HostMetric receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver).
 
