@@ -27,10 +27,10 @@ Non-Kubernetes: Couchbase version: 7.0.2
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Couchbase App install if not already present:
 
-**`db.cluster.name`** - User configured. Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.
-**`db.system`** - Has a fixed value of **couchbase**.
-**`deployment.environment`** - User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
-**`sumo.datasource`** - Has a fixed value of **couchbase**.
+**`db.cluster.name`**. User configured. Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.
+**`db.system`**. Has a fixed value of **couchbase**.
+**`deployment.environment`**. User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
+**`sumo.datasource`**. Has a fixed value of **couchbase**.
 
 ### Prerequisite
 
@@ -52,7 +52,7 @@ This will generate a command which can be executed in the machine which needs to
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for Couchbase Log Collection. Path of the log file configured to capture couchbase logs needs to be given here.
+In this step, you will configure the yaml file required for Couchbase Log Collection. Path of the log file configured to capture couchbase logs needs to be given here.
 
 The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs`.
 

@@ -15,22 +15,22 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic App for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors.The metrics allow you to monitor database resource utilization and throughput performance.
 
-This App supports Postgresql  version 9.6+.
+This App supports PostgreSQL  version 9.6+.
 
-We use the OpenTelemetry collector for Postgresql metric collection and for collecting Postgresql logs.
+We use the OpenTelemetry collector for PostgreSQL metric collection and for collecting PostgreSQL logs.
 
-The diagram below illustrates the components of the PostgreSQL collection for each database server. OpenTelemetry collector runs on the same host as PostgreSQL, and uses the [Postgresql receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) to obtain Postgresql metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The diagram below illustrates the components of the PostgreSQL collection for each database server. OpenTelemetry collector runs on the same host as PostgreSQL, and uses the [PostgreSQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) to obtain PostgreSQL metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schematics.png')} alt="Schematics" />
 
 ## Fields creation in Sumo Logic for PostgreSQL
 
-Following are the tags which will be created as part of PostgreSQL App install if not already present: 
+Following are the tags that will be created as part of PostgreSQL App install if not already present: 
 
-- **db.cluster.name** - User configured. Enter a name to identify this Postgresql cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **db.system** - Has a fixed value of **postgresql**.
-- **sumo.datasource** - Has a fixed value of **postgresql**.
-- **db.node.name** - Has a value of the host name of the machine which is being monitored.
+- **db.cluster.name**. User configured. Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **db.system**. Has a fixed value of **postgresql**.
+- **sumo.datasource**. Has a fixed value of **postgresql**.
+- **db.node.name**. Has a value of the host name of the machine which is being monitored.
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ Configure logging in PostgreSQL
 ```
 5.  Save the `postgresql.conf` file and restart the postgresql server: `sudo  service postgresql restart`
 
-## Collecting logs, metrics, and Postgresql app installation
+## Collecting logs, metrics, and PostgreSQL app installation
 
 ### Step 1: Set up Collector
 
@@ -68,14 +68,14 @@ Configure logging in PostgreSQL
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for Mysql collection.
+In this step, you will configure the yaml file required for Mysql collection.
 
 Below is the required input:
 
-- **Error Log Path** - enter the path of the error log file for your PostgreSQL instance.
-- **Endpoint** - enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`
-- **UserName** - enter the PostgreSQL username.
-- **Password** - password for the user name which is being used for scrapping the PostgreSQL metrics.
+- **Error Log Path**. enter the path of the error log file for your PostgreSQL instance.
+- **Endpoint**. enter the url of the server which needs to be monitored. Default endpoint is `localhost:5432`
+- **UserName**. enter the PostgreSQL username.
+- **Password**. password for the user name which is being used for scrapping the PostgreSQL metrics.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
@@ -98,33 +98,33 @@ For linux platform - Click on **Download Environment Variables File** button to 
 
 <TabItem value="Linux">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Postgresql instance which needs to be monitored.
-2. Place Env file in the following directory
-```sh
-/etc/otelcol-sumo/env/
-```
-3. restart the collector using
-```sh
- sudo systemctl restart otelcol-sumo
-```
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the PostgreSQL instance which needs to be monitored.
+2. Place Env file in the following directory:
+  ```sh
+  /etc/otelcol-sumo/env/
+  ```
+3. Restart the collector using:
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+2. Restart the collector using:
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Postgresql instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the PostgreSQL instance which needs to be monitored.
+2. Restart the otelcol-sumo process using:
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
@@ -139,7 +139,7 @@ Restart-Service -Name OtelcolSumo
 
 ## Sample Queries
 
-This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
+This sample query is from the **PostgreSQL - Overview** dashboard, **Fatal Errors** panel.
 
 ```sql
 sumo.datasource=postgresql db.cluster.name=*
@@ -150,7 +150,7 @@ sumo.datasource=postgresql db.cluster.name=*
 | count by date, time, severity, db, user, msg
 ```
 
-This sample query is from the **Number of Active Databases** panel of the **PostgreSQL - Database Metrics dashboard**.
+This sample query is from the **PostgreSQL - Database Metrics** dashboard, **Number of Active Databases** panel.
 
 ```sql
 sumo.datasource=postgresql deployment.environment=* db.cluster.name=* metric=postgresql.backends postgresql.database.name=* db.node.name=* | count by postgresql.database.name | count

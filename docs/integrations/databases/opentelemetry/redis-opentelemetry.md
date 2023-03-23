@@ -27,10 +27,10 @@ This app supports logs for Redis in Cluster mode or Standalone mode. The Redis l
 
 The following are [Fields](https://help.sumologic.com/docs/manage/fields/) that will be created as part of the Redis App install if not already present.
 
-* **`db.cluster.name`** - User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
-* **`db.system`** - Has fixed value of redis.
-* **`deployment.environment`** - User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
-* **`sumo.datasource`** - Has fixed value of redis.
+* **`db.cluster.name`**. User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* **`db.system`**. Has fixed value of redis.
+* **`deployment.environment`**. User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
+* **`sumo.datasource`**. Has fixed value of redis.
 
 ## Prerequisites
 

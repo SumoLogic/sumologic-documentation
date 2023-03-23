@@ -25,10 +25,10 @@ MariaDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of MariaDB App install if not already present.
 
-- **`db.cluster.name`** - User configured. Enter a name to identify this MariaDb cluster. This cluster name will be shown in the Sumo Logic dashboards
-- **`db.system`** - Has a fixed value of **mariadb**.
-- **`deployment.environment`** - User configured. This is the deployment environment where the MariaDB cluster resides. For example: dev, prod, or qa.
-- **`sumo.datasource`** - Has a fixed value of **mariadb**.
+- **`db.cluster.name`**. User configured. Enter a name to identify this MariaDb cluster. This cluster name will be shown in the Sumo Logic dashboards
+- **`db.system`**. Has a fixed value of **mariadb**.
+- **`deployment.environment`**. User configured. This is the deployment environment where the MariaDB cluster resides. For example: dev, prod, or qa.
+- **`sumo.datasource`**. Has a fixed value of **mariadb**.
 
 ## Prerequisites
 
@@ -63,7 +63,7 @@ long_query_time=2
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml required for MariaDB Collection. Path of the log file configured to capture MariaDB logs is needed to be given here.
+In this step, you will configure the yaml required for MariaDB Collection. Path of the log file configured to capture MariaDB logs is needed to be given here.
 
 The files are typically located in `/var/log/mariadb/`. If you're using a customized path, check the respective conf file (default location: `/etc/my.cnf`) for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 

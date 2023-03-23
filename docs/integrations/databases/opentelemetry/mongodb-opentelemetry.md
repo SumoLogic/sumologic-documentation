@@ -25,10 +25,10 @@ The MongoDB logs are generated in files as configured in the configuration file 
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of MongoDB App install if not already present.
 
-- **`db.cluster.name`** - User configured. Enter a name to identify this MongoDb cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`db.system`** - Has fixed value of **mongodb**.
-- **`deployment.environment`** - User configured. This is the deployment environment where the Mongodb cluster resides. For example: dev, prod or qa.
-- **`sumo.datasource`** - has a fixed value of **mongodb**.
+- **`db.cluster.name`**. User configured. Enter a name to identify this MongoDb cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`db.system`**. Has fixed value of **mongodb**.
+- **`deployment.environment`**. User configured. This is the deployment environment where the Mongodb cluster resides. For example: dev, prod or qa.
+- **`sumo.datasource`**. has a fixed value of **mongodb**.
 
 ## Prerequisites
 
@@ -163,7 +163,7 @@ The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB hea
 
 Use this dashboard to:
 
--   Identify Slow CRUD & DB commands.
+-   Identify Slow CRUD and DB commands.
 -   Gain insights into Errors logs by component and context.
 -   Number of up servers.
 

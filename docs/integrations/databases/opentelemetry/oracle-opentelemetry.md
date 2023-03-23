@@ -29,72 +29,61 @@ Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](http
 
 ## Fields creation in Sumo Logic for Oracle
 
-Following are the tags which will be created as part of Oracle App install if not already present. 
+Following are the tags which that be created as part of Oracle App install if not already present. 
 
-- **`db.cluster.name`** - User configured. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`db.system`** - Has a fixed value of **oracle**.
-- **`sumo.datasource`** - Has a fixed value of **oracle**.
+- `db.cluster.name`. User configured. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `db.system`. Has a fixed value of **oracle**.
+- `sumo.datasource`. Has a fixed value of **oracle**.
 
 ## Prerequisites
 
-This section provides instructions for configuring log collection for Oracle running on a non-Kubernetes environment.
+Here are the steps required to configure log collection for Oracle running on a non-Kubernetes environment.
 
-Steps required to configure Oracle log collection:
+* [Enable Oracle logging](enable-oracle-logging)
+* [Verify log files path](verify-local-logs-file-directories-and-path)
+* [Set up Oracle performance metrics script](#performance-metrics-script-setup)
+* [Configure three local log file Sources](#step-2-configure-integration)
 
-1. Enable Oracle logging.
-2. Verify log files path.
-3. Configure three local log file Sources.
-4. Set up Oracle performance metrics script
+### Enable Oracle logging
 
-### Step 1. Enable Oracle logging
+If logging is not enabled, you can configure it by following the steps below.
 
-If logging is not enabled you can configure it by following the steps below:
-
-- **Alert log** - Alert logs contain important information about error messages and exceptions that occur during database operations.
-- **Listener log** - To enable listener log run the following commands from `ORACLE_HOME/bin`:
+- **Alert log**. Alert logs contain important information about error messages and exceptions that occur during database operations.
+- **Listener log**. To enable listener log, run the following commands from `ORACLE_HOME/bin`:
    ```sh
    lsnrctl command  [listener_name]
    lsnrctl set log_status on
    ```
-- **Audit Log** - Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
+- **Audit Log**. Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
 
-### Step 2. Verify local logs file directories and path.
+### Verify local logs file directories and path
 
-- **Oracle Alert Logs**
-
-For 11g and later releases (12c, 18c, 19c)
-
-By default, Oracle logs are stored in
-`$ORACLE_BASE/diag/rdbms/$DB_UNIQUE_NAME/$ORACLE_SID/trace/`.
-
-The default directory for log files is stored in `BACKGROUND_DUMP_DEST` parameter. You can query the value of `BACKGROUND_DUMP_DEST`, an initialization parameter, where you can find Oracle alert log by executing the command below:
-
-SQL> show parameter background_dump_dest;
-
+- **Oracle Alert Logs**. For 11g and later releases (12c, 18c, 19c). By default, Oracle logs are stored in
+`$ORACLE_BASE/diag/rdbms/$DB_UNIQUE_NAME/$ORACLE_SID/trace/`. The default directory for log files is stored in `BACKGROUND_DUMP_DEST` parameter. You can query the value of `BACKGROUND_DUMP_DEST`, an initialization parameter, where you can find Oracle alert log by executing the command below:
+  ```sh
+  SQL > show parameter background_dump_dest;
+  ```
 - **Oracle Listener Logs**. You can check listener log file with the following command:
-    ```
-    [oracle@sumolab alert]$ lsnrctl status
-    ```
+  ```
+  [oracle@sumolab alert]$ lsnrctl status
+  ```
 - **Oracle Audit Logs**. By default, Oracle logs are stored in
-    ```
-    $ORACLE_BASE/app/oracle/admin/orcl/adump
-    ```
+  ```
+  $ORACLE_BASE/app/oracle/admin/orcl/adump
+  ```
 
-The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`
+The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`.
 
-Audit Logs should be in either `XML, EXTENDED` or `{{OS }}` format for the app to work.
+Audit Logs should be in either `XML`, `EXTENDED`, or `{{OS }}` format for the app to work.
 
 The location of these logs will be required when you set up the app through the app catalog.
 
-## Performance Metrics Script Setup
+### Performance Metrics Script Setup
 
-This section provides the instructions for setting up the performance metrics script on Linux and Windows for the Oracle app.
+To set up the performance metrics script on Linux and Windows for the Oracle app:
 
-Please follow the instructions below for your operating system. You don't need to configure the Sumo Logic Script Source now.
-
-<https://help.sumologic.com/docs/integrations/databases/oracle/performance-metrics/>
-
-As per the above instruction once the python script is available locally we need to trigger this script periodically for which please copy [cronJob.py](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-data-collection/Utils/cronJob.py) file. This will generate an output log file, path for which needs to be given at the time of app installation. Based on your platform please follow the steps below:
+1. Follow [these instructions](/docs/integrations/databases/oracle/performance-metrics/) for your operating system. You don't need to configure the Sumo Logic Script Source at this time.
+2. As per the above instructions, once the python script is available locally, you need to trigger this script periodically by copying the [cronJob.py](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-data-collection/Utils/cronJob.py) file. This will generate an output log file, path for which needs to be given at the time of app installation. Based on your platform please follow the steps below:
 
 <Tabs
   className="unique-tabs"
@@ -108,31 +97,28 @@ As per the above instruction once the python script is available locally we need
 
 Configure a cron job to trigger the python script using crontab. Frequency of this job can be set following the instructions from [here](https://www.python-engineer.com/posts/cron-jobs-for-python/#crontab).
 
-For finding the path of python3 you can execute the command: 
-
-```
-which python3
-```
-
-Here is the command which needs to be configured as part of cron to trigger the script:
-```sh
-<frequency_expression> <output_of_which_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
-```
+* To find the python3 path, you can run: 
+  ```sh
+  which python3
+  ```
+* Here is the command which needs to be configured as part of cron to trigger the script:
+  ```sh
+  <frequency_expression> <output_of_which_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
+  ```
 
 </TabItem>
 <TabItem value="Windows">
 
-Find the location of python.exe by running command:
+* Find the location of python.exe by running:
+  ```
+  where python3
+  ```
+* Create a `.bat` file with the following arguments:
+  ```sh
+  @ECHO OFF
+  <output_of_where_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
+  ```
 
-`where python3`
-
-Create a `.bat` file with the following arguments:
-
-```sh
-@ECHO OFF
-
-<output_of_where_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
-```
 The `.bat` file created above can then be triggered periodically using windows Task Scheduler following an example [here](https://www.thewindowsclub.com/how-to-schedule-batch-file-run-automatically-windows-7).
 
 </TabItem>
@@ -150,14 +136,14 @@ The `.bat` file created above can then be triggered periodically using windows T
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Oracle Collection.
+In this step, you will configure the yaml required for Oracle Collection.
 
 Path of the log file configured to capture oracle logs needs to be given here. Here is the list of logs which are required by the application. 
 
-- Alert Logs.
-- Listener Logs.
-- Audit Logs.
-- Performance metric script based logs.
+- Alert Logs
+- Listener Logs
+- Audit Logs
+- Performance metric script-based logs
 
 You can get the location of these logs by following the instructions in the prerequisite step.
 
@@ -213,11 +199,13 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-## Sample Log Messages in Non-Kubernetes environments
+## Sample Log Messages
+
+Sample Log Messages in Non-Kubernetes environments:
 
 ### Time
 
-```
+```sh
 20-Jan-2023 11:02:56 * (CONNECT_DATA=(CID=(PROGRAM=null)(HOST=__jdbc__)(USER=null))(SERVICE_NAME=sumo.cmdb01.com)) * (ADDRESS=(PROTOCOL=TCP)(HOST=124.243.25.82)(PORT=56486)) * establish * sumo.cmdb01.com * 12514
 
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
@@ -225,7 +213,7 @@ TNS-12514: TNS:listener does not currently know of service requested in connect 
 
 ## Sample Queries
 
-This sample Query is from the Oracle - Overview > DB Connection panel.
+This sample Query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
 ```sql title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
@@ -343,7 +331,7 @@ Admin Restricted Command Execution. The count of database commands that resulted
 
 Unauthorized Command Execution. The count of database commands that resulted in TNS-01190 errors over the previous 24 hours.
 
-Possible InAppropriate Activity. The count of lsnrctl commands the resulted in errors of the following types over the previous 24 hours: TNS-01169, TNS-01189, TNS-01190, "TNS-12508", ORA-12525, ORA-28040, or ORA-12170.
+Possible Inappropriate Activity. The count of lsnrctl commands the resulted in errors of the following types over the previous 24 hours: TNS-01169, TNS-01189, TNS-01190, "TNS-12508", ORA-12525, ORA-28040, or ORA-12170.
 
 Connections By Privileged Users. A donut chart that shows the breakdown of connections from privileged user accounts, such as root and administrator, over the previous 24 hours.
 

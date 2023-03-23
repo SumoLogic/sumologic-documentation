@@ -43,10 +43,10 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Memcached App install if not already present.
 
-- **`db.cluster.name`** - User configured. Enter a name to identify this Memcache cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`db.system`** - Has a fixed value of **memcached**
-- **`deployment.environment`** - User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
-- **`sumo.datasource`** - Has a fixed value of **memcached**
+- **`db.cluster.name`**. User configured. Enter a name to identify this Memcache cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`db.system`**. Has a fixed value of **memcached**
+- **`deployment.environment`**. User configured. This is the deployment environment where the Memcache cluster resides. For example: dev, prod or qa.
+- **`sumo.datasource`**. Has a fixed value of **memcached**.
 
 ## Prerequisites
 
@@ -74,7 +74,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for Memcached Collection. Path of the log file configured to capture Memcached logs needs to be given here.
+In this step, you will configure the yaml file required for Memcached Collection. Path of the log file configured to capture Memcached logs needs to be given here.
 
 The files are typically located in `/var/log/memcached/memcached.log`. If you're using a customized path, check the respective conf file (default location : `/etc/memcached.conf`) for this information.
 

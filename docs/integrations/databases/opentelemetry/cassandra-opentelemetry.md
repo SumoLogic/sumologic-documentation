@@ -19,10 +19,10 @@ The app supports Logs from the open-source version of Cassandra. The App is test
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Cassandra App install if not already present:
 
-- **`db.cluster.name`** - User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`db.system`** - Has fixed value of **cassandra**.
-- **`deployment.environment`** - User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
-- **`sumo.datasource`** - Has fixed value of **cassandra**.
+- **`db.cluster.name`**. User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **`db.system`**. Has fixed value of **cassandra**.
+- **`deployment.environment`**. User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
+- **`sumo.datasource`**. Has fixed value of **cassandra**.
 
 ## Prerequisite
 
@@ -41,11 +41,11 @@ These logs by default live in ${CASSANDRA_HOME}/logs, but most Linux distributio
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml required for Cassandra Collection.
+In this step, you will configure the yaml required for Cassandra Collection.
 Path of the log file configured to capture Cassandra logs needs to be given here.
 
 In this step we will be configuring the yaml required for Cassandra Collection.
-Below are the input required:
+Below are the inputs required:
 - The path to system.log is required here. This file is typically located in /var/log/cassandra. If you're using a customized path, check the respective conf file for this information.
 
 You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
@@ -96,7 +96,7 @@ Use this dashboard to:
 
 - Identify number of nodes which are up and down
 - Gain insights into Memory - Init, used, Max and committed
-- Gain insights into the error and warning logs by thread & Node activity
+- Gain insights into the error and warning logs by thread and Node activity
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Overview.png')} alt="Collector" />
 
