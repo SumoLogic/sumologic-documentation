@@ -2,7 +2,7 @@
 id: cisco-umbrella
 title: Cisco Umbrella
 sidebar_label: Cisco Umbrella
-description: Provides analytics on DNS, Proxy, and Audit admin activities
+description: Provides analytics on DNS, Proxy, and Audit admin activities.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
