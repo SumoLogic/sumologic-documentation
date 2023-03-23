@@ -7,8 +7,6 @@ description: Learn about the Sumo Logic Kubernetes apps.
 
 Sumo Logic provides a selection of Kubernetes apps to monitor various different aspects of your Kubernetes platform and environment. The apps provide out-of-box dashboards and other content relevant for you to monitor your K8s environment.
 
-![k8s_App_Catalog.png](/img/kubernetes/k8s_App_Catalog.png)
-
 ## Kubernetes app
 
 The [Sumo Logic Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md) provides visibility into the operations and security of the worker nodes in a cluster, as well as the application logs of the worker nodes.

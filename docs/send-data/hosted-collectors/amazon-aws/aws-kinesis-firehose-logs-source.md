@@ -5,7 +5,9 @@ sidebar_label: AWS Kinesis Firehose Logs
 description: Learn how to use the AWS Kinesis Firehose for Logs source to ingest logs from AWS Kinesis Data Firehose.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-logs.png')} alt="icon" width="50"/>
 
 An AWS Kinesis Firehose for Logs Source allows you to ingest CloudWatch logs or any other logs streamed and delivered via AWS Kinesis Data Firehose.
 
@@ -26,7 +28,7 @@ When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted
 To create an AWS Kinesis Firehose for Logs Source:
 
 1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
-1. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
+1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS Kinesis Firehose for Logs Source**.   
 
     ![AWS Kinesis Firehost for Logs Icon.png](/img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png)

@@ -37,6 +37,8 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces) (Rating: 4)
 * [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO) (Rating: 4.5)
 * [Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys) (Rating: 4)
+* [MISP Threat Intelligence](https://github.com/SumoLogic/sumologic-content/tree/master/misp) (Rating: 0) 
+* [Open Source CSPM](https://github.com/SumoLogic/sumologic-content/tree/master/cloudquery_sumo_cspm) (Rating: 0)
 
 
 ## Contributing Guidelines

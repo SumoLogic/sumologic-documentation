@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 When creating an SLO, you'll need to define the following:
 
 * SLI (service level indicator) metric you are tracking and target configuration using ratio- or threshold-based definitions
-* SLO (service level objective) defining the target and duration to monitor (for example the uptime for the target)
+* SLO (service level objective) defining the target and duration to monitor (for example, the uptime for the target)
 * Basic details for SLO name and description
 
 You have multiple configurations for creating SLOs:
@@ -116,7 +116,7 @@ Follow the instructions below based on the query type:
     * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculator over a window of time for a Week.
     * **Timezone**. Select a timezone. This is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" />
 9. Enter SLO Details, including a **Name** and **Description**. This is used in the list and for searches.<br/><img src={useBaseUrl('img/observability/slo-create-details.png')} alt="Reliability Management SLO SLI" />
-10. Click **Save**. To create a monitor, click [Save and Create Monitor](#creating-slo-monitors).
+10. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
 
 
 ## Create a Logs-based SLO

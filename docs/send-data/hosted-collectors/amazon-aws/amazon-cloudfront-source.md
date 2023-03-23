@@ -5,7 +5,9 @@ sidebar_label: Amazon CloudFront
 description: Add an Amazon CloudFront Source to upload messages to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="icon" width="40"/>
 
 Amazon CloudFront is a content delivery network (CDN) that allows an easy way for companies to distribute content to end-users with low latency and high data transfer speeds. When logging is configured, CloudFront creates log files that contain detailed information about every user request that it receives. Add an Amazon CloudFront Source to upload these messages to Sumo Logic.
 

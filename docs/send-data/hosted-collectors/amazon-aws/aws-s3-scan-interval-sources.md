@@ -1,11 +1,13 @@
 ---
 id: aws-s3-scan-interval-sources
 title: AWS S3 Scan Interval for Sources
-sidebar_label: AWS S3 Scan Interval
+sidebar_label: Amazon S3 Scan Interval
 description: A scan interval defines the waiting time between scans of the objects in your S3 bucket.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
 
 When configuring an Amazon S3 Source, you'll set the scan interval, which defines the waiting time between scans of the objects in your S3 bucket. It's important to set an interval that is long enough to allow new files to be uploaded, but is not too short that scans are performed without any new files being available to upload.
 
