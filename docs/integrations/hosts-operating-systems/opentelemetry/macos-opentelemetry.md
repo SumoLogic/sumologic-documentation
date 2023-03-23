@@ -85,7 +85,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Metric query from the panel - File System Utilization
 ```sh
-sumo.datasource=mac host=* device=* metric=system.filesystem.utilization | sum by host, device, type, mountpoint
+sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | sum by host.name, device, type, mountpoint
 ```
 
 ## Sample Open Telemetry metric 
