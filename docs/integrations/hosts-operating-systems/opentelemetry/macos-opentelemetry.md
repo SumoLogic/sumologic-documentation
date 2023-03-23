@@ -35,19 +35,13 @@ Here are the steps for collecting metrics and installing the app.
 
 ### Step 1: Set up Collector
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-If you want to create a new Collector select **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for macOS Collection.
+In this step, we will configure the yaml required for macOS Collection.
 
 There are no parameters required for the macOS app to install. One can add a custom tag if required in this step.
 
@@ -67,28 +61,24 @@ process:
 
 ### Step 3: Sending metrics to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Press **Next**. This will install the app in your Sumo Logic Org. The app consists of dashboards and monitors.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and map.
-
-## Sample Metric Query
+## Sample Queries
 
 Metric query from the panel - File System Utilization
 ```sh
 sumo.datasource=mac host=* device=* metric=system.filesystem.utilization | sum by host, device, type, mountpoint
 ```
 
-## Sample Open Telemetry metric 
+### Sample OpenTelemetry Metrics
 
 ```sql
 {"queryId":"A","_source":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","state":"LAST_ACK","_sourceName":"sumomacsyslog","host":"sumo-mac","os.type":"darwin","sumo.datasource":"mac","_sourceCategory":"sumo/mac/sys/logs","metric":"system.network.connections","_collectorId":"000000000CAADE8D","_sourceId":"0000000000000000","unit":"{connections}","_sourceHost":"sumo-mac","_collector":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","protocol":"tcp","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":14}
@@ -102,7 +92,7 @@ The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the k
 
 Use this dashboard to:
 
--   Identify hosts with high CPU load, memory utilization, and identify anomalies over time.
+- Identify hosts with high CPU load, memory utilization, and identify anomalies over time.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Overview.png')} alt="Overview" />
 
@@ -112,7 +102,7 @@ The **Host Metrics - CPU** dashboard provides the metric over time for CPU load.
 
 Use this dashboard to:
 
--   Identify hosts and processes with high CPU utilization.
+- Identify hosts and processes with high CPU utilization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-CPU.png')} alt="Host Metrics - CPU" />
 
@@ -122,9 +112,9 @@ The **Host Metrics - Disk** dashboard provides detailed information about file s
 
 Use this dashboard to view:
 
--   File system utilization over time.
--   Devices by file system usage.
--   Disk used by host.
+- File system utilization over time.
+- Devices by file system usage.
+- Disk used by host.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Disk.png')} alt="Host Metrics - Disk" />
 
@@ -134,9 +124,9 @@ The **Host Metrics - Memory** dashboard provides detailed information on host me
 
 Use this dashboard to:
 
--   Identify hosts with high memory utilization.
--   Examine memory distribution (free, used) for a given host.
--   Total free used and inactive memory.
+- Identify hosts with high memory utilization.
+- Examine memory distribution (free, used) for a given host.
+- Total free used and inactive memory.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Network.png')} alt="Host Metrics - Network" />
 
@@ -146,9 +136,9 @@ The **Host Metrics - Network** dashboard provides detailed information on host n
 
 Use this dashboard to:
 
--   Determine top hosts with network errors and dropped packets.
--   Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
--   Use dashboard filters to compare throughput across the interface of a host.
+- Determine top hosts with network errors and dropped packets.
+- Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
+- Use dashboard filters to compare throughput across the interface of a host.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Network.png')} alt="Host Metrics - Network" />
 
@@ -158,6 +148,6 @@ The **Host Metrics - TCP** dashboard provides detailed information about inbound
 
 Use this dashboard to:
 
--   Identify abnormal spikes in inbound, outbound, open, or established connections.
+- Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-TCP.png')} alt="Host Metrics - TCP" />

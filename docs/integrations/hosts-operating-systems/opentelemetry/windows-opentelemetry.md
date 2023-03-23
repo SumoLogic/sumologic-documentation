@@ -33,36 +33,23 @@ The Windows App assumes events are coming from Windows Event Log receiver in JSO
 
 Standard Windows event channels include:
 
--   Security
--   System
--   Application
+- Security
+- System
+- Application
 
-## Collection Configuration & App installation
+## Collection Configuration and App installation
 
-
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click **Install App**. Follow the steps below:
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector.  
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for Windows event logs and metrics Collection.
+In this step, we will configure the yaml file required for Windows event logs and metrics Collection.
 
 Any custom fields can be tagged along with the data in this step.
 
@@ -83,7 +70,7 @@ process:
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 1.  Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
 2.  Restart the collector using 
@@ -91,17 +78,15 @@ Once you have the yaml file downloaded in step 2, follow the below steps :
 Restart-Service -Name OtelcolSumo
 ```
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. This will install the app to your Sumo Logic Org. The app consists of dashboards.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
-
-## Sample Metric Message:
+## Sample Metrics Message
 
 ```sql
 {"queryId":"A","_source":"windows-otel-metric","_metricId":"tYzy7VHWrdxuGHOkPRT5pA","_sourceName":"Http Input","os.type":"windows","sumo.datasource":"windows","direction":"transmit","_sourceCategory":"Labs/windows-otel","_contentType":"Carbon2","host.name":"EC2AMAZ-T30T53R.ec2.internal","metric":"system.network.io","_collectorId":"000000000CEC8ECC","_sourceId":"0000000044DB46EF","unit":"By","_collector":"Labs - windows-otel","device":"Loopback_Pseudo-Interface_1","max":289495780,"min":0,"avg":229918329.73,"sum":3448774946,"latest":289485558,"count":15}
 ```
 
-## Sample Metric Query
+## Sample Metrics Query
 
 This sample Query is from the HostMetric - CPU > CPU User Time
 
@@ -117,13 +102,11 @@ sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.uti
 {"record_id":"6316","channel":"Application","event_data":"","task":"0","provider":"{\"name\":\"Microsoft-Windows-Security-SPP\",\"guid\":\"{E23B33B0-C8C9-472C-A5F9-F2BDFEA0F156}\",\"event_source\":\"Software Protection Platform Service\"}","system_time":"2023-01-20T15:22:02+0000816Z","computer":"EC2AMAZ-T30T53R","opcode":"0","keywords":"Classic","message":"Offline downlevel migration succeeded.","event_id":"{\"id\":\"16394\",\"qualifiers\":\"49152\"}","level":"Information"}
 ```
 
-## Sample Log Query
+### Sample Log Query
 
 This sample Query is from the Windows - Overview > System Restarts
 
-### Query String:
-
-```sql
+```sql title="Query String"
 %"sumo.datasource"=windows  "\"channel\":\"Security\""
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id
@@ -132,8 +115,7 @@ This sample Query is from the Windows - Overview > System Restarts
 | count as Restarts
 ```
 
-## Windows Event Log Based Dashboards
-
+## Viewing Windows Event Log-Based Dashboards
 
 ### Windows - Overview
 
@@ -141,9 +123,9 @@ The **Windows - Overview** dashboard provides insights into fatal or warning mes
 
 Use this dashboard to:
 
--   Monitor systems experiencing fatal errors, warnings, and system restarts.
--   View system login attempts. 
--   Monitor policy changes performed on the system.
+- Monitor systems experiencing fatal errors, warnings, and system restarts.
+- View system login attempts. 
+- Monitor policy changes performed on the system.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Overview.png')} alt="Windows - Overview" />
 
@@ -153,10 +135,10 @@ The **Windows - Default** dashboard provides information about the start and sto
 
 Use this dashboard to:
 
--   Monitor services being stopped, started on the system.
--   Monitor event types (channels) collected from the system.
--   Monitor log level (error, warning) trend on the systems.
--   Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
+- Monitor services being stopped, started on the system.
+- Monitor event types (channels) collected from the system.
+- Monitor log level (error, warning) trend on the systems.
+- Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Default.png')} alt="Windows - Default" />
 
@@ -166,8 +148,8 @@ The **Windows - Event Errors** dashboards provide insights into error keyword tr
 
 Use this dashboard to:
 
--   Monitor various errors in the systems.
--   Monitor error trends and outliers to ensure they are within acceptable limits to decide the next step.
+- Monitor various errors in the systems.
+- Monitor error trends and outliers to ensure they are within acceptable limits to decide the next step.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Event-Errors.png')} alt="Windows - Event Errors" />
 
@@ -177,9 +159,9 @@ The **Windows - Application** dashboard provides detailed information about inst
 
 Use this dashboard to:
 
--   Monitor Install and uninstall of applications performed on the system.
--   Monitor log levels (error, warning, information) through trends and quick snapshots.
--   Monitor various application-specific events happening through recent messages.
+- Monitor Install and uninstall of applications performed on the system.
+- Monitor log levels (error, warning, information) through trends and quick snapshots.
+- Monitor various application-specific events happening through recent messages.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Application.png')} alt="Windows - Application" />
 
@@ -191,7 +173,7 @@ The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the k
 
 Use this dashboard to:
 
--   Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
+- Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Overview.png')} alt="Host Metrics - Overview" />
 
@@ -201,8 +183,8 @@ The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU m
 
 Use this dashboard to:
 
--   Identify hosts and processes with high CPU utilization.
--   Examine CPU usage by type and identify anomalies over time.
+- Identify hosts and processes with high CPU utilization.
+- Examine CPU usage by type and identify anomalies over time.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-CPU.png')} alt="Host Metrics - CPU" />
 
@@ -212,9 +194,9 @@ The **Host Metrics - Disk** dashboard provides detailed information about disk u
 
 Use this dashboard to:
 
--   Identify hosts with high disk utilization and disk IO operations.
--   Monitor abnormal spikes in read/write rates.
--   Compare disk throughput across storage devices of a host.
+- Identify hosts with high disk utilization and disk IO operations.
+- Monitor abnormal spikes in read/write rates.
+- Compare disk throughput across storage devices of a host.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Disk.png')} alt="Host Metrics - Disk" />
 
@@ -224,9 +206,9 @@ The **Host Metrics - Memory** dashboard provides detailed information on host me
 
 Use this dashboard to:
 
--   Identify hosts with high memory utilization.
--   Examine memory distribution (free, buffered-cache, used, total) for a given host.
--   Monitor abnormal spikes in memory and swap utilization.
+- Identify hosts with high memory utilization.
+- Examine memory distribution (free, buffered-cache, used, total) for a given host.
+- Monitor abnormal spikes in memory and swap utilization.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Memory.png')} alt="Host Metrics - Memory" />
 
@@ -236,9 +218,9 @@ The **Host Metrics - Network** dashboard provides detailed information on host n
 
 Use this dashboard to:
 
--   Determine top hosts with network errors and dropped packets.  
--   Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
--   Use dashboard filters to compare throughput across the interface of a host.
+- Determine top hosts with network errors and dropped packets.  
+- Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
+- Use dashboard filters to compare throughput across the interface of a host.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Network.png')} alt="Host Metrics - Network" />
 
@@ -248,7 +230,7 @@ The **Host Metrics - TCP** dashboard provides detailed information around inboun
 
 Use this dashboard to:
 
--   Identify abnormal spikes in inbound, outbound, open, or established connections.
+- Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-TCP.png')} alt="Host Metrics - TCP" />
 
@@ -258,8 +240,8 @@ The **Process Metrics - Details** dashboard gives you a detailed view of key pro
 
 Use this dashboard to:
 
--   Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits,, it can cause IOException errors.
--   Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
--   Troubleshoot memory leaks using the resident set memory trend chart.
+- Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits, it can cause IOException errors.
+- Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
+- Troubleshoot memory leaks using the resident set memory trend chart.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Details.png')} alt="Process Metrics - Details" />

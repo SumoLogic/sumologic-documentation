@@ -29,16 +29,11 @@ Following are the tags which will be created as part of Linux App install if not
 
 ## Collecting logs, metrics & installing Linux app
 
-Here are the steps for collecting logs, metric and installing the app:
+Here are the steps for collecting logs, metrics, and app installation.
 
 ### Step 1: Set up Collector
 
-If you want to use an existing OpenTelemetry Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png')} alt="Collector" />
 
@@ -46,7 +41,7 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml file required for Linux Collection.
 
-The app requires path for system log file, based on the Linux version used:
+The app requires path for system log file, based on the Linux version used.
 
 #### Required Logs for Ubuntu
 
@@ -71,9 +66,8 @@ Click on the **Download YAML File** button to get the yaml file.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png')} alt="YAML" />
 
 :::note 
--   By default the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt - you can leave the default file paths values.  
-
--   By default the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
+- By default the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt - you can leave the default file paths values.  
+- By default the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
 
 ```sh
 process:
@@ -85,35 +79,33 @@ process:
 
 ### Step 3: Sending logs and metrics to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
-2.  restart the collector using
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
+2. Restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Press "Next". This will install the app to your Sumo Logic Org. The app consists of dashboard and monitors
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and map
-
-Sample Log Messages
+## Sample Log Messages
 
 ```sql
 Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-8.0.4-20.4.1.i586(@System)
 ```
 
-Sample OpenTelemetry metric 
+## Sample Metrics
 
 ```sql
 {"queryId":"A","_source":"linux-otel-metric","process.executable.name":"apache2","_sourceName":"Http Input","process.command":"/usr/sbin/apache2","host":"ip-172-31-90-39.ec2.internal","os.type":"linux","sumo.datasource":"linux","process.executable.path":"/usr/sbin/apache2","process.command_line":"/usr/sbin/apache2_-k_start","process.owner":"www-data","_sourceCategory":"Labs/linux-otel/metric","_contentType":"Carbon2","metric":"process.memory.physical_usage","_collectorId":"000000000C984E1A","_sourceId":"0000000042E512AE","unit":"By","_collector":"Labs - linux-otel","process.pid":"26967","max":42295296,"min":536576,"avg":9061120,"sum":144977920,"latest":8069120,"count":16}
 ```
 
-## Sample Log Query
+## Sample Queries
 
-Log query from  the panel : Total Event Distribution
+### Log query
+
+Log query from the panel: Total Event Distribution
 
 ```sql
 %"sumo.datasource"=linux   
@@ -122,9 +114,9 @@ Log query from  the panel : Total Event Distribution
 |count as Events by dest_hostname
 ```
 
-## Sample Metric Query
+### Metrics query
 
-Metric query from the panel : CPU Utilization Over Time
+Metric query from the CPU Utilization Over Time panel.
 ```sql
 sumo.datasource=linux     host=*  metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host | outlier
 ```
@@ -158,9 +150,9 @@ The Host Metrics - Disk dashboard provides detailed information about on disk ut
 
 Use this dashboard to:
 
--   Identify hosts with high disk utilization and disk IO operations.
--   Monitor abnormal spikes in read/write rates.
--   Compare disk throughput across storage devices of a host.
+- Identify hosts with high disk utilization and disk IO operations.
+- Monitor abnormal spikes in read/write rates.
+- Compare disk throughput across storage devices of a host.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Disk.png')} alt="Host Metrics - Disk" />
 
