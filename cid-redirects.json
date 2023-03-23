@@ -1699,7 +1699,7 @@
   "/cid/02205": "/docs/integrations/microsoft-azure/teams",
   "/cid/220517": "/docs/observability/aws/integrations/aws-api-gateway",
   "/cid/02206": "/docs/integrations/sumo-apps/enterprise-audit",
-  "/cid/220620": "/docs/integrations/amazon-aws/elasticache",
+  "/cid/220620": "/docs/integrations/amazon-aws/network-load-balancer/",
   "/cid/220706": "/docs/integrations/amazon-aws/ec2-cloudwatch-metrics",
   "/cid/220804": "/docs/integrations/amazon-aws/ec2-host-metrics",
   "/cid/220909": "/docs/integrations/amazon-aws/cost-explorer",
