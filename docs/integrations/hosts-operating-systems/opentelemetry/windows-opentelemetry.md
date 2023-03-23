@@ -111,7 +111,7 @@ This sample Query is from the Windows - Overview > System Restarts
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id
 | parse regex field=msg_summary "(?<msg_summary>.*\.*)" nodrop
-| where event_id = "4608" and channel = "Security" and host matches "{{host}}"
+| where event_id = "4608" and channel = "Security" and host.name matches "{{host.name}}"
 | count as Restarts
 ```
 
