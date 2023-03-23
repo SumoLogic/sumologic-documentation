@@ -83,7 +83,7 @@ For linux platform - Click on **Download Environment Variables File** button to 
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-YAML.png')} alt="YAML" />
 
-### Step 3: Sending logs and metric to Sumo
+### Step 3: Sending logs and metrics to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
