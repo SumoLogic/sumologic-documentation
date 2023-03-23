@@ -27,24 +27,24 @@ This section provides instructions for configuring log collection for Artifactor
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
--   **artifactory.log** : The main Artifactory log file that contains data on Artifactory server activity.
--   **access.log** :  The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
--   **request.log** :  Generic HTTP traffic information similar to the Apache HTTPd request log.
--   **traffic.log** :  A log that contains information about site traffic and file sizes.
+- **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
+- **access.log**.  The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
+- **request.log**.  Generic HTTP traffic information similar to the Apache HTTPd request log.
+- **traffic.log**.  A log that contains information about site traffic and file sizes.
 
-For more details about Artifactory logs, refer to <https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files> and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
+For more details about Artifactory logs, refer to [JFrog Logging](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
 Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 
--   `artifactory.log`
--   `access.log`
--   `request.log`
--   `traffic.*.log`
+- `artifactory.log`
+- `access.log`
+- `request.log`
+- `traffic.*.log`
 
-To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/etc` :
-
+To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/etc`:
+```
 artifactory.traffic.collectionActive=true
-
+```
 A restart is required for traffic collection to take effect.
 
 ## Collection Configuration and App installation
@@ -53,13 +53,7 @@ As part of the setting up the collection process and app installation user can s
 
 ### Step 1: Set up Collector
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-If you want to create a new Collector please select **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' alt="Artifactory-Collector" />
 
@@ -69,10 +63,10 @@ In this step we will be configuring the yaml required for the Artifactory Collec
 
 Path of the different log file configured to capture Artifactory logs is needed to be given here:
 
--   `artifactory.log`
--   `access.log`
--   `request.log`
--   `traffic.*.log`
+- `artifactory.log`
+- `access.log`
+- `request.log`
+- `traffic.*.log`
 
 You can add any custom fields which you want to tag along with the data ingested in sumo.
 
@@ -100,7 +94,8 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
- </TabItem>
+
+</TabItem>
 <TabItem value="Windows">
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
@@ -108,6 +103,7 @@ Once you have the yaml file downloaded in step 2, follow the below steps based o
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
+
 </TabItem>
 <TabItem value="macOS">
 
@@ -134,11 +130,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Sample Query
 
-This sample Query is from the **Artifactory - Artifactory - Cached Deployment Activity > Accepted Deploys** by Geolocation panel.
+This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys** by Geolocation panel.
 
-Query String
-
-```sql
+```sql title="Query String"
 " %"sumo.datasource"=artifactory "ACCEPTED DEPLOY" "-cache"
 |parse "[*] [*] *" as trace_id, event_type, user_info
 | parse regex field=user_info "(?:(?<repo>[^:]*):(?<path>[^\s]*))?\s+(?<opt_msg>[\w\s:]+)?\s+(?<user>[^\/]+)\/(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\."
