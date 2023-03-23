@@ -119,7 +119,7 @@ Please modify the location of the `puppetReport.sh` if required in the above com
 
 ## Collection configuration and App installation
 
-As part of the setting up the collection process and app installation user can select the App from App Catalog and click on **Install App**. Please follow the steps below.
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
