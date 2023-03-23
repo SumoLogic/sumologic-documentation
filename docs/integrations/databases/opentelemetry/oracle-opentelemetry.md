@@ -80,7 +80,7 @@ SQL> show parameter background_dump_dest;
     $ORACLE_BASE/app/oracle/admin/orcl/adump
     ```
 
-The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command:SQL> show parameter audit
+The default directory for log files is stored as the value of `audit_file_dest`. In order to display it, run the following command: `SQL> show parameter audit`
 
 Audit Logs should be in either `XML, EXTENDED` or `{{OS }}` format for the app to work.
 
