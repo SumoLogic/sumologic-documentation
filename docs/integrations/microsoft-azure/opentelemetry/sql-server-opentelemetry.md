@@ -59,8 +59,7 @@ The Microsoft SQL Server App's queries and dashboards depend on logs from the SQ
 
 `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png')} alt="YAML" />
 

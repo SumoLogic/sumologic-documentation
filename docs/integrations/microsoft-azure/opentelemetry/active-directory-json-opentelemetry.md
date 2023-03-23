@@ -36,23 +36,21 @@ Standard Windows event channels include:
 
 ## Collection Configuration and App Installation
 
+{@import ../../../reuse/opentelemetry/config-app-install.md}
+
 As part of the setting up the collection process and app installation, you can select the App from App Catalog and click on Install App. Please follow the steps below:
 
 ### Step 1: Set up Collector
 
-If you want to use an existing OpenTelemetry Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-If you want to create a new Collector please select **Add a new Collector** option.
-
-This will generate a command which can be executed in the windows machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure Integration
 
-In this step, we will be configuring the yaml required for Active Directory Collection.
+In this step, we will configure the yaml required for Active Directory Collection.
 
-You can add any custom fields which you want to tag along with the data ingested in sumo.
+You can add any custom fields which you want to tag along with the data ingested in Sumo.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -60,18 +58,15 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the steps below.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml at *C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d*  folder in the machine which needs to be monitored.
-2.  restart the collector using the command `Restart-Service -Name`.
+1. Copy the yaml at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using the command `Restart-Service -Name`.
 
-After the successful execution of the above command, Sumo Logic will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Press **Next** . This will install the app to your Sumo Logic Org. The app consists of Dashboards.
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available. Your data should appear in the dashboard within 20 minutes and you'll see full graphs and map.
-
-### Sample Log Message
+## Sample Log Messages
 
 ```sql
 {
@@ -111,7 +106,7 @@ level:"Information"
 }
 ```
 
-### Sample Query
+## Sample Query
 
 This sample Query is from the Active Directory - Active Directory Service Activity > Top 10 Messages panel.
 
@@ -128,12 +123,12 @@ This sample Query is from the Active Directory - Active Directory Service Activi
 
 ### Active Directory Service Activity
 
--   The **Active Directory Service Activity** dashboard provides insights into overall active directory services like Category overtime, object creation, top 10 messages.
+The **Active Directory Service Activity** dashboard provides insights into overall active directory services like Category overtime, object creation, top 10 messages.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Activity.png')} alt="Service Activity" />
 
 ### Active Directory Service Failures
 
--   The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
+The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Failures.png')} alt="Service Failures" />
