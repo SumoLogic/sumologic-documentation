@@ -64,7 +64,7 @@ CSE determines which value of of `normalizedAction` is appropriate for a given l
 
 | Logon Type | Logon Title | Description | Value of normalizedAction |
 |:--|:--|:--|:--|
-| 1  | System | Used only by the System account, for example at system startup. | \<none\> |
+| 1  | System | Used only by the System account, for example, at system startup. | \<none\> |
 | 2  | Interactive | A user logged on to this computer. | *logon* |
 | 3  | Network | A user or computer logged on to this computer from the network. | *domainLogon* |
 | 4  | Batch | Batch logon type is used by batch servers, where processes may be executing on behalf of a user without their direct intervention. | *logon* |

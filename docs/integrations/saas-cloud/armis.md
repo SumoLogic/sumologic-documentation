@@ -7,7 +7,7 @@ description: The Sumo Logic App for Armis offers complete device security with a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/armis-icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
 
 The Sumo Logic App for Armis offers enhanced visibility into both alerts and device data, making it easier to monitor and manage your device security. The app features dashboards that analyze alerts by severity, status, and type, providing a clear picture of the trend of alerts over time. Additionally, the app allows you to monitor devices by risk level, type, and category, and provides a table view of the latest devices with key information to keep your IT infrastructure secure.
 

@@ -6,6 +6,8 @@ sidebar_label: CSE AWS EC2 Inventory
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/>
+
 The CSE AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
 For information on how inventory data is used in Cloud SIEM Enterprise, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
