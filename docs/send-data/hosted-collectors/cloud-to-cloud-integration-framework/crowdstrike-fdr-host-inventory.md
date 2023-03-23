@@ -27,7 +27,7 @@ Device data from this source could be used to augment AID data from the [CrowdSt
 
 ## Metadata Field
 
-Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
+If you've configured your integration with the Cloud SIEM forward option, metadata fields will be set. See **Metadata Fields** table below:
 
 | Fields     |    Value                    |
 | :-------    |  :------------------------ |
