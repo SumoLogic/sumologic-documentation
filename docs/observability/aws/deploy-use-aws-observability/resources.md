@@ -73,8 +73,6 @@ IAM Roles
    </td>
    <td>AWS API Gateway
 <br/>
-AWS Lambda
-<br/>
 Amazon DynamoDB
 <br/>
 AWS Application Load Balancer
