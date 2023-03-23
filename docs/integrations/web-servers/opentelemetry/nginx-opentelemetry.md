@@ -49,21 +49,13 @@ The process to set up collection for Nginx data is done through the following st
 
 ### Step 1: Set up OpenTelemetry Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-If you want to create a new Collector please select **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png')} alt="Access" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Nginx Collection.
+In this step, we will be configuring the yaml required for Nginx Collection.
 
 Below are the inputs required:
 
@@ -78,7 +70,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Sending logs and metric to Sumo
 
-Once you download the yaml file, please follow the below steps based on your platform.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -118,13 +110,9 @@ Once you download the yaml file, please follow the below steps based on your pla
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-This will install the app to your Sumo Logic Org. The app consists of Dashboards and monitors.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-## Nginx Dashboards
+## Viewing Nginx Dashboards
 
 ### Overview
 

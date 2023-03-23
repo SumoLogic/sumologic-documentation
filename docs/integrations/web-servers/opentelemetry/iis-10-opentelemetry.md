@@ -72,52 +72,38 @@ date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(Use
 
 For more information about IIS log format and log configuration refer to this [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
-Once the logs are configured to be written into a local file follow the below step to configure collection in sumo.
+Once the logs are configured to be written into a local file follow the below step to configure collection in Sumo.
 
 ## Collection Configuration and App installation
 
-As part of collection setup and app installation, you can select the App from App Catalog and click on Install App. Follow the steps below.
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-1. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for IIS Collection.
+In this step, we will be configuring the yaml required for IIS Collection.
 
 Path of the different log file configured to capture IIS logs is needed to be given here. Please refer to the "Prerequisite" section of this page.
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using 
-```sh
-Restart-Service -Name OtelcolSumo
-```
+  ```sh
+  Restart-Service -Name OtelcolSumo
+  ```
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. 
-
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 

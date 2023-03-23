@@ -77,39 +77,28 @@ All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/
 
 ## Collecting Logs, Metrics and installing HAProxy app
 
-Here are the steps for Collecting Logs and installing the app:
+Here are the steps for Collecting Logs and installing the app.
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-1. Select the platform for which you want to install the Sumo Logic OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for HAProxy Collection.
+In this step, we will be configuring the yaml required for HAProxy Collection.
 
 The path of the log file configured to capture haproxy logs is needed to be given here.
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information.
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs and metric to Sumo
 
-Once you have the yaml file downloaded in step 2, follow the below steps based on the platform of the machine :
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -139,20 +128,16 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelc
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Press **Next**.This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-### Sample Log Messages
+## Sample Log Messages
 
 ```bash
 May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
-### Sample Query
+## Sample Queries
 
 This query example is from the HAProxy - Overview dashboard > Top 5 URLs with Errors panel:
 

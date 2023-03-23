@@ -34,7 +34,7 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 The receiver used gets stats from an Apache Web Server instance using the `server-status?auto` endpoint.
 
-This receiver supports Apache Web Server version 2.4+
+This receiver supports Apache Web Server version 2.4+.
 
 In order to receive server statistics, you must configure the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
 
@@ -51,20 +51,11 @@ For error logs, following directives are to be noted:
 
 ## Collecting Logs, Metrics & Installing App for Apache
 
-Here are the steps for Collecting Logs, metric and installing the app:
+Here are the steps for Collecting Logs, metrics, and installing the app:
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
-:::
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-1. Select the platform for which you want to install the Sumo Logic OpenTelemetry Collector.
-
-This will generate a command that can be executed in the machine that needs to get monitored. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png')} alt="Collector" />
 
@@ -78,14 +69,14 @@ Below are the inputs required:
 - **Access File log Path** - Enter the path to the Access log file for your mysql instance.
 - **Error file log path** - Enter the path to the error log file for your mysql instance.
 - Fields - **webengine.cluster.name**
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-Click on the **Download YAML File** button to get the yaml file.
+
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo
 
-Once you download the yaml file, please follow the below steps based on your platform.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -125,13 +116,9 @@ Once you download the yaml file, please follow the below steps based on your pla
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards and monitors.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes you'll see full graphs and maps.
-
-### Sample Log Messages
+## Sample Log Messages
 
 Access Logs
 ```sh
@@ -143,13 +130,11 @@ Error Logs
 [Mon Apr 26 09:52:58.188858 2021]  [core:notice]  [pid 530] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
 ```
 
-### Sample Log Query
+## Sample Log Queries
 
 This sample Query is from the Top 5 Clients Causing 4xx Errors panel of the Apache - Web server Operations dashboard.
 
-Query String
-
-```sql
+```sql title="Query String"
 webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
 | json "log" nodrop | if  (_raw matches "{*", log, _raw)  as mesg
 | parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
@@ -161,9 +146,9 @@ webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* 
 | limit  5
 ```
 
-### Sample Metric 
+### Sample Metrics
 
-```
+```json
 {
 	"queryId":"A",
 	"server_name":"localhost",

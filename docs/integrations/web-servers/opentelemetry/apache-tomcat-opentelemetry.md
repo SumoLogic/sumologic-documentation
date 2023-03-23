@@ -37,41 +37,28 @@ By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default dire
 
 ## Collecting Logs and Installing the Apache Tomcat app
 
-Here are the steps for Collecting Logs and installing the app:
+Here are the steps for Collecting Logs and installing the app.
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-1. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Tomcat Collection.
+In this step, we will be configuring the yaml required for Tomcat Collection.
 
 The path of the log file configured to capture tomcat logs is needed to be given here.
 
 The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a customized path, check the Tomcat.conf file for this information.
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo
 
-Once you have the yaml file downloaded in step 2, you can copy it to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -111,11 +98,7 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
-
-Click **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages
 

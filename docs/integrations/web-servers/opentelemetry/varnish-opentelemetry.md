@@ -33,20 +33,11 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 ## Collection Configuration and App installation
 
-As part of setting up the collection process and app installation user can select the App from App Catalog and click Install App. Please follow the steps below:
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-To create a new Collector:
-
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Collector.png')} alt="Collector" />
 
@@ -56,14 +47,13 @@ OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collect
 
 In this step, you'll configure the yaml required for Varnish Collection. You'll need to provide the path of the log file configured to capture Varnish logs.
 
-The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details, refer the the [Prerequisites](#prerequisites) section of this page. You can add any custom fields which you want to tag along with the data ingested in Sumo.
-Click on the **Download YAML File** button to get the yaml file.
+The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details, refer the the [Prerequisites](#prerequisites) section of this page. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps based on your environment:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -93,11 +83,7 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. 
-
-This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available. Your data should appear in the dashboard within 20 minutes and you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 

@@ -31,39 +31,31 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Collection Configuration and App installation
 
-As part of setting up the collection process and app installation user can select the App from App Catalog and follow the steps below:
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-:::note
-If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the "Use an existing Collector" option.
-:::
-
-1. Select the **Add a new Collector** option.
-2. Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png')} alt="Collector" />
 
 ## Step 2: Configure integration
 
-Open Telemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file which has all the details with respect to the data which needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform..
+OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file which has all the details with respect to the data which needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform..
 
-In this step we will be configuring the yaml required for Squid Collection.
+In this step, we will be configuring the yaml required for Squid Collection.
 
 The path of the log file configured to capture Squid logs is needed to be given here.
 
 The files are typically located in `/var/log/squid/access.log`. Refer to the [Prerequisites](#prerequisites) section for more details.
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo.
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png')} alt="YAML" />
 
 ## Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, please follow the below steps based on your environment.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -93,11 +85,7 @@ Once you have the yaml file downloaded in step 2, please follow the below steps 
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine. 
-
-Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available. Your data should appear in the dashboard within 20 minutes and you'll see full graphs and map.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 
@@ -107,11 +95,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Sample Query
 
-This sample Query is from the Squid Proxy - HTTP Response Analysis > URLs Experiencing Redirections panel.
+This sample Query is from the **Squid Proxy - HTTP Response Analysis** > **URLs Experiencing Redirections** panel.
 
-Query String
-
-```sql
+```sql title="Query String"
 %"sumo.datasource"=squidproxy %"webengine.cluster.name"=*  host.name=* %"webengine.system"=squidproxy
 | json "log" as message nodrop 
 | if (isEMpty(message), _raw, message) as message
