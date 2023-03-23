@@ -98,9 +98,79 @@ All Sumo Logic system-generated fields begin with an underscore (`_`). Group-by 
 
 ## Guide Contents
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/search/search-query-language/group-aggregate-operators/avg"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>avg</h4></a>
+  <p>The averaging function (avg) calculates the average value of the numerical field being evaluated within the time range analyzed.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>count, count_distinct, count_frequent Operators</h4></a>
+  <p>Aggregating (group-by) functions are used in conjunction with the group operator and a field name.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/search/search-query-language/group-aggregate-operators/first-last"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>first, last</h4></a>
+  <p>The first and last operators return the first or last result relative to the sort order.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/search/search-query-language/group-aggregate-operators/median"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="50"/><h4>median</h4></a>
+  <p>In order to calculate the median value for a particular field, you can utilize the pct (percentile) operator with a percentile argument of 50.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/search/search-query-language/group-aggregate-operators/min-max"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="50"/><h4>min, max</h4></a>
+  <p>Use the min and max functions to find the smallest or largest value in a set of values.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="50"/><h4>most_recent, least_recent</h4></a>
+  <p>The most_recent and least_recent operators, used with the withtime operator, are aggregate operators that allow you to select the most recent or least recent value within a group.</p>
+  </div>
+</div>
+</div>
+    <div className="box smallbox7 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/group-aggregate-operators/pct-percentile"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>pct</h4></a>
+      <p>The pct (percentile) operator finds the specified percentiles of a given field.</p>
+      </div>
+    </div>
+    <div className="box smallbox8 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/group-aggregate-operators/pct-sampling"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>pct_sampling</h4></a>
+      <p>The percent sampling function, pct_sampling, finds the percentile of a given field.</p>
+      </div>
+    </div>
+    <div className="box smallbox9 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/group-aggregate-operators/stddev"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>stddev</h4></a>
+      <p>Finds the standard deviation value for a distribution of numerical values within the time range analyzed and associated with a group designated by the "group by" field.</p>
+      </div>
+    </div>
+    <div className="box smallbox10 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/group-aggregate-operators/sum"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="50"/><h4>sum</h4></a>
+      <p>sum adds the values of the numerical field being evaluated within the time range analyzed.</p>
+      </div>
+    </div>
+    <div className="box smallbox11 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/group-aggregate-operators/values"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="50"/><h4>values</h4></a>
+      <p>The values operator provides all the distinct values of a field.</p>
+      </div>
+    </div>
+
+<br/>
+
+:::tip
+Use our [Root Cause Explorer](/docs/observability/root-cause-explorer) to investigate usage and issues.
+:::
