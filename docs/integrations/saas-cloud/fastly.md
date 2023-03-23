@@ -7,7 +7,7 @@ description: Fastly is a content delivery network (CDN) that provides you contro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="50"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
@@ -16,7 +16,7 @@ Fastly is a content delivery network (CDN) that provides you control over how an
 
 The Fastly app uses the following log types:
 * Fastly CDN logs
-* Fastly WAF Request and Debug logs.  For information about WAF logging see[ Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
+* Fastly WAF Request and Debug logs. For information about WAF, logging see [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
 
 
 ### Sample Queries
