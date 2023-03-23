@@ -39,7 +39,6 @@ If you want to use an existing Otel Collector then this step can be skipped by s
 
 If you want to create a new Collector select **Add a new Collector** option.
 
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.  
 
