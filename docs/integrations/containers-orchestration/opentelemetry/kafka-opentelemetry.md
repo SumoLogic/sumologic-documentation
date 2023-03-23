@@ -25,8 +25,8 @@ The diagram below illustrates the components of the Kafka collection for each ka
 
 The Sumo Logic App for Kafka assumes:
 
--   Kafka app supports the default logs format.
--   For a list of metrics that are collected and used by the app, see [Kafka Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/kafkametricsreceiver/documentation.md).
+- Kafka app supports the default logs format.
+- For a list of metrics that are collected and used by the app, see [Kafka Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/kafkametricsreceiver/documentation.md).
 
 ### Sample Log Messages
 
@@ -85,13 +85,7 @@ The process to set up collection for Kafka data is done through the following st
 
 ### Step1: Set up OpenTelemetry Collector
 
-If you want to use an existing OpenTelemetry Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-If you want to create a new Collector please select **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png')} alt="Collector" />
 
@@ -99,12 +93,12 @@ This will generate a command which can be executed in the machine which needs to
 
 In this step we will be configuring the yaml required for Kafka Collection.
 
-Below are the input required :
+Below are the inputs required:
 
--   **Endpoint - (default: `localhost:9092`)**: The URL of the broker endpoint
--   **Server File log Path** - Enter the path to the Server log file for your kafka instance.
--   **Controller file log path** - Enter the path to the Controller log file for your kafka instance.
--   **Fields** : `messaging.cluster.name` - User configured. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **Endpoint - (default: `localhost:9092`)**: The URL of the broker endpoint
+- **Server File log Path** - Enter the path to the Server log file for your kafka instance.
+- **Controller file log path** - Enter the path to the Controller log file for your kafka instance.
+- **Fields** : `messaging.cluster.name` - User configured. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -112,7 +106,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Sending logs and metric to Sumo
 
-Once you download the yaml file, please follow the below steps based on your platform.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -152,15 +146,11 @@ Once you download the yaml file, please follow the below steps based on your pla
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
-
-This will install the app to your Sumo Logic Org. The app consists of Dashboard and monitors
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Viewing Kafka Dashboards
 
-Filters with Template Variables
+**Filters with Template Variables**
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables/).
 
@@ -170,8 +160,8 @@ The Kafka - Overview dashboard gives you an at-a-glance view of your Kafka deplo
 
 Use this dashboard to:
 
--   Analyze trends across Partition Count and Unsync Partition Replica count metrics. 
--   Determine the number of brokers, partitions and topics across each cluster and ensure they match with expectations
+- Analyze trends across Partition Count and Unsync Partition Replica count metrics. 
+- Determine the number of brokers, partitions and topics across each cluster and ensure they match with expectations
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Overview.png')} alt="Overview" />
 
@@ -181,10 +171,10 @@ This dashboard helps you quickly analyze your Kafka error logs across all cluste
 
 Use this dashboard to:
 
--   Identify critical events in your Kafka broker and controller logs.
--   Examine trends to detect spikes in Error or Fatal events.
--   Monitor Broker added/started and shutdown events in your cluster.
--   Quickly determine patterns across all logs in a given Kafka cluster.
+- Identify critical events in your Kafka broker and controller logs.
+- Examine trends to detect spikes in Error or Fatal events.
+- Monitor Broker added/started and shutdown events in your cluster.
+- Quickly determine patterns across all logs in a given Kafka cluster.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Logs.png')} alt="Logs" />
 
@@ -194,7 +184,7 @@ This dashboard helps you to monitor unsynchronized partition replicas and consum
 
 Use this dashboard to:
 
--   Monitor consumer Group Lag by Topic.
--   Identify unsynchronized partition replicas.
+- Monitor consumer Group Lag by Topic.
+- Identify unsynchronized partition replicas.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Metrics.png')} alt="Metrics" />

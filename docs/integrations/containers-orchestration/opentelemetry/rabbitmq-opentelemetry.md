@@ -28,9 +28,8 @@ This section provides instructions for configuring log collection for RabbitMQ r
 
 Follow the instructions to set up log collection:
 
-1.  **Configure logging in RabbitMQ**. RabbitMQ supports logging via the following methods: local text log files, syslog and stdout. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, log leven needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
-
-2.  **Configure RabbitMQ to write log lines to a local file**. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the RabbitMQ.conf file. To configure the log output destination to a log file, use one of the following settings, either in the[ configuration file](https://www.rabbitmq.com/logging.html).
+1. **Configure logging in RabbitMQ**. RabbitMQ supports logging via the following methods: local text log files, syslog and stdout. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, log leven needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
+2. **Configure RabbitMQ to write log lines to a local file**. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the RabbitMQ.conf file. To configure the log output destination to a log file, use one of the following settings, either in the[ configuration file](https://www.rabbitmq.com/logging.html).
 
 Edit or create file config: `/etc/rabbitmq/rabbitmq.conf` following below:
 
@@ -44,35 +43,28 @@ Once the logs are configured to be written to a local file follow the below step
 
 ## Collection configuration & App installation
 
-As part of the setting up the collection process and app installation you can select the App from App Catalog and click on Install App. Please follow the steps below :
+{@import ../../../reuse/opentelemetry/config-app-install.md}
 
 ### Step 1 : Set up Collector
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-If you want to create a new Collector please select **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/opentelemetry/set-up-collector.md}
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png')} alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml file required for RabbitMQ Collection.
+In this step, we will be configuring the yaml file required for RabbitMQ Collection.
 
 Path of the log file configured to capture RabbitMQ logs is needed to be given here.
 
 The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`.
-You can add any custom fields which you want to tag along with the data ingested in sumo.
-Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png')} alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
-Once you have the yaml file downloaded in step 2, you can copy it to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -85,8 +77,8 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 
 <TabItem value="Linux">
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the RabbitMQ instance which needs to be monitored.
-2.  Restart the collector using:
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the RabbitMQ instance which needs to be monitored.
+2. Restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -94,8 +86,8 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+2. Restart the collector using:
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
@@ -103,8 +95,8 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the RabbitMq instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command 
+1. Copy the yaml file to /etc/otelcol-sumo/conf.d/ folder in the RabbitMq instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command 
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
 ```
@@ -112,11 +104,7 @@ Restart-Service -Name OtelcolSumo
 </TabItem>
 </Tabs>
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
-
-Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 
@@ -141,6 +129,6 @@ Query String
 
 ### Overview
 
--   The **RabbitMQ - Overview** dashboard gives you an at-a-glance view of Error messages, error by severity, top and last 10 errors, Broker and Event Start/Add log messages.
+- The **RabbitMQ - Overview** dashboard gives you an at-a-glance view of Error messages, error by severity, top and last 10 errors, Broker and Event Start/Add log messages.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Overview.png')} alt="Overview" />
