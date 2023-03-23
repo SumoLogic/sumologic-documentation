@@ -87,7 +87,7 @@ Here are the steps for Collecting Logs and installing the app.
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml required for HAProxy Collection.
+In this step, you will configure the yaml required for HAProxy Collection.
 
 The path of the log file configured to capture haproxy logs is needed to be given here.
 

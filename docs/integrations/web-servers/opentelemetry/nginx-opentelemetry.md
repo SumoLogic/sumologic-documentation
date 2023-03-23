@@ -55,7 +55,7 @@ The process to set up collection for Nginx data is done through the following st
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml required for Nginx Collection.
+In this step, you will configure the yaml required for Nginx Collection.
 
 Below are the inputs required:
 

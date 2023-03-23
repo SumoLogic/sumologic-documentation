@@ -86,7 +86,7 @@ Once the logs are configured to be written into a local file follow the below st
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml required for IIS Collection.
+In this step, you will configure the yaml required for IIS Collection.
 
 Path of the different log file configured to capture IIS logs is needed to be given here. Please refer to the "Prerequisite" section of this page.
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.

@@ -45,7 +45,7 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file which has all the details with respect to the data which needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform.
 
-In this step, you'll configure the yaml required for Varnish Collection. You'll need to provide the path of the log file configured to capture Varnish logs.
+In this step, you will configure the yaml required for Varnish Collection. You'll need to provide the path of the log file configured to capture Varnish logs.
 
 The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details, refer the the [Prerequisites](#prerequisites) section of this page. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 

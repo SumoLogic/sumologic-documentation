@@ -25,33 +25,28 @@ The Sumo Logic App for Apache assumes:
 
 Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Apache App install if not already present.
 
-- **`webengine.cluster.name`** - User configured.Enter a name to uniquely identify your Apache web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`** - Has fixed value of **apache**
-- **`sumo.datasource`** - Has fixed value of **apache**
-- **`webengine.node.name`** - Has the value of host name of the machine which is being monitored
+- **`webengine.cluster.name`**. User configured.Enter a name to uniquely identify your Apache web server cluster. This web server cluster name will be shown in the Sumo Logic dashboards.
+- **`webengine.system`**. Has fixed value of **apache**
+- **`sumo.datasource`**. Has fixed value of **apache**
+- **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
 
 ## Prerequisites
 
-The receiver used gets stats from an Apache Web Server instance using the `server-status?auto` endpoint.
+The receiver used gets stats from an Apache Web Server instance using the `server-status?auto` endpoint. This receiver supports Apache Web Server version 2.4+.
 
-This receiver supports Apache Web Server version 2.4+.
+* **Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+* **Configure the Apache log files**:
+   * Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
+   * Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
+      * For access logs, the following directive is to be noted:
+         - CustomLog: access log file path and format (standard common and combined)
+      * For error logs, following directives are to be noted:
+         - ErrorLog: error log file path
+         - LogLevel: to control the number of messages logged to the `error_log`
 
-In order to receive server statistics, you must configure the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+## Collecting Logs, Metrics, and Installing App for Apache
 
-Configure Apache to log to a local files. Before you can configure Sumo Logic to ingest logs, you must configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
-
-To configure the Apache log files, locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
-
-For access logs, the following directive is to be noted:
-- CustomLog: access log file path and format (standard common and combined)
-
-For error logs, following directives are to be noted:
-- ErrorLog: error log file path
-- LogLevel: to control the number of messages logged to the `error_log`
-
-## Collecting Logs, Metrics & Installing App for Apache
-
-Here are the steps for Collecting Logs, metrics, and installing the app:
+Here are the steps for collecting Logs, metrics, and installing the app:
 
 ### Step 1: Set up Collector
 
@@ -61,14 +56,14 @@ Here are the steps for Collecting Logs, metrics, and installing the app:
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml required for Apache Collection.
+In this step, you will configure the yaml required for Apache Collection.
 
 Below are the inputs required:
 
-- **Endpoint** (default: `http://localhost:8080/server-status?auto`): The URL of the httpd status endpoint
-- **Access File log Path** - Enter the path to the Access log file for your mysql instance.
-- **Error file log path** - Enter the path to the error log file for your mysql instance.
-- Fields - **webengine.cluster.name**
+- **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:8080/server-status?auto`).
+- **Access File log Path**. Enter the path to the Access log file for your mysql instance.
+- **Error file log path**. Enter the path to the error log file for your mysql instance.
+- **Fields**. `webengine.cluster.name`.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
@@ -120,19 +115,19 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ## Sample Log Messages
 
-Access Logs
-```sh
+```sh title="Access Logs"
 192.168.29.177 - - [26/Apr/2021:12:18:32 +0530]  "GET /server-status HTTP/1.1"  404  196
 ```
 
-Error Logs
-```sh
+```sh title="Error Logs
 [Mon Apr 26 09:52:58.188858 2021]  [core:notice]  [pid 530] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
 ```
 
-## Sample Log Queries
+## Sample Queries
 
-This sample Query is from the Top 5 Clients Causing 4xx Errors panel of the Apache - Web server Operations dashboard.
+### Logs
+
+This sample Logs Query is from the **Top 5 Clients Causing 4xx Errors** panel of the **Apache - Web server Operations** dashboard.
 
 ```sql title="Query String"
 webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
@@ -146,7 +141,16 @@ webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* 
 | limit  5
 ```
 
-### Sample Metrics
+### Metrics
+
+Here's a sample Metrics query from the **Request State Analysis** dashboard > **Waiting** panel:
+
+```sql
+sumo.datasource=apache metric=apache.scoreboard state=waiting webengine.cluster.name=* webengine.node.name=* | sum by webengine.cluster.name
+```
+
+
+## Sample Metrics
 
 ```json
 {
@@ -173,13 +177,6 @@ webengine.system=apache webengine.cluster.name=* HTTP (40* OR 41* OR 42* OR 43* 
 }
 ```
 
-### Sample Metric query
-
-Here's a sample query from the **Request State Analysis** dashboard > **Waiting** panel:
-
-```
-sumo.datasource=apache metric=apache.scoreboard state=waiting webengine.cluster.name=* webengine.node.name=* | sum by webengine.cluster.name
-```
 
 ## Viewing Apache Dashboards
 

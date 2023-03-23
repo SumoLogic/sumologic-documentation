@@ -43,7 +43,7 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file which has all the details with respect to the data which needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform..
 
-In this step, we will be configuring the yaml required for Squid Collection.
+In this step, you will configure the yaml required for Squid Collection.
 
 The path of the log file configured to capture Squid logs is needed to be given here.
 
