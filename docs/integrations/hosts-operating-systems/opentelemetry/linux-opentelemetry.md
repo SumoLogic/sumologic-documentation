@@ -9,13 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
 The Sumo Logic App for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs. The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis.
 
 Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for the collection of both metrics and log data.
 
-We use the OpenTelemetry collector for Linux metric collection and for collecting Linux system logs. OpenTelemetry collector runs on the Linux machine, and uses the [Host Metric Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain Host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Linux logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+We use the OpenTelemetry collector to collect Linux metrics and system logs. The OpenTelemetry collector runs on the Linux machine and uses the [Host Metric Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain Host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Linux logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Schematics.png')} alt="Schematics" />
 
@@ -39,9 +39,7 @@ Here are the steps for collecting logs, metrics, and app installation.
 
 ### Step 2: Configure integration
 
-In this step, we will be configuring the yaml file required for Linux Collection.
-
-The app requires path for system log file, based on the Linux version used.
+In this step, you will configure the yaml file required for Linux Collection. The app requires path for system log file, based on the Linux version used.
 
 #### Required Logs for Ubuntu
 
@@ -65,9 +63,9 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src={u
 
 :::note 
 
-By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt - you can leave the default file paths values.  
+By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.  
 
-By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
+By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM). If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
 ```sh
 process:
   include:
@@ -91,21 +89,47 @@ process:
 
 ## Sample Log Messages
 
-```sql
+```
 Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-8.0.4-20.4.1.i586(@System)
 ```
 
 ## Sample Metrics
 
-```sql
-{"queryId":"A","_source":"linux-otel-metric","process.executable.name":"apache2","_sourceName":"Http Input","process.command":"/usr/sbin/apache2","host":"ip-172-31-90-39.ec2.internal","os.type":"linux","sumo.datasource":"linux","process.executable.path":"/usr/sbin/apache2","process.command_line":"/usr/sbin/apache2_-k_start","process.owner":"www-data","_sourceCategory":"Labs/linux-otel/metric","_contentType":"Carbon2","metric":"process.memory.physical_usage","_collectorId":"000000000C984E1A","_sourceId":"0000000042E512AE","unit":"By","_collector":"Labs - linux-otel","process.pid":"26967","max":42295296,"min":536576,"avg":9061120,"sum":144977920,"latest":8069120,"count":16}
+```json
+{
+	"queryId":"A",
+	"_source":"linux-otel-metric",
+	"process.executable.name":"apache2",
+	"_sourceName":"Http Input",
+	"process.command":"/usr/sbin/apache2",
+	"host":"ip-172-31-90-39.ec2.internal",
+	"os.type":"linux",
+	"sumo.datasource":"linux",
+	"process.executable.path":"/usr/sbin/apache2",
+	"process.command_line":"/usr/sbin/apache2_-k_start",
+	"process.owner":"www-data",
+	"_sourceCategory":"Labs/linux-otel/metric",
+	"_contentType":"Carbon2",
+	"metric":"process.memory.physical_usage",
+	"_collectorId":"000000000C984E1A",
+	"_sourceId":"0000000042E512AE",
+	"unit":"By",
+	"_collector":"Labs - linux-otel",
+	"process.pid":"26967",
+	"max":42295296,
+	"min":536576,
+	"avg":9061120,
+	"sum":144977920,
+	"latest":8069120,
+	"count":16
+}
 ```
 
 ## Sample Queries
 
 ### Log query
 
-Log query from the panel: Total Event Distribution
+Logs query from the **Total Event Distribution** panel.
 
 ```sql
 %"sumo.datasource"=linux   
@@ -116,16 +140,17 @@ Log query from the panel: Total Event Distribution
 
 ### Metrics query
 
-Metric query from the CPU Utilization Over Time panel.
+Metrics query from the **CPU Utilization Over Time** panel.
+
 ```sql
-sumo.datasource=linux     host.name=*  metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
+sumo.datasource=linux host.name=* metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 
-## Viewing Linux Dashboards
+## Linux Metrics Dashboards
 
 ### Host Metrics - Overview
 
-The Host Metrics - Overview dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -135,7 +160,7 @@ Use this dashboard to:
 
 ### Host Metrics - CPU
 
-The Host Metrics - CPU dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -146,7 +171,7 @@ Use this dashboard to:
 
 ### Host Metrics - Disk
 
-The Host Metrics - Disk dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -158,7 +183,7 @@ Use this dashboard to:
 
 ### Host Metrics - Memory
 
-The Host Metrics - Memory dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -170,7 +195,7 @@ Use this dashboard to:
 
 ### Host Metrics - Network
 
-The Host Metrics - Network dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 
@@ -182,7 +207,7 @@ Use this dashboard to:
 
 ### Host Metrics - TCP
 
-The Host Metrics - TCP dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
+The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:
 
@@ -202,11 +227,12 @@ Use this dashboard to:
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png')} alt="Process Metrics - Details" />
 
-## Linux Log Based Dashboards
+
+## Linux Log-Based Dashboards
 
 ### Linux - Overview
 
-Dashboard description: See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
+See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png')} alt="Linux - Overview" />
 
@@ -216,7 +242,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 ### Linux - Event Sources
 
-Dashboard description: See information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
+See information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Event-Sources.png')} alt="Linux - Event Sources" />
 
@@ -226,20 +252,20 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 ### Linux - Login Status
 
-Dashboard description: See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.
+See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Login-Status.png')} alt="Linux - Login Status" />
 
 #### Filtering the Login Status dashboard
 
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of action, host.name, dest_user, and outcome.
+Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `host.name`, `dest_user`, and `outcome`.
 
 ### Linux - Security Status
 
-Dashboard description: See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
+See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png')} alt="Linux - Security Status" />
 
 #### Filtering the Security Status dashboard
 
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of action, host.name, dest_user, and outcome.
+Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `host.name`, `dest_user`, and `outcome`.

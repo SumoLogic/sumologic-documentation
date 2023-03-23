@@ -9,15 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
 The Sumo Logic App for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors.
 
 In addition to that the Windows App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows App is based on the Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
-Windows event logs are sent to Sumo Logic through OpenTelemetry [Event Log receiver. ](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver)
-
-Windows Host metrics are sent to Sumo Logic through OpenTelemetry [HostMetric receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver).
+* Windows event logs are sent to Sumo Logic through OpenTelemetry [Event Log receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
+* Windows Host metrics are sent to Sumo Logic through OpenTelemetry [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver).
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Schematics.png')} alt="Schematics" />
 
@@ -25,7 +24,7 @@ Windows Host metrics are sent to Sumo Logic through OpenTelemetry [HostMetric re
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
 
-- **`sumo.datasource`** - Has a fixed value of **windows**.
+- **`sumo.datasource`**. Has a fixed value of **windows**.
 
 ## Log Types
 
@@ -49,7 +48,7 @@ Standard Windows event channels include:
 
 ### Step 2: Configure integration
 
-In this step, we will configure the yaml file required for Windows event logs and metrics Collection.
+In this step, you will configure the yaml file required for Windows event logs and metrics Collection.
 
 Any custom fields can be tagged along with the data in this step.
 
@@ -72,7 +71,7 @@ process:
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
-1. Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
@@ -86,33 +85,43 @@ process:
 {"queryId":"A","_source":"windows-otel-metric","_metricId":"tYzy7VHWrdxuGHOkPRT5pA","_sourceName":"Http Input","os.type":"windows","sumo.datasource":"windows","direction":"transmit","_sourceCategory":"Labs/windows-otel","_contentType":"Carbon2","host.name":"EC2AMAZ-T30T53R.ec2.internal","metric":"system.network.io","_collectorId":"000000000CEC8ECC","_sourceId":"0000000044DB46EF","unit":"By","_collector":"Labs - windows-otel","device":"Loopback_Pseudo-Interface_1","max":289495780,"min":0,"avg":229918329.73,"sum":3448774946,"latest":289485558,"count":15}
 ```
 
-## Sample Metrics Query
+## Sample Queries
 
-This sample Query is from the HostMetric - CPU > CPU User Time
+This sample metrics query is from the **Host Metric - CPU** dashboard > **CPU User Time** panel.
 
-### Query String
-
-```sh
+```sql title="Metrics Query String"
 sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.utilization state=user | avg by host.name
 ```
 
-## Sample Logs
+This sample log query is from the **Windows - Overview** dashboard > **System Restarts** panel.
 
-```sql
-{"record_id":"6316","channel":"Application","event_data":"","task":"0","provider":"{\"name\":\"Microsoft-Windows-Security-SPP\",\"guid\":\"{E23B33B0-C8C9-472C-A5F9-F2BDFEA0F156}\",\"event_source\":\"Software Protection Platform Service\"}","system_time":"2023-01-20T15:22:02+0000816Z","computer":"EC2AMAZ-T30T53R","opcode":"0","keywords":"Classic","message":"Offline downlevel migration succeeded.","event_id":"{\"id\":\"16394\",\"qualifiers\":\"49152\"}","level":"Information"}
-```
-
-### Sample Log Query
-
-This sample Query is from the Windows - Overview > System Restarts
-
-```sql title="Query String"
+```sql title="Log Query String"
 %"sumo.datasource"=windows  "\"channel\":\"Security\""
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id
 | parse regex field=msg_summary "(?<msg_summary>.*\.*)" nodrop
 | where event_id = "4608" and channel = "Security" and host.name matches "{{host.name}}"
 | count as Restarts
+```
+
+
+## Sample Logs
+
+```json
+{
+	"record_id":"6316",
+	"channel":"Application",
+	"event_data":"",
+	"task":"0",
+	"provider":"{\"name\":\"Microsoft-Windows-Security-SPP\",\"guid\":\"{E23B33B0-C8C9-472C-A5F9-F2BDFEA0F156}\",\"event_source\":\"Software Protection Platform Service\"}",
+	"system_time":"2023-01-20T15:22:02+0000816Z",
+	"computer":"EC2AMAZ-T30T53R",
+	"opcode":"0",
+	"keywords":"Classic",
+	"message":"Offline downlevel migration succeeded.",
+	"event_id":"{\"id\":\"16394\",\"qualifiers\":\"49152\"}",
+	"level":"Information"
+}
 ```
 
 ## Viewing Windows Event Log-Based Dashboards

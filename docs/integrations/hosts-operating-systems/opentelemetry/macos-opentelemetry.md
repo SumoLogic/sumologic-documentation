@@ -9,26 +9,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for macOS allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis.
+The Sumo Logic App for macOS allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis.
 
 Preconfigured dashboards provide insight into CPU load, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for metrics.
 
-We use the OpenTelemetry collector for metrics collection.
+We use the Sumo Logic Distribution for OpenTelemetry Collector for metrics collection.
 
-OpenTelemetry collector runs on the macOS machine, and uses the [Host Metrics Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic.
+The OpenTelemetry collector runs on the macOS machine, and uses the [Host Metrics Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Schematics.png')} alt="Schematics" />
 
 ## Fields Created in Sumo Logic for macOS
 
-Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of macOS App install, if not already present. 
-
+Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
 
 - **`sumo.datasource`** - Has fixed value of **mac**.
 
-## Collecting Logs, Metrics & installing macOS app
+## Collecting Logs, Metrics, and installing macOS app
 
 Here are the steps for collecting metrics and installing the app.
 
@@ -40,16 +39,15 @@ Here are the steps for collecting metrics and installing the app.
 
 ### Step 2: Configure integration
 
-In this step, we will configure the yaml required for macOS Collection.
+In this step, you will configure the yaml required for macOS Collection.
 
-There are no parameters required for the macOS app to install. One can add a custom tag if required in this step.
-
-Click on the **Download YAML File** button to get the yaml file.
+1. (Optional) You can add a custom tag, if desired. (There are no parameters required for the macOS app to install.)
+2. Click on the **Download YAML File** button to get the yaml file.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png')} alt="YAML" />
 
 :::note
-By default the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
+By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM). If you would like to narrow down the list of processes being monitored, add the following entry under the process section of the downloaded yaml.
 ```sh
 process:
   include:
@@ -64,23 +62,46 @@ process:
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command 
-```sh
- otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
 ## Sample Queries
 
-Metric query from the panel - File System Utilization
+Metrics query from the File System Utilization panel.
+
 ```sh
 sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | sum by host.name, device, type, mountpoint
 ```
 
-### Sample OpenTelemetry Metrics
+## Sample OTel Metrics
 
-```sql
-{"queryId":"A","_source":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","state":"LAST_ACK","_sourceName":"sumomacsyslog","host":"sumo-mac","os.type":"darwin","sumo.datasource":"mac","_sourceCategory":"sumo/mac/sys/logs","metric":"system.network.connections","_collectorId":"000000000CAADE8D","_sourceId":"0000000000000000","unit":"{connections}","_sourceHost":"sumo-mac","_collector":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72","protocol":"tcp","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":14}
+```json
+{
+	"queryId":"A",
+	"_source":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72",
+	"state":"LAST_ACK",
+	"_sourceName":"sumomacsyslog",
+	"host":"sumo-mac",
+	"os.type":"darwin",
+	"sumo.datasource":"mac",
+	"_sourceCategory":"sumo/mac/sys/logs",
+	"metric":"system.network.connections",
+	"_collectorId":"000000000CAADE8D",
+	"_sourceId":"0000000000000000",
+	"unit":"{connections}",
+	"_sourceHost":"sumo-mac",
+	"_collector":"sumo-mac-dc8d7942-8038-46f0-af33-9a3a06a73f72",
+	"protocol":"tcp",
+	"max":0,
+	"min":0,
+	"avg":0,
+	"sum":0,
+	"latest":0,
+	"count":14
+}
 ```
 
 ## Viewing Linux Dashboards
