@@ -47,7 +47,9 @@ metadata:
           cpu: 50m
 ```
 
-Please notice that resource consumption depends on data traffic in your cluster. In clusters with huge data traffic you will need to increase [resource limits](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) and/or increase number of replicas for components.
+:::note 
+Resource consumption depends on data traffic in your cluster. In clusters with huge data traffic, you will need to increase [resource limits](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) and/or increase number of replicas for components.
+:::
 
 ## Installation
 
