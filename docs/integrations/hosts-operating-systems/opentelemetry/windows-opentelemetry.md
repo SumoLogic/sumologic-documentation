@@ -23,7 +23,7 @@ Windows Host metrics are sent to Sumo Logic through OpenTelemetry [HostMetric re
 
 ## Fields Created in Sumo Logic for Windows
 
-Following are the tags which will be created as part of Windows App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
 
 - **`sumo.datasource`** - Has a fixed value of **windows**.
 
