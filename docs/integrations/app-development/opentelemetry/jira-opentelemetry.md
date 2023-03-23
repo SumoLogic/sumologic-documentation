@@ -40,9 +40,9 @@ The Jira app uses the following log types:
 
 ## Configure hosted collector to receive Webhooks
 
-In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
-1. Configure a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
+In this step, you create a host collector to receive webhooks from Jira and set up an HTTP source on it.
+1. Configure a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/), or select an existing hosted collector for the HTTP source.
+2. Configure an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on the hosted collector.
     - For Source Category, specify Atlassian/Jira/Events
     - Add `sumo.datasource` as File to this source and assign the value **jira** for it.
     <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Datasource.png' alt="Datasource" />
@@ -94,7 +94,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Sending logs to Sumo Logic
 
-Once you have the yaml file downloaded in the previous step, follow the below steps based on the platform of the machine.
+{@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"

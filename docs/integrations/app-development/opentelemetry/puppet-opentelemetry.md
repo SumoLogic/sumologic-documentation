@@ -30,9 +30,9 @@ Follow the instructions to set up log collection:
 
 We use OpenTelemetry collector to gather the following data from Puppet:
 
--   **Puppet Server logs**.  For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
--   **Puppet Server Access logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
--   Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
+- **Puppet Server logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
+- **Puppet Server Access logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
+- Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
 
 The default Puppet Server Access log file is: `/var/log/puppetlabs/puppetserver/puppetserver-access.log`. If your Puppet Server Access logs are located elsewhere, please note the path this will be used later while app installation.
 
@@ -129,7 +129,7 @@ As part of the setting up the collection process and app installation user can s
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for Puppet collection.
+In this step, we will be configure the yaml required for Puppet collection.
 
 Path of the log file configured to capture puppet access logs and puppet report are needed to be given here. Refer to the Prerequisites section of this document.
 
@@ -196,7 +196,7 @@ This is a sample log message for non-Kubernetes environments.
 
 ## Sample Queries
 
-This sample query is from the Puppet - Overview dashboard > Node Requests Summary Over Time panel.
+This sample query is from the **Puppet - Overview** dashboard > **Node Requests Summary Over Time** panel.
 
 ```
 %"sumo.datasource"=puppet
