@@ -4,6 +4,8 @@ title: Group or Aggregate Operators
 description: Evaluate messages and place them into groups.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Aggregating (group-by) functions evaluate messages and place them into groups. The group operator is used in conjunction with group-by functions.
 
 Only search results that have been aggregated using a group or aggregate operator can be placed on a dashboard panel. See [Chart Search Results](/docs/search/get-started-with-search/search-basics/chart-search-results) for information about charting.
