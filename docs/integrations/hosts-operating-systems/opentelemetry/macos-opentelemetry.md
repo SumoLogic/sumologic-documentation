@@ -46,16 +46,6 @@ In this step, you will configure the yaml required for macOS Collection.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png')} alt="YAML" />
 
-:::note
-By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM). If you would like to narrow down the list of processes being monitored, add the following entry under the process section of the downloaded yaml.
-```sh
-process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
-```
-:::
-
 ### Step 3: Sending metrics to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
