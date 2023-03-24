@@ -64,7 +64,7 @@ When you create an Cisco Meraki Source, you add it to a Hosted Collector. Before
 
 To configure Cisco Meraki Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
+1. On the Collectors page, click **Add Source** next to a **Hosted Collector**.
 1. Select Cisco Meraki.<br/> <img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-select.png')} alt="cisco-meraki-sumo-source-select.png" width="150" />
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/> <img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-form.png')} alt="cisco-meraki-sumo-source-formt.png" width="450" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
