@@ -337,7 +337,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Other Data Sources',
+          label: 'Collect From Other Data Sources',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/index'},
