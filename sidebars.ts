@@ -310,7 +310,6 @@ module.exports = {
             },
           ],
         },
-        'send-data/sumo-distribution-opentelemetry',
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
