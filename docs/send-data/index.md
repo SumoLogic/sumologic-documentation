@@ -18,7 +18,7 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/send-data/sumo-distribution-opentelemetry"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="icon" width="40"/><h4>Sumo Logic Distro for OpenTelemetry</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="icon" width="40"/><h4>Sumo Logic Distro for OpenTelemetry</h4></a>
   <p>Our OpenTelemetry Distribution is a single unified agent to send Logs, Metrics, Traces, and more.</p>
   </div>
 </div>
