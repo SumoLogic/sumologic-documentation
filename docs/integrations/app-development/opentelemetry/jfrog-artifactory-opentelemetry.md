@@ -141,26 +141,38 @@ This sample Query is from the **Artifactory - Cached Deployment Activity** > **A
 
 ## Viewing JFrog Artifactory Dashboards
 
-### Artifactory-Overview
+### Artifactory - Overview
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory-Overview" />
+
+{@import ../../../reuse/jfrog-artifactory-overview.md}
 
 ### Artifactory - Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory-Cached-Deployment-Activity" />
 
+{@import ../../../reuse/jfrog-artifactory-cached.md}
+
 ### Artifactory - Download Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory-Download-Activity" />
+
+{@import ../../../reuse/jfrog-artifactory-download.md}
 
 ### Artifactory - Non-Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory-Non-Cached-Deployment-Activity" />
 
+{@import ../../../reuse/jfrog-artifactory-noncached.md}
+
 ### Artifactory - Request and Access
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory-Request-and-Access" />
 
+{@import ../../../reuse/jfrog-artifactory-request-access.md}
+
 ### Artifactory - Traffic
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory-Traffic" />
+
+{@import ../../../reuse/jfrog-artifactory-traffic.md}
