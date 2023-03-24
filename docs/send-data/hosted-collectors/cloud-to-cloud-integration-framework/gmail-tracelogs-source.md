@@ -1,10 +1,13 @@
 ---
 id: gmail-tracelogs-source
 title: Gmail Trace Logs Source
-description: Gmail Trace Logs Integration
+sidebar_label: Gmail Trace Logs
+description: The Sumo Logic Gmail Trace Logs source pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="50"/>
 
 The Gmail Trace Logs integration pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
 

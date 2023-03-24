@@ -5,6 +5,11 @@ sidebar_label: MS Office 365 Audit Source
 description: Collect Audit Log content types to track and monitor usage of Microsoft Office 365.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="40"/>
+
+
 ## Office 365 Audit Log Workload types
 
 :::note
@@ -30,7 +35,7 @@ Create only one Source for a given workload type. If you create an additional So
 Audit log data can contain sensitive information. When you configure any audit log Source, make sure that you implement the appropriate RBAC permissions to limit access to the content as needed. 
 :::
 
-## Requirements
+## Prerequisites
 
  * Enable unified auditing for your Office 365 organization. To enable, see https://docs.microsoft.com/en-us/office365/securitycompliance/turn-audit-log-search-on-or-off
  * [Office 365 admin roles](#office-365-admin-roles)
@@ -46,7 +51,7 @@ When you configure a Microsoft Office 365 Audit Source in Sumo you will need t
 Using the Global Administrator role is recommended:
 
 | Role  |   Description |
-|:-----------------------|:------------------------------------------------------------------------------------------|
+|:-----------------------|:-------------|
 | Global Administrator  | This role enables access to all administrative features in your Office 365 subscription. |
 
 You could take a different, more granular, approach to assign roles to
@@ -90,30 +95,23 @@ During the configuration, you will need to authenticate to Microsoft using sta
 1. Select **Office 365 Audit**. 
 1. Enter a name to identify the Source. **Description** is optional.
 1. For **O365 Region**, select the region that corresponds to your Microsoft 365 or Office 365 subscription plan, the supported regions are Commercial, GCC, and GCC High. See [Activity API operations](https://docs.microsoft.com/en-us/office/office-365-management-api/office-365-management-activity-api-reference#activity-api-operations) for more details.
-
   :::note
   Source creation will fail if an incorrect **O365 Region** is selected. You cannot change the **O365 Region** setting on an existing Source.
   :::
-
 1. For **Content Type**, select the type of log to collect. If you want to collect from additional content types, create additional instances of this Source type.
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called `_sourceCategory`.) This is an important part of limiting access to this content using RBAC. Recommended Source Category naming conventions:
-
-  * For SharePoint: **O365/SharePoint**
-  * For Exchange: **O365/Exchange**
-  * For Azure: **O365/Azure**
-
+   * For SharePoint: **O365/SharePoint**
+   * For Exchange: **O365/Exchange**
+   * For Azure: **O365/Azure**
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
-
   :::note
   Sumo Logic never receives your Microsoft Office 365 credentials.
   :::
-
 1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the new Source.
-1. When you are finished configuring the Source. click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Audit Index events
 

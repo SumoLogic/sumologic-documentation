@@ -16,7 +16,7 @@ This topic describes v1.5.0 of the non-FedRAMP version of the Insight Enrichmen
 
 ## What the Insight Enrichment Server does
 
-The Insight Enrichment Server performs an external query on the [Entity](docs/cse/records-signals-entities-insights/view-manage-entities.md) for an Insight—for example an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
+The Insight Enrichment Server performs an external query on the [Entity](docs/cse/records-signals-entities-insights/view-manage-entities.md) for an Insight—for example, an IP address, a hostname, username, or a MAC address—and adds the query results as an enrichment to the Insight.
 
 You configure enrichments in the server’s configuration file. The key settings are the Entity type to run the enrichment on, and the command and command arguments to run. 
 
