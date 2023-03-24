@@ -99,7 +99,6 @@ Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted 
 
 The Hosted Collector is not an installed software agent, but rather a collection of endpoints and integration that collects logs from various cloud data sources.
 
-
 ### (B) Sumo Logic Cloud
 
 The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
