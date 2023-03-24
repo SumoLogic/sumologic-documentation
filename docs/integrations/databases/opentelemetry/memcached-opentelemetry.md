@@ -19,26 +19,6 @@ Memcache logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](ht
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Schematics.png')} alt="Schematics" />
 
-## Sample Log Message
-
-```
-Jun 23 07:35:01 node03 memcached: \
-<31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
-```
-
-## Sample Query
-
-Following is the query from Errors panel of Memcached app's overview Dashboard:
-
-```sql
-%"deployment.environment"=* %"db.cluster.name"=* %"sumo.datasource"=memcached memcached ">" ERROR | json "log" as _rawlog nodrop 
-| if (isEmpty(_rawlog), _raw, _rawlog) as memcached_log_message
-| parse regex field=memcached_log_message ">(?<pid>\d+) (?<cmd>\w+)"
-| if(cmd matches "ERROR",1,0) as ERROR
-| timeslice by 1h 
-| sum(ERROR) as ERROR by _timeslice
-```
-
 ## Fields creation in Sumo Logic for Memcached
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Memcached App install if not already present.
@@ -125,6 +105,28 @@ You can add any custom fields which you want to tag along with the data ingested
 </Tabs>
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
+
+
+## Sample Log Message
+
+```
+Jun 23 07:35:01 node03 memcached: \
+<31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
+```
+
+## Sample Query
+
+Following is the query from Errors panel of Memcached app's overview Dashboard:
+
+```sql
+%"deployment.environment"=* %"db.cluster.name"=* %"sumo.datasource"=memcached memcached ">" ERROR | json "log" as _rawlog nodrop 
+| if (isEmpty(_rawlog), _raw, _rawlog) as memcached_log_message
+| parse regex field=memcached_log_message ">(?<pid>\d+) (?<cmd>\w+)"
+| if(cmd matches "ERROR",1,0) as ERROR
+| timeslice by 1h 
+| sum(ERROR) as ERROR by _timeslice
+```
+
 
 ## Viewing Memcached Dashboards
 

@@ -17,9 +17,7 @@ The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pr
 
 Couchbase logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-This App has been tested with Couchbase version 7.0.2
-
-Non-Kubernetes: Couchbase version: 7.0.2
+This App has been tested with Couchbase version 7.0.2.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/schematics-couchbase.png')} alt="Schematics" />
 
@@ -27,10 +25,10 @@ Non-Kubernetes: Couchbase version: 7.0.2
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Couchbase App install if not already present:
 
-**`db.cluster.name`**. User configured. Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.
-**`db.system`**. Has a fixed value of **couchbase**.
-**`deployment.environment`**. User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
-**`sumo.datasource`**. Has a fixed value of **couchbase**.
+* `db.cluster.name`. User configured. Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* `db.system`. Has a fixed value of `couchbase`.
+* `deployment.environment`. User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
+* `sumo.datasource`. Has a fixed value of `couchbase`.
 
 ### Prerequisite
 

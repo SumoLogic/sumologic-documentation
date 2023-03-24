@@ -12,6 +12,7 @@ import TabItem from '@theme/TabItem';
 <img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
 The [Cassandra](https://cassandra.apache.org/_/cassandra-basics.html) - OpenTelemetry app is a log based app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. Preconfigured dashboards provide insight into resource utilization, cache/Gossip/Memtable statistics and Error and warnings. Cassandra logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+
 The app supports Logs from the open-source version of Cassandra. The App is tested on the 3.11.10 version of Cassandra.
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Schematics.png')} alt="Schematics" />
 
@@ -19,17 +20,16 @@ The app supports Logs from the open-source version of Cassandra. The App is test
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Cassandra App install if not already present:
 
-- **`db.cluster.name`**. User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`db.system`**. Has fixed value of **cassandra**.
-- **`deployment.environment`**. User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
-- **`sumo.datasource`**. Has fixed value of **cassandra**.
+- `db.cluster.name`. User configured. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `db.system`. Has fixed value of **cassandra**.
+- `deployment.environment`. User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
+- `sumo.datasource`. Has fixed value of **cassandra**.
 
-## Prerequisite
-
+## Prerequisites
 
 Cassandra has three main logs: system.log, debug.log, and gc.log which hold general logging messages, debugging logging messages, and java garbage collection logs respectively.
 
-These logs by default live in ${CASSANDRA_HOME}/logs, but most Linux distributions relocate logs to /var/log/cassandra. Operators can tune this location as well as what levels are logged using the provided logback.xml file. For more details on Cassandra logs, see[ this](https://cassandra.apache.org/doc/latest/troubleshooting/reading_logs.html) link.
+These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distributions relocate logs to `/var/log/cassandra`. Operators can tune this location as well as what levels are logged using the provided logback.xml file. For more details on Cassandra logs, see[ this](https://cassandra.apache.org/doc/latest/troubleshooting/reading_logs.html) link.
 
 ## Configure Cassandra Logs Collection
 
@@ -41,12 +41,10 @@ These logs by default live in ${CASSANDRA_HOME}/logs, but most Linux distributio
 
 ### Step 2: Configure integration
 
-In this step, you will configure the yaml required for Cassandra Collection.
-Path of the log file configured to capture Cassandra logs needs to be given here.
+In this step, you will configure the yaml required for Cassandra Collection. Path of the log file configured to capture Cassandra logs needs to be given here.
 
-In this step we will be configuring the yaml required for Cassandra Collection.
 Below are the inputs required:
-- The path to system.log is required here. This file is typically located in /var/log/cassandra. If you're using a customized path, check the respective conf file for this information.
+- The path to system.log is required here. This file is typically located in `/var/log/cassandra`. If you're using a customized path, check the respective conf file for this information.
 
 You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
