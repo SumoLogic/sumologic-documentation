@@ -2,14 +2,14 @@
 id: additional-configurations-reference
 title: Additional Configurations Reference
 sidebar_label: Additional Configurations Reference
-description: Learn about Configurations Reference
+description: Reference guide for Sumo Logic OpenTelemetry Collector configurations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Best Practices
+Here are some best practices for configuring the Sumo Logic Distribution for OpenTelemetry.
 
-### Configuration Location
+## Configuration Location
 
 All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
 
@@ -18,7 +18,7 @@ All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. Thi
 
 For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 
-### Custom Pipeline
+## Custom Pipeline
 
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
@@ -42,7 +42,7 @@ service:
         - sumologic
 ```
 
-### Using Batch processor to batch data
+## Using Batch processor to batch data
 
 The [Batch processor][batchprocessor] can be utilized to convert the processed data into batches that are larger than a specified size or time interval. This can aid in compressing the data more effectively and minimizing the number of requests sent by the exporters.
 
@@ -62,16 +62,16 @@ batch:
 ```
 
 :::note
- If you are utilizing the [Sumo Logic exporter][sumologicexporter] to send data in a format **other than** OTLP, it is possible to explicitly restrict the size of the requests in bytes by utilizing the configuration option `max_request_body_size`.
+If you are utilizing the [Sumo Logic exporter][sumologicexporter] to send data in a format **other than** OTLP, it is possible to explicitly restrict the size of the requests in bytes by utilizing the configuration option `max_request_body_size`.
 :::
 
 Learn more about these processors:
-[batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
-[memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
-[filterprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor
-[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/pkg/exporter/sumologicexporter
+* [batchprocessor]
+* [memorylimiterprocessor]
+* [filterprocessor]
+* [sumologicexporter]
 
-### Mapping OpenTelemetry concepts to Sumo Logic
+## Mapping OpenTelemetry concepts to Sumo Logic
 
 OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentelemetry-proto/tree/main/opentelemetry/proto), which is internally constructed out of several layers. For all signals,
 these can be broken down into following:
@@ -88,9 +88,7 @@ Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a g
 
 All **Resource-level** attributes are stored as fields, and any attributes that don't match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level**, they are stored as JSON, and if there is a body, it will be stored under the `log` key.
 
-#### Examples
-
-##### Log with both Resource-level and Record-level attributes
+### Example: Log with both Resource-level and Record-level attributes
 
 Consider the following input log:
 
@@ -118,7 +116,7 @@ Such log will be stored as the following set of data at Sumo Logic:
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" />
 
-##### Log with Resource-level attributes only
+### Example: Log with Resource-level attributes only
 
 If no log-level attributes are present, the log body is stored inline. For example, for the following input:
 
@@ -141,7 +139,7 @@ The output is stored as:
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" />
 
-### Data Tagging Recommendations
+## Data Tagging Recommendations
 
 We recommend reading the [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions/) document before continuing to become more familiar with the terms used below. The following terms are important for data tagging:
 
@@ -190,3 +188,8 @@ Tags are useful for building the queries and helps to correlate the different si
 :::note
 Refer to the [Fields](/docs/manage/fields/) documentation for more information on fields and how to use them.
 :::
+
+[batchprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor
+[memorylimiterprocessor]: https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor
+[filterprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor
+[sumologicexporter]: https://github.com/SumoLogic/sumologic-otel-collector/pkg/exporter/sumologicexporter

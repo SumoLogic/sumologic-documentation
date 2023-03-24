@@ -8,7 +8,8 @@ description: Learn how to collect metrics using the Sumo Logic OpenTelemetry Col
 The Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for metrics collection. The full list of them is available in [our repository].
 
 To use the receiver, you need to define it in the `receivers:` section and then use it in the pipeline.
-Let's consider the following example usage of [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver):
+
+Consider the following example usage of [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver):
 
 ```yaml
 receivers:
@@ -69,8 +70,8 @@ service:
         - sumologic
 ```
 
-:::note
-Refer to [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
+:::tip
+Refer to our [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
 :::
 
 [our repository]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components

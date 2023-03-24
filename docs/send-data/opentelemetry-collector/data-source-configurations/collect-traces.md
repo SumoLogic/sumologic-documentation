@@ -10,7 +10,9 @@ Default installation of the Sumo Logic Distribution for OpenTelemetry Collector 
 * `localhost:4317` for GRPC
 * `localhost:4318` for HTTP
 
-If you would like to run collection on different ports, you can save a configuration like the following as `conf.d/expose-otlp.yaml`:
+## Run collection on different ports
+
+If you'd like to run collection on different ports, you can save a configuration like the following as `conf.d/expose-otlp.yaml`:
 
 ```yaml
 receivers:
@@ -22,8 +24,11 @@ receivers:
         endpoint: 0.0.0.0:4318
 ```
 
-:::note
-The configuration is going to be applied for `metrics/default`, `logs/default`, and `traces/default` defined in `sumologic.yaml`. If you'd like to create a new independent pipeline, use the following content for `conf.d/expose-otlp.yaml`
+The configuration is going to be applied for `metrics/default`, `logs/default`, and `traces/default` defined in `sumologic.yaml`.
+
+## Create a new independent pipeline
+
+If you'd like to create a new independent pipeline, use the following content for `conf.d/expose-otlp.yaml`
 
 ```yaml
 receivers:
@@ -46,12 +51,8 @@ service:
         - sumologic
 ```
 
+
+:::tip
+* Refer to our [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
+* Refer to [Instrument your application with OpenTelemetry](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/) for a detailed explanation of application instrumentation.
 :::
-
-:::note
-Refer to the [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration
-:::
-
-## Instrument your application with OpenTelemetry
-
-Refer to [Instrument your application with OpenTelemetry](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/) for detailed explanation of application instrumentation.
