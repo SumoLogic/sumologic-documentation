@@ -11,13 +11,13 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs. The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis.
+The Sumo Logic App for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs.
 
-Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for the collection of both metrics and log data.
+The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for the collection of both metrics and log data.
 
-We use the OpenTelemetry collector to collect Linux metrics and system logs. The OpenTelemetry collector runs on the Linux machine and uses the [Host Metric Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain Host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Linux logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux metrics and system logs. The OpenTelemetry collector runs on the Linux machine and uses the [Host Metric Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver) to obtain Host and process metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Linux logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Schematics.png' alt="Schematics" />
 
 ## Fields Created in Sumo Logic for Linux
 
@@ -35,11 +35,11 @@ Here are the steps for collecting logs, metrics, and app installation.
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
-In this step, you will configure the yaml file required for Linux Collection. The app requires path for system log file, based on the Linux version used.
+In this step, you will configure the yaml file required for Linux Collection. The app requires path for system log file, based on your Linux version used.
 
 #### Required Logs for Ubuntu
 
@@ -54,12 +54,13 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 #### Required Logs for CentOS, Amazon Linux, and Red Hat
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
-- audit/audit.log
-- secure
-- Messages
-- yum.log
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png')} alt="YAML" />
+- `audit/audit.log`
+- `secure`
+- `Messages`
+- `yum.log`
+
+Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png' alt="YAML" />
 
 :::note 
 
@@ -156,7 +157,7 @@ Use this dashboard to:
 
 - Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Overview.png')} alt="Host Metrics - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Host Metrics - Overview" />
 
 ### Host Metrics - CPU
 
@@ -167,7 +168,7 @@ Use this dashboard to:
 - Identify hosts and processes with high CPU utilization.
 - Examine CPU usage by type and identify anomalies over time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-CPU.png')} alt="Host Metrics - CPU" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-CPU.png' alt="Host Metrics - CPU" />
 
 ### Host Metrics - Disk
 
@@ -179,7 +180,7 @@ Use this dashboard to:
 - Monitor abnormal spikes in read/write rates.
 - Compare disk throughput across storage devices of a host.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Disk.png')} alt="Host Metrics - Disk" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Disk.png' alt="Host Metrics - Disk" />
 
 ### Host Metrics - Memory
 
@@ -191,7 +192,7 @@ Use this dashboard to:
 - Examine memory distribution (free, buffered-cache, used, total) for a given host.
 - Monitor abnormal spikes in memory and swap utilization.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Memory.png')} alt="Host Metrics - Memory" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Memory.png' alt="Host Metrics - Memory" />
 
 ### Host Metrics - Network
 
@@ -203,7 +204,7 @@ Use this dashboard to:
 - Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 - Use dashboard filters to compare throughput across the interface of a host.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Network.png')} alt="Host Metrics - Network" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Network.png' alt="Host Metrics - Network" />
 
 ### Host Metrics - TCP
 
@@ -213,7 +214,7 @@ Use this dashboard to:
 
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png')} alt="Host Metrics - TCP" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
 
 ### Process Metrics - Details
 
@@ -225,7 +226,7 @@ Use this dashboard to:
 - Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
 - Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png')} alt="Process Metrics - Details" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
 
 
 ## Linux Log-Based Dashboards
@@ -234,7 +235,7 @@ Use this dashboard to:
 
 See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png')} alt="Linux - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Linux - Overview" />
 
 #### Filtering the Overview dashboard
 
@@ -244,7 +245,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 See information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Event-Sources.png')} alt="Linux - Event Sources" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Event-Sources.png' alt="Linux - Event Sources" />
 
 #### Filtering the Event Sources dashboard
 
@@ -254,7 +255,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Login-Status.png')} alt="Linux - Login Status" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Login-Status.png' alt="Linux - Login Status" />
 
 #### Filtering the Login Status dashboard
 
@@ -264,7 +265,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png')} alt="Linux - Security Status" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
 
 #### Filtering the Security Status dashboard
 
