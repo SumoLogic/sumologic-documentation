@@ -152,7 +152,7 @@ Use this dashboard to:
 
 ### Backup Restore Mirroring
 
-The SQL Server - Backup Restore Mirroring provides information about:
+The SQL Server - Backup Restore Mirroring dashboard provides information about:
 
 -   Transaction log backup events
 -   Database backup events
