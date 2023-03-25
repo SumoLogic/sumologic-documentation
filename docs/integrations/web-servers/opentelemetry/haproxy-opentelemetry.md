@@ -17,7 +17,7 @@ The Sumo Logic App for HAProxy helps you monitor activity in HAProxy. The precon
 
 HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
 ## HAProxy Log Types
 
@@ -83,7 +83,7 @@ Here are the steps for Collecting Logs and installing the app.
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -94,7 +94,7 @@ The path of the log file configured to capture haproxy logs is needed to be give
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information.
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metric to Sumo
 
@@ -171,7 +171,7 @@ Use this dashboard to:
 - Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 - Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Overview.png' alt="Overview" />
 
 ### Error Log Analysis
 
@@ -183,7 +183,7 @@ Use this dashboard to:
 - To track and view client geographic locations generating errors.
 - Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Error-Log-Analysis.png')} alt="Error Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Error-Log-Analysis.png' alt="Error Log Analysis" />
 
 ### Outlier Analysis
 
@@ -194,7 +194,7 @@ Use this dashboard to:
 - Detect the outliers in your infrastructure with Sumo Logic's machine learning algorithm.
 - To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Outlier-Analysis.png')} alt="Outlier Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Outlier-Analysis.png' alt="Outlier Analysis" />
 
 ### Threat Analysis
 
@@ -204,13 +204,13 @@ Use this dashboard to:
 
 - To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png')} alt="Threat Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png' alt="Threat Analysis" />
 
 ### Trends
 
 The **HAProxy - Trends** dashboard provides an at-a-glance view of traffic to HAProxy servers on your network. Dashboard panels display the traffic count over one day time period, locations where traffic trends for visits by country one days time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Trends.png')} alt="Trends" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Trends.png' alt="Trends" />
 
 ### Visitor Access Types
 
@@ -220,7 +220,7 @@ Use this dashboard to:
 
 - Understand which platform and browsers are used to gain access to your infrastructure. These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Access-Types.png')} alt="Visitor Access Types" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Access-Types.png' alt="Visitor Access Types" />
 
 ### Visitor Locations
 
@@ -230,7 +230,7 @@ Use this dashboard to:
 
 - Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Locations.png')} alt="Visitor Locations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Locations.png' alt="Visitor Locations" />
 
 ### Visitor Traffic Insight
 
@@ -241,7 +241,7 @@ Use this dashboard to:
 - To understand the type of content that is frequently requested by users.
 - It helps in allocating IT resources according to the content types.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Traffic-Insight.png')} alt="Visitor Traffic Insight" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Visitor-Traffic-Insight.png' alt="Visitor Traffic Insight" />
 
 ### Web Server Operations
 
@@ -252,4 +252,4 @@ Use this dashboard to:
 - Gain insights into Client, Server Responses on HAProxy Server. This helps you identify errors in HAProxy Server.
 - To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png')} alt="Web Server Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Web-Server-Operations.png' alt="Web Server Operations" />

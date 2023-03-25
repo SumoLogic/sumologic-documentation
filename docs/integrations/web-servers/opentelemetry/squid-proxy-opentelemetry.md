@@ -15,7 +15,7 @@ The [Squid](http://www.squid-cache.org/Intro/) Proxy app is a logs app that help
 
 Squid logs are sent to Sumo Logic through OpenTtelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Schematics.png')} alt="Schematics" />
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png')} alt="Collector" />
 
 ## Step 2: Configure integration
 
@@ -51,7 +51,7 @@ The files are typically located in `/var/log/squid/access.log`. Refer to the [Pr
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png')} alt="YAML" />
 
 ## Step 3: Sending logs to Sumo
 
@@ -113,22 +113,22 @@ This sample Query is from the **Squid Proxy - HTTP Response Analysis** > **URLs 
 
 The **Squid Proxy - Overview** Dashboard provides an at-a-glance view of the activity and health of the SquidProxy clusters and servers by destination locations, error and denied requests, URLs accessed.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Overview.png')} alt="Overview" />
 
 ### Squid Proxy - Activity Trend
 
 **Squid Proxy - Activity Trend** dashboard provides trends around denied request trend, action trend, time spent to serve, success and non-success response, remote hosts.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Activity-Trend.png')} alt="Activity Trend" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Activity-Trend.png')} alt="Activity Trend" />
 
 ### Squid Proxy - HTTP Response Analysis
 
 **The Squid Proxy - HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-HTTP-Response-Analysis.png')} alt="HTTP Response Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-HTTP-Response-Analysis.png')} alt="HTTP Response Analysis" />
 
 ### Squid Proxy - Quality of Service
 
 The **Squid Proxy - Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Quality-of-Service.png')} alt="Quality of Service" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Quality-of-Service.png')} alt="Quality of Service" />

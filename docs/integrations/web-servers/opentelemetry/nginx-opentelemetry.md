@@ -19,7 +19,7 @@ We use the OpenTelemetry collector for Nginx metric collection and for collectin
 
 The diagram below illustrates the components of the Nginx collection for each web server. OpenTelemetry collector runs on the same host as Nginx, and uses the [Nginx Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver) to obtain Nginx metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Nginx logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Schematic.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Schematic.png')} alt="Access" />
 
 ## Log Types and Metrics
 
@@ -51,7 +51,7 @@ The process to set up collection for Nginx data is done through the following st
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png')} alt="Access" />
 
 ### Step 2: Configure integration
 
@@ -66,7 +66,7 @@ Below are the inputs required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png')} alt="Access" />
 
 ### Step 3: Sending logs and metric to Sumo
 
@@ -124,7 +124,7 @@ Use this dashboard to:
 - Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 - Get insights into Active and dropped connection.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Overview.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Overview.png')} alt="Access" />
 
 ### Error Logs
 
@@ -136,7 +136,7 @@ Use this dashboard to:
 - Track and view client geographic locations generating errors.
 - Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Error-Logs.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Error-Logs.png')} alt="Access" />
 
 ### Trends
 
@@ -147,7 +147,7 @@ Use this dashboard to:
 - Understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 - Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Trends.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Trends.png')} alt="Access" />
 
 ### Outlier Analysis
 
@@ -160,7 +160,7 @@ Use this dashboard to:
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Outlier-Analysis.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Outlier-Analysis.png')} alt="Access" />
 
 ### Threat Intel
 
@@ -170,7 +170,7 @@ Use this dashboard to:
 
 - Gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Threat-Intel.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Threat-Intel.png')} alt="Access" />
 
 ### Web Server Operations
 
@@ -181,7 +181,7 @@ Use this dashboard to:
 - Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
 - Identify geo-locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Web-Server-Operations.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Web-Server-Operations.png')} alt="Access" />
 
 ### Visitor Access Types
 
@@ -192,7 +192,7 @@ Use this dashboard to:
 - Understand which platform and browsers are used to gain access to your infrastructure.
 - These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Access-Types.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Access-Types.png')} alt="Access" />
 
 ### Visitor Locations
 
@@ -202,7 +202,7 @@ Use this dashboard to:
 
 - Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Locations.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Locations.png')} alt="Access" />
 
 ### Visitor Traffic Insight
 
@@ -213,7 +213,7 @@ Use this dashboard to:
 - Understand the type of content that is frequently requested by users.
 - It helps in allocating IT resources according to the content types.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Traffic-Insight.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Visitor-Traffic-Insight.png')} alt="Access" />
 
 ### Connections and Requests Metrics
 
@@ -224,4 +224,4 @@ Use this dashboard to:
 - Gain information about active and dropped connections. This helps you identify the connection rejected by Nginx Server.
 - Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Connections-and-Requests-Metrics.png')} alt="Connections and Requests Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Connections-and-Requests-Metrics.png')} alt="Connections and Requests Metrics" />

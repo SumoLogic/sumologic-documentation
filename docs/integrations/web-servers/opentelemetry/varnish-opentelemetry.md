@@ -15,7 +15,7 @@ The Sumo Logic App for [Varnish](https://varnish-cache.org/intro/) provides dash
 
 Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Varnish
 
@@ -39,7 +39,7 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -49,7 +49,7 @@ In this step, you will configure the yaml required for Varnish Collection. You'l
 
 The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details, refer the the [Prerequisites](#prerequisites) section of this page. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -115,34 +115,34 @@ This sample query is from the Varnish Overview - Traffic Volume dashboard > MB S
 
 The **Varnish - Overview** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and uptime, cache hit, requests, and VLC.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Overview.png' alt="Overview" />
 
 ### Varnish - Traffic Timeline Analysis
 
 The **Varnish - Logs Timeline Analysis** dashboard provides a high-level view of the activity and health of Varnish servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Traffic-Timeline-Analysis.png')} alt="Traffic Timeline Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Traffic-Timeline-Analysis.png' alt="Traffic Timeline Analysis" />
 
 ### Varnish - Outlier Analysis
 
 The **Varnish - Outlier Analysis** dashboard provides a high-level view of Varnish server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Outlier-Analysis.png')} alt="Outlier Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Outlier-Analysis.png' alt="Outlier Analysis" />
 
 ### Varnish - Threat Intel
 
 The **Varnish - Threat Intel** dashboard provides an at-a-glance view of threats to Varnish servers on your network. Dashboard panels display threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Threat-Intel.png')} alt="Threat Intel" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Threat-Intel.png' alt="Threat Intel" />
 
 ### Varnish - Visitor Traffic Insight
 
 The **Varnish - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Visitor-Traffic-Insight.png')} alt="Visitor Traffic Insight" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Visitor-Traffic-Insight.png' alt="Visitor Traffic Insight" />
 
 ### Varnish - Web Server Operations
 
 The **Varnish - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Web-Server-Operations.png')} alt="Web Server Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Web-Server-Operations.png' alt="Web Server Operations" />

@@ -15,7 +15,7 @@ The [Apache](https://httpd.apache.org/ABOUT_APACHE.html) app is a unified logs a
 
 The diagram below illustrates the components of the Apache collection for each web server. OpenTelemetry collector runs on the same host as Apache, and uses the [Apache Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/apachereceiver) to obtain Apache metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Apache logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Schematics.png' alt="Schematics" />
 
 The Sumo Logic App for Apache assumes:
 
@@ -52,7 +52,7 @@ Here are the steps for collecting Logs, metrics, and installing the app:
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -67,7 +67,7 @@ Below are the inputs required:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo
 
@@ -190,7 +190,7 @@ Use this dashboard to:
 - Identify the top URLs causing errors
 - Identify the top critical error messages
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Overview.png' alt="Overview" />
 
 ### Error Log Analysis
 
@@ -203,7 +203,7 @@ Use this dashboard to:
 - Identify clients causing the most errors
 - Monitor trends in error logs and identify outliers
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Error-Log-Analysis.png')} alt="Error Log Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Error-Log-Analysis.png' alt="Error Log Analysis" />
 
 ### Trends
 
@@ -213,7 +213,7 @@ Use this dashboard to:
 
 - Monitor trends and identify outliers
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Trends.png')} alt="Trends" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Trends.png' alt="Trends" />
 
 ### Outlier Analysis
 
@@ -223,7 +223,7 @@ Use this dashboard to:
 
 - Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Outlier-Analysis.png')} alt="Outlier Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Outlier-Analysis.png' alt="Outlier Analysis" />
 
 ### Threat Analysis
 
@@ -235,7 +235,7 @@ Use this dashboard to:
 
 - Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Threat-Analysis.png')} alt="Threat Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Threat-Analysis.png' alt="Threat Analysis" />
 
 ### Visitor Locations
 
@@ -245,7 +245,7 @@ Use this dashboard to:
 
 - Get insights into geographic locations of your user base
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Locations.png')} alt="Visitor Locations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Locations.png' alt="Visitor Locations" />
 
 ### Visitor Access Types
 
@@ -255,7 +255,7 @@ Use this dashboard to:
 
 - Understand which platform and browsers are being used to access your applications
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Access-Types.png')} alt="Visitor Access Types" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Access-Types.png' alt="Visitor Access Types" />
 
 ### Visitor Traffic Insight
 
@@ -265,7 +265,7 @@ Use this dashboard to:
 
 - Understand content types of content that are frequently requested by users.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Traffic-Insight.png')} alt="Visitor Traffic Insight" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Traffic-Insight.png' alt="Visitor Traffic Insight" />
 
 ### Web Server Operations
 
@@ -275,7 +275,7 @@ Use this dashboard to:
 
 - Get insights into client locations, bots and response codes
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Web-Server-Operations.png')} alt="Web Server Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Web-Server-Operations.png' alt="Web Server Operations" />
 
 ### Request State Analysis
 
@@ -285,7 +285,7 @@ Use this dashboard to:
 
 - Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Request-State-Analysis.png')} alt="Request State Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Request-State-Analysis.png' alt="Request State Analysis" />
 
 ### Server Status
 
@@ -296,4 +296,4 @@ Use this dashboard to:
 - Monitor server uptime
 - Monitor web server performance
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Server-Status.png')} alt="Server Status" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Server-Status.png' alt="Server Status" />

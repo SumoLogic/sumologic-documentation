@@ -15,7 +15,7 @@ The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is 
 
 Tomcat logs are sent to Sumo Logic through Opentelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Schematics.png' alt="Schematics" />
 
 ## Fields Created in Sumo Logic for Tomcat
 
@@ -43,7 +43,7 @@ Here are the steps for Collecting Logs and installing the app.
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -54,7 +54,7 @@ The path of the log file configured to capture tomcat logs is needed to be given
 The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a customized path, check the Tomcat.conf file for this information.
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo
 
@@ -132,7 +132,7 @@ Use this dashboard to:
 - Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 - Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Overview.png' alt="Overview" />
 
 #### Visitor Locations
 
@@ -143,7 +143,7 @@ The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view o
 - United States. Uses a geo lookup operation to display US visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 - Visits by US State Over Time. Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Visitor-Locations.png')} alt="Locations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Visitor-Locations.png' alt="Locations" />
 
 ### Visitor Traffic Insight
 
@@ -161,7 +161,7 @@ Top 5 Referrers. Shows a list of the top 5 referring websites by URL in a bar ch
 
 Top 10 Search Terms from Popular Search Engines. Displays a list of the top 10 search terms and their count from search engines such as Google, Bing, and Yahoo in an aggregation table for the past hour.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Visitor-Traffic-Insight.png')} alt="Traffic Insight" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Visitor-Traffic-Insight.png' alt="Traffic Insight" />
 
 ### Web Server Operations
 
@@ -179,7 +179,7 @@ Top 5 Clients Cause 4xx Errors. Displays a list of the top 5 clients that have 4
 
 Top 5 URIs Causing 404 Responses. Provides a list of the top 5 URIs with 404 response types in a pie chart for the past hour.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Web-Server-Operations.png')} alt="Web Server Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Web-Server-Operations.png' alt="Web Server Operations" />
 
 ### Logs Timeline Analysis
 
@@ -190,7 +190,7 @@ Use this dashboard to:
 - To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 - Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Logs-Timeline-Analysis.png')} alt="Logs Timeline Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Logs-Timeline-Analysis.png' alt="Logs Timeline Analysis" />
 
 ### Outlier Analysis
 
@@ -201,7 +201,7 @@ Use this dashboard to:
 - Detect outliers in your infrastructure with Sumo Logic's machine learning algorithm.
 - To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Outlier-Analysis.png')} alt="Outlier Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Outlier-Analysis.png' alt="Outlier Analysis" />
 
 ### Catalina Overview
 
@@ -223,7 +223,7 @@ Average Server Startup Time. Displays the average server startup time per second
 
 Server State Events Over Time. Shows server state events (shutdown or startup) in a stacked column chart on a timeline for the last seven days.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Catalina-Overview.png')} alt="Catalina Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Catalina-Overview.png' alt="Catalina Overview" />
 
 ### Garbage Collection
 
@@ -245,7 +245,7 @@ Par Old Gen. Par Old Gen is also referred to as "Tenured Space". This panel show
 
 PS Perm Gen. PS Perm Gen is also referred to as "Permanent Space". This panel shows Perm Gen memory utilization just before garbage collection was executed vs. Perm Gen memory utilization after garbage collection was executed.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Garbage-Collection.png')} alt="Garbage Collection" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Garbage-Collection.png' alt="Garbage Collection" />
 
 ### Threat intel
 
@@ -255,4 +255,4 @@ Use this dashboard to:
 
 - To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png')} alt="Threat intel" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png' alt="Threat intel" />
