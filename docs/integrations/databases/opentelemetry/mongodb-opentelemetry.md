@@ -19,7 +19,7 @@ MongoDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 ## Log Types
 
-The MongoDB logs are generated in files as configured in the configuration file /var/log/mongodb/mongodb.log. For more details on MongoDB logs, see [this](https://docs.mongodb.com/manual/reference/log-messages/) link.
+The MongoDB logs are generated in files as configured in the configuration file `/var/log/mongodb/mongodb.log`. For more details on MongoDB logs, see [this](https://docs.mongodb.com/manual/reference/log-messages/) link.
 
 ## Fields creation in Sumo Logic for MongoDB
 
