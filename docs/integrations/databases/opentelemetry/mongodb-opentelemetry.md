@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 MongoDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Schematics.png' alt="Schematics" />
 
 ## Log Types
 
@@ -49,7 +49,7 @@ By default, MongoDB logs are stored in a log file.
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -57,7 +57,7 @@ In this step the user needs to provide the path to the mongo db log file configu
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -167,7 +167,7 @@ Use this dashboard to:
 -   Gain insights into Errors logs by component and context.
 -   Number of up servers.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Overview.png' alt="Overview" />
 
 ### Errors and Warnings
 
@@ -177,7 +177,7 @@ Use this dashboard to:
 
 -   Determine components producing multiple errors or warnings.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Errors-and-Warnings.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Errors-and-Warnings.png' alt="Access" />
 
 ### Logins and Connections
 
@@ -188,7 +188,7 @@ Use this dashboard to:
 -   Determine potential hacking attempts.
 -   Determine location of attacks.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Logins-and-Connections.png')} alt="Logins and Connections" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Logins-and-Connections.png' alt="Logins and Connections" />
 
 ### Query Logs
 
@@ -199,7 +199,7 @@ Use this dashboard to:
 -   Monitor abnormal spikes in Query volume.
 -   Identify the read versus write ratio of your application queries. Adjusting indexes to improve query performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Query-Logs.png')} alt="Query Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Query-Logs.png' alt="Query Logs" />
 
 ### Replication Logs
 
@@ -210,7 +210,7 @@ Use this dashboard to:
 -   Monitor replication state and replication events like inserts/updates/commands per second.
 -   Track Replication Oplog window to identify replication delay
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Replication-Logs.png')} alt="Replication Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Replication-Logs.png' alt="Replication Logs" />
 
 ### Sharding
 
@@ -221,4 +221,4 @@ Use this dashboard to:
 -   Identify Sharding errors and warnings.
 -   Gain insights into Chunk operations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Sharding.png')} alt="Sharding" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Sharding.png' alt="Sharding" />

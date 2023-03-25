@@ -19,7 +19,7 @@ This App is tested with the following MariaDB versions:
 
 MariaDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for MariaDB
 
@@ -59,7 +59,7 @@ long_query_time=2
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -67,7 +67,7 @@ In this step, you will configure the yaml required for MariaDB Collection. Path 
 
 The files are typically located in `/var/log/mariadb/`. If you're using a customized path, check the respective conf file (default location: `/etc/my.cnf`) for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -142,7 +142,7 @@ Use this dashboard to:
 - Quickly identify the number of errors, excessive slow queries, replication errors and failed login attempts.
 - Glance through the Top 10 errors and warning along with the geo location of the failed attempts of login.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Overview.png' alt="Overview" />
 
 ### Error Logs
 
@@ -155,7 +155,7 @@ Use this dashboard to:
 - Ensure that server start, server stop, and crash recovery events are in line with expectations
 - Dashboard filters allow you to narrow a search for the database clusters.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Error-Logs.png')} alt="Error Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Error-Logs.png' alt="Error Logs" />
 
 ### Failed Logins
 
@@ -165,7 +165,7 @@ Use this dashboard to:
 
 - Monitor all failed login attempts and identify any unusual or suspicious activity
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Failed-Logins.png')} alt="Failed Logins" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Failed-Logins.png' alt="Failed Logins" />
 
 ### Replication
 
@@ -176,7 +176,7 @@ Use this dashboard to:
 - Quickly determine reasons for replication failures
 - Monitor replication status trends
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Replication.png')} alt="Replication" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Replication.png' alt="Replication" />
 
 ### Slow Queries
 
@@ -192,4 +192,4 @@ Use this dashboard to:
 - Determine which SQL commands are slower than others
 - Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Slow-Queries.png')} alt="Slow Queries" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Slow-Queries.png' alt="Slow Queries" />

@@ -21,7 +21,7 @@ We use the OpenTelemetry collector for PostgreSQL metric collection and for coll
 
 The diagram below illustrates the components of the PostgreSQL collection for each database server. OpenTelemetry collector runs on the same host as PostgreSQL, and uses the [PostgreSQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) to obtain PostgreSQL metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for PostgreSQL
 
@@ -64,7 +64,7 @@ Configure logging in PostgreSQL
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -81,7 +81,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo
 
@@ -175,7 +175,7 @@ Use this dashboard to:
 - Drill-down into database errors, failed logins and slow queries.
 - Determine if your database or queries need to be tuned based on comparing the number of slow queries.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Overview.png' alt="Overview" />
 
 ### Query Execution
 
@@ -186,7 +186,7 @@ Use this dashboard to:
 - Monitor query performance and identify slow queries.
 - Examine query execution trends.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Query-Execution.png')} alt="Query Execution" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Query-Execution.png' alt="Query Execution" />
 
 ### Database Metrics
 
@@ -198,7 +198,7 @@ Use this dashboard to:
 - Monitor database size and disk usage.
 - Identify top 5 and least 5 frequently scanned indexes.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Database-Metrics.png')} alt="Database Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Database-Metrics.png' alt="Database Metrics" />
 
 ### Schema Metrics
 
@@ -210,7 +210,7 @@ Use this dashboard to view:
 - Disk block reads and Disk usage by schema.
 - Buffer hits and rows inserted, updated and deleted by schema.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schema-Metrics.png')} alt="Schema Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schema-Metrics.png' alt="Schema Metrics" />
 
 Query performance can degrade with the growth of the size of table, database and/or indexes. This means that you either need to scale up the database instance, [partition your data](https://www.postgresql.org/docs/current/static/ddl-partitioning.html), or redesign your indexes. Unusual growth in disk space can also mean there are problems with [VACUUMs](https://www.postgresql.org/docs/9.1/static/sql-vacuum.html) .
 
@@ -225,7 +225,7 @@ Use this dashboard to:
 - Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
 - Identify known malicious IPs that are accessing your databases and use firewall access control lists to prevent them from sending you traffic going forward.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Security.png')} alt="Security" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Security.png' alt="Security" />
 
 ### Error Logs
 
@@ -237,7 +237,7 @@ Use this dashboard to:
 - Monitor error trends and quickly identify outliers.
 - Identify unexpected database or user activity.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Error-Logs.png')} alt="Error Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Error-Logs.png' alt="Error Logs" />
 
 ### Slow Queries
 
@@ -250,7 +250,7 @@ Use this dashboard to:
 - Determine which SQL commands are slower than others.
 - Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Slow-Queries.png')} alt="Slow Queries" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Slow-Queries.png' alt="Slow Queries" />
 
 ### Relation Metrics
 
@@ -262,4 +262,4 @@ Use this dashboard to:
 - Monitor index scans and size to determine if executed queries are accessing them for a relation.
 - Track index utilization of existing indexes in a relation.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Relation-Metrics.png')} alt="Relation Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />

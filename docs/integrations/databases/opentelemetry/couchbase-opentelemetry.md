@@ -19,7 +19,7 @@ Couchbase logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](h
 
 This App has been tested with Couchbase version 7.0.2.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/schematics-couchbase.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/schematics-couchbase.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Couchbase
 
@@ -46,7 +46,7 @@ Select the platform for which you want to install the Sumo OpenTelemetry Collect
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -62,7 +62,7 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Download-YAML-File.png')} alt="Configuration" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Download-YAML-File.png' alt="Configuration" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -137,7 +137,7 @@ Use this dashboard to:
 - Gain insights into information about Average Latency and Response code distribution.
 - Determine errors in clusters: get the list of top error logs and error queries
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Overview.png' alt="Overview" />
 
 
 ### Errors
@@ -149,7 +149,7 @@ Use this dashboard to:
 - Quickly identify critical errors affecting your couchbase servers.
 - Identify SQL error queries from clients.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Errors.png')} alt="Errors" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Errors.png' alt="Errors" />
 
 
 ### Events
@@ -160,7 +160,7 @@ Use this dashboard to:
 
 - To audit the activities happening in the cluster. This helps to determine what activities have occurred in the system, helping to control system security.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Events.png')} alt="Events" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Events.png' alt="Events" />
 
 
 ### HTTP Access
@@ -171,4 +171,4 @@ Use this dashboard to:
 
 - To understand user behavior accessing clusters and servers through Rest API.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-HTTP-Access.png')} alt="Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-HTTP-Access.png' alt="Access" />

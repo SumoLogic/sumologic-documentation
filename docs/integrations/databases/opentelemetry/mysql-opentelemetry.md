@@ -19,7 +19,7 @@ We use the OpenTelemetry collector for MySQL metric collection and for collectin
 
 The diagram below illustrates the components of the MySQL collection for each database server. OpenTelemetry collector runs on the same host as MySQL, and uses the [MySQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver) to obtain MySQL metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Schematics.png' alt="Schematics" />
 
 ## Log and Metrics Types
 
@@ -83,7 +83,7 @@ Here are the steps for collecting logs, metrics, and installing the app.
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -103,7 +103,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 For Linux platform, click **Download Environment Variables File** to get the file with the password which is supposed to be set as environment variable.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo Logic
 
@@ -200,7 +200,7 @@ Use this dashboard to:
 
 - Quickly identify the state of a given database cluster
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Overview.png' alt="Overview" />
 
 ### Error Logs
 
@@ -213,7 +213,7 @@ Use this dashboard to:
 - Ensure that server start, server stop and crash recovery events are in line with expectations
 - Dashboard filters allow you to narrow a search for database cluster.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Error-Logs.png')} alt="Error Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Error-Logs.png' alt="Error Logs" />
 
 ### Failed Logins
 
@@ -223,7 +223,7 @@ Use this dashboard to:
 
 - Monitor all failed login attempts and identify any unusual or suspicious activity
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Failed-Logins.png')} alt="Failed Logins" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Failed-Logins.png' alt="Failed Logins" />
 
 ### Replication
 
@@ -234,7 +234,7 @@ Use this dashboard to:
 - Quickly determine reasons for replication failures
 - Monitor replication status trends
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Replication.png')} alt="Replication" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Replication.png' alt="Replication" />
 
 ### Slow Queries
 
@@ -250,7 +250,7 @@ Use this dashboard to:
 - Determine which SQL commands are slower than others
 - Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Slow-Queries.png')} alt="Slow Queries" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Slow-Queries.png' alt="Slow Queries" />
 
 ### Performance and Resource Metrics
 
@@ -263,4 +263,4 @@ Use this dashboard to:
 - Monitor query execution trends to ensure they match up with expectations
 - Dashboard filters allow you to narrow a search for a specific database cluster
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Performance-and-Resource-Metrics.png')} alt="Performance and Resource Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Performance-and-Resource-Metrics.png' alt="Performance and Resource Metrics" />

@@ -19,7 +19,7 @@ This App is tested with the following Oracle versions:
 
 Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png' alt="Schematics" />
 
 ## Log Types
 
@@ -39,8 +39,8 @@ Following are the tags which that be created as part of Oracle App install if no
 
 Here are the steps required to configure log collection for Oracle running on a non-Kubernetes environment.
 
-* [Enable Oracle logging](enable-oracle-logging)
-* [Verify log files path](verify-local-logs-file-directories-and-path)
+* [Enable Oracle logging](#enable-oracle-logging)
+* [Verify log files path](#verify-local-logs-file-directories-and-path)
 * [Set up Oracle performance metrics script](#performance-metrics-script-setup)
 * [Configure three local log file Sources](#step-2-configure-integration)
 
@@ -132,7 +132,7 @@ The `.bat` file created above can then be triggered periodically using windows T
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -149,7 +149,7 @@ You can get the location of these logs by following the instructions in the prer
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -231,7 +231,7 @@ This sample Query is from the **Oracle - Overview** dashboard > **DB Connection*
 
 See the overview of Oracle listener process activity, including successful DB connections, TNS error information, SID and Service Name usage, and top usage, in terms of ports, database users, user hosts, client hosts, and user programs as derived from the Oracle Listener log.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Overview.png' alt="Overview" />
 
 DB Connections. The count of database connections established during the previous 24 hours.
 
@@ -265,7 +265,7 @@ Top User Program Name. A table that shows the top 20 programs that initiated con
 
 See information about Oracle errors, including counts of various error types, ORA messages, oracle instance state, and other data derived from the Oracle Alert log.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Alert-Analysis.png')} alt="Alert Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Alert-Analysis.png' alt="Alert Analysis" />
 
 Deadlock Errors. Count of ORA-00060 messages over the previous 24 hours.
 
@@ -303,7 +303,7 @@ Instance Shutdown Complete. A table that lists when shutdowns of database instan
 
 See details of Oracle listener process activity, including database connections by host and application, connection failures, command execution status and trends, and other data derived from the Oracle Listener log.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Listener-Troubleshooting.png')} alt="Listener Troubleshooting" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Listener-Troubleshooting.png' alt="Listener Troubleshooting" />
 
 DB Connections By Host. An area chart that shows the count of database connections by host, per 5 minute timeslice, over the previous 24 hours.
 
@@ -325,7 +325,7 @@ SID or Service Name Detailed Breakup. A table that shows the count of connection
 
 See information about database connections established by privileged users, connection attempts from public IP addresses, attempts to execute unauthorized commands, and events that are associated with potentially inappropriate activities as derived from Oracle Listener and Alert Logs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Security-Monitoring.png')} alt="Security Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Security-Monitoring.png' alt="Security Monitoring" />
 
 Admin Restricted Command Execution. The count of database commands that resulted in TNS-12508 errors over the previous 24 hours.
 
@@ -351,7 +351,7 @@ Failed DB Connections by Privileged Users. A table that provides information abo
 
 See information derived from the syslog audit trail, including successful and failed activities, and top usage by client, database user, and privileges used.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Sys-Audit-Log.png')} alt="Sys Audit Log" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Sys-Audit-Log.png' alt="Sys Audit Log" />
 
 Status Trend. A stacked column chart that shows the count of successful and unsuccessful database actions over the previous 24 hours.
 
@@ -371,7 +371,7 @@ Recent Successful Activities. A table that lists information about successful da
 
 See logon activity information derived from the syslog audit trail, including successful and failed logons, logon status trends, multiple database user logons and client user logons from the same UserHost, and multiple UserHost logons with the same database user.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Sys-Audit-Log-Logon-Analysis.png')} alt="Sys Audit Log - Logon Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Sys-Audit-Log-Logon-Analysis.png' alt="Sys Audit Log - Logon Analysis" />
 
 Successful Logons. Count of successful logins in the previous 24 hours.
 
@@ -395,13 +395,13 @@ Multiple UserHosts Logons with Same Database User. A table that lists database u
 
 See logon activity information derived from the XML audit trail, including successful and failed logons, logon status trends, multiple database user logons and client user logons from the same UserHost, and multiple UserHost logons with the same database user.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-XML-Audit-Log-Logon-Analysis.png')} alt="XML Audit Log - Logon Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-XML-Audit-Log-Logon-Analysis.png' alt="XML Audit Log - Logon Analysis" />
 
 ### XML Audit Log - SQL Statement Analysis
 
 See information derived from the XML audit trail about user management, role management, Data Definition Language (DDL), Data Manipulation Language (DML), and Transaction Control Language (TCL) activity.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-XML-Audit-Log-SQL-Statement-Analysis.png')} alt="XML Audit Log - SQL Statement Analysis" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-XML-Audit-Log-SQL-Statement-Analysis.png' alt="XML Audit Log - SQL Statement Analysis" />
 
 Recent User Management Activities. A table that lists information about user management activities in the previous 24 hours.
 
@@ -427,7 +427,7 @@ TCL Activity Trend. A stacked column chart that shows the count of DML actions b
 
 See database usage information obtained by the Oracle script source, including tablespace and datafile utilization; recent active connections; wait times; and recent jobs.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Monitor-Performance-by-DB-Script.png')} alt="Monitor Performance by DB Script" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Monitor-Performance-by-DB-Script.png' alt="Monitor Performance by DB Script" />
 
 TableSpace Utilization. A table that shows, for each tablespace, the percentage of tablespace used for each 5 minute timeslice over the last 60 minutes.
 

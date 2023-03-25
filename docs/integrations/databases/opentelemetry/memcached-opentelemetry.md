@@ -17,7 +17,7 @@ The Sumo Logic App for Memcached is tested for Version: 1.4.15.
 
 Memcache logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Memcached
 
@@ -50,7 +50,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -60,7 +60,7 @@ The files are typically located in `/var/log/memcached/memcached.log`. If you're
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -134,10 +134,10 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 
 The **Memcached - Overview** dashboard provides an at-a-glance view of the Memcached errors, client protocol, and command executed.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Overview.png' alt="Overview" />
 
 ### Logs
 
 The **Memcached - Logs** dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Logs.png')} alt="Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Logs.png' alt="Logs" />

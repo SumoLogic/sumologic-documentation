@@ -17,7 +17,7 @@ We use the OpenTelemetry collector to collect Elasticsearch metrics and logs.
 
 The diagram below illustrates the components of the Elasticsearch collection for each database server. OpenTelemetry collector runs on the same host as Elasticsearch, and uses the [Elasticsearch Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/elasticsearchreceiver/) to obtain Elasticsearch metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Elasticsearch logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Schematics.png')} alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Schematics.png' alt="Schematics" />
 
 ## Fields Create in Sumo Logic for Elasticsearch
 
@@ -51,7 +51,7 @@ Here are the steps for collecting logs, metrics, and installing the app.
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -68,7 +68,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For Linux platform, click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metric to Sumo
 
@@ -191,76 +191,76 @@ deployment.environment=* metric=jvm.memory.heap.used db.cluster.name=* db.node.
 
 The **Elasticsearch - Overview** dashboard provides the health of Elasticsearch clusters, shards analysis, resource utilization of Elasticsearch host and clusters, search and indexing performance.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Overview.png' alt="Overview" />
 
 ### Total Operations Stats
 
 The **Elasticsearch - Total Operations stats** dashboard provides information on the operations of the Elasticsearch system.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Total-Operations-Stats.png')} alt="Total Operations Stats" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Total-Operations-Stats.png' alt="Total Operations Stats" />
 
 ### Thread Pool
 
 The **Elasticsearch - Thread Pool** dashboard analyzes thread pools operations to manage memory consumption of nodes in the cluster.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Thread-Pool.png')} alt="Thread Pool" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Thread-Pool.png' alt="Thread Pool" />
 
 ### Resource
 
 The **Elasticsearch - Resource** dashboard monitors JVM Memory, Network, Disk, Network and CPU of Elasticsearch node.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Resource.png')} alt="Resource" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Resource.png' alt="Resource" />
 
 ### Performance Stats
 
 The **Elasticsearch - Performance Stats** dashboard performance statistics such as latency and Translog operations and size.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Performance-Stats.png')} alt="Performance Stats" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Performance-Stats.png' alt="Performance Stats" />
 
 ### Indices
 
 The **Elasticsearch - Indices** dashboard monitors Index operations, size and latency. It also provides analytics on doc values, fields, fixed bitsets, and terms memory.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Indices.png')} alt="Indices" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Indices.png' alt="Indices" />
 
 ### Documents
 
 The **Elasticsearch - Documents** dashboard provides analytics and monitoring on Elasticsearch documents.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Documents.png')} alt="Documents" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Documents.png' alt="Documents" />
 
 ### Caches
 
 The **Elasticsearch - Caches** dashboard allows you to monitor query cache size, evictions and field data memory size.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Caches.png')} alt="Caches" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Caches.png' alt="Caches" />
 
 ### Errors And Warnings
 
 The **ElasticSearch - Errors And Warnings** dashboard shows errors and warnings by Elasticsearch components.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Errors-And-Warnings.png')} alt="Errors And Warnings" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Errors-And-Warnings.png' alt="Errors And Warnings" />
 
 ### Garbage Collection
 
 The **Elasticsearch - Garbage Collector** dashboard provides information on the garbage collection of the Java Virtual Machine.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Garbage-Collection.png')} alt="Garbage Collection" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Garbage-Collection.png' alt="Garbage Collection" />
 
 ### Login And Connections
 
 The **ElasticSearch - Login And Connections** dashboard shows geo location of client connection requests, failed connection logins and count of failed login attempts
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Login-And-Connections.png')} alt="Login And Connections" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Login-And-Connections.png' alt="Login And Connections" />
 
 ### Operations
 
 The **Elasticsearch - Operations** dashboard allows you to monitor server stats and events such as node up/down, index creation/deletion. It also provides disk usage and cluster health status.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Operations.png')} alt="Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Operations.png' alt="Operations" />
 
 ### Queries
 
 The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Queries.png')} alt="Resource Usage" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ElasticSearch-OpenTelemetry/ElasticSearch-Queries.png' alt="Resource Usage" />
