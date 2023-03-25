@@ -15,7 +15,7 @@ The Sumo Logic App for Microsoft SQL Server is a logs based app that provides in
 
 This App has been tested with following SQL Server versions:
 
--   Microsoft SQL Server 2012
+- Microsoft SQL Server 2012
 
 SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -25,17 +25,16 @@ SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](
 
 Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of SQL Server App install if not already present.
 
-* **`db.cluster.name`** - User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
-**`db.system`** - Has a fixed value of **sqlserver**.
-* **`deployment.environment`** - User configured. This is the deployment environment where the SQL Server cluster resides. For example dev, prod, or qa.
-**`sumo.datasource`** - Has a fixed value of **sqlserver**.
+* `db.cluster.name`. User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* `db.system`. Has a fixed value of **sqlserver**.
+* `deployment.environment`. User configured. This is the deployment environment where the SQL Server cluster resides. For example dev, prod, or qa.
+* `sumo.datasource`. Has a fixed value of **sqlserver**.
 
 ## Prerequisites
 
 Make sure logging is turned on in SQL Server. Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
-The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
 
-`C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
+The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
 
 The ERRORLOG is typically in UTF-16LE encoding, but verify the file encoding used in your SQL Server configuration. On Windows, this can be found by using a tool such as Notepad++.
 
