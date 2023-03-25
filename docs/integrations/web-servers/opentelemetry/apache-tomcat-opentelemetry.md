@@ -21,17 +21,17 @@ Tomcat logs are sent to Sumo Logic through Opentelemetry [filelog receiver](http
 
 The following are the [Fields](/docs/manage/fields) that will be created as part of the Tomcat App install, if not already present.
 
-- **`webengine.cluster.name`** - User configured. Set a value of the cluster where your Tomcat instance resides. This will be tagged along with the data sent to Sumo.
-- **`webengine.system`** - Has a fixed value of **tomcat**.
-- **`sumo.datasource`** - Has a fixed value of **tomcat**.
+- `webengine.cluster.name`. User configured. Set a value of the cluster where your Tomcat instance resides. This will be tagged along with the data sent to Sumo.
+- `webengine.system`. Has a fixed value of **tomcat**.
+- `sumo.datasource`. Has a fixed value of **tomcat**.
 
 ## Prerequisites
 
 The Sumo Logic App for Apache Tomcat uses three types of logs:
 
-1.  Tomcat Access logs \ Log format description: [https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html) Recommended pattern used is pattern="common"
-2.  Tomcat Catalina.out logs \ Log format description: <https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html>
-3.  Tomcat Garbage Collection (GC) logs \ Log format description: <https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements>
+1. Tomcat Access logs. [Log format description](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html). Recommended pattern used is pattern="common".
+2. Tomcat Catalina.out logs. [Log format description](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
+3. Tomcat Garbage Collection (GC) logs. [Log format description](https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements)
 
 By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default directory for log files is listed in the `/usr/share/tomcat/conf/logging.properties` file.
 
@@ -52,6 +52,7 @@ In this step, you will configure the yaml required for Tomcat Collection.
 The path of the log file configured to capture tomcat logs is needed to be given here.
 
 The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a customized path, check the Tomcat.conf file for this information.
+
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' alt="YAML" />
@@ -100,14 +101,14 @@ You can add any custom fields which you want to tag along with the data ingested
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-### Sample Log Messages
+## Sample Log Messages
 
 ```
 Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server startup in 63394 ms
 179.105.33.169 - - [13/Dec/2022:15:53:03 +0000] "PUT /aboutus/ HTTP/1.1" 404 76246453 "http://bing.com/Nutch-1.4" "-"
 ```
 
-### Sample Query
+## Sample Queries
 
 ```sql
  %"sumo.datasource"=tomcat %"webengine.cluster.name"=*

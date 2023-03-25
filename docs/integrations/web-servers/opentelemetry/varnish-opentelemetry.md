@@ -19,9 +19,9 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 ## Fields creation in Sumo Logic for Varnish
 
-- **`webengine.cluster.name`**. User configured. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`**. Has a fixed value of **varnish**.
-- **`sumo.datasource`**. Has a fixed value of **varnish**.
+- `webengine.cluster.name`. User configured. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `webengine.system`. Has a fixed value of **varnish**.
+- `sumo.datasource`. Has a fixed value of **varnish**.
 
 ## Prerequisites
 
@@ -67,18 +67,18 @@ The files are located in `/var/log/varnish/varnishncsa.log` by default. For more
 
 1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command 
-```sh
-sudo systemctl restart otelcol-sumo
-```
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
 1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command 
-```sh
-otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
@@ -93,7 +93,7 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol
 
 ### Sample Query
 
-This sample query is from the Varnish Overview - Traffic Volume dashboard > MB Served Over Time panel.
+This sample query is from the **Varnish Overview - Traffic Volume** dashboard > **MB Served Over Time** panel.
 
 ```sql title="Query String"
 %"sumo.datasource"=varnish %"webengine.system"=varnish %"webengine.cluster.name"=* | json "log" as _rawlog nodrop 

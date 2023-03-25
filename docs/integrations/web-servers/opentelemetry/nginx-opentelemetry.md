@@ -13,13 +13,16 @@ import TabItem from '@theme/TabItem';
 
 Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic App for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
 
-The app has been tested with Nginx version: 1.19.8, 1.21.4, 1.23.1
+The app has been tested with Nginx version: 1.19.8, 1.21.4, 1.23.1.
 
 We use the OpenTelemetry collector for Nginx metric collection and for collecting Nginx logs.
 
-The diagram below illustrates the components of the Nginx collection for each web server. OpenTelemetry collector runs on the same host as Nginx, and uses the [Nginx Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver) to obtain Nginx metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Nginx logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+<!--
+The diagram below illustrates the components of the Nginx collection for each web server.
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Schematic.png' alt="Schematic" />
+-->
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Schematic.png' alt="Access" />
+OpenTelemetry collector runs on the same host as Nginx, and uses the [Nginx Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver) to obtain Nginx metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Nginx logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 ## Log Types and Metrics
 
@@ -32,16 +35,15 @@ The Sumo Logic App for Nginx assumes:
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Nginx App install if not already present.
 
-- **`webengine.cluster.name`** - User configured.Enter a name to uniquely identify your Nginx web server cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.node.name`** - Has value of host name.
-- **`webengine.system`** - Has fixed value of nginx
-- **`sumo.datasource`** - Has fixed value of nginx
+- `webengine.cluster.name`. User configured.Enter a name to uniquely identify your Nginx web server cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `webengine.node.name`. Has value of host name.
+- `webengine.system`. Has fixed value of nginx.
+- `sumo.datasource`. Has fixed value of nginx.
 
 ## Prerequisites
 
-* Configuring Nginx server to expose status endpoint for collecting metrics:
-The receiver used gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
-* Configuring and retrieving access and error log files: Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
+* Configure your Nginx server to expose status endpoint for collecting metrics: The receiver used gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
+* Configure and retrieve access and error log files: Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 
 ## Collecting Logs, Metrics, and Installing Nginx App
 
@@ -59,14 +61,16 @@ In this step, you will configure the yaml required for Nginx Collection.
 
 Below are the inputs required:
 
-- **Endpoint** - (default: 127.0.0.1:3306): The URL of the status endpoint.
-- **Access File log Path** - Enter the path to the Access log file for your nginx instance.
-- **Error file log path** - Enter the path to the error log file for your nginx instance.
-- **Fields**: `webengine.cluster.name` - User configured. Enter a name to identify this nginx cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- **Endpoint**. The URL of the status endpoint (default: `127.0.0.1:3306`).
+- **Access File log Path**. Enter the path to the Access log file for your nginx instance.
+- **Error file log path**. Enter the path to the error log file for your nginx instance.
+- **Fields**. `webengine.cluster.name` User configured. Enter a name to identify this nginx cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Click on the **Download YAML File** button to get the yaml file.
 
+<!--
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png' alt="Access" />
+-->
 
 ### Step 3: Sending logs and metric to Sumo
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
 The [Squid](http://www.squid-cache.org/Intro/) Proxy app is a logs app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users' experience.
 
@@ -25,9 +25,9 @@ By default, the squid proxy will write the access log to the log directory that 
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Squid App install if not already present:
 
-- **`webengine.cluster.name`** - User configured. Enter a name to identify this Squid cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **`webengine.system`**  - Has a fixed value of **squidproxy**.
-- **`sumo.datasource`** - Has a fixed value of **squidproxy**.
+- `webengine.cluster.name`. User configured. Enter a name to identify this Squid cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `webengine.system`. Has a fixed value of **squidproxy**.
+- `sumo.datasource`. Has a fixed value of **squidproxy**.
 
 ## Collection Configuration and App installation
 
@@ -43,9 +43,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 OpenTelemetry works with a [configuration](https://opentelemetry.io/docs/collector/configuration/) yaml file which has all the details with respect to the data which needs to be collected. For example, it specifies the location of a log file that is read and sent to the Sumo Logic platform..
 
-In this step, you will configure the yaml required for Squid Collection.
-
-The path of the log file configured to capture Squid logs is needed to be given here.
+In this step, you will configure the yaml required for Squid Collection. The path of the log file configured to capture Squid logs is needed to be given here.
 
 The files are typically located in `/var/log/squid/access.log`. Refer to the [Prerequisites](#prerequisites) section for more details.
 

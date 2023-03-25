@@ -29,9 +29,9 @@ The HAProxy logs are generated in files as configured in the configuration file 
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
-- **webengine.cluster.name** - User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
-- **webengine.system** - Has fixed value of **haproxy**
-- **sumo.datasource** - Has fixed value of **haproxy**
+- `webengine.cluster.name`. User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
+- `webengine.system`. Has fixed value of **haproxy**
+- `sumo.datasource`. Has fixed value of **haproxy**
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ This section provides instructions for configuring log collection for HAProxy ru
 
 By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file `/etc/haproxy/haproxy.cfg` is needed to be modified to send logs to files.
 
-HAProxy logs have six levels of verbosity. To select a level, set loglevel to one of:
+HAProxy logs have several levels of verbosity. To select a level, set your loglevel to one of the following:
 
 - emerg - Errors such as running out of operating system file descriptors.
 - alert - Some rare cases where something unexpected has happened, such as being unable to cache a response.
@@ -60,7 +60,7 @@ All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/
   global
      log 127.0.0.1  local2
   ```
-1. Now create an `etc/rsyslog.d/haproxy.conf` file containing below lines.
+1. Create an `etc/rsyslog.d/haproxy.conf` file containing below lines.
   ```bash
   local2.*    /var/log/haproxy.log
   ```
@@ -91,8 +91,7 @@ In this step, you will configure the yaml required for HAProxy Collection.
 
 The path of the log file configured to capture haproxy logs is needed to be given here.
 
-The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information.
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' alt="YAML" />
 
@@ -112,18 +111,18 @@ You can add any custom fields which you want to tag along with the data ingested
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
 2. Restart the collector using:
-```sh
-sudo systemctl restart otelcol-sumo
-```
+  ```sh
+  sudo systemctl restart otelcol-sumo
+  ```
 
 </TabItem>
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Haproxy instance which needs to be monitored.
 2. Restart the otelcol-sumo process using:
-```sh
-otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
+  ```sh
+  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
 </TabItem>
 </Tabs>
@@ -139,7 +138,7 @@ May 13 08:24:43 localhost haproxy[21813]:
 
 ## Sample Queries
 
-This query example is from the HAProxy - Overview dashboard > Top 5 URLs with Errors panel:
+This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
 ```
 webengine.cluster.name=* %"sumo.datasource"=haproxy
