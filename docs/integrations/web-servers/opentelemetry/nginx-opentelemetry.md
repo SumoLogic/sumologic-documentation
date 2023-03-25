@@ -61,7 +61,7 @@ In this step, you will configure the yaml required for Nginx Collection.
 
 Below are the inputs required:
 
-- **Endpoint**. The URL of the status endpoint (default: `127.0.0.1:3306`).
+- **Endpoint**. The URL of the status endpoint (default: `http://localhost:80/status`).
 - **Access File log Path**. Enter the path to the Access log file for your nginx instance.
 - **Error file log path**. Enter the path to the error log file for your nginx instance.
 - **Fields**. `webengine.cluster.name` User configured. Enter a name to identify this nginx cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -87,7 +87,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <TabItem value="Linux">
 
-1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Nginx instance which needs to be monitored.
+1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder for the Nginx instance which needs to be monitored.
 2. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
@@ -96,7 +96,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="Windows">
 
-1. Copy the yaml to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the yaml to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using 
   ```sh
   Restart-Service -Name OtelcolSumo
@@ -105,7 +105,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder in the Nginx instance which needs to be monitored.
+1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Nginx instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
