@@ -29,7 +29,7 @@ This section provides instructions for configuring log collection for RabbitMQ r
 Follow the instructions to set up log collection:
 
 1. **Configure logging in RabbitMQ**. RabbitMQ supports logging via the following methods: local text log files, syslog and stdout. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, log level needs to be set to **debug**. Default log level is **info**. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
-2. **Configure RabbitMQ to write log lines to a local file**. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the RabbitMQ.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://www.rabbitmq.com/logging.html). Edit or create `/etc/rabbitmq/rabbitmq.conf` file config:
+2. **Configure RabbitMQ to write log lines to a local file**. By default, RabbitMQ logs are stored in `/var/log/rabbitmq/rabbit@<hostname>.log`. The default directory for log files is listed in the `RabbitMQ.conf` file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://www.rabbitmq.com/logging.html). Edit or create `/etc/rabbitmq/rabbitmq.conf` file config:
   ```
   log.dir = /var/log/rabbitmq
   log.file = rabbitmq.log
@@ -42,7 +42,7 @@ Once the logs are configured to be written to a local file, follow the below ste
 
 {@import ../../../reuse/opentelemetry/config-app-install.md}
 
-### Step 1 : Set up Collector
+### Step 1: Set up Collector
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 

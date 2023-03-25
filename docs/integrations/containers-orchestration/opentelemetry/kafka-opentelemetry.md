@@ -15,7 +15,7 @@ The Sumo Logic App for Kafka is a unified logs and metrics app. The app helps yo
 
 We use the OpenTelemetry collector for Kafka metrics and logs collection.
 
-The diagram below illustrates the components of the Kafka collection for each kafka broker node. OpenTelemetry collector runs on the same host as Kafka, and uses the [Kafka Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkametricsreceiver) to obtain Kafka metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Kafka logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The diagram below illustrates the components of the Kafka collection for each Kafka broker node. OpenTelemetry collector runs on the same host as Kafka, and uses the [Kafka Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkametricsreceiver) to obtain Kafka metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Kafka logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Schematics.png' alt="Schematics" />
 
@@ -33,8 +33,7 @@ The Sumo Logic App for Kafka assumes:
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of KafkaApp install if not already present.
 
-messaging.cluster.name - User configured.Enter a name to uniquely identify your kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
-
+* `messaging.cluster.name`. User configured. Enter a name to uniquely identify your Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * `messaging.node.name`. Has value of `host name`.
 * `messaging.system`. Has fixed value of `kafka`.
 * `sumo.datasource`. Has fixed value of `kafka`.
@@ -47,7 +46,7 @@ Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller
 
 The process to set up collection for Kafka data is done through the following steps.
 
-### Step1: Set up OpenTelemetry Collector
+### Step 1: Set up OpenTelemetry Collector
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
@@ -57,11 +56,11 @@ The process to set up collection for Kafka data is done through the following st
 
 In this step we will be configuring the yaml required for Kafka Collection.
 
-Below are the inputs required:
+Below is the input required:
 
 - **Endpoint**. The URL of the broker endpoint (default: `localhost:9092`).
-- **Server File log Path**. Enter the path to the Server log file for your kafka instance.
-- **Controller file log path**. Enter the path to the Controller log file for your kafka instance.
+- **Server File log Path**. Enter the path to the Server log file for your Kafka instance.
+- **Controller file log path**. Enter the path to the Controller log file for your Kafka instance.
 - **Fields**. `messaging.cluster.name` User configured. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Click on the **Download YAML File** button to get the yaml file.
