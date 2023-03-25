@@ -19,7 +19,7 @@ This App has been tested with following SQL Server versions:
 
 SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png')} alt="Redis Logs dashboards" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards" />
 
 ## Fields creation in Sumo Logic for SQL Server
 
@@ -51,7 +51,7 @@ Select the platform for which you want to install the Sumo OpenTelemetry Collect
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png')} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -61,7 +61,7 @@ The Microsoft SQL Server App's queries and dashboards depend on logs from the SQ
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png')} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
@@ -138,7 +138,7 @@ Use this dashboard to:
 -   Keep track of Counts like - Deadlock, Error, Backup failure, mirroring errors and insufficient space issue.
 -   Examine Login activities, failures, and failure reasons.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Overview.png')} alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
 
 ### General Health
 
@@ -150,7 +150,7 @@ Use this dashboard to:
 -   Monitor server events trends including SQL Server wait time.
 -   Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-General-Health.png')} alt="General Health" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
 
 ### Backup Restore Mirroring
 
@@ -162,7 +162,7 @@ The SQL Server - Backup Restore Mirroring provides information about:
 -   Backup failures and reasons
 -   Mirroring errors
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png')} alt="Backup Restore Mirroring" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' alt="Backup Restore Mirroring" />
 
 ### Operations
 
@@ -173,4 +173,4 @@ Use this dashboard to:
 -   Get insights into configuration changes and updates to SQL server instances.
 -   Monitor any errors and warnings.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Operations.png')} alt="Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Operations.png' alt="Operations" />
