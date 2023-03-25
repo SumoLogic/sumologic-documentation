@@ -127,7 +127,7 @@ Please modify the location of the `puppetReport.sh` if required in the above com
 
 ### Step 2: Configure integration
 
-In this step, we will be configure the yaml required for Puppet collection.
+In this step, you will configure the yaml required for Puppet collection.
 
 Path of the log file configured to capture puppet access logs and puppet report are needed to be given here. Refer to the Prerequisites section of this document.
 

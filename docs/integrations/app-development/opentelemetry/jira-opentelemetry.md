@@ -81,7 +81,7 @@ When you configure the webhook, enter the URL for the [HTTP source you created](
 
 ### Step 2: Configure integration
 
-In this step, we will configure the yaml file required for the Jira Collection.
+In this step, you will configure the yaml file required for Jira Collection.
 
 Path of the different log file configured to capture Jira logs is needed to be given here:
 - Jira Access Logs. Apache HTTP server log files. Default path `/var/log/apache2/*.log`.

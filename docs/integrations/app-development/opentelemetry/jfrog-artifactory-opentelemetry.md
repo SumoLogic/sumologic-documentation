@@ -60,7 +60,7 @@ A restart is required for traffic collection to take effect.
 
 ### Step 2: Configure integration
 
-In this step we will configure the yaml required for the Artifactory Collection.
+In this step, you will configure the yaml required for the Artifactory Collection.
 
 Path of the different log file configured to capture Artifactory logs is needed to be given here:
 
