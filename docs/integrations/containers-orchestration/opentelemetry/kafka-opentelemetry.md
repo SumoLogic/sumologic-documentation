@@ -93,7 +93,7 @@ Click on the **Download YAML File** button to get the yaml file.
 <TabItem value="Windows">
 
 1.  Copy the yaml to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using 
+2.  Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
