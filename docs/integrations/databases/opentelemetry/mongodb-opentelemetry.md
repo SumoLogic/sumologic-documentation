@@ -75,7 +75,7 @@ You can add any custom fields which you want to tag along with the data ingested
 <TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
-2. restart the collector using
+2. restart the collector using:
 ```sh
  sudo systemctl restart otelcol-sumo
 ```
@@ -84,7 +84,7 @@ You can add any custom fields which you want to tag along with the data ingested
 <TabItem value="Windows">
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using 
+2. Restart the collector using: 
 ```sh
 Restart-Service -Name OtelcolSumo
 ```
@@ -93,7 +93,7 @@ Restart-Service -Name OtelcolSumo
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Mongodb instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
+2. Restart the otelcol-sumo process using:
 ```sh
  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml" 
 ```

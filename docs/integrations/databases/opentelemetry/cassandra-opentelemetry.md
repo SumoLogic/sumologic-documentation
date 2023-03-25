@@ -57,7 +57,7 @@ You can add any custom fields which you want to be tagged with the data ingested
 Linux:
 
 1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Cassandra instance which needs to be monitored.
-2. Restart the collector using
+2. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```

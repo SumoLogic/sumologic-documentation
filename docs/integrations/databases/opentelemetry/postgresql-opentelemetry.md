@@ -15,13 +15,13 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic App for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors.The metrics allow you to monitor database resource utilization and throughput performance.
 
-This App supports PostgreSQL  version 9.6+.
+This App supports PostgreSQL version 9.6+.
 
 We use the OpenTelemetry collector for PostgreSQL metric collection and for collecting PostgreSQL logs.
 
 The diagram below illustrates the components of the PostgreSQL collection for each database server. OpenTelemetry collector runs on the same host as PostgreSQL, and uses the [PostgreSQL receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver) to obtain PostgreSQL metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. MySQL logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schematics.png' alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for PostgreSQL
 
@@ -36,13 +36,13 @@ Following are the tags that will be created as part of PostgreSQL App install if
 
 [Here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver#prerequisites) are the prerequisites for metric collection.
 
-Configure logging in PostgreSQL
+Configure logging in PostgreSQL:
 
 1. Locate your local PostgreSQL postgresql.conf configuration file in the database data_directory. For more information, see the [PostgreSQL File Locations documentation](https://www.postgresql.org/docs/9.1/static/runtime-config-file-locations.html). By default it's located in `/var/lib/pgsql/<version>/data/postgresql.conf`. You can run SHOW config_file command inside your server's psql shell to get the location. After determining the location of conf file, modify the PostgreSQL postgresql.conf configuration file logging parameters
 2. Connect to the database server (using SSH) in a terminal window.
 3. Open `postgresql.conf` configuration file.
 4. Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
-```sql
+  ```sql
     log_destination = 'stderr'
     logging_collector = on
     log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
@@ -55,8 +55,11 @@ Configure logging in PostgreSQL
     log_timezone = 'UTC'
     log_min_messages = 'WARNING'
     log_line_prefix = '%m [%p] %q%u@%d '
-```
-5.  Save the `postgresql.conf` file and restart the postgresql server: `sudo  service postgresql restart`
+  ```
+5.  Save the `postgresql.conf` file and restart the postgresql server:   
+  ```sh
+  sudo service postgresql restart
+  ```
 
 ## Collecting logs, metrics, and PostgreSQL app installation
 
@@ -64,7 +67,7 @@ Configure logging in PostgreSQL
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -81,7 +84,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs and metrics to Sumo
 

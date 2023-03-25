@@ -98,7 +98,7 @@ Click on the **Download YAML File** button to get the yaml file.
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Couchbase instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command
+2. Restart the otelcol-sumo process using:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```

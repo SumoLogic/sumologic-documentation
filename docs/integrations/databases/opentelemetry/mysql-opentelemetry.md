@@ -57,20 +57,20 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 1. Open `my.cnf` in a text editor.
 2. Set the following parameters in the `[mysqld]` section:
-```sql
-[mysqld]
-    log_error = /var/log/mysql/error.log
-    slow_query_log=1
-    slow_query_log_file = /var/log/mysql/mysql-slow.log
-    long_query_time=2
-    long_query_time=2
-```
+  ```sql
+  [mysqld]
+      log_error = /var/log/mysql/error.log
+      slow_query_log=1
+      slow_query_log_file = /var/log/mysql/mysql-slow.log
+      long_query_time=2
+      long_query_time=2
+  ```
 
-[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the log_error key.
+[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
 
-[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html). slow_query_log=1 enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
+[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
 
-[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MySQL App.
+[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
 
 1. Save the `my.cnf` file.
 2. Restart the MySQL server: `sudo mysql.server restart`
@@ -95,7 +95,7 @@ Below are the required inputs:
 - **User Name**. enter the MySQL username.
 - **Error File log Path**. enter the path to the error log file for your mysql instance.
 - **Slow Transaction file log path**. enter the path to the slow log file for your mysql instance.
-- **Tags** : `db.cluster.name`
+- **Tags**. `db.cluster.name`.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 
@@ -121,11 +121,11 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 <TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySQL instance which needs to be monitored.
-2. Place Env file in the following directory
+2. Place Env file in the following directory:
   ```sh
   /etc/otelcol-sumo/env/
   ```
-3. restart the collector using
+3. restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
@@ -134,7 +134,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 <TabItem value="Windows">
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using 
+2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
@@ -143,7 +143,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySQL instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command 
+2. Restart the otelcol-sumo process using: 
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
@@ -197,7 +197,6 @@ sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* 
 The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
 
 Use this dashboard to:
-
 - Quickly identify the state of a given database cluster
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Overview.png' alt="Overview" />

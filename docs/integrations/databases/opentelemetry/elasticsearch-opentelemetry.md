@@ -86,7 +86,7 @@ For Linux platform, click on **Download Environment Variables File** button to g
 <TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
-2. Place Env file in the following directory
+2. Place Env file in the following directory:
   ```sh
   /etc/otelcol-sumo/env/
   ```
