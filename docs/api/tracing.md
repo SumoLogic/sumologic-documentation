@@ -5,6 +5,10 @@ sidebar_label: Traces
 description: Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/traces.png')} alt="Thumbnail icon" width="40"/>
+
 The Traces API allows you to browse traces collected in the system. You can execute queries to find traces matching provided search criteria as well as gather detailed information about individual traces and spans. For more information, see [View and investigate traces](/docs/apm/traces/view-and-investigate-traces).
 
 :::tip Other Tracing APIs

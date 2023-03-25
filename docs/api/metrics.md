@@ -5,6 +5,10 @@ sidebar_label: Metrics
 description: Use HTTP endpoints to access your metric data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
 
 {@import ../reuse/api-intro.md}
