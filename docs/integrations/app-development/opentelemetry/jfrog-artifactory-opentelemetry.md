@@ -19,7 +19,7 @@ The Sumo Logic App for Artifactory provides insight into your [JFrog Artifactory
 
 Following are the Tags which will be created as part of Artifactory App install if not already present.
 
-**sumo.datasource** - Has fixed value of **artifactory**
+* `sumo.datasource`. Has fixed value of **artifactory**
 
 ## Prerequisites
 
@@ -27,10 +27,10 @@ This section provides instructions for configuring log collection for Artifactor
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
-- **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
-- **access.log**.  The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
-- **request.log**. Generic HTTP traffic information similar to the Apache HTTPd request log.
-- **traffic.log**. A log that contains information about site traffic and file sizes.
+- `artifactory.log`. The main Artifactory log file that contains data on Artifactory server activity.
+- `access.log`. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
+- `request.log`. Generic HTTP traffic information similar to the Apache HTTPd request log.
+- `traffic.log`. A log that contains information about site traffic and file sizes.
 
 For more details about Artifactory logs, refer to [JFrog Logging](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
@@ -119,13 +119,13 @@ Click on the **Download YAML File** button to get the yaml file.
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-### Sample Log Messages in Non-Kubernetes environments
+## Sample Log Messages
 
-```
+```bash title="Sample Log Messages in Non-Kubernetes environments"
 2023-45-16 11:45:44,171 [a8bgdia2di2g80kh] [ACCEPTED DEPLOY] hortonworks-cache:org/apache/hadoop/hadoop-project/2.6.0-cdh5.4.4-SNAPSHOT/maven-metadata.xml for client : admin/195.186.216.125.
 ```
 
-### Sample Query
+## Sample Query
 
 This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys by Geolocation** panel.
 

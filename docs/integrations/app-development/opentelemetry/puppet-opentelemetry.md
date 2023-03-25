@@ -20,16 +20,13 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 
 Following are the tags which will be created as part of Puppet App install if not already present. 
 
-- **`sumo.datasource`** - Has a fixed value of **Puppet**.
+- `sumo.datasource`. Has a fixed value of **Puppet**.
 
 ## Prerequisites
 
-This section provides instructions for configuring log collection for Puppet running on a non-Kubernetes environment for the Sumo Logic App for Puppet.
-
-Follow the instructions to set up log collection:
+This section provides instructions for configuring log collection for Puppet running on a non-Kubernetes environment for the Sumo Logic App for Puppet. F
 
 We use OpenTelemetry collector to gather the following data from Puppet:
-
 - **Puppet Server logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 - **Puppet Server Access logs**. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 - Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
@@ -115,6 +112,7 @@ Configure a cron job to trigger the python script using crontab. Frequency of th
 ```sh
 <frequency_expression> /opt/puppetlabs/server/data/puppetserver/reports/puppetReport.sh
 ```
+
 Please modify the location of the `puppetReport.sh` if required in the above command. The execution of the script above will generate a log file named `puppet_rpt_conversion.log`. The path to this log file needs to be provided during the app installation.
 
 ## Collection configuration and App installation
