@@ -27,7 +27,7 @@ The HAProxy logs are generated in files as configured in the configuration file 
 
 ## Fields Create in Sumo Logic for HAProxy
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of HAProxy App install if not already present.
 
 - **webengine.cluster.name** - User configured. Enter a name to identify the Haproxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - **webengine.system** - Has fixed value of **haproxy**
