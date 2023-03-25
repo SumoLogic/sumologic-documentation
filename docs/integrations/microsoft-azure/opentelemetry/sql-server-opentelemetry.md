@@ -134,7 +134,6 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 The SQL Server - Overview dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server (s) deployed in your cluster. This dashboard also provides login activities and methods by users.
 
 Use this dashboard to:
-
 -   Keep track of Counts like - Deadlock, Error, Backup failure, mirroring errors and insufficient space issue.
 -   Examine Login activities, failures, and failure reasons.
 
@@ -154,7 +153,7 @@ Use this dashboard to:
 
 ### Backup Restore Mirroring
 
-The SQL Server - Backup Restore Mirroring provides information about:
+The SQL Server - Backup Restore Mirroring dashboard provides information about:
 
 -   Transaction log backup events
 -   Database backup events
