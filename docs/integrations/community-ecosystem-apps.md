@@ -31,14 +31,15 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
 * [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
 * [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF) (Rating: 3.5)
+* [Microsoft Defender for Endpoint](https://github.com/SumoLogic/sumologic-content/tree/master/Microsoft/Defender_4_EndPoint) (Rating: None)
+* [MISP Threat Intelligence](https://github.com/SumoLogic/sumologic-content/tree/master/MISP) (Rating: None)
+* [Open Source CSPM](https://github.com/SumoLogic/sumologic-content/tree/master/CSPM) (Rating: None)
 * [Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR) (Rating: 3.5)
 * [Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP) (Rating: 4)
 * [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS) (Rating: 4)
 * [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces) (Rating: 4)
 * [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO) (Rating: 4.5)
 * [Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys) (Rating: 4)
-* [MISP Threat Intelligence](https://github.com/SumoLogic/sumologic-content/tree/master/MISP) (Rating: 0) 
-* [Open Source CSPM](https://github.com/SumoLogic/sumologic-content/tree/master/CSPM) (Rating: 0)
 
 
 ## Contributing Guidelines
