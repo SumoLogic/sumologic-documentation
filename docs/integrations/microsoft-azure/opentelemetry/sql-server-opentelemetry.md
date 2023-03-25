@@ -110,16 +110,17 @@ Press **Next** . This will install the app to your Sumo Logic Org. The app consi
 
 Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
-## Log Sample
+## Sample Logs
 
 ```
 2023-01-09 13:23:31.276 Logon Login succeeded for user 'NT SERVICE\SQLSERVERAGENT'. Connection made using Windows authentication. [CLIENT: ]
 ```
 
-## Query Sample
+## Sample Queries
+
+Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
 
 ```sql
-Following is the query from "Error and warning count" from the Overview dashboard of Sql Server App:
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw 
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"
