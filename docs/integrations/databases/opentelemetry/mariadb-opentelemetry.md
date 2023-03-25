@@ -25,10 +25,10 @@ MariaDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of MariaDB App install if not already present.
 
-- **`db.cluster.name`**. User configured. Enter a name to identify this MariaDb cluster. This cluster name will be shown in the Sumo Logic dashboards
-- **`db.system`**. Has a fixed value of **mariadb**.
-- **`deployment.environment`**. User configured. This is the deployment environment where the MariaDB cluster resides. For example: dev, prod, or qa.
-- **`sumo.datasource`**. Has a fixed value of **mariadb**.
+- `db.cluster.name`. User configured. Enter a name to identify this MariaDb cluster. This cluster name will be shown in the Sumo Logic dashboards
+- `db.system`. Has a fixed value of **mariadb**.
+- `deployment.environment`. User configured. This is the deployment environment where the MariaDB cluster resides. For example: dev, prod, or qa.
+- `sumo.datasource`. Has a fixed value of **mariadb**.
 
 ## Prerequisites
 
@@ -39,17 +39,17 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
 1. To configure the MariaDB log files, locate your local `server.cnf` configuration file in the database directory.
 2. Open `server.cnf` in a text editor.
 3. Set the following parameters in the `[mariadb]` section:
-```sql
-[mariadb]
-log_error=/var/log/mariadb/mariadb-error.log
-log_output=FILE
-slow_query_log=1
-slow_query_log_file = /var/log/mariadb/slow_query.log
-long_query_time=2
-```
-  - [Error Logs](https://mariadb.com/kb/en/error-log/): MariaDB always writes its error log, but the destination is configurable.
-  - [Slow Query Logs](https://mariadb.com/kb/en/slow-query-log-overview/): The slow query log is disabled by default.
-  - [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
+  ```sql
+  [mariadb]
+  log_error=/var/log/mariadb/mariadb-error.log
+  log_output=FILE
+  slow_query_log=1
+  slow_query_log_file = /var/log/mariadb/slow_query.log
+  long_query_time=2
+  ```
+   - [Error Logs](https://mariadb.com/kb/en/error-log/): MariaDB always writes its error log, but the destination is configurable.
+   - [Slow Query Logs](https://mariadb.com/kb/en/slow-query-log-overview/): The slow query log is disabled by default.
+   - [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
 4. Save the `server.cnf` file.
 5. Restart the MariaDB server: `systemctl restart mariadb`
 

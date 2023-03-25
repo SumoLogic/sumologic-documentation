@@ -38,11 +38,11 @@ The Sumo Logic App for MySQL assumes the default MySQL Error log file format for
 - MySQL Replication is based on logs from the MySQL Error log format.
 - MySQL Slow Queries is based on logs from the MySQL Slow Queries log format.
 
-The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see <http://dev.mysql.com/doc/refman/5.5/en/server-logs.html>.
+The MySQL app dashboards dependent on error logs are based on the message types ERROR, NOTE, Warning, and Info. For more details on the MySQL log file format, see [here](http://dev.mysql.com/doc/refman/5.5/en/server-logs.html).
 
 ## Fields creation in Sumo Logic for MySQL
 
-Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of MySQL App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of MySQL App install if not already present. 
 
 - `db.cluster.name` - User configured. Enter a name to identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `db.system` - Has fixed value of **mysql**

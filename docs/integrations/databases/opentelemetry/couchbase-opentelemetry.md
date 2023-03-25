@@ -19,7 +19,7 @@ Couchbase logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](h
 
 This App has been tested with Couchbase version 7.0.2.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/schematics-couchbase.png' alt="Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Couchbase
 
@@ -46,7 +46,7 @@ Select the platform for which you want to install the Sumo OpenTelemetry Collect
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -62,7 +62,7 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Download-YAML-File.png' alt="Configuration" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-YAML.png' alt="Configuration" />
 
 ### Step 3: Sending logs to Sumo
 

@@ -17,7 +17,7 @@ The Sumo Logic App for Redis helps you monitor the Redis database cluster. The p
 
 Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/schematics-redis.png' alt="Redis Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Schematics.png' alt="Redis Schematics" />
 
 ## Log Types
 
@@ -25,7 +25,7 @@ This app supports logs for Redis in Cluster mode or Standalone mode. The Redis l
 
 ## Creating Fields in Sumo Logic for Redis
 
-The following are [Fields](https://help.sumologic.com/docs/manage/fields/) that will be created as part of the Redis App install if not already present.
+The following are [Fields](/docs/manage/fields/) that will be created as part of the Redis App install if not already present.
 
 * **`db.cluster.name`**. User configured. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * **`db.system`**. Has fixed value of redis.
@@ -54,7 +54,7 @@ Once the logs are configured to write to a local file, follow the steps below to
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/collector-screenshot.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -66,7 +66,7 @@ The log file path configured to capture redis logs must be given here. The files
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/configuration-screenshot.png' alt="Configuration" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-YAML.png' alt="Configuration" />
 
 
 ### Step 3: Sending logs to Sumo Logic

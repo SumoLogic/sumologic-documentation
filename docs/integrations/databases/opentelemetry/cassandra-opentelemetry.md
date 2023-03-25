@@ -14,7 +14,8 @@ import TabItem from '@theme/TabItem';
 The [Cassandra](https://cassandra.apache.org/_/cassandra-basics.html) - OpenTelemetry app is a log based app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. Preconfigured dashboards provide insight into resource utilization, cache/Gossip/Memtable statistics and Error and warnings. Cassandra logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 The app supports Logs from the open-source version of Cassandra. The App is tested on the 3.11.10 version of Cassandra.
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Schematics.png' alt="Schematics" />
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Schematics.png' alt="Schematics" />
 
 ## Fields creation in Sumo Logic for Cassandra
 
@@ -37,7 +38,7 @@ These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distribut
 
 {@import ../../../reuse/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Collector.png' alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -48,7 +49,7 @@ Below are the inputs required:
 
 You can add any custom fields which you want to be tagged with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-YAML.png' alt="YAML" />
 
 ### Step 3: Sending logs to Sumo
 
