@@ -6,7 +6,7 @@ title: Collector API Methods and Examples
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 
 :::caution
-Collector Management APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
+Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the below documentation.
 :::
 
 ## Before You Begin
@@ -23,7 +23,7 @@ See the following topics for additional information:
 * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.
 * [Troubleshooting APIs](/docs/api/troubleshooting.md)
 
-There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
+There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors. See [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
 
 {@import ../../reuse/api-endpoints.md}
 
@@ -44,7 +44,7 @@ If a rate is exceeded, a rate limit exceeded 429 status code is returned.
 
 The following table lists the API response fields for installed and hosted Collectors.
 
-<table>
+<table><small>
   <tr>
    <td><strong>Parameter</strong>
    </td>
@@ -180,11 +180,8 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector.
-
-<p>To assign an <a href="/docs/manage/ingestion-volume/ingest-budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
-
-<code>fields=_budget=Dev_20GB</code>
+   <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector. To assign an <a href="/docs/manage/ingestion-volume/ingest-budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:
+   <p><code>fields=_budget=Dev_20GB</code></p>
    </td>
    <td>Modifiable
    </td>
@@ -257,7 +254,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
    </td>
    <td>Modifiable
-<p>To assign to <code>JSON</code> see <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
+   <p>To assign to <code>JSON</code>, <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">learn more</a>.</p>
    </td>
   </tr>
   <tr>
@@ -283,17 +280,10 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>Null
    </td>
-   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization.
-
-Currently only Local and Remote File Sources are supported.
-
-The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%.
-
-For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.
+   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.
    </td>
-   <td>Modifiable
-   </td>
-  </tr>
+   <td>Modifiable</td>
+  </tr></small>
 </table>
 
 

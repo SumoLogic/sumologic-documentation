@@ -11,19 +11,19 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/api/getting-started"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Getting Started</h4></a>
-  <p>Sumo Logic API authentication and endpoints to use for your API client.</p>
+  <a href="/docs/api/getting-started"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="50"/><h4>Auth and Endpoints</h4></a>
+  <p>API authentication and the Sumo Logic endpoints to use for your API client.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/api/collector-management"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Thumbnail icon" width="50"/><h4>Collector Mgmt API</h4></a>
-  <p>Manage Collectors, Sources, and Collector versions.</p>
+  <p>Manage Collectors, Collector versions, and Sources.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">  
-  <a href="/docs/api/search-job"><img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/><h4>Search Job API</h4></a>
+  <a href="/docs/api/search-job"><img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="50"/><h4>Search Job API</h4></a>
   <p>Access resources and log data from third-party scripts and applications.</p>
   </div>
 </div>
@@ -31,9 +31,6 @@ Use the Sumo Logic Application Programming Interfaces (APIs) to interact with ou
 
 <br/>
 
-:::sumo Get API Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Integrate APIs](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations) Forum and [Sumo Dojo](http://slack.sumologic.com/).
-:::
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
@@ -188,7 +185,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
   <div className="box smallbox31 card">
     <div className="container">
-    <a href="/docs/user-management"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>User Mgmt</h4></a>
+    <a href="/docs/api/user-management"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="Thumbnail icon" width="50"/><h4>User Mgmt</h4></a>
     </div>
  </div>
   <div className="box smallbox32 card">
@@ -196,10 +193,15 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
     <a href="/docs/api/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/><h4>Troubleshooting</h4></a>
     </div>
   </div>
+  <div className="box smallbox33 card">
+    <div className="container">
+    <a href="/docs/api/beta"><img src={useBaseUrl('img/icons/business/beta.png')} alt="Thumbnail icon" width="50"/><h4>APIs in Beta</h4></a>
+    </div>
+  </div>
 </div>
 
 <br/>
 
-:::tip Beta APIs
-Check out our [APIs in beta](/docs/api/beta).
+:::sumo Get Help
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations) and [Sumo Dojo](http://slack.sumologic.com/).
 :::
