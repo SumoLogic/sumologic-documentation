@@ -5,6 +5,8 @@ sidebar_label: Create a New Doc
 description: Learn how to create a doc, write content in markdown, and submit your changes to our repo.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Here's a high-level overview of how to create a new Sumo Logic doc.
 
 {@import ../reuse/doc-prerequisites.md}
@@ -59,10 +61,18 @@ In your IDE, write the body of your doc.
 To add your new doc to the left-nav menu, you'll need to add its name and file path to the [`sidebars.ts` file](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts).
 
 :::note Doc Team Support
-The Sumo Logic Doc Team will help you add your documentation to the sidebar and top navigation. If you have suggestions, please include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
+The Sumo Logic Doc Team can help you add your doc to the sidebar and top navigation. If you have suggestions, include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
 :::
 
-## Step 6: Preview your changes
+## Step 6: Add doc to the hub page
+
+Hub pages are `/index` pages that display all docs in that section in card view. Some cards are sorted by alphabetical order, and some are sorted by importance and/or ranking.
+
+As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="icon" />
+
+Once you decide on placement, use the card HTML code in that doc to create a new entry.
+
+## Step 7: Preview your changes
 
 Next, you'll build and deploy a local instance of the Sumo Logic Docusaurus site.
 
@@ -70,7 +80,7 @@ Our site is built using Docusaurus, a static site generator, which builds your s
 
 We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.
 
-## Step 7: Submit your request
+## Step 8: Submit your request
 
 1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png). Use descriptive commit messages (and issue or ticket numbers, if applicable) detailing the content updates you are entering for content. One-line messages are fine for small changes, but bigger changes should look like this:
   ```bash
