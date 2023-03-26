@@ -44,7 +44,7 @@ If a rate is exceeded, a rate limit exceeded 429 status code is returned.
 
 The following table lists the API response fields for installed and hosted Collectors.
 
-<table><small>
+<table>
   <tr>
    <td><strong>Parameter</strong>
    </td>
@@ -283,7 +283,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.
    </td>
    <td>Modifiable</td>
-  </tr></small>
+  </tr>
 </table>
 
 
