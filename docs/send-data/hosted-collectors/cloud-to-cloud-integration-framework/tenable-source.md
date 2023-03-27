@@ -108,6 +108,14 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/
 
 {@import ../../../reuse/restart-c2c-source.md}
 
+### Base URL
+
+Internally, the source will use the following base URL depending on the respective environment:
+
+| BASE_URL | Value |
+|:--|:--|
+| Non-Fed Env. | https://cloud.tenable.com |
+| Fed Env. | https://fedcloud.tenable.com |
 
 #### JSON configuration
 
@@ -131,6 +139,7 @@ The following table shows the **config** parameters for a Tenable Source.
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `access_key` | String | Yes |  | The Tenable access key you want to use to authenticate collection requests. | modifiable |
 | `secret_key` | String | Yes |  | The Tenable secret key you want to use to authenticate collection requests. | modifiable |
+| `fed_cloud` | Boolean | No | False | Set to true if tenable.io uses FedRAMP environment. | modifiable |
 | `include_unlicensed_assets` | Boolean | No | False | Set to true if you want to collect unlicensed objects. | modifiable |
 | `supported_apis` | Array of strings | No | Vulnerability Data | Define one or more of the available APIs to collect:<br/>Vulnerability Data, Audit Logs, and Asset Data.<br/>For example, for both you'd use:["Vulnerability Data","Audit Logs","Asset Data"] | modifiable |
 
