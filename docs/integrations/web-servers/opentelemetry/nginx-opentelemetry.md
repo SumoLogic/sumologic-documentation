@@ -17,10 +17,9 @@ The app has been tested with Nginx version: 1.19.8, 1.21.4, 1.23.1.
 
 We use the OpenTelemetry collector for Nginx metric collection and for collecting Nginx logs.
 
-<!--
 The diagram below illustrates the components of the Nginx collection for each web server.
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Schematic.png' alt="Schematic" />
--->
 
 OpenTelemetry collector runs on the same host as Nginx, and uses the [Nginx Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver) to obtain Nginx metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Nginx logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
