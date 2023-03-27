@@ -6,7 +6,9 @@ description: Learn how to access CSE APIs and API documentation.
 
 This page has information about accessing the CSE APIs and API documentation.
 
-Your API endpoint depends on your Sumo Logic deployment. For a list of Sumo Logic API endpoints by deployment, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). Your endpoint will look something like this:
+Your API endpoint depends on your Sumo Logic deployment. For a list of Sumo Logic API endpoints by deployment, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and [Cloud SIEM Enterprise APIs](/docs/api/cloud-siem-enterprise/). 
+
+Your endpoint will look something like this:
 
 `https://api.us2.sumologic.com/api/`
 
