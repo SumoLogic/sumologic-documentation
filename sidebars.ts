@@ -1951,6 +1951,7 @@ integrations: [
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
+          'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
