@@ -41,6 +41,6 @@ This example shows a query in the [Metrics Explorer](/docs/metrics/metrics-queri
 metric=4XXError | count by method
 ```
 
-In this query, we're searching for how many 4xx errors occurred by different methods, for example GET, PUT, DELETE, and so on.
+In this query, we're searching for how many 4xx errors occurred by different methods, for example, GET, PUT, DELETE, and so on.
 
 ![count-example.png](/img/metrics/count-example.png)

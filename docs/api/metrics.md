@@ -5,6 +5,10 @@ sidebar_label: Metrics
 description: Use HTTP endpoints to access your metric data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
 
 {@import ../reuse/api-intro.md}
@@ -158,7 +162,7 @@ To execute a metrics query, send a JSON request to the endpoint.
    </td>
    <td>No
    </td>
-   <td>Desired granularity of temporal quantization (DAVID A TODO LINK), in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
+   <td>Desired granularity of temporal quantization in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
    </td>
   </tr>
 </table>

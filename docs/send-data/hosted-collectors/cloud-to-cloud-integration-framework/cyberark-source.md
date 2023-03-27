@@ -1,13 +1,13 @@
 ---
 id: cyberark-source
-title: CyberArk EPM
+title: CyberArk EPM Source
 sidebar_label: CyberArk EPM
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cyberark-icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
 
 The CyberArk Endpoint Privilege Manager (EPM) is a security solution that helps organizations reduce the risk of information theft or ransomware attacks by enforcing the principle of least privilege and preventing unauthorized access to critical systems and data. The solution employs a combination of privilege security, application control, and credential theft prevention to reduce the likelihood of malware infections.
 
@@ -96,8 +96,8 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | No | Not applicable | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | No | Not applicable | FirstPartyGenericError |
+| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
 
 ### JSON configuration
 

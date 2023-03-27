@@ -75,7 +75,7 @@ Choosing between Frequent and Infrequent for a data set depends on how frequentl
 
 For example, for a large development team with hundreds of developers, it is better to send development and test logs to the Frequent Tier if your developers are going to access it often during development. 
 
-In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur  infrequently, for example only a couple of times a week, are better off in the Infrequent tier to keep the cost of ownership low.  
+In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur infrequently, for example, only a couple of times a week, are better off in the Infrequent tier to keep the cost of ownership low.  
 
 ## Assigning data to a Data Tier
 

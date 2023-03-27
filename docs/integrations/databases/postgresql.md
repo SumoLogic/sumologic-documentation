@@ -190,7 +190,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
   component: "database"
   db_system: "postgresql"
   db_cluster: "<clustername-CHANGEME>"
-    --For example analytics-dbcluster, webapp-dbcluster
+    --for example, analytics-dbcluster, webapp-dbcluster
   ```
    1. Enter in values for the following parameters (marked `CHANGEME` above):
       * `environment` - This is the deployment environment where the PostgreSQL cluster identified by the value of `servers` resides. While this value is optional we highly recommend setting it.
@@ -200,7 +200,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
 :::note
 `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-For example if your application uses `“postgresql-prod.sumologic.com:3306`” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
+For example, if your application uses `“postgresql-prod.sumologic.com:3306`” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
 
 If your application connects directly to a given postgresql node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=postgresql-prod.sumologic.com`.
 
@@ -273,7 +273,7 @@ This section provides instructions for configuring metrics collection for the Su
    1. Create or modify telegraf.conf in `/etc/telegraf/telegraf.d/` and copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem.txt).
    2. Enter values for the following parameters (marked with `CHANGE_ME`) in the [downloaded file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem.txt).
      * In the input plugins section, `[[inputs.postgresql_extensible]]`:
-       * `address` - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PosgreSQL database in [Step 1](#step-1-configure-metrics-collection). For example: `host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable`.
+       * `address` - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PostgreSQL database in [Step 1](#step-1-configure-metrics-collection). For example: `host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable`.
        * In the tags section, `[inputs.postgresql_extensible.tags]`:
          * `environment` - This is the deployment environment where the Postgresql cluster resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
          * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example: analytics-dbcluster, webapp-dbcluster.
@@ -341,7 +341,7 @@ Perform the steps outlined below for each PostgreSQL database server.
    * **Fields.** Set the following fields:
       * `component` = database
       * `db_system` = postgresql
-      * `db_cluster` = <Your_Postgresql_Cluster_Name> (For example analytics-dbcluster, webapp-dbcluster)
+      * `db_cluster` = <Your_Postgresql_Cluster_Name> (for example, analytics-dbcluster, webapp-dbcluster)
       * `environment` = <Environment_Name> (For example dev, prod or qa)
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.

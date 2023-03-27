@@ -7,7 +7,7 @@ description: Allows you to analyze and correlate Akamai data with origin data.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic App for Akamai Cloud Monitor allows you to analyze and correlate Akamai data with origin data in order to improve availability and performance of applications, improve end-user experience, gain deeper user insights, and enforce rigorous security controls. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 

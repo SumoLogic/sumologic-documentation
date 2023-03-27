@@ -33,7 +33,7 @@ To configure a Local Windows Event Log Source:
 1. Set the following:
 
     :::note
-    Hostname values are parsed and applied to your event logs as _sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
+    Hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
     :::
 
    * **Name.** Type the name you'd like to display for the new Source. 

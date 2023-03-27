@@ -1047,7 +1047,7 @@ To add the file to another document, use this code with the reuse file name:
 ## Tables
 Simple tables can help format content. For example, lists of attributes with descriptions. Adding the style below the table helps with formatting.
 
-Tables use plain markdown with one header, default left aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks.
+Tables use plain markdown with one header, default left-aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks.
 
 <Tabs
   className="unique-tabs"

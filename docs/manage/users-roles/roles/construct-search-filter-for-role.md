@@ -191,7 +191,7 @@ When a user with that role filter runs a query, Sumo runs it like this:
 ```
 
 :::note
-You can grant access to multiple Partitions using a wildcard only if the multiple Partitions reside in the same data tier. For example if the filter `app*` matches partitions in two data tiers, it is not a valid search filter.
+You can grant access to multiple Partitions using a wildcard only if the multiple Partitions reside in the same data tier. For example, if the filter `app*` matches partitions in two data tiers, it is not a valid search filter.
 :::
 
 #### Using ! as a NOT in a search filter
