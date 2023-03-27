@@ -34,7 +34,7 @@ Outlier rules allow you to generate a Signal when behavior by an Entity (such as
 * Spike in EC2 instance creation
 * Abnormal volume of data sent to third-party storage 
 
-An Outlier rule is different from other CSE rule types in that you don’t need to define an explicit criteria to fire a Signal, and a threshold for firing a Signal is now learned from the baseline behavior. Instead, the rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
+An Outlier rule is different from other CSE rule types in that the threshold for firing a signal is learned from the baseline. The rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
 
 For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, CSE builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, CSE creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
 
@@ -92,13 +92,9 @@ This section shows how an Outlier rule would function with a daily baseline.
 **Outlier Model Configuration**
 * **Detect an outlier for the** `count`
 
-   When the aggregation is selected to run for `count`, the count of the occurrences of the rule expression aggregated against the entity defined in the baseline configuration is used to build the normal behavior baseline and look for Outlier. For all the other aggregation types, the Record field is an expected input. The allowed aggregation options are:
-   * `count`
-   * `min`
-   * `max`
-   * `sum`
-   * `count_distinct`
-   * `avg`
+   When the `count` function is used, the occurrences of rule expression on each record is used to build the normal behavior baseline. You do not need to input a record filed in case of `count`. 
+   
+   For all the other aggregation types, the Record field is an expected input. 
 
 * **Model Sensitivity Threshold**: 3
 * **Minimum Count Value**: 10
