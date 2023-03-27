@@ -4,7 +4,6 @@ title: Write an Outlier rule
 sidebar_label: Outlier Rule
 description: Outlier rules allow you to generate a Signal when behavior by an Entity (user) is encountered that qualifies as an outlier from expected behavior.
 keywords:
-  - sumo logic
   - cloud siem
   - cse
   - outlier rule
@@ -23,11 +22,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic has information about Outlier rules and how to create them in the CSE UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules.md) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About Outlier rules
-Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. For example, an  Outlier rule might look for the events like the following:
+Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. For example, an Outlier rule might look for the events like the following:
 
 * Spike in login failures from a user
 * Abnormal number of high severity endpoint alerts
@@ -51,7 +50,7 @@ This section has instructions for configuring an Outlier rule.
 The settings in the **If triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
 
 **Baseline Configuration**
-1.  **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
+1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
 1. **for the entity(ies)**. Select one or more Record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. Set the baseline and retention settings:
@@ -70,7 +69,7 @@ The settings in the **If triggered** section are divided into two subsections, o
 
 ### Then create a Signal
 
-For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule.md#configure-then-create-a-signal-settings) section of the Match Rule topic.
+For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule/#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
 :::tip
 Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and Outlier rules are no exception. 
@@ -83,9 +82,7 @@ On the Rule detail page, if you hover over the degraded message, you will usuall
 This section shows how an Outlier rule would function with a daily baseline.
 
 **Baseline Configuration**
-*  Our example rule expression is:
-
-      `normalizedAction=logon AND success=false`
+*  Our example rule expression is: `normalizedAction=logon AND success=false`
 * **To build a** `daily` **baseline**
 * **for the entity(ies)**: `user_username`
 
