@@ -53,7 +53,7 @@ The settings in the **If triggered** section determine what Records the rule wil
    :::
 1. **for the following Entity(ies)**. If you selected **per Entity** above, you’ll be prompted to select one or Record fields for which you want baselines built.
    :::note
-   If there is more than one Entity listed, the baseline is only for that combination of Entities.
+   If there is more than one entity listed, a baseline is tracked only for that distinct combination of entities.
    :::
 1. Set the baseline and retention settings:
    1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
