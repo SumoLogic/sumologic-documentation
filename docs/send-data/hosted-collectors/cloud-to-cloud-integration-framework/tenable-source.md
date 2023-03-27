@@ -112,7 +112,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/
 
 Internally, the source will use the following base URL depending on the respective environment:
 
-| BASE_URL | Value |
+| BASE URL | Value |
 |:--|:--|
 | Non-Fed Env. | https://cloud.tenable.com |
 | Fed Env. | https://fedcloud.tenable.com |
