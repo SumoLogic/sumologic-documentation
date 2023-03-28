@@ -25,8 +25,8 @@ Minimal resource requirements are the following:
 You can install our OpenTelemetry Collector using one of the following methods:
 
 * [Install script](#install-script)
-* [Manual step-by-step installation](#manual-step-by-step-installation)
 * [UI Installation via App Catalog](#ui-installation-via-app-catalog)
+* [Manual step-by-step installation](#manual-step-by-step-installation)
 
 ### Install Script
 
@@ -87,6 +87,17 @@ The following env variables can be used along with script:
 |:-------------------------------|:-------------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
 
+### UI Installation via App Catalog
+
+1. Go to the **App Catalog** and select **macOS - OpenTelemetry application**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" width="350" />
+1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-overview.png')} alt="macOS app overview" width="550" />
+1. Select **Add New Collector** and click **Next**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
+1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
+1. Copy command and execute it in your system terminal.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
+1. Wait for installation to be completed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfully registered" />
+1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png')} alt="source customization" />
+1. Wait for finishing the installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png')} alt="application installed successfully" />
+
 ### Manual step-by-step Installation
 
 #### Step 1. Download the binary
@@ -142,17 +153,6 @@ As for now, we do not support installation of OpenTelemetry Collector as service
 ```bash
 sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
-
-### UI Installation via App Catalog
-
-1. Go to the **App Catalog** and select **macOS - OpenTelemetry application**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" width="350" />
-1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-overview.png')} alt="macOS app overview" width="550" />
-1. Select **Add New Collector** and click **Next**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
-1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
-1. Copy command and execute it in your system terminal.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
-1. Wait for installation to be completed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfully registered" />
-1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png')} alt="source customization" />
-1. Wait for finishing the installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png')} alt="application installed successfully" />
 
 ### Additional settings
 
