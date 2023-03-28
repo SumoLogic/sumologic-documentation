@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about First Seen rules and how to create them in the CSE UI.
 :::tip
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules.md) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About First Seen rules
@@ -33,7 +33,7 @@ A First Seen rule is different from other CSE rule types in that you don’t def
 For example, for the “First time a user logged in from a new geographic location” use case, CSE will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, CSE will create a Signal for every new geolocation detected and incrementally add to the baseline.
 
 ## Example rule
-The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen Rule](#configure-a-first-seen-rule), below.
+The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
 <img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition"/>
 
 
@@ -52,6 +52,9 @@ The settings in the **If triggered** section determine what Records the rule wil
    For more information about how to select the type of base line, see the [Use case](#use-case-monitor-login-from-first-seen-geolocation), below.
    :::
 1. **for the following Entity(ies)**. If you selected **per Entity** above, you’ll be prompted to select one or Record fields for which you want baselines built.
+   :::note
+   If there is more than one entity listed, a baseline is tracked only for that distinct combination of entities.
+   :::
 1. Set the baseline and retention settings:
    1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The default is 90 days. You can decrease this period, but not increase it.
    1. **Baseline Learning Period (days)**. The minimum amount of time for which data points should be collected before firing a Signal. The default is 30 days.
@@ -61,7 +64,7 @@ The settings in the **If triggered** section determine what Records the rule wil
 
 ### Then create a Signal
 
-For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule.md#configure-then-create-a-signal-settings) section of the Match Rule topic.
+For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
 :::tip
 Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and First Seen Rules are no exception. 
