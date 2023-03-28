@@ -1767,6 +1767,16 @@ integrations: [
        collapsed: true,
        link: {type: 'doc', id: 'integrations/microsoft-azure/index'},
        items: [
+         {
+           type: 'category',
+           label: 'OpenTelemetry',
+           collapsible: true,
+           collapsed: true,
+           items: [
+             'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
+             'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
+           ],
+         },
          'integrations/microsoft-azure/active-directory-json',
          'integrations/microsoft-azure/active-directory-legacy',
          'integrations/microsoft-azure/active-directory-azure',
@@ -1847,6 +1857,16 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
+            ],
+          },
           'integrations/containers-orchestration/activemq',
           'integrations/containers-orchestration/docker-community-edition',
           'integrations/containers-orchestration/docker-enterprise-edition',
