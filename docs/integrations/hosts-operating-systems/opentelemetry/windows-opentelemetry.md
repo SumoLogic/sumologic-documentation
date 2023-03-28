@@ -67,7 +67,7 @@ process:
 ```
 :::
 
-### Step 3: Sending logs to Sumo
+### Step 3: Send logs to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

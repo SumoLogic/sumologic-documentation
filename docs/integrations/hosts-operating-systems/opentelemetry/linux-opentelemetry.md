@@ -76,7 +76,7 @@ process:
 
 :::
 
-### Step 3: Sending logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

@@ -56,7 +56,7 @@ The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. Yo
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Send logs to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

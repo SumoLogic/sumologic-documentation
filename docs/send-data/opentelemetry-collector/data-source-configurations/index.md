@@ -27,14 +27,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div class="box smallbox3 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-traces"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Tracing</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-traces"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Traces</h4></a>
   <p>Instructions for collecting tracing data with the OpenTelemetry collector.</p>
   </div>
 </div>
 <div class="box smallbox4 card">
   <div class="container">
-  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations Reference</h4></a>
-  <p>Reference for additional configurations you can use with the OpenTelemetry collector.</p>
+  <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations</h4></a>
+  <p>More OpenTelemetry collector configurations.</p>
   </div>
   </div>
 </div>
@@ -111,7 +111,7 @@ If a configuration is loaded later in the order, it will be merged with the prev
 
 For example, if two configuration files define the same key, the value from the later file will overwrite the value from the earlier file. If a list or map is defined in multiple configuration files, the lists or maps are merged, with values from the later configuration file taking precedence.
 
-Let's consider the following example configuration files:
+Consider the following example configuration files:
 
 ```yaml title="conf.d/0-base.yaml"
 extensions:
