@@ -15,7 +15,7 @@ Sumo Logic Distribution for OpenTelemetry stores the configuration for the colle
 | Mac | `/etc/otelcol-sumo/conf.d` |
 | Windows | `C:\ProgramData\Sumo Logic OpenTelemetry Collector\` |
 
-<!-- TO DO: double check the Windows path mentioned above -->
+<!-- Double check the Windows path mentioned above -->
 
 
 ## Configuration Location
@@ -29,7 +29,8 @@ The `conf.d` folder has been created by Sumo Logic, and should contain a separat
 
 For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 
-The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input. Learn More <!-- Learn More should be a link to App Catalog page that explains how the Souce Configuration section works.-->
+The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input. Learn More
+<!-- Learn More should be a link to App Catalog page that explains how the Souce Configuration section works.-->
 
 ## Custom Configuration
 
@@ -40,7 +41,8 @@ Use Custom configuration to customize the collection of your logs, metrics and t
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
-* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information. <!--There is another processor called ResourceDetection/system should that also be used?-->
+* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
+<!--There is another processor called ResourceDetection/system. Should that also be used?-->
 
 We also expect Sumo Logic exporter to be included in exporters section.
 
