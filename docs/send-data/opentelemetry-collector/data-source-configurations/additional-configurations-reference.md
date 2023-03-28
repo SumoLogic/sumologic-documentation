@@ -30,7 +30,7 @@ The `conf.d` folder has been created by Sumo Logic, and should contain a separat
 For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 
 The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input. Learn More
-<!-- Learn More should be a link to App Catalog page that explains how the Souce Configuration section works.-->
+<!-- Learn More should be a link to App Catalog page that explains how the Source Configuration section works.-->
 
 ## Custom Configuration
 
