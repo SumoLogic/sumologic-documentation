@@ -6,6 +6,10 @@ description: Use HTTP endpoints to manage your account's security policies.
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+
 The Policies Management API allows you to control the security and share settings of your organization. For more information, see [Security](https://help.sumologic.com/?cid=4041).
 
 {@import ../reuse/api-intro.md}

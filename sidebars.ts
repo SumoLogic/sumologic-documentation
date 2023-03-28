@@ -136,6 +136,33 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'OpenTelemetry Collector',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
+          items: [
+            'send-data/opentelemetry-collector/install-collector-linux',
+            'send-data/opentelemetry-collector/install-collector-macos',
+            'send-data/opentelemetry-collector/install-collector-windows',
+            {
+              type: 'category',
+              label: 'Data Source and Configurations',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
+              items:[
+                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
+                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
+              ]
+            },
+            'send-data/opentelemetry-collector/troubleshooting-faq',
+            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Hosted Collectors & Sources',
           collapsible: true,
           collapsed: true,
@@ -283,7 +310,6 @@ module.exports = {
             },
           ],
         },
-        'send-data/sumo-distribution-opentelemetry',
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -1859,6 +1885,24 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/databases/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/databases/opentelemetry/cassandra-opentelemetry',
+              'integrations/databases/opentelemetry/couchbase-opentelemetry',
+              'integrations/databases/opentelemetry/elasticsearch-opentelemetry',
+              'integrations/databases/opentelemetry/mariadb-opentelemetry',
+              'integrations/databases/opentelemetry/memcached-opentelemetry',
+              'integrations/databases/opentelemetry/mongodb-opentelemetry',
+              'integrations/databases/opentelemetry/mysql-opentelemetry',
+              'integrations/databases/opentelemetry/oracle-opentelemetry',
+              'integrations/databases/opentelemetry/postgresql-opentelemetry',
+              'integrations/databases/opentelemetry/redis-opentelemetry',
+            ],
+          },
           'integrations/databases/cassandra',
           'integrations/databases/couchbase',
           'integrations/databases/elasticsearch',
@@ -2046,6 +2090,21 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/web-servers/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/web-servers/opentelemetry/apache-opentelemetry',
+              'integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry',
+              'integrations/web-servers/opentelemetry/haproxy-opentelemetry',
+              'integrations/web-servers/opentelemetry/iis-10-opentelemetry',
+              'integrations/web-servers/opentelemetry/nginx-opentelemetry',
+              'integrations/web-servers/opentelemetry/squid-proxy-opentelemetry',
+              'integrations/web-servers/opentelemetry/varnish-opentelemetry'
+            ],
+          },
           'integrations/web-servers/apache',
           'integrations/web-servers/apache-tomcat',
           'integrations/web-servers/haproxy',
