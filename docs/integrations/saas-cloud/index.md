@@ -90,19 +90,19 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox13 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/istio"><img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="icon" width="90"/><h4>Istio</h4></a>
+  <a href="/docs/integrations/saas-cloud/istio"><img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="icon" width="70"/><h4>Istio</h4></a>
   <p>Gain visibility into your Istio and control plane component performance.</p>
   </div>
 </div>
 <div className="box smallbox14 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/knowbe4"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100" /><h4>KnowBe4</h4></a>
+  <a href="/docs/integrations/saas-cloud/knowbe4"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="160" /><h4>KnowBe4</h4></a>
   <p>Monitoring and analyzing KnowBe4 Phishing Security logs</p>
   </div>
 </div>
 <div className="box smallbox15 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="50"/><h4>Microsoft Exchange Trace Logs</h4></a>
+  <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="40"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Monitor Delivered, Failed, Quarantined, Pending, and Spam messages.</p>
   </div>
 </div>
