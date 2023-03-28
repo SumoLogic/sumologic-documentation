@@ -20,6 +20,10 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
+Supported Versions
+
+* RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2, CentOS (7, 8) 
+
 ## Install
 
 You can install our OpenTelemetry Collector using one of the following methods:
