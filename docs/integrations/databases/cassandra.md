@@ -1,6 +1,6 @@
 ---
 id: cassandra
-title: Cassandra
+title: Cassandra - Classic Collector
 sidebar_label: Cassandra
 description: Documentation for the Sumo Logic Cassandra app.
 ---

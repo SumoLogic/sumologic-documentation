@@ -1,6 +1,6 @@
 ---
 id: elasticsearch
-title: Elasticsearch
+title: Elasticsearch - Classic Collector
 sidebar_label: Elasticsearch
 description: The Elasticsearch app helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters.
 ---
