@@ -33,10 +33,14 @@ The **App Catalog** provides a mechanism to create these configuration files usi
 
 ## Custom Configuration
 
+Use Custom configuration to customize the collection of your logs, metrics and traces in Sumo Logic. Learn more about configuration [here](https://opentelemetry.io/docs/collector/configuration).
+
+<!--link to other sources from OpenTelemetry that will help users understand more about configuration.-->
+
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
-* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
+* **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information. <!--There is another processor called ResourceDetection/system should that also be used?-->
 
 We also expect Sumo Logic exporter to be included in exporters section.
 

@@ -13,6 +13,8 @@ You can find the full list of receivers on the Sumo Logic OpenTelemetry Collecto
 
 The Filelog Receiver tails and parses logs from files.
 
+<!-- We should explain what each of the attribute in the configuration does.-->
+
 The following is a basic configuration for the Filelog Receiver, which can be placed in `conf.d` directory:
 
 ```yaml
