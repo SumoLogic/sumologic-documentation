@@ -44,7 +44,7 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s --
+   sudo curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
    ```
 * By first downloading the script, inspecting its contents for security, and then running it:
    ```bash
