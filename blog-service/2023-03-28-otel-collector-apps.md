@@ -11,7 +11,7 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We’re happy to announce our new and improved data onboarding workflow that gets you up and running with infrastructure monitoring in minutes using our OpenTelemetry collector. Out-of-the-box, you can start monitoring host and process data, web servers (like IIS, Nginx), databases (like MySQL, Redis, Cassandra), and other sources. [Learn more](/docs/get-started/quickstart).
+We’re happy to announce our new and improved data onboarding workflow that gets you up and running with infrastructure monitoring in minutes using our OpenTelemetry collector. With this update, you can start monitoring host and process data, web servers (like IIS, Nginx), databases (like MySQL, Redis, Cassandra), and other sources out of the box - no manual configuration required. [Learn more](/docs/get-started/quickstart).
 
 The Sumo Logic Distribution for OpenTelemetry, a single unified agent to send Logs, Metrics, Traces, and Metadata, helps simplify and streamline Observability and debugging to improve overall system reliability and efficiency. [Learn more](/docs/send-data/opentelemetry-collector).
 
