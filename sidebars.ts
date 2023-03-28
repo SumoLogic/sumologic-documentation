@@ -1857,6 +1857,16 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
+            ],
+          },
           'integrations/containers-orchestration/activemq',
           'integrations/containers-orchestration/docker-community-edition',
           'integrations/containers-orchestration/docker-enterprise-edition',
