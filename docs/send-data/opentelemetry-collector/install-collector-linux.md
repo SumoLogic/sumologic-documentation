@@ -339,7 +339,7 @@ You can also use flag `-p` to remove all existing configurations as well:
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
-### Manual step-by-step Installation
+### Manual step-by-step Uninstall
 
 If you installed the Collector manually, simply remove the binary from the directory you have placed it in by running the following command:
 
