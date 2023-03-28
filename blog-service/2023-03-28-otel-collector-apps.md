@@ -1,5 +1,5 @@
 ---
-title: NEW: Get Started with OpenTelemetry Monitoring in Minutes
+title: NEW - Get Started with OpenTelemetry Monitoring in Minutes
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - opentelemetry
