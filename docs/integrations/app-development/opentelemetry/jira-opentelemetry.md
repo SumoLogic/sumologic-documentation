@@ -92,7 +92,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo Logic
+### Step 3: Send logs to Sumo Logic
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
@@ -140,15 +140,15 @@ Click on the **Download YAML File** button to get the yaml file.
 
 {@import ../../../reuse/opentelemetry/send-logs-outro.md}
 
-### Sample Log Messages (Non-Kubernetes environments)
+## Sample Log Messages
 
-```
+```sh title="Sample Log Message (Non-Kubernetes environment)"
 bluechip-office - - 19/01/2023:05:02:10 Z "GET /jira/rest/gadget/1.0/averageage/generate?projectOrFilterId=filter-16392&periodName=monthly&daysprevious=730&width=428&height=285&inline=true&_=1541539601115 HTTP/1.1" 401 8509 "https://jira.kumoroku.com/jira/plugins/servlet/gadgets/ifr?container=atlassian&mid=17024&country=US&lang=en&view=default&view-params=%7B%22writable%22%3A%22true%22%7D&st=atlassian%3A7udmdg9B2kTj%2FIang%2FZBXDM3COYkLIHJIzAUYmw9QDAiuHR4StJpZph6bTEtMMfxwx46%2B7cTTIjSGz%2B%2FNBJa4GLMS7e3ijRtWhIEIi4u19i2WXZsBZ8ZP8AekcT1JzwwkH9lGt9IRgXmL05epIw8kYAzDpKI1E%2FdHLFYtwo7m1M%2FRSsPMdoYGmwUfuIHM6%2FKGMsCDzToTKRzay85Sw9O7Db6%2B7A9MkQm0BxSmX3hMpV%2BPWgw%2BKDuNwPC0HCzrkMb4V2M3pJE0qBbvJqM2O6ezII938KZBz0%2B1zKnC9Rw2ePrbrm7TjCWGiR77NxKFtowNo3Xfg%3D%3D&up_isConfigured=true&up_isPopup=false&up_refresh=15&up_projectOrFilterId=filter-
 ```
 
 ## Sample Queries
 
-This sample query is from the Jira - Overview > Catalina Requests panel.
+This sample query is from the **Jira - Overview** dashboard > **Catalina Requests** panel.
 
 ```sql
 "%"sumo.datasource"=jira
@@ -166,55 +166,55 @@ This sample query is from the Jira - Overview > Catalina Requests panel.
 
 ## Viewing Jira Dashboards
 
-### Jira - Overview
+### Overview
 
 The **Jira - Overview** dashboard provides a high-level view of Jira activities, including the location of event authentications, login comparisons, Jira requests, errors and error trends, and data usage.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Overview.png' alt="Overview" />
 
-### Jira - Access
+### Access
 
 The **Jira - Access** dashboard provides information about Jira user access, including request trends, average response times, issues by project, response codes, and errors.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Access.png' alt="Access" />
 
-### Jira - Catalina
+### Catalina
 
 The **Jira - Catalina** dashboard provides information on the Jira internal web server. Panels display analytics for errors, failures, exceptions, request trends, and top ranked URLs
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />
 
-### Jira - Issue Details
+### Issue Details
 
 The **Jira - Issues Details** dashboard provides insights into Jira issues, showing analytics on open, closed, and reopened issues. Panels also display details on issue assignments and escalations and the average time to close issues, allowing you to prioritize and strategize issue management.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Details.png' alt="Issue Details" />
 
-### Jira - Issue Overview
+### Issue Overview
 
 The **Jira - Issue Overview** dashboard provides a high-level view of Jira issue activities, so you can monitor work from creation to completion. The panels display analytics for issues that have been created, closed, reopened, and still in progress.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Issue-Overview.png' alt="Issue Overview" />
 
-### Jira - Recent Issue Changes
+### Recent Issue Changes
 
 The **Jira - Recent Issue Changes** dashboard tracks recent progress of Jira issues. You can view detailed information on the type of issue, including when it was created, its status, assignee, and a summary of the issue.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Recent-Issue-Changes.png' alt="Recent Issue Changes" />
 
-### Jira - Security
+### Security
 
 The **Jira - Security** dashboard provides information on security in Jira. The panels show analytics for the location of successful and failed logins, successful and failed logins for active users, comparisons of successful and failed logins, and session trends.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Security.png' alt="Security" />
 
-### Jira - Sprints Events
+### Sprints Events
 
 The **Jira - Sprints Events** dashboard provides insights on sprint events in Jira, including the number of sprint events, event trends, and sprints closed and created.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Sprints-Events.png' alt="Sprints Events" />
 
-### Jira - User Events
+### User Events
 
 The **Jira - User Events** dashboard provides information about user events in Jira, including the number of user events, trends, and users that have been updated, created, and deleted.
 

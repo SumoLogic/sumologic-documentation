@@ -135,7 +135,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo Logic
+### Step 3: Send logs to Sumo Logic
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
@@ -211,14 +211,14 @@ This sample query is from the **Puppet - Overview** dashboard > **Node Requests 
 
 ## Viewing Puppet Dashboards
 
-### Puppet - Overview
+### Overview
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Overview.png' alt="Overview" />
 
-### Puppet - Error Analysis: Puppet Server and Node Error Analysis
+### Error Analysis: Puppet Server and Node Error Analysis
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Error-Analysis.png' alt="Error Analysis" />
 
-### Puppet - Node Puppet Runs Analysis: Puppet Node Runs Analysis
+### Node Puppet Runs Analysis: Puppet Node Runs Analysis
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Node-Puppet-Runs-Analysis.png' alt="Node Puppet Runs Analysis" />
