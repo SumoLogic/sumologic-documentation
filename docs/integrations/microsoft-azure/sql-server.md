@@ -1,6 +1,6 @@
 ---
 id: sql-server
-title: Microsoft SQL Server
+title: Microsoft SQL Server - Classic Collector
 sidebar_label: Microsoft SQL Server
 description: The Microsoft SQL Server App provides insight into your SQL server performance metrics and errors.
 ---
