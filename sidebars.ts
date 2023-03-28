@@ -136,6 +136,33 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'OpenTelemetry Collector',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
+          items: [
+            'send-data/opentelemetry-collector/install-collector-linux',
+            'send-data/opentelemetry-collector/install-collector-macos',
+            'send-data/opentelemetry-collector/install-collector-windows',
+            {
+              type: 'category',
+              label: 'Data Source and Configurations',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
+              items:[
+                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
+                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
+              ]
+            },
+            'send-data/opentelemetry-collector/troubleshooting-faq',
+            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Hosted Collectors & Sources',
           collapsible: true,
           collapsed: true,
@@ -283,7 +310,6 @@ module.exports = {
             },
           ],
         },
-        'send-data/sumo-distribution-opentelemetry',
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -1741,6 +1767,16 @@ integrations: [
        collapsed: true,
        link: {type: 'doc', id: 'integrations/microsoft-azure/index'},
        items: [
+         {
+           type: 'category',
+           label: 'OpenTelemetry',
+           collapsible: true,
+           collapsed: true,
+           items: [
+             'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
+             'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
+           ],
+         },
          'integrations/microsoft-azure/active-directory-json',
          'integrations/microsoft-azure/active-directory-legacy',
          'integrations/microsoft-azure/active-directory-azure',
@@ -1802,6 +1838,17 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/app-development/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/app-development/opentelemetry/puppet-opentelemetry',
+              'integrations/app-development/opentelemetry/jira-opentelemetry',
+              'integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry',
+            ],
+          },
           'integrations/app-development/bitbucket',
           'integrations/app-development/github',
           'integrations/app-development/gitlab',
@@ -1821,6 +1868,16 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
+            ],
+          },
           'integrations/containers-orchestration/activemq',
           'integrations/containers-orchestration/docker-community-edition',
           'integrations/containers-orchestration/docker-enterprise-edition',
@@ -1859,6 +1916,24 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/databases/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/databases/opentelemetry/cassandra-opentelemetry',
+              'integrations/databases/opentelemetry/couchbase-opentelemetry',
+              'integrations/databases/opentelemetry/elasticsearch-opentelemetry',
+              'integrations/databases/opentelemetry/mariadb-opentelemetry',
+              'integrations/databases/opentelemetry/memcached-opentelemetry',
+              'integrations/databases/opentelemetry/mongodb-opentelemetry',
+              'integrations/databases/opentelemetry/mysql-opentelemetry',
+              'integrations/databases/opentelemetry/oracle-opentelemetry',
+              'integrations/databases/opentelemetry/postgresql-opentelemetry',
+              'integrations/databases/opentelemetry/redis-opentelemetry',
+            ],
+          },
           'integrations/databases/cassandra',
           'integrations/databases/couchbase',
           'integrations/databases/elasticsearch',
@@ -1908,6 +1983,17 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry',
+            ],
+          },
           'integrations/hosts-operating-systems/host-metrics',
           'integrations/hosts-operating-systems/host-process-metrics',
           'integrations/hosts-operating-systems/linux',
@@ -2036,6 +2122,21 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/web-servers/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/web-servers/opentelemetry/apache-opentelemetry',
+              'integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry',
+              'integrations/web-servers/opentelemetry/haproxy-opentelemetry',
+              'integrations/web-servers/opentelemetry/iis-10-opentelemetry',
+              'integrations/web-servers/opentelemetry/nginx-opentelemetry',
+              'integrations/web-servers/opentelemetry/squid-proxy-opentelemetry',
+              'integrations/web-servers/opentelemetry/varnish-opentelemetry'
+            ],
+          },
           'integrations/web-servers/apache',
           'integrations/web-servers/apache-tomcat',
           'integrations/web-servers/haproxy',
