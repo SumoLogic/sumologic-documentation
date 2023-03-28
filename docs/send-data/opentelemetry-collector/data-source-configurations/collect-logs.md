@@ -145,7 +145,7 @@ service:
 
 Windows Log Event Receiver tails and parses logs from windows event log API.
 
-Consider the following example usage of [Windows Event Log receiver][windowseventlogreceiver].
+Consider the following example usage of [Windows Event Log receiver][windowseventlogreceiver]. It is going to collect logs from application, security, and system channels and send them to Sumo Logic.
 
 ```yaml
 receivers:
@@ -176,8 +176,6 @@ service:
       exporters:
         - sumologic
 ```
-
-It is going to collect logs from application, security, and system channels and send them to Sumo Logic.
 
 :::tip Additional information
 * Refer to our [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
