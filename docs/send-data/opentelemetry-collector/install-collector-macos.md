@@ -32,7 +32,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 #### Get the Installation token
 
-Get your [installation token](/docs/manage/security/installation-tokens) if you don't have it already and assign it to an environment variable:
+Get your [installation token](/docs/manage/security/installation-tokens) (if you don't have it already) and assign it to an environment variable:
 
 ```bash
 export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>
@@ -58,28 +58,28 @@ The `-d` argument to the script is needed on macOS. It will skip Systemd install
 
 It will perform the following operations:
 
-* install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`
-* get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
-* create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
+* Install or upgrade operation by placing the latest version as `/usr/local/bin/otelcol-sumo`
+* Get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `/etc/otelcol-sumo/sumologic.yaml`
+* Create user configuration directory (`/etc/otelcol-sumo/conf.d`) with `common.yaml` file which will contain installation token
 
 #### Script Options
 
 The following arguments can be passed to the script:
 
-| long name     | short name | description    | takes value                |
-|:----------------|:-----------|:------------|:---------------------------|
-| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.           | no      |
-| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.               | yes, in `key=value` format |
-| `--download-only`           | `w`        | Download new binary only and skip configuration part.                                       | no                         |
-| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | yes, e.g. `0.71.0-sumo-0`  |
-| `--skip-config`             | `s`        | Do not create default configuration        | no                         |
-| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                               | no        |
-| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.              | no                         |
-| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                         | no                         |
-| `--yes`                     | `y`        | Disable confirmation asks.      | no                         |
-| `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | no                         |
-| `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                                     | no                         |
-| `--help`                    | `h`        | Prints help and usage.                                                                                                                                                       | no                         |
+| long name    | short name | description   | takes value   |
+|:----------|:-----------|:------------|:---------------|
+| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.           | No      |
+| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.               | Yes, in `key=value` format |
+| `--download-only`           | `w`        | Download new binary only and skip configuration part.                                       | No                         |
+| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.                                                               | Yes (for example: `0.71.0-sumo-0`)  |
+| `--skip-config`             | `s`        | Do not create default configuration        | No                         |
+| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.                                               | No        |
+| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.              | No                         |
+| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                         | No                         |
+| `--yes`                     | `y`        | Disable confirmation asks.      | No                         |
+| `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | No                         |
+| `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.                                     | No                         |
+| `--help`                    | `h`        | Prints help and usage.                                                                                                                                                       | No                         |
 
 The following env variables can be used along with script:
 
@@ -156,10 +156,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### Additional settings
 
-This section describes common OpenTelemetry customizations:
-
-* [Using Proxy](#using-proxy)
-* [FIPS](#fips)
+This section describes common OpenTelemetry customizations.
 
 #### Using Proxy
 

@@ -70,7 +70,7 @@ For Linux platform, click on **Download Environment Variables File** button to g
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

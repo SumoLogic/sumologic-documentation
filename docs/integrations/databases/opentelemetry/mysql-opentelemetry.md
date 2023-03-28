@@ -105,7 +105,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs and metrics to Sumo Logic
+### Step 3: Send logs and metrics to Sumo Logic
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

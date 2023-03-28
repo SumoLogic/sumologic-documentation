@@ -46,7 +46,7 @@ In this step, you will configure the yaml required for macOS Collection.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png' alt="YAML" />
 
-### Step 3: Sending metrics to Sumo
+### Step 3: Send metrics to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

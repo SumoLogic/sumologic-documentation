@@ -70,17 +70,17 @@ The following arguments can be passed to the script:
 
 | long name  | short name | description  | takes value    |
 |:----------------------------|:-----------|:--------------|:-------------|
-| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.      | no          |
-| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.              | yes, in `key=value` format |
-| `--download-only`           | `w`        | Download new binary only and skip configuration part.           | no                         |
-| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.             | yes, e.g. `0.71.0-sumo-0`  |
-| `--skip-config`             | `s`        | Do not create default configuration            | no                         |
-| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.               | no                         |
-| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.             | no                         |
-| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                              | no         |
-| `--yes`                     | `y`        | Disable confirmation asks.               | no                         |
-| `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | no                |
-| `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.         | no                         |
+| `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.      | No          |
+| `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.              | Yes, in `key=value` format |
+| `--download-only`           | `w`        | Download new binary only and skip configuration part.           | No                         |
+| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.             | Yes, e.g. `0.71.0-sumo-0`  |
+| `--skip-config`             | `s`        | Do not create default configuration            | No                         |
+| `--skip-systemd`            | `d`        | Preserves from Systemd service installation.               | No                         |
+| `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.             | No                         |
+| `--install-hostmetrics`     | `H`        | Install the hostmetrics configuration to collect host metrics.                              | No         |
+| `--yes`                     | `y`        | Disable confirmation asks.               | No                         |
+| `--uninstall`               | `u`        | Removes Sumo Logic Distribution for OpenTelemetry Collector from the system and disable Systemd service eventually. Use with `--purge` to remove all configurations as well. | No                |
+| `--purge`                   | `p`        | It has to be used with `--uninstall`. It removes all Sumo Logic Distribution for OpenTelemetry Collector related configuration and data.         | No                         |
 | `--help`      | `h`        | Prints help and usage.           |
 
 The following env variables can be used along with script:
@@ -142,7 +142,7 @@ otelcol-sumo --version
 
 We recommend using the [installation script](#install-script) as it supports the Systemd scenario. This section describes how to install it manually.
 
-:::note prerequisites
+:::info prerequisites
 Ensure that the user who will run the `otelcol-sumo` process has access to any directories used in your configuration within the filesystem.
 :::
 
@@ -215,7 +215,7 @@ To run OpenTelemetry Collector as Systemd Service, follow the steps below:
    sudo journalctl -u otelcol-sumo  # checks logs
    ```
 
-##### Using Environmental variable to store Installation token
+#### Using Environmental variable to store Installation token
 
 We recommend keeping the install token in environmental variable for `Systemd` installation:
 
@@ -259,9 +259,9 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### UI Installation via App Catalog
 
-1. Go to **App Catalog** and select `Linux`. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
+1. Go to **App Catalog** and select **Linux**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
 1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-overview.png')} alt="linux app overview" width="550" />
-1. Select `Add New Collector` and click `Next`. <br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
+1. Select **Add New Collector** and click **Next**. <br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
 1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
 1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
 1. Wait for the installation to complete.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-registration-success.png')} alt="application installed successfully" />
@@ -271,10 +271,7 @@ sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/
 
 ### Additional Settings
 
-This section describes common OpenTelemetry customizations:
-
-* [Using Proxy](#using-proxy)
-* [FIPS](#fips)
+This section describes common OpenTelemetry customizations.
 
 #### Using Proxy
 
