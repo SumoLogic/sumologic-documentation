@@ -31,7 +31,7 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 <div className="box smallbox3 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40"/><h4>Hosted Collectors</h4></a>
-  <p>Learn how to configure a Sumo-hosted collector and add Sources from a variety of services.</p>
+  <p>Set up a Hosted Collector to collect data directly from cloud sources like AWS, GCP and more without installing an agent.</p>
   </div>
 </div>
   <div className="box smallbox4 card">

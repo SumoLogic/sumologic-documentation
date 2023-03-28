@@ -7,7 +7,7 @@ description: Learn how to collect logs using the Sumo Logic OpenTelemetry Collec
 
 The Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for log collection. This document describes the receivers most commonly used for logs: the [Filelog Receiver](#filelog-receiver) and [Windows Log Event Receiver](#windows-log-event-receiver).
 
-You can find the full list of receivers in [our repository].
+You can find the full list of receivers on the Sumo Logic OpenTelemetry Collector [docs page].
 
 ## Filelog Receiver
 
@@ -41,6 +41,8 @@ service:
       exporters:
       - sumologic
 ```
+
+`include:` lets the Filelog Receiver know where the log file is placed. Make sure that collector has permissions to access the files, otherwise it will not be collected.
 
 The `include_file_name: false` prevents the receiver from adding `log.file.name` attribute to the logs.
 
@@ -188,5 +190,5 @@ It is going to collect logs from application, security, and system channels and 
 [filelogreceiver_readme]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver
 [filestorageextension_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/storage/filestorage
 [groupbyattrprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/groupbyattrsprocessor#group-by-attributes-processor
-[our repository]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components
+[docs page]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components
 [windowseventlogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver/README.md

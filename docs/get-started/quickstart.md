@@ -40,7 +40,27 @@ The journey of 10,000 logs begins with a single collector. Your data analytics j
 
 ### Set up Collector
 
-From the Sumo Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**. Next, choose from a local [Installed Collector](/docs/send-data/installed-collectors), web-[Hosted Collector](/docs/send-data/hosted-collectors), or our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector). Next, you'll choose the data sources that will provide the most value for you.
+After you've logged into Sumo Logic, choose a collector.
+
+#### OpenTelemetry Collector
+
+[OpenTelemetry Collector](/docs/send-data/opentelemetry-collector)
+
+1. Go to **App Catalog** and click on the app you'd like to install.
+1. Click the **Add a New Collector** option during app installation.
+1. After you've installed the collector, you'll be prompted with instructions to set up the source.
+
+<!--
+:::note
+Only V2 apps have the "Add a New Collector" option. For V1 apps and below,
+:::
+-->
+
+#### Installed and Hosted Collectors
+
+Go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**. Next, choose from a local [Installed Collector](/docs/send-data/installed-collectors) or web-[Hosted Collector](/docs/send-data/hosted-collectors).
+
+Next, you'll choose the data sources that will provide the most value for you.
 
 ### Set up Source
 

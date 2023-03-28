@@ -7,7 +7,16 @@ description: Reference guide for Sumo Logic OpenTelemetry Collector configuratio
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Here are some best practices for configuring the Sumo Logic Distribution for OpenTelemetry.
+Sumo Logic Distribution for OpenTelemetry stores the configuration for the collector in the configuration directory. It can be found here.
+
+| | |
+| :-- | :-- |
+| Linux | `/etc/otelcol-sumo/conf.d` |
+| Mac | `/etc/otelcol-sumo/conf.d` |
+| Windows | `C:\ProgramData\Sumo Logic OpenTelemetry Collector\` |
+
+<!-- TO DO: double check the Windows path mentioned above -->
+
 
 ## Configuration Location
 
@@ -16,9 +25,13 @@ All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. Thi
 * It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`.
 * Specific configurations should be grouped by pipelines in meaningfully named files in the `conf.d` directory.
 
+The `conf.d` folder has been created by Sumo Logic, and should contain a separate configuration file for a specific application component for example MySQL or Nginx.
+
 For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 
-## Custom Pipeline
+The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input. Learn More <!-- Learn More should be a link to App Catalog page that explains how the Souce Configuration section works.-->
+
+## Custom Configuration
 
 There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
 

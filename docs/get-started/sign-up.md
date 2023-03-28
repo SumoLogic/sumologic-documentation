@@ -33,7 +33,7 @@ To activate your Sumo Logic Trial account:
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
-Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with insights in a couple of minutes.
+Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
 
 ### Set up Collector
 
