@@ -20,6 +20,10 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
+Versions Supported
+
+* MacOS 10.X and up
+
 ## Install
 
 You can install our OpenTelemetry Collector using one of the following methods:
@@ -210,6 +214,12 @@ You can also use flag `-p` to remove all existing configurations as well:
 
 ```bash
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+```
+
+You can also run the following command to clear the cache. This will remove any cached data associated with the Collector. 
+
+```bash
+sudo rm -rf /var/cache/otelcol-sumo
 ```
 
 ### Manual step-by-step installation
