@@ -17,7 +17,7 @@ The **Geo Location of Failed Users** dashboard panel provides geographic insight
 
 ## Log Types
 
-The Sumo Logic App for KnowBe4 consumes Phishing Security logs, refer to the [Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) and [Recipient Results](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1{pst_id}~1recipients/get) documentation.
+The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [KnowBe4 Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) and [Recipient Results](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1{pst_id}~1recipients/get) documentation.
 
 ## Sample Log Messages
 
