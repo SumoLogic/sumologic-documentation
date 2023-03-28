@@ -67,9 +67,7 @@ Below are the inputs required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<!--
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png' alt="Access" />
--->
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png' alt="Nginx-YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 
