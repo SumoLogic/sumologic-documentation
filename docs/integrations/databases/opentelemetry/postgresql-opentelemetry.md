@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 
@@ -178,7 +178,7 @@ Use this dashboard to:
 - Drill-down into database errors, failed logins and slow queries.
 - Determine if your database or queries need to be tuned based on comparing the number of slow queries.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Overview.png' alt="Overview" />
 
 ### Query Execution
 
@@ -189,7 +189,7 @@ Use this dashboard to:
 - Monitor query performance and identify slow queries.
 - Examine query execution trends.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Query-Execution.png' alt="Query Execution" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Query-Execution.png' alt="Query Execution" />
 
 ### Database Metrics
 
@@ -201,7 +201,7 @@ Use this dashboard to:
 - Monitor database size and disk usage.
 - Identify top 5 and least 5 frequently scanned indexes.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Database-Metrics.png' alt="Database Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Database-Metrics.png' alt="Database Metrics" />
 
 ### Schema Metrics
 
@@ -213,7 +213,7 @@ Use this dashboard to view:
 - Disk block reads and Disk usage by schema.
 - Buffer hits and rows inserted, updated and deleted by schema.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Schema-Metrics.png' alt="Schema Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Schema-Metrics.png' alt="Schema Metrics" />
 
 Query performance can degrade with the growth of the size of table, database and/or indexes. This means that you either need to scale up the database instance, [partition your data](https://www.postgresql.org/docs/current/static/ddl-partitioning.html), or redesign your indexes. Unusual growth in disk space can also mean there are problems with [VACUUMs](https://www.postgresql.org/docs/9.1/static/sql-vacuum.html) .
 
@@ -228,7 +228,7 @@ Use this dashboard to:
 - Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
 - Identify known malicious IPs that are accessing your databases and use firewall access control lists to prevent them from sending you traffic going forward.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Security.png' alt="Security" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Security.png' alt="Security" />
 
 ### Error Logs
 
@@ -240,7 +240,7 @@ Use this dashboard to:
 - Monitor error trends and quickly identify outliers.
 - Identify unexpected database or user activity.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Error-Logs.png' alt="Error Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Error-Logs.png' alt="Error Logs" />
 
 ### Slow Queries
 
@@ -253,7 +253,7 @@ Use this dashboard to:
 - Determine which SQL commands are slower than others.
 - Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Slow-Queries.png' alt="Slow Queries" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Slow-Queries.png' alt="Slow Queries" />
 
 ### Relation Metrics
 
@@ -265,4 +265,4 @@ Use this dashboard to:
 - Monitor index scans and size to determine if executed queries are accessing them for a relation.
 - Track index utilization of existing indexes in a relation.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PostgreSQL-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Relation-Metrics.png' alt="Relation Metrics" />
