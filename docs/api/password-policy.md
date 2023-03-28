@@ -6,6 +6,10 @@ description: Use HTTP endpoints to manage your account's password policy.
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+
 The Password Policy Management API allows you to manage the [password policy](/docs/manage/security/set-password-policy.md) for your Sumo Logic users.
 
 {@import ../reuse/api-intro.md}

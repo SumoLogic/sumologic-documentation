@@ -6,6 +6,10 @@ description: Use HTTP endpoints to manage Installation Tokens.
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+
 The Tokens Management API allows you to manage [Installation Tokens](/docs/manage/security/installation-tokens) from HTTP endpoints to organize your content.
 
 {@import ../reuse/api-intro.md}

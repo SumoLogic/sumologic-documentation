@@ -7,7 +7,7 @@ description: Static URLs provide download links to the most recent version of a 
 Use our static URLs to download the most recent version of a Collector. The version of the Collector will be updated each time there is a release or patch.
 
 :::note
-This document provides static URLs to download our [Installed Collector](/docs/send-data/installed-collectors) agent. If you need our **Distribution of OpenTelemetry**, go to our [GitHub repository](https://github.com/SumoLogic/sumologic-otel-collector/releases).
+This document provides static URLs to download our [Installed Collector](/docs/send-data/installed-collectors) agent. If you're looking for our OpenTelemetry distribution, go to our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) for more details.
 :::
 
 
