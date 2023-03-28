@@ -81,7 +81,7 @@ The OpenTelemetry Collector offers two approaches for Syslog processing:
 
 The following table shows the comparison of source specific configurations between the Installed Collector and OpenTelemetry Collector.
 
-| Feature/Capability | Syslog Receiver | TCPlog/UDPlog Receiver and Sumo Logic Syslog Processor |
+| Feature/Capability | OpenTelemetry Syslog Receiver | TCPlog/UDPlog Receiver and Sumo Logic Syslog Processor |
 |:--------------------|:----------------|:---------------------------------|
 | Accepts logs        | `RFC3164` and `RFC5424` formats | Any format |
 | Field Parsing       | Collector side | Not on collector side |
