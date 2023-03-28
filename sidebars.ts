@@ -1838,6 +1838,17 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/app-development/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/app-development/opentelemetry/puppet-opentelemetry',
+              'integrations/app-development/opentelemetry/jira-opentelemetry',
+              'integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry',
+            ],
+          },
           'integrations/app-development/bitbucket',
           'integrations/app-development/github',
           'integrations/app-development/gitlab',
@@ -1972,6 +1983,17 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry',
+              'integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry',
+            ],
+          },
           'integrations/hosts-operating-systems/host-metrics',
           'integrations/hosts-operating-systems/host-process-metrics',
           'integrations/hosts-operating-systems/linux',
