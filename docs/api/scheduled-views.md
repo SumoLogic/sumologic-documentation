@@ -6,6 +6,10 @@ description: Use HTTP endpoints to manage Scheduled Views.
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/general/calendar.png')} alt="Thumbnail icon" width="50"/>
+
 The [Scheduled View](/docs/manage/scheduled-views) Management API allows you to manage Scheduled Views from HTTP endpoints.
 
 {@import ../reuse/api-intro.md}
