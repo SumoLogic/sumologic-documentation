@@ -15,7 +15,6 @@ We’re happy to announce our new and improved data onboarding workflow that get
 
 The Sumo Logic Distribution for OpenTelemetry, a single unified agent to send Logs, Metrics, Traces, and Metadata, helps simplify and streamline Observability and debugging to improve overall system reliability and efficiency. [Learn more](/docs/send-data/opentelemetry-collector).
 
-
 Note: The new onboarding workflows are only available for new Trial customers at this time. 
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-onboarding.gif')} alt="OpenTelemetry collector onboarding flow" />
