@@ -5,6 +5,10 @@ sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/>
+
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
 :::caution

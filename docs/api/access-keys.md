@@ -6,6 +6,10 @@ description: Use HTTP endpoints to manage access keys.
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+
 The [Access Keys](/docs/manage/security/access-keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
 
 {@import ../reuse/api-intro.md}

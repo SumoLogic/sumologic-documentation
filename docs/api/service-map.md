@@ -5,6 +5,10 @@ sidebar_label: Service Map
 description: The Service Map API allows you to fetch a graph representation of the Service Map.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/traces/servicemap.png')} alt="Thumbnail icon" width="50"/>
+
 The Service Map API allows you to fetch a graph representation of the Service Map, which is a high-level view of your application environment, automatically derived from tracing data. For more information, see [Service Map](/docs/apm/traces/services-list-map).
 
 :::tip Other Tracing APIs
