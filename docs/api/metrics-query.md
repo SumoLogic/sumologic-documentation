@@ -6,6 +6,10 @@ description: The Metrics Query API allows you to execute queries on various metr
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+
 The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints. For more information, see [Metrics - Classic](/docs/metrics/metrics-queries/metrics-queries-classic).
 
 {@import ../reuse/api-intro.md}

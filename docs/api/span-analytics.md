@@ -5,6 +5,10 @@ sidebar_label: Span Analytics
 description: The Span Analytics API allows you to browse spans collected in the system.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/distributed-operations.png')} alt="Thumbnail icon" width="50"/>
+
 The Span Analytics API allows you to browse spans collected in the system. You can execute queries to find individual spans matching provided search criteria as well as run aggregated span queries and retrieve their results. For more information, see [Spans](/docs/apm/traces/spans).
 
 :::tip Other Tracing APIs
