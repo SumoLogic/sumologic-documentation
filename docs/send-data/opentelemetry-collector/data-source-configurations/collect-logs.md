@@ -13,7 +13,7 @@ You can find the full list of receivers in [our repository].
 
 The Filelog Receiver tails and parses logs from files.
 
-The following is a basic configuration for the Filelog Receiver, which can be placed in `conf.d` directory:
+The following is a basic configuration for collecting logs from a file. This configuration can be placed in `conf.d` directory:
 
 ```yaml
 receivers:
