@@ -9,7 +9,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
 
 To use the receiver, you need to define it in the `receivers:` section and then use it in the pipeline.
 
-Consider the following example configuration for collecting [Host Metrics Source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver):
+Consider the following example configuration for collecting [Host Metrics Source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver). This configuration can be placed in `conf.d` directory:
 
 ```yaml
 receivers:
