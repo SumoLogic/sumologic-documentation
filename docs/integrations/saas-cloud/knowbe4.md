@@ -2,7 +2,7 @@
 id: knowbe4
 title: Sumo Logic App for KnowBe4
 sidebar_label: KnowBe4
-description: The Sumo Logic App for KnowBe4 offers functionality for monitoring and analyzing your organization's KnowBe4 Phishing Security logs.
+description: The Sumo Logic App for KnowBe4 offers functionality for monitoring and analyzing KnowBe4 Phishing Security logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
