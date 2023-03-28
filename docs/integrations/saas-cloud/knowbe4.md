@@ -9,7 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="50" />
 
-The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, the world's largest security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status. The distribution of Phishing Security Tests by difficulty and long-running Phishing Security Tests panels offers insights into the difficulty level of the phishing tests and identifies tests that have been running for an extended period. The Phish Prone Percentage panel helps you understand the percentage of users who are at higher risk of falling for a phishing attack. The Geo Location of Failed Users panel provides geographic insights into where failed users are located. The Phishing Security Tests Summary and Phish Failures Summary panels provide high-level summaries of the organization's testing performance. Finally, the Top Failed Users panel identifies users who have failed multiple tests and may require additional training.
+The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status. 
+
+The distribution of **Phishing Security Tests** by difficulty and long-running **Phishing Security Tests** panels offer insights into the difficulty level of the phishing tests and identify tests that have been running for an extended period. The app's **Phish Prone Percentage** dashboard panel helps you understand the percentage of users who are at higher risk of falling for a phishing attack. 
+
+The **Geo Location of Failed Users** dashboard panel provides geographic insights into where failed users are located. The **Phishing Security Tests Summary** and **Phish Failures Summary** dashboard panels provide high-level summaries of the organization's testing performance. Finally, the **Top Failed Users** panel identifies users who have failed multiple tests and may require additional training.
 
 ## Log Types
 
