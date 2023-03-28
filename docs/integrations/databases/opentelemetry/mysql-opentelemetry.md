@@ -183,10 +183,10 @@ db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 | sort by avg_time | limit  10
 ```
 
-## Sample metrics query
 
-This sample query is from the **FSync Op Count** panel.
-```sql
+This sample metrics query is from the **FSync Op Count** panel.
+
+```sql title="Sample metrics query"
 sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* metric=mysql.operations operation=fsyncs  | sum
 ```
 
@@ -199,7 +199,7 @@ The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of
 Use this dashboard to:
 - Quickly identify the state of a given database cluster
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Overview.png' alt="Overview" />
 
 ### Error Logs
 
@@ -212,7 +212,7 @@ Use this dashboard to:
 - Ensure that server start, server stop and crash recovery events are in line with expectations
 - Dashboard filters allow you to narrow a search for database cluster.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Error-Logs.png' alt="Error Logs" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Error-Logs.png' alt="Error Logs" />
 
 ### Failed Logins
 
@@ -222,7 +222,7 @@ Use this dashboard to:
 
 - Monitor all failed login attempts and identify any unusual or suspicious activity
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Failed-Logins.png' alt="Failed Logins" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Failed-Logins.png' alt="Failed Logins" />
 
 ### Replication
 
@@ -233,7 +233,7 @@ Use this dashboard to:
 - Quickly determine reasons for replication failures
 - Monitor replication status trends
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Replication.png' alt="Replication" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Replication.png' alt="Replication" />
 
 ### Slow Queries
 
@@ -249,7 +249,7 @@ Use this dashboard to:
 - Determine which SQL commands are slower than others
 - Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Slow-Queries.png' alt="Slow Queries" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Slow-Queries.png' alt="Slow Queries" />
 
 ### Performance and Resource Metrics
 
@@ -262,4 +262,4 @@ Use this dashboard to:
 - Monitor query execution trends to ensure they match up with expectations
 - Dashboard filters allow you to narrow a search for a specific database cluster
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySql-Performance-and-Resource-Metrics.png' alt="Performance and Resource Metrics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Performance-and-Resource-Metrics.png' alt="Performance and Resource Metrics" />
