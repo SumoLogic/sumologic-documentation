@@ -108,7 +108,7 @@ Automations can be run manually from the **Actions** drop-down on [Insight detai
 <img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" width="230"/>
 
 You will see three sections in the Action menu:
-* **Insight Automation** - Displays a list of all enabled Insight Automations configured to run manually.
+* **Insight Automation**. Displays a list of all enabled Insight Automations configured to run manually.
 * **Entity Automation** - Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more Entity Automations to run (see below).
 * **Insight Actions** - Displays a list of all valid legacy Insight Actions.
 
