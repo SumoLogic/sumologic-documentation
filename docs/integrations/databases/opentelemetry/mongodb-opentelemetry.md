@@ -59,7 +59,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Send logs to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

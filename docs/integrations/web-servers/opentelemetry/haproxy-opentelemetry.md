@@ -95,7 +95,7 @@ The files are typically located in `/var/log/haproxy*.log`. If you're using a cu
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs and metric to Sumo
+### Step 3: Send logs and metrics to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

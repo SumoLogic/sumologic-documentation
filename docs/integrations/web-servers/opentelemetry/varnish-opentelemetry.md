@@ -51,7 +51,7 @@ The files are located in `/var/log/varnish/varnishncsa.log` by default. For more
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Send logs to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 

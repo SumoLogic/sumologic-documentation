@@ -151,7 +151,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Send logs to Sumo
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
@@ -201,11 +201,9 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 ## Sample Log Messages
 
-Sample Log Messages in Non-Kubernetes environments:
+Sample Log Message in Non-Kubernetes environment:
 
-### Time
-
-```sh
+```sh title="Time"
 20-Jan-2023 11:02:56 * (CONNECT_DATA=(CID=(PROGRAM=null)(HOST=__jdbc__)(USER=null))(SERVICE_NAME=sumo.cmdb01.com)) * (ADDRESS=(PROTOCOL=TCP)(HOST=124.243.25.82)(PORT=56486)) * establish * sumo.cmdb01.com * 12514
 
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor

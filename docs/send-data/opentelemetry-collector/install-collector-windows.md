@@ -42,30 +42,29 @@ Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePoint
 
 The script is going to perform the following operations:
 
-* install or upgrade operation by placing the latest version as `C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin`
-* get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\sumologic.yaml`
-* create user configuration directory (`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`) with `common.yaml` file which will contain installation token
-* create `OtelcolSumo` (`Sumo Logic OpenTelemetry Collector`) service
+* Install or upgrade operation by placing the latest version as `C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin`
+* Get [static configuration](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/sumologic.yaml) and place it as `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\sumologic.yaml`
+* Create user configuration directory (`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`) with `common.yaml` file which will contain installation token
+* Create `OtelcolSumo` (`Sumo Logic OpenTelemetry Collector`) service
 
 #### Script Options
 
-| Name               | Description                            | Takes Value                                               |
-|:-------------------|:-----------------------------------------|:-------------------------------------|
-| -InstallationToken | Installation token                                      | yes                                                                                  |
-| -Tags              | Sets tags for collector. This argument should be a map. | yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
+| Name           | Description      | Takes Value          |
+|:---------------|:----------------|:-------------|
+| `-InstallationToken` | Installation token      | Yes       |
+| `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
 
 ### Manual Step-by-Step Installation
 
 1. Go to the [latest release documentation](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest).
-2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="550" />
-3. Run Installer.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="windows-installation-1.png" width="550" />
-4. Read and accept End-User License Agreement.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="windows-installation-2.png" width="550" />
-5. Select binary destination.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="windows-installation-3.png" width="550" />
-6. Set Installation Token and Tags properties.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="windows-installation-4.png" width="550" />
-7. Click Install to begin installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="windows-installation-5.png" width="550" />
-8. Wait for installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="windows-stallation-6.png" width="550" />
+2. Download `otelcol-sumo_x.y.z.0_en-US.x64.msi` from the `Assets` section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation.png')} alt="windows-installation.png" width="450" />
+3. Run Installer.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-1.png')} alt="windows-installation-1.png" width="450" />
+4. Read and accept End-User License Agreement.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-2.png')} alt="windows-installation-2.png" width="450" />
+5. Select binary destination.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-3.png')} alt="windows-installation-3.png" width="450" />
+6. Set Installation Token and Tags properties.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-4.png')} alt="windows-installation-4.png" width="450" />
+7. Click **Install** to begin installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-5.png')} alt="windows-installation-5.png" width="450" />
+8. Wait for installation to be completed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-installation-6.png')} alt="windows-stallation-6.png" width="450" />
 9. You can modify configuration, which should be placed in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config` directory.
-
    :::note
    `C:\ProgramData` directory is hidden by default.
    :::
@@ -81,10 +80,11 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
+Alternatively, you can open Services.msc and check whether Sumo Logic OTel Collector Service is running or not. 
 
 ### UI Installation via App Catalog
 
-1. Go to **App Catalog** and  select **find Windows 2012+ - OpenTelemetry**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-1.png')} alt="windows-ui-installation-1.png" width="550" />
+1. Go to **App Catalog** and select **Windows - OpenTelemetry**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-1.png')} alt="windows-ui-installation-1.png" width="550" />
 1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-2.png')} alt="windows-ui-installation-2.png" width="550" />
 1. Select **Add New Collector** and click **Next**.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-3.png')} alt="windows-ui-installation-3.png" width="550" />
 1. Select the installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-4.png')} alt="windows-ui-installation-4.png" width="550" />
@@ -96,10 +96,7 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 
 ## Additional Settings
 
-This section describes common OpenTelemetry customisations:
-
-* [Using Proxy](#using-proxy)
-* [FIPS](#fips)
+This section describes common OpenTelemetry customizations.
 
 #### Using Proxy
 
@@ -123,7 +120,7 @@ To exclude a specific domain or IP address from using the proxy, you can add it 
 NO_PROXY=sumologic.com
 ```
 
-::: note
+:::info
 Restart `Sumo Logic OpenTelemetry Collector` (`OtelcolSumo`) service to apply the changes.
 :::
 
@@ -135,9 +132,9 @@ Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumolog
 
 ### Uninstall
 
-1. Go to **add or remove programs**.<br/>   <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
-1. Find `OpenTelemetry Collector` and click `Uninstall`.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
-1. Confirm the uninstallation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="windows-uninstallation-3.png" width="550" />
+1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
+1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
+1. Confirm the uninstallation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-3.png')} alt="windows-uninstallation-3.png" width="350" />
 
 ## Upgrading the Collector
 

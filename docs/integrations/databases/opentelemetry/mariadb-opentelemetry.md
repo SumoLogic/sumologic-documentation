@@ -69,7 +69,7 @@ The files are typically located in `/var/log/mariadb/`. If you're using a custom
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' alt="YAML" />
 
-### Step 3: Sending logs to Sumo
+### Step 3: Send logs to Sumo
 
 Once you have the yaml file downloaded in step 2, you can copy the same to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
 

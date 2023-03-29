@@ -69,7 +69,7 @@ You can add any custom fields which you want to tag along with the data ingested
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-YAML.png' alt="Configuration" />
 
 
-### Step 3: Sending logs to Sumo Logic
+### Step 3: Send logs to Sumo Logic
 
 {@import ../../../reuse/opentelemetry/send-logs-intro.md}
 
