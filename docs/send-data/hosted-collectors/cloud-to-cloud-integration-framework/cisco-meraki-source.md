@@ -115,3 +115,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `apiSecretKey` | String | Yes | Cisco Meraki API secret key | modifiable |
 | `merakiOrg` | String | Yes | Cisco Meraki Organization ID | modifiable |
 | `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable |
+
+## Troubleshooting
+You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section "Gather Meraki Organization IDs" to ensure you are using an ID for a Meraki organization returned in that query.
+
+```json
+{
+    "state": "Error",
+    "errorType": "THIRD-PARTY-CONFIG",
+    "errorCode": 400,
+    "errorInfo": "meraki '/api/v1/organizations/orgIdInput' not found using API key"
+}
+```
+
+# Known Issues
+1. Pagination has a rare occurrence to potentially return a small number duplicate logs. This issue has been reported to Cisco.
