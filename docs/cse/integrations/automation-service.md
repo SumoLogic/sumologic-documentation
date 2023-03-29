@@ -2,7 +2,7 @@
 id: automation-service
 title: Automation Service (Beta)
 sidebar_label: Automation Service
-description: Automate smart actions including enrichments and notifications. 
+description: Use the Automation Service to automate smart actions including enrichments and notifications. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -86,7 +86,9 @@ To create a new Automation:
 1. Click the gear icon at the top of the CSE UI and choose **Automation** under **Integrations**. 
 1. Click **New Automation**. 
    (To modify an existing Automation, click on the edit icon for the corresponding Automation.)
+
    <img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
+
 1. Select a **Playbook** from the drop-down list. The Playbook must be defined and its type must be set to **CSE** before associating it with an Automation.
 1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.)
    If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
@@ -101,7 +103,7 @@ Automations will run automatically when an Insight is created or closed provided
 * The Automation is an Insight Automation, or
 The Automation is an Entity Automation and the Insight contains one or more Entities of the Entity Type(s) configured in the Automation (this includes the primary and any related Entities).
 
-Automations can be run manually from the **Actions** drop-down on [Insight details](/docs/cse/records-signals-entities-insights/about-cse-insight-ui/#insight-details-page) pages. (On [Entity details](/docs/cse/records-signals-entities-insights/view-manage-entities/#about-the-entities-details-page) pages, Entity Automations can also be run manually from the **Automations** drop-down).
+Automations can be run manually from the **Actions** drop-down on [Insight details](/docs/cse/records-signals-entities-insights/about-cse-insight-ui#insight-details-page) pages. (On [Entity details](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) pages, Entity Automations can also be run manually from the **Automations** drop-down).
 
 <img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" width="230"/>
 
