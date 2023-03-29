@@ -17,7 +17,7 @@ This topic describes the capabilities of the CSE Automation Service and includes
 
 ## About the CSE Automation Service
 
-The CSE Automation Service utilizes Sumo Logic Cloud SOAR capabilities to allow you to define and automate smart actions including enrichments and notifications. These actions can be automatically triggered when certain events occur in CSE, helping you to quickly investigate, understand, and react to potential security threats.
+The CSE Automation Service uses Sumo Logic Cloud SOAR capabilities to allow you to define and automate smart actions including enrichments and notifications. These actions can be automatically triggered when certain events occur in CSE, helping you to quickly investigate, understand, and react to potential security threats.
 
 You can interact with the service through Automations, which execute Playbooks. Playbooks are composed of one or more Actions with a workflow that could include parallel actions and logic steps. Actions are included with Integrations. Sumo Logic provides a number of integrations, actions, and playbooks with the service that can be customized; you can create their own custom integrations, actions and playbooks as well. More details about each are in the specific sections below.
 
