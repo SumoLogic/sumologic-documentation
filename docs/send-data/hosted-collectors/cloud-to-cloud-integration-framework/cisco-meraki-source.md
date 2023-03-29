@@ -125,4 +125,4 @@ You may receive the follow error below if you enter an invalid Cisco Meraki orga
 ```
 
 # Known Issues
-1. Pagination has a rare occurrence to potentially return a small number duplicate logs. This issue has been reported to Cisco.
+Pagination has a rare occurrence to potentially return a small number duplicate logs. This issue has been reported to Cisco.
