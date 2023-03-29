@@ -37,7 +37,7 @@ Playbooks can contain both Enrichment and Notification Actions. Playbooks can al
 * Invites certain people to the Slack channel
 
 :::note
-The CSE Automation Service is intended to replace the legacy Insight Actions and the Enrichment Service. All of the actions and integrations provided with those capabilities are included in the CSE Automation Service (though some may require “on premise” deployment via the Bridge). Those capabilities will be deprecated later in 2023.
+The CSE Automation Service is intended to replace the legacy Insight Actions and the Enrichment Service. All of the actions and integrations provided with those capabilities are included in the CSE Automation Service (though some may require “on premise” deployment through the Bridge). Those capabilities will be deprecated later in 2023.
 :::
 
 :::note
