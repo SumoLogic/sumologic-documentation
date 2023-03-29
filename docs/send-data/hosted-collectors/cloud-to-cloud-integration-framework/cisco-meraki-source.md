@@ -1,6 +1,6 @@
 ---
 id: cisco-meraki-source
-title: Cisco Meraki Source (Beta)
+title: Cisco Meraki Source
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,20 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::note
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
-:::
-
 The Cisco Meraki Source provides a secure endpoint to receive data from the Meraki organization and networks and ingests event logs pertaining to them. It securely stores the required authentication, scheduling, and state tracking information.
 
 ## Data Sources
 
 | Default Interval | API Endpoint                                 |
 |:------------------|:----------------------------------------------|
-| Every 12 Hours   | [Get Organizations](https://developer.cisco.com/meraki/api-latest/#!get-organizations)                            |
-| Every 12 Hours   | [Get Organization Networks](https://developer.cisco.com/meraki/api-latest/#!get-organization-networks)                    |
+| Every 24 Hours   | [Get Organizations](https://developer.cisco.com/meraki/api-latest/#!get-organizations)                            |
+| Every 24 Hours   | [Get Organization Networks](https://developer.cisco.com/meraki/api-latest/#!get-organization-networks)                    |
 | Every 15 Minutes | [Get Organization Appliance Security Events](https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-events)  |
 | Every 15 Minutes | [Get Organization Configuration Changes](https://developer.cisco.com/meraki/api-v1/#!get-organization-configuration-changes)       |
 | Every 15 Minutes | [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events)                           |
@@ -58,9 +52,16 @@ To obtain an Meraki auth token, follow the steps below:
 
 For more detailed steps with troubleshooting examples, visit the official documentation [here](https://developer.cisco.com/meraki/api-v1/#!authorization/authorization).
 
+## Gather Meraki Organization IDs
+You will need to provide a single Meraki organization identifier in the configuration. Run the following curl command using your Cisco Meraki API key to see the list of Meraki organizations and note the ID number for the organizations you wish to collect data from.
+
+```
+curl --location 'https://api.meraki.com/api/v1/organizations' --header 'Authorization: Bearer {{api_key}}'
+```
+
 ## Create a Cisco Meraki Source
 
-When you create an Cisco Meraki Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Cisco Meraki Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). You will need to create a new Cisco Meraki source for every Cisco Meraki organization you want to collect data from.
 
 To configure Cisco Meraki Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
@@ -73,6 +74,7 @@ To configure Cisco Meraki Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
 1. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
 1. **API Key**. Provide the API key you generated from your Meraki account.
+1. **Meraki Organization ID**. Provide the numeric Meraki organization ID of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
