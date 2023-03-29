@@ -113,4 +113,5 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `baseURL` | String | Yes | Region URL of the Cisco Meraki application. | modifiable |
 | `apiSecretKey` | String | Yes | Cisco Meraki API secret key | modifiable |
+| `merakiOrg` | String | Yes | Cisco Meraki Organization ID | modifiable |
 | `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable |
