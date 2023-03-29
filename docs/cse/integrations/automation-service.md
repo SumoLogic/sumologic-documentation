@@ -122,7 +122,7 @@ If you select **Entity Automation > Run Automations** you will be prompted to se
 
 1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type. 
 1. Click **Next**.
-  You will be presented with a list of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
+  A list displays of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
 1. Select the Automations you wish to run and click **Run Automation**.
   The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.
   <img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
