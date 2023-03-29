@@ -5,10 +5,6 @@ description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint t
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 The Cisco Meraki Source provides a secure endpoint to receive data from the Meraki organization and networks and ingests event logs pertaining to them. It securely stores the required authentication, scheduling, and state tracking information.
 
 ## Data Sources
