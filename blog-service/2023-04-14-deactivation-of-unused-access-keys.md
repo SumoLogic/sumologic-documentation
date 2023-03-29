@@ -13,6 +13,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 By default API access keys will now automatically be deactivated if they have been unused for 30 days. This enhances the security of your account by reducing the risk of unauthorized access through inactive access keys. This ensures that only active access keys can be used to access your account and its resources. 
 
-In addition to the default setting, we have also provided an option for administrators to set a custom policy for the number of days, from 1 to 365, an access key can be unused before being automatically deactivated. This allows administrators to tailor the feature to suit their organization's specific security requirements.
+In addition to the change in the default setting, administrators can now set a custom policy for the number of days, from 1 to 365, an access key can be unused before being automatically deactivated. This setting allows administrators to tailor the feature to suit their organization's specific security requirements.
 
 To access this feature, log in to your account and navigate to **Administration > Security > Policies**. From there, you can set your preferred policy for deactivation of unused access keys. [Learn more](/docs/manage/security/access-keys#edit-deactivate-or-delete-an-access-key).
