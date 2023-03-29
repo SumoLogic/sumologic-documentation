@@ -191,7 +191,7 @@ No icon is displayed for Entities that are Not Flagged.
 Support for three new optional attributes have been added to the enrichment schema:
 * `expiresAt`.  Defines when the enrichment should be auto-deleted from CSE (by default, enrichments will never be auto-deleted).
 * `externalUrl`.  Defines a link that will be displayed with an enrichment (for example, to include a link to the VirusTotal details page for this Entity, put the link in this field).
-* `reputation` - Associates a threat indicator with this enrichment data. The allowable values are `malicious`, `suspicious`, and `notflagged`. The default is not to display any reputation.
+* `reputation`.  Associates a threat indicator with this enrichment data. The allowable values are `malicious`, `suspicious`, and `notflagged`. The default is not to display any reputation.
 
 ## API and Terraform Support
 
