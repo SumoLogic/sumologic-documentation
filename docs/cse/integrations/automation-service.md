@@ -74,7 +74,7 @@ To learn more about managing Playbooks, Actions, and Integrations, read [Cloud S
 
 :::note
 Beta: Some notes about Playbooks, Integrations and Actions in the Beta that may differ from the current Cloud SOAR documentation:
-* Playbooks must have a type of "CSE".
+* Playbooks type must be **CSE**.
 * The CSE Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
 * Actions can run "on premise" via a Bridge or can run directly through the Cloud. For security and performance reasons, only Certified Integrations/Actions can run directly through the Cloud; custom Actions must run "on premise".
 * Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the CSE Automation Service. Contact Sumo Logic if you are interested in a specific Integration that is not yet included with the CSE Automation Service.
