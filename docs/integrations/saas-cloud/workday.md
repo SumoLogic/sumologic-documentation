@@ -275,11 +275,11 @@ In this section, we will configure a collection of login and audit logs  from Wo
 * For non-FedRamp Sumo Logic deployments
     * [Create a Workday Cloud To Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source).
 * If you're using the Sumo Logic FedRamp deployment, you can either use a Sumo Logic Workday collection script to be run in an Amazon Web Services (AWS) environment using the AWS Lambda service, or run Sumo Logic Python scripts to run periodically on a Linux machine via a cron job.
-    * [AWS Lambda based collection](#Deploy_the_Sumo_Logic_Workday_SAM_Application) via a Serverless Application Model (SAM) application.
-    * [Script-based collection](#Configure_script-based_collection_for_Workday) from a Linux machine.
+    * [AWS Lambda based collection](#deploy-the-sumo-logic-workday-sam-application-in-your-aws-environment-deprecated) via a Serverless Application Model (SAM) application.
+    * [Script-based collection](#configure-script-based-collection-for-workday-deprecated) from a Linux machine.
 
 
-#### Deploy the Sumo Logic Workday SAM Application in your AWS environment
+#### Deploy the Sumo Logic Workday SAM Application in your AWS environment (DEPRECATED)
 
 In this step, you deploy the SAM application, which creates the necessary resources in your AWS account.
 
@@ -307,7 +307,7 @@ To deploy the Sumo Logic Workday SAM Application, do the following:
 6. After the deployment, you can verify whether all the resources are created completely.
 
 
-#### Configure script-based collection for Workday
+#### Configure script-based collection for Workday (DEPRECATED)
 
 This section shows you how to configure script-based log collection for the Sumo Logic Workday App.
 
