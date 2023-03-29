@@ -183,7 +183,7 @@ Threat indicators, if set, will be displayed throughout the CSE UI either as a f
 No icon is displayed for Entities that are Not Flagged.
 
 :::note
-**Not Flagged** is not the default value (which is no indicator at all). CSE will not automatically determine the indicator value; enrichments must explicitly set it (see below).
+**Not Flagged** is not the default value (which is no indicator at all). CSE will not automatically determine the indicator value; enrichments must explicitly set it (see Enrichment Attributes).
 :::
 
 ### New Enrichment Attributes
