@@ -6,6 +6,10 @@ description: The Ingest Budget Management API allows you to manage ingest budget
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/>
+
 The Ingest Budget Management API allows you to manage **V1** [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets) that have a **Field Value** from HTTP endpoints.
 
 See [V2 API](/docs/api/ingest-budget-V2) for management of ingest budgets with a scope.
