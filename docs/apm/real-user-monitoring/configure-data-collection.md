@@ -63,6 +63,7 @@ To configure a RUM HTTP Traces source:
           }
         });
    ```
+   * **deployment.environment** (optional):  Your production, staging, or development environment name, up to 10 distinct values per org. 
    * **Probabilistic sampling rate** (optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from. Supports regex. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`. Please make sure provided URLs are valid JavaScript flavor regexes.
    * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. As an example, you could enter a key of `internal.version` with a value of `0.1.21`. This information is saved in the script for `name_of_your_web_service`.
