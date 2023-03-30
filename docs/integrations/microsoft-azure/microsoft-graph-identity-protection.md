@@ -15,9 +15,9 @@ With the Microsoft Graph Identity Protection App, organizations can easily monit
 
 Key features of the Microsoft Graph Identity Protection App include:
 
-* Real-time monitoring: The app provides real-time monitoring of events related to the Microsoft Graph Identity Protection Source, allowing organizations to quickly detect potential security incidents.
-* Advanced analytics: The app includes a wide range of pre-built dashboards, and visualizations, that enable organizations to analyze their Microsoft Graph Identity Protection data in real-time, and gain insights into user behavior, sign-in patterns, and .risky detections. The App displays the distribution of risks by level, state, processing status, type, activity, etc which allows you to categorize risks by various criteria and helps to identify critical and frequently occurring risks.
-* Investigation capabilities: The app provides advanced search and analytics capabilities that allow security teams to investigate security incidents, identify the root cause of security events, and take steps to improve their organization's overall security posture.
+* **Real-time monitoring.** The app provides real-time monitoring of events related to the Microsoft Graph Identity Protection Source, allowing you to quickly detect potential security incidents.
+* **Advanced analytics.** The app includes a wide range of pre-built dashboards, and visualizations, that enable organizations to analyze their Microsoft Graph Identity Protection data in real-time, and gain insights into user behavior, sign-in patterns, and .risky detections. The App displays the distribution of risks by level, state, processing status, type, activity, etc which allows you to categorize risks by various criteria and helps to identify critical and frequently occurring risks.
+* **Investigation capabilities.** The app provides advanced search and analytics capabilities that allow security teams to investigate security incidents, identify the root cause of security events, and take steps to improve their organization's overall security posture.
 
 ## Log types
 
@@ -125,7 +125,7 @@ _sourceCategory=msgip-app-src riskEventType
 
 ## Collecting Logs for Microsoft Graph Identity Protection API
 
-This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. Refer to the [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
+This section explains how to collect logs from Microsoft Graph Identity Protection API and ingest them into Sumo Logic. For details, see [Cloud-to-Cloud-Integration for Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/) to create the source and use the same source category while installing the app.
 
 ## Installing the Microsoft Graph Identity Protection App
 
