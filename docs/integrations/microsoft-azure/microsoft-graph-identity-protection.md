@@ -155,7 +155,7 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 * You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-###  Risk Detections
+### Risk Detections
 
 **Microsoft Graph Identity Protection - Risk Detections**.
 
