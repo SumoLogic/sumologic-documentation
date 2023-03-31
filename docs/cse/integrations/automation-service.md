@@ -146,7 +146,7 @@ The list of Automations is organized by Insight and Entity, and each section can
 * A link to **View Playbook** in the CSE Automation Service UI.
 
 :::note
-Beta: During the Beta, you may have to manually refresh this screen to see the most current Status.
+During the Beta, you may have to manually refresh this screen to see the most current Status.
 :::
 
 If you click **View Playbook**, the CSE Automation Service UI will open to the Playbook Status page:
