@@ -41,7 +41,7 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 ### General
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* [Log Reduce](../../search/logreduce/logreduce-operator/)/ [Log Compare](../../search/logcompare/) operators are not supported in Monitors. If your  query contains these operators, then you will not be able to create the monitor.  
+* [Log Reduce](../../search/logreduce/logreduce-operator/)/ [Log Compare](../../search/logcompare/) operators are not supported in Monitors. If your query contains these operators, you will not be able to create the monitor.  
 * Monitors only support the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers.md).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
