@@ -50,7 +50,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/search/search-query-language/math-expressions/abs"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>abs</h4></a>
-  <p>The absolute function calculates the absolute value of x.</p>
+  <p>Calculates the absolute value of x.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
@@ -86,7 +86,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox7 card">
   <div className="container">
   <a href="/docs/search/search-query-language/math-expressions/ceil"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>ceil</h4></a>
-  <p>The ceil operator rounds up a field value to the nearest integer value.</p>
+  <p>Rounds up a field value to the nearest integer value.</p>
   </div>
 </div>
 <div className="box smallbox8 card">
@@ -110,13 +110,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox11 card">
   <div className="container">
   <a href="/docs/search/search-query-language/math-expressions/expm1"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>expm1</h4></a>
-  <p>The expm1 function returns value of x in exp(x)-1, compensating for the roundoff in exp(x).</p>
+  <p>Returns a value of x in exp(x)-1, compensating for the roundoff in exp(x).</p>
   </div>
 </div>
 <div className="box smallbox12 card">
   <div className="container">
   <a href="/docs/search/search-query-language/math-expressions/floor"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>floor</h4></a>
-  <p>The floor function rounds down to the largest previous integer value. Returns the largest integer not greater than x.</p>
+  <p>Rounds down to the largest previous integer value.</p>
   </div>
 </div>
 <div className="box smallbox13 card">
@@ -128,7 +128,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox14 card">
       <div className="container">
       <a href="/docs/search/search-query-language/math-expressions/isnan-isinfinity"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isNaN, isInfinity</h4></a>
-      <p>The isNaN and isInfinity operators check a numeric string and return a boolean value.</p>
+      <p>These operators check a numeric string and return a boolean value.</p>
       </div>
     </div>
     <div className="box smallbox15 card">
@@ -146,7 +146,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox17 card">
       <div className="container">
       <a href="/docs/search/search-query-language/math-expressions/log1p"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>log1p</h4></a>
-      <p>The log1p function computes log(1+x) accurately for small values of x.</p>
+      <p>Computes log(1+x) accurately for small values of x.</p>
       </div>
     </div>
     <div className="box smallbox18 card">
