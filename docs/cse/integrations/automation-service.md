@@ -85,7 +85,8 @@ Some notes about Playbooks, Integrations and Actions in the Beta that may differ
 
 To create a new Automation:
 1. Click the gear icon at the top of the CSE UI and choose **Automation** under **Integrations**. 
-1. Click **New Automation**.  (To modify an existing Automation, click on the edit icon for the corresponding Automation.)</br><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
+1. Click **New Automation**.  (To modify an existing Automation, click on the edit icon for the corresponding Automation.)
+<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
 1. Select a **Playbook** from the drop-down list. The Playbook must be defined and its type must be set to **CSE** before associating it with an Automation.
 1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.) If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
 1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the Automation will not appear in any Actions/Automations menus.
@@ -118,7 +119,8 @@ If you select **Entity Automation > Run Automations** you will be prompted to se
 
 1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type. 
 1. Click **Next**. A list displays of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
-1. Select the Automations you wish to run and click **Run Automation**. The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
+1. Select the Automations you wish to run and click **Run Automation**. The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.
+<img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
   
 In this example:
 * The CarbonBlack Automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
