@@ -128,10 +128,10 @@ If you select **Entity Automation > Run Automations** you will be prompted to se
   The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.
   <img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
   
-  In this example:
-    * The CarbonBlack Automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
-    * The nslookup Automation is configured to only run on IP Addresses so it will run three times.
-    * No Automation will run on the Hostname.
+In this example:
+* The CarbonBlack Automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
+* The nslookup Automation is configured to only run on IP Addresses so it will run three times.
+* No Automation will run on the Hostname.
 
 ## Viewing the Status of Automations
 
