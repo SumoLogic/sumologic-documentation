@@ -141,5 +141,5 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 
 This API can return a 400 error code which could mean one of the following reasons:
 
-1. "The provided authorization code or refresh token has expired due to inactivity". Please regenerate your authorization code and use it shortly after generation to update your Sumo Logic C2C source. This token will expire if not used quickly.
+1. "The provided authorization code or refresh token has expired due to inactivity". Regenerate your authorization code and use it shortly after generation to update your Sumo Logic C2C source. This token will expire if not used quickly.
 2. "Invalid request. Request is malformed or invalid". This response error can occur if other parts of the configuration are incorrect such as an invalid "Client Secret Value" or incorrect set permissions. Please ensure all of the setup steps are followed and the source has the correct configuration.
