@@ -124,7 +124,7 @@ If you have the [**Manage Access Keys** role capability](/docs/manage/users-role
 The **Security** > **Access Keys** page lists all access keys in your account. 
 
 When you mouse over an access key, a three-dot more options menu appears, with three options.
-<img src={useBaseUrl('img/security/access-key-three-dot.png')} alt="Edit access key" width="900"/>
+<img src={useBaseUrl('img/security/access-key-three-dot.png')} alt="Edit access key" width="600"/>
 
 * **Edit**. Opens up an **Edit Access Key** window where you can modify the allowlist for the access key.
 * **Deactivate/Reactivate**. Depending on the current status of the key, there will be either a **Deactivate** or **Reactivate** option. If you deactivate an access key, Sumo retains the key credentials but renders the key useless. You can reactivate a key at any time to begin using it again. 
