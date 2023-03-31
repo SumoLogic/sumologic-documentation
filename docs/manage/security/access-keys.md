@@ -86,7 +86,7 @@ an Access-Control-Allow-Origin header.
 You can use the **Preferences** page to edit, activate, deactivate, and delete your access keys. 
 
 When you mouse over an access key on the **Preferences** page, several controls appear. 
-<img src={useBaseUrl('/img/security/my-access-keys1.png')} alt="My Access Keys" width="1200"/>
+<img src={useBaseUrl('/img/security/my-access-keys1.png')} alt="My Access Keys" width="600"/>
 
 * **Edit**. The pencil icon opens up an **Edit Access Key** window where you can modify the allowlist for the access key.
 * **Deactivate/Reactivate**. Depending on the current status of the key, there will be either a **Deactivate** or **Reactivate** link. If you deactivate an access key, Sumo Logic retains the key credentials but renders the key useless. By default, Sumo Logic will deactivate an Access Key if it has gone unused for more than 30 days, though the [Access Keys Deactivation policy](#access-keys-deactivation-policy) can be updated by a Sumo Logic administrator. You can reactivate a key at any time to begin using it again.
