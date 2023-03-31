@@ -25,7 +25,7 @@ Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** f
 Having URL to the webhook, copy and paste it into a notepad. You will need it to configure the webhook connection in the next section.
 :::
 
-## Create an IAM user with required priviledges 
+## Create an IAM user with required privileges
 
 ### Lambda Function URL
 
