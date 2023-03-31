@@ -13,11 +13,54 @@ You can trigger an AWS Lambda function directly from a Monitor or Scheduled Sear
 
 For example, you can create a Monitor that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
 
-## Build an API in the API Gateway to expose a Lambda function
+## Use Lambda Function URL or build an API in the API Gateway to expose a Lambda function
 
-First, generate an Invoke URL, with a POST method for your Lambda function by creating an API in Amazon API Gateway. For information about exposing an HTTP endpoint, see Amazon's [API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html).
+Lambda can be called directly using **Function URL**. Check [Lambda Functions URLs documentation](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html) for the details.
 
-When you have created the Invoke URL, copy and paste it into a notepad. You will need it to configure the webhook connection in the next section.
+In more demanding use cases lambda can be accessed via **API Gateway**. To use this approach generate an Invoke URL, with a POST method for your Lambda function by creating an API in Amazon API Gateway. For information about exposing an HTTP endpoint in API Gateway, see Amazon's [API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html).
+
+Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** for the authorization type in configuration on AWS side.
+
+:::tip
+Having URL to the webhook, copy and paste it into a notepad. You will need it to configure the webhook connection in the next section.
+:::
+
+## Create an IAM user with required priviledges 
+
+### Lambda Function URL
+
+If you use Lambda Function URL create an IAM user with **lambda:InvokeFunctionUrl** action allowed. 
+
+:::caution
+Required action is different than the *lambda:InvokeFunction* used in AWS managed IAM Policy *AWSLambdaRole* so one needs to create *Customer managed* role
+:::
+
+<details><summary>Template for the IAM Policy</summary>
+Custom policy: 
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunctionUrl"
+            ],
+            "Resource": "arn:aws:lambda:*:*:function:*"
+        }
+    ]
+}
+```
+
+</details>
+
+### API Gateway
+
+If you use API Gateway create an IAM user who has basic API gateway invoke access. You can use the AWS managed policy **AmazonAPIGatewayInvokeFullAccess**.
+
+:::tip
+Having user account with required IAM policy assigned create AWS Access Key for this account and note **Access key** and **Secret access key** to authenticate Webhook connection in next section.
+:::
 
 ## Create a Webhook connection
 
@@ -34,11 +77,11 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * **Name.** Enter a name for the Connection.
     * **Description.** Optional: Enter a Description for the Connection.
     * **URL.** Enter the Invoke URL from the previous section.
-    * **Access Key and Secret Key.** Enter your AWS Access Key and Secret Key.
-    * Secure your API gateway method by selecting **AWS_IAM** for the authorization type.
-    * Create an IAM user who has basic API gateway invoke access. You can use the AWS managed policy **AmazonAPIGatewayInvokeFullAccess**.
+    * **Access Key ID** and **Secret Access Key.** Enter AWS Access key and Secret access key for the account with required IAM policy assigned created in previous section.
     * **Region.** Select your region.
-    * **Service Name.** Enter **execute-api** as the service name.
+    * **Service Name.** 
+      * For Lambda Function URL enter **lambda** as the service name
+      * For API Gateway enter **execute-api** as the service name.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
     * **Alert Payload.** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
     * **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
