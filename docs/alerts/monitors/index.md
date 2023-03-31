@@ -114,3 +114,58 @@ Type of Alert/Trigger condition defined Critical/Warning/Missing Data.
 
 ### Alert Variables  
 Custom variables used inside the Action Payload.
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+In this section, we'll introduce the following concepts:
+
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/create-monitor"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Create a Monitor</h4></a>
+  <p>This topic shows you how to create a monitor.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/edit-settings"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Edit Monitor Settings</h4></a>
+  <p>This topic shows allows you to view, create, manage, and organize your Monitors.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+    <a href="/docs/alerts/monitors/monitor-faq"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Monitors FAQ</h4></a>
+  <p>This topic lists the common FAQs regarding Monitors.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+    <a href="/docs/alerts/monitors/alert-variables"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Variables</h4></a>
+  <p>Variables are used as parameters that allow you to customize the JSON payload object of your alert notifications.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+    <a href="/docs/alerts/monitors/alert-response"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Response</h4></a>
+  <p>Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/alert-grouping"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Grouping</h4></a>
+<p>Alert Grouping gives you the flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on a specific field(s).</p>
+  </div>
+</div>
+<div className="box smallbox7 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/alert-response-faq"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Response FAQ</h4></a>
+<p>This topic lists the common FAQs regarding Alert Response.</p>
+  </div>
+</div>
+</div>
+
+<br/>
+
+:::tip
+Use our [Root Cause Explorer](/docs/observability/root-cause-explorer) to investigate usage and issues.
+:::
