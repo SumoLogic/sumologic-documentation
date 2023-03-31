@@ -197,12 +197,12 @@ Support for three new optional attributes have been added to the enrichment sche
 ## API and Terraform Support
 
 The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support Automations. The new endpoints include:
-* `GET /automations` - Get the list of Automations
-* `POST /automations` - Create an Automation
-* `POST /automations/execute` - Run one or more Automations against one or more Entities/Insights
-* `DELETE /automations/{id}` - Delete an Automation
-* `GET /automations/{id}` - Get a specific Automation
-* `PUT /automations/{id}` - Update a specific Automation
+* `GET /automations`. Get the list of Automations
+* `POST /automations`. Create an Automation
+* `POST /automations/execute`. Run one or more Automations against one or more Entities/Insights
+* `DELETE /automations/{id}`. Delete an Automation
+* `GET /automations/{id}`. Get a specific Automation
+* `PUT /automations/{id}`. Update a specific Automation
 
 The Sumo Logic Terraform provider has also been updated. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
