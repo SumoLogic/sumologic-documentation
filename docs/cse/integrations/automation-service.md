@@ -110,7 +110,7 @@ Automations can be run manually from the **Actions** drop-down on [Insight detai
 You will see three sections in the Action menu:
 * **Insight Automation**. Displays a list of all enabled Insight Automations configured to run manually.
 * **Entity Automation**. Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more Entity Automations to run (see below).
-* **Insight Actions** - Displays a list of all valid legacy Insight Actions.
+* **Insight Actions**.  Displays a list of all valid legacy Insight Actions.
 
 :::tip
 You can run the same Automation more than once for a given Entity or Insight, but not at the same time. Additional attempts to run an Automation while an instance is running will result in an error.
