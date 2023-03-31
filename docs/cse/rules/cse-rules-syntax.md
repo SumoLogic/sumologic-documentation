@@ -45,6 +45,20 @@ The following expression divides `error_count` by `user_count`.
 
 `error_count / user_count`
 
+## /*  */
+
+The forward slash and asterisk characters (/*  */) comment out lines. 
+
+For CSE rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in CIP, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
+
+**Syntax**
+
+`/*  */`
+
+**Example**
+
+`/* This is a comment. */`
+
 ## <
 
 The less than (<) character returns “true” if the expression is less than the other expression.

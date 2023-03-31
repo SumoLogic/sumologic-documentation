@@ -80,6 +80,7 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
+Alternatively, you can open Services.msc and check whether Sumo Logic OTel Collector Service is running or not. 
 
 ### UI Installation via App Catalog
 
