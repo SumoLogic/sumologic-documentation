@@ -29,7 +29,8 @@ Automations can be triggered automatically when an Insight is created and/or clo
 
 Playbooks can contain both Enrichment and Notification Actions. Playbooks can also be nested. So, for example, you could define a playbook that is executed automatically when an Insight is created that:
 * Gathers enrichment data
-  And if the data returned includes a malicious threat indicator:
+
+And if the data returned includes a malicious threat indicator:
 * Changes the Insight state to “In Progress”
 * Assigns the Insight
 * Sends a (customized) email with information about the Insight and indicator
