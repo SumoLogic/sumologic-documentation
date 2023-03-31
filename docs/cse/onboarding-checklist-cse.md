@@ -19,50 +19,52 @@ Access the linked articles to learn how to perform each item in the checklist.
 
 ## Provision CSE
 
-* [About CSE provisioning](/docs/manage/manage-subscription/create-manage-orgs-service-providers#about-cse-provisioning). Cloud SIEM Enterprise must be enabled by Sumo Logic before it is accessible.  Once enabled, you will see a link labeled **Cloud SIEM Enterprise** on the left side of the Sumo Logic navigation list. 
+Cloud SIEM Enterprise must be enabled by Sumo Logic (provisioned) before it is accessible.
+
+* [About CSE provisioning](/docs/manage/manage-subscription/create-manage-orgs-service-providers#about-cse-provisioning). Once enabled, you will see a link labeled **Cloud SIEM Enterprise** on the left side of the Sumo Logic navigation list. 
 <img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/>
 
-* [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) (optional).  You may consider setting up a custom sub-domain as well.
-* [Enable a support acccount](/docs/manage/security/enable-support-account/). If you would like Sumo Logic Support to be able to access your environment for assistance, be sure to enable Support Access.
+* [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) (optional).  You may consider setting up a custom sub-domain. If you have multiple Sumo Logic accounts, you may find it useful to configure a custom subdomain for each of your Sumo Logic accounts. Custom subdomains can help ensure that requests are authenticated to the right account when links are received. 
+* [Enable a support acccount](/docs/manage/security/enable-support-account/). If you would like [Sumo Logic Support](https://support.sumologic.com/hc/en-us) to be able to access your environment for assistance, be sure to enable Support Access.
 
 
 ## Set up roles and access
 
-CSE access is controlled through the unified RBAC controls.  
+CSE access is controlled through [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/role-based-access-control/).  
 
 * [Create and manage roles](/docs/manage/users-roles/roles/create-manage-roles/). Verify that CSE Users and CSE Admins have proper permissions.
 
 
 ## Set up entity and domain normalization
 
-CSE is able to normalize usernames and domains in order to improve cross-correlation.  For example, bob@acme.com, bob@acme.uk and bob.smith are all the same user and should be reflected as such in the records CSE creates.
+CSE is able to normalize usernames and domains in order to improve cross-correlation.  For example, `bob@acme.com`, `bob@acme.uk` and `bob.smith` are all the same user and should be reflected as such in the records CSE creates.
 
 * [Username and hostname normalization](/docs/cse/schema/username-and-hostname-normalization/). Enable host and domain normalization.
-
-* [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/) (optional). Set up username normalization lookup. (Optional and may not be required.)
+* [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/) (optional). Set up username normalization lookup. 
 
 
 ## Forward data to CSE
 
-You can now begin forwarding data to CSE using our [ingest guides](/docs/cse/ingestion/). Sending data to the CSE Data tier consumes credits, and credit consumption can be tracked by installing the Data Volume app.
-
-* [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/). Enable the Data Volume Index.
-* [Installing the Data Model App](/docs/integrations/sumo-apps/data-volume#installing-the-data-volume-app). Install Data Volume App. 
+You can forward data to CSE using our [ingest guides](/docs/cse/ingestion/). The ingest process consists of configuring a source or collector to forward messages to CSE, and ensuring that the forwarded messages are correctly tagged with the information CSE needs in order to map messages fields to Record attributes. 
+* [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/). Enable the Data Volume Index to track your data comsumption.
+* [Sumo Logic Data Model App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume App to provide you with a summary and detailed views of your account's data usage volume. 
 * [Audit Event Index](/docs/manage/security/audit-event-index/). CSE Insights are stored within two audit partitions or indexes. These partitions also store configuration changes made to the CSE Environment.  Because historical reporting of this information may be required, we recommend [increasing the retention](/docs/manage/partitions-data-tiers/) of these two partitions to 365 days.
    * Increase retention for `_index=sumologic_audit_events`.
    * Increase retention for `_index=sumologic_system_events`.
 * [CSE ingestion best practices](/docs/cse/ingestion/cse-ingestion-best-practices/). Forward select security data to CSE. When messages are sent to CSE, they are processed through the [records data pipeline](/docs/cse/schema/record-processing-pipeline/) for parsing and normalization into the [CSE schema](/docs/cse/schema/schema-attributes/). Each data source should be configured with the out-of-the-box parser built for that data type, and adhere to other ingestion best practices. 
-* [Inventory sources and data](/docs/cse/administration/inventory-sources-and-data/). Configure Inventory Data Sources. In addition to message events, CSE leverages “Inventory” to pull in user & system telemetry on a predefined interval.  Inventory information is then displayed for the analyst within the CSE UI.
+* [Inventory sources and data](/docs/cse/administration/inventory-sources-and-data/). Configure Inventory Data Sources. In addition to message events, CSE leverages inventory data to pull in user and system telemetry on a predefined interval. Inventory information is then displayed for the analyst within the CSE UI.
 
-## Import security apps and content
+## Install security apps and import content
 
-* [Enterprie Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/). Install/Import the CSE App Content. In order to monitor data that is being parsed, along with all the Signals and Insights these records are generating, leverage the CSE App. This app contains multiple folders of searches and dashboards related to CSE.
-* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/). Install Threat Intelligence Dashboards. Other useful security dashboards that should be imported include the various [CrowdStrike Threat Intel Dashboards](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection#viewing-crowdstrike-falcon-dashboards).
+Sumo Logic has apps that provide security-related data to CSE, and dashboards and searches that are useful to import to CSE. 
+
+* [Enterprie Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/). Install the Enterprise Audit - Cloud SIEM app to monitor data that is being parsed, along with all the Signals and Insights these records are generating. The app contains multiple folders of searches and dashboards related to CSE.
+* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/). Install the Threat Intel Quick Analysis App to get security analytics, like the [threat intel dashboards](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#viewing-threat-intel-quick-analysis-dashboards), that help you detect threats in your environment. 
 * [Security and threat detection](/docs/integrations/security-threat-detection/). Verify other security sources have Apps installed
 * Import Crowdstrike Threat Intel Searches. Crowdstrike threat indicator matches can be configured to become signals within CSE using scheduled searches. In addition, for customers with existing scheduled search alerts, these can also be configured to become signals with CSE as well.
 * Review other scheduled search alerts that might be candidates for signaling
 
-## Basic Setup of CSE Environment
+## Set up the CSE environment
 
 * [Set Insight generation window and threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Configure Insight Detection Thresholds. One of the most important aspects of CSE is the CSE Detection configuration.  Customers can define how the time window and threshold the signal clustering algorithm uses to generate insights.  In many cases, the default settings are ideal.
 * [Write a First Seen rule](/docs/cse/rules/write-first-seen-rule/). Configure First Seen Rule Baseline. Typically longer baselines (30 days) reduce alert noise.  However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred. 
