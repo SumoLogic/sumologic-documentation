@@ -43,7 +43,7 @@ To create your own access keys:
 1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
 1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page-2.png')} alt="Add Access Key" width="600"/>
 1. The **Create a Sumo Logic Access Key** window appears.
-<img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="1200"/>
+<img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="600"/>
 1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 7 below.
 1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
   :::note
