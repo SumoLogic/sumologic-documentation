@@ -2,7 +2,7 @@
 id: microsoft-graph-identity-protection
 title: Microsoft Graph Identity Protection
 sidebar_label: Microsoft Graph Identity Protection
-description: This Sumo Logic App for Microsoft Graph Identity Protection provides organizations with advanced security monitoring and analytics capabilities for their Microsoft Graph Identity Protection data.
+description: The Sumo Logic App for Microsoft Graph Identity Protection provides organizations with advanced security monitoring and analytics capabilities for their Microsoft Graph Identity Protection data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
