@@ -73,7 +73,7 @@ You will see the Playbooks list in the CSE Automation Service UI:
 
 To learn more about managing Playbooks, Actions, and Integrations, read [Cloud SOAR Automation](/docs/cloud-soar/automation/). In addition, some documentation (including the documentation for building custom Integrations and using the Bridge) is included in the UI. It can be accessed by clicking the Help icon in the upper-right corner of the screen.
 
-:::note
+:::note Beta
 Some notes about Playbooks, Integrations and Actions in the Beta that may differ from the current Cloud SOAR documentation:
 * Playbooks type must be **CSE**.
 * The CSE Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
