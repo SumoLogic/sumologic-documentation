@@ -200,7 +200,7 @@ From the URL, remove any query parameters like json, From Moment and To Moment. 
 ### Step 2: Add a Hosted Collector and HTTP Source
 
 :::note
-This step is not needed if you're configuring the Cloud To Cloud Collector Source.
+This step is not needed if you're configuring the [Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/).
 :::
 
 In this step, you create a hosted collector and HTTP source to receive data from the scripts that collect data from your Workday tenant.
