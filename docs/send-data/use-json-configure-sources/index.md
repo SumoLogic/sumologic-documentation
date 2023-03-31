@@ -91,6 +91,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Universal |
 | [Cloud Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#cloud-syslog-source) | Cloudsyslog |
 | [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source) | Universal |
+| [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) | Universal |
 | [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Universal |
 | [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) | 	Universal |
 | [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source) | Universal |
