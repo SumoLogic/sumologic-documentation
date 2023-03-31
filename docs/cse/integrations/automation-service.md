@@ -87,8 +87,7 @@ To create a new Automation:
 1. Click the gear icon at the top of the CSE UI and choose **Automation** under **Integrations**. 
 1. Click **New Automation**.  (To modify an existing Automation, click on the edit icon for the corresponding Automation.)</br><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
 1. Select a **Playbook** from the drop-down list. The Playbook must be defined and its type must be set to **CSE** before associating it with an Automation.
-1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.)
-   If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
+1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.) If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
 1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the Automation will not appear in any Actions/Automations menus.
 1. Set the **Status**. Disabled Automations will not run automatically and will not appear in any Actions/Automations menus.
 1. Click **Add to List** (or **Update** if editing an existing Automation).
