@@ -44,7 +44,6 @@ This section contains log messages for both `Risky Users` and `Risk detections` 
 }
 ```
 
-**Sample Risk detections Log Message**
 
 ```json title="Risk detections Log"
 {
