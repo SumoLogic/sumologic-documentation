@@ -131,11 +131,7 @@ Locate and install the app from the **App Catalog**. If you want to see a previe
 
 To install the app, follow the steps below:
 1. From the **App Catalog**, search for the app and select it.
-2. Select the version of the service you're using and click **Add to Library**.
-
-:::note
-Version selection is applicable only to a few apps currently. For details, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-:::
+2. Select the version of the service you're using and click **Add to Library**. Version selection is available only for limited number of apps. For details, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, enter the following fields.
    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    2. **Data Source**. Select either of these options for the data source:
