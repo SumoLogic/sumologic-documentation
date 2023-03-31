@@ -117,11 +117,8 @@ If you select **Entity Automation > Run Automations** you will be prompted to se
 <img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" width="600"/>
 
 1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type. 
-1. Click **Next**.
-  A list displays of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
-1. Select the Automations you wish to run and click **Run Automation**.
-  The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.
-  <img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
+1. Click **Next**. A list displays of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
+1. Select the Automations you wish to run and click **Run Automation**. The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
   
 In this example:
 * The CarbonBlack Automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
