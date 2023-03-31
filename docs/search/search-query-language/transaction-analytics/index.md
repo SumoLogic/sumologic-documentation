@@ -19,25 +19,25 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/merge-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Merge Operator</h4></a>
-  <p>The Merge operator reduces a stream of events to a single event using a specified merge strategy.</p>
+  <p>Reduces a stream of events to a single event using a specified merge strategy.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/transaction-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Transaction Operator</h4></a>
-  <p>No matter what type of data you are analyzing, from tracking website sign ups, to e-commerce data, to watching system activity across a distributed system, the transaction operator can be used in a variety of use cases.</p>
+  <p>Analyze transaction data such as website sign-ups and e-commerce activity.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/flow-diagrams"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Flow Diagrams</h4></a>
-  <p> In Sumo Logic, Flow Diagrams can show the flow within a distributed system.</p>
+  <p>Flow Diagrams can show the flow within a distributed system.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
   <a href="/docs/search/search-query-language/transaction-analytics/transactionize-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Transactionize Operator</h4></a>
-  <p>The Transactionize Operator groups log messages that match on any fields you specify.</p>
+  <p>Groups log messages that match on any fields you specify.</p>
   </div>
 </div>
 </div>
