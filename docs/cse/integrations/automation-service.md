@@ -73,8 +73,8 @@ You will see the Playbooks list in the CSE Automation Service UI:
 
 To learn more about managing Playbooks, Actions, and Integrations, read [Cloud SOAR Automation](/docs/cloud-soar/automation/). In addition, some documentation (including the documentation for building custom Integrations and using the Bridge) is included in the UI. It can be accessed by clicking the Help icon in the upper-right corner of the screen.
 
-:::note
-Beta: Some notes about Playbooks, Integrations and Actions in the Beta that may differ from the current Cloud SOAR documentation:
+:::note Beta
+Some notes about Playbooks, Integrations and Actions in the Beta that may differ from the current Cloud SOAR documentation:
 * Playbooks type must be **CSE**.
 * The CSE Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
 * Actions can run "on premise" via a Bridge or can run directly through the Cloud. For security and performance reasons, only Certified Integrations/Actions can run directly through the Cloud; custom Actions must run "on premise".
@@ -85,14 +85,9 @@ Beta: Some notes about Playbooks, Integrations and Actions in the Beta that may 
 
 To create a new Automation:
 1. Click the gear icon at the top of the CSE UI and choose **Automation** under **Integrations**. 
-1. Click **New Automation**. 
-   (To modify an existing Automation, click on the edit icon for the corresponding Automation.)
-
-   <img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
-
+1. Click **New Automation**.  (To modify an existing Automation, click on the edit icon for the corresponding Automation.)</br><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
 1. Select a **Playbook** from the drop-down list. The Playbook must be defined and its type must be set to **CSE** before associating it with an Automation.
-1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.)
-   If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
+1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.) If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
 1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the Automation will not appear in any Actions/Automations menus.
 1. Set the **Status**. Disabled Automations will not run automatically and will not appear in any Actions/Automations menus.
 1. Click **Add to List** (or **Update** if editing an existing Automation).
@@ -122,16 +117,13 @@ If you select **Entity Automation > Run Automations** you will be prompted to se
 <img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" width="600"/>
 
 1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type. 
-1. Click **Next**.
-  A list displays of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
-1. Select the Automations you wish to run and click **Run Automation**.
-  The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.
-  <img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
+1. Click **Next**. A list displays of all Entity Automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
+1. Select the Automations you wish to run and click **Run Automation**. The Automations will run. The system will automatically run the appropriate Automations for the appropriate Entity Types.<br/><img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
   
-  In this example:
-    * The CarbonBlack Automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
-    * The nslookup Automation is configured to only run on IP Addresses so it will run three times.
-    * No Automation will run on the Hostname.
+In this example:
+* The CarbonBlack Automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
+* The nslookup Automation is configured to only run on IP Addresses so it will run three times.
+* No Automation will run on the Hostname.
 
 ## Viewing the Status of Automations
 
@@ -146,7 +138,7 @@ The list of Automations is organized by Insight and Entity, and each section can
 * A link to **View Playbook** in the CSE Automation Service UI.
 
 :::note
-Beta: During the Beta, you may have to manually refresh this screen to see the most current Status.
+During the Beta, you may have to manually refresh this screen to see the most current Status.
 :::
 
 If you click **View Playbook**, the CSE Automation Service UI will open to the Playbook Status page:
@@ -190,19 +182,19 @@ No icon is displayed for Entities that are Not Flagged.
 ### New Enrichment Attributes
 
 Support for three new optional attributes have been added to the enrichment schema:
-* `expiresAt`.  Defines when the enrichment should be auto-deleted from CSE (by default, enrichments will never be auto-deleted).
-* `externalUrl`.  Defines a link that will be displayed with an enrichment (for example, to include a link to the VirusTotal details page for this Entity, put the link in this field).
-* `reputation`.  Associates a threat indicator with this enrichment data. The allowable values are `malicious`, `suspicious`, and `notflagged`. The default is not to display any reputation.
+* `expiresAt`. Defines when the enrichment should be auto-deleted from CSE (by default, enrichments will never be auto-deleted).
+* `externalUrl`. Defines a link that will be displayed with an enrichment (for example, to include a link to the VirusTotal details page for this Entity, put the link in this field).
+* `reputation`. Associates a threat indicator with this enrichment data. The allowable values are `malicious`, `suspicious`, and `notflagged`. The default is not to display any reputation.
 
 ## API and Terraform Support
 
 The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support Automations. The new endpoints include:
-* `GET /automations` - Get the list of Automations
-* `POST /automations` - Create an Automation
-* `POST /automations/execute` - Run one or more Automations against one or more Entities/Insights
-* `DELETE /automations/{id}` - Delete an Automation
-* `GET /automations/{id}` - Get a specific Automation
-* `PUT /automations/{id}` - Update a specific Automation
+* `GET /automations`. Get the list of Automations
+* `POST /automations`. Create an Automation
+* `POST /automations/execute`. Run one or more Automations against one or more Entities/Insights
+* `DELETE /automations/{id}`. Delete an Automation
+* `GET /automations/{id}`. Get a specific Automation
+* `PUT /automations/{id}`. Update a specific Automation
 
 The Sumo Logic Terraform provider has also been updated. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
