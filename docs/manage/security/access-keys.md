@@ -49,7 +49,7 @@ To create your own access keys:
   :::note
   Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
   :::
-  <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="1200"/>
+  <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="600"/>
 1. The window updates, and displays the domain you added.Repeat steps 5 and 6 to add additional domains to the allowlist.
 1. Click **Create Key** to generate the key. 
 1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key.
