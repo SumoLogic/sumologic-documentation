@@ -12,18 +12,18 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This is a concise setup guide that will ensure best practices are followed, and that maximum value is achieved by leveraging all of the features of the Cloud SIEM solution. Sumo Logic offers a complete CSE Quickstart package through the professional services team that covers these checklist items, as well as tuning and other configurations not listed here.
+This document provides a high-level checklist of onboarding tasks for Cloud SIEM Enterprise (CSE) administrators. This setup guide ensures you follow best practices, and helps you achieve maximum value from the CSE by helping you leverage all of the features of the Cloud SIEM solution. Sumo Logic offers a complete CSE Quickstart package through the professional services team that covers these checklist items, as well as tuning and other configurations not listed here.
+
+Access the linked articles to learn how to perform each item in the checklist.
 
 
 ## Provision CSE
 
-Cloud SIEM Enterprise must be enabled by Sumo Logic before it is accessible.  Once enabled, you will see a link labeled “Cloud SIEM Enterprise” on the left side of the Sumo Logic navigation list.  You may consider setting up a custom sub-domain as well.
-[Screenshot]
+* [About CSE provisioning](/docs/manage/manage-subscription/create-manage-orgs-service-providers#about-cse-provisioning). Cloud SIEM Enterprise must be enabled by Sumo Logic before it is accessible.  Once enabled, you will see a link labeled **Cloud SIEM Enterprise** on the left side of the Sumo Logic navigation list. 
+<img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/>
 
-If you would like Sumo Logic Support to be able to access your environment for assistance, be sure to enable Support Access.
-
-* [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) (optional). 
-* [Enable a support acccount](/docs/manage/security/enable-support-account/). 
+* [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) (optional).  You may consider setting up a custom sub-domain as well.
+* [Enable a support acccount](/docs/manage/security/enable-support-account/). If you would like Sumo Logic Support to be able to access your environment for assistance, be sure to enable Support Access.
 
 
 ## Set up roles and access
