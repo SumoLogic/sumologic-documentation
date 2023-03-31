@@ -29,7 +29,6 @@ To learn about the Microsoft Graph Identity Protection API fields, see the [Risk
 
 This section contains log messages for both `Risky Users` and `Risk detections` sources.
 
-**Sample Risky Users Log Message**
 
 ```json title="Risky Users Log"
 {
