@@ -1,6 +1,6 @@
 ---
 id: haproxy
-title: HAProxy
+title: HAProxy - Classic Collector
 sidebar_label: HAProxy
 description: The Sumo Logic App for HAProxy is a unified logs and metrics app that helps you monitor the availability, performance, and health of your HAProxy cluster.
 ---
