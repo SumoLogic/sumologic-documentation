@@ -167,7 +167,7 @@ If you do not have root or admin permissions, you can still install the Sumo Ope
 However, note that some functionalities, such as certain host metrics, may not be available when running the Collector as a non-root user.
 
 
-#### On Linux or MacOS, how can I view/edit configuration files within the `conf.d` directory?
+#### On Linux or macOS, how can I view/edit configuration files within the `conf.d` directory?
 
 These directories and files require root permission to access. You can use `sudo` command.
 
