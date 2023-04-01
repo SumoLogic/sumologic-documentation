@@ -22,7 +22,7 @@ Minimal resource requirements are the following:
 
 Versions Supported
 
-* MacOS 10.X and up
+* macOS 10.X and up
 
 ## Install
 
