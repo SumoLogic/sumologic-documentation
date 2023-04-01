@@ -228,7 +228,7 @@ See [Accessing the collector's metrics](#accessing-the-collectors-metrics) secti
 
 Refer to the Uninstall section in the following docs:
 * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux/#uninstall)
-* [Windows]/docs/send-data/opentelemetry-collector/install-collector-windows/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows/#uninstall)
 * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos/#uninstall)
 
 
