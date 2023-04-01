@@ -179,7 +179,7 @@ service:
 
 :::tip Additional information
 * Refer to our [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
-* Refer to our [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
+* See [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
 :::
 
 [json_parser]: https://github.com/open-telemetry/opentelemetry-log-collection/blob/main/docs/operators/json_parser.md
