@@ -52,8 +52,8 @@ The collector sends a heartbeat message every 15 seconds (by default).
 #### Does the OpenTelemetry Collector get throttled? Under what circumstances does this happen?
 
 The behavior is the same as for any other collection method.
-* [Logs Throttling](https://help.sumologic.com/docs/manage/ingestion-volume/log-ingestion/#log-throttling)
-* [Metrics Throttling](https://help.sumologic.com/docs/metrics/manage-metric-volume/metric-throttling/)
+* [Logs Throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling)
+* [Metrics Throttling](/docs/metrics/manage-metric-volume/metric-throttling/)
 
 
 ## Collector connection failure
