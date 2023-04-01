@@ -278,7 +278,9 @@ For example:
 
 In this case, this means that the collector couldn’t find the file you wanted to collect logs from. There can be lot of reasons why this error happens, including not having appropriate permissions. 
 
-_Note: that collector will still collect & send data from other sources as long as there is no issues with those sources._
+:::note
+The collector will still collect and send data from other sources as long as there are no issues with those sources.
+:::
 
 #### Why am I receiving an error when collecting data from the Sumo Logic OpenTelemetry Collector? It is unable to read Process Data (PID, process name, and so on)?
 
