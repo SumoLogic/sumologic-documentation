@@ -102,7 +102,7 @@ The following env variables can be used along with script:
 1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
 1. Wait for the installation to complete.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-registration-success.png')} alt="application installed successfully" />
 1. Read the prerequisite section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-prerequisite.png')} alt="collector successfully registered" />
-1. Customize source configuration, download it, and place it in the directory `/etc/otelcol-sumo/conf.d`, and then restart collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-configure.png')} alt="source customisation" />
+1. Customize your source configuration, download it, place it in the directory `/etc/otelcol-sumo/conf.d`, and then restart your collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-configure.png')} alt="source customisation" />
 1. Wait for the installation to complete.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-success.png')} alt="application installed successfully" />
 
 ### Manual step-by-step Installation
