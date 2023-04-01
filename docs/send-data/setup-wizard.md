@@ -8,7 +8,7 @@ description: Use the Setup Wizard to quickly get started sending data to Sumo Lo
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
-Setup Wizard is outdated. We recommend using [App Catalog](https://help.sumologic.com/docs/integrations/) to onboard your data.
+The Setup Wizard is outdated. We recommend using the [App Catalog](/docs/integrations/) to onboard your data.
 :::
 
 The Setup Wizard lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
