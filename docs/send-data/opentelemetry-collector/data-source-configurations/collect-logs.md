@@ -178,7 +178,7 @@ service:
 ```
 
 :::tip Additional information
-* Refer to our [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
+* See [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
 * See [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
 :::
 
