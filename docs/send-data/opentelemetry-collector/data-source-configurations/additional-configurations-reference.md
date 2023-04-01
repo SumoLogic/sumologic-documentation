@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Here are some best practices for configuring the Sumo Logic Distribution for OpenTelemetry.
 
-## Configuration Location & Structure
+## Configuration location and structure
 The Sumo Logic OpenTelemetry Collector configuration is comprised of two parts. Based on the platform, the configuration by default is stored at the following location
 
 ```
