@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This document contains common troubleshooting scenarios and frequently asked questions about Sumo Logic OpenTelemetry Collector.
+This document contains common troubleshooting scenarios and frequently asked questions about the Sumo Logic OpenTelemetry Collector.
 
 ## About the Sumo Logic OTel Collector
 
