@@ -7,7 +7,7 @@ description: Learn about Sumo Logic OTel Collector Sources.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Data Sources
-Data sources or Source in Sumo refers to a specific application/infrastructure component from which the collector can collect telemetry (Logs, Metrics & Traces). The sources include all configuration including protocol, receivers, processors, and exporters required to collect telemetry data from a given source. MySQL, Nginx, Kafka, Cassandra, and JMX are all examples of sources from where Sumo Logic collector can collect and send data. 
+Data sources or Source in Sumo refers to a specific application/infrastructure component from which the collector can collect telemetry (Logs, Metrics, and Traces). The sources include all configuration including protocol, receivers, processors, and exporters required to collect telemetry data from a given source. MySQL, Nginx, Kafka, Cassandra, and JMX are all examples of sources from where Sumo Logic collector can collect and send data. 
 
 
 ### Configuration
