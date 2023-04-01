@@ -226,7 +226,7 @@ See [Accessing the collector's metrics](#accessing-the-collectors-metrics) secti
 
 #### How do I uninstall the Sumo OpenTelemetry Collector?
 
-Refer to the Uninstall section in the below mentioned docs
+Refer to the Uninstall section in the following docs:
 * [Linux](https://help.sumologic.com/docs/send-data/opentelemetry-collector/install-collector-linux/#uninstall)
 * [Windows](https://help.sumologic.com/docs/send-data/opentelemetry-collector/install-collector-windows/#uninstall)
 * [MacOS](https://help.sumologic.com/docs/send-data/opentelemetry-collector/install-collector-macos/#uninstall)
