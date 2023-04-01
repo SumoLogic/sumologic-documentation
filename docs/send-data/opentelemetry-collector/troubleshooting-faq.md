@@ -236,7 +236,7 @@ Refer to the Uninstall section in the below mentioned docs
 
 #### How do I ingest historical data​?
 
-To ingest old or historical data use a [Filelog Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) for log collection. By default, the Filelog Receiver starts reading logs from the end of the file. However, this can be changed by adjusting the configuration file to start reading from the beginning of the file by setting `start_at: beginning` in the receiver section. Below is an example
+To ingest old or historical data, use a [Filelog Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) for log collection. By default, the Filelog Receiver starts reading logs from the end of the file. However, this can be changed by adjusting the configuration file to start reading from the beginning of the file by setting `start_at: beginning` in the receiver section. Here is an example:
 
 ```yaml
 receivers:
