@@ -98,7 +98,6 @@ Click a link for information on the individual app dashboards:
 * [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
-* [Amazon RDS Dashboards](../integrations/aws-rds-metrics.md)
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
