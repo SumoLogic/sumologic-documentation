@@ -16,7 +16,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Auth0](https://auth0.com/docs/logs/streams/sumo-logic-dashboard)
 * [Barracuda CloudGen Firewall](https://campus.barracuda.com/product/cloudgenfirewall/doc/91132156/sumo-logic-integration/)
 * [Catchpoint](https://github.com/catchpoint/Integrations.SumoLogic/blob/main/README.md)
-* [CircleCI](https://circleci.com/docs/2.0/insights-partnerships/#sumo-logic-integration)
+* [CircleCI](https://circleci.com/docs/sumo-logic-integration/)
 * [CloudFlare](https://developers.cloudflare.com/fundamentals/data-products/analytics-integrations/sumo-logic)
 * [Code42](https://support.code42.com/Administrator/Cloud/Monitoring_and_managing/Integrate_Code42_with_Sumo_Logic)
 * [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)
