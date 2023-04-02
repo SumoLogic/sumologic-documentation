@@ -46,7 +46,7 @@ After you've logged into Sumo Logic, choose a collector.
 
 [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector)
 
-1. Go to **App Catalog** and click on the app you'd like to install.
+1. Go to **App Catalog** and click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
 1. After you've installed the collector, you'll be prompted with instructions to set up the source.
 
