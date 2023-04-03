@@ -6,7 +6,6 @@ description: Sumo Logic Monitors continuously query your logs or metrics and sen
 tags: [monitor, monitors]
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
