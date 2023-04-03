@@ -95,6 +95,10 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 
 Sumo Logic AWS OTel Lambda also provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries for container based Lambda functions. 
 
+:::note
+The instruction below supports only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
+:::
+
 ### Requirements
 
 Instrumentation of container based AWS Lambda function requires some changes in the Dockerfile and image rebuild. You'll need the following:
