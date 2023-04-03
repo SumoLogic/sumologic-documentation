@@ -1,7 +1,7 @@
 ---
 id: onboarding-checklist-cse
-title: Onboarding checklist for CSE
-sidebar_label: Onboarding checklist for CSE
+title: Onboarding Checklist for CSE
+sidebar_label: Onboarding Checklist for CSE
 description: Onboarding tasks to get up and running with Cloud SIEM.
 keywords:
   - cloud siem
@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides a high-level checklist of onboarding tasks for Cloud SIEM Enterprise (CSE) administrators. This setup guide ensures that you follow best practices, and helps you obtain maximum value from the CSE by showing you how to leverage all of the features of the Cloud SIEM solution. 
+This article provides a high-level checklist of onboarding tasks and best practices for Cloud SIEM Enterprise (CSE) administrators. This setup guide shows you how to maximize value from CSE by leveraging all of its features. 
 
 Sumo Logic also offers a complete CSE Quickstart package through the Professional Services team that covers these checklist items, as well as tuning and other configurations not listed here.
 
@@ -25,7 +25,7 @@ Sumo Logic must enable (provision) Cloud SIEM Enterprise before you can access i
 
 * [Create and Manage Organizations (Service Providers)](/docs/manage/manage-subscription/create-manage-orgs-service-providers/). Once Sumo Logic [provisions CSE](/docs/manage/manage-subscription/create-manage-orgs-service-providers#about-cse-provisioning), you see a link labeled **Cloud SIEM Enterprise** on the left side of the Sumo Logic navigation list. <br/><img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/>
 * [Manage Organizational Settings](/docs/manage/manage-subscription/manage-org-settings) (optional). If you have multiple Sumo Logic accounts, you may find it useful to [set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) for each of your accounts. Custom subdomains help ensure that requests authenticate to the right account. 
-* [Enable a Support Acccount](/docs/manage/security/enable-support-account/). Enable Support Access if you would like [Sumo Logic Support](https://support.sumologic.com) to access your environment for assistance.
+* [Enable a Support Account](/docs/manage/security/enable-support-account/). If you need [Sumo Logic Support](https://support.sumologic.com) assistance, enable this feature to grant our agents permission to access your environment.
 
 
 ## Set up roles and access
