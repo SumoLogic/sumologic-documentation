@@ -45,6 +45,9 @@ The AWS Observability solution script is organized into the following groups of 
    * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
    * **source-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo logic sources as required for the solution.
 
+:::note
+Using main.tf, only apps can be installed with the “sumo-module” module by keeping the “collection-module” module commented. 
+:::
 
 System Files:
 
@@ -52,13 +55,12 @@ System Files:
 * [providers.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers Configuration Language](https://www.terraform.io/docs/language/providers/index.html) for more information.
 * [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
 * [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
-* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in sumo logic field schema 
-* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the user's Sumo Logic account.
+* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in the Sumo Logic field schema 
+* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the your Sumo Logic account.
   
 ## Step 1: Set up the Terraform environment
 
-Before you run the Terraform script, perform the following actions on a
-server machine of your choice:
+Before you run the Terraform script, perform the following actions on a server machine of your choice:
 
 1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
@@ -102,7 +104,7 @@ server machine of your choice:
       ```
 
 :::important
-Going forward, please do not modify these fields outside of Terraform.
+Going forward, do not modify these fields outside of Terraform.
 :::
 
 ## Step 3: Determine which AWS Account/Regions to Deploy
