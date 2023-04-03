@@ -11,6 +11,7 @@ Sumo Logic automatically adds several metadata fields to metrics at ingestion ti
 For a list of Sumo Logic metrics sources, see [Metrics Sources](/docs/metrics/introduction).  
 :::
 
+
 ## Built-in metadata fields
 You can run queries using any of the following built-in metadata fields.
 
