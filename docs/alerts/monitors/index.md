@@ -48,7 +48,6 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
 * A Log Monitor can have one query up to 15,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
-* [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
 * The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.
 * [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
