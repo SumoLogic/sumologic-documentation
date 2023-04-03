@@ -1789,6 +1789,7 @@ integrations: [
          'integrations/microsoft-azure/web-apps',
          'integrations/microsoft-azure/iis-7',
          'integrations/microsoft-azure/iis-10-legacy',
+         'integrations/microsoft-azure/microsoft-graph-identity-protection',
          'integrations/microsoft-azure/office-365',
          'integrations/microsoft-azure/sql-server',
          'integrations/microsoft-azure/teams',
