@@ -15,19 +15,19 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/accum"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>accum</h4></a>
-  <p>The accum operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval and can be used to find a total running count across all intervals.</p>
+  <p>Calculates the cumulative sum of a field.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/as"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>as</h4></a>
-  <p>The as operator is typically used in conjunction with other operators, but it can also be used alone to rename fields or to create new constant fields.</p>
+  <p>The as operator, typically used in conjunction with other operators, can also be used standalone to rename fields or to create new constant fields.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/asn-lookup"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>ASN lookup</h4></a>
-  <p>Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address.</p>
+  <p>Use this to look up an Autonomous System Number (ASN) and organization name by IP address.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
@@ -69,7 +69,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox10 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/compare"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>compare</h4></a>
-  <p>The compare operator can be used with the Time Compare button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query.</p>
+  <p>Can be used with the <a href="/docs/search/time-compare">Time Compare button</a> in the Sumo UI, which generates correct syntax and adds it to your aggregate query.</p>
   </div>
 </div>
 <div className="box smallbox11 card">
@@ -81,13 +81,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox12 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/contains"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>contains</h4></a>
-  <p>The contains operator compares string values of two parsed fields and returns a boolean result based on whether the second field's value exists in the first.</p>
+  <p>Compares string values of two parsed fields and returns a boolean result based on whether the second field's value exists in the first.</p>
   </div>
 </div>
 <div className="box smallbox13 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/dectohex"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>decToHex</h4></a>
-  <p>The decToHex operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.</p>
+  <p>Converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.</p>
   </div>
 </div>
 <div className="box smallbox14 card">
@@ -129,7 +129,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox20 card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/formatdate"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>formatDate</h4></a>
-  <p>The formatDate operator allows you to format dates in log files as a string in the format you require, such as U.S. date formatting, European formatting, and timestamps.</p>
+  <p>Formats dates in log files as a string in a different format, such as U.S. or European date formatting.</p>
   </div>
 </div>
     <div className="box smallbox21 card">
@@ -153,7 +153,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox24 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/haversine"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>haversine</h4></a>
-      <p>The haversine operator returns the distance between latitude and longitude values of two coordinates in kilometers.</p>
+      <p>Returns the distance between latitude and longitude values of two coordinates in kilometers.</p>
       </div>
     </div>
     <div className="box smallbox25 card">
@@ -165,7 +165,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox26 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/hextodec"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>hexToDec</h4></a>
-      <p>The hexToDec operator converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.</p>
+      <p>Converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.</p>
       </div>
     </div>
     <div className="box smallbox27 card">
@@ -183,277 +183,291 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox29 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/ipv4tonumber"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>ipv4ToNumber</h4></a>
-      <p>The ipv4ToNumber operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format.</p>
+      <p>Converts an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format.</p>
       </div>
     </div>
     <div className="box smallbox30 card">
       <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isNull, isEmpty, isBlank</h4></a>
-      <p>The isNull operator checks a string and returns a boolean value. The isEmpty operator checks if a string contains no characters and is only whitespace. The isBlank operator checks if a string contains no characters, is only whitespace, and is null.</p>
+      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isNull</h4></a>
+      <p>Checks a string and returns a boolean value.</p>
       </div>
     </div>
     <div className="box smallbox31 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isEmpty</h4></a>
+      <p>Checks if a string contains no characters and is only whitespace.</p>
+      </div>
+    </div>
+    <div className="box smallbox32 card">
+      <div className="container">
+      <a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isBlank</h4></a>
+      <p>Checks if a string contains no characters, is only whitespace, and is null.</p>
+      </div>
+    </div>
+    <div className="box smallbox33 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/isnumeric"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isNumeric</h4></a>
       <p>The isNumeric operator checks whether a string is a valid Java number.</p>
       </div>
     </div>
-    <div className="box smallbox32 card">
+    <div className="box smallbox34 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/isprivateip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isPrivateIP</h4></a>
       <p>The isPrivateIP operator checks if an IPv4 address is private and returns a boolean.</p>
       </div>
     </div>
-    <div className="box smallbox33 card">
+    <div className="box smallbox35 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/ispublicip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isPublicIP</h4></a>
       <p>The isPublicIP operator checks if an IPv4 address is public and returns a boolean.</p>
       </div>
     </div>
-    <div className="box smallbox34 card">
+    <div className="box smallbox36 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/isreservedip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isReservedIP</h4></a>
       <p>The isReservedIP operator checks if an IPv4 address is reserved as defined by RFC 5735 and returns a boolean.</p>
       </div>
     </div>
-    <div className="box smallbox35 card">
+    <div className="box smallbox37 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/isvalidip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>isValidIP</h4></a>
       <p>The isValidIP operator checks if the value is a valid IP address.</p>
       </div>
     </div>
-    <div className="box smallbox36 card">
+    <div className="box smallbox38 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/join"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>join</h4></a>
       <p>The join operator combines records of two or more data streams.</p>
       </div>
     </div>
-    <div className="box smallbox37 card">
-      <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/length"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>length</h4></a>
-      <p>The length operator returns the number of characters in a string.</p>
-      </div>
+  <div className="box smallbox39 card">
+    <div className="container">
+    <a href="/docs/search/search-query-language/search-operators/length"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>length</h4></a>
+    <p>The length operator returns the number of characters in a string.</p>
     </div>
-    <div className="box smallbox38 card">
-      <div className="container">
-      <a href="/docs/search/search-query-language/search-operators/limit"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>limit</h4></a>
+  </div>
+</div>
+
+<br/>
+
+
+
+<div className="box-wrapper" markdown="1">
+
+  <div className="box smallbox1 card">
+    <div className="container">
+    <a href="/docs/search/search-query-language/search-operators/limit"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>limit</h4></a>
       <p>The limit operator reduces the number of raw messages or aggregate results returned.</p>
       </div>
     </div>
-    <div className="box smallbox39 card">
+    <div className="box smallbox2 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/lookup"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>lookup</h4></a>
-      <p>The lookup operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query.</p>
+      <p>Returns one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query.</p>
       </div>
     </div>
-    <div className="box smallbox40 card">
+    <div className="box smallbox3 card">
       <div className="container">
       <a href="/docs/search/search-query-language/search-operators/lookupcontains"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>lookupContains</h4></a>
       <p>Use the lookupContains operator to determine whether a key exists in a lookup table. It will return a boolean value.</p>
       </div>
     </div>
-        <div className="box smallbox41 card">
+        <div className="box smallbox4 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/lookup-classic"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>lookup (Classic)</h4></a>
-          <p>The lookup (classic) operator maps data in your log messages to meaningful information saved in Sumo or on an HTTPS server.</p>
+          <p>Maps data in your log messages to meaningful information saved in Sumo or on an HTTPS server.</p>
           </div>
         </div>
-        <div className="box smallbox42 card">
+        <div className="box smallbox5 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/luhn"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>luhn</h4></a>
-          <p>The luhn operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them.</p>
+          <p>Uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them.</p>
           </div>
         </div>
-        <div className="box smallbox43 card">
+        <div className="box smallbox6 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/manually-cast-data-string-number"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Manually cast data to string or number</h4></a>
           <p>Most data in Sumo Logic is stored as a string data type. Metadata fields are stored as string data and parsed fields are by default parsed as string type data.</p>
           </div>
         </div>
-        <div className="box smallbox44 card">
+        <div className="box smallbox7 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/matches"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>matches</h4></a>
           <p>The matches operator can be used to match a string to a wildcard pattern or an RE2 compliant regex.</p>
           </div>
         </div>
-        <div className="box smallbox45 card">
+        <div className="box smallbox8 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/now"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>now</h4></a>
           <p>The now returns the current epoch time in milliseconds.</p>
           </div>
         </div>
-        <div className="box smallbox46 card">
+        <div className="box smallbox9 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/num"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>num</h4></a>
-          <p>The num operator converts a field to a double value (64-bit IEEE 754 double-precision floating-point number), which is twice as accurate as a float value (32-bit IEEE 754 single-precision floating-point number).</p>
+          <p>Converts a field to a double value, which is twice as accurate as a float value.</p>
           </div>
         </div>
-        <div className="box smallbox47 card">
+        <div className="box smallbox10 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/outlier"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>outlier</h4></a>
-          <p>Given a series of time-stamped numerical values, using the outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.</p>
+          <p>Identifies values in a sequence that seem unexpected and would trigger an alert/violation.</p>
           </div>
         </div>
-        <div className="box smallbox48 card">
+        <div className="box smallbox11 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/predict"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>predict</h4></a>
           <p>Uses a series of time-stamped numerical values to predict future values.</p>
           </div>
         </div>
-        <div className="box smallbox49 card">
+        <div className="box smallbox12 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/queryendtime"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>queryEndTime()</h4></a>
           <p>The queryEndTime() operator returns the end time of the search time range in milliseconds.</p>
           </div>
         </div>
-        <div className="box smallbox50 card">
+        <div className="box smallbox13 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/querystarttime"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>queryStartTime()</h4></a>
           <p>The queryStartTime() operator returns the start time of the search time range in milliseconds.</p>
           </div>
         </div>
-        <div className="box smallbox51 card">
+        <div className="box smallbox14 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/querytimerange"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>queryTimeRange()</h4></a>
           <p>The queryTimeRange() operator returns the time duration for the query being executed in milliseconds.</p>
           </div>
         </div>
-        <div className="box smallbox52 card">
+        <div className="box smallbox15 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/replace"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>replace</h4></a>
           <p>The replace operator allows you to replace all instances of a specified string with another string.</p>
           </div>
         </div>
-        <div className="box smallbox53 card">
+        <div className="box smallbox16 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/rollingstd"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>rollingstd</h4></a>
           <p>The rollingstd operator finds the rolling standard deviation of a field, allowing you to identify changes over time.</p>
           </div>
         </div>
-        <div className="box smallbox54 card">
+        <div className="box smallbox17 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/save"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>save</h4></a>
-          <p>The save operator allows you to save the results of a query to a lookup table you have already created, as described in Create a Lookup Table.</p>
+          <p>Allows you to save the results of a query to a lookup table you've already created.</p>
           </div>
         </div>
-        <div className="box smallbox55 card">
+        <div className="box smallbox18 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/save-classic"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>save (Classic)</h4></a>
           <p>The save (classic) operator works with the classic Lookup Tables feature.</p>
           </div>
         </div>
-        <div className="box smallbox56 card">
+        <div className="box smallbox19 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/sessionize"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>sessionize</h4></a>
-          <p>The sessionize operator allows you to use an extracted value from one log message to find correlating values in log messages from other systems.</p>
+          <p>Uses an extracted value from one log message to find correlating values in log messages from other systems.</p>
           </div>
         </div>
-        <div className="box smallbox57 card">
+        <div className="box smallbox20 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/smooth"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>smooth</h4></a>
-          <p>The smooth operator calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation.</p>
+          <p>Calculates the rolling (or moving) average of a field, measuring the average of a value to "smooth" random variation.</p>
           </div>
         </div>
-        <div className="box smallbox58 card">
+        <div className="box smallbox21 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/sort"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>sort</h4></a>
           <p>The sort operator orders aggregated search results.</p>
           </div>
         </div>
-        <div className="box smallbox59 card">
+        <div className="box smallbox22 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/substring"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>substring()</h4></a>
           <p>The substring operator allows you to specify an offset that will output only part of a string, referred to as a substring.</p>
           </div>
         </div>
-        <div className="box smallbox60 card">
+        <div className="box smallbox23 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/threatip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatip()</h4></a>
-          <p>The threatip operator correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment.</p>
+          <p>Correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
           </div>
         </div>
-        <div className="box smallbox61 card">
+        <div className="box smallbox24 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/timeslice"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>timeslice()</h4></a>
           <p>The timeslice operator aggregates data by time period, so you can create bucketed results based on a fixed interval.</p>
           </div>
         </div>
-        <div className="box smallbox62 card">
+        <div className="box smallbox25 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/timeslice-join"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Timeslice Join Results</h4></a>
           <p>When you gather data using a join operator, you can slice data by time period using the timeslice operator.</p>
           </div>
         </div>
-        <div className="box smallbox63 card">
+        <div className="box smallbox26 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/tolowercase-touppercase"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>toLowerCase, toUpperCase</h4></a>
           <p>The toLowerCase operator takes a string and converts it to all lower case letters.</p>
           </div>
         </div>
-        <div className="box smallbox64 card">
+        <div className="box smallbox27 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/top"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>top</h4></a>
           <p>Use the top operator with the sort operator to reduce the number of sorted results returned.</p>
           </div>
         </div>
-        <div className="box smallbox65 card">
+        <div className="box smallbox28 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/topk"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>topk</h4></a>
           <p>The topk operator allows you to select the top values from fields and group them by fields.</p>
           </div>
         </div>
-        <div className="box smallbox66 card">
+        <div className="box smallbox29 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/total"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>total</h4></a>
           <p>The total operator inserts the sum of a set of fields into every row of the set.</p>
           </div>
         </div>
-        <div className="box smallbox67 card">
+        <div className="box smallbox30 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/tourl"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>tourl</h4></a>
           <p>The tourl operator provides you the ability to assign a short name that describes the URL.</p>
           </div>
         </div>
-        <div className="box smallbox68 card">
+        <div className="box smallbox31 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/trace"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>trace</h4></a>
           <p>The trace operator acts as a highly sophisticated filter to connect the dots across different log messages.</p>
           </div>
         </div>
-        <div className="box smallbox69 card">
+        <div className="box smallbox32 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/transpose"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>transpose</h4></a>
           <p>Similar to a Pivot Table in Excel, the transpose operator allows you to take a list and turn it into a table in the Aggregates tab.</p>
           </div>
         </div>
-        <div className="box smallbox70 card">
+        <div className="box smallbox33 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/trim"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>trim()</h4></a>
           <p>The trim operator eliminates leading and trailing spaces from a string field.</p>
           </div>
         </div>
-        <div className="box smallbox71 card">
+        <div className="box smallbox34 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/urldecode"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>urldecode</h4></a>
           <p>The urldecode operator decodes a URL you include in a query, returning the decoded (unescaped) URL string.</p>
           </div>
         </div>
-        <div className="box smallbox72 card">
+        <div className="box smallbox35 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/urlencode"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>urlencode</h4></a>
           <p>The urlencode operator encodes the URL into an ASCII character set.</p>
           </div>
         </div>
-        <div className="box smallbox73 card">
+        <div className="box smallbox36 card">
           <div className="container">
           <a href="/docs/search/search-query-language/search-operators/where"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>where()</h4></a>
           <p>The where operator allows you to filter results based on a boolean expression.</p>
           </div>
         </div>
 </div>
-
-<br/>
-
-:::tip
-Use our [Root Cause Explorer](/docs/observability/root-cause-explorer) to investigate usage and issues.
-:::  
