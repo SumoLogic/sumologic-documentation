@@ -1115,7 +1115,7 @@
   "/07Sumo-Logic-Apps/24Web_Servers/Apache/Apache_Metrics": "/docs/integrations/web-servers/apache",
   "/07Sumo-Logic-Apps/24Web_Servers/Apache": "/docs/integrations/web-servers/apache",
   "/07Sumo-Logic-Apps/24Web_Servers/Apache/Apache-App-Dashboards": "/docs/integrations/web-servers/apache",
-  "/07Sumo-Logic-Apps/24Web_Servers/Couchbase": "/docs/integrations/web-servers/couchbase",
+  "/07Sumo-Logic-Apps/24Web_Servers/Couchbase": "/docs/integrations/databases/couchbase",
   "/07Sumo-Logic-Apps/24Web_Servers/HAProxy": "/docs/integrations/web-servers/haproxy",
   "/07Sumo-Logic-Apps/24Web_Servers/HAProxy/Collect_Logs_and_Metrics_for_HAProxy": "/docs/integrations/web-servers/haproxy",
   "/07Sumo-Logic-Apps/24Web_Servers/HAProxy/Install_the_HAProxy_Monitors,_App,_and_View_the_Dashboards": "/docs/integrations/web-servers/haproxy",
