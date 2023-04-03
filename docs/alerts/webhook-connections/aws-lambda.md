@@ -15,7 +15,7 @@ For example, you can create a Monitor that triggers a Lambda function when too m
 
 ## Use Lambda Function URL or build an API in the API Gateway to expose a Lambda function
 
-Lambda can be called directly using **Function URL**. Check [Lambda Functions URLs documentation](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html) for the details.
+Lambda can be called directly using **Function URL**. Check [Lambda Functions URLs documentation](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html) for details.
 
 In more demanding use cases lambda can be accessed via **API Gateway**. To use this approach generate an Invoke URL, with a POST method for your Lambda function by creating an API in Amazon API Gateway. For information about exposing an HTTP endpoint in API Gateway, see Amazon's [API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html).
 
