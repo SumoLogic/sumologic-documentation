@@ -9,14 +9,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Here are some best practices for configuring the Sumo Logic Distribution for OpenTelemetry.
 
-## Configuration Location
+## Configuration location and structure
+The Sumo Logic OpenTelemetry Collector configuration is comprised of two parts. Based on the platform, the configuration by default is stored at the following location
 
-All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
+```
+Linux or MacOS : /etc/otelcol-sumo/
+Windows : C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config 
+```
+
+:::note
+If you did a manual install of the collector, your configuration might be in a different location.
+:::
+
+* **Sumo Logic Logic-defined configuration**. This is required by collector to properly communicate with SumoLogic SaaS service, and transmit data. All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually. Depending upon your platform.
+* **Data Source configuration**. Here, you can define all the configuration that tells the collector what data to collect, how to process it (including adding metadata), and send it to Sumo Logic. All the user-defined configuration resides under `conf.d` directory.
+
+Any configuration for a Source (MySQL, Nginx, Application Logs, etc) should be stored in a separate file with descriptive name under the `conf.d` directory. For example, a file named `conf.d/mysql.yaml` can contain configuration to collect MySQL data (logs and metrics), and will contain the necessary receiver, processors and the pipeline that together inform the collector on how to collect and send the MySQL data.
 
 * It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`.
-* Specific configurations should be grouped by pipelines in meaningfully named files in the `conf.d` directory.
 
-For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 
 ## Custom Pipeline
 

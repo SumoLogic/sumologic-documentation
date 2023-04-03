@@ -13,7 +13,7 @@ You can find the full list of receivers in [our repository].
 
 The Filelog Receiver tails and parses logs from files.
 
-The following is a basic configuration for the Filelog Receiver, which can be placed in `conf.d` directory:
+The following is a basic configuration for collecting logs from a file. This configuration can be placed in `conf.d` directory:
 
 ```yaml
 receivers:
@@ -145,7 +145,7 @@ service:
 
 Windows Log Event Receiver tails and parses logs from windows event log API.
 
-Consider the following example usage of [Windows Event Log receiver][windowseventlogreceiver].
+Consider the following example usage of [Windows Event Log receiver][windowseventlogreceiver]. It is going to collect logs from application, security, and system channels and send them to Sumo Logic.
 
 ```yaml
 receivers:
@@ -177,11 +177,9 @@ service:
         - sumologic
 ```
 
-It is going to collect logs from application, security, and system channels and send them to Sumo Logic.
-
 :::tip Additional information
-* Refer to our [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
-* Refer to our [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
+* See [OpenTelemetry documentation][windowseventlogreceiver] for more information about Windows Event Log receiver.
+* See [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.
 :::
 
 [json_parser]: https://github.com/open-telemetry/opentelemetry-log-collection/blob/main/docs/operators/json_parser.md
