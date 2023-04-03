@@ -6,6 +6,10 @@ description: Use HTTP endpoints to view your account's health events.
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/company-value/heart-wellness.png')} alt="Thumbnail icon" width="50"/>
+
 The [Health Events](/docs/manage/health-events) Management API allows you to view the health of your Collectors and Sources from HTTP endpoints.
 
 {@import ../reuse/api-intro.md}
