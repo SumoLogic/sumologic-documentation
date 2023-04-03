@@ -64,8 +64,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
-  <p>2 Items.</p>
+  <a href="docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
+  <p>The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. It is further divided into two topics: Search from the Field Browser and Show and Hide Fields in the Field Browser.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
