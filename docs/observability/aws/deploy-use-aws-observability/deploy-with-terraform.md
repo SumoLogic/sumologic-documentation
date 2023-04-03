@@ -558,7 +558,7 @@ The following examples override the following:
 
 * Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
 
-* Example 2 overrides the auto_enable_access_logs variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
+* Example 2 overrides the auto_enable_access_logs variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to *Both*, which automatically enables access logging for new and existing ALB resources.
 
 **Default example:**
 
@@ -727,7 +727,7 @@ cloudwatch_metrics_source_url=””
 The following is a specific Source URL example:
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
@@ -1445,7 +1445,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS, and AWS SQS.
+* Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS, and AWS SQS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder
