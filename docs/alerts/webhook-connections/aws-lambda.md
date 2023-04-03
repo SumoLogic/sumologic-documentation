@@ -56,7 +56,7 @@ Custom policy:
 
 ### API Gateway
 
-If you use API Gateway create an IAM user who has basic API gateway invoke access. You can use the AWS managed policy **AmazonAPIGatewayInvokeFullAccess**.
+If you use API Gateway, create an IAM user who has basic API gateway invoke access. You can use the AWS managed policy **AmazonAPIGatewayInvokeFullAccess**.
 
 :::tip
 Having user account with required IAM policy assigned create AWS Access Key for this account and note **Access key** and **Secret access key** to authenticate Webhook connection in next section.
