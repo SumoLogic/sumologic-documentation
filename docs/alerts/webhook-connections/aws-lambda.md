@@ -35,7 +35,8 @@ If you use the Lambda Function URL, create an IAM user with **lambda:InvokeFunct
 Required action is different than the *lambda:InvokeFunction* used in AWS managed IAM Policy *AWSLambdaRole* so one needs to create *Customer managed* role
 :::
 
-<details><summary>Template for the IAM Policy</summary>
+<details><summary>IAM Policy template</summary>
+
 Custom policy: 
 ```json
 {
