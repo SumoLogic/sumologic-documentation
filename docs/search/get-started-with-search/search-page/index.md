@@ -36,6 +36,7 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 In your search query, you'll see that we have separated out important terms in a search for you by color to help you identify them quickly.  
 
 ![Query Sample Colors](/img/search/get-started-search/search-page/query-with-colors.png)
+
 | Color | Purpose |
 |:--|:--|
 | Blue | Boolean operators (and, or, not) |
@@ -53,43 +54,43 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/add-saved-search-to-favorites"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Add a Saved Search to Favorites</h4></a>
-  <p>You can mark a saved search as a favorite on the Search page so it appears in the Library on the Favorites tab.</p>
+  <p>You can mark a saved search as a favorite so it appears in your Library.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/change-time-range-in-histogram"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Change the Time Range in the Histogram</h4></a>
-  <p>You can highlight a time range in the histogram for your search results to filter the search results based on that time range.</p>
+  <p>Learn how to filter results based on a histogram time range.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
   <a href="docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
-  <p>The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. It is further divided into two topics: Search from the Field Browser and Show and Hide Fields in the Field Browser.</p>
+  <p>Explore specific fields of interest in a search by displaying or hiding selected fields without having to parse them.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Modify a Search from the results table</h4></a>
-  <p>After running a search, you can modify subsequent searches by selecting the text displayed in the Messages tab.</p>
+  <p>Modify past searches by selecting text displayed in the Messages tab.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/navigate-through-search-results"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Navigate Messages in Search Results</h4></a>
-  <p>When you run a search query, messages display in the Message, Aggregates, or Summarize tabs in the lower half of the browser window.</p>
+  <p>When you run a search query, messages display in the Message, Aggregates, and Summarize tabs.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/search-highlighting"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search Highlighting</h4></a>
-  <p>When you perform a search, and results are returned, your search terms are highlighted in the Messages tab.</p>
+  <p>When your search results are returned, your search terms are highlighted in the Messages tab.</p>
   </div>
 </div>
 <div className="box smallbox7 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/search-load-indicator"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search Load Indicator</h4></a>
-  <p>The search load indicator gives you feedback on the amount of system load and provides suggestions on what you can do to reduce the load by making your query more specific.</p>
+  <p>Learn how to reduce system load by making your queries more specific.</p>
   </div>
 </div>
 <div className="box smallbox8 card">
@@ -101,7 +102,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox9 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/set-messages-tab-preferences"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Set Messages Tab Preferences</h4></a>
-  <p>The Preferences menu in the Messages tab allows you to customize how messages are displayed.</p>
+  <p>The Preferences menu allows you to customize how messages are displayed.</p>
   </div>
 </div>
 <div className="box smallbox10 card">
