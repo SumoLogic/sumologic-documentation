@@ -2751,6 +2751,7 @@
   "/Metrics/Metric-Queries-and-Alerts/09Metric_Query_Error_Messages": "/docs/metrics/metrics-queries/metric-query-error-messages",
   "/Metrics/Metric-Queries-and-Alerts/Metric_Aggregation_Tips": "/docs/metrics/metrics-queries/aggregation-tips",
   "/Monitor_and_Alert/Alerts/Why_Would_a_Scheduled_Search_Fail": "/docs/alerts/scheduled-searches/faq",
+  "/Monitor_and_Alert/Alerts/Why_Would_a_Scheduled_Search_Fail%3F": "/docs/alerts/scheduled-searches/faq",
   "/Monitor_and_Alert/Alerts/What_Happens_When_a_Scheduled_Search_Is_Suspended": "/docs/alerts/scheduled-searches/faq",
   "/N/A": "/docs/send-data/hosted-collectors/cloud-syslog-source",
   "/Observability_Solution/AWS_Observability_Solution": "/docs/observability/aws",
