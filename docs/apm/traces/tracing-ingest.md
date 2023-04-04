@@ -2,7 +2,7 @@
 id: tracing-ingest
 title: Use Tracing to Troubleshoot Ingest
 sidebar_label: Use Tracing to Troubleshoot Ingest
-description: Use tracing to to search the audit index for all events that impact ingest.
+description: Use tracing to to search the Audit Event Index for all events that impact ingest.
  
 ---
 
@@ -12,7 +12,8 @@ The [Audit Event Index](/docs/manage/security/audit-event-index/) contains event
 
 ## Example query
 In the following example, events logged for `_index=sumologic_system_events AND _sourceCategory=tracingIngest` indicate some impact on ingest. The example query assumes all event types are events to be informed about.
-```_index=sumologic_system_events AND _sourceCategory=tracingIngest
+```
+_index=sumologic_system_events AND _sourceCategory=tracingIngest
 | json field=_raw "eventName"
 | timeslice 1h
 | count by _timeslice, eventName
