@@ -51,7 +51,7 @@ Follow these instructions to create an Entity Group based on Entity name or whet
 2. On the **Entity Groups** page, click **Create**.
     <img src={useBaseUrl('/img/cse/Entity-Groups-List.png')} alt="Entity-Groups-List" />
 3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)
-    <img src={useBaseUrl('/img/cse/create-entity-group-Values.png')} alt="create-entity-group-inventory" />
+    <img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="create-entity-group-values" />
 4. **Name**. Enter a name for the Entity Group.
 5. **Description**. (Optional.)
 6. **Group Entities matching the following**. Select **Values**.
@@ -97,6 +97,9 @@ Follow these instructions to create an Entity Group that corresponds to a group 
     * User
 8. **Source**. Select an inventory source from the pull-down list.
 9. **Group**. Enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group.
+   :::note
+   **Group** refers to a normalized group attribute. The name of the raw attribute varies depending on the inventory source. Just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data/#about-inventory-data-sources).
+   :::
 10. **Tags**. Select any tags you’d like to apply to Entities in the group.
 11. **Criticality**. If desired, select a Criticality.
 12. **Suppression**. Select **Suppressed** if you want to suppress Signals on Entities in the group.
