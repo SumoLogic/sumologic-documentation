@@ -13,7 +13,7 @@ The **APM: Application View** groups services into higher-level applications bas
 
 The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
 
-The **APM: Environment View** displays environments at the top level and breaks down application health by environment (i.e., prod or dev). This view can be especially useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/>
+The **APM: Environment View** displays environments at the top level and breaks down application health by environment (such as `prod` or `dev`), with up to 10 values of **deployment.environment** tag. This view can be useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/>
 
 Services must be active within the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
 

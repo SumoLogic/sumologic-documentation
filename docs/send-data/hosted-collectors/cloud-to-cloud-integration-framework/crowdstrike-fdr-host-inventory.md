@@ -23,9 +23,11 @@ To collect device data from the CrowdStrike platform, you must have an authorize
 
 CrowdStrike FDR Host Inventory retrieves device information every 24 hours. The source will fetch device information that was seen in the last 30 days for the first time. Afterward, it will only fetch information about devices that have been modified.
 
+Device data from this source could be used to augment AID data from the [CrowdStrike FDR source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) via a [lookup table](/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables)
+
 ## Metadata Field
 
-Metadata fields will be set. See **Metadata Fields** table below:
+If you've configured your integration with the Cloud SIEM forward option, metadata fields will be set. See **Metadata Fields** table below:
 
 | Fields     |    Value                    |
 | :-------    |  :------------------------ |
@@ -86,16 +88,20 @@ When you create a CrowdStrike FDR Host Inventory Source, you add it to a Hosted 
 To configure the CrowdStrike FDR Host Inventory API:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **CrowdStrike Inventory** icon.<br/><img src={useBaseUrl('/img/send-data/crowdstrike-icon.png')} alt="crowdstrike-icon.png" width="120" />
+3. Select **CrowdStrike FDR Host Inventory** icon.<br/><img src={useBaseUrl('/img/send-data/crowdstrike-fdr-host-inventory-icon.png')} alt="crowdstrike-fdr-host-inventory-icon.png" width="120" />
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-config-main.png')} alt="crowdstrike-fdr-host-inventory-config-main.png" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
+6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise as inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
+  * `_siemVendor`: CrowdStrike
+  * `_siemProduct`: FDR Host Inventory
+  * `_siemDataType`: Inventory  
+7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-7. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
-8. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
-9. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
-10. When you are finished configuring the Source, click **Save**.
+8. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
+9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
+10. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
+11. When you are finished configuring the Source, click **Save**.
 
 ## Error types
 

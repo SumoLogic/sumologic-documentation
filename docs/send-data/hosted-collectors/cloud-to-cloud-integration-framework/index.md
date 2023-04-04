@@ -114,6 +114,12 @@ In this section, we'll introduce the following concepts:
   <p>Provides a secure endpoint to receive data from the Cisco Amp System Log API.</p>
   </div>
 </div>
+<div className="box smallbox10 card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source"><img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-select.png')} alt="icon" width="90"/><h4>Cisco Meraki</h4></a>
+  <p>Provides a secure endpoint to receive data from the Cisco Meraki API.</p>
+  </div>
+</div>
 <div className="box smallbox11 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source"><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="icon" width="100"/><h4>Citrix Cloud Source</h4></a>
@@ -302,7 +308,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox42 card">
         <div className="container">
-        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source"><img src={useBaseUrl('img/send-data/sentinelone-logo.svg')} alt="icon" width="180"/><h4>SentinelOne Mgmt API</h4></a>
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source"><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" /><h4>SentinelOne Mgmt API</h4></a>
         <p>Collects data from the SentinelOne Management Console.</p>
         </div>
       </div>
