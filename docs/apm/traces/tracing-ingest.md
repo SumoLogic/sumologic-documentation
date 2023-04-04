@@ -2,7 +2,7 @@
 id: tracing-ingest
 title: Use Tracing to Troubleshoot Ingest
 sidebar_label: Use Tracing to Troubleshoot Ingest
-description: Use tracing to to search the audit index for all events that impact ingest.
+description: Use tracing to to search the Audit Event Index for all events that impact ingest.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
