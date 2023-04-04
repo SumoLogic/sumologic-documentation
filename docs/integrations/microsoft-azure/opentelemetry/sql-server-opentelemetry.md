@@ -136,7 +136,7 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 
 ## Sample Metrics Query
 
-Following is the query from **Page Buffer hit ratio %** panel from the **SQL Server - Performance Counters** dashboard:
+The following query is from the **SQL Server - Performance Counters** dashboard > **Page Buffer hit ratio %** panel:
 
 ```sql
 sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqlserver.page.buffer_cache.hit_ratio 
