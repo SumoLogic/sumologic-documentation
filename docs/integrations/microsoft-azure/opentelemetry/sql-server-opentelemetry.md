@@ -205,8 +205,8 @@ SQL Server - Performance Counters dashboard shows performance counters related t
 
 Use this dashboard to:
 
--   Get info for Page buffer hit %, page split rate
--   Insight into Lock waits rate, Page read and write rate along with Patch reqeust rate and SQL compilation and recompilation per sec.
+- Get info for Page buffer hit %, page split rate
+- Insight into Lock waits rate, Page read and write rate along with Patch request rate and SQL compilation and recompilation per sec.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Operations" />
 
