@@ -87,7 +87,7 @@ Here's an example of a search using the Prod Partition to narrow the search scop
 
 ### Avoid creating too many partitions to avoid fragmentation.
 
-We recommend 20 as the maximum number of partitions. This is both to avoid index fragmentation and data management issues. 
+We recommend 20 as the maximum number of partitions. This is to avoid both index fragmentation and data management issues. 
 
 ### Optimal partitions are sized between 1% and 30% of total ingest.
 
