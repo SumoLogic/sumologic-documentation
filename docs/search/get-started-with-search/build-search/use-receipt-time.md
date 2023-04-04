@@ -5,7 +5,7 @@ description: You can display search results in the order that the Collector rece
 ---
 
 
-To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md "Search Metadata") field `_receiptTime` instead of `_messageTime`, giving you the abilityto view the difference in the parsed[timestamp](/docs/send-data/reference-information/time-reference.md) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
+To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md "Search Metadata") field `_receiptTime` instead of `_messageTime`, giving you the ability to view the difference in the parsed [timestamp](/docs/send-data/reference-information/time-reference.md) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
 
 ## Run a search by Receipt Time
 
