@@ -31,7 +31,7 @@ Consider the following queries:
 
 ## What is Query Rewriting?
 
-Whenever possible, we rewrite a user's queries to perform better. We'll illustrate this using a simple example below: 
+Whenever possible, we rewrite a user's queries to perform better. We'll illustrate this using a simple example below:.
 
 This means that:
 
