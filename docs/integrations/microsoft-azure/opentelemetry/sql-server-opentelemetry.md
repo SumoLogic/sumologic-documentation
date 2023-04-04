@@ -194,8 +194,8 @@ SQL Server - Transaction and Transaction Logs dashboard shows performance counte
 
 Use this dashboard to:
 
--   Get info with respect to time for Transaction and write Transaction per sec
--   Insight into Transaction log related metrics like flush rate, flush data rate and flush wait rate along with Transaction log % usage.
+- Get info with respect to time for Transaction and write Transaction per sec
+- Insight into Transaction log related metrics like flush rate, flush data rate, and flush wait rate along with Transaction log % usage.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
 
