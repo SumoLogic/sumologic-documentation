@@ -98,7 +98,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
 8. **Source**. Select an inventory source from the pull-down list.
 9. **Group**. Enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group.
    :::note
-   **Group** refers to a normalized group attribute. The name of the raw attribute varies depending on the inventory source. Just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data/#about-inventory-data-sources).
+   **Group** refers to a normalized group attribute. The name of the raw attribute varies depending on the inventory source. Just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
    :::
 10. **Tags**. Select any tags you’d like to apply to Entities in the group.
 11. **Criticality**. If desired, select a Criticality.
