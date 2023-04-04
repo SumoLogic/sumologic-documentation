@@ -11,7 +11,8 @@ The [Audit Event Index](/docs/manage/security/audit-event-index/) contains event
 
 ## Example query
 In the following example, events logged for `_index=sumologic_system_events AND _sourceCategory=tracingIngest` indicate some impact on ingest. The example query assumes all event types are events to be informed about.
-```_index=sumologic_system_events AND _sourceCategory=tracingIngest
+```
+_index=sumologic_system_events AND _sourceCategory=tracingIngest
 | json field=_raw "eventName"
 | timeslice 1h
 | count by _timeslice, eventName
