@@ -29,10 +29,10 @@ Have your webhook URL handy by copying and pasting it to a notepad. You'll need 
 
 ### Lambda Function URL
 
-If you use the Lambda Function URL, create an IAM user with **lambda:InvokeFunctionUrl** action allowed. 
+If you use the Lambda Function URL, you'll need to create an IAM user with the **lambda:InvokeFunctionUrl** action allowed. 
 
 :::caution
-Required action is different than the *lambda:InvokeFunction* used in AWS managed IAM Policy *AWSLambdaRole* so one needs to create *Customer managed* role
+The above action differs from **lambda:InvokeFunction**, which is used in the AWS-managed IAM Policy **AWSLambdaRole**. So you'll need  to create and assign **Customer managed** policy. (see image)
 :::
 
 <details><summary>IAM Policy template</summary>
