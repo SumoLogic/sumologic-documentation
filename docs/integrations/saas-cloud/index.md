@@ -106,6 +106,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Monitor Delivered, Failed, Quarantined, Pending, and Spam messages.</p>
   </div>
 </div>
+<div className="box smallbox15 card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/miro"><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
+  <p>Monitoring and investigate Miro potential security threats</p>
+  </div>
+</div>
 <div className="box smallbox16 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/opsgenie"><img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="icon" width="50"/><h4>Opsgenie</h4></a>
