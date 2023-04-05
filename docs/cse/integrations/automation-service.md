@@ -204,7 +204,7 @@ The CSE Automation Service API is documented in the [Cloud SOAR documentation](/
 
 ## Available Integrations
 
-The following Integrations are avaialble for the Automation Service, but only some are automatically installed in customer environments. If you would like an Integration listed below added to your environment, contact your Sumo Logic account representative.
+The following Integrations are available for the Automation Service, but only some are automatically installed in customer environments. If you would like an Integration listed below added to your environment, contact your Sumo Logic account representative.
 
 | | |
 |:-----------------------------------------|:-----------------------------------------------|
