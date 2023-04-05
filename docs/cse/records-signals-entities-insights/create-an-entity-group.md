@@ -29,8 +29,8 @@ Note that when an Insight is created, any tags that are assigned to the primary 
 
 The number of Entity Groups you can configure per org varies by the type of the group:
 
-* You can configure a maximum of 50 Entity Groups based on membership in a group in an Inventory system.
-* You can configure a maximum of 1000 Entity Groups based on Entity name or an IP address range.
+* You can configure a maximum of 1000 Entity Groups based on membership in a group in an Inventory system.
+* You can configure a maximum of 10000 Entity Groups based on Entity name or an IP address range.
 
 
 ## Overlapping Entity Groups
