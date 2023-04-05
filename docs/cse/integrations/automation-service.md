@@ -78,7 +78,7 @@ Some notes about Playbooks, Integrations and Actions in the Beta that may differ
 * Playbooks type must be **CSE**.
 * The CSE Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
 * Actions can run "on premise" via a Bridge or can run directly through the Cloud. For security and performance reasons, only Certified Integrations/Actions can run directly through the Cloud; custom Actions must run "on premise".
-* Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the CSE Automation Service. Contact Sumo Logic if you are interested in a specific Integration that is not yet included with the CSE Automation Service.
+* Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the CSE Automation Service. A selection of popular Integrations have been added to your environment automatically, but the full list of available Integrations is included in [Available Integrations](#available-integrations) below. Contact your Sumo Logic account representative if you would like to have one of these Integrations added to your environment, or if you're interested in an Integration that's not listed.
 :::
 
 ## Configuring an Automation
@@ -201,3 +201,330 @@ The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support Au
 The Sumo Logic Terraform provider has also been updated. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
 The CSE Automation Service API is documented in the [Cloud SOAR documentation](/docs/cloud-soar/).
+
+## Available Integrations
+
+The following Integrations are available for the Automation Service, but only some are automatically installed in customer environments. If you would like an Integration listed below added to your environment, contact your Sumo Logic account representative.
+
+* Abnormal Security
+* Abuse.ch SSLBL Feed
+* AbuseIPDB
+* Acronis
+* Active Directory OIF
+* Active Directory V2
+* Airtable
+* Akenza
+* AlienVault OTX OIF
+* AlienVault USM Anywhere
+* AlienVault USM Central
+* Alleantia
+* alphaMountain
+* Anomali ThreatStream
+* ANY.RUN
+* APIVoid
+* Arbor
+* Arcann
+* Arcsight ESM
+* Arcsight Logger
+* ARK
+* Atlassian Jira
+* Atlassian Jira V2
+* Automox
+* AWS Athena
+* AWS CloudFront
+* AWS CloudTrail
+* AWS CloudWatchLogs
+* AWS EC2
+* AWS GuardDuty
+* AWS IAM
+* AWS Inspector
+* AWS Route53
+* AWS S3
+* AWS Security Hub
+* AWS Simple Notification Service
+* AWS SQS
+* Azure AD
+* Bitdefender GravityZone
+* BitSight Security Performance Management
+* Blueliv
+* Blueliv Community
+* Box
+* CA Service Desk
+* Censys
+* Censys 2.0
+* Certego
+* Check Point OIF
+* Check-Host
+* Cherwell
+* Chronicle
+* CIRCL CVE Search
+* Cisco AMP for Endpoints
+* Cisco ASA
+* Cisco Cyber Vision
+* Cisco ESA
+* Cisco Firepower
+* Cisco IOS XE
+* Cisco ISE
+* Cisco Meraki
+* Cisco Stealthwatch
+* Cisco Talos
+* Cisco Threat Grid OIF
+* Cisco Threat Response
+* Cisco Umbrella Investigate OIF
+* Cisco Umbrella OIF
+* Cisco Webex
+* Claroty
+* Cloudflare
+* Cofense
+* ConnectWise Manage
+* Coralogix - Query Logs
+* Coralogix - Send Logs
+* Corelight
+* Cortex XDR
+* Cribl
+* CrowdStrike Falcon
+* CrowdStrike Falcon Discover
+* CrowdStrike Falcon Sandbox
+* CrowdStrike Falcon Intelligence
+* Cuckoo OIF
+* CyberArk AAM
+* CyberArk PAM
+* Cybereason
+* Cybersecurity Help
+* CyberTriage
+* CylanceProtect
+* DarkOwl
+* Darktrace
+* Devo
+* Digital Shadows
+* Domain Dossier
+* DomainTools
+* Downdetector
+* Dropbox
+* Duo
+* Dynatrace
+* EclecticIQ
+* Elastic Security
+* Elasticsearch
+* Elasticsearch V2
+* EnergyLogserver
+* Ermes
+* Exana Open DNS
+* Exploit Database
+* F5 AS3
+* F5 AWAF
+* Farsight Security DNSDB
+* Fastah IP Geolocation
+* Fidelis Elevate Network
+* FireEye AX
+* FireEye Central Management (CM)
+* FireEye Email Security (EX)
+* FireEye Endpoint Security (HX)
+* FireEye Helix
+* FireEye Network Security (NX)
+* FireEye Threat Intelligence (iSight)
+* FireHydrant
+* Firewall Tools
+* Flowmon
+* Forcepoint NGFW
+* Forcepoint Web Security
+* Forescout eyeSight
+* FortiAnalyzer
+* FortiGate
+* FortiMail
+* FortiProxy
+* FortiSandbox
+* FortiSIEM
+* FortiWeb
+* FortiWeb V2
+* FreshDesk
+* Freshservice
+* GITLAB
+* Gmail
+* Gmail Multiple Mailbox
+* GoAnywhere
+* Google Chat
+* Google Safe Browsing
+* GreyNoise
+* Hacker Target OIF
+* Hatching Triage
+* Have I been pwned
+* HCL BigFix
+* HP Universal CMDB
+* HTTP Tools
+* HudsonRock Cavalier
+* Hybrid Analysis
+* IBM DB2
+* IBM Maximo
+* IBM MSS Tickets
+* IBM QRadar OIF
+* IBM X-Force Exchange OIF
+* Imperva Incapsula
+* Imperva SecureSphere
+* Imperva WAF
+* Intel 471
+* Intelligence X
+* Intezer
+* Intsights TIP
+* IP Quality Score
+* IP-API
+* IPinfo
+* Ipstack
+* Jamf
+* Jamf Protect
+* Javelin AD Protect
+* Joe Sandbox
+* Kali Linux
+* Kaspersky CyberTrace
+* Kaspersky Sandbox
+* Kaspersky TIP
+* Kela Darkbeast
+* Kela RaDark
+* KnowBe4 KMSAT - Reporting
+* KnowBe4 KMSAT - User Events
+* Lacework
+* Lansweeper
+* Lastline Analyst
+* Libraesva Email Security V4
+* Libraesva Email Security V5
+* LogPoint OIF
+* LogRhythm
+* Malware Bazaar
+* Malwarebytes Nebula
+* Manage Engine Desktop Central
+* Material Security
+* Mattermost
+* MaxMind OIF
+* McAfee ATD OIF
+* McAfee ePO OIF
+* McAfee ESM
+* McAfee MVISION
+* McAfee Network Security Platform Manager (NSM)
+* McAfee Web Gateway OIF
+* Micro Focus Service Management
+* Microsoft 365 Defender
+* Microsoft Azure Security Center
+* Microsoft Defender ATP
+* Microsoft EWS
+* Microsoft EWS Extension
+* Microsoft Graph Security
+* Microsoft OneDrive
+* Microsoft Sentinel
+* Microsoft Sharepoint
+* Microsoft Teams
+* Mimecast
+* MISP OIF
+* Mitre Matrix
+* MSSQL
+* MxToolbox
+* MYSQL
+* Netskope
+* Netskope V2
+* Neurons ITSM
+* Neustar IP GeoPoint
+* Nmap
+* Nozomi Networks
+* Nucleon Cyber
+* Okta
+* oneLogin
+* OpenLDAP
+* OpenText EnCase Endpoint Security
+* Opswat Metadefender
+* Oracle DB
+* PagerDuty
+* Palo Alto AutoFocus
+* Palo Alto Networks NGFW OIF
+* Palo Alto Networks Panorama V2
+* Palo Alto Networks WildFire OIF
+* Panda EDR
+* Passive Total
+* PhishLabs DRP
+* PhishLabs EIR - Incident Data
+* PhishLabs EIR - IOC Feed
+* PhishTank
+* POP3
+* PowerShell Tools
+* Proofpoint TAP
+* ProtectOnce
+* Pulse Secure
+* Pulsedive
+* Qualys
+* Qualys EDR
+* Qualys WAS
+* Rapid 7 InsightVM
+* Rapid7 InsightIDR
+* Rapid7 InsightIDR V2
+* Rapid7 Nexpose
+* RapidAPI
+* Recorded Future OIF
+* RSA NetWitness
+* RSA NetWitness Logs
+* SailPoint
+* Salesforce
+* Screenshot Machine OIF
+* Security Scorecard
+* SecurityTrails
+* Securonix
+* Securonix V2
+* SentinelOne
+* ServiceNow OIF
+* SFTP Tools
+* Shodan
+* Skype
+* Slack
+* Snort
+* Snowflake
+* SOCRadar
+* SolarWinds Orion
+* SonicWall
+* Sophos Central
+* Sophos Central 3.0
+* SpiderFoot HX
+* Splunk OIF
+* Stellar Cyber Starlight
+* Stormshield
+* Sumo Logic CIP
+* Sumo Logic CSE
+* Symantec DeepSight
+* Symantec EDR
+* Symantec Endpoint Protection
+* Symantec Endpoint Protection Cloud
+* Symantec Secure Web Gateway (Bluecoat)
+* Symantec SWS
+* Symantec WebPulse
+* Syslog-NG
+* Telegram
+* Telegram V2
+* Tenable.io
+* Tenable.sc
+* Terraform
+* TheHive
+* Threat Crowd
+* ThreatConnect OIF
+* ThreatMiner
+* ThreatQ
+* Trend Micro APEX ONE
+* Trend Micro Deep Security
+* Trend Micro Vision ONE
+* Twilio
+* URLhaus Abuse
+* URLScan.io
+* Vectra
+* VirusTotal OIF
+* VMRay
+* VMware Carbon Black App Control
+* VMware Carbon Black Cloud Endpoint Standard
+* VMware Carbon Black Cloud Endpoint Standard V2
+* VMware Carbon Black Cloud Enterprise EDR
+* VMware Carbon Black Cloud Platform
+* VMware Carbon Black EDR
+* VMWare vSphere
+* VMware Workspace ONE
+* WhoisXML
+* WithSecure Elements
+* WithSecure Endpoint Protection
+* Wittra
+* Zendesk
+* ZeroFOX
+* Zoom
+* Zscaler
