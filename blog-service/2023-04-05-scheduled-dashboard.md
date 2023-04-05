@@ -1,5 +1,5 @@
 ---
-title: Scheduled Dashboard Report
+title: Scheduled Dashboard Email Reports
 hide_table_of_contents: true
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
