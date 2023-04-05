@@ -71,7 +71,7 @@ To configure Cisco Meraki Source:
 1. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
 1. **API Key**. Provide the API key you generated from your Meraki account.
 1. **Meraki Organization ID**. Provide the numeric Meraki organization ID of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
-1. **Network Event Collection**. Enable or disable this option to collect information about your Meraki Networks, their network and wireless Air Marshal events.
+1. **Network Event Collection**. Enable or disable this option to collect information about your Meraki Networks, their network events and wireless Air Marshal events.
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
