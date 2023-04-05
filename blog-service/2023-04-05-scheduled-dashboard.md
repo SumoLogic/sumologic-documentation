@@ -3,9 +3,6 @@ title: Scheduled Dashboard Report
 hide_table_of_contents: true
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
-  - sumo logic
-  - service release notes
-  - open source
   - dashboard
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
