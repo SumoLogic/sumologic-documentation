@@ -19,8 +19,8 @@ Messages will be further broken down when they are received and indexed. When 
 
 Sources have the option to be configured to automatically infer log boundaries or to specify a boundary regular expression that matches the entire first line of each multiline log. These options are called **Infer Boundaries** and **Boundary Regex** in your Source's configuration settings.
 
-* [Infer Boundaries](#infer-boundaries) - This option will apply a set of default expressions, which are used to detect the beginning of a new multi-line message. When a message line matches one of these expressions, Sumo Logic waits until the next instance of this same expression, and then groups all lines between them as a single message. 
-* [Boundary Regex](#boundary-regex) - In some cases, a multiline log message may not have a first line that matches any of the default rules used by Sumo Logic to detect a multiline message. In this case, you will need to specify a regular expression to detect the **entire first line of each new log message** within the file. 
+* [Infer Boundaries](#infer-boundaries). This option will apply a set of default expressions, which are used to detect the beginning of a new multi-line message. When a message line matches one of these expressions, Sumo Logic waits until the next instance of this same expression, and then groups all lines between them as a single message. 
+* [Boundary Regex](#boundary-regex). In some cases, a multiline log message may not have a first line that matches any of the default rules used by Sumo Logic to detect a multiline message. In this case, you will need to specify a regular expression to detect the **entire first line of each new log message** within the file. 
 
 ## Infer Boundaries
 
@@ -70,6 +70,6 @@ When syslog messages are received over TCP Sumo Logic will treat each line withi
 
 ### How Does Multiline Work With HTTP Sources?
 
-Mutliline detection on an HTTP source only works within the confines of a single HTTP request. If you send multiple multiline messages within a single HTTP post request the multiline options will apply to those messages. If you send a multiline message as separate POST requests the multiline options do not apply.
+Multiline detection on an HTTP source only works within the confines of a single HTTP request. If you send multiple multiline messages within a single HTTP post request the multiline options will apply to those messages. If you send a multiline message as separate POST requests the multiline options do not apply.
 
 Sumo Logic cannot thread together multiple HTTP posts into a single message. This is due to there being no guarantee of the order of receipt (simply the nature of HTTP) and because there is no certainty that multiple clients are not sending to the same HTTP Source, which may cause additional issues with how the order of messages are received.
