@@ -35,7 +35,7 @@ The number of Entity Groups you can configure per org varies by the type of the 
 
 ## Overlapping Entity Groups
 
-It’s possible to define Entity Groups that overlap, in terms of the Entities they contain. However, for the sake of simplicity, we recommend you configure your Entity Groups to not overlap. If an Entity does belong to more than one group, CSE applies tags, criticality, and suppression status in this order:
+It’s possible to define Entity Groups that overlap, in terms of the Entities they contain. However, for the sake of simplicity, we recommend you configure your Entity Groups to not overlap. If an Entity does belong to more than one group, the tags from all of the groups are applied to the Entity. Criticality and suppression status are applied by the first Entity Group that matches in this order:
 
 1. Entity Groups based on Inventory source and group are processed in alphabetical order, by Entity Group name.
 2. Entity Groups based on IP address ranges are processed in order from most specific (smallest block) to least specific (largest block).
