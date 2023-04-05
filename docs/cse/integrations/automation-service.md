@@ -78,7 +78,7 @@ Some notes about Playbooks, Integrations and Actions in the Beta that may differ
 * Playbooks type must be **CSE**.
 * The CSE Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
 * Actions can run "on premise" via a Bridge or can run directly through the Cloud. For security and performance reasons, only Certified Integrations/Actions can run directly through the Cloud; custom Actions must run "on premise".
-* Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the CSE Automation Service. A selection of popular Integrations have been added to your environment automatically, but the full list of available Integrations is included in [Available Integrations](#available-integrations) below. Contact your Sumo Logic account representative if you would like to have one of these Integrations added to your environment, or if you're interested in an Integration that's not listed.
+* Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the CSE Automation Service. A selection of popular Integrations have been added to your environment automatically, but the full list of available Integrations is included in [Available Integrations](#available-integrations) below. Contact your Sumo Logic account representative if you would like to have one of these Integrations added to your environment, if you would like documentation for a specific Integration, or if you're interested in an Integration that's not listed.
 :::
 
 ## Configuring an Automation
@@ -204,7 +204,7 @@ The CSE Automation Service API is documented in the [Cloud SOAR documentation](/
 
 ## Available Integrations
 
-The following Integrations are available for the Automation Service, but only some are automatically installed in customer environments. If you would like an Integration listed below added to your environment, contact your Sumo Logic account representative.
+The following Integrations are available for the Automation Service, but only some are automatically installed in customer environments. If you would like an Integration listed below added to your environment, or would like documentation for a specific Integration, contact your Sumo Logic account representative.
 
 * Abnormal Security
 * Abuse.ch SSLBL Feed
