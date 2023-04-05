@@ -22,7 +22,7 @@ In more demanding use cases lambda can be accessed via **API Gateway**. To use t
 Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** for the authorization type in configuration on AWS side.
 
 :::tip
-Having URL to the webhook, copy and paste it into a notepad. You will need it to configure the webhook connection in the next section.
+Have your webhook URL handy by copying and pasting it to a notepad. You'll need it to configure your webhook connection in the next section.
 :::
 
 ## Create an IAM user with required privileges
