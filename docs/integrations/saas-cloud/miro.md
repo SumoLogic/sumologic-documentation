@@ -98,7 +98,11 @@ The **Miro - Overview** provides a comprehensive overview of events related to M
 
 The widgets allow you to track and analyze event-related information, including the total number of events, their distribution, team-wise breakdown, creation and opening of boards over time, and their geographical locations. The Recent File Event Summary and Recent Event Summary widgets provide a summary of the latest events for quick reference. A dashboard is a useful tool for monitoring and improving event management by providing quick access to relevant information.
 
+
+<!--
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro-Overview.png" />
+-->
+
 
 ### Miro - Security Activity
 
