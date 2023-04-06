@@ -50,7 +50,7 @@ If you use the Lambda Function URL to expose a Lambda function, you'll need to:
        ]
    }
    ```
-3. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.<br/><img src={useBaseUrl('img/connection-and-integration/customer-managed-policy.png')} alt="Customer managed policy" />
+3. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.
 
 ### Build an API Gateway
 
