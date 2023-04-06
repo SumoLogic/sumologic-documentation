@@ -38,7 +38,7 @@ To schedule a dashboard email, do the following:
 
     **Time Zone:** Choose your time zone.
 
-    **Email to:** Enter the email address where you want the dashboard to be sent.
+    **Email to.** Enter the email address where you want the dashboard to be sent.
 
     **Subject.** Enter a subject for the email.
 
