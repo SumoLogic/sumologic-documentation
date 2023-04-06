@@ -47,9 +47,8 @@ To schedule a dashboard email, do the following:
     <img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="scheduled_report>" width="450"/>
 
 :::note
-1. You can schedule only one export per dashboard.
-
-1. Alterting the queries or template variables will not update the scheduled report.
+* You can schedule only one export per dashboard.
+* Altering the queries or template variables will not update the scheduled report.
 :::
 
 ## Update a scheduled report
