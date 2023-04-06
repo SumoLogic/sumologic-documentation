@@ -31,7 +31,7 @@ To schedule a dashboard email, do the following:
 
     **Every:** The options depend on the Frequency you selected.
     * For Daily: You can choose Everyday, Weekdays, or Weekends.
-    * For Weekly: You can choose a particular day of the week.
+    * **Weekly.** Choose a particular day of the week.
     * For Monthly: You can choose which day of which week of the month you want the report to be sent.
 
     **Time:** Choose the time of day you want the dashboard to be sent.
