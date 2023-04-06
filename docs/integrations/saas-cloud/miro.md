@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40" />
 
-The Sumo Logic App for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the Miro cloud-to-cloud source to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
+The Sumo Logic App for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the [Miro cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
 
 The App provides a comprehensive overview of key security events and user activity. It includes widgets that track key metrics such as total events, board events, team events, sign-in security events, and more. Additionally, it offers insights into the distribution of sign-in security events and sign-ins over time by authentication methods. The dashboard also highlights sign-ins from risky geo-locations, enabling users to quickly identify potential security threats and take appropriate actions to mitigate them. These widgets help users monitor their accounts' performance, identify improvement areas, and ensure their data's security. With these widgets, Miro users can easily monitor and manage their security posture, ensuring their data and systems remain secure and protected.
 
