@@ -73,7 +73,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox11 card">
       <div className="container">
       <a href="/docs/cse/rules/normalized-authentication-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Normalized Authentication Rules</h4></a>
-      <p>Detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.</p>
+      <p>Detect activities that compromise accounts using authentication logs.</p>
       </div>
     </div>
     <div className="box smallbox12 card">
