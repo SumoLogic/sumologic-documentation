@@ -1,6 +1,6 @@
 ---
 id: memcached
-title: Memcached
+title: Memcached - Classic Collector
 sidebar_label: Memcached
 description: The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters.
 ---

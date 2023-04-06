@@ -1,6 +1,6 @@
 ---
 id: puppet
-title: Puppet
+title: Puppet - Classic Collector
 sidebar_label: Puppet
 description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
 ---

@@ -6,6 +6,10 @@ description: This guide provides information to help you troubleshoot errors you
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/>
+
 This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.
 
 ## Deployments and Sumo Logic Endpoints
