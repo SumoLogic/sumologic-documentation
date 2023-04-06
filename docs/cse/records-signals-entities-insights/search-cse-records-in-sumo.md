@@ -53,7 +53,6 @@ Within a FailedRecord, `fields.reason` will contain the reason why the FailedRec
 _index=sec_record_failure | fields %fields.reason
 ```
 
-
 ### Partition for CSE Signals
 
 CSE Signals are retained in the **sec_signal** partition. Signals are saved in JSON format, and support search by keyword and nested attributes.
