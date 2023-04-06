@@ -1,6 +1,7 @@
 ---
 slug: /cse/rules
 title: CSE Rules
+description: Learn about Cloud SIEM Enterprise (CSE) rules, including how to write rules, rules syntax, and CSE built-in rules.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
