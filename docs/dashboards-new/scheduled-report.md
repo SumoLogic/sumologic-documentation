@@ -40,7 +40,7 @@ To schedule a dashboard email, do the following:
 
     **Email to:** Enter the email address where you want the dashboard to be sent.
 
-    **Subject:** Enter a subject for the email.
+    **Subject.** Enter a subject for the email.
 
     **Message.** Enter the body of the email.
 
