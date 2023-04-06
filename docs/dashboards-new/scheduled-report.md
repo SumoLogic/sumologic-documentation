@@ -25,7 +25,7 @@ To schedule a dashboard email, do the following:
 
 1. The **Schedule Report** popup appears.
 
-    **Formart:** Choose PDF or PNG.
+    **Format.** Choose PDF or PNG.
 
     **Frequency:** Choose Daily, Weekly, or Monthly.
 
