@@ -223,10 +223,9 @@ The following Integrations are available for the Automation Service, but only so
 * ANY.RUN
 * APIVoid
 * Arbor
-* Arcann
+* Arcanna
 * Arcsight ESM
 * Arcsight Logger
-* ARK
 * Atlassian Jira
 * Atlassian Jira V2
 * Automox
