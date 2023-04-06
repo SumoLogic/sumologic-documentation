@@ -67,7 +67,7 @@ _sourceCategory=miro
 
 ## Set up collection
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) App to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) App to create the source and use the same source category while installing the app.
 
 ## Installing the Miro App
 
