@@ -858,6 +858,7 @@ module.exports = {
         'dashboards-new/share-dashboard-new',
         'dashboards-new/filter-template-variables',
         'dashboards-new/migrate-to-new-dashboards',
+        'dashboards-new/scheduled-report',
         'dashboards-new/faq',
       ],
     },
