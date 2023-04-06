@@ -42,7 +42,7 @@ To schedule a dashboard email, do the following:
 
     **Subject:** Enter a subject for the email.
 
-    **Message:** Enter the body of the email.
+    **Message.** Enter the body of the email.
 
     <img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="scheduled_report>" width="450"/>
 
