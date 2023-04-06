@@ -13,11 +13,13 @@ You can trigger an AWS Lambda function directly from a Monitor or Scheduled Sear
 
 For example, you can create a Monitor that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
 
-## Use Lambda Function URL or build an API in the API Gateway to expose a Lambda function
+## How to expose a Lambda function
+
+To expose a expose a Lambda function, you can either call a Lambda Function URL or build an API in the API Gateway.
 
 Lambda can be called directly using **Function URL**. See [Creating and managing Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html) for details.
 
-In more demanding use cases lambda can be accessed via **API Gateway**. To use this approach generate an Invoke URL, with a POST method for your Lambda function by creating an API in Amazon API Gateway. For information about exposing an HTTP endpoint in API Gateway, see Amazon's [API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html).
+In more demanding use cases, lambda can be accessed via **API Gateway**. To use this approach, generate an Invoke URL with a POST method for your Lambda function by creating an API in Amazon API Gateway. For information about exposing an HTTP endpoint in API Gateway, see the [Amazon API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html).
 
 Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** for the authorization type in configuration on AWS side.
 
@@ -25,19 +27,20 @@ Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** f
 Have your webhook URL handy by copying and pasting it to a notepad. You'll need it to configure your webhook connection in the next section.
 :::
 
-## Create an IAM user with required privileges
-
 ### Lambda Function URL
 
-If you use the Lambda Function URL, you'll need to create an IAM user with the **lambda:InvokeFunctionUrl** action allowed. 
+If you use the Lambda Function URL to expose a Lambda function, you'll need to:
 
-:::caution
-The above action differs from **lambda:InvokeFunction**, which is used in the AWS-managed IAM Policy **AWSLambdaRole**. So you'll need  to create and assign **Customer managed** policy. (see image)
-:::
+1. Create an IAM user with the **lambda:InvokeFunctionUrl** action allowed.
+  :::note
+  This is different from the **lambda:InvokeFunction** action, which is used in the AWS-managed IAM Policy **AWSLambdaRole**.
+  :::
+2. Create and assign **Customer managed** policy.
+3. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.<br/><img src={useBaseUrl('img/connection-and-integration/customer-managed-policy.png')} alt="Customer managed policy" />
 
 <details><summary>IAM Policy template</summary>
 
-Custom policy: 
+Custom policy:
 ```json
 {
     "Version": "2012-10-17",
@@ -55,13 +58,12 @@ Custom policy:
 
 </details>
 
-### API Gateway
+### Build an API Gateway
 
-If you use API Gateway, create an IAM user who has basic API gateway invoke access. You can use the AWS managed policy **AmazonAPIGatewayInvokeFullAccess**.
+If you're building an API Gateway to expose a Lambda function, you'll need to:
 
-:::tip
-Having user account with required IAM policy assigned create AWS Access Key for this account and note **Access key** and **Secret access key** to authenticate Webhook connection in next section.
-:::
+1. Create an IAM user account with basic API gateway invoke access using the AWS managed policy **AmazonAPIGatewayInvokeFullAccess**.
+2. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.
 
 ## Create a Webhook connection
 
@@ -72,7 +74,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 Configure the webhook connection to trigger the AWS Lambda function.
 
 1. Go to **Manage Data** > **Monitoring** > **Connections**.
-1. On the **Connections** page click **Add**.
+1. On the **Connections** page, click **Add**.
 1. Click **AWS Lambda**.
 1. In the **Create Connection** dialog, enter:
     * **Name.** Enter a name for the Connection.
@@ -80,7 +82,7 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * **URL.** Enter the Invoke URL from the previous section.
     * **Access Key ID** and **Secret Access Key.** Enter AWS Access key and Secret access key for the account with required IAM policy assigned created in previous section.
     * **Region.** Select your region.
-    * **Service Name.** 
+    * **Service Name.**
       * For Lambda Function URL, enter **lambda** as the service name.
       * For API Gateway, enter **execute-api** as the service name.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
