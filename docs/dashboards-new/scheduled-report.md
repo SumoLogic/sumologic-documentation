@@ -27,7 +27,7 @@ To schedule a dashboard email, do the following:
 
     **Format.** Choose PDF or PNG.
 
-    **Frequency:** Choose Daily, Weekly, or Monthly.
+    **Frequency.** Choose Daily, Weekly, or Monthly.
 
     **Every:** The options depend on the Frequency you selected.
     * For Daily: You can choose Everyday, Weekdays, or Weekends.
