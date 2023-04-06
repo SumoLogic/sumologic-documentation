@@ -36,27 +36,21 @@ If you use the Lambda Function URL to expose a Lambda function, you'll need to:
   This is different from the **lambda:InvokeFunction** action, which is used in the AWS-managed IAM Policy **AWSLambdaRole**.
   :::
 2. Create and assign **Customer managed** policy.
+   ```json title="IAM Customer Managed Policy template"
+   {
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Effect": "Allow",
+               "Action": [
+                   "lambda:InvokeFunctionUrl"
+               ],
+               "Resource": "arn:aws:lambda:*:*:function:*"
+           }
+       ]
+   }
+   ```
 3. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.<br/><img src={useBaseUrl('img/connection-and-integration/customer-managed-policy.png')} alt="Customer managed policy" />
-
-<details><summary>IAM Policy template</summary>
-
-Custom policy:
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "lambda:InvokeFunctionUrl"
-            ],
-            "Resource": "arn:aws:lambda:*:*:function:*"
-        }
-    ]
-}
-```
-
-</details>
 
 ### Build an API Gateway
 
