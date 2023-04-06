@@ -49,6 +49,10 @@ There is a separate partition for forwarded raw messages for which Records were 
 
 Within a FailedRecord, `fields.reason` will contain the reason why the FailedRecord was generated. The following query will extract the failure reason:
 
+```
+_index=sec_record_failure | fields %fields.reason
+```
+
 
 ### Partition for CSE Signals
 
