@@ -1395,6 +1395,7 @@
   "/cid/1011": "/docs/send-data/installed-collectors/sources/local-windows-event-log-source",
   "/cid/10110": "/docs/integrations/app-development/jfrog-xray",
   "/cid/10111": "/docs/integrations/app-development/jfrog-xray",
+  "/cid/10188": "/docs/integrations/saas-cloud/miro",
   "/cid/10112": "/docs/integrations/app-development/jfrog-xray",
   "/cid/10116": "/docs/manage/fields",
   "/cid/10117": "/docs/metrics/metrics-transformation-rules",

@@ -2041,6 +2041,7 @@ integrations: [
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
+          'integrations/saas-cloud/miro',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',

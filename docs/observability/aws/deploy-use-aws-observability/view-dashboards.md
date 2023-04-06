@@ -105,7 +105,7 @@ Click a link for information on the individual app dashboards:
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
 * [Amazon RDS Dashboards](/docs/observability/aws/integrations/aws-rds-metrics.md)
 * [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
-* [Amazon SQS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
+* [Amazon SQS Dashboards](../integrations/amazon-sqs.md)
 
 ## More Information
 
