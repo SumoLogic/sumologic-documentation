@@ -34,7 +34,7 @@ To schedule a dashboard email, do the following:
     * **Weekly.** Choose a particular day of the week.
     * **Monthly.** Choose which day of which week of the month you want the report to be sent.
 
-    **Time:** Choose the time of day you want the dashboard to be sent.
+    **Time.** Choose the time of day you want the dashboard to be sent.
 
     **Time Zone.** Choose your time zone.
 
