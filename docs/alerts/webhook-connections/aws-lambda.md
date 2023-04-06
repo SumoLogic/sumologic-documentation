@@ -15,7 +15,7 @@ For example, you can create a Monitor that triggers a Lambda function when too m
 
 ## How to expose a Lambda function
 
-To expose a expose a Lambda function, you can either call a Lambda Function URL or build an API in the API Gateway.
+To expose a Lambda function, you can use the **Enable function URL** option or build an API in the API Gateway.
 
 Lambda can be called directly using **Function URL**. See [Creating and managing Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html) for details.
 
