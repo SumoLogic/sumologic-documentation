@@ -31,7 +31,9 @@ AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates
 
 New Features:
 
-* Support for Amazon SQS service
+* Support for Amazon EC2 CloudWatch Metric
+* Support for Amazon SNS service
+* New onboarding method via script for linux and windows
 
 Enhancements / Updates:
 
