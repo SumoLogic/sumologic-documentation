@@ -4,6 +4,7 @@ title: Scheduled Report
 sidebar_label: Scheduled Report
 description: Learn how to create, update, delete and export a scheduled dashboard report.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Scheduled dashboard enables you to receive a copy of the dashboard to your email address or alias periodically, in either PDF or PNG format. 
