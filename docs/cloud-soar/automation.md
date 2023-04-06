@@ -2,6 +2,7 @@
 id: automation
 title: Cloud SOAR Automation
 sidebar_label: Automation
+description: Configuration tools for Cloud SOAR automation and orchestration features.
 ---
 
 import Iframe from 'react-iframe';
@@ -18,6 +19,47 @@ App Central allows you to unlock the full Cloud SOAR potential. From this sectio
 ![App Central](/img/cloud-soar/appcentral.png)
 
 While browsing available integrations, you can check the details and all the actions available and install it.
+
+### Update integrations
+
+Integrations in App Central display a version number. The version indicates when there is a change to the integration. If a newer version is available, you can  update the integration from  App Central by clicking **UPDATE**.<br/><img src={useBaseUrl('img/cloud-soar/integration-update.png')} alt="<your image description>" width="400"/>
+
+As soon as you click **UPDATE**, the new version is present inside the Integration section.
+
+Following is an example of integration code before updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-before.png')} alt="<your image description>" width="800"/>
+
+Following is an example of integration code after updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-after.png')} alt="<your image description>" width="800"/>
+
+### Certified integrations
+
+Certified integrations are those that are provided by Sumo Logic. After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="<your image description>" width="400"/>
+
+After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Cloud SOAR internal IDE. This is also valid for the actions available for that integration.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified-2.png')} alt="<your image description>" width="600"/>
+
+An example of certified actions.
+<img src={useBaseUrl('img/cloud-soar/integration-certified-action.png')} alt="<your image description>" width="600"/>
+
+To sum up, you can add one or more resources to the certified integration downloaded (as explained in the documentation Automation section), you can configure it by providing the access credentials, test it, and use it as it is. 
+
+In order to be able to modify the integration code - resource code and actions code - it was introduced the clone functionality. By clicking on the “certified integration - duplicate to edit” button, a new integration will be created in the integrations list with an incremented name. 
+The “certified integration - duplicate to edit” button is shown in the image below
+<img src={useBaseUrl('img/cloud-soar/integration-duplicate.png')} alt="<your image description>" width="600"/>
+
+An example of a duplicated integration is shown in the image below.
+<img src={useBaseUrl('img/cloud-soar/integration-duplicated.png')} alt="<your image description>" width="250"/>
+
+If the certified integration resource was configured before the duplication process, all the settings will be saved and replicated inside the cloned integration. There is no need to reset the duplicated integration.
+
+As can be noticed in the next image, only the integration resource received an incremented name and not the actions available for that particular integration. This decision was taken to facilitate the automation process and avoid confusion. 
+Since only the duplicated integration can be modified, the actions name represents the activity that the action will perform, rather it is modified or not. 
+The user, while building playbooks, can choose which resource wants to use. If the duplicated resource is chosen, the actions available will be the ones belonging to the duplicated resource.
+
+The image below shows an example of the duplicated resource’s actions showing no changes in their name.
+<img src={useBaseUrl('img/cloud-soar/integration-duplicated-resources-actions.png')} alt="<your image description>" width="600"/>
+
+An example of selecting the action’s resource while building playbooks. The selected action is “Add Comment To Issue”.
+<img src={useBaseUrl('img/cloud-soar/integration-add-comment-to-issue.png')} alt="<your image description>" width="600"/>
+
 
 ## Playbook
 
@@ -363,8 +405,6 @@ To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} a
 ![automation menu](/img/cloud-soar/image94.png)          
 
 
-
-
 ## Integrations
 
 Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. To configure, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > **Integrations**.
@@ -413,6 +453,18 @@ will be displayed at the bottom right-side of the screen. Once the proxy
 test is successful, click save again to commit the final configuration
 settings for the integration.
 
+#### Deleted bookmark
+
+Inside the Integrations section, a bookmark was introduced that automatically hides the deleted integration. The feature is already activated and it can be deactivated simply by clicking on the “Deleted” button. As soon as it is deactivated, all the deleted integrations will appear in the integration list. This feature was introduced in order to have always a clear and clean view of the integrations list.
+
+An image of the “Deleted” bookmark activated:
+<img src={useBaseUrl('img/cloud-soar/integration-deleted.png')} alt="<your image description>" width="300"/>
+
+
+An image of the “Deleted” bookmark deactivated.
+<img src={useBaseUrl('img/cloud-soar/integration-deleted-2.png')} alt="<your image description>" width="300"/>
+
+
 ### Integration Framework
 
 Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework.
@@ -454,9 +506,178 @@ Netwitness integration by uploading the new integration action file. This new ac
 
 ![new action](/img/cloud-soar/image66.png)
 
-
-
 See the Integration Framework manual for more details on utilizing the integration framework within Cloud SOAR.
+
+### Slack integration used inside User Choice
+
+To configure Slack inside Cloud SOAR, a public or private channel has to be created. This will permit to send of messages or files to channels or users directly. With the Cloud SOAR Slack integration teams can remain connected, organize conversations and quickly find what is needed to get the work done.
+
+#### Slack Configuration
+
+First, you need to create a Slack App on the user/company workspace. To create an App you have to navigate to the api.Slack Applications page. Click on Create an App button as shown in the image below.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-add-app.png')} alt="<your image description>" width="600"/>
+
+Create an App From scratch
+<img src={useBaseUrl('img/cloud-soar/integration-slack-from-scratch.png')} alt="<your image description>" width="400"/>
+
+After selecting the option “From scratch” was selected, insert a name for the app and select the workspace as shown in the image below. Click the Create App button.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-workspace.png')} alt="<your image description>" width="400"/>
+
+Once the App is created, you have to add the appropriate Permissions. Choose Permissions. Alternatively, you can see OAuth & Permissions from the side menu as the next image illustrates.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-permissions.png')} alt="<your image description>" width="600"/>
+
+At this point, the Scopes should be added for the User Token and Bot Token. Both tokens let your app act independently. User tokens allow you to work directly on behalf of users, based on the OAuth scopes that install users towards your app.
+All the Actions required scopes depend on the type of channel-like object you're working with.
+The image below shows how to add the OAuth scopes.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-scopes.png')} alt="<your image description>" width="400"/>
+
+To use the Actions, you'll need at least one of the channels:, groups:, im: or mpim: scopes corresponding to the conversation type you're working with.
+Now for each action of Slack Integration, you need different scopes to be added to the BOT or User.
+
+
+#### Actions: List Channels / Get Channel / Get Members
+
+For these actions, you will need the below scope.
+
+BOT Token and USER Token need the same scopes:
+* channels: read (View basic information about public channels in a workspace)
+* groups: read (View basic information about private channels that your Slack app has been added to)
+* im: read (View basic information about direct messages that your Slack app has been added to)
+* mpim: read (View basic information about group direct messages that your slack app has been added to)
+
+
+#### Actions: Create channel / Invite To Channel / Remove User From Channel / Archive Channel
+
+For the above actions you will need the following scopes:
+
+BOT Token:
+* channels: manage (Manage public channels that your Slack app has been added to and create new ones)
+User Token:
+* channels: write (Manage a user’s public channels and create new ones on a user’s behalf)
+
+These scopes are the same for BOT and USER tokens:
+* groups: write (Manage private channels that your slack app has been added to and create new ones)
+* im: write (Start direct messages with people)
+* mpim: write (Start group direct messages with people)
+
+
+#### Actions: List Users / Get User
+
+BOT Token and USER Token need the same scopes:
+* users: read (View people in a workspace)
+* users: read.email (View email addresses of people in a workspace)
+
+
+#### Actions: List Conversations History
+
+BOT Token and USER Token need the same scopes:
+* channels: history (View messages and other content in public channels that your Slack app has been added to)
+* groups: history (View messages and other content in private channels that your Slack app has been added to)
+* im: history (View messages and other content in direct messages that your Slack app has been added to)
+* mpim: history (View messages and other content in group direct messages that your Slack app has been added to)
+
+
+#### Actions: Send Message / Delete Message
+
+BOT Token:
+* chat: write (Post messages in approved channels & conversations)
+
+User Token:
+* chat: write:user (Send messages on a user’s behalf)
+* chat: write (Post messages in approved channels & conversations)
+* chat: write:bot (Send messages as your slack app)
+
+
+#### Actions: Deactivate Account
+
+For this action, you will need the below scope. It only works with USER Token and not  BOT Token.
+
+User Token:
+* admin.users: write (Modify account information)
+
+
+#### Actions: Search into Conversations
+
+For this action, you will need only one scope and it only works with USER Token but not with BOT Token.
+
+User Token:
+* search: read (Search a workspace’s content)
+
+
+#### Actions: Send File 
+
+Bot Token:
+* files: write (Upload, edit, and delete files as your Slack app)
+
+User Token:
+* files: write: user (Upload, edit, and delete files as your slack app)
+* files: write (Upload, edit, and delete files as your Slack app)
+
+The images below show how the Bot Token and User Token will look in Scopes after the configuration process.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token.png')} alt="<your image description>" width="400"/>
+<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-user-token.png')} alt="<your image description>" width="400"/>
+
+At this point, the APP needs to be installed in the workspace.
+
+The following image shows how to install the APP in the workspace.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="<your image description>" width="600"/>
+
+After installing the App, two Tokens will be generated automatically. Keep them safe, will be needed afterward.
+The next image is showing the blurred generated tokens
+<img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="<your image description>" width="600"/>
+
+#### Slack in Cloud SOAR
+
+To configure the Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon, and click Automation.
+<img src={useBaseUrl('img/cloud-soar/integration-automation-menu.png')} alt="<your image description>" width="300"/>
+
+In the Automation section, on the left menu, click Integrations, and then select Slack integration as it’s showed in the image below.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="<your image description>" width="800"/>
+
+The integration details will appear. Click on the "+" button to add a new Resource. 
+Create a new resource for the User as it’s shown in the image below.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="<your image description>" width="600"/>
+
+Copy the User OAuth Token from the Slack webpage and paste it Into the Bot/User OAuth Token. Once you have filled in all the required fields, click Save. Once all the required fields have been completed, you will be able to TEST SAVED SETTINGS.
+
+An example of the resource created for Users.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user.png')} alt="<your image description>" width="400"/>
+
+Create another resource for the Bot User. Copy the Bot User OAuth Token from the Slack webpage and paste it Into the Bot/User OAuth Token. Once you have filled in all the required fields, click Save then test the saved settings.
+
+An example of the resource created for Bot Users.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="<your image description>" width="400"/>
+
+Ensure that both configured resources are working properly. Use TEST SAVED SETTINGS to verify the resource’s configuration. 
+
+An example of a successful configuration message is shown below.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-edit-resource.png')} alt="<your image description>" width="400"/>
+
+The next image shows how the Resources should look after the configuration.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-resource-2.png')} alt="<your image description>" width="600"/>
+
+The next step is to move inside the Settings ⇒ General section as shown in the following image, then search for the Instant Messaging feature.
+<img src={useBaseUrl('img/cloud-soar/integration-settings-menu.png')} alt="<your image description>" width="300"/>
+
+This feature has to be enabled and configured using the OAuth generated tokens. An example of a correct configuration is shown in the image below.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging.png')} alt="<your image description>" width="600"/>
+
+If the resources are configured correctly and a green Success message is displayed  for the configured Workspace, the user can set the playbook’s User Choices to be answered by Slack. 
+The image below is showed a simple playbook with two available answers (Close Incident, Investigate), and the option Answer By Slack is enabled.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="<your image description>" width="600"/>
+
+Please notice that in this case, the Authorizer set is just a user. If a group is chosen, a Slack channel will be created and all the group members will be authorized to choose one of the User Choice available options. The channel will be automatically named as the incident on which the playbook is running. 
+
+When the playbook flow reaches the User Choice, the user or group will receive a message containing the reference to the incident, the playbook name, and the question set for the User Choice.
+
+An example of a Slack User Choice message.
+<img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="<your image description>" width="600"/>
+
+After one of the available options is selected, a message will inform the user or the group about the choice made, and the playbook flow will continue as soon as an option is selected.
+
+An example of Slack User Choice:
+<img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="<your image description>" width="600"/>
+
 
 
 ## Rules
