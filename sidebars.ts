@@ -853,6 +853,7 @@ module.exports = {
         },
         'dashboards-new/locate-deviations-time-series',
         'dashboards-new/set-custom-time-ranges',
+        'dashboards-new/scheduled-report',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/link-dashboards',
         'dashboards-new/share-dashboard-new',
