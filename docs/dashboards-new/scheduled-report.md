@@ -56,11 +56,8 @@ To schedule a dashboard email, do the following:
 
 To update the existing scheduled dashboard email, do the following:
 
-1. Navigate to the dashboard, and choose **Update Scheduled Report** from the more options menu in the upper right corner of the page. 
-
-1. Make desired changes, and click **Update** to save them. 
-
-<img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report.png')} alt="update_scheduled_report" width="450"/>
+1. Navigate to the dashboard, then choose **Update Scheduled Report** from the more options menu in the upper right corner of the page. 
+1. Make desired changes and click **Update** to save them. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report.png')} alt="update_scheduled_report" width="450"/>
 
 ## Delete a scheduled report
 
