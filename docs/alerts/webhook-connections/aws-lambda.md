@@ -51,9 +51,7 @@ If you use the Lambda Function URL to expose a Lambda function, you'll need to:
        ]
    }
    ```
-   
 2. Create an IAM user account and assign **Customer managed** policy created in step 1.
-
 3. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.
 
 ### Build an API Gateway
