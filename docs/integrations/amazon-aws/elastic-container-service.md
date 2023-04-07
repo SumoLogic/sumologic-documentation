@@ -294,7 +294,7 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 
 ### Collect Metrics for Amazon ECS
 
-In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics). However, we also recommend taking a look at the [AWS Kinesis Firehose for Metrics Source](https://help-opensource.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/). For a comparison of the two options, please see [Kinesis Firehose source or CloudWatch source](https://help-opensource.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source).
+In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics). However, we also recommend taking a look at the [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/). For a comparison of the two options, please see [Kinesis Firehose source or CloudWatch source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source).
 
 1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 2. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
