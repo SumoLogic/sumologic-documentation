@@ -100,10 +100,11 @@ The widgets allow you to track and analyze event-related information, including 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro-Overview.png" />
 
-### Miro - Security Activity
 
-The **Miro - Security Activity** provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Total SignIn Security Events, Total Account(s) Created, Total Account(s) Deleted, Total User(s) Deactivated, Total User(s) Reactivated, Distribution of SignIn Security Events, Sign-In over time by Authentication Methods, and SignIn from Risky Geo-Locations.
+### Miro - Security Events
+
+The **Miro - Security Events** provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Total SignIn Security Events, Total Account(s) Created, Total Account(s) Deleted, Total User(s) Deactivated, Total User(s) Reactivated, Distribution of SignIn Security Events, Sign-In over time by Authentication Methods, and SignIn from Risky Geo-Locations.
 
 The widgets allow you to track and analyze your security events, including the total number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of SignIn Security Events widget provides an overview of sign-in patterns across different events, while the SignIn over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The SignIn from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Activity.png' alt="Miro-Security-Activity.png" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro-Security-Events.png" />
