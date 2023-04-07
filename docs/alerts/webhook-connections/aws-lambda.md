@@ -37,7 +37,6 @@ If you use the Lambda Function URL to expose a Lambda function, you'll need to:
   :::note
   This is different from the **lambda:InvokeFunction** action, which is used in the AWS-managed IAM Policy **AWSLambdaRole**.
   :::
-  
    ```json title="IAM Customer Managed Policy template"
    {
        "Version": "2012-10-17",
