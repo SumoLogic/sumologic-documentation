@@ -1,7 +1,7 @@
 ---
 id: search-log-level
 title: Log Search - Log Level Detection and Insights
-sidebar_label: Log Search Histogram (Beta)
+sidebar_label: Log Level Detection and Insights (Beta)
 description: You can highlight a time range in the histogram for your search results to filter the search results based on that time range.
 ---
 
@@ -9,9 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-:::info beta
-This feature is in Beta. To participate, contact your Sumo Logic account executive or our Support Team.
-:::
+This feature is in Beta. To participate, contact your Sumo Logic account executive.
 
 When performing **Log Search** queries in the UI, you can visualize and filter log-level distribution in your Histogram results and Messages table view, helping you to:
 
