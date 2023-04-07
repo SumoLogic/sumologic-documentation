@@ -23,7 +23,7 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-The G Suite Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
+The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
 
 ## Log Sources for Installed Collectors
 
@@ -67,6 +67,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Universal |
 | [Cloud Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#cloud-syslog-source) | Cloudsyslog |
 | [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source) | Universal |
+| [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) | Universal |
 | [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Universal |
 | [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) | 	Universal |
 | [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source) | Universal |

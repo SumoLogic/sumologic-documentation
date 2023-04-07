@@ -6,6 +6,10 @@ hide_table_of_contents: true
 description: Use HTTP endpoints to manage Lookup Tables.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/>
+
 The Lookup Management API allows you to manage [Lookup Tables](/docs/search/lookup-tables) from HTTP endpoints.
 
 {@import ../reuse/api-intro.md}

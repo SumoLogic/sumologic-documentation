@@ -2,7 +2,7 @@
 id: miro-source
 title: Miro Source
 sidebar_label: Miro
-description: Configure Miro Source Cloud-to-Cloud connector
+description: Learn how to configure the Miro Source Cloud-to-Cloud connector for Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
