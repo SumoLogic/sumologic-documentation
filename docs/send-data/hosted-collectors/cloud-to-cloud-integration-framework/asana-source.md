@@ -13,8 +13,8 @@ The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](
 
 ## Prerequisites
 
-1. Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in Enterprise Domains can access audit log API endpoints.
-1. Service account's Personal Access Token (PAT) is required.
+* Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in Enterprise Domains can access audit log API endpoints.
+* Your Service account's Personal Access Token (PAT) is required.
 
 ## Data Source
 
