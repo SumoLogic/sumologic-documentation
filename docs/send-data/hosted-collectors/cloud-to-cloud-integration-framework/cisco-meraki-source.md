@@ -71,6 +71,7 @@ To configure Cisco Meraki Source:
 1. **Base URL**. It refers to the default URL where your Meraki account is hosted. If you are located in China, you have the option to modify the base URL.
 1. **API Key**. Provide the API key you generated from your Meraki account.
 1. **Meraki Organization ID**. Provide the numeric Meraki organization ID of the Meraki org you want to collect data from. You can only provide one ID. Please create multiple sources for multiple Meraki organizations.
+1. **Network Event Collection**. Enable or disable this option to collect information about your Meraki Networks, their network events, and wireless Air Marshal events.
 1. (Optional) The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -125,4 +126,5 @@ You may receive the follow error below if you enter an invalid Cisco Meraki orga
 ```
 
 # Known Issues
-Pagination has a rare occurrence to potentially return a small number duplicate logs. This issue has been reported to Cisco.
+1. Pagination has a rare occurrence to potentially return a small number duplicate logs. This issue has been reported to Cisco.
+1. The Cisco Meraki API has a [rate limit](https://developer.cisco.com/meraki/api-latest/#!rate-limit) of 10 API calls every second. There is a possibility for the source to have a collection delay if your Meraki organization has thousands of networks with many product types. The Cisco Meraki API for collecting network events requires we make one API call per network, per product type. There are a total of 6 product types. The API also requires one API call per network for collecting wireless Air Marshal events. This means 2,000 networks can be around 14,000 API calls (2000*6+2000) to retrieve network events assuming no pagination is needed. At the rate limit of 10 API calls per second, the quickest we could make API calls is around 24 mins. Occasionally the Cisco Meraki API can take around 1 to 2 seconds to respond adding to the time. In order to solve this issue, Cisco would need to raise the API rate limit or provide an API endpoint for collecting [network events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) and [wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) events without the requirement to iterate over each network and product type individually. 

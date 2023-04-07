@@ -41,11 +41,17 @@ In Sumo Logic, Records are stored in partitions, which are indexes that enable b
 
 There is a separate partition for forwarded raw messages for which Records were not created, because no log mapper was available.   
 
-### Partitions for unmapped messages
+### Partition for unparsed or unmapped messages
 
 | CSE Record Type | Sumo Logic partition |
 |:-----------------|:----------------------|
 | FailedRecord    | sec_record_failure   |
+
+Within a FailedRecord, `fields.reason` will contain the reason why the FailedRecord was generated. The following query will extract the failure reason:
+
+```
+_index=sec_record_failure | fields %fields.reason
+```
 
 ### Partition for CSE Signals
 

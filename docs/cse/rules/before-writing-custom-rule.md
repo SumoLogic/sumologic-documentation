@@ -9,17 +9,19 @@ description: Learn how to plan a custom rule and prototype rule expressions in t
 This topic has information about writing custom CSE rules.
 
 :::tip
-Before you create a custom rule, check to see if there is a [built-in rule](cse-built-in-rules.md) that meets or comes close to meeting  your need. You can easily tailor built-in rules using [rule tuning expressions](rule-tuning-expressions.md). By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules can't.
+Before you create a custom rule, check to see if there is a [built-in rule](cse-built-in-rules.md) that meets or comes close to meeting your need. You can easily tailor built-in rules using [rule tuning expressions](rule-tuning-expressions.md).
 :::
+
+By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules can't.
 
 ## Related topics
 
 The following topics provide information that’s relevant to the process of writing a custom rule:
 
-* [Record Processing Pipeline](../schema/record-processing-pipeline.md) — This topic describes how CSE creates Records for incoming messages. It provides facts about how message fields are mapped to CSE schema attributes; about the attributes CSE adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
-* [Schema Attributes](/docs/cse/schema/schema-attributes) — This topic defines the Record attributes you can reference in rules.
-* [CSE Rules Syntax](cse-rules-syntax.md) — This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
-* [Searching for CSE Records in Sumo Logic](../records-signals-entities-insights/search-cse-records-in-sumo.md) — This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
+* [Record Processing Pipeline](../schema/record-processing-pipeline.md). This topic describes how CSE creates Records for incoming messages. It provides facts about how message fields are mapped to CSE schema attributes; about the attributes CSE adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
+* [Schema Attributes](/docs/cse/schema/schema-attributes). This topic defines the Record attributes you can reference in rules.
+* [CSE Rules Syntax](cse-rules-syntax.md). This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
+* [Searching for CSE Records in Sumo Logic](../records-signals-entities-insights/search-cse-records-in-sumo.md). This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
 
 ### Use case analysis and rule type selection
 
