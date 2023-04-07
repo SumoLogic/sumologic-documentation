@@ -985,7 +985,7 @@ module.exports = {
           link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
             'search/get-started-with-search/search-page/add-saved-search-to-favorites',
-            'search/get-started-with-search/search-page/histogram',
+            'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',
               label: 'Field Browser',
