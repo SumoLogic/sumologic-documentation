@@ -68,8 +68,8 @@ This guide provides information to work with your tracing data.
 </div>
 <div className="box smallbox9 card">
   <div className="container">
-  <a href="/docs/apm/traces/tracing-ingest"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="30"/><h4>Use Tracing to Troubleshoot Ingest</h4></a>
-  <p>Use tracing to to search the Audit Event Index for all events that impact ingest.</p>
+  <a href="/docs/apm/traces/tracing-ingest"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="30"/><h4>Troubleshoot Ingest</h4></a>
+  <p>Use tracing to troubleshoot problems with data ingest.</p>
   </div>
 </div>
 </div>
