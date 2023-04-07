@@ -33,7 +33,7 @@ To authenticate SumoLogic backend and allow webhook calls you need to create in 
 
 If you use the Lambda Function URL to expose a Lambda function, you'll need to:
 
-1. Create and assign **Customer managed** policy with the **lambda:InvokeFunctionUrl** action allowed.
+1. Create **Customer managed** policy with the **lambda:InvokeFunctionUrl** action allowed.
   :::note
   This is different from the **lambda:InvokeFunction** action, which is used in the AWS-managed IAM Policy **AWSLambdaRole**.
   :::
