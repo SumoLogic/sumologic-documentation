@@ -1,5 +1,5 @@
 ---
-id: asana
+id: asana-source
 title: Asana Source
 sidebar_label: Asana
 description: Learn how to retrieve Asana audit logs into the Sumo Logic environment.
@@ -7,7 +7,7 @@ description: Learn how to retrieve Asana audit logs into the Sumo Logic environm
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/asana-c2c/asana-icon.png')} alt="asana-icon" width="60" />
+<img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon" width="40" />
 
 The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](https://developers.asana.com/reference/audit-log-api). Asana can help you to break down large work into manageable tasks. It's a comprehensive work management tool that allows you to track project and task progress, share files, comments, and notes, and keep track of deadlines.
 
@@ -24,14 +24,14 @@ The Asana Audit Logs Integration fetches audit logs every 5 mins using [GetAudit
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Login to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana-c2c/asana_login.png')} alt="asana-login" width="600" />
-1. After Logging in, click the **Apps** tab from with your admin console.
+1. Log in to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} alt="asana-login" width="400" />
+1. After logging in, click the **Apps** tab from with your admin console.
 1. Click **Service accounts**.
 1. Click the **Add service account** button.
-1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/asana-c2c/add_service_account.png')} alt="add_service_account" width="800" />
-1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/pat.png')} alt="pat" width="500" />
-1. Click **Save Changes** to save the PAT token for your service account.
-1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/workspace_id.png')} alt="workspace_id" width="700" />
+1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/add_service_account.png')} alt="add_service_account" width="800" />
+1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/pat.png')} alt="pat" width="400" />
+1. Click **Save changes** to save the PAT token for your service account.
+1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/workspace_id.png')} alt="workspace_id" width="700" />
 
 ## States
 
@@ -55,8 +55,8 @@ When you create an Asana Source, you add it to a Hosted Collector. Before creati
 To configure an Asana Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Asana** icon.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/asana-icon.png')} alt="asana-icon" width="60" />
-1. Enter a **Name** for the Source. The description is optional. <br/>  <img src={useBaseUrl('img/send-data/asana-c2c/asana_config_main.png')} alt="asana-config-main.png" width="500" />
+1. Search for and select **Asana**.<br/> <img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon" width="40" />
+1. Enter a **Name** for the Source. The description is optional. <br/><img src={useBaseUrl('img/send-data/asana_config_main.png')} alt="asana-config-main.png" width="400" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -76,28 +76,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### Restarting your Source
 
-If your Source encounters ThirdPartyConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
-
-#### UI
-
-To restart your source in the Sumo Logic platform, follow the steps below:
-1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
-2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="600" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="600" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated.png" width="600" />
-
-#### API
-
-To restart your source using the Sumo Management API, follow the instructions below:
-* Method: POST
-* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
-
-<details><summary>Which API endpoint should I use?</summary>
-
-{@import ../../../reuse/api-endpoints.md}
-
-</details>
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON Configuration
 
@@ -124,19 +103,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ```json
 {
-    "api.version": "v1",
-    "source": {
-        "config": {
-                           "name": "Asana",
-                           "description": "Test Source",
-                           "category": "source_category",
-                           "personalAccessToken": "****************************",
-   "workspaceID": "1204094735693514"
-                      },
-        "schemaRef": {
-            "type": "Asana"
-        },
-        "sourceType": "Security"
-    }
+	"api.version":"v1",
+	"source":{
+		"config":{
+			"name":"Asana",
+			"description":"Test Source",
+			"category":"source_category",
+			"personalAccessToken":"****************************",
+			"workspaceID":"1204094735693514"
+		},
+		"schemaRef":{
+			"type":"Asana"
+		},
+		"sourceType":"Security"
+	}
 }
 ```
