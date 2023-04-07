@@ -2467,6 +2467,7 @@ integrations: [
         'manage/partitions-data-tiers/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
+        'beta/search-log-level',
       ],
     },
   ],
