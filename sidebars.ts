@@ -2466,6 +2466,8 @@ integrations: [
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
+        'beta/search-log-level',
+        'beta/aws-private-link',
         'manage/partitions-data-tiers/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
