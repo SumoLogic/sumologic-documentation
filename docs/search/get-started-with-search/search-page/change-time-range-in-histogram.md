@@ -1,13 +1,10 @@
 ---
-id: histogram
-title: Using the Log Search Histogram
-sidebar_label: Histogram
+id: change-time-range-in-histogram
+title: Change the Time Range in the Histogram
 description: You can highlight a time range in the histogram for your search results to filter the search results based on that time range.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-## Change the Time Range in the Histogram
 
 You can highlight a time range in the search results histogram to filter your search results in the **Messages** tab based on that time range.  
 
