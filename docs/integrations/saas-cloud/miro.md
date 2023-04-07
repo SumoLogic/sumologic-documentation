@@ -100,7 +100,6 @@ The widgets allow you to track and analyze event-related information, including 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro-Overview.png" />
 
-
 ### Miro - Security Events
 
 The **Miro - Security Events** provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Total SignIn Security Events, Total Account(s) Created, Total Account(s) Deleted, Total User(s) Deactivated, Total User(s) Reactivated, Distribution of SignIn Security Events, Sign-In over time by Authentication Methods, and SignIn from Risky Geo-Locations.
