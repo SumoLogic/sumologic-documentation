@@ -6,15 +6,14 @@ description: Learn how to retrieve Asana audit logs into the Sumo Logic environm
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/asana.png')} alt="asana-icon.png" width="80" />
+<img src={useBaseUrl('img/send-data/asana-c2c/asana-icon.png')} alt="asana-icon" width="60" />
 
 The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](https://developers.asana.com/reference/audit-log-api). Asana can help you to break down large work into manageable tasks. It's a comprehensive work management tool that allows you to track project and task progress, share files, comments, and notes, and keep track of deadlines.
 
 ## Prerequisites
 
 1. Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in Enterprise Domains can access audit log API endpoints.
-
-2. Service account's Personal Access Token (PAT) is required.
+1. Service account's Personal Access Token (PAT) is required.
 
 ## Data Sources
 
@@ -24,21 +23,14 @@ The Asana Audit Logs Integration fetches audit logs using [GetAuditLogs](https:/
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Login to your [Asana Enterprise Account](https://app.asana.com/admin).
-
-2. After Logging in, Click the `Apps` tab from with your admin console.
-
-3. Click `Service accounts`
-
-4. Click the `Add service account` button
-
-5. Refer to the below image for the same:
-
-6. Copy the Personal Access Token (PAT) from here for further use.
-
-7. Click `Save Changes` to save the PAT token for your service account.
-
-7. Inspect the URL and parse the workspace ID of your service account.
+1. Login to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana-c2c/asana_login.png')} alt="asana-login" width="600" />
+1. After Logging in, click the **Apps** tab from with your admin console.
+1. Click **Service accounts**.
+1. Click the **Add service account** button.
+1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/asana-c2c/add_service_account.png')} alt="add_service_account" width="800" />
+1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/pat.png')} alt="pat" width="500" />
+1. Click **Save Changes** to save the PAT token for your service account.
+1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/workspace_id.png')} alt="workspace_id" width="700" />
 
 ## States
 
@@ -64,10 +56,14 @@ When you create an Asana Source, you add it to a Hosted Collector. Before creati
 To configure an Asana Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Asana**.<br/> 
-1. Enter a **Name** for the Source. The description is optional.
+1. Search for and select **Asana**.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/asana-icon.png')} alt="asana-icon" width="60" />
+1. Enter a **Name** for the Source. The description is optional. <br/>  <img src={useBaseUrl('img/send-data/asana-c2c/asana_config_main.png')} alt="asana-config-main.png" width="500" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the Personal Access Token (PAT) from the Asana platform.
+1. Enter the unique workspace ID for the users service account.
 
 ### Error Types
 
@@ -123,7 +119,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `personalAccessToken` | String | Yes | Personal Access Token from the Asana platform. | modifiable |
-| `workspaceID` | String | Yes | This will be the unique workspace id for the users service account | modifiable |
+| `workspaceID` | String | Yes | This will be the unique workspace id for the users service account. | modifiable |
 
 ### JSON Example
 
