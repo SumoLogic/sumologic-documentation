@@ -15,9 +15,9 @@ The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](
 1. Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in Enterprise Domains can access audit log API endpoints.
 1. Service account's Personal Access Token (PAT) is required.
 
-## Data Sources
+## Data Source
 
-The Asana Audit Logs Integration fetches audit logs using [GetAuditLogs](https://developers.asana.com/reference/getauditlogevents) source.
+The Asana Audit Logs Integration fetches audit logs every 5 mins using [GetAuditLogs](https://developers.asana.com/reference/getauditlogevents) source.
 
 ## Setup and Configuration
 
@@ -45,9 +45,7 @@ When you create an Asana Source, it goes through the following stages:
 If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.<br/>![Azure Event Hubs error.png](/img/send-data/Azure-Event-Hubs-error.png)
-
-Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.<br/>![health error generic.png](/img/send-data/azure_health_error_generic.png)
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
 ## Create Asana Source
 
@@ -56,7 +54,7 @@ When you create an Asana Source, you add it to a Hosted Collector. Before creati
 To configure an Asana Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Asana**.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/asana-icon.png')} alt="asana-icon" width="60" />
+1. Search for and select **Asana** icon.<br/> <img src={useBaseUrl('img/send-data/asana-c2c/asana-icon.png')} alt="asana-icon" width="60" />
 1. Enter a **Name** for the Source. The description is optional. <br/>  <img src={useBaseUrl('img/send-data/asana-c2c/asana_config_main.png')} alt="asana-config-main.png" width="500" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
@@ -67,13 +65,13 @@ To configure an Asana Source:
 
 ### Error Types
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | No | Not applicable | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | No | Not applicable | FirstPartyGenericError |
+| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
 
 ### Restarting your Source
 
@@ -137,7 +135,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
         "schemaRef": {
             "type": "Asana"
         },
-        "sourceType": "Universal"
+        "sourceType": "Security"
     }
 }
 ```
