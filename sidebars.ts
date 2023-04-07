@@ -1522,6 +1522,7 @@ module.exports = {
       'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',
       'apm/traces/search-query-language-support-for-traces',
+      'apm/traces/tracing-ingest',
       {
         type: 'category',
         label: 'Advanced Configuration',
