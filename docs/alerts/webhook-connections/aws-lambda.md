@@ -27,15 +27,17 @@ Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** f
 Have your webhook URL handy by copying and pasting it to a notepad. You'll need it to configure your webhook connection in the next section.
 :::
 
+To authenticate SumoLogic backend and allow webhook calls you need to create in your AWS Account an IAM User account with very restricted priviledges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In two following sections you can find detailed steps for both cases. 
+
 ### Lambda Function URL
 
 If you use the Lambda Function URL to expose a Lambda function, you'll need to:
 
-1. Create an IAM user with the **lambda:InvokeFunctionUrl** action allowed.
+1. Create and assign **Customer managed** policy with the **lambda:InvokeFunctionUrl** action allowed.
   :::note
   This is different from the **lambda:InvokeFunction** action, which is used in the AWS-managed IAM Policy **AWSLambdaRole**.
   :::
-2. Create and assign **Customer managed** policy.
+  
    ```json title="IAM Customer Managed Policy template"
    {
        "Version": "2012-10-17",
@@ -50,6 +52,9 @@ If you use the Lambda Function URL to expose a Lambda function, you'll need to:
        ]
    }
    ```
+   
+2. Create an IAM user account and assign **Customer managed** policy created in step 1.
+
 3. Create an AWS Access Key for this account. Take note of your **Access key** and **Secret access key**, which you'll need in the next section to authenticate your Webhook connection.
 
 ### Build an API Gateway
