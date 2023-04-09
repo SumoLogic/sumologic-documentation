@@ -578,7 +578,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging.png')} alt="Successful configuration" width="600"/>
    1. For **Integration** select Slack.
    1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
-   1. Paste your previously saved User OAuth Acces Token to the **Oauth Token for channel creation** field. If configuration is successful, **Workspace** displays "Success".
+   1. Paste your previously saved User OAuth Access Token to the **Oauth Token for channel creation** field. If configuration is successful, **Workspace** displays "Success".
 
 If your new resources are configured correctly, and Instant Messaging displays a "Success" message for the configured workspace, you can [Use the Slack app in User Choice](#use-the-slack-app-in-user-choice). 
 
