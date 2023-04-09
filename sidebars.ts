@@ -205,6 +205,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
@@ -1521,6 +1522,7 @@ module.exports = {
       'apm/traces/services-list-map',
       'apm/traces/tracing-dashboards',
       'apm/traces/search-query-language-support-for-traces',
+      'apm/traces/tracing-ingest',
       {
         type: 'category',
         label: 'Advanced Configuration',
@@ -2466,6 +2468,8 @@ integrations: [
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
+        'beta/search-log-level',
+        'beta/aws-private-link',
         'manage/partitions-data-tiers/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
