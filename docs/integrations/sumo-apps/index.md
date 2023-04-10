@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/sumoapps.png')} alt="Thumbnail icon" width="75"/>
 
-Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events. This guide has documentation for those apps.
+Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events. 
 
 ## Requesting Sumo Logic Enterprise Apps
 
