@@ -2,14 +2,18 @@
 slug: /integrations/pci-compliance
 title: PCI Compliance
 sidebar_label: PCI Compliance
-description: Docs for Sumo apps for PCI Compliance.
+description: With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requirements without the data hassle or the burden of self-policing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="55"/>
 
-This guide has documentation for Sumo Logic apps for PCI Compliance.
+With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requirements without the data hassle or the burden of self-policing.
+
+* **Simplify audits**. Easily meet your audit requirements with scheduled and ad-hoc log searches.
+* **Maintain compliance**. Rapidly discover and visualize data patterns to demonstrate PCI requirements.
+* **Monitor in real-time**. Proactively monitor all infrastructures in real-time for indicators of security breaches.
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
