@@ -34,14 +34,14 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
     <div className="container">
     <a href="/docs/integrations/google/"><img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="40"/>
     <h4>Google</h4></a>
-    <p>A guide to Sumo Logic apps for Google products, such as Google Workspace.</p>
+    <p>A guide to Sumo Logic apps for Google products, such as Workspace.</p>
   </div>
 </div>
     <div className="box smallbox4 card">
     <div className="container">
     <a href="/docs/integrations/databases"><img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="55"/>
     <h4>Database Servers</h4></a>
-    <p>Integrations for database servers, such as Oracle and MongoDB.</p>
+    <p>A guide to Sumo Logic apps for database servers, such as Oracle and MongoDB.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
@@ -59,8 +59,8 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
 </div>
   <div className="box smallbox7 card">
   <div className="container">
-  <a href="/docs/integrations/cloud-security-monitoring-analytics/"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="45"/><h4>Cloud Security Monitoring and Analytics</h4></a>
-  <p>A guide to Sumo Logic cloud security data source apps.</p>
+  <a href="/docs/integrations/cloud-security-monitoring-analytics/"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="45"/><h4>Cloud Security Monitoring/Analytics</h4></a>
+  <p>A guide to Sumo Logic apps for cloud security data source.</p>
   </div>
  </div>
 <div className="box smallbox8 card">
@@ -90,13 +90,13 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
 <div className="box smallbox12 card">
   <div className="container">
     <a href="/docs/integrations/app-development"><img src={useBaseUrl('img/icons/operations/app-stack.png')} alt="Thumbnail icon" width="50"/><h4>App Development</h4></a>
-    <p>Apps for platforms and tools that support software dev processes and automation tools.</p>
+    <p>Monitor your platforms and tools that support software development and automation.</p>
   </div>
 </div>
 <div className="box smallbox13 card">
   <div className="container">
     <a href="/docs/integrations/global-intelligence"><img src={useBaseUrl('img/global-intelligence/gis.svg')} alt="icon" width="35"/><h4>Global Intelligence</h4></a>
-    <p>Our Global Intelligence apps provide security teams with valuable real-time security intelligence.</p>
+    <p>Sumo Logic apps for Global Intelligence provide valuable real-time security intelligence.</p>
     </div>
 </div>
 <div className="box smallbox14 card">
@@ -108,7 +108,7 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
 <div className="box smallbox15 card">
    <div className="container">
    <a href="/docs/integrations/sumo-apps/"><img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="45"/><h4>PCI Compliance</h4></a>
-   <p>Meet evolving PCI requirements without the data hassle or the burden of self-policing.</p>
+   <p>Meet evolving PCI requirements without the data hassle.</p>
    </div>
 </div>
 <div className="box smallbox16 card">
