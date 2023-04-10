@@ -1,6 +1,6 @@
 ---
 id: aws-private-link
-title: Sumo Logic Connector for AWS Privatelink
+title: Sumo Logic Connector for AWS Privatelink (Beta)
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

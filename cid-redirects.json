@@ -1407,6 +1407,7 @@
   "/cid/10132": "/docs/manage/partitions-data-tiers/data-tiers",
   "/cid/10133": "/docs/manage/partitions-data-tiers/searching-data-tiers",
   "/cid/10134": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source",
+  "/cid/10189": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source",
   "/cid/10135": "/docs/manage/manage-subscription/manage-org-settings",
   "/cid/10136": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source",
   "/cid/10137": "/docs/cse/schema/attributes-map-to-records",
