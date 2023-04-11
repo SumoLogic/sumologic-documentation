@@ -10,7 +10,7 @@ Multiline processing requires your logs to have line breaks or carriage returns 
 
 ## Multiline Processing Caveats
 
-Multiline messages that are more than 2,000** **lines or 512KB in size will get flushed and collected as single log lines due to the default log message size limitations. Depending on the Collector's available memory you may be able to increase this limit, please contact Support for assistance by navigating to 'Help' > 'Support' in the Sumo
+Multiline messages that are more than 2,000 lines or 512KB in size will get flushed and collected as single log lines due to the default log message size limitations. Depending on the Collector's available memory, you may be able to increase this limit. Contact Support for assistance by navigating to **Help** > **Support** in the Sumo Logic
 menu.
 
 Messages will be further broken down when they are received and indexed. When collecting log messages that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks. Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log. Review the relevant Source's documentation for additional information.
