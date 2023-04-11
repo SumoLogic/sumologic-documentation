@@ -1,19 +1,13 @@
 ---
 id: automation-service
-title: Automation Service (Beta)
+title: Automation Service
 sidebar_label: Automation Service
 description: Use the Automation Service to automate smart actions including enrichments and notifications. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This topic describes the capabilities of the Automation Service for Cloud SIEM Enterprise and includes instructions for its use.
+This topic describes the Automation Service for Cloud SIEM Enterprise.
 
 ## About the Automation Service
 
@@ -21,7 +15,7 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses Sumo Logic Cloud SOA
 
 You can interact with the service through Automations, which execute Playbooks. Playbooks are composed of one or more Actions with a workflow that could include parallel actions and logic steps. Actions are included with Integrations. Sumo Logic provides a number of integrations, actions, and playbooks with the service that can be customized; you can create their own custom integrations, actions and playbooks as well. More details about each are in the specific sections below.
 
-The CSE Automation Service supports Enrichment, Notification and Custom Actions. 
+The Automation Service supports Enrichment, Notification and Custom Actions. 
 * Enrichment Actions can be used to gather additional information about an Entity or Insight, including Threat Indicators.
 * Notification Actions can be used to send notifications or update status in systems like CSE, CIP, Slack, Microsoft Teams, Jira, email, and so on.
 
@@ -38,16 +32,40 @@ And if the data returned includes a malicious threat indicator:
 * Invites certain people to the Slack channel
 
 :::note
-The CSE Automation Service is intended to replace the legacy Insight Actions and the Enrichment Service. All of the actions and integrations provided with those capabilities are included in the CSE Automation Service (though some may require “on premise” deployment through the Bridge). Those capabilities will be deprecated later in 2023.
+The Automation Service is intended to replace the legacy Insight Actions and the Enrichment Service. All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on premise” deployment through the Bridge). Those capabilities will be deprecated later in 2023.
 :::
 
 :::note
-The CSE Automation Service is enabled to allow customers to execute up to 10,000 actions per day. 
+The Automation Service is enabled to allow customers to execute up to 10,000 actions per day. 
 :::
 
-## Permissions for the CSE Automation Service
+### Access the Automation Service
 
-Access to the CSE Automation Service is controlled by permissions (capabilities) in the Sumo Platform:
+The Automation page can be accessed in the **Configuration** menu under **Integrations**:
+
+<img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+
+From here, you can manage Automations and access the Automation Service UI to manage Playbooks, Actions, and Integrations. To access the Automation Service UI, click **Manage Playbooks**:
+
+<img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+
+You will see the Playbooks list in the Automation Service UI:
+
+<img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+
+To learn more about managing Playbooks, Actions, and Integrations, read [Cloud SOAR Automation](/docs/cloud-soar/automation/). In addition, some documentation (including the documentation for building custom Integrations and using the Bridge) is included in the UI. It can be accessed by clicking the Help icon in the upper-right corner of the screen.
+
+:::note Beta
+Some notes about Playbooks, Integrations and Actions in the Beta that may differ from the current Cloud SOAR documentation:
+* Playbooks type must be **CSE**.
+* The Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
+* Actions can run "on premise" via a Bridge or can run directly through the Cloud. For security and performance reasons, only Certified Integrations/Actions can run directly through the Cloud; custom Actions must run "on premise".
+* Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the Automation Service. A selection of popular Integrations have been added to your environment automatically, but the full list of available Integrations is included in [Available Integrations](#available-integrations) below. Contact your Sumo Logic account representative if you would like to have one of these Integrations added to your environment, if you would like documentation for a specific Integration, or if you're interested in an Integration that's not listed.
+:::
+
+### Permissions for the Automation Service
+
+Access to the Automation Service is controlled by permissions (capabilities) in the Sumo Platform:
 * Cloud SIEM Enterprise > Configuration > View Automations
 * Cloud SIEM Enterprise > Configuration > Manage Automations 
 * Cloud SIEM Enterprise > Configuration > Execute Automations
@@ -57,31 +75,23 @@ Access to the CSE Automation Service is controlled by permissions (capabilities)
 
 Note that in order to interact with most of the features described on this page, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
 
-## Accessing the CSE Automation Service
+### API and Terraform support
 
-The Automation page can be accessed in the **Configuration** menu under **Integrations**:
+The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support Automations. The new endpoints include:
+* `GET /automations`. Get the list of Automations
+* `POST /automations`. Create an Automation
+* `POST /automations/execute`. Run one or more Automations against one or more Entities/Insights
+* `DELETE /automations/{id}`. Delete an Automation
+* `GET /automations/{id}`. Get a specific Automation
+* `PUT /automations/{id}`. Update a specific Automation
 
-<img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="170"/>
+The Sumo Logic Terraform provider has also been updated. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
-From here, you can manage Automations and access the CSE Automation Service UI to manage Playbooks, Actions, and Integrations. To access the CSE Automation Service UI, click **Manage Playbooks**:
+The Automation Service API is documented in the [Cloud SOAR documentation](/docs/cloud-soar/).
 
-<img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="450"/>
+## Automations
 
-You will see the Playbooks list in the CSE Automation Service UI:
-
-<img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="600"/>
-
-To learn more about managing Playbooks, Actions, and Integrations, read [Cloud SOAR Automation](/docs/cloud-soar/automation/). In addition, some documentation (including the documentation for building custom Integrations and using the Bridge) is included in the UI. It can be accessed by clicking the Help icon in the upper-right corner of the screen.
-
-:::note Beta
-Some notes about Playbooks, Integrations and Actions in the Beta that may differ from the current Cloud SOAR documentation:
-* Playbooks type must be **CSE**.
-* The CSE Automation Service only supports automated Enrichment, Notification, and Custom Action types at this time. 
-* Actions can run "on premise" via a Bridge or can run directly through the Cloud. For security and performance reasons, only Certified Integrations/Actions can run directly through the Cloud; custom Actions must run "on premise".
-* Cloud SOAR App Central, where you can browse the full Integration and Playbook catalog, is not yet connected to the CSE Automation Service. A selection of popular Integrations have been added to your environment automatically, but the full list of available Integrations is included in [Available Integrations](#available-integrations) below. Contact your Sumo Logic account representative if you would like to have one of these Integrations added to your environment, if you would like documentation for a specific Integration, or if you're interested in an Integration that's not listed.
-:::
-
-## Configuring an Automation
+### Create an automation
 
 To create a new Automation:
 1. Click the gear icon at the top of the CSE UI and choose **Automation** under **Integrations**. 
@@ -93,7 +103,7 @@ To create a new Automation:
 1. Set the **Status**. Disabled Automations will not run automatically and will not appear in any Actions/Automations menus.
 1. Click **Add to List** (or **Update** if editing an existing Automation).
 
-## Running Automations
+### Run an automation
 Automations will run automatically when an Insight is created or closed provided that:
 * The Automation is enabled, 
 * The Automation is configured to run on the trigger(s), and 
@@ -127,7 +137,7 @@ In this example:
 * The nslookup Automation is configured to only run on IP Addresses so it will run three times.
 * No Automation will run on the Hostname.
 
-## Viewing the Status of Automations
+### View automation status
 
 After running an Automation, you can go to the Automations tab to view its status.  
 
@@ -137,13 +147,13 @@ The list of Automations is organized by Insight and Entity, and each section can
 * The time and date when the Automation was run.
 * The name and description of the associated Playbook.
 * The Playbook’s current status.
-* A link to **View Playbook** in the CSE Automation Service UI.
+* A link to **View Playbook** in the Automation Service UI.
 
 :::note
 During the Beta, you may have to manually refresh this screen to see the most current Status.
 :::
 
-If you click **View Playbook**, the CSE Automation Service UI will open to the Playbook Status page:
+If you click **View Playbook**, the Automation Service UI will open to the Playbook Status page:
 
 <img src={useBaseUrl('img/cse/automations-playbook-status.png')} alt="Playbook status" width="600"/>
 
@@ -153,7 +163,7 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 For more information about the Playbook Status page and understanding how to interact with the Playbook graph, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
 
-## Enrichment and Threat Indicators
+## Enrichments and threat indicators
 
 You can view the results of enrichments in CSE by navigating to the newly-redesigned **Enrichments** tab (which will appear on the Entity, Signal and Insight details pages if there are any enrichments to display):
 
@@ -181,28 +191,189 @@ No icon is displayed for Entities that are Not Flagged.
 **Not Flagged** is not the default value (which is no indicator at all). CSE will not automatically determine the indicator value; enrichments must explicitly set it (see Enrichment Attributes).
 :::
 
-### New Enrichment Attributes
+### New enrichment attributes
 
 Support for three new optional attributes have been added to the enrichment schema:
 * `expiresAt`. Defines when the enrichment should be auto-deleted from CSE (by default, enrichments will never be auto-deleted).
 * `externalUrl`. Defines a link that will be displayed with an enrichment (for example, to include a link to the VirusTotal details page for this Entity, put the link in this field).
 * `reputation`. Associates a threat indicator with this enrichment data. The allowable values are `malicious`, `suspicious`, and `notflagged`. The default is not to display any reputation.
 
-## API and Terraform Support
+## Actions
 
-The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support Automations. The new endpoints include:
-* `GET /automations`. Get the list of Automations
-* `POST /automations`. Create an Automation
-* `POST /automations/execute`. Run one or more Automations against one or more Entities/Insights
-* `DELETE /automations/{id}`. Delete an Automation
-* `GET /automations/{id}`. Get a specific Automation
-* `PUT /automations/{id}`. Update a specific Automation
+<!-- github-comment
+Write
+-->
 
-The Sumo Logic Terraform provider has also been updated. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+### Create an action
 
-The CSE Automation Service API is documented in the [Cloud SOAR documentation](/docs/cloud-soar/).
+<!-- github-comment
+Write
+-->
 
-## Available Integrations
+
+## Manage playbooks
+
+### About playbooks
+
+A **Playbook** is a predefined set of actions or tasks to respond to a certain event or incident type. The creation and utilization of playbooks can allow an organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
+
+Playbooks are automated workflows which can be configured to execute
+automatically without user intervention, acting on information from the
+incident, or can be executed in interactive mode, where user input is
+required to authorize predefined actions.
+
+To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
+
+![Playbook](/img/cloud-soar/image71.png)
+
+A list of any previously created Playbooks will be displayed on the
+left-side of the page. Click **+** to add a new playbook.
+
+A new configuration box will be displayed. Name your new playbook,
+select the **Incident Type** to associated with it, and click save to continue. [Learn more](#custom-fields).
+
+Once the new playbook has been saved, it will be displayed on the
+left-side of the screen. To begin to configure the new playbook, select
+it from the list and click the **Edit** button at the bottom of the
+screen.
+
+![Playbook List](/img/cloud-soar/image72.png)
+
+
+Opening the playbook will present a black screen with a **Start** node, and
+an **End** node. These nodes dictate the beginning and the end of the
+playbook's automation sequence. They can be dragged and dropped anywhere
+on the screen to allow for multiple integrations and conditional
+statements to be executed.
+
+To begin to add the first node within the new playbook, click the **+** on
+the **Start** node.
+
+![New Playbook](/img/cloud-soar/image73.png)
+
+The playbook configuration page is displayed. It gives you the ability
+to choose from the following options:
+* **Action**: Automatically take specific actions such as enriching
+ data or taking containment steps when an Incident Template is matched
+* **Task**: Assign a task to an Cloud SOAR user
+* **Condition**: Use conditional statements to define what actions
+ should be taken in response to previous input/output feeds
+* **User Choice**: Pause automatic processing to allow for manual
+ intervention
+* **Playbook**: Call other R3 Playbooks in response to conditional
+ statements and/or user choice actions
+
+### Create a playbook
+
+<!-- github-comment
+Write
+-->
+
+## App Central
+
+App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
+
+![App Central](/img/cloud-soar/appcentral.png)
+
+While browsing available integrations, you can check the details and all the actions available and install it.
+
+
+## Integrations
+
+Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. To configure, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > **Integrations**.
+
+![integrations](/img/cloud-soar/image62.png)
+
+
+A list of available integrations within the organization can be found to the left-side of the screen. To begin to configure, click on a product to continue.
+
+![configure integration](/img/cloud-soar/image63.png)
+
+
+A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five
+separate types: **Enrichment, Containment, Custom, Daemon, and Notification** actions. Each selection will list its associated actions
+and if there are required fields which need to be configured for Cloud SOAR to utilize its functionality within its Playbooks.
+
+To add a new integration resource, click the **+ Resources** button in the
+upper left-hand corner of the integrations screen. To edit an existing
+integration resource, hover over the resource and click the pencil icon
+to the far right of the resource name in the resource list.
+
+![Resource Settings](/img/cloud-soar/image64.png)              
+
+
+Each Integration's configuration screen
+may be different, but in most cases, administrators will need
+information such as IP addresses, API tokens, usernames and passwords
+for their network/security products.
+
+To test the configuration, click save and reopen the Integration. Once
+the Integration is reopened, click test and successful connections will
+display a success message at the bottom of the screen. Any unsuccessful
+attempts will display an error message with information needed to
+remediate the issue.
+
+Additionally, some integration types also allow users to use a
+pre-configured general proxy or define a specific one for its
+integration with Cloud SOAR. To configure a proxy for an integration, open
+the integration and click the Proxy dropdown. Select "Use different
+proxy** and add the corresponding proxy information.
+
+Once the information has been added, click save to commit the
+integration. Open the integration up again and click the Test button to
+test the new configuration settings. A successful connection attempt
+will be displayed at the bottom right-side of the screen. Once the proxy
+test is successful, click save again to commit the final configuration
+settings for the integration.
+
+
+### Integrations framework
+
+Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework.
+For increased security and isolation, each integration is executed in
+its own Docker container, which can be easily customized by the user
+when the integration is created.
+
+Integrations are defined using two types of YAML text files. The first
+type, the integration definition file, is used to define the properties
+of the product with which the integration connects. This includes
+information such as the name, logo, connection parameters, test code and
+the Docker container used to execute the actions. One integration
+definition file is required for each integration and serves as a
+container for all of the actions that the integration will perform.
+
+The second type of file is an action definition file, which is used to
+define a single action that will be performed using the integration.
+Each integration action is defined in a separate action definition file,
+which will be associated by Cloud SOAR with the appropriate integration
+definition. Action definition files are the files which contain the
+actual code which will be executed to perform the action. Supported
+languages include Perl, Python, PowerShell and Bash. In addition to the
+action code, action definition files also contain information such as
+the name, required and optional fields and the format in which the
+resulting information will be displayed.
+
+![integration definition](/img/cloud-soar/image65.png)
+
+### Integration File Hierarchy
+
+Defining integrations at the **action** level allows users greater
+flexibility in customizing existing integrations and sharing new actions
+with other users. For example, a user may choose to extend Sumo Logic'
+existing RSA Netwitness integration to include an additional action
+which retrieves all network connections for a given host.
+
+Once the user has created this new action, it can easily be added to the existing RSA
+Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration in other customer instances as well.
+
+![new action](/img/cloud-soar/image66.png)
+
+
+
+See the Integration Framework manual for more details on utilizing the integration framework within Cloud SOAR.
+
+
+### Available Integrations
 
 The following Integrations are available for the Automation Service, but only some are automatically installed in customer environments. If you would like an Integration listed below added to your environment, or would like documentation for a specific Integration, contact your Sumo Logic account representative.
 
@@ -527,3 +698,163 @@ The following Integrations are available for the Automation Service, but only so
 * ZeroFOX
 * Zoom
 * Zscaler
+
+
+## Bridge
+
+<!-- github-comment
+Write. The content below was copied from the doc accessed from the ? menu option.
+-->
+
+### Requirements 
+
+#### Hardware requirements
+
+* OS: 
+   * Ubuntu (18.04/20.04)
+   * CentOS 7
+   * RedHat 8
+* RAM: 8GB
+* CPU: 4 Core
+* DISK: 160GB
+* Network card: 1
+
+#### Network requirements
+
+Bridge Appliance has to be able to resolve DNS hostnames and needs to reach the below destinations
+
+| DESTINATION | PROTOCOL | PORT |
+| :-- | :-- | :-- |
+| sumo-logic-api-url | TCP| 443| 
+| siem-cloud-url | 	TCP| 	443| 
+| 926226587429.dkr.ecr.us-west-2.amazonaws.com| 	TCP| 	443| 
+| index.docker.io* | 	TCP| 	443| 
+| registry-1.docker.io* | 	TCP| 	443| 
+| auth.docker.io* | 	TCP| 	443| 
+| production.cloudflare.docker.com* | 	TCP| 	443| 
+| long-endpoint1-events.sumologic.net | 	TCP| 	443| 
+
+\* Needed only to connect to docker hub.
+
+### Install Docker
+
+1. Install Docker-CE following the [installation instructions in Docker Docs](https://docs.docker.com/engine/install/). Install at least version 20.10 (do not use nightly build).
+1. As soon as the docker daemon is installed, start it with: 
+   ```
+   systemctl start docker
+   ```
+1. Enable it on boot: 
+   ```
+   systemctl enable docker
+   ```
+1. If docker has to use a proxy to pull images, follow the below instructions:
+   ```
+   mkdir -p /etc/systemd/system/docker.service.d
+   ```
+1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
+   ```
+   [Service]
+   Environment="HTTP_PROXY=http://proxy.example.com:8080\" 
+   Environment="HTTPS_PROXY=http://proxy.example.com:8080\"
+   ```
+1. Reload the systemd daemon with:
+   ```
+   systemctl daemon-reload
+   ```
+1. And restart docker service with:
+   ```
+   systemctl restart docker
+   ```
+
+### Get installation token
+
+Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
+
+<img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
+
+### Automation bridge installation
+
+#### Ubuntu
+
+1. Download the `automation-bridge-X.X.deb` and copy it on the bridge virtual machine.
+1. To install the package run from ssh:
+   ```
+   sudo dpkg -i automation-bridge-X.X.deb
+   ```
+
+#### CentOS/RedHat
+
+1. Download the `automation-bridge-X.X.rpm` and copy it on the bridge virtual machine.
+1. To install the package run from ssh:
+   ```
+   sudo yum install automation-bridge-X.X.rpm
+   ```
+1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
+   * 1SOAR_URL1
+   * 1SOAR_TOKEN1
+1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
+
+And you can set the below optional parameters
+
+ALIAS
+An example of configuration file would be
+
+{
+
+"SOAR_URL": "https://
+
+"SOAR_TOKEN": "
+
+"SIEM_URL":"https://
+
+"ALIAS": "
+
+}
+
+BRIDGE ALIAS
+With bridge ALIAS is possible to distinguish which integration resources will be executed with this automation bridge.
+
+When new integration resource is created or edited is possible to select default ALIAS or to create new one
+
+ 
+
+So every automatic action configured to use this resource'll be performed with Bridge that have the same ALIAS
+
+AUTOMATION-BRIDGE UPDATE
+Ubuntu
+Update process works as the installation process.Please follow the same steps described in "AUTOMATION-BRIDGE INSTALLATION" section
+
+CentOS/RedHat
+Update process works as the installation process.Please follow the same steps described in "AUTOMATION-BRIDGE INSTALLATION" section
+
+NOTE
+If you are not using the SIEM, set "SIEM_URL" to "NONE"
+
+Restart service with
+
+systemctl restart automation-bridge
+
+If you need to allow automation-bridge communication through a proxy, edit the file /etc/opt/automation-bridge/automation-bridge.conf
+
+And set the correct value.below an example
+
+HTTP_PROXY="http://proxy.example.com:8080\"
+
+HTTPS_PROXY="http://proxy.example.com:8080\"
+
+Restart service with
+
+systemctl restart automation-bridge
+
+POST-INSTALLATION CHECKS
+To check if the bridge is running correctly run the following command
+
+ps faux |grep automation-bridge
+
+This is an example of a running automation-bridge
+
+
+
+On the SOAR instance, the Automation Bridge Monitoring panel under Settings > Audit and information > License information menu shows a list of live bridge agents:
+
+
