@@ -536,7 +536,6 @@ module.exports = {
         'manage/partitions-data-tiers/data-tiers',
         'manage/partitions-data-tiers/data-tiers-faqs',
         'manage/partitions-data-tiers/searching-data-tiers',
-        'manage/partitions-data-tiers/infrequent-tier-search',
       ]
     },
     {
@@ -1947,22 +1946,10 @@ integrations: [
           'integrations/databases/mongodb',
           'integrations/databases/mongodb-atlas',
           'integrations/databases/mysql',
-          {
-          type: 'category',
-          label: 'Oracle',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'integrations/databases/oracle/index'},
-          items: [
-            'integrations/databases/oracle/collect-logs-metrics',
-            'integrations/databases/oracle/performance-metrics',
-            'integrations/databases/oracle/monitors-app-dashboards',
-            'integrations/databases/oracle/alerts',
-          ],
-        },
-        'integrations/databases/postgresql',
-        'integrations/databases/redis',
-        ],
+          'integrations/databases/oracle',
+          'integrations/databases/postgresql',
+          'integrations/databases/redis',
+         ],
       },
       {
         type: 'category',
@@ -2470,7 +2457,7 @@ integrations: [
         'manage/manage-subscription/beta-opt-in',
         'beta/search-log-level',
         'beta/aws-private-link',
-        'manage/partitions-data-tiers/infrequent-tier-search',
+        'beta/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
       ],
