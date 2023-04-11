@@ -28,7 +28,7 @@ You need a 1Password API token and your customer specific 1Password domain, for 
 
 To generate a 1Password API token follow these steps:
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
-2. Switch to the **Directory** tab (or use [direct link to Directory tab](https://sumologictestingapi.1password.com/integrations/directory))
+2. Switch to the **Directory** tab (or use [direct link to Directory tab](https://sumologictestingapi.1password.com/integrations/directory)).
 3. Choose the **Sumo Logic** integration in **Events Reporting** section. 
 4. Enter System Name of your convenience (default value Sumo Logic would be fine in most cases) and click **Add Integration**.
 5. On the next page enter Token Name. This can be any string which will help you to recognize tokens generated for different environments like Production, Stage, Dev. 
