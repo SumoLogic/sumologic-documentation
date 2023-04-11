@@ -5,7 +5,7 @@ title: Web Servers
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="45"/>
 
 This guide has documentation for Sumo apps for web servers.
 
