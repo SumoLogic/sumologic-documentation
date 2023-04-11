@@ -404,8 +404,8 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Oracle ad
 
 The instructions for setting up the Oracle performance metrics script vary by operating system:
 
-* For Linux, see [Set Up Oracle Performance Metrics Script on Linux](/docs/integrations/databases/oracle/performance-metrics#linux)
-* For Windows, see[ Set Up Oracle Performance Metrics Script on Windows](/docs/integrations/databases/oracle/performance-metrics#windows)
+* For Linux, see [Set Up Oracle Performance Metrics Script on Linux](/docs/integrations/databases/oracle/#linux)
+* For Windows, see [Set Up Oracle Performance Metrics Script on Windows](/docs/integrations/databases/oracle/#windows)
 
 
 #### Configure Metrics Collection
@@ -487,13 +487,13 @@ If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `
 
 There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
 
-* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component** - “database” - In the input `[[inputs.exec]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-* **db_system** - “oracle” - In the input plugins sections. This value identifies the database system.
+* `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `component: “database”`. In the input `[[inputs.exec]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+* `db_system - “oracle”`. In the input plugins sections. This value identifies the database system.
 
 See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 
-After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from [this doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the Oracle metrics and forward them to the Sumo Logic HTTP Source.
 
@@ -543,10 +543,10 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 
 Custom filter examples:
 
-1. For alerts applicable only to a specific cluster, your custom filter would be, ‘`db_cluster=oracle-prod.01`‘.
+1. For alerts applicable only to a specific cluster, your custom filter would be, `db_cluster=oracle-prod.01`.
 2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be,`db_cluster=oracle-prod*`.
-3. **For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=oracle-1`** and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-4. Go to Manage Data > Alerts > Monitors.
+3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=oracle-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
+4. Go to **Manage Data** > **Alerts** > **Monitors**.
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
 
@@ -663,7 +663,7 @@ The database user that you use to run the SQL queries should have permission to 
   </tr>
 </table>
 
-### For Linux
+### Linux
 
 The script was developed and tested on:
 * Linux Server 8.4, Python (3.7.10), Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
@@ -826,7 +826,7 @@ $ python3 oracle-perf-monitor.py
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your Oracle log files to the Sumo Logic service.
 
 
-### For Windows
+### Windows
 
 This section has instructions for setting up the performance metrics script on Windows OS for the Oracle app.
 
