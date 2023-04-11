@@ -30,7 +30,7 @@ To generate a 1Password API token follow these steps:
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
 2. Switch to the **Directory** tab (or use [direct link to Directory tab](https://sumologictestingapi.1password.com/integrations/directory)).
 3. Go to the **Events Reporting** section and choose the **Sumo Logic** integration. 
-4. Enter System Name of your convenience (default value Sumo Logic would be fine in most cases) and click **Add Integration**.
+4. In the **System Name** field, enter the name of your choice (default value `Sumo Logic` should be fine in most cases), then click **Add Integration**.
 5. On the next page enter Token Name. This can be any string which will help you to recognize tokens generated for different environments like Production, Stage, Dev. 
 6. In section **Events to Report** leave enabled event sources which you want to share using the token. Then click **Issue Token**.
 7. On last page click icon on the right to the token string to copy it to the clipboard. You can also select **Save in 1Password** to store it for further reference. 
