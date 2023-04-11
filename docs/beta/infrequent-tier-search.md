@@ -1,16 +1,19 @@
 ---
 id: infrequent-tier-search
-title: Infrequent Tier Support for Scheduled Searches
-sidebar_label: Scheduled Search - Infrequent Tier (Beta)
+title: Infrequent Tier Support for Scheduled Searches (Beta)
 description: Learn how to schedule and run searches against the Infrequent data tier.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 :::note
-This Beta is now closed. 
+This Beta is now closed.
 :::
 
 Previously, scheduled searches were only supported in Sumo Logic’s Continuous data tier. Now, you can also schedule searches that run against the Infrequent tier.
