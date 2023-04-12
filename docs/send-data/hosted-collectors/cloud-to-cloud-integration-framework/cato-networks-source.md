@@ -80,7 +80,7 @@ To configure an Cato Networks Source:
 1. Enter the **API Key** for Cato Networks account.
 1. Enter the **Account ID** for Cato Networks account.
 1. Select the **Data Types**. You can select one or both of the data sources.
-   - If **All** is selected, the integration will fetch both security and audit events. <br/>By default, All will be selected.
+   - If **All** is selected, the integration will fetch both security and audit events. By default, **All ** will be selected.
    - If **Security Events** is selected, the integration will fetch security data.
    - If **Audit Events** is selected, the integration will fetch audit data.
     :::note
