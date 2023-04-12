@@ -536,7 +536,6 @@ module.exports = {
         'manage/partitions-data-tiers/data-tiers',
         'manage/partitions-data-tiers/data-tiers-faqs',
         'manage/partitions-data-tiers/searching-data-tiers',
-        'manage/partitions-data-tiers/infrequent-tier-search',
       ]
     },
     {
@@ -2458,7 +2457,7 @@ integrations: [
         'manage/manage-subscription/beta-opt-in',
         'beta/search-log-level',
         'beta/aws-private-link',
-        'manage/partitions-data-tiers/infrequent-tier-search',
+        'beta/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
       ],
