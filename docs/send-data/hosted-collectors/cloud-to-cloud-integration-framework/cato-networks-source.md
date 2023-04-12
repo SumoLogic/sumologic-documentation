@@ -19,7 +19,7 @@ Cato Networks source ingests security events from [EventsFeed API](https://suppo
 
 ## Prerequisites
 
-1. Only account administrators with the Editor privilege can generate keys in the Cato Management Application (CMA).
+1. In the Cato Management Application, only account administrators with the **Editor** privilege can generate keys. (CMA).
 1. For ingesting security events you need to enable the events feeds in your account. Follow the below-mentioned steps to enable events feed:
     - In the navigation panel, select **System > API Access Management**.
     - Select **Event Feed Enabled**. <br/>After this, your account starts sending events to the Cato API server. <br/><img src={useBaseUrl('img/send-data/cato-c2c/cato-networks-enable-events-feed.png')} alt="cato-networks-enable-events-feed.png" width="700" />
