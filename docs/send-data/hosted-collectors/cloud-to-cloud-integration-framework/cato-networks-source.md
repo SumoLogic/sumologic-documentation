@@ -47,7 +47,7 @@ You cannot access the value for the API key once you close this window.
 
 ### Account ID
 
-All API calls require an Account ID parameter. Inspect for a four-digit integer in the URL when logged into the Cato account and note the Account ID. <br/><img src={useBaseUrl('img/send-data/cato-c2c/cato-networks-account-id.png')} alt="cato-networks-account-id.png" width="700" />
+All API calls require an account ID parameter. When logged into the Cato account, look for a four-digit integer in the URL and take note of the account ID. . <br/><img src={useBaseUrl('img/send-data/cato-c2c/cato-networks-account-id.png')} alt="cato-networks-account-id.png" width="700" />
 
 ## States
 
