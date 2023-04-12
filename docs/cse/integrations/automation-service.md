@@ -790,71 +790,59 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    sudo yum install automation-bridge-X.X.rpm
    ```
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
-   * 1SOAR_URL1
-   * 1SOAR_TOKEN1
+   * `1SOAR_URL1`
+   * `1SOAR_TOKEN1`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
-And you can set the below optional parameters
+And you can set this optional parameter: `ALIAS`
 
-ALIAS
-An example of configuration file would be
-
+An example of a configuration file would be:
+```
 {
-
 "SOAR_URL": "https://
-
 "SOAR_TOKEN": "
-
 "SIEM_URL":"https://
-
 "ALIAS": "
-
 }
+```
 
-BRIDGE ALIAS
-With bridge ALIAS is possible to distinguish which integration resources will be executed with this automation bridge.
+#### Bridge ALIAS
 
-When new integration resource is created or edited is possible to select default ALIAS or to create new one
+With bridge ALIAS it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
 
- 
+<img src={useBaseUrl('img/cse/automations-bridge-alias-create.png')} alt="Create ALIAS bridge" width="400"/>
 
-So every automatic action configured to use this resource'll be performed with Bridge that have the same ALIAS
+<img src={useBaseUrl('img/cse/automations-bridge-alias-default.png')} alt="Use default ALIAS bridge" width="400"/>
 
-AUTOMATION-BRIDGE UPDATE
-Ubuntu
-Update process works as the installation process.Please follow the same steps described in "AUTOMATION-BRIDGE INSTALLATION" section
+#### Automation bridge update
 
-CentOS/RedHat
-Update process works as the installation process.Please follow the same steps described in "AUTOMATION-BRIDGE INSTALLATION" section
+For Ubuntu and CentOS/RedHat, the update process works as the installation process. Follow the same steps described in [Automation bridge installation](#automation-bridge-installation).
 
-NOTE
-If you are not using the SIEM, set "SIEM_URL" to "NONE"
+:::note
+If you are not using the SIEM:
+1. Set `SIEM_URL` to `NONE`.
+1. Restart the service with:
+   ```
+   systemctl restart automation-bridge
+   ```
+1. If you need to allow automation-bridge communication through a proxy, edit the file `/etc/opt/automation-bridge/automation-bridge.conf` and set the correct value. Below is an example:
+   ```
+   HTTP_PROXY="http://proxy.example.com:8080\"
+   HTTPS_PROXY="http://proxy.example.com:8080\"
+   ```
+1. Restart the service with:
+   ```
+   systemctl restart automation-bridge
+   ```
+:::
 
-Restart service with
+#### Post-installation checks
 
-systemctl restart automation-bridge
-
-If you need to allow automation-bridge communication through a proxy, edit the file /etc/opt/automation-bridge/automation-bridge.conf
-
-And set the correct value.below an example
-
-HTTP_PROXY="http://proxy.example.com:8080\"
-
-HTTPS_PROXY="http://proxy.example.com:8080\"
-
-Restart service with
-
-systemctl restart automation-bridge
-
-POST-INSTALLATION CHECKS
-To check if the bridge is running correctly run the following command
-
+To check if the bridge is running correctly run the following command:
+```
 ps faux |grep automation-bridge
+```
 
-This is an example of a running automation-bridge
+This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-
-
-On the SOAR instance, the Automation Bridge Monitoring panel under Settings > Audit and information > License information menu shows a list of live bridge agents:
-
-
+On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cse/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
