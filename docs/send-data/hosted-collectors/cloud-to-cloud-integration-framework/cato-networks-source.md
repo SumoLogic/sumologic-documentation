@@ -17,7 +17,7 @@ This source ingests Security and Audit events from Cato API.
 
 Cato Networks source ingests security events from [EventsFeed API](https://support.catonetworks.com/hc/en-us/articles/360019839477-Cato-API-EventsFeed-Large-Scale-Event-Monitoring) and audit events from [AuditFeed API](https://support.catonetworks.com/hc/en-us/articles/360017900857-Cato-API-AuditFeed).
 
-## Prerequisite
+## Prerequisites
 
 1. Only account administrators with the Editor privilege can generate keys in the Cato Management Application (CMA).
 1. For ingesting security events you need to enable the events feeds in your account. Follow the below-mentioned steps to enable events feed:
