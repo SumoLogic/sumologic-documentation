@@ -1,4 +1,5 @@
 ---
+
 id: infrequent-dashboard-support
 title: Infrequent Tier Support for Dashboards
 description: Learn how to setup dashboard panels against the Infrequent data tier.
@@ -9,8 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <head>
   <meta name="robots" content="noindex" />
 </head>
-
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
 Previously, dashboards were only supported in Sumo Logic's Continuous data tier. This support enables you to also set up dashboard panels to include data from the Infrequent tier.
 
@@ -26,7 +25,6 @@ _dataTier=Infrequent _sourceCategory=appA "error"
 _index=some_infrequent_index
 ```
  Or, run the following query.
-
 ```sql
 _index=some_infrequent_index OR _index=some_continuous_index
 ```
