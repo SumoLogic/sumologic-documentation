@@ -14,10 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### Minor Changes and Enhancements
 
 * [New] When logs fail to parse or map, a detailed error message will be logged in the `sec_record_failure` index, in the `fields.reason` attribute. 
-* [New] Where possible, private domains are now [automatically enriched](https://help.sumologic.com/docs/cse/schema/record-processing-pipeline/#enrich-records-with-ip-address-url-and-domain-info) by CSE during record processing. 
+* [New] Where possible, private domains are now [automatically enriched](/docs/cse/schema/record-processing-pipeline/#enrich-records-with-ip-address-url-and-domain-info) by CSE during record processing. 
 * [Updated] Insight comments can now contain up to 1024 characters (up from 256).
 * [New] On the list of Rule Tuning Expressions, each Tuning Expression now lists the number of Rules to which it is currently applied.
-* [New] For First Seen Rules, the UI will display the baseline model status (i.e. building, with amount of progress, or complete). (Note it will only display the status on Rules that were created or updated after this feature became available.)
+* [New] For First Seen Rules, the UI will display the baseline model status (i.e., building, with amount of progress, or complete). (Note it will only display the status on Rules that were created or updated after this feature became available.)
 
 ### Bug Fixes
 
