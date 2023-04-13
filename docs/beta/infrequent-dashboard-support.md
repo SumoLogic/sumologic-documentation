@@ -46,4 +46,4 @@ You can download the JSON for the dashboard [here](https://sumologic-app-data.s3
 
 ## Limitation
 
-* Auto-refesh is not available for dashboard panels running on Infrequent tier.
+* Auto refresh is not available for dashboard panels running on Infrequent tier.
