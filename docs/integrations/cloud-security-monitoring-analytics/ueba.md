@@ -1,9 +1,16 @@
 ---
+layout: forward
+target: https://help.sumologic.com/docs/integrations/security-threat-detection/
+---
+
+<!-- github-comment The header above redirects to another page. Here is the old header.
+---
 id: ueba
 title: UEBA Cloud Security Monitoring and Analytics
 sidebar_label: UEBA
 description: Install the Sumo Logic UEBA  app to monitor baseline user and entity and report on detected patterns.
 ---
+-->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
