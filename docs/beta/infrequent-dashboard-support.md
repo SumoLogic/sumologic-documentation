@@ -16,7 +16,7 @@ Previously, dashboards were only supported in Sumo Logic’s Continuous data tie
 
 ## Sample Queries
 
-This means you can now include data from the Infrequent Tier in the scope of dashboard panels.
+To use data from the Infrequent tier in your dashboard panels, you can use the following sample queries
 
 For example, you can use `_dataTier=Infrequent` in your query scope:
 
