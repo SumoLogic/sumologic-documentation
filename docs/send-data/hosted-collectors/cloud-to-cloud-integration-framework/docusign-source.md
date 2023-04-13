@@ -67,7 +67,7 @@ You must first create an app to get integration key and configure RSA Key Pair a
 
 ### App Consent
 
-Once your app is created you need consent to make API calls. For requesting application consent, follow the steps below:
+Once your app is created, you need consent to make API calls. To request application consent, follow the steps below:
 1. Copy the below URL based on your account environment in the browser and press enter, replace **INTEGRATION_KEY**, and **REDIRECT_URI** with the values you copied at step 5 and step 8 of [App](#app) section respectively.
    * For Development (Demo) Environment, `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
    * For Production Environment, `https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
