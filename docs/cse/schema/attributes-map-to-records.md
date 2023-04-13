@@ -20,14 +20,14 @@ This topic lists the schema attributes that you can map to Records. Note that yo
 | cause | string | Describes the reason for an outcome in a record in a common way. |
 | changeTarget | string   | The user account that was affected by a change. |
 | changeType | string   | Category of change the user made. |
-| cloud_provider | string | The name of the cloud infrastucture operator, typically a public cloud provider. E.g. Google Cloud Platform (GCP), Amazon Web Services (AWS), Microsoft Azure, Alibaba Cloud etc. |
-| cloud_region | string | The physical location a cloud provider operates their infrastucture from. E.g. AWS us-east-2 (Ohio), Azure Central US (Iowa), GCP asia-northeast1-a (Tokyo) etc. |
+| cloud_provider | string | The name of the cloud infrastructure operator, typically a public cloud provider. E.g. Google Cloud Platform (GCP), Amazon Web Services (AWS), Microsoft Azure, Alibaba Cloud etc. |
+| cloud_region | string | The physical location a cloud provider operates their infrastructure from. E.g. AWS us-east-2 (Ohio), Azure Central US (Iowa), GCP asia-northeast1-a (Tokyo) etc. |
 | cloud_service | string | The specific service offering from a cloud provider. E.g. AWS VPC Flow, Azure Virtual Machines, AWS Lambda, Alibaba Cloud ECS, GCP Compute Engine etc. |
-| cloud_zone | string | The cloud infrastucture isolated within a region on which a resource is located or is running. |
+| cloud_zone | string | The cloud infrastructure isolated within a region on which a resource is located or is running. |
 | commandLine | string   | The command run by the user using a shell. |
 | description | string   | The description of the log event. |
-| device_container_id | string | The unique identifier provided to a discreet container which packages together the elements required to run software. |
-| device_container_name | string | The name provided to a discreet container which packages together the elements required to run software. |
+| device_container_id | string | The unique identifier provided to a discrete container which packages together the elements required to run software. |
+| device_container_name | string | The name provided to a discrete container which packages together the elements required to run software. |
 | device_container_runtime | string | The provider name of the engine whine underpins the container. E.g. Docker, AWS Lambda, containerd |
 | device_hostname | string   | Fully Qualified Domain Name that uniquely and absolutely names a computer. If name normalization occurs this will be the normalized name. |
 | device_image | string | The snapshot of the state of a device or similar which can be used to deploy or reproduce a system. E.g. A VM image, a container image.|
@@ -48,8 +48,8 @@ This topic lists the schema attributes that you can map to Records. Note that yo
 | dns_replyDomain | string   | This should be conditionally populated if the DNS reply is a domain. |
 | dns_replyIp | string   | This should be conditionally populated if the DNS reply is an IP address. |
 | dns_returnCode | string   | Code indicating the outcome of a DNS request. |
-| dstDevice_container_id | string | The unique identifier provided to a discreet container which packages together the elements required to run software. | 
-| dstDevice_container_name | string | The name provided to a discreet container which packages together the elements required to run software. | 
+| dstDevice_container_id | string | The unique identifier provided to a discrete container which packages together the elements required to run software. | 
+| dstDevice_container_name | string | The name provided to a discrete container which packages together the elements required to run software. | 
 | dstDevice_container_runtime | string | The provider name of the engine whine underpins the container. E.g. Docker, AWS Lambda, containerd. | 
 | dstDevice_hostname | string   | Fully Qualified Domain Name that uniquely and absolutely names a computer. If name normalization occurs this will be the normalized name. |
 | dstDevice_image | string | The snapshot of the state of a device or similar which can be used to deploy or reproduce a system for which traffic is destined. E.g. A VM image, a container image. |
@@ -114,8 +114,8 @@ This topic lists the schema attributes that you can map to Records. Note that yo
 | sessionId | string | An ephemeral and at least semi-unique identifier of a connection between two systems. E.g. HTTP session, user logon session, TCP session identifiers. |
 | severity | string   | The source specific severity level with no normalization. |
 | sourceUid | string   | A UID that is defined by the record itself. Each record is assigned a UID during mapping, but this is the unique identifier field that may exist within an originating record. |
-| srcDevice_container_id | string | The unique identifier provided to a discreet container which packages together the elements required to run software. |
-| srcDevice_container_name | string | The name provided to a discreet container which packages together the elements required to run software. |
+| srcDevice_container_id | string | The unique identifier provided to a discrete container which packages together the elements required to run software. |
+| srcDevice_container_name | string | The name provided to a discrete container which packages together the elements required to run software. |
 | srcDevice_container_runtime | string | The provider name of the engine whine underpins the container. E.g. Docker, AWS Lambda, containerd. |
 | srcDevice_hostname | string   | Fully Qualified Domain Name that uniquely and absolutely names a computer. If name normalization occurs this will be the normalized name. |
 | srcDevice_image | string | The snapshot of the state of a device or similar which can be used to deploy or reproduce a system for which traffic is originating. E.g. A VM image, a container image. |
