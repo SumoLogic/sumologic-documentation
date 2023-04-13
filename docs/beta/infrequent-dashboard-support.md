@@ -22,7 +22,6 @@ To use data from the Infrequent tier in your dashboard panels, you can use the f
 _dataTier=Infrequent _sourceCategory=appA "error"
 ```
 * Or select data in the Infrequent tier by specifying the Partition that contains it. For example:
-
 ```sql
 _index=some_infrequent_index
 ```
