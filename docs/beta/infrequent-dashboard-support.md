@@ -31,7 +31,6 @@ Or
 _index=some_infrequent_index OR _index=some_continuous_index
 ```
 
-
 ## Limitations  
 
 * Auto-refesh is not available for dashboard panels running on Infrequent tier
