@@ -1,5 +1,5 @@
 ---
-id: infrequent-tier-dashboard-support
+id: infrequent-dashboard-support
 title: Infrequent Tier Support for Dashboards
 description: Learn how to setup dashboard panels against the Infrequent data tier.
 ---
@@ -25,16 +25,11 @@ _dataTier=Infrequent _sourceCategory=appA "error"
 ```sql
 _index=some_infrequent_index
 ```
-Or
+ Or, run the following query.
 
 ```sql
 _index=some_infrequent_index OR _index=some_continuous_index
 ```
-
-## Limitations  
-
-* Auto-refesh is not available for dashboard panels running on Infrequent tier
-
 
 ## Infrequent Dashboard Usage
 
@@ -48,3 +43,7 @@ The dashboard presents the following information for the currently selected time
 * **Top 50 Expensive Queries**. The top 50 expensive queries set up on Dashboards to run against the Infrequent tier.
 
 You can download the JSON for the dashboard [here](https://sumologic-app-data.s3.amazonaws.com/Infrequent_Dashboard.json). For information about importing dashboards and other content see [Import Content in the Library](/docs/get-started/library#import-content).
+
+## Limitation
+
+* Auto refresh is not available for dashboard panels running on Infrequent tier.
