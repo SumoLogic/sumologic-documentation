@@ -23,7 +23,6 @@ For example, you can use `_dataTier=Infrequent` in your query scope:
 ```sql
 _dataTier=Infrequent _sourceCategory=appA "error"
 ```
-
 Or, you can select data in the Infrequent tier by specifying the Partition that contains it, like this:
 
 ```sql
