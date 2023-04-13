@@ -43,7 +43,6 @@ Sumo Logic provides a dashboard you can use to monitor the Infrequent tier consu
 <img src={useBaseUrl('img/beta/infrequent-dashboard.png')} alt="dashboard" />
 
 The dashboard presents the following information for the currently selected time range:
-
 * **Avg Credits Consumed/Day**. The daily average number of credits consumed over the last 30 days.
 * **Total Credits Consumed**. The total credits consumed in the last 30 days.
 * **Top 50 Expensive Queries**. The top 50 expensive queries setup on Dashboards to run against Infrequent tier.
