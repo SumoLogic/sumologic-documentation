@@ -60,7 +60,7 @@ You must first create an app to get integration key and configure RSA Key Pair a
   :::
 8. Click on **ADD URI** under **Redirect URIs** and enter `http://localhost/` as your new redirect URI. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
   :::note
-  You'll need redirect uri while requesting [application consent](#app-consent).
+  You'll need a redirect URI while requesting [application consent](#app-consent).
   :::
 9. Click **SAVE** to finish new app configuration.
 
