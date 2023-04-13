@@ -27,7 +27,6 @@ _index=some_infrequent_index
 ```
 or
 
-
 ```sql
 _index=some_infrequent_index OR _index=some_continuous_index
 ```
