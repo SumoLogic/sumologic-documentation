@@ -24,7 +24,7 @@ The Citrix Cloud API integration retrieves system logs every 5 minutes.
 Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
 
 | Field Name | Value |
-| --- | --- |
+| :--- | :--- |
 | _siemparser | /Parsers/System/Citrix/Citrix Cloud C2C |
 
 ## Configuration
