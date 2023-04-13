@@ -25,7 +25,7 @@ _dataTier=Infrequent _sourceCategory=appA "error"
 ```sql
 _index=some_infrequent_index
 ```
-or
+Or
 
 ```sql
 _index=some_infrequent_index OR _index=some_continuous_index
