@@ -65,15 +65,26 @@ Some notes about Playbooks, Integrations and Actions in the Beta that may differ
 
 ### Permissions for the Automation Service
 
-Access to the Automation Service is controlled by permissions (capabilities) in the Sumo Platform:
-* Cloud SIEM Enterprise > Configuration > View Automations
-* Cloud SIEM Enterprise > Configuration > Manage Automations 
-* Cloud SIEM Enterprise > Configuration > Execute Automations
-* Cloud SOAR > View Cloud SOAR
-* Cloud SOAR > Automation Playbooks > Access
-* Cloud SOAR > Automation Playbooks > Configure
+Access to the Automation Service is controlled by [roles capabilities](docs/manage/users-roles/roles/role-capabilities/) in the Sumo Logic platform. To get access to the Automation Service:
+1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
+1. Click the **Roles** tab. 
+1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
+1. Add the following capabilities:
+   * Cloud SIEM Enterprise
+     * Configuration
+       * View Automations
+       * Manage Automations
+       * Execute Automations
+   * Cloud SOAR
+     * View Cloud SOAR
+     * Automation Playbooks
+       * Access
+       * Configure
+1. Follow the directions in [Access the Automation Service](#access-the-automation-service) to verify that you can see **Automation** in the **Configuration** menu.
 
-Note that in order to interact with most of the features described on this page, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
+:::note
+To interact with most of the Automation Service features, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
+:::
 
 ### API and Terraform support
 
