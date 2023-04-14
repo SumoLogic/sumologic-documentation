@@ -13,7 +13,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Collect Forwarded Events from a Windows Event Collector</h4></a>
+  <a href="/docs/send-data/installed-collectors/sources/collect-forwarded-events-windows-event-collector"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Collect Windows Forwarded Events</h4></a>
   <p>Track and collect forwarded events from a Windows Event Collector.</p>
   </div>
 </div>
