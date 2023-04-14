@@ -2368,6 +2368,7 @@ integrations: [
       items: [
         'contributing/edit-doc',
         'contributing/create-doc',
+        'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/code-of-conduct',
         'contributing/glossary',
