@@ -11,11 +11,7 @@ You can find the full list of receivers on our [OpenTelemetry Collector GitHub p
 
 ## Filelog Receiver
 
-The Filelog Receiver tails and parses logs from files.
-
-<!-- We should explain what each of the attribute in the configuration does.-->
-
-The following is a basic configuration for the Filelog Receiver (collecting logs from a file), which you can place in the `conf.d` directory:
+The Filelog Receiver tails and parses logs from files. The following is a basic configuration for the Filelog Receiver (collecting logs from a file), which you can place in the `conf.d` directory:
 
 ```yaml
 receivers:
