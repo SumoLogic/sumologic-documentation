@@ -58,19 +58,19 @@ You must first create an app to get integration key and configure RSA Key Pair a
   :::note
   You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
   :::
-8. Click on **ADD URI** under **Redirect URIs** and enter redirect uri to add new redirect uri. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
+8. Under **Redirect URIs**, click **ADD URI**, then enter `http://localhost/` as your new redirect URI. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
   :::note
-  You'll need redirect uri while requesting [application consent](#app-consent).
+  You'll need a redirect URI while requesting [application consent](#app-consent).
   :::
 9. Click **SAVE** to finish new app configuration.
 
 
 ### App Consent
 
-For requesting application consent, follow the steps below:
-1. Copy the below URL based on your account environment in the browser and press enter, replace **INTEGRATION_KEY**, and **REDIRECT_URI** with the values you copied at step 5 and step 8 of [App](#app) section respectively.
-   * For Development (Demo) Environment, `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
-   * For Production Environment, `https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
+Once your app is created, you need consent to make API calls. To request application consent, follow the steps below:
+1. Copy the below URL based on your account environment in the browser and press enter. Replace **INTEGRATION_KEY** and **REDIRECT_URI** with the values you copied in steps 5 and 8 of the [App](#app) section, respectively.
+   * For the development (demo) environment, use `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
+   * For the production environment, use `https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
 2.  Click **ALLOW ACCESS** to provide your consent. This should redirect you to **REDIRECT_URI**.
 
 ## States
