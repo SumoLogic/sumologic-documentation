@@ -36,9 +36,11 @@ The journey of 10,000 logs begins with a single collector. Your data analytics j
 
 ### Set up Collector
 
-#### OpenTelemetry Collector
+:::info
+OpenTelemetry is our preferred collector unless you're configuring security data ingestion.
+:::
 
-[OpenTelemetry Collector](/docs/send-data/opentelemetry-collector)
+#### OpenTelemetry Collector
 
 1. Log in to Sumo Logic.
 1. Go to **App Catalog** and click the app you'd like to install.
@@ -48,20 +50,21 @@ The journey of 10,000 logs begins with a single collector. Your data analytics j
   :::
 1. After you've installed the collector, you'll be prompted with instructions to set up the source.
 
-#### Installed and Hosted Collectors
+#### Installed and Hosted Collector
 
 1. Log in to Sumo Logic.
 1. From the Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="icon" />
-1. Choose from our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector), [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted), or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
-  :::info
-  OpenTelemetry is our preferred collector unless you're configuring security data ingest.
-  :::
+1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
 
 ### Set up Source
 
 In this step, you'll choose the data sources that will provide the most value for you.
 
-#### Installed and Hosted Collectors
+#### OpenTelemetry Collector
+
+See [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
+
+#### Installed and Hosted Collector
 
 1. Find your Collector in the Collection page table and select **Add** > **Add Source**. <br/>![WTS_Collection_Page](/img/get-started/WTS_Collection_Page.png)
 1. Follow the prompts to set up your desired Source. For more information on configuring specific sources, see [Installed Collector Sources](/docs/send-data/installed-collectors/sources/) and [Configure a Hosted Collector Source](/docs/send-data/hosted-collectors/configure-hosted-collector/#step-2-configure-a-source).
