@@ -252,6 +252,10 @@ cache_time = 5m
 You can configure the Insight Enrichment Server to pass parameters to a
 Powershell script, as shown in the examples below.
 
+:::important
+The scripts provided below are examples and are not guaranteed to work with all versions of the applications. Modify the scripts to work in your environment. If you need assistance, ask your Sumo Logic representative to engage the Professional Services team.
+:::
+
 ### CarbonBlack enrichment
 
 This enrichment queries the Carbon Black Device API for an IP address
