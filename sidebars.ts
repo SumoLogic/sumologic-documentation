@@ -429,7 +429,6 @@ module.exports = {
           items: [
             'send-data/collection/search-for-a-collector-or-source',
             'send-data/collection/start-stop-collector-using-scripts',
-            'send-data/collection/restart-collectors',
             'send-data/collection/edit-collector',
             'send-data/collection/edit-source',
             'send-data/collection/pause-resume-source',
@@ -1910,7 +1909,6 @@ integrations: [
           'integrations/cloud-security-monitoring-analytics/linux',
           'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9',
           'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10',
-          'integrations/cloud-security-monitoring-analytics/ueba',
           'integrations/cloud-security-monitoring-analytics/windows',
         ],
       },
