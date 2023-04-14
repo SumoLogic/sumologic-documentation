@@ -17,7 +17,6 @@ Sumo Logic Distribution for OpenTelemetry stores the configuration for the colle
 
 <!-- Double check the Windows path mentioned above -->
 
-
 ## Configuration location and structure
 
 The Sumo Logic OpenTelemetry Collector configuration is comprised of two parts. Based on the platform, the configuration by default is stored at the following location:
@@ -42,7 +41,9 @@ Any configuration for a Source (e.g., MySQL, Nginx, Application Logs) should be 
 It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`. For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
 :::
 
-The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input.
+The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input. Learn More.
+
+<!-- Learn More should be a link to App Catalog page that explains how the Source Configuration section works.-->
 
 ## Custom Configuration
 
@@ -52,6 +53,8 @@ There are some processors provided in `sumologic.yaml` that are intended to be u
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
 * **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
+
+<!--There is another processor called ResourceDetection/system. Should that also be used?-->
 
 We also expect the Sumo Logic exporter to be included in the `exporters` section.
 
