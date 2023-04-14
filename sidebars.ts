@@ -2456,7 +2456,6 @@ integrations: [
         'manage/manage-subscription/beta-opt-in',
         'beta/search-log-level',
         'beta/aws-private-link',
-        'beta/infrequent-tier-search',
         'manage/security/audit-index-access',
         'api/beta',
       ],

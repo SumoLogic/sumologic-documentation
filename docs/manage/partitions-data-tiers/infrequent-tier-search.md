@@ -12,10 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-:::note
-This Beta is now closed.
-:::
-
 Previously, scheduled searches were only supported in Sumo Logic’s Continuous data tier. Now, you can also schedule searches that run against the Infrequent tier.
 
 ## Sample Queries
