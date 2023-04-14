@@ -12,7 +12,7 @@ An OTLP/HTTP Source is an endpoint for receiving OTLP-formatted Logs, Metrics, 
 
 ## Tracing Prerequisites
 
-As indictated [here](/docs/apm/traces/quickstart.md#prerequisites) the following preprequisites apply before Sumo Logic can accept tracing data:
+As indicated [here](/docs/apm/traces/quickstart/#prerequisites), the following prerequisites apply before Sumo Logic can accept tracing data:
 
 | Account Type | Account Level |
 |:--|:--|
