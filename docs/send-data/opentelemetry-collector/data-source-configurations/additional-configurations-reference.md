@@ -15,7 +15,8 @@ Sumo Logic Distribution for OpenTelemetry stores the configuration for the colle
 | Mac | `/etc/otelcol-sumo/conf.d` |
 | Windows | `C:\ProgramData\Sumo Logic OpenTelemetry Collector\` |
 
-<!-- Double check the Windows path mentioned here -->  
+<!-- Double check the Windows path mentioned above -->
+
 
 ## Configuration location and structure
 
