@@ -2,12 +2,14 @@
 slug: /integrations/global-intelligence
 title: Global Intelligence Service Apps
 sidebar_label: Global Intelligence Service
-description: This category is about Global Intelligence for Sumo Logic apps.
+description: Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Learn about the Sumo Logic apps for Global Intelligence.
+<img src={useBaseUrl('img/global-intelligence/gis.svg')} alt="icon" width="25"/>
+
+Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
