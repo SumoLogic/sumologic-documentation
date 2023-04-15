@@ -35,11 +35,19 @@ In your GitHub authoring tool, run a search for the URL you're removing. In this
 Never do a Find All > Replace All, as this can break unrelated items like image paths. Replace each URL on a one-by-one basis.
 :::
 
-## Step 3: Add deprecation note (optional)
+## Step 3: Delete the doc
+
+Delete the actual .md doc file from the repository (in this example, it'd be `docs/integrations/web-servers/nginx-legacy.md`).
+
+## Step 4: Remove doc from navigation
+
+Remove the doc from the navigation menu ([sidebars.ts](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts) file).
+
+## Step 5: Add deprecation note (optional)
 
 If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide/#notes-and-admonitions) in the new doc stating the legacy solution has been deprecated. Check with a SME to be sure.
 
 
-## Step 4: Hide from Google results (optional)
+## Step 6: Hide from Google results (optional)
 
 It can take months for an old URL to drop from Google search engine results. If you run into a scenario where you need to hide a page immediately from Google, [open a GitHub Issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) and provide the details for our site admin.

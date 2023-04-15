@@ -232,7 +232,7 @@ To collect AWS CloudTrail events, do the following:
    * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category**. Enter a source category, for example, AWS/Cloudtrail.
+   * **Source Category**. Enter a source category, for example, AWS/CloudTrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
    * **Enable Timestamp Parsing**. Select the checkbox to enable.
