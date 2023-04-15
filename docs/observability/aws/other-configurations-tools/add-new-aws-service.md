@@ -207,7 +207,7 @@ Once you are done with the above steps, the AWS service will be added to the AWS
 
 ### Add **account** field to log data
 
-Logs from AWS services are collected into Sumo Logic via Amazon S3, AWS Elastic Load Balancing, Amazon Cloudfront, AWS Cloudtrail, Amazon S3 Audit, or HTTP Log source (Cloudwatch logs). You can add metadata fields to sources using Fields configuration. 
+Logs from AWS services are collected into Sumo Logic via Amazon S3, AWS Elastic Load Balancing, Amazon Cloudfront, AWS CloudTrail, Amazon S3 Audit, or HTTP Log source (Cloudwatch logs). You can add metadata fields to sources using Fields configuration. 
 
 Add account field by adding fields to your log source as shown below:
 
