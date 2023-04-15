@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Amazon Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With Cloudtrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
+The Sumo Logic App for Amazon Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With CloudTrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
 
 The Sumo Logic App for Aurora PostgreSQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
@@ -179,7 +179,7 @@ To collect AWS CloudTrail events, do the following:
    * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
    * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category** - Enter a source category, for example, AWS/Cloudtrail.
+   * **Source Category** - Enter a source category, for example, AWS/CloudTrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
    * **Enable Timestamp Parsing** - Select the checkbox to enable.

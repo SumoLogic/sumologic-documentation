@@ -554,9 +554,8 @@ Source Parameters define how collectors and their sources are set up in Sumo Log
 
 The following examples override the following:
 
-* Example 1 overrides the cloudtrail_source_details parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
-
-* Example 2 overrides the auto_enable_access_logs variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
+* Example 1 overrides the `cloudtrail_source_details` parameter to collect CloudTrail logs from a user-provided s3 bucket. CloudTrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
+* Example 2 overrides the `auto_enable_access_logs` variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
 
 **Default example:**
 
@@ -573,7 +572,7 @@ module "collection-module" {
 
 **Override Example 1: Override the cloudtrail_source_details parameter**
 
-Override the **cloudtrail_source_details** parameter to collect Cloudtrail logs from a user-provided s3 bucket. Cloudtrail logs in this case are already stored in the user-provided s3 bucket.
+Override the `cloudtrail_source_details` parameter to collect CloudTrail logs from a user-provided s3 bucket. CloudTrail logs in this case are already stored in the user-provided s3 bucket.
 
 ```
 module "collection-module" {
@@ -583,9 +582,9 @@ module "collection-module" {
  access_id    = var.sumologic_access_id
  access_key   = var.sumologic_access_key
  environment  = var.sumologic_environment
- # Enable Collection of Cloudtrail logs
+ # Enable Collection of CloudTrail logs
  collect_cloudtrail_logs   = true
- # Collect Cloudtrail logs, from user provided s3 bucket
+ # Collect CloudTrail logs, from user provided s3 bucket
  # Don't create a s3 bucket, use bucket details provided by the user. Don't force destroy bucket
  cloudtrail_source_details = {
    source_name     = "CloudTrail Logs us-east-1"
@@ -988,10 +987,10 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 
 Create a Sumo Logic CloudTrail Logs Source. You have the following options:
 
-* `true` - Ingest Cloudtrail logs into Sumo Logic - Creates a Sumo Logic CloudTrail Log Source that collects CloudTrail logs from an existing bucket or new bucket. If true, configure "cloudtrail_source_details" to ingest CloudTrail logs.
+* `true` - Ingest CloudTrail logs into Sumo Logic - Creates a Sumo Logic CloudTrail Log Source that collects CloudTrail logs from an existing bucket or new bucket. If true, configure "cloudtrail_source_details" to ingest CloudTrail logs.
 * `false` - You are already ingesting CloudTrail logs into Sumo Logic.
 
-When enabling Cloudtrail logs setting to true, you need to provide [cloudtrail_source_details](https://docs.google.com/document/d/1-x4T7hg0IrliEC_smOoUyYLMQ4_C_uxgrtK4F18F84A/edit#heading=h.i6xrjtjugpny) with configuration information.
+When enabling CloudTrail logs setting to true, you need to provide [cloudtrail_source_details](https://docs.google.com/document/d/1-x4T7hg0IrliEC_smOoUyYLMQ4_C_uxgrtK4F18F84A/edit#heading=h.i6xrjtjugpny) with configuration information.
 
 **Default value:**
 
@@ -1032,9 +1031,9 @@ To enable, set [collect_cloudtrail_logs](#collect_cloudtrail_logs) to true and p
 The following override example uses the bucket “`aws-observability-logs`” with path expression "`*AWSLogs/*/CloudTrail/*/*`" path expression:
 
 ```
-# Enable Collection of Cloudtrail logs
+# Enable Collection of CloudTrail logs
 collect_cloudtrail_logs   = true
-# Collect Cloudtrail logs, from user provided s3 bucket
+# Collect CloudTrail logs, from user provided s3 bucket
 # Don't create a s3 bucket, use bucket details provided by the user. Don't force destroy bucket
 cloudtrail_source_details = {
  source_name     = "CloudTrail Logs us-east-1"
