@@ -257,6 +257,10 @@ Powershell script, as shown in the examples below.
 This enrichment queries the Carbon Black Device API for an IP address
 and returns host information. 
 
+:::important
+The example provided below is not guaranteed to work with all versions of the application. Modify the example to work in your environment. If you need assistance, ask your Sumo Logic representative to engage the Professional Services team.
+:::
+
 **Script:  c:\\scripts\\CB.ps1**
 
 ```
@@ -283,6 +287,10 @@ command_args = -file c:\scripts\cb.ps1 ${IP}
 ### CrowdStrike enrichment
 
 This enrichment queries the CrowdStrike Device API for an IP address and returns host information.
+
+:::important
+The example provided below is not guaranteed to work with all versions of the application. Modify the example to work in your environment. If you need assistance, ask your Sumo Logic representative to engage the Professional Services team.
+:::
 
 **Prerequisites**
 
@@ -321,6 +329,10 @@ ip_range = 192.168.38.104-192.168.38.105
 
 GreyNoise helps security teams reduce noise and prioritize signal-targeted attacks against their organization. This enrichment queries GreyNoise to see what it knows about the IP address.
 
+:::important
+The example provided below is not guaranteed to work with all versions of the application. Modify the example to work in your environment. If you need assistance, ask your Sumo Logic representative to engage the Professional Services team.
+:::
+
 **Script - c:\scripts\GreyNoise.ps1**
 
 ```
@@ -346,6 +358,10 @@ command_args = -file c:\scripts\GreyNoise.ps1 ${IP}
 ### SentinelOne enrichment
 
 The SentinelOne enrichment queries IP addresses or hostnames using the SentinelOne API and returns the information SentinelOne knows about the host.
+
+:::important
+The example provided below is not guaranteed to work with all versions of the application. Modify the example to work in your environment. If you need assistance, ask your Sumo Logic representative to engage the Professional Services team.
+:::
 
 1. In the PowerShell scripts below, replace `usea1-partners` with your portal.
 1. In the PowerShell scripts below, replace `<>` with your SentinelOne API key
