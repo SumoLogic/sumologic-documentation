@@ -70,7 +70,7 @@ server machine of your choice:
 
 ## Step 2: Configure the Terraform script
 
-1. Clone the repository https://github.com/SumoLogic/sumologic-solution-template:
+1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
     ```bash
     $ git clone https://github.com/SumoLogic/sumologic-solution-templates
     ```
