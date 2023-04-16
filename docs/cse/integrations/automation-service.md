@@ -311,14 +311,17 @@ An action node in a playbook runs an enrichment or notification operation. Strin
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
 1. The **Add Node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
 1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} alt="Add action node" width="500"/>  
-1. Give the node a **Name**. Give the action a name that can easily identify the action being taken.
-1. Select the **Type** of action: **Enrichment** or **Notification**. 
-1. Select the **Action**. The integration **Resource** that the action originates from is displayed. See [View the integration that provides the action](#step-3-view-the-integration-that-provides-the-action) to learn how to look for actions on integrations.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="500"/> 
-1. Fill out the fields with the specific information required by the action. As with any action type you choose, a new section will be added asking for more clarifying information about how you would like this action to be performed. 
+1. Give the node a **Name** that can easily identify the action being taken.
+1. Select the **Type** of action as **Enrichment** or **Notification**. 
+1. Select the **Action** the drop-down list. The integration **Resource** that the action originates from is displayed along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="500"/> 
+1. Fill out the fields with the specific information required by the action. For get more information about the action, you can [view the integration that provides the action](#step-3-view-the-integration-that-provides-the-action).
 1. Once you have entered all the information requested, click **Create**. The action node is added.
 1. Repeat the steps to add other action nodes. 
+1. [Add condition nodes](#add-a-condition-node-to-a-playbook) if desired. 
+1. When you are done configuring your playbook, click **Save** at the bottom of the window.<br/><img src={useBaseUrl('img/cse/automations-save-playbook-button.png')} alt="Save the playbook" width="250"/> 
+1. When you are done configuring the playbook, click the **Publish** button at the bottom of the playbook windows.1. Click **Save** at the bottom of the playbook window to save the playbook.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} alt="Publish the playbook" width="250"/> 
 
-#### Add a condition node to a playbook
+### Add a condition node to a playbook
 
 Define a conditional statement to be met before the next node type can be executed.
 
@@ -326,79 +329,19 @@ Define a conditional statement to be met before the next node type can be execut
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
 1. The **Add Node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
 1. Select **Condition**. The condition node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" width="500"/>
-
-
-When developing the first condition, users have multiple options to
-choose from:
-
-- **Insert a custom value**. Will execute when a user-defined variable is observed within an Incident.
-- **Get value from an Incident field**. Will execute when a value is observed within an Incident Field (see [Incident Fields](#custom-fields)).
-- **Get value from Triage Field**. Will execute when a value is observed within a Triage Field (see [Triage Fields](#triage-1)).
-- **Get value from previous action**. Will execute when a value is observed from a previous input or output field.
-
-From our earlier example, we are going to choose to evaluate the output
-from our Domain Reputation check of the observed domain. Click **Output**
-from **Get value from previous action**.
-
-A list of available results or outputs from the previously selected
-integration will be displayed in JSON format. Select which output type
-(e.g., hashes, IP addresses, domains) to evaluate and add it to the
+1. Click **Create**. The empty condition appears on the playbook.
+1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from a previous action.
+1. Now that you've linked the condition to an action, hover the mouse over the condition node and click the edit button on the node to configure the condition settings.<br/><img src={useBaseUrl('img/cse/automations-edit-condition-node.png')} alt="Edit a condition node" width="150"/> 
+1. The condition node configuration screen displays again. Under **Condition1** click **Select a value**.<br/><img src={useBaseUrl('img/cse/automations-add-a-condition-3.png')} alt="Select values for the condition" width="500"/> 
+1. Click **Get Value** and select from the drop-down menu whether the value will evaluate to **true (bool)**, **false (bool)**, or **empty**.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node-2.png')} alt="Get values for the condition" width="500"/>
+1. Under **Get value from a previous action** select the value to feed into the condition. The example shows **Get Devices** and **Playbook inputs** that came from a previous action. (The condition must be linked by a line to a previous action node to receive outputs from the action.) Click the options from a previous action and select which output type (for example, hashes, IP addresses, domains) to evaluate and add it to the condition.
+1. The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the condition.
+1. Now that **Condition 1** is defined, you can choose to filter your
+results further by selecting an **AND/OR** operator to define another
 condition.
-
-![Node Placeholder Function](/img/cloud-soar/image83.png)
-
-
-The selected output type will be displayed under **Condition 1**. Select
-which condition you would like for the output results to meet from the
-inequality operators below and click **Select a value** to define the
-condition.
-
-![Condition Node Settings](/img/cloud-soar/image84.png)
-
-
-The condition we want to meet for this example is "Advance this Incident
-forward if the observed domain returns at least 1 result or **row** from
-VirusTotal". We insert **0** into the custom value field and click **+** to
-add it to the condition.
-
-![Manual Value Adding](/img/cloud-soar/image85.png)
-
-
-Now that **Condition 1** is defined*,* users can choose to filter their
-results further by selecting an AND/OR operator to define another
-condition.
-
-![Condition Settings](/img/cloud-soar/image86.png)
-
-
-Once the condition is defined, click **Create** to add it to the playbook.
-
-When new conditions are created, we will need to define what happens
-when their results meet one of our criteria. A new node is added to the
-condition below. This node breaks the condition down into successes and
-failures and can be modified by hovering over it and clicking **+**.
-
-![Use of Condition](/img/cloud-soar/image87.png)
-
-
-This new node represents a decision tree in which both results, success
-or failure, will have to be defined. Follow the steps above to finalize
-the condition
-
-![Nodes List](/img/cloud-soar/image88.png)
-
-
-### Playbook Template
-
-When a Playbook is assigned to an incident, these predefined actions and tasks can
-be converted to actual tasks within Cloud SOAR for assignment to users and oversight by management. Each individual task can be assigned attributes, such as who it is assigned to, who has authorized the task, and when it is due. A **Playbook Template** permits administrators to predefine some of these attributes based on an existing Playbook so that they appear as defaults when the Playbook Template is utilized.
-
-Playbooks are the core of Cloud SOAR's automation capabilities. Playbooks
-permit administrators to create automated and semi-automated workflows
-utilizing Cloud SOAR integrations, tasks and a variety of flow control
-decisions and other actions.
-
-**playbook** workflows can be configured to execute automatically without human intervention, or can be executed in an interactive mode, where user input is required to authorize predefined actions.
+1. Click **Update**.
+1. When you create a new condition, you need to define what happens
+when their results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
 
 
 ## Integrations
