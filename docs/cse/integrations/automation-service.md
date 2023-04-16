@@ -9,17 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic describes the Automation Service for Cloud SIEM Enterprise (CSE).
 
-:::info Limited access
-The Automation Service is available on a limited access basis. If you would the Automation Service enabled in your Cloud SIEM Enterprise environment, contact your Sumo Logic account representative.
+:::info Limited availability
+The Automation Service is available on a limited availability (LA) basis. If you would the Automation Service enabled in your Cloud SIEM Enterprise environment, contact your Sumo Logic account representative.
 :::
 
 ## About the Automation Service
 
 The Automation Service for Cloud SIEM Enterprise (CSE) uses Sumo Logic [Cloud SOAR automation](/docs/cloud-soar/automation/) capabilities to allow you to define and automate smart actions including enrichments and notifications. These actions can be automatically triggered when certain events occur in CSE, helping you to quickly investigate, understand, and react to potential security threats.
 
-You can interact with the service through [automations](#automations), which execute playbooks. [Playbooks](#playbooks)  are composed of one or more [actions](#actions) with a workflow that could include parallel actions and logic steps. Actions are included with [Integrations](#integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create you own integrations, actions, and playbooks.
+You can interact with the service through [automations](#automations), which execute playbooks. [Playbooks](#playbooks)  are composed of one or more [actions](#actions) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](#integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
-:::note Limited access
+:::note Limited availability
 Playbooks, integrations, and actions in this version that may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/):
 * Playbooks type must be **CSE**.
 * The Automation Service only supports automated enrichment, notification, and custom action types at this time. 
@@ -41,58 +41,13 @@ Playbooks, integrations, and actions in this version that may differ from those 
   1. Invites certain people to the Slack channel.
 
 :::note
-* The Automation Service is intended to replace the legacy Insight Actions and the Enrichment Service. All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](#bridge)). Those capabilities will be deprecated later in 2023.
+* The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Enrichment Service](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](#bridge)). Those capabilities will be deprecated later in 2023.
 * The Automation Service is enabled to allow customers to execute up to 10,000 actions per day. 
 :::
 
-### Tour the Automation Service
+### Prerequisites
 
-#### Step 1: View automations
-[Automations](#automations) add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
-1. Click the **Configuration** (gear icon) at the top of the UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
-1. View the list of available automations. If no automations display, you must first [create an automation](#create-an-automation) by clicking **Create Automation**. 
-
-#### Step 2: View playbooks
-A [playbook](#playbooks) contains a series of actions that are performed when an automation runs.
-1. From the automations screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
-
-#### Step 3: View actions on a playbook
-[Actions](#actions) are individual operations performed in a playbook.
-1. Open a playbook. Actions are the boxes in the flow.
-1. Click an action to view the integration resource that provides it. 
-
-#### Step 4: View integrations
-Playbooks run actions provided by resources in [integrations](#integrations). 
-1. Click **Integrations** in the left navigation bar.
-1. Select an integration to see its resources and the actions the resource provides.
-
-#### Step 4: View results of an automation
-When automations run, the results display on Insights and Entities.
-1. Open an Insight or Entity.
-1. Click **Automations** at the top of the screen.
-1. View the automations that were run. Each automation shows its result under **Status**. You can click **View Playbook** to see the playbook that ran.
-1. To run an automation manually:
-   * Insights:
-      1. Click **Actions** under the Insight's name. 
-      1. Select an option under **Insight Automation** to run an automation on the Insight.
-      1. Select an option under **Entity Automation** to run an automation on Entities on the Insight. 
-   * Entities:
-      1. Click **Automations** under the Entity's name. 
-      1. Select an option under **Entity Automation**. 
- 
-
-#### Step 5: View enrichments
-When automations run, they can provide enrichments to Insights, Entities, and Signals. 
-1. Open an Insight, Entity, or Signal with enrichments provided by an automation. 
-1. Click **Enrichments** at the top of the screen.
-1. If [threat indicators are set by the enrichment](#enrichments-and-threat-indicators), they are displayed.
-
-
-### Access rights
-
-#### Required role capabilities
+#### Configure role capabilities
 
 After the Automation Service is enabled for your organization, access to the Automation Service is controlled by [roles capabilities](docs/manage/users-roles/roles/role-capabilities/) in the Sumo Logic platform. To get access to the Automation Service:
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
@@ -115,6 +70,18 @@ After the Automation Service is enabled for your organization, access to the Aut
 To interact with most of the Automation Service features, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
 :::
 
+#### Authorize integrations
+
+To use [integrations](#integrations), you must authorize their resources for use in the Automation Service.
+1. Click the **Configuration** (gear icon) at the top of the UI.
+1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/> 
+1. Click **Integrations** in the left navigation bar.
+1. Select the integration you want to authorize.
+1. Hover over the resource and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
+1. Enter the authorization needed by the resource. What you enter is specific to the resource you're using. In this case, enter the the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
+
+
 #### API and Terraform support
 
 The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support automations. The new endpoints include:
@@ -129,6 +96,54 @@ The Sumo Logic Terraform provider has also been updated. For more information, s
 
 <!-- github-comment The beta article said: "The Automation Service API is documented in the [Cloud SOAR documentation](/docs/cloud-soar/)." No, the API is not documented in the Cloud SOAR documentation. - John Pipkin. April 15, 2023. -->
 
+
+### Tour the Automation Service
+
+In this section we'll show you how an automation runs a playbook, which in turns runs actions that are provided by integrations. 
+
+#### Step 1: View an automation
+[Automations](#automations) add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
+1. Click the **Configuration** (gear icon) at the top of the UI.
+1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation) by clicking **New Automation**.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
+1. To see the playbook an automation runs, click the **Edit** button.<br/><img src={useBaseUrl('img/cse/automations-edit-button.png')} alt="Automation edit button" width="800"/>
+1. The playbook is shown.<br/><img src={useBaseUrl('img/cse/automations-edit-dialog.png')} alt="Automation edit dialog" width="400"/>
+
+#### Step 2: View the playbook for the automation
+A [playbook](#playbooks) contains a series of actions that are performed when an automation runs.
+1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. Open the playbook for the automation you viewed in [Step 1](#step-1-view-an-automation).<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
+1. Note the actions in the playbook. [Actions](#actions) are the boxes in the flow, and are the operations performed in a playbook. Click an action to view the integration resource that provides it.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
+
+#### Step 3: View the integration that provides the action
+Playbooks run actions provided by resources in [integrations](#integrations). 
+1. Click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
+1. Select the integration that provides the action you viewed in [Step 2](#step-2-view-the-playbook-for-the-automation). The action is shown in the list of actions on the resource.<br/><img src={useBaseUrl('img/cse/automations-resource-example.png')} alt="Resource example" width="600"/>
+
+#### Step 4: View results of an automation
+
+You've now seen how an automation runs a playbook, which in turns runs actions that are provided by integrations. Let's now see what happens after automations run.
+
+When automations run, the results display on Insights and Entities.
+1. Open an Insight or Entity.
+1. Click **Automations** at the top of the screen. The example below shows automations that ran on an Insight. Each automation shows its result under **Status**. You can click **View Playbook** to see the playbook that the automation ran.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an Insight" width="800"/>
+1. While viewing an Insight or Entity, you can run automations manually:
+   * Insights:
+      1. Click **Actions** under the Insight's name. 
+      1. Select an option under **Insight Automation** to run an automation on the Insight.
+      1. Select an option under **Entity Automation** to run an automation on Entities on the Insight.
+      <br/><img src={useBaseUrl('img/cse/automations-insight-actions-menu.png')} alt="Actions menu on an Insight" width="300"/> 
+   * Entities:
+      1. Click **Automations** under the Entity's name. 
+      1. Select an option under **Entity Automation**. 
+      <br/><img src={useBaseUrl('img/cse/automations-entity-automations-menu.png')} alt="Automations menu on an Entity" width="250"/> 
+ 
+#### Step 5: View enrichments
+When automations run, they can provide enrichments to Insights, Entities, and Signals. 
+1. Open an Insight, Entity, or Signal with enrichments provided by an automation. 
+1. Click **Enrichments** at the top of the screen.
+1. If [threat indicators are set by the enrichment](#enrichments-and-threat-indicators), they are displayed. The following example shows a **Malicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-malicious-threat-indicator.png')} alt="Threat indicator example" width="800"/> 
 
 ## Automations
 
