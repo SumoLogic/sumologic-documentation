@@ -17,7 +17,7 @@ The Automation Service is available on a limited availability (LA) basis. If you
 
 The Automation Service for Cloud SIEM Enterprise (CSE) uses Sumo Logic [Cloud SOAR automation](/docs/cloud-soar/automation/) capabilities to allow you to define and automate smart actions including enrichments and notifications. These actions can be automatically triggered when certain events occur in CSE, helping you to quickly investigate, understand, and react to potential security threats.
 
-You can interact with the service through [automations](#automations), which execute playbooks. [Playbooks](#playbooks)  are composed of one or more [actions](#actions) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](#integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
+You can interact with the service through [automations](#automations), which execute playbooks. [Playbooks](#playbooks)  are composed of one or more [actions](#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](#integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
 :::note Limited availability
 Playbooks, integrations, and actions in this version that may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/):
@@ -73,13 +73,13 @@ To interact with most of the Automation Service features, you must have at least
 #### Authorize integrations
 
 To use [integrations](#integrations), you must authorize their resources for use in the Automation Service.
-1. Click the **Configuration** (gear icon) at the top of the UI.
+1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. Click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/> 
 1. Click **Integrations** in the left navigation bar.
 1. Select the integration you want to authorize.
-1. Hover over the resource and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
-1. Enter the authorization needed by the resource. What you enter is specific to the resource you're using. In this case, enter the the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
+1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
+1. Enter the authorization needed by the resource. What you enter is specific to the resource you're using. In the example below, enter the the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 
 
 #### API and Terraform support
@@ -103,7 +103,7 @@ In this section we'll show you how an automation runs a playbook, which in turns
 
 #### Step 1: View an automation
 [Automations](#automations) add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
-1. Click the **Configuration** (gear icon) at the top of the UI.
+1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation) by clicking **New Automation**.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
 1. To see the playbook an automation runs, click the **Edit** button.<br/><img src={useBaseUrl('img/cse/automations-edit-button.png')} alt="Automation edit button" width="800"/>
@@ -114,7 +114,7 @@ A [playbook](#playbooks) contains a series of actions that are performed when an
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Open the playbook for the automation you viewed in [Step 1](#step-1-view-an-automation).<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
-1. Note the actions in the playbook. [Actions](#actions) are the boxes in the flow, and are the operations performed in a playbook. Click an action to view the integration resource that provides it.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
+1. Note the actions in the playbook. [Actions](#add-an-action-node-to-a-playbook) are the boxes in the flow, and are the operations performed in a playbook. Click an action to view the integration resource that provides it.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
 
 #### Step 3: View the integration that provides the action
 Playbooks run actions provided by resources in [integrations](#integrations). 
@@ -150,26 +150,30 @@ When automations run, they can provide enrichments to Insights, Entities, and Si
 ### Create an automation
 1. Click the gear icon at the top of the CSE UI and choose **Automation** under **Integrations**. 
 1. Click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)
-<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="560"/>
-1. Select a **Playbook** from the drop-down list. The Playbook must be defined and its type must be set to **CSE** before associating it with an automation.
-1. Select whether the Playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the Playbook from CSE. (It does not impact the trigger selection.) If **Entity** is selected, select one or more Entity Types. The Playbook will only execute on the Entity Types selected. 
-1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** or **Automations** menus.
+<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
+1. Select a **Playbook** from the drop-down list. The playbook must be defined and its type must be set to **CSE** before associating it with an automation.
+1. Select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from CSE. (It does not impact the trigger selection.) If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected. 
+1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** mneu on Insights or **Automations** menus on Entities.
 1. Set the **Status**. Disabled automations will not run automatically and will not appear in any **Actions** or **Automations** menus.
 1. Click **Add to List** (or **Update** if editing an existing automation).
 
-### Run an automation
+### Run an automation automatically
 
-##### Automatically
 If an automation is set to run when an Insight is created or closed, it runs automatically provided that:
 * The automation is enabled, 
 * The automation is configured to run on the trigger(s), and 
 * The automation is an Insight automation, or
 * The automation is an Entity automation, and the Insight contains one or more Entities of the Entity types configured in the automation (this includes the primary and any related Entities).
 
-##### Manually
-Automations can be run manually from the **Actions** drop-down on [Insight details](/docs/cse/records-signals-entities-insights/about-cse-insight-ui#insight-details-page) pages. (On [Entity details](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) pages, Entity Automations can also be run manually from the **Automations** drop-down).
+### Run an automation manually
 
-<img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" width="230"/>
+Automations can be run manually from the **Actions** drop-down menu on [Insight details](/docs/cse/records-signals-entities-insights/about-cse-insight-ui#insight-details-page) pages:
+
+<img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" width="250"/>
+
+On [Entity details](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) pages, Entity Automations can be run manually from the **Automations** drop-down menu:
+
+<img src={useBaseUrl('img/cse/automations-entity-automations-menu.png')} alt="Automations menu on an Entity" width="250"/> 
 
 You will see three sections in the Action menu:
 * **Insight Automation**. Displays a list of all enabled Insight automations configured to run manually.
@@ -180,15 +184,17 @@ You will see three sections in the Action menu:
 You can run the same automation more than once for a given Entity or Insight, but not at the same time. Additional attempts to run an automation while an instance is running will result in an error.
 :::
 
+#### Select Entities to run the automation on
+
 If you select **Entity Automation > Run Automations** you will be prompted to select one or more of the Entities included in the Insight:
 
-<img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" width="600"/>
+<img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" width="400"/>
 
 1. Select one or more of the Entities listed or select **Select All Entities**. The selected Entities don’t have to be the same type. 
 1. Click **Next**. A list displays of all Entity automations that are enabled, configured to be run manually, and configured for at least one of the Entity Types you selected on the previous screen. 
 1. Select the automations you wish to run and click **Run Automation**. The automations will run. The system will automatically run the appropriate automations for the appropriate Entity Types.
-<img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="600"/>
-  
+<img src={useBaseUrl('img/cse/automations-entity-menu-2.png')} alt="Entity Automation menu with selections" width="400"/>
+
 In this example:
 * The CarbonBlack automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
 * The nslookup automation is configured to only run on IP Addresses so it will run three times.
@@ -202,15 +208,15 @@ After running an automation, you can go to the **Automations** tab to view its s
 
 The list of automations is organized by Insight and Entity, and each section can be collapsed and expanded. On each card you will find:
 * The time and date when the automation was run.
-* The name and description of the associated Playbook.
-* The Playbook’s current status.
+* The name and description of the associated playbook.
+* The playbook’s current status.
 * A link to **View Playbook** in the Automation Service UI.
 
 :::note
-During the Beta, you may have to manually refresh this screen to see the most current Status.
+You may have to manually refresh this screen to see the most current Status.
 :::
 
-If you click **View Playbook**, the Automation Service UI will open to the Playbook Status page:
+If you click **View Playbook**, the Automation Service UI will open to the playbook status page:
 
 <img src={useBaseUrl('img/cse/automations-playbook-status.png')} alt="Playbook status" width="600"/>
 
@@ -218,7 +224,7 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 <img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" width="600"/>
 
-For more information about the Playbook Status page and understanding how to interact with the Playbook graph, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
+For more information about the playbook status page and understanding how to interact with the playbook graph, see [Cloud SOAR Automation](/docs/cloud-soar/automation/).
 
 ### Enrichments and threat indicators
 
@@ -262,137 +268,64 @@ Support for three new optional attributes have been added to the enrichment sche
 
 ### About playbooks
 
-A **Playbook** is a predefined set of actions or tasks to respond to a certain event or incident type. The creation and utilization of playbooks can allow an organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
+A playbook is a predefined set of operations that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
-Playbooks are automated workflows which can be configured to execute
+Playbooks can be configured to execute
 automatically without user intervention, acting on information from the
 incident, or can be executed in interactive mode, where user input is
 required to authorize predefined actions.
 
-To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
+### View playbooks
 
-![Playbook](/img/cloud-soar/image71.png)
+1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
+1. Under **Integrations** select **Automation**.
+1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
+1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](#integrations) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
 
-A list of any previously created Playbooks will be displayed on the
-left-side of the page. Click **+** to add a new playbook.
 
-A new configuration box will be displayed. Name your new playbook,
-select the **Incident Type** to associated with it, and click save to continue. [Learn more](#custom-fields).
+### Create a new playbook
 
-Once the new playbook has been saved, it will be displayed on the
-left-side of the screen. To begin to configure the new playbook, select
+1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
+1. Under **Integrations** select **Automation**.
+1. Click **Manage Playbooks**. Previous-created playbooks will display. <br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>
+1. A new configuration box will be displayed. Name your new playbook,
+select the incident **Type** to associated with it (for example, **Denial of Service**, **Malware**, **Phishing**, etc.)
+1. Click **Save**. The new playbook appears in the list of available playbooks.
+1. To configure the new playbook, select
 it from the list and click the **Edit** button at the bottom of the
-screen.
+screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" width="600"/><br/>Opening the playbook will present a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
+1. To begin to add the first node within the new playbook, click the **+** on the **Start** node. The **Add Node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
+   * [**Action**](#add-an-action-node-to-a-playbook): Automatically take specific actions such as enriching data or taking containment steps.
+   * [**Condition**](#add-a-condition-node-to-a-playbook): Use conditional statements to define what actions should be taken in response to previous inputs.
+   * **Playbook**: Call other playbooks in response to conditional
+ statements.
 
-![Playbook List](/img/cloud-soar/image72.png)
+### Add an action node to a playbook
 
+An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. 
 
-Opening the playbook will present a black screen with a **Start** node, and
-an **End** node. These nodes dictate the beginning and the end of the
-playbook's automation sequence. They can be dragged and dropped anywhere
-on the screen to allow for multiple integrations and conditional
-statements to be executed.
+1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
+1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
+1. The **Add Node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} alt="Add action node" width="500"/>  
+1. Give the node a **Name**. Give the action a name that can easily identify the action being taken.
+1. Select the **Type** of action: **Enrichment** or **Notification**. 
+1. Select the **Action**. The integration **Resource** that the action originates from is displayed. See [View the integration that provides the action](#step-3-view-the-integration-that-provides-the-action) to learn how to look for actions on integrations.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="500"/> 
+1. Fill out the fields with the specific information required by the action. As with any action type you choose, a new section will be added asking for more clarifying information about how you would like this action to be performed. 
+1. Once you have entered all the information requested, click **Create**. The action node is added.
+1. Repeat the steps to add other action nodes. 
 
-To begin to add the first node within the new playbook, click the **+** on
-the **Start** node.
+#### Add a condition node to a playbook
 
-![New Playbook](/img/cloud-soar/image73.png)
+Define a conditional statement to be met before the next node type can be executed.
 
-The playbook configuration page is displayed. It gives you the ability
-to choose from the following options:
-* **Action**: Automatically take specific actions such as enriching
- data or taking containment steps when an Incident Template is matched
-* **Task**: Assign a task to an Cloud SOAR user
-* **Condition**: Use conditional statements to define what actions
- should be taken in response to previous input/output feeds
-* **User Choice**: Pause automatic processing to allow for manual
- intervention
-* **Playbook**: Call other R3 Playbooks in response to conditional
- statements or user choice actions
-
-
-### Actions
-
-Select **Action** from the node types. A new screen will be displayed
-showing all actions a user has to choose from. These action types
-(Enrichment, Containment, Custom Actions, and Notifications) will
-directly interact with Cloud SOAR's integrations to either gather data or
-initiate actions automatically.
-
-![Node Adding](/img/cloud-soar/image74.png)
-
-![Node Adding](/img/cloud-soar/image75.png)
-
-
-As an example, lets choose Enrichment from the action type screen. As
-with any action type we choose, a new section will be added to our
-configurations screen asking for more clarifying information on how we
-would like this action to be performed.
-
-Title the enrichment action something that can easily be identified by
-the action that is being taken, such as **Domain Reputation Check**.
-Next, we want to choose the action, expand the **Action** dropdown list
-and review the available options.
-
-![Node Creation](/img/cloud-soar/image76.png)
-
-
-![Node Resource Adding](/img/cloud-soar/image77.png)
-
-
-Expand the **Resource** dropdown list to
-view all active Integration feeds. The feeds found in each action type
-are those who can execute the specified action (i.e. blocking of an IP
-address can be done through firewalls/WAFs, etc.). Once a resource is
-assigned a new dropdown list will be displayed. Options found in this
-list are comprised of **Incident Artifact** fields, which are the incident
-fields Cloud SOAR parses out when issuing new incidents.
-
-Continuing from the example above, an Enrichment action is being called
-to gather Domain Reputation information from VirusTotal for the domain
-observed in the Incident. Once all enrichment variables are identified,
-click ****Create**** to continue.
-
-The newly added node will now be visible in playbook configuration
-screen. To add an additional node hover over the newly created
-enrichment task. A menu bar will be displayed at the bottom of the node,
-click **+** to add a new node, the pencil icon to edit the existing node,
-or the trash can to delete the existing node.
-
-![node menu](/img/cloud-soar/image78.png)
-
-
-### Task
-
-From the node selection menu, choose **Task**. A new configuration screen
-will be displayed. Title the new task and add any description if
-desired. The next dropdown lists are **Authorizer** and **Owner** fields.
-The **Authorizer** field is the user who is assigning the task, and the
-**Owner** field is the user who will be assigned the task to complete.
-When the task has been developed, click **Create**.
-
-![Task Node](/img/cloud-soar/image79.png)              
-
-
-For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run
-time. These variable placeholders may be added by clicking on the
-![placeholder icon](/img/cloud-soar/image80.png) icon. To add a variable placeholder,
-begin typing in the newly inserted placeholder box and Cloud SOAR will
-display a list of available options which match. For example, typing
-**incident**. will display a list of all the valid incident fields which
-may be added as variable placeholders.
-
-### Condition
-
-From the node's menu, choose **Condition**. A new configuration screen
-will be displayed which will enable a user to define a conditional
-statement to be met before the next node type can be executed. Under
-**Condition 1,** click on **Select a value** to define the first
-condition.
-
-![Condition Node](/img/cloud-soar/image81.png)
-
-![Condition Node](/img/cloud-soar/image82.png)
+1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
+1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
+1. The **Add Node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. Select **Condition**. The condition node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" width="500"/>
 
 
 When developing the first condition, users have multiple options to
@@ -455,37 +388,6 @@ the condition
 ![Nodes List](/img/cloud-soar/image88.png)
 
 
-### User Choice
-
-From the node's menu, select **User Choice**. The User Choice option allows
-for the system to pose a question to the incident owner. Based off of
-the analysis the incident owner performs on the previous information
-gathered, they will be presented a choice to take an automated action
-such as blocking an IP at the firewall or Quarantining an end-user
-workstation from the network.
-
-![User Choice](/img/cloud-soar/image89.png)
-
-
-![Placeholders](/img/cloud-soar/image90.png)
-
-
-Define the question to be answered and the authorizer of the user choice selection and click ****Create**** to finalize.
-
-The results of execution - successes, failures, and outcomes - are
-visible the Playbook's individual node details. The results of
-enrichment, containment and custom Playbook actions undertaken on
-incident artifacts, e.g., IP addresses, URLs, domains, etc., are
-catalogued in the incident's **Entities** module.
-
-If a playbook fails, it can be re-executed inside the incident again or on the failing node with the Kill ![Kill option](/img/cloud-soar/image33c.png) and Run ![Run option](/img/cloud-soar/image33d.png) processes available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user takes action.
-
-![status running](/img/cloud-soar/image33e.png)
-
-
-![status completed](/img/cloud-soar/image33e1.png)
-
-
 ### Playbook Template
 
 When a Playbook is assigned to an incident, these predefined actions and tasks can
@@ -517,7 +419,7 @@ and if there are required fields which need to be configured for Cloud SOAR to u
 
 To add a new integration resource, click the **+ Resources** button in the
 upper left-hand corner of the integrations screen. To edit an existing
-integration resource, hover over the resource and click the pencil icon
+integration resource, hover over the resource name and click the pencil icon
 to the far right of the resource name in the resource list.
 
 ![Resource Settings](/img/cloud-soar/image64.png)              
