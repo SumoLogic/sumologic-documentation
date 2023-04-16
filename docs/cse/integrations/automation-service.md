@@ -145,7 +145,7 @@ The Sumo Logic Terraform provider has also been updated. For more information, s
 ### Run an automation
 
 ##### Automatically
-If an automation is set to run when an Insight is created or closed, it runs automtically provided that:
+If an automation is set to run when an Insight is created or closed, it runs automatically provided that:
 * The automation is enabled, 
 * The automation is configured to run on the trigger(s), and 
 * The automation is an Insight automation, or
