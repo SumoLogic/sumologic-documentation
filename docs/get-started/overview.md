@@ -84,7 +84,7 @@ Get to know the Collection process through our video, "Data Collection Strategy"
 
 #### OpenTelemetry Collector (recommended)
 
-The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
+The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata from a [variety of sources](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/) to Sumo Logic. The collector uses encryption and compression to send data securely and efficiently and is fault-tolerant to network issues. 
 
 #### Installed Collector
 

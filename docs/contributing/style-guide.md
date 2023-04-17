@@ -165,20 +165,8 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 
 Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
 
-To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+Here's how to add a title to your code block.
 
-```sql {2-6}
-_sourceCategory=reinvent/travel/checkout
-[subquery:_sourceCategory=reinvent/travel/nginx
-     | count by src_ip
-     | topk(1,_count)
-     | compose src_ip keywords
-]
-| json field=_raw "funcName"
-| where funcname in ("process_cart","charge")
-| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
-| count by funcname
-```
 
 <Tabs
   className="unique-tabs"
@@ -205,6 +193,50 @@ _sourceCategory=reinvent/travel/checkout
 function HelloDocusaurus() {
   return <h1>Hello, Docusaurus!</h1>;
 }
+```
+
+</TabItem>
+</Tabs>
+
+To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```sql {2-6}
+    _sourceCategory=reinvent/travel/checkout
+    [subquery:_sourceCategory=reinvent/travel/nginx
+         | count by src_ip
+         | topk(1,_count)
+         | compose src_ip keywords
+    ]
+    | json field=_raw "funcName"
+    | where funcname in ("process_cart","charge")
+    | if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+    | count by funcname
+    ```
+
+</TabItem>
+<TabItem value="Result">
+
+```sql {2-6}
+_sourceCategory=reinvent/travel/checkout
+[subquery:_sourceCategory=reinvent/travel/nginx
+     | count by src_ip
+     | topk(1,_count)
+     | compose src_ip keywords
+]
+| json field=_raw "funcName"
+| where funcname in ("process_cart","charge")
+| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+| count by funcname
 ```
 
 </TabItem>

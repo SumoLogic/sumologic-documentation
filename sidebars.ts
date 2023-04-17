@@ -2368,6 +2368,7 @@ integrations: [
       items: [
         'contributing/edit-doc',
         'contributing/create-doc',
+        'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/code-of-conduct',
         'contributing/glossary',
@@ -2456,8 +2457,6 @@ integrations: [
         'manage/manage-subscription/beta-opt-in',
         'beta/search-log-level',
         'beta/aws-private-link',
-        'beta/infrequent-tier-search',
-        'manage/security/audit-index-access',
         'api/beta',
       ],
     },
