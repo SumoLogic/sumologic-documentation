@@ -89,12 +89,12 @@ Now that you have configured Akamai DataStream 2 logs, install the Sumo Logic Ap
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library)..
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
+    2. **Data Source.** Select either of these options for the data source.
+        * Choose **Source Category**, and select a source category from the list.
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
@@ -108,14 +108,22 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The **Akamai DataStream - Overview** dashboard displays the geo location of requests, requests from risky locations, cache hit ratio trend, URLs causing issues, and user agent breakdown.
 
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Overview.png')} alt="Akamai-DataStream-Overview"/>
+
 ### Akamai DataStream - Performance and Qos Monitoring
 
 The **Akamai DataStream - Performance and Qos Monitoring** dashboard analyze response time and provides analysis between response time and requests, DNS lookup delay by geolocations, and shows transfer time by the requested path.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Performance-and-Qos-Monitoring.png')} alt="Akamai-DataStream-Performance-and-Qos-Monitoring"/>
 
 ### Akamai DataStream - Requests Type
 
 The **Akamai DataStream - Requests Type** dashboard provides details about visitor platforms, breakdown of browsers and OS, cache hit ratio by content type, and requests with errors.
 
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Requests-Type.png')} alt="Akamai-DataStream-Requests-Type"/>
+
 ### Akamai DataStream - Video Streaming
 
 The **Akamai DataStream - Video Streaming** dashboard displays details related to video streaming requests, and analyzes failed vs successful video streaming requests over time.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Video-Streaming.png')} alt="Akamai-DataStream-Video-Streaming"/>
