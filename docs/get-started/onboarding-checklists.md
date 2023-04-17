@@ -107,7 +107,7 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 
 Sumo provides a tool for tracking and managing collection and data volume.
 
-* [Log Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index.md). Sumo Logic writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume), which provides pre-configured searches and dashboards for analyzing log ingestion. 
+* [Log Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index). Sumo Logic writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume), which provides pre-configured searches and dashboards for analyzing log ingestion. 
 * [Metric Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index.md). The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
 
 ### Searching
