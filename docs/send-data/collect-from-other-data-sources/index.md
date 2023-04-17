@@ -158,7 +158,7 @@ In this section, we'll introduce the following concepts:
     <div className="box smallbox25 card">
       <div className="container">
       <a href="/docs/send-data/collect-from-other-data-sources/vmware-airwatch-integration"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>VMware AirWatch</h4></a>
-      <p>Provide visibility for monitoring enterprise mobility management in your deployment.</p>
+      <p>Provides visibility for monitoring enterprise mobility management in your deployment.</p>
       </div>
     </div>
     <div className="box smallbox26 card">
