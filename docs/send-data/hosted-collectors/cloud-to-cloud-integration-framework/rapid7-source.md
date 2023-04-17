@@ -7,7 +7,7 @@ description: Learn how to collect asset and vulnerabilities from Rapid7 InsightV
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/rapid7-icon.png')} alt="rapid7-icon" width="40" />
+<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-icon" width="80" />
 
 The Rapid7 source collects asset and vulnerabilities from [Rapid7 InsightVM](https://help.rapid7.com/insightvm/en-us/api/integrations.html) API and sends it to Sumo Logic. InsightVM provides a fully available, scalable, and efficient way to collect vulnerability data and minimize risk. InsightVM automatically evaluates changes in user's networks, allowing security professionals to better understand and quickly manage the risk posed to their organization.
 
@@ -27,7 +27,7 @@ Metadata fields will be set, if the integration is configured with the SIEM forw
 
 ## Setup and Configuration
 
-<need more infor>
+The Rapid7 InsightVM source requires you to provide a region and organizational API key to access the data. Follow the instructions from Rapid7 documentation, to determine the [Region](https://docs.rapid7.com/insight/api-overview#endpoint) and [Organizational API key](https://docs.rapid7.com/insight/managing-platform-api-keys#generate-an-organization-key).
 
 ## States
 
@@ -51,13 +51,13 @@ When you create an Rapid7 Source, you add it to a Hosted Collector. Before creat
 To configure an Rapid7 Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Rapid7**.<br/> <img src={useBaseUrl('img/send-data/rapid7-icon.png')} alt="rapid7-icon" width="40" />
+1. Search for and select **Rapid7**.<br/> <img src={useBaseUrl('img/send-data/rapid7-icon.png')} alt="rapid7-icon" width="140" />
 1. Enter a **Name** for the Source. The description is optional. <br/><img src={useBaseUrl('img/send-data/rapid7_config_main.png')} alt="rapid7-config-main.png" width="400" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. Enter the **Region** of InsightVM platform.
+1. Enter the **Region** of Rapid7 InsightVM platform.
 1. Enter the **API Key** for authorization.
 
 ### Error Types
@@ -92,7 +92,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `region` | String | Yes | Region of the Insight platform. Know more about [Support regions](https://docs.rapid7.com/insight/product-apis/#supported-regions)  | modifiable |
+| `region` | String | Yes | Region of the Insight platform. Know more about [Supported regions](https://docs.rapid7.com/insight/product-apis/#supported-regions).  | modifiable |
 | `apikey` | String | Yes | API Key for the account authorization. | modifiable |
 
 ### JSON Example
@@ -113,7 +113,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
       "type": "Rapid7"
     },
     "sourceType": "Universal"
-  }
+  },
 }
 ```
 
