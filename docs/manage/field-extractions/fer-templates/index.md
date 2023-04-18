@@ -52,43 +52,43 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox7 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/aws-s3-usage-logs"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="50"/><h4>AWS S3 Usage Logs</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/aws-s3-usage-logs"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="45"/><h4>AWS S3 Usage Logs</h4></a>
       <p>Learn how to parse the common fields in your AWS S3 Usage log.</p>
       </div>
     </div>
     <div className="box smallbox8 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/cisco-app"><img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="icon" width="40"/><h4>Cisco Logs Extraction Template</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/cisco-app"><img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="icon" width="70"/><h4>Cisco Logs Extraction Template</h4></a>
       <p>Learn how to parse the common fields in your Cisco ASA log.</p>
       </div>
     </div>
     <div className="box smallbox9 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/cisco-fwsm-fer"><img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="icon" width="40"/><h4>Sample Cisco FWSM Field Extraction Rule</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/cisco-fwsm-fer"><img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="icon" width="70"/><h4>Sample Cisco FWSM Field Extraction Rule</h4></a>
       <p>Learn how to create field extraction rules for CISCO FWSM.</p>
       </div>
     </div>
     <div className="box smallbox10 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/microsoft-iis-logs"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpng')} alt="icon" width="50"/><h4>Microsoft IIS Logs</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/microsoft-iis-logs"><img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="icon" width="80"/><h4>Microsoft IIS Logs</h4></a>
       <p>Learn how to parse the common fields in your Microsoft IIS log.</p>
       </div>
     </div>
     <div className="box smallbox11 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/nginx-logs"><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="icon" width="50"/><h4>Nginx Logs</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/nginx-logs"><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="icon" width="90"/><h4>Nginx Logs</h4></a>
       <p>Learn how to parse the common fields in your Nginx Access log.</p>
       </div>
     </div>
     <div className="box smallbox12 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/palo-alto-networks"><img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/paloalto.png')} alt="icon" width="50"/><h4>Palo Alto Networks</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/palo-alto-networks"><img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/paloalto.png')} alt="icon" width="110"/><h4>Palo Alto Networks</h4></a>
       <p>Learn how to parse the common fields in your Palo Alto Networks log.</p>
       </div>
     </div>
     <div className="box smallbox13 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/varnish-logs"><img src={useBaseUrl('img/integrations/web-servers/Varnish_Small.png')} alt="icon" width="50"/><h4>Varnish Logs Extraction Template</h4></a>
+      <a href="/docs/manage/field-extractions/fer-templates/varnish-logs"><img src={useBaseUrl('img/integrations/web-servers/varnish-cache.png')} alt="icon" width="100"/><h4>Varnish Logs Extraction Template</h4></a>
       <p>Learn how to parse the common fields in your Varnish log.</p>
       </div>
     </div>
