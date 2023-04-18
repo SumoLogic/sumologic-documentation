@@ -15,7 +15,7 @@ The Rapid7 source collects asset and vulnerabilities from [Rapid7 InsightVM](htt
 
 Rapid7 source ingests inventory, assessment, and summary details for assets from [Assets API](https://help.rapid7.com/insightvm/en-us/api/integrations.html#operation/searchIntegrationAssets) and vulnerabilities from [Vulnerabilities API](https://help.rapid7.com/insightvm/en-us/api/integrations.html#operation/searchIntegrationVulnerabilities).
 
-## Meta-data Fields
+## Metadata Fields
 
 Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
 
