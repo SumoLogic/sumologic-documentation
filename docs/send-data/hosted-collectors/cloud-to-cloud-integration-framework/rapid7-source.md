@@ -2,7 +2,7 @@
 id: rapid7-source
 title: Rapid7 Source
 sidebar_label: Rapid7 Source
-description: Learn how to collect asset and vulnerabilities from Rapid7 InsightVM
+description: Learn how to collect assets and vulnerabilities from Rapid7 InsightVM.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
