@@ -20,7 +20,7 @@ Rapid7 source ingests inventory, assessment, and summary details for assets from
 Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
 
 | Field Name | Value |
-| --- | --- |
+| :--- | :--- |
 | _siemDataType | Inventory |
 | _siemProduct | InsightVM |
 | _siemVendor | Rapid7 |
