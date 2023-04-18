@@ -88,7 +88,7 @@ Use the following steps to create a service application:
 
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
-From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
+From there, select (or search for) the following permissions under type **Application permissions**. An Administrator must approve (grant) these permissions before the integration will function.
 
 | API | Account Type| Permissions |
 |:---------|:---------------------------------------------------|:------------------------------------|
