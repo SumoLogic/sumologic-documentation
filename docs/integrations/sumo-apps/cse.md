@@ -60,6 +60,11 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## View App Dashboards
 
+### Insight Trainer
+
+This dashboard offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity Signals, resulting in generation of more meaningful Insights. For more information, see [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer).
+
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-siem-insight-trainer-dashboard.png')} alt="CSE dashboard" />
 
 ### Insights Closed
 
@@ -77,7 +82,6 @@ This dashboard presents metrics about Insight creation in your environment. You 
 ### Insights Overview
 
 This dashboard displays a high level view of Insight activity in your environment. You can see counts of Insights created and  closed over time, and the top Insights by Confidence Level.
-
 
 <img src={useBaseUrl('img/integrations/sumo-apps/insight-overview.png')} alt="CSE dashboard" />
 
