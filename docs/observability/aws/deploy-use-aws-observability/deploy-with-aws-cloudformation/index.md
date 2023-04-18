@@ -34,7 +34,7 @@ AWS Observability integrates with Explore by populating metadata and only shows
 
 1. Sign on to the AWS Management console.
 1. Choose an option:
-   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.1/sumologic_observability.master.template.yaml)
+   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml)
    * Click the AWS Observability Solution (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.1/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, please visit [Change Log](../changelog.md).
     :::note
     In case you want to modify the Collector Name and Source Categories of the Sumo Logic sources that will be created by default, you can do so by downloading CloudFormation template version 2.1.0 or greater and following [these instructions](#modify-the-collector-name-and-source-categories) before proceeding to the next step. 
@@ -74,7 +74,7 @@ time you run the template.
 
 | Prompt | Guideline |
 |:--|:--|
-| Install AWS Observability apps and alerts | <ul><li>**Yes** –  Installs the apps (AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, and AWS NLB) and alerts for the AWS Observability Solution. All the apps are installed in the Sumo Logic AWS Observability  Personal folder in Sumo Logic and all alerts are installed in an AWS Observability folder of the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts | <ul><li>**Yes** –  Installs the apps (AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS and Amazon SQS) and alerts for the AWS Observability Solution. All the apps are installed in the Sumo Logic AWS Observability  Personal folder in Sumo Logic and all alerts are installed in an AWS Observability folder of the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 
@@ -83,7 +83,7 @@ Provide responses to the prompts in this section.
 | Prompt | Guideline |
 |:--|:--|
 | Select the kind of CloudWatch Metrics Source to create | **Note:** Switching from one type of Metrics Source to another can result in re-computation of your Root Cause Explorer anomaly detection models. This re-computation can take a couple of days to finish and meanwhile you will not get new Events of Interest (EOIs).<ul><li>**CloudWatch Metrics Source** - Creates Sumo Logic AWS CloudWatch Metrics Sources.</li><li>**Kinesis Firehose Metrics Source (Recommended)** -  Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source.<br/>**Note:** This new source has cost and performance benefits over the CloudWatch Metrics Source is therefore recommended.</li><li>**None** - Skips the Installation of both the Sumo Logic Sources</li></ul> |
-| Sumo Logic AWS Metrics Namespaces | Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics and Inventory Sources. The default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS.<br/>AWS/AutoScaling will be appended to Namespaces for Inventory Sources.<br/>Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source.md) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support. |
+| Sumo Logic AWS Metrics Namespaces | Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics and Inventory Sources. The default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, and AWS/EC2.<br/>AWS/AutoScaling will be appended to Namespaces for Inventory Sources.<br/>Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source.md) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support. |
 | Existing Sumo Logic Metrics Source API URL | You must supply this URL if you are already collecting CloudWatch Metrics. Provide the existing Sumo Logic Metrics Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
 
 ## Step 6: Sumo Logic AWS ALB Log Source
@@ -222,6 +222,7 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 .*\"eventSource\":\"ecs\.amazonaws\.com\".*
 .*\"eventSource\":\"elasticache\.amazonaws\.com\".*
 .*\"eventsource\":\"sns\.amazonaws\.com\".*
+.*\"eventsource\":\"sqs\.amazonaws\.com\".*
 ```
 
 ### Common errors
