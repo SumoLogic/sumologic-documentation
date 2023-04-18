@@ -96,7 +96,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Audit Events  
 
-The **Amazon SNS - Audit Events** dashboard provides insights across Cloudtrail events across location, status, and topic names.
+The **Amazon SNS - Audit Events** dashboard provides insights across CloudTrail events across location, status, and topic names.
 
 Use this dashboard to:
 
