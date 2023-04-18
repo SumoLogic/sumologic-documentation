@@ -19,7 +19,7 @@ When you resolve Insights, you give them [Insight resolutions](/docs/cse/adminis
 
 You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
 
-The dashboard makes two kinds of suggestions, either a “tunability” score to help you write tuning expressions for Entities, or recommendations to change the severity level of rules. We recommend you first look at rules with the highest tunability score and assess the dominant Entities (like users and IPs) to write tuning expressions for. Only after implenting tuning expressions do we recommend you adjust rule severities. This [suggested workflow](#suggested-workflow) will give you the best results over time.
+The dashboard makes two kinds of suggestions, either a “tunability” score to help you write tuning expressions for Entities, or recommendations to change the severity level of rules. We recommend you first look at rules with the highest tunability score and assess the dominant Entities (like users and IPs) to write tuning expressions for. Only after implementing tuning expressions do we recommend you adjust rule severities. This [suggested workflow](#suggested-workflow) will give you the best results over time.
 
 ## Cloud SIEM - Insight Trainer page
 
