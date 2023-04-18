@@ -2101,7 +2101,6 @@ integrations: [
           'integrations/sumo-apps/audit',
           'integrations/sumo-apps/cse',
           'integrations/sumo-apps/data-volume',
-          'integrations/sumo-apps/data-volume-legacy',
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/infrequent-data-tier',
