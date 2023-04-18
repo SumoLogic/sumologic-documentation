@@ -6,7 +6,7 @@ description: Learn how to collect assets and vulnerabilities from Rapid7 Insight
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-icon" width="80" />
+<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="80" />
 
 The Rapid7 source collects asset and vulnerabilities from [Rapid7 InsightVM](https://help.rapid7.com/insightvm/en-us/api/integrations.html) API and sends it to Sumo Logic. InsightVM provides a fully available, scalable, and efficient way to collect vulnerability data and minimize risk. InsightVM automatically evaluates changes in user's networks, allowing security professionals to better understand and quickly manage the risk posed to their organization.
 
@@ -50,7 +50,7 @@ When you create an Rapid7 Source, you add it to a Hosted Collector. Before creat
 To configure an Rapid7 Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Rapid7**.<br/> <img src={useBaseUrl('img/send-data/rapid7-icon.png')} alt="rapid7-icon" width="140" />
+1. Search for and select **Rapid7**.<br/> <img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="140" />
 1. Enter a **Name** for the Source. The description is optional. <br/><img src={useBaseUrl('img/send-data/rapid7_config_main.png')} alt="rapid7-config-main.png" width="400" />
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
