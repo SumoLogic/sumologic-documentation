@@ -1,12 +1,12 @@
 ---
 slug: /integrations/cloud-security-monitoring-analytics
 title: Cloud Security Monitoring and Analytics
-description: A guide to Sumo Logic data source apps, including Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
+description: A guide to Sumo Logic cloud security data source apps, including Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="45"/>
 
 This guide has documentation for all five data source apps that Sumo provides: Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls. All dashboards are using our latest features to provide practical security insights for all security practitioners.
 
@@ -68,13 +68,6 @@ This guide has documentation for all five data source apps that Sumo provides: W
       </div>
     </div>
     <div className="box smallbox9 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/ueba.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/ueba">UEBA</a></h4>
-      <p>A guide to the Sumo Logic app for UEBA - Cloud Security Monitoring and Analytics.</p>
-      </div>
-    </div>
-    <div className="box smallbox10 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/windows">Windows</a></h4>

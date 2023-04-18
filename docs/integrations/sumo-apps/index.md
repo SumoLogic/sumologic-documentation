@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/sumoapps.png')} alt="Thumbnail icon" width="75"/>
 
-Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events. This guide has documentation for those apps.
+Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events. 
 
 ## Requesting Sumo Logic Enterprise Apps
 
@@ -48,34 +48,27 @@ Once a request has been submitted, a support ticket is automatically opened. A r
   </div>
 </div>
 <div className="box smallbox4 card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="/docs/integrations/sumo-apps/data-volume-legacy">Data Volume (Legacy)</a></h4>
-  <p>A guide to the Sumo Logic Data Volume App (Legacy).</p>
-  </div>
-</div>
-    <div className="box smallbox5 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/Enterprise_Audit.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit (multiple apps)</a></h4>
       <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
       </div>
-    </div>
-    <div className="box smallbox6 card">
+</div>
+    <div className="box smallbox5 card">
       <div className="container">
       <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="60"/>
       <h4><a href="/docs/integrations/sumo-apps/enterprise-search-audit">Enterprise Search Audit</a></h4>
       <p>A guide to our Enterprise Search Audit App.</p>
       </div>
     </div>
-    <div className="box smallbox7 card">
+    <div className="box smallbox6 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/sumo-apps/infrequent-data-tier">Infrequent Data Tier</a></h4>
       <p>A guide to the Sumo Logic Infrequent Data Tier app.</p>
       </div>
     </div>
-    <div className="box smallbox8 card">
+    <div className="box smallbox7 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/sumo-apps/security-analytics">Security Analytics</a></h4>
