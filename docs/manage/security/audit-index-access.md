@@ -6,7 +6,13 @@ sidebar_label: Audit Index Data Permissions (Beta)
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
+
+This feature is in Beta. To participate, contact your Sumo Logic account executive.
 
 Sumo Logic has added new [role capabilities](/docs/manage/users-roles/roles/role-capabilities) that allow you to grant access to the following audit indexes:
 
@@ -15,38 +21,12 @@ Sumo Logic has added new [role capabilities](/docs/manage/users-roles/roles/role
 * [Audit Event Index](/docs/manage/security/audit-event-index). Contains JSON logs on account activities, both actions initiated by users and actions  initiated by Sumo Logic. User event logs ares stored in the `sumologic_audit_events` partition. Sumo Logic event logs are stored in the `sumologic_system_events` partition.
 * [Audit Index](/docs/manage/security/audit-index). Contains account activity logs from Sumo Logic's older logging framework, and is stored in the `sumologic_audit` partition.
 
-With this change, role search filters will no longer be applied to audit indexes.The table below describes the role capabilities required to access audit indexes.
+With this change, role search filters will no longer be applied to audit indexes. Log Monitors use the view audit index capability of their creator.
 
-Log Monitors use the view audit index capability of their creator.
+The table below describes the role capabilities required to access audit indexes.
 
-<table>
-  <tr>
-   <td>
-    Role Capability
-   </td>
-   <td>
-    Description
-   </td>
-  </tr>
-  <tr>
-   <td>
-    Search Audit Index
-   </td>
-   <td>Grants access to all of the data in the Search Audit Index.
-   </td>
-  </tr>
-  <tr>
-   <td>Data Volume Index
-   </td>
-   <td>Grants access to all of the data in the Data Volume Index and to system action events in the Audit Event Index.
-<p>(System action events are events resulting from Sumo Logic actions.)</p>
-   </td>
-  </tr>
-  <tr>
-   <td>Audit Event Index
-   </td>
-   <td>Grants access to all of the user action events in the Audit Event Index, and all the data in the Audit Index.
-<p>(User action events are events resulting from user actions.)</p>
-   </td>
-  </tr>
-</table>
+| Role Capability | Description |
+|:---|:---|
+| Search Audit Index | Grants access to all of the data in the Search Audit Index. |
+| Data Volume Index | Grants access to all of the data in the Data Volume Index and to system action events in the Audit Event Index. (System action events are events resulting from Sumo Logic actions.) |
+| Audit Event Index | Grants access to all of the user action events in the Audit Event Index, and all the data in the Audit Index. (User action events are events resulting from user actions.) |
