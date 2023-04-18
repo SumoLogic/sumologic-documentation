@@ -211,6 +211,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source',
@@ -428,7 +429,6 @@ module.exports = {
           items: [
             'send-data/collection/search-for-a-collector-or-source',
             'send-data/collection/start-stop-collector-using-scripts',
-            'send-data/collection/restart-collectors',
             'send-data/collection/edit-collector',
             'send-data/collection/edit-source',
             'send-data/collection/pause-resume-source',
@@ -536,7 +536,6 @@ module.exports = {
         'manage/partitions-data-tiers/data-tiers',
         'manage/partitions-data-tiers/data-tiers-faqs',
         'manage/partitions-data-tiers/searching-data-tiers',
-        'manage/partitions-data-tiers/infrequent-tier-search',
       ]
     },
     {
@@ -1910,7 +1909,6 @@ integrations: [
           'integrations/cloud-security-monitoring-analytics/linux',
           'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9',
           'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10',
-          'integrations/cloud-security-monitoring-analytics/ueba',
           'integrations/cloud-security-monitoring-analytics/windows',
         ],
       },
@@ -2371,6 +2369,7 @@ integrations: [
       items: [
         'contributing/edit-doc',
         'contributing/create-doc',
+        'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/code-of-conduct',
         'contributing/glossary',
@@ -2459,8 +2458,6 @@ integrations: [
         'manage/manage-subscription/beta-opt-in',
         'beta/search-log-level',
         'beta/aws-private-link',
-        'manage/partitions-data-tiers/infrequent-tier-search',
-        'manage/security/audit-index-access',
         'api/beta',
       ],
     },
