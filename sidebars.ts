@@ -2018,6 +2018,7 @@ integrations: [
           'integrations/saas-cloud/acquia',
           'integrations/saas-cloud/airtable',
           'integrations/saas-cloud/akamai-cloud-monitor',
+          'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
@@ -2100,7 +2101,6 @@ integrations: [
           'integrations/sumo-apps/audit',
           'integrations/sumo-apps/cse',
           'integrations/sumo-apps/data-volume',
-          'integrations/sumo-apps/data-volume-legacy',
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/infrequent-data-tier',
@@ -2455,7 +2455,6 @@ integrations: [
       link: {type: 'doc', id: 'beta/index'},
       items: [
         'manage/manage-subscription/beta-opt-in',
-        'beta/search-log-level',
         'beta/aws-private-link',
         'api/beta',
       ],
