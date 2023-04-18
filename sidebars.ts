@@ -972,6 +972,7 @@ module.exports = {
             'search/get-started-with-search/search-basics/search-large-messages',
             'search/get-started-with-search/search-basics/search-surrounding-messages',
             'search/get-started-with-search/search-basics/share-link-to-search',
+            'search/get-started-with-search/search-basics/share-message-link',
             'search/get-started-with-search/search-basics/time-range-expressions',
             'search/get-started-with-search/search-basics/view-search-results-json-logs',
             'search/get-started-with-search/search-basics/view-traces-search-results',
