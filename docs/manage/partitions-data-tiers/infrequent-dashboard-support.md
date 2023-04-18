@@ -10,26 +10,26 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
+<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
 Previously, dashboards were only supported in Sumo Logic's Continuous data tier. This support enables you to also set up dashboard panels to include data from the Infrequent tier.
 
 ## Sample Queries
 
-To use data from the Infrequent tier in your dashboard panels, you can use the following sample queries
- * Use `_dataTier=Infrequent` in your query scope. For example:
-```sql
-_dataTier=Infrequent _sourceCategory=appA "error"
-```
-* Or select data in the Infrequent tier by specifying the Partition that contains it. For example:
-```sql
-_index=some_infrequent_index
-```
- Or, run the following query.
+To use data from the Infrequent tier in your dashboard panels, you can use the following sample queries.
 
-```sql
-_index=some_infrequent_index OR _index=some_continuous_index
-```
+* Use `_dataTier=Infrequent` in your query scope. For example:
+  ```sql
+  _dataTier=Infrequent _sourceCategory=appA "error"
+  ```
+* Or select data in the Infrequent tier by specifying the Partition that contains it. For example:
+  ```sql
+  _index=some_infrequent_index
+  ```
+  Or, run the following query:
+  ```sql
+  _index=some_infrequent_index OR _index=some_continuous_index
+  ```
 
 ## Infrequent Dashboard Usage
 
@@ -44,6 +44,6 @@ The dashboard presents the following information for the currently selected time
 
 You can download the JSON for the dashboard [here](https://sumologic-app-data.s3.amazonaws.com/Infrequent_Dashboard.json). For information about importing dashboards and other content see [Import Content in the Library](/docs/get-started/library#import-content).
 
-## Limitation
+## Limitations
 
 * Auto refresh is not available for dashboard panels running on Infrequent tier.

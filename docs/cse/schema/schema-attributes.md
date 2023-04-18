@@ -1800,6 +1800,194 @@ In cases where the log data has a source or destination context, there are situa
  </tbody>
 </table>
 <h2>
+ device_k8s_deployment
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The deployment name described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ device_k8s_namespace
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The namespace name within which resources are running as described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ device_k8s_pod
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The name given to a pod described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ device_k8s_replicaSet	
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The replica set name described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
  device_mac
 </h2>
 <table>
@@ -5378,6 +5566,194 @@ In cases where the log data has a source or destination context, there are situa
  </tbody>
 </table>
 <h2>
+ dstDevice_k8s_deployment	
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The deployment name described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ dstDevice_k8s_namespace	
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The namespace name within which resources are running as described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ dstDevice_k8s_pod		
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The name given to a pod described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ dstDevice_k8s_replicaSet			
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The replica set name described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
  dstDevice_mac
 </h2>
 <table>
@@ -6284,6 +6660,53 @@ In cases where the log data has a source or destination context, there are situa
    </td>
    <td>
     A semi-unique identifier for an e-mail message generated by the sending mail system often ending with the fully qualified domain name of the sending system. It is not completely unique as copies of the same e-mail message, such as one sent to multiple recipients, may have the same message ID. Different mail systems may form message IDs in different ways.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    string
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ email_recipient
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    Address of the e-mail recipient. Note that only a single recipient can be mapped from a log. To be used only for logs related specifically to e-mail activity (spam filtering, message tracking, etc).
    </td>
   </tr>
   <tr>
@@ -11908,6 +12331,194 @@ In cases where the log data has a source or destination context, there are situa
    </td>
    <td>
     True
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ srcDevice_k8s_deployment	
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The deployment name described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ srcDevice_k8s_namespace	
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The namespace name within which resources are running as described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ srcDevice_k8s_pod		
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The name given to a pod described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
+   </td>
+  </tr>
+ </tbody>
+</table>
+<h2>
+ srcDevice_k8s_replicaSet			
+</h2>
+<table>
+ <tbody>
+  <tr>
+  <td>
+    <strong>
+     Description
+    </strong>
+   </td>
+   <td>
+    The replica set name described in the log.
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Type
+    </strong>
+   </td>
+   <td>
+    int
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Can be set by mapping
+    </strong>
+   </td>
+   <td>
+    True
+   </td>
+  </tr>
+  <tr>
+  <td>
+    <strong>
+     Enrichment field
+    </strong>
+   </td>
+   <td>
+    False
    </td>
   </tr>
  </tbody>
