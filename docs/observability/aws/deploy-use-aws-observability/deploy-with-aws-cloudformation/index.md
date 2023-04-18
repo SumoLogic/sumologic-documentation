@@ -74,7 +74,7 @@ time you run the template.
 
 | Prompt | Guideline |
 |:--|:--|
-| Install AWS Observability apps and alerts | <ul><li>**Yes** –  Installs the apps (AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS and Amazon SQS) and alerts for the AWS Observability Solution. All the apps are installed in the Sumo Logic AWS Observability  Personal folder in Sumo Logic and all alerts are installed in an AWS Observability folder of the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts | <ul><li>**Yes** –  Installs the apps (AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS and Amazon SQS) and alerts for the AWS Observability Solution. These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 
