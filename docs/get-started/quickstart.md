@@ -20,9 +20,9 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
-:::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
-:::
+## Before you begin
+
+You'll need a Sumo Logic account to proceed. You can sign up for a free trial [here](/docs/get-started/sign-up).
 
 ## Your Sumo Logic Journey
 
@@ -32,24 +32,42 @@ Let's get started!
 
 ## Step 1: Get your data into Sumo
 
-:::tip
-If you haven't yet, sign up for free trial through [Sumo Logic or AWS Marketplace](/docs/get-started/sign-up).
-:::
-
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo.
 
 ### Set up Collector
 
-From the Sumo Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**. Next, choose from a local [Installed Collector](/docs/send-data/installed-collectors), web-[Hosted Collector](/docs/send-data/hosted-collectors), or our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector). Next, you'll choose the data sources that will provide the most value for you.
+:::info
+OpenTelemetry is our preferred collector unless you're configuring security data ingestion.
+:::
+
+#### OpenTelemetry Collector
+
+1. Log in to Sumo Logic.
+1. Go to **App Catalog** and click the app you'd like to install.
+1. Click the **Add a New Collector** option during app installation.
+  :::note
+  Only V2 apps have the **Add a New Collector** option.
+  :::
+1. After you've installed the collector, you'll be prompted with instructions to set up the source.
+
+#### Installed and Hosted Collector
+
+1. Log in to Sumo Logic.
+1. From the Home page, go to **Manage Data** > **Collection** > **Collection** tab, and select **Add Collector**.<br/><img src={useBaseUrl('img/get-started/WTS_Collector_page.png')} alt="icon" />
+1. Choose from our [Hosted Collector](/docs/send-data/hosted-collectors) (web-hosted) or [Installed Collector](/docs/send-data/installed-collectors) (locally installed on your machine).
 
 ### Set up Source
 
-You can set up a Source when your Installed Collector appears in the table on the Collection page, by navigating to the collector and selecting **Add** > **Add Source**. For more information, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources/) and [Hosted Collectors](/docs/send-data/hosted-collectors/).
+In this step, you'll choose the data sources that will provide the most value for you.
 
-![WTS_Collection_Page](/img/get-started/WTS_Collection_Page.png)
+#### OpenTelemetry Collector
 
-For more information, see [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/).
+See [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
 
+#### Installed and Hosted Collector
+
+1. Find your Collector in the Collection page table and select **Add** > **Add Source**. <br/>![WTS_Collection_Page](/img/get-started/WTS_Collection_Page.png)
+1. Follow the prompts to set up your desired Source. For more information on configuring specific sources, see [Installed Collector Sources](/docs/send-data/installed-collectors/sources/) and [Configure a Hosted Collector Source](/docs/send-data/hosted-collectors/configure-hosted-collector/#step-2-configure-a-source).
 
 ## Step 2: Search and analyze your data
 
@@ -107,6 +125,11 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 
 ## More Resources
 
+:::sumo Need help?
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
+:::
+
+* [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
 * [AWS Observability Quickstart](/docs/observability/aws/quickstart). This guide will walk you through setting up the Sumo Logic AWS Observability integration.
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
 * [Traces Quickstart](docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
