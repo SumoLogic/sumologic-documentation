@@ -12,7 +12,7 @@ Search results might vary depending on each user's permissions.
 
 Sumo Logic enables you to share links to specific messages in the search table. This is an extended functionality of the [Share a link to search](/docs/search/get-started-with-search/search-basics/share-link-to-search/) feature.
 
-You can share a link to a specific message in the Sumo Logic search table, which allows you to quickly and easily share important information. To share a message link to a search, after your query has run, click **Message** beneath the search query box.
+You can share a link to a specific message in the Sumo Logic search table, which allows you to quickly and easily share important information. To share a message link to a search, after your query has run, click **Message** tab beneath the search query box.
 
 This link will be available for three years after it is created. 
 
