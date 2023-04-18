@@ -237,7 +237,7 @@ To install the app:
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source**. Select either of these options for **SES CloudTrail Log Source**, and **SES Notification Log Source**.
         * Choose **Source Category**, and select a source category from the list.
-            * For SES CloudTrail Logs, provide sourceCategory as **AWS/Cloudtrail**
+            * For SES CloudTrail Logs, provide sourceCategory as **AWS/CloudTrail**
             * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
         * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.

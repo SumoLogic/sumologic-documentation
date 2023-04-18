@@ -7,13 +7,11 @@ description: Learn how to collect logs using the Sumo Logic OpenTelemetry Collec
 
 The Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for log collection. This document describes the receivers most commonly used for logs: the [Filelog Receiver](#filelog-receiver) and [Windows Log Event Receiver](#windows-log-event-receiver).
 
-You can find the full list of receivers in [our repository].
+You can find the full list of receivers on our [OpenTelemetry Collector GitHub page](https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components).
 
 ## Filelog Receiver
 
-The Filelog Receiver tails and parses logs from files.
-
-The following is a basic configuration for collecting logs from a file. This configuration can be placed in `conf.d` directory:
+The Filelog Receiver tails and parses logs from files. The following is a basic configuration for the Filelog Receiver (collecting logs from a file), which you can place in the `conf.d` directory:
 
 ```yaml
 receivers:
@@ -42,11 +40,11 @@ service:
       - sumologic
 ```
 
+`include:` lets the Filelog Receiver know where the log file is placed. Make sure that the collector has permissions to access the files; otherwise, it will not be collected.
+
 The `include_file_name: false` prevents the receiver from adding `log.file.name` attribute to the logs.
 
-Instead, we are using `include_file_path_resolved: true`, which adds a `log.file.path_resolved` attribute to the logs that contain the whole path of the file, as opposed to just the name of the file.
-
-The `log.file.path_resolved` attribute should be moved to resource and we use [Group by Attributes processor][groupbyattrprocessor] for that.
+Instead, we are using `include_file_path_resolved: true`, which adds a `log.file.path_resolved` attribute to the logs that contain the whole path of the file, as opposed to just the name of the file. The `log.file.path_resolved` attribute should be moved to resource and we use [Group by Attributes processor][groupbyattrprocessor] for that.
 
 The remaining processors in pipeline are from `sumologic.yaml` file and should be applied for better performance of collector and use of Sumo Logic platform.
 
@@ -186,5 +184,4 @@ service:
 [filelogreceiver_readme]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver
 [filestorageextension_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/storage/filestorage
 [groupbyattrprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/groupbyattrsprocessor#group-by-attributes-processor
-[our repository]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components
 [windowseventlogreceiver]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver/README.md
