@@ -1,13 +1,14 @@
 ---
 id: edit-doc
-title: Edit and Publish Sumo Logic Document
-sidebar_label: Edit an Existing Doc
+title: Edit an Existing Sumo Doc
+sidebar_label: Edit a Doc
 description: Learn how to edit a doc, write content in markdown, and submit your changes to our repo.
 ---
 
 Here's a high-level overview of how to edit an existing Sumo Logic doc.
 
 {@import ../reuse/doc-prerequisites.md}
+
 
 ## Minor edits
 
@@ -93,11 +94,6 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
 ## What happens next?
 
 Docs Team members will review contributions, provide feedback, and approve. When approved, the Docs Team will merge and update staging. Updates to production will be handled by the Docs Team.
-
-
-
-
-
 
 
 <!--

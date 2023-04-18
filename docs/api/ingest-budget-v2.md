@@ -6,6 +6,10 @@ description: The Ingest Budget Management API V2 allows you to manage metadata-b
 hide_table_of_contents: true
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/>
+
 The Ingest Budget Management API **V2** allows you to manage metadata-based [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets) (with a scope) from HTTP endpoints.
 
 See [V1 API](/docs/api/ingest-budget-v1) for management of ingest budgets with a Field Value.

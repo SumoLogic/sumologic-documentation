@@ -1,7 +1,7 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-description: Sign Up with Sumo Logic, creating and activating your account.
+description: Learn how to sign up with Sumo Logic and create your account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -32,9 +32,16 @@ To activate your Sumo Logic Trial account:
 1. Check your email inbox for the activation Sumo Logic email. If you don't see it, check your Spam and Trash folders.
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
-1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
 
-In a few minutes, your account is activated and you can use the [Setup Wizard](/docs/send-data/setup-wizard) to start sending your logs to Sumo Logic and dive in to our monitoring, troubleshooting, and security functionality.
+Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
+
+### Set up Collector
+
+1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="icon" width="400" />
+1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards.
+1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
+
+That's it - congrats! Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
 
 
 ### Upgrade or continue with Free account

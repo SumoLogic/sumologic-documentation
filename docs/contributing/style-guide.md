@@ -35,14 +35,14 @@ If you need help with a convention, word to use, or format to follow, we will ke
 For terminology usage guidance, see our [Word List](/docs/contributing/word-list.md).
 
 If you're new to writing content or would like to learn more, check out these resources:
-* [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/) - Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
-* [Google Technical Writing Courses](https://developers.google.com/tech-writing) - Excellent and easy self-paced courses to refine your writing. Be advised, the courses may use a different style, but still excellent to get started.
-* [Every Page is Page One](https://everypageispageone.com/examples-of-eppo-topics/) - A helpful method for considering what goes into a page is to think of every page as page one. With the extreme use of search engines or sharing a link to find content, users may land in the middle of a section or tutorial. These ideas help hone your content and focus on user needs.
+* [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/). Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
+* [Google Technical Writing Courses](https://developers.google.com/tech-writing). Excellent and easy self-paced courses to refine your writing. Be advised, the courses may use a different style, but still excellent to get started.
+* [Every Page is Page One](https://everypageispageone.com/examples-of-eppo-topics/). A helpful method for considering what goes into a page is to think of every page as page one. With the extreme use of search engines or sharing a link to find content, users may land in the middle of a section or tutorial. These ideas help hone your content and focus on user needs.
 
 Helpful blogs on tech writing:
-* [Usability and Tech Writing](https://www.nngroup.com/topic/writing-web/) - Jakob Neilson defined usability, including insights on technical writing and learning, helpful for writing docs
-* [Feathers tech writing](https://ffeathers.wordpress.com/) - Pioneered API and technical tech writing, insights and instructions
-* [I'd rather be writing](https://idratherbewriting.com/) - Guides and thoughts on tech writing process and content
+* [Usability and Tech Writing](https://www.nngroup.com/topic/writing-web/). Jakob Neilson defined usability, including insights on technical writing and learning, helpful for writing docs
+* [Feathers tech writing](https://ffeathers.wordpress.com/). Pioneered API and technical tech writing, insights and instructions
+* [I'd rather be writing](https://idratherbewriting.com/). Guides and thoughts on tech writing process and content
 
 The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
@@ -165,20 +165,8 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 
 Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
 
-To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+Here's how to add a title to your code block.
 
-```sql {2-6}
-_sourceCategory=reinvent/travel/checkout
-[subquery:_sourceCategory=reinvent/travel/nginx
-     | count by src_ip
-     | topk(1,_count)
-     | compose src_ip keywords
-]
-| json field=_raw "funcName"
-| where funcname in ("process_cart","charge")
-| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
-| count by funcname
-```
 
 <Tabs
   className="unique-tabs"
@@ -205,6 +193,50 @@ _sourceCategory=reinvent/travel/checkout
 function HelloDocusaurus() {
   return <h1>Hello, Docusaurus!</h1>;
 }
+```
+
+</TabItem>
+</Tabs>
+
+To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```sql {2-6}
+    _sourceCategory=reinvent/travel/checkout
+    [subquery:_sourceCategory=reinvent/travel/nginx
+         | count by src_ip
+         | topk(1,_count)
+         | compose src_ip keywords
+    ]
+    | json field=_raw "funcName"
+    | where funcname in ("process_cart","charge")
+    | if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+    | count by funcname
+    ```
+
+</TabItem>
+<TabItem value="Result">
+
+```sql {2-6}
+_sourceCategory=reinvent/travel/checkout
+[subquery:_sourceCategory=reinvent/travel/nginx
+     | count by src_ip
+     | topk(1,_count)
+     | compose src_ip keywords
+]
+| json field=_raw "funcName"
+| where funcname in ("process_cart","charge")
+| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+| count by funcname
 ```
 
 </TabItem>
@@ -384,35 +416,64 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 ## Images
 
-Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new images appended with dates or version numbers.
-
-* Must be in PNG or GIF format
-* Always include `alt text` parameter
-* Use `width` parameter to resize oversized and/or pixelated images
-
-1. Save your image(s) in the `/static/img` folder.
-2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter).
+1. Save your image(s) in the `/static/img` folder. This folder structure mirrors the doc section folders.
+   * When updating an existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
+   * File format be .png or .gif.
+2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter), if it's not already there.
   ```
   import useBaseUrl from '@docusaurus/useBaseUrl';
   ```
-3. Paste the below code snippet where you want your image to appear.
-   * Replace with file path with your own and ensure it includes the correct subfolder name. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
-   * Add alt text and optionally, you can add width parameter to resize your image, if needed.
+3. Copy the below code snippet and paste it where you want your image to appear.
    ```
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
    ```
+4. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+   :::info
+   For web-hosted images, do not use the `{useBaseUrl('<img>')}` syntax:
+   * Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
+   * Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
+   :::
+5. Add an alt text description.
 
-<details><summary>What is <code>alt text</code>?</summary>
+  <details><summary>What is <code>alt text</code>?</summary>
 
-When you insert an image, describe the image in the Alt text, which explains what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
+  When you insert an image, you must briefly describe what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
 
-Alt text is not a caption and it doesn't need to describe the details of an image. It's just a label: "Image properties dialog" or "Sumo Logic logo."
+  Alt text is not a caption; it's just a label: "Image properties dialog" or "Sumo Logic logo." It doesn't need to describe all details of an image.
 
-Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
+  Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
-If you are editing and you come across an image without `alt text`, add it.
+  If you are editing and you come across an image without `alt text`, add it.
 
-</details>
+  </details>
+
+6. Use the `width` to resize oversized and/or pixelated images, if needed.
+
+  <Tabs
+    className="unique-tabs"
+    defaultValue="Markdown"
+    values={[
+      {label: 'Markdown', value: 'Markdown'},
+      {label: 'Result', value: 'Result'},
+    ]}>
+
+  <TabItem value="Markdown">
+
+  ```md
+  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+  ```
+
+  </TabItem>
+  <TabItem value="Result">
+
+  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+
+  </TabItem>
+  </Tabs>
+
+### Images in lists
+
+When adding an image to a bulleted or sequential list, include the image snippet in-line with the list item, with a `<br/>` element in between, like this:
 
 <Tabs
   className="unique-tabs"
@@ -425,41 +486,16 @@ If you are editing and you come across an image without `alt text`, add it.
 <TabItem value="Markdown">
 
 ```md
-<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
 
 </TabItem>
 </Tabs>
-
-When adding an image to a bulleted or sequential list, include it in-line with the list item, right after a `<br/>` element, like this:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-```md
-1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
-```
-
-</TabItem>
-<TabItem value="Result">
-
-1. Here is a list item. <br/><img src={useBaseUrl('img/image.png')} alt="alt-text" width="400"/>
-
-</TabItem>
-</Tabs>
-
 
 ### Screenshots
 
@@ -470,7 +506,7 @@ By default, images that you insert into a page are set to be responsive - resize
 
 ### Masking sensitive information
 
-We mask sensitive information, like user names, email addresses, IP addresses, and so on. In [Snagit](https://www.techsmith.com/screen-capture.html) or a similar program, use the shape tool to mask the text using solid gray, (RGB 212, 212, 212).
+We mask sensitive information like usernames, email addresses, and IP addresses. In Snagit or a similar program, use the shape tool to mask the text using solid gray, (RGB 212, 212, 212).
 
 ### Callouts
 
@@ -481,7 +517,7 @@ Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opa
 
 You can mix ordered (or numbered) and unordered (or bulleted) lists together. Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of indenting too much; three tab indents will automatically render as code.
 
-In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (**.**) rather than a dash (-). For example:
+In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (`.`) rather than a dash (`-`). For example:
 
 <Tabs
   className="unique-tabs"
@@ -514,6 +550,16 @@ Use numbered lists when providing a set of instructions or steps.
 
 Always start with `1.`. Markdown automatically numbers sequentially when building the site. This can be helpful when you need to add or change the order of instructions (no need to edit every number).
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
 ```markdown title="Markdown Ordered List"
 1. First ordered list item.
 1. Another item.
@@ -525,20 +571,23 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
   More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
 
 ```
+</TabItem>
+<TabItem value="Result">
 
 1. First ordered list item.
 1. Another item.
-   - Unordered sub-list.
+   * Unordered sub-list.
 1. Actual numbers don't matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
+   * More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
 
-  More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
-
+</TabItem>
+</Tabs>
 
 ### Bulleted Lists
 
-Use bulleted lists when the items don't need to be presented in sequential order. Ensure parallel grammatical structure - that is, start each bullet with the same part of speech - and end each bullet in a period. Use asterisks `*` for unordered, bulleted lists.
+Use bulleted lists when the items don't need to be presented in sequential order. End each bullet in a terminal period. Use asterisks `*` for unordered, bulleted lists.
 
 <Tabs
   className="unique-tabs"
@@ -553,11 +602,9 @@ Use bulleted lists when the items don't need to be presented in sequential order
 ```markdown title="Markdown Unordered List"
 * Unordered list line 1.
 * Line 2.
-
-  Content to show under 2.
-
-  * Another set of bullets.
-  * Here we go, another!
+   <br/>Content to show under 2.
+* Another set of bullets.
+* Here we go, another!
 ```
 
 </TabItem>
@@ -565,11 +612,9 @@ Use bulleted lists when the items don't need to be presented in sequential order
 
 * Unordered list line 1.
 * Line 2.
-
-  Content to show under 2.
-
-  * Another set of bullets.
-  * Here we go, another!
+   <br/>Content to show under 2.
+* Another set of bullets.
+* Here we go, another!
 
 </TabItem>
 </Tabs>
@@ -579,10 +624,12 @@ You can configure your editor to always use this format for lists. For Visual St
 * **Ordered List: Marker** set to *one*.
 * **Unordered List: Marker** set to *.
 
+Ensure parallel grammatical structure - that is, start each bullet with the same part of speech.
+
 
 ## Links
 
-Regular Markdown links are supported, using url paths or relative file paths.
+For docs links, use relative file paths. For everything else (external links), use absolute URL paths.
 
 <Tabs
   className="unique-tabs"
@@ -603,15 +650,25 @@ Here's how to make a [table](#tables).
 **Linking to files in the same folder:**
 
 ```md
-Check out our [style guide](style-guide.md).
-
-How about [translations](./translations.md)?
+* Check out our [glossary](glossary.md).
+   <br/>or
+* Check out our [glossary](./glossary.md).
+   <br/>or
+* Check out our [glossary](/docs/contributing/glossary).
 ```
 
 **Linking to files in other parent folders:**
 
 ```md
-Learn how to [sign up with Sumo](../get-started/sign-up.md).
+* Learn how to [sign up with Sumo](../get-started/sign-up.md).
+   <br/>or
+* Learn how to [sign up with Sumo](/docs/get-started/sign-up).
+```
+
+**Linking to external URLs:**
+
+```md
+For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
 ```
 
 </TabItem>
@@ -623,13 +680,21 @@ Here's how to make a [table](#tables).
 
 **Linking to files in the same folder:**
 
-Check out our [style guide](style-guide.md).
-
-How about [translations](./translations.md)?
+* Check out our [glossary](glossary.md).
+   <br/>or
+* Check out our [glossary](./glossary.md).
+   <br/>or
+* Check out our [glossary](/docs/contributing/glossary).
 
 **Linking to files in other parent folders:**
 
-Learn how to [sign up with Sumo](../get-started/sign-up.md).
+* Learn how to [sign up with Sumo](../get-started/sign-up.md).
+   <br/>or
+* Learn how to [sign up with Sumo](/docs/get-started/sign-up).
+
+**Linking to external URLs:**
+
+For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
 
 </TabItem>
 </Tabs>
@@ -1036,13 +1101,42 @@ To add release notes with images:
 
 ## Reusing Content
 
-You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
+For repeatable content (like an identical section that appears in several docs), you can save a lot of time by creating one instance of that content in the `/docs/reuse` folder and then import that snippet to other docs.
 
-To add the file to another document, use this code with the reuse file name:
-```bash
-{@import ../../reuse/filename.md}
+1. Create a new markdown file and save it to the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder.
+1. Import that content to another doc by adding this snippet (substitute the file path with your own).
+   ```bash
+   {@import ../../reuse/filename.md}
+   ```
+
+Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
+
+Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+### Restarting your source
+
+{@import ../reuse/restart-c2c-source.md}
 ```
+</TabItem>
+<TabItem value="Result">
 
+### Restarting your source
+
+{@import ../reuse/restart-c2c-source.md}
+
+</TabItem>
+</Tabs>
 
 ## Tables
 Simple tables can help format content. For example, lists of attributes with descriptions. Adding the style below the table helps with formatting.

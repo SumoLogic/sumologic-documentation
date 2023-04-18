@@ -13,7 +13,7 @@ This feature is available in the following account plans.
 | Cloud Flex | Trial, Enterprise |
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. The [Enterprise Search Audit App](/docs/integrations/sumo-apps/Enterprise-Search-Audit) provides pre-built dashboards and reports of the data from the Search Audit Index to help you analyze your current search use and identify areas for improvement. 
+The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. The [Enterprise Search Audit App](/docs/integrations/sumo-apps/enterprise-search-audit) provides pre-built dashboards and reports of the data from the Search Audit Index to help you analyze your current search use and identify areas for improvement. 
 
 ## Enable the Search Audit Index
 
