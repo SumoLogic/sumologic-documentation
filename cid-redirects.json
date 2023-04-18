@@ -2009,7 +2009,7 @@
   "/cid/5191": "/docs/integrations/containers-orchestration/vmware-legacy",
   "/cid/5192": "/docs/integrations/amazon-aws/cloudfront",
   "/cid/5193": "/docs/integrations/security-threat-detection/cisco-asa",
-  "/cid/5194": "/docs/integrations/sumo-apps/data-volume-legacy :/docs/integrations/sumo-apps/data-volume",
+  "/cid/5194": "/docs/integrations/sumo-apps/data-volume",
   "/cid/5195": "/docs/integrations/web-servers/iis-10",
   "/cid/5196": "/docs/integrations/hosts-operating-systems/linux",
   "/cid/51965": "/docs/metrics/metrics-queries/share-metric-query",
