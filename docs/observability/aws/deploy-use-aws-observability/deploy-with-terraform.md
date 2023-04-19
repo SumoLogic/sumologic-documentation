@@ -20,11 +20,11 @@ To set up the AWS Observability solution using Terraform, complete the followin
 Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
 
 :::note
-If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend that you:
+If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend you to follow the below instruction:
 
-* Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
-* Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
-* **AWS Observability Apps** folder by default will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
+1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
+1. **AWS Observability Apps** folder by default will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
 :::
 
 ## Before you start 
