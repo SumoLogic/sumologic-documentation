@@ -302,47 +302,53 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox42 card">
     <div className="container">
+    <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source"><img src={useBaseUrl('img/send-data/rapid7-logo.png')} width="120"/><h4>Rapid7</h4></a>
+    <p>Collects asset and vulnerabilities data from Rapid7 InsightVM.</p>
+    </div>
+  </div>
+    <div className="box smallbox43 card">
+    <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source"><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="120"/><h4>SailPoint</h4></a>
     <p>Provides a secure endpoint to receive Events and User Inventory data from the IdentityNow V3 API.</p>
     </div>
   </div>
-  <div className="box smallbox43 card">
+  <div className="box smallbox44 card">
     <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source"><img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/><h4>Salesforce</h4></a>
         <p>Provides a secure endpoint to receive event data from the Salesforce through its Rest API.</p>
         </div>
       </div>
-      <div className="box smallbox44 card">
+      <div className="box smallbox45 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source"><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" /><h4>SentinelOne Mgmt API</h4></a>
         <p>Collects data from the SentinelOne Management Console.</p>
         </div>
       </div>
-      <div className="box smallbox45 card">
+      <div className="box smallbox46 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source"><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/><h4>Slack</h4></a>
         <p>Learn about the Slack Source, part of Sumo Logic's Cloud-to-Cloud Integration Framework.</p>
         </div>
       </div>
-      <div className="box smallbox46 card">
+      <div className="box smallbox47 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/><h4>Sophos Central</h4></a>
         <p>Provides a secure endpoint to receive authentication logs from the Sophos Central APIs.</p>
         </div>
       </div>
-      <div className="box smallbox47 card">
+      <div className="box smallbox48 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Web Security Service</h4></a>
         <p>Provides a secure endpoint to receive WSS Access logs from the Symantec WSS API.</p>
         </div>
       </div>
-      <div className="box smallbox48 card">
+      <div className="box smallbox49 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="190"/><h4>Tenable</h4></a>
         <p>Provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>
       </div>
-      <div className="box smallbox49 card">
+      <div className="box smallbox50 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/><h4>Workday</h4></a>
         <p>When you create a Workday Source, you add it to a Hosted Collector.</p>
