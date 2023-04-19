@@ -266,7 +266,7 @@ Threat indicators, if set, will be displayed throughout the CSE UI either as a f
 | **Suspicious** | ![indicator-suspicious-label.png](/img/cse/indicator-suspicious-label.png) | ![indicator-suspicious-icon.png](/img/cse/indicator-suspicious-icon.png) |
 | **Not Flagged** | ![indicator-suspicious-label.png](/img/cse/indicator-notflagged-label.png) | None |
 
-No icon is displayed for Entities that with the Not Flagged label.
+No icon is displayed for Entities that with the **Not Flagged** label.
 
 :::note
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
