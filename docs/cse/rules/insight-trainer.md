@@ -15,7 +15,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## About Insight Trainer
 
-When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/): Duplicate, False Positive, No Action, or Resolved. A False Positive resolution indicates that an Insight was triggered for legitimate activity, a No Action resolution indicates that no action was required, and a Resolved resolution indicates that an incident occurred and was resolved. As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
+When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
+
+* False Positive: Non-actionable Insight possibly due to an error in the underlying detection logic of the rule or non-applicability to the environment.
+* No Action: Insight is valid but no action is necessary. 
+* Resolved: Action was taken on the Insight or instances where the defining intention of the rule is true. (An example of this would be a penetration test).
+
+
+As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
 You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
 
