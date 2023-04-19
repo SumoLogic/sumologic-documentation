@@ -313,7 +313,7 @@ screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} 
 1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
    * [**Action**](#add-an-action-node-to-a-playbook): Automatically take specific actions such as enriching data or taking containment steps.
    * [**Condition**](#add-a-condition-node-to-a-playbook): Use conditional statements to define what actions should be taken in response to previous inputs.
-   * **Playbook**: Call other playbooks in response to conditional
+   * [**Playbook**](#playbooks): Call other playbooks in response to conditional
  statements.
 
 ### Add an action node to a playbook
