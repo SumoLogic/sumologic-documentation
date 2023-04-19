@@ -895,7 +895,7 @@ If you are not using the SIEM:
 
 #### Post-installation checks
 
-To check if the bridge is running correctly run the following command:
+To check if the bridge is running correctly, run the following command:
 ```
 ps faux |grep automation-bridge
 ```
