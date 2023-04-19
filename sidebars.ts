@@ -244,6 +244,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
