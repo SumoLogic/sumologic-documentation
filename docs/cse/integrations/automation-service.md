@@ -244,7 +244,7 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 ### Enrichments and threat indicators
 
-You can view the results of enrichments in Cloud SIEM by navigating to the newly-redesigned **Enrichments** tab (which will appear on the Entity, Signal, and Insight details pages if there are any enrichments to display):
+You can view the results of enrichments in Cloud SIEM by navigating to the **Enrichments** tab (which will appear on the Entity, Signal, and Insight details pages if there are any enrichments to display):
 
 <img src={useBaseUrl('img/cse/enrichments.png')} alt="Enrichments" width="800"/>
 
