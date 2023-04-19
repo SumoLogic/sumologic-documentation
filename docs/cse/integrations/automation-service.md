@@ -19,7 +19,7 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automati
 
 You can interact with the service through [automations](#automations), which execute playbooks. [Playbooks](#playbooks)  are composed of one or more [actions](#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](#integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
-:::note Limited availability
+:::info Limited availability
 Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/):
 * Playbooks type must be **CSE**.
 * The Automation Service only supports automated enrichment, notification, and custom action types at this time. 
@@ -42,7 +42,7 @@ Playbooks, integrations, and actions in this version may differ from those in [C
 
 :::note
 * The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](#bridge)). Those capabilities will be deprecated later in 2023.
-* The Automation Service is enabled to allow customers to execute up to 10,000 actions per day. 
+* The Automation Service allows you to execute up to 10,000 actions per day. 
 :::
 
 ### Prerequisites
@@ -74,7 +74,7 @@ To interact with most of the Automation Service features, you must have at least
 
 To use [integrations](#integrations), you must authorize their resources for use in the Automation Service.
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. Click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/> 
 1. Click **Integrations** in the left navigation bar.
 1. Select the integration whose resource you want to authorize.
@@ -101,12 +101,12 @@ The Automation Service uses the Cloud SOAR API. For more information about the A
 
 ### Tour the Automation Service
 
-In this section we'll show you how an automation runs a playbook, which in turns runs actions that are provided by integrations. 
+In this section, we'll show you how an automation runs a playbook, which in turns runs actions that are provided by integrations. 
 
 #### Step 1: View an automation
 [Automations](#automations) add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation) by clicking **New Automation**.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
 1. To see the playbook an automation runs, click the **Edit** button.<br/><img src={useBaseUrl('img/cse/automations-edit-button.png')} alt="Automation edit button" width="800"/>
 1. The playbook is shown.<br/><img src={useBaseUrl('img/cse/automations-edit-dialog.png')} alt="Automation edit dialog" width="400"/>
@@ -114,7 +114,7 @@ In this section we'll show you how an automation runs a playbook, which in turns
 #### Step 2: View the playbook for the automation
 A [playbook](#playbooks) contains a series of actions that are performed when an automation runs.
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. At the top of the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Open the playbook for the automation you viewed in [Step 1](#step-1-view-an-automation).<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
@@ -155,19 +155,19 @@ Automations run playbooks to add enrichments and create notifications for either
 
 ### View automations
 1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
-1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/> 
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation)).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/> 
 
 To view the automations that have run on Insights or Entities, see [View results of an automation](#step-4-view-results-of-an-automation).
 
 ### Create an automation
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. At the top of the automations screen, click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
 1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined, and its type must be set to **CSE** before associating it with an automation. (You can set the type as **CSE** when you [create a new playbook](#create-a-new-playbook).)<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
 1. Select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. 
 1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected. 
-1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
+1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
 1. Set the **Status**. Disabled automations will not run automatically and will not appear in any **Actions** or **Automations** menus.
 1. Click **Add to List** (or **Update** if editing an existing automation).
 
@@ -204,7 +204,7 @@ You can run the same automation more than once for a given Entity or Insight, bu
 
 #### Select Entities to run the automation on
 
-On an Insight if you select **Actions** > **Entity Automation > Run Automations**, you will be prompted to select one or more of the Entities included in the Insight:
+On an Insight, if you select **Actions** > **Entity Automation > Run Automations**, you will be prompted to select one or more of the Entities included in the Insight:
 
 <img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" width="400"/>
 
@@ -244,7 +244,7 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 ### Enrichments and threat indicators
 
-You can view the results of enrichments in Cloud SIEM by navigating to the newly-redesigned **Enrichments** tab (which will appear on the Entity, Signal, and Insight details pages if there are any enrichments to display):
+You can view the results of enrichments in Cloud SIEM by navigating to the **Enrichments** tab (which will appear on the Entity, Signal, and Insight details pages if there are any enrichments to display):
 
 <img src={useBaseUrl('img/cse/enrichments.png')} alt="Enrichments" width="800"/>
 
@@ -266,7 +266,7 @@ Threat indicators, if set, will be displayed throughout the CSE UI either as a f
 | **Suspicious** | ![indicator-suspicious-label.png](/img/cse/indicator-suspicious-label.png) | ![indicator-suspicious-icon.png](/img/cse/indicator-suspicious-icon.png) |
 | **Not Flagged** | ![indicator-suspicious-label.png](/img/cse/indicator-notflagged-label.png) | None |
 
-No icon is displayed for Entities that with the Not Flagged label.
+No icon is displayed for Entities that with the **Not Flagged** label.
 
 :::note
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
@@ -292,7 +292,7 @@ required to authorize predefined actions.
 ### View playbooks
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
@@ -301,7 +301,7 @@ required to authorize predefined actions.
 ### Create a new playbook
 
 1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
-1. Under **Integrations** select **Automation**..<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**..<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. Click **Manage Playbooks**. Previous-created playbooks will display. <br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} alt="New playbook dialog" width="400"/>
@@ -310,10 +310,10 @@ required to authorize predefined actions.
 1. To configure the new playbook, select
 it from the list and click the **Edit** button at the bottom of the
 screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" width="600"/><br/>Opening the playbook will present a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
-1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add Node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
+1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
    * [**Action**](#add-an-action-node-to-a-playbook): Automatically take specific actions such as enriching data or taking containment steps.
    * [**Condition**](#add-a-condition-node-to-a-playbook): Use conditional statements to define what actions should be taken in response to previous inputs.
-   * **Playbook**: Call other playbooks in response to conditional
+   * [**Playbook**](#playbooks): Call other playbooks in response to conditional
  statements.
 
 ### Add an action node to a playbook
@@ -322,7 +322,7 @@ An action node in a playbook runs an enrichment or notification operation. Strin
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
-1. The **Add Node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
 1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} alt="Add action node" width="600"/>  
 1. Give the node a **Name** that identifies the action being taken.
 1. Select the **Type** of action as **Enrichment** or **Notification**. 
@@ -340,14 +340,14 @@ Define a conditional statement to be met before the next node can be executed.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
-1. The **Add Node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" width="500"/>
 1. Click **Create**. The empty condition appears on the playbook.
 1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from the previous action.
 1. Now that you've linked the condition to an action, hover the mouse over the condition node and click the edit button on the node to configure the condition settings.<br/><img src={useBaseUrl('img/cse/automations-edit-condition-node.png')} alt="Edit a condition node" width="150"/> 
-1. The condition node configuration dialog displays again. Under **Condition1** click **Select a value**.<br/><img src={useBaseUrl('img/cse/automations-add-a-condition-3.png')} alt="Select values for the condition" width="500"/> 
+1. The condition node configuration dialog displays again. Under **Condition1**, click **Select a value**.<br/><img src={useBaseUrl('img/cse/automations-add-a-condition-3.png')} alt="Select values for the condition" width="500"/> 
 1. Click **Get Value** and select from the drop-down menu whether the value will evaluate to **true (bool)**, **false (bool)**, or **empty**.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node-2.png')} alt="Get values for the condition" width="500"/>
-1. Under **Get value from a previous action** select the value to feed into the condition. The example shows **Get Devices** and **Playbook inputs** that came from the previous action. (The condition must be linked by a line to the previous action node to receive outputs from the action.) Click the options from the previous action and select which output type (for example, hashes, IP addresses, domains) to evaluate and add it to the condition.
+1. Under **Get value from a previous action**, select the value to feed into the condition. The example shows **Get Devices** and **Playbook inputs** that came from the previous action. (The condition must be linked by a line to the previous action node to receive outputs from the action.) Click the options from the previous action and select which output type (for example, hashes, IP addresses, domains) to evaluate and add it to the condition.
 1. The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the condition.
 1. Now that **Condition 1** is defined, you can choose to filter your
 results further by selecting an **AND/OR** operator to define another
@@ -367,7 +367,7 @@ Before you can use actions from an integration resource, you must [authorize the
 ### View integrations
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
 1. Select an integration to see the actions on the resource. You call these actions when you [add an action node to a playbook](#add-an-action-node-to-a-playbook).<br/><img src={useBaseUrl('img/cse/automations-integrations-actions-list.png')} alt="Actions on an integration" width="800"/>
@@ -400,7 +400,7 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ### Integrations framework
 
-The Cloud SOAR Integration Framework allows users to develop and extend integrations using a common, open and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which can be easily customized when the integration is created.
+The Cloud SOAR Integration Framework allows users to develop and extend integrations using a common, open, and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which can be easily customized when the integration is created.
 
 Integrations are defined using two types of YAML text files. The first type, the integration definition file, is used to define the properties of the product with which the integration connects. This includes information such as the name, logo, connection parameters, test code and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all of the actions that the integration will perform.
 
@@ -865,7 +865,7 @@ An example of a configuration file would be:
 
 #### Bridge ALIAS
 
-With bridge ALIAS it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
+With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
 
 <img src={useBaseUrl('img/cse/automations-bridge-alias-create.png')} alt="Create ALIAS bridge" width="400"/>
 
@@ -895,7 +895,7 @@ If you are not using the SIEM:
 
 #### Post-installation checks
 
-To check if the bridge is running correctly run the following command:
+To check if the bridge is running correctly, run the following command:
 ```
 ps faux |grep automation-bridge
 ```
