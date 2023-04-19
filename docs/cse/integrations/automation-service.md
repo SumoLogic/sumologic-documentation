@@ -322,7 +322,7 @@ An action node in a playbook runs an enrichment or notification operation. Strin
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
-1. The **Add Node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
 1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} alt="Add action node" width="600"/>  
 1. Give the node a **Name** that identifies the action being taken.
 1. Select the **Type** of action as **Enrichment** or **Notification**. 
