@@ -310,7 +310,7 @@ required to authorize predefined actions.
 1. To configure the new playbook, select
 it from the list and click the **Edit** button at the bottom of the
 screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" width="600"/><br/>Opening the playbook will present a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
-1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add Node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
+1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
    * [**Action**](#add-an-action-node-to-a-playbook): Automatically take specific actions such as enriching data or taking containment steps.
    * [**Condition**](#add-a-condition-node-to-a-playbook): Use conditional statements to define what actions should be taken in response to previous inputs.
    * **Playbook**: Call other playbooks in response to conditional
