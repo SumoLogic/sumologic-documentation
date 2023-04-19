@@ -1,5 +1,5 @@
 ---
-title: NEW - Get Started with OpenTelemetry Monitoring in Minutes
+title: March 28, 2023 (Collection)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - opentelemetry
@@ -11,7 +11,7 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We’re happy to announce a release that saves you configuration time. Our new and improved OpenTelemetry collector data onboarding workflow that gets you up and running with infrastructure monitoring in minutes. With this update, you can start monitoring host and process data, web servers (like IIS, Nginx), databases (like MySQL, Redis, Cassandra), and other sources out of the box - no manual configuration required. [Learn more](/docs/get-started/quickstart).
+New - We’re happy to announce a release that saves you configuration time. Our new and improved OpenTelemetry collector data onboarding workflow that gets you up and running with infrastructure monitoring in minutes. With this update, you can start monitoring host and process data, web servers (like IIS, Nginx), databases (like MySQL, Redis, Cassandra), and other sources out of the box - no manual configuration required. [Learn more](/docs/get-started/quickstart).
 
 The Sumo Logic Distribution for OpenTelemetry, a single unified agent to send Logs, Metrics, Traces, and Metadata, helps simplify and streamline Observability and debugging to improve overall system reliability and efficiency. [Learn more](/docs/send-data/opentelemetry-collector).
 
