@@ -114,7 +114,7 @@ In this section, we'll show you how an automation runs a playbook, which in turn
 #### Step 2: View the playbook for the automation
 A [playbook](#playbooks) contains a series of actions that are performed when an automation runs.
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. At the top of the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Open the playbook for the automation you viewed in [Step 1](#step-1-view-an-automation).<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
