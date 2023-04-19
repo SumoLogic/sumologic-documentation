@@ -42,7 +42,7 @@ Playbooks, integrations, and actions in this version may differ from those in [C
 
 :::note
 * The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](#bridge)). Those capabilities will be deprecated later in 2023.
-* The Automation Service is enabled to allow customers to execute up to 10,000 actions per day. 
+* The Automation Service allows you to execute up to 10,000 actions per day. 
 :::
 
 ### Prerequisites
