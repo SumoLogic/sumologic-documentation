@@ -191,7 +191,7 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 ## Resources created in Sumo Logic
 
-### Meta-data Tags
+### Metadata Tags
 
 The Meta-data tags applied on Sumo Logic Sources.
 
