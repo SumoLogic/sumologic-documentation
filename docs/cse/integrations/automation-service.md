@@ -204,7 +204,7 @@ You can run the same automation more than once for a given Entity or Insight, bu
 
 #### Select Entities to run the automation on
 
-On an Insight if you select **Actions** > **Entity Automation > Run Automations**, you will be prompted to select one or more of the Entities included in the Insight:
+On an Insight, if you select **Actions** > **Entity Automation > Run Automations**, you will be prompted to select one or more of the Entities included in the Insight:
 
 <img src={useBaseUrl('img/cse/automations-entity-menu.png')} alt="Entity Automation menu" width="400"/>
 
