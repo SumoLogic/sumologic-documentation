@@ -328,7 +328,7 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 
 ### Install Script
 
-If you installed the Collector with the install script, you can use it to uninstall the Collector:
+If you installed the Collector with the install script, you can this command to uninstall the Collector:
 
 ```bash
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
