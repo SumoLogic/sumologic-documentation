@@ -1,7 +1,6 @@
 ---
-id: search-log-level
-title: Log Search - Log Level Detection and Insights
-sidebar_label: Log Level Detection and Insights (Beta)
+id: log-level
+title: Log Level Detection and Insights (Beta)
 description: You can highlight a time range in the histogram for your search results to filter the search results based on that time range.
 ---
 
