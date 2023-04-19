@@ -101,7 +101,7 @@ The Automation Service uses the Cloud SOAR API. For more information about the A
 
 ### Tour the Automation Service
 
-In this section we'll show you how an automation runs a playbook, which in turns runs actions that are provided by integrations. 
+In this section, we'll show you how an automation runs a playbook, which in turns runs actions that are provided by integrations. 
 
 #### Step 1: View an automation
 [Automations](#automations) add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
