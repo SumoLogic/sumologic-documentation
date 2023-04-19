@@ -67,7 +67,11 @@ server machine of your choice:
 1. Install the latest version of [curl](https://curl.haxx.se/download.html).
 1. Install [Python](https://www.python.org/) version 3.7 or later.
 1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the fields.sh batch file.
-
+1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to know more.
+    ```bash
+    pip install sumologic-sdk
+    ```
+    
 ## Step 2: Configure the Terraform script
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
