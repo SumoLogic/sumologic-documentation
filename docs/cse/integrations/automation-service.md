@@ -340,7 +340,7 @@ Define a conditional statement to be met before the next node can be executed.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
-1. The **Add Node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" width="500"/>
 1. Click **Create**. The empty condition appears on the playbook.
 1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from the previous action.
