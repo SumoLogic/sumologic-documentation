@@ -155,7 +155,7 @@ Automations run playbooks to add enrichments and create notifications for either
 
 ### View automations
 1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations** select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/> 
 
 To view the automations that have run on Insights or Entities, see [View results of an automation](#step-4-view-results-of-an-automation).
