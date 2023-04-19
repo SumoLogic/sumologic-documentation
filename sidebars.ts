@@ -141,7 +141,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
-            'send-data/opentelemetry-collector/get-started',
+            'send-data/opentelemetry-collector/quickstart',
             'send-data/opentelemetry-collector/install-collector-linux',
             'send-data/opentelemetry-collector/install-collector-macos',
             'send-data/opentelemetry-collector/install-collector-windows',
@@ -158,6 +158,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
+            'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/troubleshooting-faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
