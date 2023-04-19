@@ -241,7 +241,7 @@
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/1Password_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Akamai_SIEM_API_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source",
-  "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/AWS_Cost_Explorer_Source": "/docs/send-data/hosted-collectors/amazon-aws/aws-cost-explorer-source",
+  "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/AWS_Cost_Explorer_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source",
   "/docs/send-data/hosted-collectors/amazon-aws/aws-cost-explorer": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Azure_Event_Hubs_Source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Carbon_Black_Cloud_Source": "/docs/cse/ingestion/carbon-black",
