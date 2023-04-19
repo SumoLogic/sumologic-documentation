@@ -18,9 +18,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
 
 * False Positive: Non-actionable Insight possibly due to an error in the underlying detection logic of the rule or non-applicability to the environment.
-* No Action: Insight is valid but no action is necessary. 
+* No Action: Insight is valid but no action is necessary. This is anything that can be considered safe but is true to the detection logic. (Rules causing repeated No Action resolutions may also be considered as good tuning expression candidates.)
 * Resolved: Action was taken on the Insight or instances where the defining intention of the rule is true. (An example of this would be a penetration test).
-
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
