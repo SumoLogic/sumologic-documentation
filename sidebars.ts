@@ -161,6 +161,7 @@ module.exports = {
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
+        'send-data/kubernetes',
         {
           type: 'category',
           label: 'Hosted Collectors & Sources',
@@ -392,7 +393,6 @@ module.exports = {
             'send-data/collect-from-other-data-sources/docker-collection-methods',
             'send-data/collect-from-other-data-sources/integrate-halo-event-logs',
             'send-data/collect-from-other-data-sources/collect-logs-heroku',
-            'send-data/collect-from-other-data-sources/kubernetes',
             'send-data/collect-from-other-data-sources/kubernetes-fluentd-plugin',
             'send-data/collect-from-other-data-sources/collect-logs-oracle-cloud-infrastructure',
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
