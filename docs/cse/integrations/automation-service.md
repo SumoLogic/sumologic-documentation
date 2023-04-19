@@ -167,7 +167,7 @@ To view the automations that have run on Insights or Entities, see [View results
 1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined, and its type must be set to **CSE** before associating it with an automation. (You can set the type as **CSE** when you [create a new playbook](#create-a-new-playbook).)<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
 1. Select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. 
 1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected. 
-1. Select one or more **Execute when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
+1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
 1. Set the **Status**. Disabled automations will not run automatically and will not appear in any **Actions** or **Automations** menus.
 1. Click **Add to List** (or **Update** if editing an existing automation).
 
