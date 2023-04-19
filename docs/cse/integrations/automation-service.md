@@ -19,7 +19,7 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automati
 
 You can interact with the service through [automations](#automations), which execute playbooks. [Playbooks](#playbooks)  are composed of one or more [actions](#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](#integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
-:::note Limited availability
+:::info Limited availability
 Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/):
 * Playbooks type must be **CSE**.
 * The Automation Service only supports automated enrichment, notification, and custom action types at this time. 
