@@ -12,12 +12,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 This topic has information about Outlier rules and how to create them in the CSE UI.
 
 :::tip
