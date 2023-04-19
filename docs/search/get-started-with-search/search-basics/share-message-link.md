@@ -19,7 +19,7 @@ This link will be available for three years after it is created. 
 To share a message link to a search:
 
 1. Run a search you'd like to share.
-2. Once the search results are generated, navigate to the **Message** tab. <br/> <img src={useBaseUrl('/img/search/get-started-search/search-basics/copy-message.png')} alt="copy-message" width="900"/>
+2. Once the search results are generated, navigate to the **Messages** tab. <br/> <img src={useBaseUrl('/img/search/get-started-search/search-basics/copy-message.png')} alt="copy-message" width="900"/>
 3. Find the message you want to share and right-click on it. Then, select **Copy Link to Message**. <br/> <img src={useBaseUrl('/img/search/get-started-search/search-basics/select-message.png')} alt="icon" width="800"/>
 4. You will see a notification at the bottom left of the page after the message link has been copied. <br/> <img src={useBaseUrl('/img/search/get-started-search/search-basics/message-notification.png')} alt="icon" width="300"/>.
 5. You can now paste the link to the message on any platform to share it with others.
