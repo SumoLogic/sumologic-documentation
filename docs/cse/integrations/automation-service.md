@@ -400,7 +400,7 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ### Integrations framework
 
-The Cloud SOAR Integration Framework allows users to develop and extend integrations using a common, open and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which can be easily customized when the integration is created.
+The Cloud SOAR Integration Framework allows users to develop and extend integrations using a common, open, and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which can be easily customized when the integration is created.
 
 Integrations are defined using two types of YAML text files. The first type, the integration definition file, is used to define the properties of the product with which the integration connects. This includes information such as the name, logo, connection parameters, test code and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all of the actions that the integration will perform.
 
