@@ -131,7 +131,7 @@ Availability indicates if a service is working and handling valid requests. Othe
 
 ## Data Retention
 
-SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention.
+SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention. You can access this data via [SLO dashboards](/docs/observability/reliability-management-slo/dashboards/) or your [logs](/docs/observability/reliability-management-slo/create-slo/#slo-as-log-messages).
 
 
 ## Accessing SLOs
