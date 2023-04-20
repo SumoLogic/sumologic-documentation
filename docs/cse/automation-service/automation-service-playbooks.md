@@ -28,7 +28,7 @@ required to authorize predefined actions.
 ## Create a new playbook
 
 1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
-1. Under **Integrations**, select **Automation**..<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.
 1. Click **Manage Playbooks**. Previous-created playbooks will display. <br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} alt="New playbook dialog" width="400"/>
@@ -54,7 +54,7 @@ An action node in a playbook runs an enrichment or notification operation. Strin
 1. Give the node a **Name** that identifies the action being taken.
 1. Select the **Type** of action as **Enrichment** or **Notification**. 
 1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="600"/> 
-1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/cse/automation-service/about-automation-service#step-3-view-the-integration-that-provides-the-action).
+1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/cse/automation-service/automation-service-integrations#view-integrations).
 1. Once you have entered all the information requested, click **Create**. The action node is added to the playbook.
 1. Repeat the steps to add other action nodes. 
 1. [Add condition nodes](#add-a-condition-node-to-a-playbook) if desired. 

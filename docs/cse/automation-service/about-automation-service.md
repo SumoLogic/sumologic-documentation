@@ -20,7 +20,7 @@ Playbooks, integrations, and actions in this version may differ from those in [C
 * Playbooks type must be **CSE**.
 * The Automation Service only supports automated enrichment, notification, and custom action types at this time. 
 * Actions can run "on-premise" via a [bridge](/docs/cse/automation-service/automation-service-bridge) or can run directly through the Sumo Logic cloud. For security and performance reasons, only certified integrations and actions can run directly through the cloud; custom actions must run "on-premise".
-* Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), where you can browse the full integration and playbook catalog, is not yet connected to the Automation Service. A selection of popular integrations have been added to your environment automatically, but the full list of available integrations is included in [Available integrations](/docs/cse/automation-service/automation-service-integrations#available-integrations) below. Contact your Sumo Logic account representative if you would like to have one of these integrations added to your environment, if you would like documentation for a specific integration, or if you're interested in an integration that's not listed.
+* Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), where you can browse the full integration and playbook catalog, is not yet connected to the Automation Service. A selection of popular integrations have been added to your environment automatically, but the full list of [available integrations](/docs/cse/automation-service/automation-service-integrations#available-integrations) is included. Contact your Sumo Logic account representative if you would like to have one of these integrations added to your environment, if you would like documentation for a specific integration, or if you're interested in an integration that's not listed.
 :::
 
 ## Benefits
@@ -47,46 +47,15 @@ An automation runs a playbook, which  runs actions that are provided by integrat
 
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
-1. To view playbooks, at the top of the screen click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>.<br/>The list of available playbooks displays. Playbooks run actions provided by integrations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. To [view playbooks](/docs/cse/automation-service/automation-service-playbooks#view-playbooks), at the top of the screen click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>.<br/>The list of available playbooks displays. Playbooks run actions provided by integrations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Open a playbook to see the actions it runs. Click an action to view the integration resource that provides it.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="800"/>
-1. To view integrations, click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
+1. To [view integrations](/docs/cse/automation-service/automation-service-integrations#view-integrations), click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
 1. Open an integration to see its actions.<br/><img src={useBaseUrl('img/cse/automations-resource-example.png')} alt="Resource example" width="700"/>
-1. After automations run, click the **Automations** tab in Insights or Entities to view their output.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an Insight" width="800"/><br/>For more information, see [View results of an automation](/docs/cse/automation-service/automation-service-automations/#view-results-of-an-automation).
-
-<!-- github-comment The old tour section is below.
-
-## Tour the Automation Service
-
-An automation runs a playbook, which in turns runs actions that are provided by integrations. This section introduces you to each of these elements.
-
-### Step 1: View an automation
-[Automations](/docs/cse/automation-service/automation-service-automations) add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
-1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
-1. View the list of available automations. (If no automations display, you must first [create an automation](/docs/cse/automation-service/automation-service-automations#create-an-automation) by clicking **New Automation**.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
-1. To see the playbook an automation runs, click the **Edit** button.<br/><img src={useBaseUrl('img/cse/automations-edit-button.png')} alt="Automation edit button" width="800"/>
-1. The playbook is shown.<br/><img src={useBaseUrl('img/cse/automations-edit-dialog.png')} alt="Automation edit dialog" width="400"/>
-
-### Step 2: View the playbook for the automation
-A [playbook](/docs/cse/automation-service/automation-service-playbooks) contains a series of actions that are performed when an automation runs.
-1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
-1. At the top of the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
-1. Open the playbook for the automation you viewed in [Step 1](#step-1-view-an-automation).<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
-1. Note the actions in the playbook. [Actions](#add-an-action-node-to-a-playbook) are the boxes in the flow, and are the operations performed in a playbook. Click an action to view the integration resource that provides it.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="800"/>
-
-### Step 3: View the integration that provides the action
-Playbooks run actions provided by resources in [integrations](/docs/cse/automation-service/automation-service-integrations). 
-1. Click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
-1. Select the integration that provides the action you viewed in [Step 2](#step-2-view-the-playbook-for-the-automation). The action is shown in the list of actions on the resource.<br/><img src={useBaseUrl('img/cse/automations-resource-example.png')} alt="Resource example" width="700"/>
-
--->
-
+1. After an automation runs, click the **Automations** tab in Insights or Entities to [view results of the automation](/docs/cse/automation-service/automation-service-automations/#view-results-of-an-automation).<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an Insight" width="800"/>
 
 ## Overview: Configure an automation
 
-This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in the automation.
+This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation.
 
 :::info
 Before you can configure an automation, you must [authorize the integrations](/docs/cse/automation-service/about-automation-service#authorize-integrations) you want to use.
@@ -165,7 +134,7 @@ After the Automation Service is enabled for your organization, access to the Aut
      * Automation Playbooks
        * Access
        * Configure
-1. Follow the directions in our [tour of the Automation Service](#tour-the-automation-service) to verify that you can see the **Automation** option in the **Configuration** menu.
+1. Follow the directions to [access the Automation Service](#access-the-automation-service) to verify that you can see the **Automation** option in the **Configuration** menu.
 
 :::note
 To interact with most of the Automation Service features, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
