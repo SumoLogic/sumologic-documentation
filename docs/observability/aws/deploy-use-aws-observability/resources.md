@@ -131,7 +131,7 @@ IAM Role
    </td>
   </tr>
   <tr>
-   <td>Lambda Log Forwarder ( AWS CloudWatch logs)
+   <td>Lambda Log Forwarder (AWS CloudWatch logs)
    </td>
    <td>AWS Lambda
 <br/>
