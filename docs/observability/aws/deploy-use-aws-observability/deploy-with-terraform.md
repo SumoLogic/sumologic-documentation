@@ -20,7 +20,7 @@ To set up the AWS Observability solution using Terraform, complete the followin
 Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
 
 :::note
-If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend you to follow the below instruction:
+If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend you follow the below instructions:
 
 1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
 1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
