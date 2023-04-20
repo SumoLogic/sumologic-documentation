@@ -18,7 +18,9 @@ This Source is available in the Fed deployment.
 
 ## Historical data
 
-If you have already enabled Crowdstrike FDR you can have a queue of up to seven days worth of data. This historical data is ingested by the CrowdStrike FDR Source. This can be avoided by not enabling FDR in the Crowdstrike portal until you're ready to configure the Crowdstrike FDR Source. If you have enabled FDR and do not want to ingest the historical data, contact Customer Support for guidance.
+:::note
+If you have already enabled Crowdstrike FDR you can have a queue of up to seven days worth of data. This historical data is ingested by the CrowdStrike FDR Source. This can be avoided by not enabling FDR in the Crowdstrike portal until you're ready to configure the Crowdstrike FDR Source. If you have enabled FDR and do not want to ingest the historical data, contact Crowdstrike Support for guidance.
+:::
 
 ## States
 
@@ -46,7 +48,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ## Prerequisite
 
-You must contact the [CrowdStrike support team](https://supportportal.crowdstrike.com/)to enable CrowdStrike FDR. If it's not enabled, your requests will receive HTTP 500 responses.
+You must contact the [CrowdStrike support team](https://supportportal.crowdstrike.com/) to enable CrowdStrike FDR. If it's not enabled, your requests will receive HTTP 500 responses.
 
 ### Authentication
 
