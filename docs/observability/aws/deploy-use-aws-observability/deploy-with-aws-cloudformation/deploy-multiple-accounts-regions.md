@@ -63,7 +63,7 @@ Perform the following steps to install apps.
 1. Enable ELB Classic Access logging as **None** and Create Sumo Logic ELB Classic Logs Source as **No**. <br/>  ![Multiaccount6.png](/img/observability/Multiaccount6.png)
 1. Location where you want the App to be Installed as **PersonalFolder**. And for **Do you want to share App with whole organization**, set as **True**.<br/>  ![Multiaccount7.png](/img/observability/Multiaccount7.png)
 
-## Step 5: Determine Account Aliases
+## Step 5: Determine account aliases
 
 If you are going to deploy the solution in multiple AWS accounts, we highly recommend that you prepare a CSV file that maps your AWS Account-ids to account aliases. These aliases should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). These names will appear in the Sumo Logic Explorer View, metrics, and logs and can be queried using the “account field”.
 
