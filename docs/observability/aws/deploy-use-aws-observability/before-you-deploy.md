@@ -42,7 +42,7 @@ You have two options for deploying:
 * Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
 * Deploy using a [Terraform Script](deploy-with-terraform.md)
 
-Sumo Logic AWS Observability Solution supports following AWS regions:
+The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Asia Pacific (Hong Kong)
 * Asia Pacific (Tokyo)
 * Asia Pacific (Seoul)
