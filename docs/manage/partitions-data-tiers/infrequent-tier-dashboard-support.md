@@ -1,7 +1,7 @@
 ---
 id: infrequent-tier-dashboard-support
 title: Infrequent Tier Support for Dashboards
-description: Learn how to setup dashboard panels against the Infrequent data tier.
+description: Learn how to set up dashboard panels against the Infrequent data tier.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
