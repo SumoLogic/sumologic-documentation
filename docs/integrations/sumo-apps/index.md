@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events.
 
-## Requesting Sumo Logic Enterprise Apps
+**Requesting Sumo Logic Enterprise Apps**
 
 Enterprise apps, such as the [Sumo Logic App for PCI Compliance](/docs/integrations/pci-compliance/setup) and the [Sumo Logic App for Security Analytics](/docs/integrations/sumo-apps/security-analytics), are for Sumo Logic Enterprise accounts only and cannot be self-installed. A paid Professional Services contract is required for installment and configuration.
 
