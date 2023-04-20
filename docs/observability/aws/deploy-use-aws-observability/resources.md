@@ -199,7 +199,7 @@ The metadata tags are applied to Sumo Logic Sources.
   <tr>
    <td>Source
    </td>
-   <td>Meta-data tags applied
+   <td>Metadata tags applied
    </td>
    <td>Common fields created via FERs
    </td>
