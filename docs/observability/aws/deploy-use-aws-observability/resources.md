@@ -193,7 +193,7 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 ### Metadata Tags
 
-The metadata tags applied on Sumo Logic Sources.
+The metadata tags are applied to Sumo Logic Sources.
 
 <table>
   <tr>
