@@ -24,7 +24,7 @@ If you have already set up the solution with CloudFormation in the past and want
 
 1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
 1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
-1. **AWS Observability Apps** folder by default will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+1. By default, the **AWS Observability Apps** folder will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic access keys belong to.
 :::
 
 ## Before you start 
