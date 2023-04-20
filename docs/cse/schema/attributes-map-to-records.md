@@ -87,7 +87,7 @@ This topic lists the schema attributes that you can map to Records. Note that yo
 | http_hostname | string   | Hostname from the client request |
 | http_method | string   | Type of request being made. (e.g. GET or POST) |
 | http_referer | string   | Identifies the address of the webpage (i.e. the URI or IRI) which is linked to the resource being requested. |
-| http_requestHeaders | map[string]string | A map of the HTTP request headers. |
+| http_requestHeaders | string | A map of the HTTP request headers. |
 | http_response_contentLength | int      | The number of bytes of data in the body of the response |
 | http_response_contentType   | string   | The format of the data in the HTTP response. |
 | http_response_statusCode    | int      | The HTTP response code for a request. |
