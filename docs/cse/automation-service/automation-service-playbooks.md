@@ -23,7 +23,7 @@ required to authorize predefined actions.
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
-1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](#integrations) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
+1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/cse/automation-service/automation-service-integrations) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
 
 ## Create a new playbook
 
@@ -40,7 +40,7 @@ screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} 
 1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
    * [**Action**](#add-an-action-node-to-a-playbook): Automatically take specific actions such as enriching data or taking containment steps.
    * [**Condition**](#add-a-condition-node-to-a-playbook): Use conditional statements to define what actions should be taken in response to previous inputs.
-   * [**Playbook**](#playbooks): Call other playbooks in response to conditional
+   * **Playbook**: Call other playbooks in response to conditional
  statements.
 
 ## Add an action node to a playbook
@@ -54,7 +54,7 @@ An action node in a playbook runs an enrichment or notification operation. Strin
 1. Give the node a **Name** that identifies the action being taken.
 1. Select the **Type** of action as **Enrichment** or **Notification**. 
 1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="600"/> 
-1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](#step-3-view-the-integration-that-provides-the-action).
+1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/cse/automation-service/about-automation-service#step-3-view-the-integration-that-provides-the-action).
 1. Once you have entered all the information requested, click **Create**. The action node is added to the playbook.
 1. Repeat the steps to add other action nodes. 
 1. [Add condition nodes](#add-a-condition-node-to-a-playbook) if desired. 

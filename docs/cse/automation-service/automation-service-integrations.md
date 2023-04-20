@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
 :::info
-Before you can use actions from an integration resource, you must [authorize the integration](#authorize-integrations) to work with the Automation Service.
+Before you can use actions from an integration resource, you must [authorize the integration](/docs/cse/automation-service/about-automation-service#authorize-integrations) to work with the Automation Service.
 :::
 
 ## View integrations
@@ -21,7 +21,7 @@ Before you can use actions from an integration resource, you must [authorize the
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
-1. Select an integration to see the actions on the resource. You call these actions when you [add an action node to a playbook](#add-an-action-node-to-a-playbook).<br/><img src={useBaseUrl('img/cse/automations-integrations-actions-list.png')} alt="Actions on an integration" width="800"/>
+1. Select an integration to see the actions on the resource. You call these actions when you [add an action node to a playbook](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook).<br/><img src={useBaseUrl('img/cse/automations-integrations-actions-list.png')} alt="Actions on an integration" width="800"/>
 
 :::tip
 To add a new resource to an integration, click the **+** button to the left of **Resources**. This is useful if you have another instance of the vendor application you want to connect to.
@@ -47,7 +47,7 @@ If the certified integration resource was configured before the duplication proc
 
 Note that in the following example a **(2)** follows the duplicated integration's name, as well as the resource name. A **(3)** would follow the name of the next duplicate, **(4)** the next, and so on. Also note that the actions listed in the integration do not have the **Certified Actions** check mark, because they exist on a duplicated integration.<br/><img src={useBaseUrl('img/cse/automations-integration-duplicated-resources-actions.png')} alt="No changes to duplicated resource actions" width="600"/>
 
- If you choose a duplicated resource when you [add an acton node to a playbook](#add-an-action-node-to-a-playbook), the actions available will be the ones belonging to the duplicated resource. The following example shows selecting an action from a duplicated resource.<br/><img src={useBaseUrl('img/cse/automations-integration-add-comment-to-issue.png')} alt="Add comment to issue" width="600"/>
+ If you choose a duplicated resource when you [add an acton node to a playbook](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook), the actions available will be the ones belonging to the duplicated resource. The following example shows selecting an action from a duplicated resource.<br/><img src={useBaseUrl('img/cse/automations-integration-add-comment-to-issue.png')} alt="Add comment to issue" width="600"/>
 
 ## Integrations framework
 
