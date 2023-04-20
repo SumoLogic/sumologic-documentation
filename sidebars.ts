@@ -161,6 +161,7 @@ module.exports = {
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
+        'send-data/collect-from-other-data-sources/kubernetes',
         {
           type: 'category',
           label: 'Hosted Collectors & Sources',

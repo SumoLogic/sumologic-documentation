@@ -6,4 +6,4 @@ description: Sumo Logic offers a comprehensive Kubernetes Solution, however, if 
 
 The [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md) in our sumologic-kubernetes-collection GitHub repository has detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
 
-This guide is the same used for setting up collection for our [comprehensive Kubernetes solution](/docs/observability/kubernetes). 
+This is the same guide used for setting up a collection for our [comprehensive Kubernetes solution](/docs/observability/kubernetes).
