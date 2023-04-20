@@ -2629,6 +2629,7 @@
   "/Manage/Partitions/Analytics_Tiers": "/docs/manage/partitions-data-tiers",
   "/Manage/Partitions/Data_Tiers": "/docs/manage/partitions-data-tiers",
   "/Manage/Partitions_and_Data_Tiers": "/docs/manage/partitions-data-tiers",
+  "/docs/manage/partitions-data-tiers/infrequent-dashboard-support": "/docs/manage/partitions-data-tiers/infrequent-tier-dashboard-support",
   "/Manage/Partitions_and_Data_Tiers/01-About-Partitions": "/docs/manage/partitions-data-tiers",
   "/Manage/Partitions_and_Data_Tiers/03-Add-a-Partition": "/docs/manage/partitions-data-tiers/create-edit-partition",
   "/Manage/Partitions_and_Data_Tiers/04_Edit_a_Partition": "/docs/manage/partitions-data-tiers/create-edit-partition",
