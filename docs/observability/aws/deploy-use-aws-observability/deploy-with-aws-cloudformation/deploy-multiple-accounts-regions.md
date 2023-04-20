@@ -27,7 +27,7 @@ If this is the first time you've deployed the AWS Observability solution, read t
     :::warning
     This step is critical: if you do not select the correct region, you will deploy the solution in the wrong region.
     :::
-1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration), below.
+1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
 
 ## Step 2: Sumo Logic access configuration 
 
