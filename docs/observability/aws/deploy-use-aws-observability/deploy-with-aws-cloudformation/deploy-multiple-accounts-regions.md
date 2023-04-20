@@ -12,14 +12,13 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 ## Before you start
 
-If this is the first time you've deployed the AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/) topic for more information.
+If this is the first time you've deployed the AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/) topic for more information. And, complete the prerequisites for StackSets as described in the [AWS documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html).
 
 ## Step 1: Open the CloudFormation template
 
 1. Sign on to the AWS Management console.
-1. Choose an option:
-   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml)
-   * Click the AWS Observability solution (S3 Link for CloudFormation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
+1. Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacksets/create) to create StackSets.
+1. Enter Amazon S3 URL as (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
     :::note
     If you want to modify the Collector Name and Source Categories of the Sumo Logic sources that will be created by default, download the CloudFormation template version 2.1.0 or greater and follow [these instructions](#modify-the-collector-name-and-source-categories) before proceeding to the next step. 
     :::
