@@ -143,3 +143,11 @@ This API can return a 400 error code which could mean one of the following reaso
 
 1. "The provided authorization code or refresh token has expired due to inactivity". Regenerate your authorization code and use it shortly after generation to update your Sumo Logic C2C source. This token will expire if not used quickly.
 2. "Invalid request. Request is malformed or invalid". This response error can occur if other parts of the configuration are incorrect such as an invalid "Client Secret Value" or incorrect set permissions. Ensure all of the setup steps are followed and the source has the correct configuration.
+
+:::note intermittent JSON error
+When querying for the Microsoft Exchange trace log messages, Microsoft API may sporadically return a HTML webpage titled "Sign in to Outlook" instead of JSON events. 
+
+This will force the health status of the source into an error state with the error text `invalid character '<' looking for beginning of value` as we try to JSON decode the data. The API will revert back to providing us the expected JSON events and collection will continue as there is no issue with the authentication, but it does cause the health status of the source to flip into an error state. 
+
+Our source keeps track of a time cursor for events and will only move the time cursor forward once we have successfully received, decoded the JSON, and sent the logs into Sumo Logic before we move the time cursor forward to ensure there is no data loss. If you experience this issue, contact Microsoft support.
+:::
