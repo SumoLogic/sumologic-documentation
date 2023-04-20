@@ -44,27 +44,31 @@ Once a request has been submitted, a support ticket is automatically opened. A r
   </div>
 </div>
 <div className="box smallbox4 card">
-  <div className="container">
-  <a href="/docs/integrations/sumo-apps/enterprise-audit"><img src={useBaseUrl('img/integrations/sumo-apps/Enterprise_Audit.png)} alt="icon" width="40"/><h4>Enterprise Audit (multiple apps)</h4></a>
-  <p>Provides for more meaningful audit messages through JSON-based apps.</p>
-  </div>
+      <div className="container">
+      <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Thumbnail icon" width="50"/>
+      <h4><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit (multiple apps)</a></h4>
+      <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
+      </div>
 </div>
-<div className="box smallbox5 card">
-  <div className="container">
-  <a href="/docs/integrations/sumo-apps/enterprise-search-audit"><img src={useBaseUrl('img/icons/security/sumologic_EnterpriseSearchAudit.png')} alt="icon" width="40"/><h4>Enterprise Search Audit</h4></a>
-  <p>Provides visibility into your account's search activity and identifies areas of improvement.</p>
-  </div>
-</div>
-<div className="box smallbox6 card">
-  <div className="container">
-  <a href="/docs/integrations/sumo-apps/infrequent-data-tier"><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="icon" width="40"/><h4>Infrequent Data Tier</h4></a>
-  <p>Provides visibility into the On-demand Search usage and costs associated with Infrequent Data Tier.</p>
-  </div>
-</div>
-<div className="box smallbox7 card">
-  <div className="container">
-  <a href="/docs/integrations/sumo-apps/security-analytics"><img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="icon" width="40"/><h4>Security Analytics</h4></a>
-    <p>Provides Dashboards that help to easily see and manage your system's status.</p>
-  </div>
-</div>
+    <div className="box smallbox5 card">
+      <div className="container">
+      <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="60"/>
+      <h4><a href="/docs/integrations/sumo-apps/enterprise-search-audit">Enterprise Search Audit</a></h4>
+      <p>A guide to our Enterprise Search Audit App.</p>
+      </div>
+    </div>
+    <div className="box smallbox6 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="55"/>
+      <h4><a href="/docs/integrations/sumo-apps/infrequent-data-tier">Infrequent Data Tier</a></h4>
+      <p>A guide to the Sumo Logic Infrequent Data Tier app.</p>
+      </div>
+    </div>
+    <div className="box smallbox7 card">
+      <div className="container">
+      <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="55"/>
+      <h4><a href="/docs/integrations/sumo-apps/security-analytics">Security Analytics</a></h4>
+      <p>A guide to the Sumo Logic app for Security Analytics.</p>
+      </div>
+    </div>
 </div>
