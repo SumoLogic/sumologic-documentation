@@ -12,7 +12,7 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 ## Before you start
 
-If this is the first time you've deployed the AWS Observability Solution, read the [Before You Deploy](https://help.sumologic.com/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/) topic for more information.
+If this is the first time you've deployed the AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/) topic for more information.
 
 ## Step 1: Open the CloudFormation template
 
