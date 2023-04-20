@@ -107,9 +107,9 @@ The first thing you need to do is decide what actions you want to use in your pl
 
 Now that you have the names of the actions you want to use, you can add them to your playbook.
 
-1. Create a new playbook.
+1. [Create a new playbook](/docs/cse/automation-service/automation-service-playbooks#create-a-new-playbook).
 1. Click **Add Node**.
-1. Choose **Action** as the type.
+1. Choose [**Action**](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) as the type of node to add.
 1. In the **Action** field, select the name an action you identified in Step 1. 
 1. As soon as you choose the action, the **Resource** field displays the name of the resource. Verify that the name of the resource matches what you noted in Step 1. 
 1. Fill out the rest of the fields in the **Add Node** dialog to configure the action to behave the way you want.
@@ -122,18 +122,18 @@ Now that you have the names of the actions you want to use, you can add them to 
 
 Now that the playbook is configured, you can add it to an automation.
 
-1. Create a new automation.
-1. Select the playbook you created.
-1. In **Expects attributes for** select **Entity** or **Insight**.
-1. Select whether you want to automatically run the automation on Insight creation or closure, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
+1. [Create a new automation](/docs/cse/automation-service/automation-service-automations#create-an-automation).
+1. Select the playbook you created in Step 2.
+1. In **Expects attributes for**,  select **Entity** or **Insight**.
+1. Select whether you want to automatically run the automation when an Insight is created or closed, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
 1. Select **Enabled**.
 1. Click **Add to List**.
 
 ### Step 4: Run the automation
 
-Now that you've created the automation, it is ready to run. If you set the automation to run when an Insight is created or closed, it runs automatically. 
+Now that you've created the automation, it is ready to run. If you set the automation to run when an Insight is created or closed, it runs [automatically](/docs/cse/automation-service/automation-service-automations#run-an-automation-automatically). 
 
-If you set the automation to run manually, you can run it from an Insight or an Entity:
+If you configured the automation to [run manually](/docs/cse/automation-service/automation-service-automations#run-an-automation-manually), you can run it from an Insight or an Entity:
 * Insights
    1. Open an Insight.
    1. Click **Actions**.
