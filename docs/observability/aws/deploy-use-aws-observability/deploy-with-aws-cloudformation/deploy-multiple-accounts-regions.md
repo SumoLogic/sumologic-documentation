@@ -21,7 +21,7 @@ If this is the first time you've deployed the AWS Observability solution, read t
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml)
    * Click the AWS Observability solution (S3 Link for CloudFormation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template. If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
     :::note
-    In case you want to modify the Collector Name and Source Categories of the Sumo Logic sources that will be created by default, you can do so by downloading CloudFormation template version 2.1.0 or greater and following [these instructions](#modify-the-collector-name-and-source-categories) before proceeding to the next step. 
+    If you want to modify the Collector Name and Source Categories of the Sumo Logic sources that will be created by default, download the CloudFormation template version 2.1.0 or greater and follow [these instructions](#modify-the-collector-name-and-source-categories) before proceeding to the next step. 
     :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::warning
