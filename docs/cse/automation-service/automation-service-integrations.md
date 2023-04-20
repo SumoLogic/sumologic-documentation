@@ -18,7 +18,7 @@ Before you can use actions from an integration resource, you must [authorize the
 ## View integrations
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
 1. Select an integration to see the actions on the resource. You call these actions when you [add an action node to a playbook](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook).<br/><img src={useBaseUrl('img/cse/automations-integrations-actions-list.png')} alt="Actions on an integration" width="800"/>

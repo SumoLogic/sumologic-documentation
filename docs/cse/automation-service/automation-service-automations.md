@@ -12,7 +12,7 @@ Automations run playbooks to add enrichments and create notifications for either
 
 ## View automations
 1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
+1. Under **Integrations**, select **Automation**.
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation)).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/> 
 
 To view the automations that have run on Insights or Entities, see [View results of an automation](/docs/cse/automation-service/about-automation-service#view-results-of-an-automation).
@@ -22,7 +22,7 @@ To view the automations that have run on Insights or Entities, see [View results
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. At the top of the automations screen, click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
 1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined, and its type must be set to **CSE** before associating it with an automation. (You can set the type as **CSE** when you [create a new playbook](/docs/cse/automation-service/automation-service-playbooks#create-a-new-playbook).)<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
-1. Select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. 
+1. In **Expects attributes for** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. 
 1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected. 
 1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
 1. Set the **Status**. Disabled automations will not run automatically and will not appear in any **Actions** or **Automations** menus.
@@ -74,6 +74,26 @@ In this example:
    * The CarbonBlack automation is configured for IP Addresses, Email Addresses, and Domain Names, so it will run four times (once for the Email Address and once for each IP Address selected on the previous screen).
    * The nslookup automation is configured to only run on IP Addresses so it will run three times.
    * No automation will run on the Hostname.
+
+## View results of an automation
+
+If an automation is set to run when an Insight is created or closed, it [runs automatically](/docs/cse/automation-service/automation-service-automations#run-an-automation-automatically). You can also [run an automation manually](/docs/cse/automation-service/automation-service-automations#run-an-automation-manually). 
+
+### View automations on Insights and Entities
+
+When automations run, the results display on Insights and Entities.
+1. Open an Insight or Entity.
+1. Click **Automations** at the top of the screen. The example below shows automations that ran on an Insight. Each automation shows its result under **Status**. You can click **View Playbook** to see the playbook that the automation ran.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an Insight" width="800"/>
+
+While viewing an Insight or Entity, you can [run automations manually](/docs/cse/automation-service-automations#run-an-automation-manually).
+ 
+### View enrichments provided by automations
+
+When automations run, they can provide enrichments to Insights, Entities, and Signals. 
+1. Open an Insight, Entity, or Signal with enrichments provided by an automation. 
+1. Click **Enrichments** at the top of the screen.
+1. If [threat indicators are set by the enrichment](/docs/cse/integrations/automation-service-enrichments#threat-indicators), they are displayed. The following example shows a **Malicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-malicious-threat-indicator.png')} alt="Threat indicator example" width="800"/> 
+
 
 ## View an automation's status
 
