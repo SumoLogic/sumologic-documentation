@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
 :::info
-Before you can use actions from an integration resource, you must [authorize the integration](/docs/cse/automation-service/about-automation-service#authorize-integrations) to work with the Automation Service.
+Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
 :::
 
 ## View integrations

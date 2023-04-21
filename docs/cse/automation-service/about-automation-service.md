@@ -13,14 +13,19 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automati
 
 You can interact with the service through [automations](/docs/cse/automation-service/automation-service-automations), which execute playbooks. [Playbooks](/docs/cse/automation-service/automation-service-playbooks)  are composed of one or more [actions](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](/docs/cse/automation-service/automation-service-integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
-:::info Limited availability
-The Automation Service is available on a limited availability (LA) basis. If you would like the Automation Service enabled in your Cloud SIEM Enterprise environment, contact your Sumo Logic account representative.
+## Differences compared to Cloud SOAR
 
-Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/):
-* Playbooks type must be **CSE**.
-* The Automation Service only supports automated enrichment, notification, and custom action types at this time. 
-* Actions can run "on-premise" via a [bridge](/docs/cse/automation-service/automation-service-bridge) or can run directly through the Sumo Logic cloud. For security and performance reasons, only certified integrations and actions can run directly through the cloud; custom actions must run "on-premise".
-* Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), where you can browse the full integration and playbook catalog, is not yet connected to the Automation Service. A selection of popular integrations have been added to your environment automatically, but the full list of [available integrations](/docs/cse/automation-service/automation-service-integrations#available-integrations) is included. Contact your Sumo Logic account representative if you would like to have one of these integrations added to your environment, if you would like documentation for a specific integration, or if you're interested in an integration that's not listed.
+The Automation Service differs from Cloud SOAR in the following ways:
+* The Automation Service only supports automated enrichment, notification, and custom action types. 
+* Automation Service playbooks can only be triggered from CSE.
+* The Automation Service allows you to execute up to 10,000 actions per day.
+* The Automation Service does not include the incident and case management features from Cloud SOAR.
+* Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
+
+:::info Limited availability
+The Automation Service is available on a limited availability (LA) basis. This means the feature is fully implemented and supported, and is available to all customers, but is only deployed in customer environments upon request. If you would like the Automation Service enabled in your Cloud SIEM Enterprise environment, contact your Sumo Logic account representative.
+
+Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), where you can browse the full integration and playbook catalog, is not yet connected to the Automation Service. A selection of popular integrations have been added to your environment automatically, but the full list of [available integrations](/docs/cse/automation-service/automation-service-integrations#available-integrations) is included. Contact your Sumo Logic account representative if you would like to have one of these integrations added to your environment, if you would like documentation for a specific integration, or if you're interested in an integration that's not listed.
 :::
 
 ## Benefits
@@ -37,8 +42,8 @@ Playbooks, integrations, and actions in this version may differ from those in [C
   1. Invites certain people to the Slack channel.
 
 :::note
-* The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/cse/automation-service/automation-service-bridge)). Those capabilities will be deprecated later in 2023.
-* The Automation Service allows you to execute up to 10,000 actions per day. 
+* The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/cse/automation-service/automation-service-bridge)). Those capabilities will be deprecated later in 2023. 
+* Actions can run directly from the Sumo Logic cloud or from other environments via a [bridge](/docs/cse/automation-service/automation-service-bridge/). For security and performance reasons, only certified integrations and actions can run directly from the Sumo Logic cloud environment.
 :::
 
 ## Access the Automation Service
@@ -58,7 +63,7 @@ An automation runs a playbook, which  runs actions that are provided by integrat
 This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation.
 
 :::info
-Before you can configure an automation, you must [authorize the integrations](/docs/cse/automation-service/about-automation-service#authorize-integrations) you want to use.
+Before you can configure an automation, you must [configure the connection](#configure-the-connection-for-an-integration-resource) for the integration resources you want the automation to use.
 :::
 
 ### Step 1: Get actions for the playbook
@@ -140,16 +145,16 @@ After the Automation Service is enabled for your organization, access to the Aut
 To interact with most of the Automation Service features, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
 :::
 
-### Authorize integrations
+### Configure the connection for an integration resource
 
-To use [integrations](/docs/cse/automation-service/automation-service-integrations), you must authorize their resources for use in the Automation Service.
+To use [integrations](/docs/cse/automation-service/automation-service-integrations), you must configure the connection for their resources.
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
 1. Click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/> 
 1. Click **Integrations** in the left navigation bar.
-1. Select the integration whose resource you want to authorize.
+1. Select the integration whose resource you want to configure the connection for.
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
-1. Enter the authorization needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
+1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
 

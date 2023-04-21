@@ -47,6 +47,10 @@ screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} 
 
 An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. 
 
+:::info
+Before you can add action nodes to a playbook, you must [configure the connection](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) for each integration resource that actions originate from.
+:::
+
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
