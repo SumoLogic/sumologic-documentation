@@ -21,7 +21,6 @@ syslog.collection.YOUR_DEPLOYMENT.sumologic.com
 
 where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
-
 In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the **DigiCert** certificate
 from one of the following locations:
 * [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
