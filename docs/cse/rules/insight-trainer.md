@@ -17,9 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
 
-* False Positive: Non-actionable Insight possibly due to an error in the underlying detection logic of the rule or non-applicability to the environment.
-* No Action: Insight is valid but no action is necessary. This is anything that can be considered safe but is true to the detection logic. (Rules causing repeated No Action resolutions may also be considered as good tuning expression candidates.)
-* Resolved: Action was taken on the Insight or instances where the defining intention of the rule is true. (An example of this would be a penetration test).
+* False Positive: A false alarm, possibly due to an error in the detection logic of the rule or inapplicability to your environment.
+* No Action: A valid detection but no action is necessary due to effective containment measures. Rules participating in repeated No Action Insights may also be good tuning expression candidates.
+* Resolved: A valid detection where investigation was necessary.
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
@@ -50,8 +50,8 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
-1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 1. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
+1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 
 ### Recommendations Summary
 
@@ -60,12 +60,13 @@ This panel summarizes the changes to Insight resolutions if you implement the re
 <img src={useBaseUrl('img/cse/cloud-siem-insight-trainer-recommendations-summary.png')} alt="Insight Trainer Recommendations Summary" width="800"/>
 
 1. **Total Eligible Insights (prior to optimization)**. The number of Insights that could be reduced.
-1. **Total Optimized Insights (FUI + OLI)**. The total number of Insights with a resolution label either added or removed.
-1. **Insight Counts by Resolution: Eligible v. Optimized Labeled Insights**. Bar chart showing the relative number of Resolved versus False Positive resolutions that would result if you implement the recommended rule changes. 
+1. **Optimized Labeled Insights (OLI)**. The number of Insights remaining with a resolution label.
 1. **Forecasted Unlabeled Insights (FUI)**. The number of Insights that will no longer have a resolution label.
+1. **Total Optimized Insights (FUI + OLI)**. The total number of Insights with a resolution label either added or removed.
 1. **False Positive Rate: Eligible Insights**. The false positive rate for Insights that are eligible for optimization.
 1. **False Positive Rate: Optimized Insights**. The false positive rate for Insights after optimization.
-1. **Optimized Labeled Insights (OLI)**. The number of Insights remaining with a resolution label.
+1. **Insight Counts by Resolution: Eligible v. Optimized Labeled Insights**. Bar chart showing the relative number of Resolved versus False Positive resolutions that would result if you implement the recommended rule changes. 
+
 
 ### Recommended Rule Severities
 
