@@ -452,7 +452,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
    ```
 4. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
-   For web-hosted images, do not use the `{useBaseUrl('<img>')}` syntax:
+   For web-hosted images, do not use the `useBaseUrl` syntax.
    * &#9989; Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
    * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
@@ -490,15 +490,17 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 ### Image sizes
 
+When sizing images, use your discretion.
+
 #### Logos
 
-For square logos, set the width to about 45-55px. Use your discretion.
+For square logos, set the width to about 45-55px.
 
 |  Yes &#9989;  |  No &#10060; |
 |---|---|
 |  <img src={useBaseUrl('img/contributing/logo-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/logo-no.png')} alt="alt-text" width="400"/> |
 
-For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px. Use your discretion.
+For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px.
 
 #### Screenshots
 
