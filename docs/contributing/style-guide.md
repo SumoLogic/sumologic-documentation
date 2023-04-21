@@ -266,9 +266,9 @@ Not everything has an intuitive name. It's the very nature of working with a con
 
 ## Downloadable files
 
-To link to a downloadable asset file, such as a .yaml, .ps1, or .xml:
+To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 
-1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in the file called `domainCollector.ps1`.
+1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="header sizes" width="250"/>
 1. Go to your doc in progress and use the following syntax to link the file:
   <Tabs
     className="unique-tabs"
@@ -292,7 +292,7 @@ To link to a downloadable asset file, such as a .yaml, .ps1, or .xml:
   </TabItem>
   </Tabs>
 
-Supported file formats include .json, .js, .doc, and more. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
+Nearly all file formats are supported. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
 
 If your file is available in another public Sumo Logic repo, provide the standard URL link. [Here's an example](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/fargate/install-metrics.sh).
 
@@ -490,7 +490,25 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 ### Image sizes
 
+#### Logos
 
+For square logos, set the width to about 45-55px. Use your discretion.
+
+|  Yes &#9989;  |  No &#10060; |
+|---|---|
+|  <img src={useBaseUrl('img/contributing/logo-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/logo-no.png')} alt="alt-text" width="400"/> |
+
+For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px. Use your discretion.
+
+#### Screenshots
+
+Ensure that screenshots are large enough so that the content is legible, but not comically oversized. Use your discretion.
+
+|  Yes &#9989;  |  No &#10060; |
+|---|---|
+|  <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+
+Screenshots should never be wider than 600px.
 
 ### Images in lists
 
