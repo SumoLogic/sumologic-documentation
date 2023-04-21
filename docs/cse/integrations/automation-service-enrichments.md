@@ -8,7 +8,7 @@ description: Learn how enrichments and threat indicators are added by the Automa
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
- In addition to being added by the [Insight Enrichment server](/docs/cse/integrations/insight-enrichment-server/), enrichments can also be added by the [Automation Service](/docs/cse/automation-service/about-automation-service). Enrichments added by the Automation Service can add threat indicators to show risk level in Insights and Entities. 
+ In addition to being added by the [Insight Enrichment server](/docs/cse/integrations/insight-enrichment-server/), enrichments can also be added by the [Automation Service](/docs/cse/automation-service/about-automation-service). Enrichments added by the Automation Service can add [threat indicators](#threat-indicators) to show risk level in Insights and Entities. 
 
 ## Enrichments
 
@@ -40,9 +40,9 @@ No icon is displayed for Entities that with the **Not Flagged** label.
 **Not Flagged** is not the default value (which is no indicator at all). Cloud SIEM will not automatically determine the indicator value; enrichments must explicitly set it.
 :::
 
-## New enrichment attributes
+## Enrichment attributes
 
-Support for three new optional attributes have been added to the enrichment schema:
+The enrichment schema includes support for the following optional attributes:
 * `expiresAt`. Defines when the enrichment should be auto-deleted from Cloud SIEM (by default, enrichments will never be auto-deleted).
 * `externalUrl`. Defines a link that will be displayed with an enrichment (for example, to include a link to the VirusTotal details page for this Entity, put the link in this field).
 * `reputation`. Associates a threat indicator with this enrichment data. The allowable values are `malicious`, `suspicious`, and `notflagged`. The default is not to display any reputation.
