@@ -1,14 +1,14 @@
 ---
 id: automation-service-enrichments
-title: Automation Service enrichments
-sidebar_label: Automation Service enrichments
-description: Learn how enrichments and threat indicators are added by the Automation Service.
+title: Enrichments and threat indicators
+sidebar_label: Enrichments and threat indicators
+description: Learn how enrichments include threat indicators.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
- In addition to being added by the [Insight Enrichment server](/docs/cse/integrations/insight-enrichment-server/), enrichments can also be added by the [Automation Service](/docs/cse/automation-service/about-automation-service). Enrichments added by the Automation Service can add [threat indicators](#threat-indicators) to show risk level in Insights and Entities. 
+ Enrichments can add [threat indicators](#threat-indicators) to show risk level in Insights and Entities. 
 
 ## Enrichments
 
