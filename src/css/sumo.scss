@@ -614,17 +614,18 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 // NOTE
 html[data-theme='dark'] .alert--secondary {
-  --ifm-alert-background-color: rgba(32, 201, 151, 0.05);
-  --ifm-alert-border-color: #20c997;
-  border-left: 6px solid #20c997;
+  --ifm-alert-background-color: #474748;
+  --ifm-alert-border-color: #fdfdfe;
+  border-left: 6px solid #fdfdfe;
+  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #20c997 !important;
   }
   a {
     //font-weight: bold;
-    color: rgb(58, 204, 180);
-    text-decoration: none;
+    color: #fdfdfe;
+    text-decoration: underline;
   }
   a:hover {
     text-decoration: underline;
@@ -632,10 +633,11 @@ html[data-theme='dark'] .alert--secondary {
 }
 
 html[data-theme='light'] .alert--secondary {
-  background-color: rgba(32, 201, 151, 0.05);
-  --ifm-alert-color: #20c997;
-  --ifm-alert-border-color: #20c997;
-  border-left: 6px solid #20c997;
+  background-color: #fdfdfe;
+  --ifm-alert-color: #474748;
+  --ifm-alert-border-color: #d4d5d8;
+  border-left: 6px solid #d4d5d8;
+  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #1d4238;
   .admonition-icon {
@@ -643,8 +645,8 @@ html[data-theme='light'] .alert--secondary {
   }
   a {
     //font-weight: bold;
-    color: rgb(0, 196, 163);
-    text-decoration: none;
+    color: #474748;
+    text-decoration: underline;
   }
   a:hover {
     text-decoration: underline;
@@ -656,6 +658,7 @@ html[data-theme='dark'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
+  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     background-color: #000099;
@@ -678,6 +681,7 @@ html[data-theme='light'] .theme-admonition-sumo {
   --ifm-alert-color: #000099;
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
+  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #000099;
   .admonition-icon {
@@ -700,6 +704,7 @@ html[data-theme='light'] .alert--info {
   --ifm-alert-background-color: rgba(0, 139, 178, 0.05);
   --ifm-alert-border-color: #008bb2;
   border-left: 6px solid #008bb2;
+  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ra-admonition-icon-color: #008bb2 !important;
@@ -718,6 +723,7 @@ html[data-theme='dark'] .alert--info {
   --ifm-alert-background-color: rgba(0, 139, 178, 0.05);
   --ifm-alert-border-color: #008bb2;
   border-left: 6px solid #008bb2;
+  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #008bb2 !important;
@@ -737,6 +743,7 @@ html[data-theme='light'] .alert--success {
   --ifm-alert-background-color: rgba(63, 146, 63, 0.05);
   --ifm-alert-border-color: #3f923f;
   border-left: 6px solid #3f923f;
+  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
@@ -755,6 +762,7 @@ html[data-theme='dark'] .alert--success {
   --ifm-alert-background-color: rgba(63, 146, 63, 0.05);
   --ifm-alert-border-color: #3f923f;
   border-left: 6px solid #3f923f;
+  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
@@ -774,6 +782,7 @@ html[data-theme='light'] .alert--warning {
   --ifm-alert-background-color: rgba(255, 141, 3, 0.05);
   --ifm-alert-border-color: #ff8d03;
   border-left: 6px solid #ff8d03;
+  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   border-radius: 0;
   .admonition-icon {
@@ -793,8 +802,8 @@ html[data-theme='dark'] .alert--warning {
   --ifm-alert-background-color: rgba(255, 141, 3, 0.05);
   --ifm-alert-border-color: #ff8d03;
   border-left: 6px solid #ff8d03;
+  border-radius: 6px;
   --ifm-alert-color: #ffffff;
-  border-radius: 0;
   .admonition-icon {
     --ifm-alert-foreground-color: #ff8d03 !important;
   }
@@ -813,6 +822,7 @@ html[data-theme='light'] .alert--danger {
   --ifm-alert-background-color: rgba(223, 75, 48, 0.05);
   --ifm-alert-border-color: #df4b30;
   border-left: 6px solid #df4b30;
+  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ra-admonition-icon-color: #df4b30 !important;
@@ -831,6 +841,7 @@ html[data-theme='dark'] .alert--danger {
   --ifm-alert-background-color: rgba(223, 75, 48, 0.05);
   --ifm-alert-border-color: #df4b30;
   border-left: 6px solid #df4b30;
+  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #df4b30 !important;
