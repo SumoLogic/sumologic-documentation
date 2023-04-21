@@ -30,7 +30,7 @@ Write. The content below was copied from the doc accessed from the ? menu option
 
 ### Network requirements
 
-Bridge Appliance has to be able to resolve DNS hostnames and needs to reach the below destinations
+The Bridge has to be able to resolve DNS hostnames and needs to reach the below destinations
 
 | DESTINATION | PROTOCOL | PORT |
 | :-- | :-- | :-- |

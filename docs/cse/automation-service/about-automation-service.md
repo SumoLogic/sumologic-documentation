@@ -155,7 +155,7 @@ To use [integrations](/docs/cse/automation-service/automation-service-integratio
 
 ### API and Terraform support
 
-The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support automations. The new endpoints include:
+The [CSE API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
 * `GET /automations`. Get the list of automations
 * `POST /automations`. Create an automation
 * `POST /automations/execute`. Run one or more automations against one or more Entities/Insights
@@ -163,7 +163,7 @@ The [CSE API](/docs/cse/administration/cse-apis/) has been updated to support au
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
 
-The Sumo Logic Terraform provider has also been updated. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+The Sumo Logic Terraform provider also supports automations. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
 :::tip
 The Automation Service uses the Cloud SOAR API. For more information about the API, click the **?** button in the upper right of the Cloud SOAR UI to see the API Documentation manual.
