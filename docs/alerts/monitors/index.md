@@ -9,7 +9,7 @@ tags: [monitor, monitors]
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="45"/>
 
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 
