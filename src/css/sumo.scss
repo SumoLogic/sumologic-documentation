@@ -1872,3 +1872,53 @@ html[data-theme='dark'] .featureImage {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.container-boxes {
+  overflow: hidden; /* Clear the floats */
+}
+
+.dos-box {
+  background-color: #91CF91;
+  color: #212121;
+  border-left: 8px solid #12863a;
+  padding: 10px;
+  border-radius: 3px;
+  width: 40%;
+  margin-left: 10px;
+  margin-right: 1px;
+  margin-bottom: 2px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.donts-box {
+  background-color: #E59FA1;
+  color: #000000;
+  border-left: 8px solid #e60e0e;
+  padding: 10px;
+  border-radius: 3px;
+  width: 40%;
+  margin-bottom: 2px;
+  float: left;
+  box-sizing: border-box;
+}
+
+
+
+.yes-box {
+  background-color: #91CF91;
+  color: #212121;
+  border-left: 8px solid #12863a;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.no-box {
+  background-color: #E59FA1;
+  color: #000000;
+  border-left: 8px solid #e60e0e;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
