@@ -92,7 +92,7 @@ Here is an example of a file in which all fields are supplied:
 
 ```
 address_block,label,internal,suppresses_signals
-10.0.5.0/24,”Internal Block”,true,false
+10.0.5.0/24,"Internal Block",true,false
 ```
 
 Here is an example of a file in which only the required field, `address_block`, is specified:
