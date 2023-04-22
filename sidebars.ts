@@ -2301,7 +2301,7 @@ integrations: [
             'cse/integrations/enable-virustotal-enrichment',
             'cse/integrations/integrate-cse-with-taxii-feed',
             'cse/integrations/security-incident-response-integration',
-            'cse/integrations/automation-service-enrichments',
+            'cse/integrations/enrichments-and-indicators',
           ],
         },
         {
