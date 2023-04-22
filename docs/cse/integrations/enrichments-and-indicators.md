@@ -1,5 +1,5 @@
 ---
-id: automation-service-enrichments
+id: enrichments-and-indicators
 title: Enrichments and threat indicators
 sidebar_label: Enrichments and threat indicators
 description: Learn how enrichments include threat indicators.

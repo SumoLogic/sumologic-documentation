@@ -92,7 +92,7 @@ While viewing an Insight or Entity, you can [run automations manually](#run-an-a
 When automations run, they can provide enrichments to Insights, Entities, and Signals. 
 1. Open an Insight, Entity, or Signal with enrichments provided by an automation. 
 1. Click **Enrichments** at the top of the screen.
-1. If [threat indicators are set by the enrichment](/docs/cse/integrations/automation-service-enrichments#threat-indicators), they are displayed. The following example shows a **Malicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-malicious-threat-indicator.png')} alt="Threat indicator example" width="800"/> 
+1. If [threat indicators are set by the enrichment](/docs/cse/integrations/enrichments-and-indicators#threat-indicators), they are displayed. The following example shows a **Malicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-malicious-threat-indicator.png')} alt="Threat indicator example" width="800"/> 
 
 
 ## View an automation's status
