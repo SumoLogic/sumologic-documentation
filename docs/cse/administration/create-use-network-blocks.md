@@ -90,11 +90,13 @@ The table below defines the fields you can import for a Network Block.
 
 Here is an example of a file in which all fields are supplied:
 
-`address_block,label,internal,suppresses_signals 10.0.5.0/24,”Internal Block”,true,false`
+`address_block,label,internal,suppresses_signals 
+10.0.5.0/24,”Internal Block”,true,false`
 
 Here is an example of a file in which only the required field, `address_block`, is specified:
 
-`address_block 192.168.10.0/24`
+`address_block 
+192.168.10.0/24`
 
 ## Network Blocks and enrichment fields
 
