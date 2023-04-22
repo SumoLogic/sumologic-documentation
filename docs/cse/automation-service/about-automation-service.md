@@ -31,7 +31,7 @@ Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), w
 ## Benefits
 
 * The Automation Service supports enrichment, notification, and custom actions:
-  * Enrichment actions can be used to gather additional information about an Entity or Insight, including [threat indicators](/docs/cse/integrations/automation-service-enrichments#threat-indicators).
+  * Enrichment actions can be used to gather additional information about an Entity or Insight, including [threat indicators](/docs/cse/integrations/enrichments-and-indicators#threat-indicators).
   * Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Continuous Intelligence Platform (CIP), Slack, Microsoft Teams, Jira, email, and so on.
 * Automations can be triggered automatically when an Insight is created or closed. Automations can also be executed manually via the Cloud SIEM UI and API.
 * Playbooks can contain both enrichment and notification actions. Playbooks can also be nested. So, for example, you could define a playbook that is executed automatically when an Insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
@@ -44,6 +44,7 @@ Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), w
 :::note
 * The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/cse/automation-service/automation-service-bridge)). Those capabilities will be deprecated later in 2023. 
 * Actions can run directly from the Sumo Logic cloud or from other environments via a [bridge](/docs/cse/automation-service/automation-service-bridge/). For security and performance reasons, only certified integrations and actions can run directly from the Sumo Logic cloud environment.
+* The Automation Service is not available in FedRAMP environments at this time.
 :::
 
 ## Access the Automation Service
