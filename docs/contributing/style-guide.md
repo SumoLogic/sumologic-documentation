@@ -7,6 +7,7 @@ description: A guide to styling and formatting Sumo Logic Docs.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!--
 :::note
 content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
 :::
@@ -26,6 +27,7 @@ content `content` **content** *content* [content](/docs/integrations/microsoft-a
 :::warning
 content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
 :::
+-->
 
 This page details how to author Sumo Docs, which are written in GitHub-flavored markdown.
 
