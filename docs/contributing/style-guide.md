@@ -11,7 +11,7 @@ This page details how to author Sumo Docs, which are written in GitHub-flavored 
 
 The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can speak as one company with a unified voice, and know what we mean when we talk about our product. The Style Guide began as a document used by the Documentation team to make decisions about tone, voice, and word usage. We thought it would be useful to share with everyone in our community.
 
-This is a living document. If you've wondered about the usage of the name of a component, a feature in the UI, or any other word usage, and you don't find that term here, please let us know. The Documentation team will look it up and add usage guidance. Likewise, if you disagree with any usage defined here, please let us know and we'll update as necessary.
+This is a living document. If you're looking for a style rule or UI component usage that's not defined here, let us know. The Documentation team will look it up and add usage guidance.
 
 ## Writing Resources
 
@@ -151,7 +151,32 @@ Here's an example that encompasses all the above styles: If you are not parsing 
 
 ## Code Blocks
 
-Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Always use these to format programming language scripts (i.e., SQL for Sumo queries, JSON for logs). Format blocks of code by placing triple backticks before and after the code.
+Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Format blocks of code by placing triple backticks before and after the code.
+
+If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages.  Always use these to format programming language scripts (i.e., `sql` for Sumo queries, `json` for logs).
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```json
+    {  
+      "employee": {
+      "name": "Jane Smith",   
+      "team": "Operations",   
+      "manager": true  
+      }  
+    }  
+    ```
+
+</TabItem>
+<TabItem value="Result">
 
 ```json
 {  
@@ -163,10 +188,10 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 }  
 ```
 
-Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
+</TabItem>
+</Tabs>
 
 Here's how to add a title to your code block.
-
 
 <Tabs
   className="unique-tabs"
