@@ -3359,5 +3359,7 @@
   "/docs/global-intelligence/nginx/collect-logs-nginx": "/docs/integrations/global-intelligence/nginx",
   "/docs/integrations/cloud-security-monitoring-analytics/ueba": "/docs/integrations/cloud-security-monitoring-analytics",
   "/docs/integrations/security-threat-detection/ueba": "/docs/integrations/cloud-security-monitoring-analytics",
+  "/docs/cse/integrations/automation-service": "/docs/cse/automation-service",
+  "/docs/cse/integrations/automation-service-enrichments": "/docs/cse/integrations/enrichments-and-indicators",
   "/cid/-1": "/"
 }
