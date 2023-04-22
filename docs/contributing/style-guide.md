@@ -7,6 +7,26 @@ description: A guide to styling and formatting Sumo Logic Docs.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::note
+content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
+:::
+
+:::tip
+content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
+:::
+
+:::info
+content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
+:::
+
+:::caution
+content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
+:::
+
+:::warning
+content `content` **content** *content* [content](/docs/integrations/microsoft-azure/iis-7/)
+:::
+
 This page details how to author Sumo Docs, which are written in GitHub-flavored markdown.
 
 The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can speak as one company with a unified voice, and know what we mean when we talk about our product. The Style Guide began as a document used by the Documentation team to make decisions about tone, voice, and word usage. We thought it would be useful to share with everyone in our community.

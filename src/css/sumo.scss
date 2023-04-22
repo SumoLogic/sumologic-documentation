@@ -106,8 +106,8 @@
 }
 
 html[data-theme='dark'] {
-  --ifm-background-color: #101827;
-  --ifm-navbar-background-color: #101827;
+  --ifm-background-color: #141d2f;
+  --ifm-navbar-background-color: #141d2f;
   --collapse-button-bg-color-dark: transparent !important;
   --ifm-toc-border-color: rgba(29, 43, 69, .9);
   --ifm-code-background: #172b42;
@@ -609,15 +609,19 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 // Admonitions
 .alert {
-  border-radius: 0;
+  border-radius: 6;
 }
+
+.admonitionHeading_src-theme-Admonition-styles-module {
+  font-size: 0.8rem !important;
+}
+
 
 // NOTE
 html[data-theme='dark'] .alert--secondary {
   --ifm-alert-background-color: #474748;
   --ifm-alert-border-color: #fdfdfe;
   border-left: 6px solid #fdfdfe;
-  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #20c997 !important;
@@ -637,7 +641,6 @@ html[data-theme='light'] .alert--secondary {
   --ifm-alert-color: #474748;
   --ifm-alert-border-color: #d4d5d8;
   border-left: 6px solid #d4d5d8;
-  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #1d4238;
   .admonition-icon {
@@ -647,6 +650,7 @@ html[data-theme='light'] .alert--secondary {
     //font-weight: bold;
     color: #474748;
     text-decoration: underline;
+    text-decoration-color: #c2c2c2;
   }
   a:hover {
     text-decoration: underline;
@@ -658,7 +662,6 @@ html[data-theme='dark'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
-  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     background-color: #000099;
@@ -681,7 +684,6 @@ html[data-theme='light'] .theme-admonition-sumo {
   --ifm-alert-color: #000099;
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
-  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #000099;
   .admonition-icon {
@@ -704,14 +706,13 @@ html[data-theme='light'] .alert--info {
   --ifm-alert-background-color: rgba(0, 139, 178, 0.05);
   --ifm-alert-border-color: #008bb2;
   border-left: 6px solid #008bb2;
-  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ra-admonition-icon-color: #008bb2 !important;
   }
   a {
     //font-weight: bold;
-    color: #008bb2;
+    color: #00789a;
     text-decoration: none;
   }
   a:hover {
@@ -723,7 +724,6 @@ html[data-theme='dark'] .alert--info {
   --ifm-alert-background-color: rgba(0, 139, 178, 0.05);
   --ifm-alert-border-color: #008bb2;
   border-left: 6px solid #008bb2;
-  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #008bb2 !important;
@@ -743,14 +743,13 @@ html[data-theme='light'] .alert--success {
   --ifm-alert-background-color: rgba(63, 146, 63, 0.05);
   --ifm-alert-border-color: #3f923f;
   border-left: 6px solid #3f923f;
-  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
   }
   a {
     //font-weight: bold;
-    color: #2abb2a;
+    color: #146214;
     text-decoration: none;
   }
   a:hover {
@@ -762,7 +761,6 @@ html[data-theme='dark'] .alert--success {
   --ifm-alert-background-color: rgba(63, 146, 63, 0.05);
   --ifm-alert-border-color: #3f923f;
   border-left: 6px solid #3f923f;
-  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
@@ -779,18 +777,16 @@ html[data-theme='dark'] .alert--success {
 
 // CAUTION
 html[data-theme='light'] .alert--warning {
-  --ifm-alert-background-color: rgba(255, 141, 3, 0.05);
-  --ifm-alert-border-color: #ff8d03;
-  border-left: 6px solid #ff8d03;
-  border-radius: 6px;
+  --ifm-alert-background-color: #fff8e6;
+  --ifm-alert-border-color: #e6a700;
+  border-left: 6px solid #e6a700;
   --ifm-alert-color: var(--ifm-font-color-base);
-  border-radius: 0;
   .admonition-icon {
     --ra-admonition-icon-color: #ff8d03 !important;
   }
   a {
     //font-weight: bold;
-    color: #ff8d03;
+    color: #aa4700;
     text-decoration: none;
   }
   a:hover {
@@ -802,7 +798,6 @@ html[data-theme='dark'] .alert--warning {
   --ifm-alert-background-color: rgba(255, 141, 3, 0.05);
   --ifm-alert-border-color: #ff8d03;
   border-left: 6px solid #ff8d03;
-  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #ff8d03 !important;
@@ -819,17 +814,16 @@ html[data-theme='dark'] .alert--warning {
 
 // WARNING
 html[data-theme='light'] .alert--danger {
-  --ifm-alert-background-color: rgba(223, 75, 48, 0.05);
+  --ifm-alert-background-color: #ffebec;
   --ifm-alert-border-color: #df4b30;
   border-left: 6px solid #df4b30;
-  border-radius: 6px;
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ra-admonition-icon-color: #df4b30 !important;
   }
   a {
     //font-weight: bold;
-    color: #df4b30;
+    color: #9d3522;
     text-decoration: none;
   }
   a:hover {
@@ -841,7 +835,6 @@ html[data-theme='dark'] .alert--danger {
   --ifm-alert-background-color: rgba(223, 75, 48, 0.05);
   --ifm-alert-border-color: #df4b30;
   border-left: 6px solid #df4b30;
-  border-radius: 6px;
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #df4b30 !important;
