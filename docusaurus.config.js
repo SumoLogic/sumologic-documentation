@@ -97,6 +97,12 @@ module.exports = {
             ],
           },
         },
+        gtag: {
+          trackingID: [
+            'G-CVH19TBVSL',
+            'UA-16579649-3',
+          ],
+        },
         googleAnalytics: {
           trackingID: 'UA-16579649-3',
         },
