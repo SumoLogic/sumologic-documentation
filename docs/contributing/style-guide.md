@@ -153,7 +153,7 @@ Here's an example that encompasses all the above styles: If you are not parsing 
 
 Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Format blocks of code by placing triple backticks before and after the code.
 
-If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages.  Always use these to format programming language scripts (i.e., `sql` for Sumo queries, `json` for logs).
+If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
 
 <Tabs
   className="unique-tabs"
