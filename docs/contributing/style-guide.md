@@ -68,6 +68,14 @@ This gives a call to action for the reader or user to effectively get something 
 | Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
 | To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
 
+<div class="no-box">
+&#10060; You can add a resource...
+</div>
+(They know they can do a thing. Clearly state to do the thing.)
+<div class="yes-box">
+&#9989; Add a resource...
+</div>
+
 ### Inclusive language
 
 By writing inclusively and using culturally neutral language, our words resonate with global audiences and make everyone feel welcome, no matter their race, gender, socioeconomic status, and ability.
@@ -92,13 +100,6 @@ By writing inclusively and using culturally neutral language, our words resonate
   &#10060; "master"<br/>
   &#10060; "hit"
 </div>
-</div>
-
-<div class="yes-box">
-hi
-</div>
-<div class="no-box">
-hi
 </div>
 
 ## Doc structure summary
