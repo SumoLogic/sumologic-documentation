@@ -1880,27 +1880,29 @@ html[data-theme='dark'] .featureImage {
 .dos-box {
   background-color: #91CF91;
   color: #212121;
-  border-left: 8px solid #12863a;
+  border-top: 8px solid #12863a;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 1px;
   width: 40%;
   margin-left: 10px;
   margin-right: 1px;
   margin-bottom: 2px;
   float: left;
   box-sizing: border-box;
+  line-height: 26pt;
 }
 
 .donts-box {
   background-color: #E59FA1;
   color: #000000;
-  border-left: 8px solid #e60e0e;
+  border-top: 8px solid #e60e0e;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 1px;
   width: 40%;
   margin-bottom: 2px;
   float: left;
   box-sizing: border-box;
+  line-height: 26pt;
 }
 
 

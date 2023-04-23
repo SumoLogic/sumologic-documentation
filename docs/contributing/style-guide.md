@@ -79,24 +79,18 @@ By writing inclusively and using culturally neutral language, our words resonate
 
 <div class="container-boxes">
 <div class="dos-box">
-  <strong>Yes</strong>
-  <ul>
-  <li>"allowlist"</li>
-  <li>"denylist</li>
-  <li>"placeholder data"</li>
-  <li>"primary" or "main"</li>
-  <li>"press" or "click"</li>
-  </ul>
+  &#9989; "allowlist"<br/>
+  &#9989; "denylist"<br/>
+  &#9989; "placeholder data"<br/>
+  &#9989; "primary" or "main"<br/>
+  &#9989; "press" or "click"
 </div>
-<div class="donts-box">
-  <strong>No</strong>
-  <ul>
-  <li>"whitelist"</li>
-  <li>"blacklist"</li>
-  <li>"dummy data"</li>
-  <li>"master"</li>
-  <li>"hit"</li>
-  </ul>
+<div class="donts-box">  
+  &#10060; "whitelist"<br/>
+  &#10060; "blacklist"<br/>
+  &#10060; "dummy data"<br/>
+  &#10060; "master"<br/>
+  &#10060; "hit"
 </div>
 </div>
 
