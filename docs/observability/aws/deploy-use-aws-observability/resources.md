@@ -63,7 +63,7 @@ AWS EC2
 <br/>
 
    </td>
-   <td>AWS Lambda
+   <td>IAM Roles
    </td>
    <td>AWS API Gateway
 <br/>
