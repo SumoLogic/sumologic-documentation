@@ -80,7 +80,7 @@ The **AWS EC2 CPU (Host OS metrics)** dashboard provides insights into EC2 CPU p
 Use this dashboard to:
 
 * Quickly identify if high CPU utilization for an EC2 instance is potentially causing a production issue.
-* Determine how CPU cycles are being spent across  CPU user time, system time, and  IO wait time.
+* Determine how CPU cycles are being spent across CPU user time, system time, and IO wait time.
 
 <img src={useBaseUrl('img/observability/2.2.-AWS-EC2-CPU-Host-OS-metrics.png')} alt="AWS_EC2_CPU"/>
 
