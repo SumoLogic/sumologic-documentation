@@ -14,9 +14,9 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automati
 You can interact with the service through [automations](/docs/cse/automation-service/automation-service-automations), which execute playbooks. [Playbooks](/docs/cse/automation-service/automation-service-playbooks)  are composed of one or more [actions](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](/docs/cse/automation-service/automation-service-integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
 
-{@import ../../reuse/automation-service-la-note.md}
-
 :::info Limited availability
+The Automation Service is available on a limited availability (LA) basis. This means the feature is fully implemented and supported, and is available to all customers, but is only deployed in customer environments upon request. If you would like the Automation Service enabled in your Cloud SIEM Enterprise environment, contact your Sumo Logic account representative.
+
 Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), where you can browse the full integration and playbook catalog, is not yet connected to the Automation Service. A selection of popular integrations have been added to your environment automatically, but the full list of [available integrations](/docs/cse/automation-service/automation-service-integrations#available-integrations) is included. Contact your Sumo Logic account representative if you would like to have one of these integrations added to your environment, if you would like documentation for a specific integration, or if you're interested in an integration that's not listed.
 :::
 
