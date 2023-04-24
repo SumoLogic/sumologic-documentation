@@ -175,7 +175,7 @@ The **AWS EC2 Network (CloudWatch Metrics)** dashboard provides detailed informa
 
 Use this dashboard to:
 
-* Monitor imported network metrics like - Byte rate for input and output, and Bytes going in and out of Ec2 instances.
+* Monitor imported network metrics such as bytes rate for input and output and bytes going in and out of EC2 instances.
 * Observe network metrics for Ec2 for packet in/out, and rate of the packets.
 
 <img src={useBaseUrl('/img/observability/AWS-EC2-Cloudwatch-Metrics-Network.png')} alt="AWS-EC2-Cloudwatch-Metrics-Network"/>
