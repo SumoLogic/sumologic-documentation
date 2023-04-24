@@ -109,7 +109,7 @@ Use this dashboard to:
 
 ### 1.1. AWS EC2 Summary (CloudWatch Metrics)
 
-The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance information about an EC2 CPU, instance disk store, network, and EBS volume usage along with EC2 instance health status.
 
 Use this dashboard to:
 
