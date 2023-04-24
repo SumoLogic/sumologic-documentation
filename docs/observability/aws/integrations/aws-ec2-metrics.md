@@ -115,8 +115,8 @@ Use this dashboard to:
 
 * Monitor CPU utilization along with CPU credit details & status check counts for EC2.
 * EBS related metrics for EC2 instance.
-* Observe Instance Disk Store (Disk Read/Write - Bytes & ops) for EC2 instance.
-* Monitor Network usage metrics (Network in/out - Byes & packets) for EC2 instance.
+* Observe Instance Disk Store (disk read/write bytes and operations) for EC2 instance.
+* Monitor Network usage metrics (network in/out byes and packets) for EC2 instance.
 
 <img src={useBaseUrl('/img/observability/AWS-EC2-Cloudwatch-Metrics-Summary.png')} alt="AWS-EC2-Cloudwatch-Metrics-Summary"/>
 
@@ -141,7 +141,7 @@ The **AWS EC2 CPU (CloudWatch Metrics)** dashboard provides detailed information
 Use this dashboard to:
 
 * Monitor Average CPU utilization over time for EC2.
-* Observe CPU Credits metrics (Usage and balance) over time.
+* Observe CPU Credits metrics (Usage and Balance) over time.
 * Identify CPU Surplus Credits (Charged and Balance) over time.
 
 <img src={useBaseUrl('/img/observability/AWS-EC2-Cloudwatch-Metrics-CPU.png')} alt="AWS-EC2-Cloudwatch-Metrics-CPU"/>
@@ -162,10 +162,10 @@ Use this dashboard to:
 
 The **AWS EC2 Disk (CloudWatch Metrics)** dashboard provides detailed information about a EC2 Instance Store Disk usage, based on disk read and write bytes, operations.
 
-Use this dashboard to monitor instance store:
+Use this dashboard to:
 
-* Disk metrics like Disk read/write Bytes and Byte rate.
-* Disk metrics like Disk read/write Operations and Operation rate.
+* Monitor instance store Disk metrics, such as disk read/write bytes and byte rate.
+* Monitor instance store Disk metrics, such as disk read/write operations and operation rate.
 
 <img src={useBaseUrl('/img/observability/AWS-EC2-Cloudwatch-Metrics-Disk.png')} alt="AWS-EC2-Cloudwatch-Metrics-Disk"/>
 
