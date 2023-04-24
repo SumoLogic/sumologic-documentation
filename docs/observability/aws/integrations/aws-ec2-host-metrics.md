@@ -56,7 +56,7 @@ Use this dashboard to:
 
 * Quickly identify instances with high and low CPU and memory utilization.
 * Monitor average statistics across various resource dimensions across all of your EC2 instances.
-* Identify trends and deviations in resource usage across instance types, based upon which you can identify which instance types need to be resized.
+* Identify resource usage patterns and deviations across instance types to determine which instance types should be resized.
 * Monitor average CPU utilization by instance type.
 
 <img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Overview-Host-OS-metrics.png')} alt="AWS_EC2_Overview"/>
