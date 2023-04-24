@@ -162,10 +162,10 @@ Use this dashboard to:
 
 The **AWS EC2 Disk (CloudWatch Metrics)** dashboard provides detailed information about a EC2 Instance Store Disk usage, based on disk read and write bytes, operations.
 
-Use this dashboard to:
+Use this dashboard to monitor instance store:
 
-* Monitor instance store - Disk metrics like Disk read/write Bytes and Byte rate.
-* Monitor instance store - Disk netrucs like Disk read/write Operations and Operation rate.
+* Disk metrics like Disk read/write Bytes and Byte rate.
+* Disk metrics like Disk read/write Operations and Operation rate.
 
 <img src={useBaseUrl('/img/observability/AWS-EC2-Cloudwatch-Metrics-Disk.png')} alt="AWS-EC2-Cloudwatch-Metrics-Disk"/>
 
