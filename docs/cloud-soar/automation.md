@@ -560,7 +560,7 @@ After you create a Slack app, you must add the appropriate permissions for use w
 1. Click **Install to Workspace** to make the app available for use. 
 <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
 1. Installation generates a User OAuth Token and a Bot User OAuth Token. Copy the tokens and keep them in a secure location for use in the next step. 
-<img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="Oauth tokens" width="600"/>
+<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="Oauth tokens" width="600"/>
 
 #### Step 4: Configure the Slack integration in Cloud SOAR
 
