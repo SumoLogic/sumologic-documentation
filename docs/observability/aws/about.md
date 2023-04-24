@@ -35,7 +35,7 @@ After you have [prepared](/docs/observability/aws/deploy-use-aws-observability/b
 
 ![AWS_Observ_architecture.jpg](/img/observability/AWS_Observ_architecture.jpeg)
 
-### Data Collection and Dashboards
+### Data collection and dashboards
 
 Sumo Logic collects logs, metrics, and events including AWS EC2 Host Metrics, CloudWatch logs and metrics, and CloudTrail logs. The collected data streams are enriched with the following metadata:
 
