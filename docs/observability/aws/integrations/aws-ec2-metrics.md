@@ -129,7 +129,7 @@ Use this dashboard to:
 * Monitor the geo location for successful and failed events.
 * Observed the event status and top error codes.
 * Track distribution and top event types and trends.
-* Monitor top IAM Users, Assumed Role Users and User agents.
+* Monitor top IAM Users, Assumed Role Users, and User agents.
 * Monitor distribution of Successful and failed events with the list of latest events.
 
 <img src={useBaseUrl('/img/observability/AWS-EC2-CloudTrail-Events.png')} alt="AWS-EC2-CloudTrail-Events"/>
