@@ -105,8 +105,8 @@ Click a link for information on the individual app dashboards:
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
 * [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
-* [Amazon RDS Dashboards](/docs/observability/aws/integrations/aws-rds-metrics.md)
 * [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
+* [Amazon SQS Dashboards](/docs/observability/aws/integrations/amazon-sqs.md)
 
 ## More Information
 
