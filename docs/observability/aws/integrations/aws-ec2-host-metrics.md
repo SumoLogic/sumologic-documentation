@@ -48,7 +48,7 @@ The Sumo Logic **AWS Observability EC2 metrics dashboards** collect local host m
 We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
 :::
 
-### 1.2 AWS EC2 Overview (Host OS metrics)
+### 1.2. AWS EC2 Overview (Host OS metrics)
 
 The **AWS EC2 Overview (Host OS metrics)** dashboard provides insights into EC2 performance throughout your infrastructure, including CPU utilization, network rates, disk, and memory usage.
 
@@ -61,7 +61,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Overview-Host-OS-metrics.png')} alt="AWS_EC2_Overview"/>
 
-### 1.2 AWS EC2 Summary (Host OS metrics)
+### 1.2. AWS EC2 Summary (Host OS metrics)
 
 The **AWS EC2 Summary (Host OS metrics)** dashboard provides resource utilization insights for a specific EC2 instance.
 
@@ -73,7 +73,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Summary-Host-OS-metrics.png')} alt="AWS_EC2_Summary"/>
 
-### 2.2 AWS EC2 CPU (Host OS metrics)
+### 2.2. AWS EC2 CPU (Host OS metrics)
 
 The **AWS EC2 CPU (Host OS metrics)** dashboard provides insights into EC2 CPU performance throughout your infrastructure, including average CPU load, system, user, idle, and wait times, as well as statistics per instance.
  
@@ -84,7 +84,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/observability/2.2.-AWS-EC2-CPU-Host-OS-metrics.png')} alt="AWS_EC2_CPU"/>
 
-### 3.2 AWS EC2 Memory (Host OS metrics)
+### 3.2. AWS EC2 Memory (Host OS metrics)
 
 The **AWS EC2 Memory (Host OS metrics)** dashboard provides insights into EC2 memory usage per instance for total and percentage memory usage, free memory use, buffers, cache memory, and system memory.
 
@@ -95,7 +95,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/observability/3.2.-AWS-EC2-Memory-Host-OS-metrics.png')} alt="AWS_EC2_Memory"/>
 
-### 4.2 AWS EC2 Disk (Host OS metrics)
+### 4.2. AWS EC2 Disk (Host OS metrics)
 
 The **AWS EC2 Disk (Host OS metrics)** dashboard provides insights into EC2 disk usage per instance throughout your infrastructure, including directory, writes and usage, available bytes, used bytes, and byte read and write rates.
 
@@ -107,7 +107,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/observability/4.2.-AWS-EC2-Disk-Host-OS-metrics.png')} alt="AWS_EC2_Disk"/>
 
-### 5.2 AWS EC2 Network (Host OS metrics)
+### 5.2. AWS EC2 Network (Host OS metrics)
 
 The **AWS EC2 Network (Host OS metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
 
@@ -118,7 +118,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/observability/5.2.-AWS-EC2-Network-Host-OS-metrics.png')} alt="AWS_EC2_Network"/>
 
-### 6.2 AWS EC2 TCP (Host OS metrics)
+### 6.2. AWS EC2 TCP (Host OS metrics)
 
 The **AWS EC2 TCP (Host OS metrics)** dashboard provides insights into TCP traffic performance per EC2 instance throughout your infrastructure, including metrics for inbound and outbound connections, listen and established connections, and close wait and time wait connections.
 
