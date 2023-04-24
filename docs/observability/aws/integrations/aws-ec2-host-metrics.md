@@ -90,7 +90,7 @@ The **AWS EC2 Memory (Host OS metrics)** dashboard provides insights into EC2 me
 
 Use this dashboard to:
 
-* Quickly identify if high memory utilization for an EC2 instance is potentially causing a production issue
+* Quickly identify if high memory utilization for an EC2 instance is potentially causing a production issue.
 * Determine how memory is being used across buffers and cache memory.
 
 <img src={useBaseUrl('img/observability/3.2.-AWS-EC2-Memory-Host-OS-metrics.png')} alt="AWS_EC2_Memory"/>
