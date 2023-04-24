@@ -62,6 +62,10 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * US West (N. California)
 * US West (Oregon)
 
+:::note
+The region(s) must be enabled and active before deploying the solution.
+:::
+
 ## Deployment considerations  
 
 You deploy the solution by either running an AWS CloudFormation template or via Terraform scripts. When doing so, consider the following.
