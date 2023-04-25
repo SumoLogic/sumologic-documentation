@@ -1,0 +1,3 @@
+:::info Limited availability
+The Automation Service is available on a limited availability (LA) basis. This means that while the feature is production-ready and fully supported, implementation is done by customer request only. If you'd like the Automation Service enabled in your Cloud SIEM Enterprise environment, contact your Sumo Logic account representative. For more information, see [About the Automation Service](/docs/cse/automation-service/about-automation-service/).
+:::
