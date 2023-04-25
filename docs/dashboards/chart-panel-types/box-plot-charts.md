@@ -53,7 +53,7 @@ error
 | min(a) as mina, min (b) as minb, pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/VPC-Flow-Logs) uses a query that creates a Box Plot Chart. It is:
+The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/vpc-flow-logs) uses a query that creates a Box Plot Chart. It is:
 
 ```sql
 _sourceCategory=vpc  
