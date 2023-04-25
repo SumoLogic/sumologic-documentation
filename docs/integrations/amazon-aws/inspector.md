@@ -1,7 +1,7 @@
 ---
 id: inspector
 title: Amazon Inspector
-description: The Sumo Logic Inspector App helps reveal trends and identify anomalies from these AWS Inspector findings.
+description: The Sumo Logic Inspector App helps reveal trends and identify anomalies from these Amazon Inspector findings.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,7 +23,7 @@ Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events
 You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector).
 
 
-### Step 1: Add a hosted collector and AWS S3 source
+### Step 1: Add a hosted collector and Amazon S3 source
 
 This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for  the AWS Security Hub App.
 
@@ -31,10 +31,10 @@ This section demonstrates how to add a hosted Sumo Logic collector and AWS sourc
 
 An AWS Source must be associated with a Sumo Logic Hosted Collector. Before creating the S3 source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
 
-To add a hosted collector and AWS S3 source:
+To add a hosted collector and Amazon S3 source:
 
-1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product)
-2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
+1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
+2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source#awss3-source) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
@@ -48,8 +48,8 @@ The **AWS Security Hub App collector** transforms the received events and sends 
 To deploy an AWS Security Hub App collector:
 1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
 2. In the Serverless Application Repository, search for **sumologic**.
-3. Select **Show apps that create custom IAM roles or resource policies **check box.
-4. Click the **sumologic-securityhub-collector **link, and then click **Deploy**.
+3. Select **Show apps that create custom IAM roles or resource policies** check box.
+4. Click the **sumologic-securityhub-collector** link, and then click **Deploy**.
 5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source).
 6. Scroll to the bottom of the window and click **Deploy**.
 

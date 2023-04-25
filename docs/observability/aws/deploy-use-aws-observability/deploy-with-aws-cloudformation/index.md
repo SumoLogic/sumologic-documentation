@@ -26,7 +26,7 @@ If this is the first time you've deployed the AWS Observability Solution, read 
 
 The sections below describe the configuration prompts in the CloudFormation template and the information you need to supply. Before you start filling out the template, it’s a good idea to review each section to make sure you know which sections you want to fill out, and that you have the information you need to proceed.
 
-AWS Observability integrates with Explore by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the Explore view. If you do not see Lambda functions, verify the Cloud Formation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
+AWS Observability integrates with Explore by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the Explore view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
 
 "AWS Observability Apps-\<Version\> \<Date of installation\>" folder of dashboards by default will be created in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
 
@@ -35,7 +35,7 @@ AWS Observability integrates with Explore by populating metadata and only shows
 1. Sign on to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template. 
+   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
     :::note
  If you would like to download or inspect this or other versions of this template, please visit [Change Log](../changelog.md).
     :::
@@ -76,7 +76,7 @@ You should only install the AWS Observability apps and alerts the first time you
 
 | Prompt | Guideline |
 |:--|:--|
-| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS, and Amazon SQS.</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS, and Amazon SQS.</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 
@@ -229,7 +229,7 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 
 ### Common errors
 
-Below are some common errors that can occur while using the Cloud Formation template. 
+Below are some common errors that can occur while using the CloudFormation template. 
 
 | Error | Description | Resolution |
 |:--|:--|:--|

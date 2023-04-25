@@ -17,7 +17,7 @@ For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/Ama
 
 The VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can use either of the below methods to collect Amazon VPC Flow Logs.
 
-Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source  and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
+Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source  and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
 
 ## Field Extraction Rule for VPC Flow logs
 Here is an example [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md) for VPC Flow logs.
@@ -34,7 +34,7 @@ json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg
 
 ## Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using Amazon S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
 
 This section has instructions for collecting logs for the Amazon VPC Flow Logs app.
 
@@ -141,9 +141,9 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo.
 
 
-## Collect Amazon VPC Flow Logs Using an AWS S3 Source
+## Collect Amazon VPC Flow Logs Using an Amazon S3 Source
 
-This section has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
+This section has instructions for collecting Amazon VPC Flow Logs using an Amazon S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
 
 
 ### Step 1: Enable Amazon VPC Flow Logs  
@@ -153,9 +153,9 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 3. Confirm that logs are being delivered to the S3 bucket. Log files are saved to the bucket using following folder structure: `bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`.
 
 
-### Step 2: Configure AWS S3 Source  
+### Step 2: Configure Amazon S3 Source  
 
-1. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
 4. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) for the S3 Source to Sumo Logic. When you configure the S3 source:

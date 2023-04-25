@@ -128,9 +128,9 @@ Add the following environment variables to your Lambda function:
 |:--|:--|:--|
 | `SUMO_HTTP_ENDPOINT` | This is the URL of the Sumo Logic HTTP source created in Step 1. | Required |
 | `SUMO_LOG_TYPES` | Please provide a comma-separated list of values that are one or more "platform", "function" or "extension" to indicate which AWS Lambda logs you want to send to Sumo Logic. By default, all of these three values are assumed. | Optional
-| `SUMO_ENABLE_FAILOVER` | Set to True to failover in case you would like the extension to send logs to an AWS S3 bucket. In the case of throttling or, exceptions the default value assumed is False. | Optional
-| `SUMO_S3_BUCKET_NAME` | The name of an AWS S3 bucket. | Optional |
-| `SUMO_S3_BUCKET_REGION` | The Region where the above AWS S3 bucket is located. | Optional |
+| `SUMO_ENABLE_FAILOVER` | Set to True to failover in case you would like the extension to send logs to an Amazon S3 bucket. In the case of throttling or, exceptions the default value assumed is False. | Optional
+| `SUMO_S3_BUCKET_NAME` | The name of an Amazon S3 bucket. | Optional |
+| `SUMO_S3_BUCKET_REGION` | The Region where the above Amazon S3 bucket is located. | Optional |
 | `SUMO_MAX_RETRY` | A Number of retries to send logs to Sumo Logic. The default is 0. | Optional |
 | `SUMO_LOG_LEVEL` | Log level, which can be one of info, error, or debug. The default value is info. | Optional |
 | `SOURCE_CATEGORY_OVERRIDE` | The Source Category for all incoming data is set to that of the HTTP endpoint by default. You can however override it with this parameter | Optional |
@@ -157,7 +157,7 @@ Add the following environment variables to your Lambda function:
     }
     ```
 
-   * Configure a [Sumo Logic AWS S3](../hosted-collectors/amazon-aws/aws-s3-source.md)  source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
+   * Configure a [Sumo Logic Amazon S3](../hosted-collectors/amazon-aws/aws-s3-source.md)  source with the same source category as that of the HTTP Source created in Step 1 to read from this bucket.
 
     :::note
     Logs from the Sumo Logic Lambda extension are stored and compressed in the following prefix path     `sumologic-extension/<aws-region>/<Function>/<Version>/<Year>/<Month>/<Day>/<Hour>/<Min>/<UUID>.gz`

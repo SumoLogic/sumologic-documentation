@@ -15,11 +15,11 @@ For more information on Amazon VPC Flow Logs, see [here](http://docs.aws.amazon.
 
 ## Collect Logs for the PCI Compliance for Amazon VPC Flow Logs App
 
-VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data.
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data.
 
 You can use either of the following methods to collect Amazon VPC Flow Logs:
 
-* [Collect Amazon VPC Flow Logs using AWS S3 source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
+* [Collect Amazon VPC Flow Logs using Amazon S3 source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
 * [Collect Amazon VPC Flow Logs using a CloudFormation template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
 
 ## Field Extraction Rule(s) for VPC Flow logs  

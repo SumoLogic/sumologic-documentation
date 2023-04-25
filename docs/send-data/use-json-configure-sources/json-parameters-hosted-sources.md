@@ -60,7 +60,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
-| [AWS S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
+| [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-metadata-tag-source) | Polling |
 | [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) | Universal |
 | [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) | Universal |
@@ -181,7 +181,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 | `url` | String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
 | `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
 | `snsTopicOrSubscriptionArn`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
-| `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your AWS S3 bucket. | Modifiable |
+| `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
 | `pathExpression`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Wildcard pattern that matches the S3 objects you'd like to collect. | Modifiable |
 
 
@@ -227,7 +227,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 
 #### AWS S3 Archive Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources)  section. This is an Amazon S3 Archive Source JSON example:
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Archive Source JSON example:
 
 ```json
 {
@@ -473,7 +473,7 @@ This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `t
 ```json
 {
   "source":
-     { 
+     {
            "name":"test-source",
            "automaticDateParsing":true,
            "multilineProcessingEnabled":true,
@@ -500,7 +500,7 @@ This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `t
                             "awsKey":"XXX"
                         }   
                     }
-                ] 
+                ]
             },
             "sourceType":"HTTP"
   }

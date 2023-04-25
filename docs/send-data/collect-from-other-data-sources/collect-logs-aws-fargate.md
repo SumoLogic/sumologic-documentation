@@ -80,7 +80,7 @@ The following AWS Lambda environment variables are supported in both the Lambda 
 
 If you are configuring log collection for VPC flow logs, see the Environment variables for VPC flow log collection section on Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation.
 
-Define variables in the `Environment `section of the Cloud Formation template.
+Define variables in the `Environment `section of the CloudFormation template.
 
 ```
 "Environment": {

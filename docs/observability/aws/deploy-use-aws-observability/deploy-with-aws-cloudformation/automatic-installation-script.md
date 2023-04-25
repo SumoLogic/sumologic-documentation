@@ -2,10 +2,10 @@
 id: automatic-installation-script
 title: AWS Observability Automatic Installation Script
 sidebar_label: Automatic Installation Script
-description: Sumo Logic provides POSIX and powershell scripts to trigger the Cloud Formation template for creating a stack to deploy AWS Observability Solution.
+description: Sumo Logic provides POSIX and powershell scripts to trigger the CloudFormation template for creating a stack to deploy AWS Observability Solution.
 ---
 
-Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [powershell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the Cloud Formation template for creating a stack to deploy AWS Observability Solution.
+Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [powershell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the CloudFormation template for creating a stack to deploy AWS Observability Solution.
 
 This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#Appendix-I)). For more advanced use cases, when any of the default needs to be adjusted, please fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) installation steps.
 
@@ -28,9 +28,9 @@ The script takes two inputs:
 **AWS_PROFILE** can be set as an environment variable from the command line before executing the script. If it is not set, the “default” aws profile will be used.
 
 
-## Cloud Formation Parameters
+## CloudFormation Parameters
 
-The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a cloud formation template. This cloud formation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values.  Refer table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
+The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values.  Refer table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
 
 
 ### Powershell Script Command Execution

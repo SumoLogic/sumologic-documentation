@@ -26,8 +26,8 @@ If you are not already collecting your AWS logs, follow the instructions below t
 * [Collect AWS CloudTrail Logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)
 * [Collect AWS ELB Logs](/docs/integrations/amazon-aws/classic-load-balancer#collecting-logs-and-metrics)
 
-VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
-* [Using an AWS S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
+* [Using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
 * [Using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
 

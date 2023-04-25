@@ -96,7 +96,7 @@ If the Source is not subscribed to an SNS topic and set to **Automatic** the sca
 
 #### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
@@ -144,7 +144,7 @@ Make sure that the topic and the bucket are in the same region.
 
 #### SNS with one bucket and multiple Sources
 
-When collecting from one AWS S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
+When collecting from one Amazon S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 
@@ -230,7 +230,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 * **Target Processing Time by Target Group.** Bar chart of max, average, and min processing times for each target group.
 * **Average Target Processing Time by Target Group.** Line chart of mean processing time by target group.
 * **Latency by Top 20 Clients.** Displays the process time of the top 20 IP addresses in your deployment.
-* **Latency by Top 20 Backend Instances. **This Panel focuses solely on the back end of your AWS EC2 deployment, keeping watch over the processing time of the 20 busiest instances.
+* **Latency by Top 20 Backend Instances.** This Panel focuses solely on the back end of your Amazon EC2 deployment, keeping watch over the processing time of the 20 busiest instances.
 * **Latency by Top 20 Paths.** Displays the process time of the busiest 20 paths in your deployment.
 
 

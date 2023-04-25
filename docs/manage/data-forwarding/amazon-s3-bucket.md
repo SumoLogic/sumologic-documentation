@@ -20,7 +20,7 @@ After data forwarding is configured, you should start to see file objects poste
 
 * An administrator role on the Partition where you want to set up forwarding.
 * Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
-* A Partition or Scheduled View to push to AWS S3.
+* A Partition or Scheduled View to push to Amazon S3.
 
 ## Forwarding interval 
 

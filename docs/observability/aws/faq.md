@@ -37,7 +37,7 @@ AWS Observability provides a view across AWS accounts, regions, namespaces, and
 Adding a service requires:
 
 * The AWS Observability solution must be installed for at least one supported service.
-* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+* Collect metrics for your service using a [Sumo Logic AWS CloudWatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
 See [Add a New AWS Service to the AWS Observability Explore Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
@@ -167,7 +167,7 @@ deployment configuration or manually.
 
 For example, metrics for Lambda functions must be coming in for those
 entities to show in the Explore view. If you do not see Lambda
-functions, verify the Cloud Formation stack is correctly configured
+functions, verify the CloudFormation stack is correctly configured
 including the AWS/Lambda namespace to collect metrics. For information,
 see 
 

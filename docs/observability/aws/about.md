@@ -29,7 +29,7 @@ The unified platform collects and provides logs, metrics, traces, and metadata f
 
 Sumo Logic provides an AWS CloudFormation templates (CFN) and Terraform scripts that automate the setup and installation of the AWS Observability Solution for your AWS accounts and regions.
 
-* **Sumo Logic AWS Observability** supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Classic ELB, Application ELB, Network ELB, AWS SNS, and AWS SQS.
+* **Sumo Logic AWS Observability** supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Classic ELB, Application ELB, Network ELB, Amazon SNS, and Amazon SQS.
 
 After you have [prepared](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) and [deployed](/docs/observability/aws/deploy-use-aws-observability) the solution, you can [add and configure additional AWS services](/docs/observability/aws/other-configurations-tools#Add_a_New_AWS_Service_to_the_AWS_Observability_Explore_Hierarchy) as your infrastructure grows.
 

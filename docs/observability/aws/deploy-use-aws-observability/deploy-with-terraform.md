@@ -73,7 +73,7 @@ Before you run the Terraform script, perform the following actions on a server m
     ```bash
     pip install sumologic-sdk
     ```
-    
+
 ## Step 2: Configure the Terraform script
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
@@ -651,7 +651,7 @@ collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
 
 #### cloudwatch_metrics_source_details
 
-Provide details for the Sumo Logic Cloudwatch Metrics source. If not provided, then defaults will be used.
+Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
 * `limit_to_namespaces` - Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source.
 
@@ -1104,7 +1104,7 @@ collect_cloudwatch_logs = "Kinesis Firehose Log Source"
 
 #### cloudwatch_logs_source_details
 
-Provide details for the Sumo Logic Cloudwatch Logs source. If not provided, then defaults will be used.
+Provide details for the Sumo Logic CloudWatch Logs source. If not provided, then defaults will be used.
 
 For bucket_details (used with Kinesis Firehose Logs Source):
 
@@ -1117,7 +1117,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 * `IncludeLogGroupInfo`:  Set to true to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to True.
 * `logformat`: For Lambda, the value should be set to “Others”.
 * `log_stream_prefix`: Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function.
-* `workers`: Number of lambda function invocations for Cloudwatch logs source Dead Letter Queue processing.
+* `workers`: Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
 
 **Default value:**
 
@@ -1395,13 +1395,13 @@ sumologic_collector_details = {
 
 ### existing_iam_details
 
-Provide an existing AWS IAM role arn value which provides access to AWS S3 Buckets, AWS CloudWatch Metrics API and Sumo Logic Inventory data. If kept empty, a new IAM role will be created with the required permissions.
+Provide an existing AWS IAM role arn value which provides access to Amazon S3 Buckets, AWS CloudWatch Metrics API and Sumo Logic Inventory data. If kept empty, a new IAM role will be created with the required permissions.
 
 For more details on permissions, check the IAM policy tmpl files at /source-module/templates folder.
 
 **Default value:**
 
-```
+```json
 {
  "create_iam_role": true,
  "iam_role_arn": ""
@@ -1410,7 +1410,7 @@ For more details on permissions, check the IAM policy tmpl files at /source-modu
 
 **Override Example JSON:**
 
-```
+```json
 existing_iam_details = {
  "create_iam_role": true,
  "iam_role_arn": ""
@@ -1448,7 +1448,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS, and AWS SQS.
+* Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, Amazon SNS, and Amazon SQS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder

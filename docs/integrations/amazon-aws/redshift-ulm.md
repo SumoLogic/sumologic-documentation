@@ -179,9 +179,9 @@ This section has instruction for setting up collection of logs and metrics for t
 
 ### Step 1. Plan source categories
 
-Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each.  A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
+Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each. A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
 
-* For the AWS S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
+* For the Amazon S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
 * For the AWS CloudTrail source for Redshift CloudTrail Events, you could specify a source category of `AWS/CloudTrail`.
 * For the AWS CloudWatch source for Redshift metrics, you could specify a source category of `AWS/Metric/Redshift`.
 
@@ -198,10 +198,10 @@ In this step, you enable audit logging for Amazon Redshift.
 For information about connection logs and user logs, see [STL_CONNECTION_LOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_CONNECTION_LOG.html) and [STL_USERLOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_USERLOG.html) in AWS help.
 
 
-### Step 3: Configure AWS S3 source for Amazon Redshift Audit logs collection
+### Step 3: Configure Amazon S3 source for Amazon Redshift Audit logs collection
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
+2. To your Hosted Collector, add an [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.

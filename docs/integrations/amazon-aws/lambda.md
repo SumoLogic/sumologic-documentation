@@ -133,7 +133,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | top 10 caller by Invocations
 ```
 
-```sql title="Error (Count)(Cloudwatch metric Based)"
+```sql title="Error (Count)(CloudWatch metric Based)"
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
@@ -192,7 +192,7 @@ AWS Lambda provides Provisoned Concurrency for greater control over the start up
 
 To collect the metrics in Sumo Logic, follow the steps below:
 
-1. Jump to the [Collect Amazon Cloudwatch Metrics](#collect-amazon-cloudwatch-metrics) section and complete the steps as described.
+1. Jump to the [Collect Amazon CloudWatch Metrics](#collect-amazon-cloudwatch-metrics) section and complete the steps as described.
 2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management Console, as shown in the following example.
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:

@@ -14,7 +14,7 @@ The Carbon Black Cloud App analyzes alert and event data from Endpoint Standard 
 
 ## Log Types
 
-The Carbon Black Cloud App uses the following Carbon Black Cloud log types, which are set to the AWS S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
+The Carbon Black Cloud App uses the following Carbon Black Cloud log types, which are set to the Amazon S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
 
 * Alert Data
 * Event Data
@@ -81,7 +81,7 @@ As a prerequisite, [Grant Sumo Logic access](/docs/send-data/hosted-collectors/a
 
 #### S3 Source for event logs
 
-Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
+Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
