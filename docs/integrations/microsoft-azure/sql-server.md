@@ -127,7 +127,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       environment="ENV_TO_BE_CHANGED"
       component="database"
       db_system = "sqlserver"
-      db_cluster: "ENV_TO_BE_CHANGED"
+      db_cluster = "ENV_TO_BE_CHANGED"
       db_cluster_address = "ENV_TO_BE_CHANGED"
       db_cluster_port = "ENV_TO_BE_CHANGED"
   ```

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
-Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, Open Telemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
+Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, OpenTelemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
 
 Given an alert, for instance, a microservice in AWS us-west-2 experiencing unusual user response times, an on-call user can use Root Cause Explorer to correlate EOIs on over 500 AWS CloudWatch metrics over 15 AWS service namespaces (such as EC2, RDS, and so on), Kubernetes metrics, and trace data, to isolate the probable cause to a specific set of EC2 instances, serving the given microservice in AWS us-west-2 that may be overloaded. 
 
@@ -38,7 +38,7 @@ Root Cause Explorer can also work with EC2 and EBS metrics collected by Host M
 Root Cause Explorer also supports:
 
 * Kubernetes metrics (from customer-managed Kubernetes, EKS, GKE, or Azure Kubernetes Engine) and associated Events of Interest. Given the ephemeral nature of container resources, Root Cause Explorer uses proprietary algorithms to aggregate Events of Interest to stable entities in a Kubernetes cluster.
-* Metrics derived from Open Telemetry data from Sumo Logic Tracing for applications and services
+* Metrics derived from OpenTelemetry data from Sumo Logic Tracing for applications and services
 
 The screenshot below shows the Root Cause Explorer UI.
 

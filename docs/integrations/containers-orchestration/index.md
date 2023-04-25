@@ -7,7 +7,7 @@ description: Docs for Sumo apps for container management and orchestration tools
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="55"/>
 
 This guide has documentation Sumo apps for container management and orchestration tools.  
 

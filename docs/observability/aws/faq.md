@@ -189,7 +189,7 @@ Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supporte
 * AWS Simple Queueing Service (SQS)
 * AWS X-ray
 * Kubernetes metrics and hierarchy
-* Open Telemetry metrics
+* OpenTelemetry metrics
 * Space Map
 
 ### Who can use the new features?

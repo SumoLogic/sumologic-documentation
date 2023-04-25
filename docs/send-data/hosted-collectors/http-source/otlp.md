@@ -8,7 +8,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-An OTLP/HTTP Source is an endpoint for receiving OTLP-formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
+An OTLP/HTTP Source is an endpoint for receiving OTLP-formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic.
+
+## Tracing Prerequisites
+
+As indicated [here](/docs/apm/traces/quickstart/#prerequisites), the following prerequisites apply before Sumo Logic can accept tracing data:
+
+| Account Type | Account Level |
+|:--|:--|
+| Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5 GB a day. |
+
 
 ## Create an OTLP/HTTP Source
 

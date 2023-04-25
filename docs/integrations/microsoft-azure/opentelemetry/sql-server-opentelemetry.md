@@ -11,14 +11,13 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The SQL Server app unifies logs and metrics to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations.
+The Sumo Logic App for Microsoft SQL Server is a logs based app that provides insight into your SQL server. The App consists of predefined Dashboards, providing visibility into your environment for real-time or historical analysis on backup, restore mirroring, general health and operations of your system.
 
 This App has been tested with following SQL Server versions:
 
 - Microsoft SQL Server 2012
 
-The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. Because of this, it is a Windows only receiver. Thus metrics for SQL Server can be collected only if its in a windows machine. 
-SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). They can be collected for any environment like - windows/linux/mac.
+SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards" />
 
@@ -117,13 +116,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 2023-01-09 13:23:31.276 Logon Login succeeded for user 'NT SERVICE\SQLSERVERAGENT'. Connection made using Windows authentication. [CLIENT: ]
 ```
 
-## Sample Metrics
-
-```
-{"queryId":"A","_source":"EC2AMAZ-T30T53R-13b7b3fc-cc2f-4eb0-accb-2aa33e6fa01b","_metricId":"K4oGmX1LMJ_iMZ4EeqGjJg","_sourceName":"OTC Metric Input","os.type":"windows","sumo.datasource":"sqlserver","db.system":"sqlserver","_sourceCategory":"OTC Metric Input","deployment.environment":"ec2WinDev","host.name":"EC2AMAZ-T30T53R.ec2.internal","metric":"sqlserver.transaction_log.flush.rate","_collectorId":"00005AF3107A445C","_sourceId":"0000000000000000","unit":"{flushes}/s","db.cluster.name":"sqlserverCluster","_sourceHost":"EC2AMAZ-T30T53R","sqlserver.database.name":"master","_collector":"EC2AMAZ-T30T53R-13b7b3fc-cc2f-4eb0-accb-2aa33e6fa01b","max":0.001388,"min":0,"avg":0.0007219,"sum":0.00361,"latest":0,"count":5}
-```
-
-## Sample Log Query
+## Sample Queries
 
 Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
 
@@ -134,13 +127,6 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 | count by LogType
 ```
 
-## Sample Metrics Query
-
-The following query is from the **SQL Server - Performance Counters** dashboard > **Page Buffer hit ratio %** panel:
-
-```sql
-sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqlserver.page.buffer_cache.hit_ratio 
-```
 ## Viewing Microsoft SQL Server Dashboards
 
 ### Overview
@@ -187,27 +173,3 @@ Use this dashboard to:
 -   Monitor any errors and warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Operations.png' alt="Operations" />
-
-### SQL Server - Transaction and Transaction Logs
-
-SQL Server - Transaction and Transaction Logs dashboard shows performance counters related metric for Transaction and Transaction Logs.
-
-Use this dashboard to:
-
-- Get info with respect to time for Transaction and write Transaction per sec
-- Insight into Transaction log related metrics like flush rate, flush data rate, and flush wait rate along with Transaction log % usage.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
-
-### SQL Server - Performance Counters
-
-SQL Server - Performance Counters dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
-
-Use this dashboard to:
-
-- Get info for Page buffer hit %, page split rate
-- Insight into Lock waits rate, Page read and write rate along with Patch request rate and SQL compilation and recompilation per sec.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Operations" />
-
-

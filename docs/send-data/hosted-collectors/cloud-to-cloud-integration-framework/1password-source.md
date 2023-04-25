@@ -24,13 +24,17 @@ The 1Password Source ingests:
 
 ## Authentication
 
-You need a 1Password API token and your customer specific 1Password domain, for example `events.1password.com`.
-
-To generate a 1Password API token follow these steps:
+You'll need a 1Password API token and your customer-specific 1Password domain (for example, `events.1password.com`). To generate a 1Password API token, follow these steps:
 1. [Sign in](https://start.1password.com/signin) to your 1Password account and click [Integrations](https://my.1password.com/integrations/active) in the sidebar.
-2. Choose the Events Reporting integration where you want to issue a token and click **Add a token**.
-3. Enter a name for the bearer token and choose when it will expire. Select or deselect the event types the token has access to, then click **Issue Token**.
-4. Click **Save** in 1Password and choose which vault to save your token to. Then click **View Integration Details**.
+2. Switch to the **Directory** tab (or use [this direct link to the Directory tab](https://sumologictestingapi.1password.com/integrations/directory)).
+3. Go to the **Events Reporting** section and click the **Sumo Logic** integration.
+4. In the **System Name** field, enter the name of your choice (default value `Sumo Logic` should be fine in most cases), then click **Add Integration**.
+5. In the **Set up token** section:
+   1. Enter a **Token Name**. This can be any string that will help you recognize tokens generated for different environments like production, staging, and dev.
+   1. Under **Events to Report**, leave enabled event sources which you want to share using the token.
+   1. When you're done, click **Issue Token**.
+6. In the **Save token** section, click the copy icon (next to the token string) to copy it to your clipboard. You can also click **Save in 1Password** to store it for your future reference.
+7. Lastly, click **View Integration Details** to see the summary, then click **Learn More** pointing to 1Password App installation manual.
 
 
 ## States
