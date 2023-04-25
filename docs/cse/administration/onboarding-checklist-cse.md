@@ -1,7 +1,7 @@
 ---
 id: onboarding-checklist-cse
-title: Onboarding Checklist for CSE
-sidebar_label: Onboarding Checklist for CSE
+title: Onboarding Checklist for Cloud SIEM
+sidebar_label: Onboarding Checklist for Cloud SIEM
 description: Onboarding tasks to get up and running with Cloud SIEM.
 keywords:
   - cloud siem
@@ -18,69 +18,231 @@ Sumo Logic also offers a complete CSE Quickstart package through the Professiona
 
 Access the linked articles to learn how to perform each item in the checklist.
 
+## Initial setup
 
-## Provision CSE
+Perform the tasks in the following sections to do initial setup of your Cloud SIEM environment.
 
-Sumo Logic must enable (provision) Cloud SIEM Enterprise before you can access it.
+### Provision Cloud SIEM 
 
-* [Create and Manage Organizations (Service Providers)](/docs/manage/manage-subscription/create-manage-orgs-service-providers/). Once Sumo Logic [provisions CSE](/docs/manage/manage-subscription/create-manage-orgs-service-providers#about-cse-provisioning), you see a link labeled **Cloud SIEM Enterprise** on the left side of the Sumo Logic navigation list. <br/><img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/>
-* [Manage Organizational Settings](/docs/manage/manage-subscription/manage-org-settings) (optional). If you have multiple Sumo Logic accounts, you may find it useful to [set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) for each of your accounts. Custom subdomains help ensure that requests authenticate to the right account. 
-* [Enable a Support Account](/docs/manage/security/enable-support-account/). If you need [Sumo Logic Support](https://support.sumologic.com) assistance, enable this feature to grant our agents permission to access your environment.
+Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, you will see a link labeled Cloud SIEM Enterprise on the left side of the Sumo Logic navigation list.
 
+<img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/> 
 
-## Set up roles and access
+To further set up your instance, you may consider setting up a custom sub-domain. And enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
-Configure [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/role-based-access-control/) to manage access to the CSE. 
+See:
+* The [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) section of the [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) article 
+* [Enable a Support Account](/docs/manage/security/enable-support-account/) 
 
-* [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles/). Verify that CSE users and administrators have proper permissions.
+### Set up users
 
+Perform the following steps to set up users in Cloud SIEM.
 
-## Set up entity and domain normalization
+#### Configure Cloud SIEM users and roles
 
-CSE can normalize usernames and domains to improve cross-correlation. For example, `bob@acme.com`, `bob@acme.uk` and `bob.smith` designate the same user and should be reflected as such in the records CSE creates.
+Cloud SIEM access is controlled through the unified role-based access controls (RBAC). We recommend creating two Cloud SIEM Roles starting out with the following capabilities, but you are welcome to adjust them to your company needs:
+* **Cloud SIEM Analyst**<br/>Add the following capabilities:
+   * Cloud SIEM Enterprise
+      * View Cloud SIEM Enterprise
+      * Insights
+         * Comment on Insights
+* **Cloud SIEM Administrator**<br/>Add the following capabilities (add all capabilities under Cloud SIEM Enterprise):
+   * Cloud SIEM Enterprise
+      * View Cloud SIEM Enterprise
+         * Insights
+         * Content
+         * Configuration
 
-* [Username and Hostname Normalization](/docs/cse/schema/username-and-hostname-normalization/). Enable host and domain normalization.
-* [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/) (optional). Set up username normalization lookup. 
+Also make sure to verify that Cloud SIEM users have necessary access permissions.
 
+See: 
+* [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles/)
+* The [Cloud SIEM Enterprise](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise) section of the [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/) article
 
-## Forward data to CSE
+#### Set up username and domain normalization
 
-You can forward data to CSE using our [ingest guides](/docs/cse/ingestion/). The ingest process consists of configuring a source or collector to forward messages to CSE, and ensuring that the forwarded messages are correctly tagged with the information CSE needs to map message fields to Record attributes. 
-* [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/). Enable the Data Volume Index to track your data consumption.
-* [Sumo Logic Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume App to provide you with a summary and detailed views of your account's data usage volume. 
-* [Audit Event Index](/docs/manage/security/audit-event-index/). CSE stores Insights within two audit partitions or indexes. These partitions also retain configuration changes made to the CSE Environment. Because compliance standards may require historical reporting of this information, we recommend [increasing the retention](/docs/manage/security/audit-event-index#search-the-audit-event-index) of the following partitions to 365 days:
-  * `_index=sumologic_audit_events`
-  * `_index=sumologic_system_events`
-* [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/). Forward select security data to CSE. When messages get sent to CSE, they are processed through the [records data pipeline](/docs/cse/schema/record-processing-pipeline/) for parsing and normalization into the [CSE schema](/docs/cse/schema/schema-attributes/). Configure each data source with the out-of-the-box parser built for that data type, and adhere to other ingestion best practices. 
-* [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data/). Configure Inventory Data Sources to properly ingest inventory data from services. In addition to message events, CSE leverages inventory data to pull in user and system telemetry on a predefined interval. The CSE UI displays this inventory information for analysts.
+Cloud SIEM can normalize usernames and domains to improve cross-correlation. For example, `bob@acme.com`, `bob@acme.uk`, and `bob.smith` are all the same user and should be reflected as such in the records the Cloud SIEM creates. It is important to do this as thoroughly as possible prior to sending logs to Cloud SIEM so that usernames and domains are consistent across all log data received. As part of this work, you may choose to set up an entity lookup table. 
 
-## Install security apps and import content
+See:
+* [Username and Hostname Normalization](/docs/cse/schema/username-and-hostname-normalization/)
+* [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/)
 
-Sumo Logic has apps that provide security-related data to CSE, and dashboards and searches that you may find useful to import to CSE. 
+### Forward data to Cloud SIEM
 
-* [Enterprie Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/). Install the Enterprise Audit - Cloud SIEM app to monitor parsed data, along with all the Signals and Insights these records generate. The app contains multiple folders of searches and dashboards related to CSE.
-* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/). Install the Threat Intel Quick Analysis App to get security analytics, like the threat intel dashboards, that help you detect threats in your environment. 
-* [Security and Threat Detection](/docs/integrations/security-threat-detection/). Install apps for your security sources.
-* [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection). Import Crowdstrike Threat Intel [pre-built searches](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection#parsersfers-folder). You can configure Crowdstrike threat indicator matches to become signals within CSE using scheduled searches. 
-* [Generate CSE Signals With a Scheduled Search](/docs/alerts/scheduled-searches/generate-cse-signals/). If you have existing scheduled search alerts, configure them to become Signals within CSE.
+Perform the following tasks to forward data to Cloud SIEM from other sources.
 
+#### Ingest data
 
-## Set up the CSE environment
+Begin forwarding data to Cloud SIEM using our ingest guides. Sending data to the Cloud SIEM Data tier consumes credits, and credit consumption can be tracked by enabling the Metrics Data Volume Index and installing the Data Volume app.
 
-Perform basic configuration to ensure you optimize the CSE environment.
+See:
+* [CSE Ingestion](/docs/cse/ingestion/)
+* [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
+* [Sumo Logic Data Volume App](/docs/integrations/sumo-apps/data-volume/)
 
-* [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Configure the detection window and the threshold Activity Score for Insight generation. Use care if you decide to change settings. In many cases, the default settings are ideal.
-* [Write a First Seen rule](/docs/cse/rules/write-first-seen-rule/). Configure a First Seen Rule baseline. Typically longer baseline learning periods (more than the 30 day minimum) reduce alert noise. However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred. 
-* [Create and Use Network Blocks](/docs/cse/administration/create-use-network-blocks/). Define Network Blocks to tag records with descriptive information that help analysts and responders have the context for Records, Signals, and Insights. You can often export this information from DHCP servers or other network devices. 
-* [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list/). Define Match Lists to enrich Records at ingest time with useful metadata. Most of the CSE rules also reference Match Lists to reduce false positives and whitelist systems, users, and domains. We recommend setting up Match Lists for vulnerability scanners and verified domains. Note that some rules may generate too many alerts if you do not configure the proper Match Lists for tuning, such as for administrator IPs, administration users, AWS administrators, and so on. 
-* [Create a Custom Threat Intel Source](/docs/cse/administration/create-custom-threat-intel-source/). Configure external threat feeds to do real-time comparisons against known-bad indicators. Professional Services configure popular free threat feeds for you during initial configuration. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, or others), let your account representative know so that Professional Services can configure these.
-* [Integrations](/docs/cse/integrations/). Configure custom integrations to enrich Insights. For example, enable VirusTotal enrichment to add malware information.
-* [CSE Actions](/docs/cse/administration/create-cse-actions) and [Create CSE Context Actions](/docs/cse/administration/create-cse-context-actions/). Create actions and context actions to assist investigations. For example, you can create a CSE action to [send automated notifications](/docs/cse/administration/create-cse-actions#rule-actions) when rules move to a degraded state, or [configure a context action](/docs/cse/administration/create-cse-context-actions#configure-a-context-action) to show user telemetry. You can also [enable Insight email notifications](/docs/cse/administration/create-cse-actions#email) so that users get an email whenever another user assigns an Insight to them.
-* [Managing Custom Inisght Statuses](/docs/cse/administration/manage-custom-insight-statuses/) (optional). Customize the Insight workflow to manage custom Insight statuses.
+#### Configure partitions
 
+Cloud SIEM Insights are stored within two audit partitions or indexes. These partitions also store configuration changes made to the Cloud SIEM environment. Because historical reporting of this information may be required, we recommend increasing the retention of these two partitions to 365 days:
+* `_index=sumologic_audit_events`
+* `_index=sumologic_system_events`
 
-## Install the Insight Enrichment Server
+See: The [Search the Audit Event Index](/docs/manage/security/audit-event-index#search-the-audit-event-index) section of the [Audit Event Index](/docs/manage/security/audit-event-index/) article
 
-The Insight Enrichment Server is a lightweight agent that uses enrichment scripts to add information to Insights. 
+#### Create parsers
 
-* [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). Install the Insight Enrichment Server to gather information on Entities when Insights fire. It can even make API calls to EDR platforms like CrowdStrike and CarbonBlack to gather information. 
+When messages are sent to Cloud SIEM, they are processed through the records data pipeline (parsers to log mappers) for parsing and normalization into the Cloud SIEM schema. Each data source should be configured with the out-of-the-box parser built for that data type, and adhere to other ingestion best practices. If Sumo Logic doesn’t provide an out-of-the-box parser or log mapper for some of your sources, we can help you create the parsers. You’ll need to specify `_siemForward` and `_parser` fields as needed, or use the **Forward to SIEM** checkbox where possible when configuring sources. 
+
+See: 
+* [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/)
+* [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline/)
+* [CSE Schema Attributes](/docs/cse/schema/schema-attributes/)
+* [Parser Editor](/docs/cse/schema/parser-editor/)
+
+#### Forward inventory data to Cloud SIEM
+
+In addition to message events, Cloud SIEM leverages inventory sources to pull in user and system telemetry on a predefined interval. Inventory information is then displayed for the analyst within the Cloud SIEM UI. Configure inventory sources as needed to forward data.
+
+See: 
+* [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data/)
+* [Configure a Custom Inventory Source](/docs/cse/administration/custom-inventory-sources/)
+
+### Install and configure security apps
+
+Perform the following tasks to install security apps that provide data to Cloud SIEM, and to configure apps to improve threat intel searches.
+
+#### Install security apps
+
+Install the Cloud SIEM App to monitor data that is parsed, along with all the signals and Insights that records generate. The app contains multiple folders of searches and dashboards related to Cloud SIEM.
+
+Also install any out-of-the-box apps or dashboards for security data sources we support, including CrowdStrike’s Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM. 
+
+See:
+* [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/)
+* [Security and Threat Detection](/docs/integrations/security-threat-detection/)
+* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
+
+#### Import Crowdstrike threat intel searches
+
+You can configure Crowdstrike threat indicator matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
+
+See: 
+* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
+* [Generate CSE Signals With a Scheduled Search](/docs/alerts/scheduled-searches/generate-cse-signals/)
+
+## Initial configuration
+
+Perform the tasks in the following sections to do initial configuration of useful tools in your Cloud SIEM environment.
+
+### Set detection thresholds
+
+One of the most important aspects of Cloud SIEM is detection configuration for Insight generation. While you can define the detection window and the threshold Activity Score for Insight generation yourself, in most cases the default settings are ideal.
+
+See: [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/)
+
+### Create custom statuses
+
+Cloud SIEM statuses allow you to organize your incident response pipeline and track the progress of Insight remediation. Create custom statuses as needed for your environment. 
+
+See: [Managing Custom Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses/)
+
+### Define network blocks
+
+Network blocks tag records with descriptive information that will help analysts and responders have the context of records, signals, and Insights. To define network blocks, you can often export the information from DHCP servers or other network devices. 
+
+See:[] Create and Use Network Blocks](m/docs/cse/administration/create-use-network-blocks/)
+
+### Configure threat intel feeds
+
+Cloud SIEM heavily leverages threat intelligence to do real-time comparisons against known bad indicators. You can configure popular free threat feeds. But if your security team pays for premium threat intelligence (such as RecordedFuture, Anomali, Crowdstrike, ThreatConnect, etc), you can configure these too.
+
+See: [Create a Custom Threat Intel Source](/docs/cse/administration/create-custom-threat-intel-source/)
+
+### Create lists
+Perform the following steps to create lists to allow or suppress information monitored for Cloud SIEM. 
+
+#### Create match lists
+
+Match lists enrich records at ingest time with useful metadata. Most of the Cloud SIEM rules also reference match lists to reduce false positives and to allowlist systems, users, and domains. At a minimum, you should create match lists for vulnerability scanners and verified domains. To prevent rules from being too noisy, you should also create match lists for admin IPs, admin users, AWS admins, and the like. 
+
+See: 
+* [Create a Matchlist](/docs/cse/match-lists-suppressed-lists/create-match-list/)
+* The [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists) section of the [Entity Tags and Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/) article
+
+#### Set up suppressed lists
+
+Set up suppressed lists as needed to suppress signals that you don’t want to fire. You configure suppressed lists similar to how you configure match lists. But suppressed lists are not referenced in rules, and they suppress all signals for a given indicator instead. 
+
+See: [Suppressed lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists/)
+
+#### Suppress entities and adjust criticality levels
+
+Suppress entities that you know do not need to fire signals. Also adjust criticality levels as needed for known entities. 
+
+See: 
+* [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/)
+* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/)
+
+#### Create entity groups and custom entity types
+
+Create entity groups to apply tags, criticality, or suppression at large scale. And while Cloud SIEM has a number of built-in entity types (for example, IP address, hostname, and username), you can create custom entity types for entities that are not recognized out-of-the-box. 
+
+See: 
+* [Create an entity group](/docs/cse/records-signals-entities-insights/create-an-entity-group/)
+* [Create a custom entity type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/)
+
+### Create actions
+
+Perform the following tasks to create actions to run in Cloud SIEM.
+
+#### Create Cloud SIEM actions
+
+You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as send an email to an assignee when an Insight is assigned, or to integrate with tools (for example, JIRA, Slack, etc.).
+
+See: [Create CSE Actions](/docs/cse/administration/create-cse-actions/)
+
+#### Create Context Actions
+
+A Context Action is an option that a Cloud SIEM analyst can use to query an external system for information about an Entity, IOC, or data encountered in a Record. For example, you could create a Context Action to check an IP address against a threat intel service, look up a username, or run a log search in Sumo Logic for a hostname.
+
+You could also create a Context Action to show users’ Google activity. For example, install the Google Workspace app and set up the User Activity dashboard. Then create the context action to pivot directly to the dashboard from Cloud SIEM usernames. 
+
+See: 
+* [Create CSE Context Actions](/docs/cse/administration/create-cse-context-actions/)
+* The [User Activity](/docs/integrations/google/workspace/install-app-dashboards/#user-activity) section of the [Google Workspace App and Dashboards](/docs/integrations/google/workspace/install-app-dashboards/) article
+
+### Configure rules
+
+Perform the following tasks to set up the rules that fire signals.
+
+#### Create custom rules
+
+Create custom rules as needed depending on your situation. Before you create custom rules, however, check built-in rules to ensure that there isn’t already a rule available to cover your needs. If you want to be alerted when custom rules are disabled, you can create an action.
+
+See: 
+* [CSE Rules](/docs/cse/rules/)
+* [CSE Built-In Rules](/docs/cse/rules/cse-built-in-rules/)
+* [Create CSE Actions](/docs/cse/administration/create-cse-actions/)
+
+#### Create rule tuning expressions
+
+You can create a rule tuning expression and apply it to multiple rules. A rule tuning expression allows you to extend a rule expression. Every rule has a rule expression, to which incoming records are compared. When a record matches a rule expression, and other rule criteria are satisfied, the rule generates a signal. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a signal if a record matches the combined expression. 
+
+See: [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/)
+
+#### Configure First Seen rule baseline
+
+First Seen rules allow you to generate a signal when behavior by an Entity (such as a user) is encountered that hasn't been seen before. Cloud SIEM automatically creates a baseline model of normal behavior over a 30-day period. Typically longer baselines (such as 30 days) reduce alert noise. However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred.
+
+See: [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule/)
+
+#### Adjust rules with Insight Trainer
+
+The Insight Trainer is a dashboard in the Cloud SIEM app that offers recommendations for making adjustments to rules. Follow the recommendations to make your rules more effective at creating high-fidelity signals.
+
+See: [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer/)
+
+### Configure the Automation Service
+
+The Automation Service allows you to automate smart actions, including enrichments and notifications. You can run automations manually, or at Insight creation or closure.
+
+See: [Automation Service](/docs/cse/automation-service/)
