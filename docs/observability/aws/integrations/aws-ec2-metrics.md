@@ -95,7 +95,7 @@ The Sumo Logic App for AWS EC2 allows you to display your EC2 instance metrics (
 
 ### 1.1. AWS EC2 Overview (CloudWatch Metrics)
 
-The **AWS EC2 Overview (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Overview (CloudWatch Metrics)** dashboard provides at-a-glance information about a CPU, instance disk store, network and EBS volume usage along with instance health status.
 
 Use this dashboard to:
 
@@ -109,7 +109,7 @@ Use this dashboard to:
 
 ### 1.1. AWS EC2 Summary (CloudWatch Metrics)
 
-The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance information about an EC2 CPU, instance disk store, network, and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance information about an CPU, instance disk store, network, and EBS volume usage along with instance health status.
 
 Use this dashboard to:
 
