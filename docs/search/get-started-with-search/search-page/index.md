@@ -36,7 +36,6 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 In your search query, you'll see that we have separated out important terms in a search for you by color to help you identify them quickly.  
 
 ![Query Sample Colors](/img/search/get-started-search/search-page/query-with-colors.png)
-
 | Color | Purpose |
 |:--|:--|
 | Blue | Boolean operators (and, or, not) |

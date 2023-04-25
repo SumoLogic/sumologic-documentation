@@ -82,7 +82,7 @@ The location of these logs will be required when you set up the app through the 
 
 To set up the performance metrics script on Linux and Windows for the Oracle app:
 
-1. Follow [these instructions](/docs/integrations/databases/oracle/performance-metrics/) for your operating system. You don't need to configure the Sumo Logic Script Source at this time.
+1. Follow [these instructions](/docs/integrations/databases/oracle/#performance-metrics-script-setup) for your operating system. You don't need to configure the Sumo Logic Script Source at this time.
 2. As per the above instructions, once the python script is available locally, you need to trigger this script periodically by copying the [cronJob.py](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-data-collection/Utils/cronJob.py) file. This will generate an output log file, path for which needs to be given at the time of app installation. Based on your platform please follow the steps below:
 
 <Tabs

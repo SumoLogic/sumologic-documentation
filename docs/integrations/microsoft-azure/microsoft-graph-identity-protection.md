@@ -21,9 +21,9 @@ Key features of the Microsoft Graph Identity Protection App include:
 
 ## Log types
 
-The App uses Microsoft Graph Identity Protection Source to collect [Risky Users](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) and [Risk Detections](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) data from Microsoft Graph Identity Protection API. 
+The App uses Microsoft Graph Identity Protection Source to collect [Risky Users](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) and [Risk Detections](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) data from Microsoft Graph Identity Protection API.
 
-To learn about the Microsoft Graph Identity Protection API fields, see the [Risky Users](https://learn.microsoft.com/en-us/graph/api/resources/riskyuser?view=graph-rest-1.0#properties) and [Risk Detections](https://learn.microsoft.com/en-us/graph/api/resources/riskdetection?view=graph-rest-1.0#properties) documentation. 
+To learn about the Microsoft Graph Identity Protection API fields, see the [Risky Users](https://learn.microsoft.com/en-us/graph/api/resources/riskyuser?view=graph-rest-1.0#properties) and [Risk Detections](https://learn.microsoft.com/en-us/graph/api/resources/riskdetection?view=graph-rest-1.0#properties) documentation.
 
 ### Sample Log Messages
 
@@ -83,9 +83,9 @@ This section contains log messages for both `Risky Users` and `Risk detections` 
 This section contains the sample queries of both the `Risky Users` and `Risk detections`.
 
 ```sql title="Risky Users by Status"
-_sourceCategory=msgip-app-src !riskEventType 
+_sourceCategory=msgip-app-src !riskEventType
 | json "id", "userPrincipalName", "isDeleted", "isProcessing", "riskLevel", "riskState", "riskDetail", "riskLastUpdatedDateTime" as user_id, user, is_deleted, is_processing, risk_level, risk_state, risk_action, risk_last_updated_date_time nodrop
-| topk(1, risk_last_updated_date_time) by user_id 
+| topk(1, risk_last_updated_date_time) by user_id
 
 | "{{user_status}}" as user_status_filter
 | if(user_status_filter matches "active", "false", user_status_filter) as user_status_filter
@@ -105,10 +105,10 @@ _sourceCategory=msgip-app-src !riskEventType
 ```
 
 ```sql title="Risk by Level"
-_sourceCategory=msgip-app-src riskEventType 
+_sourceCategory=msgip-app-src riskEventType
 | json "activity", "activityDateTime", "detectedDateTime", "detectionTimingType", "id", "ipAddress", "lastUpdatedDateTime", "location", "location.geoCoordinates.latitude", "location.geoCoordinates.longitude", "riskDetail", "riskEventType", "riskLevel", "riskState", "source", "tokenIssuerType", "userPrincipalName", "userId" as activity, activity_date_time, detected_date_time, detection_timing_type, risk_id, ip_address, last_updated_date_time, location, latitude, longitude, risk_action, risk_event_type, risk_level, risk_state, source, token_issuer_type, user, user_id nodrop
 | concat(location.city, ", ", location.state, ", ", location.countryOrRegion) as location
-| topk(1, last_updated_date_time) by risk_id 
+| topk(1, last_updated_date_time) by risk_id
 
 | where activity matches "{{activity}}"
 | where risk_event_type matches "{{risk_event_type}}"
@@ -154,14 +154,14 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 **Microsoft Graph Identity Protection - Risk Detections**.
 
-This dashboard provides insights into the risks detected in the organization. It displays the geo-location of risks, and the distribution of risks by state, type, level, activity, and token issuer type. It also shows the latency chart which helps to identify the delay between risk occurrence and detection time. It displays the table with information about the frequency of risks by type with a one-day comparison, a summary of all the risks, and a list of various actions performed to mitigate the risks with their frequency. 
+This dashboard provides insights into the risks detected in the organization. It displays the geo-location of risks, and the distribution of risks by state, type, level, activity, and token issuer type. It also shows the latency chart which helps to identify the delay between risk occurrence and detection time. It displays the table with information about the frequency of risks by type with a one-day comparison, a summary of all the risks, and a list of various actions performed to mitigate the risks with their frequency.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-graph-identity-protection-risk-detections.png')} alt="Microsoft Graph Identity Protection Risk Detections" width="900"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risk-Detections.png' alt="Microsoft Graph Identity Protection Risk Detections" />
 
 ### Risky Users
 
 **Microsoft Graph Identity Protection - Risky Users**.
 
-This dashboard helps to monitor and manage the risky users of your organization. It visualizes the distribution of risky users by status, level, state, and processing state. It also provides a list of various actions performed to mitigate the risks with their frequency. It displays the table of summary of all the risky users. 
+This dashboard helps to monitor and manage the risky users of your organization. It visualizes the distribution of risky users by status, level, state, and processing state. It also provides a list of various actions performed to mitigate the risks with their frequency. It displays the table of summary of all the risky users.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-graph-identity-protection-risky-users.png')} alt="Microsoft Graph Identity Protection Risky Users" width="900"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Identity-Protection/Microsoft-Graph-Identity-Protection-Risky-Users.png' alt="Microsoft Graph Identity Protection Risky Users" />

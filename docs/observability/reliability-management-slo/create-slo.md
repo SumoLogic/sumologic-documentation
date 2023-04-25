@@ -373,10 +373,10 @@ You would need to create a custom graphic that combines multiple SLOs from multi
 1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
   ```sql
   _view=sumologic_slo_output
-  | lookup * from sumo: //content/slos on sloId, sloVersion
+  | lookup * from sumo://content/slos on sloId, sloVersion
   | where !isBlank (sloname) and slofolderpath matches "*"
   | concat (sloname, " (", sloId, ")") as sloUniqueName
-  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by s1oUniqueName
+  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
   | totalEvents - goodEvents as badEvents
   | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
   | 100 * (1 - badEvents / denominator) as sli

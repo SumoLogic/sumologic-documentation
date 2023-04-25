@@ -31,7 +31,7 @@ Sumo divides your time range into 15 minute buckets.
 
 For each bucket, Sumo uses a rollup type, described below, to aggregate the values of all the data points in the bucket. The aggregated values are displayed in your metric visualization or processed further in the pipeline.
 
-By default, Sumo uses the `avg` rollup type. You can specify another rollup type by using the `quantize` operator, as described in [Quantize with rollup type specified](/docs/metrics/introduction/Metric-Quantization#Quantize_with_rollup_type_specified) below.
+By default, Sumo uses the `avg` rollup type. You can specify another rollup type by using the `quantize` operator, as described in [Quantize with rollup type specified](/docs/metrics/introduction/metric-quantization#Quantize_with_rollup_type_specified) below.
 
 
 #### Rollup types

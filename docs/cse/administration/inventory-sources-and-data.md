@@ -170,7 +170,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 | ip | ipv4s |   |  
 | natIp | ipv4s |   |
 
-#### Windows Active Directory Inventory Source
+### Windows Active Directory Inventory Source
 
 #### Computer inventory data mapping
 

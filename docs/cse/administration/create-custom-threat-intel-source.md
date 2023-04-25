@@ -59,12 +59,12 @@ Your new source should now appear on the **Threat Intelligence** page.
         reached, the indicator will be removed from the source. When you
         click in the field, you’ll be prompted to select a date and
         time.
-    1. Click **Add**. <br/>![import-indicators.png](/img/cse/import-indicators.png)
+    1. Click **Add**.
 
 ### Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
-save time by creating a .csv file and uploading it to CSE.
+save time by creating a .csv file and uploading it to CSE.<br/>![import-indicators.png](/img/cse/import-indicators.png)
 
 #### Create a CSV file
 
@@ -78,7 +78,12 @@ The .csv file can contain up to three columns, which are described below. 
 
 **Example .csv file**
 
-`value,description,expires mvtexco.com,EMEA guidance 22.333.22.252,Tante Intel,2022-06-01 01:00 PM`
+```
+value,description,expires 
+mvtexco.com,EMEA
+guidance
+22.333.22.252,Tante Intel,2022-06-01 01:00 PM
+```
 
 ### Upload the file
 

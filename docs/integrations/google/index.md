@@ -7,7 +7,7 @@ description: Docs for Sumo apps for Google.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="55"/>
 
 This guide has documentation for all of the apps that Sumo provides for Google.
 

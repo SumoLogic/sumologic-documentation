@@ -7,7 +7,6 @@ keywords:
   - cloud siem
   - cse
   - outlier rule
-  - ueba
   - behavioral analytics
 ---
 
@@ -31,14 +30,14 @@ Outlier rules allow you to generate a Signal when behavior by an Entity (such as
 * Spike in login failures from a user
 * Abnormal number of high severity endpoint alerts
 * Spike in EC2 instance creation
-* Abnormal volume of data sent to third-party storage 
+* Abnormal volume of data sent to third-party storage
 
 An Outlier rule is different from other CSE rule types in that the threshold for firing a signal is learned from the baseline. The rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
 
 For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, CSE builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, CSE creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
 
 ## Example rule
-The screenshot below shows an Outlier rule in the CSE rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below. 
+The screenshot below shows an Outlier rule in the CSE rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
 
 <img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition"/>
 
@@ -72,9 +71,9 @@ The settings in the **If triggered** section are divided into two subsections, o
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule/#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
 :::tip
-Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and Outlier rules are no exception. 
+Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and Outlier rules are no exception.
 
-On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment. 
+On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
 
 ## Use case for a spike in failed logins from a user
@@ -89,9 +88,9 @@ This section shows how an Outlier rule would function with a daily baseline.
 **Outlier Model Configuration**
 * **Detect an outlier for the** `count`
 
-   When the `count` function is used, the occurrences of rule expression on each record is used to build the normal behavior baseline. You do not need to input a record filed in case of `count`. 
-   
-   For all the other aggregation types, the Record field is an expected input. 
+   When the `count` function is used, the occurrences of rule expression on each record is used to build the normal behavior baseline. You do not need to input a record filed in case of `count`.
+
+   For all the other aggregation types, the Record field is an expected input.
 
 * **Model Sensitivity Threshold**: 3
 * **Minimum Count Value**: 10
@@ -99,4 +98,3 @@ This section shows how an Outlier rule would function with a daily baseline.
  :::tip
  If you are unsure what to set the minimum count value to from the default value of 1, consider providing the value which is beyond the normal acceptable behavior for a given time window for a particular entity. The **Minimum Count Value** is geared towards false positive reduction and improving the fidelity of Signals generated, and will vary based upon the use case and type of logs collected.
  :::
-
