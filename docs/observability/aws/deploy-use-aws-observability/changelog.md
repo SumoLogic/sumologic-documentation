@@ -15,7 +15,7 @@ AWS Observability Solution (S3 Link for cloudformation template):`https://sumolo
 
 AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
-New Features:
+New Feature:
 
 * Support for Amazon SQS service.
 
