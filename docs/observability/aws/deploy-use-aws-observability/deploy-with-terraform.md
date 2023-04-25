@@ -20,11 +20,11 @@ To set up the AWS Observability solution using Terraform, complete the followin
 Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
 
 :::note
-If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend that you:
+If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend you follow the below instructions:
 
-* Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
-* Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
-* **AWS Observability Apps** folder by default will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
+1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
+1. By default, the **AWS Observability Apps** folder will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic access keys belong to.
 :::
 
 ## Before you start 
@@ -66,8 +66,12 @@ server machine of your choice:
     ```
 1. Install the latest version of [curl](https://curl.haxx.se/download.html).
 1. Install [Python](https://www.python.org/) version 3.7 or later.
-1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the fields.sh batch file.
-
+1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the `fields.sh` batch file.
+1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to learn more.
+    ```bash
+    pip install sumologic-sdk
+    ```
+    
 ## Step 2: Configure the Terraform script
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:

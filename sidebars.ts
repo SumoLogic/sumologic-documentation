@@ -314,6 +314,7 @@ module.exports = {
             },
           ],
         },
+        'send-data/collect-from-other-data-sources/kubernetes',
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -2300,6 +2301,7 @@ integrations: [
             'cse/integrations/enable-virustotal-enrichment',
             'cse/integrations/integrate-cse-with-taxii-feed',
             'cse/integrations/security-incident-response-integration',
+            'cse/integrations/enrichments-and-indicators',
           ],
         },
         {
@@ -2338,6 +2340,20 @@ integrations: [
             'cse/records-signals-entities-insights/configure-entity-lookup-table',
             'cse/records-signals-entities-insights/configure-custom-insight',
             'cse/records-signals-entities-insights/cse-heads-up-display',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cse/automation-service/index'},
+          items: [
+            'cse/automation-service/about-automation-service',
+            'cse/automation-service/automation-service-automations',
+            'cse/automation-service/automation-service-playbooks',
+            'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-bridge',
           ],
         },
       ],
