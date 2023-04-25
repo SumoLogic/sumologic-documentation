@@ -1,7 +1,7 @@
 ---
-id: infrequent-dashboard-support
+id: infrequent-tier-dashboard-support
 title: Infrequent Tier Support for Dashboards
-description: Learn how to setup dashboard panels against the Infrequent data tier.
+description: Learn how to set up dashboard panels against the Infrequent data tier.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 Previously, dashboards were only supported in Sumo Logic's Continuous data tier. This support enables you to also set up dashboard panels to include data from the Infrequent tier.
 
@@ -46,4 +46,4 @@ You can download the JSON for the dashboard [here](https://sumologic-app-data.s3
 
 ## Limitations
 
-* Auto refresh is not available for dashboard panels running on Infrequent tier.
+* Auto refresh is not available for dashboard panels running on the Infrequent tier.

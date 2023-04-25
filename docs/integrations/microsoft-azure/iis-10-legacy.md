@@ -7,7 +7,7 @@ description: IIS 10 App allows you to manage your Microsoft Internet Information
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="thumbnail icon" width="120"/>
 
 The IIS 10 (Legacy) App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. This app also provides the ability to monitor customer paths and interactions, so you can analyze how customers are using your product. The app provides predefined searches and Dashboards, that give visibility into your environment for real-time and historical analysis.
 
