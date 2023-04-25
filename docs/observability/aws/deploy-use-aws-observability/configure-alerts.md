@@ -61,7 +61,6 @@ Sumo Logic provides the following out-of-the-box alerts:
 | AWS SQS -  Messages not processed | This alert fires when we detect messages that have been received by a consumer, but have not been processed (deleted/failed). That is, the average number of messages that are in flight are >=20 for an interval of 5 minutes| >=20 | <20 |
 | AWS SQS - Queue has stopped receiving messages | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue <1 for an interval of 30 minutes | <1 | >=1 |
 
-
 :::note
 The information is provided for both Alert conditions and Recover conditions.
 :::
