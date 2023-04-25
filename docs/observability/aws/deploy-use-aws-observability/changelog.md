@@ -48,23 +48,23 @@ AWS Observability Solution (S3 Link for cloudformation template):`https://sumolo
 AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
 
 New Features:
-* Support for Amazon EC2 CloudWatch Metric
-* Support for Amazon SNS service
-* New onboarding method via script for linux and windows
+* Support for Amazon EC2 CloudWatch Metric.
+* Support for Amazon SNS service.
+* New onboarding method via script for linux and windows.
 
 Updates:
 * Updated “AWS Account Overview” and “AWS Region Overview” dashboards to monitor newly added Amazon SNS.
-* Simplified Terraform onboarding by importing existing SumoLogic Fields and FERs to TF state file via fields.sh script
-* Enhanced / optimized dashboards for AWS DynamoDB, AWS API Gateway, AWS Classic Load Balancer, Amazon RDS, AWS Application Load Balancer, Amazon EC2 Metrics, Amazon ElastiCache, AWS Network Load Balancer
-* Terraform solution will use Sumo Logic terraform provider >= v2.16.2
+* Simplified Terraform onboarding by importing existing SumoLogic Fields and FERs to TF state file via fields.sh script.
+* Enhanced and optimized dashboards for AWS DynamoDB, AWS API Gateway, AWS Classic Load Balancer, Amazon RDS, AWS Application Load Balancer, Amazon EC2 Metrics, Amazon ElastiCache, and AWS Network Load Balancer.
+* Terraform solution will use Sumo Logic terraform provider >= v2.16.2.
 
 Bug Fixes:
-* Fixed lambda CloudWatch logs FER (AwsObservabilityLambdaCloudWatchLogsFER)
+* Fixed lambda CloudWatch logs FER (AwsObservabilityLambdaCloudWatchLogsFER).
 * Added new FER (AwsObservabilityGenericCloudWatchLogsFER) to handle generic CloudWatch logs namespace identification.
-* Fixed creation of extra resources with terraform when user selects none to deployed
-* Fixed issue with collection of generic aws namespace metric
-* Fixed query for “Network Bytes In” panel in Amazon ElastiCache dashboard
-* Fixed / updated documentation for Terraform solution
+* Fixed creation of extra resources with terraform when user selects none to deployed.
+* Fixed issue with collection of generic aws namespace metric.
+* Fixed query for “Network Bytes In” panel in Amazon ElastiCache dashboard.
+* Updated documentation for Terraform solution.
 
 Removals:
 * RCE Dashboards are deprecated from the AWS Observability solution.
@@ -76,9 +76,9 @@ https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-version
 AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
 
 New Features:
-* You can now select the install location for the AWS Observability app folder “AWS Observability”. Personal is the default location.
-* You can share the AWS Observability app folder “AWS Observability” with the Sumo Logic organization during installation, with “Share with Org” as default.
-* Added new AWS Service - Classic Elastic Load Balancer (ELB) to the AWS Observability Solution.
+* Select the install location for the AWS Observability app folder. **Personal** is the default location.
+* Share the AWS Observability app folder “AWS Observability” with the Sumo Logic organization during installation, with “Share with Org” as default.
+* Classic Elastic Load Balancer (ELB) AWS Service added to AWS Observability Solution.
 
 Updates:
 * Updated “AWS Account Overview” and “AWS Region Overview” dashboards to monitor newly added AWS Classic ELB Service.
@@ -87,7 +87,7 @@ Updates:
 * Updated FERs for application load balancer access logs, ECS AWS CloudTrail logs, ElastiCache CloudTrail logs and created a new EC2 related AWS CloudTrail logs FER.
 
 Bug Fixes:
-* Resolved issue for upgrade / uninstallation of AWS Observability solution if a user deletes the “apps” and/or “monitor” folder prior to upgrade or deletion.
+* Resolved issue related to upgrade and uninstallation of AWS Observability solution when a user deletes the “apps” and/or “monitor” folder prior to upgrade or deletion.
 
 ## v2.3.0, 24-Sept-2021
 
@@ -96,14 +96,14 @@ CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/
 [Terraform folder](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) in the [sumologic-solution-templates GitHub Repo](https://github.com/SumoLogic/sumologic-solution-templates)
 
 Updates:
-* Provide Terraform Support for setting up the AWS Observability Solution
-* Allow for rapid on-boarding of multiple AWS accounts via CloudFormation templates and CSV files that map AWS account-ids to account aliases
-* Allow for collection of CloudWatch metrics data from all possible AWS namespaces
-* Updated ECS, ElastiCache, EC2, RDS and Lambda dashboards with minor cosmetic changes
+* Provide Terraform support for setting up the AWS Observability Solution.
+* Allow rapid on-boarding of multiple AWS accounts via CloudFormation templates and CSV files, that map AWS account-ids to account aliases.
+* Allow collection of CloudWatch metrics data from all possible AWS namespaces.
+* Updated ECS, ElastiCache, EC2, RDS, and Lambda dashboards with minor cosmetic changes.
 
 Bug Fixes:
-* Changed the IAM Role to ensure that permissions are applied to S3 buckets used by AWS Observability only
-* Made the AWS Account ID available as the “accountId” field
+* Changed the IAM Role to ensure that permissions are applied to S3 buckets used by AWS Observability only.
+* Made the AWS Account ID available as the “accountId” field.
 * OOTB monitors:
   * Added a new monitor “AWS EC2 - High Total CPU Utilization”
   * Renamed “AWS EC2 - High CPU Utilization” to “AWS EC2 - High System CPU Utilization”
@@ -114,37 +114,37 @@ Bug Fixes:
 CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.2.0/sumologic_observability.master.template.yaml
 
 Updates:
-* Support for Kinesis Firehose for Metrics and Logs sources
-* Lambda App updates to support data formats in the Kinesis Firehose for Logs source
-* Added Global Intelligence for AWS CloudTrail DevOps
+* Support Kinesis Firehose for Metrics and Logs sources.
+* Lambda App updates to support data formats in the Kinesis Firehose for Logs source.
+* Added Global Intelligence for AWS CloudTrail DevOps.
 
 Bug Fixes:
-* Fix to the EC2 metrics dashboards to show Total CPU Utilization instead of System CPU Utilization.
+* Changed the widget title from "System CPU Utilization" to "Total CPU Utilization" in EC2 metrics dashboards.
 
 Removals:
-* Metric Rules for entity fields
+* Metric Rules for entity fields.
 
 ## v2.1.0, 04-Feb-2021
 
 CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.1.0/sumologic_observability.master.template.yaml
 
 Updates:
-* Out-of-the-box Alerts
-* Support for AWS NLB, Amazon ECS and ElastiCache
-* CloudFormation template versioning
-* Support for AWS/SQS and AWS/SNS CloudWatch Metrics Namespaces
-* Automatic deletion of all resources created by the test CloudFormation template that checks permissions
+* Out-of-the-box Alerts.
+* Support for AWS NLB, Amazon ECS, and ElastiCache.
+* CloudFormation template versioning.
+* Support for AWS/SQS and AWS/SNS CloudWatch Metrics namespaces.
+* Automatic deletion of all resources created by the test CloudFormation template that checks permissions.
 
 Bug Fixes:
-* FERs were not getting applied correctly for logs from existing collector sources with spaces in the source name
+* Fixed the FERs that were not getting applied correctly for logs from existing collector sources, with spaces in the source name.
 
 ## v2.0.0, 10-Oct-2020
 
 CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/sumologic_observability.master.template.yaml
 
 Updates:
-* Updated the AWS Explore hierarchy and updated all dashboards to use entity model
-* Added new FERs and fields to support the entity model
+* Updated the AWS Explore hierarchy and all dashboards to use entity model.
+* Added new FERs and fields to support the entity model.
 
 ## v1.0.0, 31-Aug-2020
 
