@@ -78,14 +78,14 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
     </div>
     <div className="box smallbox10 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="Thumbnail icon" width="120"/>
+      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
       <h4><a href="/docs/integrations/microsoft-azure/iis-7">IIS 7</a></h4>
       <p>A guide to the Sumo Logic app for IIS 7.</p>
       </div>
     </div>
     <div className="box smallbox11 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="Thumbnail icon" width="120"/>
+      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
       <h4><a href="/docs/integrations/microsoft-azure/iis-10-legacy">IIS 10 (Legacy)</a></h4>
       <p>A guide to the Sumo Logic app for IIS 10 Legacy.</p>
       </div>

@@ -37,5 +37,5 @@ Make sure your IAM user has the following IAM policy attached with it.
 9. For **Granularity**, provide 2 supported granularities for each of the MetricTypes (or cost types):
     * Daily Costs (Polled every 12h)
     * Monthly Costs (Polled every day)
-10. Add **[Processing Rules](/docs/send-data/collection/Processing-Rules)**.
+10. Add **[Processing Rules](/docs/send-data/collection/processing-rules)**.
 11. Click **Submit** when complete.
