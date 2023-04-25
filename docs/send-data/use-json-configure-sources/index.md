@@ -6,18 +6,15 @@ description: Learn how to configure sources and processing rules using JSON.
 
 Installed Collector and Hosted Collector sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
-:::important
-JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+:::caution Limitations
+This feature is **not supported** for our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
 :::
 
-See the following topics for additional information:
-
- * [Collector Management API](/docs/api/collector-management)
- * [JSON Source Parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources)
- * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)
- * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration)
-
 ## Defining a Source JSON file
+
+:::info
+JSON files must be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+:::
 
 When registering a Collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
 [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) or [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors) configuration file. These parameters are used the first time a collector is set up.
@@ -33,8 +30,8 @@ For more information on setting the `syncSources` parameter, see [Local Confi
 
 You can use JSON to configure multiple sources in either of the following ways:
 
- * Create a single JSON file with the configuration information for all the sources (sources.json).
- * Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
+* Create a single JSON file with the configuration information for all the sources (sources.json).
+* Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
 
 :::note
 The maximum number of Sources allowed on a Collector is 1,000.
