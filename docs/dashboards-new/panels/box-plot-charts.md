@@ -37,7 +37,7 @@ If you query contains more than one of a min, lower quartile, median quartile, u
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), min (b), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/VPC-Flow-Logs) uses a query that creates a Box Plot Chart. It is:
+The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/vpc-flow-logs) uses a query that creates a Box Plot Chart. It is:
 
 ```sql
 _sourceCategory=vpc  

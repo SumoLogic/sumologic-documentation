@@ -187,7 +187,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Overview
 
-The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail events and metrics.
+The **Amazon SNS - Overview** dashboard provides insights across CloudTrail events and metrics.
 
 **Use this dashboard to:**
 
@@ -200,7 +200,7 @@ The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail even
 
 ### Amazon SNS - Audit Events  
 
-The **Amazon SNS - Audit Events** dashboard provides insights across Cloudtrail events across location, status, and topic names.
+The **Amazon SNS - Audit Events** dashboard provides insights across CloudTrail events across location, status, and topic names.
 
 Use this dashboard to:
 

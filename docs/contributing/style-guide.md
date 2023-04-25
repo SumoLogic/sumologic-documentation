@@ -13,16 +13,6 @@ The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can 
 
 This is a living document. If you've wondered about the usage of the name of a component, a feature in the UI, or any other word usage, and you don't find that term here, please let us know. The Documentation team will look it up and add usage guidance. Likewise, if you disagree with any usage defined here, please let us know and we'll update as necessary.
 
-## Doc structure summary
-
-* [Frontmatter (metadata)](#metadata-frontmatter) goes at the top
-* Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
-* Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
-* Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
-* Keep instructions concise, easy to follow, not too many screenshots.
-* Include any notes, warnings, tips, or other admonitions.
-
-
 ## Writing Resources
 
 If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow:
@@ -34,9 +24,9 @@ If you need help with a convention, word to use, or format to follow, we will ke
 
 For terminology usage guidance, see our [Word List](/docs/contributing/word-list.md).
 
-If you're new to writing content or would like to learn more, check out these resources:
+If you're new to writing tech content or would like to learn more, check out these resources:
 * [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/). Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
-* [Google Technical Writing Courses](https://developers.google.com/tech-writing). Excellent and easy self-paced courses to refine your writing. Be advised, the courses may use a different style, but still excellent to get started.
+* [Google Technical Writing Courses](https://developers.google.com/tech-writing). Self-paced courses to refine your writing. The courses may use a style different from ours, but still an excellent to get started.
 * [Every Page is Page One](https://everypageispageone.com/examples-of-eppo-topics/). A helpful method for considering what goes into a page is to think of every page as page one. With the extreme use of search engines or sharing a link to find content, users may land in the middle of a section or tutorial. These ideas help hone your content and focus on user needs.
 
 Helpful blogs on tech writing:
@@ -85,6 +75,16 @@ Use inclusive and culturally neutral language. Our audience is global. Do not us
 Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
 
 Unless you're referring to a specific person, do not use gender pronouns (he/she).
+
+
+## Doc structure summary
+
+* [Frontmatter (metadata)](#metadata-frontmatter) goes at the top
+* Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
+* Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
+* Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
+* Keep instructions concise, easy to follow, not too many screenshots.
+* Include any notes, warnings, tips, or other admonitions.
 
 
 ## Abbreviations
@@ -165,20 +165,8 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 
 Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
 
-To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+Here's how to add a title to your code block.
 
-```sql {2-6}
-_sourceCategory=reinvent/travel/checkout
-[subquery:_sourceCategory=reinvent/travel/nginx
-     | count by src_ip
-     | topk(1,_count)
-     | compose src_ip keywords
-]
-| json field=_raw "funcName"
-| where funcname in ("process_cart","charge")
-| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
-| count by funcname
-```
 
 <Tabs
   className="unique-tabs"
@@ -210,6 +198,50 @@ function HelloDocusaurus() {
 </TabItem>
 </Tabs>
 
+To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```sql {2-6}
+    _sourceCategory=reinvent/travel/checkout
+    [subquery:_sourceCategory=reinvent/travel/nginx
+         | count by src_ip
+         | topk(1,_count)
+         | compose src_ip keywords
+    ]
+    | json field=_raw "funcName"
+    | where funcname in ("process_cart","charge")
+    | if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+    | count by funcname
+    ```
+
+</TabItem>
+<TabItem value="Result">
+
+```sql {2-6}
+_sourceCategory=reinvent/travel/checkout
+[subquery:_sourceCategory=reinvent/travel/nginx
+     | count by src_ip
+     | topk(1,_count)
+     | compose src_ip keywords
+]
+| json field=_raw "funcName"
+| where funcname in ("process_cart","charge")
+| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+| count by funcname
+```
+
+</TabItem>
+</Tabs>
+
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-cheat-sheet/code-blocks).
 
 
@@ -234,14 +266,35 @@ Not everything has an intuitive name. It's the very nature of working with a con
 
 ## Downloadable files
 
-You can also add files such as custom code, json, yaml, and xml in the `static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
+To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 
-```md
-[Download this Terraform](/files/terraform/script.tf)
-```
+1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="header sizes" width="250"/>
+1. Go to your doc in progress and use the following syntax to link the file:
+  <Tabs
+    className="unique-tabs"
+    defaultValue="Markdown"
+    values={[
+      {label: 'Markdown', value: 'Markdown'},
+      {label: 'Result', value: 'Result'},
+    ]}>
 
-If your file is available from another public Sumo Logic repo, please link to that file instead as a URL link. See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
+  <TabItem value="Markdown">
 
+  ```md
+  <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+  ```
+
+  </TabItem>
+  <TabItem value="Result">
+
+  <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+
+  </TabItem>
+  </Tabs>
+
+Nearly all file formats are supported. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
+
+If your file is available in another public Sumo Logic repo, provide the standard URL link. [Here's an example](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/fargate/install-metrics.sh).
 
 ## Emphasis
 
@@ -384,7 +437,9 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 ## Images
 
-1. Save your image(s) in the `/static/img` folder. This folder structure mirrors the doc section folders.
+### Add an image
+
+1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
    * When updating an existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
    * File format be .png or .gif.
 2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter), if it's not already there.
@@ -397,21 +452,15 @@ You can use a link to a file embedding the entire file, or embed a range of code
    ```
 4. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
-   For web-hosted images, do not use the `{useBaseUrl('<img>')}` syntax:
-   * Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
-   * Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
+   For web-hosted images, do not use the `useBaseUrl` syntax.
+   * &#9989; Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
+   * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
-5. Add an alt text description.
+5. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description what the image is meant to show. Alt text is a label, not a caption, doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
 
-  <details><summary>What is <code>alt text</code>?</summary>
+  <details><summary>More about <code>alt text</code></summary>
 
-  When you insert an image, you must briefly describe what the image is meant to show. It is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download.
-
-  Alt text is not a caption; it's just a label: "Image properties dialog" or "Sumo Logic logo." It doesn't need to describe all details of an image.
-
-  Alt text of some kind is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
-
-  If you are editing and you come across an image without `alt text`, add it.
+  Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
   </details>
 
@@ -438,6 +487,30 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
   </TabItem>
   </Tabs>
+
+### Image sizes
+
+When sizing images, use your discretion.
+
+#### Logos
+
+For square logos, set the width to about 45-55px.
+
+|  Yes &#9989;  |  No &#10060; |
+|---|---|
+|  <img src={useBaseUrl('img/contributing/logo-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/logo-no.png')} alt="alt-text" width="400"/> |
+
+For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px.
+
+#### Screenshots
+
+Ensure that screenshots are large enough so that the content is legible, but not comically oversized. Use your discretion.
+
+|  Yes &#9989;  |  No &#10060; |
+|---|---|
+|  <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> |  <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
+
+Screenshots should never be wider than 600px.
 
 ### Images in lists
 

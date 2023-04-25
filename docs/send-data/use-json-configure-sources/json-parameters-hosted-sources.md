@@ -470,9 +470,39 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `thirdPartyRef` parameter to enable **S3 Replay**. Leave `thirdPartyRef` empty if you don't want to enable S3 replay.
 
-```
+```json
 {
-  "source":{ "name":"test-source", "automaticDateParsing":true, "multilineProcessingEnabled":true, "useAutolineMatching":true, "contentType":"AwsS3Bucket", "forceTimeZone":false, "filters":[], "cutoffTimestamp":1634972400000, "encoding":"UTF-8", "fields":{}, "thirdPartyRef":{   "resources":[{     "serviceType":"AwsS3Bucket",     "path":{       "type":"S3BucketPathExpression",       "bucketName":"test-kinesis-bucket-name",       "pathExpression":"http-endpoint-failed/*",       "useVersionedApi":true     },     "authentication":{       "type":"S3BucketAuthentication",       "awsId":"XXX",       "awsKey":"XXX"     }   }] }, "sourceType":"HTTP"
+  "source":
+     { 
+           "name":"test-source",
+           "automaticDateParsing":true,
+           "multilineProcessingEnabled":true,
+           "useAutolineMatching":true,
+           "contentType":"AwsS3Bucket",
+           "forceTimeZone":false,
+           "filters":[],
+           "cutoffTimestamp":1634972400000,
+           "encoding":"UTF-8",
+           "fields":{},
+           "thirdPartyRef":{   
+               "resources":[
+                   {     
+                        "serviceType":"AwsS3Bucket",
+                        "path":{       
+                            "type":"S3BucketPathExpression",       
+                            "bucketName":"test-kinesis-bucket-name",       
+                            "pathExpression":"http-endpoint-failed/*",       
+                            "useVersionedApi":true     
+                        },     
+                        "authentication":{       
+                            "type":"S3BucketAuthentication",
+                            "awsId":"XXX",
+                            "awsKey":"XXX"
+                        }   
+                    }
+                ] 
+            },
+            "sourceType":"HTTP"
   }
 }
 ```

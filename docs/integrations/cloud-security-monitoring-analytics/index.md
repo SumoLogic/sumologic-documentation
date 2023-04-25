@@ -69,13 +69,6 @@ This guide has documentation for all five data source apps that Sumo provides: W
     </div>
     <div className="box smallbox9 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/ueba.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/ueba">UEBA</a></h4>
-      <p>A guide to the Sumo Logic app for UEBA - Cloud Security Monitoring and Analytics.</p>
-      </div>
-    </div>
-    <div className="box smallbox10 card">
-      <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/windows">Windows</a></h4>
       <p>A guide to the Sumo Logic app for Windows - Cloud Security Monitoring and Analytics.</p>

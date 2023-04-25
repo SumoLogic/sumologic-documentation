@@ -18,7 +18,7 @@ The Sumo Logic App for Workday provides insights into authentication activity, u
 
 The Sumo Logic App for Workday collects all logs in JSON format. It uses the following two types of logs:
 * SignOn Logs
-* Audit Logs
+* Activity Logs
 
 
 ### Sample Log Messages
@@ -47,7 +47,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 ```
 
 
-```txt title="Audit Logs"
+```txt title="Activity Logs"
 {
 	"activityAction":"READ",
 	"systemAccount":"wd-environments",
@@ -84,7 +84,7 @@ _sourceCategory=workday_logs and _sourceName=signonlogs
 
 Sumo Logic collects data from the User Activity and Signon Activity Reports via the Workday APIs. Once data collection is set up, the data in the Sumo Logic platform is analyzed via the Workday app in the Sumo Logic app catalog.
 
-User activity data is collected through the Workday Audit Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
+User activity data is collected through the Workday Activity Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
 
 ## Collecting Logs for the Workday App
 
