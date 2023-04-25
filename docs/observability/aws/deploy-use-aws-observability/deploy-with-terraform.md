@@ -20,11 +20,11 @@ To set up the AWS Observability solution using Terraform, complete the followin
 Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
 
 :::note
-If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend that you:
+If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend you follow the below instructions:
 
-* Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
-* Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
-* **AWS Observability Apps** folder by default will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
+1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
+1. By default, the **AWS Observability Apps** folder will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic access keys belong to.
 :::
 
 ## Before you start 
@@ -45,6 +45,9 @@ The AWS Observability solution script is organized into the following groups of 
    * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
    * **source-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo logic sources as required for the solution.
 
+:::note
+Using main.tf, only apps can be installed with the “sumo-module” module by keeping the “collection-module” module commented.
+:::
 
 System Files:
 
@@ -52,13 +55,12 @@ System Files:
 * [providers.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers Configuration Language](https://www.terraform.io/docs/language/providers/index.html) for more information.
 * [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
 * [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
-* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in sumo logic field schema 
-* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the user's Sumo Logic account.
+* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in the Sumo Logic field schema 
+* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the your Sumo Logic account.
   
 ## Step 1: Set up the Terraform environment
 
-Before you run the Terraform script, perform the following actions on a
-server machine of your choice:
+Before you run the Terraform script, perform the following actions on a server machine of your choice:
 
 1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
@@ -66,8 +68,12 @@ server machine of your choice:
     ```
 1. Install the latest version of [curl](https://curl.haxx.se/download.html).
 1. Install [Python](https://www.python.org/) version 3.7 or later.
-1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the fields.sh batch file.
-
+1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the `fields.sh` batch file.
+1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to learn more.
+    ```bash
+    pip install sumologic-sdk
+    ```
+    
 ## Step 2: Configure the Terraform script
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
@@ -102,7 +108,7 @@ server machine of your choice:
       ```
 
 :::important
-Going forward, please do not modify these fields outside of Terraform.
+Going forward, do not modify these fields outside of Terraform.
 :::
 
 ## Step 3: Determine which AWS Account/Regions to Deploy
@@ -724,7 +730,7 @@ cloudwatch_metrics_source_url=””
 The following is a specific Source URL example:
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
@@ -1442,7 +1448,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, and AWS SNS.
+* Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, AWS SNS, and AWS SQS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder
@@ -1525,6 +1531,7 @@ The following table provides a list of all source parameters and their default v
 | `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled. | `true` |
 | `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled. | `true` |
 | `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled | `true` |
+| `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled | `true` |
 | `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled. | `true` |
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |
