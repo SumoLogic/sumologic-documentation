@@ -239,7 +239,7 @@ See: [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule/)
 
 The Insight Trainer is a dashboard in the Cloud SIEM app that offers recommendations for making adjustments to rules. Follow the recommendations to make your rules more effective at creating high-fidelity signals.
 
-See: [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer/)
+See: Improve Rules with Insight Trainer
 
 ### Configure the Automation Service
 
