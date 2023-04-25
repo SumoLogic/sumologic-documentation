@@ -23,7 +23,7 @@ When performing **Log Search** queries in the UI, you can visualize and filter l
 
 <details><summary>What are log levels?</summary>
 
-Sumo Logic detects six log levels out of the box: CRITICAL, WARN, ERROR, INFO, DEBUG, and TRACE. If we're unable to find one of these log levels in a message, it is categorized under the OTHERS bucket.
+Sumo Logic detects six log levels out of the box: FATAL, ERROR, WARN, INFO, DEBUG, and TRACE. If we're unable to find one of these log levels in a message, it is categorized under the OTHERS bucket.
 
 </details>
 
