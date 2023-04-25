@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is in Beta. To participate, contact your Sumo Logic account executive.
 
-When performing **Log Search** queries in the UI, you can visualize and filter log-level distribution in your Histogram results and Messages table view, helping you to:
+When performing **Log Search** queries in the UI, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
 
 * Quickly identify anomalies
 * Drill down quickly into high severity logs
