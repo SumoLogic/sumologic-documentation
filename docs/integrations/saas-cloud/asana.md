@@ -9,13 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon" width="40" />
 
-The Sumo Logic App for Asana is designed to monitor and analyze the Asana data, and detect potential security threats related to user activity. Also, you can gain insights into user/team management updates, track user log-in activities, detect data access and export, and changes to security settings and user roles. This app provides a pre-built dashboard that allows you to visualize the Asana data in a meaningful way, and identify trends and patterns of the team. By taking appropriate actions based on these insights, you can ensure the security of Asana data and prevent data breaches.
+TThe Sumo Logic App for Asana enables you to monitor, analyze, and detect potential security threats related to user activity. Also, you can gain insights into user/team management updates, track user log-in activities, detect data access and export, and changes to security settings and user roles. This app provides a pre-built dashboard that allows you to visualize the Asana data and identify trends and patterns of the team. By taking appropriate actions based on these insights, you can ensure the security of Asana data and prevent data breaches.
 
-Key features of Asana App includes:
-- **Pre-built dashboard**. This app comes with a pre-built dashboard that allows you to quickly view key metrics related to Asana data. These dashboards provide a high-level overview of logins, changes to roles, data export, and user updates.
-- **Customizable searches**. This app allows you to create custom searches to analyze specific aspects of Asana data, which enables you to drill down into the data and uncover insights that are relevant to the business needs.
-- **Real-time monitoring**. This app provides real-time monitoring of Asana data, allowing you to stay up-to-date with the latest changes and trends in your team's work.
-- **Integration with other sources**. This App can be used in conjunction with other Sumo Logic Apps, that enables you to gain a more holistic view of the data.
+Key features of the Asana App include:
+- **Pre-built dashboard**. You may view the most important metrics connected to Asana data quickly using this app's pre-built dashboard. These dashboards offer a high-level overview of user updates, data exports, role changes, and logins.
+- **Customizable searches**. With the help of this app, you may build custom searches to examine particular Asana data elements, allowing you to go deeper into the data and find insights that are pertinent to your company's needs.
+- **Real-time monitoring**. By providing real-time monitoring of Asana data, this tool enables you to keep track of the most recent developments and trends in your team's work.
+- **Integration with other sources**. This app can be used in conjunction with other Sumo Logic Apps, which enables you to gain a more holistic view of the data.
 
 ## Log Types
 
@@ -90,7 +90,7 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 ## Viewing Asana dashboard
 
-The **Asana - Overview** dashboard presents a comprehensive overview of audit events related to actions taken on Asana. It includes widgets for user logins from risky locations, number of users invited, password change events, events by user authorization, user login events over time, content exports by resource, events by role change, events by team status, events by app authorization, events by access token authorization, deletion events, and geographical locations of user login. Overall, this dashboard serves as a valuable tool for enhancing event management by offering easy access to relevant information. Also, the recent admin settings and recent access control events widgets offer a concise overview of recent events related to respective categories. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Asana-Overview.png')} alt="Asana-Overview" width="750"/>
+The **Asana - Overview** dashboard presents a comprehensive overview of audit events related to actions taken on Asana. It includes widgets for user logins from risky locations, number of users invited, password change events, events by user authorization, user login events over time, content exports by resource, events by role change, events by team status, events by app authorization, events by access token authorization, deletion events, and geographical locations of user login. Overall, this dashboard provides quick access to pertinent information, making it a useful tool for improving event management. Also, the recent admin settings and recent access control events widgets offer a concise overview of recent events related to respective categories. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Asana-Overview.png')} alt="Asana-Overview" width="750"/>
 
 
 
