@@ -35,6 +35,14 @@ module.exports = {
       src: './src/helper/google-translate.js',
       async: true,
     },
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
+      async: true,
+    },
+    {
+      src: './src/helper/google-analytics.js',
+      async: true,
+    },
   ],
   staticDirectories: ['static'],
   webpack: {
@@ -88,6 +96,12 @@ module.exports = {
               'caution',
             ],
           },
+        },
+        gtag: {
+          trackingID: [
+            'G-CVH19TBVSL',
+            'UA-16579649-3',
+          ],
         },
         googleAnalytics: {
           trackingID: 'UA-16579649-3',

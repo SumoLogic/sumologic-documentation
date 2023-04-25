@@ -78,7 +78,12 @@ The .csv file can contain up to three columns, which are described below. 
 
 **Example .csv file**
 
-`value,description,expires mvtexco.com,EMEA guidance 22.333.22.252,Tante Intel,2022-06-01 01:00 PM`
+```
+value,description,expires 
+mvtexco.com,EMEA
+guidance
+22.333.22.252,Tante Intel,2022-06-01 01:00 PM
+```
 
 ### Upload the file
 

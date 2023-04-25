@@ -65,11 +65,7 @@ AWS EC2
 <br/>
 
    </td>
-   <td>AWS Lambda
-<br/>
-IAM Roles
-<br/>
-
+   <td>IAM Roles
    </td>
    <td>AWS API Gateway
 <br/>
@@ -140,7 +136,7 @@ IAM Role
    </td>
   </tr>
   <tr>
-   <td>AWS Lambda CloudWatch logs (Lambda Log Forwarder)
+   <td>Lambda Log Forwarder (AWS CloudWatch logs)
    </td>
    <td>AWS Lambda
 <br/>
@@ -150,7 +146,7 @@ IAM Roles
    </td>
   </tr>
   <tr>
-   <td>AWS CloudWatch Logs (Kinesis Firehose Log source)
+   <td>Kinesis Firehose Log source (AWS CloudWatch logs)
    </td>
    <td>Kinesis Firehose
 <br/>
@@ -200,11 +196,64 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 ## Resources created in Sumo Logic
 
+### Metadata Tags
+
+The metadata tags are applied to Sumo Logic Sources.
+
+<table>
+  <tr>
+   <td>Source
+   </td>
+   <td>Metadata tags applied
+   </td>
+   <td>Common fields created via FERs
+   </td>
+  </tr>
+  <tr>
+   <td>CloudWatch Metrics
+   </td>
+   <td>Account
+   </td>
+   <td>Not Applicable
+   </td>
+  </tr>
+  <tr>
+   <td>Host Metrics
+   </td>
+   <td>Account, Namespace
+   </td>
+   <td>Not Applicable
+   </td>
+  </tr>
+    <tr>
+   <td>CloudTrail Logs
+   </td>
+   <td>Account
+   </td>
+   <td>Account ID, Region, Namespace
+   </td>
+  </tr>
+    <tr>
+   <td>CloudWatch Logs
+   </td>
+   <td>Account, Account ID, Region
+   </td>
+   <td>Namespace
+   </td>
+  </tr>
+    <tr>
+   <td>Load Balancer Access Logs
+   </td>
+   <td>Account, Account ID, Region
+   </td>
+   <td>Namespace
+   </td>
+  </tr>
+</table>
 
 ### Terraform
 
 [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) execution creates the following resources in Sumo Logic.
-
 
 <table>
   <tr>

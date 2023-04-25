@@ -45,7 +45,11 @@ To configure a Windows Active Directory Inventory Source:
    * **Description** is optional.
    * **Fetch Interval**. By default, Active Directory is queried for data every 24 hours (86400 seconds). You can select a more frequent interval, but it shouldn't be more frequent than every 10 hours (36000 seconds).
    * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](local-windows-event-log-source.md) below.
-   * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+   * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value. You need to set the following fields.
+   * `_siemVendor`: Microsoft
+   * `_siemProduct`: Windows
+   * `_siemForward`: true
+   * `_siemDataType`: Inventory
 
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
