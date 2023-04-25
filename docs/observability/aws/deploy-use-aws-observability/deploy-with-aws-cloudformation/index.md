@@ -222,6 +222,7 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 .*\"eventSource\":\"ecs\.amazonaws\.com\".*
 .*\"eventSource\":\"elasticache\.amazonaws\.com\".*
 .*\"eventsource\":\"sns\.amazonaws\.com\".*
+.*\"eventsource\":\"sqs\.amazonaws\.com\".*
 ```
 
 ### Common errors
