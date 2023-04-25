@@ -12,9 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For details on AWS EC2 metrics, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
 
-### Sample CloudTrail log for EC2 
+### Sample log
 
-```json
+```json title="Sample CloudTrail log for EC2"
 {
     "eventVersion":"1.08",
     "userIdentity":
