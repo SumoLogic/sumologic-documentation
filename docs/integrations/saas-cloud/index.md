@@ -50,7 +50,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/asana">
   <img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon.png" width="60" /><h4>Asana</h4></a>
-  <p>Monitor, analyze, and detect potential security threats related to user activity.</p>
+  <p>Monitor and analyze the Asana data to detect potential security threats related to user activity.</p>
   </div>
 </div>
 <div className="box smallbox7 card">
