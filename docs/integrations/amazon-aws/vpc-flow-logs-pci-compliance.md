@@ -19,8 +19,8 @@ VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each met
 
 You can use either of the following methods to collect Amazon VPC Flow Logs:
 
-* [Collect Amazon VPC Flow Logs using Amazon S3 source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
-* [Collect Amazon VPC Flow Logs using a CloudFormation template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
+* [Collect Amazon VPC Flow Logs using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
 ## Field Extraction Rule(s) for VPC Flow logs  
 Create Field Extraction Rule for VPC Flow Logs.
