@@ -233,7 +233,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your AWS SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your Amazon SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Monitor details of threat locations and count.
