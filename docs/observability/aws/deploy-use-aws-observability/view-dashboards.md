@@ -95,15 +95,16 @@ Click a link for information on the individual app dashboards:
 
 * [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
 * [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
-* [Amazon DynamoDB Dashboards](../integrations/aws-dynamodb.md)
+* [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
+* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md/)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
+* [Amazon RDS Dashboards](../integrations/aws-rds-metrics.md)
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
 * [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
-* [Amazon RDS Dashboards](/docs/observability/aws/integrations/aws-rds-metrics.md)
 * [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
 * [Amazon SQS Dashboards](../integrations/amazon-sqs.md)
 
