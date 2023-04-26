@@ -40,7 +40,7 @@ AWS Observability integrates with Explore by populating metadata and only shows
 Download this or other versions of this template from [Change Log](../changelog.md). 
 :::
 :::note
- If you want to change the Collector Name and Source Categories of the Sumo Logic sources that are created by default, download CloudFormation template version 2.1.0 or greater and follow [these instructions](#modify-the-collector-name-and-source-categories) before proceeding.
+To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
 :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::warning
