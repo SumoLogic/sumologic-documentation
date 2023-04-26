@@ -12,14 +12,14 @@ description: The Sumo Logic App for Amazon VPC Flow Logs provides a community-su
 Using the Sumo Logic Kinesis Connector to collect CloudWatch Logs (including VPC FLow Logs) is a community-supported solution. It is not officially supported by Sumo Logic Support. To provide feedback, report a bug, or get help, log into the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000g8L6OAI/Apps).
 :::
 
-While the preferred method for collecting Amazon CloudWatch logs into Sumo Logic is using an AWS Lambda Function, an alternate method would be to configure Amazon Cloudwatch logs to publish a log stream to Amazon Kinesis, then use the Sumo Logic Kinesis Connector to read the log data out of an Amazon Kinesis stream, and POST that data to a Sumo Logic HTTP Source.  
+While the preferred method for collecting Amazon CloudWatch logs into Sumo Logic is using an AWS Lambda Function, an alternate method would be to configure Amazon CloudWatch logs to publish a log stream to Amazon Kinesis, then use the Sumo Logic Kinesis Connector to read the log data out of an Amazon Kinesis stream, and POST that data to a Sumo Logic HTTP Source.  
 
 This approach was developed before Amazon released the ability to integrate AWS Lambda with Amazon CloudWatch Logs, and was originally developed to support the integration with AWS VPC Flow Logs. This approach requires more infrastructure and the integration of more AWS services than using the AWS Lambda based approach.  The one advantage that this approach offers is increased assurance of delivery because the data is pulled from the queue synchronously, and will retry in case of delivery failure.  In the current AWS Lambda based integration, data delivery failures may result in lost data. The Sumo Logic AWS Lambda functions are being enhanced to increase their fault tolerance.
 
 In order to make this integration easier, Sumo Logic has provided the following items:
 
-1. A JAVA based application, called **the Sumo Logic Kinesis Connector**.  This app pulls data from an Amazon Kinesis Stream, and POSTs that data to a Sumo Logic HTTP Source.  This app can be used to Collect CloudWatch Log formatted data, or any other form of custom log data that you may publish to Kinesis.   This app is hosted on [Sumo Logic's Git Hub account](https://github.com/SumoLogic/sumologic-kinesis-connector) .
-1. An **Amazon Cloud Formation Template**.   Sumo Logic provides a CloudFormation template to make setup easier. This template will create a Kinesis stream, subscribe it to your CloudWatch log group, and create an EC2 instance with the Sumo Logic Kinesis Connector.
+1. A JAVA-based application called the **Sumo Logic Kinesis Connector**.  This app pulls data from an Amazon Kinesis Stream, and POSTs that data to a Sumo Logic HTTP Source. This app can be used to Collect CloudWatch Log formatted data, or any other form of custom log data that you may publish to Kinesis. This app is hosted on [Sumo Logic's GitHub account](https://github.com/SumoLogic/sumologic-kinesis-connector).
+1. An **Amazon CloudFormation Template**. Sumo Logic provides a CloudFormation template to make setup easier. This template will create a Kinesis stream, subscribe it to your CloudWatch log group, and create an EC2 instance with the Sumo Logic Kinesis Connector.
 
 ## Create a Sumo Logic Hosted Collector and an HTTP Source
 

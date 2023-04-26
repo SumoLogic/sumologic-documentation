@@ -21,7 +21,7 @@ Data Forwarding allows you to forward log data to an external server or supporte
     [Archive](../archive.md) allows you to forward log data from [Installed Collectors](/docs/send-data/installed-collectors) to AWS S3 buckets to collect at a later time.
     :::
 
-* [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views) can forward log data to an AWS S3 bucket. See [Forwarding Data from Sumo Logic to S3](amazon-s3-bucket.md) for details.  
+* [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views) can forward log data to an Amazon S3 bucket. See [Forwarding Data from Sumo Logic to S3](amazon-s3-bucket.md) for details.  
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

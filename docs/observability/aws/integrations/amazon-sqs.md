@@ -1,7 +1,7 @@
 ---
 id: amazon-sqs
 title: Amazon SQS
-description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization. 
+description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -160,7 +160,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your AWS SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your Amazon SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 Use this dashboard to:
 * Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
