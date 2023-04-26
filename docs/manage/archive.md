@@ -1,6 +1,6 @@
 ---
 id: archive
-title: Archiving Log Data 
+title: Archiving Log Data
 description: Send data to an Archive that you can ingest from later.
 ---
 
@@ -36,7 +36,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
@@ -144,25 +144,22 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector or one you have created for this purpose.
-1. Select **AWS S3 Archive**.  
-    ![archive icon.png](/img/archive/archive-icon.png)
+1. Select **AWS S3 Archive**. <br/> ![archive icon.png](/img/archive/archive-icon.png)
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
 1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
     * can use **one **wildcard (\*).
-    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. * For example, if your filename is: ` prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip` you could use `prefix*` to only ingest from those matching files.
+    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
     * can **NOT** use a leading forward slash.
     * can **NOT** have the S3 bucket name.
 1. For **Source Category**, enter any string to tag to the
     data collected from this Source. Category metadata is stored in a
     searchable field called _sourceCategory.
 1. **Fields**. Click the **+Add Field** link to add custom metadata Fields. Define the fields you want to associate, each field needs a name (key) and value.
-
     :::note
     Fields specified on an AWS S3 Archive Source take precedence if the archived data has the same fields.
     :::
-
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
@@ -204,7 +201,7 @@ An ingestion job is a request to pull data from your S3 bucket. The job begins i
 
 1. In Sumo Logic select **Manage Data > Collection > Archive**.
 1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
-1. Click **New Ingestion** **Job** and a window appears where you:
+1. Click **New Ingestion Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.
     1. Select the date and time range of archived data to ingest. A maximum of 12 hours is supported.
 

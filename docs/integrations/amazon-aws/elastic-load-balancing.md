@@ -56,7 +56,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 ### Prerequisites
 
 * Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
-* Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+* Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 * Confirm that logs are being delivered to the Amazon S3 bucket.
 
 To enable logging in AWS:

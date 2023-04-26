@@ -1096,7 +1096,7 @@ in the CSE rules syntax.
 
 ## toInt 
 
-Casts a string to an integer This is equivalent to `int` in the CSE
+Casts a string to an integer. This is equivalent to `int` in the CSE
 rules syntax.
 
 **Syntax**
