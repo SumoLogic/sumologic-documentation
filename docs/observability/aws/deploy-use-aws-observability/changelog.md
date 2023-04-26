@@ -2,7 +2,7 @@
 id: changelog
 title: AWS Observability Terraform script and CloudFormation Changelog
 sidebar_label: Changelog
-description: This section provides details on the available versions of the AWS Observability Cloud Formation template.
+description: This section provides details on the available versions of the AWS Observability CloudFormation template.
 ---
 
 This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version.
@@ -55,7 +55,7 @@ New Features:
 Updates:
 * Updated “AWS Account Overview” and “AWS Region Overview” dashboards to monitor newly added Amazon SNS.
 * Simplified Terraform onboarding by importing existing SumoLogic Fields and FERs to TF state file via fields.sh script.
-* Enhanced and optimized dashboards for AWS DynamoDB, AWS API Gateway, AWS Classic Load Balancer, Amazon RDS, AWS Application Load Balancer, Amazon EC2 Metrics, Amazon ElastiCache, and AWS Network Load Balancer.
+* Enhanced and optimized dashboards for Amazon DynamoDB, AWS API Gateway, AWS Classic Load Balancer, Amazon RDS, AWS Application Load Balancer, Amazon EC2 Metrics, Amazon ElastiCache, and AWS Network Load Balancer.
 * Terraform solution will use Sumo Logic terraform provider >= v2.16.2.
 
 Bug Fixes:
