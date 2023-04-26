@@ -7,7 +7,85 @@ description: The simplest way to start capturing telemetry data is to implement 
 
 Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
 
-## How to instrument your ASP.NET Core application
+# .Net full auto-instrumentation vs library-instrumentation (partial auto)
+
+It is important to understand difference between two types of instrumentations that
+are available in .Net. First one, is fully automatic one that does not require
+code. Second one, requires some initialization that has to be done in the code
+and is called library instrumentation by opentelemetry community. It is partial
+auto-instrumentation as traces are generated automatically depending on settings
+provided by developer(s) during initialization phase.
+
+## How to instrument .NET application, fully automaticly (Windows)
+
+OpenTelemetry .NET Automatic Instrumentation has to be installed via Powershell
+module, process require administrator permissions.
+
+```powershell
+# Download the module
+$module_url = "https://raw.githubusercontent.com/open-telemetry/opentelemetry-dotnet-instrumentation/v0.7.0/OpenTelemetry.DotNet.Auto.psm1"
+$download_path = Join-Path $env:temp "OpenTelemetry.DotNet.Auto.psm1"
+Invoke-WebRequest -Uri $module_url -OutFile $download_path -UseBasicParsing
+
+# Import the module to use its functions
+Import-Module $download_path
+
+# Install core files (online vs offline method)
+Install-OpenTelemetryCore
+```
+
+After installation, we can set service name and run application
+
+```powershell
+# Set up the instrumentation for the current PowerShell session
+Register-OpenTelemetryForCurrentSession -OTelServiceName "MyServiceDisplayName"
+
+# Run your application with instrumentation
+.\MyNetApp.exe
+```
+
+### ASP.NET application on IIS
+
+ASP.NET application that runs on IIS requires two additional steps.
+
+#### Step 1. Setup IIS instrumentation
+
+This step requires to execute following command in powerhell.
+
+```powershell
+# Setup IIS instrumentation
+Register-OpenTelemetryForIIS
+```
+
+#### Step 2. Define opentelemetry modules loaded by IIS
+
+There are two options in order to achieve the goal.
+
+First, update application `web.config` with following section.
+
+```xml
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules>
+      <remove name="TelemetryHttpModule" />
+      <add name="TelemetryHttpModule" type="OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule, OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule" preCondition="managedHandler" />
+    </modules>
+  </system.webServer>
+```
+
+Second, update `applicationHost.config` which is located in located in `%SystemDrive%\Windows\system32\inetsrv\config` like below.
+
+```xml
+  <location path="" overrideMode="Allow">
+    <system.webServer>
+      <modules>
+        <add name="TelemetryHttpModule" type="OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule, OpenTelemetry.Instrumentation.AspNet.TelemetryHttpModule" preCondition="managedHandler" />
+      </modules>
+    </system.webServer>
+  </location>
+```
+
+## How to instrument your ASP.NET Core application (library instrumentation)
 
 There are a few simple steps to instrument the application and obtain telemetry data.
 
@@ -52,7 +130,7 @@ The final step is to configure the exporter endpoint, service and application na
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
-## How to instrument your ASP.NET application
+## How to instrument your ASP.NET application (library instrumentation)
 
 Instrumentation of the .NET application requires a little more effort but is still simple.
 
