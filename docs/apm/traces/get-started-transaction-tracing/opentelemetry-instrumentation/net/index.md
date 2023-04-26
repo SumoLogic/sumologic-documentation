@@ -16,6 +16,8 @@ and is called library instrumentation by opentelemetry community. It is partial
 auto-instrumentation as traces are generated automatically depending on settings
 provided by developer(s) during initialization phase.
 
+> **Note** Below description applies to v0.7.0.
+
 ## How to instrument .NET application, fully automaticly (Windows)
 
 OpenTelemetry .NET Automatic Instrumentation has to be installed via Powershell
@@ -37,12 +39,25 @@ Install-OpenTelemetryCore
 After installation, we can set service name and run application
 
 ```powershell
-# Set up the instrumentation for the current PowerShell session
+# Set up the instrumentation for the current PowerShell session.
+# Can be done via environment variable.
 Register-OpenTelemetryForCurrentSession -OTelServiceName "MyServiceDisplayName"
+```
 
+The final step is to configure the exporter endpoint, service and application name otherwise defaults will be used. In this example, the instrumentation will be configured by environment variables.
+
+* `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
+* `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
+
+More extensive description of all available options can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md)
+
+```powershell
 # Run your application with instrumentation
 .\MyNetApp.exe
 ```
+
 
 ### ASP.NET application on IIS
 
@@ -84,6 +99,15 @@ Second, update `applicationHost.config` which is located in located in `%SystemD
     </system.webServer>
   </location>
 ```
+
+The final step is to configure the exporter endpoint, service and application name otherwise defaults will be used. In this example, the instrumentation will be configured by environment variables.
+
+* `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
+* `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
+
+More extensive description is available on the following [page](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/iis-instrumentation.md)
 
 ## How to instrument your ASP.NET Core application (library instrumentation)
 
