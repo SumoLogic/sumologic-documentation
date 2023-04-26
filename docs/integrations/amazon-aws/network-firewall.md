@@ -25,7 +25,7 @@ Before you begin, you must:
 
 1. Enable logging from the AWS Network Firewall to an Amazon S3 bucket as described in the [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html).
 2. Confirm that logs are being delivered to the S3 bucket.
-3. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+3. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
 
 ## Collecting Logs for AWS Network Firewall

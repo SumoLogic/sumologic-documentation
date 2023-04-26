@@ -77,7 +77,7 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 1. Enable WAF logging to a Kinesis Stream, as described in AWS help.
 2. Configure an Amazon S3 bucket as the destination of the Kinesis Stream, as described in [Amazon Kinesis Data Firehose Data Delivery](https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html) in AWS help.
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+4. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
 
 ### Configure a Sumo collector and source to receive AWS WAF logs

@@ -18,7 +18,7 @@ This section has instructions for collecting VPC Flow Logs using a CloudFormatio
 
 VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can use either of these methods to collect Amazon VPC Flow Logs:
 * [From CloudWatch using CloudFormation](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
-* [Using an Amazon S3 source](#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
+* [Using an Amazon S3 source](#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
 
 Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
 

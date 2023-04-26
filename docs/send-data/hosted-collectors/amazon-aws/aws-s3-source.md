@@ -35,9 +35,9 @@ Files are transferred in their compressed form and decompressed when ingested. 
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add an Amazon S3 Source to collect objects from your Amazon S3 bucket. See below for details.
 
-## AWS S3 Source
+## Amazon S3 Source
 
-When you create an AWS S3 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Amazon Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Rules
 
@@ -83,7 +83,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 import Iframe from 'react-iframe';
 
-## Create an AWS S3 Source
+## Create an Amazon S3 Source
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
@@ -196,7 +196,7 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
     In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
     :::
 
-When collecting from one Amazon S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
+When collecting from one Amazon S3 bucket with multiple Sumo Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 

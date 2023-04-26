@@ -181,7 +181,7 @@ This section has instruction for setting up collection of logs and metrics for t
 
 Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each. A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
 
-* For the Amazon S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
+* For the AWS S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
 * For the AWS CloudTrail source for Redshift CloudTrail Events, you could specify a source category of `AWS/CloudTrail`.
 * For the AWS CloudWatch source for Redshift metrics, you could specify a source category of `AWS/Metric/Redshift`.
 
