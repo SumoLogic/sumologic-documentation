@@ -2,7 +2,7 @@
 id: asana
 title: Asana
 sidebar_label: Asana
-description: Monitor, analyze, and detect potential security threats related to user activity.
+description: Monitor and analyze the Asana data to detect potential security threats related to user activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
