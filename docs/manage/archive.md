@@ -150,7 +150,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
 1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
     * can use **one **wildcard (\*).
-    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is: ` prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip` you could use `prefix*` to only ingest from those matching files.
+    * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
     * can **NOT** use a leading forward slash.
     * can **NOT** have the S3 bucket name.
 1. For **Source Category**, enter any string to tag to the
