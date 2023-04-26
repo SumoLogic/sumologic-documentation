@@ -61,9 +61,9 @@ To investigate services in your AWS environment, do the following:
 
     ![AWS-Region-Overview.png](/img/observability/AWS-Region-Overview.png)
 
-1. From the expanded account and region combination, select a namespace/AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
+1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
 
-![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
+    ![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
 
 ## Drill down for root cause analysis
 
