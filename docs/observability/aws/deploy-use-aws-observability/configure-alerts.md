@@ -35,7 +35,7 @@ Sumo Logic provides the following out-of-the-box alerts:
 | AWS Application Load Balancer - High Latency | This alert fires when we detect that the average latency for a given Application load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | \\>= 3000 | \< 3000 |
 | AWS Application Load Balancer - High 4XX Errors | This alert fires when there are too many HTTP requests (\>5%) with a response status of 4xx within an interval of 5 minutes. | >= 5 | \< 5 |
 | AWS Application Load Balancer - High 5XX Errors | This alert fires when there are too many HTTP requests (\>5%) with a response status of 5xx within an interval of 5 minutes. | >= 5 | \< 5 |
-| AWS Application Load Balancer - Access from Highly Malicious Sources | This alert fires when an Application Load Balancer is accessed from highly malicious IP addresses within last 5 minutes. | > 0 | <= 0 |
+| AWS Application Load Balancer - Access from Highly Malicious Sources | This alert fires when an Application Load Balancer is accessed from highly malicious IP addresses within the last 5 minutes. | > 0 | <= 0 |
 | AWS Lambda - Low Provisioned Concurrency Utilization | This alert fires when the average provisioned concurrency utilization for 5 minutes is low (\<= 50%). This indicates low provisioned concurrency utilization efficiency. | \<= 50 | \\> 50 |
 | AWS Lambda - High Percentage of Failed Requests | This alert fires when we detect a large number of failed Lambda requests >5%) within an interval of 5 minutes. | >= 5 | \< 5 |
 | AWS EC2 - High System CPU Utilization | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (\>=85%). | >=85 | \<85 |
