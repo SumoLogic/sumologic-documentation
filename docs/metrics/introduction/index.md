@@ -25,7 +25,7 @@ In Sumo, we use the term *time series* to refer a set of timestamped values of a
 
 ## How do metrics get into Sumo?
 
-Sumo administrators set up *metric sources* to receive metrics.  A metric source understands a particular type of metric. For example, Sumo’s host metrics source knows how to ingest system metrics (network, CPU, file system, and so on) from Linux and Windows. Our CloudWatch source knows how to ingest metrics from AWS.
+Sumo administrators set up *metric sources* to receive metrics. A metric source understands a particular type of metric. For example, Sumo’s host metrics source knows how to ingest system metrics (network, CPU, file system, and so on) from Linux and Windows. Our CloudWatch source knows how to ingest metrics from AWS.
 
 Metrics flow into Sumo as individual data points. The frequency varies.
 

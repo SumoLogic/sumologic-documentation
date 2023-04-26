@@ -13,7 +13,7 @@ The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Anal
 
 The Amazon VPC Flow Logs show the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.
 
-For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html
+See [Amazon VPC Flow Logs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html) more information.
 
 The VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can use either of the below methods to collect Amazon VPC Flow Logs.
 
@@ -34,7 +34,7 @@ json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg
 
 ## Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using Amazon S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using Amazon S3 Source](#collect-amazon-vpc-flow-logs-using-an-amazon-s3-source).
 
 This section has instructions for collecting logs for the Amazon VPC Flow Logs app.
 
@@ -143,7 +143,7 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 
 ## Collect Amazon VPC Flow Logs Using an Amazon S3 Source
 
-This section has instructions for collecting Amazon VPC Flow Logs using an Amazon S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
+This section has instructions for collecting Amazon VPC Flow Logs using an Amazon S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#collect-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
 
 
 ### Step 1: Enable Amazon VPC Flow Logs  
