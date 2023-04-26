@@ -81,7 +81,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
-| [AWS S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
+| [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-metadata-tag-source) | Polling |
 | [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) | Universal |
 | [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) | Universal |
@@ -149,7 +149,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
 
 **When collection should begin**
 

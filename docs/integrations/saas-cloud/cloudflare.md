@@ -59,7 +59,7 @@ This section shows you how to set up a Hosted Collector and specify a Sumo Logic
 
 #### Prerequisites
 
-To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs to send logs to AWS S3 using [Logpush](https://developers.cloudflare.com/logs/logpush) or [Logpull](https://developers.cloudflare.com/logs/logpull-api/).
+To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs to send logs to Amazon S3 using [Logpush](https://developers.cloudflare.com/logs/logpush) or [Logpull](https://developers.cloudflare.com/logs/logpull-api/).
 
 To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
 
