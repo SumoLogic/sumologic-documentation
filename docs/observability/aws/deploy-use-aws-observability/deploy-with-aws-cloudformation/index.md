@@ -32,16 +32,16 @@ AWS Observability integrates with Explore by populating metadata and only shows
 
 ## Step 1: Open the CloudFormation template
 
-1. Sign on to the AWS Management console.
+1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
-    :::note
- If you would like to download or inspect this or other versions of this template, please visit [Change Log](../changelog.md).
-    :::
-    :::note
- If you want to change the Collector Name and Source Categories of the Sumo Logic sources that are created by default, download CloudFormation template version 2.1.0 or greater and follow [these instructions](#modify-the-collector-name-and-source-categories) before proceeding.
-    :::
+   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
+:::note
+Download this or other versions of this template from [Change Log](../changelog.md). 
+:::
+:::note
+To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
+:::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::warning
     This step is critical: if you do not select the correct region, you will deploy the solution in the wrong region.
