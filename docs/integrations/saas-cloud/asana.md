@@ -15,7 +15,7 @@ Key features of the Asana app include:
 - **Pre-built dashboard**. You may view the most important metrics connected to Asana data quickly using this app's pre-built dashboard. These dashboards offer a high-level overview of user updates, data exports, role changes, and logins.
 - **Customizable searches**. With the help of this app, you may build custom searches to examine particular Asana data elements, allowing you to go deeper into the data and find insights that are pertinent to your company's needs.
 - **Real-time monitoring**. By providing real-time monitoring of Asana data, this tool enables you to keep track of the most recent developments and trends in your team's work.
-- **Integration with other sources**. This app can be used in conjunction with other Sumo Logic Apps, which enables you to gain a more holistic view of the data.
+- **Integration with other sources**. This app can be used in conjunction with other Sumo Logic apps, which enables you to gain a more holistic view of the data.
 
 ## Log Types
 
