@@ -19,7 +19,7 @@ Key features of the Asana app include:
 
 ## Log Types
 
-This App uses Asana Source to collect [Audit Logs](https://developers.asana.com/reference/audit-log-api) from Asana.
+This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/reference/audit-log-api) from Asana.
 
 ### Sample log message
 
