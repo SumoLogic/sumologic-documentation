@@ -67,7 +67,7 @@ _sourceCategory="asana-app"
 
 To set up [Cloud to Cloud Integration Asana Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/) for the Asana App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Asana Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Asana App is properly integrated and configured to collect and analyze your Asana data.
 
-## Installing the Asana App
+## Installing the Asana app
 
 This section has instructions for installing the Asana App for Sumo Logic and description of the dashboard.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
