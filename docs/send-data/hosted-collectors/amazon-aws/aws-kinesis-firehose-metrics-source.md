@@ -48,7 +48,7 @@ The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://doc
 
 In this step, you create the AWS Kinesis Firehose for Metrics source.
 
-1. Go to **Manage Data > Collection > Collection** in the Sumo Logic UI.
+1. Go to **Manage Data** > **Collection** > **Collection** in the Sumo Logic UI.
 1. Click **Add Source** next to a Hosted Collector. 
 1. Select **AWS Kinesis Firehose** for Metrics.
 

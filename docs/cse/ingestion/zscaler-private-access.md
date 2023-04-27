@@ -16,7 +16,7 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
+1. In the Sumo Logic platform, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -33,7 +33,7 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 

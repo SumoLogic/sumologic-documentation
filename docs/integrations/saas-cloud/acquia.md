@@ -206,7 +206,7 @@ Include the token as the [Structured ID](https://tools.ietf.org/html/rfc5424#sec
 The token is deleted if you delete the source. To change a token, use the **Regenerate Token** option as described in the following procedure.
 
 To configure a cloud syslog source, do the following:
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 3. Select **Cloud Syslog**.
 4. Enter a **Name** to display for this source in Sumo. Description is optional.

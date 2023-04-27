@@ -60,7 +60,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 #### Create an AWS Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select **AWS Elastic Load Balancing** as the source type.
 4. Enter a name for the new Source. A description is optional.
@@ -153,7 +153,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
 3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
 

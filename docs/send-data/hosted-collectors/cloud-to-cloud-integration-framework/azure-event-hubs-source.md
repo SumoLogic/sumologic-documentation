@@ -76,7 +76,7 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 1. Select **Azure Event Hubs**.<br/> ![Azure Event Hubs Icon.png](/img/send-data/Azure-Event-Hubs-Icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/>  ![azure-event-hubs-input.png](/img/send-data/azure-event-hubs-input.png)

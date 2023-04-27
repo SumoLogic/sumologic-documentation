@@ -146,7 +146,7 @@ To collect logs for the Windows Performance App, do the following:
 
 To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
 
-1. Go to **Manage Data > Collection > Collection**.
+1. Go to **Manage Data** > **Collection** > **Collection**.
 2. Find the Collector and the Windows Performance Source.
 3. For the **Source**, click **Edit**.
 4. Under **Perfmon Queries** select the check boxes for these queries:

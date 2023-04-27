@@ -27,7 +27,7 @@ When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted
 
 To create an AWS Kinesis Firehose for Logs Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS Kinesis Firehose for Logs Source**.   
 
