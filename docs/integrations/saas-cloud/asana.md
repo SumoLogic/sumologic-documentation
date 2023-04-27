@@ -65,15 +65,15 @@ _sourceCategory="asana-app"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Asana Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/) for the Asana App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Asana Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Asana App is properly integrated and configured to collect and analyze your Asana data.
+To set up [Cloud to Cloud Integration Asana Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/) for the Asana app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Asana Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Asana app is properly integrated and configured to collect and analyze your Asana data.
 
 ## Installing the Asana app
 
-This section has instructions for installing the Asana App for Sumo Logic and description of the dashboard.
+This section has instructions for installing the Asana spp for Sumo Logic and description of the dashboard.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for and select the app.
 1. Select **Add Integration** button to install the app.
-1. Configure **Asana App** using the steps described in the [Asana Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Asana app** using the steps described in the [Asana Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
