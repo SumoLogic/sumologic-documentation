@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Asana enables you to track user sign in activities, detect data access and export, and identify changes to security settings and user roles. This allows you to gain insights into user and team management updates and identify potential security threats. This app provides a pre-built dashboard that allows you to visualize the Asana data in a meaningful way and identify trends and patterns in the team. By taking appropriate actions based on these insights, you can ensure the security of Asana data and prevent data breaches.
 
-Key features of the Asana App include:
+Key features of the Asana app include:
 - **Pre-built dashboard**. You may view the most important metrics connected to Asana data quickly using this app's pre-built dashboard. These dashboards offer a high-level overview of user updates, data exports, role changes, and logins.
 - **Customizable searches**. With the help of this app, you may build custom searches to examine particular Asana data elements, allowing you to go deeper into the data and find insights that are pertinent to your company's needs.
 - **Real-time monitoring**. By providing real-time monitoring of Asana data, this tool enables you to keep track of the most recent developments and trends in your team's work.
