@@ -16,7 +16,7 @@ Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This 
 
 While defining SLOs for the Infrequent tier logs, you can use the following sample queries.
 
-* Use `_dataTier=Infrequent` in your query scope. For example:
+* Use `_dataTier=Infrequent` in your query scope to only search for data in the Infrequent tier. For example:
   ```sql
   _dataTier=Infrequent _sourceCategory=APIService | parse "Status: *" as status_code | where status_code >= 500
   ```
