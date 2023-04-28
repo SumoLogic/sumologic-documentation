@@ -1,10 +1,9 @@
 ---
-title: April 28, 2023 (Apps)
+title: April 28, 2023 (Dashboards)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
-  - apps
-  - app catalog
-  - saas cloud
+  - dashboards new
+  - dashboard migration
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
