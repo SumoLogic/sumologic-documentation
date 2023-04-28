@@ -18,7 +18,7 @@ Key features of the Proofpoint On Demand app include:
 
 ## Log Types
 
-This app uses Proofpoint on Demand source to collect the data from Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol, which securely stores the required authentication, scheduling, and state tracking information.
+This app uses Proofpoint on Demand source to collect the data from Proofpoint on Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol, which securely stores the required authentication, scheduling, and state tracking information.
 
 ## Sample log message
 
