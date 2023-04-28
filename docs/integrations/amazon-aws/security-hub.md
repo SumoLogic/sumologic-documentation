@@ -170,7 +170,7 @@ In the case of a problem, perform the following tasks to discover the cause.
 
 
 ## Collecting Findings for the AWS Security Hub App
-This section shows you how to add a hosted collector and AWS S3 Source and deploy an AWS Security Hub collector.
+This section shows you how to add a hosted collector and Amazon S3 Source and deploy an AWS Security Hub collector.
 
 To complete the following tasks, Security Hub must be enabled on your AWS account. For more information,, see the AWS Security Hub documentation for [Setting Up AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html).
 
@@ -184,7 +184,7 @@ Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events
 You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](#Step_2:_Deploy_an_AWS_Security_Hub_App_collector).
 
 
-#### Step 1: Add a hosted collector and AWS S3 source
+#### Step 1: Add a hosted collector and Amazon S3 source
 
 This section demonstrates how to add a hosted Sumo Logic collector and AWS source, to collect events for  the AWS Security Hub App.
 
@@ -192,8 +192,8 @@ This section demonstrates how to add a hosted Sumo Logic collector and AWS sourc
 
 An AWS Source must be associated with a Sumo Logic Hosted Collector. Before creating the S3 source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
 
-To add a hosted collector and AWS S3 source:
-1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md)
+To add a hosted collector and Amazon S3 source:
+1. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
 3. Add an [AWS Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
