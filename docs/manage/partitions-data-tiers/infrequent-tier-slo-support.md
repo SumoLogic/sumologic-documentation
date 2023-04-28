@@ -31,7 +31,7 @@ While defining SLOs for the Infrequent tier logs, you can use the following samp
 
 ## Infrequent Dashboard Usage
 
-Sumo Logic provides a dashboard you can use to monitor the Infrequent tier consumption by SLOs.
+Sumo Logic provides a dashboard to monitor the Infrequent tier consumption by SLOs.
 
 <img src={useBaseUrl('img/partitions-data-tiers/infrequent-support-slo.png')} alt="dashboard" />
 
