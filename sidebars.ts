@@ -2024,6 +2024,7 @@ integrations: [
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
+          'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
