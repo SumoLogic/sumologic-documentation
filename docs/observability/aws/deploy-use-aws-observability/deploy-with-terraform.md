@@ -91,7 +91,7 @@ Before you run the Terraform script, perform the following actions on a server m
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
    * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `in`, `fed`, or `us1`.
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](https://chat.openai.com/docs/manage/security/access-keys.md) documentation.
-   * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys.md) Sumo Logic Access Key used for Sumo Logic API calls.
+   * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys.md) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
    * `aws_account_alias`: The Name/Alias for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs. Please leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
     :::note
