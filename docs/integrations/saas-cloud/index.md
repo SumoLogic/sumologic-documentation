@@ -147,7 +147,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox22 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/proofpoint-on-demand"><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="120"/><h4>Proofpoint On Demand</h4></a>
-  <p>Analyze message logs and provide improved security posture.</p>
+  <p>Analyze message logs and improve your security posture.</p>
   </div>
 </div>
 <div className="box smallbox23 card">
