@@ -77,7 +77,7 @@ Before you begin, collect logs from Airtable API and ingest them into Sumo Logic
 To install the app, follow the steps below:
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
-1. Configure **Airtable App** using the steps described in the [Airtable Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Airtable App** using the steps described in the [Airtable Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
