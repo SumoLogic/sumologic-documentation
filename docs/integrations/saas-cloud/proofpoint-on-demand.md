@@ -1,8 +1,8 @@
 ---
 id: proofpoint-on-demand
-title: Proofpoint On Demand
-sidebar_label: Proofpoint On Demand
-description: The Proofpoint On Demand app for Sumo Logic provides an improved security posture by analyzing message logs.
+title: Proofpoint on Demand
+sidebar_label: Proofpoint on Demand
+description: The Proofpoint on Demand app for Sumo Logic provides an improved security posture by analyzing message logs.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
