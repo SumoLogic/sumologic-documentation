@@ -2041,6 +2041,7 @@ integrations: [
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
+          'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
