@@ -46,7 +46,7 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **False positive**. Display recommendations only for reducing False Positive resolutions.
    * **False positive & No action**. Display recommendations for reducing both False Positive and No Action resolutions. 
 1. **show_rules**. The types of rules you want to show recommendations for:
-   * **All rules**. Provide commendations for all rules, not just rules with recommendations to change severity.
+   * **All rules**. Show all rules that were analyzed, not just rules with recommendations.
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
