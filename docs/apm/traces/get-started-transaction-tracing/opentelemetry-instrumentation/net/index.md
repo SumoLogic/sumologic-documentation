@@ -16,7 +16,9 @@ and is called library instrumentation by opentelemetry community. It is partial
 auto-instrumentation as traces are generated automatically depending on settings
 provided by developer(s) during initialization phase.
 
-> **Note** Below description applies to v0.7.0.
+:::note
+The below description applies to v0.7.0.
+:::
 
 ## How to instrument a .NET application automatically (Windows)
 
