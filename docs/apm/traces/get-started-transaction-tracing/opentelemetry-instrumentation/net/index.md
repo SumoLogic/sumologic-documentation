@@ -18,7 +18,7 @@ provided by developer(s) during initialization phase.
 
 > **Note** Below description applies to v0.7.0.
 
-## How to instrument .NET application, fully automaticly (Windows)
+## How to instrument a .NET application automatically (Windows)
 
 OpenTelemetry .NET Automatic Instrumentation has to be installed via Powershell
 module, process require administrator permissions.
