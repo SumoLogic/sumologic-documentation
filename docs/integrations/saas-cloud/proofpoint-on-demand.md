@@ -150,9 +150,9 @@ _sourceCategory="pod_src"
 
 To set up [Cloud to Cloud Integration Proofpoint on Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) for the Proofpoint on Demand app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint on Demand Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
 
-## Installing the Proofpoint On Demand app​
+## Installing the Proofpoint on Demand app​
 
-This section has instructions for installing the Proofpoint On Demand app for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Proofpoint on Demand app for Sumo Logic and descriptions of each of the dashboards.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.
