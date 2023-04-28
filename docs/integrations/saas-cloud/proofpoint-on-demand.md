@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Proofpoint on Demand is a cloud-based cybersecurity platform that offers a wide range of services to protect businesses against cyber threats. This includes email security, threat intelligence, information protection, and compliance solutions. The Proofpoint on Demand app for Sumo Logic provides insight into the functioning and effectiveness of your email security policies, allowing you to make informed decisions to improve security posture. This app will further provide information about the encryption status of the communication.
 
-Key features of the Proofpoint On Demand app include: 
+Key features of the Proofpoint on Demand app include: 
 - **Email security monitoring**. Monitor message traffic to detect and prevent spam, phishing, and other email-borne threats.
 - **Compliance monitoring**. Monitor email communications for compliance with internal policies and external regulations such as Data Loss Prevention (DLP), Domain-based Message Authentication, Reporting and Conformance (DMARC), and other relevant regulations.
 - **Incident investigation**. Quickly investigate potential security incidents by searching and analyzing email security and compliance data. This includes identifying the source of a security threat and the extent of its impact.
