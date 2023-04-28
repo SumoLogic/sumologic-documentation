@@ -12,7 +12,7 @@ Proofpoint On Demand is a cloud-based cybersecurity platform that offers a wide 
 
 Key features of the Proofpoint On Demand app include: 
 - **Email security monitoring**. Monitor message traffic to detect and prevent spam, phishing, and other email-borne threats.
-- **Compliance monitoring**. Monitor email communications for compliance with internal policies and external regulations such as DLP, DMARC, and other relevant regulations.
+- **Compliance monitoring**. Monitor email communications for compliance with internal policies and external regulations such as Data Loss Prevention (DLP), Domain-based Message Authentication, Reporting and Conformance (DMARC), and other relevant regulations.
 - **Incident investigation**. Quickly investigate potential security incidents by searching and analyzing email security and compliance data. This includes identifying the source of a security threat and the extent of its impact.
 - **User behavior monitoring**. Monitor behavior related to email communication to identify potential insider threats or unauthorized access.
 
