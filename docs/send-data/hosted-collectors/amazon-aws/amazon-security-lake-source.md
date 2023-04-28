@@ -20,18 +20,6 @@ Amazon Security Lake source provides a web services interface that can be used t
 
 This makes AWS log setup relatively easy. In addition, the data available from various AWS services is in the OCSF format, making it simple to parse and correlate across different sources.
 
-## Setup IAM Role on Amazon Security Lake
-
-Before setting up your Amazon Security Lake account, you need to create the following IAM role in AWS:
-
-### AmazonSecurityLakeMetaStoreManager role
-
-Create the `AmazonSecurityLakeMetaStoreManager` role in AWS Identity and Access Management (IAM). The role must carry this name and is necessary for Security Lake to support extract, transform, and load (ETL) jobs on raw log and event data that it receives from sources. Without creating and assuming this role, you cannot create your data lake or query data from Security Lake. One role can be used across Regions—there's no need to create a separate role for different Regions.
-
-:::note
-Before you create the role, you need to attach the AWS policies to your `AmazonSecurityLakeMetaStoreManager` role. See [AWS policy](https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html#prerequisites).
-:::
-
 ## Configure Amazon Security Lake Setup
 
 ### Step 1. Grant Sumo logic access to Amazon Security Lake console
