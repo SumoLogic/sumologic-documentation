@@ -61,7 +61,7 @@ A spike in a metric on a resource is a sign of an underlying problem. Larger sp
 
 An abnormal spike in a metric is a statistical anomaly. Root Cause Explorer leverages spikes and adds additional context to them to compute Events of Interest (EOIs).
 
-EOIs are constructed based on modeling the periodicity of the underlying AWS Cloudwatch, Kubernetes, or Tracing metrics on each resource in your account to create resource-specific baselines. The periodicity of a metric can be daily, weekly, or none. 
+EOIs are constructed based on modeling the periodicity of the underlying AWS CloudWatch, Kubernetes, or Tracing metrics on each resource in your account to create resource-specific baselines. The periodicity of a metric can be daily, weekly, or none. 
 
 EOIs also leverage proprietary noise reduction rules curated by subject matter experts. One example of a rule is how long the system watches an anomalous metric before detecting an EOI. Similarly, EOIs on metrics that have an upper bound (for example, CPU utilization cannot exceed 100%) are subject to additional curation rules.
 

@@ -52,8 +52,8 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox7 card">
       <div className="container">
-      <a href="/docs/manage/field-extractions/fer-templates/aws-s3-usage-logs"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="45"/><h4>AWS S3 Usage Logs</h4></a>
-      <p>Learn how to parse the common fields in your AWS S3 Usage log.</p>
+      <a href="/docs/manage/field-extractions/fer-templates/aws-s3-usage-logs"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="45"/><h4>Amazon S3 Usage Logs</h4></a>
+      <p>Learn how to parse the common fields in your Amazon S3 Usage log.</p>
       </div>
     </div>
     <div className="box smallbox8 card">
