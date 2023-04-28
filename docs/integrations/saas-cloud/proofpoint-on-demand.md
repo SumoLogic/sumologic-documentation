@@ -170,7 +170,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
 
-## Viewing Proofpoint On Demand Dashboards​​
+## Viewing Proofpoint on Demand Dashboards​​
 
 * All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
