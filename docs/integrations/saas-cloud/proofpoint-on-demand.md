@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="proofpoint-logo" width="100"/>
 
-Proofpoint on Demand is a cloud-based cybersecurity platform that offers a wide range of services to protect businesses against cyber threats. This includes email security, threat intelligence, information protection, and compliance solutions. The Proofpoint on Demand app for Sumo Logic enables insights into the functioning of email security policies and helps you gain visibility into the effectiveness of email security policies, therefore making informed decisions to improve security posture. This app will further provide information about the encryption status of the communication.
+Proofpoint on Demand is a cloud-based cybersecurity platform that offers a wide range of services to protect businesses against cyber threats. This includes email security, threat intelligence, information protection, and compliance solutions. The Proofpoint on Demand app for Sumo Logic provides insight into the functioning and effectiveness of your email security policies, allowing you to make informed decisions to improve security posture. This app will further provide information about the encryption status of the communication.
 
 Key features of the Proofpoint On Demand app include: 
 - **Email security monitoring**. Monitor message traffic to detect and prevent spam, phishing, and other email-borne threats.
