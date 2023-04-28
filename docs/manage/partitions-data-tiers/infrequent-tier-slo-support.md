@@ -24,7 +24,7 @@ While defining SLOs for the Infrequent tier logs, you can use the following samp
   ```sql
   _index=some_infrequent_index
   ```
-  Or, run the following query:
+  Or, you can also search across multiple indices by using the `OR` operator. For example:
   ```sql
   _index=some_infrequent_index OR _index=some_continuous_index
   ```
