@@ -58,7 +58,7 @@ In this step, you configure an HTTP Source to collect osquery log messages. You 
 
 ## Configure an Osquery log profile
 
-In this step you configure osquery to send log messages to CIP. For instructions, see [Logging osquery](https://osquery.readthedocs.io/en/stable/deployment/logging/) in osquery help.
+In this step you configure osquery to send log messages to Sumo Logic core platform. For instructions, see [Logging osquery](https://osquery.readthedocs.io/en/stable/deployment/logging/) in osquery help.
 
 ## Verify ingestion
 

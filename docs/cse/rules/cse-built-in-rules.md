@@ -3083,7 +3083,7 @@ SharpStomp is a C# utility that can be used to timestomp the specified file's cr
 ## Sumo Logic Scheduled Searches
 
 
- This rule passes through Sumo Logic CIP scheduled search hits to CSE as signals.
+ This rule passes through Sumo Logic Sumo Logic core platform scheduled search hits to CSE as signals.
 
 ## Sunburst Suspicious File Writes
 
