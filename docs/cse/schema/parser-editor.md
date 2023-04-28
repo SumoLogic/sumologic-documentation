@@ -169,12 +169,12 @@ To create your mapping, see [Creating a Structured Log Mapping](create-structure
 
 ## Configuring a source to use a parser
 
-This section explains how to configure a Sumo Logic Sumo Logic core platform source to send the messages it collects to a parser. This involves configuring a Field for the source: you'll create a `_parser` Field that defines the path to the parser. 
+This section explains how to configure a Sumo Logic core platform source to send the messages it collects to a parser. This involves configuring a Field for the source: you'll create a `_parser` Field that defines the path to the parser. 
 
 1. Navigate to your custom parser in the editor.
 1. Hover over the row that contains the parser.<br/>  ![more-options-for-parser.png](/img/cse/more-options-for-parser.png)
 1. Click the three-dot more options icon, and select **Copy Path** and save the path.
-1. In Sumo Logic Sumo Logic core platform, go to **Manage Data** > **Collection** > **Collection**.
+1. In Sumo Logic core platform, go to **Manage Data** > **Collection** > **Collection**.
 1. Navigate to the source that produces the messages your custom parser will process.<br/>  ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
 1. Click **+Add Field**. 
 1. Two blank fields appear, below any Fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/>![new-field.png](/img/cse/new-field.png) An orange icon indicates that the `_parser` field has not been created in your Sumo Logic core platform org yet.

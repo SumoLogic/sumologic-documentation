@@ -191,7 +191,7 @@ You can declare your own variables in a parser. To ensure that a variable is not
 
 Messages are parsed to create a dictionary of field values, a start time, and an end time.
 
-When choosing a field name, avoid using non-alphanumeric characters unless that goes against the conventional practice or a well-known name. For instance, in PAN-firewall parser there is a field named `X-Forwarded-For`. That name was selected after the well-known protocol header. Any other name would not be as easily recognized. But, whenever possible, it’s preferable to stick with alphanumeric names so that they won’t need quoting when they are used in Sumo Platform features, such as Sumo Logic Core Platform log and metric queries, action templates, and dashboards.
+When choosing a field name, avoid using non-alphanumeric characters unless that goes against the conventional practice or a well-known name. For instance, in PAN-firewall parser there is a field named `X-Forwarded-For`. That name was selected after the well-known protocol header. Any other name would not be as easily recognized. But, whenever possible, it’s preferable to stick with alphanumeric names so that they won’t need quoting when they are used in Sumo Platform features, such as Sumo Logic core platform log and metric queries, action templates, and dashboards.
 
 Field names beginning with `_$` (underscore followed by the dollar sign) aren’t saved in the field dictionary, but can be used to pass values from one part of the parsing process to another (from a parser to a transform, for instance).
 
