@@ -20,7 +20,7 @@ While defining SLOs for the Infrequent tier logs, you can use the following samp
   ```sql
   _dataTier=Infrequent _sourceCategory=APIService | parse "Status: *" as status_code | where status_code >= 500
   ```
-* Or select data in the Infrequent tier by specifying the Partition that contains it. For example:
+* Or, use `_index` parameter to specify the Partition that contains the data you want to access. For example:
   ```sql
   _index=some_infrequent_index
   ```
