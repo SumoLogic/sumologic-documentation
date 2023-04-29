@@ -33,7 +33,7 @@ Here are the steps for collecting logs, metrics, and app installation.
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' alt="Collector" />
 
@@ -78,7 +78,7 @@ process:
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
 2. Restart the collector using:
@@ -86,7 +86,7 @@ process:
   sudo systemctl restart otelcol-sumo
   ```
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 

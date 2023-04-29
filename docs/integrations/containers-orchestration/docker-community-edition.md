@@ -185,7 +185,7 @@ Follow the instructions for the operating system of the host where you will inst
 
 ### Step 3: Configure Docker log source
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
@@ -229,7 +229,7 @@ Follow the instructions for the operating system of the host where you will inst
 
 ### Step 4: Add a Docker stats source
 
-1. In Sumo select **Manage Data > Collection > Collection**.
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats**, then for Content Type select **Logs (JSON)** to collect data as JSON logs.
 4. Configure the following source fields:

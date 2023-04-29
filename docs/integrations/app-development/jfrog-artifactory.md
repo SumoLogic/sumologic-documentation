@@ -385,34 +385,34 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Overview.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/jfrog-artifactory-overview.md}
+{@import ../../reuse/apps/jfrog/artifactory-overview.md}
 
 ### Traffic
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Traffic.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/jfrog-artifactory-traffic.md}
+{@import ../../reuse/apps/jfrog/artifactory-traffic.md}
 
 ### Request and Access
 
 <img src={useBaseUrl('img/integrations/app-development/artifactory_app_request_access.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/jfrog-artifactory-request-access.md}
+{@import ../../reuse/apps/jfrog/artifactory-request-access.md}
 
 ### Download Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Download.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/jfrog-artifactory-download.md}
+{@import ../../reuse/apps/jfrog/artifactory-download.md}
 
 ### Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Cached.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/jfrog-artifactory-cached.md}
+{@import ../../reuse/apps/jfrog/artifactory-cached.md}
 
 ### Non-Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Non-Cached.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/jfrog-artifactory-noncached.md}
+{@import ../../reuse/apps/jfrog/artifactory-noncached.md}

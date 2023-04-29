@@ -48,7 +48,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 **Create an access key**
 
-1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
+1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
 2. Click **Access Keys**.
 3. Add a new access key called Observable Networks, then save the new **Access ID** and **Access Key** values.
 

@@ -197,7 +197,7 @@ For a file source, configure a local or remote file source in one of the followi
 
 **For a syslog source, configure the syslog source in the following way:**
 
-1. Go to **Manage Data > Collection > Collection** and click **Add Source**.
+1. Go to **Manage Data** > **Collection** > **Collection** and click **Add Source**.
 2. Select **Syslog** for the Source type.
 3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
 4. For **Protocol** choose **TCP**.

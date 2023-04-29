@@ -41,7 +41,7 @@ You cannot restart a Collector if:
 
 To restart your Installed Collector in the Sumo Logic platform:
 
-1. Open the Collection page, go to **Manage Data > Collection > Collection**.
+1. Open the Collection page, go to **Manage Data** > **Collection** > **Collection**.
 1. Find the Installed Collector and click the information icon on the right of the row.
 1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/>   ![restart collector button.png](/img/collector/restart-collector-button.png)
 1. Click **Confirm **to send the restart request.<br/>   ![restart confirmation.png](/img/collector/restart-confirmation.png)

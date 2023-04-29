@@ -48,11 +48,11 @@ Once the logs are configured to write to a local file, follow the steps below to
 
 ## Configuring Collection and Installing the Redis App
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Collector.png' alt="Collector" />
 
@@ -71,7 +71,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -101,7 +101,7 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Message
 

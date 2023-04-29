@@ -46,7 +46,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker Logs Source
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
@@ -87,7 +87,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker Stats Source
 
-1. In Sumo select **Manage Data > Collection > Collection**.
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
 4. Configure the source fields:

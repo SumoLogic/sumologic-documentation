@@ -164,7 +164,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
-1. Go to **Manage Data > Collection > Collection**, and click **Add Source**.
+1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source**.
 2. Select **Syslog** for the Source type.
 3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
 4. For **Protocol** choose **TCP**.
@@ -203,7 +203,7 @@ Collecting performance logs involves using VMware tools and scripts running on v
 
 Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-1. Go to **Manage Data > Collection > Collection**, and click **Add Source** for your vCenter Server Collector.
+1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source** for your vCenter Server Collector.
 2. Select **Local File** for the Source type.
 3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
 4. For File Path, enter **/var/log/vmware/*.perf.out.**
