@@ -24,8 +24,8 @@ The benchmarks are powered by more than 15 M data points per week from AWS Cloud
 
 A well-architected modern app running on AWS can experience four types of errors during mission-critical scale-out events leading to an outage or application incident. These include:
 * Service Availability errors, where a particular AWS service (For example, EC2) may be unavailable.
-* Throttling errors, where AWS rate-limits API traffic from the customer’s application for a given service and API. (For example, PutItem requests for AWS DynamoDB.)
-* Account Quota errors, where a customer may saturate account limits for a particular service and resource. (For example, exceeding the 100 buckets per account limit of AWS S3.)
+* Throttling errors, where AWS rate-limits API traffic from the customer’s application for a given service and API. (For example, PutItem requests for Amazon DynamoDB.)
+* Account Quota errors, where a customer may saturate account limits for a particular service and resource. (For example, exceeding the 100 buckets per account limit of Amazon S3.)
 * Insufficient capacity/out-of-stock errors where AWS is unable to provide resources of a particular size in a given region, such as EC2 m4.xlarge instances in us-west-1.
 
 By comparing a given customer’s AWS error rate against other customers by AWS region, service, API, AWS account, and instance types, Global Intelligence for AWS CloudTrail DevOps, helps identify if such errors might be the probable cause of an incident.
@@ -33,7 +33,7 @@ By comparing a given customer’s AWS error rate against other customers by AWS 
 In addition, the app provides configuration guidance for key AWS services based on settings common among other customers.
 
 * Configuration guidance includes memory and concurrency settings for AWS Lambda, provisioned IOPS for DynamoDB, and min/max sizes of EC2 Auto Scaling groups.
-* For throttling-related root causes for some services like AWS Lambda and AWS DynamoDB, such guidance can help users right-size their apps based on common configuration settings.
+* For throttling-related root causes for some services like AWS Lambda and Amazon DynamoDB, such guidance can help users right-size their apps based on common configuration settings.
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
 ## Prerequisites
@@ -157,7 +157,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+4. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps

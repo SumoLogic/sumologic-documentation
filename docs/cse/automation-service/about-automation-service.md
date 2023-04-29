@@ -34,7 +34,7 @@ The Automation Service differs from Cloud SOAR in the following ways:
 
 * The Automation Service supports enrichment, notification, and custom actions:
   * Enrichment actions can be used to gather additional information about an Entity or Insight, including [threat indicators](/docs/cse/integrations/enrichments-and-indicators#threat-indicators).
-  * Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Continuous Intelligence Platform (CIP), Slack, Microsoft Teams, Jira, email, and so on.
+  * Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Sumo Logic core platform, Slack, Microsoft Teams, Jira, email, and so on.
 * Automations can be triggered automatically when an Insight is created or closed. Automations can also be executed manually via the Cloud SIEM UI and API.
 * Playbooks can contain both enrichment and notification actions. Playbooks can also be nested. So, for example, you could define a playbook that is executed automatically when an Insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
   1. Changes the Insight state to “In Progress”.
@@ -157,7 +157,7 @@ To use [integrations](/docs/cse/automation-service/automation-service-integratio
 1. Click **Integrations** in the left navigation bar.
 1. Select the integration whose resource you want to configure the connection for.
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
-1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
+1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
 

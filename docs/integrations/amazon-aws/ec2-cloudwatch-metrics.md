@@ -74,7 +74,7 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 
 ### Sample Queries
 
-```sql title="CPU utilization (Cloudwatch metric based)"
+```sql title="CPU utilization (CloudWatch metric-based)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 

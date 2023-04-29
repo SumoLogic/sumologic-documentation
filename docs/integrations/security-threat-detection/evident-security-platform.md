@@ -222,12 +222,12 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
 7. Copy the HTTP Source Address URL and use it in the following section.
 
 
-### Step 2. Configure an Evident.io Integration with AWS SNS
+### Step 2. Configure an Evident.io Integration with Amazon SNS
 
-To configure an Evident.IO Integration with AWS SNS:
+To configure an Evident.IO Integration with Amazon SNS:
 
 1. In Evident.io, [add an Integration](http://docs.evident.io/#to-add-an-integration).
-2. Enable an [AWS SNS integration](http://docs.evident.io/#amazon-sns).
+2. Enable an [Amazon SNS integration](http://docs.evident.io/#amazon-sns).
 
 
 ### Step 3. Subscribe to SNS Notifications
@@ -236,7 +236,7 @@ Once the Hosted Collector and HTTP Source are configured, subscribe your Hosted 
 
 If this is a new SNS topic, first subscribe an email address to it to make sure the path from ESP to the SNS topic works correctly before subscribing the Hosted Collector.
 
-1. In the **AWS Management Console**, go to **SNS > Topics**, and find the topic you created in Configure an Evident.IO Integration with AWS SNS.
+1. In the **AWS Management Console**, go to **SNS > Topics**, and find the topic you created in Configure an Evident.IO Integration with Amazon SNS.
 2. Select the checkbox for the topic.
 3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
 4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL you created in the first step into the **Endpoint** field.

@@ -13,6 +13,7 @@ Follow the steps in this topic to install or uninstallÂ a collector on Windows.Â
 * Windows 8, 32 or 64 bit
 * Windows 8.1, 32 or 64 bit
 * Windows 10, 32 or 64 bit
+* Windows 11, 32 or 64 bit
 * Windows Server 2012
 * Windows Server 2016
 * Windows Server 2019

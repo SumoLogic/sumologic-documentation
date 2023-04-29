@@ -1,4 +1,3 @@
-
 To install the app:
 
 1. Click **App Catalog**, then search for and select the app.
