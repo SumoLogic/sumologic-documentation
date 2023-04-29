@@ -126,11 +126,11 @@ The `.bat` file created above can then be triggered periodically using windows T
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up the Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Collector.png' alt="Collector" />
 
@@ -153,7 +153,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -197,7 +197,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 
