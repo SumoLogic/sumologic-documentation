@@ -161,8 +161,6 @@ _sourceCategory="docusign_src"
 
 ## Installing the DocuSign App
 
-Locate and install the app from the **App Catalog**. To preview the dashboards included with the app before installing, click **Preview Dashboards**.
-
 Before you begin, collect logs from DocuSign API and ingest them into Sumo Logic. Refer to the [DocuSign API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source/) to create the source and use the same source category while installing the app.
 
 To install the app, follow the steps below:

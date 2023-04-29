@@ -165,7 +165,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 
 ## Installing the AWS VPC Security App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and dashboards that provide insight into your data.
 
 To install the app:
 

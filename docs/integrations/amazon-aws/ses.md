@@ -229,7 +229,7 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 
 ## Installing the Amazon SES App
 
-Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 1. From the **App Catalog**, search for and select the app. You can click **Preview Dashboards** to verify that you have the app you need.

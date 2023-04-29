@@ -519,9 +519,7 @@ Exception: Invalid config
 
 This section provides instructions on how to install the Workday App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-As part of this beta, the app will automatically be installed in the Sumo Logic account of your choice as part of the Admin recommended folder.
-
-Panels will start to fill automatically once you have configured the collection. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with time, you'll see full graphs and maps.
+{@import ../../reuse/app-install.md}
 
 ## Viewing Workday Dashboards
 

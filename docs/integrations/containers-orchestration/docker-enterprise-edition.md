@@ -146,7 +146,7 @@ To install the Docker EE App, do the following:
     2. Choose **Enter a Custom Data Filter,** and for the Docker Log Source enter the source category with the value from [Step 1](#collecting-logs-and-metrics-for-docker-ee) of the collection instructions, beginning with an underscore, for example: `_sourceCategory=docker`
 5. Select the following option for the **Docker Platform Log Source**.
     1. Choose **Source Category**, and select the Source Category from the list.
-    2. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](#collecting-logs-and-metrics-for-docker-ee) of collection instructions followed by “`/system`”, for example: `_sourceCategory=kubernetes/system`
+    2. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](#collecting-logs-and-metrics-for-docker-ee) of collection instructions followed by `/system` (for example: `_sourceCategory=kubernetes/system`).
 6. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 7. Click **Add to Library**.
 

@@ -218,7 +218,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ## Installing the AWS EC2 App
 
-Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
