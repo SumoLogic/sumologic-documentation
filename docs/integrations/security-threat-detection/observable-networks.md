@@ -176,7 +176,7 @@ _sourceCategory=observable
 
 ## Install the Observable Networks App
 
-This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#viewing-dashboards) allow you to visually analyze your Observable Networks data at a glance.
+This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
 
 To install the app:
 

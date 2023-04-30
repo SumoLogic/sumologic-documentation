@@ -111,30 +111,15 @@ To deploy an AWS Security Hub App collector:
   max(severity_normalized) by resource_type
 ```
 
-
-
 ## Installing the Amazon Inspector App
 
-Once you've set up ingestion of findings from AWS Security Hub, you can install the Sumo Logic app for Amazon Inspector and use the pre-configured searches and Dashboards.
+Once you've set up ingestion of findings from AWS Security Hub, you can install the Sumo Logic app for Amazon Inspector and use the pre-configured searches and dashboards.
 
-To install the Sumo Logic App for Amazon Inspector:
-1. From the App Catalog, search for and select the app.
-2. You're prompt to select an application version. Select _Amazon Inspector,_ and click **Add to Library**.
-3. To install the app, complete the following fields.
-    * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](/docs/get-started/apps-integrations#custom-data-filters). 
-    * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your Personal folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/app-install.md}
 
 ## Viewing the Amazon Inspector Overview Dashboard
 
-The dashboard has a set of filters that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard. You can filter by AWS account ID, finding ID, finding type, normalized severity, and title.
+This dashboard has a set of filters that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard. You can filter by AWS account ID, finding ID, finding type, normalized severity, and title.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/inspector-app-filters.png')} alt="Amazon Inspector" />
 
