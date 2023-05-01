@@ -27,8 +27,8 @@ Community content is stored in our [Community Content Repository](https://github
 The overall ratings for content are listed on a scale of 0 to 5, with 5 being the highest. You can view detailed ratings and comments on the Community Content Repository.
 :::
 
-* [AWS CloudTrail - User Activity](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/CloudTrail) (Rating: None)
-* [AWS EC2 - Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL) (Rating: 4)
+* [AWS CloudTrail - User Activity](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_CloudTrail) (Rating: 4.5)
+* [AWS EC2 - Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_EC2/Host_Metrics_OTEL) (Rating: 4)
 * [AWS Health Events](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_Health) (Rating: None)
 * [Checkpoint Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Checkpoint) (Rating: None)
 * [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
