@@ -1,6 +1,6 @@
 ---
 id: archive
-title: Archiving Log Data
+title: Archiving Log Data to S3
 description: Send data to an Archive that you can ingest from later.
 ---
 
@@ -23,7 +23,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 :::
 
 1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
-1. In Sumo Logic, select **Manage Data > Logs > Data Forwarding**.
+1. In Sumo Logic, select **Manage Data > Collection > Data Archiving**.
 1. Click **+** to add a new destination.
 1. Select **AWS Archive bucket** for **Destination Type**.  
     ![destinationType.png](/img/archive/destinationType.png)
