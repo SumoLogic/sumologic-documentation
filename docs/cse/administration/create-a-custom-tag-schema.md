@@ -23,7 +23,7 @@ For more information about tags in CSE, see [Using Tags with Insights, Signals, 
 
 1. Click the gear icon at the top of the CSE UI and select **Tag Schemas** under **Workflow**.  
 
-    ![gear-tag-schema.png](/img/cse/gear-tag-schema.png)
+    <img src={useBaseUrl('img/cse/gear-tag-schema.png')} alt="Access tag schemas" width="800"/>
 
 1. On the **Tag Schemas** page, click **Create**.  
 
