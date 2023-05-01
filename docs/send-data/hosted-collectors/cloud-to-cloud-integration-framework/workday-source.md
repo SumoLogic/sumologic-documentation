@@ -156,7 +156,7 @@ The following table shows the **config** parameters for Workday Source.
 | `backfillDays` | Integer | No | 24 Hours ago(1) | How far back the integration should collect the data from the Workday. <br /> Options: Now(0) or 24 hours ago(1). | modifiable |
 | `pollingIntervalMinutes` | Integer | No | 10 | How frequently the integration should poll to Workday. <br /> Options: 10m, 15m, 30m, 1h, 24h. | modifiable |
 
-### Workday Source JSON example:
+### Workday Source JSON example
 
 ```json
 {
@@ -188,70 +188,68 @@ The following table shows the **config** parameters for Workday Source.
 ## Troubleshooting
 
 After you configure your Source, you should check the status of the
-source in the Collectors page. In case the Source is not functioning as
-expected, you may see an error next to the Source Category column as
-shown below: 
+source in the Collectors page.
+
+If the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
 ![troubleshooting.png](/img/send-data/workday-troubleshooting.png)
 
-The following section details how you can resolve various errors: 
+The following section details how you can resolve various errors.
 
-**Error:**  401 Client Error: 401: invalid username or password
+#### Error 401 | Client Error: invalid username or password
 
 To resolve this:
-
 1. Check if you have such an authentication policy enabled. If by default your users' login via SSO then you may have to exclude the ISU Security Group to allow it to use username and password by creating a separate authentication policy.
 1. Try changing the Session Timeout Minutes to 0 as shown in the article https://www.sora.co/help/configuring-your-workday-integration.
 1. Exempt user from password expiration as shown in the article https://www.sora.co/help/configuring-your-workday-integration.
 
 Below is the section for common errors for **Activity Logs**.
 
-**Error** 403 Forbidden: 403: permission denied
+#### Error 403 | Forbidden: permission denied
 - Token will be generated successfully in this case but Activity Logs API will return 403 forbidden error.
 - This is due to `System scope` is not provided to the API client.
 
 To resolve this:
-  1. Enable the `System scope`. Refer to [API Client](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client) section.
+1. Enable the `System scope`. Refer to the [Workday App > API Client](/docs/integrations/saas-cloud/workday/#step-13-register-the-api-client) section.
 
-**Error** 401: Unauthorized: 401: invalid_client
+#### Error 401 | Unauthorized: invalid_client
 - Invalid client id or client secret is provided.
 - A new client secret is generated, making the existing one invalid.
 - The `OAuth 2.0 Clients Enabled` checkbox under the Edit Tenant Setup - Security task is disabled.
 
 To resolve this:
-  1. Provide the correct "client id" and "client secret".
-  2. Enable the `The OAuth 2.0 Clients Enabled` checkbox. Refer [OAuth 2.0 Clients Enabled](/docs/integrations/saas-cloud/workday/#step-14-enable-your-tenant-to-send-data) section.
+1. Provide the correct "client id" and "client secret".
+1. Enable the `The OAuth 2.0 Clients Enabled` checkbox. Refer to the [Workday App > OAuth 2.0 Clients Enabled](/docs/integrations/saas-cloud/workday/#step-14-enable-your-tenant-to-send-data) section.
 
-**Error** 400: Bad Request: 400: invalid_grant
+
+#### Error 400 | Bad Request: invalid_grant
 - An invalid or expired refresh token is provided.
 - Existing token is deleted or a new one is generated hence making the existing one invalid.
 
 To resolve this:
-  1. Generate a new refresh token and update the C2C configuration.
+1. Generate a new refresh token and update the C2C configuration.
 
-**Error** 400: Bad Request: 400: invalid_request
+#### Error 400 |  Bad Request: invalid_request
 - An invalid tenant name is provided in the token URL.
 
 To resolve this:
-  1. Provide the correct "tenant name".
+1. Provide the correct "tenant name".
 
-**Error** 404: Not Found: 404: invalid_request 
-- An invalid path parameter is provided in the token URL. For example, `/oauth/ instead of /oauth2/`
-
-To resolve this:
-  1. Provide the correct "token URL".
-
-**Error** 404: Not Found: 404: invalid_request
-- An invalid path parameter is provided in the Activity Logs URL. For example, `/v2 instead of /v1`
+#### Error 404 |  Not Found: invalid_request
+- An invalid path parameter is provided in the token URL. For example, `/oauth/` instead of `/oauth2/`.
 
 To resolve this:
-  1. Provide the correct "Activity Logs URL".
+1. Provide the correct "token URL".
 
-**Error** 503: Service Unavailable
+#### Error 404 |  Not Found: invalid_request
+- An invalid path parameter is provided in the Activity Logs URL. For example, `/v2` instead of `/v1`.
+
+To resolve this:
+1. Provide the correct "Activity Logs URL".
+
+#### Error | 503: Service Unavailable
 - An invalid tenant name is provided in the Activity Logs URL.
-- An invalid hostname is provided in the token or Activity Logs URL. For example, `wd5-impl-services1.workday.com instead of wd2-impl-services1.workday.com`
+- An invalid hostname is provided in the token or Activity Logs URL. For example, `wd5-impl-services1.workday.com` instead of `wd2-impl-services1.workday.com`.
 
 To resolve this:
-  1. Provide the correct "tenant name" and "hostname".
-
-                    
+1. Provide the correct "tenant name" and "hostname".                  
