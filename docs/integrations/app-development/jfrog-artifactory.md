@@ -360,7 +360,7 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing JFrog Artifactory Dashboards
 

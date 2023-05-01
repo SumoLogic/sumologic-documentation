@@ -68,7 +68,7 @@ For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.c
 
 This section has instructions for installing the Cisco Umbrella App for Sumo Logic and dashboard descriptions.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the Cisco Umbrella Dashboards
 

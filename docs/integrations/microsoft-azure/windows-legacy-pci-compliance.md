@@ -81,7 +81,7 @@ This section provides instructions for installing the PCI Compliance for Windows
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the Windows Legacy PCI Compliance Dashboards
 

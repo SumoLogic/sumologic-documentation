@@ -133,7 +133,7 @@ To configure Webhooks for Zoom events collection, do the following:
 
 Now that you have set up collection for the Zoom events, install the Sumo Logic App for Zoom to use the pre-configured dashboards that provide visibility into your environment.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Zoom Dashboards
 

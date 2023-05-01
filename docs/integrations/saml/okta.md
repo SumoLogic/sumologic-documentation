@@ -196,7 +196,7 @@ The Okta Log Collection configuration via SumoJanus is no longer applicable and 
 
 Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Okta Dashboards
 

@@ -172,7 +172,7 @@ Now that you have set up collection for PCI for Palo Alto Networks 10 app, you c
 
 This app supports PAN-OS v10.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing PCI for Palo Alto Networks 10 Dashboards
 

@@ -103,7 +103,7 @@ Complete the following instructions to install the Sumo Logic Infrequent Data Ti
 Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Infrequent Data Tier Dashboards
 

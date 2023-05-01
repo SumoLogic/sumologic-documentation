@@ -96,7 +96,7 @@ If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/c
 
 Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Azure Audit Dashboards
 

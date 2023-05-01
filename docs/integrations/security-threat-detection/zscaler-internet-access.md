@@ -180,7 +180,7 @@ _sourceCategory=ZIA
 
 This section provides instructions on how to install the Zscaler Internet Access App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](/docs/integrations/security-threat-detection/Zscaler-Web-Security#Dashboards) provide easy-to-access visual insights into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing ZIA Dashboards
 
