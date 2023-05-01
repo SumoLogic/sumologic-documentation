@@ -36,7 +36,7 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 
 Installation steps require you to add a Source to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see Configure a Hosted Collector.
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 

@@ -7,6 +7,7 @@ description: Learn how automations run playbooks to add enrichments and create n
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+{@import ../../reuse/automation-service-la-note.md}
 
 Automations run playbooks to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
 

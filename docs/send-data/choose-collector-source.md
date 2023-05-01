@@ -67,10 +67,74 @@ The Installed Collector and OpenTelemetry Collector are two popular collectors u
 
 The following table shows the comparison between the Installed Collector and OpenTelemetry Collector based on their supported platforms and sources, and their ideal use cases.
 
-| Collector Type       | Supported Platforms | Supported Sources                                                                                                                       | Ideal Use Cases                                                                                                                                                                          |
-|:-------|:-----------|:------------|:------------------------|
-| Installed Collector  | Linux, MacOS, Kubernetes, Windows | Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, All Telegraf Input Plugins, Windows Log Event Receiver, Windows Performance Counters Receiver, Script Sources, Script Actions, Docker Stats / Logs, Remote File, Windows Active Directory Source, Remote Windows Event Log Source | Remote management and configuration, Ingest Budgets, Collector Management API (e.g. for Health Events or CRUD operations), CPU target |
-| OpenTelemetry Collector | Linux, MacOS, Kubernetes, Windows | Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing | Single agent management, scale issues with FluentD on Kubernetes Collection, no remote management or configuration, no Ingest Budgets, no Collector Management API, no CPU target |
+<table>
+  <thead>
+    <tr>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Collector Type</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Supported Platforms</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Supported Sources</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Ideal Use Cases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{verticalAlign: 'top', textAlign: 'left'}}>Installed Collector</td>
+      <td style={{verticalAlign: 'top'}}>Linux, MacOS, Kubernetes, Windows</td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Local File</li>
+          <li>Syslog</li>
+          <li>Host/Process Metrics</li>
+          <li>Streaming Metrics</li>
+          <li>Transaction Tracing</li>
+          <li>All Telegraf Input Plugins</li>
+          <li>Windows Log Event Receiver</li>
+          <li>Windows Performance Counters Receiver</li>
+          <li>Script Sources</li>
+          <li>Script Actions</li>
+          <li>Docker Stats / Logs</li>
+          <li>Remote File</li>
+          <li>Windows Active Directory Source</li>
+          <li>Remote Windows Event Log Source</li>
+        </ul>
+      </td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Remote management and configuration</li>
+          <li>Ingest Budgets</li>
+          <li>Collector Management API (e.g. for Health Events or CRUD operations)</li>
+          <li>CPU target</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style={{verticalAlign: 'top', textAlign: 'left'}}>OpenTelemetry Collector</td>
+      <td style={{verticalAlign: 'top'}}>Linux, MacOS, Kubernetes, Windows</td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Local File</li>
+          <li>Syslog</li>
+          <li>Host/Process Metrics</li>
+          <li>Streaming Metrics</li>
+          <li>Transaction Tracing</li>
+          <li>All Telegraf Input Plugins</li>
+          <li>Windows Log Event Receiver</li>
+          <li>Windows Performance Counters Receiver</li>
+        </ul>
+      </td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Single agent management</li>
+          <li>scale issues with FluentD on Kubernetes Collection</li>
+          <li>No remote management or configuration</li>
+          <li>No Ingest Budgets</li>
+          <li>No Collector Management API</li>
+          <li>No CPU target</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 #### Source Specific Configurations
 
