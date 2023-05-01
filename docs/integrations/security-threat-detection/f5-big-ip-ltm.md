@@ -77,20 +77,14 @@ Telemetry Streaming uses a declarative model, meaning you provide a JSON declara
 
 #### Prerequisite
 
-1. Install [AS3 RPM](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html)
-
-The [Application Services 3 (AS3)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/) extension is a mechanism for declaratively configuring application-specific resources on a BIG-IP system. This involves posting a JSON declaration to the system’s API endpoint, `https://< BIG-IP>/mgmt/shared/appsvcs/declare`.
-
+1. Install [AS3 RPM](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html). The [Application Services 3 (AS3)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/) extension is a mechanism for declaratively configuring application-specific resources on a BIG-IP system. This involves posting a JSON declaration to the system’s API endpoint, `https://< BIG-IP>/mgmt/shared/appsvcs/declare`.
 2. Install Telemetry Streaming RPM (download from [here](https://github.com/F5Networks/f5-telemetry-streaming/releases)).
   * Login to F5 (user admin, password from the above output), navigate to the Main tab, **iApps > Package Management LX > Import.**
   * Select the downloaded file and click **Upload **to upload Telemetry Streaming RPM. For more information on installing TS RPM, see [here](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/installation.html).
-
 3. Enable AVR. To enable the AVR, follow the steps below:
    * Go to **System > Resource Provisioning.**
    * Enable Application Visibility and Reporting (AVR)
    * Click **Submit.**
-
-
 
 ### Collection Setup
 
@@ -135,25 +129,9 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 
 This section provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
 
-Using [these instructions](/docs/get-started/library) imports the JSON into your Sumo Logic environment
+You can use [these instructions](/docs/get-started/library) to import the JSON into your Sumo Logic environment.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/app-install.md}
 
 ## Viewing F5 - BIG-IP LTM Dashboards    
 

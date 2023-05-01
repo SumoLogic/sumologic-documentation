@@ -29,11 +29,9 @@ protocol, domain, server_port, path
 ```
 The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html). For information on unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/Classic-Load-Balancer).
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 ## Prerequisites
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the **Add Integration** button, follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
+Follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
 
 
 ### Before you begin
@@ -88,7 +86,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 These configuration instructions apply to log collection from all AWS Source types. Select the correct Source type for your Source in Step 3.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
@@ -177,7 +175,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
 3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
 
@@ -235,27 +233,9 @@ _sourceCategory=elb*
 
 ## Installing the AWS Elastic Load Balancer Classic App
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
+{@import ../../reuse/app-install.md}
 
 <details><summary>What if data isn't displaying in all Panels?</summary>
 

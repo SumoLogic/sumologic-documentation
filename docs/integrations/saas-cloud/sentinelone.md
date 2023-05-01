@@ -339,7 +339,6 @@ _sourceCategory=sentinelone  uuid
 
 ## Installing the SentinelOne App
 
-Locate and install the app from the **App Catalog**. To see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 Before you begin, collect logs from SentinelOne and ingest them into Sumo Logic. Refer to the [SentinelOne Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source/) to create the source and use the same source category while installing the app.
 
 To install the app, follow the steps below:

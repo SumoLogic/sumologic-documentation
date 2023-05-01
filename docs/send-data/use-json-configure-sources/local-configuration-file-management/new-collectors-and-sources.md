@@ -6,7 +6,7 @@ description: Local Configuration File Management is a straightforward way to get
 ---
 
 
-With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data > Collection > Collection** page.
+With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data** > **Collection** > **Collection** page.
 
 ## Step 1. Determine the Sources you need
 

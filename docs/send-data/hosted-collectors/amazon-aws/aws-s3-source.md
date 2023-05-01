@@ -85,7 +85,7 @@ import Iframe from 'react-iframe';
 
 ## Create an Amazon S3 Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
@@ -208,7 +208,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 :::
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 13.C when creating your subscription.
 1. Complete steps 13.B through 13.E for [configuring SNS Notifications](#set-up-sns-in-aws-highly-recommended).
 
