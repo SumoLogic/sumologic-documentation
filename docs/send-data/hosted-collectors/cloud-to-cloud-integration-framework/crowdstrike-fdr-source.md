@@ -60,7 +60,7 @@ When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Bef
 
 To configure a CrowdStrike FDR Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

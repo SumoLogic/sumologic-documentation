@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="thumbnail icon" width="75"/>
 
-
 The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.
@@ -268,26 +267,9 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 ## Installing the Evident.io ESP App
 
-Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Evident.io Dashboards
 
