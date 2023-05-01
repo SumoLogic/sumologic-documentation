@@ -28,7 +28,7 @@ Follow the steps in this topic to install or uninstall a collector on Linux. See
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data > Collection > Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
 -or-
 * Open a browser and enter the static URL for your pod. See Download a Collector from a Static URL for a list of URLs for your deployment pod. The download begins immediately.
 
@@ -193,7 +193,7 @@ Use the following command to start the collector service.
  ```bash
  sudo ./collector start
  ```
-13. To verify that the collector is installed, go to **Manage Data > Collection > Collection** in the Sumo web app and verify that you can see the collector.
+13. To verify that the collector is installed, go to **Manage Data** > **Collection** > **Collection** in the Sumo web app and verify that you can see the collector.
 
 </details>
 
@@ -264,7 +264,7 @@ sudo systemctl daemon-reload
 
 
 2. **Remove the collector from Sumo Logic**:
-   1. In Sumo Logic select **Manage Data > Collection > Collection**.
+   1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.
 

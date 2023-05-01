@@ -39,7 +39,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
 1. Enter a **Name** to display for this source in Sumo. Description is optional.
