@@ -49,8 +49,8 @@ To configure an Akamai SIEM API Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
-1. Select **Akamai SIEM API**. <br/>   ![Akamai source icon.png](/img/send-data/Akamai-source-icon.png)
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/>   ![Akamai SIEM API Source](/img/send-data/Akamai-SIEM-API-Source.png)
+1. Select **Akamai SIEM API**.<br/><img src={useBaseUrl('img/send-data/Akamai-source-icon.png')} alt="Thumbnail icon" width="90"/>
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/Akamai-SIEM-API-Source.png')} alt="Thumbnail icon" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`:Akamai
