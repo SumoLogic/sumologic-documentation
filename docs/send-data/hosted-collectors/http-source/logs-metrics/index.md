@@ -25,7 +25,7 @@ As a best practice, Sumo Logic recommends batching data into each POST request t
 
 To configure an HTTP Logs and Metrics Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
 1. Enter a **Name** to display for the Source in the Sumo web application. Description is optional.

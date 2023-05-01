@@ -31,11 +31,11 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png' alt="Collector" />
 
@@ -53,7 +53,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ## Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -83,7 +83,7 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 

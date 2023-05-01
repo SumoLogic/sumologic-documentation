@@ -15,7 +15,7 @@ The Setup Wizard (deprecated) lets you get data in your Sumo Logic account quick
 
 Before you begin, [sign up](/docs/get-started/sign-up.md) for a Sumo Logic account and activate it.
 
-To open the Setup Wizard, select **Manage Data > Collection > Collection** and click the **Setup Wizard** link on the top right of the Collection page.
+To open the Setup Wizard, select **Manage Data** > **Collection** > **Collection** and click the **Setup Wizard** link on the top right of the Collection page.
 
 <img src={useBaseUrl('img/get-started/setup-wizard.png')} alt="setup-wizard" />
 
