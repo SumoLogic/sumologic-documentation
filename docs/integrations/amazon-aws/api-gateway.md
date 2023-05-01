@@ -104,7 +104,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md):
 1. **Name**. Enter a name to display the new Source.
 2. **Description**. Enter an optional description.
-3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
+3. **S3 Region**. Select the Amazon Region for your **API Gateway** S3 bucket.
 4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
 5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string.
   :::note NOTES

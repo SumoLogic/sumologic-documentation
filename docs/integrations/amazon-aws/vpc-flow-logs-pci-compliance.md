@@ -15,12 +15,12 @@ For more information on Amazon VPC Flow Logs, see [here](http://docs.aws.amazon.
 
 ## Collect Logs for the PCI Compliance for Amazon VPC Flow Logs App
 
-VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data.
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data.
 
 You can use either of the following methods to collect Amazon VPC Flow Logs:
 
-* [Collect Amazon VPC Flow Logs using AWS S3 source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
-* [Collect Amazon VPC Flow Logs using a CloudFormation template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
+* [Collect Amazon VPC Flow Logs using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
 ## Field Extraction Rule(s) for VPC Flow logs  
 Create Field Extraction Rule for VPC Flow Logs.
@@ -39,26 +39,9 @@ json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg
 
 ## Installing the PCI Compliance for Amazon VPC Flow Logs App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/app-install.md}
 
 ## Viewing the PCI VPC Dashboards
 

@@ -24,8 +24,8 @@ The benchmarks are powered by more than 15 M data points per week from AWS Cloud
 
 A well-architected modern app running on AWS can experience four types of errors during mission-critical scale-out events leading to an outage or application incident. These include:
 * Service Availability errors, where a particular AWS service (For example, EC2) may be unavailable.
-* Throttling errors, where AWS rate-limits API traffic from the customer’s application for a given service and API. (For example, PutItem requests for AWS DynamoDB.)
-* Account Quota errors, where a customer may saturate account limits for a particular service and resource. (For example, exceeding the 100 buckets per account limit of AWS S3.)
+* Throttling errors, where AWS rate-limits API traffic from the customer’s application for a given service and API. (For example, PutItem requests for Amazon DynamoDB.)
+* Account Quota errors, where a customer may saturate account limits for a particular service and resource. (For example, exceeding the 100 buckets per account limit of Amazon S3.)
 * Insufficient capacity/out-of-stock errors where AWS is unable to provide resources of a particular size in a given region, such as EC2 m4.xlarge instances in us-west-1.
 
 By comparing a given customer’s AWS error rate against other customers by AWS region, service, API, AWS account, and instance types, Global Intelligence for AWS CloudTrail DevOps, helps identify if such errors might be the probable cause of an incident.
@@ -33,7 +33,7 @@ By comparing a given customer’s AWS error rate against other customers by AWS 
 In addition, the app provides configuration guidance for key AWS services based on settings common among other customers.
 
 * Configuration guidance includes memory and concurrency settings for AWS Lambda, provisioned IOPS for DynamoDB, and min/max sizes of EC2 Auto Scaling groups.
-* For throttling-related root causes for some services like AWS Lambda and AWS DynamoDB, such guidance can help users right-size their apps based on common configuration settings.
+* For throttling-related root causes for some services like AWS Lambda and Amazon DynamoDB, such guidance can help users right-size their apps based on common configuration settings.
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
 ## Prerequisites
@@ -44,8 +44,6 @@ This feature is available in the following account plans.
 | :---- | :----
 |  Cloud Flex  |  Trial, Enterprise
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 ## Log Types  
 
@@ -159,7 +157,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+4. [Grant Access to an Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
@@ -169,24 +167,7 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/app-install.md}
 
 ## Viewing GI CloudTrail DevOps Dashboards
 

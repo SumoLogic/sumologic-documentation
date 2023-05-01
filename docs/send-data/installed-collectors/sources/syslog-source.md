@@ -17,7 +17,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 ## Configure a Syslog Source
 
-1. In the Sumo web app select **Manage Data > Collection > Collection**.
+1. In the Sumo web app select **Manage Data** > **Collection** > **Collection**.
 1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Syslog** for the Source type. <br/>![syslog source.png](/img/send-data/syslog-source.png)
 1. **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
