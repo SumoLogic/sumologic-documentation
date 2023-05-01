@@ -154,7 +154,7 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing AWS Config Dashboards
 

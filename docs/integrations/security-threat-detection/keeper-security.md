@@ -78,7 +78,7 @@ This section provides instructions for installing the Keeper Security App, as we
 
 Now that you have set up collection for Keeper, install the app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Keeper Security Dashboards
 

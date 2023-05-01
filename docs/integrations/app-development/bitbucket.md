@@ -154,7 +154,7 @@ Sumo Logic needs to understand the event type for incoming events (for example, 
 
 This section provides instructions for installing the Bitbucket app.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Bitbucket Dashboards
 

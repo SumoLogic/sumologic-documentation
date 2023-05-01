@@ -120,7 +120,7 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 This section has instructions for installing the Dropbox App for Sumo Logic and dashboard descriptions.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the Dropbox Dashboards​
 

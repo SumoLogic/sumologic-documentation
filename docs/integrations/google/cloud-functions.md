@@ -129,7 +129,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 Now that you have set up collection for Google Cloud Functions, install the Sumo Logic App to access the pre-configured searches and dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Google Cloud Functions Dashboards
 

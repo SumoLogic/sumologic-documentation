@@ -133,7 +133,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 ## Installing the Google Cloud Storage App
 Now that you have set up collection for Google Cloud Storage, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Google Cloud Storage Dashboards
 
