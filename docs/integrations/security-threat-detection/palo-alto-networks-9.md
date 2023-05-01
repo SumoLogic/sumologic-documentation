@@ -174,7 +174,7 @@ This section provides instructions for installing the Palo Alto Networks 9 App, 
 
 This app supports PAN-OS v9.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Palo Alto Networks 9 Dashboards
 

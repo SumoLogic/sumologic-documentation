@@ -167,7 +167,7 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing GI CloudTrail DevOps Dashboards
 

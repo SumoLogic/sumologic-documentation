@@ -358,7 +358,7 @@ This section demonstrates how to install the Host and Process Metrics App.
 
 Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Host and Process Metrics Dashboards
 

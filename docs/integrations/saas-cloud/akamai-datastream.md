@@ -86,7 +86,7 @@ Follow the instructions for setting up [Integration for Akamai DataStream 2](htt
 
 Now that you have configured Akamai DataStream 2 logs, install the Sumo Logic App for Akamai DataStream to take advantage of the pre-configured searches and dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Akamai DataStream Dashboards​
 

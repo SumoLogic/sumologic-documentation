@@ -378,7 +378,7 @@ Note: There are limits to how many alerts can be enabled - please see the [Alert
 
 This section has instructions for installing the Sumo App for Nginx Plus. The instructions assume you have already set up the collection as described above.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Nginx Plus Alerts
 

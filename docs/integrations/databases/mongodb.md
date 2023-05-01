@@ -506,7 +506,7 @@ Now that you have set up collection for MongoDB, install the Sumo Logic App for 
 
 Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click Preview Dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing MongoDB Dashboards
 

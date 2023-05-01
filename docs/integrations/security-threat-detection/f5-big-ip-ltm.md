@@ -131,7 +131,7 @@ This section provides instructions for installing the F5 - BIG-IP LTM App, as we
 
 You can use [these instructions](/docs/get-started/library) to import the JSON into your Sumo Logic environment.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing F5 - BIG-IP LTM Dashboards    
 

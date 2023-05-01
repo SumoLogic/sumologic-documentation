@@ -118,7 +118,7 @@ Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint
 
 This section demonstrates how to install the SailPoint App.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 
 ## Viewing SailPoint Dashboards

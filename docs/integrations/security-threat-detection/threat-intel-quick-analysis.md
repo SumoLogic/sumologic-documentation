@@ -23,7 +23,7 @@ This app contains generic regex expressions and thus may not perform well at ver
 
 This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Threat Intel Optimization
 

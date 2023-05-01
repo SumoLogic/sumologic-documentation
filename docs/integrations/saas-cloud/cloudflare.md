@@ -81,7 +81,7 @@ This section has instructions for installing the Cloudflare App for Sumo and des
 
 Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the Cloudflare Dashboards
 
