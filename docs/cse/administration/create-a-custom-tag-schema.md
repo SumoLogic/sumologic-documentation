@@ -5,13 +5,15 @@ sidebar_label: Create a Custom Tag Schema
 description: Custom tag schemas allow you to ensure that users apply consistent tag values.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has instructions for creating a custom tag schema in CSE. 
 
 ## About tags in CSE
 
-Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag. There are two types of tags: *keyword tags*, which are arbitrary, freeform strings; and *schema keys*, which are predefined key-value pairs. CSE provides two built-in schemas keys: **Technique** and **Tactic**. You can’t edit the built-in schemas, although they appear in the list of tag schemas in the CSE UI, with a Sumo label, as shown below.
+Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag. There are two types of tags: *keyword tags*, which are arbitrary, freeform strings; and *schema keys*, which are predefined key-value pairs. CSE provides built-in schemas keys that display in the CSE UI with a Sumo label, as shown in the example below. You can’t edit the built-in schemas.
 
-![built-in-tags.png](/img/cse/built-in-tags.png)
+<img src={useBaseUrl('img/cse/built-in-tags.png')} alt="Built-in schema keys" width="400"/>
 
 Schema tags can enforce specific tag values and prevent confusion from variations in tag values. For example, you might want to ensure the use of standard server identifiers, such as “FinanceServer”, rather than “Server-Finance” or “Finance_Server”. 
 
@@ -42,6 +44,6 @@ For more information about tags in CSE, see [Using Tags with Insights, Signals, 
     1. **Value Options**. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
         * **Value**. Enter an allowable value for the tag.
         * **Label**. Enter a label for the value.
-        * **Link**. If desired, enter a URL. If you supply a URL, that link will appear in the Actions menu of the tag in any content items to which it’s been applied.  CSE’s built-in schema tags Technique and Tactic are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site.
+        * **Link**. If desired, enter a URL. If you supply a URL, that link will appear in the Actions menu of the tag in any content items to which it’s been applied.  CSE’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site.
 
             ![mitre-link.png](/img/cse/mitre-link.png)
