@@ -12,11 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides a high-level checklist of onboarding tasks and best practices for Cloud SIEM Enterprise (CSE) administrators. This setup guide shows you how to maximize value from CSE by leveraging all of its features. 
-
-Sumo Logic also offers a complete CSE Quickstart package through the Professional Services team that covers these checklist items, as well as tuning and other configurations not listed here.
-
-Access the linked articles to learn how to perform each item in the checklist.
+This article provides a high-level checklist of onboarding tasks and best practices for Cloud SIEM Enterprise (CSE) administrators. Sumo Logic also offers a complete CSE Quickstart package through the Professional Services team that covers these checklist items as well other configurations not listed here.
 
 ## Initial setup
 
@@ -28,10 +24,10 @@ Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, 
 
 <img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/> 
 
-To further set up your instance, you may consider setting up a custom sub-domain. And enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
+To further set up your instance, you may consider setting up a custom sub-domain. You can also enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
 See:
-* The [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) section of the [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) article 
+* The the [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) article 
 * [Enable a Support Account](/docs/manage/security/enable-support-account/) 
 
 ### Set up users
@@ -73,7 +69,7 @@ Perform the following tasks to forward data to Cloud SIEM from other sources.
 
 #### Ingest data
 
-Begin forwarding data to Cloud SIEM using our ingest guides. Sending data to the Cloud SIEM Data tier consumes credits, and credit consumption can be tracked by enabling the Metrics Data Volume Index and installing the Data Volume app.
+Begin forwarding data to Cloud SIEM using our [ingest guides](/docs/cse/ingestion/). Sending data to the Cloud SIEM Data tier consumes credits, and credit consumption can be tracked by enabling the Metrics Data Volume Index and installing the Data Volume app.
 
 See:
 * [CSE Ingestion](/docs/cse/ingestion/)
@@ -82,7 +78,7 @@ See:
 
 #### Configure partitions
 
-Cloud SIEM Insights are stored within two audit partitions or indexes. These partitions also store configuration changes made to the Cloud SIEM environment. Because historical reporting of this information may be required, we recommend increasing the retention of these two partitions to 365 days:
+Cloud SIEM Insights are stored within two audit partitions. These partitions also store configuration changes made to the Cloud SIEM environment. Because historical reporting of this information may be required, we recommend increasing the retention of these two partitions to 365 days:
 * `_index=sumologic_audit_events`
 * `_index=sumologic_system_events`
 
@@ -149,7 +145,7 @@ See: [Managing Custom Insight Statuses](/docs/cse/administration/manage-custom-i
 
 Network blocks tag records with descriptive information that will help analysts and responders have the context of records, signals, and Insights. To define network blocks, you can often export the information from DHCP servers or other network devices. 
 
-See:[] Create and Use Network Blocks](m/docs/cse/administration/create-use-network-blocks/)
+See: [Create and Use Network Blocks](/docs/cse/administration/create-use-network-blocks/)
 
 ### Configure threat intel feeds
 
@@ -196,7 +192,7 @@ Perform the following tasks to create actions to run in Cloud SIEM.
 
 #### Create Cloud SIEM actions
 
-You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as send an email to an assignee when an Insight is assigned, or to integrate with tools (for example, JIRA, Slack, etc.).
+You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, JIRA, Slack, etc.), or to send an email to analysts when they are assigned Insights.
 
 See: [Create CSE Actions](/docs/cse/administration/create-cse-actions/)
 
@@ -204,7 +200,7 @@ See: [Create CSE Actions](/docs/cse/administration/create-cse-actions/)
 
 A Context Action is an option that a Cloud SIEM analyst can use to query an external system for information about an Entity, IOC, or data encountered in a Record. For example, you could create a Context Action to check an IP address against a threat intel service, look up a username, or run a log search in Sumo Logic for a hostname.
 
-You could also create a Context Action to show users’ Google activity. For example, install the Google Workspace app and set up the User Activity dashboard. Then create the context action to pivot directly to the dashboard from Cloud SIEM usernames. 
+You could also create a Context Action to show users’ Google activity. For example, install the Google Workspace app and set up the User Activity dashboard. Then create a context action to pivot directly to the dashboard from Cloud SIEM usernames. 
 
 See: 
 * [Create CSE Context Actions](/docs/cse/administration/create-cse-context-actions/)
