@@ -5,6 +5,8 @@ sidebar_label: Network Blocks
 description: A Network Block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating CSE Insights.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic describes *Network Blocks* and their purpose, and provides instructions for setting them up and using them.
 
 :::note
@@ -52,14 +54,14 @@ include the CIDR block itself in the label. For example, instead of
 
 ## Overlapping Network Blocks
 
-In the case that the two or more Network Blocks overlap, CSE uses the
-smallest, most-specific block that matches the the IP address that's
-being looked up. For example, given these two Network Blocks:
+In the case that the two or more Network Blocks overlap, CSE uses the smallest, most-specific block that matches the IP address that's being looked up. For example, given these two Network Blocks:
 
-* `10.0.0.0/8` with Label "foo"
-* `10.0.10./24` with Label "bar"
+* `10.0.0.0/8` with Label "EC2 Internal"
+* `10.128.0.0/24` with Label "WebServer IPs"
 
-When CSE looks for the Network Block the address `10.0.10.1`, it will return the more-specific block, "bar".
+When CSE looks for the Network Block address `10.128.0.1`, it will return the more-specific block, "WebServer IPs".
+
+<img src={useBaseUrl('img/cse/overlapping-network-blocks.png')} alt="Overlapping network blocks" width="400"/>
 
 ## Create a Network Block manually
 
