@@ -68,7 +68,7 @@ A Match List can contain up to 100,000 items.
 When comparing a field value to items on a Match List, CSE generally requires an exact match. There are two exceptions to that rule.
 
 *  Match Lists that contain IP addresses can list either explicit IP addresses, CIDR blocks of IP addresses, (for example `1.2.3.4/24`), or both.
-* Match Lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a Record. Note that the converse is not the case: `mail.google.com` in a list won’t `match google.com` and won’t match `test.mail.google.com`.
+* Match Lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a Record. Note that the converse is not the case: `mail.google.com` in a list won’t match `google.com`.
 
 ## Create a Match List
 
@@ -137,13 +137,15 @@ value
 10.99.19.9
 ```
 
-## Best Practices for using Match Lists
+## Best practices for using Match Lists
 
 Sumo Logic recommends the following conventions and best practices for using Match Lists.
 
 ### Use Match Lists
 
-Use the Match List feature early on to get the most value from CSE. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue.
+Use the Match List feature early on to get the most value from CSE. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue. 
+
+Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists). 
 
 ### Choose appropriate Target Column
 

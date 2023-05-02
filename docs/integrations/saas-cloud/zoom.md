@@ -77,9 +77,7 @@ Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/
 
 Now that you have set up collection for the Zoom events, install the Sumo Logic App for Zoom to use the pre-configured dashboards that provide visibility into your environment.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
+1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. Select **Add Integration** button to install the app.
 1. Configure **Zoom App** using the steps described in the [Zoom Source](/docs/send-data/hosted-collectors/http-source/zoom). If you already have set up your data, skip this step by clicking on **Next**.
 1. To install the app, click **Add to Library** and complete the following fields.

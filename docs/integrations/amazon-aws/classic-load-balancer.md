@@ -213,7 +213,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event-based object discovery on existing AWS Sources.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the Collection page, navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided. You will use this in step 10.C when creating your subscription.
 3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
 
@@ -268,7 +268,7 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 
 ## Install the AWS Classic Load Balancer App
 
-Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

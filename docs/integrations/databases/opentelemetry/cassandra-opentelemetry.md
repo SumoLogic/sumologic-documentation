@@ -36,7 +36,7 @@ These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distribut
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Collector.png' alt="Collector" />
 
@@ -53,7 +53,7 @@ You can add any custom fields which you want to be tagged with the data ingested
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 Linux:
 
@@ -63,7 +63,7 @@ Linux:
   sudo systemctl restart otelcol-sumo
   ```
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log
 

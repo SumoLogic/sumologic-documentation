@@ -35,7 +35,7 @@ A host metric source running on an Installed Collector on an Amazon EC2 instance
 
 ## Manually Configure a Host Metrics Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source**.
 
     ![add-source2.png](/img/send-data/add-source2.png)
