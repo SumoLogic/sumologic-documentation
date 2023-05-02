@@ -16,7 +16,7 @@ The KnowBe4 API integration collects user events data into Sumo Logic for storag
 Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Region** and **KnowBe4 API Token**.
 
 :::important
-KnowBe4 APIs are only limited to Platinum and Diamond customers. , and the `_siemparser` is currently only available for the External Events source.
+KnowBe4 APIs are only limited to Platinum and Diamond customers.
 :::
 
 ### Region
