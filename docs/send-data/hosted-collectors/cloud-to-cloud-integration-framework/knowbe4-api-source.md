@@ -54,7 +54,7 @@ The `_siemparser` is currently available only for the External Events source.
 The KnowBe4 integration fetches two types of data sources for the KnowBe4 account.
 - **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
 :::note
-C2C will skip the record, if `started_at` data is not in the format of `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+C2C will skip the record if `started_at` data is not in the format of `yyyy-MM-ddTHH:mm:ss.SSSZ`.
 :::
 - **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default.
 
