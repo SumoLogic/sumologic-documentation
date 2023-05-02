@@ -17,7 +17,7 @@ Here is an example of a Suppressed List.
 
 ![suppressed-list.png](/img/cse/suppressed-list.png)
 
-Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used?).
+Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used).
 
 When you create a Suppressed List, you can choose one of the following as its Target Column.
 
