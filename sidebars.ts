@@ -37,6 +37,34 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    //Contribution guide for documentation
+    {
+      type: 'category',
+      label: 'Contribution Guide',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'contributing/index'},
+      items: [
+        'contributing/edit-doc',
+        'contributing/create-doc',
+        'contributing/remove-doc',
+        'contributing/style-guide',
+        'contributing/code-of-conduct',
+        'contributing/glossary',
+        'contributing/word-list',
+    //  'contributing/translations',
+        {
+          type: 'category',
+          label: 'Templates',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
+          ]
+        }
+      ],
+    },
   ],
   // *** SEND DATA
   senddata: [
@@ -187,7 +215,6 @@ module.exports = {
                 'send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source',
                 'send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources',
                 'send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source',
-                'send-data/hosted-collectors/amazon-aws/aws-cost-explorer-source',
                 'send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source',
                 'send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source',
                 'send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source',
@@ -208,6 +235,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source',
@@ -316,6 +344,7 @@ module.exports = {
             },
           ],
         },
+        'send-data/collect-from-other-data-sources/kubernetes',
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -975,6 +1004,7 @@ module.exports = {
             'search/get-started-with-search/search-basics/search-large-messages',
             'search/get-started-with-search/search-basics/search-surrounding-messages',
             'search/get-started-with-search/search-basics/share-link-to-search',
+            'search/get-started-with-search/search-basics/share-message-link',
             'search/get-started-with-search/search-basics/time-range-expressions',
             'search/get-started-with-search/search-basics/view-search-results-json-logs',
             'search/get-started-with-search/search-basics/view-traces-search-results',
@@ -1635,6 +1665,7 @@ module.exports = {
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
+                'observability/aws/integrations/amazon-sqs',
               ],
             },
             'observability/aws/faq',
@@ -2023,10 +2054,12 @@ integrations: [
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
+          'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
+          'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
           'integrations/saas-cloud/fastly',
@@ -2038,6 +2071,7 @@ integrations: [
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
+          'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
@@ -2300,6 +2334,7 @@ integrations: [
             'cse/integrations/enable-virustotal-enrichment',
             'cse/integrations/integrate-cse-with-taxii-feed',
             'cse/integrations/security-incident-response-integration',
+            'cse/integrations/enrichments-and-indicators',
           ],
         },
         {
@@ -2340,6 +2375,20 @@ integrations: [
             'cse/records-signals-entities-insights/cse-heads-up-display',
           ],
         },
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cse/automation-service/index'},
+          items: [
+            'cse/automation-service/about-automation-service',
+            'cse/automation-service/automation-service-automations',
+            'cse/automation-service/automation-service-playbooks',
+            'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-bridge',
+          ],
+        },
       ],
     },
     {
@@ -2356,37 +2405,6 @@ integrations: [
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/mssp',
-      ],
-    },
-  ],
-
-  //Contribution guide for documentation
-  contributing: [
-    {
-      type: 'category',
-      label: 'Contribution Guide',
-      collapsible: false,
-      collapsed: true,
-      link: {type: 'doc', id: 'contributing/index'},
-      items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
-        'contributing/remove-doc',
-        'contributing/style-guide',
-        'contributing/code-of-conduct',
-        'contributing/glossary',
-        'contributing/word-list',
-    //  'contributing/translations',
-        {
-          type: 'category',
-          label: 'Templates',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'contributing/templates/generic-doc',
-            'contributing/templates/partner-app-doc',
-          ]
-        }
       ],
     },
   ],

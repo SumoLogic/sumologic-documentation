@@ -220,7 +220,7 @@ For more information, see [Script Source](/docs/send-data/installed-collectors/s
 
 The script requires Ruby on the host machine.
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
 3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).

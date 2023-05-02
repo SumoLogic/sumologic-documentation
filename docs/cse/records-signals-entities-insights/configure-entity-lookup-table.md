@@ -47,7 +47,7 @@ Before you configure a Lookup Table in CSE, you must create the Lookup Table in 
 
 ### Populate table from inventory data
 
-You can create Lookup Tables from information about hosts and users–known as inventory data–in your environment. Inventory data is collected by CIP inventory sources, typically by an Active Directory source running on a Sumo Logic Installed Collector, and also by sources that leverage the Sumo Logic Cloud-to-Cloud Integration Framework.
+You can create Lookup Tables from information about hosts and users–known as inventory data–in your environment. Inventory data is collected by Sumo Logic core platform inventory sources, typically by an Active Directory source running on a Sumo Logic Installed Collector, and also by sources that leverage the Sumo Logic Cloud-to-Cloud Integration Framework.
 
 This method–the typical way to populate a Lookup Table for the purpose of Entity normalization–involves running a log search against data collected by a CSE Inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table.md) topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](#configure-an-entity-lookup-table), below.
 
