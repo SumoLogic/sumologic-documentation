@@ -290,7 +290,7 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'HTTP Sources for Logs, Metrics, Traces, OTLP',
+              label: 'HTTP Sources for Logs, Metrics, Traces, OTLP, Zoom',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/hosted-collectors/http-source/index'},
@@ -310,6 +310,7 @@ module.exports = {
                 'send-data/hosted-collectors/http-source/traces',
                 'send-data/hosted-collectors/http-source/generate-new-url',
                 'send-data/hosted-collectors/http-source/troubleshooting',
+                'send-data/hosted-collectors/http-source/zoom',
               ],
             },
           ],
