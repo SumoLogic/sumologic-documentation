@@ -407,7 +407,7 @@ module.exports = {
               },
               {
                 label: 'Contribute to Docs',
-                to: '/docs/contributing',
+                href: '/docs/contributing',
                 icon: 'edit_note',
               },
             ]
