@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic makes it easy to get started with OpenTelemetry by providing a custom distribution of the OpenTelemetry collector, which can be used to send metrics, logs, and traces directly to our platform.
 
-This quickstart mirrors our onboarding workflow in the Sumo Logic UI (you'll do most of this work in the browser). It is a step-by-step guide to installing the OpenTelemetry collector and getting your hands on the resulting metrics data in Sumo Logic.
+This quickstart guide, which mirrors our Sumo Logic UI onboarding workflow, is a step-by-step guide to installing the OpenTelemetry collector and getting your hands on the resulting metrics data in Sumo Logic. You'll do most of this work in your browser.
 
 ## What you'll learn
 
@@ -18,18 +18,18 @@ This quickstart mirrors our onboarding workflow in the Sumo Logic UI (you'll do 
 * Configure a receiver to collect memory data
 * Send that via the Sumo Logic exporter directly to the Sumo Logic Ingest API
 
-We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
-
-<details><summary>What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?</summary>
-
-* [OpenTelemetry](https://opentelemetry.io/) is a state-of-the-art open standard for collecting all kinds of observability data. Using a single common standard, it can flexibly collect logs, metrics, and tracing data. It is open source and freely available to download and hack on. It comes out of the box with support for the most popular integrations and makes it very easy to implement new ones if your use case isn’t already covered (it probably is!).
-* The Sumo Logic Distribution for OpenTelemetry Collector is a custom build of the OpenTelemetry collector that's optimized for interacting with Sumo Logic’s API. It supports everything the standard collector does, but has some additional extensions for Sumo Logic.
-
 In this quickstart, you'll run our OpenTelemetry collector directly on the machine you wish to monitor, which will send data via the Sumo Logic [API](/docs/api/), which is compatible with the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/reference/specification/protocol/).
 
-To learn more, see [Sumo Logic OpenTelemetry vs. OpenTelemetry Upstream Relationship](/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship).
+We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
-</details>
+## Before you begin
+
+You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
+
+:::tip
+See [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting-faq/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
+:::
+
 
 ## Installation
 
@@ -37,21 +37,23 @@ In this section, you'll install Sumo Logic’s OpenTelemetry collector on your m
 
 ### Step 1: Log in to Sumo
 
-If you don’t already have a Sumo Logic account, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic). Otherwise, [log in](https://service.sumologic.com/ui/) as you normally would.
+[Sign in](https://service.sumologic.com/ui/) to your Sumo Logic as you normally would.
 
 ### Step 2: Get an Installation Token
 
-Create a new installation token by going to the Administration section of your account and generate a new token. Follow the [Installation Tokens](/docs/manage/security/installation-tokens/) documentation for detailed steps. After you’ve created it, don’t forget to copy the token.
+In this section, you'll create a new [installation token](/docs/manage/security/installation-tokens), which allows the collector to talk securely to Sumo Logic API and tells it what account to send the data to. This is secure enough that you can comfortably deploy it as an environment variable or as part of a script.
 
-<details><summary>What's an installation token?</summary>
-Allows the collector to talk securely to Sumo Logic API and tells it what account to send the data to. This is secure enough that you can comfortably deploy it as an environment variable or as part of a script.
-</details>
+1. Go to **Administration** > **Security** > **Installation Tokens**.
+1. Click the **+ Add Token** button above the table. A panel named **Create Installation Token** appears to the right of the table.
+1. Input a unique name, then click **Save**.
+1. After you’ve created it, don’t forget to copy the token.
+
 
 ### Step 3: Install the collector on the target machine
 
-We've created a one-step installation script to make it easier to install the collector. you'll install this on a Mac in this example, but the same basic steps work for Linux environments.
+We've created a one-step installation script to make it easier to install the collector. In this example, you'll install this on a Mac, but the same basic steps work for Linux environments as well.
 
-<details><summary>What's a collector?</summary>
+<details><summary>What's a Collector?</summary>
 An executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
 </details>
 
@@ -102,7 +104,7 @@ The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/
 
 The [`exporters` section](https://opentelemetry.io/docs/collector/configuration/#exporters) describes the places we will send that data. The exporter is a component within the collector that sends data to another destination (in this case, Sumo Logic). The default configuration file already sets up an exporter called `sumologic`, so we don’t need to specify that again. Instead, you'll set up an additional simple console debug logger to see when the collector processes data.
 
-The `services` section describes how the collector will process the information between when  it scrapes the raw metrics and when it exports it. To do this, it will set up a pipeline for the information that can process metrics, logs, or traces differently. Here we specify that we want a metrics pipeline that takes the data from the `hostmetrics` receiver and sends it to both Sumo Logic and to our local console logger.
+The [`service` section](https://opentelemetry.io/docs/collector/configuration/#service) describes how the collector will process the information between when it scrapes the raw metrics and when it exports it. To do this, it will set up a pipeline for the information that can process metrics, logs, or traces differently. Here we specify that we want a metrics pipeline that takes the data from the `hostmetrics` receiver and sends it to both Sumo Logic and to our local console logger.
 </details>
 
 Save this yaml file. Now, the collector is ready to start running.
@@ -148,6 +150,7 @@ That means the data has made it into Sumo Logic and it’s ready for analysis. N
 
 ## Additional Resources
 
-* [Sumo Logic Distribution for OpenTelemetry GitHub Repo](https://github.com/SumoLogic/sumologic-otel-collector#readme), our custom distro of the collector
-* [OpenTelemetry Contrib Repo](https://github.com/open-telemetry/opentelemetry-collector-contrib#readme), where most of the receivers and exporters are implemented
+* [Sumo Logic Distribution for OpenTelemetry GitHub repo](https://github.com/SumoLogic/sumologic-otel-collector#readme), our custom distro of the collector
+* [Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship](/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship/)
+* [OpenTelemetry Contrib repo](https://github.com/open-telemetry/opentelemetry-collector-contrib#readme), where most of the receivers and exporters are implemented
 * [OpenTelemetry Docs](https://opentelemetry.io/docs/), where you can learn more about how OpenTelemetry works
