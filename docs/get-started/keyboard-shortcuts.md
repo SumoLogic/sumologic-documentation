@@ -50,6 +50,10 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | option+o       | Open the Account page                                         |
 | option+p       | Open the Preferences tab                                      |
 | option+z       | Open the Setup Wizard                                         |
+| command+j      | Share the current log search                                  |
+| command+s      | Open the Save as dialog                                       |
+| command+e      | Open the Edit dialog                                          |
+| shift+option+l | Open and start the Live Tail                                  |
 
 ## Keyboard Shortcuts on Windows
 
@@ -79,3 +83,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | g p         | Open the Preferences tab                                        |
 | g z         | Open the Setup Wizard                                           |
 | ?           | Show this screen                                                |
+| ctrl+j      | Share the current log page                                      |
+| ctrl+s      | Open the Save as dialog                                         |
+| ctrl+e      | Open the Edit dialog                                            |
+| shift+alt+l | Open and start the Live Tail                                    |
