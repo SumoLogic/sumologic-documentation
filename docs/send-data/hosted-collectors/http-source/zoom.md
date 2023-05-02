@@ -24,7 +24,7 @@ This section shows you how to configure Webhooks to collect events from Zoom. Fo
 
 When you create a Zoom Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
-Some Webhook events may not be available based on the plan type. Refer to the Prerequisite section for each Webhook event type on this [Zoom page](https://marketplace.zoom.us/docs/api-reference/webhook-reference/account-events/account-created#prerequisites) for account-created event types.
+Some Webhook events may not be available based on the plan type. Refer to the Prerequisite section for each Webhook event type on this [Zoom page](https://developers.zoom.us/docs/api/rest/reference/zoom-api/events/#operation/meeting.created) for account-created event types.
 
 ## Setup and Configuration
 
