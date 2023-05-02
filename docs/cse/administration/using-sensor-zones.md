@@ -31,7 +31,7 @@ Sensor zones will only apply to IP addresses in private address ranges.
 
 To define a sensor zone for a Source:
 
-1. In the Sumo Logic UI, navigate to the Source you want to update, at **Manage Data > Collection > Collection**.  
+1. In the Sumo Logic UI, navigate to the Source you want to update, at **Manage Data** > **Collection** > **Collection**.  
 2. In the **Fields/Metadata** area, define a [Field](/docs/manage/fields.md) named `_siemSensorZone` and set it to the desired value.
 <img src={useBaseUrl('img/cse/source.png')} alt="source.png" />
 3. Click **Save**.

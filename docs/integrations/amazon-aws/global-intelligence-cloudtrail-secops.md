@@ -38,8 +38,6 @@ This feature is available in the following account plans.
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 ## Log Types  
 
 Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs. When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.

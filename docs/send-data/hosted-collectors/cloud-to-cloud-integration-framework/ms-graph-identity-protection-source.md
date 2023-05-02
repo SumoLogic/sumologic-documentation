@@ -92,7 +92,7 @@ When you create a Microsoft Graph Identity Protection Source, you add it to a H
 
 To configure a Microsoft Graph Identity Protection Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
