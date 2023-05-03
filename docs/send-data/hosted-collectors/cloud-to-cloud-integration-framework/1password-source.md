@@ -9,12 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="45"/>
 
-The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
+The 1Password Source provides a secure endpoint to receive Sign-in Attempts, Item Usage, and Audit Events from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
+
+## Data Sources
 
 The 1Password Source ingests:
-* [Sign-in Attempts](https://support.1password.com/events-api-reference/#sign-in-attempts)
-* [Item Usage](https://support.1password.com/events-api-reference/#item-usage)
-
+* [Sign-in Attempts](https://support.1password.com/events-api-reference/#sign-in-attempts): Collects information about sign-in attempts, that include the name and IP address of the user who attempted to sign in to the account.
+* [Item Usage](https://support.1password.com/events-api-reference/#item-usage): Collects information about items in shared vaults that have been modified, accessed, or used.
+* [Audit Events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents): Collects information about the audit events.
 
 ## Rules
 
@@ -36,7 +38,6 @@ You'll need a 1Password API token and your customer-specific 1Password domain (f
 6. In the **Save token** section, click the copy icon (next to the token string) to copy it to your clipboard. You can also click **Save in 1Password** to store it for your future reference.
 7. Lastly, click **View Integration Details** to see the summary, then click **Learn More** pointing to 1Password App installation manual.
 
-
 ## States
 
 A 1Password Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
@@ -55,7 +56,6 @@ When you delete the Source, it is placed in a **Stopping** state. When it has su
 On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![1password state.png](/img/send-data/1password-state.png)
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/> ![1password](/img/send-data/health_error_generic.png)
-
 
 ## Create a 1Password Source
 
@@ -86,7 +86,6 @@ To configure a 1Password Source:
 9. **API Token**. Enter the token you got from creating your 1Password API token in the [Authentication section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source#Authentication) above.
 10. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
 11. When you are finished configuring the Source, click **Submit**.
-
 
 ## Error types
 
@@ -146,7 +145,6 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 ### Restarting your Source
 
 {@import ../../../reuse/restart-c2c-source.md}
-
 
 ## JSON configuration
 
