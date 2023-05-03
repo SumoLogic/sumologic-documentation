@@ -83,7 +83,7 @@ The maximum number of Collectors allowed per organization is 10,000.
   <p>Configure a cloud syslog source to send data to Sumo Logic.</p>
   </div>
 </div>
-<div className="box smallbox9 card">
+<div className="box smallbox8 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/zoom"><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="40"/>
   <h4>Zoom Source</h4></a>
