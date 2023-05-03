@@ -12,11 +12,15 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides a high-level checklist of onboarding tasks and best practices for Cloud SIEM Enterprise (CSE) administrators. Sumo Logic also offers a complete CSE Quickstart package through the Professional Services team that covers these checklist items as well other configurations not listed here.
+This article provides a high-level checklist of onboarding tasks and best practices for Cloud SIEM Enterprise (CSE) administrators. 
+
+## Onboard with Professional Services
+
+Ask your Sumo Logic account representative to engage the Professional Services team to guide you through the onboarding tasks described in this article. Sumo Logic offers a complete Quickstart package through the Professional Services team that covers these tasks, as well as other configurations not listed here. While you can perform some of the tasks in this checklist on your own, many require Professional Services. We provide this article as a convenience to help you keep track of your work as you onboard to Cloud SIEM.
 
 ## Initial setup
 
-Perform the tasks in the following sections to do initial setup of your Cloud SIEM environment.
+Work with Professional Services to perform the tasks in the following sections to do initial setup of your Cloud SIEM environment.
 
 ### Provision Cloud SIEM 
 
@@ -127,7 +131,7 @@ See:
 
 ## Initial configuration
 
-Perform the tasks in the following sections to do initial configuration of useful tools in your Cloud SIEM environment.
+Work with Professional Services to perform the tasks in the following sections to do initial configuration of useful tools in your Cloud SIEM environment.
 
 ### Set detection thresholds
 
