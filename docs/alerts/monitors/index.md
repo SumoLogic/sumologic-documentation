@@ -6,11 +6,10 @@ description: Sumo Logic Monitors continuously query your logs or metrics and sen
 tags: [monitor, monitors]
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="45"/>
 
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 
@@ -41,13 +40,13 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 ### General
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
+* [Log Reduce](../../search/logreduce/logreduce-operator/)/ [Log Compare](../../search/logcompare/) operators are not supported in Monitors. If your query contains these operators, you will not be able to create the monitor.  
 * Monitors only support the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers.md).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
 * A Log Monitor can have one query up to 15,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
-* [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
 * The timeshift [metrics operator](/docs/metrics/metrics-operators) is not supported in a Metric Monitor.
 * [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
@@ -114,3 +113,52 @@ Type of Alert/Trigger condition defined Critical/Warning/Missing Data.
 
 ### Alert Variables  
 Custom variables used inside the Action Payload.
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+In this section, we'll introduce the following concepts:
+
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/create-monitor"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Create a Monitor</h4></a>
+  <p>Learn how to create a monitor.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/edit-settings"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Edit Monitor Settings</h4></a>
+  <p>Learn how to view, create, manage, and organize Monitors.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+    <a href="/docs/alerts/monitors/monitor-faq"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Monitors FAQ</h4></a>
+  <p>This topic lists the common FAQs regarding Monitors.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+    <a href="/docs/alerts/monitors/alert-variables"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Variables</h4></a>
+  <p>Use Alert Variables as parameters to customize the JSON payload object of your alert notifications.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+    <a href="/docs/alerts/monitors/alert-response"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Response</h4></a>
+  <p>Get contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/alert-grouping"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Grouping</h4></a>
+<p>Customize how your alerts are generated from monitors by specifying a grouping condition based on specific fields.</p>
+  </div>
+</div>
+<div className="box smallbox7 card">
+  <div className="container">
+  <a href="/docs/alerts/monitors/alert-response-faq"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Alert Response FAQ</h4></a>
+<p>This topic lists the common FAQs regarding Alert Response.</p>
+  </div>
+</div>
+</div>

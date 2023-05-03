@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This document contains common troubleshooting scenarios and frequently asked questions about Sumo Logic OpenTelemetry Collector from our customers and field teams (SE, TAM, Support Engineers).
+This document contains common troubleshooting scenarios and frequently asked questions about the Sumo Logic OpenTelemetry Collector.
 
 ## About the Sumo Logic OTel Collector
 
@@ -45,53 +45,38 @@ The default cache size for the Sumo Logic OpenTelemetry Collector is 5000 batche
 
 The collector caches data when it’s unable to send it to the Sumo backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo, and others.
 
+#### Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
+
+The collector sends a heartbeat message every 15 seconds (by default).
+
+#### Does the OpenTelemetry Collector get throttled? Under what circumstances does this happen?
+
+The behavior is the same as for any other collection method.
+* [Logs Throttling](/docs/manage/ingestion-volume/log-ingestion/#log-throttling)
+* [Metrics Throttling](/docs/metrics/manage-metric-volume/metric-throttling/)
+
 
 ## Collector connection failure
 
 #### How do I provide a proxy setting for the Sumo Logic OpenTelemetry Collector to connect to the Sumo Logic backend?
 
-* For Linux
-* For Windows
-* For macOS
+If your Collector fails to connect to Sumo Logic, you may need to configure a proxy setting for the Sumo Logic OpenTelemetry Collector so that it can connect to the Sumo Logic backend. The information how to install the proxy has been provided on the Install Collector page for the specific platform.
+* [Linux Proxy](/docs/send-data/opentelemetry-collector/install-collector-linux/#using-proxy)
+* [Windows Proxy](/docs/send-data/opentelemetry-collector/install-collector-windows/#using-proxy)
+* [macOS Proxy](/docs/send-data/opentelemetry-collector/install-collector-macos/#using-proxy)
 
-If your Collector fails to connect to Sumo Logic, you may need to configure a proxy setting for the Sumo Logic OpenTelemetry Collector so that it can connect to the Sumo Logic backend. You can use the `HTTP_PROXY` or `HTTPS_PROXY` environment variables.
+#### On macOS, does the Sumo Logic OpenTelemetry Collector stop sending data after some time?
 
-To do this, you need to export the environment variables in your terminal or command prompt, with the proxy server address and port replaced by the actual address and port of the proxy server you want to use.
+Because the OpenTelemetry Collector is connected to the terminal, it will stop reporting data when you log off, close the terminal, or put the computer to sleep.
 
-For example, you can use the following command to export the `HTTP_PROXY` and `HTTPS_PROXY` environment variables in your terminal. Exporters leverage the HTTP communication and respect the following proxy environment variables:
 
-```bash
-export FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
-export HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
-export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
-```
+#### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data?
 
-If you want to make these variables available globally for all users, you can add them to the `/etc/profile` file using a command like this:
+<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="950" />
 
-```bash
-sudo tee -a /etc/profile << END
-export FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
-export HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
-export HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
-END
-```
+This means the collector is having trouble connecting to the Sumo Logic backend.
 
-To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following command:
-
-```bash
-export NO_PROXY=sumologic.com
-```
-
-After setting up the proxy environment variables, you can start the Sumo Logic OpenTelemetry Collector and it should be able to establish a connection with the Sumo Logic backend through the proxy.
-
-#### Does the OpenTelemetry Collector get throttled? Under what circumstances does this happen?
-
-The behavior is the same as for any other collection method.
-
-#### Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
-
-The collector sends a heartbeat message every 15 seconds (by default).
-
+While data should still be collected and shipped to Sumo, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
 
 ## Collector installation errors
 
@@ -182,12 +167,7 @@ If you do not have root or admin permissions, you can still install the Sumo Ope
 However, note that some functionalities, such as certain host metrics, may not be available when running the Collector as a non-root user.
 
 
-#### On macOS, does the Sumo Logic OpenTelemetry Collector stop sending data after some time?
-
-Because the OpenTelemetry Collector is connected to the terminal, it will stop reporting data when you log off, close the terminal, or put the computer to sleep.
-
-
-#### On Linux, how can I view/edit `config.yaml` files within the `conf.d` directory?
+#### On Linux or macOS, how can I view/edit configuration files within the `conf.d` directory?
 
 These directories and files require root permission to access. You can use `sudo` command.
 
@@ -246,29 +226,28 @@ See [Accessing the collector's metrics](#accessing-the-collectors-metrics) secti
 
 #### How do I uninstall the Sumo OpenTelemetry Collector?
 
-To uninstall the Collector, you can run the following command:
-
-```bash
-curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh \
-| sudo -E bash -s -- --uninstall --purge --yes
-```
-
-This will completely remove the Collector from your system, including any associated configuration files.
-
-If you are using a Mac, you can also run the following command to clear the cache:
-
-```bash
-sudo rm -rf /var/cache/otelcol-sumo
-```
-
-This will remove any cached data associated with the Collector.
+Refer to the Uninstall section in the following docs:
+* [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows/#uninstall)
+* [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos/#uninstall)
 
 
 ## Data ingestion and forwarding
 
 #### How do I ingest historical data​?
 
-To ingest old or historical data is to use a [Filelog Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) for log collection. By default, the Filelog Receiver starts reading logs from the end of the file. However, this can be changed by adjusting the configuration file to start reading from the beginning of the file by setting `start_at: beginning`.
+To ingest old or historical data, use a [Filelog Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) for log collection. By default, the Filelog Receiver starts reading logs from the end of the file. However, this can be changed by adjusting the configuration file to start reading from the beginning of the file by setting `start_at: beginning` in the receiver section. Here is an example:
+
+```yaml
+receivers:
+  filelog/custom_files:
+    include:
+    - /var/log/myservice/*.log
+    include_file_name: false
+    include_file_path_resolved: true
+    storage: file_storage
+    start_at: beginning
+```
 
 #### How do I send data to multiple Sumo Logic accounts from a single collector?
 
@@ -297,15 +276,11 @@ For example:
 
 <img src={useBaseUrl('img/send-data/error-faq.png')} alt="error-faq.png" width="950" />
 
-In this case, this means that the collector couldn’t find the file you wanted to collect logs from `/var/log/auth.log`.
+In this case, this means that the collector couldn’t find the file you wanted to collect logs from. There can be lot of reasons why this error happens, including not having appropriate permissions. 
 
-#### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data?
-
-<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="950" />
-
-This means the collector is having trouble connecting to the Sumo Logic backend.
-
-While data should still be collected and shipped to Sumo, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
+:::note
+The collector will still collect and send data from other sources as long as there are no issues with those sources.
+:::
 
 #### Why am I receiving an error when collecting data from the Sumo Logic OpenTelemetry Collector? It is unable to read Process Data (PID, process name, and so on)?
 
@@ -346,10 +321,7 @@ If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo
 
 #### How can I filter out metrics from being collected?
 
-* Linux
-* Windows  
-
-Both Linux and Windows users can utilize the filter processor provided by the OpenTelemetry Collector Contributor repository to filter out metrics from being collected. The filter processor can be used to selectively drop or pass through data based on certain conditions, but the specifics of the filtering would depend on the use case and requirements. For more information, refer to the [Filter Processor documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/filterprocessor/README.md.).
+Both Linux and Windows users can utilize the filter processor provided by the OpenTelemetry Collector Contributor repository to filter out metrics from being collected. The filter processor can be used to selectively drop or pass through data based on certain conditions, but the specifics of the filtering would depend on the use case and requirements. For more information, see [Filter Processor documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/filterprocessor/README.md).
 
 #### How can I filter out log files using the OpenTelemetry Collector?
 

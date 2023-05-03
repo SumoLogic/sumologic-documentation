@@ -138,7 +138,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[If operator](/docs/search/search-query-language/search-operators/if)**. A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
-**[Include rule ](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Include rules are a type of Processing Rule that is used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
+**[Include rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Include rules are a type of Processing Rule that is used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
 **[Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets)**. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 
@@ -301,4 +301,4 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Webhook](/docs/alerts/webhook-connections)**. A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
 
-**[Where operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
+**[`where` operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".

@@ -21,12 +21,6 @@ syslog.collection.YOUR_DEPLOYMENT.sumologic.com
 
 where `YOUR_DEPLOYMENT` is `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For more information, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
-:::important
-FIPS 140-2 compliance is not available for Cloud Syslog in the FedRAMP deployment.  
-
-It is with great emphasis that you must recognize and understand that the responsibility to mitigate information spillage is solely yours. We do not have insight into your data nor how your data is classified.
-:::
-
 In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the **DigiCert** certificate
 from one of the following locations:
 * [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt)
@@ -45,7 +39,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 To configure a cloud syslog source, do the following:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
 1. On the **Collection** page, click **Add Source** next to a Hosted Collector. See [Set up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for information on adding Hosted Collectors.
 1. Select **Cloud Syslog**.
 1. Enter a **Name** to display for this source in Sumo. Description is optional.

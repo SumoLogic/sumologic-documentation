@@ -45,6 +45,20 @@ The following expression divides `error_count` by `user_count`.
 
 `error_count / user_count`
 
+## /*  */
+
+The forward slash and asterisk characters (/*  */) comment out lines. 
+
+For CSE rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
+
+**Syntax**
+
+`/*  */`
+
+**Example**
+
+`/* This is a comment. */`
+
 ## <
 
 The less than (<) character returns “true” if the expression is less than the other expression.
@@ -402,7 +416,7 @@ Compares string values of two fields and returns a boolean result based on wheth
 `contains(<field1>, <field2>)`
 
 :::note
-CIP supports additional two forms of `contains` syntax. CSE supports only the form shown here. 
+Sumo Logic core platform supports additional two forms of `contains` syntax. CSE supports only the form shown here. 
 :::
 
 ## cos
@@ -735,17 +749,17 @@ attribute.
 
 **Syntax notes**
 
-* In CIP, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
+* In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
  
 :::note
 Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
 :::
 
-* As part of the ingestion process, the `fields` field in CSE is mapped to the `_raw` field in CIP.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
+* As part of the ingestion process, the `fields` field in CSE is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
-* CSE doesn’t support all of the `json` operator syntax options that CIP does, but you can do things like:
+* CSE doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
 
   * `| json field=fields "foo.bar['baz']" as nestedKey`
   * `| json field=fields "foo[0]" as indexKey`
@@ -1082,7 +1096,7 @@ in the CSE rules syntax.
 
 ## toInt 
 
-Casts a string to an integer This is equivalent to `int` in the CSE
+Casts a string to an integer. This is equivalent to `int` in the CSE
 rules syntax.
 
 **Syntax**
@@ -1176,9 +1190,9 @@ Filters results based on the value of a boolean expression.  
 
 `| where jsonArrayContains(field, “vuln_scanner”)`  
 
-## CIP literals supported in CSE
+## Sumo Logic core platform literals supported in CSE
 
-The following CIP literals are supported in CSE:
+The following Sumo Logic core platform literals are supported in CSE:
 
 * Time-based suffixed literals (millisecond-based. i.e., 1s == 1000)
 

@@ -40,7 +40,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
      * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.  <br/>  ![lambda-python.png](/img/traces/lambda-python3.png)
 1. Make sure you have **X-Ray Tracing** disabled in Lambda API Stage. Navigate to [AWS API Gateway console](https://console.aws.amazon.com/apigateway/main/apis), find your API and go to Stages. In the **Logs/Tracing** tab uncheck **Enable X-Ray Tracing** option.
 :::note
-If for whatever reason you can't disable this, configure X-Ray context propagation by setting O`TEL_PROPAGATORS=xray` environment variable on your client side.
+If for whatever reason you can't disable this, configure X-Ray context propagation by setting `OTEL_PROPAGATORS=xray` environment variable on your client side.
 :::
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces.md).
@@ -94,6 +94,10 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 ## Sumo Logic AWS OTel Lambda container instrumentation
 
 Sumo Logic AWS OTel Lambda also provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries for container based Lambda functions. 
+
+:::note
+The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
+:::
 
 ### Requirements
 

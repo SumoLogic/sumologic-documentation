@@ -2,14 +2,14 @@
 slug: /integrations/app-development
 title: App Development
 sidebar_label: App Development
-description: Docs for Sumo apps for platforms and tools that support software development processes.
+description: Docs for Sumo Logic apps for platforms and tools that support software development processes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/app-stack.png')} alt="Thumbnail icon" width="50"/>
 
-Sumo provides apps for platforms and tools that support software development processes, including software development platforms, automation tools, and issue tracking systems. This guide has documentation for those Sumo apps.
+Sumo Logic provides apps for platforms and tools that support software development processes, including software development platforms, automation tools, and issue tracking systems.
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">

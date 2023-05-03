@@ -48,7 +48,7 @@ Services Maps are built automatically from distributed tracing data in real time
 * Hover over a service to see its connections to other services and the last 15 minutes of activity in terms of latency, requests, and errors
 * Click on a service to open the Entity Inspector for further drill down into traces, metrics, and the service dashboard
 * Filter by application, if your tracing data has the application tag (`application=[app-name]`)
-* Filter by environment, if your tracing data has the deployment environment tag (`deployment.environment=[environment]`)
+* Filter by environment (up to 10 values), if your tracing data has the deployment environment tag (`deployment.environment=[environment]`)
 * Search for a service by name
 
 ![services-map](/img/traces/services-map.png)

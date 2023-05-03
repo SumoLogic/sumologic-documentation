@@ -7,7 +7,7 @@ description: Integrations created and supported by Sumo Logic Partners.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/partner-integrations.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/partner-integrations.png')} alt="Thumbnail icon" width="70"/>
 
 Sumo Logic Partner Integrations are provided and supported by our partner network. The partner links provide detailed information on their Sumo Logic integration, as well as pointers to related documentation created and maintained by them.
 

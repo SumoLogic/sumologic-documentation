@@ -7,21 +7,21 @@ description: Learn about Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Rela
 
 This document explains the purpose of the Sumo Logic Distribution for OpenTelemetry Collector, why we offer an alternative distribution of the OpenTelemetry Collector, and our approach to versioning and handling breaking changes.
 
-The Sumo Logic Distribution for OpenTelemetry Collector is the OpenTelemetry Collector with addition of Sumo Logic specific changes. Our aim is to extend and not to replace the OpenTelemetry Collector.
+The Sumo Logic Distribution for OpenTelemetry Collector is the OpenTelemetry Collector with addition of Sumo Logic specific changes. Our aim is to extend and not to replace the OpenTelemetry Collector. Releasing our own distribution allows us to:
+* Include Sumo Logic platform-specific features
+* Provide a easier user experience by having a tigher integration between the collector and SumoLogic SaaS service
+* Provide better customer support
+* Bypass the OpenTelemetry release schedule for critical bug fixes
+* Provide various installation methods
+* Quickly respond to customer needs
+* Offer use case oriented documentation
+
 
 We work closely with the OpenTelemetry community in order to improve overall experience by:
 * Attending SIG meetings
 * Creating issues in upstream if we find a bug or have a feature request
 * Issuing pull requests in upstream with bug fixes and features
 
-Releasing our own distribution allows us to:
-* Include Sumo Logic platform specific features
-* Provide better customer support
-* Bypass the OpenTelemetry release schedule for critical bug fixes
-* Provide customer oriented features
-* Provide various installation methods
-* Quickly respond to customer needs
-* Offer use case oriented documentation
 
 ## Versioning policy
 

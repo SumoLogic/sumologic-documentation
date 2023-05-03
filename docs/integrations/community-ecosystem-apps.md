@@ -27,7 +27,10 @@ Community content is stored in our [Community Content Repository](https://github
 The overall ratings for content are listed on a scale of 0 to 5, with 5 being the highest. You can view detailed ratings and comments on the Community Content Repository.
 :::
 
-* [EC2 Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/EC2/Host_Metrics_OTEL) (Rating: 4)
+* [AWS CloudTrail - User Activity](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_CloudTrail) (Rating: 4.5)
+* [AWS EC2 - Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_EC2/Host_Metrics_OTEL) (Rating: 4)
+* [AWS Health Events](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_Health) (Rating: None)
+* [Checkpoint Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Checkpoint) (Rating: None)
 * [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
 * [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
 * [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF) (Rating: 3.5)
@@ -36,8 +39,9 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [Open Source CSPM](https://github.com/SumoLogic/sumologic-content/tree/master/CSPM) (Rating: None)
 * [Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR) (Rating: 3.5)
 * [Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP) (Rating: 4)
-* [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS) (Rating: 4)
+* [Sophos Central](https://github.com/SumoLogic/sumologic-content/tree/master/Sophos/Sophos-Central) (Rating: None)
 * [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces) (Rating: 4)
+* [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS) (Rating: 4)
 * [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO) (Rating: 4.5)
 * [Qualys VMDR & Inventory](https://github.com/SumoLogic/sumologic-content/tree/master/Qualys) (Rating: 4)
 

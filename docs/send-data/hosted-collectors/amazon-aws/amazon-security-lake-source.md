@@ -20,30 +20,6 @@ Amazon Security Lake source provides a web services interface that can be used t
 
 This makes AWS log setup relatively easy. In addition, the data available from various AWS services is in the OCSF format, making it simple to parse and correlate across different sources.
 
-## Setup Relevant IAM Roles on Amazon Security Lake
-
-Before setting up your Amazon Security Lake account, you need to create the following IAM roles in AWS:
-
-### Role 1 (AmazonSecurityLakeMetaStoreManager)
-
-Create the `AmazonSecurityLakeMetaStoreManager` role in AWS Identity and Access Management (IAM). The role must carry this name and is necessary for Security Lake to support extract, transform, and load (ETL) jobs on raw log and event data that it receives from sources. Without creating and assuming this role, you cannot create your data lake or query data from Security Lake. One role can be used across Regions—there's no need to create a separate role for different Regions.
-
-:::note
-Before you create the role, you need to attach the AWS policies to your `AmazonSecurityLakeMetaStoreManager` role. See [AWS policy](https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html#prerequisites).
-:::
-
-### Role 2 (EventBridge API destinations)
-
-Create the `EventBridge API destinations` role for the data subscribers in AWS Identity and Access Management (IAM) that grants Amazon EventBridge permissions to invoke API destinations and send object notifications to the correct HTTPS endpoints.
-For more information, see creating IAM role for [EventBridge API destinations](https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-data-access.html#iam-role-subscriber).
-
-The role name must be in the format: `AmazonSecurityLakeRoleForEventBridge-[AWS Account ID]`. For example, AmazonSecurityLakeRoleForEventBridge-03039853141.
-
-* After creating this IAM role, the Role ARN will be generated automatically.
-* Copy and secure the Role ARN of the role as you'll need it to create the subscriber in later steps. It must be in this format – `arn:aws:iam::account-is:role/role-name`. <br/><img src={useBaseUrl('img/send-data/role-arn-name.png')} alt="role-arn-name.png" width="1000"/>
-
-We assume that by following the above steps, you have successfully created the required IAM roles and generated a Role ARN. In the next step, you'll grant Sumo Logic access to Amazon Security Lake to use the services.
-
 ## Configure Amazon Security Lake Setup
 
 ### Step 1. Grant Sumo logic access to Amazon Security Lake console
@@ -79,8 +55,8 @@ To create a subscriber in Amazon Security Lake Console, follow the steps below:
    * **Subscription endpoint**. The Subscription endpoint is intentionally left blank because it will be added to the subscriber in later steps.
    * **HTTPS key name** (Optional). Name of the server certificate that is used to authenticate the subscriber's connection to the AWS Security Lake.
    * **HTTPS key value**(Optional). Actual value or password associated with the key.
-
   <img src={useBaseUrl('img/send-data/notifications.png')} alt="notifications.png" width="800"/>
+1. You can either choose to create a new service role and use it, if you haven't created one before, or you can opt to use an existing service role and select the appropriate role name. <br/> <img src={useBaseUrl('img/send-data/servicerole.png')} alt="servicerole.png" width="800"/>
 1. Click **Create**. A new subscriber will be created.
 1. Navigate to the Subscribers tab on the left and select the recently created Subscriber.
 1. Copy and secure the AWS Role ID of the subscriber, you'll need it in later steps. <br/> <img src={useBaseUrl('img/send-data/aws-role-id.png')} alt="aws-role-id.png" width="600"/>
