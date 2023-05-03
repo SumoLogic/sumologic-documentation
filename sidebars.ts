@@ -37,6 +37,34 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    //Contribution guide for documentation
+    {
+      type: 'category',
+      label: 'Contribution Guide',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'contributing/index'},
+      items: [
+        'contributing/edit-doc',
+        'contributing/create-doc',
+        'contributing/remove-doc',
+        'contributing/style-guide',
+        'contributing/code-of-conduct',
+        'contributing/glossary',
+        'contributing/word-list',
+    //  'contributing/translations',
+        {
+          type: 'category',
+          label: 'Templates',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
+          ]
+        }
+      ],
+    },
   ],
   // *** SEND DATA
   senddata: [
@@ -1635,6 +1663,7 @@ module.exports = {
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
+                'observability/aws/integrations/amazon-sqs',
               ],
             },
             'observability/aws/faq',
@@ -2023,6 +2052,7 @@ integrations: [
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
+          'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
@@ -2039,6 +2069,7 @@ integrations: [
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
+          'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
@@ -2372,37 +2403,6 @@ integrations: [
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/mssp',
-      ],
-    },
-  ],
-
-  //Contribution guide for documentation
-  contributing: [
-    {
-      type: 'category',
-      label: 'Contribution Guide',
-      collapsible: false,
-      collapsed: true,
-      link: {type: 'doc', id: 'contributing/index'},
-      items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
-        'contributing/remove-doc',
-        'contributing/style-guide',
-        'contributing/code-of-conduct',
-        'contributing/glossary',
-        'contributing/word-list',
-    //  'contributing/translations',
-        {
-          type: 'category',
-          label: 'Templates',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'contributing/templates/generic-doc',
-            'contributing/templates/partner-app-doc',
-          ]
-        }
       ],
     },
   ],

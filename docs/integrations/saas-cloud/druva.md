@@ -4,6 +4,7 @@ title: Druva
 sidebar_label: Druva
 description: The Druva App for Sumo Logic provides real-time monitoring and security insight for Druva accounts, enabling prompt detection and response to potential security incidents through granular insights into user activity, alerts, and backup status.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/druva-icon.png')} alt="druva-icon.png" width="100"/>
@@ -79,15 +80,16 @@ To set up [Cloud to Cloud Integration Druva Source](/docs/send-data/hosted-colle
 This section has instructions for installing the Druva App for Sumo Logic and descriptions of each of the dashboards.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
 1. Configure **Druva App** using the steps described in the [Citrix Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
+      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
+   2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
 1. Click **Next**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
