@@ -1,7 +1,7 @@
 ---
 id: zoom
-title: Zoom HTTP Source
-description: An HTTP Zoom Source is an endpoint for receiving traces.
+title: Zoom Source
+description: An HTTP Zoom Source is an endpoint for for receiving Webhook events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -22,7 +22,7 @@ This section shows you how to configure Webhooks to collect events from Zoom. Fo
 
 ## Prerequisites
 
-When you create a Zoom Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/).
+When you create a Zoom Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
 Some Webhook events may not be available based on the plan type. Refer to the Prerequisite section for each Webhook event type on this [Zoom page](https://developers.zoom.us/docs/api/rest/reference/zoom-api/events/#operation/meeting.created) for account-created event types.
 
@@ -41,9 +41,9 @@ Follow the below steps to get the required fields for user configuration:
   <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
 1. Click **Continue**, to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
 
-## Create Zoom Source
+## Create Zoom Source
 
-To configure an Zoom Source:
+To configure Zoom Source:
 1. In the Sumo Logic web interface, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Zoom**. <br/> <img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="60"/>

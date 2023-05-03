@@ -64,11 +64,4 @@ In this section, we'll introduce the following concepts:
   <p>Check the HTTP status codes.</p>
   </div>
 </div>
-<div className="box smallbox9 card">
-  <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/zoom"><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="40"/>
-  <h4>HTTP Zoom Source</h4></a>
-  <p>Learn how to create HTTP Zoom source and enable events subscriptions.</p>
-  </div>
-</div>
 </div>
