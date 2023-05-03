@@ -71,7 +71,7 @@ _sourceCategory=zoom
 
 ## Set up collection
 
-Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/send-data/hosted-collectors/http-source/zoom) and use the same source category while installing the app.
+Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/send-data/hosted-collectors/zoom) and use the same source category while installing the app.
 
 ## Installing the Zoom App
 
@@ -79,7 +79,7 @@ Now that you have set up collection for the Zoom events, install the Sumo Logic 
 
 1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. Select **Add Integration** button to install the app.
-1. Configure **Zoom App** using the steps described in the [Zoom Source](/docs/send-data/hosted-collectors/http-source/zoom). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Zoom App** using the steps described in the [Zoom Source](/docs/send-data/hosted-collectors/zoom). If you already have set up your data, skip this step by clicking on **Next**.
 1. To install the app, click **Add to Library** and complete the following fields.
     1. **Data Source.** Select either of these options for the data source.
         * Choose **Source Category**, and select the source category associated with the Hosted Collector you configured earlier.
