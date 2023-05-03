@@ -17,9 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
 
-* False Positive: A false alarm, possibly due to an error in the detection logic of the rule or inapplicability to your environment.
-* No Action: A valid detection but no action is necessary due to effective containment measures. Rules participating in repeated No Action Insights may also be good tuning expression candidates.
-* Resolved: A valid detection where investigation was necessary.
+* **False Positive**. A false alarm, possibly due to an error in the detection logic of the rule or inapplicability to your environment.
+* **No Action**. A valid detection, but no action is necessary due to effective containment measures. Rules participating in repeated No Action Insights may also be good tuning expression candidates.
+* **Resolved:**. A valid detection where investigation was necessary.
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
