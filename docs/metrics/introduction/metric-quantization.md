@@ -121,37 +121,37 @@ The table below shows how Sumo Logic selects a quantization interval based on qu
   <tr>
    <td>400 days
    </td>
-   <td>3 days
+   <td>1 day
    </td>
   </tr>
   <tr>
    <td>200 days
    </td>
-   <td>2 days
+   <td>1 day
    </td>
   </tr>
   <tr>
    <td>150 days
    </td>
-   <td>1 day
+   <td>12 hours
    </td>
   </tr>
   <tr>
    <td>90 days
    </td>
-   <td>12 hours
+   <td>6 hours
    </td>
   </tr>
   <tr>
    <td>30 days
    </td>
-   <td>6 hours
+   <td>2 hours
    </td>
   </tr>
   <tr>
    <td>14 days
    </td>
-   <td>2 hours
+   <td>1 hour
    </td>
   </tr>
   <tr>
@@ -163,31 +163,37 @@ The table below shows how Sumo Logic selects a quantization interval based on qu
   <tr>
    <td>3 days
    </td>
-   <td>30 minutes
+   <td>1 hour
    </td>
   </tr>
   <tr>
-   <td>1 day
+   <td>2 days
    </td>
    <td>10 minutes
    </td>
   </tr>
   <tr>
-   <td>6 hours
+   <td>1 day
    </td>
-   <td>3 minutes
+   <td>5 minutes
    </td>
   </tr>
   <tr>
-   <td>3 hours
+   <td>6 hours
    </td>
    <td>1 minute
    </td>
   </tr>
   <tr>
-   <td>1 hour
+   <td>3 hours
    </td>
    <td>30 seconds
+   </td>
+  </tr>
+  <tr>
+   <td>1 hour
+   </td>
+   <td>15 seconds
    </td>
   </tr>
 </table>

@@ -9,14 +9,14 @@ This section has instructions for collecting Zscaler Private Access (ZPA) log me
 
 Sumo Logic CSE supports ZPA logs sent as JSON.
 
-## Step 1: Configure CIP collection
+## Step 1: Configure Sumo Logic core platform collection
 
 In this step, you configure an HTTP Source to collect Zscaler Private Access log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](#configure-an-http-source) below.
 Otherwise, create a new collector as described in [Configure a Hosted Collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 
-1. In the Sumo Logic platform, select **Manage Data > Collection > Collection**.
+1. In the Sumo Logic platform, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
@@ -33,7 +33,7 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
@@ -50,7 +50,7 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 
 ## Step 2: Configure Zscaler Private Access
 
-In this step you configure Zscaler Private Access to send log messages to CIP. For instructions, see [Configuring a Log Receiver](https://help.zscaler.com/zpa/configuring-log-receiver) in ZPA Help.
+In this step you configure Zscaler Private Access to send log messages to Sumo Logic core platform. For instructions, see [Configuring a Log Receiver](https://help.zscaler.com/zpa/configuring-log-receiver) in ZPA Help.
 
 ## Step 3: Verify ingestion
 

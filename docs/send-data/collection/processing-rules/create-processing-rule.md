@@ -20,7 +20,7 @@ There are two user interfaces (UI) to create a Processing Rule, classic and new
 
 You can add a processing rule to an existing Source or create a processing rule when you configure a new Source.
 
-1. To create a processing rule for an existing Source, go to **Manage Data > Collection > Collection** and click **Edit** next to a Source. When configuring your new or existing Source, click the **\+ Add Filter** or **\+ Add** **Action** text in the **Processing Rules** section. 
+1. To create a processing rule for an existing Source, go to **Manage Data** > **Collection** > **Collection** and click **Edit** next to a Source. When configuring your new or existing Source, click the **\+ Add Filter** or **\+ Add** **Action** text in the **Processing Rules** section. 
 
     * A filter is either an allowlist or denylist rule.
     * An action is either a hash or mask rule.
@@ -58,7 +58,7 @@ You can add a processing rule to an existing Source or create a processing rule 
 
 ## Original interface
 
-1. To create a processing rule for an existing Source, go to **Manage Data > Collection > Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs**** section and then click **Add Rule**.  
+1. To create a processing rule for an existing Source, go to **Manage Data** > **Collection** > **Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs**** section and then click **Add Rule**.  
 
     ![Add processing rule](/img/collector/processing-rules/create-a-processing-rule/no-rules.png)
 

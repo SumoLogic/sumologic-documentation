@@ -191,7 +191,7 @@ The **Frequency** option should be set according to your environment. We use a s
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

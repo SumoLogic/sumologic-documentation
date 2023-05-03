@@ -33,11 +33,11 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Collector.png' alt="Collector" />
 
@@ -53,7 +53,7 @@ The files are located in `/var/log/varnish/varnishncsa.log` by default. For more
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -83,7 +83,7 @@ The files are located in `/var/log/varnish/varnishncsa.log` by default. For more
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ### Sample Log Messages in Non-Kubernetes environments
 
