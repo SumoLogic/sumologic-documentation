@@ -15,7 +15,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/manage/ingestion-volume/log-ingestion"><img src={useBaseUrl('img/ingestion-volume/ingestion/ingestion.png')} alt="icon" width="40"/><h4>Log Ingestion</h4></a>
+  <a href="/docs/manage/ingestion-volume/log-ingestion"><img src={useBaseUrl('img/ingestion-volume/ingestion.png')} alt="icon" width="40"/><h4>Log Ingestion</h4></a>
   <p>Learn how the logs will be ingested across all Collectors.</p>
   </div>
 </div>
