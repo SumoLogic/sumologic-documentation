@@ -77,9 +77,9 @@ To configure an Zoom Source:
 1. Click **Add events** and subscribe to all the Webhook Events.
 1. Click **Done** and validate the endpoint by clicking on the **Validate** button.
 1. Once Validated, click on **Save**.
-:::note
-You may face ingestion issues if you use more than one subscription per webhook.
-:::
+  :::note
+  You may face ingestion issues if you use more than one subscription per webhook.
+  :::
 1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="app-activated-message" width="400"/>
 
 
