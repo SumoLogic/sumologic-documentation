@@ -37,6 +37,34 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    //Contribution guide for documentation
+    {
+      type: 'category',
+      label: 'Contribution Guide',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'contributing/index'},
+      items: [
+        'contributing/edit-doc',
+        'contributing/create-doc',
+        'contributing/remove-doc',
+        'contributing/style-guide',
+        'contributing/code-of-conduct',
+        'contributing/glossary',
+        'contributing/word-list',
+    //  'contributing/translations',
+        {
+          type: 'category',
+          label: 'Templates',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
+          ]
+        }
+      ],
+    },
   ],
   // *** SEND DATA
   senddata: [
@@ -2041,6 +2069,7 @@ integrations: [
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
+          'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
@@ -2255,6 +2284,7 @@ integrations: [
             'cse/rules/normalized-threat-rules',
             'cse/rules/rule-tuning-expressions',
             'cse/rules/tailor-global-rule',
+            'cse/rules/insight-trainer',
           ],
         },
         {
@@ -2374,37 +2404,6 @@ integrations: [
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/mssp',
-      ],
-    },
-  ],
-
-  //Contribution guide for documentation
-  contributing: [
-    {
-      type: 'category',
-      label: 'Contribution Guide',
-      collapsible: false,
-      collapsed: true,
-      link: {type: 'doc', id: 'contributing/index'},
-      items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
-        'contributing/remove-doc',
-        'contributing/style-guide',
-        'contributing/code-of-conduct',
-        'contributing/glossary',
-        'contributing/word-list',
-    //  'contributing/translations',
-        {
-          type: 'category',
-          label: 'Templates',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'contributing/templates/generic-doc',
-            'contributing/templates/partner-app-doc',
-          ]
-        }
       ],
     },
   ],

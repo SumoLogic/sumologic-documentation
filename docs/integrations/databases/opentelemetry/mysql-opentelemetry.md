@@ -81,7 +81,7 @@ Here are the steps for collecting logs, metrics, and installing the app.
 
 ### Step 1 : Set up collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Collector.png' alt="Collector" />
 
@@ -107,7 +107,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -151,7 +151,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Logs
 
