@@ -156,7 +156,7 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
 
 1. Do one of the following:
    * If you're configuring a new Source, proceed to the next step.
-   * To edit the timestamp settings for an existing Source, navigate to **Manage Data > Collection > Collection**. Then click **Edit** to the right of the Source name and go to step 2.
+   * To edit the timestamp settings for an existing Source, navigate to **Manage Data** > **Collection** > **Collection**. Then click **Edit** to the right of the Source name and go to step 2.
 1. Click **Advanced** (if the advanced settings are not already displaying).
 1. For **Timestamp Format**, select **Specify a format**.<br/> ![timestamp format specify input.png](/img/send-data/timestamp-format-specify-input.png)
 1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. If the timestamp format is in epoch time, enter "epoch" in the **Format** field. Your custom timestamp format must follow our supported [timestamp conventions](#timestamp-conventions).<br/>  ![multiple timestamp formats.png](/img/send-data/multiple-timestamp-formats.png)
