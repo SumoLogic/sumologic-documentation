@@ -659,9 +659,19 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
-        'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Data Archiving',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/data-archiving/index'},
+      items: [
+        'manage/data-archiving/archive',
+        'manage/data-archiving/installed-collectors',
       ]
     },
     {
@@ -757,7 +767,6 @@ module.exports = {
         'manage/security/set-max-web-session-timeout',
        ]
      },
-    'manage/archive',
    ],
   },
 ],

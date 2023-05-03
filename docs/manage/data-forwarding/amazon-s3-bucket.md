@@ -1,7 +1,7 @@
 ---
 id: amazon-s3-bucket
-title: Forwarding Data from Sumo Logic to S3
-description: After granting access to an Amazon S3 bucket, you can use Sumo Logic to set up Data Forwarding.
+title: Forward Data from Sumo Logic to S3
+description: Learn about how to forward data from Sumo logic to S3.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

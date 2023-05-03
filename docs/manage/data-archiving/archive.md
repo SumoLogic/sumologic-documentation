@@ -1,6 +1,6 @@
 ---
 id: archive
-title: Archiving Log Data to S3
+title: Archive Log Data to S3
 description: Send data to an Archive that you can ingest from later.
 ---
 
