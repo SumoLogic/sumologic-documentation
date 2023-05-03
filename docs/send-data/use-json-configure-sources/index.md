@@ -6,18 +6,15 @@ description: Learn how to configure sources and processing rules using JSON.
 
 Installed Collector and Hosted Collector sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
-:::important
-JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+:::caution Limitations
+This feature is **not supported** for our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
 :::
 
-See the following topics for additional information:
-
- * [Collector Management API](/docs/api/collector-management)
- * [JSON Source Parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources)
- * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)
- * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration)
-
 ## Defining a Source JSON file
+
+:::info
+JSON files must be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+:::
 
 When registering a Collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
 [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) or [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors) configuration file. These parameters are used the first time a collector is set up.
@@ -33,8 +30,8 @@ For more information on setting the `syncSources` parameter, see [Local Confi
 
 You can use JSON to configure multiple sources in either of the following ways:
 
- * Create a single JSON file with the configuration information for all the sources (sources.json).
- * Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
+* Create a single JSON file with the configuration information for all the sources (sources.json).
+* Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
 
 :::note
 The maximum number of Sources allowed on a Collector is 1,000.
@@ -84,7 +81,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
-| [AWS S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
+| [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-metadata-tag-source) | Polling |
 | [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) | Universal |
 | [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) | Universal |
@@ -152,7 +149,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
 
 **When collection should begin**
 
@@ -340,12 +337,12 @@ These instruction assume you have already created a data forwarding destination.
 
 1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-forwarding/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step:
-   1. Select **Manage Data > Collection > Collection**. 
+   1. Select **Manage Data** > **Collection** > **Collection**. 
    1. Click the icon to the right of the source. The API usage information panel appears. Make a note of the sinkId in the filter section of the JSON.<br/>  ![sink id](/img/send-data/sinkId.png)
 1. Click the icon to the right of the Source. Make a note of the sinkId in the filter section of the JSON.
 1. Click Done to close the API usage information panel.
 1. Now that you have determined the sinkId for the data forwarding destination, delete the test rule.
-   1. Select **Manage Data > Collection > Collection**.
+   1. Select **Manage Data** > **Collection** > **Collection**.
    1. Navigate to the source to which you added the test rule.
    1. In the **Processing Rules** section of the page, click the delete icon to the right of the test rule. <br/>![proc rule](/img/send-data/proc-rule.png)
 

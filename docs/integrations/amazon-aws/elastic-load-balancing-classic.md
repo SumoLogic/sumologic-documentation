@@ -29,11 +29,9 @@ protocol, domain, server_port, path
 ```
 The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html). For information on unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/Classic-Load-Balancer).
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 ## Prerequisites
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the **Add Integration** button, follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
+Follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
 
 
 ### Before you begin
@@ -88,7 +86,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 These configuration instructions apply to log collection from all AWS Source types. Select the correct Source type for your Source in Step 3.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
@@ -109,7 +107,7 @@ If you paused the Source and want to skip some data when you resume, update the 
 
 * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
 * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.  
     * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
@@ -124,7 +122,7 @@ If the Source is not subscribed to an SNS topic and set to **Automatic** the sca
 
 #### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint).
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
 Make sure that the topic and the bucket are in the same region.
@@ -168,7 +166,7 @@ Make sure that the topic and the bucket are in the same region.
 
 #### SNS with one bucket and multiple Sources
 
-When collecting from one AWS S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
+When collecting from one Amazon S3 bucket with multiple Sumo Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 
@@ -177,7 +175,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
 3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
 
@@ -235,27 +233,9 @@ _sourceCategory=elb*
 
 ## Installing the AWS Elastic Load Balancer Classic App
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
+{@import ../../reuse/apps/app-install.md}
 
 <details><summary>What if data isn't displaying in all Panels?</summary>
 
@@ -298,8 +278,8 @@ Track your Elastic Load Balancer activity at a glance to identify areas for furt
 * **Average Backend Processing Time by Backend.** Compare average processing times by backend servers over the last 24 hours to find any unusual spikes of activity on a particular backend.
 * **Backend Processing Time by Backend.** View the average, min, and max processing times for your backend systems for the last 24 hours, broken down by backends.
 * **Top 20 Latencies Paths.** View the paths of the top 20 latencies in your system for the last 3 hours.
-* **Top 20 Latencies by Clients. **View the IP addresses of the clients in your deployment with the top 20 latencies in the last 24 hours.
-* **Top 20 Latencies by Backend Instances.** Focus solely on the back end of your AWS EC2 deployment, review the instances with the top 20 latencies for the last 24 hours
+* **Top 20 Latencies by Clients.** View the IP addresses of the clients in your deployment with the top 20 latencies in the last 24 hours.
+* **Top 20 Latencies by Backend Instances.** Focus solely on the back end of your Amazon EC2 deployment, review the instances with the top 20 latencies for the last 24 hours
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-LatencyAnalysis.png')} alt="AWS Elastic Load Balancer Classic" />
 

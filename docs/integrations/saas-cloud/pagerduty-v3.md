@@ -7,7 +7,6 @@ description: The Sumo Logic App for PagerDuty V3 collects incident messages from
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V3 uses Webhooks V3, to provide enhanced context for alert object models.
@@ -22,9 +21,6 @@ This section provides instructions for configuring a Sumo Logic Hosted Collector
 * [Sample Query](#Query-example)
 * [Configure a Sumo Logic Collector and Source](#Configure-a-Sumo-Logic-Collector-and-Source)
 * [Create a PagerDuty V3 Webhook](#Create-a-PagerDuty-V3-Webhook)
-
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, you can follow the in-product instructions in Sumo Logic to set up the app.
 
 
 ### Event Types
@@ -101,28 +97,7 @@ This section provides instructions for installing the Sumo App for PagerDuty V3,
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for PagerDuty and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-3.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`)
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing PagerDuty V3 Dashboards
 

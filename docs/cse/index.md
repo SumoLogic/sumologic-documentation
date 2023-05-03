@@ -70,4 +70,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn about Insight generation, working with Entities, and how to query CSE Records.</p>
   </div>
 </div>
+<div className="box smallbox9 card">
+  <div className="container">
+  <h4><a href="/docs/cse/automation-service">Automation Service</a></h4>
+  <p>Learn how the Automation Service helps you automate smart actions.</p>
+  </div>
+</div>
 </div>
