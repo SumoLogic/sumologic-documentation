@@ -90,7 +90,7 @@ In general, fewer Insights are generated if you decrease severities on rules, an
 
 Following is the suggested workflow to use the Insight Trainer dashboard:
 1. Review severity recommendations once a week.
-1. Look at the rules with the highest tunability scores and assess the dominant Entities to write [tuning expressions](/docs/cse/rules/rule-tuning-expressions) for (like users and IP addresses).
+1. Look at the rules with the highest tunability scores and assess the dominant Entities to write [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) for (like users and IP addresses).
 1. Write tuning expressions for Entities, where possible.
 1. Adjust rule severities if needed.
 
