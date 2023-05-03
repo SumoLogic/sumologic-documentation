@@ -135,7 +135,7 @@ If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/c
 
 This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Azure Web Apps Dashboards
 

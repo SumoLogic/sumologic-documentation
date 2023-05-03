@@ -280,7 +280,7 @@ For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdS
 
 This section provides instructions for installing the Sumo App for CrowdStrike Falcon Endpoint Protection, as well as examples for each of the app dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing CrowdStrike Falcon Dashboards
 

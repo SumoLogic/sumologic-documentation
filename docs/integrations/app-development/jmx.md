@@ -307,7 +307,7 @@ annotations:
 
 This section has instructions for installing the Sumo App for JMX.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing JMX Dashboards
 

@@ -254,7 +254,7 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Amazon Redshift Dashboards
 

@@ -28,7 +28,7 @@ To collect AWS Elastic Load Balancing Metrics, perform the following tasks:
 
 Now that you have configured AWS ELB Metrics, install the Sumo Logic App for AWS Elastic Load Balancing Metrics to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing AWS ELB Metrics Dashboards
 

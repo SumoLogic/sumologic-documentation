@@ -73,7 +73,7 @@ Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/do
 
 This section has instructions for installing the Miro App for Sumo Logic and descriptions of each of the dashboards.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. Click **Add Integration**.
