@@ -1,6 +1,6 @@
 ---
 id: zoom
-title: Zoom Source
+title: Zoom HTTP Source
 description: An HTTP Zoom Source is an endpoint for receiving traces.
 ---
 
