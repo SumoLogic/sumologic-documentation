@@ -95,4 +95,10 @@ In this section, we'll introduce the following concepts:
       <p>Learn how to tailor global (built-in) rules in CSE.</p>
       </div>
     </div>
+    <div className="box smallbox15 card">
+      <div className="container">
+      <a href="/docs/cse/rules/insight-trainer"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Insight Trainer</h4></a>
+      <p>Learn how to adjust rules to improve Insight generation.</p>
+      </div>
+    </div>
 </div>
