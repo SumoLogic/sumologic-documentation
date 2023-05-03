@@ -7,11 +7,11 @@ description: A guide to styling and formatting Sumo Logic Docs.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page details how to author Sumo Docs, which are written in GitHub-flavored markdown.
+This page describes how to author Sumo Docs, which are written in GitHub-flavored markdown.
 
 The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can speak as one company with a unified voice, and know what we mean when we talk about our product. The Style Guide began as a document used by the Documentation team to make decisions about tone, voice, and word usage. We thought it would be useful to share with everyone in our community.
 
-This is a living document. If you've wondered about the usage of the name of a component, a feature in the UI, or any other word usage, and you don't find that term here, please let us know. The Documentation team will look it up and add usage guidance. Likewise, if you disagree with any usage defined here, please let us know and we'll update as necessary.
+This is a living document. If you're looking for a style rule or UI component usage that's not defined here, let us know. The Documentation team will look it up and add usage guidance.
 
 ## Writing Resources
 
@@ -68,14 +68,39 @@ This gives a call to action for the reader or user to effectively get something 
 | Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
 | To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
 
+<div class="no-box">
+&#10060; You can add a resource...
+</div>
+(They know they can do a thing. Clearly state to do the thing.)
+<div class="yes-box">
+&#9989; Add a resource...
+</div>
+
 ### Inclusive language
 
-Use inclusive and culturally neutral language. Our audience is global. Do not use idioms or terminology only understood by a specific region or group, and avoid overly technical jargon.
+By writing inclusively and using culturally neutral language, our words resonate with global audiences and make everyone feel welcome, no matter their race, gender, socioeconomic status, and ability.
 
-Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
+* Do not use idioms, slang, expressions, or terminology only understood by a specific region or group.
+* Avoid overly technical jargon.
+* Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
+* Unless you're referring to a specific person, do not use gender pronouns (he/she).
 
-Unless you're referring to a specific person, do not use gender pronouns (he/she).
-
+<div class="container-boxes">
+<div class="dos-box">
+  &#9989; "allowlist"<br/>
+  &#9989; "denylist"<br/>
+  &#9989; "placeholder data"<br/>
+  &#9989; "primary" or "main"<br/>
+  &#9989; "press" or "click"
+</div>
+<div class="donts-box">  
+  &#10060; "whitelist"<br/>
+  &#10060; "blacklist"<br/>
+  &#10060; "dummy data"<br/>
+  &#10060; "master"<br/>
+  &#10060; "hit"
+</div>
+</div>
 
 ## Doc structure summary
 
@@ -91,8 +116,27 @@ Unless you're referring to a specific person, do not use gender pronouns (he/she
 
 Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”.  Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
 
-* Instead of "e.g.", use “for example”
-* Instead of "i.e.", use “that is”
+<div class="container-boxes">
+<div class="dos-box">
+"e.g.,"
+</div>
+<div class="donts-box">
+"for example"
+</div>
+<div class="dos-box">
+"i.e.,"
+</div>
+<div class="donts-box">
+"that is"
+</div>
+<div class="dos-box">
+"etc."
+</div>
+<div class="donts-box">
+"and so on", "and more"
+</div>
+</div>
+
 
 ## Acronyms
 
@@ -106,7 +150,9 @@ For example, the first time you use AWS Application Load Balancer (ALB), you int
 
 ## Beta Releases
 
-For a Closed Beta release, you'll need to exclude it from the nav and search engine results so that users will need the link to access it:
+### Closed Beta
+
+For a Closed Beta release:
 1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** badge.
   ```
   ---
@@ -125,15 +171,28 @@ For a Closed Beta release, you'll need to exclude it from the nav and search eng
   ```
 1. Do _not_ add the doc to `sidebars.ts`.
 1. Publish the doc.
-1. When the feature is moved from Beta to GA, remove the Robots meta tag and Beta label, and add the doc to sidebars.ts.
 
+When the feature moves from Beta to GA, remove the Robots meta tag, remove the Beta label, and add the doc to sidebars.ts.
+
+### Open Beta
 
 For an Open Beta release:
-1. Add the beta label.
-1. Omit the Robots meta tag.
-1. Include the doc in `sidebars.ts`.
+1. Underneath the frontmatter, add the **Beta** label.
+  ```
+  ---
+  id: xyz-source
+  title: XYZ Source (Beta)
+  description: The XYZ Source provides a secure endpoint to receive event data.
+  ---
+
+  <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
+  First paragraph goes here...
+  ```
+1. Add the doc in `sidebars.ts`.
 1. Publish the doc.
-1. When the feature is moved from Beta to GA, remove the Beta label.
+
+When the feature moves from Beta to GA, remove the Beta label.
 
 ## Capitalization
 
@@ -151,7 +210,32 @@ Here's an example that encompasses all the above styles: If you are not parsing 
 
 ## Code Blocks
 
-Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Always use these to format programming language scripts (i.e., SQL for Sumo queries, JSON for logs). Format blocks of code by placing triple backticks before and after the code.
+Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Format blocks of code by placing triple backticks before and after the code.
+
+If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```json
+    {  
+      "employee": {
+      "name": "Jane Smith",   
+      "team": "Operations",   
+      "manager": true  
+      }  
+    }  
+    ```
+
+</TabItem>
+<TabItem value="Result">
 
 ```json
 {  
@@ -163,10 +247,10 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 }  
 ```
 
-Markdown code blocks support Syntax highlighting. If you know the code language, include that in the first set of ticks. This applies code highlighting for the language. See [this list](https://prismjs.com/#supported-languages) of available languages.
+</TabItem>
+</Tabs>
 
 Here's how to add a title to your code block.
-
 
 <Tabs
   className="unique-tabs"

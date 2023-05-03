@@ -23,7 +23,7 @@ In this step, you configure an HTTP Source to collect osquery log messages. You 
 
 ### Configure a hosted collector
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector**.
 1. The **Add Hosted Collector** popup appears.  
@@ -40,7 +40,7 @@ In this step, you configure an HTTP Source to collect osquery log messages. You 
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
@@ -58,7 +58,7 @@ In this step, you configure an HTTP Source to collect osquery log messages. You 
 
 ## Configure an Osquery log profile
 
-In this step you configure osquery to send log messages to CIP. For instructions, see [Logging osquery](https://osquery.readthedocs.io/en/stable/deployment/logging/) in osquery help.
+In this step you configure osquery to send log messages to Sumo Logic core platform. For instructions, see [Logging osquery](https://osquery.readthedocs.io/en/stable/deployment/logging/) in osquery help.
 
 ## Verify ingestion
 

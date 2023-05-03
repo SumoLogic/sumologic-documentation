@@ -105,7 +105,7 @@ When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted C
 
 To configure a Microsoft Azure AD Inventory Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
