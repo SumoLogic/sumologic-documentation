@@ -2284,6 +2284,7 @@ integrations: [
             'cse/rules/normalized-threat-rules',
             'cse/rules/rule-tuning-expressions',
             'cse/rules/tailor-global-rule',
+            'cse/rules/insight-trainer',
           ],
         },
         {
