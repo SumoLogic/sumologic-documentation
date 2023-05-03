@@ -3,10 +3,9 @@ id: box-plot-charts
 title: Box Plot Charts
 description: Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In Box Plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.
-
-![Box plot](/img/dashboards-new/panels/box-plot-charts/Box-plot.png)
+A Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In Box Plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.<br/><img src={useBaseUrl('img/dashboards-new/panels/box-plot-charts/Box-plot.png')} alt="Box-plot" width="800"/>
 
 To create Box Plot Chart panels, your query must include:
 
@@ -47,11 +46,10 @@ _sourceCategory=vpc  
 | min(Packets), pct(Packets,25), pct(Packets,50), pct(Packets,75), max(Packets) by _timeslice
 ```
 
-To create a Box Plot chart
+## Create a Box Plot chart:
 
-1. Type a supported query in the Search box, including all of the required field names.
-1. Once the search results appear, click the **Box Plot Chart** icon.
-
-    ![Charts - box plot](/img/dashboards-new/panels/box-plot-charts/charts_box_plot.png)    
-
-1. (Optional) Click **Add to Dashboard** if you'd like to save the chart as a panel. 
+To add a panel with a box plot chart:
+1. Create or open a Dashboard (New) and click on **Add Panel > Time Series or Add Panel > Categorical**.<br/><img src={useBaseUrl('img/dashboards-new/panels/box-plot-charts/time-series-or-categorical.png')} alt="time-series-or-categorical" width="600"/>
+1. Type a supported query in the Search box, including all of the required field names and press **Enter** for it to run.
+1. Once the search results appear, select **Box Plot** from the **Chart Type** dropdown.<br/><img src={useBaseUrl('img/dashboards-new/panels/box-plot-charts/charts_box_plot.png')} alt="charts_box_plot" width="800"/>
+1. [Modify the chart](https://help.sumologic.com/docs/dashboards-new/panels/modify-chart/) as desired.
