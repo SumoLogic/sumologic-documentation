@@ -11,11 +11,13 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 
 #### S3 Event Notifications Integration
 
-Sumo’s S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect it. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
+The Sumo Logic S3 integration combines scan-based discovery and event-based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped.
+
+When you enable event-based notifications, S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics, which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect it. For more information about SNS, see the [Amazon SNS product docs](https://aws.amazon.com/sns/).
 
 ![Cloud_AWS_icon.png](/img/integrations/amazon-aws/Cloud_AWS_icon.png)
 
-Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
+Enabling event-based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket, Sumo Logic assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
@@ -29,7 +31,7 @@ This video covers the Sumo Logic S3 event notifications integration, which combi
 
 #### Create an AWS Source
 
-These configuration instructions apply to log collection from all AWS Source types. Select the correct Source type for your Source in Step 3.
+These configuration instructions apply to log collection from all AWS Source types.
 
 1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
@@ -40,11 +42,11 @@ These configuration instructions apply to log collection from all AWS Source typ
   Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud) for details.
   :::
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (`*`) in this string. Recursive path expressions use a single wildcard and do NOT use a leading forward slash. See [About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions) for details.
 8. **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
-9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`. (Examples: `sourceCategory: aws/observability/alb/logs`, `_sourceCategory: aws/observability/clb/logs`).
+9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`. (For example, `sourceCategory: aws/observability/alb/logs` or `_sourceCategory: aws/observability/clb/logs`).
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     * Add a **region** field and assign it the value of respective AWS region where the Classic Load Balancer exists.
@@ -54,8 +56,7 @@ These configuration instructions apply to log collection from all AWS Source typ
 11. For **AWS Access**, choose between the two **Access Method** options below, based on the AWS authentication you are providing.
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role. Role-based access is recommended (this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product)).
     * For **Key access**, enter the **Access Key ID** and **Secret Access Key**. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-12. **Log File Discovery**. You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
-Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts).
+12. **Log File Discovery**. You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files. We highly recommend using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts).
    * **Scan Interval**. Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
    * **SNS Subscription Endpoint (Highly Recommended)**. New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
    * To set up the subscription, you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.
@@ -65,10 +66,10 @@ Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability 
 
 The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint).
 
-1. Go to **Services >** **Simple Notification Service** and click **Create Topic**.
+1. Go to **Services** > **Simple Notification Service** and click **Create Topic**.
 1. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, which you’ll need for the next step. Make sure that the topic and the bucket are in the same region.
 1. Go back to **Services** > **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step 2 above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
-1. Select the **Topic** created in step 2 and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
+1. Select the **Topic** created in step 2 and navigate to **Actions** > **Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
   ```json
   {
       "Version": "2008-10-17",
@@ -126,7 +127,7 @@ You can use this [community-supported script](https://github.com/SumoLogic/sumol
 
 #### Troubleshoot S3 Event Notifications
 
-##### In the web interface under **Log File Discovery**, it shows a red exclamation mark with "Sumo Logic has not received a validation request from AWS".
+**In the Sumo Logic UI under 'Log File Discovery', there is a red exclamation mark with the message 'Sumo Logic has not received a validation request from AWS'.**
 
 Steps to troubleshoot:
 
@@ -134,9 +135,9 @@ Steps to troubleshoot:
 2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
 3. If you didn’t use CloudFormation, check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 
-##### In the web interface under **Log File Discovery** it shows a green check with "Sumo Logic has received an AWS validation request at this endpoint", but you still have high latencies.
+**In the Sumo Logic UI under 'Log File Discovery', there is a green check with the message 'Sumo Logic has received an AWS validation request at this endpoint', but still high latencies.**
 
-The green check confirms that the endpoint was used correctly, but it does not mean Sumo is receiving notifications successfully.
+The green check confirms that the endpoint was used correctly, but it does not mean Sumo Logic is receiving notifications successfully.
 
 Steps to troubleshoot:
 
