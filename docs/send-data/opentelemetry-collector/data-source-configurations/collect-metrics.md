@@ -5,11 +5,11 @@ sidebar_label: Collect Metrics
 description: Learn how to collect metrics using the Sumo Logic OpenTelemetry Collector.
 ---
 
-The Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for metrics collection. The full list of them is available in [our repository].
+The Sumo Logic Distribution for OpenTelemetry Collector provides various receivers for metrics collection. The full list of OpenTelemetry receivers are available on [OpenTelemetry collector repository](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/).
 
 To use the receiver, you need to define it in the `receivers:` section and then use it in the pipeline.
 
-Consider the following example usage of [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver):
+Consider the following example configuration for collecting [Host Metrics Source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver#host-metrics-receiver). This configuration can be placed in `conf.d` directory:
 
 ```yaml
 receivers:
@@ -69,6 +69,9 @@ service:
       exporters:
         - sumologic
 ```
+:::note
+You'll need to restart the collector process in order to apply changes.
+:::
 
 :::tip
 Refer to our [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.

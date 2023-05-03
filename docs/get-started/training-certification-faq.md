@@ -193,6 +193,10 @@ In this course, you'll create starter SOC queries as dashboard panels. These adv
 
 **Sumo Logic Certified - Cloud SIEM Administration**. Learn how to set up data ingestion for Cloud SIEM, including writing custom log and ingest mappings. Customize your environment with a deep dive into custom rules and Insight Actions.
 
+**Sumo Logic Certified - Cloud SOAR Fundamentals**. Learn how to automate your security operations center with playbooks, dashboards, and reports. Watch a playbook run in real time and export a customized dashboard.
+
+**Sumo Logic Certified - Cloud SOAR Administration**. Learn about Cloud SOAR administration, including RBAC controls to secure your SOC. Get hands on by customizing settings and automating actions with playbooks.
+
 **Sumo Logic Certified - Kubernetes on Sumo Logic**. Swiftly navigate through Kubernetes cluster name spaces, services, nodes, and deployments and master monitoring and troubleshooting Kubernetes from alerts and dashboards to customized templates to address key use cases.
 
 **Sumo Logic Certified - Observability Fundamentals**. Learn about Sumo Logic’s three pillars of the observability solution - Metrics, Tracing, and Logs. You'll also become conversant with the use of the tools to help you identify the root cause of an outage and trace the incidents to troubleshoot an issue.

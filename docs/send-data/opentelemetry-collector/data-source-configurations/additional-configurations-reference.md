@@ -7,25 +7,53 @@ description: Reference guide for Sumo Logic OpenTelemetry Collector configuratio
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Here are some best practices for configuring the Sumo Logic Distribution for OpenTelemetry.
+Sumo Logic Distribution for OpenTelemetry stores the configuration for the collector in the configuration directory. It can be found here.
 
-## Configuration Location
+| | |
+| :-- | :-- |
+| Linux | `/etc/otelcol-sumo/conf.d` |
+| Mac | `/etc/otelcol-sumo/conf.d` |
+| Windows | `C:\ProgramData\Sumo Logic OpenTelemetry Collector\` |
 
-All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually.
+<!-- Double check the Windows path mentioned above -->
 
-* It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`.
-* Specific configurations should be grouped by pipelines in meaningfully named files in the `conf.d` directory.
 
-For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
+## Configuration location and structure
 
-## Custom Pipeline
+The Sumo Logic OpenTelemetry Collector configuration is comprised of two parts. Based on the platform, the configuration by default is stored at the following location:
+* Linux and macOS: `/etc/otelcol-sumo/`
+* Windows: `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config`
 
-There are few processors provided in `sumologic.yaml` which are intended to be used in every pipeline.
+:::note
+If you manually installed the collector, your configuration may be in a different location.
+:::
+
+### Sumo Logic-defined configuration
+
+This is required by the collector to properly communicate with Sumo Logic SaaS service, and transmit data. All Sumo Logic preconfigured components are stored in `sumologic.yaml` file. This file is managed by the installation script and should never be changed manually. Depending upon your platform.
+
+### Data Source configuration
+
+Here, you can define all the configuration that tells the collector what data to collect, how to process it (including adding metadata), and send it to Sumo Logic. All the user-defined configuration resides under the `conf.d` directory.
+
+Any configuration for a Source (e.g., MySQL, Nginx, Application Logs) should be stored in a separate file with descriptive name under the `conf.d` directory. For example, a file named `conf.d/mysql.yaml` can contain configuration to collect MySQL data (logs and metrics), and will contain the necessary receiver, processors and the pipeline that together inform the collector on how to collect and send the MySQL data.
+
+:::tip
+It is recommended to maintain the configuration of all reusable components in `conf.d/common.yaml`. For example, a file named `conf.d/mysql.yaml` can contain the MySQL receiver along with any processors that are intended to modify the collected data before sending it to Sumo Logic.
+:::
+
+The **App Catalog** provides a mechanism to create these configuration files using a simple UI form input.
+
+## Custom Configuration
+
+Use Custom configuration to customize the collection of your logs, metrics and traces in Sumo Logic. Learn more about configuration [here](https://opentelemetry.io/docs/collector/configuration).
+
+There are some processors provided in `sumologic.yaml` that are intended to be used in every pipeline.
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
 * **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
 
-We also expect Sumo Logic exporter to be included in exporters section.
+We also expect the Sumo Logic exporter to be included in the `exporters` section.
 
 See the following example:
 

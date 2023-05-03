@@ -66,4 +66,10 @@ This guide provides information to work with your tracing data.
   <p>Learn how to link logs and traces, modify span attributes, and mask sensitive site information.</p>
   </div>
 </div>
+<div className="box smallbox9 card">
+  <div className="container">
+  <a href="/docs/apm/traces/tracing-ingest"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="30"/><h4>Troubleshoot Ingest</h4></a>
+  <p>Use tracing to troubleshoot problems with data ingest.</p>
+  </div>
+</div>
 </div>

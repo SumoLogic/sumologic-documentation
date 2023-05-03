@@ -14,7 +14,7 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 
 ### Configure an Installed Collector
 
-1. In Sumo Logic CIP, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic core platform, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -35,7 +35,7 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 

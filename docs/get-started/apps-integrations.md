@@ -126,7 +126,7 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you don't have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic App for Data Volume](/docs/integrations/sumo-apps/data-volume-legacy "Data Volume App") do not require you to select a Source Category.
+Searches included with the [Sumo Logic App for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume App") do not require you to select a Source Category.
 :::
 
 ### Custom Data Filters

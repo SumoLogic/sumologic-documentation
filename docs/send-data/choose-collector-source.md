@@ -55,6 +55,107 @@ To help design your deployment see [how Installed Collectors work](/docs/send-da
 
 For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 
+### Compare Installed Collectors and OpenTelemetry Collectors​
+
+The Installed Collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
+
+**Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
+
+**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
+
+#### When to Choose Installed Collector vs. OpenTelemetry Collector
+
+The following table shows the comparison between the Installed Collector and OpenTelemetry Collector based on their supported platforms and sources, and their ideal use cases.
+
+<table>
+  <thead>
+    <tr>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Collector Type</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Supported Platforms</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Supported Sources</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Ideal Use Cases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{verticalAlign: 'top', textAlign: 'left'}}>Installed Collector</td>
+      <td style={{verticalAlign: 'top'}}>Linux, MacOS, Kubernetes, Windows</td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Local File</li>
+          <li>Syslog</li>
+          <li>Host/Process Metrics</li>
+          <li>Streaming Metrics</li>
+          <li>Transaction Tracing</li>
+          <li>All Telegraf Input Plugins</li>
+          <li>Windows Log Event Receiver</li>
+          <li>Windows Performance Counters Receiver</li>
+          <li>Script Sources</li>
+          <li>Script Actions</li>
+          <li>Docker Stats / Logs</li>
+          <li>Remote File</li>
+          <li>Windows Active Directory Source</li>
+          <li>Remote Windows Event Log Source</li>
+        </ul>
+      </td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Remote management and configuration</li>
+          <li>Ingest Budgets</li>
+          <li>Collector Management API (e.g. for Health Events or CRUD operations)</li>
+          <li>CPU target</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style={{verticalAlign: 'top', textAlign: 'left'}}>OpenTelemetry Collector</td>
+      <td style={{verticalAlign: 'top'}}>Linux, MacOS, Kubernetes, Windows</td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Local File</li>
+          <li>Syslog</li>
+          <li>Host/Process Metrics</li>
+          <li>Streaming Metrics</li>
+          <li>Transaction Tracing</li>
+          <li>All Telegraf Input Plugins</li>
+          <li>Windows Log Event Receiver</li>
+          <li>Windows Performance Counters Receiver</li>
+        </ul>
+      </td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Single agent management</li>
+          <li>scale issues with FluentD on Kubernetes Collection</li>
+          <li>No remote management or configuration</li>
+          <li>No Ingest Budgets</li>
+          <li>No Collector Management API</li>
+          <li>No CPU target</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+#### Source Specific Configurations
+
+The OpenTelemetry Collector offers two approaches for Syslog processing:
+
+* Syslog Receiver
+* TCPlog/UDPlog Receiver and Sumo Logic Syslog Processor.
+
+The following table shows the comparison of source specific configurations between the Installed Collector and OpenTelemetry Collector.
+
+| Feature/Capability | OpenTelemetry Syslog Receiver | TCPlog/UDPlog Receiver and Sumo Logic Syslog Processor |
+|:--------------------|:----------------|:---------------------------------|
+| Accepts logs        | `RFC3164` and `RFC5424` formats | Any format |
+| Field Parsing       | Collector side | Not on collector side |
+| Protocol Verification | Strict parsing; logs sent to the wrong endpoint will not be parsed | No protocol verification; all formats are treated the same |
+| Recommendation      | Sending logs using a certain RFC protocol | Compatibility with the current Installed Collector behavior is needed |
+
+Overall, OpenTelemetry Collector is the preferred option if you need a single agent to collect data from multiple sources, want to avoid managing multiple agents, or face scale issues with FluentD on Kubernetes Collection. If you require remote management and configuration or use an unsupported source or platform, the Installed Collector may be a better fit.
+
+For more information, refer to the [OpenTelemetry documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/comparison.md#comparison-between-the-installed-collector-and-opentelemetry-collector).
+
 ### Hosted Collectors
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
@@ -93,42 +194,7 @@ The following table shows the major differences between them.
 |:--|:--|
 | <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
 
-### Compare Installed Collectors and OpenTelemetry Collectors​
 
-The Installed Collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
-
-**Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
-
-**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
-
-#### When to Choose Installed Collector vs. OpenTelemetry Collector
-
-The following table shows the comparison between the Installed Collector and OpenTelemetry Collector based on their supported platforms and sources, and their ideal use cases.
-
-| Collector Type       | Supported Platforms | Supported Sources                                                                                                                       | Ideal Use Cases                                                                                                                                                                          |
-|:-------|:-----------|:------------|:------------------------|
-| Installed Collector  | Linux, MacOS, Kubernetes, Windows | Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, All Telegraf Input Plugins, Windows Log Event Receiver, Windows Performance Counters Receiver, Script Sources, Script Actions, Docker Stats / Logs, Remote File, Windows Active Directory Source, Remote Windows Event Log Source | Remote management and configuration, Ingest Budgets, Collector Management API (e.g. for Health Events or CRUD operations), CPU target |
-| OpenTelemetry Collector | Linux, MacOS, Kubernetes, Windows | Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing | Single agent management, scale issues with FluentD on Kubernetes Collection, no remote management or configuration, no Ingest Budgets, no Collector Management API, no CPU target |
-
-#### Source Specific Configurations
-
-The OpenTelemetry Collector offers two approaches for Syslog processing:
-
-* Syslog Receiver
-* TCPlog/UDPlog Receiver and Sumo Logic Syslog Processor.
-
-The following table shows the comparison of source specific configurations between the Installed Collector and OpenTelemetry Collector.
-
-| Feature/Capability | Syslog Receiver | TCPlog/UDPlog Receiver and Sumo Logic Syslog Processor |
-|:--------------------|:----------------|:---------------------------------|
-| Accepts logs        | `RFC3164` and `RFC5424` formats | Any format |
-| Field Parsing       | Collector side | Not on collector side |
-| Protocol Verification | Strict parsing; logs sent to the wrong endpoint will not be parsed | No protocol verification; all formats are treated the same |
-| Recommendation      | Sending logs using a certain RFC protocol | Compatibility with the current Installed Collector behavior is needed |
-
-Overall, OpenTelemetry Collector is the preferred option if you need a single agent to collect data from multiple sources, want to avoid managing multiple agents, or face scale issues with FluentD on Kubernetes Collection. If you require remote management and configuration or use an unsupported source or platform, the Installed Collector may be a better fit.
-
-For more information, refer to the [OpenTelemetry documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/comparison.md#comparison-between-the-installed-collector-and-opentelemetry-collector).
 
 ## Sumo Logic Sources
 

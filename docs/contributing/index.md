@@ -6,7 +6,7 @@ description: Learn how to provide feedback and contribute to Sumo Logic Docs, an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="45"/>
 
 We're a developer/practitioner community building reliable and secure modern apps. We welcome all contributions, from minor typo fixes to new docs/topics. Your expertise and sharing can help fellow users learn and expand their knowledge of Sumo Logic.
 
@@ -19,6 +19,12 @@ There are many ways to contribute to Sumo Docs, beyond writing code. Here's a hi
 
 * [Edit an existing doc](/docs/contributing/edit-doc)
 * [Create a new doc](/docs/contributing/create-doc)
+
+## Delete a Doc
+
+:::warning
+Never delete a doc! See [How to Properly Remove a Doc](/docs/contributing/remove-doc) for instructions.
+:::
 
 ## Submit an Issue
 
