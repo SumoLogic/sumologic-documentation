@@ -16,7 +16,18 @@ This article provides a high-level checklist of onboarding tasks and best practi
 
 ## Onboard with Professional Services
 
-Ask your Sumo Logic account representative to engage the Professional Services team to guide you through the onboarding tasks described in this article. Sumo Logic offers a complete Quickstart package through the Professional Services team that covers these tasks, as well as other configurations not listed here. While you can perform some of the tasks in this checklist on your own, many require Professional Services. We provide this article as a convenience to help you keep track of your work as you onboard to Cloud SIEM.
+While you might be able to do some of the tasks in this checklist on your own, many require the assistance of the Professional Services team.  Therefore, do not attempt to do the checklist on your own. Ask your Sumo Logic account representative to engage the Professional Services team to guide you through the onboarding tasks. Sumo Logic offers a complete Quickstart package through the Professional Services team that covers these tasks, as well as other configurations not listed here. We provide this article as a convenience to help you keep track of your work as Professional Services helps you onboard to Cloud SIEM.
+
+## Prepare for onboarding
+
+Before onboarding, it’s important that you understand how your data will be used in Cloud SIEM. Doing so makes the engagement process with Professional Services run more smoothly. Before meeting with Professional Services:
+
+* Know your data sources. It becomes easier to start the engagement with Professional Services if you know the data sources that are in scope for Cloud SIEM.
+* Know the use cases. If you are aware of the rules, dashboards, and alerts that you are interested in within Cloud SIEM, it helps Professional Services plan setup. For example, in some cases you may not need custom rules and can rely on out-of-the-box rules in Cloud SIEM.
+* Be familiar with components of Cloud SIEM. Get to know about components such as entity tagging, network blocks, match lists, and threat intel.
+* Be familiar with the data flow. Before meeting with Professional Services, you should be familiar with the lifecycle of data in the Sumo Logic core platform and Cloud SIEM: <br/><img src={useBaseUrl('img/cse/cip-to-cse.png')} alt="Data ingestion to Cloud SIEM" width="600"/> 
+
+After you have prepared for onboarding, you’re ready to meet with Professional Services to set up Cloud SIEM.
 
 ## Initial setup
 
@@ -69,7 +80,7 @@ See:
 
 ### Forward data to Cloud SIEM
 
-Perform the following tasks to forward data to Cloud SIEM from other sources.
+Professional Services will work closely with you to forward data to Cloud SIEM. After forwarding, they will validate if the data is normalized to the Cloud SIEM schema, and make adjustments to parsing and mapping when needed.
 
 #### Ingest data
 
