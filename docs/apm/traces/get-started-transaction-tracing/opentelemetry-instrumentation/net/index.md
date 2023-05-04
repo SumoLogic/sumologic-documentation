@@ -17,7 +17,7 @@ auto-instrumentation as traces are generated automatically depending on settings
 provided by developer(s) during initialization phase.
 
 :::note
-The below description applies to v0.7.0.
+The below description applies to [v0.7.0](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/tag/v0.7.0).
 :::
 
 ## How to instrument a .NET application automatically (Windows)
