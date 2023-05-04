@@ -45,6 +45,9 @@ The AWS Observability solution script is organized into the following groups of 
    * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
    * **source-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo logic sources as required for the solution.
 
+:::note
+Using main.tf, only apps can be installed with the “sumo-module” module by keeping the “collection-module” module commented.
+:::
 
 System Files:
 
@@ -52,13 +55,12 @@ System Files:
 * [providers.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/providers.tf): Provides Terraform configurations to declare the providers they require to have Terraform install and use them. See [Providers Configuration Language](https://www.terraform.io/docs/language/providers/index.html) for more information.
 * [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
 * [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
-* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in sumo logic field schema 
-* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the user's Sumo Logic account.
+* [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in the Sumo Logic field schema 
+* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the your Sumo Logic account.
   
 ## Step 1: Set up the Terraform environment
 
-Before you run the Terraform script, perform the following actions on a
-server machine of your choice:
+Before you run the Terraform script, perform the following actions on a server machine of your choice:
 
 1. Install [Terraform](https://www.terraform.io/) version [0.13.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
@@ -71,7 +73,7 @@ server machine of your choice:
     ```bash
     pip install sumologic-sdk
     ```
-    
+
 ## Step 2: Configure the Terraform script
 
 1. Clone the repository https://github.com/SumoLogic/sumologic-solution-templates:
@@ -83,10 +85,13 @@ server machine of your choice:
     $ terraform init
     ```
     This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/null/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
+    :::note
+    Note that templates located at [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) directory contain references to files from the [sumologic-solution-templates/aws-observability] (https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability) directory.
+    :::
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Enter au, ca, de, eu, jp, us2, in, fed or us1.
-   * `sumologic_access_id`: [Sumo Logic Access ID](/docs/manage/security/access-keys.md) Sumo Logic Access ID.
-   * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys.md) Sumo Logic Access Key used for Sumo Logic API calls.
+   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `in`, `fed`, or `us1`.
+   * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
+   * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
    * `aws_account_alias`: The Name/Alias for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs. Please leave this blank if you are going to deploy the solution in multiple AWS accounts. Do not include special characters in the alias.
     :::note
@@ -106,7 +111,7 @@ server machine of your choice:
       ```
 
 :::important
-Going forward, please do not modify these fields outside of Terraform.
+Going forward, do not modify these fields outside of Terraform.
 :::
 
 ## Step 3: Determine which AWS Account/Regions to Deploy
@@ -649,7 +654,7 @@ collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
 
 #### cloudwatch_metrics_source_details
 
-Provide details for the Sumo Logic Cloudwatch Metrics source. If not provided, then defaults will be used.
+Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
 * `limit_to_namespaces` - Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source.
 
@@ -728,7 +733,7 @@ cloudwatch_metrics_source_url=””
 The following is a specific Source URL example:
 
 ```bash
-collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
+collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 cloudwatch_metrics_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/9876"
 ```
 
@@ -1102,7 +1107,7 @@ collect_cloudwatch_logs = "Kinesis Firehose Log Source"
 
 #### cloudwatch_logs_source_details
 
-Provide details for the Sumo Logic Cloudwatch Logs source. If not provided, then defaults will be used.
+Provide details for the Sumo Logic CloudWatch Logs source. If not provided, then defaults will be used.
 
 For bucket_details (used with Kinesis Firehose Logs Source):
 
@@ -1115,7 +1120,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 * `IncludeLogGroupInfo`:  Set to true to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to True.
 * `logformat`: For Lambda, the value should be set to “Others”.
 * `log_stream_prefix`: Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function.
-* `workers`: Number of lambda function invocations for Cloudwatch logs source Dead Letter Queue processing.
+* `workers`: Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
 
 **Default value:**
 
@@ -1393,13 +1398,13 @@ sumologic_collector_details = {
 
 ### existing_iam_details
 
-Provide an existing AWS IAM role arn value which provides access to AWS S3 Buckets, AWS CloudWatch Metrics API and Sumo Logic Inventory data. If kept empty, a new IAM role will be created with the required permissions.
+Provide an existing AWS IAM role arn value which provides access to Amazon S3 Buckets, AWS CloudWatch Metrics API and Sumo Logic Inventory data. If kept empty, a new IAM role will be created with the required permissions.
 
 For more details on permissions, check the IAM policy tmpl files at /source-module/templates folder.
 
 **Default value:**
 
-```
+```json
 {
  "create_iam_role": true,
  "iam_role_arn": ""
@@ -1408,7 +1413,7 @@ For more details on permissions, check the IAM policy tmpl files at /source-modu
 
 **Override Example JSON:**
 
-```
+```json
 existing_iam_details = {
  "create_iam_role": true,
  "iam_role_arn": ""
@@ -1446,7 +1451,7 @@ Parameters will take default values as defined under the default column.
 
 This installs the following:
 
-* Apps: AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, and AWS SNS.
+* Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, Amazon SNS, and Amazon SQS.
   * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
   * Default location: “AWS Observability Monitors” folder of the Monitors folder
@@ -1517,8 +1522,8 @@ The following table provides a list of all source parameters and their default v
 
 | Parameter | Description | Default |
 |:--|:--|:--|
-| `access_id` | Sumo Logic Access ID. See [Access Keys](access keyes) for information. Ignore this setting if you entered it in Source Parameters.	| Ignore if already configured in **main.auto.tfvars** file. |
-| `access_key` | Sumo Logic Access Key. See Access Keys for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file.
+| `access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	| Ignore if already configured in **main.auto.tfvars** file. |
+| `access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file.
 | `environment` | Enter au, ca, de, eu, jp, us2, in, fed, or us1. See Sumo Logic Endpoints and Firewall Security for information. Ignore this setting if you entered it in Source Parameters. | Ignore if already configured in main.auto.tfvars file. |
 | `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page. | Ignore if already configured in main.auto.tfvars file. |
 | `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps". | `"AWS Observability Apps"`  |
@@ -1529,6 +1534,7 @@ The following table provides a list of all source parameters and their default v
 | `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled. | `true` |
 | `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled. | `true` |
 | `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled | `true` |
+| `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled | `true` |
 | `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled. | `true` |
 | `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
 `true` |

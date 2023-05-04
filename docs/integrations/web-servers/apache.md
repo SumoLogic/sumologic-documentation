@@ -532,7 +532,7 @@ email_notifications = [
 
 ## Installing the Apache App
 
-Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and [dashboards](#viewing-dashboards).
+Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and dashboards.
 
 To install the app, do the following:
 1. Locate and select the app you need from the **App Catalog**.

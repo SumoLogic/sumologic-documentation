@@ -25,7 +25,7 @@ metrics query | eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
     * `pct(n)`. Returns the nth percentile of the values in the time series.
     * `latest`. Returns the last data point in the time series.
     * `stddev`. Returns standard deviation of the points in the time series.
-* `_granularity`. Returns the length of the [quantization](/docs/metrics/introduction/Metric-Quantization) bucket in milliseconds. You can use this placeholder in your query.
+* `_granularity`. Returns the length of the [quantization](/docs/metrics/introduction/metric-quantization) bucket in milliseconds. You can use this placeholder in your query.
 
 
 ## Examples

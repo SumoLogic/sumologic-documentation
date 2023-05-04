@@ -36,7 +36,7 @@ You can set up a Script Action using the Sumo web app, described in [Option A](#
 
 ### Option A. Set up Script Action using UI
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the Installed Collector to which want to add the script action and select **Add > Add Script Action**.
 1. **Name.** Enter a name to display for the Script Action.
 1. **Description**. Optional.
@@ -115,7 +115,7 @@ This example shows how to set up a script and configure a Script Action.
     chmod +x countNumberOfWarnings.sh
     ```
 
-1. Select **Manage Data > Collection > Collection**.
+1. Select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the Installed Collector to which you want to add the script action and select **Add > Add Script Action**.  
 1. Configure the Script Action as described in [Step 3](#step-3-set-up-script-action) above.
 1. Define a search and click **Save As**. 

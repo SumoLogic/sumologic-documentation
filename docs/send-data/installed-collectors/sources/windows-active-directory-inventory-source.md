@@ -34,7 +34,7 @@ Install a single Active Directory Source to collect inventory data from the enti
 
 To configure a Windows Active Directory Inventory Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the Installed Collector you'd like to add the Source to. Click **Add** and then choose** Add Source** from the pop-up menu.
 1. Click **Windows Active Directory Inventory**.<br/><img src={useBaseUrl('/img/send-data/windows-ad-inventory-source-icon.png')} alt="Windows Active Directory Inventory icon" width="125"/>
 1. Set the following:   
