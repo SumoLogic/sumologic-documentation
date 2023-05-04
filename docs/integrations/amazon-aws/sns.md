@@ -72,9 +72,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
-
 ## Collecting Logs and Metrics for the Amazon SNS App
-
 
 ### Collecting Metrics for Amazon SNS  
 
@@ -83,7 +81,6 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 3. Namespaces. Select **aws/sns**.
 4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
 5. Click **Save**.
-
 
 ### Collecting Amazon SNS Events using CloudTrail
 
@@ -105,11 +102,9 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
     * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
 2. Click **Save**.
 
-
 ### Field in Field Schema
 
 Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
 
 ### Field Extraction Rule(s)
 
@@ -141,7 +136,6 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 | fields region, namespace, topicname, accountid
 ```
 
-
 ## Centralized AWS CloudTrail Log Collection
 In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
 
@@ -158,7 +152,6 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 | if (recipientAccountId = "567680881046",  "prod", account) as account
 | fields account
 ```
-
 
 ## Installing the Amazon SNS App
 
@@ -182,7 +175,6 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
 ## Viewing Amazon SNS Dashboards
 
 ### Overview
@@ -197,7 +189,6 @@ The **Amazon SNS - Overview** dashboard provides insights across CloudTrail even
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Overview.png')} alt="Amazon SNS" />
 
-
 ### Amazon SNS - Audit Events  
 
 The **Amazon SNS - Audit Events** dashboard provides insights across CloudTrail events across location, status, and topic names.
@@ -210,7 +201,6 @@ Use this dashboard to:
 * Get details of active topic names and users of both successful and error events.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS" />
-
 
 ### Amazon SNS - Messages, Notifications  
 
@@ -226,7 +216,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS" />
 
-
 ### Amazon SNS - Threat Intel  
 
 The **Amazon SNS - Threat Intel** dashboard provides insights across threat locations, count, malicious confidence and details.
@@ -237,7 +226,6 @@ The **Amazon SNS - Threat Intel** dashboard provides insights across threat loca
 * Get details of all threats by IPs.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS" />
-
 
 ### Amazon SNS - Audit Events Details
 

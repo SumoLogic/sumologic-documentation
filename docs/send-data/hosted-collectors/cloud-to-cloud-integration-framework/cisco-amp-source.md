@@ -47,7 +47,7 @@ When you create a Cisco AMP Source, you add it to a Hosted Collector. Before cr
 
 To configure a Cisco AMP Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Cisco AMP**.
 
