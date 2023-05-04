@@ -7,7 +7,7 @@ description: The simplest way to start capturing telemetry data is to implement 
 
 Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
 
-# .Net full auto-instrumentation vs library-instrumentation (partial auto)
+# .NET full auto-instrumentation vs library-instrumentation (partial auto)
 
 It is important to understand difference between two types of instrumentations that
 are available in .Net. First one, is fully automatic one that does not require
