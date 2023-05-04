@@ -42,7 +42,7 @@ Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, 
 To further set up your instance, you may consider setting up a custom sub-domain. You can also enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
 See:
-* The the [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) article 
+* The [Set up a custom subdomain](/docs/manage/manage-subscription/manage-org-settings#set-up-a-customsubdomain) section of the [Manage Organization Settings](/docs/manage/manage-subscription/manage-org-settings/) article 
 * [Enable a Support Account](/docs/manage/security/enable-support-account/) 
 
 ### Set up users
