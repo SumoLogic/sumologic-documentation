@@ -97,7 +97,7 @@ When you create a Microsoft Graph Azure AD Reporting Source, you add it to a Ho
 
 To configure a Microsoft Graph Azure AD Reporting Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **MS Graph Azure AD Reporting**.
 

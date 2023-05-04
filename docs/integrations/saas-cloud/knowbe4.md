@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100" />
 
-The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status. 
+The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status.
 
-The distribution of **Phishing Security Tests** by difficulty and long-running **Phishing Security Tests** panels offer insights into the difficulty level of the phishing tests and identify tests that have been running for an extended period. The app's **Phish Prone Percentage** dashboard panel helps you understand the percentage of users who are at higher risk of falling for a phishing attack. 
+The distribution of **Phishing Security Tests** by difficulty and long-running **Phishing Security Tests** panels offer insights into the difficulty level of the phishing tests and identify tests that have been running for an extended period. The app's **Phish Prone Percentage** dashboard panel helps you understand the percentage of users who are at higher risk of falling for a phishing attack.
 
 The **Geo Location of Failed Users** dashboard panel provides geographic insights into where failed users are located. The **Phishing Security Tests Summary** and **Phish Failures Summary** dashboard panels provide high-level summaries of the organization's testing performance. Finally, the **Top Failed Users** panel identifies users who have failed multiple tests and may require additional training.
 
@@ -125,6 +125,7 @@ email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment
 ## Installing the KnowBe4 App
 
 Locate and install the app from the **App Catalog**. To see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
 Before you begin, collect logs from KnowBe4 and ingest them into Sumo Logic. Refer to the [KnowBe4 Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/) to create the source and use the same source category while installing the app.
 
 To install the app, follow the steps below:

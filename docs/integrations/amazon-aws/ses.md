@@ -182,7 +182,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
-14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
+14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the AWS Source.
 15. When you are finished configuring the Source, click **Save**.
 
 
@@ -229,7 +229,7 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 
 ## Installing the Amazon SES App
 
-Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 1. From the **App Catalog**, search for and select the app. You can click **Preview Dashboards** to verify that you have the app you need.

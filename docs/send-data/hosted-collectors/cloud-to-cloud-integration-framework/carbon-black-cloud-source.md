@@ -58,7 +58,7 @@ When you create a Carbon Black Cloud Source, you add it to a Hosted Collector. 
 
 To configure a Carbon Black Cloud Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a **Hosted Collector**.
 1. Select **Carbon Black Cloud**.<br/>  ![CB Cloud icon.png](/img/send-data/CB-Cloud-icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/> ![CB Cloud input pane.png](/img/send-data/CB-Cloud-input-pane.png)

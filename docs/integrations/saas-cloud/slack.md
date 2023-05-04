@@ -326,17 +326,16 @@ Use the table below to reference the required scope permissions you need to add 
 | Audit API | Enterprise Grid Plan |  auditlogs:read |
 
 #### Install the Slack App on a Workspace for Web API Logs
-Only follow these steps if you are installing a Slack App on a specific workspace to monitor Web API logs. Please ensure
-you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
-section.
+
+Only follow these steps if you are installing a Slack App on a specific workspace to monitor Web API logs. Ensure that you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this section.
 
 1. On the app settings page, click **Install App** and the **Install to Workspace** button. <br/><img src={useBaseUrl('img/send-data/slack-install-app-to-workspace.png')} alt="slack-install-app-to-workspace.png" width="650"/>
 2. Allow your new Slack App to monitor your workspace. <br/><img src={useBaseUrl('img/send-data/slack-app-allow.png')} alt="Allow App to Monitor Workspace" width="450"/>
 3. Save the generated access token. This will be used by the Sumo Logic  configuration for access. <br/><img src={useBaseUrl('img/send-data/slack-copy-user-token.png')} alt="Copy Token" width="500"/>
 
 #### Install the Slack App on the Enterprise Grid for Audit API Logs
-Only follow these steps if you are installing a Slack App on the Enterprise to monitor Audit API logs. Make sure you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
-section. A Slack Enterprise Grid account is required.
+
+Only follow these steps if you are installing a Slack App on the Enterprise to monitor Audit API logs. Make sure you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this section. A Slack Enterprise Grid account is required.
 
 1. On the app settings page, click **OAuth & Permissions**. <br/><img src={useBaseUrl('img/send-data/slack-oath-perm-link.png')} alt="Oauth Permissions" width="250"/>
 2. Scroll down to **Redirect URLs**. Add a new redirect URL as `https://localhost` and click **Save URLs**. <br/><img src={useBaseUrl('img/send-data/slack-redirect-url.png')} alt="Redirect URL" width="500"/>

@@ -25,7 +25,7 @@ Although you can use the same GCP Source to receive log data collected from mult
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 1. Enter a **Name** to display for the Source. A **Description** is optional.<br/>  ![google_cloud_platform_2022.png](/img/send-data/google_cloud_platform.png)
