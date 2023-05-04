@@ -70,6 +70,7 @@ Package installers require TLS 1.2 or higher.
 * Windows 8, 32 or 64 bit
 * Windows 8.1, 32 or 64 bit
 * Windows 10, 32 or 64 bit
+* Windows 11, 32 or 64 bit
 * Windows Server 2012
 * Windows Server 2016
 * Windows Server 2019

@@ -727,7 +727,7 @@ This topic defines the attributes in CSE Schema v3.
     </strong>
    </td>
    <td>
-    Used for signals received via log path e.g. scheduled search alert from CIP.
+    Used for signals received via log path e.g. scheduled search alert from Sumo Logic core platform.
    </td>
   </tr>
   <tr>
