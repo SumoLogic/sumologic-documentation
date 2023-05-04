@@ -81,37 +81,37 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/manage/field-extractions/field-naming-convention"><img src={useBaseUrl('img/field-extraction-rules/admin.png')} alt="icon" width="40"/><h4>Field Naming Convention</h4></a>
+  <a href="/docs/manage/field-extractions/field-naming-convention"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Field Naming Convention</h4></a>
   <p>Learn about the recommended naming conventions for standard fields in Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/manage/field-extractions/create-field-extraction-rule"><img src={useBaseUrl('img/field-extraction-rules/admin.png')} alt="icon" width="40"/><h4>Create a Field Extraction Rule</h4></a>
+  <a href="/docs/manage/field-extractions/create-field-extraction-rule"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Create a Field Extraction Rule</h4></a>
   <p>Learn how to instruct Sumo Logic to parse out fields automatically.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/manage/field-extractions/edit-field-extraction-rules"><img src={useBaseUrl('img/field-extraction-rules/admin.png')} alt="icon" width="40"/><h4>Edit Field Extraction Rules</h4></a>
+  <a href="/docs/manage/field-extractions/edit-field-extraction-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Edit Field Extraction Rules</h4></a>
   <p>Learn how to change Field Extraction Rules.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/manage/field-extractions/fer-templates"><img src={useBaseUrl('img/field-extraction-rules/admin.png')} alt="icon" width="40"/><h4>FER Templates</h4></a>
+  <a href="/docs/manage/field-extractions/fer-templates"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>FER Templates</h4></a>
   <p>Learn how to use FER Templates to parse common fields for various applications.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/manage/field-extractions/parse-elb-logs"><img src={useBaseUrl('img/field-extraction-rules/admin.png')} alt="icon" width="40"/><h4>Parse AWS ELB Logs</h4></a>
+  <a href="/docs/manage/field-extractions/parse-elb-logs"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Parse AWS ELB Logs</h4></a>
   <p>Learn how to parse the common fields in AWS ELB logs.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/manage/field-extractions/safend-field-extraction"><img src={useBaseUrl('img/field-extraction-rules/admin.png')} alt="icon" width="40"/><h4>Sample Safend Field Extraction</h4></a>
+  <a href="/docs/manage/field-extractions/safend-field-extraction"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Sample Safend Field Extraction</h4></a>
   <p>Learn how to create Field Extraction Rules for Safend.</p>
   </div>
 </div>
