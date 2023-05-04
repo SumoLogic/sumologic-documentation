@@ -2,9 +2,8 @@
 title: May 04, 2023 (Manage Account)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
-  - apps
-  - app catalog
-  - saas cloud
+  - security
+  - audit event index
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
