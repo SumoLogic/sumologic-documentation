@@ -127,7 +127,7 @@ You can use this [community-supported script](https://github.com/SumoLogic/sumol
 
 #### Troubleshoot S3 Event Notifications
 
-**In the Sumo Logic UI under 'Log File Discovery', there is a red exclamation mark with the message 'Sumo Logic has not received a validation request from AWS'.**
+**In the Sumo Logic UI, under 'Log File Discovery', there is a red exclamation mark with the message 'Sumo Logic has not received a validation request from AWS'.**
 
 Steps to troubleshoot:
 
@@ -135,7 +135,7 @@ Steps to troubleshoot:
 2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
 3. If you didn’t use CloudFormation, check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 
-**In the Sumo Logic UI under 'Log File Discovery', there is a green check with the message 'Sumo Logic has received an AWS validation request at this endpoint', but still high latencies.**
+**In the Sumo Logic UI, under 'Log File Discovery', there is a green check with the message 'Sumo Logic has received an AWS validation request at this endpoint', but still high latencies.**
 
 The green check confirms that the endpoint was used correctly, but it does not mean Sumo Logic is receiving notifications successfully.
 
