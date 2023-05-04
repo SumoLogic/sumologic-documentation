@@ -468,7 +468,7 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Kinesis Firehose for Logs Source
 
-This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `thirdPartyRef` parameter to enable **S3 Replay**. Leave `thirdPartyRef` empty if you don't want to enable S3 replay.
+This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `thirdPartyRef` parameter to enable **S3 Replay**.
 
 ```json
 {

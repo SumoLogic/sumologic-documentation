@@ -103,23 +103,17 @@ If you need more results you'll need to break up your search into several search
 
 ## Rate limit throttling  
 
-* A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
+{@import ../reuse/api-rate-limit.md}
 
-    If a rate is exceeded, a rate limit exceeded 429 status code is returned.
+A limit of 200 active concurrent search jobs applies to your organization.
 
-* A limit of 200 active concurrent search jobs applies to your organization.
-
-When searching the [Frequent Tier](/docs/manage/partitions-data-tiers/data-tiers) a rate limit of 20 concurrent search jobs applies to your organization.
+When searching the [Frequent Tier](/docs/manage/partitions-data-tiers/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
 
 Once you reach the limit of 200 active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed search job limit.
 
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
-
 You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](#deleting-a-search-job) for details.
-
-
 
 ## Process flow
 
