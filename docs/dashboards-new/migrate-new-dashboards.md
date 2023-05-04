@@ -80,5 +80,5 @@ Choosing more than fifty dashboards will disable the **Migrate** button.<br/><im
 
 | Incompatibility | Description |   
 | :-----------------| :--------------|
-| Panels | <ul><li>Box plot and sankey diagrams are not supported</li> <li>Incompatible panels are automatically migrated to **text** panels with all the information about the panel preserved in the panel</li> <li>Retained information in text panel:</li> <ul> <li>Query</li> <li>Time range</li> <li>Panel title</li></ul> </ul> |
+| Panels | <li>Incompatible panels are automatically migrated to **text** panels with all the information about the panel preserved in the panel</li> <li>Retained information in text panel:</li> <ul> <li>Query</li> <li>Time range</li> <li>Panel title</li></ul> </ul> |
 | Public dashboards | <ul><li>Public dashboards are not yet supported by New Dashboards</li> </ul> |
