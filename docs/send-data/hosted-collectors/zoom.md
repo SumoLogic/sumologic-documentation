@@ -1,7 +1,7 @@
 ---
 id: zoom
 title: Zoom Source
-description: An HTTP Zoom Source is an endpoint for for receiving Webhook events.
+description: Set up a Zoom HTTP Source as an endpoint for receiving Webhook events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
