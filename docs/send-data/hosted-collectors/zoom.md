@@ -43,7 +43,7 @@ Follow the below steps to get the required fields for user configuration:
 
 ## Create Zoom Source
 
-To configure Zoom Source:
+To configure a Zoom Source:
 1. In the Sumo Logic web interface, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Zoom**. <br/> <img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Zoom icon" width="60"/>
