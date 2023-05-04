@@ -78,7 +78,7 @@ Register-OpenTelemetryForIIS
 
 There are two options in order to achieve the goal.
 
-First, update application `web.config` with following section.
+First, update the application's `web.config` with the following section.
 
 ```xml
   <system.webServer>
