@@ -9,12 +9,9 @@ Automatic instrumentation of the .NET applications is a very easy task. The simp
 
 # .NET full auto-instrumentation vs library-instrumentation (partial auto)
 
-It is important to understand difference between two types of instrumentations that
-are available in .Net. First one, is fully automatic one that does not require
-code. Second one, requires some initialization that has to be done in the code
-and is called library instrumentation by opentelemetry community. It is partial
-auto-instrumentation as traces are generated automatically depending on settings
-provided by developer(s) during initialization phase.
+It is important to understand difference between two types of instrumentations that are available in .NET. 
+* **Fully automatic instrumentation** does not require code. 
+* **Partially automatic instrumentation**, which is called library instrumentation by the opentelemetry community, requires some initialization in the code. It is partial auto-instrumentation as traces are generated automatically depending on settings provided by developer(s) during the initialization phase.
 
 :::note
 The below description applies to [v0.7.0](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/tag/v0.7.0).
