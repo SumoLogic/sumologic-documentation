@@ -60,38 +60,23 @@ When you create a Sophos Central Source, you add it to a Hosted Collector. Befo
 To configure a Sophos Central Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
-
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-
-1. Select **Sophos Central**.
-
-   ![sophos central source icon.png](/img/send-data/sophos-central-source-icon.png)
-
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
-
-   ![sophos-central-source.png](/img/send-data/sophos-central-source.png)
-
+1. Select **Sophos Central**.<br/><img src={useBaseUrl('img/send-data/sophos-central-source-icon.png')} alt="sophos-central-source-icon" width="100"/>
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/sophos-central-source.png')} alt="sophos-central-source" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
-
    * `_siemVendor`: Sophos
    * `_siemProduct`: Sophos Central
    * `_siemFormat`: JSON
    * `_siemEventID`: `<eventId>` Where `<eventId>` is populated by the alert category. This will be one of the following values: azure, adSync, applicationControl, appReputation, blockListed, connectivity, cwg, denc, downloadReputation, endpointFirewall, fenc, forensicSnapshot, general, iaas, iaasAzure, isolation, malware, mtr, mobiles, policy, protection, pua, runtimeDetections, security, smc, systemHealth, uav, uncategorized, updating, utm, virt, wireless, or xgEmail.
-
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-
 1. **Client ID**. Provide the Sophos Central Client ID you want to use to authenticate collection requests.
-
 1. **Client Secret**. Provide the Sophos Central Client Secret you want to use to authenticate collection requests.
-
 1. **Supported APIs to collect**. Select one or more of the available APIs, **Alerts** and **Events**.
-
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
-
+1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
 1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
