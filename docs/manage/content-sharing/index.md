@@ -92,19 +92,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/admin-mode"><img src={useBaseUrl('img/content-sharing/admin.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
+  <a href="/docs/manage/content-sharing/admin-mode"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
   <p>Learn how to control your content and add important items to the Admin Recommended folder.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/changing-alerts"><img src={useBaseUrl('img/content-sharing/admin.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
+  <a href="/docs/manage/content-sharing/changing-alerts"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
   <p>Learn how to modify or turn off alerts created by another user.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/manage/content-sharing/content-sharing-faq"><img src={useBaseUrl('img/content-sharing/admin.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
+  <a href="/docs/manage/content-sharing/content-sharing-faq"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
   <p>Get to know the answers to basic questions around Content Sharing.</p>
   </div>
 </div>
