@@ -90,7 +90,7 @@ First, update the application's `web.config` with the following section.
   </system.webServer>
 ```
 
-Second, update `applicationHost.config` which is located in located in `%SystemDrive%\Windows\system32\inetsrv\config` like below.
+Second, update `applicationHost.config`, which is located in `%SystemDrive%\Windows\system32\inetsrv\config` like below.
 
 ```xml
   <location path="" overrideMode="Allow">
