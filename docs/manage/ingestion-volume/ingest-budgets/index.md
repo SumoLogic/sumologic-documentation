@@ -309,7 +309,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Ingest Budgets Quickstart Tutorial</h4></a>
-  <p>Learn how to create and use Ingest Bugets.</p>
+  <p>Learn how to create and use Ingest Budgets.</p>
   </div>
 </div>
 </div>
