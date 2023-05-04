@@ -38,7 +38,7 @@ Import-Module $download_path
 Install-OpenTelemetryCore
 ```
 
-After installation, we can set service name and run application
+After installation, you can set the service name and run the application.
 
 ```powershell
 # Set up the instrumentation for the current PowerShell session.
