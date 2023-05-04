@@ -23,9 +23,9 @@ While you might be able to do some of the tasks in this checklist on your own, m
 Before onboarding, it’s important that you understand how your data will be used in Cloud SIEM. Doing so makes the engagement process with Professional Services run more smoothly. Before meeting with Professional Services:
 
 * Know your data sources. It becomes easier to start the engagement with Professional Services if you know the data sources that are in scope for Cloud SIEM.
+* Be familiar with the data flow. Before meeting with Professional Services, you should be familiar with how data moves from the Sumo Logic core platform to Cloud SIEM. For more information, see [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices).
 * Know the use cases. If you are aware of the rules, dashboards, and alerts that you are interested in within Cloud SIEM, it helps Professional Services plan setup. For example, in some cases you may not need custom rules and can rely on out-of-the-box rules in Cloud SIEM.
 * Be familiar with components of Cloud SIEM. Get to know about components such as entity tagging, network blocks, match lists, and threat intel.
-* Be familiar with the data flow. Before meeting with Professional Services, you should be familiar with the lifecycle of data in the Sumo Logic core platform and Cloud SIEM: <br/><img src={useBaseUrl('img/cse/cip-to-cse.png')} alt="Data ingestion to Cloud SIEM" width="600"/> 
 
 After you have prepared for onboarding, you’re ready to meet with Professional Services to set up Cloud SIEM.
 
@@ -250,7 +250,7 @@ See: [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule/)
 
 The Insight Trainer is a dashboard in the Cloud SIEM app that offers recommendations for making adjustments to rules. Follow the recommendations to make your rules more effective at creating high-fidelity signals.
 
-See: Improve Rules with Insight Trainer
+See: [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer/)
 
 ### Configure the Automation Service
 
