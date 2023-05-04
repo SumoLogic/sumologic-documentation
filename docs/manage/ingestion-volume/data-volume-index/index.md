@@ -45,13 +45,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index"><img src={useBaseUrl('img/ingestion-volume/data-volume.png')} alt="icon" width="40"/><h4>Log and Tracing Data Volume Index</h4></a>
+  <a href="/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Log and Tracing Data Volume Index</h4></a>
   <p>Get to know how much data your account is ingesting.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index"><img src={useBaseUrl('img/ingestion-volume/data-volume.png')} alt="icon" width="40"/><h4>Metrics Data Volume Index</h4></a>
+  <a href="/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Metrics Data Volume Index</h4></a>
   <p>Get to know the volume of metric data points your account is ingesting.</p>
   </div>
 </div>
