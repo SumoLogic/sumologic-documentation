@@ -4,7 +4,7 @@ title: Manage Subscription
 description: Learn about Sumo Logic account plans and types and about how to manage yours.
 ---
 
-The topics in this guide provide information on Sumo Logic service agreements, as well as instructions on how to efficiently manage your account. 
+The topics in this guide provide information on Sumo Logic service agreements and how to manage your account efficiently. 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -50,7 +50,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox7 card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/create-manage-orgs-service-providers"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Create and Manage Organizations (Service Providers)</h4></a>
-  <p>Learn how to group, provision, and centrally manage and monitor the credits usage of multiple orgs.</p>
+  <p>Learn how to group, provision, centrally manage, and monitor credits usage of multiple orgs.</p>
   </div>
 </div>
 <div className="box smallbox8 card">
@@ -62,7 +62,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox9 card">
   <div className="container">
   <a href="/docs/manage/manage-subscription/beta-opt-in"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Beta Participation Opt-In</h4></a>
-  <p>Learn how to Opt-in for Sumo Logic's pre-release programs ("Betas").</p>
+  <p>Learn how to opt in for Sumo Logic pre-release programs.</p>
   </div>
 </div>
 <div className="box smallbox10 card">
