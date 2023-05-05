@@ -129,6 +129,11 @@ Throughput is the amount of processing time by a service or system. Depending on
 Availability indicates if a service is working and handling valid requests. Other systems, services, and even virtual storage all have potential metrics to track with SLIs. The other option gives you the ability to include different SLOs based on your specific business needs.
 
 
+## Data Retention
+
+SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention. You can access this data via [SLO dashboards](/docs/observability/reliability-management-slo/dashboards/) or your [logs](/docs/observability/reliability-management-slo/create-slo/#slo-as-log-messages).
+
+
 ## Accessing SLOs
 
 In Sumo Logic, select **Manage Data** > **Monitoring**, then select the **SLO** tab, where you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.

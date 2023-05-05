@@ -5,6 +5,10 @@ title: Sumo Logic Connector for AWS Privatelink (Beta)
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 This feature is in Beta. To participate, contact your Sumo Logic account executive.

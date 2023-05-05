@@ -25,15 +25,15 @@ In search results, the transactionize operator adds transaction fields. The fiel
 
 ## Syntax
 
-* `transactionize \<field\>], \<field\>], \<field\>] [as\<fiel\>]`
-* `transactionize \<field\>] [as\<fiel\>] [\<subquer\>)]`  
-    where `\<subquer\>]` is executed on the results of the query for
+* `transactionize \<field\>], \<field\>], \<field\>] [as\<field\>]`
+* `transactionize \<field\>] [as\<field\>] [\<subquery\>)]`  
+    where `\<subquery\>]` is executed on the results of the query for
     each group, independently.
-* `transactionize \<field\>] [as\<fiel\>] \<parameter\>] [\<subquer\>)]`
+* `transactionize \<field\>] [as\<field\>] \<parameter\>] [\<subquery\>)]`
 
 ### Parameters
 
-Parameters must follow the `as \<fiel\>]` clause, as shown in the above
+Parameters must follow the `as \<field\>]` clause, as shown in the above
 Syntax section. For example,   
 
 ```sql
