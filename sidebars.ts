@@ -2211,6 +2211,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
+            `cse/administration/onboarding-checklist-cse`,
             'cse/administration/filter-search',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
@@ -2293,6 +2294,7 @@ integrations: [
             'cse/rules/normalized-threat-rules',
             'cse/rules/rule-tuning-expressions',
             'cse/rules/tailor-global-rule',
+            'cse/rules/insight-trainer',
           ],
         },
         {
