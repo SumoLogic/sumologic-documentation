@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="icon" width="50"/>
 
-Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.  
+Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect later. If you have logs that you don't need to search immediately, you can archive them for later use. You can also ingest them from your Archive on-demand with five-minute granularity.  
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
