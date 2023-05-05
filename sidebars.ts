@@ -342,11 +342,11 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Webhooks Sources',
+              label: 'Webhook Sources',
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/hosted-collectors/zoom',
+                'send-data/hosted-collectors/webhook-sources/zoom',
               ],
             },
           ],
