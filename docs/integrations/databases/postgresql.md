@@ -497,7 +497,7 @@ email_notifications = [
 
 ## Installing the PostgreSQL App
 
-Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic App for PostgreSQL to use the pre-configured Searches and [dashboards](#viewing-dashboards). To install the app, do the following:
+Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic App for PostgreSQL to use the pre-configured Searches and dashboards. To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

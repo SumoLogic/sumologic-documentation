@@ -1,5 +1,5 @@
 ---
-title: Scheduled Dashboard Email Reports
+title: April 5, 2023 (Dashboards)
 hide_table_of_contents: true
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
@@ -9,5 +9,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-Our new **Scheduled Report** feature enables you to receive an email copy of a dashboard periodically in either PDF or PNG format, allowing you to get insight into the dashboard without logging into the Sumo Logic platform.
-
+New - Our new **Scheduled Report** feature enables you to receive an email copy of a dashboard periodically in either PDF or PNG format, allowing you to get insight into the dashboard without logging into the Sumo Logic platform.

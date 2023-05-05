@@ -117,7 +117,7 @@ Once you've set up a collector and source, read these tips on configuring and ma
 * [Data Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
 * [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](/docs/manage/security/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
-* [Data Volume App](/docs/integrations/sumo-apps/data-volume-Legacy). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
+* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](/docs/integrations/sumo-apps/audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
 

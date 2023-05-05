@@ -32,7 +32,7 @@ When you create a CSE AWS EC2 Inventory Source, you add it to a Hosted Collecto
 
 To configure a CSE AWS EC2 Inventory Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS EC2 Inventory**.<br/>![EC2 inventory icon.png](/img/send-data/EC2-inventory-icon.png)
 1. Enter a **Name** for the Source. The description is optional. <br/>![AWS EC2 input pane.png](/img/send-data/AWS-EC2-input-pane.png)

@@ -18,6 +18,7 @@ _index=sumologic_system_events AND _sourceCategory=tracingIngest
 
 In the following example, all the events logged indicate some impact on ingest. The example query assumes all event types are events to be informed about.
 ```
+_index=sumologic_system_events AND _sourceCategory=tracingIngest
 | json field=_raw "eventName"
 | timeslice 1h
 | count by _timeslice, eventName
