@@ -66,7 +66,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -106,7 +106,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Logs
 

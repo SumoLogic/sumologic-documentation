@@ -42,7 +42,31 @@ You have two options for deploying:
 * Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
 * Deploy using a [Terraform Script](deploy-with-terraform.md)
 
-## Deployment Considerations  
+The Sumo Logic AWS Observability solution supports the following AWS regions:
+* Asia Pacific (Hong Kong)
+* Asia Pacific (Tokyo)
+* Asia Pacific (Seoul)
+* Asia Pacific (Mumbai)
+* Asia Pacific (Singapore)
+* Asia Pacific (Sydney)
+* Canada (Central)
+* Europe (Frankfurt)
+* Europe (Stockholm)
+* Europe (Ireland)
+* Europe (London)
+* Europe (Paris)
+* Middle East (Bahrain)
+* South America (São Paulo)
+* US East (N. Virginia)
+* US East (Ohio)
+* US West (N. California)
+* US West (Oregon)
+
+:::note
+The region(s) must be enabled and active before deploying the solution.
+:::
+
+## Deployment considerations  
 
 You deploy the solution by either running an AWS CloudFormation template or via Terraform scripts. When doing so, consider the following.
 
@@ -150,7 +174,7 @@ Here’s a sample `sources.json` file that you can include in your AMI.
 
 Before setting up the AWS Observability solution we recommend testing permissions for both AWS and Sumo Logic by using a test AWS CloudFormation template. To execute this template:
 
-1. Invoke the AWS CloudFormation template at this [URL](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/permissionchecker/permissioncheck.template.yaml).
+1. Invoke the AWS CloudFormation template at this [URL](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
 1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/>  ![Testing_sumo_Permission_1.png](/img/observability/Testing_sumo_Permission_1.png)
 1. Click **Create Stack.**

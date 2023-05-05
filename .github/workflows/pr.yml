@@ -6,32 +6,20 @@ on:
         - main
 
 jobs:
-    build-and-deploy:
-      runs-on: ubuntu-20.04
-      env:
-          CI: true
-          NODE_ENV: production
-      steps:
-        - uses: actions/checkout@v3
-        - name: Set up Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: '18.x'
-            cache: 'yarn'
-        - name: Docusaurus Webpack cache
-          uses: actions/cache@v3
-          with:
-            path: node_modules/.cache
-            key: ${{ runner.os }}-webpack-cache
-        - name: Install dependencies
-          run: yarn install --frozen-lockfile
-        - name: Build the Docusaurus site
-          env:
-            NODE_OPTIONS: "--max-old-space-size=8192"
-          run: yarn build
-    spellcheck:
-      runs-on: ubuntu-latest
-      steps:
+  deploy-to-review:
+    uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
+    with:
+      hostname: https://d2t1s0ah22jxsa.cloudfront.net
+      base_url: /${{ github.ref_name }}/
+      environment: review/${{ github.ref_name }}
+    secrets:
+      S3_BUCKET_NAME: ${{ secrets.REVIEW_S3_BUCKET_NAME }}
+      CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.REVIEW_CLOUDFRONT_DISTRIBUTION_ID }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3
       - uses: codespell-project/actions-codespell@master
         name: Check spelling

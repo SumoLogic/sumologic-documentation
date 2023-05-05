@@ -19,7 +19,7 @@ In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log m
 
 #### Configure a hosted collector
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. Click **Add Collector**.
 3. Click **Hosted Collector.**
 4. The **Add Hosted Collector** popup appears.<br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="add-hosted-collector" />
@@ -38,12 +38,12 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 If you have issues performing the steps below, see the [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) topic for more information.
 
-The bucket you designate for Carbon Black Cloud data must be exclusively used for this data source. Note also that the Sumo Logic collector does not support collection of logs that are edited after being stored in S3 and prior to being polled for ingestion to the CIP platform.
+The bucket you designate for Carbon Black Cloud data must be exclusively used for this data source. Note also that the Sumo Logic collector does not support collection of logs that are edited after being stored in S3 and prior to being polled for ingestion to the Sumo Logic core platform.
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In Sumo Logic, select **Manage Data > Collection > Collection**.
+4. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 5. Navigate to the Hosted Collector where you want to create the source.
 6. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 7. Select **Amazon S3**.

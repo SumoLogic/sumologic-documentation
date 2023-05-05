@@ -7,6 +7,7 @@ description: Learn how integrations are connectors to applications from industry
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+{@import ../../reuse/automation-service-la-note.md}
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
@@ -85,6 +86,7 @@ The following integrations are available for the Automation Service, but only so
 * Active Directory OIF
 * Active Directory V2
 * Airtable
+* Akamai WAF
 * Akenza
 * AlienVault OTX OIF
 * AlienVault USM Anywhere
@@ -219,7 +221,7 @@ The following integrations are available for the Automation Service, but only so
 * GreyNoise
 * Hacker Target OIF
 * Hatching Triage
-* Have I been pwned
+* Have I Been Pwned
 * HCL BigFix
 * HP Universal CMDB
 * HTTP Tools
@@ -253,6 +255,7 @@ The following integrations are available for the Automation Service, but only so
 * Kela RaDark
 * KnowBe4 KMSAT - Reporting
 * KnowBe4 KMSAT - User Events
+* KnowBe4 PhishER
 * Lacework
 * Lansweeper
 * Lastline Analyst
@@ -263,9 +266,11 @@ The following integrations are available for the Automation Service, but only so
 * Malware Bazaar
 * Malwarebytes Nebula
 * Manage Engine Desktop Central
+* Mandiant Advantage Threat Intelligence
 * Material Security
 * Mattermost
 * MaxMind OIF
+* MaxMind V2
 * McAfee ATD OIF
 * McAfee ePO OIF
 * McAfee ESM
@@ -309,6 +314,7 @@ The following integrations are available for the Automation Service, but only so
 * Palo Alto Networks WildFire OIF
 * Panda EDR
 * Passive Total
+* Phantombuster
 * PhishLabs DRP
 * PhishLabs EIR - Incident Data
 * PhishLabs EIR - IOC Feed
@@ -338,7 +344,7 @@ The following integrations are available for the Automation Service, but only so
 * Securonix
 * Securonix V2
 * SentinelOne
-* ServiceNow OIF
+* ServiceNow V2
 * SFTP Tools
 * Shodan
 * Skype
@@ -377,6 +383,7 @@ The following integrations are available for the Automation Service, but only so
 * Trend Micro APEX ONE
 * Trend Micro Deep Security
 * Trend Micro Vision ONE
+* Tufin SecureTrack V2
 * Twilio
 * URLhaus Abuse
 * URLScan.io

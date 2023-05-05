@@ -31,7 +31,7 @@ In this step, you configure an HTTP Source to collect OneLogin log messages. You
 
 ### Configure an HTTP Source
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 

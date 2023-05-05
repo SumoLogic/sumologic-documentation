@@ -37,6 +37,34 @@ module.exports = {
         'get-started/faq',
       ],
     },
+    //Contribution guide for documentation
+    {
+      type: 'category',
+      label: 'Contribution Guide',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'contributing/index'},
+      items: [
+        'contributing/edit-doc',
+        'contributing/create-doc',
+        'contributing/remove-doc',
+        'contributing/style-guide',
+        'contributing/code-of-conduct',
+        'contributing/glossary',
+        'contributing/word-list',
+    //  'contributing/translations',
+        {
+          type: 'category',
+          label: 'Templates',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'contributing/templates/generic-doc',
+            'contributing/templates/partner-app-doc',
+          ]
+        }
+      ],
+    },
   ],
   // *** SEND DATA
   senddata: [
@@ -49,6 +77,35 @@ module.exports = {
       items: [
         'send-data/choose-collector-source',
         'send-data/setup-wizard',
+        {
+          type: 'category',
+          label: 'OpenTelemetry Collector',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
+          items: [
+            'send-data/opentelemetry-collector/quickstart',
+            'send-data/opentelemetry-collector/install-collector-linux',
+            'send-data/opentelemetry-collector/install-collector-macos',
+            'send-data/opentelemetry-collector/install-collector-windows',
+            {
+              type: 'category',
+              label: 'Data Source and Configurations',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
+              items:[
+                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
+                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
+              ]
+            },
+            'send-data/opentelemetry-collector/performance-benchmarks',
+            'send-data/opentelemetry-collector/troubleshooting-faq',
+            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
+          ]
+        },
         {
           type: 'category',
           label: 'Installed Collectors & Sources',
@@ -133,33 +190,6 @@ module.exports = {
               ],
             },
           ],
-        },
-        {
-          type: 'category',
-          label: 'OpenTelemetry Collector',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
-          items: [
-            'send-data/opentelemetry-collector/install-collector-linux',
-            'send-data/opentelemetry-collector/install-collector-macos',
-            'send-data/opentelemetry-collector/install-collector-windows',
-            {
-              type: 'category',
-              label: 'Data Source and Configurations',
-              collapsible: true,
-              collapsed: true,
-              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
-              items:[
-                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
-                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
-                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
-                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
-              ]
-            },
-            'send-data/opentelemetry-collector/troubleshooting-faq',
-            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
-          ]
         },
         {
           type: 'category',
@@ -1635,6 +1665,7 @@ module.exports = {
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
+                'observability/aws/integrations/amazon-sqs',
               ],
             },
             'observability/aws/faq',
@@ -2023,6 +2054,7 @@ integrations: [
           'integrations/saas-cloud/akamai-cloud-monitor',
           'integrations/saas-cloud/akamai-datastream',
           'integrations/saas-cloud/armis',
+          'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
@@ -2039,6 +2071,7 @@ integrations: [
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
+          'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
@@ -2171,6 +2204,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
+            `cse/administration/onboarding-checklist-cse`,
             'cse/administration/filter-search',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
@@ -2253,6 +2287,7 @@ integrations: [
             'cse/rules/normalized-threat-rules',
             'cse/rules/rule-tuning-expressions',
             'cse/rules/tailor-global-rule',
+            'cse/rules/insight-trainer',
           ],
         },
         {
@@ -2372,37 +2407,6 @@ integrations: [
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/mssp',
-      ],
-    },
-  ],
-
-  //Contribution guide for documentation
-  contributing: [
-    {
-      type: 'category',
-      label: 'Contribution Guide',
-      collapsible: false,
-      collapsed: true,
-      link: {type: 'doc', id: 'contributing/index'},
-      items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
-        'contributing/remove-doc',
-        'contributing/style-guide',
-        'contributing/code-of-conduct',
-        'contributing/glossary',
-        'contributing/word-list',
-    //  'contributing/translations',
-        {
-          type: 'category',
-          label: 'Templates',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'contributing/templates/generic-doc',
-            'contributing/templates/partner-app-doc',
-          ]
-        }
       ],
     },
   ],

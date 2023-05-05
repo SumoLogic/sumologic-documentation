@@ -89,7 +89,7 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 This section provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.  
+Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and dashboards that provide insight into your data.  
 
 To install the app:
 

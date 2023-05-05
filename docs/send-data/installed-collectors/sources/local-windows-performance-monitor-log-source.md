@@ -17,7 +17,7 @@ MSDN.
 
 To configure a Local Windows Performance Monitor Log Source:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the installed Collector to which you’d like to add a Source. Click **Add **and then choose **Add** **Source** from the menu. 
 1. Click **Windows Performance**. 
 1. Choose **Local** for the Type of **Windows Performance Source**. 
