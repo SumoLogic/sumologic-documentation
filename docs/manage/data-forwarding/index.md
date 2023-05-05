@@ -10,10 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Data Forwarding is not currently supported for data in the [Infrequent Tier](../partitions-data-tiers/data-tiers.md).
 
-## Guide contents
+You can forward log data to an AWS S3 bucket through [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views). See [Forwarding Data from Sumo Logic to S3](amazon-s3-bucket.md) for details.
 
-* [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views) can forward log data to an AWS S3 bucket. See [Forwarding Data from Sumo Logic to S3](amazon-s3-bucket.md) for details.
-* Data Forwarding is not currently supported for data in the [Infrequent Tier](../partitions-data-tiers/data-tiers.md).
+## Guide contents
 
 In this section, we'll introduce the following concepts:
 
