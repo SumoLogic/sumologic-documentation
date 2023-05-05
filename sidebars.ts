@@ -876,6 +876,7 @@ module.exports = {
             'dashboards-new/panels/map-charts',
             'dashboards-new/panels/markdown-syntax',
             'dashboards-new/panels/pie-charts',
+            'dashboards-new/panels/sankey-charts',
             'dashboards-new/panels/scatter-charts',
             'dashboards-new/panels/single-value-charts',
             'dashboards-new/panels/table-charts',
