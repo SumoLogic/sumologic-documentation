@@ -1,6 +1,6 @@
 ---
 id: installed-collectors
-title: Archive Log Data to other destinations
+title: Archive Log Data to Other Destinations
 description: Learn how to set up Data Archiving destinations.
 ---
 import Tabs from '@theme/Tabs';
