@@ -177,7 +177,7 @@ json "message" as _rawvpc nodrop
 
 Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Amazon VPC Flow Logs Dashboards
 

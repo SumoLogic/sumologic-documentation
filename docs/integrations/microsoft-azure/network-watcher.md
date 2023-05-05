@@ -169,7 +169,7 @@ If logs don't start flowing into Sumo Logic after you perform the configuration 
 
 Now that you have configured Azure Network Watcher, install the Sumo Logic App for Azure Network Watcher to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Azure Network Watcher Dashboards
 

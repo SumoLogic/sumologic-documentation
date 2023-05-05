@@ -218,7 +218,7 @@ To configure a cloud syslog source, do the following:
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
-8. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the new source.
+8. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the new source.
 9. Click **Save**. The token information is displayed in a read-only dialog box, shown below.
 10. Click **Copy** to copy the information for use in the syslog client. The information is copied in the following format:
   ```bash
@@ -251,7 +251,7 @@ To configure Acquia log forwarding, follow the instructions in the Acquia [docum
 
 This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Acquia Dashboards
 

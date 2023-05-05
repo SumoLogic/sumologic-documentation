@@ -40,6 +40,10 @@ Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in ver
 
 The [agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.16.0/opentelemetry-javaagent.jar) should be downloaded and distributed to each of the service hosts or containers, as the JVM will need access to it.
 
+:::note
+Ensure that the agent has root permissions for the Java jar files.
+:::
+
 ## Step 2: Update the JVM configuration (valid for version 1.16.0)
 
 Either of the following options could be used as the template, with the following changes:

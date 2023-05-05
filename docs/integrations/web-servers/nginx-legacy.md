@@ -165,7 +165,7 @@ For **FER for Error Logs**, use the following Parse Expression:
 
 This section has instructions for installing the Sumo App for Nginx (Legacy). These instructions assume you have already set up the collection as described above.
 
-{@import ../../reuse/app-install.md}
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Nginx (Legacy) Dashboards
 

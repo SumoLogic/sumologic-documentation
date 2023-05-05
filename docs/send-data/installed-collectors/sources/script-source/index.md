@@ -77,7 +77,7 @@ To configure a Script Source:
    * **Time Zone.** Select an option under **Use time zone from log file, but if none present use**. Or, if you'd like to override all time zones from data you collect, choose an option under **Ignore time zone and instead use**.
 
 1. **Enable** **Multiline Processing**, see [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options.
-1. If you'd like to filter data being collected, set **Processing Rule** options. [Hash and Mask filters](/docs/send-data/collection/processing-rules/create-processing-rule.md) can be used to obfuscate proprietary information included in data collected from a script source.
+1. If you'd like to filter data being collected, set **Processing Rule** options. [Hash and Mask filters](/docs/send-data/collection/processing-rules/create-processing-rule) can be used to obfuscate proprietary information included in data collected from a script source.
 1. Click **Save** to complete the Source setup.
 
 ## Configuring sourceCategory and sourceHost using variables
