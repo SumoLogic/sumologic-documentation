@@ -27,6 +27,14 @@ To collect event data from the DocuSign Monitor, you must meet the following cri
 
 The DocuSign API integration retrieves events data every 5 minutes.
 
+## Metadata Fields
+
+Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
+
+| Field Name | Value |
+| :--- | :--- |
+| _siemparser | /Parsers/System/DocuSign/DocuSign Monitor |
+
 ## Setup and Configuration
 
 In this configuration, you will set up the DocuSign account and configure it to be authorized and authenticated to use customer event data from DocuSign Monitor API. To obtain the DocuSign auth token and customer event data, you will need the following parameters:
@@ -45,7 +53,7 @@ You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-
 
 You must first create an app to get integration key and configure RSA Key Pair and Redirect URI. This key is required to get access token which will be used to authenticate DocuSign API. To create an app follow the steps below:
 
-1. Log in to your **DocuSign** account.
+1. Sign in to your **DocuSign** account.
 2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
 3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="400" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="400" />
@@ -64,7 +72,6 @@ You must first create an app to get integration key and configure RSA Key Pair a
   You'll need a redirect URI while requesting [application consent](#app-consent).
   :::
 10. Click **SAVE** to finish new app configuration.
-
 
 ### App Consent
 
