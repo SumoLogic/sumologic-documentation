@@ -71,7 +71,7 @@ _sourceCategory=zoom
 
 ## Set up collection
 
-Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/send-data/hosted-collectors/zoom) and use the same source category while installing the app.
+Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/send-data/hosted-collectors/webhook-sources/zoom) and use the same source category while installing the app.
 
 ## Installing the Zoom App
 
