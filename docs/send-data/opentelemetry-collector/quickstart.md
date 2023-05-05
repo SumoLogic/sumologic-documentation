@@ -18,17 +18,14 @@ This quickstart guide, which mirrors our Sumo Logic UI onboarding workflow, is a
 * Configure a receiver to collect memory data
 * Send that via the Sumo Logic exporter directly to the Sumo Logic Ingest API
 
-In this quickstart, you'll run our OpenTelemetry collector directly on the machine you wish to monitor, which will send data via the Sumo Logic [API](/docs/api/), which is compatible with the [OpenTelemetry Protocol (OTLP)](https://opentelemetry.io/docs/reference/specification/protocol/).
+In this quickstart, you'll run our OpenTelemetry collector directly on the machine you want to monitor, which will send data via our [OTLP](https://opentelemetry.io/docs/reference/specification/protocol/)-compatible Sumo Logic [API](/docs/api/).
 
 We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
 ## Before you begin
 
-You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
-
-:::tip
-See [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting-faq/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
-:::
+* You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
+* Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting-faq/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
 
 
 ## Installation
@@ -46,16 +43,16 @@ In this section, you'll create a new [installation token](/docs/manage/security/
 1. Go to **Administration** > **Security** > **Installation Tokens**.
 1. Click the **+ Add Token** button above the table. A panel named **Create Installation Token** appears to the right of the table.
 1. Input a unique name, then click **Save**.
-1. After you’ve created it, don’t forget to copy the token.
+1. After you’ve created your token, don’t forget to copy it.
 
 
 ### Step 3: Install the collector on the target machine
 
-We've created a one-step installation script to make it easier to install the collector. In this example, you'll install this on a Mac, but the same basic steps work for Linux environments as well.
-
-<details><summary>What's a Collector?</summary>
-An executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
+<details><summary>What's a collector?</summary>
+A collector is an executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
 </details>
+
+We've created a one-step installation script to make it easier to install the collector. In this example, you'll install this on a Mac. These same basic steps work for Linux environments as well.
 
 1. First, set up an environment variable to hold the installation token you just created. Open up a shell and run the following command:
    ```bash
@@ -140,7 +137,7 @@ If you see that kind of output, the collector has successfully set up a connecti
 
 Back in the Sumo Logic UI:
 
-1. Navigate to **Manage Data** > **Collection** > **Collection** tab. You should see a list of running collectors there. One of those will be the collector we ran in the previous step. It should have a green **Healthy** status and its Type should be **OT Distro**.
+1. Navigate to **Manage Data** > **Collection** > **Collection** tab. You should see a list of running collectors there. One of those will be the collector we ran in the previous step. It should have a green **Healthy** status and its **Type** should be **OT Distro**.
 1. To see the metrics data, hover over the line, and two small icons will appear next to the collector's name. Click the icon to the right, **Open in Metrics**, which looks like a small graph.
 
 This will open a new tab that shows you the metrics coming from this collector. You should see a graph with three lines, one for each state of the `system.memory.usage` metric: `free`, `used`, and `inactive`.

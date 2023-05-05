@@ -79,6 +79,35 @@ module.exports = {
         'send-data/setup-wizard',
         {
           type: 'category',
+          label: 'OpenTelemetry Collector',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
+          items: [
+            'send-data/opentelemetry-collector/quickstart',
+            'send-data/opentelemetry-collector/install-collector-linux',
+            'send-data/opentelemetry-collector/install-collector-macos',
+            'send-data/opentelemetry-collector/install-collector-windows',
+            {
+              type: 'category',
+              label: 'Data Source and Configurations',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
+              items:[
+                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
+                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
+                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
+              ]
+            },
+            'send-data/opentelemetry-collector/performance-benchmarks',
+            'send-data/opentelemetry-collector/troubleshooting-faq',
+            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
+          ]
+        },
+        {
+          type: 'category',
           label: 'Installed Collectors & Sources',
           collapsible: true,
           collapsed: true,
@@ -161,35 +190,6 @@ module.exports = {
               ],
             },
           ],
-        },
-        {
-          type: 'category',
-          label: 'OpenTelemetry Collector',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
-          items: [
-            'send-data/opentelemetry-collector/quickstart',
-            'send-data/opentelemetry-collector/install-collector-linux',
-            'send-data/opentelemetry-collector/install-collector-macos',
-            'send-data/opentelemetry-collector/install-collector-windows',
-            {
-              type: 'category',
-              label: 'Data Source and Configurations',
-              collapsible: true,
-              collapsed: true,
-              link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
-              items:[
-                'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
-                'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
-                'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
-                'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
-              ]
-            },
-            'send-data/opentelemetry-collector/performance-benchmarks',
-            'send-data/opentelemetry-collector/troubleshooting-faq',
-            'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
-          ]
         },
         {
           type: 'category',
