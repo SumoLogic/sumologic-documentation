@@ -1,4 +1,4 @@
-name: deploy-to-staging
+name: staging
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - test
 
 jobs:
-  deploy-to-staging:
+  staging:
     uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
     with:
       hostname: https://d10g313yy2pc88.cloudfront.net
