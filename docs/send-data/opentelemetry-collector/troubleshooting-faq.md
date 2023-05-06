@@ -12,6 +12,12 @@ This document contains common troubleshooting scenarios and frequently asked que
 
 ## About the Sumo Logic OTel Collector
 
+#### What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?
+
+[**OpenTelemetry**](https://opentelemetry.io/) is a state-of-the-art open standard for collecting all kinds of observability data. Using a single common standard, it can flexibly collect logs, metrics, and tracing data. It is open source and freely available to download and hack on. It comes out of the box with support for the most popular integrations and makes it very easy to implement new ones if your use case isn’t already covered (it probably is!).
+
+The **Sumo Logic Distribution for OpenTelemetry** is a custom build of the OpenTelemetry collector that's optimized for interacting with Sumo Logic’s API. It supports everything the standard collector does, but has some additional extensions for Sumo Logic.
+
 #### How is the Sumo Logic OpenTelemetry Collector different from the Installed Collector? Which one should I use?
 
 You can compare the OpenTelemetry and Installed Collector [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/comparison.md) to decide which one is right for you.
@@ -276,7 +282,7 @@ For example:
 
 <img src={useBaseUrl('img/send-data/error-faq.png')} alt="error-faq.png" width="950" />
 
-In this case, this means that the collector couldn’t find the file you wanted to collect logs from. There can be lot of reasons why this error happens, including not having appropriate permissions. 
+In this case, this means that the collector couldn’t find the file you wanted to collect logs from. There can be lot of reasons why this error happens, including not having appropriate permissions.
 
 :::note
 The collector will still collect and send data from other sources as long as there are no issues with those sources.
