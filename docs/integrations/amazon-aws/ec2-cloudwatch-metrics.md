@@ -120,7 +120,7 @@ The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your E
 ### Collect Amazon CloudWatch EC2 Metrics
 
 Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) **(recommended)**
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) **(recommended)** or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 :::note
 Namespace for **Amazon EC2** Service is **AWS/EC2**.
