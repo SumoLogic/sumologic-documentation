@@ -85,7 +85,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 **Number of Unique Visitors.** Shows unique visitors to the site based on IP address over the last three hours in a single value chart.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-CloudFront-WebOperations.png')} alt="Amazon CloudFront" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudfront-Overview')} alt="Amazon CloudFront" />
 
 
 ### Latency Monitoring
@@ -104,7 +104,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 **Global Latency Time in Seconds**. See the global latency times in the last 24 hours on a line chart.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudfront-Overview.png')} alt="Amazon CloudFront" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudFront-Latency-Monitoring.png')} alt="Amazon CloudFront" />
 
 
 ### Visitor Statistics
