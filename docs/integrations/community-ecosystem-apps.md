@@ -27,10 +27,19 @@ Community content is stored in our [Community Content Repository](https://github
 The overall ratings for content are listed on a scale of 0 to 5, with 5 being the highest. You can view detailed ratings and comments on the Community Content Repository.
 :::
 
+* [Amazon CloudSearch](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_CloudSearch) (Rating: None)
+* [Amazon RDS - Enhanced Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_RDS/Enhanced-Monitoring) (Rating: None)
+* [Aruba Wireless - Auth Manager & WMS Module](https://github.com/SumoLogic/sumologic-content/tree/master/Aruba_Wireless/ArubaWireless_Controller) (Rating: None)
+* [Aruba Wireless - TACACS](https://github.com/SumoLogic/sumologic-content/tree/master/Aruba_Wireless/ArubaWireless_TACACS) (Rating: None)
 * [AWS CloudTrail - User Activity](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_CloudTrail) (Rating: 4.5)
 * [AWS EC2 - Host Metrics for OpenTelemetry](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_EC2/Host_Metrics_OTEL) (Rating: 4)
 * [AWS Health Events](https://github.com/SumoLogic/sumologic-content/tree/master/Amazon_Web_Services/AWS_Health) (Rating: None)
+* [Centrify](https://github.com/SumoLogic/sumologic-content/tree/master/Centrify) (Rating: None)
 * [Checkpoint Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Checkpoint) (Rating: None)
+* [Chef](https://github.com/SumoLogic/sumologic-content/tree/master/Chef) (Rating: None)
+* [Cisco Sourcefire](https://github.com/SumoLogic/sumologic-content/tree/master/Cisco/Sourcefire) (Rating: None)
+* [Citrix Netscaler VPN](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/VPN) (Rating: None)
+* [Citrix XenServer](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/XenServer) (Rating: None)
 * [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
 * [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
 * [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF) (Rating: 3.5)
