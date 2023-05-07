@@ -639,7 +639,10 @@ html[data-theme='light'] .alert--secondary {
   background-color: #fdfdfe;
   --ifm-alert-color: #474748;
   --ifm-alert-border-color: #d4d5d8;
-  border-left: 6px solid #d4d5d8;
+  border-left: 6px solid #8C9296;
+  border-right: 1px solid #d4d5d8;
+  border-top: 1px solid #d4d5d8;
+  border-bottom: 1px solid #d4d5d8;
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #1d4238;
   .admonition-icon {

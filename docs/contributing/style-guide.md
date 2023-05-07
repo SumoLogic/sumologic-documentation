@@ -146,6 +146,107 @@ All companies have numerous acronyms for product, features, solutions, and more.
 
 For example, the first time you use AWS Application Load Balancer (ALB), you introduce or use it like that the first time on the page. Through the rest of the page, you can use ALB.
 
+## Admonitions
+
+We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
+
+Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo. You can use markdown content in the admonitions, code blocks, links, bullets, images, videos, and much more.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+
+:::note
+This is a note.
+:::
+
+:::tip
+This is a tip about a cool feature option.
+:::
+
+:::important
+This is some vital information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
+:::
+
+:::caution
+This could note important and problematic information.
+:::
+
+:::sumo Best Practice
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+:::
+
+```
+
+</TabItem>
+<TabItem value="Result">
+
+:::note
+This is a note.
+:::
+
+:::tip
+This is a tip about a cool feature option.
+:::
+
+:::important
+This is some vital information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
+:::
+
+:::caution
+This could note important and problematic information.
+:::
+
+:::sumo Best Practice
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+:::
+
+</TabItem>
+</Tabs>
+
+You can use [code blocks](#code-blocks) in admonitions. Here's an example:
+
+:::tip
+Here's a cool tip.
+
+```json title="You can highlight lines in code blocks" {11-16}
+"overrides": [
+    {
+    "series": [],
+    "queries": [
+        "A"
+        ],
+    "userProvidedChartType": false,
+    "properties": {
+        "type": "column"
+        },
+    "unsafeCanvasJSProperties": {
+        "bevelEnabled": true,
+        "indexLabelPlacement": "inside",
+        "indexLabel": "{y}",
+        "indexLabelOrientation": "vertical"
+        }
+    }
+]
+```
+
+:::
 
 
 ## Beta Releases
@@ -328,6 +429,52 @@ _sourceCategory=reinvent/travel/checkout
 
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-cheat-sheet/code-blocks).
 
+
+## Collapsible text blocks
+
+Use an [expander](https://docusaurus.io/docs/next/markdown-features#details) to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
+
+You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
+
+```html title="Copy and fill out for expanders"
+<details><summary>Title for the expander</summary>
+
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+
+Add all content after Summary and before the closing details tags.
+
+</details>
+```
+
+
+<details>
+
+<summary>Example expander</summary>
+
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+
+```json title="Code in a tip with line highlight" {11-16}
+"overrides": [
+    {
+    "series": [],
+    "queries": [
+        "A"
+        ],
+    "userProvidedChartType": false,
+    "properties": {
+        "type": "column"
+        },
+    "unsafeCanvasJSProperties": {
+        "bevelEnabled": true,
+        "indexLabelPlacement": "inside",
+        "indexLabel": "{y}",
+        "indexLabelOrientation": "vertical"
+        }
+    }
+]
+```
+
+</details>
 
 ## Contractions
 
@@ -994,157 +1141,6 @@ module.exports = {
   ]
 ```
 </details>
-
-
-## Notes and admonitions
-
-We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
-
-Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo. You can use markdown content in the admonitions, code blocks, links, bullets, images, videos, and much more.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-```md
-
-:::note
-This is a note.
-:::
-
-:::tip
-This is a tip about a cool feature option.
-:::
-
-:::important
-This is some vital information.
-:::
-
-:::danger
-This action is dangerous and could result in data loss.
-:::
-
-:::caution
-This could note important and problematic information.
-:::
-
-:::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
-:::
-
-```
-
-</TabItem>
-<TabItem value="Result">
-
-:::note
-This is a note.
-:::
-
-:::tip
-This is a tip about a cool feature option.
-:::
-
-:::important
-This is some vital information.
-:::
-
-:::danger
-This action is dangerous and could result in data loss.
-:::
-
-:::caution
-This could note important and problematic information.
-:::
-
-:::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
-:::
-
-</TabItem>
-</Tabs>
-
-You can use [code blocks](#code-blocks) in admonitions. Here's an example:
-
-:::tip
-Here's a cool tip.
-
-```json title="You can highlight lines in code blocks" {11-16}
-"overrides": [
-    {
-    "series": [],
-    "queries": [
-        "A"
-        ],
-    "userProvidedChartType": false,
-    "properties": {
-        "type": "column"
-        },
-    "unsafeCanvasJSProperties": {
-        "bevelEnabled": true,
-        "indexLabelPlacement": "inside",
-        "indexLabel": "{y}",
-        "indexLabelOrientation": "vertical"
-        }
-    }
-]
-```
-
-:::
-
-
-### Collapsible boxes
-
-Use an [expander](https://docusaurus.io/docs/next/markdown-features#details) to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
-
-You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
-
-```html title="Copy and fill out for expanders"
-<details><summary>Title for the expander</summary>
-
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
-
-Add all content after Summary and before the closing details tags.
-
-</details>
-```
-
-
-<details>
-
-<summary>Example expander</summary>
-
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
-
-```json title="Code in a tip with line highlight" {11-16}
-"overrides": [
-    {
-    "series": [],
-    "queries": [
-        "A"
-        ],
-    "userProvidedChartType": false,
-    "properties": {
-        "type": "column"
-        },
-    "unsafeCanvasJSProperties": {
-        "bevelEnabled": true,
-        "indexLabelPlacement": "inside",
-        "indexLabel": "{y}",
-        "indexLabelOrientation": "vertical"
-        }
-    }
-]
-```
-
-</details>
-
 
 ## Patents and trademarks
 
