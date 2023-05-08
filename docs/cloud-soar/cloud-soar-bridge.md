@@ -1,38 +1,35 @@
 ---
-id: automation-service-bridge
-title: Automation Service Bridge
-sidebar_label: Automation Service Bridge
-description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
+id: cloud-soar-bridge
+title: Cloud SOAR Bridge
+sidebar_label: Cloud SOAR Bridge
+description: Learn how to install a bridge for Cloud SOAR to allow running custom actions or integrations in an on-premise environment.   
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-{@import ../../reuse/automation-service-la-note.md}
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
 ## Requirements 
 
 ### Hardware requirements
+<!-- These hardware requirements differ from those for the Automation Service bridge -->
 
-* OS: 
-   * Ubuntu (18.04/20.04)
-   * CentOS 7
-   * RedHat 8
+* OS: Ubuntu (18.04/20.04)
 * RAM: 8GB
 * CPU: 4 Core
 * DISK: 160GB
 * Network card: 1
 
 ### Network requirements
+<!-- These network requirements differ from those for the Automation Service bridge -->
 
 The Bridge has to be able to resolve DNS hostnames and needs to reach the below destinations
 
 | DESTINATION | PROTOCOL | PORT |
 | :-- | :-- | :-- |
-| sumo-logic-api-url | TCP| 443| 
-| siem-cloud-url | 	TCP| 	443| 
-| 926226587429.dkr.ecr.us-west-2.amazonaws.com| 	TCP| 	443| 
+| soar-cloud-url | TCP | 443 |
+| siem-cloud-url | TCP| 443| 
+| 784093250948.dkr.ecr.eu-central-1.amazonaws.com | 	TCP| 	443| 
 | index.docker.io* | 	TCP| 	443| 
 | registry-1.docker.io* | 	TCP| 	443| 
 | auth.docker.io* | 	TCP| 	443| 
@@ -75,9 +72,9 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
 
-<img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
 
-## Automation bridge installation
+## Automation installation
 
 ### Ubuntu
 
@@ -102,22 +99,24 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 And you can set this optional parameter (do not include spaces): `ALIAS`
 
 An example of a configuration file would be:
+<!-- This example differs from that for the Automation Service bridge -->
 ```
 {
-   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
-   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
-   "SIEM_URL":"https://YOUR_CSE_URL/sec",
-   "ALIAS":"YOUR_ALIAS_NO_SPACES"
+        "SOAR_URL":"https://YOUR_DOMAIN/incmansuite_ng/api", 
+        "SOAR_TOKEN":"YOUR_JWT_TOKEN",
+        "SIEM_URL":"https://YOUR_CSE_URL/sec",
+        "ALIAS": "YOUR_ALIAS_NO_SPACES"
 }
 ```
+Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
 
 ### Bridge ALIAS
 
 With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
 
-<img src={useBaseUrl('img/cse/automations-bridge-alias-create.png')} alt="Create ALIAS bridge" width="400"/>
+<img src={useBaseUrl('img/cloud-soar/automations-bridge-alias-create.png')} alt="Create ALIAS bridge" width="400"/>
 
-<img src={useBaseUrl('img/cse/automations-bridge-alias-default.png')} alt="Use default ALIAS bridge" width="400"/>
+<img src={useBaseUrl('img/cloud-soar/automations-bridge-alias-default.png')} alt="Use default ALIAS bridge" width="400"/>
 
 ### Automation bridge update
 
@@ -148,6 +147,6 @@ To check if the bridge is running correctly, run the following command:
 ps faux |grep automation-bridge
 ```
 
-This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
+This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cse/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
