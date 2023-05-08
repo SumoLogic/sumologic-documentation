@@ -23,7 +23,7 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 ### Network requirements
 <!-- These network requirements differ from those for the Automation Service bridge -->
 
-The Bridge has to be able to resolve DNS hostnames and needs to reach the below destinations
+The Bridge must be able to resolve DNS hostnames and reach the below destinations.
 
 | DESTINATION | PROTOCOL | PORT |
 | :-- | :-- | :-- |
