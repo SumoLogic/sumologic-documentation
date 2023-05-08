@@ -112,7 +112,7 @@ Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navi
 
 ### Bridge ALIAS
 
-With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
+With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
 
 <img src={useBaseUrl('img/cloud-soar/automations-bridge-alias-create.png')} alt="Create ALIAS bridge" width="400"/>
 
