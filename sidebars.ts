@@ -2388,6 +2388,7 @@ integrations: [
             'cse/automation-service/automation-service-automations',
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-integration-framework',
             'cse/automation-service/automation-service-bridge',
           ],
         },
