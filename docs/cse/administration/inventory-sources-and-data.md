@@ -44,6 +44,7 @@ Some inventory sources provide user inventory information, some provide computer
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source) | Cloud-to-Cloud | Computer and User |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Cloud-to-Cloud | User |
 | [Qualsys VMDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source) | Cloud-to-Cloud | Computer |
+| [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | Cloud-to-Cloud | Computer | 
 | [Sailpoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) | Cloud-to-Cloud | User |
 | [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source) | Cloud-to-Cloud | Computer |
 | [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source) | Cloud-to-Cloud | Computer |  
@@ -196,6 +197,17 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 | os | operatingSystem.osName |  | 
 | osVersion | operatingSystem.version |  | 
 
+### Rapid7 - Computer
+
+| Inventory Attribute | Data Source Field | Note |
+| :-- | :-- | :-- |
+| uniqueId | "rapid7-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
+| deviceUniqueId | id | A per-source unique ID | 
+| groups | groups |  | 
+| ip | ip |  | 
+| natIp | ip |  | 
+| os | os_system_name |  | 
+| osVersion | os_version |  | 
 
 ### Sailpoint Source - User
 
