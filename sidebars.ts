@@ -888,7 +888,17 @@ module.exports = {
         'dashboards-new/link-dashboards',
         'dashboards-new/share-dashboard-new',
         'dashboards-new/filter-template-variables',
-        'dashboards-new/migrate-to-new-dashboards',
+        {
+          type: 'category',
+          label: 'Migrate to New Dashboard',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'dashboards-new/dashboards-migration/index'},
+          items: [
+            'dashboards-new/dashboards-migration/steps-to-migrate',
+            'dashboards-new/dashboards-migration/changes-after-migration',
+          ],
+        },
         'dashboards-new/faq',
       ],
     },
