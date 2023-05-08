@@ -2407,6 +2407,7 @@ integrations: [
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/mssp',
+        'cloud-soar/cloud-soar-bridge',
       ],
     },
   ],
