@@ -90,7 +90,7 @@ To create an Amazon Security Lake Source, follow the steps below:
   Remember to copy and secure the subscription endpoint. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
   :::
 
-1. Optional: You can create any **Processing Rules** that you want for the Source. For more information, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+1. Optional: You can create any **Processing Rules** that you want for the Source. For more information, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 
 The next step is to update your Amazon Security Lake subscriber to fill in the subscriber endpoint on the Subscribers page.
 

@@ -11,10 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
-<!-- github-comment
-Write. The content below was copied from the doc accessed from the ? menu option.
--->
-
 ## Requirements 
 
 ### Hardware requirements
@@ -103,15 +99,15 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    * `1SOAR_TOKEN1`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
-And you can set this optional parameter: `ALIAS`
+And you can set this optional parameter (do not include spaces): `ALIAS`
 
 An example of a configuration file would be:
 ```
 {
-"SOAR_URL": "https://
-"SOAR_TOKEN": "
-"SIEM_URL":"https://
-"ALIAS": "
+   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
+   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
+   "SIEM_URL":"https://YOUR_CSE_URL/sec",
+   "ALIAS":"YOUR_ALIAS_NO_SPACES"
 }
 ```
 
