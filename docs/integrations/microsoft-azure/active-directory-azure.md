@@ -193,4 +193,4 @@ See information about failure sign-in events in your Azure AD, including the geo
 - **Sign In by User Over Time.** Shows trend of failure sign-in events over time.
 - **Sign-Ins Breakdown by Country, State, City.** Shows breakdown by country, state, and city.
 - **Sign in by Application.** Shows failure sign-in events by Application.
-- **Anomaly in Total Login Count.** Shows any Anomaly in the total failure login count .
+- **Anomaly in Total Login Count.** Shows any Anomaly in the total failure login count.
