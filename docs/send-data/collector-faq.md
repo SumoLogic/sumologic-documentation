@@ -180,7 +180,7 @@ Is it possible to delete data already collected into Sumo Logic? I've ingested 
 #### Answer
 
 Sumo Logic does not support the deletion of specific log messages. You can either delete the entire data ingested in a given time range and index or choose to hide the specific log message. Following is a explanation of these techniques:
-- To request data deletion from your account, you can send a request to [Sumo Logic Support](mailto:support@sumologic.com) through your account administrator. We will be able to delete all data within the specified time range for particular views/partitions that you have set up.
+- To request data deletion from your account, you can send a request to [Sumo Logic Support](https://support.sumologic.com) through your account administrator. We will be able to delete all data within the specified time range for particular views/partitions that you have set up.
 - If you do not want to delete all the data in the specified time range, an alternative is hiding the selective messages. You can achieve this in one of the two available ways:
     - Create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
     - You can reach out to [Sumo Logic Support](https://support.sumologic.com) through your account administrator, who can help in applying filters across your account so that all users in your organization are not able to access the unwanted logs.
