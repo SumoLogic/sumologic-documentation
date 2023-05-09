@@ -184,11 +184,7 @@ Sumo Logic does not support the deletion of specific log messages. You can eithe
 - If you do not want to delete all the data in the specified time range, an alternative is hiding the selective messages. You can achieve this in one of the two available ways:
     - Create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
     - You can reach out to [Sumo Logic Support](support@sumologic.com) through your account administrator, who can help in applying filters across your account so that all users in your organization are not able to access the unwanted logs.
-
-:::note
-In both cases, users can only hide the data (which is represented as data deletion).<br/> The only provision in Sumo Logic to delete the data permanently is by expiring the data through data retention.
-:::
-
+    
 It is also important to note that deleting data has no effect on the log ingestion rate that is displayed on the Accounts Page. Once data has been received by Sumo Logic it is counted against your account limits. However, on-demand charges are based on a daily average across the entire billing cycle and most daily spikes can be absorbed over a billing period. 
 
 ## Enabling updated Remote Windows Event Collection with 19.155 Collector
