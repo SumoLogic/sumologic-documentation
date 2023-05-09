@@ -25,7 +25,7 @@ Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), w
 The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service only supports automated enrichment, notification, and custom action types. 
 * Automation Service playbooks can only be triggered from CSE.
-* The Automation Service allows you to execute up to 10,000 actions per day.
+* The Automation Service does not allow you to execute an unlimited number of actions per day.
 * The Automation Service does not include the incident and case management features from Cloud SOAR.
 * Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
 
