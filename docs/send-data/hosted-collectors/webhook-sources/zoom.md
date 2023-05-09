@@ -16,7 +16,7 @@ Zoom HTTP Source is an endpoint for receiving Webhook events that are grouped in
 - User Events
 - Account Events
 
-For more information on Zoom Webhook events, see this [Zoom web page](https://marketplace.zoom.us/docs/api-reference/webhook-reference).
+For more information, see the [Zoom webhook events documentation](https://marketplace.zoom.us/docs/api-reference/webhook-reference).
 
 This section shows you how to configure Webhooks to collect events from Zoom. For more information, see [Create a Webhook-Only App](https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-webhook-only-app).
 
