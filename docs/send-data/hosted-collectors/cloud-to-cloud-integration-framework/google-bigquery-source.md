@@ -13,7 +13,7 @@ Google Cloud’s BigQuery is a fully managed enterprise data warehouse that help
 
 ## Data Source
 
-The Google BigQuery Integration fetches data using [BigQuery API](https://developers.google.com/identity/protocols/oauth2/scopes#bigqueryv2).
+The Google BigQuery Integration fetches results of a query using [BigQuery API](https://developers.google.com/identity/protocols/oauth2/scopes#bigqueryv2).
 
 ## Setup and Configuration
 
@@ -30,8 +30,8 @@ Follow the below steps to get the Service Account's Credential JSON file to run 
 
 ## States
 
-Google BigQuery integration Source is a dfully managed enterprise data warehouse that helps you to manage and analyze your data.
-When you create an Rapid7 Source, it goes through the following stages:
+Google BigQuery integration Source is a fully managed enterprise data warehouse that helps you to manage and analyze your data.
+When you create an Google BigQuery Source, it goes through the following stages:
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
@@ -58,16 +58,56 @@ To configure an Google BigQuery Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Project ID**. Enter the unique identifier number for your project. You can find this from the Google Cloud Console.
-1. **Delegated User Email**. Enter the admin user email address for the domain which grants the access to service account.
+1. **Project ID**. Enter the unique identifier number for your BigQuery project. You can find this from the Google Cloud Console.
 1. **Checkpoint Field**. Enter the name of the field in the query result to be used for checkpointing. This field has to be increasing and of type number or timestamp.
 1. **Checkpoint Start**. Enter the first value for the checkpoint that the integration will plug into the query.
-1. **Time Field (Optional)**. Enter the name of the field in the query result to be parsed as timestamp. If not provided the current time will be used.
-1. **Query**. Enter the BigQuery Name of the user to run. It has to include the phrase "%CHECKPOINT%".
-1. **Query Interval (Optional)**. Enter the time interval to run the query in the format: Xm (for X minutes) or Xh (for X hours).
-1. **Google BigQuery Credential**. Upload the JSON Key file downloaded from Google Cloud IAM & Admin.
-1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-1. When you are finished configuring the Source, click **Submit**.
+1. **(Optional)Time Field**. Enter the name of the field in the query result to be parsed as timestamp. If not provided the current time will be used.
+1. **Query**. Enter the query that you need to run. It has to include the phrase **%CHECKPOINT%**.
+1. **(Optional) Query Interval**. Enter the time interval to run the query in the format: Xm (for X minutes) or Xh (for X hours).
+1. **Google BigQuery Credential**. Upload the Credential JSON file downloaded from Google Cloud IAM & Admin.
+1. **(Optional) Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+1. When you are finished configuring the Source, click **Save**.
+
+### Examples: Query, Checkpoint and Checkpoint Start
+
+Each query must contain a phrase **%CHECKPOINT%**, integration will extract and save the current checkpoint and use it in place of this phrase. The value of **Checkpoint Start** must be the same type as the **Checkpoint Field**.
+:::note
+Quote the phrase as **"%CHECKPOINT%"** if the Checkpoint Field is a timestamp string.
+:::
+
+Following are some examples which will help you understand on what value to use for the field Query, Checkpoint, Time Field and Checkpoint Start.
+
+#### Example 1: Checkpoint Field is same as Timestamp Field.
+
+You can see double quotes for the timestamp as it is a string.
+
+Select base_url, source_url, collection_category, collection_number, timestamp(sensing_time) as sensing_time from `bigquery-public-data.cloud_storage_geo_index.landsat_index` where sensing_time > `"%CHECKPOINT%"` order by sensing_time with limit 100.
+
+| Field | Value |
+|:---|:---|
+| `Checkpoint Field` | `sensing_time` |
+| `Checkpoint Start`| `2022-02-02 11:00:00.000+0700` |
+| `Time Field` | `sensing_time` |
+
+#### Example 2: Checkpoint Field is a numeric field.
+
+Select trip_id, subscriber_type, start_time, duration_minutes from `bigquery-public-data.austin_bikeshare.bikeshare_trips` where trip_id > `%CHECKPOINT%` order by start_time with limit 100.
+
+| Field | Value |
+|:---|:---|
+| `Checkpoint Field` | `trip_id` |
+| `Checkpoint Start`| `0` |
+| `Time Field` | `start_time` |
+
+#### Example 3: Query Gmail Logs
+
+Select message_info, event_info, event_info.timestamp_usec as timestamp from `MyProject.MyDataSet.activity` where event_info.timestamp_usec > `%CHECKPOINT%` with limit 100.
+
+| Field | Value |
+|:---|:---|
+| `Checkpoint Field` | `timestamp` |
+| `Checkpoint Start`| `1683053865563258` |
+| `Time Field` | `timestamp` |
 
 ### Error Types
 
@@ -103,10 +143,10 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `projectId` | String | Yes | The project ID is the globally unique identifier for your project. For example, `pelagic-quanta-364805`. | modifiable |
 | `credentialsJson` | String | Yes | This field contains the credential JSON of the Service Account used for accessing BigQuery service. | modifiable |
-| `Query` | String | Yes | The query to be used in BigQuery. The special string **%checkpoint%** will be replaced with the largest value seen in the checkpoint field. | modifiable |
-| `timeField` | String | No | The name of the column to be used to extract timestamp. If not specified, the C2C will use the current time for each row or record we collect. The TIMESTAMP data type is recommended, but any number will be converted into a timestamp by dividing by 10 until the integral part has 10 digits. For example, `TIMESTAMP_MICROS(event_info.timestamp_usec)` as time. | modifiable |
-| `checkpointField` | String | Yes | The column whose largest value will be used as the %checkpoint% in the next search. The previous value will be saved in a file and compared with the current value using max() after being converted to string, so you can use any field type which is either a number or lexicographically comparable like TIMESTAMP. | modifiable |
-| `checkpointStart` | String | Yes | Provide the value that we will plugin at the very first run only. This is because the checkpoint might not be a timestamp field so we don’t know the exact value here. | modifiable |
+| `Query` | String | Yes | The query to be used in BigQuery. The special string **%CHECKPOINT%** will be replaced with the largest value seen in the checkpoint field. | modifiable |
+| `timeField` | String | No | The name of the column to be used to extract timestamp. If not specified, the C2C will use the current time for each row or record we collect. The TIMESTAMP data type is recommended, but any number type will be converted into a epoch milliseconds or epoch microseconds. | modifiable |
+| `checkpointField` | String | Yes | The column whose largest value will be used as the **%CHECKPOINT%** in the next search. The checkpoint field has to be of type number of timestamp. | modifiable |
+| `checkpointStart` | String | Yes | The very first value of the checkpoint to be used in the query. | modifiable |
 
 ### JSON Example
 
