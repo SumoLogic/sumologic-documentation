@@ -160,7 +160,7 @@ See information about Authorization in Azure Active Directory including the name
 - **Operation Name.** Shows the name of authorizations or authentication, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of authorizations or authentication along with a count, and compares it to the count of operations from one day before.
 - **Operations Over Time.** Shows a count of authorizations or authentication along with the name on a line chart.
-- **Successful Events.** Shows an aggregation table of successful events with columns for the operation names,  result types, result descriptions, target source name, identity, and count.
+- **Successful Events.** Shows an aggregation table of successful events with columns for the operation names, result types, result descriptions, target source name, identity, and count.
 - **Failed Events.** Shows an aggregation table of failed events with columns for the operation names,  result types, result descriptions, identity, target source name, and count.
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 
