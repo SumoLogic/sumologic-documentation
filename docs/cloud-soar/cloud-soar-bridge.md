@@ -12,9 +12,11 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 ## Requirements 
 
 ### Hardware requirements
-<!-- These hardware requirements differ from those for the Automation Service bridge -->
 
-* OS: Ubuntu (18.04/20.04)
+* OS: 
+   * Ubuntu (18.04/20.04)
+   * CentOS 7
+   * RedHat 8
 * RAM: 8GB
 * CPU: 4 Core
 * DISK: 160GB
@@ -68,11 +70,28 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    systemctl restart docker
    ```
 
-## Get installation token
-
-Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
-
-<img src={useBaseUrl('img/cloud-soar/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
+## Get JWT token
+<!-- This section is different from the Automation Service, where it is titled "Get installation token". -->
+1. Click the gear icon at the top of the Cloud SOAR screen and select **Settings**.
+1. Add a new profile:
+   1. Select **User Management > Profiles**. 
+   1. Click the **+** button to the left of **Profiles**.
+   1. In the **Add profile** dialog, enter a **Name** for the new profile.
+   1. Click the **Settings** box.
+   1. In the **API** box select **Use**.
+   1. Click **CREATE**.
+1. Add a new user:
+   1. Select **User Management > Users**.
+   1. Click the **+** button to the left of **Users**.
+   1. In the **Add user** dialog, for **Profile** select the profile you created above. Fill out the rest of the fields.
+   1. Click **CREATE**. 
+1. Copy the JWT token for the new user:
+   1. Log in to Cloud SOAR as the new user.
+   1. Click the gear icon at the top of the Cloud SOAR screen and select **Settings**.
+   1. Select **User Management > Users**.
+   1. Select the new user.
+   1. Scroll down to the **JWT Token** section.
+   1. Copy the token. You will use this token later in the installation process.
 
 ## Automation installation
 
@@ -91,9 +110,9 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    ```
    sudo yum install automation-bridge-X.X.rpm
    ```
-1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
-   * `1SOAR_URL1`
-   * `1SOAR_TOKEN1`
+1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters: <!-- These parameters differ from those for the Automation Service -->
+   * `SOAR_URL`
+   * `SOAR_TOKEN`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
 And you can set this optional parameter (do not include spaces): `ALIAS`
@@ -150,3 +169,10 @@ ps faux |grep automation-bridge
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
 On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+
+### Configuring the automation bridge for CyberArk
+
+If you are using CyberArk, you must add the following certificates provided by CyberArk to the `/opt/automation-bridge/` directory:
+* `RootCA_new.crt`
+* `client_new.crt`
+* `client_new.pem`
