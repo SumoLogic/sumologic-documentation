@@ -179,12 +179,13 @@ Is it possible to delete data already collected into Sumo Logic? I've ingested 
 
 #### Answer
 
-It is not possible for users to delete specific message data already ingested into Sumo Logic. All data sent to Sumo Logic is indexed together and stored in a Write Once Read Many (WORM) storage, which you cannot modify. You may request data be deleted from your account. If you have Views and Partitions set up, Sumo Logic can delete data from that specific View or Partition. Otherwise, the deletion will cover ALL data delivered into the account within a specified time range. Any request for data deletion should be sent to [Sumo Logic Support](mailto:support@sumologic.com) through your account administrator.
-
-An alternative to requesting Sumo Logic to delete your message data is to create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
-
+Sumo Logic does not support the deletion of specific log messages. You can either delete the entire data ingested in a given time range and index or choose to hide the specific log message. Following is a explanation of these techniques:
+- To request data deletion from your account, you can send a request to [Sumo Logic Support](https://support.sumologic.com) through your account administrator. We will be able to delete all data within the specified time range for particular views/partitions that you have set up.
+- If you do not want to delete all the data in the specified time range, an alternative is hiding the selective messages. You can achieve this in one of the two available ways:
+    - Create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
+    - You can reach out to [Sumo Logic Support](https://support.sumologic.com) through your account administrator, who can help in applying filters across your account so that all users in your organization are not able to access the unwanted logs.
+    
 It is also important to note that deleting data has no effect on the log ingestion rate that is displayed on the Accounts Page. Once data has been received by Sumo Logic it is counted against your account limits. However, on-demand charges are based on a daily average across the entire billing cycle and most daily spikes can be absorbed over a billing period. 
-
 
 ## Enabling updated Remote Windows Event Collection with 19.155 Collector
 
