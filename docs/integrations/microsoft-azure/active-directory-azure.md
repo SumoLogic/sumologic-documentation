@@ -50,8 +50,8 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 3. Click **Create**.
 4. On the **Custom deployment** blade, click **Build your own template in the editor**.
 5. Copy the contents of `azuredeploy_logs.json`, and paste it into the editor window.
-6. Click **Save**
-.7. Now you are back on the **Custom deployment** blade.
+6. Click **Save**.
+7. Now you are back on the **Custom deployment** blade.
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
     3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Step_1._Configure_an_HTTP_source).
