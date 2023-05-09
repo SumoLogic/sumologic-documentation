@@ -146,7 +146,7 @@ See information about group management in Azure Activity Directory, including gr
 
 - **Operation Name.** Shows the name of group management operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of group management operations along with a count, and compares it to the count of operations from one day before.
-- **Operations Over Time.**  Shows a count of group management operations along with the name on a line chart.
+- **Operations Over Time.** Shows a count of group management operations along with the name on a line chart.
 - **Failed Events.** Shows an aggregation table of failed events with columns for the operation names,  result types, result descriptions, identity, and count.
 - **Successful Events.** Shows an aggregation table of successful events with columns for the operation names,  result types, result descriptions, identity, and count.
 - **Members Added/Removed.** Shows an aggregation table of successful events with columns for the time, operation names,  result types, target source name, identity, display name, and count.
