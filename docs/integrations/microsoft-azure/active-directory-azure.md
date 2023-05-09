@@ -158,7 +158,7 @@ See information about group management in Azure Activity Directory, including gr
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Active-Directory-Authorization_Authentication_Other.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of authorizations or authentication, and a count of how many times they happened on a bar chart.
-- **Operation Name - One Day Time Comparison.**  Shows an aggregation table with the names of authorizations or authentication along with a count, and compares it to the count of operations from one day before.
+- **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of authorizations or authentication along with a count, and compares it to the count of operations from one day before.
 - **Operations Over Time.** Shows a count of authorizations or authentication along with the name on a line chart.
 - **Successful Events.** Shows an aggregation table of successful events with columns for the operation names,  result types, result descriptions, target source name, identity, and count.
 - **Failed Events.** Shows an aggregation table of failed events with columns for the operation names,  result types, result descriptions, identity, target source name, and count.
