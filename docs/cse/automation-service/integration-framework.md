@@ -11,96 +11,241 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework. For increased security and isolation, each integration is executed in its own Docker container, which can be easily customized by the user when the integration is created.
+Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework. For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration.
 
 Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.
 
-The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed.
+The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed. 
 
-<img src={useBaseUrl('img/cse/integration-framework-container.png')} alt="<your image description>" width="600"/>
+The following diagram shows the integration file hierarchy:
 
-Figure 1 - Integration File Hierarchy
+<img src={useBaseUrl('img/cse/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
 
-Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, a user may choose to extend Sumo Logic existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host. Once the user has created this new action, it can easily be added to the existing RSA Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration for other customer instances as well.
+Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend Sumo Logic existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. You can also share this new action and use it to extend the functionality of the integration for others.
 
-<img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} alt="<your image description>" width="600"/>
+The following diagram shows action file portability:
 
-## Integration Framework File Formats
+<img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} alt="Integration framework file portability" width="700"/>
 
-Both the integration definition file and the action definition file are YAML files. The following sections highlights the formats for each file type. Appendix A contains samples of completed integration definition and action definition files as a reference.
+## Integration framework file formats
 
-### Integration Definition File Format
+Both the integration definition file and the action definition file are YAML files. The following sections highlights the formats for each file type. The [Example files](#example-files) section contains samples of completed integration definition and action definition files as a reference.
 
-name: [String]* #Name of integration (should match action definition file)
+### Integration definition file format
 
-version: [String]* #File version number
+**\* ** Required fields
 
-icon: [Base64 String]* #Integration logo
+* **name* ** [String]: Name of integration (should match action definition file)
+* **version* ** [String]: File version number
+* **icon* ** [Base64 String]: Integration logo
+* **script* **: 
+   * **type* ** [String]: Code type (Python, Perl, PowerShell, or bash)
+   * **test_connection_code* ** [String]: #Code to test integration
+* **docker_repo_tag* ** [String]: Docker repository tag
+* **local_repo** [Boolean]: Define if Docker image is a local one
+* **configuration* **: 
+   * **testable_connection* ** [Boolean]: Is test code present? (true/false)
+   * **require_proxy_config* ** [Boolean]: Is proxy available? (true/false)
+   * **data_attributes* **: Fields required for configuration
+      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable
+         * **label* ** [String]: Label displayed in the UI
+         * **type* ** [String]: Type of field
+         * **required* ** [Boolean]: Is the field required? (true/false)
+         * **validator** [String]: Input validator type
+         * **default** [String]: Default field value
+         * **values** [String]: List of possible values for a list field
+   * **listing_attributes** Configuration fields to show in the resource table
+      * **<field_name>* ** [String]: Name of field which will be shown in the table
+      * **name* ** [String]: Name displayed in the column header
+* **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
-script: *
+<details><summary>Notes on integration definition file fields</summary>
 
-    type: [String]* #Code type (python, perl, poweshell or bash)
+* **name**<br/>Name displayed in the Cloud SOAR UI. It must match the ‘integration’ field of each action definition file added to the integration. 
+* **script: type**<br/>Indicates which code parser Cloud SOAR should use to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
+   * `bash`
+   * `perl`
+   * `powershell`
+   * `python`
+* **script: test_connection_code**<br/>Code which can be used to test the integration through the Cloud SOAR UI by clicking on “Test Saved Settings”. Exiting with a value of “0” indicates success, while any other value will indicate failure. 
+* **docker_repo_tag**<br/>Docker repository tag of the image build the new container from. Can be from any local or remote repository configured on the Cloud SOAR server. 
+* **local_repo** true/false (Default false)<br/>Indicate that Docker image is a local one and not one present in SOAR Repository 
+* **configuration: require_proxy_config**<br/>True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter ‘proxy_url’ will be passed to the code on execution as Environment variable. 
+* **configuration: data_attributes <field_name>**<br/>One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes configuration: data_attributes: url, configuration:data_attributes:user_name and configuration:data_attributes:password should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
+* **configuration: data_attributes: <field_name>: type**<br/>Acceptable values are:
+   * `checkbox`
+   * `list`
+   * `number`
+   * `password`
+   * `textarea`
+   * `text` 
+* **configuration: data_attributes: <field_name>: validator**<br/>Acceptable values are: `url`, `ip`, `port`, `host`, `integer`.
+* **configuration: data_attributes: <field_name>: values**<br/>List of possible values for a list field in key:value format, where the key is the value which will be used as the input parameter and the value is the display value which will be shown in the list. For example:
+   * `ip: IP Address`
+   * `domain: Domain`
+   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
 
-    test_connection_code: |
+</details>
 
-          [String] #Code to test integration
+### Action definition file format
 
-docker_repo_tag: [String]* #Docker repository tag
+**\* ** Required fields
 
-local_repo: [Boolean] #Define if docker image is a local one
+* **integration* ** [String]: Name of integration (should match integration definition file)
+* **name* ** [String]: Name of action
+* **type* ** [String]: Type of action
+* **script* **:
+   * **code* ** [String]: Action code
+* **fields* **:
+   * **id* ** [String]: Name of field which will be passed to code at runtime as environment variable
+   * **label* ** [String]: Label displayed in the UI
+   * **type* ** [String]: Type of field
+   * **required* ** [Boolean]: Is the field required (true/false)
+   * **validator* ** [String]: # Input validator type
+   * **default** [String]: Default field value
+   * **values** [String]: List of possible values for a list field
+   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false)
+   * **observables** [String]: Link with the Observables section
+* **output* **: Expected fields from results
+   * **path* ** [String]: Result path
+   * **type* ** [String]: Type of data returned
+* **table_view* **: Results to display in table view
+   * **display_name* ** [String]: Column name
+   * **value* ** [String]: Result path
+   * **type* ** [String]: Element type
+* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False)
+* **hook** [List]: List of hooks
+* **check_not_null_field** [String]: Internal name of entities (Incident or Task) field that can be not null to show action button
+* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed
+* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed
+* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format
+* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic
+* **exit_condition**:
+   * **path* ** [String]: Result path of exit condition value
+   * **string* ** [String]: Result path of string to check if is equal to result value
+* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. Setting value to force previous run'll be killed stopping Docker container.
+* **scheduled**:
+   * **every* ** [String] format: <int\><interval type\> s = Second, d = Day, h= Hours, m = Minutes
+   * **expire* ** [String] format: <int\><interval type\> s = Second, d = Day, h= Hours, m = Minutes
 
-configuration: *
+<details><summary>Notes on action definition file fields</summary>
 
-    testable_connection: [Boolean]* #Is test code present? (true/false)
+* **integration**<br/>This should match the ‘name field of the integration definition file for the integration. 
+* **name**<br/>Friendly name which will be displayed in the Cloud SOAR UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as “ban hash” or “system info”. 
+* **type**<br/>Type of action being performed. Acceptable values are:
+   * `Containment`
+   * `Notification`
+   * `Custom`
+   * `Daemon`
+   * `Trigger`
+* **fields: id**<br/>One id attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the id attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
+* **fields: id: type**<br/>Acceptable values are: 
+   * `list`
+   * `text`
+   * `upload`
+   * `checkbox`
+   * `fileDetonate`
+   * `tag`
+   * `multilist`
+   * `textarea`
+   * `datetime`
+   * `number`
+* **fields: id: validator**<br/>Acceptable values are: 
+   * `ipaddress`
+   * `port`
+   * `integer`
+   * `url`
+   * `domain`
+   * `e-mail`
+   * `ip_domain`
+   * `hash`
+   * `datetime`
+   * `sha256`
+   * `md5`
+   * `sha1`
+* **fields: id: values**<br/>List of possible values for a list field in key:value format, where the key is the value which will be used as the input parameter and the value is the display value which will be shown in the list. For example:
+   * `ip: IP Address`
+   * `domain: Domain`
+   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. |
+* **fields: id: incident_artifacts**<br/>When set to “true”, incident artifact values such as “sourceAddress” can be used as inputs for the field. 
+* **fields: id: observables**<br/>This field defines the link between the action and the observables section.Specifying an observable type here will cause the action to be displayed in the Actions menu for the specified observable type. Acceptable values are: `ipaddress`, `url`, `userdetail`, `md5`, `sha1`, `sha256`, `domain`, `file`, `email`.
+* **output:path**<br/>JSON path for each field which may be returned by the action, using the following JSON as an example:
+   ```
+   { country: "US",
+   response_code: 1,
+   as_owner: "CloudFlare, Inc.",
+   detected_urls: {
+   url: "http://google.com/",
+   positives: 2
+   }}
+   ```
+   The following output:path attributes should be added:
+   * `country`
+   * `response_code`
+   * `as_owner`
+   * `detected_urls.[].url`
+   * `detected_urls.[].positives`
+* **output: path: type**<br/>Reserved for future use. All outputs are treated as strings.
+* **table_view**<br/>The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in Table View.
+* **table_view: display_name**<br/>Friendly name which will appear as the column name.
+* **table_view: value**<br/>JSON path for each field which may be returned by the action, beginning with the path “” See output:path field above for additional information.
+* **table_view: type**<br/>Type of value at the moment is only possible to specify if the value should be shown as a link
+* **use_in_triage**<br/>Action should be manually executable in triage event? (default False)
+* **hook**<br/>Fields valid only for trigger actions, possible values are:
+   * `approveTask`
+   * `createTask`
+   * `reassignTask`
+   * `closeTask`
+   * `updateTask`
+   * `taskCustomAction`
+   * `updateIncident`
+   * `closeIncident`
+   * `newIncident`
+   * `incidentCustomAction`
+   * `addObservableIp`
+   * `addObservableMail`
+   * `addObservableUrl`
+   * `addObservableDomain`
+   * `addObservableUserDetail`
+   * `addObservableArtifact`
+   * `grabEvent`
+   * `reassignEvent`
+   * `discardEvent`
+   * `webhook`
+* **check_not_null_field**<br/>For action with hook incidentCustomAction and taskCustomAction , it specify internal name of element field should be not null to show button in GUI
+* **src_doc**<br/>Result path or rawOutput to take the entire output to show in html5 iframe sandboxed
+* **url_preview**<br/>Result path url to show in html5 iframe sandboxed
+* **image_base64_png(jpg)**<br/>Result path to get base64 png or jpg to show on GUI
+* **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
+* **exit_condition:path**<br/>Result path where to search in json structure as table_view section
+* **exit_condition:string**<br/>Value to check in path.
+* **re-execution**<br/>By default if previous action run is not yet finished, next scheduled run is skipped. Setting re-execution: ‘force’ previous action run will be killed stopping Docker container.
+* **scheduled:every**<br/>Time interval between one run and the next one, i.e. 10s, 5d, etc.
+   * s: SECONDS
+   * d: DAYS
+   * h: HOURS
+   * m: MINUTES
+* **scheduled:expire**<br/>Time after first run to stop scheduling and last result will be kept:
+   * s: SECONDS
+   * d: DAYS
+   * h: HOURS
+   * m: MINUTES
+* **signature**<br/>Not to be set by user.
 
-    require_proxy_config: [Boolean]* #Is proxy available? (true/false)
+</details>
 
-    data_attributes:* #Fields required for configuration
 
-        <field_name>: [String]* #Name of field which will be passed to code as environment variable
+## Action params
 
-            label: [String]* #Label displayed in the UI
+For security reason all action params are passed to Docker container as Environment variable with variable name equal to the id specified into yaml. For python code you can always use:
 
-            type: [String]* #Type of field
-
-            required: [Boolean]* #Is the field required? (true/false)
-
-            validator: [String] #Input validator type
-
-            default: [String] #Default field value
-
-            values: [String] #List of possible values for a list field
-
-    listing_attributes: #Configuration fields to show in the resource table
-
-        <field_name>: [String]* #Name of field which will be shown in the table
-
-        name: [String]* #Name displayed in the column header
-
-signature: [String] #signature to indicate integration is the original one written by Sumo Logic.
-
-* indicates a required field
-
-#### Notes on Specific Fields
-
-TABLE
-
-### Action Definition File Format
-
-PUT STUFF HERE
-
-#### Notes on Specific Fields
-
-TABLE
-
-## Action Params
-
-For security reason all action params are passed to docker container as Environment variable with variable name equal to the id specified into yaml. For python code you can always use
-
+```
 argparse.ArgumentParser()
+```
 
-but in that case you have to specify a class to manage Environment variable
+But in that case you have to specify a class to manage environment variable:
 
+```
 class EnvDefault(argparse.Action):
   def __init__(self, required=True, default=None, **kwargs):
        envvar = kwargs.get("dest")
@@ -109,45 +254,69 @@ class EnvDefault(argparse.Action):
        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
    def __call__(self, parser, namespace, values, option_string=None):
        setattr(namespace, self.dest, values)
-and add it into action kwargs
+```
 
+And add it into action `kwargs`:
+
+```
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
+```
 
-Or if you don't need extra utils provided by ArgumentParser as validation etc, you can simply:
+Or if you don't need extra utils provided by ArgumentParser as validation etc, you can simply use:
 
+```
 host = os.environ.get("host", "localhost")
+```
 
-## Integration Output
+## Integration output
 
 Cloud SOAR primarily uses JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, in order to pass data returned from an action to a future action in a Runbook or to other internal components, the output from an integration action must be returned in JSON and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas of Cloud SOAR.
 
 Most APIs can return JSON data, either by default or as an option. If an integration does not return JSON natively, the returned data may be converted to JSON prior to being returned by the action code so long as it matches the structure specified in the output:path attributes of the action definition file. For example, to return JSON data using Python, the output should be printed as follows:
 
-STUFF
+```
+Import json
+...
+print(json.dumps(<JSON Data>))
+```
 
-<img src={useBaseUrl('img/cse/integration-framework-action-result.png')} alt="<your image description>" width="600"/>
+Cloud SOAR will use the standard error and standard output to determinate if an action terminates successfully or not. So if you print a string in stderr like:
 
-Figure 3 - Table View
+```
+sys.stderr.write(str(err)) -> Action failed with reason string err
+```
 
-JSON view will display the entire output of the integration action in JSON format.
+Output from each integration action can be viewed in either table view or JSON view when executed. Table view is used to display a subset of the data, defined in the action definition file "table_view:" attributes listed above, in a table format. For example, the following code in an action definition file would result in a table view with columns for "ID", "CVSS", "A", "C", and "I":
 
-<img src={useBaseUrl('img/cse/integration-framework-action-result-2.png')} alt="<your image description>" width="600"/>
-
-Figure 4 - JSON View
-
-Setting
-
+```
+table_view:
+- display_name: 'ID'
+value : 'id'
 - display_name: 'CVSS'
+value : cvss'
+```
 
+The following image shows the table view:
+
+<img src={useBaseUrl('img/cse/integration-framework-action-result.png')} alt="Action result" width="600"/>
+
+The JSON view will display the entire output of the integration action in JSON format:
+
+<img src={useBaseUrl('img/cse/integration-framework-action-result-2.png')} alt="Action result output" width="600"/>
+
+Following is the setting for a link type:
+
+```
+- display_name: 'CVSS'
 value : 'cvss'
-
 type : 'link'
+```
 
-<img src={useBaseUrl('img/cse/integration-framework-show-details.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-show-details.png')} alt="Show details" width="600"/>
 
 ### Added more output type for action
 
-src_doc: 'result path OR rawOutput' -> it's possible to specify a json path or using rawOutput to specify text output to use as srcDoc for iframe sandboxed, Note!! is not possible to use javascript
+`src_doc` can use result path or rawOutput. It's possible to specify a JSON path or use rawOutput to specify text output to use as `srcDoc` for iframe sandboxed. (It is not possible to use JavaScript.)
 
 ```
 integration: 'Incident tools'
@@ -181,105 +350,81 @@ script:
 src_doc: 'rawOutput'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} alt="<your image description>" width="600"/>
+The following image shows output from the example above:
 
-image_base64_png(jpg): 'result path where to get base64 png or jpg image'
+<img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} alt="Browser market share" width="600"/>
 
-<img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} alt="<your image description>" width="600"/>
+The `image_base64_png(jpg)` field provides the result path where to get base64 png or jpg image.
 
-## Working with Integrations
+<img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} alt="Result path" width="600"/>
 
-All integrations are configured by navigating to Configurations -> External Sources -> Integrations from the Main Menu bar.
+## Working with integrations
 
-Integration Definitions
-To add a new integration, click on the "+" icon at the top of the integration list pane on the left-hand side of the integrations page.
+All integrations are configured by navigating to **Integrations**.
 
-<img src={useBaseUrl('img/cse/integration-framework-definition.png')} alt="<your image description>" width="600"/>
+### Integration definitions
 
-Figure 5 - Integration Definition
+To add a new integration, click on the **+** icon at the top of the integration list pane on the left-hand side of the integrations page.
 
-The Add New Integration window allows the user to upload an integration definition file by clicking "Select Files".
+<img src={useBaseUrl('img/cse/integration-framework-definition.png')} alt="Add integration" width="800"/>
 
-Once the integration definition file and the Docker image have been defined, click "Save" to add the new integration.
+The **New Integration** window allows you to upload an integration definition file by clicking **Select Files**. Once you define the integration definition file and the Docker image, click **Save** to add the new integration.
 
-<img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} alt="New integration" width="600"/>
 
-Figure 6 - Adding an Integration
+To edit an existing integration by uploading a new integration definition file , click on the **Edit** button in the upper right-hand corner of the page. To export the integration definition file for the selected integration, click on the **Export** icon.
 
-To edit an existing integration by uploading a new integration definition file , click on the "Edit" button in the upper right-hand corner of the page.
+### Action definitions
 
-To export the integration definition file for the selected integration, click on the "Export" icon.
+To add a new action, select the appropriate integration from the integrations list on the left-hand side of the page, then click on the **Add Action** button (**+** icon) to the right of the integrations list.
 
-Action Definitions
-To add a new integration, select the appropriate integration from the integrations list on the left-hand side of the page, then click on the "+ Add Action" button to the right of the integrations list.
+<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} alt="Add integration" width="600"/>
 
-<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} alt="<your image description>" width="600"/>
+The **New Action** window allows you to upload an action definition file by clicking **Select Files**.
 
-Figure 7 - Action Definition
+Once the action definition file has been selected, click **Save** to add the new action.
 
-The Add New Action window allows the user to upload an action definition file by clicking "Select Files".
+<img src={useBaseUrl('img/cse/integration-framework-upload.png')} alt="Upload" width="600"/>
 
-Once the action definition file has been selected, click "Save" to add the new action.
+Existing actions may be edited by clicking the **Upload** button below the action name to upload a new action definition file, or by clicking the **Edit** button below the action name to open a text editor and edit the action directly.
 
-<img src={useBaseUrl('img/cse/integration-framework-upload.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} alt="Action editor" width="600"/>
 
-Figure 8 - Adding an Integration Action
+To test an action, click on the **Test Action** button below the action name, enter the required parameters and click **Test Action**.
 
-Existing actions may be edited by clicking the "Upload" button below the action name to upload a new action definition file, or by clicking the "Edit" button below the action name to open a text editor and edit the action directly within Cloud SOAR.
+<img src={useBaseUrl('img/cse/integration-framework-test-action.png')} alt="Test action" width="600"/>
 
-<img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} alt="<your image description>" width="600"/>
-
-Figure 9 - Cloud SOAR Action Editor
-
-To test an action, click on the "Test Action" button below the action name, enter the required parameters and click "Test Action".
-
-<img src={useBaseUrl('img/cse/integration-framework-test-action.png')} alt="<your image description>" width="600"/>
-
-Figure 10 - Action Testing
-
-To export an action, click on the "Export" button below the action name.
+To export an action, click on the **Export** button below the action name.
 
 ### Daemon Action Definitions
 
-Uploading an action yaml with type Daemon is possible to specify daemon action.
+Uploading an action YAML file with type Daemon allows you to specify Daemon action. You can also define rules associated with Daemon.
 
-And now is possible to define rules associated with Daemon.
+<img src={useBaseUrl('img/cse/integration-framework-daemon-action.png')} alt="Daemon action" width="800"/>
 
-<img src={useBaseUrl('img/cse/integration-framework-daemon-action.png')} alt="<your image description>" width="800"/>
-
-Note: daemon action must return an array of object in json format
+Daemon action must return an array of objects in JSON format:
 
 ```
 [{ 'a': 'a1', 'b': 'b1' }, { 'a': 'a2', 'b': 'b2' }]
 ```
 
-And every object is processed by filter and action
+Every object is processed by filter and action. It is also possible to define which output field should be passed to the next script run and an extra param key value pair to specialize each rule:
 
-Note: It is also possible to define which output field should be pass to the next script run and an extra param key value pair to specialize each rule.
+<img src={useBaseUrl('img/cse/integration-framework-add-automation-rule.png')} alt="Add automation rule" width="600"/>
 
-<img src={useBaseUrl('img/cse/integration-framework-add-automation-rule.png')} alt="<your image description>" width="600"/>
-
-All available actions into rule:
-
-Create incident from template
-
-Update incident
-
-Close Incident
-
-Change incident status
-
-Add events to an existing incident
-
-Change task progress
-
-Close task
-
-Add to Triage
+All available actions are:
+* Create incident from template
+* Update incident
+* Close Incident
+* Change incident status
+* Add events to an existing incident
+* Change task progress
+* Close task
+* Add to Triage
 
 ### Scheduled Action Definitions
 
-Yaml example:
+YAML example:
 
 ```
  integration: \'Incident tools\'*
@@ -299,33 +444,22 @@ Yaml example:
    - path : 'exit_condition'
 ```
 
-re-execution: By default, if previous action run is not yet finished, next scheduled run is skipped. Setting re-execution: 'force' previous run will be killed stopping docker container.**   **
+Field notes:
+* **re-execution**<br/>By default, if the previous action run is not yet finished, the next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
+* **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions:
+   * **exit_condition: path**<br/>It's where to search in json structure as table_view section.
+   * **exit_condition: string**<br/>Value to check in path.
+* **scheduled**<br/>Specify the time interval between one run and the next and action expiration.
+   * **scheduled: EVERY**<br/>The time interval between one run and the next.
+   * **scheduled: EXPIRE**<br/>The time after the first run to stop scheduling. The last result will be kept. Time interval:
+     * s => SECONDS
+     * d => DAYS
+     * h => HOURS
+     * m => MINUTES
 
-exit_condition: Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions:
+##  Example files
 
-exit_condition:path: it's where to search in json structure as table_view section
-
-exit_condition:string: value to check in path
-
-scheduled: Specify the time interval between one run and the next and action expiration.
-
-scheduled:EVERY: time interval between one run and the next
-
-scheduled:EXPIRE: time after first run to stop scheduling and last result will be kept
-
-Time interval:
-
-s => SECONDS
-
-d => DAYS
-
-h => HOURS
-
-m => MINUTES
-
-##  Appendix A -- Example Files
-
-### Integration Definition File (VirusTotal)
+### Integration definition file (VirusTotal)
 
 ```
 name: 'VirusTotal'
@@ -377,7 +511,7 @@ configuration:
         required: true
 ```
 
-### Action Definition File (VirusTotal)
+### Action definition file (VirusTotal)
 
 ```
 integration: 'VirusTotal Open Framework CS'
@@ -460,7 +594,7 @@ table_view:
       value : 'report.[].Malware.[].Antivirus'
 ```
 
-### Daemon Definition File (QRadar)
+### Daemon definition file (QRadar)
 
 ```
 integration: 'IBM QRadar OIF'
@@ -633,7 +767,7 @@ output:
 signature: '4fbf0ab65bde0eba04875da80457b8915645485a399f16100f80fa17a7dd70bae9183afea233a3a9846336f7def5ab0ffd05b28c637d6fe4001203c29396eeb2'
 ```
 
-### Trigger Definition File (Incident Tools)
+### Trigger definition file (Incident Tools)
 
 ```
 integration: 'Incident Tools'
@@ -692,7 +826,7 @@ hook:
     - updateIncident
 ```
 
-### Trigger taskCustomAction Definition File (Incident Tools)
+### Trigger taskCustomAction definition file (Incident Tools)
 
 ```
 integration: 'Incident tools'
@@ -724,7 +858,7 @@ hook:
     - taskCustomAction
 ```
 
-### Trigger incidentCustomAction Definition File (Incident Tools)
+### Trigger incidentCustomAction definition file (Incident Tools)
 
 ```
 integration: 'Incident tools'
@@ -756,7 +890,7 @@ hook:
     - incidentCustomAction
 ```
 
-### Scheduled Definition File (Incident Tools)
+### Scheduled definition file (Incident Tools)
 
 ```
 integration: 'Incident tools'
@@ -814,115 +948,88 @@ output:
     - path : 'exit_condition'
 ```
 
-## Appendix B -- Using a Custom Docker Image
+## Using a custom Docker image
 
-Cloud SOAR allows the user to execute all the actions of an integration in a container built from a custom Docker image.
+You can execute all the actions of an integration in a container built from a custom Docker image.
 
-This is particularly useful, for example, if the user wants to improve actions by taking advantage of third-party libraries. In that case, user can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts.
+This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts.
 
-There are however many other ways in which using a custom Docker image can allow Cloud SOAR users to customize their integrations and actions.
+There are however many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
 
-### Steps to create a custom docker image
+### Steps to create a custom Docker image
 
-Go to the Integrations page inside the Automation sections. Look for the integration for which you need to create a custom Docker image and click on it.
+1. Go to the **Integrations** page.
+1. Look for the integration for which you need to create a custom Docker image and click on it.
+1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it.
+<br/><img src={useBaseUrl('img/cse/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="600"/>
+<br/>This will open the custom Docker editor:
+<br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
+1. Type a name for your custom image in the **Docker image tag** field. This is a required field.
+1. When you are creating a new custom Docker image, you will see the **Last update** field is showing **Never edited before**. The text area below allows you to write a Dockerfile with the instructions to build your custom image:
+<br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor-2.png')} alt="Docker custom image" width="700"/>
+1. Proceed to write your custom Dockerfile as you would normally do. If you need tips on how to do this, refer to [Useful Docker commands](#useful-docker-commands) or check the Docker official documentation. Keep in mind that the following statements are not currently available, which means they will be ignored when building the image: `COPY`, `WORKDIR`, `EXPOSE`, `ADD`, `ENTRYPOINT`, `USER`, `ARG`, and `STOPSIGNAL`.
+1. In the editor you will see there is a dropdown menu above the text area that reads **Valid Instructions**. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile. If you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area.
+<br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor-3.png')} alt="Docker instructions" width="600"/>
+1. As soon as you change something in your Dockerfile, a **Save** button will appear next to the Docker editor button. Click on it if you are ready to save your custom Dockerfile.
 
-Next to the name of the Integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it.
+Once you have saved a custom Dockerfile, the integration will be executed on a container built from the relative custom Docker image.
 
-<img src={useBaseUrl('img/cse/integration-framework-custom-docker-image.png')} alt="<your image description>" width="600"/>
+### Testing your custom Docker image
 
-This will open the custom docker editor:
+We strongly suggest that you test your custom images as soon as you create or modify them. If by any chance you save a faulty custom Dockerfile, when the actions from that integration are triggered, their execution will fail because the Docker image will fail as well.
 
-<img src={useBaseUrl('img/cse/integration-framework-docker-editor.png')} alt="<your image description>" width="600"/>
+1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor.
+<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image.png')} alt="Test Docker image" width="600"/>
+<br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile.
+<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="600"/>
+1. If your custom Docker image was built without error, a success message will pop up in your Cloud SOAR screen. Otherwise, if Cloud SOAR cannot build a proper image from your custom Dockerfile, an error message will pop up, containing details on what went wrong. In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
 
-Please start by typing a name for your custom image in the Docker image tag field. This is a required field.
+### Deleting your custom Docker image and reverting to the original one
 
-When you are creating a new custom docker image you will see the Last update field is showing "Never edited before".
+The **RESET DEFAULT IMAGE** button that appears at the bottom of the editor allows you to delete your custom Docker image and revert to the original Docker image used for that integration.
 
-The text area below allows you to write a Dockerfile with the instructions to build your custom image:
+As soon as you click on it, the integration will start being executed again in a container based on the original integration image. Notice that your custom Dockerfile will be lost, so you will have to write it again if you want to revert back to your custom image.
 
-<img src={useBaseUrl('img/cse/integration-framework-docker-editor-2.png')} alt="<your image description>" width="600"/>
+### Checking whether an integration is using a custom Docker image
 
-Proceed to write your custom Dockerfile as you would normally do, if you need tips on how to do this please refer to Appendix C or check the Docker official documentation.
+If you have appropriate permissions, you can set up custom Docker images for any integration. There are many ways to check if any of your integrations are being executed in a container from a custom Docker image.
 
-Keep in mind that the following statements are not currently available in Cloud SOAR, which means they will be ignored when building the image: COPY, WORKDIR, EXPOSE, ADD, ENTRYPOINT, USER, ARG and STOPSIGNAL.
+If you go to the Docker YAML editor of the integration, if it is using a custom image, a comment above the `docker_repo_tag` will tell you so:
 
-In the editor you will see there is a dropdown menu above the text area that reads Valid Instructions. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile, if you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area.
+<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-3.png')} alt="Docker custom image" width="800"/>
 
-<img src={useBaseUrl('img/cse/integration-framework-docker-editor-3.png')} alt="<your image description>" width="600"/>
+However, the best way to check whether an integration is using a custom image is to open the Docker editor for that integration (by clicking on the button with the Docker logo on it).
 
-As soon as you change something in your Dockerfile, a save button will appear next to the Docker editor button. Click on it if you are ready to save your custom Dockerfile.
+Integrations using a custom image will have a **Docker image tag**, a **Last update** date, and some Dockerfile content.
 
-Once you have saved a custom Dockerfile, the integration will be executed on a container built from the relative custom docker image.
+On the other hand, integrations that are not using a custom Docker image will have an empty Docker editor showing **Never edited before** in the **Last update** field:
 
-### Testing your custom docker image
-
-We strongly suggest that you test your custom images as soon as you create or modify them. If by any chance you save a faulty custom Dockerfile, when the actions from that integration are triggered their execution will fail as the Docker image will fail as well.
-
-To test your custom images, click where it says Test image, at the bottom right corner of the editor.
-
-<img src={useBaseUrl('img/cse/integration-framework-test-docker-image.png')} alt="<your image description>" width="600"/>
-
-Cloud SOAR will try to build an image from your Dockerfile. While this happens, you a spinner will show up in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile.
-
-<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-2.png')} alt="<your image description>" width="600"/>
-
-If your custom Docker image was built without error, a success message will pop up in your Cloud SOAR screen.
-
-Otherwise, if Cloud SOAR cannot build a proper image from your custom Dockerfile, an error message will pop up, containing details on what went wrong.
-
-In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
-
-### Deleting your custom docker image and reverting to the original one
-
-The Reset Default Image that appears at the bottom of the editor allows you to delete your custom docker image and revert to the original docker image used for that integration.
-
-As soon as you click on it, the integration will start being executed again in a container based on the original integration image.
-
-Please notice that your custom Dockerfile will be lost, so you will have to write it again if you want to revert back to your custom image.
-
-### Checking whether an integration is using a custom docker image or not
-
-Users with appropriate permissions can set up custom docker images for any integration.
-
-There are many ways to check if any of your integrations is being executed in a container from a custom docker image.
-
-If you go to the Docker YAML editor of the integration, if it is using a custom image, a comment above the docker_repo_tag will tell you so:
-
-<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-3.png')} alt="<your image description>" width="800"/>
-
-However, the best way to check whether an integration is using a custom image, is to open the Docker editor for that integration (by clicking on the button with the Docker logo on it).
-
-Integrations using a custom image, will have a Docker image tag, a Last update date and some Dockerfile content.
-
-On the other hand, integrations that are not using a custom docker image will have an empty Docker editor showing "Never edited" in the Last updated field:
-
-<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-4.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-4.png')} alt="Docker never edited" width="800"/>
 
 
-## Appendix C -- Useful Docker Commands
+## Useful Docker commands
 
-The following commands may be useful in performing some common actions in Docker on your Cloud SOAR server. Please see the official Docker documentation at https://docs.docker.com/ for additional information.
+The following commands may be useful in performing some common actions in Docker on your server. See the official Docker documentation at https://docs.docker.com/ for additional information.
 
 ### Create Docker image (Python example)
 
-Create a file with name dockerfile inside a dedicated directory:
-
-FROM python:2-slim
-
-RUN pip install --trusted-host pypi.python.org requests suds
-
-Inside this directory run:
-
-docker build -t <my_integration>
-
-If you run docker image ls you can see your image with tag
-
-<my_integration>
-
-Now you can use this tag into yaml:
-
-docker_repo_tag: '<my_integration>:latest'
-
+1. Create a file with name dockerfile inside a dedicated directory:
+   ```
+   FROM python:2-slim
+   RUN pip install --trusted-host pypi.python.org requests suds
+   ```
+1. Inside this directory run:
+   ```
+   docker build -t <my_integration>
+   ```
+1. If you run Docker image ls you can see your image with tag
+   ```
+   <my_integration>
+   ```
+1. Now you can use this tag into yaml:
+   ```
+   docker_repo_tag: '<my_integration>:latest'
+   ```
 
 ### Load an image from a tar archive
 
@@ -948,7 +1055,7 @@ docker image ls
 docker system df
 ```
 
-## Appendix D -- Use multi select in output
+## Use multi-select in output
 
 ```
     [
@@ -1045,47 +1152,46 @@ docker system df
         }
     ]
 ```
-With a result as shown above it's possible to add into OIF yaml output section:
+With a result as shown above it's possible to add into OIF YAML output section:
 
 ```
 output:
   - path : '[].{Name: name, ID: _id, Address: address}'
 
 ```
-And if you use that output into textarea as placeholder:
+And if you use that output into `textarea` as placeholder:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-1.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-1.png')} alt="Textarea" width="600"/>
 
-You will get pretty print html of aggregated elements
+You will get a print HTML of aggregated elements
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} alt="HTML of aggregated elements" width="800"/>
 
-## Appendix E -- Pipe functions in yaml output
+## Pipe functions in YAML output
 
-With the same action used in Appendix D, it's possible to use two common pipe functions to process action output
+With the same action used in [Use mult-select in output](#use-multi-select-in-output), it's possible to use two common pipe functions to process action output.
 
-1. join(`separator`)
+Pipe function `join('separator')`:
 
 ```
 output:
   - path : '[].guid | join(,)'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-app-3-image-1.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-3-image-1.png')} alt="Join separator pipe function" width="600"/>
 
-And so the next action'll run one time with a string created join array element with `separator` specified
+And so the next action will run one time with a string created join array element with `separator` specified:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} alt="Separator specified" width="700"/>
 
-2. unique()
-
+Pipe function `unique()`:
 ```
 output:
   - path : '[].tags.[] | unique()'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-3.png')} alt="<your image description>" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-3.png')} alt="Unique pipe function" width="600"/>
 
-the array'll be populated with not duplicated element
+The array will be populated with not duplicated element:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} alt="<your image description>" width="800"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
