@@ -61,8 +61,7 @@ The results are not automatically updated. If you want to refresh traces, click
 
 ### Trace Query Visualizations
 
-The Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and higher Return on Investment (ROI).
-It offers six charts to help you better analyze and trace data efficiently. These include:
+The Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). It offers six charts to help you analyze and trace data efficiently. These include:
 * Trace duration
 * Error count
 * Error count
@@ -100,7 +99,7 @@ To view the Trace Query Visualization charts:
 1. Navigate to the Traces (Query) screen and type in a query.
 2. Click the **Show Chart** tab. The default chart shown will be **Trace duration** as a **timeseries** chart.
 3. From the dropdown menu, select the chart type you want to view: **Trace duration**, **Error count**, or **Span count**.
-4. You can view each chart type as a **timeseries** or **histogram** chart by selecting the corresponding option from the dropdown menu
+4. You can view each chart type as a **timeseries** or **histogram** chart by selecting the corresponding option from the dropdown menu.
 
 These new aggregation charts will provide you with even more insights into the behavior of your application and help you resolve issues faster.
 
