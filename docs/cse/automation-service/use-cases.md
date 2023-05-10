@@ -42,7 +42,7 @@ The following example adds a simple enrichment using the “IP Reputation V3” 
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **IP reputation V3**.
    1. To the right of the **IPs** field click the gear icon.
-   1. Click **Playbook inputs** and select **input.signals[].entity.value**.
+   1. Click **Playbook inputs** and select **input.entity.value**.
    1. Click **Create**. 
 1. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
