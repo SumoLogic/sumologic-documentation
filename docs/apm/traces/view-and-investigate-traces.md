@@ -77,7 +77,7 @@ Here is some more detailed information about each chart type:
 * **Error count**. It helps you visualize the average number of errors per trace for certain time ranges. You can drill down to specific time ranges and identify the distribution of errors.
 * **Span count**. It helps you visualize how many spans you have per trace. You can drill down to specific time ranges and identify the distribution of spans.
 
-These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes in errors that may indicate an issue in the system.
+These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
 
 You can further switch between the charts from the dropdown menu, and view them as **timeseries** or **histograms**. **Trace duration** is set as the default **timeseries** chart, but you can drill down further and view additional charts such as the histogram to get a more detailed understanding of your tracing data.
 * **Timeseries**. It shows the average trace duration for each time bucket. It allows you to switch between linear and logarithmic scales to better visualize the data.
