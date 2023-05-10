@@ -283,6 +283,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source',
               ],
             },
             {
