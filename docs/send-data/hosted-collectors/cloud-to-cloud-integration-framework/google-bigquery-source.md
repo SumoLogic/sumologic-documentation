@@ -24,8 +24,8 @@ Follow the below steps to get the Service Account's Credential JSON file to run 
 1. From the project dropdown button, select the project where you will run the BigQuery jobs.<br/><img src={useBaseUrl('img/send-data/Google_Project_Name.png')} alt="Google_Project_Name" width="400" />
 1. Click on **Create a Service Account** and follow the instructions in [Create service accounts](https://cloud.google.com/iam/docs/service-accounts-create) google cloud docs.<br/><img src={useBaseUrl('img/send-data/Google_Create_Service_Account.png')} alt="Google_Create_Service_Account" width="500" />
 1. Click on the email address provisioned during the creation and then click the **KEYS** tab.<br/><img src={useBaseUrl('img/send-data/Google_Service_Account_Keys.png')} alt="Google_Service_Account_Keys" width="600" />
-1. Click **ADD KEY**. 
-1. Click **Create new key** and choose **JSON**.
+1. Click **ADD KEY** and choose **Create new key**. <br/><img src={useBaseUrl('img/send-data/Google_add_key.png')} alt="Google_Create_Service_Account" width="200" />
+1. Select key type as **JSON**.<br/><img src={useBaseUrl('img/send-data/Google_type_json.png')} alt="Google_Create_Service_Account" width="450" />
 1. Click **Create**. A JSON key file is downloaded to your computer.
 
 ## States
@@ -68,7 +68,7 @@ To configure an Google BigQuery Source:
 1. **(Optional) Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
-### Examples: Query, Checkpoint and Checkpoint Start
+### Sample values for Query, Checkpoint, and Checkpoint Start fields
 
 Each query must contain a phrase **%CHECKPOINT%**, integration will extract and save the current checkpoint and use it in place of this phrase. The value of **Checkpoint Start** must be the same type as the **Checkpoint Field**.
 :::note
@@ -77,11 +77,25 @@ Quote the phrase as **"%CHECKPOINT%"** if the Checkpoint Field is a timestamp st
 
 Following are some examples which will help you understand on what value to use for the field Query, Checkpoint, Time Field and Checkpoint Start.
 
-#### Example 1: Checkpoint Field is same as Timestamp Field.
+#### Example 1: Checkpoint Field is timestamp.
 
 You can see double quotes for the timestamp as it is a string.
 
-Select base_url, source_url, collection_category, collection_number, timestamp(sensing_time) as sensing_time from `bigquery-public-data.cloud_storage_geo_index.landsat_index` where sensing_time > `"%CHECKPOINT%"` order by sensing_time with limit 100.
+```sql
+Select * from MyProject.MyDataSet.MyTable where timestamp > "%CHECKPOINT%"
+```
+
+| Field | Value |
+|:---|:---|
+| `Checkpoint Field` | `timestamp` |
+| `Checkpoint Start`| `2022-02-02 11:00:00.000+0700` |
+| `Time Field` | `timestamp` |
+
+Specific example on a public dataset:
+
+```sql
+SELECT base_url,source_url,collection_category,collection_number,timestamp(sensing_time) as sensing_time FROM bigquery-public-data.cloud_storage_geo_index.landsat_index where sensing_time > '%CHECKPOINT%' order by sensing_time asc LIMIT 100
+```
 
 | Field | Value |
 |:---|:---|
@@ -91,7 +105,9 @@ Select base_url, source_url, collection_category, collection_number, timestamp(s
 
 #### Example 2: Checkpoint Field is a numeric field.
 
-Select trip_id, subscriber_type, start_time, duration_minutes from `bigquery-public-data.austin_bikeshare.bikeshare_trips` where trip_id > `%CHECKPOINT%` order by start_time with limit 100.
+```sql
+SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-data.austin_bikeshare.bikeshare_trips where trip_id > %CHECKPOINT% order by start_time asc LIMIT 100
+```
 
 | Field | Value |
 |:---|:---|
@@ -101,7 +117,9 @@ Select trip_id, subscriber_type, start_time, duration_minutes from `bigquery-pub
 
 #### Example 3: Query Gmail Logs
 
-Select message_info, event_info, event_info.timestamp_usec as timestamp from `MyProject.MyDataSet.activity` where event_info.timestamp_usec > `%CHECKPOINT%` with limit 100.
+```sql
+select message_info,event_info, event_info.timestamp_usec as timestamp from MyProject.MyDataSet.activity where event_info.timestamp_usec > %CHECKPOINT% LIMIT 100
+```
 
 | Field | Value |
 |:---|:---|
