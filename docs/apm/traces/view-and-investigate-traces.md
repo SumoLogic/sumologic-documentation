@@ -72,7 +72,7 @@ The Trace Query Visualizations allow you to visualize the breakdown of where tim
 
 <img src={useBaseUrl('/img/traces/breakdown2.png')} alt="breakdown2.png" width="950px" height="500" />
 
-For each chart type, you can choose to view it as either a **timeseries** or **histogram** chart. Here is some more detailed information about each chart type:
+Here is some more detailed information about each chart type:
 * **Trace duration**. It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
 * **Error count**. It helps you visualize the average number of errors per trace for certain time ranges. You can drill down to specific time ranges and identify the distribution of errors.
 * **Span count**. It helps you visualize how many spans you have per trace. You can drill down to specific time ranges and identify the distribution of spans.
