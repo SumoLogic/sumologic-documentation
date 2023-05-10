@@ -64,7 +64,7 @@ The results are not automatically updated. If you want to refresh traces, click
 The Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application, complexity of your traces as well as errors. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). It offers six charts to help you analyze and trace data efficiently. These include:
 * Trace duration as timeseries
 * Trace duration as histogram
-* Error count
+* Error count as timeseries
 * Error count
 * Span count as timeseries
 * Span count
