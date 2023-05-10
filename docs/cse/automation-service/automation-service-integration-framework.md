@@ -967,7 +967,7 @@ output:
     - path : 'array.[].amount2'
     - path : 'exit_condition'
 ```
-<!-- You cannot edit Docker files in the Automation Service. There is no Docker logo on integrations that you can click to edit the Docker image.
+<!-- We're leaving out the Docker image sections. You cannot edit Docker files in the Automation Service because is no Docker logo on integrations that you can click to edit the Docker image.
 
 ## Using a custom Docker image
 
@@ -1071,6 +1071,7 @@ docker image ls
 ```
 docker system df
 ```
+-->
 
 ## Use multi-select in output
 
@@ -1212,5 +1213,3 @@ output:
 The array will be populated with not duplicated element:
 
 <img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
-
--->
