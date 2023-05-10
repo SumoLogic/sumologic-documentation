@@ -66,7 +66,7 @@ The Trace Query Visualizations allow you to visualize the breakdown of where tim
 * Trace duration as histogram
 * Error count
 * Error count
-* Span count
+* Span count as timeseries
 * Span count
 * Trace duration as histogram
 
