@@ -1,8 +1,8 @@
 ---
 id: automation-service-bridge
-title: Bridge
-sidebar_label: Bridge
-description: Learn how to install a bridge to allow running custom actions or integrations in an on-premise environment.   
+title: Automation Service Bridge
+sidebar_label: Automation Service Bridge
+description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
