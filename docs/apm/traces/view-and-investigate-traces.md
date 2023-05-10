@@ -85,7 +85,6 @@ You can further switch between the charts from the dropdown menu, and view them 
 To get the best results from this chart, it is recommended to filter the traces to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
 
 * The height of the bar represents the average trace duration for each time bucket.
-* Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
 * Click on any of the color segments to focus on this service and drill down to selected timeframe.
 * Click and drag on the chart to zoom in.
 
