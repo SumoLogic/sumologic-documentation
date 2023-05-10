@@ -9,9 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 {@import ../../reuse/automation-service-la-note.md}
 
+<!-- This article's content is copied over from the "Integration Framework Manual" previously available ony from the"?" button in the Automation Service UI. Note that most discussion of Docker containers is commented out because you can only edit Docker containers in Cloud SOAR; you can't do it in the Automation Service. -->
+
 ## Overview
 
-The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration.
+The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. <!-- For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration. -->
 
 Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code, and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.
 
@@ -21,7 +23,7 @@ The following diagram shows the integration file hierarchy:
 
 <img src={useBaseUrl('img/cse/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
 
-Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. 
+Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. 
 
 You can also share this new action and use it to extend the functionality of the integration for others. The following diagram shows action file portability:
 
