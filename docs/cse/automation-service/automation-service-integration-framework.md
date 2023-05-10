@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 {@import ../../reuse/automation-service-la-note.md}
 
-<!-- This article's content is copied over from the "Integration Framework Manual" previously available ony from the"?" button in the Automation Service UI. Note that most discussion of Docker containers is commented out because you can only edit Docker containers in Cloud SOAR; you can't do it in the Automation Service. -->
+<!-- This article's content is copied over from the "Integration Framework Manual" previously available only from the"?" button in the Automation Service UI. Note that most discussion of Docker containers is commented out because you can only edit Docker containers in Cloud SOAR; you can't do it in the Automation Service. -->
 
 ## Overview
 
