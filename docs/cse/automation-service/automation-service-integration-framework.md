@@ -11,78 +11,83 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Overview
 
-Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework. For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration.
+The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration.
 
-Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.
+Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code, and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.
 
-The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed. 
+The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell, and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields, and the format in which the resulting information will be displayed. 
 
 The following diagram shows the integration file hierarchy:
 
 <img src={useBaseUrl('img/cse/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
 
-Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend Sumo Logic existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. You can also share this new action and use it to extend the functionality of the integration for others.
+Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. 
 
-The following diagram shows action file portability:
+You can also share this new action and use it to extend the functionality of the integration for others. The following diagram shows action file portability:
 
 <img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} alt="Integration framework file portability" width="700"/>
 
 ## Integration framework file formats
 
-Both the integration definition file and the action definition file are YAML files. The following sections highlights the formats for each file type. The [Example files](#example-files) section contains samples of completed integration definition and action definition files as a reference.
+Both the integration definition file and the action definition file are YAML files. The following sections highlight the formats for each file type. The [Example files](#example-files) section contains samples of completed integration definition and action definition files as a reference.
 
 ### Integration definition file format
 
 **\* ** Required fields
 
-* **name* ** [String]: Name of integration (should match action definition file)
-* **version* ** [String]: File version number
-* **icon* ** [Base64 String]: Integration logo
+* **name* ** [String]: Name of integration (should match action definition file).
+* **version* ** [String]: File version number.
+* **icon* ** [Base64 String]: Integration logo.
 * **script* **: 
-   * **type* ** [String]: Code type (Python, Perl, PowerShell, or bash)
-   * **test_connection_code* ** [String]: #Code to test integration
-* **docker_repo_tag* ** [String]: Docker repository tag
-* **local_repo** [Boolean]: Define if Docker image is a local one
+   * **type* ** [String]: Code type (Python, Perl, PowerShell, or bash).
+   * **test_connection_code* ** [String]: Code to test integration.
+* **docker_repo_tag* ** [String]: Docker repository tag.
+* **local_repo** [Boolean]: Define if Docker image is a local one.
 * **configuration* **: 
-   * **testable_connection* ** [Boolean]: Is test code present? (true/false)
-   * **require_proxy_config* ** [Boolean]: Is proxy available? (true/false)
-   * **data_attributes* **: Fields required for configuration
-      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable
-         * **label* ** [String]: Label displayed in the UI
-         * **type* ** [String]: Type of field
-         * **required* ** [Boolean]: Is the field required? (true/false)
-         * **validator** [String]: Input validator type
-         * **default** [String]: Default field value
-         * **values** [String]: List of possible values for a list field
-   * **listing_attributes** Configuration fields to show in the resource table
-      * **<field_name>* ** [String]: Name of field which will be shown in the table
-      * **name* ** [String]: Name displayed in the column header
+   * **testable_connection* ** [Boolean]: Is test code present (true/false).
+   * **require_proxy_config* ** [Boolean]: Is proxy available (true/false).
+   * **data_attributes* **: Fields required for configuration.
+      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable.
+         * **label* ** [String]: Label displayed in the UI.
+         * **type* ** [String]: Type of field.
+         * **required* ** [Boolean]: Is the field required (true/false).
+         * **validator** [String]: Input validator type.
+         * **default** [String]: Default field value.
+         * **values** [String]: List of possible values for a list field.
+   * **listing_attributes** Configuration fields to show in the resource table.
+      * **<field_name>* ** [String]: Name of field which will be shown in the table.
+      * **name* ** [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
 <details><summary>Notes on integration definition file fields</summary>
 
-* **name**<br/>Name displayed in the Cloud SOAR UI. It must match the ‘integration’ field of each action definition file added to the integration. 
-* **script: type**<br/>Indicates which code parser Cloud SOAR should use to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
+* **name**<br/>Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
+* **script: type**<br/>Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
    * `bash`
    * `perl`
    * `powershell`
    * `python`
-* **script: test_connection_code**<br/>Code which can be used to test the integration through the Cloud SOAR UI by clicking on “Test Saved Settings”. Exiting with a value of “0” indicates success, while any other value will indicate failure. 
-* **docker_repo_tag**<br/>Docker repository tag of the image build the new container from. Can be from any local or remote repository configured on the Cloud SOAR server. 
-* **local_repo** true/false (Default false)<br/>Indicate that Docker image is a local one and not one present in SOAR Repository 
-* **configuration: require_proxy_config**<br/>True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter ‘proxy_url’ will be passed to the code on execution as Environment variable. 
-* **configuration: data_attributes <field_name>**<br/>One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes configuration: data_attributes: url, configuration:data_attributes:user_name and configuration:data_attributes:password should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
+* **script: test_connection_code**<br/>Code which can be used to test the integration through the UI by clicking on **Test Saved Settings**. Exiting with a value of `0` indicates success, while any other value will indicate failure. 
+* **docker_repo_tag**<br/>Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server. 
+* **local_repo** true/false (Default false)<br/>Indicates that the Docker image is a local one and not one present in the repository.
+* **configuration: require_proxy_config**<br/>True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable. 
+* **configuration: data_attributes <field_name>**<br/>One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
 * **configuration: data_attributes: <field_name>: type**<br/>Acceptable values are:
    * `checkbox`
    * `list`
    * `number`
    * `password`
+   * `text`
    * `textarea`
-   * `text` 
-* **configuration: data_attributes: <field_name>: validator**<br/>Acceptable values are: `url`, `ip`, `port`, `host`, `integer`.
-* **configuration: data_attributes: <field_name>: values**<br/>List of possible values for a list field in key:value format, where the key is the value which will be used as the input parameter and the value is the display value which will be shown in the list. For example:
-   * `ip: IP Address`
+* **configuration: data_attributes: <field_name>: validator**<br/>Acceptable values are: 
+   * `host`
+   * `integer`
+   * `ip`
+   * `port`
+   * `url`
+* **configuration: data_attributes: <field_name>: values**<br/>List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
    * `domain: Domain`
+   * `ip: IP Address`
    * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
 
 </details>
@@ -91,85 +96,94 @@ Both the integration definition file and the action definition file are YAML fil
 
 **\* ** Required fields
 
-* **integration* ** [String]: Name of integration (should match integration definition file)
-* **name* ** [String]: Name of action
-* **type* ** [String]: Type of action
+* **integration* ** [String]: Name of integration (should match integration definition file).
+* **name* ** [String]: Name of action.
+* **type* ** [String]: Type of action.
 * **script* **:
-   * **code* ** [String]: Action code
+   * **code* ** [String]: Action code.
 * **fields* **:
-   * **id* ** [String]: Name of field which will be passed to code at runtime as environment variable
-   * **label* ** [String]: Label displayed in the UI
-   * **type* ** [String]: Type of field
-   * **required* ** [Boolean]: Is the field required (true/false)
-   * **validator* ** [String]: # Input validator type
-   * **default** [String]: Default field value
-   * **values** [String]: List of possible values for a list field
-   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false)
-   * **observables** [String]: Link with the Observables section
-* **output* **: Expected fields from results
-   * **path* ** [String]: Result path
-   * **type* ** [String]: Type of data returned
-* **table_view* **: Results to display in table view
-   * **display_name* ** [String]: Column name
-   * **value* ** [String]: Result path
+   * **id* ** [String]: Name of field which will be passed to code at runtime as environment variable.
+   * **label* ** [String]: Label displayed in the UI.
+   * **type* ** [String]: Type of field.
+   * **required* ** [Boolean]: Is the field required (true/false).
+   * **validator* ** [String]: Input validator type.
+   * **default** [String]: Default field value.
+   * **values** [String]: List of possible values for a list field.
+   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false).
+   * **observables** [String]: Link with the Observables section.
+* **output* **: Expected fields from results.
+   * **path* ** [String]: Result path.
+   * **type* ** [String]: Type of data returned.
+* **table_view* **: Results to display in table view.
+   * **display_name* ** [String]: Column name.
+   * **value* ** [String]: Result path.
    * **type* ** [String]: Element type
-* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False)
-* **hook** [List]: List of hooks
-* **check_not_null_field** [String]: Internal name of entities (Incident or Task) field that can be not null to show action button
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format
-* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic
+* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
+* **hook** [List]: List of hooks.
+* **check_not_null_field** [String]: Internal name of entities (Incident or Task) field that can be not null to show action button.
+* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
+* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
+* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
 * **exit_condition**:
-   * **path* ** [String]: Result path of exit condition value
-   * **string* ** [String]: Result path of string to check if is equal to result value
-* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. Setting value to force previous run'll be killed stopping Docker container.
+   * **path* ** [String]: Result path of exit condition value.
+   * **string* ** [String]: Result path of string to check if is equal to result value.
+* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
 * **scheduled**:
-   * **every* ** [String] format: <int\><interval type\> s = Second, d = Day, h= Hours, m = Minutes
-   * **expire* ** [String] format: <int\><interval type\> s = Second, d = Day, h= Hours, m = Minutes
+   * **every* ** [String] format <int\><interval type\>: s = Second, d = Day, h= Hours, m = Minutes
+   * **expire* ** [String] format <int\><interval type\>: s = Second, d = Day, h= Hours, m = Minutes
 
 <details><summary>Notes on action definition file fields</summary>
 
-* **integration**<br/>This should match the ‘name field of the integration definition file for the integration. 
-* **name**<br/>Friendly name which will be displayed in the Cloud SOAR UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as “ban hash” or “system info”. 
+* **integration**<br/>This should match the `name` field of the integration definition file for the integration. 
+* **name**<br/>Friendly name which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`. 
 * **type**<br/>Type of action being performed. Acceptable values are:
    * `Containment`
-   * `Notification`
    * `Custom`
    * `Daemon`
+   * `Notification`
    * `Trigger`
-* **fields: id**<br/>One id attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the id attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
+* **fields: id**<br/>One id attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
 * **fields: id: type**<br/>Acceptable values are: 
-   * `list`
-   * `text`
-   * `upload`
    * `checkbox`
-   * `fileDetonate`
-   * `tag`
-   * `multilist`
-   * `textarea`
    * `datetime`
+   * `fileDetonate`
+   * `list`
+   * `multilist`
    * `number`
-* **fields: id: validator**<br/>Acceptable values are: 
-   * `ipaddress`
-   * `port`
-   * `integer`
-   * `url`
+   * `tag`
+   * `text`
+   * `textarea`
+   * `upload`
+* **fields: id: validator**<br/>Acceptable values are:  
+   * `datetime`
    * `domain`
    * `e-mail`
-   * `ip_domain`
    * `hash`
-   * `datetime`
+   * `integer`
+   * `ipaddress`
+   * `ip_domain`
+   * `md5`
+   * `port`
+   * `sha1`
    * `sha256`
+   * `url`
+* **fields: id: values**<br/>List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
+   * `domain: Domain`
+   * `ip: IP Address`
+   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. 
+* **fields: id: incident_artifacts**<br/>When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field. 
+* **fields: id: observables**<br/>This field defines the link between the action and the observables section. Specifying an observable type here will cause the action to be displayed in the **Actions** menu for the specified observable type. Acceptable values are:
+   * `domain`
+   * `email`
+   * `file`
+   * `ipaddress`
    * `md5`
    * `sha1`
-* **fields: id: values**<br/>List of possible values for a list field in key:value format, where the key is the value which will be used as the input parameter and the value is the display value which will be shown in the list. For example:
-   * `ip: IP Address`
-   * `domain: Domain`
-   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. |
-* **fields: id: incident_artifacts**<br/>When set to “true”, incident artifact values such as “sourceAddress” can be used as inputs for the field. 
-* **fields: id: observables**<br/>This field defines the link between the action and the observables section.Specifying an observable type here will cause the action to be displayed in the Actions menu for the specified observable type. Acceptable values are: `ipaddress`, `url`, `userdetail`, `md5`, `sha1`, `sha256`, `domain`, `file`, `email`.
-* **output:path**<br/>JSON path for each field which may be returned by the action, using the following JSON as an example:
+   * `sha256`
+   * `url`
+   * `userdetail`
+* **output: path**<br/>JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
    { country: "US",
    response_code: 1,
@@ -179,7 +193,7 @@ Both the integration definition file and the action definition file are YAML fil
    positives: 2
    }}
    ```
-   The following output:path attributes should be added:
+   The following `output:path` attributes should be added:
    * `country`
    * `response_code`
    * `as_owner`
@@ -188,44 +202,44 @@ Both the integration definition file and the action definition file are YAML fil
 * **output: path: type**<br/>Reserved for future use. All outputs are treated as strings.
 * **table_view**<br/>The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in Table View.
 * **table_view: display_name**<br/>Friendly name which will appear as the column name.
-* **table_view: value**<br/>JSON path for each field which may be returned by the action, beginning with the path “” See output:path field above for additional information.
-* **table_view: type**<br/>Type of value at the moment is only possible to specify if the value should be shown as a link
-* **use_in_triage**<br/>Action should be manually executable in triage event? (default False)
-* **hook**<br/>Fields valid only for trigger actions, possible values are:
-   * `approveTask`
-   * `createTask`
-   * `reassignTask`
-   * `closeTask`
-   * `updateTask`
-   * `taskCustomAction`
-   * `updateIncident`
-   * `closeIncident`
-   * `newIncident`
-   * `incidentCustomAction`
+* **table_view: value**<br/>JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+* **table_view: type**<br/>Type of value which is only possible to specify if the value should be shown as a link.
+* **use_in_triage**<br/>Action should be manually executable in triage event (default False).
+* **hook**<br/>Fields valid only for trigger actions. Possible values are:
+   * `addObservableArtifact`
+   * `addObservableDomain`
    * `addObservableIp`
    * `addObservableMail`
    * `addObservableUrl`
-   * `addObservableDomain`
    * `addObservableUserDetail`
-   * `addObservableArtifact`
-   * `grabEvent`
-   * `reassignEvent`
+   * `approveTask`
+   * `closeIncident`
+   * `closeTask`
+   * `createTask`
    * `discardEvent`
+   * `grabEvent`
+   * `incidentCustomAction`
+   * `newIncident`
+   * `reassignEvent`
+   * `reassignTask`
+   * `taskCustomAction`
+   * `updateIncident`
+   * `updateTask`
    * `webhook`
-* **check_not_null_field**<br/>For action with hook incidentCustomAction and taskCustomAction , it specify internal name of element field should be not null to show button in GUI
-* **src_doc**<br/>Result path or rawOutput to take the entire output to show in html5 iframe sandboxed
-* **url_preview**<br/>Result path url to show in html5 iframe sandboxed
-* **image_base64_png(jpg)**<br/>Result path to get base64 png or jpg to show on GUI
+* **check_not_null_field**<br/>For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
+* **src_doc**<br/>Result path or rawOutput to take the entire output to show in html5 iframe sandbox.
+* **url_preview**<br/>Result path URL to show in html5 iframe sandbox.
+* **image_base64_png(jpg)**<br/>Result path to get base64 png or jpg to show in the UI.
 * **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-* **exit_condition:path**<br/>Result path where to search in json structure as table_view section
+* **exit_condition:path**<br/>Result path where to search in JSON structure as `table_view` section.
 * **exit_condition:string**<br/>Value to check in path.
-* **re-execution**<br/>By default if previous action run is not yet finished, next scheduled run is skipped. Setting re-execution: ‘force’ previous action run will be killed stopping Docker container.
-* **scheduled:every**<br/>Time interval between one run and the next one, i.e. 10s, 5d, etc.
+* **re-execution**<br/>By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: ‘force’`, the previous action run will be killed, stopping the Docker container.
+* **scheduled:every**<br/>Time interval between one run and the next one (for example, 10s, 5d, etc.):
    * s: SECONDS
    * d: DAYS
    * h: HOURS
    * m: MINUTES
-* **scheduled:expire**<br/>Time after first run to stop scheduling and last result will be kept:
+* **scheduled:expire**<br/>Time after the first run to stop scheduling. The last result will be kept:
    * s: SECONDS
    * d: DAYS
    * h: HOURS
@@ -235,15 +249,15 @@ Both the integration definition file and the action definition file are YAML fil
 </details>
 
 
-## Action params
+## Action parameters
 
-For security reason all action params are passed to Docker container as Environment variable with variable name equal to the id specified into yaml. For python code you can always use:
+For security reasons, all action parameters are passed to the Docker container as an environment variable, with the variable name equal to the ID specified in YAML. For Python code you can always use:
 
 ```
 argparse.ArgumentParser()
 ```
 
-But in that case you have to specify a class to manage environment variable:
+But in that case, you have to specify a class to manage the environment variable:
 
 ```
 class EnvDefault(argparse.Action):
@@ -256,13 +270,13 @@ class EnvDefault(argparse.Action):
        setattr(namespace, self.dest, values)
 ```
 
-And add it into action `kwargs`:
+And you must add it into the action `kwargs`:
 
 ```
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Or if you don't need extra utils provided by ArgumentParser as validation etc, you can simply use:
+Otherwise, if you don't need extra utilities provided by `ArgumentParser` for validation, you can simply use:
 
 ```
 host = os.environ.get("host", "localhost")
@@ -270,7 +284,7 @@ host = os.environ.get("host", "localhost")
 
 ## Integration output
 
-Cloud SOAR primarily uses JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, in order to pass data returned from an action to a future action in a Runbook or to other internal components, the output from an integration action must be returned in JSON and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas of Cloud SOAR.
+Integrations primarily use JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, in order to pass data returned from an action to a future action in a runbook or to other internal components, the output from an integration action must be returned in JSON, and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas.
 
 Most APIs can return JSON data, either by default or as an option. If an integration does not return JSON natively, the returned data may be converted to JSON prior to being returned by the action code so long as it matches the structure specified in the output:path attributes of the action definition file. For example, to return JSON data using Python, the output should be printed as follows:
 
@@ -280,13 +294,13 @@ Import json
 print(json.dumps(<JSON Data>))
 ```
 
-Cloud SOAR will use the standard error and standard output to determinate if an action terminates successfully or not. So if you print a string in stderr like:
+The system will use the standard error and standard output to determinate if an action terminates successfully or not. So if you print a string in `stderr` like the following...
 
 ```
 sys.stderr.write(str(err)) -> Action failed with reason string err
 ```
 
-Output from each integration action can be viewed in either table view or JSON view when executed. Table view is used to display a subset of the data, defined in the action definition file "table_view:" attributes listed above, in a table format. For example, the following code in an action definition file would result in a table view with columns for "ID", "CVSS", "A", "C", and "I":
+...output from each integration action can be viewed in either table view or JSON view when executed. Table view is used to display a subset of the data, defined in the action definition file `table_view` attributes listed above, in a table format. For example, the following code in an action definition file would result in a table view with columns for **ID**, **CVSS**, **A**, **C**, and **I**:
 
 ```
 table_view:
@@ -316,7 +330,7 @@ type : 'link'
 
 ### Added more output type for action
 
-`src_doc` can use result path or rawOutput. It's possible to specify a JSON path or use rawOutput to specify text output to use as `srcDoc` for iframe sandboxed. (It is not possible to use JavaScript.)
+It's possible to specify a JSON path or use rawOutput to specify text output to use as `srcDoc` for iframe sandbox (it is not possible to use JavaScript):
 
 ```
 integration: 'Incident tools'
@@ -350,53 +364,57 @@ script:
 src_doc: 'rawOutput'
 ```
 
-The following image shows output from the example above:
+The following image shows output from the code example:
 
 <img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} alt="Browser market share" width="600"/>
 
-The `image_base64_png(jpg)` field provides the result path where to get base64 png or jpg image.
+The `image_base64_png(jpg)` field provides the result path where to get base64 png or jpg image, for example:
 
 <img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} alt="Result path" width="600"/>
 
 ## Working with integrations
 
-All integrations are configured by navigating to **Integrations**.
+All integrations are configured by navigating to **Integrations** in the UI.
 
 ### Integration definitions
 
-To add a new integration, click on the **+** icon at the top of the integration list pane on the left-hand side of the integrations page.
+To add a new integration, click on the **+** icon on the **Integrations** page.
 
 <img src={useBaseUrl('img/cse/integration-framework-definition.png')} alt="Add integration" width="800"/>
 
-The **New Integration** window allows you to upload an integration definition file by clicking **Select Files**. Once you define the integration definition file and the Docker image, click **Save** to add the new integration.
+The **New Integration** window allows you to upload an integration definition file by clicking **Select File**. Once you define the integration definition file and the Docker image, click **Save** to add the new integration.
 
 <img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} alt="New integration" width="600"/>
 
-To edit an existing integration by uploading a new integration definition file , click on the **Edit** button in the upper right-hand corner of the page. To export the integration definition file for the selected integration, click on the **Export** icon.
+To edit an existing integration by uploading a new integration definition file , click on the **Edit** button. To export the integration definition file for the selected integration, click the **Export** icon.
 
 ### Action definitions
 
-To add a new action, select the appropriate integration from the integrations list on the left-hand side of the page, then click on the **Add Action** button (**+** icon) to the right of the integrations list.
+To add a new action, select the appropriate integration from the integrations list, then click on the **Upload** button to the right of the integration.
 
-<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} alt="Add integration" width="600"/>
-
-The **New Action** window allows you to upload an action definition file by clicking **Select Files**.
-
-Once the action definition file has been selected, click **Save** to add the new action.
+The **New Action** window allows you to upload an action definition file by clicking **Select File**, and lets you select the kind of action.
 
 <img src={useBaseUrl('img/cse/integration-framework-upload.png')} alt="Upload" width="600"/>
+
+Once the action definition file has been selected, click **Save** to add the new action.
 
 Existing actions may be edited by clicking the **Upload** button below the action name to upload a new action definition file, or by clicking the **Edit** button below the action name to open a text editor and edit the action directly.
 
 <img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} alt="Action editor" width="600"/>
 
-To test an action, click on the **Test Action** button below the action name, enter the required parameters and click **Test Action**.
+To test an action, click on the **Test Action** button below the action name.
+
+<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} alt="Add integration" width="600"/>
+
+Enter the required parameters and click **Test Action**.
 
 <img src={useBaseUrl('img/cse/integration-framework-test-action.png')} alt="Test action" width="600"/>
 
 To export an action, click on the **Export** button below the action name.
 
-### Daemon Action Definitions
+<!-- It's not possible to do the following in the Automation Service, because the "Rules" menu is not exposed. 
+
+### Daemon action definitions
 
 Uploading an action YAML file with type Daemon allows you to specify Daemon action. You can also define rules associated with Daemon.
 
@@ -422,7 +440,9 @@ All available actions are:
 * Close task
 * Add to Triage
 
-### Scheduled Action Definitions
+-->
+
+#### Scheduled action definitions
 
 YAML example:
 
@@ -447,7 +467,7 @@ YAML example:
 Field notes:
 * **re-execution**<br/>By default, if the previous action run is not yet finished, the next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
 * **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions:
-   * **exit_condition: path**<br/>It's where to search in json structure as table_view section.
+   * **exit_condition: path**<br/>It's where to search in JSON structure as `table_view` section.
    * **exit_condition: string**<br/>Value to check in path.
 * **scheduled**<br/>Specify the time interval between one run and the next and action expiration.
    * **scheduled: EVERY**<br/>The time interval between one run and the next.
@@ -947,21 +967,18 @@ output:
     - path : 'array.[].amount2'
     - path : 'exit_condition'
 ```
+<!-- You cannot edit Docker files in the Automation Service. There is no Docker logo on integrations that you can click to edit the Docker image.
 
 ## Using a custom Docker image
 
-You can execute all the actions of an integration in a container built from a custom Docker image.
-
-This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts.
-
-There are however many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
+You can execute all the actions of an integration in a container built from a custom Docker image. This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts. However, there are many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
 
 ### Steps to create a custom Docker image
 
 1. Go to the **Integrations** page.
 1. Look for the integration for which you need to create a custom Docker image and click on it.
 1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it.
-<br/><img src={useBaseUrl('img/cse/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="600"/>
+<br/><img src={useBaseUrl('img/cse/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="700"/>
 <br/>This will open the custom Docker editor:
 <br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
 1. Type a name for your custom image in the **Docker image tag** field. This is a required field.
@@ -979,10 +996,10 @@ Once you have saved a custom Dockerfile, the integration will be executed on a c
 We strongly suggest that you test your custom images as soon as you create or modify them. If by any chance you save a faulty custom Dockerfile, when the actions from that integration are triggered, their execution will fail because the Docker image will fail as well.
 
 1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor.
-<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image.png')} alt="Test Docker image" width="600"/>
+<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image.png')} alt="Test Docker image" width="6700"/>
 <br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile.
-<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="600"/>
-1. If your custom Docker image was built without error, a success message will pop up in your Cloud SOAR screen. Otherwise, if Cloud SOAR cannot build a proper image from your custom Dockerfile, an error message will pop up, containing details on what went wrong. In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
+<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="700"/>
+1. If your custom Docker image was built without error, a success message will pop up in your screen. Otherwise, if a proper image cannot be built from your custom Dockerfile, an error message will pop up, containing details on what went wrong. In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
 
 ### Deleting your custom Docker image and reverting to the original one
 
@@ -1026,7 +1043,7 @@ The following commands may be useful in performing some common actions in Docker
    ```
    <my_integration>
    ```
-1. Now you can use this tag into yaml:
+1. Now you can use this tag in YAML:
    ```
    docker_repo_tag: '<my_integration>:latest'
    ```
@@ -1165,7 +1182,7 @@ And if you use that output into `textarea` as placeholder:
 
 You will get a print HTML of aggregated elements
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} alt="HTML of aggregated elements" width="800"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} alt="HTML of aggregated elements" width="500"/>
 
 ## Pipe functions in YAML output
 
@@ -1195,3 +1212,5 @@ output:
 The array will be populated with not duplicated element:
 
 <img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
+
+-->
