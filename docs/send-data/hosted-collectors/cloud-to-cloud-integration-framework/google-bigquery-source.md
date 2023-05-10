@@ -2,7 +2,7 @@
 id: google-bigquery-source
 title: Google BigQuery Source
 sidebar_label: Google BigQuery
-description: The Google BigQuery API integration ingests data from the BigQuery API.
+description: Learn how to collect data using the BigQuery API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
