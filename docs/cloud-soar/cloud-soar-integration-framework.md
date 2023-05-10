@@ -19,7 +19,7 @@ The following diagram shows the integration file hierarchy:
 
 <img src={useBaseUrl('img/cloud-soar/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
 
-Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. 
+Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. 
 
 You can also share this new action and use it to extend the functionality of the integration for others. The following diagram shows action file portability:
 
