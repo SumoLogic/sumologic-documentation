@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/google-bigquery-icon.png')} alt="google-bigquery-icon" width="70" />
 
-Google Cloud’s BigQuery is a fully managed enterprise data warehouse that helps you to manage and analyze your data, which also provides built-in features such as ML, geospatial analysis, and business intelligence. The Google BigQuery integration gets data from a [Google BigQuery](https://cloud.google.com/bigquery?utm_source=google&utm_medium=cpc&utm_campaign=na-none-all-en-dr-sitelink-all-all-trial-b-gcp-1605212&utm_content=text-ad-none-any-DEV_c-CRE_648217359723-ADGP_Desk%20%7C%20BKWS%20-%20BRO%20%7C%20Txt%20_%20BI%20Engine%20_%20Product%20Support-KWID_43700075197895289-kwd-1409510316386-userloc_9031936&utm_term=KW_bigquery%20bi%20engine-ST_BigQuery%20BI%20Engine-NET_g-&gclid=CjwKCAjwxr2iBhBJEiwAdXECw6GBvSq5vsHUwq6kL8X6cr4PxNIUY38sUiHseLcYIBRHB7ap8gUMrxoCYV4QAvD_BwE&gclsrc=aw.ds#section-1) table via a provided query.
+Google Cloud’s BigQuery is a fully managed enterprise data warehouse that helps you to manage and analyze your data, which also provides built-in features such as ML, geospatial analysis, and business intelligence. The Google BigQuery integration gets data from a [Google BigQuery](https://cloud.google.com/bigquery) table via a provided query.
 
 ## Data Source
 
