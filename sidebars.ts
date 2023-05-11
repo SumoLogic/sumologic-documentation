@@ -342,6 +342,15 @@ module.exports = {
                 'send-data/hosted-collectors/http-source/troubleshooting',
               ],
             },
+            {
+              type: 'category',
+              label: 'Webhook Sources',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/hosted-collectors/webhook-sources/zoom',
+              ],
+            },
           ],
         },
         'send-data/collect-from-other-data-sources/kubernetes',
