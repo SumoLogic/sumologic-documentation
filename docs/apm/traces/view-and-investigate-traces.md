@@ -84,7 +84,7 @@ Timeseries: It helps you visualise the average number of errors per trace for se
 Histogram: Provides an insight in how many traces were found with certain number of errors. For example if a backend fails in a specific way, it can always generate similar number of errors for traces from that period.
 * **Span count**. 
 Timeseries: It helps you visualize how many spans you have per trace for selected timerange.
-Histogram: Provides an information how many traces had a certain number of spans. If the expectation is that certain transaction type should generate similar number of spans everytime it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces. 
+Histogram: Provides an information how many traces had a certain number of spans. If the expectation is that certain transaction type should generate similar number of spans every time it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces. 
 
 These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
 
