@@ -64,7 +64,7 @@ The results are not automatically updated. If you want to refresh traces, click
 The Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application, the complexity of your traces as well as errors. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). There are three types of metrics that Trace Query Visualizations offer:
 * **Trace duration**
 * **Error count**
-* **Span count**.
+* **Span count**
 
 <img src={useBaseUrl('/img/traces/trace-query-view.png')} alt="trace-query-view.png" width="950px" height="500" />
 
