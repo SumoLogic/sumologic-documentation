@@ -7,7 +7,6 @@ description: Learn about the framework used for integrations.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Overview
 
 The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration.
 
