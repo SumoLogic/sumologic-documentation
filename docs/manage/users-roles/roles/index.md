@@ -22,7 +22,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/manage/users-roles/roles/role-based-access-control"><img src={useBaseUrl('img/icons/operations/role-based-access.png')} alt="icon" width="40"/><h4>Role-Based Access Control</h4></a>
-  <p>Learn how to grant capabilities and access to data in Sumo Logic using roles.</p>
+  <p>Learn how to grant access and capabilities to data in Sumo Logic using roles.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
