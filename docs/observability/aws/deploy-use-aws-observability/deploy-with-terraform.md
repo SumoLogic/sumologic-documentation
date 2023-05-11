@@ -1550,7 +1550,7 @@ The following table provides a list of all source parameters and their default v
 
 ## Troubleshooting
 
-This section provides information on how to troubleshoot failures while deploying AWS observability soluton using Terraform.
+This section provides information on how to troubleshoot failures while deploying AWS observability solution using Terraform.
 
 ### 1. Python command not found
 #### Error Message
@@ -1578,7 +1578,7 @@ Delete existing hierarchy and a create new one:<br/>
 #### Error Message
 from sumologic import SumoLogic<br/>Import Error: cannot import name 'SumoLogic' from 'sumologic'<br/> `(/usr/local/lib/python3.10/site-packages/sumologic/__init__.py)`
 #### Solution
-The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability soluton using the following command:<br/>`pip install sumologic-sdk`
+The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability solution using the following command:<br/>`pip install sumologic-sdk`
 
 ### 5. Argument named *managed_apps* is not expected
 #### Error Message
