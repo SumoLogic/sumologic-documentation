@@ -86,7 +86,6 @@ You can further switch between the charts from the dropdown menu, and view them 
 
 To get the best results from this chart, it is recommended to filter data to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
 
-* Click on any of the color segments to focus on this service and drill down to selected timeframe.
 
 :::note
 Multiple query rows are not supported currently. Charts show data for first active (visible) row only.
