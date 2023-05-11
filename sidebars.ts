@@ -283,6 +283,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source',
               ],
             },
             {
@@ -340,6 +341,15 @@ module.exports = {
                 'send-data/hosted-collectors/http-source/traces',
                 'send-data/hosted-collectors/http-source/generate-new-url',
                 'send-data/hosted-collectors/http-source/troubleshooting',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Webhook Sources',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/hosted-collectors/webhook-sources/zoom',
               ],
             },
           ],
@@ -2389,6 +2399,7 @@ integrations: [
             'cse/automation-service/automation-service-automations',
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-integration-framework',
             'cse/automation-service/automation-service-bridge',
           ],
         },
