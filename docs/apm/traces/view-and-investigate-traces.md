@@ -74,7 +74,11 @@ For both charts, you can switch between linear and logarithmic scales to better 
 <img src={useBaseUrl('/img/traces/breakdown2.png')} alt="breakdown2.png" width="950px" height="500" />
 
 Here is some more detailed information about each chart type:
-* **Trace duration**. It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
+* **Trace duration**. 
+Timeseries: It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
+The height of the bar represents the average trace duration for each time bucket.
+Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
+Histogram: helps you understand the distribution of trace durations. For example you can notice groups of durations responsible for longer traces during slowdown periods.
 * **Error count**. It helps you visualize the average number of errors per trace for certain time ranges. You can drill down to specific time ranges and identify the distribution of errors.
 * **Span count**. It helps you visualize how many spans you have per trace. You can drill down to specific time ranges and identify the distribution of spans.
 
