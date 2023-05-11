@@ -68,7 +68,9 @@ The Trace Query Visualizations allow you to visualize the breakdown of where tim
 * Error count as histogram
 * Span count as timeseries
 * Span count as histogram
-
+* **Timeseries**. It shows the average trace duration for each time bucket. 
+* **Histogram**. It shows the distribution of traces (their count) in different buckets such as duration, number of spans, or errors. 
+For both charts, you can switch between linear and logarithmic scales to better visualize the data. Note that logarithmic charts will not show any visible bars for buckets with only one trace.
 <img src={useBaseUrl('/img/traces/breakdown2.png')} alt="breakdown2.png" width="950px" height="500" />
 
 Here is some more detailed information about each chart type:
