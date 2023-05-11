@@ -372,4 +372,10 @@ In this section, we'll introduce the following concepts:
         <p>Learn to create a Workday Source.</p>
         </div>
       </div>
+      <div className="box smallbox53 card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="50"/><h4>Zero Networks Segment</h4></a>
+        <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
+        </div>
+      </div>
     </div>
