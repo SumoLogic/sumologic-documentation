@@ -84,7 +84,7 @@ You can further switch between the charts from the dropdown menu, and view them 
 * **Timeseries**. It shows the average trace duration for each time bucket. It allows you to switch between linear and logarithmic scales to better visualize the data.
 * **Histogram**. It shows the distribution of data in different time periods  such as the number of traces with a certain range of spans or errors. You can switch between linear and logarithmic scales to better visualize the data.<br/><img src={useBaseUrl('img/traces/charttype.png')} alt="charttype.png" width="950px" />
 
-To get the best results from this chart, it is recommended to filter the traces to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
+To get the best results from this chart, it is recommended to filter data to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
 
 * Click on any of the color segments to focus on this service and drill down to selected timeframe.
 * Click and drag on the chart to zoom in.
