@@ -76,7 +76,7 @@ Each query must contain a phrase `%CHECKPOINT%`. Integration will extract and sa
 Quote the phrase as **"%CHECKPOINT%"** if the Checkpoint Field is a timestamp string.
 :::
 
-Following are some examples which will help you understand on what value to use for the field Query, Checkpoint, Time Field and Checkpoint Start.
+Following are some examples that demonstrate what values to use for the Query, Checkpoint, Time Field, and Checkpoint Start fields.
 
 #### Example 1: Checkpoint Field is timestamp.
 
