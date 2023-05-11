@@ -61,7 +61,7 @@ To configure an Google BigQuery Source:
 1. **Project ID**. Enter the unique identifier number for your BigQuery project. You can find this from the Google Cloud Console.
 1. **Checkpoint Field**. Enter the name of the field in the query result to be used for checkpointing. This field has to be increasing and of type number or timestamp.
 1. **Checkpoint Start**. Enter the first value for the checkpoint that the integration will plug into the query.
-1. **(Optional)Time Field**. Enter the name of the field in the query result to be parsed as timestamp. If not provided the current time will be used.
+1. **(Optional) Time Field**. Enter the name of the field in the query result to be parsed as timestamp. If not provided, the current time will be used.
 1. **Query**. Enter the query that you need to run. It has to include the phrase **%CHECKPOINT%**.
 1. **(Optional) Query Interval**. Enter the time interval to run the query in the format: Xm (for X minutes) or Xh (for X hours).
 1. **Google BigQuery Credential**. Upload the Credential JSON file downloaded from Google Cloud IAM & Admin.
