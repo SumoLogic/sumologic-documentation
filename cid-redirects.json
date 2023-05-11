@@ -1445,6 +1445,7 @@
   "/cid/10189": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source",
   "/cid/10190": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source",
   "/cid/10192": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source",
+  "/cid/10196": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source",
   "/cid/10135": "/docs/manage/manage-subscription/manage-org-settings",
   "/cid/10136": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source",
   "/cid/10137": "/docs/cse/schema/attributes-map-to-records",
