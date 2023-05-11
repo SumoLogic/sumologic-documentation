@@ -206,7 +206,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox26 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source"><img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="40"/><h4>Gmail Trace Logs </h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source"><img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="40"/><h4>Gmail Trace Logs</h4></a>
   <p>Gmail Trace Logs Integration</p>
   </div>
 </div>
