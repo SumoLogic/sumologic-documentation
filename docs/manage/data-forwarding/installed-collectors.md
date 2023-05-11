@@ -81,7 +81,7 @@ Follow the instructions for the destination type you chose.
 *  **Description**. (Optional)
 * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 * **AWS Access**. Select Role-based access or Key access based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
-  * For Role-based access enter the Role ARN that was provided by AWS after creating the role.
+  * For Role-based access, enter the Role ARN that was provided by AWS after creating the role.
   * For Key access enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
 </TabItem>
@@ -106,7 +106,7 @@ There are several methods you can use to configure processing rules: 
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Enter a name to define the rule.
-1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR. For more information about creating processing rules, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR. For more information about creating processing rules, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. Select **Forward messages that match** as the rule type. This option is visible only if you have defined at least one data forwarding destination, as described in the previous section. 
 1. Select the Destination from the dropdown menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior. <br/>![transparent syslog forwarding option.png](/img/data-forwarding/transparent-syslog-forwarding-option.png)
 1. Click **Apply**. The new rule is listed along with any other previously defined processing rules.

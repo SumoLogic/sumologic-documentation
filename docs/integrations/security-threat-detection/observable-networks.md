@@ -48,7 +48,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 **Create an access key**
 
-1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
+1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
 2. Click **Access Keys**.
 3. Add a new access key called Observable Networks, then save the new **Access ID** and **Access Key** values.
 
@@ -176,7 +176,7 @@ _sourceCategory=observable
 
 ## Install the Observable Networks App
 
-This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#viewing-dashboards) allow you to visually analyze your Observable Networks data at a glance.
+This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
 
 To install the app:
 

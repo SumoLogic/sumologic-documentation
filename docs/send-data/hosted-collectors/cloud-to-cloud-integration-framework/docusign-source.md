@@ -27,6 +27,14 @@ To collect event data from the DocuSign Monitor, you must meet the following cri
 
 The DocuSign API integration retrieves events data every 5 minutes.
 
+## Metadata Fields
+
+Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
+
+| Field Name | Value |
+| :--- | :--- |
+| _siemparser | /Parsers/System/DocuSign/DocuSign Monitor |
+
 ## Setup and Configuration
 
 In this configuration, you will set up the DocuSign account and configure it to be authorized and authenticated to use customer event data from DocuSign Monitor API. To obtain the DocuSign auth token and customer event data, you will need the following parameters:
@@ -35,8 +43,8 @@ In this configuration, you will set up the DocuSign account and configure it to 
 
 To get the User ID, follow the steps below:
 1. Log in to **DocuSign** account.
-2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
-3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="600" />
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
+3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="400" />
 :::note
 You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
@@ -45,32 +53,32 @@ You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-
 
 You must first create an app to get integration key and configure RSA Key Pair and Redirect URI. This key is required to get access token which will be used to authenticate DocuSign API. To create an app follow the steps below:
 
-1. Log in to your **DocuSign** account.
-2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
-3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="600" />
+1. Sign in to your **DocuSign** account.
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
+3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="400" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="400" />
-5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="600" />
+5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="400" />
   :::note
   You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
   :::
-6. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="450" />
-7. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="600" />  
+6. Leave **Authentication** settings as default as shown in below image. <br/> <img src={useBaseUrl('img/send-data/docusign-authetication.png')} alt="<docusign-integration-key.png>" width="400" />
+7. Click on **GENERATE RSA** under **Service Integration** to create new private and public key pair. <br/> <img src={useBaseUrl('img/send-data/docusign-generate-rsa.png')} alt="<docusign-generate-rsa.png>" width="450" />
+8. Copy **Private Key** from dialog and close the dialog. <br/> <img src={useBaseUrl('img/send-data/docusign-private-key.png')} alt="<docusign-private-key.png>" width="400" />  
   :::note
   You'll need to provide RSA private key while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
   :::
-8. Under **Redirect URIs**, click **ADD URI**, then enter `http://localhost/` as your new redirect URI. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
+9. Under **Redirect URIs**, click **ADD URI**, then enter `http://localhost` as your new redirect URI. <br/> <img src={useBaseUrl('img/send-data/docusign-redirect-uri.png')} alt="<docusign-redirect-uri.png>" width="400" />
   :::note
   You'll need a redirect URI while requesting [application consent](#app-consent).
   :::
-9. Click **SAVE** to finish new app configuration.
-
+10. Click **SAVE** to finish new app configuration.
 
 ### App Consent
 
 Once your app is created, you need consent to make API calls. To request application consent, follow the steps below:
-1. Copy the below URL based on your account environment in the browser and press enter. Replace **INTEGRATION_KEY** and **REDIRECT_URI** with the values you copied in steps 5 and 8 of the [App](#app) section, respectively.
-   * For the development (demo) environment, use `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
-   * For the production environment, use `https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
+1. Copy the below URL based on your account environment in the browser and press enter. Replace **INTEGRATION_KEY** and **REDIRECT_URI** with the values you copied in steps 5 and 9 of the [App](#app) section, respectively.
+   * For the development (demo) environment, use `https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature%20impersonation&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
+   * For the production environment, use `https://account.docusign.com/oauth/auth?response_type=code&scope=signature%20impersonation&client_id=INTEGRATION_KEY&redirect_uri=REDIRECT_URI`
 2.  Click **ALLOW ACCESS** to provide your consent. This should redirect you to **REDIRECT_URI**.
 
 ## States
@@ -89,7 +97,7 @@ If the Source has any issues during any one of these states, it is placed in an�
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
+On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
 ## Set up DocuSign Source
 
@@ -107,7 +115,7 @@ To configure the DocuSign source:
 7. In **DocuSign Environment**, choose the environment of your DocuSign account.
 8. In **User ID**, enter the User ID of your account. See [User ID](#user-id) section to help find your User ID.
 9. In **Integration Key**, enter the integration key you generated. See step 5 of [App](#app) section.
-10. In **RSA Private Key**, enter the rsa private key you generated. See step 7 of [App](#app) section.
+10. In **RSA Private Key**, enter the rsa private key you generated. See step 8 of [App](#app) section.
 11. When you are finished configuring the Source, click **Save**.
 
 ### Error types
@@ -129,9 +137,9 @@ If your Source encounters ThirdPartyConfig errors, you can restart it from eithe
 To restart your source in the Sumo Logic platform, follow the steps below:
 1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
 2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="600" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="600" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated.png" width="600" />
+3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="400" />
+4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="400" />
+5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/restart-source-initiated.png')} alt="restart-source-initiated.png" width="400" />
 
 #### API
 

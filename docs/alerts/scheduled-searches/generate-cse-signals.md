@@ -5,6 +5,8 @@ sidebar_label: Generate CSE Signals With a Scheduled Search
 description: You can generate a CSE Signal with a scheduled search.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. Before you start using scheduled searches to create CSE Signals, it is helpful to understand what Signals are, and how they relate to the generation of CSE Insights. For information about how it all works see [Insight Generation Process](../../cse/records-signals-entities-insights/insight-generation-process.md). 
 
 :::note
@@ -63,11 +65,11 @@ type you select. A field whose name does not match a CSE attribute will not be p
 
 ## Scheduling the search
 
-1. After creating and saving your search, click the save icon.<br/> ![save-as.png](/img/alerts/save-as.png)
+1. After creating and saving your search, click the save icon.<br/><img src={useBaseUrl('img/alerts/save-as.png')} alt="Save the search" width="800"/>
   :::note
   The required fields (`normalizedseverity`, `stage`, and fields for entities) need to come after the `where` and `count` operators, otherwise an error will occur when saving the scheduled search.
   :::
-1. The **Save Item** popup appears. <br/>![save-item.png](/img/alerts/save-item.png)
+1. The **Save Item** popup appears. <br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="600"/>
 1. Click **Schedule this search**.
 1. The **Save Item** popup prompts you to select a run frequency.<br/> ![run-frequency.png](/img/alerts/run-freq-signal-gen.png)
 1. Select a frequency from the pull-down list and click **Save**.  Scheduling a run frequency that matches your query time range will reduce overlapping searches and duplicate alerts. When you have a search scheduled to run over the same results as a previously scheduled search you would trigger an alert on the same data. 
