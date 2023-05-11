@@ -88,7 +88,9 @@ Histogram: Provides an information how many traces had a certain number of spans
 
 These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
 
-You can further switch between the charts from the dropdown menu, and view them as **timeseries** or **histograms**. **Trace duration** is set as the default **timeseries** chart, but you can drill down further and view additional charts such as the histogram to get a more detailed understanding of your tracing data.
+You can point-and-drag on chart or click on any column to further narrow down your results. Clicking on a column in timeseries drills-down to its timestamp and service (if present). Clicking on a column in histogram chart narrows down selection of traces matching the values of clicked column.
+Results are displayed in trace list below.
+To go back to previous selection - use "Revert to last query" link in top right corner of the panel.
 <br/><img src={useBaseUrl('img/traces/charttype.png')} alt="charttype.png" width="950px" />
 
 To get the best results from this chart, it is recommended to filter data to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
