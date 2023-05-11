@@ -130,7 +130,7 @@ select message_info,event_info, event_info.timestamp_usec as timestamp from MyPr
 
 ### Error Types
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows the three possible error types, the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
