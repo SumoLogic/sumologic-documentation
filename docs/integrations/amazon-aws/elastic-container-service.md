@@ -298,7 +298,7 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 
 1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 2. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. In the Sumo web app, select **Manage Data > Collection > Collection**.
+3. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5. Select Amazon CloudWatch Source for Metrics.
 6. **Name.** Enter a name to display for the new source.
@@ -320,7 +320,7 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-colle
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket, if you so choose.
 2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In the Sumo web app, select **Manage Data > Collection > Collection**.
+4. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 6. Select AWS CloudTrail source.
 7. **Name.** Enter a name to display for the new Source.

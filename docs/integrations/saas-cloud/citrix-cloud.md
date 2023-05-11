@@ -68,8 +68,6 @@ sourceCategory="citrixCloudSource"
 
 ## Installing the Citrix Cloud App
 
-Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
 Before you begin, collect logs from Citrix Cloud API and ingest them into Sumo Logic. Refer to the [Citrix Cloud API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/) to create the source and use the same source category while installing the app.
 
 To install the app, follow the steps below:
