@@ -80,7 +80,9 @@ The height of the bar represents the average trace duration for each time bucket
 Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
 Histogram: helps you understand the distribution of trace durations. For example you can notice groups of durations responsible for longer traces during slowdown periods.
 * **Error count**. It helps you visualize the average number of errors per trace for certain time ranges. You can drill down to specific time ranges and identify the distribution of errors.
-* **Span count**. It helps you visualize how many spans you have per trace. You can drill down to specific time ranges and identify the distribution of spans.
+* **Span count**. 
+Timeseries: It helps you visualize how many spans you have per trace for selected timerange.
+Histogram: Provides an information how many traces had a certain number of spans. If the expectation is that certain transaction type should generate similar number of spans everytime it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces. 
 
 These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
 
