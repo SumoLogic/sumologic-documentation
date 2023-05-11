@@ -25,11 +25,11 @@ In search results, the transactionize operator adds transaction fields. The fiel
 
 ## Syntax
 
-* `transactionize \<field\>], \<field\>], \<field\>] [as\<field\>]`
-* `transactionize \<field\>] [as\<field\>] [\<subquery\>)]`  
-    where `\<subquery\>]` is executed on the results of the query for
+* `transactionize <field>, <field>, <field> [as <field>]`
+* `transactionize <field> [as <field>] [<subquery>]`  
+    where `[<subquery>]` is executed on the results of the query for
     each group, independently.
-* `transactionize \<field\>] [as\<field\>] \<parameter\>] [\<subquery\>)]`
+* `transactionize <field> [as <field>] <parameter> [<subquery>]`
 
 ### Parameters
 
