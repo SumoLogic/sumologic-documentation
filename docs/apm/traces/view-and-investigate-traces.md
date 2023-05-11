@@ -61,40 +61,52 @@ The results are not automatically updated. If you want to refresh traces, click
 
 ### Trace Query Visualizations
 
-The Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application, the complexity of your traces as well as errors. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). It offers six charts to help you analyze and trace data efficiently. These include:
-* Trace duration as timeseries
-* Trace duration as histogram
-* Error count as timeseries
-* Error count as histogram
-* Span count as timeseries
-* Span count as histogram
-* **Timeseries**. It shows the average trace duration for each time bucket. 
-* **Histogram**. It shows the distribution of traces (their count) in different buckets such as duration, number of spans, or errors. 
-For both charts, you can switch between linear and logarithmic scales to better visualize the data. Note that logarithmic charts will not show any visible bars for buckets with only one trace.
-<img src={useBaseUrl('/img/traces/breakdown2.png')} alt="breakdown2.png" width="950px" height="500" />
+The Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application, the complexity of your traces as well as errors. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). There are three types of metrics that Trace Query Visualizations offer:
+* **Trace duration**
+* **Error count**
+* **Span count**.
 
-Here is some more detailed information about each chart type:
-* **Trace duration**. 
-Timeseries: It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
-The height of the bar represents the average trace duration for each time bucket.
-Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
-Histogram: helps you understand the distribution of trace durations. For example you can notice groups of durations responsible for longer traces during slowdown periods.
-* **Error count**. 
-Timeseries: It helps you visualise the average number of errors per trace for selected time range.
-Histogram: Provides an insight in how many traces were found with certain number of errors. For example if a backend fails in a specific way, it can always generate similar number of errors for traces from that period.
-* **Span count**. 
-Timeseries: It helps you visualize how many spans you have per trace for selected timerange.
-Histogram: Provides an information how many traces had a certain number of spans. If the expectation is that certain transaction type should generate similar number of spans every time it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces. 
+<img src={useBaseUrl('/img/traces/trace-query-view.png')} alt="trace-query-view.png" width="950px" height="500" />
+
+These metrics can be viewed as either a **timeseries** chart or a **histogram** chart.
+* **Timeseries**. It shows the average trace duration for each time bucket.
+* **Histogram**. It shows the distribution of traces (their count) in different buckets such as duration, number of spans, or errors.
+
+For both charts, you can switch between linear and logarithmic scales to better visualize the data. Note that logarithmic charts will not show any visible bars for buckets with only one trace.
+
+#### Understanding each chart type in detail
+
+* **Trace duration**.
+  * **Timeseries**. It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
+    - The height of the bar represents the average trace duration for each time bucket.
+    - Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
+  * **Histogram**. It helps you understand the distribution of trace durations. For example you can notice groups of durations responsible for longer traces during slowdown periods.
+ <img src={useBaseUrl('/img/traces/trace-duration-histogram.png')} alt="trace-duration-histogram.png" width="850px" height="700" />
+
+ Similarly, you can choose timeseries chart type from the dropdown and view the chart.
+
+* **Error count**.
+  * **Timeseries**. It helps you visualise the average number of errors per trace for selected time range.
+  * **Histogram**. It provides an insight into how many traces were found with a certain number of errors. For example, if a backend fails in a specific way, it can always generate a similar number of errors for traces from that period.
+  <img src={useBaseUrl('/img/traces/error-count-timeseries.png')} alt="error-count-timeseries.png" width="950px" height="500" />
+
+ Similarly, you can choose histogram chart type from the dropdown and view the chart.
+
+* **Span count**.
+  * **Timeseries**. It helps you visualize how many spans you have per trace for the selected timerange.
+  * **Histogram**. It gives you information about how many traces have a certain number of spans. If a certain type of transaction is expected to produce a similar number of spans every time it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces.
+
+  <img src={useBaseUrl('/img/traces/span-count-histogram.png')} alt="error-count-histogram.png" width="950px" height="500" />
+
+  Similarly, you can choose timeseries chart type from the dropdown and view the chart.
 
 These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
 
-You can point-and-drag on chart or click on any column to further narrow down your results. Clicking on a column in timeseries drills-down to its timestamp and service (if present). Clicking on a column in histogram chart narrows down selection of traces matching the values of clicked column.
-Results are displayed in trace list below.
-To go back to previous selection - use "Revert to last query" link in top right corner of the panel.
-<br/><img src={useBaseUrl('img/traces/charttype.png')} alt="charttype.png" width="950px" />
+You can point and drag on a chart or click on any column to further narrow down your results. Clicking on a column in timeseries drills down to its timestamp and service (if present). Clicking on a column in a histogram chart narrows down the selection of traces matching the values of clicked column.
+
+The results are displayed in the trace list. To go back to the previous selection, use the **Revert to the last query** link in the top right corner of the panel.
 
 To get the best results from this chart, it is recommended to filter data to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
-
 
 :::note
 Multiple query rows are not supported currently. Charts show data for first active (visible) row only.
@@ -107,8 +119,6 @@ To view the Trace Query Visualization charts:
 2. Click the **Show Chart** tab. The default chart shown will be **Trace duration** as a **timeseries** chart.
 3. From the dropdown menu, select the chart type you want to view: **Trace duration**, **Error count**, or **Span count**.
 4. You can view each chart type as a **timeseries** or **histogram** chart by selecting the corresponding option from the dropdown menu.
-
-These new aggregation charts will provide you with even more insights into the behavior of your application and help you resolve issues faster.
 
 #### Dashboard Panel support
 
