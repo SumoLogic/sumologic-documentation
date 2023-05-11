@@ -11,9 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Following are use cases that describe how to create automations for different situations.
 
-## Use case: Enable a simple enrichment
+## Simple use case: Enable an enrichment
 
-The following example adds a simple enrichment using the “IP Reputation V3” action from VirusTotal:
+The following example adds an enrichment using the “IP Reputation V3” action from VirusTotal:
 
 1. Edit the VirusTotal OIF resource:
    1. Click the **Configuration** button (gear icon) at the top of the UI.
