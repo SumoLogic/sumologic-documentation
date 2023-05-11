@@ -70,7 +70,8 @@ To configure an Google BigQuery Source:
 
 ### Sample values for Query, Checkpoint, and Checkpoint Start fields
 
-Each query must contain a phrase **%CHECKPOINT%**, integration will extract and save the current checkpoint and use it in place of this phrase. The value of **Checkpoint Start** must be the same type as the **Checkpoint Field**.
+Each query must contain a phrase `%CHECKPOINT%`. Integration will extract and save the current checkpoint and use it in place of this phrase. The value of **Checkpoint Start** must be the same type as the **Checkpoint Field**.
+
 :::note
 Quote the phrase as **"%CHECKPOINT%"** if the Checkpoint Field is a timestamp string.
 :::
