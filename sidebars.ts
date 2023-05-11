@@ -342,6 +342,15 @@ module.exports = {
                 'send-data/hosted-collectors/http-source/troubleshooting',
               ],
             },
+            {
+              type: 'category',
+              label: 'Webhook Sources',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/hosted-collectors/webhook-sources/zoom',
+              ],
+            },
           ],
         },
         'send-data/collect-from-other-data-sources/kubernetes',
@@ -2389,6 +2398,7 @@ integrations: [
             'cse/automation-service/automation-service-automations',
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-integration-framework',
             'cse/automation-service/automation-service-bridge',
           ],
         },
