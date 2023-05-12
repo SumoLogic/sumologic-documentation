@@ -59,23 +59,66 @@ Queries above 7 days may be slower to load.
 
 The results are not automatically updated. If you want to refresh traces, click the refresh button on the top right corner of the page.<br/>![Refresh.png](/img/traces/Refresh.png)
 
-### Trace Duration Breakdown Chart
+### Trace Query Visualizations
 
-The Trace Duration Breakdown Chart helps you understand average trace durations in every time bucket as well as the amount of time each service contributed to the end-to-end duration. Use this chart to:
+Trace Query Visualizations allow you to visualize the breakdown of where time was spent in traces for various services in your application, the complexity of your traces as well as errors. By aggregating traces, you can gain insights into anomalies and unexpected behaviors, leading to faster Time-to-Resolution (TTR) and a higher Return on Investment (ROI). There are three types of metrics that Trace Query Visualizations offer:
+* **Trace duration**
+* **Error count**
+* **Span count**
 
-* Quickly understand intermittent duration spikes or slowdowns.
-* Immediately spot the offending service by comparing CPC contribution by service.
+<img src={useBaseUrl('/img/traces/trace-query-view.png')} alt="trace-query-view.png" width="950px" height="500" />
 
-![breakdown](/img/traces/breakdown2.png)
+These metrics can be viewed as either a **timeseries** chart or a **histogram** chart.
+* **Timeseries**. It shows the average trace duration for each time bucket.
+* **Histogram**. It shows the distribution of traces (their count) in different buckets such as duration, number of spans, or errors.
 
-For best results, filter your traces to represent similar traces (traces of same transaction like login). Running this chart for different transaction types will not provide the insights you want. For the same reason, running the chart for all data without any filters is disabled.
+For both charts, you can switch between linear and logarithmic scales to better visualize the data. Note that logarithmic charts will not show any visible bars for buckets with only one trace.
 
-* The height of the bar represents the average trace duration for each time bucket.
-* Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
-* Click on any of the color segments to focus on this service and drill down to selected timeframe.
-* Click and drag on the chart to zoom in.
+#### Understanding each chart type in detail
 
+* **Trace duration**.
+  * **Timeseries**. It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
+    - The height of the bar represents the average trace duration for each time bucket.
+    - Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
+  * **Histogram**. It helps you understand the distribution of trace durations. For example, you can notice groups of durations responsible for longer traces during slowdown periods.
+ <img src={useBaseUrl('/img/traces/trace-duration-histogram.png')} alt="trace-duration-histogram.png" width="850px" height="700" />
+
+ Similarly, you can choose **timeseries** chart type from the dropdown and view the chart.
+
+* **Error count**.
+  * **Timeseries**. It helps you visualise the average number of errors per trace for selected time range.
+  * **Histogram**. It provides insight into how many traces were found with a certain number of errors. For example, if a backend fails in a specific way, it can always generate a similar number of errors for traces from that period.
+  <img src={useBaseUrl('/img/traces/error-count-timeseries.png')} alt="error-count-timeseries.png" width="950px" height="500" />
+
+ Similarly, you can choose histogram chart type from the dropdown and view the chart.
+
+* **Span count**.
+  * **Timeseries**. It helps you visualize how many spans you have per trace for the selected timerange.
+  * **Histogram**. It gives you information about how many traces have a certain number of spans. If a certain type of transaction is expected to produce a similar number of spans every time it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces.
+
+  <img src={useBaseUrl('/img/traces/span-count-histogram.png')} alt="error-count-histogram.png" width="950px" height="500" />
+
+  Similarly, you can choose timeseries chart type from the dropdown and view the chart.
+
+These charts provide valuable insights into various aspects of your tracing data performance. It helps you quickly identify any unusual spikes or distribution anomalies that may indicate an issue in the system.
+
+You can point and drag on a chart or click on any column to further narrow down your results. Clicking on a column in timeseries drills down to its timestamp and service (if present). Clicking on a column in a histogram chart narrows down the selection of traces matching the values of clicked column.
+
+The results are displayed in the trace list. To go back to the previous selection, use the **Revert to the last query** link in the top right corner of the panel.
+
+To get the best results from this chart, it is recommended to filter data to represent similar traces of the same transaction, such as login. Running this chart for different transaction types will not provide the insights users need. Similarly, running the chart for all data without any filters is disabled.
+
+:::note
 Multiple query rows are not supported currently. Charts show data for first active (visible) row only.
+:::
+
+#### Using the Trace Query Visualization Charts
+
+To view the Trace Query Visualization charts:
+1. Navigate to the Traces (Query) screen and type in a query.
+2. Click the **Show Chart** tab. The default chart shown will be **Trace duration** as a **timeseries** chart.
+3. From the dropdown menu, select the chart type you want to view: **Trace duration**, **Error count**, or **Span count**.
+4. You can view each chart type as a **timeseries** or **histogram** chart by selecting the corresponding option from the dropdown menu.
 
 #### Dashboard Panel support
 
