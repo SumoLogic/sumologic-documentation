@@ -1,5 +1,5 @@
 ---
-slug: /dashboards-migration
+slug: /dashboards-new/dashboards-migration
 title: Migrate to Dashboards (New)
 description: Learn how to migrate Dashboards (Classic) to Dashboards (New) functionality.
 tags: [migration, dashboard]
