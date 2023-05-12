@@ -131,7 +131,7 @@ To add a Trace List panel to your Dashboard:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations.png' alt="APM Dashboard" width="950"/>
 
-#### 04. Service Health Across Applications and Operations within Environments
+#### 04. Service Health Across Applications and Operations within Environment
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations-within-Environment.png' alt="APM Dashboard" width="950"/>
 
 #### 05. Application Service Health Across Environments
