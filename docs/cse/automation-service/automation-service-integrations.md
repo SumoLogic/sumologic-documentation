@@ -279,6 +279,7 @@ The following integrations are available for the Automation Service, but only so
 * Nucleon Cyber
 * Okta
 * oneLogin
+* OpenAI ChatGPT
 * OpenLDAP
 * OpenText EnCase Endpoint Security
 * Opswat Metadefender
@@ -359,6 +360,7 @@ The following integrations are available for the Automation Service, but only so
 * Trend Micro APEX ONE
 * Trend Micro Deep Security
 * Trend Micro Vision ONE
+* Tufin SecureChange
 * Tufin SecureTrack V2
 * Twilio
 * URLhaus Abuse
