@@ -83,7 +83,7 @@ For both charts, you can switch between linear and logarithmic scales to better 
   * **Histogram**. It helps you understand the distribution of trace durations. For example, you can notice groups of durations responsible for longer traces during slowdown periods.
  <img src={useBaseUrl('/img/traces/trace-duration-histogram.png')} alt="trace-duration-histogram.png" width="850px" height="700" />
 
- Similarly, you can choose timeseries chart type from the dropdown and view the chart.
+ Similarly, you can choose **timeseries** chart type from the dropdown and view the chart.
 
 * **Error count**.
   * **Timeseries**. It helps you visualise the average number of errors per trace for selected time range.
