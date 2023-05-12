@@ -87,7 +87,7 @@ For both charts, you can switch between linear and logarithmic scales to better 
 
 * **Error count**.
   * **Timeseries**. It helps you visualise the average number of errors per trace for selected time range.
-  * **Histogram**. It provides an insight into how many traces were found with a certain number of errors. For example, if a backend fails in a specific way, it can always generate a similar number of errors for traces from that period.
+  * **Histogram**. It provides insight into how many traces were found with a certain number of errors. For example, if a backend fails in a specific way, it can always generate a similar number of errors for traces from that period.
   <img src={useBaseUrl('/img/traces/error-count-timeseries.png')} alt="error-count-timeseries.png" width="950px" height="500" />
 
  Similarly, you can choose histogram chart type from the dropdown and view the chart.
