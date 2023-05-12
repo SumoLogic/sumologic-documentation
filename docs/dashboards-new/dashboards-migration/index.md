@@ -1,14 +1,15 @@
 ---
-id: index
+slug: /dashboards-migration
 title: Migrate to Dashboards (New)
 description: Learn how to migrate Dashboards (Classic) to Dashboards (New) functionality.
+tags: [migration, dashboard]
 ---
 
 The **Migrate to New Dashboards** functionality allows you to transform **Dashboards (Classic)** to the **Dashboards (New)** format, with minimal intervention from post-migration activity.
 
 ## Advantages
 
-**Dashboards (New)**:
+**Dashboards (New)**
 
 - Persistent release and update with new feature additions.
 - Provides the unique ability to analyze metrics metadata and log data on the same dashboard in an integrated seamless view. This is what you need to monitor and manage a Kubernetes environment effectively.
