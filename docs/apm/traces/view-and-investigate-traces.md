@@ -80,7 +80,7 @@ For both charts, you can switch between linear and logarithmic scales to better 
   * **Timeseries**. It allows you to quickly identify services that are causing spikes or slowdowns in trace duration. It helps you understand the average trace duration for every time bucket, as well as the amount of time each service contributed to the end-to-end duration.
     - The height of the bar represents the average trace duration for each time bucket.
     - Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
-  * **Histogram**. It helps you understand the distribution of trace durations. For example you can notice groups of durations responsible for longer traces during slowdown periods.
+  * **Histogram**. It helps you understand the distribution of trace durations. For example, you can notice groups of durations responsible for longer traces during slowdown periods.
  <img src={useBaseUrl('/img/traces/trace-duration-histogram.png')} alt="trace-duration-histogram.png" width="850px" height="700" />
 
  Similarly, you can choose timeseries chart type from the dropdown and view the chart.
