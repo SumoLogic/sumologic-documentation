@@ -1070,7 +1070,13 @@ html[data-theme='dark'] .node polygon {
 .smallbox44 h4,
 .smallbox45 h4,
 .smallbox46 h4,
-.smallbox47 h4, {
+.smallbox47 h4,
+.smallbox48 h4,
+.smallbox49 h4,
+.smallbox50 h4,
+.smallbox51 h4,
+.smallbox52 h4,
+.smallbox53 h4, {
   margin-top: 10px;
 }
 
@@ -1120,7 +1126,13 @@ html[data-theme='dark'] .node polygon {
 .smallbox44 img,
 .smallbox45 img,
 .smallbox46 img,
-.smallbox47 img, {
+.smallbox47 img,
+.smallbox48 img,
+.smallbox49 img,
+.smallbox50 img,
+.smallbox51 img,
+.smallbox52 img,
+.smallbox53 img, {
   margin-top: 16px;
 }
 
@@ -1493,6 +1505,54 @@ html[data-theme='dark'] .node polygon {
 .smallbox47 {
   grid-column: 2;
   grid-row: 16;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox48 {
+  grid-column: 3;
+  grid-row: 16;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox49 {
+  grid-column: 1;
+  grid-row: 17;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox50 {
+  grid-column: 2;
+  grid-row: 17;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox51 {
+  grid-column: 3;
+  grid-row: 17;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox52 {
+  grid-column: 1;
+  grid-row: 18;
+  width: 225px !important;
+  padding: 1px;
+  font-size: .9rem;
+}
+
+.smallbox53 {
+  grid-column: 2;
+  grid-row: 18;
   width: 225px !important;
   padding: 1px;
   font-size: .9rem;
