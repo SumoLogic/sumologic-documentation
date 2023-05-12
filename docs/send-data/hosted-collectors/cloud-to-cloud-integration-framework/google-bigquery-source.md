@@ -119,7 +119,7 @@ SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-
 #### Example 3: Query Gmail Logs
 
 ```sql
-select message_info,event_info, event_info.timestamp_usec as timestamp from MyProject.MyDataSet.activity where event_info.timestamp_usec > %CHECKPOINT% LIMIT 100
+SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TIMESTAMP FROM `MyProject.MyDataSet.activty` WHERE gmail.event_info.timestamp_usec > %CHECKPOINT% LIMIT 100
 ```
 
 | Field | Value |
