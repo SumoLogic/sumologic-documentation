@@ -32,155 +32,108 @@ Both the integration definition file and the action definition file are YAML fil
 
 **\* ** Required fields
 
-* **name* ** [String]: Name of integration (should match action definition file).
+* **name* ** [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
 * **version* ** [String]: File version number.
 * **icon* ** [Base64 String]: Integration logo.
 * **script* **: 
-   * **type* ** [String]: Code type (Python, Perl, PowerShell, or bash).
-   * **test_connection_code* ** [String]: Code to test integration.
-* **docker_repo_tag* ** [String]: Docker repository tag.
-* **local_repo** [Boolean]: Define if Docker image is a local one.
+   * **type* ** [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
+     * `bash`
+     * `perl`
+     * `powershell`
+     * `python`
+   * **test_connection_code* ** [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure. 
+* **docker_repo_tag* ** [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server. 
+* **local_repo** [Boolean]: Indicates that the Docker image is a local one and not one present in the repository.
 * **configuration* **: 
    * **testable_connection* ** [Boolean]: Is test code present (true/false).
-   * **require_proxy_config* ** [Boolean]: Is proxy available (true/false).
-   * **data_attributes* **: Fields required for configuration.
-      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable.
+   * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable. 
+   * **data_attributes* **: Fields required for configuration. 
+      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable. One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
          * **label* ** [String]: Label displayed in the UI.
-         * **type* ** [String]: Type of field.
+         * **type* ** [String]: Type of field. Acceptable values are:
+           * `checkbox`
+           * `list`
+           * `number`
+           * `password`
+           * `text`
+           * `textarea`
          * **required* ** [Boolean]: Is the field required (true/false).
-         * **validator** [String]: Input validator type.
+         * **validator** [String]: Input validator type. Acceptable values are: 
+           * `host`
+           * `integer`
+           * `ip`
+           * `port`
+           * `url`
          * **default** [String]: Default field value.
-         * **values** [String]: List of possible values for a list field.
+         * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
+           * `domain: Domain`
+           * `ip: IP Address`
+           * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
    * **listing_attributes** Configuration fields to show in the resource table.
       * **<field_name>* ** [String]: Name of field which will be shown in the table.
       * **name* ** [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
-<details><summary>Notes on integration definition file fields</summary>
-
-* **name**<br/>Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
-* **script: type**<br/>Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
-   * `bash`
-   * `perl`
-   * `powershell`
-   * `python`
-* **script: test_connection_code**<br/>Code which can be used to test the integration through the UI by clicking on **Test Saved Settings**. Exiting with a value of `0` indicates success, while any other value will indicate failure. 
-* **docker_repo_tag**<br/>Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server. 
-* **local_repo** true/false (Default false)<br/>Indicates that the Docker image is a local one and not one present in the repository.
-* **configuration: require_proxy_config**<br/>True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable. 
-* **configuration: data_attributes <field_name>**<br/>One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
-* **configuration: data_attributes: <field_name>: type**<br/>Acceptable values are:
-   * `checkbox`
-   * `list`
-   * `number`
-   * `password`
-   * `text`
-   * `textarea`
-* **configuration: data_attributes: <field_name>: validator**<br/>Acceptable values are: 
-   * `host`
-   * `integer`
-   * `ip`
-   * `port`
-   * `url`
-* **configuration: data_attributes: <field_name>: values**<br/>List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
-   * `domain: Domain`
-   * `ip: IP Address`
-   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
-
-</details>
-
 ### Action definition file format
 
 **\* ** Required fields
 
-* **integration* ** [String]: Name of integration (should match integration definition file).
-* **name* ** [String]: Name of action.
-* **type* ** [String]: Type of action.
-* **script* **:
-   * **code* ** [String]: Action code.
-* **fields* **:
-   * **id* ** [String]: Name of field which will be passed to code at runtime as environment variable.
-   * **label* ** [String]: Label displayed in the UI.
-   * **type* ** [String]: Type of field.
-   * **required* ** [Boolean]: Is the field required (true/false).
-   * **validator* ** [String]: Input validator type.
-   * **default** [String]: Default field value.
-   * **values** [String]: List of possible values for a list field.
-   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false).
-   * **observables** [String]: Link with the Observables section.
-* **output* **: Expected fields from results.
-   * **path* ** [String]: Result path.
-   * **type* ** [String]: Type of data returned.
-* **table_view* **: Results to display in table view.
-   * **display_name* ** [String]: Column name.
-   * **value* ** [String]: Result path.
-   * **type* ** [String]: Element type
-* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
-* **hook** [List]: List of hooks.
-* **check_not_null_field** [String]: Internal name of entities (Incident or Task) field that can be not null to show action button.
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
-* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
-* **exit_condition**:
-   * **path* ** [String]: Result path of exit condition value.
-   * **string* ** [String]: Result path of string to check if is equal to result value.
-* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
-* **scheduled**:
-   * **every* ** [String] format <int\><interval type\>: s = Second, d = Day, h= Hours, m = Minutes
-   * **expire* ** [String] format <int\><interval type\>: s = Second, d = Day, h= Hours, m = Minutes
-
-<details><summary>Notes on action definition file fields</summary>
-
-* **integration**<br/>This should match the `name` field of the integration definition file for the integration. 
-* **name**<br/>Friendly name which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`. 
-* **type**<br/>Type of action being performed. Acceptable values are:
+* **integration* ** [String]: Name of integration. This should match the `name` field of the integration definition file for the integration. 
+* **name* ** [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`. 
+* **type* ** [String]: Type of action being performed. Acceptable values are:
    * `Containment`
    * `Custom`
    * `Daemon`
    * `Notification`
    * `Trigger`
-* **fields: id**<br/>One id attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
-* **fields: id: type**<br/>Acceptable values are: 
-   * `checkbox`
-   * `datetime`
-   * `fileDetonate`
-   * `list`
-   * `multilist`
-   * `number`
-   * `tag`
-   * `text`
-   * `textarea`
-   * `upload`
-* **fields: id: validator**<br/>Acceptable values are:  
-   * `datetime`
-   * `domain`
-   * `e-mail`
-   * `hash`
-   * `integer`
-   * `ipaddress`
-   * `ip_domain`
-   * `md5`
-   * `port`
-   * `sha1`
-   * `sha256`
-   * `url`
-* **fields: id: values**<br/>List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
+* **script* **:
+   * **code* ** [String]: Action code.
+* **fields* **:
+   * **id* ** [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
+   * **label* ** [String]: Label displayed in the UI.
+   * **type* ** [String]: Type of field. Acceptable values are: 
+     * `checkbox`
+     * `datetime`
+     * `fileDetonate`
+     * `list`
+     * `multilist`
+     * `number`
+     * `tag`
+     * `text`
+     * `textarea`
+     * `upload`
+   * **required* ** [Boolean]: Is the field required (true/false).
+   * **validator* ** [String]: Input validator type. Acceptable values are:  
+     * `datetime`
+     * `domain`
+     * `e-mail`
+     * `hash`
+     * `integer`
+     * `ipaddress`
+     * `ip_domain`
+     * `md5`
+     * `port`
+     * `sha1`
+     * `sha256`
+     * `url`
+   * **default** [String]: Default field value.
+   * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
    * `domain: Domain`
    * `ip: IP Address`
    * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. 
-* **fields: id: incident_artifacts**<br/>When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field. 
-* **fields: id: observables**<br/>This field defines the link between the action and the observables section. Specifying an observable type here will cause the action to be displayed in the **Actions** menu for the specified observable type. Acceptable values are:
-   * `domain`
-   * `email`
-   * `file`
-   * `ipaddress`
-   * `md5`
-   * `sha1`
-   * `sha256`
-   * `url`
-   * `userdetail`
-* **output: path**<br/>JSON path for each field which may be returned by the action, using the following JSON as an example:
+   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field. 
+   * **observables** [String]: This field defines the link between the action and the observables section. Specifying an observable type here will cause the action to be displayed in the **Actions** menu for the specified observable type. Acceptable values are:
+     * `domain`
+     * `email`
+     * `file`
+     * `ipaddress`
+     * `md5`
+     * `sha1`
+     * `sha256`
+     * `url`
+     * `userdetail`
+* **output* **: Expected fields from results.
+   * **path* ** [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
    { country: "US",
    response_code: 1,
@@ -191,18 +144,18 @@ Both the integration definition file and the action definition file are YAML fil
    }}
    ```
    The following `output:path` attributes should be added:
-   * `country`
-   * `response_code`
-   * `as_owner`
-   * `detected_urls.[].url`
-   * `detected_urls.[].positives`
-* **output: path: type**<br/>Reserved for future use. All outputs are treated as strings.
-* **table_view**<br/>The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in Table View.
-* **table_view: display_name**<br/>Friendly name which will appear as the column name.
-* **table_view: value**<br/>JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
-* **table_view: type**<br/>Type of value which is only possible to specify if the value should be shown as a link.
-* **use_in_triage**<br/>Action should be manually executable in triage event (default False).
-* **hook**<br/>Fields valid only for trigger actions. Possible values are:
+     * `country`
+     * `response_code`
+     * `as_owner`
+     * `detected_urls.[].url`
+     * `detected_urls.[].positives`
+   * **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+   * **display_name* ** [String]: Column name. 
+   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
+* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False). 
+* **hook** [List]: List of hooks. Fields valid only for trigger actions. Possible values are:
    * `addObservableArtifact`
    * `addObservableDomain`
    * `addObservableIp`
@@ -223,28 +176,26 @@ Both the integration definition file and the action definition file are YAML fil
    * `updateIncident`
    * `updateTask`
    * `webhook`
-* **check_not_null_field**<br/>For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
-* **src_doc**<br/>Result path or rawOutput to take the entire output to show in html5 iframe sandbox.
-* **url_preview**<br/>Result path URL to show in html5 iframe sandbox.
-* **image_base64_png(jpg)**<br/>Result path to get base64 png or jpg to show in the UI.
-* **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-* **exit_condition:path**<br/>Result path where to search in JSON structure as `table_view` section.
-* **exit_condition:string**<br/>Value to check in path.
-* **re-execution**<br/>By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: ‘force’`, the previous action run will be killed, stopping the Docker container.
-* **scheduled:every**<br/>Time interval between one run and the next one (for example, 10s, 5d, etc.):
-   * s: SECONDS
-   * d: DAYS
-   * h: HOURS
-   * m: MINUTES
-* **scheduled:expire**<br/>Time after the first run to stop scheduling. The last result will be kept:
-   * s: SECONDS
-   * d: DAYS
-   * h: HOURS
-   * m: MINUTES
-* **signature**<br/>Not to be set by user.
-
-</details>
-
+* **check_not_null_field** [String]: For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
+* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed. 
+* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
+* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
+* **exit_condition**: Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
+   * **path* ** [String]: Result path where to search in JSON structure as `table_view` section.
+   * **string* ** [String]: Result path of string to check if is equal to result value. 
+* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container. 
+* **scheduled**:
+   * **every* ** [String] format <int\><interval type\>: Time interval between one run and the next one (for example, 10s, 5d, etc.):
+     * s: SECONDS
+     * d: DAYS
+     * h: HOURS
+     * m: MINUTES
+   * **expire* ** [String] format <int\><interval type\>: Time after the first run to stop scheduling. The last result will be kept:
+     * s: SECONDS
+     * d: DAYS
+     * h: HOURS
+     * m: MINUTES
 
 ## Action parameters
 
