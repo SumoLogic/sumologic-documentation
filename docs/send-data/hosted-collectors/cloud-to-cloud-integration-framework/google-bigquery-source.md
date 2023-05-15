@@ -117,7 +117,8 @@ SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-
 | `Time Field` | `start_time` |
 
 #### Example 3: Query Gmail Logs 
-(Replace `MyProject` and `MyDataSet` with values matching your environment)
+
+In the example below, you'll need to replace `MyProject` and `MyDataSet` with values matching your environment.
 
 ```sql
 SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TIMESTAMP FROM `MyProject.MyDataSet.activity` WHERE gmail.event_info.timestamp_usec > %CHECKPOINT% order by TIMESTAMP LIMIT 30000
