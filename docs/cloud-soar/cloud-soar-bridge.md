@@ -51,6 +51,9 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    ```
    systemctl enable docker
    ```
+
+### Using a Proxy
+
 1. If docker has to use a proxy to pull images, follow the below instructions:
    ```
    mkdir -p /etc/systemd/system/docker.service.d
@@ -116,6 +119,9 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    ```
    sudo yum install automation-bridge-X.X.rpm
    ```
+
+### Installation Configuration
+
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters: <!-- These parameters differ from those for the Automation Service -->
    * `SOAR_URL`
    * `SOAR_TOKEN`
