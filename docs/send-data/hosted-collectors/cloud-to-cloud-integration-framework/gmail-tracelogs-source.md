@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 :::note
 This source was originally developed for [Gmail logs in BigQuery](https://support.google.com/a/topic/7233311?fl=1&sjid=293657922002214011-NA), which has been replaced by [Google Workspace logs and reports in BigQuery](https://support.google.com/a/topic/9079469?fl=1&sjid=293657922002214011-NA).
 
-Please use our [Google BigQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source) instead.
+Please use our [Google BigQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source) instead (see Example 3 under [this section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source/#sample-values-for-query-checkpoint-and-checkpoint-start-fields) specifically). 
 :::
 
 The Gmail Trace Logs integration pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
