@@ -4,6 +4,7 @@ title: Linking Multiple Dashboards (New)
 sidebar_label: Linking Dashboards (New)
 description: Learn how to quickly link dashboards together to view related data.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Link Multiple Dashboards Together
 
@@ -22,15 +23,14 @@ When you click a data point on a Dashboard (New) chart the Summary tab provides 
 * The following image shows a Summary panel from a selected log data point. The **Linked Dashboards** section is at the bottom.<br/>  ![summary v2 logs.png](/img/dashboards-new/drill-root-causes/summary-v2-logs.png)
 * The following image shows a Summary panel from a selected metric data point. The **Linked Dashboards** section is at the bottom.<br/>  ![metrics summary v2.png](/img/dashboards-new/drill-root-causes/metrics-summary-v2.png)
 
-
 ## Link a Dashboard (New) to Explore
 
 Stack linking connects Dashboard (New) to Explore so you can view dashboards when exploring infrastructure components.
 
 You link a Dashboard (New) to your stack in Explore by specifying metadata key-value pairs:
 
-* Key - Metadata field name, this is collected from your data and is usually an entity or component name.
-* Value(s) - The values of the entity or component.
+* **Entity Type**. Predefined entity object representing a given part of your system and its related set of data (such as EC2 Instance, Application, MySQL Cluster).
+* **Entity Name**. Name of a given entity, as displayed in the Explore tab. An asterisk (“*”) can be used to match all entities of a given type.
 
 The metadata keys assigned to your Dashboard (New) Stack Linking must be the same as the explored component for the dashboard to show as an option. For example, if your component is named `tablename`, and has `account`, `region`, and `namespace` metadata assigned to it, as seen in the following Explore screenshot:
 
@@ -42,19 +42,21 @@ The keys assigned to the Dashboard (New) Stack Linking would need to include tho
 
 To link a custom Dashboard (New) to your stack in Explore, do the following:
 
-1. From your custom dashboard, click the three-dot icon in the upper right corner of the window and select **Create Stack Linking** from the dropdown menu.<br/>  ![Create Stack Linking option from Dashboard New.png](/img/dashboards-new/link-dashboard-explore/Create-Stack-Linking-option-from-Dashboard-New.png)
+1. From your custom dashboard, click the three-dot icon in the upper right corner of the window and select **Create Stack Linking** from the dropdown menu.<br/>
+    :::info
+    Make sure you have edit permission for a dashboard to create stack linking.
+    :::<br/> 
+    ![Create Stack Linking option from Dashboard New.png](/img/dashboards-new/link-dashboard-explore/Create-Stack-Linking-option-from-Dashboard-New.png)
 1. In the **Dashboard Stack Linking** dialog, set the **Domain** you want the key available in.
-1. Enter a **Key** that describes the dashboard.
-1. Next enter **Value(s)**, the component to which the dashboard will be linked in the Explore hierarchy.<br/>![dashboard stack linking august 2021.png](/img/dashboards-new/link-dashboard-explore/dashboard-stack-linking-august-2021.png) 
-1. You can add more key-value pairs by clicking the **Add Link** link.
-1. The checkbox to **Set as default dashboard for this entity in** a hierarchy is available to set when you have defined a specific **Domain**. When set, you can limit the scope to a subset     of hierarchies using the dropdown labelled **No matching hierarchies**.
+1. Select an **Entity Type** for which you would like to display the dashboard.
+1. If you would like to further specify for which entities of a given type the dashboard is displayed you can input the relevant **Entity Name** (as displayed in the Explore tab). If you would like to see the dashboards for all entities of a given type you can use (“*”) as the entity name. <br/><img src={useBaseUrl('img/dashboards-new/link-dashboard-explore/dashboard-stack-linking-may-2023.png')} alt="time-series-or-categorical" width="600"/>
+1. You can add more entity associations by clicking **Add another entity type/name pair**.
 1. Click **Apply** to apply the stack link.
-1. Now when you navigate in Explore to an entity or component with matching key-value pairs you will have the option to view your Dashboard (New) in Explore.  
+1. Now when you navigate in **Explore** to an entity with matching entity type and entity name, you will have the option to view your **Dashboard (New)** in the **Explore**.  
      
-
 ## View linked dashboards
 
-In Explore, when navigating to components you will have the option to select other dashboards that were linked. 
+In **Explore**, when navigating to components you will have the option to select other dashboards that are linked. 
 
 From the **Dashboards** dropdown menu, select the name of the linked dashboard to load it in Explore. When hovering over available dashboards the tooltip provides the location and creator so it is easier to identify.
 
