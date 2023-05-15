@@ -62,7 +62,7 @@ To configure an Google BigQuery Source:
 1. **Checkpoint Field**. Enter the name of the field in the query result to be used for checkpointing. This field has to be increasing and of type number or timestamp.
 1. **Checkpoint Start**. Enter the first value for the checkpoint that the integration will plug into the query.
 1. **(Optional) Time Field**. Enter the name of the field in the query result to be parsed as timestamp. If not provided, the current time will be used.
-1. **Query**. Enter the query that you need to run. It must include the phrase `%CHECKPOINT%` and *should* include sorting the checkpoint field as well.
+1. **Query**. Enter the query that you need to run. You must include the phrase `%CHECKPOINT%` and sort the checkpoint field.
 1. **(Optional) Query Interval**. Enter the time interval to run the query in the format: `Xm` (for X minutes) or `Xh` (for X hours).
 1. **Google BigQuery Credential**. Upload the Credential JSON file downloaded from Google Cloud IAM & Admin.
 1. **(Optional) Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
