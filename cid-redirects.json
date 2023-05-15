@@ -2559,6 +2559,7 @@
   "/docs/manage/connections-integrations/servicenow/set-up-searches": "/docs/alerts/webhook-connections/servicenow/set-up-searches",
   "/docs/manage/connections-integrations/servicenow/set-up-connections": "/docs/alerts/webhook-connections/servicenow/set-up-connections",
   "/docs/manage/connections-integrations/servicenow/launch-investigations": "/docs/alerts/webhook-connections/servicenow/launch-investigations",
+  "/docs/dashboards-new/migrate-to-new-dashboards":"/docs/dashboards-new/dashboards-migration",
   "/Manage/Connections/Webhook_Connections/About_Webhook_Connections": "/docs/alerts/webhook-connections",
   "/Manage/Connections/Webhook_Connections/Use_the_Audit_Index_with_Webhook_Connections": "/docs/alerts/webhook-connections/audit-index",
   "/Manage/Connections/Webhook_Connections/Webhook_Connection_for_Datadog": "/docs/alerts/webhook-connections/datadog",
