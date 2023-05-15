@@ -1582,7 +1582,10 @@ Delete existing hierarchy and a create new one:<br/>
 #### Error Message
 from sumologic import SumoLogic<br/>Import Error: cannot import name 'SumoLogic' from 'sumologic'<br/> `(/usr/local/lib/python3.10/site-packages/sumologic/__init__.py)`
 #### Solution
-The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability solution using the following command:<br/>`pip install sumologic-sdk`
+The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability solution using the following command:
+  ```sql
+  pip install sumologic-sdk
+  ```
 
 ### Argument named *managed_apps* is not expected
 #### Error Message
