@@ -1,12 +1,13 @@
 ---
 slug: /metrics/metric-charts
-title: Metrics Charts
-sidebar_label: Metrics Charts
+title: Metrics Charts (Classic)
 description: You can visualize metrics data in Sumo Logic.
 ---
 
-:::note
-The topics in this section provide information about our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
+:::info legacy solution
+This topic pertains to our Classic Metrics UI (Legacy).
+
+For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
 :::
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +17,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/metrics/metric-charts/create-metrics-visualization"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Create and Chart a Metrics Query</h4></a>
+  <a href="/docs/metrics/metric-charts/create-metrics-visualization"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Create a Metrics Query and Chart</h4></a>
   <p>Learn how to view metrics data in Sumo Logic.</p>
   </div>
 </div>
