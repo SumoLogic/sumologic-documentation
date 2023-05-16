@@ -1,8 +1,8 @@
 ---
 id: automation-service-bridge
-title: Bridge
-sidebar_label: Bridge
-description: Learn how to install a bridge to allow running custom actions or integrations in an on-premise environment.   
+title: Automation Service Bridge
+sidebar_label: Automation Service Bridge
+description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -81,7 +81,14 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### Ubuntu
 
-1. Download the `automation-bridge-X.X.deb` and copy it on the bridge virtual machine.
+1. Access the Automation Service:
+   1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
+   1. Under **Integrations**, select **Automation**.
+   1. At the top of the screen, click **Manage Playbooks**.
+1. Click **?** in the upper-right.
+1. In the **Automation Bridge** box, click **UBUNTU**.
+1. Click **Download** to download the `automation-bridge-X.X.deb` file.
+1. Copy the file to the bridge virtual machine.
 1. To install the package run from ssh:
    ```
    sudo dpkg -i automation-bridge-X.X.deb
@@ -89,7 +96,14 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. Download the `automation-bridge-X.X.rpm` and copy it on the bridge virtual machine.
+1. Access the Automation Service:
+   1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
+   1. Under **Integrations**, select **Automation**.
+   1. At the top of the screen, click **Manage Playbooks**.
+1. Click **?** in the upper-right.
+1. In the **Automation Bridge** box, click **CENTOS/REDHAT**.
+1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
+1. Copy the file to the bridge virtual machine.
 1. To install the package run from ssh:
    ```
    sudo yum install automation-bridge-X.X.rpm
