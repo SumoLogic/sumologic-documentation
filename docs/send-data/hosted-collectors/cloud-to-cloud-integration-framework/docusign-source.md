@@ -16,6 +16,7 @@ The DocuSign provides a secure endpoint to receive customer event data from the
 ## Prerequisites
 
 To collect event data from the DocuSign Monitor, you must meet the following criteria:
+* **Administrator access to an organization**. To call the DocuSign Monitor endpoint, you must impersonate a user with administrator access to your organization.
 * **Enable DocuSign Monitor**. [Enable DocuSign Monitor](https://developers.docusign.com/docs/monitor-api/how-to/enable-monitor/) for your organization to call the endpoint.
 * **Integration Key**. An integration key identifies your integration and links to its configuration values. [Create an integration key](https://developers.docusign.com/platform/configure-app/#how-to-get-an-integration-key)
 * **Redirect Uri**. The redirect URI is the URI (URL) to which DocuSign will redirect the browser after authentication. [Set a redirect URI](https://developers.docusign.com/platform/configure-app/#how-to-set-a-redirect-uri)
