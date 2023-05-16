@@ -18,7 +18,7 @@ This App has been tested with following SQL Server versions:
 - Microsoft SQL Server 2012
 
 The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. Because of this, it is a Windows only receiver. Thus metrics for SQL Server can be collected only if its in a windows machine. 
-SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). They can be collected for any environment like - windows/linux/mac.
+SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) and can be collected for any environment, including Windows, Linux, and Mac.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards" />
 
@@ -194,8 +194,8 @@ SQL Server - Transaction and Transaction Logs dashboard shows performance counte
 
 Use this dashboard to:
 
--   Get info with respect to time for Transaction and write Transaction per sec
--   Insight into Transaction log related metrics like flush rate, flush data rate and flush wait rate along with Transaction log % usage.
+- Get info with respect to time for Transaction and write Transaction per sec
+- Insight into Transaction log related metrics like flush rate, flush data rate and flush wait rate along with Transaction log use percentage.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
 
