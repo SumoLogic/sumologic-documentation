@@ -2090,6 +2090,7 @@ integrations: [
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
           'integrations/saas-cloud/miro',
+          'integrations/saas-cloud/ms-graph-azure-ad-reporting',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
