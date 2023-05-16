@@ -177,12 +177,12 @@ The following example shows how to create an integration with a custom action th
 1. Add the IP Quality Score integration resource:
     1. Click the **+** button to the left of **Resources**. 
     1. Fill out the **Add Resource** dialog:
-    * **Label**: Enter **IP Quality Score Resource**.
-    * **API URL**: Enter `https://www.ipqualityscore.com/`.
-    * **API Key**: Enter the API key you previously obtained from IP Quality Score.
-    * **Connection Timeout (s)**: Leave the default value at **120**.
-    * **Automation engine**: Select the Automation Bridge you installed locally as described in the first step of this example. 
-    * **Proxy options**: Select **Use no proxy**.
+       * **Label**: Enter **IP Quality Score Resource**.
+       * **API URL**: Enter `https://www.ipqualityscore.com/`.
+       * **API Key**: Enter the API key you previously obtained from IP Quality Score.
+       * **Connection Timeout (s)**: Leave the default value at **120**.
+       * **Automation engine**: Select the Automation Bridge you installed locally as described in the first step of this example. 
+       * **Proxy options**: Select **Use no proxy**.
     1. Click **Save**. The IP Quality Score Resource appears in the integration.
 1. Create the playbook:
     1. Click **Playbook** in the navigation menu.
