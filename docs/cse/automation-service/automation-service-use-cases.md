@@ -90,7 +90,7 @@ The following use case shows how to configure a notification to send an email wi
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic CIP**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.
-   1. Enter the **API URL** for your Sumo Logic core platform instance (for example, https://api.us2.sumologic.com). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
+   1. Enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
    1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**. 
    1. Select your **Time Zone**.
@@ -128,7 +128,7 @@ The following use case shows how to configure a notification to send an email wi
    1. Click **Create**. 
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
-   1. Click on the **Save** button (floppy disk icon) at the bottom of the playbook view.
+   1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view.
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
