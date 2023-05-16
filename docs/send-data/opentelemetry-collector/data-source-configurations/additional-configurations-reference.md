@@ -13,7 +13,7 @@ Sumo Logic Distribution for OpenTelemetry stores the configuration for the colle
 | :-- | :-- |
 | Linux | `/etc/otelcol-sumo/conf.d` |
 | Mac | `/etc/otelcol-sumo/conf.d` |
-| Windows | `C:\ProgramData\Sumo Logic OpenTelemetry Collector\` |
+| Windows | `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` |
 
 
 ## Configuration location and structure
@@ -50,7 +50,7 @@ There are some processors provided in `sumologic.yaml` that are intended to be u
 
 * **Memory limiter processor**. It is used to prevent out-of-memory situations on the collector. It should be always first on the processor's list. For more information, refer to the [OpenTelemetry documentation](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/memorylimiterprocessor#memory-limiter-processor).
 * **Batch processor**. It accepts spans, metrics, or logs and places them into batches. Batching helps better compress the data and reduce the number of outgoing connections required to transmit the data. See [Using batch processor to batch data](#using-batch-processor-to-batch-data) for more information.
-* **ResourceDetection/System processor**. [It can be used](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourcedetectionprocessor/) to detect resource information from the host in a format that conforms to the [OpenTelemetry resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions/), and append or override the resource value in telemetry data with this information. This processor is used to tag labels like `host.name`, `host.id`, `os.type`.
+* **ResourceDetection/System processor**. [It can be used](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourcedetectionprocessor/) to detect resource information from the host in a format that conforms to the [OpenTelemetry resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions/), and append or override the resource value in telemetry data with this information. You can also tag labels like `host.name`, `host.id`, `os.type`.
 
 We also expect the Sumo Logic exporter to be included in the `exporters` section.
 
