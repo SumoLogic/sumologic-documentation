@@ -42,10 +42,6 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * [Partner app template](/docs/contributing/templates/partner-app-doc)
 :::
 
-:::tip
-See also: [Sumo Logic UX Style Guide](/files/UX-Sumo-Style.pdf).
-:::
-
 ## Voice and Tone
 
 * We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
@@ -68,6 +64,7 @@ This gives a call to action for the reader or user to effectively get something 
 | Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
 | To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
 
+<!--
 <div class="no-box">
 &#10060; You can add a resource...
 </div>
@@ -75,6 +72,7 @@ This gives a call to action for the reader or user to effectively get something 
 <div class="yes-box">
 &#9989; Add a resource...
 </div>
+-->
 
 ### Inclusive language
 
@@ -114,28 +112,10 @@ By writing inclusively and using culturally neutral language, our words resonate
 
 ## Abbreviations
 
-Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”.  Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
+Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
 
-<div class="container-boxes">
-<div class="dos-box">
-"e.g.,"
-</div>
-<div class="donts-box">
-"for example"
-</div>
-<div class="dos-box">
-"i.e.,"
-</div>
-<div class="donts-box">
-"that is"
-</div>
-<div class="dos-box">
-"etc."
-</div>
-<div class="donts-box">
-"and so on", "and more"
-</div>
-</div>
+* Instead of "e.g.", use “for example”
+* Instead of "i.e.", use “that is”
 
 
 ## Acronyms
@@ -297,17 +277,35 @@ When the feature moves from Beta to GA, remove the Beta label.
 
 ## Capitalization
 
-* Title case (initial cap) all doc titles.
-   * Example: `Global Intelligence for Apache Tomcat App`
-* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case.
-   * Example: `Throughput signals and contributing factors`
+* Title case (initial cap) all doc titles. Example: `Global Intelligence for Apache Tomcat App`
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`
 
 
 ## Code (Inline)
 
-* Use \` \` single backticks to format inline code, such as commands, API method names, and code. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
+* Use single backticks (\` \`) to format inline code, such as commands, API method names, and code. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
 
-Here's an example that encompasses all the above styles: If you are not parsing all sources in the hosted collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with value _/Parsers/System/Auth0/Auth0_.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    Example: `_view = sumologic_slo_output`
+
+</TabItem>
+<TabItem value="Result">
+
+Example: `_view = sumologic_slo_output`
+
+</TabItem>
+</Tabs>
+
+
 
 ## Code Blocks
 
@@ -432,7 +430,7 @@ For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/d
 
 ## Collapsible text blocks
 
-Use an [expander](https://docusaurus.io/docs/next/markdown-features#details) to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
+You can use an [expander](https://docusaurus.io/docs/next/markdown-features#details) to collapse long content that can be searched, but not displayed, when loading a page. We recommend using expanders only for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
 
 You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
 
@@ -622,9 +620,7 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 </TabItem>
 </Tabs>
 
-:::caution
 Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
-:::
 
 ### Documenting procedures
 
