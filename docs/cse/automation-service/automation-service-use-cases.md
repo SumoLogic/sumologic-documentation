@@ -192,7 +192,7 @@ The following example shows how to create an integration with a custom action th
     1. Enter a **Description**.
     1. Click **Create**.
 1. Select the input parameters for the playbook:
-    1.Click the **Edit** button (pencil icon) at the bottom of the playbook view.
+    1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
     1. On the **Start** node, click the **Edit** button (pencil icon).
     1. In the **Edit node** dialog, select **Insight** in the **Add one or more params as a playbook input** field. (You could also select **Entity**, but choose **Insight** for the purposes of this example.)
     1. Click the **Remove** button (trash can icon) to remove any parameters you don’t want to use as inputs for the playbook. 
