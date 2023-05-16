@@ -127,7 +127,7 @@ You can add Trace Duration Breakdown Chart as a dashboard panel to a new or exis
 1. Go to **+ New** > **Dashboard (New)**.
 1. Click the **Traces** panel type.
 1. Add the required trace query filters representing similar traces of the same transaction.
-1. Under **Visual Settings** > **Chart type**, select **Trace Query Visualisations**.
+1. Under **Visual Settings** > **Chart type**, select **Trace Query Visualizations**.
 
 ### Traces Matching Queries table
 
