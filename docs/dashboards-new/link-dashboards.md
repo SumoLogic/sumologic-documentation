@@ -30,7 +30,7 @@ Stack linking connects Dashboard (New) to Explore so you can view dashboards whe
 You link a Dashboard (New) to your stack in Explore by specifying metadata key-value pairs:
 
 * **Entity Type**. Predefined entity object representing a given part of your system and its related set of data (such as EC2 Instance, Application, MySQL Cluster).
-* **Entity Name**. Name of a given entity, as displayed in the Explore tab. An asterisk (“*”) can be used to match all entities of a given type.
+* **Entity Name**. Name of a given entity, as displayed in the Explore tab. An asterisk (`*`) can be used to match all entities of a given type.
 
 The metadata keys assigned to your Dashboard (New) Stack Linking must be the same as the explored component for the dashboard to show as an option. For example, if your component is named `tablename`, and has `account`, `region`, and `namespace` metadata assigned to it, as seen in the following Explore screenshot:
 
