@@ -223,7 +223,7 @@ The following example shows how to create an integration with a custom action th
     1. Click **Create**. The **Add Insight Enrichment** node is added to the playbook. 
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
-    1. Click on the **Save** button (floppy disk icon) at the bottom of the playbook view.
+    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view.
 1. Create an automation to run the playbook:
     1. Return to the main Cloud SIEM screen.
