@@ -23,7 +23,7 @@ When you click a data point on a Dashboard (New) chart the Summary tab provides 
 * The following image shows a Summary panel from a selected log data point. The **Linked Dashboards** section is at the bottom.<br/>  ![summary v2 logs.png](/img/dashboards-new/drill-root-causes/summary-v2-logs.png)
 * The following image shows a Summary panel from a selected metric data point. The **Linked Dashboards** section is at the bottom.<br/>  ![metrics summary v2.png](/img/dashboards-new/drill-root-causes/metrics-summary-v2.png)
 
-## Link a Dashboard (New) to Explore
+## Link a custom Dashboard (New) to your stack in Explore
 
 Stack linking connects Dashboard (New) to Explore so you can view dashboards when exploring infrastructure components.
 
