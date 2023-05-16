@@ -29,7 +29,7 @@ Explore can be accessed using Dashboard (New) in conjunction with the below apps
 
 ### Stack linking
 
-Stack linking connects **Dashboard (New)** to Explore so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards-new/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" width="400"/>
+Stack linking connects **Dashboard (New)** to Explore so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards-new/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards-new/explore/stack-linking.png')} alt="Explore" width="500"/>
 
 ### AWS Observability
 
