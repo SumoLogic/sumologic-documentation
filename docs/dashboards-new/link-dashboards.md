@@ -45,11 +45,11 @@ To link a custom Dashboard (New) to your stack in Explore, do the following:
 1. From your custom dashboard, click the three-dot icon in the upper right corner of the window and select **Create Stack Linking** from the dropdown menu.<br/>
     :::info
     Make sure you have edit permission for a dashboard to create stack linking.
-    :::<br/> 
+    :::<br/>
     ![Create Stack Linking option from Dashboard New.png](/img/dashboards-new/link-dashboard-explore/Create-Stack-Linking-option-from-Dashboard-New.png)
 1. In the **Dashboard Stack Linking** dialog, set the **Domain** you want the key available in.
 1. Select an **Entity Type** for which you would like to display the dashboard.
-1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the Explore tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards-new/link-dashboard-explore/dashboard-stack-linking-may-2023.png')} alt="time-series-or-categorical" width="600"/>
+1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the Explore tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards-new/link-dashboard-explore/dashboard-stack-linking.png')} alt="time-series-or-categorical" width="600"/>
 1. You can add more entity associations by clicking **Add another entity type/name pair**.
 1. Click **Apply** to apply the stack link.
 1. Now when you navigate in **Explore** to an entity with matching entity type and entity name, you will have the option to view your **Dashboard (New)** in the **Explore**.  
