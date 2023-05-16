@@ -165,7 +165,7 @@ The following example shows how to create an integration with a custom action th
     1. From the Automation screen, click **Manage Playbooks**.
     1. Click **Integrations** in the navigation menu.
     1. Click the **+** icon at the top of the screen to the left of **Integrations**. The **New Integration** dialog appears. 
-    1. Download this file: <a href="https://help.sumologic.com/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>   
+    1. Download this file: <a href="https://help.sumologic.com/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
     1. Drag the file into the **Select File** box in the **New Integration** dialog.
     1. Click **Upload**. An IP Quality Score integration is created.
     1. Open the new **IP Quality Score** integration. 
