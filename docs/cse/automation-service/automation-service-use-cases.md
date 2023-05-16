@@ -22,7 +22,7 @@ The following example adds an enrichment using the “IP Reputation V3” action
    1. Click **Integrations** in the navigation menu.
    1. Select **VirusTotal OIF**.
    1. Hover your mouse over the resource name and click the Edit button that appears.
-   1. Enter the **API URL**: https://www.virustotal.com
+   1. Enter the **API URL**: `https://www.virustotal.com`.
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key. 
    1. Click **Save**.
 1. Create the playbook:
