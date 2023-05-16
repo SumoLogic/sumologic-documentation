@@ -41,7 +41,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox5 card">
   <div className="container">
   <a href="/docs/metrics/metric-charts/quantization-interval-chart"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="40"/><h4>Choose a Quantization Interval</h4></a>
-  <p>Learn why its recommended to change the Quantization Interval when running a metric query.</p>
+  <p>Learn why we recommend changing the Quantization Interval when running a metric query.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
