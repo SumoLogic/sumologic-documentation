@@ -41,7 +41,7 @@ The following example adds an enrichment using the “IP Reputation V3” action
    1. For **Integration**, select **VirusTotal OIF**.
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **IP reputation V3**.
-   1. To the right of the **IPs** field click the gear icon.
+   1. To the right of the **IPs** field, click the gear icon.
    1. Click **Playbook inputs** and select **input.entity.value**.
    1. Click **Create**. 
 1. Add an enrichment action to the playbook:
