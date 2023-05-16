@@ -6,7 +6,7 @@ description: Learn how to quickly link dashboards together to view related data.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Link Multiple Dashboards Together
+## Linking multiple dashboards
 
 You can link dashboards together to quickly view related data. Each panel can have links to other dashboards. Links have options to include metadata and time range. When you select a data point on
 the panel you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
