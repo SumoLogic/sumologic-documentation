@@ -94,7 +94,7 @@ A pop up window is shown where you need to provide the filter a name. This name 
 
 We have named the filter "primary" in the above image. Once done click **Save**. When opening Explore you'll now see the **primary** filter as an option in the **Filter** menu.<br/><img src={useBaseUrl('img/dashboards-new/explore/select-saved-filters.png')} alt="Explore" width="500"/>
 
-### Updating, Deleting, Saving Filters as Default
+### Updating, Deleting, Saving filters as default
 
 Saved filters can be applied as a default filter, edited, or deleted.
 * A default filter is applied every time you open Explore.
@@ -103,17 +103,17 @@ Saved filters can be applied as a default filter, edited, or deleted.
 
 <img src={useBaseUrl('img/dashboards-new/explore/set-default.png')} alt="Explore" width="500"/>
 
-### Remove Default Filter
+### Remove Default filter
 
 The default filter is displayed in the **Filter** dropdown menu with a **Default** label. Select the **Remove default** text link to clear your set default filter.<br/><img src={useBaseUrl('img/dashboards-new/explore/remove-default-filter.png')} alt="Explore" width="400"/>
 
-## Linking to Entities in Explore
+## Linking to entities in Explore
 
 ### Obtaining Links
 
 Use the link button to the right of the Dashboard title in Explore to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards-new/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards-new/explore/link-explore-dashboard.png')} alt="Explore" />
 
-### Manually Creating Links
+### Manually creating links
 
 You can create a URL to a specific entity in Explore.
 
