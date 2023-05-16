@@ -171,7 +171,7 @@ The following example shows how to create an integration with a custom action th
     1. Open the new **IP Quality Score** integration. 
     1. Hover your mouse over the **IP Quality Score** name and click the **Upload** button that appears.
     1. In the **Upload** dialog, select **Action** in the **kind** field. 
-    1. Download this file: <a href="https://help.sumologic.com/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a> 
+    1. Download this file: <a href="https://help.sumologic.com/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a>.
     1. Drag the file into the **Select File** box in the **New Integration** dialog. 
     1. Click **Upload**. The **IP Reputation** action appears in the IP Quality Score integration.
 1. Add the IP Quality Score integration resource:
