@@ -19,40 +19,98 @@ The Amazon RDS app uses the following logs and metrics:
 * [Amazon RDS operations using AWS CloudTrail](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html).
 * [Publishing RDS CloudWatch Logs, RDS Database logs for Aurora MySQL, RDS MySQL, MariaDB](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html).
 
-### Sample Log Message
+### Sample CloudTrail Log Message
 
 <details><summary>Click to expand</summary>
 
 ```json title="CloudTrail"
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDABCDEFGH4QEWUABG5Q",
-"arn":"arn:aws:iam::951234567898:user/Nitin","accountId":"951234567898","accessKeyId":"ASIABCDEFGHFBOT4FDVK",
-"userName":"Nitin","sessionContext":{"attributes":{"mfaAuthenticated":"true","creationDate":
-"2018-10-28T08:16:35Z"}},"invokedBy":"signin.amazonaws.com"},"eventTime":"2018-10-28T08:55:37Z",
-"eventSource":"rds.amazonaws.com","eventName":"CreateDBCluster","awsRegion":"us-west-1","sourceIPAddress"
-:"140.144.120.190","userAgent":"signin.amazonaws.com","requestParameters":{"backupRetentionPeriod":1,
-"databaseName":"NitinSampleDB","dBClusterIdentifier":"auroramysql57dbcluster02-cluster","dBClusterParameterGroupName"
-:"default.aurora-mysql5.7","vpcSecurityGroupIds":["sg-0123454e5b1da3aff"],"dBSubnetGroupName":"default-vpc-b92fc5d7",
-"engine":"aurora-mysql","engineVersion":"5.7.12","port":3306,"masterUsername":"nitin","masterUserPassword":"****",
-"storageEncrypted":true,"enableCloudwatchLogsExports":["audit","error","general","slowquery"],"engineMode":
-"provisioned"},"responseElements":{"allocatedStorage":1,"availabilityZones":["us-west-1a","us-west-1b",
-"us-west-1c"],"backupRetentionPeriod":1,"databaseName":"NitinSampleDB","dBClusterIdentifier":
-"auroramysql57dbcluster02-cluster","dBClusterParameterGroup":"default.aurora-mysql5.7","dBSubnetGroup"
-:"default-vpc-b92fc5d7","status":"creating","endpoint":"auroramysql57dbcluster07-cluster.cluster-cp1svq2n34sd.us-west-1.rds.amazonaws.com",
-"readerEndpoint":"auroramysql57dbcluster07-cluster.cluster-ro-cp5svq2n34sd.us-west-1.rds.amazonaws.com",
-"multiAZ":false,"engine":"aurora-mysql","engineVersion":"5.7.12","port":3306,"masterUsername":"nitin",
-"preferredBackupWindow":"03:25-03:55","preferredMaintenanceWindow":"tue:03:58-tue:04:28","readReplicaIdentifiers":[],
-"dBClusterMembers":[],"vpcSecurityGroups":[{"vpcSecurityGroupId":"sg-012345e5b1da3aff","status":"active"}],
-"hostedZoneId":"Z2R2ITUGPM61AM","storageEncrypted":true,"kmsKeyId":"arn:aws:kms:us-west-1:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
-"dbClusterResourceId":"cluster-AVPSEUMFISOMMXXVGKL4GBUC2E","dBClusterArn":"arn:aws:rds:us-west-1:951234567898:cluster:auroramysql57dbcluster02-cluster",
-"associatedRoles":[],"iAMDatabaseAuthenticationEnabled":false,"clusterCreateTime":"Oct 28, 2018 8:55:35 AM","enabledCloudwatchLogsExports":["audit","error","general","slowquery"],"engineMode":
-"provisioned","deletionProtection":false},"requestID":"2cbb7974-b79c-4121-aed1-5ebe8f945b72",
-"eventID":"7e554be7-0a00-4f8f-9e56-a2d54519fff9","eventType":"AwsApiCall","recipientAccountId":
-"951234567898"}
+{
+   "eventVersion":"1.05",
+   "userIdentity":
+   {
+      "type":"IAMUser",
+      "principalId":"AIDABCDEFGH4QEWUABG5Q",
+      "arn":"arn:aws:iam::951234567898:user/Nitin",
+      "accountId":"951234567898",
+      "accessKeyId":"ASIABCDEFGHFBOT4FDVK",
+      "userName":"Nitin",
+      "sessionContext":
+      {
+         "attributes":
+         {
+            "mfaAuthenticated":"true","
+            creationDate":"2018-10-28T08:16:35Z"
+         }
+      },
+      "invokedBy":"signin.amazonaws.com"
+   },
+   "eventTime":"2018-10-28T08:55:37Z",
+   "eventSource":"rds.amazonaws.com",
+   "eventName":"CreateDBCluster",
+   "awsRegion":"us-west-1",
+   "sourceIPAddress":"140.144.120.190",
+   "userAgent":"signin.amazonaws.com",
+   "requestParameters":
+   {
+      "backupRetentionPeriod":1,
+      "databaseName":"NitinSampleDB",
+      "dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
+      "dBClusterParameterGroupName":"default.aurora-mysql5.7",
+      "vpcSecurityGroupIds":["sg-0123454e5b1da3aff"],
+      "dBSubnetGroupName":"default-vpc-b92fc5d7",
+      "engine":"aurora-mysql",
+      "engineVersion":"5.7.12",
+      "port":3306,
+      "masterUsername":"nitin",
+      "masterUserPassword":"****",
+      "storageEncrypted":true,
+      "enableCloudwatchLogsExports":["audit","error","general","slowquery"],
+      "engineMode":"provisioned"
+   },
+   "responseElements":
+   {
+      "allocatedStorage":1,
+      "availabilityZones":["us-west-1a","us-west-1b","us-west-1c"],
+      "backupRetentionPeriod":1,
+      "databaseName":"NitinSampleDB",
+      "dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
+      "dBClusterParameterGroup":"default.aurora-mysql5.7",
+      "dBSubnetGroup":"default-vpc-b92fc5d7",
+      "status":"creating",
+      "endpoint":"auroramysql57dbcluster07-cluster.cluster-cp1svq2n34sd.us-west-1.rds.amazonaws.com",
+      "readerEndpoint":"auroramysql57dbcluster07-cluster.cluster-ro-cp5svq2n34sd.us-west-1.rds.amazonaws.com",
+      "multiAZ":false,
+      "engine":"aurora-mysql",
+      "engineVersion":"5.7.12",
+      "port":3306,
+      "masterUsername":"nitin",
+      "preferredBackupWindow":"03:25-03:55",
+      "preferredMaintenanceWindow":"tue:03:58-tue:04:28",
+      "readReplicaIdentifiers":[],
+      "dBClusterMembers":[],
+      "vpcSecurityGroups":[{"vpcSecurityGroupId":"sg-012345e5b1da3aff","status":"active"}],
+      "hostedZoneId":"Z2R2ITUGPM61AM",
+      "storageEncrypted":true,
+      "kmsKeyId":"arn:aws:kms:us-west-1:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
+      "dbClusterResourceId":"cluster-AVPSEUMFISOMMXXVGKL4GBUC2E",
+      "dBClusterArn":"arn:aws:rds:us-west-1:951234567898:cluster:auroramysql57dbcluster02-cluster",
+      "associatedRoles":[],
+      "iAMDatabaseAuthenticationEnabled":false,
+      "clusterCreateTime":"Oct 28, 2018 8:55:35 AM",
+      "enabledCloudwatchLogsExports":["audit","error","general","slowquery"],
+      "engineMode":"provisioned",
+      "deletionProtection":false
+   },
+   "requestID":"2cbb7974-b79c-4121-aed1-5ebe8f945b72",
+   "eventID":"7e554be7-0a00-4f8f-9e56-a2d54519fff9",
+   "eventType":"AwsApiCall","recipientAccountId":"951234567898"
+}
 ```
-
 </details>
 
 ### Sample Database CloudWatch Logs
+
+<details><summary>Click to expand</summary>
 
 ```json title="Recent Warning Events (Error Logs)"
 {
@@ -88,6 +146,7 @@ The Amazon RDS app uses the following logs and metrics:
    "logGroup":"/aws/rds/instance/rds-dbinstance-1/audit"
 }
 ```
+</details>
 
 ### Sample Queries
 
@@ -167,7 +226,6 @@ Sumo Logic supports collecting metrics using two source types
 Namespace for **Amazon RDS** Service is **AWS/RDS**.
 * ​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
-
 ### Collect Amazon RDS CloudTrail Logs
 
 1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
@@ -211,7 +269,7 @@ Sumo supports several methods for collecting logs from Amazon CloudWatch. You ca
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
-- While configuring the cloud Watch log source, following Field can be added in the source:
+- While configuring the cloud Watch log source, following fields can be added in the source:
    - Add an **account** field and assign it a value which is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
    - Add a **region** field and assign it the value of the respective AWS region where the RDS exists.
    - Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
@@ -324,7 +382,6 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
 ## Viewing the RDS Dashboards  
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
@@ -387,7 +444,7 @@ Use this dashboard to:
 * Identify when the CPU is overloaded, so you can throttle connections to the instance, tune SQL queries with a high CPU load, or consider a larger instance class to remedy the situation.
 * Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png')} alt="Amazon RDS dashboard" />
 
 ### 03. Amazon RDS Aurora Generic
 
@@ -415,7 +472,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Amazon RDS dashboard" />
 
-
 ### 05. Amazon RDS Aurora MySQL Global Database and BackTrack Activity
 
 **Amazon RDS Aurora MySQL Global Database and BackTrack Activity** dashboard provides insights into Aurora MySQL performance data from across your infrastructure for Global Database activity and Backtrack activity.
@@ -440,7 +496,7 @@ Use this dashboard to:
 * Get the number of failed and successful DB connections.
 * Get a quick breakdown of the protocol used for database connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
 
 ### 07. Amazon RDS - MySQL Logs - Error Logs Analysis
 
@@ -453,7 +509,7 @@ Use this dashboard to:
 * Monitor database instances starting up and being ready for connection events. 
 * Monitor MySQL RDS Cluster replication events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Error-Logs-Analysis.png')} alt="Amazon RDS dashboard" />
 
 ### 08. Amazon RDS - MySQL Logs - Slow Query Analysis
 
@@ -467,7 +523,7 @@ Use this dashboard to:
 * Check if **SQL SELECT** type queries can be shifted to read replicas for better performance.
 * Monitor trends of slow queries and compare them with history to check if something different is happening or might have happened to decide the next step.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Slow-Query-Analysis.png')} alt="Amazon RDS dashboard" />
 
 ### 09. Amazon RDS - MySQL Logs - Audit Logs Analysis
 
@@ -482,17 +538,17 @@ Use this dashboard to:
 * Identify typical user management activities being performed. 
 * Quickly identify objects which are dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png')} alt="Amazon RDS dashboard" />
 
 ### 10. Amazon RDS - MySQL Logs - Audit Log SQL Statements
 
 The **Amazon RDS - MySQL Logs - Audit Log SQL Statement** dashboard provides an analysis of audit logs, including types of top SQL commands being executed on the RDS instances and clusters. This dashboard works on audit logs which need to be [turned on](https://aws.amazon.com/blogs/database/auditing-an-amazon-aurora-cluster/) and [enabled](#collect-amazon-rds-cloudwatch-logs) to be [uploaded to Amazon CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.CloudWatch.html). These logs are specifically enabled to audit activities of interest from an audit and compliance perspective. 
 
 Use this dashboard to:
-* Identify top SQL statements and commands being executed along with trends.
+* Identify the top SQL statements and commands being executed along with trends.
 * Get details on various SQL statements/commands (DML, DDL, DCL, TCL) being executed. 
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-SQL-Statements.png')} alt="Amazon RDS dashboard" />
 
 ### 11. Amazon RDS - MySQL Logs - General Log Analysis
 
@@ -504,5 +560,5 @@ Use this dashboard to:
 * Monitor why certain things are failing by checking what exactly client sent to the server to execute.
 * Monitor the type of SQL statements/queries (DML, DDL, DCL, TCL, and others) being sent by the client to execute.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-General-Log-Analysis.png')} alt="Amazon RDS dashboard" />
 
