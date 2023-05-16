@@ -62,7 +62,7 @@ To configure an Google BigQuery Source:
 1. **Checkpoint Field**. Enter the name of the field in the query result to be used for checkpointing. This field has to be increasing and of type number or timestamp.
 1. **Checkpoint Start**. Enter the first value for the checkpoint that the integration will plug into the query.
 1. **(Optional) Time Field**. Enter the name of the field in the query result to be parsed as timestamp. If not provided, the current time will be used.
-1. **Query**. Enter the query that you need to run. It must include the phrase `%CHECKPOINT%`.
+1. **Query**. Enter the query that you need to run. You must include the phrase `%CHECKPOINT%` and sort the checkpoint field.
 1. **(Optional) Query Interval**. Enter the time interval to run the query in the format: `Xm` (for X minutes) or `Xh` (for X hours).
 1. **Google BigQuery Credential**. Upload the Credential JSON file downloaded from Google Cloud IAM & Admin.
 1. **(Optional) Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
@@ -116,17 +116,23 @@ SELECT trip_id,subscriber_type,start_time,duration_minutes FROM bigquery-public-
 | `Checkpoint Start`| `0` |
 | `Time Field` | `start_time` |
 
-#### Example 3: Query Gmail Logs
+#### Example 3: Query Gmail Logs 
+
+In the example below, you'll need to replace `MyProject` and `MyDataSet` with values matching your environment.
 
 ```sql
-SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TIMESTAMP FROM `MyProject.MyDataSet.activty` WHERE gmail.event_info.timestamp_usec > %CHECKPOINT% LIMIT 100
+SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TIMESTAMP FROM `MyProject.MyDataSet.activity` WHERE gmail.event_info.timestamp_usec > %CHECKPOINT% order by TIMESTAMP LIMIT 30000
 ```
 
 | Field | Value |
 |:---|:---|
-| `Checkpoint Field` | `timestamp` |
+| `Checkpoint Field` | `TIMESTAMP` |
 | `Checkpoint Start`| `1683053865563258` |
-| `Time Field` | `timestamp` |
+| `Time Field` | `TIMESTAMP` |
+
+Note that the value of `Checkpoint Start` above is an epoch MICRO seconds timestamp (16 digits) for `May 2, 2023 06:57:45.563258 PM GMT` and the query also sorts by the checkpoint field (`TIMESTAMP`). 
+
+When setting up this source for Gmail logs for the first time and collecting historical Gmail logs, it is important to set the `Checkpoint Start` in epoch microseconds (16 digits), and sort the checkpoint field explicitly in your query. Also note that it might take a long time for the source (and many BigQuery queries to execute) to backfill if the starting point is set far in the past - depending on your Gmail logs volume. 
 
 ### Error Types
 

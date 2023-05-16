@@ -9,11 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 {@import ../../reuse/automation-service-la-note.md}
 
-<!-- This article's content is copied over from the "Integration Framework Manual" previously available only from the"?" button in the Automation Service UI. Note that most discussion of Docker containers is commented out because you can only edit Docker containers in Cloud SOAR; you can't do it in the Automation Service. -->
-
-## Overview
-
-The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. <!-- For increased security and isolation, each integration is executed in its own Docker container, which you can easily customize when you create the integration. -->
+The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. 
 
 Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code, and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.
 
@@ -37,155 +33,95 @@ Both the integration definition file and the action definition file are YAML fil
 
 **\* ** Required fields
 
-* **name* ** [String]: Name of integration (should match action definition file).
+* **name* ** [String]: Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration.
 * **version* ** [String]: File version number.
 * **icon* ** [Base64 String]: Integration logo.
 * **script* **: 
-   * **type* ** [String]: Code type (Python, Perl, PowerShell, or bash).
-   * **test_connection_code* ** [String]: Code to test integration.
-* **docker_repo_tag* ** [String]: Docker repository tag.
-* **local_repo** [Boolean]: Define if Docker image is a local one.
+   * **type* ** [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
+     * `bash`
+     * `perl`
+     * `powershell`
+     * `python`
+   * **test_connection_code* ** [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure. 
+* **docker_repo_tag* ** [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
 * **configuration* **: 
    * **testable_connection* ** [Boolean]: Is test code present (true/false).
-   * **require_proxy_config* ** [Boolean]: Is proxy available (true/false).
+   * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable. 
    * **data_attributes* **: Fields required for configuration.
-      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable.
+      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable. One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution.
          * **label* ** [String]: Label displayed in the UI.
-         * **type* ** [String]: Type of field.
+         * **type* ** [String]: Type of field. Acceptable values are:
+           * `checkbox`
+            * `list`
+            * `number`
+            * `password`
+            * `text`
+            * `textarea`
          * **required* ** [Boolean]: Is the field required (true/false).
-         * **validator** [String]: Input validator type.
+         * **validator** [String]: Input validator type. Acceptable values are: 
+           * `host`
+           * `integer`
+           * `ip`
+           * `port`
+           * `url`
          * **default** [String]: Default field value.
-         * **values** [String]: List of possible values for a list field.
+         * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
+           * `domain: Domain`
+           * `ip: IP Address`
+           * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
    * **listing_attributes** Configuration fields to show in the resource table.
       * **<field_name>* ** [String]: Name of field which will be shown in the table.
       * **name* ** [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
-<details><summary>Notes on integration definition file fields</summary>
-
-* **name**<br/>Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
-* **script: type**<br/>Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
-   * `bash`
-   * `perl`
-   * `powershell`
-   * `python`
-* **script: test_connection_code**<br/>Code which can be used to test the integration through the UI by clicking on **Test Saved Settings**. Exiting with a value of `0` indicates success, while any other value will indicate failure. 
-* **docker_repo_tag**<br/>Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server. 
-* **local_repo** true/false (Default false)<br/>Indicates that the Docker image is a local one and not one present in the repository.
-* **configuration: require_proxy_config**<br/>True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable. 
-* **configuration: data_attributes <field_name>**<br/>One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
-* **configuration: data_attributes: <field_name>: type**<br/>Acceptable values are:
-   * `checkbox`
-   * `list`
-   * `number`
-   * `password`
-   * `text`
-   * `textarea`
-* **configuration: data_attributes: <field_name>: validator**<br/>Acceptable values are: 
-   * `host`
-   * `integer`
-   * `ip`
-   * `port`
-   * `url`
-* **configuration: data_attributes: <field_name>: values**<br/>List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
-   * `domain: Domain`
-   * `ip: IP Address`
-   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
-
-</details>
-
 ### Action definition file format
 
 **\* ** Required fields
 
-* **integration* ** [String]: Name of integration (should match integration definition file).
-* **name* ** [String]: Name of action.
-* **type* ** [String]: Type of action.
+* **integration* ** [String]: Name of integration. This should match the `name` field of the integration definition file for the integration. 
+* **name* ** [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ip reputation` or `system info`. 
+* **type* ** [String]: Type of action being performed. Acceptable values are:
+   * `Custom`
+   * `Enrichment`
+   * `Notification`
 * **script* **:
    * **code* ** [String]: Action code.
 * **fields* **:
-   * **id* ** [String]: Name of field which will be passed to code at runtime as environment variable.
+   * **id* ** [String]: Name of field. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
    * **label* ** [String]: Label displayed in the UI.
-   * **type* ** [String]: Type of field.
+   * **type* ** [String]: Type of field. Acceptable values are: 
+     * `checkbox`
+      * `datetime`
+      * `fileDetonate`
+      * `list`
+      * `multilist`
+      * `number`
+      * `tag`
+      * `text`
+      * `textarea`
+      * `upload`
    * **required* ** [Boolean]: Is the field required (true/false).
-   * **validator* ** [String]: Input validator type.
+   * **validator* ** [String]: Input validator type. Acceptable values are:  
+     * `datetime`
+     * `domain`
+     * `e-mail`
+     * `hash`
+     * `integer`
+     * `ipaddress`
+     * `ip_domain`
+     * `md5`
+     * `port`
+     * `sha1`
+     * `sha256`
+     * `url`
    * **default** [String]: Default field value.
-   * **values** [String]: List of possible values for a list field.
-   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false).
-   * **observables** [String]: Link with the Observables section.
+   * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
+     * `domain: Domain`
+     * `ip: IP Address`
+     * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. 
+   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field. 
 * **output* **: Expected fields from results.
-   * **path* ** [String]: Result path.
-   * **type* ** [String]: Type of data returned.
-* **table_view* **: Results to display in table view.
-   * **display_name* ** [String]: Column name.
-   * **value* ** [String]: Result path.
-   * **type* ** [String]: Element type
-* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
-* **hook** [List]: List of hooks.
-* **check_not_null_field** [String]: Internal name of entities (Incident or Task) field that can be not null to show action button.
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
-* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
-* **exit_condition**:
-   * **path* ** [String]: Result path of exit condition value.
-   * **string* ** [String]: Result path of string to check if is equal to result value.
-* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
-* **scheduled**:
-   * **every* ** [String] format <int\><interval type\>: s = Second, d = Day, h= Hours, m = Minutes
-   * **expire* ** [String] format <int\><interval type\>: s = Second, d = Day, h= Hours, m = Minutes
-
-<details><summary>Notes on action definition file fields</summary>
-
-* **integration**<br/>This should match the `name` field of the integration definition file for the integration. 
-* **name**<br/>Friendly name which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`. 
-* **type**<br/>Type of action being performed. Acceptable values are:
-   * `Containment`
-   * `Custom`
-   * `Daemon`
-   * `Notification`
-   * `Trigger`
-* **fields: id**<br/>One id attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
-* **fields: id: type**<br/>Acceptable values are: 
-   * `checkbox`
-   * `datetime`
-   * `fileDetonate`
-   * `list`
-   * `multilist`
-   * `number`
-   * `tag`
-   * `text`
-   * `textarea`
-   * `upload`
-* **fields: id: validator**<br/>Acceptable values are:  
-   * `datetime`
-   * `domain`
-   * `e-mail`
-   * `hash`
-   * `integer`
-   * `ipaddress`
-   * `ip_domain`
-   * `md5`
-   * `port`
-   * `sha1`
-   * `sha256`
-   * `url`
-* **fields: id: values**<br/>List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
-   * `domain: Domain`
-   * `ip: IP Address`
-   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. 
-* **fields: id: incident_artifacts**<br/>When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field. 
-* **fields: id: observables**<br/>This field defines the link between the action and the observables section. Specifying an observable type here will cause the action to be displayed in the **Actions** menu for the specified observable type. Acceptable values are:
-   * `domain`
-   * `email`
-   * `file`
-   * `ipaddress`
-   * `md5`
-   * `sha1`
-   * `sha256`
-   * `url`
-   * `userdetail`
-* **output: path**<br/>JSON path for each field which may be returned by the action, using the following JSON as an example:
+   * **path* ** [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
    { country: "US",
    response_code: 1,
@@ -196,60 +132,20 @@ Both the integration definition file and the action definition file are YAML fil
    }}
    ```
    The following `output:path` attributes should be added:
-   * `country`
-   * `response_code`
-   * `as_owner`
-   * `detected_urls.[].url`
-   * `detected_urls.[].positives`
-* **output: path: type**<br/>Reserved for future use. All outputs are treated as strings.
-* **table_view**<br/>The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in Table View.
-* **table_view: display_name**<br/>Friendly name which will appear as the column name.
-* **table_view: value**<br/>JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
-* **table_view: type**<br/>Type of value which is only possible to specify if the value should be shown as a link.
-* **use_in_triage**<br/>Action should be manually executable in triage event (default False).
-* **hook**<br/>Fields valid only for trigger actions. Possible values are:
-   * `addObservableArtifact`
-   * `addObservableDomain`
-   * `addObservableIp`
-   * `addObservableMail`
-   * `addObservableUrl`
-   * `addObservableUserDetail`
-   * `approveTask`
-   * `closeIncident`
-   * `closeTask`
-   * `createTask`
-   * `discardEvent`
-   * `grabEvent`
-   * `incidentCustomAction`
-   * `newIncident`
-   * `reassignEvent`
-   * `reassignTask`
-   * `taskCustomAction`
-   * `updateIncident`
-   * `updateTask`
-   * `webhook`
-* **check_not_null_field**<br/>For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
-* **src_doc**<br/>Result path or rawOutput to take the entire output to show in html5 iframe sandbox.
-* **url_preview**<br/>Result path URL to show in html5 iframe sandbox.
-* **image_base64_png(jpg)**<br/>Result path to get base64 png or jpg to show in the UI.
-* **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-* **exit_condition:path**<br/>Result path where to search in JSON structure as `table_view` section.
-* **exit_condition:string**<br/>Value to check in path.
-* **re-execution**<br/>By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: ‘force’`, the previous action run will be killed, stopping the Docker container.
-* **scheduled:every**<br/>Time interval between one run and the next one (for example, 10s, 5d, etc.):
-   * s: SECONDS
-   * d: DAYS
-   * h: HOURS
-   * m: MINUTES
-* **scheduled:expire**<br/>Time after the first run to stop scheduling. The last result will be kept:
-   * s: SECONDS
-   * d: DAYS
-   * h: HOURS
-   * m: MINUTES
-* **signature**<br/>Not to be set by user.
-
-</details>
-
+     * `country`
+     * `response_code`
+     * `as_owner`
+     * `detected_urls.[].url`
+     * `detected_urls.[].positives`
+     * **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+   * **display_name* ** [String]: Column name. 
+   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
+* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
+* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed. 
+* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+* **signature** [String]: Signature to indicate action is the original one written by Sumo Logic. Not to be set by user.
 
 ## Action parameters
 
@@ -384,7 +280,7 @@ To add a new integration, click on the **+** icon on the **Integrations** page.
 
 <img src={useBaseUrl('img/cse/integration-framework-definition.png')} alt="Add integration" width="800"/>
 
-The **New Integration** window allows you to upload an integration definition file by clicking **Select File**. Once you define the integration definition file and the Docker image, click **Save** to add the new integration.
+The **New Integration** window allows you to upload an integration definition file by clicking **Select File**. Once you define the integration definition file, click **Save** to add the new integration.
 
 <img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} alt="New integration" width="600"/>
 
@@ -414,70 +310,6 @@ Enter the required parameters and click **Test Action**.
 
 To export an action, click on the **Export** button below the action name.
 
-<!-- It's not possible to do the following in the Automation Service, because the "Rules" menu is not exposed. 
-
-### Daemon action definitions
-
-Uploading an action YAML file with type Daemon allows you to specify Daemon action. You can also define rules associated with Daemon.
-
-<img src={useBaseUrl('img/cse/integration-framework-daemon-action.png')} alt="Daemon action" width="800"/>
-
-Daemon action must return an array of objects in JSON format:
-
-```
-[{ 'a': 'a1', 'b': 'b1' }, { 'a': 'a2', 'b': 'b2' }]
-```
-
-Every object is processed by filter and action. It is also possible to define which output field should be passed to the next script run and an extra param key value pair to specialize each rule:
-
-<img src={useBaseUrl('img/cse/integration-framework-add-automation-rule.png')} alt="Add automation rule" width="600"/>
-
-All available actions are:
-* Create incident from template
-* Update incident
-* Close Incident
-* Change incident status
-* Add events to an existing incident
-* Change task progress
-* Close task
-* Add to Triage
-
--->
-
-#### Scheduled action definitions
-
-YAML example:
-
-```
- integration: \'Incident tools\'*
- name: 'intervallo date loop'
- type: Scheduled
- script:
-    code: |
-        [......]
- exit_condition:
-   - path: 'exit_condition'
-     string: 'false'
- re-execution: 'force'  
- scheduled: 
-     - every: '10s'
-       expire: '120s'
- output:
-   - path : 'exit_condition'
-```
-
-Field notes:
-* **re-execution**<br/>By default, if the previous action run is not yet finished, the next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
-* **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions:
-   * **exit_condition: path**<br/>It's where to search in JSON structure as `table_view` section.
-   * **exit_condition: string**<br/>Value to check in path.
-* **scheduled**<br/>Specify the time interval between one run and the next and action expiration.
-   * **scheduled: EVERY**<br/>The time interval between one run and the next.
-   * **scheduled: EXPIRE**<br/>The time after the first run to stop scheduling. The last result will be kept. Time interval:
-     * s => SECONDS
-     * d => DAYS
-     * h => HOURS
-     * m => MINUTES
 
 ##  Example files
 
@@ -616,464 +448,6 @@ table_view:
       value : 'report.[].Malware.[].Antivirus'
 ```
 
-### Daemon definition file (QRadar)
-
-```
-integration: 'IBM QRadar OIF'
-name: 'Get Offenses Daemon'
-type: Daemon
-script:
-code: |
-    import argparse
-    import base64
-    import json
-    import sys
-    import requests
-    import warnings
-    from requests.packages.urllib3.exceptions import InsecureRequestWarning
-    import traceback
-    warnings.simplefilter('ignore', InsecureRequestWarning)
-    class EnvDefault(argparse.Action):
-      def __init__(self, required=True, default=None, **kwargs):
-        envvar = kwargs.get("dest")
-        default = os.environ.get(envvar, default) if envvar in os.environ else default
-        required = False if required and default else required
-        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-      def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace, self.dest, values)
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--url', help='URL , REQUIRED', required=True, action=EnvDefault)
-    parser.add_argument('--authMethod', help='Authentication method ,
-    REQUIRED', required=True, action=EnvDefault)
-    parser.add_argument('--validateSSL', help='validateSSL , REQUIRED',
-    required=True, action=EnvDefault)
-    parser.add_argument('--id', help='last offense id', required=False, action=EnvDefault)
-    parser.add_argument('--username', help='username', required=False, action=EnvDefault)
-    parser.add_argument('--password', help='password', required=False, action=EnvDefault)
-    parser.add_argument('--token', help='token', required=False, action=EnvDefault)
-    parser.add_argument('--proxy_url', help='proxy url',
-   required=False, action=EnvDefault)
-    args, unknown = parser.parse_known_args()
-    max_destination_ip_to_get = 10
-    host = str(args.url) + '/api/siem/offenses'
-    if args.id:
-    host += "?filter=id>" + args.id
-    else:
-    host += "?filter=id>145366"
-    host += '&status!=CLOSED'
-    header = {
-        'Version': '5.0',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-    }
-    if args.authMethod == "credentials":
-        base64byte = base64.b64encode(bytes(args.username + ":" + args.password, 'utf-8'))
-        credential = base64byte.decode("utf-8")
-        header['Authorization'] = 'Basic ' + credential
-    else:
-        header['SEC'] = args.token
-    verifySSL = args.validateSSL == "true"
-    proxies = {'http': args.proxy_url, 'https': args.proxy_url} if args.proxy_url is not None else None
-    try:
-        s = requests.Session()
-        r = s.get(url=host, headers=header, verify=verifySSL, proxies=proxies, timeout=(5, 60))
-        r.raise_for_status()
-        json_data = json.loads(r.text)
-        new_array = []
-        for event in json_data:
-            ariel_search_utl = args.url + '/api/siem/source_addresses/'
-            event['source_address_ip'] = []
-            for source_ip_id in event['source_address_ids']:
-                search_ip = ariel_search_utl + str(source_ip_id) + '?fields=source_ip'
-                try:
-                    request_post = s.get(url=search_ip, headers=header, verify=verifySSL, proxies=proxies, timeout=(5, 60))
-                    request_post.raise_for_status()
-                    json_data_post = json.loads(request_post.text)
-                    event['source_address_ip'].append(json_data_post['source_ip'])
-                except Exception:
-                    pass
-            ariel_search_utl = args.url + '/api/siem/local_destination_addresses/'
-            event['local_destination_ip'] = []
-            for destination_ip_id in event['local_destination_address_ids'][:max_destination_ip_to_get]:
-                search_ip = ariel_search_utl + str(destination_ip_id) + '?fields=local_destination_ip'
-                try:
-                    request_post = s.get(url=search_ip, headers=header, verify=verifySSL, proxies=proxies, timeout=(5, 60))
-                    request_post.raise_for_status()
-                    json_data_post = json.loads(request_post.text)
-                    event['local_destination_ip'].append(json_data_post['local_destination_ip'])
-                except Exception:
-                    pass
-            new_array.append(event)
-        print(json.dumps(new_array))
-        exit(0)
-    except Exception as e:
-        sys.stderr.write(str(e))
-        exit(-1)
-fields:
-    - id: id
-      label: "From offence id"
-      type: text
-output:
-    - path: '[].username_count'
-      type: integer
-    - path: '[].description'
-      type: string
-    - path: '[].event_count'
-      type: integer
-    - path: '[].flow_count'
-      type: integer
-    - path: '[].assigned_to'
-      type: string
-    - path: '[].security_category_count'
-      type: integer
-    - path: '[].follow_up'
-      type: string
-    - path: '[].source_address_ids.[]'
-      type: integer
-    - path: '[].source_count'
-      type: integer
-    - path: '[].inactive'
-      type: string
-    - path: '[].protected'
-      type: string
-    - path: '[].category_count'
-      type: integer
-    - path: '[].source_network'
-      type: string
-    - path: '[].destination_networks.[]'
-      type: string
-    - path: '[].closing_user'
-      type: string
-    - path: '[].close_time'
-      type: datetime
-    - path: '[].remote_destination_count'
-      type: integer
-    - path: '[].start_time'
-      type: datetime
-    - path: '[].last_updated_time'
-      type: datetime
-    - path: '[].credibility'
-      type: integer
-    - path: '[].magnitude'
-      type: integer
-    - path: '[].id'
-      type: integer
-    - path: '[].categories.[]'
-      type: string
-    - path: '[].severity'
-      type: integer
-    - path: '[].policy_category_count'
-      type: integer
-    - path: '[].device_count'
-      type: integer
-    - path: '[].closing_reason_id'
-      type: string
-    - path: '[].offense_type'
-      type: integer
-    - path: '[].relevance'
-      type: integer
-    - path: '[].domain_id'
-      type: integer
-    - path: '[].offense_source'
-      type: string
-    - path: '[].local_destination_address_ids.[]'
-      type: integer
-    - path: '[].local_destination_count'
-      type: integer
-    - path: '[].status'
-      type: string
-    - path: '[].source_address_ip'
-      type: string
-    - path: '[].local_destination_ip'
-      type: string
-signature: '4fbf0ab65bde0eba04875da80457b8915645485a399f16100f80fa17a7dd70bae9183afea233a3a9846336f7def5ab0ffd05b28c637d6fe4001203c29396eeb2'
-```
-
-### Trigger definition file (Incident Tools)
-
-```
-integration: 'Incident Tools'
-name: 'Change severity trigger'
-type: Trigger
-script:
-code: |
-    import json
-    import argparse
-    from datetime import datetime
-    import sys
-    import requests
-    import time
-    class EnvDefault(argparse.Action):
-      def __init__(self, required=True, default=None, **kwargs):
-        envvar = kwargs.get("dest")
-        default = os.environ.get(envvar, default) if envvar in os.environ else default
-        required = False if required and default else required
-        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-      def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace, self.dest, values)
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--incidentsBeforeUpdate', help='incident before update', required=False, action=EnvDefault)
-    parser.add_argument('--incidentsAfterUpdate', help='incident after update', required=False, action=EnvDefault)
-    parser.add_argument('--token', help='JWT token , REQUIRED', required=True, action=EnvDefault)
-    parser.add_argument('--cloudsoarurl', help='Cloud SOAR URL , REQUIRED', required=True, action=EnvDefault)
-    args, unknown = parser.parse_known_args()
-    inc_det_before = json.loads(args.incidentsBeforeUpdate)
-    inc_det_after = json.loads(args.incidentsAfterUpdate)
-    incidentID = inc_det_after.get('id')
-    sys.stderr.write(str(json.dumps(inc_det_before)))
-    sys.stderr.write(str(json.dumps(inc_det_after)))
-    prio = inc_det_after.get('restriction')
-    if inc_det_after.get('restriction') != inc_det_before.get('restriction'):
-        headers = {
-            'Accept': 'application/json;charset=UTF-8',
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Bearer ' + args.token
-        }
-        end_point = '{cloudsoarurl}/api/v2/incidents/{incidentid}'.format(cloudsoarurl=args.cloudsoarurl incidentid=incidentID)
-        session = requests.Session()
-        session.verify = False
-        additional_info = inc_det_after.get('additional_info')
-        additional_info += "<br>incident field Priority modified to " + str(prio)
-        payload = {
-            "additional_info": additional_info,
-        }
-        incident = session.put(end_point, headers=headers, data=payload, proxies=None, timeout=(5, 60))
-        try:
-            incident.raise_for_status()
-        except Exception as e:
-            sys.stderr.write("Error updating incident Severity: ")
-            sys.stderr.write(str(e))
-        exit(0)
-hook:
-    - updateIncident
-```
-
-### Trigger taskCustomAction definition file (Incident Tools)
-
-```
-integration: 'Incident tools'
-name: 'ADDWORKINFO TASK'
-type: Trigger
-script:
-code: |
-    import json
-    import argparse
-    from datetime import datetime
-    import sys
-    import time
-    class EnvDefault(argparse.Action):
-      def __init__(self, required=True, default=None, **kwargs):
-        envvar = kwargs.get("dest")
-        default = os.environ.get(envvar, default) if envvar in os.environ else default
-        required = False if required and default else required
-        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-      def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace, self.dest, values)
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--tasksDetail', help='tasksDetail', required=False, action=EnvDefault)
-    parser.add_argument('--text', help='text', required=False, action=EnvDefault)
-    args, unknown = parser.parse_known_args()
-    task = json.loads(args.tasksDetail)
-    print({'element_json': task, 'text': args.text})
-check_not_null_field: opt_3
-hook:
-    - taskCustomAction
-```
-
-### Trigger incidentCustomAction definition file (Incident Tools)
-
-```
-integration: 'Incident tools'
-name: 'ADDWORKINFO'
-type: Trigger
-script:
-code:
-    import json
-    import argparse
-    from datetime import datetime
-    import sys
-    import time
-    class EnvDefault(argparse.Action):
-      def __init__(self, required=True, default=None, **kwargs):
-        envvar = kwargs.get("dest")
-        default = os.environ.get(envvar, default) if envvar in os.environ else default
-        required = False if required and default else required
-        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-      def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace, self.dest, values)
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--incidentsDetail', help='incidentsDetail', required=False, action=EnvDefault)
-    parser.add_argument('--text', help='text', required=False, action=EnvDefault)
-    args, unknown = parser.parse_known_args()
-    task = json.loads(args.incidentsDetail)
-    print({'element_json': task, 'text': args.text})
-check_not_null_field: opt_15
-hook:
-    - incidentCustomAction
-```
-
-### Scheduled definition file (Incident Tools)
-
-```
-integration: 'Incident tools'
-name: 'intervallo date loop'
-type: Scheduled
-script:
-code:
-    import json
-    import argparse
-    from datetime import datetime
-    import sys
-    import time
-    class EnvDefault(argparse.Action):
-      def __init__(self, required=True, default=None, **kwargs):
-        envvar = kwargs.get("dest")
-        default = os.environ.get(envvar, default) if envvar in os.environ else default
-        required = False if required and default else required
-        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
-      def __call__(self, parser, namespace, values, option_string=None):
-        setattr(namespace, self.dest, values)
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--cloudSoarTaskDetails', help='cloudSoarTaskDetails', required=False, action=EnvDefault)
-    parser.add_argument('--days', help='days', required=False, action=EnvDefault)
-    args, unknown = parser.parse_known_args()
-    time.sleep(20)
-    dictionary = {
-        'exit_condition': 'true',
-        'array': [{
-            'amount': '23',
-            'amount2': 11,
-            'days': args.days,
-            'start': str(datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S")),
-            'end': str(datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S"))
-        }]
-    }
-    print(json.dumps(dictionary, default=lambda val: str(val)))
-exit_condition:
-  - path: 'exit_condition'
-string: 'false'
-re-execution: 'force'
-scheduled:
-  - every: '10s'
-    expire: '120s'
-fields:
-    - id: days
-      label: 'intervallo giorni'
-      type: number
-      required: true
-output:
-    - path : 'array.[].start'
-    - path : 'array.[].end'
-    - path : 'array.[].days'
-    - path : 'array.[].amount'
-    - path : 'array.[].amount2'
-    - path : 'exit_condition'
-```
-<!-- We're leaving out the Docker image sections. You cannot edit Docker files in the Automation Service because is no Docker logo on integrations that you can click to edit the Docker image.
-
-## Using a custom Docker image
-
-You can execute all the actions of an integration in a container built from a custom Docker image. This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts. However, there are many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
-
-### Steps to create a custom Docker image
-
-1. Go to the **Integrations** page.
-1. Look for the integration for which you need to create a custom Docker image and click on it.
-1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it.
-<br/><img src={useBaseUrl('img/cse/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="700"/>
-<br/>This will open the custom Docker editor:
-<br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
-1. Type a name for your custom image in the **Docker image tag** field. This is a required field.
-1. When you are creating a new custom Docker image, you will see the **Last update** field is showing **Never edited before**. The text area below allows you to write a Dockerfile with the instructions to build your custom image:
-<br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor-2.png')} alt="Docker custom image" width="700"/>
-1. Proceed to write your custom Dockerfile as you would normally do. If you need tips on how to do this, refer to [Useful Docker commands](#useful-docker-commands) or check the Docker official documentation. Keep in mind that the following statements are not currently available, which means they will be ignored when building the image: `COPY`, `WORKDIR`, `EXPOSE`, `ADD`, `ENTRYPOINT`, `USER`, `ARG`, and `STOPSIGNAL`.
-1. In the editor you will see there is a dropdown menu above the text area that reads **Valid Instructions**. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile. If you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area.
-<br/><img src={useBaseUrl('img/cse/integration-framework-docker-editor-3.png')} alt="Docker instructions" width="600"/>
-1. As soon as you change something in your Dockerfile, a **Save** button will appear next to the Docker editor button. Click on it if you are ready to save your custom Dockerfile.
-
-Once you have saved a custom Dockerfile, the integration will be executed on a container built from the relative custom Docker image.
-
-### Testing your custom Docker image
-
-We strongly suggest that you test your custom images as soon as you create or modify them. If by any chance you save a faulty custom Dockerfile, when the actions from that integration are triggered, their execution will fail because the Docker image will fail as well.
-
-1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor.
-<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image.png')} alt="Test Docker image" width="6700"/>
-<br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile.
-<br/><img src={useBaseUrl('img/cse/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="700"/>
-1. If your custom Docker image was built without error, a success message will pop up in your screen. Otherwise, if a proper image cannot be built from your custom Dockerfile, an error message will pop up, containing details on what went wrong. In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
-
-### Deleting your custom Docker image and reverting to the original one
-
-The **RESET DEFAULT IMAGE** button that appears at the bottom of the editor allows you to delete your custom Docker image and revert to the original Docker image used for that integration.
-
-As soon as you click on it, the integration will start being executed again in a container based on the original integration image. Notice that your custom Dockerfile will be lost, so you will have to write it again if you want to revert back to your custom image.
-
-### Checking whether an integration is using a custom Docker image
-
-If you have appropriate permissions, you can set up custom Docker images for any integration. There are many ways to check if any of your integrations are being executed in a container from a custom Docker image.
-
-If you go to the Docker YAML editor of the integration, if it is using a custom image, a comment above the `docker_repo_tag` will tell you so:
-
-<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-3.png')} alt="Docker custom image" width="800"/>
-
-However, the best way to check whether an integration is using a custom image is to open the Docker editor for that integration (by clicking on the button with the Docker logo on it).
-
-Integrations using a custom image will have a **Docker image tag**, a **Last update** date, and some Dockerfile content.
-
-On the other hand, integrations that are not using a custom Docker image will have an empty Docker editor showing **Never edited before** in the **Last update** field:
-
-<img src={useBaseUrl('img/cse/integration-framework-test-docker-image-4.png')} alt="Docker never edited" width="800"/>
-
-
-## Useful Docker commands
-
-The following commands may be useful in performing some common actions in Docker on your server. See the official Docker documentation at https://docs.docker.com/ for additional information.
-
-### Create Docker image (Python example)
-
-1. Create a file with name dockerfile inside a dedicated directory:
-   ```
-   FROM python:2-slim
-   RUN pip install --trusted-host pypi.python.org requests suds
-   ```
-1. Inside this directory run:
-   ```
-   docker build -t <my_integration>
-   ```
-1. If you run Docker image ls you can see your image with tag
-   ```
-   <my_integration>
-   ```
-1. Now you can use this tag in YAML:
-   ```
-   docker_repo_tag: '<my_integration>:latest'
-   ```
-
-### Load an image from a tar archive
-
-```
-docker load < docker_image.tar
-```
-
-### Add third-party libraries to the Docker image when building
-
-```
-pip install --trusted-host pypi.python.org tenable_io mock==2.0.0 pytest==3.0.4 Sphinx==1.5.1
-```
-
-### List all Docker images
-
-```
-docker image ls
-```
-
-### Show Docker disk usage
-
-```
-docker system df
-```
--->
 
 ## Use multi-select in output
 
