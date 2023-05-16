@@ -37,7 +37,7 @@ The following example adds an enrichment using the “IP Reputation V3” action
    1. Click the **Edit** button (pencil icon) on the **START** node.
    1. Select **Insight** from the dropdown menu and click **UPDATE**.
    1. Click the **Add Node** button (**+** icon) on **START**.
-   1. Sele**ct **Action**.
+   1. Select **Action**.
    1. For **Integration**, select **VirusTotal OIF**.
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **IP reputation V3**.
