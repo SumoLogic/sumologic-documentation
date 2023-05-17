@@ -236,7 +236,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard for an overview of various activities by severity level, geo-location, and bandwidth consumption. Based on the results you see, you can go to more detailed dashboards to drill down for details. For example, if the “Threats By Severity Level” panel shows that there are “Critical” threats, you can proceed to the threat-related dashboards, including Threat Overview, Threat Analysis, Traffic Insight - File Activity, and Traffic Insight - Web Activity.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Configuration Analysis
 
@@ -244,8 +244,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to learn about firewall configuration changes. You can identify who performed a configuration change, and the system from which the configuration change was made. The dashboard also helps you identify failed and successful configurations changes. If you observe a sudden change in device behavior, you can check this dashboard to investigate whether a configuration change might be to blame.  
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-configuration-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Configuration-Analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Correlation Analysis
 
@@ -253,7 +252,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify hosts that are compromised, very likely compromised, likely compromised, or possibly compromised, based on correlation events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-correlation-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Correlation-Analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### High Severity Threats
 
@@ -261,8 +260,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify the impact of high severity threats, including the most involved  source and destination IPs. You can identify threats affecting multiple IPs, IPs affected by multiple threats, and identify source IPs or users which are responsible for generating high severity threats or are impacted by high severity threats.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-high-severity-threats.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-High-Severity-Threats.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### System Monitoring
 
@@ -270,8 +268,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify system issues like hardware failures, HA failures, link down status, dropped connections with external devices, firmware / software upgrades, password change notifications, log in/log off, administrator name or password change, any configuration change, and other minor events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-system-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-System-Monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Threat Overview
 
@@ -279,7 +276,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify threat subtypes. Based on what you learn, you can drill down for additional detail in the “Threat Analysis” dashboard. You can also use this dashboard to identify threats that affect multiple IPs, IPs affected by multiple threats, and narrow in on source IPs or users that are responsible for generating threats or are impacted by threats.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Threat-Overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Threat Analysis
 
@@ -287,7 +284,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to get detailed information on threats identified, rules fired, actions, trends, threat outliers, and threat directions.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Threat-Analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
 ### Traffic Monitoring
@@ -298,8 +295,7 @@ This app supports PAN-OS v7 and v8.
 
 You can also monitor the types of content being accessed by various apps and virtual systems. You can track the bandwidth consumed by specific apps and take corrective action as necessary. Using the geolocation map, you can track source and destination locations and determine whether a location is expected, and block it, as appropriate.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Traffic Insight - File Activity
 
@@ -307,8 +303,7 @@ You can also monitor the types of content being accessed by various apps and vir
 
 **Use case:** Use this dashboard to monitor end users’ file upload and download activities. You can track suspicious file types being uploaded or downloaded through various apps. It also provides insight into sudden changes in activities though outliers. You can compare the current activity trend with the the previous hour, the same time yesterday, and the same time last week with the time compare panel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-insight-file-activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traffic-Insight-File-Activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Traffic Insight - Web Activity
 
@@ -316,7 +311,7 @@ You can also monitor the types of content being accessed by various apps and vir
 
 **Use case:** Use this dashboard to monitor end users’ file web browsing activities. You can track URLs and the content being browsed using various apps. It also provides insight into sudden changes in activities though outliers. You can compare the current activity trend with the the previous hour, the same time yesterday, and the same time last week with the time compare panel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-insight-web-activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traffic-Insight-Web-Activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Traps V4 Monitoring
 
@@ -324,4 +319,4 @@ You can also monitor the types of content being accessed by various apps and vir
 
 **Use case:** Use this dashboard to identify how end points have been attacked. You can monitor ransomware threats and new exploits. You can also track agent installs/uninstalls, upgrades, service statuses, access violations, and prevention events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traps-v4-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traps-V4-Monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
