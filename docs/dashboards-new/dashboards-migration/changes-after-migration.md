@@ -30,7 +30,7 @@ This table shows the complete list of features that are changed after the implem
 
 ## Color Mapping
 
-In the Classic dashboard, there were 6 color schemes, but there are 11 in the New dashboard. The color mapping from the Classic to the New dashboard is shown in the image below.
+Dashboards (Classic) had 6 color schemes, while Dashboards (New) have 11 color schemes. The color mapping from the Classic to the New dashboard is shown in the image below.
 
 :::info
 You can choose the starting color in the Classic dashboard, but you do not get this choice in the New dashboard.
