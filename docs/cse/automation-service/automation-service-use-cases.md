@@ -241,4 +241,7 @@ The following example shows how to create an integration with a custom action th
     1. Under **Insight Automation**, select the automation you created in the previous step (it will have the same name as the playbook). The playbook runs.
     1. To see the results of the run, click the **Automations** tab at the top of the Insight.
     1. View the **Status** field to find out if the playbook has a status of **Success** or another status such as **Completed with errors**. 
+    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**. 
+    1. Click a node to download results of that node’s run.
+    1. Go back to the Insight and click the **Enrichments** tab to view the enrichments added by the automation.
 
