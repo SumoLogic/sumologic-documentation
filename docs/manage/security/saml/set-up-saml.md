@@ -113,13 +113,12 @@ In the steps below, you provide the information necessary for Sumo to issue a SP
 
 1. (Optional) **Sign Authn Request**. If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo. 
 
+   :::note The X-509 certificate provided for Authn Request signing can also be used to configure encrypted assertions. Please reference your IdP documentation for instructions for how to configure encrypted assertions. 
+   :::
+
 1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
 
 ### Configure on-demand roles provisioning 
-
-:::note
-For the Sumo Account Owner user to be able to authenticate using SAML with on-demand roles provisioning enabled, that user must belong to a group named "Administrator" on the IdP. When the account owner tries to log on to Sumo Logic, the SAML assertion issued by the IdP must include the "Administrator" group or SAML authentication will fail for the Account Owner user.
-:::
 
 If you enable the **Roles Attribute** option, Sumo Logic assigns roles to a user every time the user logs in. Roles are configured by your IdP and assigned as part of the SAML assertion. For this feature, you must have:
 
