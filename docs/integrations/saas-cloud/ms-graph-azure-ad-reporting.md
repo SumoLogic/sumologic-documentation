@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
-The Sumo Logic App for MS Graph Azure AD Reporting enables you to access data, including information on audit, sign-in, and provisioning activities. It helps you to monitor user activity, sign-in patterns and provisioning activities, with which you can gain insights into how your organization uses Azure AD and identify potential security issues. 
+The Sumo Logic App for MS Graph Azure AD Reporting enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. It helps you to gain insights into how your organization uses Azure AD and identify potential security issues. 
 
 Key features of the Microsoft Graph Azure AD Reporting app include:
 - **Analyze Audit Activities**. Provides real-time user activity for every resource category and shows the distribution of audits by operations and services.
