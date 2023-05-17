@@ -6,7 +6,7 @@ sidebar_label: topk
 
 The `topk` operator applies a specified aggregation function to the time series that match the query selector, and returns the *n* time series that have the highest evaluated value over the query time range.  
 
-## topk syntax
+## Syntax
 
 ```sql
 topk (N, SCALAR_EXPRESSION) [by FIELD [, FIELD, ...]]
@@ -24,7 +24,7 @@ Where: 
     * `pct(n)`. Return the n time series for which the calculated percentile of the metric values across the time range was lowest, and return the top n. 
     * `latest`. Rank matching time series by when the most recent data point was received, and return the top n time series. 
 
-## topk examples
+## Examples
 
 ### Top 10 time series by maximum value
 

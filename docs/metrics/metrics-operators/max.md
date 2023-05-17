@@ -13,7 +13,7 @@ The max operator calculates the maximum value of the time series that match the 
 max [by FIELD [, FIELD, ...]]
 ```
 
-## max examples
+## Examples
 
 ### Maximum metric value across all matching time series
 

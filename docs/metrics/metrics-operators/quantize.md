@@ -11,7 +11,7 @@ You can specify:
 * The size of the time buckets across which Sumo aggregates your metrics. If you do not specify a quantization interval, Sumo determines an optimum size for time buckets, as described in [Automatic quantization at query time](../introduction/metric-quantization.md).  
 * The rollup type that Sumo uses to aggregate the individual data points in a time bucket, which can be one of `avg, min, max, sum,` or `count`. If you do not specify a rollup type in the `quantize` clause of your query, for each time bucket, Sumo presents the average of the data points in that bucket.  
 
-## quantize syntax
+## Syntax
 
 :::note
 The `quantize` operator *must* appear immediatdly after your query selector, before any other operators.
@@ -31,7 +31,7 @@ where:
 In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
 :::
 
-## quantize examples 
+## Examples 
 
 ### Set time bucket size
 

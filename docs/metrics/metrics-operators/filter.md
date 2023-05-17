@@ -10,7 +10,7 @@ The functionality provided by the `filter` operator has been incorporated into t
 
 You can use the `filter` operator to limit the results returned by a metric query. There are several ways you can restrict results. You can apply an aggregation function, such as `avg`, to a time series. You can also filter based on how many times the value of individual data points meet a value condition over a particular duration.
 
-## filter syntax
+## Syntax
 
 There are two supported syntaxes for the `filter` operator.
 

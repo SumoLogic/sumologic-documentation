@@ -5,17 +5,15 @@ sidebar_label: count
 ---
 
 
-## count
-
 Counts the total number of time series that match the query. If grouping is specified, it counts the total number for each group.
 
-## count syntax
+## Syntax
 
 ```sql
 count [by FIELD [, FIELD, ...]]
 ```
 
-## count examples
+## Examples
 
 ### Count of time series for a metric
 

@@ -7,13 +7,13 @@ sidebar_label: sum
 
 The sum operator calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
 
-## sum syntax
+## Syntax
 
 ```sql
 sum [by FIELD [, FIELD, ...]]
 ```
 
-## sum examples
+## Examples
 
 ### Sum the value of a metric 
 

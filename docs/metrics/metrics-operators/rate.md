@@ -9,7 +9,7 @@ The rate operator calculates the per-second rate of change between consecutive d
 
 The rate operator also assigns the value of the metric tag to be `rate($metric)` and the value of the unit metadata field to be `$unit/second` (for example, 1/second).
 
-## rate syntax
+## Syntax
 
 ```sql
 metric query | rate [increasing | decreasing]
@@ -17,7 +17,7 @@ metric query | rate [increasing | decreasing]
 
 If you use the `increasing` option, the operator will consider only those pairs of consecutive points where the second point in the pair is greater than the first point. Similarly, if you use the the `decreasing` option, the operator will consider only those pairs of consecutive points where the second point in the pair is less than the first point. This functionality is useful when you are calculating the rate of change of a counter over time.
 
-## rate examples
+## Examples
 
 This query calculates the increase or decrease per second in the `Net_InBytes` metric from one collected data point to the next. 
 

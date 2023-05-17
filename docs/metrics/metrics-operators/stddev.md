@@ -12,7 +12,7 @@ Often used in financial applications, calculating standard deviations also has v
 `stddev` calculates the standard deviation at each time interval across all the time series, resulting in one time series that contains the standard deviation per time slot. If you group the results by a dimension, the standard deviation for the time series in each group is calculated. The result is returned as a metric named _stddev_.
 
 
-## stddev syntax
+## Syntax
 
 ```sql
 metric query | stddev [by FIELD [, FIELD, ...]]

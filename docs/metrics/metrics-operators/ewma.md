@@ -17,7 +17,7 @@ The most commonly used parameter is `span`, which allows you to specify the numb
 If you run `ewma` without specifying either `alpha` or `span`, it runs by default with `alpha=0.5` (or`span=3`).
 
 
-## ewma syntax
+## Syntax
 
 ```
 metric query | ewma [alpha=<#> |span=<#>]

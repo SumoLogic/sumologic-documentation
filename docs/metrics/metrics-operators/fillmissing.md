@@ -13,7 +13,7 @@ You can use the `fillmissing` operator to fill empty time slices in metric quer
 The `fillmissing` operator is supported in the metric query tab, and in the [Metrics Query Builder](/docs/metrics/metrics-queries/metrics-explorer), currently in beta. 
 :::
 
-## fillmissing Syntax
+## Syntax
 
 ```sql
 metric query | fillmissing [using] <empty | interpolation | last | fixed>

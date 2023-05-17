@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `timeshift` operator shifts the time series from your metrics query by a specified period of time.
 
-## timeshift syntax
+## Syntax
 
 ```sql
 timeshift TIME_INTERVAL

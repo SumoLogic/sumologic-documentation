@@ -7,8 +7,7 @@ sidebar_label: eval
 
 The eval operator evaluates a time series based on a user-specified arithmetic or mathematical function.
 
-
-## eval syntax
+## Syntax
 
 ```sql
 metrics query | eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
