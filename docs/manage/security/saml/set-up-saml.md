@@ -114,7 +114,7 @@ In the steps below, you provide the information necessary for Sumo to issue a SP
 1. (Optional) **Sign Authn Request**. If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo. 
 
    :::note
-   The X-509 certificate provided for Authn Request signing can also be used to configure encrypted assertions. Please reference your IdP documentation for instructions for how to configure encrypted assertions. 
+   The X-509 certificate provided for Authn Request signing can also be used to configure encrypted assertions. For details, see your IdP documentation for instructions on how to configure encrypted assertions. 
    :::
 
 1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
