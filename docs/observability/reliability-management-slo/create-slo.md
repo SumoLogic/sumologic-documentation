@@ -112,12 +112,18 @@ Follow the instructions below based on the query type:
 <img src={useBaseUrl('img/observability/slo-logs.gif')} alt="Reliability Management SLO SLI" />
 
 8. Define your SLO for target amount and duration period to monitor:
-    * **Target**. The value in percentage you want to target for the SLO, for example 99 for 99%.
-    * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculator over a window of time for a Week.
-    * **Timezone**. Select a timezone. This is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" />
-9. Enter SLO Details, including a **Name** and **Description**. This is used in the list and for searches.<br/><img src={useBaseUrl('img/observability/slo-create-details.png')} alt="Reliability Management SLO SLI" />
+  * **Target**. The value in percentage you want to target for the SLO, for example 99 for 99%.
+  * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculator over a window of time for a Week.
+   * **Timezone**. Select a timezone. This is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" />
+9. Enter SLO Details:
+  * **Name**. Name of the SLO.
+  * **Description**. Short explanation of your SLO.
+  * **Tags**. Tags are key/value pairs which associate SLO with a particular category. These tags have additional metadata to describe an SLO beyond the name and description, which helps you in the purpose of categorization, search, and filtering of SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
+:::info
+  You can associate muliple tags with your SLO.
+:::
+<img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
-
 
 ## Create a Logs-based SLO
 
