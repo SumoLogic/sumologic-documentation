@@ -27,6 +27,7 @@ By clicking on any data point on the chart, you can view the side panel's **Enti
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png' alt="Explore coffee app to drill down on infrastructure tab.png" width="950"/>
 
+
 :::note
 Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces/#time-range).
 :::
@@ -99,7 +100,7 @@ To add a Trace List panel to your Dashboard:
 
 #### 01. Application Service Overview
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Application-Service-Overview.png' alt="APM Dashboard" width="950"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Application-Service-Overview.png' alt="APM Dashboard" width="1000"/>
 
 #### 01. Environment Overview
 
@@ -122,6 +123,7 @@ To add a Trace List panel to your Dashboard:
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations.png' alt="APM Dashboard" width="950"/>
 
 #### 03. Application Service Health Across Operations within Environment
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations-within-Environment.png' alt="APM Dashboard" width="950"/>
 
 #### 04. Application Health Across Services
@@ -132,6 +134,7 @@ To add a Trace List panel to your Dashboard:
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations.png' alt="APM Dashboard" width="950"/>
 
 #### 04. Service Health Across Applications and Operations within Environment
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations-within-Environment.png' alt="APM Dashboard" width="950"/>
 
 #### 05. Application Service Health Across Environments
