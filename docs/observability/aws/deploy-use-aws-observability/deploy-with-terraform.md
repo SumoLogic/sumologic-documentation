@@ -1571,11 +1571,11 @@ Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumolog
 Delete existing hierarchy and a create new one:<br/>
 1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
   ```sql
-    `curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies`
+  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
   ```
 1. Delete the existing Hierarchy. Learn [more](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
   ```sql
-    `curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
+  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
   ```
 
 ### Cannot import name 'SumoLogic' from 'sumologic'
@@ -1591,7 +1591,7 @@ The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and inst
 #### Error Message
 An argument named **managed_apps** is not expected here.<br/>`Error: Unsupported argument`<br/>`on .terraform/modules/account.sumo_observability.app-modules/alb_app.tf line 13, in module "alb_module":`<br/>`managed_apps = {`
 #### Solution
-Refer the module available [here](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-integrations/tree/master/sumologic). 
+Refer the module available [here](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-integrations/tree/master/sumologic).
 
 ### Argument named *admin_mode* is not expected
 #### Error Message
