@@ -1437,7 +1437,35 @@ For clarity and search engine discoverability:
 
 ## Videos
 
-You can embed YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
+To embed a YouTube video on a doc:
+
+1. Copy and paste the following code into your page (including the `import Iframe` line).
+   ```html
+   <Iframe url="https://www.youtube.com/embed/abcde12345?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+   import Iframe from 'react-iframe';
+   ```
+1. Remove the URL ID from the snippet (`abcde12345`) and replace it with your own video ID, which you can find in the YouTube link URL.
+1. Ensure that `?rel=0` is appended to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
 
 ```html
 <Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
@@ -1454,7 +1482,8 @@ You can embed YouTube videos to any page with the following code. Just copy and 
 import Iframe from 'react-iframe';
 ```
 
-For example:
+</TabItem>
+<TabItem value="Result">
 
 <Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
         width="854px"
@@ -1469,7 +1498,8 @@ For example:
 
 import Iframe from 'react-iframe';
 
-You need to explicitly add `?rel=0` to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
+</TabItem>
+</Tabs>
 
 
 ## React components
