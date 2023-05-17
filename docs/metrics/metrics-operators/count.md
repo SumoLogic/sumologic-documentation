@@ -13,7 +13,7 @@ Counts the total number of time series that match the query. If grouping is spec
 
 ```sql
 count [by FIELD [, FIELD, ...]]
-```    
+```
 
 ## count examples
 

@@ -9,7 +9,9 @@ The `in` operator functionality can be used in a metrics query selector as short
 
 ## Syntax
 
-`selectors dimension = (value1, value2, value3, …)| metric query `
+```sql
+selectors dimension=(value1, value2, value3, …) | metric query
+```
 
 Where:
 

@@ -18,7 +18,9 @@ There are two supported syntaxes for the `filter` operator.
 
 The first variant filters based on a function (usually an aggregation function) applied to the time series.
 
-`metric query | filter [REDUCER BOOLEAN EXPRESSION]`
+```sql
+metric query | filter [REDUCER BOOLEAN EXPRESSION]
+```
 
 Where:
 
@@ -40,13 +42,17 @@ The supported functions are:
 
 Return the time series in which the average value of the CPU_User metric is greater than 95:
 
-`metric=CPU_User | filter avg > 95`
+```sql
+metric=CPU_User | filter avg > 95`
+```
 
 **Example 2**
 
 Return the time series in which the latest value of the CPU_User metric is greater than 50:
 
-`metric=CPU_User | filter latest > 50`
+```sql
+metric=CPU_User | filter latest > 50
+```
 
 ### Syntax 2
 
