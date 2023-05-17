@@ -120,7 +120,7 @@ Follow the instructions below based on the query type:
   * **Description**. Short explanation of your SLO.
   * **Tags**. Tags are key/value pairs which associate SLO with a particular category. These tags have additional metadata to describe an SLO beyond the name and description, which helps you in the purpose of categorization, search, and filtering of SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
 :::info
-  You can associate muliple tags with your SLO.
+  You can associate multiple tags with your SLO.
 :::
 <img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
