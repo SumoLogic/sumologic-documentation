@@ -13,16 +13,8 @@ You can specify:
 
 ## Syntax
 
-There are two supported syntaxes for the `quantize` operator.
-
 ```sql
-quantize to INTERVAL [using ROLLUP] [drop last]
-```
-
-or
-
-```sql
-quantize using ROLLUP [drop last]
+quantize [to INTERVAL] [using ROLLUP] [drop last]
 ```
 
 where:
@@ -30,12 +22,15 @@ where:
 * `INTERVAL` is the duration over which you want to quantize the metrics, in seconds (`s`) , minutes (`m`), hours (`h`), or days (`d`).
 * `ROLLUP` is  `avg, min, max, sum`, or `count`.
 * `drop last` causes the last time bucket to be dropped, if the end of that bucket is after the end of the query time range.
+* At least one of the `to INTERVAL` or `using ROLLUP` clauses needs to be present.
+
+:::note
+To apply the quantization directly to the selector, `quantize` has to follow the selector immediately. Otherwise, it will just work on top of whatever has been returned by the previous step.
+:::
 
 :::note
 In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
 :::
-
-This second syntax allows you to omit the `to INTERVAL` part of the query, but still enforce a specific rollup type. It is useful when you want to rely on Sumo to determine appropriate quantization, but want to use specific aggregation.
 
 ## Examples 
 
@@ -65,7 +60,7 @@ metric=CPU_User cluster=kafka | quantize to 10m using sum drop last
 
 ### Omit time bucket size
 
-The `quantize` clause in this metric query specifies the `sum` rollup type. Sumo will determine the most granular quantization possible according to [How sumo chooses rollup table and quantization interval](../introduction/metric-quantization.md#how-sumo-chooses-rollup-table-and-quantization-interval) and sum the metric values in determined time buckets.
+In this example we omit the `to INTERVAL` part of the query and let Sumo determine appropriate quantization interval according to [How sumo chooses rollup table and quantization interval](../introduction/metric-quantization.md#how-sumo-chooses-rollup-table-and-quantization-interval). `sum` rollup type will be used to aggregate the metrics in each time bucket.
 
 ```sql
 metric=CPU_User cluster=kafka | quantize using sum
