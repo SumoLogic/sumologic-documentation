@@ -1904,7 +1904,6 @@ integrations: [
             collapsible: true,
             collapsed: true,
             items: [
-              'integrations/app-development/opentelemetry/docker-opentelemetry',
               'integrations/app-development/opentelemetry/puppet-opentelemetry',
               'integrations/app-development/opentelemetry/jira-opentelemetry',
               'integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry',
@@ -1935,6 +1934,7 @@ integrations: [
             collapsible: true,
             collapsed: true,
             items: [
+              'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
             ],

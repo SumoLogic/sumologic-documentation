@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic OpenTelemetry app for Docker.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/docker-icon.png')} alt="Thumbnail icon" width="120"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker-icon.png')} alt="Thumbnail icon" width="120"/>
 
 The Sumo Logic app for Docker ULM is a unified logs and metrics app that enables you to monitor Docker deployment. The app provides preconfigured dashboards that include information about container state and resource usage, including information on CPU, memory, block I/O, and network.
 
@@ -20,7 +20,7 @@ OpenTelemetry collector runs on the same host as Docker and helps to collect Doc
 The Sumo Logic app for Docker supports Docker version 23.0.2.
 :::
 
-<img src={useBaseUrl('img/integrations/app-development/Docker-Schematics.png')} alt="Docker-Schematics"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Schematics.png')} alt="Docker-Schematics"/>
 
 ## Fields creation in Sumo Logic for Docker
 
@@ -53,7 +53,7 @@ Follow the below steps for collecting logs, metric and installing the app:
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src={useBaseUrl('img/integrations/app-development/Docker-collector.png')} alt="Docker-collector"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} alt="Docker-collector"/>
 
 ### Step 2: Configure integration
 
@@ -66,7 +66,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('img/integrations/app-development/Docker-YAML.png')} alt="Docker-YAML"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} alt="Docker-YAML"/>
 
 ### Step 3: Send logs to Sumo
 
@@ -85,9 +85,9 @@ Click **Next**. This will install the app (dashboards and monitors) to your Sumo
 
 Dashboard panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
-## Sample Log Messages
+## Sample Log and Metrics messages
 
-<details><summary>Click here to expand</summary>
+### Log message
 
 ```json title="Log message"
 {
@@ -110,6 +110,9 @@ Dashboard panels will start to fill automatically. It's important to note that e
   "timeNano":"timestamp_2"
 }
 ```
+
+### Metric message
+
 ```json title="Metric message"
 {
   "queryId":"A",
@@ -141,11 +144,9 @@ Dashboard panels will start to fill automatically. It's important to note that e
   "count":28
 }
 ```
-</details>
-
 ## Sample Query
 
-<details><summary>Click here to expand</summary>
+### Log query
 
 This sample Query is from the **Docker - Overview** > **Docker Events Over Time** panel.
 
@@ -161,70 +162,70 @@ sumo.datasource=docker
 | transpose row _timeslice column state
 | fillmissing timeslice(1h)
 ```
+### Metrics query
 
 This sample Query is from the **Docker - Overview** > **Top 5 Containers by CPU Usage** panel.
 
-```sql title="Log query"
+```sql title="Metric query"
 sumo.datasource=docker container.image.name={{container.image.name}} container.name={{container.name}}  metric=container.cpu.usage.total 
 | avg by container.name 
 | topk(5,avg)
 ```
-</details>
 
 ## Viewing Docker dashboards
 
 ### Docker - Overview
 
-The **Docker - Overview** dashboard provides an overview of Docker activity.
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Overview-Otel.png')} alt="Docker-Overview"/>
 
-- **Number of Docker Hosts**. The total number of Docker hosts monitored over the last 24 hours.
-- **Number of Containers Started**. The total number of containers started over the last 24 hours
-- **Number of Containers Paused**. The total number of containers paused over the last 24 hours
-- **Number of Containers Stopped**. The total number of containers stopped over the last 24 hours
-- **Number of Containers Killed**. The total number of containers killed over the last 24 hours
-- **Docker Events Over Time**. Count of specific Docker container events (such as pause, stop, die, restart, start, kill, unpause) per time slice over the last 24 hours.
-- **Containers by State**. A table that lists container events that occurred during the last 24 hours, the time the event occurred, the container image, the container name, and the event type.
+- **Number of Docker Hosts**. The total number of Docker hosts monitored.
+- **Number of Containers Started**. The total number of containers started.
+- **Number of Containers Paused**. The total number of containers paused.
+- **Number of Containers Stopped**. The total number of containers stopped.
+- **Number of Containers Killed**. The total number of containers killed.
+- **Docker Events Over Time**. Count of specific Docker container events (such as pause, stop, die, restart, start, kill, unpause) per time slice.
+- **Containers by State**. A table that lists container events that occurred, time the event occurred, the container image, the container name, and the event type.
 - **Container Events - One Day Time Comparison**. A table that lists the count of a particular event (such as pause, stop, die, restart, start, kill, unpause) for an image/container combination over the last 24 hours and compares it with the previous 24 hours time range.
-- **Top 5 Containers by CPU Usage**. CPU usage by the five containers that have used the most CPU over the last 24 hours.
-- **Top 5 Containers by Tx Bytes**. Bytes transmitted by the top five containers that have transmitted the most bytes over the last 24 hours.
-- **Top 5 Containers by Rx Bytes**. Bytes received by the five containers that have received the most bytes over the last 24 hours.
-- **Top 5 Containers by Memory Usage**. Memory usage by the top five containers that used the most memory over the last 24 hours.
+- **Top 5 Containers by CPU Usage**. CPU usage by the five containers that have used the most CPU.
+- **Top 5 Containers by Tx Bytes**. Bytes transmitted by the top five containers that have transmitted the most bytes.
+- **Top 5 Containers by Rx Bytes**. Bytes received by the five containers that have received the most bytes.
+- **Top 5 Containers by Memory Usage**. Memory usage by the top five containers that used the most memory.
 
 ### Docker - CPU Usage
 
-The **Docker - CPU Usage** dashboard provides information about CPU usage and container throttling over the last three hours.
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-CPU-Usage-Otel.png')} alt="Docker-CPU-Usage"/>
 
-- **Total CPU Consumed by Container in Kernel Mode**. Total CPU consumed in kernel mode by each container over the last three hours.
-- **CPU Usage by Image Name**. CPU consumed by container image name per timeslice over the last three hours.
-- **CPU Usage in Kernel Mode**. CPU consumed in kernel mode by each container per timeslice over the last three hours.
-- **CPU Usage in User Mode**. CPU consumed in user mode by each container per timeslice over the last three hours.
-- **Time for Which Container was Throttled**. Duration for which each container's CPU was throttled over the last three hours.
-- **Count of Periods with Throttling Active**. A chart that shows how many times each container's CPU was throttled over the last three hours.
+- **Total CPU Consumed by Container in Kernel Mode**. Total CPU consumed in kernel mode by each container.
+- **CPU Usage by Image Name**. CPU consumed by container image name per timeslice.
+- **CPU Usage in Kernel Mode**. CPU consumed in kernel mode by each container per timeslice.
+- **CPU Usage in User Mode**. CPU consumed in user mode by each container per timeslice.
+- **Time for Which Container was Throttled**. Duration for which each container's CPU was throttleds.
+- **Count of Periods with Throttling Active**. A chart that shows how many times each container's CPU was throttled.
 
 ### Docker - Memory Usage
 
-The **Docker - Memory Usage** dashboard provides information about container memory limits, memory usage, and page faults over the last three hours.
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Memory-Usage-Otel.png')} alt="Docker-Memory-Usage"/>
 
-- **Number of Times Container Hit Memory Limit**. Number of times that each container reached its memory limit over the last three hours.
-- **Memory Limit by Container**. Memory limit for each container over the last three hours.
-- **Percentage of Memory Used by Container**. Percentage of memory used by each container over the last three hours.
-- **Current and Max Memory Usage**. Current and maximum memory used by each container over the last three hours.
-- **Count of Page Faults by Container**. Number of page faults for each container over the last three hours.
-- **Memory that Cannot be Reclaimed**. Amount of memory that cannot be reclaimed for each container over the last three hours.
-- **Number of Bytes Transferred to/from the Disk**. Number of bytes transferred to and from disk by each container over the last three hours.
+- **Number of Times Container Hit Memory Limit**. Number of times that each container reached its memory limit.
+- **Memory Limit by Container**. Memory limit for each container.
+- **Percentage of Memory Used by Container**. Percentage of memory used by each container.
+- **Current and Max Memory Usage**. Current and maximum memory used by each container.
+- **Count of Page Faults by Container**. Number of page faults for each container.
+- **Memory that Cannot be Reclaimed**. Amount of memory that cannot be reclaimed for each container.
+- **Number of Bytes Transferred to/from the Disk**. Number of bytes transferred to and from disk by each container
 
 ### Docker - Network Usage
 
-The **Docker - Network Usage** dashboard provides information about network usage over the last three hours.
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="Docker-Network-Usage"/>
 
-- **Average Rx Bytes by Container**. Displays the average number of bytes received per timeslice by each container over the last three hours.
-- **Average Tx Bytes by Container**. Displays the average number of bytes transmitted per timeslice by each container over the last three hours.
-- **Count of Rx Dropped Packets**. Count of received packets dropped by each container per timeslice over the last three hours.
-- **Count of Rx Error Packets**. Count of error packets received per timeslice by each container over the last three hours.
-- **Average Rx Packets by Container**. Average packets received per timeslice by each container over the last three hours.
-- **Average Tx Packets by Container**. Average packets transmitted per timeslice by each container over the last three hours.
-- **Count of Tx Dropped Packets**. Count of packets dropped during transmission per timeslice by each container over the last three hours.
-- **Count of Tx Error Packets**. Count of error packets transmitted per timeslice by each container over the last three hours.
+- **Average Rx Bytes by Container**. Displays the average number of bytes received per timeslice by each container.
+- **Average Tx Bytes by Container**. Displays the average number of bytes transmitted per timeslice by each container.
+- **Count of Rx Dropped Packets**. Count of received packets dropped by each container per timeslice.
+- **Count of Rx Error Packets**. Count of error packets received per timeslice by each container.
+- **Average Rx Packets by Container**. Average packets received per timeslice by each container.
+- **Average Tx Packets by Container**. Average packets transmitted per timeslice by each container.
+- **Count of Tx Dropped Packets**. Count of packets dropped during transmission per timeslice by each container.
+- **Count of Tx Error Packets**. Count of error packets transmitted per timeslice by each container.
 
 
 
