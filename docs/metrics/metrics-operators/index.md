@@ -76,7 +76,7 @@ In this section, we'll introduce the following concepts:
 </div>
   <div className="box smallbox11 card">
     <div className="container">
-    <a href="/docs/metrics/metrics-operators/histogram_quantile"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>histogram_quantile</h4></a>
+    <a href="/docs/metrics/metrics-operators/histogram-quantile"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>histogram_quantile</h4></a>
     <p>Learn how to calculate the φ-quantile from the buckets of a histogram. </p>
     </div>
   </div>
