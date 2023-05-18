@@ -1550,7 +1550,7 @@ The following table provides a list of all source parameters and their default v
 
 ## Troubleshooting
 
-This section provides information on how to troubleshoot failures while deploying AWS observability solution using Terraform.
+This section provides information on how to troubleshoot failures while deploying our AWS Observability solution using Terraform.
 
 ### Python command not found
 #### Error Message
