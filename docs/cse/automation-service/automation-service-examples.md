@@ -59,7 +59,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-   1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for Insight enrichment" width="600"/>
+   1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for Insight enrichment" width="700"/>
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
    1. Click the **Configuration** button (gear icon) at the top of the UI.
@@ -129,7 +129,7 @@ The following example shows how to configure a notification that sends an email 
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-   1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" width="600"/>
+   1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" width="700"/>
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
    1. Click the **Configuration** button (gear icon) at the top of the UI.
@@ -164,18 +164,18 @@ The following example shows how to create a custom integration with an action th
     1. Under **Integrations**, select **Automation**.
     1. From the Automation screen, click **Manage Playbooks**.
     1. Click **Integrations** in the navigation menu.
-    1. Click the **+** icon at the top of the screen to the left of **Integrations**. The **New Integration** dialog appears. 
+    1. Click the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-integration-button.png')} alt="Add integration button" width="400"/> 
     1. Download this file: <a href="https://help.sumologic.com/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
-    1. Drag the file into the **Select File** box in the **New Integration** dialog.
+    1. In the **New Integration** dialog, drag the file into the **Select File** box.
     1. Click **Upload**. An IP Quality Score integration is created.
     1. Open the new **IP Quality Score** integration. 
-    1. Hover your mouse over the **IP Quality Score** name and click the **Upload** button that appears.
+    1. Hover your mouse over the **IP Quality Score** name and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-upload-button.png')} alt="Upload button" width="250"/> 
     1. In the **Upload** dialog, select **Action** in the **kind** field. 
     1. Download this file: <a href="https://help.sumologic.com/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a>.
-    1. Drag the file into the **Select File** box in the **New Integration** dialog. 
+    1. Drag the file into the **Select File** box. 
     1. Click **Upload**. The **IP Reputation** action appears in the IP Quality Score integration.
 1. Add the IP Quality Score integration resource:
-    1. Click the **+** button to the left of **Resources**. 
+    1. Click the **+** button to the left of **Resources**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-resource-button.png')} alt="Add resource button" width="250"/>  
     1. Fill out the **Add Resource** dialog:
        * **Label**: Enter **IP Quality Score Resource**.
        * **API URL**: Enter `https://www.ipqualityscore.com/`.
@@ -183,10 +183,10 @@ The following example shows how to create a custom integration with an action th
        * **Connection Timeout (s)**: Leave the default value at **120**.
        * **Automation engine**: Select the Automation Bridge you installed locally as described in the first step of this example. 
        * **Proxy options**: Select **Use no proxy**.
-    1. Click **Save**. The IP Quality Score Resource appears in the integration.
+    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-resource-ip-quality-score.png')} alt="Add resource for IP Quality Score" width="400"/>   
 1. Create the playbook:
     1. Click **Playbook** in the navigation menu.
-    1. Click the **+** button to the left of **Playbook**.
+    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
     1. Give your playbook a **Name**, such as **Custom Enrichment with IP Quality Score**.
     1. For **Type**, select **CSE**. 
     1. Enter a **Description**.
@@ -194,7 +194,7 @@ The following example shows how to create a custom integration with an action th
 1. Select the input parameters for the playbook:
     1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
     1. On the **Start** node, click the **Edit** button (pencil icon).
-    1. In the **Edit node** dialog, select **Insight** in the **Add one or more params as a playbook input** field. (If you want to create a playbook to add Entity enrichment, select **Entity** instead. See [Add Entity enrichment](#add-entity-enrichment) below.)  
+    1. In the **Edit node** dialog, select **Insight** in the **Add one or more params as a playbook input** field. (If you want to create a playbook to add Entity enrichment instead, see [Add Entity enrichment](#add-entity-enrichment) below.)  
     1. Click **Update**. 
 1. Add a condition to validate IP addresses:
     1. Click the **Add Node** button (**+** icon) on the **START** node.
@@ -204,7 +204,7 @@ The following example shows how to create a custom integration with an action th
     1. Select **input.entity.entityType**. 
     1. Click the bottom **Select a value** in the dialog. 
     1. In **Get value**, type **_ip** and press **Enter**.
-    1. Click **Create**. The condition is added to the playbook. 
+    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-condition.png')} alt="Add a condition" width="500"/>  
     1. Click and hold on the **FAILURE** (red) semicircle of the new condition node, and drag to the semicircle of the **END** node and release. This tells the playbook that if there are no valid IP addresses on entities, the playbook should end. 
 1. Add the “IP Reputation” action to the playbook:
     1. Click the **Add Node** button (**+** icon) on the **CONDITION** node.
@@ -214,7 +214,7 @@ The following example shows how to create a custom integration with an action th
     1. To the right of the **IP** field, click the gear icon. 
     1. Click **Playbook inputs**. 
     1. Select **input.entity.value**. 
-    1. Click **Create**. The **IP Reputation** node is added to the playbook.
+    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-ip-reputation-node.png')} alt="Add the IP Reputation node" width="500"/>
 1. Add the “Add Insight Enrichment” action to the playbook:
     1. Hover your mouse over the new **IP Reputation** node.
     1. Click the **Add Node** button (**+** icon) at the bottom of the **IP Reputation** node.
@@ -229,11 +229,11 @@ The following example shows how to create a custom integration with an action th
     1. To the right of the **Raw JSON** field, click the gear icon. 
     1. Click **IP Reputation**.
     1. Select **output.raw**.
-    1. Click **Create**. The **Add Insight Enrichment** node is added to the playbook. 
+    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add Insight Enrichment node" width="500"/>  
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for Insight enrichment" width="600"/>
+    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for Insight enrichment" width="700"/>
 1. Create an automation to run the playbook:
     1. Return to the main Cloud SIEM screen.
     1. Click the **Configuration** button (gear icon) at the top of the UI.
@@ -263,6 +263,6 @@ The preceding example shows how to use a custom integration to add enrichment to
 1. When you add the “IP Reputation” action to the playbook, for **Playbook inputs** select **input.value** instead of **input.entity.value**.
 1. Instead of adding the “Add Insight Enrichment” action to the playbook, add the “Add Entity Enrichment” action. 
 
-The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-entity-enrichment.png')} alt="Custom playbook for Entity enrichment" width="600"/>
+The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-entity-enrichment.png')} alt="Custom playbook for Entity enrichment" width="700"/>
  
 
