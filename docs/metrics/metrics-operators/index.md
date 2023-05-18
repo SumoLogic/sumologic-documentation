@@ -40,7 +40,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/metrics/metrics-operators/count">  <img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>count</h4></a>
+  <a href="/docs/metrics/metrics-operators/count"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>count</h4></a>
   <p>Learn how to count the total number of time series that match the query.</p>
   </div>
 </div>
