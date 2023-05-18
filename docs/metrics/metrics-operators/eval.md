@@ -31,10 +31,10 @@ eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
 
 **Example 1**
 
-This query returns the value of the cpu_idle metric, multiplied by 100.
+This query returns the value of the `CPU_Idle` metric, multiplied by 100.
 
 ```
-_sourceCategory=ApacheHttpServer metric=cpu_idle | eval _value * 100
+_sourceCategory=ApacheHttpServer metric=CPU_Idle | eval _value * 100
 ```
 
 **Example 2**
@@ -42,7 +42,7 @@ _sourceCategory=ApacheHttpServer metric=cpu_idle | eval _value * 100
 This query sets the value of each point in a single time series to the average of all values in that time series.
 
 ```
-metric=cpu | eval avg
+metric=CPU_Idle | eval avg
 ```
 
 For example, if you have this series, where the points are `(timestamp, value)`:
@@ -64,5 +64,5 @@ m2: (0, 6) (1, 6) (2, 6)
 This query returns the rate of change per second for the metric.
 
 ```
-metric=cpu | sum | eval 1000 * _value / _granularity
+metric=CPU_Idle | sum | eval 1000 * _value / _granularity
 ```

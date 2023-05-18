@@ -24,16 +24,16 @@ stddev [by FIELD [, FIELD, ...]]
 
 **Example 1**
 
-This query returns the standard deviation of the `cpu_system` metric from the _prod_ deployment.
+This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment.
 
 ```sql
-dep=prod metric=cpu_system | stddev
+dep=prod metric=CPU_Sys | stddev
 ```
 
 **Example 2**
 
-This query returns the standard deviation of the `cpu_system` metric from the _prod_ deployment, grouped by the source that collected the metrics.
+This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment, grouped by the source that collected the metrics.
 
 ```sql
-dep=prod metric=cpu_system | stddev by _source
+dep=prod metric=CPU_Sys | stddev by _source
 ```

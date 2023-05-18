@@ -20,16 +20,16 @@ Where:
 
 ## Example
 
-Query #A returns the `cpu_idle` metric for the currently selected query time range, the last 15 minutes.
+Query #A returns the `CPU_Idle` metric for the currently selected query time range, the last 15 minutes.
 
 ```sql
-#A _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle
+#A _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle
 ```
 
-Query #B returns the `cpu_idle` metric for the 15 minute period that ended two hours ago.
+Query #B returns the `CPU_Idle` metric for the 15 minute period that ended two hours ago.
 
 ```sql
-#B _sourceCategory=prod/host _sourceHost=my-mac= metric=cpu_idle | timeshift 2h
+#B _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle | timeshift 2h
 ```
 
 <img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" />

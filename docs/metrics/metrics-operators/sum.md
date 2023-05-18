@@ -17,16 +17,16 @@ sum [by FIELD [, FIELD, ...]]
 
 ### Sum the value of a metric 
 
-This query calculates the total of the `cpu_system` metric values across all time series whose `dep` tag equals “prod”.
+This query calculates the total of the `CPU_System` metric values across all time series whose `dep` tag equals “prod”.
 
 ```sql
-dep=prod metric=cpu_system | sum
+dep=prod metric=CPU_System | sum
 ```
 
 ### Sum the value of a metric by one field 
 
-This query calculates the total of the `cpu_system` metric values across all time series whose `dep` tag equals “prod” by node.
+This query calculates the total of the `CPU_System` metric values across all time series whose `dep` tag equals “prod” by node.
 
 ```sql
-cluster=search metric=cpu_idle | sum by node
+cluster=search metric=CPU_Idle | sum by node
 ```  

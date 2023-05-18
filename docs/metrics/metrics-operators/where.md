@@ -57,13 +57,13 @@ where [VALUE BOOLEAN EXPRESSION]
 This query filters out data points that are less or equal than 5.
 
 ```sql
-metric=cpu | where _value > 5
+metric=CPU_Idle | where _value > 5
 ```
 
 This query filters out data points that are less or equal than the minimum value minus 5.
 
 ```sql
-metric=cpu | where _value > min - 5
+metric=CPU_Idle | where _value > min - 5
 ```
 
 ### Filtering time series
@@ -73,7 +73,7 @@ metric=cpu | where _value > min - 5
 This query returns the time series where the average value of its data points is greater than 3.
 
 ```sql
-metric=cpu | where avg > 3
+metric=CPU_Idle | where avg > 3
 ```
 
 **Syntax 2**
@@ -97,11 +97,11 @@ Where:
 This query only returns the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-metric=cpu | where _value > 3 all any 5m
+metric=CPU_Idle | where _value > 3 all any 5m
 ```
 
 This query only returns the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-metric=cpu | where _value > 3 atleast 3 any 5m
+metric=CPU_Idle | where _value > 3 atleast 3 any 5m
 ```

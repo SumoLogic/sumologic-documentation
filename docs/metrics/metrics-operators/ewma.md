@@ -26,18 +26,18 @@ ewma [alpha=<decimal> | span=<integer>]
 Where:
 
 * `alpha`, the smoothing parameter, is a decimal value (0.0 ≤ alpha ≤ 1.0) The default value of `alpha` is 0.5
-* `span` is the number of data points. Must be an integer value greater than zero. If you set `span=5`, the last five data points will be used to calculate the average.  The default value of `span` is 3.
+* `span` is the number of data points. Must be a positive integer. If you set `span=5`, the last five data points will be used to calculate the average.  The default value of `span` is 3.
 
 ## Examples
 
 ### Using alpha
 
 ```sql
-metric=cpu | ewma alpha=0.1
+metric=CPU_Idle | ewma alpha=0.1
 ```
 
 ### Using span
 
 ```sql
-metric=cpu | ewma span=10
+metric=CPU_Idle | ewma span=10
 ```

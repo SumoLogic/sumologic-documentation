@@ -28,10 +28,10 @@ Where: 
 
 ### Top 10 time series by maximum value
 
-This query ranks the time series that match the query selector by the maximum value of the CPU_Sys metric over the time range, and returns the top 10 time series.
+This query ranks the time series that match the query selector by the maximum value of the `CPU_Sys` metric over the time range, and returns the top 10 time series.
 
 ```sql
-metric=cpu_system | topk (10, max)
+metric=CPU_Sys | topk (10, max)
 ```
 
 Top 10 time series based on a calculated value.
@@ -39,5 +39,5 @@ Top 10 time series based on a calculated value.
 This query applies a math expression — `(max / avg * 2)` — to each time series that matches the query selector. The time series are ranked by the calculated value, and the top 10 time series are returned.
 
 ```sql
-metric=cpu_system |topk (10, max / avg * 2)
+metric=CPU_Sys |topk (10, max / avg * 2)
 ```
