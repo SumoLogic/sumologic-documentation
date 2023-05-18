@@ -106,7 +106,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox16 card">
     <div className="container">
-    <a href="/docs/apm/real-user-monitoring/parse/"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>parse</h4></a>
+    <a href="/docs/metrics/metrics-operators/parse/"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>parse</h4></a>
     <p>Learn how to parse the specified field to create new fields to use in the metrics query.</p>
     </div>
   </div>
