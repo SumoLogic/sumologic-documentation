@@ -146,7 +146,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 Internally, the source will use the following base URL depending on the respective cloud region:
 
 | BASE_URL | Value |
-| --- | --- |
+| :--- | :--- |
 | Azure Government | https://graph.microsoft.us |
 | Azure Global Service | https://graph.microsoft.com |
 
