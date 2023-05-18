@@ -1612,6 +1612,7 @@
   "/cid/1957": "/docs/integrations/amazon-aws/aurora-postgresql-ulm",
   "/cid/1958": "/docs/integrations/amazon-aws/security-hub",
   "/cid/1959": "/docs/integrations/containers-orchestration/vmware",
+  "/cid/19591": "/docs/integrations/containers-orchestration/opentelemetry/docker-opentelemetry",
   "/cid/1960": "/docs/integrations/saas-cloud/pagerduty-v2",
   "/cid/19600": "/docs/integrations/saas-cloud/citrix-cloud",
   "/cid/60046": "/docs/integrations/saas-cloud/sentinelone",
