@@ -13,12 +13,16 @@ You can specify:
 
 ## Syntax
 
-:::note
-The `quantize` operator *must* appear immediatdly after your query selector, before any other operators.
-:::
+There are two supported syntaxes for the `quantize` operator.
 
 ```sql
-metrics query | quantize to INTERVAL [using ROLLUP] [drop last]
+quantize to INTERVAL [using ROLLUP] [drop last]
+```
+
+or
+
+```sql
+quantize using ROLLUP [drop last]
 ```
 
 where:
@@ -30,6 +34,8 @@ where:
 :::note
 In the Metrics Explorer, you must [switch to Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) to enter the `drop last` option.
 :::
+
+This second syntax allows you to omit the `to INTERVAL` part of the query, but still enforce a specific rollup type. It is useful when you want to rely on Sumo to determine appropriate quantization, but want to use specific aggregation.
 
 ## Examples 
 
@@ -55,4 +61,12 @@ The `quantize` clause in this metric query sets the time bucket size to 10 minut
 
 ```sql
 metric=CPU_User cluster=kafka | quantize to 10m using sum drop last
+```
+
+### Omit time bucket size
+
+The `quantize` clause in this metric query specifies the `sum` rollup type. Sumo will determine the most granular quantization possible according to [How sumo chooses rollup table and quantization interval](../introduction/metric-quantization.md#how-sumo-chooses-rollup-table-and-quantization-interval) and sum the metric values in determined time buckets.
+
+```sql
+metric=CPU_User cluster=kafka | quantize using sum
 ```
