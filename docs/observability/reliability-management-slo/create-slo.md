@@ -109,21 +109,56 @@ Follow the instructions below based on the query type:
   </tr>
 </table>
 
-<img src={useBaseUrl('img/observability/slo-logs.gif')} alt="Reliability Management SLO SLI" />
+   <img src={useBaseUrl('img/observability/slo-logs.gif')} alt="Reliability Management SLO SLI" />
 
 8. Define your SLO for target amount and duration period to monitor:
-  * **Target**. The value in percentage you want to target for the SLO, for example 99 for 99%.
-  * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculator over a window of time for a Week.
-   * **Timezone**. Select a timezone. This is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" />
+   * **Target**. The value in percentage you want to target for the SLO (for example, you'd enter `99` for 99%).
+   * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculates over a window of time for a Week.
+   * **Timezone**. Selecting a timezone is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" width="400"/>
 9. Enter SLO Details:
-  * **Name**. Name of the SLO.
-  * **Description**. Short explanation of your SLO.
-  * **Tags**. Tags are key/value pairs which associate SLO with a particular category. These tags have additional metadata to describe an SLO beyond the name and description, which helps you in the purpose of categorization, search, and filtering of SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
-:::info
+   * **Name**. Name of the SLO.
+   * **Description**. Short explanation of your SLO.
+   * **Tags**. Tags are key/value pairs which associate SLO with a particular category. [Learn more here](#slo-tags-and-filters). These tags have additional metadata to describe an SLO beyond the name and description, which can help you categorize, search, and filter your SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
+  :::info
   You can associate multiple tags with your SLO.
-:::
-<img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
+  :::
+  <img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
+
+
+### SLO Tags and Filters
+
+You can add key/value pair tags to your SLOs to allow you to better organize, sort, and filter them. As an example, you might find it useful to add variables such as environment, application name, and region.
+
+#### Add a Tag
+
+To add a tag(s) to an existing SLO:
+
+1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
+1. Click on any SLO line item in your list, then click **Edit**.
+1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+To add a tag while creating a new SLO:
+
+1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
+1. Click **Add** > **New SLO**.
+1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+#### Filter Tags
+
+After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
+
+To filter your SLOs by tag:
+
+1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" />
+1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+#### Use cases
+
+You can leverage SLO tags in **Log Search** queries. In this example, we run a query to display all SLOs. You'll see a **Tags** column here.
+
 
 ## Create a Logs-based SLO
 
@@ -326,9 +361,12 @@ The script allows you to install Sumo Logic SLOs in your specified AWS ELB direc
 
 ## SLO as Code
 
-You can use the Sumo Logic Terraform provider to automate [SLO folder](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) and [SLO creation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo). This can be useful for organizations that want to templatize SLOs, standardize SLO configuration, Monitors and dashboards and automate SLO-related workflows.
+You can use the Sumo Logic Terraform provider to automate the creation of [SLOs (`sumologic_slo`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [SLO folders (`sumologic_slo_folder`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder). This can be useful for organizations that want to:
+* Templatize SLOs
+* Standardize the configuration of SLOs, monitors, and dashboards
+* Automate SLO-related workflows
 
-Use the [Monitor Terraform provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create Monitors associated with SLOs.
+You can use the [Monitor Terraform provider (`sumologic_monitor`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.
 
 
 ## SLO as Log Messages
