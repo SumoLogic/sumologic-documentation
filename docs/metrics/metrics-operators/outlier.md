@@ -14,7 +14,7 @@ At this time, using the `outlier` operator in a metric monitor is not supported.
 ## Syntax
 
 ```sql
-metric query | outlier [window=<#>, threshold=<#>, direction=[ +- | + | - ]]
+outlier [window=<time_unit_or_number>, threshold=<number>, direction=[ +- | + | - ]]
 ```
 
 Where:

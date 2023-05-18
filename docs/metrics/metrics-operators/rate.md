@@ -12,7 +12,7 @@ The rate operator also assigns the value of the metric tag to be `rate($metric)`
 ## Syntax
 
 ```sql
-metric query | rate [increasing | decreasing]
+rate [increasing | decreasing]
 ```
 
 If you use the `increasing` option, the operator will consider only those pairs of consecutive points where the second point in the pair is greater than the first point. Similarly, if you use the the `decreasing` option, the operator will consider only those pairs of consecutive points where the second point in the pair is less than the first point. This functionality is useful when you are calculating the rate of change of a counter over time.

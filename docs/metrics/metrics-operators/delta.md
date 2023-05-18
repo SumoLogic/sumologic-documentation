@@ -14,7 +14,7 @@ You can use the `increasing` or `decreasing` option, to make `delta` consider on
 ## Syntax
 
 ```sql
-metric query | delta [increasing | decreasing]
+delta [increasing | decreasing]
 ```
 
 ## Examples

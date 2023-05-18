@@ -10,7 +10,7 @@ You can use the `where` operator to filter out either entire time series, or ind
 ## Syntax
 
 ```sql
-selectors | where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
+where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 ```
 
 Where:
@@ -49,7 +49,7 @@ For more examples, see [Filtering time series](#filtering-time-series).
 **Syntax**
 
 ```sql
-metric query | where [VALUE BOOLEAN EXPRESSION]
+where [VALUE BOOLEAN EXPRESSION]
 ```
 
 **Examples**
@@ -81,7 +81,7 @@ metric=cpu | where avg > 3
 This query filters out time series based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
 ```sql
-metric query | where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
+where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
 Where:

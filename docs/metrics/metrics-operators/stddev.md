@@ -15,7 +15,7 @@ Often used in financial applications, calculating standard deviations also has v
 ## Syntax
 
 ```sql
-metric query | stddev [by FIELD [, FIELD, ...]]
+stddev [by FIELD [, FIELD, ...]]
 ```
 
 `stddev` isn’t supported in queries that use the `quantize` operator.
