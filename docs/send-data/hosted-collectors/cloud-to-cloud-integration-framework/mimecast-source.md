@@ -64,7 +64,7 @@ When you create a Mimecast Source, you add it to a Hosted Collector. Before cre
 
 To configure a Mimecast Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

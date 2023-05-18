@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="50" />
 
 The Airtable App for Sumo Logic monitors and analyzes your organization's Airtable audit logs, providing insights into user activity, data trends, and security events. This app is based on the Airtable Audit Logs, which provide detailed information on all actions performed in your Airtable account.
+
 The Airtable App makes it simple to import data from your Airtable audit logs into Sumo Logic, where you can perform real-time analysis and build dashboards to visualize key metrics. You can monitor security events and gain insights into user activity across your organization.
 
 The Airtable App allows you to:
@@ -71,13 +72,12 @@ _sourceCategory="Labs/airtable"
 
 ## Installing the Airtable App
 
-Locate and install the app from the **App Catalog**. To see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) to create the source and use the same source category while installing the app.
 
 To install the app, follow the steps below:
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
-1. Configure **Airtable App** using the steps described in the [Airtable Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Airtable App** using the steps described in the [Airtable Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.

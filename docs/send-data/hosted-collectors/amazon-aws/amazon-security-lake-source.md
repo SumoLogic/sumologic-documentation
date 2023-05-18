@@ -20,18 +20,6 @@ Amazon Security Lake source provides a web services interface that can be used t
 
 This makes AWS log setup relatively easy. In addition, the data available from various AWS services is in the OCSF format, making it simple to parse and correlate across different sources.
 
-## Setup IAM Role on Amazon Security Lake
-
-Before setting up your Amazon Security Lake account, you need to create the following IAM role in AWS:
-
-### AmazonSecurityLakeMetaStoreManager role
-
-Create the `AmazonSecurityLakeMetaStoreManager` role in AWS Identity and Access Management (IAM). The role must carry this name and is necessary for Security Lake to support extract, transform, and load (ETL) jobs on raw log and event data that it receives from sources. Without creating and assuming this role, you cannot create your data lake or query data from Security Lake. One role can be used across Regions—there's no need to create a separate role for different Regions.
-
-:::note
-Before you create the role, you need to attach the AWS policies to your `AmazonSecurityLakeMetaStoreManager` role. See [AWS policy](https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html#prerequisites).
-:::
-
 ## Configure Amazon Security Lake Setup
 
 ### Step 1. Grant Sumo logic access to Amazon Security Lake console
@@ -63,8 +51,7 @@ To create a subscriber in Amazon Security Lake Console, follow the steps below:
 1. **Data Access method**. For your subscriber to access the data, choose **S3** as the data access mode.<br/><img src={useBaseUrl('img/send-data/data-access-method.png')} alt="data-access-method.png" width="400"/>
 1. **Subscriber Credentials**. Enter the **Account ID** and **External ID** from the [Step 1](#step-1-grant-sumo-logic-access-to-amazon-security-lake-console). <br/><img src={useBaseUrl('img/send-data/subscriber-credentials.png')} alt="subscriber-credentials.png" width="750"/>
 1. **Notifications (S3 only)**. You can specify how your subscribers should be notified. For the time being, let's use the **Subscription endpoint** as the notification mode. Enter the following fields as required:
-   * In **API destination role**, paste the `Role ARN` of the role from the [EventBridge API destinations](#role-2-eventbridge-api-destinations) section. The `Role ARN` of the role should be specific and meaningful, something like `AmazonSecurityLakeRoleForEventBridge-accountid`.
-   * **Subscription endpoint**. The Subscription endpoint is intentionally left blank because it will be added to the subscriber in later steps.
+   * **Subscription endpoint**. Add the sample endpoint value for now as follows: https://collectors.sumologic.com. Note that this value will be edited in later steps.
    * **HTTPS key name** (Optional). Name of the server certificate that is used to authenticate the subscriber's connection to the AWS Security Lake.
    * **HTTPS key value**(Optional). Actual value or password associated with the key.
   <img src={useBaseUrl('img/send-data/notifications.png')} alt="notifications.png" width="800"/>
@@ -102,7 +89,7 @@ To create an Amazon Security Lake Source, follow the steps below:
   Remember to copy and secure the subscription endpoint. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
   :::
 
-1. Optional: You can create any **Processing Rules** that you want for the Source. For more information, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+1. Optional: You can create any **Processing Rules** that you want for the Source. For more information, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 
 The next step is to update your Amazon Security Lake subscriber to fill in the subscriber endpoint on the Subscribers page.
 
@@ -111,5 +98,5 @@ The next step is to update your Amazon Security Lake subscriber to fill in the s
 To update the Amazon Security Lake subscriber, follow the steps below:
 1. Navigate to the Subscribers page and click **My Subscribers**.
 2. Edit the subscriber created in the [Setup Subscriber](#step-2-set-up-subscriber-in-amazon-security-lake-console) section in step 2.
-3. Navigate to the **Subscription endpoint** field at the bottom which was left blank. Then, add the subscription URL from the Amazon Security Lake source setup. See [Step 3.10](#step-3-create-amazon-security-lake-source-in-sumo-logic) section.
+3. Navigate to the **Subscription endpoint** field at the bottom with the sample URL. Then, edit the subscription URL with the value from the Amazon Security Lake source setup. See [Step 3.10](#step-3-create-amazon-security-lake-source-in-sumo-logic) section.
 4. Click **Save**.
