@@ -25,7 +25,7 @@ In Sumo, we use the term *time series* to refer a set of timestamped values of a
 
 ## How do metrics get into Sumo?
 
-Sumo administrators set up *metric sources* to receive metrics.  A metric source understands a particular type of metric. For example, Sumo’s host metrics source knows how to ingest system metrics (network, CPU, file system, and so on) from Linux and Windows. Our Cloudwatch source knows how to ingest metrics from AWS.
+Sumo administrators set up *metric sources* to receive metrics. A metric source understands a particular type of metric. For example, Sumo’s host metrics source knows how to ingest system metrics (network, CPU, file system, and so on) from Linux and Windows. Our CloudWatch source knows how to ingest metrics from AWS.
 
 Metrics flow into Sumo as individual data points. The frequency varies.
 
@@ -53,7 +53,7 @@ Currently available metric sources are:
 
 * [Amazon CloudWatch Source for Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) You can use a CloudWatch source on a hosted collector to collect metrics for a variety of AWS resources.  
 
-* [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from AWS Kinesis Data Firehose.
+* [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from Amazon Kinesis Data Firehose.
 
 * [Streaming Metrics Source.](../../../static/img/send-data/streaming-metrics-source.png) You can use Sumo’s streaming metrics source with an installed collector to collect metrics over TCP or UDP in Graphite, Carbon 2.0, or Prometheus format.
 

@@ -1,6 +1,6 @@
 ---
 id: mongodb-atlas
-title: MongoDB Atlas - Classic Collector
+title: MongoDB Atlas
 sidebar_label: MongoDB Atlas
 description: The Sumo Logic App for MongoDB Atlas provides visibility into the security posture of your clusters and allows for easy monitoring of performance KPIs and database operational activities with predefined dashboards for visibility into MongoDB alerts and user activity audit logs, insights into slow queries, database and hardware metrics, and monitoring database operations.
 ---
@@ -678,26 +678,9 @@ Exception: Invalid config
 
 ## Installing the MongoDB Atlas App
 
-This section provides instructions on how to install the MongoDB Atlas App, as well as examples of each of the dashboards. The App's pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the MongoDB Atlas App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 All panels may not populate. Some tiers do not support certain types of logs. Refer atlas tier [limitation docs](https://docs.atlas.mongodb.com/reference/free-shared-limitations/#atlas-free-tier) for more details.
 

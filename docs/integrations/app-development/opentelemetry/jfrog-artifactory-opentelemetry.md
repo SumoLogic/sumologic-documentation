@@ -50,11 +50,11 @@ A restart is required for traffic collection to take effect.
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' alt="Artifactory-Collector" />
 
@@ -77,7 +77,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -117,7 +117,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 
@@ -145,34 +145,34 @@ This sample Query is from the **Artifactory - Cached Deployment Activity** > **A
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory-Overview" />
 
-{@import ../../../reuse/jfrog-artifactory-overview.md}
+{@import ../../../reuse/apps/jfrog/artifactory-overview.md}
 
 ### Artifactory - Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory-Cached-Deployment-Activity" />
 
-{@import ../../../reuse/jfrog-artifactory-cached.md}
+{@import ../../../reuse/apps/jfrog/artifactory-cached.md}
 
 ### Artifactory - Download Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory-Download-Activity" />
 
-{@import ../../../reuse/jfrog-artifactory-download.md}
+{@import ../../../reuse/apps/jfrog/artifactory-download.md}
 
 ### Artifactory - Non-Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory-Non-Cached-Deployment-Activity" />
 
-{@import ../../../reuse/jfrog-artifactory-noncached.md}
+{@import ../../../reuse/apps/jfrog/artifactory-noncached.md}
 
 ### Artifactory - Request and Access
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory-Request-and-Access" />
 
-{@import ../../../reuse/jfrog-artifactory-request-access.md}
+{@import ../../../reuse/apps/jfrog/artifactory-request-access.md}
 
 ### Artifactory - Traffic
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory-Traffic" />
 
-{@import ../../../reuse/jfrog-artifactory-traffic.md}
+{@import ../../../reuse/apps/jfrog/artifactory-traffic.md}

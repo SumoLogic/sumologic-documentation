@@ -6,7 +6,12 @@ tags: [get started, getting started]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic is an all-in-one cloud data analytics platform focused on Security, Operations, and Business Intelligence use cases. We provide:
+Sumo Logic is an all-in-one cloud data analytics platform focused on Security, Operations, and Business Intelligence use cases.
+
+<!--  is an ingest and storage platform. Its intuitive web-based interface makes it easy to visualize, query, and analyze all kinds of observability data. It’s highly customizable and flexible, allowing you to build detailed dashboards, and alerts and integrate external workflows. It’s a proven platform known for its excellent handling of log-based data and with OpenTelemetry, metrics, and tracing.
+-->
+
+We provide:
 
 * Monitoring, analyzing, troubleshooting, and visualizing data from your application and network environment.
 * Elastic processing to collect, manage, and analyze the log data, regardless of type, volume, or location.

@@ -140,6 +140,9 @@ The following are Sumo Logic AWS Distro Lambda layers for AWS Region arm64 arch
 
 Sumo Logic AWS OTel Lambda also provides packed [OpenTelemetry Java](https://github.com/open-telemetry/opentelemetry-java) libraries for container-based Lambda functions.
 
+:::note
+The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
+:::
 
 ### Requirements
 

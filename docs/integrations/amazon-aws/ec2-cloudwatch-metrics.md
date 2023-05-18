@@ -74,11 +74,11 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 
 ### Sample Queries
 
-```sql title="CPU utilization (Cloudwatch metric based)"
+```sql title="CPU utilization (CloudWatch metric-based)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 
-```sql title="Top 10 Error Codes (Cloudtrail log-based)"
+```sql title="Top 10 Error Codes (CloudTrail log-based)"
 account={{account}} region={{region}} namespace={{namespace}} eventname eventsource "ec2.amazonaws.com" errorCode
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as event_source, region, requestParameters, responseElements, accountid nodrop
 | json "userIdentity", "eventName", "sourceIPAddress", "userAgent", "eventType", "requestID", "errorCode", "errorMessage", "eventCategory", "managementEvent" as userIdentity, event_name, src_ip, user_agent, event_type, request_id, error_code, error_message, event_category, management_event nodrop
@@ -120,7 +120,7 @@ The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your E
 ### Collect Amazon CloudWatch EC2 Metrics
 
 Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) **(recommended)**
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) **(recommended)** or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 :::note
 Namespace for **Amazon EC2** Service is **AWS/EC2**.
@@ -218,7 +218,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ## Installing the AWS EC2 App
 
-Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

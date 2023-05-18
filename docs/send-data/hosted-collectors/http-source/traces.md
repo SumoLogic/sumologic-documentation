@@ -25,7 +25,7 @@ See also: [RUM Traces Source](/docs/apm/real-user-monitoring/configure-data-coll
 
 To configure an HTTP Traces Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Traces**.<br/>  ![source](/img/send-data/http-traces-icon.png)
 1. Enter a Name for the Source. A description is optional.<br/>  ![source](/img/send-data/traces-source-no-fields.png)

@@ -88,7 +88,7 @@ Use the following steps to create a service application:
 
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
-From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
+From there, select (or search for) the following permissions under type **Application permissions**. An Administrator must approve (grant) these permissions before the integration will function.
 
 | API | Account Type| Permissions |
 |:---------|:---------------------------------------------------|:------------------------------------|
@@ -105,7 +105,7 @@ When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted C
 
 To configure a Microsoft Azure AD Inventory Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
