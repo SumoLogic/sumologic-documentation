@@ -132,7 +132,7 @@ SELECT gmail.message_info,gmail.event_info,gmail.event_info.timestamp_usec AS TI
 
 Note that the value of `Checkpoint Start` above is an epoch MICRO seconds timestamp (16 digits) for `May 2, 2023 06:57:45.563258 PM GMT` and the query also sorts by the checkpoint field (`TIMESTAMP`). 
 
-When setting up this source for Gmail logs for the first time and collecting historical Gmail logs, it is important to set the `Checkpoint Start` in epoch microseconds (16 digits), and sort the checkpoint field explicitly in your query. Also note that it might take a long time for the source (and many BigQuery queries to execute) to backfill if the starting point is set far in the past - depending on your Gmail logs volume. 
+When setting up this source for Gmail logs for the first time and collecting historical Gmail logs, it is important to set the `Checkpoint Start` in epoch microseconds (16 digits), and sort the checkpoint field explicitly in your query. Also note that it might take a long time for the source (and many BigQuery queries to execute) to backfill if the starting point is set far in the past - depending on your Gmail logs volume.
 
 ### Error Types
 
