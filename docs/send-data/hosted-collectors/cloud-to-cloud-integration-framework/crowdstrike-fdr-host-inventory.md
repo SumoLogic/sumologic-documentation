@@ -102,7 +102,7 @@ To configure the CrowdStrike FDR Host Inventory API:
 9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 10. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
 11. By default, **Polling Interval** is set to 24 hours.
-11. When you are finished configuring the Source, click **Save**.
+12. When you are finished configuring the Source, click **Save**.
 
 ## Error types
 
