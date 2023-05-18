@@ -55,7 +55,6 @@ When an incoming Record meets a rule's conditions, a Signal is generated for ea
 ## Rule types
 
 There are several kinds of rules. Each supports a different sort of firing behavior.
-There are several kinds of rules. Each supports a different sort of firing behavior.
 
 * **Match rule**. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a Record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](write-match-rule.md).
 * **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule applies multiple expressions to a Record. For more information about Chain rules, see [Write a Chain Rule](write-chain-rule.md).
