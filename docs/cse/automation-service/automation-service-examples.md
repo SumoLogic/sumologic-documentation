@@ -21,33 +21,33 @@ The following example shows how to add an enrichment to an Insight using the “
    1. From the Automation screen, click **Manage Playbooks**.
    1. Click **Integrations** in the navigation menu.
    1. Select **VirusTotal OIF**.
-   1. Hover your mouse over the resource name and click the Edit button that appears.
-   1. Enter the **API URL**: `https://www.virustotal.com`.
+   1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-resource-edit-button.png')} alt="Resource edit button" width="500"/>
+   1. In the **Edit resource** dialog, enter the **API URL**: `https://www.virustotal.com`.
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key. 
-   1. Click **Save**.
+   1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" width="400"/>
 1. Create the playbook:
    1. Click **Playbook** in the navigation menu.
-   1. Click the **+** button to the left of **Playbook**.
-   1. Give your playbook a **Name**. 
+   1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
+   1. In the **New playbook** dialog, give your playbook a **Name**. 
    1. For **Type**, enter **CSE**. 
    1. Enter a **Description**.
    1. Click **Create**.
 1. Add the “IP Reputation V3” action to the playbook:
    1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
    1. Click the **Edit** button (pencil icon) on the **START** node.
-   1. Select **Insight** from the dropdown menu and click **UPDATE**.
-   1. Click the **Add Node** button (**+** icon) on **START**.
+   1. In the **Edit node** dialog, select **Insight** from the dropdown menu and click **UPDATE**.
+   1. Click the **Add Node** button (**+** icon) on the **START** node.
    1. Select **Action**.
-   1. For **Integration**, select **VirusTotal OIF**.
+   1. In the **Add node** dialog, for **Integration** select **VirusTotal OIF**.
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **IP reputation V3**.
    1. To the right of the **IPs** field, click the gear icon.
    1. Click **Playbook inputs** and select **input.entity.value**.
-   1. Click **Create**. 
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-ip-reputation-v3-add-node.png')} alt="Add node for IP Reputation V3" width="500"/> 
 1. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
    1. Select **Action**.
-   1. For **Integration**, select **CSE Tools**.
+   1. In the **Add node** dialog, for **Integration**, select **CSE Tools**.
    1. For **Type**, select **Notification**.
    1. For **Action**, select **Add Insight Enrichment**.
    1. To the right of the **Insight ID** field click the gear icon.
@@ -55,7 +55,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. In the **Enrichment name** field enter **VirusTotal IP reputation**.
    1. To the right of the **Raw JSON** field click the gear icon.
    1. Click **IP reputation V3** and select **output.raw**.
-   1. Click **Create**. 
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichmeent-node.png')} alt="Add node for Insight enrichment" width="500"/> 
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
