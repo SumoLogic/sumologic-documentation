@@ -46,7 +46,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/apm/real-user-monitoring/delta/"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>delta</h4></a>
+  <a href="/docs/metrics/metrics-operators/delta/"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>delta</h4></a>
   <p>Learn how to compute the backward difference at each data point in the time series.</p>
   </div>
 </div>
