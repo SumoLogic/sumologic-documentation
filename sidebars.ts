@@ -2098,6 +2098,7 @@ integrations: [
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
+          'integrations/saas-cloud/symantec-web-security-service',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
         ],
