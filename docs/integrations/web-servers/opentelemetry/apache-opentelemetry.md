@@ -50,7 +50,7 @@ Here are the steps for collecting Logs, metrics, and installing the app:
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png' alt="Collector" />
 
@@ -71,7 +71,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -111,7 +111,7 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 

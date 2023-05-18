@@ -26,7 +26,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/dashboards-new/migrate-to-new-dashboards"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Migrating from Dashboards (Classic) to Dashboards (New)</h4></a>
+  <a href="/docs/dashboards-new/dashboards-migration/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Migrating from Dashboards (Classic) to Dashboards (New)</h4></a>
   <p>Learn how to migrate Classic to New dashboards.</p>
   </div>
 </div>

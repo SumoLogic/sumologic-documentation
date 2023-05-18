@@ -68,6 +68,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | [Access Keys](access-keys.md) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Collection](/docs/send-data/collection) | `collection` |
+| [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` | 
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
@@ -84,6 +85,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | Security Policy: [Support Account Access](enable-support-account.md) | `supportAccount` |
 | [Service Allowlist](create-allowlist-ip-cidr-addresses.md) | `serviceAllowlist` |
 | [Support Account](enable-support-account.md) | `supportAccount` |
+| [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
 | [Transformation Rules](../../metrics/metrics-transformation-rules.md) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |

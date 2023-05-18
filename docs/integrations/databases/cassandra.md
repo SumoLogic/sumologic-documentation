@@ -291,7 +291,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
 
 Cassandra metrics collection setup can be done in two ways.
 * Using Telegraf and Installed Collector
-* Using Open Telemetry Collection
+* Using OpenTelemetry Collection
 
 Both the methods require the Jolokia agent to collect metrics. The steps to configure Jolokia JVM Agent in Cassandra are as below:
 
@@ -492,7 +492,7 @@ At this point, Cassandra logs should start flowing into Sumo Logic.
 
 </details>
 
-<details><summary>Method B: Using Open Telemetry</summary>
+<details><summary>Method B: Using OpenTelemetry</summary>
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and filelog receiver for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic.
 

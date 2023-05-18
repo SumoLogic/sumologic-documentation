@@ -194,7 +194,7 @@ Next, if required, you can use the array elements to perform additional operati
 _sourceCategory=O365*
 | json field=_raw "CreationTime", "Id"
 | json "Actor[*].Type" as ActorType
-| extract field=ActorType"(?<Type>\d+)" multi
+| extract field=ActorType "(?<Type>\d+)" multi
 | max(Type) by CreationTime, Id
 ```
 

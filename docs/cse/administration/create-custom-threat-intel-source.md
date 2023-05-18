@@ -59,12 +59,12 @@ Your new source should now appear on the **Threat Intelligence** page.
         reached, the indicator will be removed from the source. When you
         click in the field, you’ll be prompted to select a date and
         time.
-    1. Click **Add**. <br/>![import-indicators.png](/img/cse/import-indicators.png)
+    1. Click **Add**.
 
 ### Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
-save time by creating a .csv file and uploading it to CSE.
+save time by creating a .csv file and uploading it to CSE.<br/>![import-indicators.png](/img/cse/import-indicators.png)
 
 #### Create a CSV file
 
@@ -74,11 +74,15 @@ The .csv file can contain up to three columns, which are described below. 
 | :-- | :-- |
 | value  | Required. Must be one of the following: <br/>- A valid IPV4 or IPv6 address<br/>- A valid, complete URL <br/>- A valid email address<br/>- A hostname (without protocol or path)<br/>- A hexadecimal string of 32, 40, 64, or 128 characters |
 | description | Optional.  |  
-| expires| Optional. The data and time when you want the indicator to be removed, in any ISO date format. For example: |
+| expires| Optional. The data and time when you want the indicator to be removed, in any ISO date format. |
+| active | Required. Specifies whether the indicator actively looks for threat intel in Records. Valid values are `true` or `false`. |
 
 **Example .csv file**
 
-`value,description,expires mvtexco.com,EMEA guidance 22.333.22.252,Tante Intel,2022-06-01 01:00 PM`
+```
+value,description,expires,active
+22.333.22.252,Tante Intel,2022-06-01 01:00 PM,true
+```
 
 ### Upload the file
 

@@ -1,5 +1,5 @@
 ---
-title: Metrics Monitors Window Update
+title: February 6, 2023 (Metrics)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - monitors
@@ -12,4 +12,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We've enhanced the alerting logic for Metrics Monitors to ensure more accurate alerts. For monitors that alert when all data points are above a given threshold `at all times within`, we've added a customizable parameter for the minimum number of required data points within an alerting window. And, for any existing monitor, the default setting is 2, which means that two data points are required within an alerting window to generate an alert. [Learn more](/docs/alerts/monitors/create-monitor/#alert-and-recovery-window).
+Update - We've enhanced the alerting logic for Metrics Monitors to ensure more accurate alerts. For monitors that alert when all data points are above a given threshold `at all times within`, we've added a customizable parameter for the minimum number of required data points within an alerting window. And, for any existing monitor, the default setting is 2, which means that two data points are required within an alerting window to generate an alert. [Learn more](/docs/alerts/monitors/create-monitor/#alert-and-recovery-window).

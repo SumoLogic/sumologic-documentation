@@ -51,7 +51,7 @@ not be applicable.
         Below are the recommended approaches to set up Dynamic Parsing of JSON:
 
         * If you are not using Partitions we recommend using [metadata](../search-basics/built-in-metadata.md) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
-        * We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS Cloudtrail logs, and they are stored in `_index=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_index=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
+        * We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_index=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_index=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
         :::
 
 1. Review your form inputs and when satisfied click **Save**.

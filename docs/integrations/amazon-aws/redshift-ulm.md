@@ -179,7 +179,7 @@ This section has instruction for setting up collection of logs and metrics for t
 
 ### Step 1. Plan source categories
 
-Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each.  A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
+Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each. A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
 
 * For the AWS S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
 * For the AWS CloudTrail source for Redshift CloudTrail Events, you could specify a source category of `AWS/CloudTrail`.
@@ -198,10 +198,10 @@ In this step, you enable audit logging for Amazon Redshift.
 For information about connection logs and user logs, see [STL_CONNECTION_LOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_CONNECTION_LOG.html) and [STL_USERLOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_USERLOG.html) in AWS help.
 
 
-### Step 3: Configure AWS S3 source for Amazon Redshift Audit logs collection
+### Step 3: Configure Amazon S3 source for Amazon Redshift Audit logs collection
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
+2. To your Hosted Collector, add an [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.
@@ -226,7 +226,7 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
    * **S3 Region**. Select the Amazon Region for your CloudTrail Redshift S3 bucket.
    *    * **Bucket Name**. Enter the exact name of your CloudTrail Redshift S3 bucket.
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)..)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category**. Enter a source category. For example, AWS/Cloudtrail.
+   * **Source Category**. Enter a source category. For example, AWS/CloudTrail.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
    * **Enable Timestamp Parsing**. Select the checkbox.
@@ -252,27 +252,9 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 ## Installing the Amazon Redshift ULM App
 
-Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards).
+Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Amazon Redshift Dashboards
 
