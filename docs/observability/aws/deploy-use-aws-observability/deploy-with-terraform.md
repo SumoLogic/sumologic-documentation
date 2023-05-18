@@ -1550,7 +1550,7 @@ The following table provides a list of all source parameters and their default v
 
 ## Troubleshooting
 
-This section provides information on how to troubleshoot failures while deploying AWS observability solution using Terraform.
+This section provides information on how to troubleshoot failures while deploying our AWS Observability solution using Terraform.
 
 ### Python command not found
 #### Error Message
@@ -1622,7 +1622,7 @@ on .terraform/modules/account.sumo_observability/provider.tf line 5, in provider
 admin_mode = var.sumologic_folder_installation_location == "Personal folder" ? false:true
 ```
 #### Solution
-Sumologic provider [version 2.10.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#2100-september-22-2021) onwards supports `admin_mode` <br/>Refer the `admin_mode` module available [here](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
+Sumologic provider [version 2.10.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#2100-september-22-2021) onwards supports `admin_mode` <br/>Refer to the [`admin_mode` module](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
 
 ### Invalid function argument
 #### Error Message
