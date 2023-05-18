@@ -106,7 +106,7 @@ In this section, we'll introduce the following concepts:
   </div>
   <div className="box smallbox16 card">
     <div className="container">
-    <a href="/docs/metrics/metrics-operators/parse/"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>parse</h4></a>
+    <a href="/docs/metrics/metrics-operators/parse"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>parse</h4></a>
     <p>Learn how to parse the specified field to create new fields to use in the metrics query.</p>
     </div>
   </div>
@@ -134,33 +134,33 @@ In this section, we'll introduce the following concepts:
     <p>Learn how to calculate the per-second rate of change between consecutive data points.</p>
     </div>
   </div>
-      <div className="box smallbox21 card">
-      <div className="container">
-      <a href="/docs/metrics/metrics-operators/histogram_quantile"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>stddev</h4></a>
-      <p>Learn how to measure the magnitude of deviations between the values in a time series.</p>
-      </div>
+  <div className="box smallbox21 card">
+    <div className="container">
+    <a href="/docs/metrics/metrics-operators/stddev"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>stddev</h4></a>
+    <p>Learn how to measure the magnitude of deviations between the values in a time series.</p>
     </div>
-    <div className="box smallbox22 card">
-      <div className="container">
-      <a href="/docs/metrics/metrics-operators/in"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>sum</h4></a>
-      <p>Learn how to calculate the sum of the metrics values that match the query.</p>
-      </div>
+  </div>
+  <div className="box smallbox22 card">
+    <div className="container">
+    <a href="/docs/metrics/metrics-operators/sum"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>sum</h4></a>
+    <p>Learn how to calculate the sum of the metrics values that match the query.</p>
     </div>
+  </div>
     <div className="box smallbox23 card">
       <div className="container">
-      <a href="/docs/metrics/metrics-operators/max"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>timeshift</h4></a>
+      <a href="/docs/metrics/metrics-operators/timeshift"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>timeshift</h4></a>
       <p>Learn how to shift the time series from your metrics query by a specified period of time.</p>
       </div>
     </div>
     <div className="box smallbox24 card">
       <div className="container">
-      <a href="/docs/metrics/metrics-operators/min"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>topk</h4></a>
+      <a href="/docs/metrics/metrics-operators/topk"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>topk</h4></a>
       <p>Learn to apply a specified aggregation function to the time series that match the query selector.</p>
       </div>
     </div>
     <div className="box smallbox25 card">
       <div className="container">
-      <a href="/docs/metrics/metrics-operators/outlier"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>where</h4></a>
+      <a href="/docs/metrics/metrics-operators/where"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>where</h4></a>
       <p>Learn how to filter out entire time series, or individual data points within a time series.</p>
       </div>
     </div>
