@@ -132,7 +132,7 @@ sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqls
 
 ### SQL Server - Overview
 
-The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server (s) deployed in your cluster. This dashboard also provides informations on login activities and methods by users.
+The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server (s) deployed in your cluster. This dashboard also provides information on login activities and methods by users.
 
 Use this dashboard to:
 -   Keep track of Counts like - Deadlock, Error, Backup failure, mirroring errors and insufficient space issue.
