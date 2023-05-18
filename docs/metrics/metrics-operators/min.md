@@ -26,7 +26,7 @@ dep=prod metric=CPU_Sys | min
 
 ### Minimum metric value across by a tag value
 
-This query returns the minimum `CPU_System` value by node for each time interval across all matching time series.
+This query returns the minimum `CPU_Sys` value by node for each time interval across all matching time series.
 
 ```sql
 cluster=search metric=CPU_Sys | min by node
