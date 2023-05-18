@@ -1610,7 +1610,7 @@ on .terraform/modules/account.sumo_observability.app-modules/alb_app.tf line 13,
 managed_apps = {
 ```
 #### Solution
-Refer the module available [here](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-integrations/tree/master/sumologic).
+Refer to [this module in GitHub](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-integrations/tree/master/sumologic).
 
 ### Argument named *admin_mode* is not expected
 #### Error Message
