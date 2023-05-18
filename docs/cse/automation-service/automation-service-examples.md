@@ -81,7 +81,7 @@ The following example shows how to add an enrichment to an Insight using the “
 
 ## Intermediate example: Configure a notification 
 
-The following example shows how to configure a notification that sends an email upon completion of the action to perform a log search in Sumo Logic core platform.
+The following example shows how to configure a notification that sends an email upon completion of an action to perform a log search in Sumo Logic core platform.
 
 1. Edit the Sumo Logic CIP resource:
    1. Click the **Configuration** button (gear icon) at the top of the UI.
@@ -89,43 +89,43 @@ The following example shows how to configure a notification that sends an email 
    1. From the Automation screen, click **Manage Playbooks**.
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic CIP**.
-   1. Hover your mouse over the resource name and click the **Edit** button that appears.
-   1. Enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
+   1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" width="600"/>
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
    1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**. 
    1. Select your **Time Zone**.
-   1. Click **Save**.
+   1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-edit-sumo-logic-resource.png')} alt="Edit a resource" width="400"/>
 1. Create the playbook:
    1. Click **Playbook** in the navigation menu.
-   1. Click the **+** button to the left of **Playbook**.
-   1. Give your playbook a **Name**, such as **Notification for a log search**. 
+   1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
+   1. In the **New playbook** dialog, give your playbook a **Name**, such as **Notification for a log search**. 
    1. For **Type**, enter **CSE**. 
    1. Enter a **Description**.
    1. Click **Create**.
 1. Add the "Search Sumo Logic" action to the playbook:
    1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
    1. Click the **Edit** button (pencil icon) on the **START** node.
-   1. Select **Insight** from the dropdown menu and click **UPDATE**.
+   1. In the **Edit node** dialog, select **Insight** from the dropdown menu and click **UPDATE**.
    1. Click the **Add Node** button (**+** icon) on **START**.
-   1. Select **Action**.
-   1. For **Integration**, select Sumo Logic CIP.
+   1. In the **Add node** dialog, select **Action**.
+   1. For **Integration**, select **Sumo Logic CIP**.
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **Search Sumo Logic**.
    1. In the **Query** box enter the search query you want to make in the Sumo Logic core platform (for example,  `_sourceCategory=collection`). For help with queries, see [General Search Examples Cheat Sheet](https://help.sumologic.com/docs/search/search-cheat-sheets/general-search-examples/). 
    1. For **Last Period** select **1 Hour**.
-   1. Click **Create**. 
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-search-sumo-logic-node.png')} alt="Add Search Sumo Logic node" width="500"/> 
 1. Add the "Send Email" action to the playbook:
    1. Hover your mouse over the new **Search Sumo Logic** node.
    1. Click the **Add Node** button (**+** icon) at the bottom of the **Search Sumo Logic** node.
    1. Select **Action**.
-   1. For **Integration**, select **Basic Tools**.
+   1. In the **Add node** dialog, ror **Integration** select **Basic Tools**.
    1. Ensure that **Type** is **Notification**.
    1. For **Action** select **Send Email**. 
    1. In **Recipients** enter your email address and press Enter.
    1. For **Subject** type a subject line for the email (for example, "Results of Sumo Logic log search"). 
    1. In **Plain text content** enter the text you want to appear in the body of the email. For example, enter "Search in Sumo Logic was executed. Click the Automations tab at the top of the Insight for which the 'Notification for a log search' automation was run. Click 'View Playbook' to see the results."
    1. Copy the plain text content into **HTML content** and add formatting if desired.
-   1. Click **Create**. 
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-send-email-node.png')} alt="Add Send Email node" width="500"/>  
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
