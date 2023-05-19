@@ -34,7 +34,7 @@ eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
 This query returns the value of the `CPU_Idle` metric, multiplied by 100.
 
 ```
-_sourceCategory=ApacheHttpServer metric=CPU_Idle | eval _value * 100
+metric=CPU_Idle | eval _value * 100
 ```
 
 **Example 2**
