@@ -119,7 +119,6 @@ See details of threats allowed and blocked by AWS WAF.
 <img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-threat-intelligence.png')} alt="AWS WAF" />
 
 
-
 ### AWS WAF Traffic
 
 See details of allowed and blocked AWS WAF traffic by location, rules and outliers.
