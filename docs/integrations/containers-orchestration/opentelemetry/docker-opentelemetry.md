@@ -47,7 +47,7 @@ Path to this JSON file will be required in the [next step](#step-2-configure-int
 
 ## Collecting Logs, Metrics, and Installing app for Docker​
 
-Follow the below steps for collecting logs, metric and installing the app:
+Follow the below steps for collecting logs, metrics, and installing the app.
 
 ### Step 1: Set up Collector
 
