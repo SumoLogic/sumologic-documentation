@@ -1547,3 +1547,90 @@ The following table provides a list of all source parameters and their default v
 | `email_notifications`	Email Notifications to be sent by the alert. | `[ ]` |
 | `connection_notifications` | Connection Notifications to be sent by the alert. | `[ ]` |
 | `parent_folder_id` | The folder ID is automatically generated. Do not enter a value for this parameter. This is the folder ID to install the apps into. A folder using the provided name will be added in "apps_folder_name". If the folder ID is empty, apps will be installed in the Personal folder. | Ignore this parameter. |
+
+## Troubleshooting
+
+This section provides information on how to troubleshoot failures while deploying our AWS Observability solution using Terraform.
+
+### Python command not found
+#### Error Message
+
+```
+python source-module/attach_fields_to_source.py
+Python: command not found
+```
+#### Solution
+Identify and replace `python` with `python3` in [source-module/update_sources.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/source-module/update_sources.tf#L12).
+
+### Module not found
+#### Error Message
+
+```
+Local-exec provisioner error
+Module Not Found Error: No Module named ‘sumologic’
+```
+#### Solution
+Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumologic-solution-templates/blob/AWSO_FY23Q4_Release/aws-observability-terraform/providers.tf#L1).
+
+### Hierarchy named 'AWS Observability' already exist
+#### Error Message
+`"errors":[{"code":"hierarchy:duplicate","message":"hierarchy named 'AWS Observability' already exist"}]`
+#### Solution
+Delete existing hierarchy and a create new one:<br/>
+1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
+  ```sql
+  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
+  ```
+1. Delete the existing Hierarchy. Learn [more](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
+  ```sql
+  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
+  ```
+
+### Cannot import name 'SumoLogic' from 'sumologic'
+#### Error Message
+
+```
+from sumologic import SumoLogic
+Import Error: cannot import name 'SumoLogic' from 'sumologic'
+(/usr/local/lib/python3.10/site-packages/sumologic/__init__.py)
+```
+#### Solution
+The package is [sumologic-sdk](https://pypi.org/project/sumologic-sdk/) and install it for AWS observability solution using the following command:
+  ```sql
+  pip install sumologic-sdk
+  ```
+
+### Argument named *managed_apps* is not expected
+#### Error Message
+
+```
+An argument named managed_apps is not expected here.
+Error: Unsupported argument
+on .terraform/modules/account.sumo_observability.app-modules/alb_app.tf line 13, in module "alb_module":
+managed_apps = {
+```
+#### Solution
+Refer to [this module in GitHub](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-integrations/tree/master/sumologic).
+
+### Argument named *admin_mode* is not expected
+#### Error Message
+
+```
+An argument named admin_mode is not expected here.
+Error: Unsupported argument
+on .terraform/modules/account.sumo_observability/provider.tf line 5, in provider "sumologic":
+admin_mode = var.sumologic_folder_installation_location == "Personal folder" ? false:true
+```
+#### Solution
+Sumologic provider [version 2.10.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#2100-september-22-2021) onwards supports `admin_mode` <br/>Refer to the [`admin_mode` module](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
+
+### Invalid function argument
+#### Error Message
+
+```
+Error: Invalid function argument
+on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologic.tf line 67, in resource "sumologic_content" "SumoLogicApps":
+67: config = file(each.value.content_json)
+```
+#### Solution
+Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom terraform script accordingly.
