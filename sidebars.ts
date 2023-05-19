@@ -1517,8 +1517,8 @@ module.exports = {
                 label: 'Go',
                 collapsible: true,
                 collapsed: true,
-                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/index'},
                 items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/index',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/go/traceid-and-spanid-injection-into-logs',
                 ],
               },
@@ -1529,8 +1529,8 @@ module.exports = {
                 label: 'JavaScript',
                 collapsible: true,
                 collapsed: true,
-                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/index'},
                 items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/index',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/traceid-spanid-injection-into-logs',
                 ],
               },
@@ -1539,8 +1539,8 @@ module.exports = {
                 label: 'Java',
                 collapsible: true,
                 collapsed: true,
-                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/index'},
                 items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/index',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration',
                 ],
@@ -1550,8 +1550,8 @@ module.exports = {
                 label: '.NET',
                 collapsible: true,
                 collapsed: true,
-                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/index'},
                 items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/index',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net/traceid-spanid-injection-into-logs',
                 ],
               },
@@ -1560,8 +1560,8 @@ module.exports = {
                 label: 'Python',
                 collapsible: true,
                 collapsed: true,
-                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/index'},
                 items: [
+                  'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/index',
                   'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python/traceid-spanid-injection-into-logs',
                 ],
               },
