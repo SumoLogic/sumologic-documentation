@@ -13,16 +13,17 @@ You can use the `fillmissing` operator to fill empty time slices in metric quer
 The `fillmissing` operator is supported in the metric query tab, and in the [Metrics Query Builder](/docs/metrics/metrics-queries/metrics-explorer), currently in beta. 
 :::
 
-## fillmissing Syntax
+## Syntax
 
 ```sql
-metric query | fillmissing [using] <empty | interpolation | last | fixed>
+fillmissing [using] <policy>
 ```
 
+Where `<policy>` is one of:
 * `empty`. No data point is derived, and the visualization is discontinuous.
 * `interpolation`. The derived data point is a linear interpolation of the data points prior to and after the empty time slice(s).
-* `Last`. The derived data point is the same value as the previous data point.
-* `fixed`. With this option, you supply a fixed value, for example “50”, and the derived data point will have that value.
+* `last`. The derived data point is the same value as the previous data point.
+* `<fixed>`. With this option, you supply a fixed value, for example “50”, and the derived data point will have that value.
 
 ## Query without fillmissing
 
