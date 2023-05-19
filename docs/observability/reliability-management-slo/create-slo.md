@@ -130,7 +130,7 @@ Follow the instructions below based on the query type:
 
 You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
 
-#### Limitations 
+#### Limitations
 
 - Tag keys cannot start with the prefixes `sumo.` or `_`
 - Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
@@ -160,8 +160,14 @@ After you've added a tag, you'll see it populate in the **Tags** column next to 
 
 To filter your SLOs by tag:
 
-1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" />
+1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
 1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
+
+In this tag filter example query below, it's looking for SLOs where the `app` is either `sumo+1` OR `sumologic`, AND the `event` is `api-call`.
+
+<img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
 
 #### Use cases
 
