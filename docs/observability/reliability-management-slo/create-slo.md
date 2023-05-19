@@ -118,7 +118,7 @@ Follow the instructions below based on the query type:
 9. Enter SLO Details:
    * **Name**. Name of the SLO.
    * **Description**. Short explanation of your SLO.
-   * **Tags**. Tags are key/value pairs which associate SLO with a particular category. [Learn more here](#slo-tags-and-filters). These tags have additional metadata to describe an SLO beyond the name and description, which can help you categorize, search, and filter your SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
+   * **Tags**. Tags are key/value pairs that allow you to apply additional metadata to your SLOs beyond the name and description. [Learn more here](#slo-tags-and-filters). Tags can help you categorize, search, and filter your SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
   :::info
   You can associate multiple tags with your SLO.
   :::
