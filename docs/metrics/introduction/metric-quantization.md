@@ -224,7 +224,7 @@ Also, you can skip specifying target quantization interval:
 metric=CPU_Idle | quantize using max
 ```
 
-In this case Sumo will automatically determine appropriate quantization interval and quantize to the `max` rollup type.
+In this case, Sumo Logic will automatically determine appropriate quantization interval and quantize to the `max` rollup type.
 
 :::note
 If the `quantize` operator in your query is preceded by another metrics operator, a rollup type you specify with `using` will be ignored – it will not be applied at the selector level.
