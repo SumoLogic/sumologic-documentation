@@ -57,11 +57,16 @@ Following is an example of selecting the action’s resource while building a pl
 
 ## Playbook
 
-:::sumo Micro Lesson
+A **Playbook** is a predefined set of actions or tasks to respond to a certain event or incident type. The creation and utilization of playbooks can allow an organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
-Create Custom Playbooks in Cloud SOAR.
+Playbooks are automated workflows which can be configured to execute
+automatically without user intervention, acting on information from the
+incident, or can be executed in interactive mode, where user input is
+required to authorize predefined actions.
 
-<Iframe url="https://www.youtube.com/embed/pcDm71wGyGs"
+Watch this micro lesson to learn how to create custom playbooks.
+
+<Iframe url="https://www.youtube.com/embed/pcDm71wGyGs?rel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -71,14 +76,8 @@ Create Custom Playbooks in Cloud SOAR.
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-:::
 
-A **Playbook** is a predefined set of actions or tasks to respond to a certain event or incident type. The creation and utilization of playbooks can allow an organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
-
-Playbooks are automated workflows which can be configured to execute
-automatically without user intervention, acting on information from the
-incident, or can be executed in interactive mode, where user input is
-required to authorize predefined actions.
+### Configure a new playbook 
 
 To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
 
