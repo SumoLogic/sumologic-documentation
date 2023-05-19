@@ -21,7 +21,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/metrics/metrics-queries/map-charts"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Map Charts</h4></a>
-  <p>Learn how to visualize metric query results by geographic location.</p>
+  <p>Learn how to visualize metrics query results by geographic location.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
