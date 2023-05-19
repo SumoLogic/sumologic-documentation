@@ -22,7 +22,7 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 
 ## Sample Log Message
 
-<details><summary>Click here to expand</summary>
+<details><summary>View Sample Log Message</summary>
 
 ```json title="Audit Activity Message"
 {
