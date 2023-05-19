@@ -70,7 +70,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs to Sumo
 
-Once you have downloaded the yaml file as described in the previous step, follow the below steps based on your platform.
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Docker instance that needs to be monitored.
 1. Place `Env` file in the `/etc/otelcol-sumo/env/` directory.
