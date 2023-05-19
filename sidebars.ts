@@ -2256,6 +2256,7 @@ integrations: [
             'cse/ingestion/cse-ingestion-best-practices',
             'cse/ingestion/products-with-log-mappings',
             'cse/ingestion/view-mappers-for-product',
+            'cse/ingestion/sumo-logic-ingest-mapping',
             'cse/ingestion/auth0',
             'cse/ingestion/aws-application-load-balancer',
             'cse/ingestion/aws-cloudtrail',
@@ -2286,7 +2287,6 @@ integrations: [
             'cse/ingestion/symantec-proxy-secure-gateway-blue-coat-proxy',
             'cse/ingestion/zscaler-nss',
             'cse/ingestion/zscaler-private-access',
-            'cse/ingestion/sumo-logic-ingest-mapping',
           ],
         },
         {
