@@ -245,7 +245,7 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 
 ## Sample Query
 
-<details><summary>Click here to expand</summary>
+<details><summary>View Sample Queries</summary>
 
 ```sql title="Audis by Resource Categories (Audit Activity)"
 _sourceCategory="azure_ad_reporting" "activityDisplayName" "operationType"
