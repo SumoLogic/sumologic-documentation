@@ -69,7 +69,7 @@ Once you have the yaml file downloaded in step 2, you can copy it to the machine
 
 After successful execution of the above command, Sumo will start receiving the data from your host machine.
 
-Press **Next** . This will install the app to your Sumo Logic Org. The app consists of Dashboards.
+Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
 
 Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
@@ -132,11 +132,11 @@ sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqls
 
 ### SQL Server - Overview
 
-The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server (s) deployed in your cluster. This dashboard also provides information on login activities and methods by users.
+The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server(s) deployed in your cluster. This dashboard also provides information on login activities and methods by users.
 
 Use this dashboard to:
--   Keep track of Counts like - Deadlock, Error, Backup failure, mirroring errors and insufficient space issue.
--   Examine Login activities, failures, and failure reasons.
+- Keep track of Deadlock, Error, Backup failure, mirroring errors, and insufficient space issue counts.
+- Examine Login activities, failures, and failure reasons.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
 
@@ -145,9 +145,9 @@ Use this dashboard to:
 The **SQL Server - General Health** dashboard gives you the overall health of SQL Server. Use this dashboard to analyze server events including stopped/up servers, and corresponding down/uptime, monitor disk space percentage utilization, wait time trend, app-domain issues by SQL server.
 
 Use this dashboard to:
--   Analyze server events including stopped/up servers, and corresponding down/uptime.
--   Monitor server events trends including SQL Server wait time.
--   Get insight into app-domain and percentage disk utilization issues by SQL Server.
+- Analyze server events including stopped/up servers, and corresponding down/uptime.
+- Monitor server events trends including SQL Server wait time.
+- Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
 
@@ -155,11 +155,11 @@ Use this dashboard to:
 
 The **SQL Server - Backup Restore Mirroring** dashboard provides information about:
 
--   Transaction log backup events
--   Database backup events
--   Restore activities
--   Backup failures and reasons
--   Mirroring errors
+- Transaction log backup events
+- Database backup events
+- Restore activities
+- Backup failures and reasons
+- Mirroring errors
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
 
@@ -168,8 +168,8 @@ The **SQL Server - Backup Restore Mirroring** dashboard provides information abo
 The **SQL Server - Operations** displays recent server configuration changes, number and type of configuration updates, error and warnings, high severity error, and warning trends.
 
 Use this dashboard to:
--   Get insights into configuration changes and updates to SQL server instances.
--   Monitor any errors and warnings.
+- Get insights into configuration changes and updates to SQL server instances.
+- Monitor any errors and warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Operations.png' alt="Operations"/>
 

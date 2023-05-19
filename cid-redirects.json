@@ -1346,6 +1346,7 @@
   "/docs/api/tokens": "/docs/api/token-management",
   "/docs/api/roles": "/docs/api/role-management",
   "/docs/api/users": "/docs/api/user-management",
+  "/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry/": "/docs/integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry/",
   "/Dashboards-and-Alerts/Dashboards": "/docs/dashboards-new",
   "/Dashboards-and-Alerts/Dashboards/Chart-Panel-Types": "/docs/dashboards/chart-panel-types",
   "/Dashboards-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Change-the-Color-of-a-Chart-by-Value-Range-on-the-Search-Page": "/docs/dashboards/edit-dashboards/manage-charts",
