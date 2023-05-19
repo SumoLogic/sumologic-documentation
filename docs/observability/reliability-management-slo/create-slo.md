@@ -158,8 +158,6 @@ To add a tag while creating a new SLO:
 
 After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
 
-To filter your SLOs by tag:
-
 1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
 1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
 
@@ -171,7 +169,13 @@ In this tag filter example query below, it's looking for SLOs where the `app` is
 
 #### Use cases
 
-You can leverage SLO tags in **Log Search** queries. In this example, we run a query to display all SLOs. You'll see a **Tags** column here.
+You can leverage SLO tags in **Log Search** queries. Here's a query, for example, to display all SLOs that have tags:
+
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" /><br/>
+
+```sql title="Try it yourself"
+cat sumo://content/slos | where !(tags="{}")
+```
 
 
 ## Create a Logs-based SLO
