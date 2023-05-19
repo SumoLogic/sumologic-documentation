@@ -24,7 +24,7 @@ We use the term _bucket_ to refer to the intervals across which Sumo quantizes y
 When you run a metric query, Sumo divides up your metric query time range into contiguous buckets, either automatically, or based on the interval you specify in the `quantize` operator. For example, given this query:
 
 ```sql
-cpu | quantize to 15m
+metric=CPU_Idle | quantize to 15m
 ```
 
 Sumo divides your time range into 15 minute buckets.
@@ -213,7 +213,7 @@ Specifying rollup type and quantization interval is optional for the `quantize` 
 To specify the rollup type for quantization, include the `quantize` operator as the first operator in your query (immediately after the selector), and specify the rolloup type with the `using` clause. For example, given this query:
 
 ```sql
-cpu | quantize to 15m using sum
+metric=CPU_Idle | quantize to 15m using sum
 ```
 
 Sumo will quantize to the `sum` rollup type.
@@ -221,10 +221,10 @@ Sumo will quantize to the `sum` rollup type.
 Also, you can skip specifying target quantization interval:
 
 ```sql
-cpu | quantize using max
+metric=CPU_Idle | quantize using max
 ```
 
-In this case Sumo will automatically determine appropriate interval and quantize to the `max` rollup type.
+In this case Sumo will automatically determine appropriate quantization interval and quantize to the `max` rollup type.
 
 :::note
 If the `quantize` operator in your query is preceded by another metrics operator, a rollup type you specify with `using` will be ignored – it will not be applied at the selector level.
@@ -243,37 +243,37 @@ If your metric query uses the `quantize` operator without specifying a rollup ty
    </td>
   </tr>
   <tr>
-   <td><code>cpu | quantize to 1m</code>
+   <td><code>metric=CPU_Idle | quantize to 1m</code>
    </td>
    <td>Use <code>avg</code> rollup.
    </td>
   </tr>
   <tr>
-   <td><code>cpu | quantize to 1m | min</code>
+   <td><code>metric=CPU_Idle | quantize to 1m | min</code>
    </td>
    <td>Use <code>min</code> rollup.
    </td>
   </tr>
   <tr>
-   <td><code>cpu | quantize to 1m | max</code>
+   <td><code>metric=CPU_Idle | quantize to 1m | max</code>
    </td>
    <td>Use <code>max</code> rollup.
    </td>
   </tr>
   <tr>
-   <td><code>cpu | quantize to 1m | sum</code>
+   <td><code>metric=CPU_Idle | quantize to 1m | sum</code>
    </td>
    <td>Use <code>avg</code> rollup.
    </td>
   </tr>
   <tr>
-   <td><code>cpu | quantize to 1m | count</code>
+   <td><code>metric=CPU_Idle | quantize to 1m | count</code>
    </td>
    <td>Use <code>avg</code> rollup.
    </td>
   </tr>
   <tr>
-   <td><code>cpu | quantize to 1m | avg</code>
+   <td><code>metric=CPU_Idle | quantize to 1m | avg</code>
    </td>
    <td>Use <code>avg</code> rollup.
    </td>
@@ -285,5 +285,5 @@ If your metric query uses the `quantize` operator without specifying a rollup ty
 The descriptive points might be passed through without change. For example, the `parse` operator changes time series metadata but lets data points through unchanged. For example:
 
 ```sql
-metric=CPU_Idle | quantize to 5s | parse field=_sourceHost as cluster,instance | avg by cluster
+metric=CPU_Idle | quantize to 5s | parse field=_sourceHost * as host | avg by cluster
 ```

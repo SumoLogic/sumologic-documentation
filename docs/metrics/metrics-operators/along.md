@@ -1,6 +1,6 @@
 ---
 id: along
-title: along Metrics Operator
+title: along Metrics Statement
 sidebar_label: along
 keywords:
     - metrics
@@ -10,7 +10,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The `along` metrics operator is useful when you join queries – it allows you to control what results are joined based on the value of one or more result fields. For more information, see [Join Query Results](docs/metrics/introduction/joins.md).
+The `along` metrics statement is useful when you join queries – it allows you to control what results are joined based on the value of one or more result fields. For more information, see [Join Query Results](docs/metrics/introduction/joins.md).
 
 ## Syntax
 

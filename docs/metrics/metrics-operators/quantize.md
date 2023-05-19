@@ -19,7 +19,7 @@ quantize [to INTERVAL] [using ROLLUP] [drop last]
 
 where:
 
-* `INTERVAL` is the duration over which you want to quantize the metrics, in seconds (`s`) , minutes (`m`), hours (`h`), or days (`d`).
+* `INTERVAL` is the duration over which you want to quantize the metrics, in seconds (`s`), minutes (`m`), hours (`h`), or days (`d`).
 * `ROLLUP` is  `avg, min, max, sum`, or `count`.
 * `drop last` causes the last time bucket to be dropped, if the end of that bucket is after the end of the query time range.
 * At least one of the `to INTERVAL` or `using ROLLUP` clauses needs to be present.
@@ -44,24 +44,24 @@ _sourceCategory=hostmetrics | quantize to 5m
 
 ### Set time bucket size and rollup type
 
-The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `sum` rollup type. Sumo will sum the metric values in each 10 minute time bucket and return that value.
+The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `max` rollup type. Sumo will take maximum of the metric values in each 10 minute time bucket and return that value.
 
 ```sql
-metric=CPU_User cluster=kafka | quantize to 10m using sum
+metric=CPU_User cluster=kafka | quantize to 10m using max
 ```
 
 ### Set time bucket size, rollup type, and drop last 
 
-The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `sum` rollup type. Sumo will sum the metric values in each 10 minute time bucket and return that value. If the last time bucket ends after the end of the query time range, that bucket is dropped.
+The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `max` rollup type. Sumo will take maximum of the metric values in each 10 minute time bucket and return that value. If the last time bucket ends after the end of the query time range, that bucket is dropped.
 
 ```sql
-metric=CPU_User cluster=kafka | quantize to 10m using sum drop last
+metric=CPU_User cluster=kafka | quantize to 10m using max drop last
 ```
 
 ### Omit time bucket size
 
-In this example we omit the `to INTERVAL` part of the query and let Sumo determine appropriate quantization interval according to [How sumo chooses rollup table and quantization interval](../introduction/metric-quantization.md#how-sumo-chooses-rollup-table-and-quantization-interval). `sum` rollup type will be used to aggregate the metrics in each time bucket.
+In this example we omit the `to INTERVAL` part of the query and let Sumo determine appropriate quantization interval according to [How Sumo chooses rollup table and quantization interval](../introduction/metric-quantization.md#how-sumo-chooses-rollup-table-and-quantization-interval). `max` rollup type will be used to aggregate the metrics in each time bucket.
 
 ```sql
-metric=CPU_User cluster=kafka | quantize using sum
+metric=CPU_User cluster=kafka | quantize using max
 ```
