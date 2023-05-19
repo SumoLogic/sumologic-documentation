@@ -52,6 +52,8 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
    ```
    systemctl enable docker
    ```
+
+### Using a proxy   
 1. If docker has to use a proxy to pull images, follow the below instructions:
    ```
    mkdir -p /etc/systemd/system/docker.service.d
@@ -108,6 +110,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    ```
    sudo yum install automation-bridge-X.X.rpm
    ```
+
+### Installation configuration
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
    * `1SOAR_URL1`
    * `1SOAR_TOKEN1`
