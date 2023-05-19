@@ -159,6 +159,10 @@ If you are not using the SIEM:
    ```
 :::
 
+### Configuring the automation bridge for High Availability
+
+You may elect to deploy and register multiple bridges to your CSE tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective user-configuration.conf file upon installation / registration. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active node(s) utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the Playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
+
 ### Post-installation checks
 
 To check if the bridge is running correctly, run the following command:
