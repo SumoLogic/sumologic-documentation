@@ -86,7 +86,7 @@ sources and the acted upon automatically or through manual actions.
 ### ARK
 
 ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR) algorithm.
-CBR solves new problems by adapting previously successful solutions to similar problems. In Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
+CBR solves new problems by adapting previously successful solutions to similar problems. In Cloud SOAR, this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
 
 ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
 
