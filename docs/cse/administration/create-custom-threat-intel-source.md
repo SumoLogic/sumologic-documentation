@@ -9,6 +9,21 @@ This topic has information about setting up a *custom threat intel source* in CS
 
 You can set up and populate custom threat intel sources interactively from the CSE UI, by uploading a .csv file, or using CSE APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
 
+Watch this micro lesson to learn more about Cloud SIEM threat intel.
+
+<Iframe url="https://www.youtube.com/embed/-DHQ2IBy5Ko?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ### How CSE uses indicators
 
 When CSE encounters an indicator from your threat source in an incoming
