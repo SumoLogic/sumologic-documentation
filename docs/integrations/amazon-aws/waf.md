@@ -111,7 +111,6 @@ Now that you have set up collection for AWS WAF, install the Sumo Logic App for 
 ### AWS WAF Overview
 
 See an overview of threats detected and traffic passing through AWS WAF.
-
 <img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-overview.png')} alt="AWS WAF" />
 
 
