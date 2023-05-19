@@ -13,11 +13,10 @@ The **Incident** section lists all Cloud SOAR incidents. Clicking on any of the 
 
 <img src={useBaseUrl('img/cloud-soar/image140.png')} alt="incidents"/>
 
-:::sumo Micro Lesson
 
-Watch a quick overview of Incidents in Cloud SOAR.
+Watch this micro lesson to learn more about Incidents in Cloud SOAR.
 
-<Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA"
+<Iframe url="https://www.youtube.com/embed/GDWFGJ8JOqA?rel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -27,7 +26,6 @@ Watch a quick overview of Incidents in Cloud SOAR.
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-:::
 
 ## Filtering Incidents
 
@@ -127,11 +125,9 @@ The Incident Overview section contains all the pertinent information for a speci
 
 The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **playbook**, **Tasks**, and **Notes**.
 
-:::sumo Micro Lesson
+Watch this micro lesson to learn more about security automation with playbooks. 
 
-Security Automation with Cloud SOAR Playbooks.
-
-<Iframe url="https://www.youtube.com/embed/ZGSxFsfyrdI"
+<Iframe url="https://www.youtube.com/embed/ZGSxFsfyrdIrel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -141,7 +137,6 @@ Security Automation with Cloud SOAR Playbooks.
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-:::
 
 
 #### War Room
