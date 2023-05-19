@@ -130,6 +130,14 @@ Follow the instructions below based on the query type:
 
 You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
 
+#### Limitations 
+
+- Tag keys cannot start with the prefixes `sumo.` or `_`
+- Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
+- Tag values can only contain letters, white space, numbers, `_`, `.`, `/`, `=`, `+`, `-`, `@`
+
+You can associate a maximum of 50 tags per SLO.
+
 #### Add a Tag
 
 To add a tag(s) to an existing SLO:
