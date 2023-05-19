@@ -128,7 +128,7 @@ Follow the instructions below based on the query type:
 
 ### SLO Tags and Filters
 
-You can add key/value pair tags to your SLOs to allow you to better organize, sort, and filter them. As an example, you might find it useful to add variables such as environment, application name, and region.
+You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
 
 #### Add a Tag
 
