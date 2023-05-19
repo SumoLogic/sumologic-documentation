@@ -57,7 +57,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox6 card">
   <div className="container">
   <a href="/docs/observability/aws/faq"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
-  <p>Get to know FAQs and information about our AWS Observability Solution apps.</p>
+  <p>Learn answers to frequently asked questions about our AWS Observability Solution apps.</p>
   </div>
 </div>
 </div>
