@@ -57,7 +57,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox8 card">
 <div className="container">
   <a href="/docs/metrics/metrics-queries/metric-query-error-messages"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Error Messages</h4></a>
-  <p>Know about warning and error messages presented for long-running metric queries and metric queries.</p>
+  <p>Learn about warnings and error messages presented for long-running metric queries and metric queries.</p>
   </div>
 </div>
 <div className="box smallbox9 card">
