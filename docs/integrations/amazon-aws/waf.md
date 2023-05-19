@@ -116,7 +116,6 @@ See an overview of threats detected and traffic passing through AWS WAF.
 ### AWS WAF Threat Intelligence
 
 See details of threats allowed and blocked by AWS WAF.
-
 <img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-threat-intelligence.png')} alt="AWS WAF" />
 
 
