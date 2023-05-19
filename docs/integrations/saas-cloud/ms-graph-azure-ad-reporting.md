@@ -287,18 +287,18 @@ _sourceCategory="azure_ad_reporting" "provisioningAction" "provisioningSteps" "p
 ```
 </details>
 
-## Setup Collection
+## Set up collection
 
-Follow the instructions for setting up [Microsoft Graph Azure AD Protection](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/) source and use the same source category while installing the app.
+Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/) source and use the same source category while installing the app.
 
-## Installing the Microsoft Graph Azure AD Protection app​
+## Installing the Microsoft Graph Azure AD Reporting app​
 
-This section has instructions for installing the Microsoft Graph Azure AD Protection app for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic and descriptions of each of the dashboards.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
-1. Configure **Microsoft Graph Azure AD Protection** app using the steps described in the [Microsoft Graph Azure AD Protection Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Microsoft Graph Azure AD Reporting** app using the steps described in the [Microsoft Graph Azure AD Reporting Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
@@ -308,10 +308,9 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. Click **Next**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
 The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
 
-## Viewing Microsoft Graph Azure AD Protection dashboards​​
+## Viewing Microsoft Graph Azure AD Reporting dashboards​​
 
 * All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
