@@ -6,7 +6,7 @@ description: Learn how to deploy AWS Observability Solution using Terraform.
 ---
 
 
-These instructions help you deploy AWS Observability Solution using a Terraform script. 
+These instructions help you deploy our AWS Observability Solution using a Terraform script. 
 
 To set up the AWS Observability solution using Terraform, complete the following steps:
 
