@@ -6,7 +6,7 @@ description: Learn how to deploy AWS Observability Solution using Terraform.
 ---
 
 
-These instructions help you deploy AWS Observability using a Terraform script. 
+These instructions help you deploy AWS Observability Solution using a Terraform script. 
 
 To set up the AWS Observability solution using Terraform, complete the following steps:
 
@@ -56,7 +56,7 @@ System Files:
 * [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf): Provides parameters for a Terraform module, allowing aspects of the module to be customized without altering the module's own source code, and allowing modules to be shared between different configurations. See [Input Variables](https://www.terraform.io/docs/language/values/variables.html) for more information.
 * [output.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/output.tf): Provides specific return values for a Terraform module. See [Output Values](https://www.terraform.io/docs/language/values/outputs.html) for more information.
 * [field.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/field.tf): creates fields and FERs in the Sumo Logic field schema 
-* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) present in the your Sumo Logic account.
+* [fields.sh](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/fields.sh): This script imports the existing fields and FERs (required by AWS Observability Solution) already present in your Sumo Logic account.
   
 ## Step 1: Set up the Terraform environment
 
@@ -66,9 +66,15 @@ Before you run the Terraform script, perform the following actions on a server m
     ```bash
     $ terraform --version
     ```
-1. Install the latest version of [curl](https://curl.haxx.se/download.html).
+1. Install the latest version of [curl](https://curl.haxx.se/download.html). To check the installed curl version, run the following command:
+    ```bash
+    $ curl --version
+    ```
 1. Install [Python](https://www.python.org/) version 3.7 or later.
-1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the `fields.sh` batch file.
+1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the `fields.sh` batch file. To check the installed jq version, run the following command:
+    ```bash
+    $ jq --version
+    ```
 1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to learn more.
     ```bash
     pip install sumologic-sdk
@@ -97,7 +103,7 @@ Before you run the Terraform script, perform the following actions on a server m
     :::note
     See the [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf) file and README in that folder for configuration information with permissible values for these variables. 
     :::
-1. As part of configuring the AWS Observability solution, we need to [create fields](../about.md) in Sumo Logic org. To import any fields that are already present in Sumo Logic into our Terraform state, we need to run a script. To do so, navigate to the **sumologic-solution-templates/aws-observability-terraform** folder and do the following:
+1. As part of configuring the AWS Observability solution, we need to [create fields and FERs](resources.md) in Sumo Logic org. To import any fields and or FERs that are already present in the Sumo Logic org into our Terraform state, we need to run a script. To do so, navigate to the **sumologic-solution-templates/aws-observability-terraform** folder and do the following:
    * Set the following environment variables using the commands below:
     ```bash
     export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
