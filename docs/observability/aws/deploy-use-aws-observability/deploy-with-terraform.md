@@ -73,7 +73,7 @@ Before you run the Terraform script, perform the following actions on a server m
 1. Install [Python](https://www.python.org/) version 3.7 or later.
 1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the `fields.sh` batch file. To check the installed jq version, run the following command:
     ```bash
-    $ jq --version
+    jq --version
     ```
 1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to learn more.
     ```bash
