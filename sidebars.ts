@@ -1144,6 +1144,7 @@ module.exports = {
             'search/search-query-language/search-operators/isreservedip',
             'search/search-query-language/search-operators/isvalidip',
             'search/search-query-language/search-operators/join',
+            'search/search-query-language/search-operators/jsonarraycontains',
             'search/search-query-language/search-operators/length',
             'search/search-query-language/search-operators/limit',
             'search/search-query-language/search-operators/lookup',
