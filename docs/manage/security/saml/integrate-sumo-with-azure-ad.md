@@ -51,7 +51,6 @@ The steps below are for the new Azure Management Console. For general steps for 
    1. Select **https://service.sumologic.com** as the default **Identifier (Entity ID)** in the list. (You'll update this in a later step.)
    1. Enter *https://service.sumologic.com* as the **Reply URL (Assertion Consumer Service URL)**. (You'll update this in a later step.)
    1. Click **Save** at the top of the pane, and then close the pane. 
-   
 1. In the **SAML Signing Certificate** tile, click the **Download** link for **Certificate (Base64)** to download the `<app-name>.cer` file.
 
     ![download-cert.png](/img/security/download-cert.png)
