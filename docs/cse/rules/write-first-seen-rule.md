@@ -31,6 +31,21 @@ A First Seen rule is different from other CSE rule types in that you don’t def
 
 For example, for the “First time a user logged in from a new geographic location” use case, CSE will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, CSE will create a Signal for every new geolocation detected and incrementally add to the baseline.
 
+Watch this micro lesson to learn more about First Seen rules.
+
+<Iframe url="https://www.youtube.com/embed/ssfL_c3j_r8?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
+
 ## Example rule
 The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
 <img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition"/>

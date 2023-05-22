@@ -14,6 +14,21 @@ The **Entities** page is useful for monitoring Entities that are close to having
 
 You can also update the [tags](tags-insights-signals-entities-rules.md), [suppression](about-signal-suppression.md) state, and [Criticality](entity-criticality.md) assigned to Entities, as described below in the [Update Multiple Entities](view-manage-entities.md) section below. 
 
+Watch this micro lesson to learn more about Entities.
+
+<Iframe url="https://www.youtube.com/embed/cIpLaDQAOAw?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## About Entities
 
 In CSE, an Entity is a unique actor that a Signal fired upon. CSE has a number of built-in Entity types:
