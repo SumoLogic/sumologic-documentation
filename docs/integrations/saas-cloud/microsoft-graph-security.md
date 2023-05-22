@@ -13,7 +13,7 @@ The Sumo Logic App for Microsoft Graph Security enables you to identify security
 Key features of the Microsoft Graph Security app include:
 - Detect and mitigate potential ransomware attacks.
 - Monitor endpoint security and identify potential threats.
-- Have a high-level overview of the organizational security posture, including metrics such as the number of alerts, alert severity, and status.
+- High-level overview of the organizational security posture, including metrics such as the number of alerts, alert severity, and status.
 - Allows security teams to identify potential threats and take appropriate action based on the trends and patterns of security alerts over time.
 
 ## Log Types
