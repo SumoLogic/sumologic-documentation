@@ -219,6 +219,21 @@ Any Entity with an Indicator will have an additional icon in the upper right **(
 
 Finally, if CSE has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control **(10)** will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
 
+Watch this micro lesson to learn more about the Entity relationship graph.
+
+<Iframe url="https://www.youtube.com/embed/GTTwjB8y_5k?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 #### Entity details in the right pane
 
 When you select an Entity on the page, the right pane displays details about that Entity. The information displayed depends on what type of Entity is selected and can include:

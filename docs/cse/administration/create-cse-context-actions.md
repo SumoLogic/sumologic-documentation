@@ -38,6 +38,21 @@ In the screenshot below, Context Actions are listed below the built-in **Add to 
 
 If an action name is shown in red font, that indicates that the action depends on a Record field that doesn’t exist.
 
+Watch this micro lesson to learn more about how to use context actions.
+
+<Iframe url="https://www.youtube.com/embed/PrMr3sjaJxA?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Configure a Context Action
 
 1. Click the gear icon at the top of the CSE UI and choose **Context Actions** under **Integrations**.

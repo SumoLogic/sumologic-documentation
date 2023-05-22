@@ -43,7 +43,7 @@ The Sumo Logic PCI Compliance for AWS CloudTrail App provides dashboards and sam
 
 See the details of security group activities and all AWS activities in compliance with PCI Requirement 01.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-AccessMonitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-01-Access-Monitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Security Group Activity.** Pie chart of the security group activity over the last 24 hours.
 * **Security Group Activity.** Aggregation table of the security group activity over the last 24 hours.
@@ -56,7 +56,7 @@ See the details of security group activities and all AWS activities in complianc
 
 See the details of failed logins and successful logins in compliance with PCI Requirement 10.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq10-LoginActivity.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-10-Login-Activity.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Failed API Calls.** Total number of failed API calls over the last 24 hours. Adjust time range as needed.
 * **Failed API Calls- Reason - Login Credentials and Permission Issues.** Aggregation table detailing failed API calls, source IP, destination user, event type, error code, region, and account ID.
@@ -75,7 +75,7 @@ See the details of failed logins and successful logins in compliance with PCI Re
 
 Search user account and IAM activity in compliance with PCI Requirement 08.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq08-AccountSystemMonitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-08-Account-System-Monitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Created Users.** Aggregation table of users created in the last 24 hours.
 * **Deleted Users.** Aggregation table of users deleted in the last 24 hours.
@@ -95,7 +95,7 @@ Search user account and IAM activity in compliance with PCI Requirement 08.
 
 See the successful and failed configuration changes, policy changes, and security group activity.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq0810-PrivilegedActivity.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-08-10-Privileged-Activity.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 #### Successful Configuration Changes
 * **Successful Configuration Changes.** Pie chart of the successful configuration changes over the last 24 hours.
