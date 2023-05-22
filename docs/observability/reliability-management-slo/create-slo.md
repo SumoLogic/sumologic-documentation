@@ -167,16 +167,6 @@ In this tag filter example query below, it's looking for SLOs where the `app` is
 
 <img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
 
-#### Use cases
-
-You can leverage SLO tags in **Log Search** queries. Here's a query, for example, to display all SLOs that have tags:
-
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" /><br/>
-
-```sql title="Try it yourself"
-cat sumo://content/slos | where !(tags="{}")
-```
-
 
 ## Create a Logs-based SLO
 
@@ -425,6 +415,8 @@ There are two ways to use it:
   cat sumo://content/slos
   ```
 
+#### Example 1
+
 As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
 
 You would need to create a custom graphic that combines multiple SLOs from multiple services:
@@ -446,3 +438,14 @@ You would need to create a custom graphic that combines multiple SLOs from multi
   | fields sloUniqueName, budgetRemaining
   ```
 1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+
+
+#### Example 2
+
+You can leverage SLO tags in **Log Search** queries. Here's a query, for example, to display all SLOs that have tags:
+
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" /><br/>
+
+```sql title="Try it yourself"
+cat sumo://content/slos | where !(tags="{}")
+```
