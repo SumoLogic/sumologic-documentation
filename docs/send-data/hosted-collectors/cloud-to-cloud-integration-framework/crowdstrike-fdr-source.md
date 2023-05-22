@@ -26,7 +26,7 @@ You must contact the [CrowdStrike support team](https://supportportal.crowdstrik
 
 ### Authentication
 
-Once CrowdStrike FDR is enabled in the CrowdStrike console, navigate to **Support > API Clients and Keys**. You need to **Create new credentials** to copy the **AWS Access Key ID**, **AWS Secret Access Key**, and **SQS Queue URL** to provide to Sumo Logic when creating your CrowdStrike FDR Source.
+Once CrowdStrike FDR is enabled in the CrowdStrike console, navigate to **Support** > **API Clients and Keys**. You need to **Create new credentials** to copy the **AWS Access Key ID**, **AWS Secret Access Key**, and **SQS Queue URL** to provide to Sumo Logic when creating your CrowdStrike FDR Source.
 
 ## States
 
