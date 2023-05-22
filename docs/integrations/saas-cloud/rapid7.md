@@ -15,7 +15,7 @@ Rapid7 app provides vital information, including asset count, distribution of as
 
 ## Log Types
 
-This app uses Sumo Logic’s Rapid7 Source to collect [Assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [Vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
+This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
 
 ## Sample log message
 
