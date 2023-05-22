@@ -116,17 +116,23 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox17 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="40"/><h4>Microsoft Exchange Trace Logs</h4></a>
+  <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="60"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Monitor Delivered, Failed, Quarantined, Pending, and Spam messages.</p>
   </div>
 </div>
 <div className="box smallbox18 card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/microsoft-graph-security"><img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="60"/><h4>Microsoft Graph Security </h4></a>
+  <p>Identify security threats by analysing alert logs.</p>
+  </div>
+</div>
+<div className="box smallbox19 card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/miro"><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
   <p>Monitoring and investigate Miro potential security threats.</p>
   </div>
 </div>
-<div className="box smallbox19 card">
+<div className="box smallbox20 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/ms-graph-azure-ad-reporting"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>MS Graph Azure AD Reporting</h4></a>
   <p>Monitor and analyze user activity, sign-in patterns and provisioning activities.</p>
