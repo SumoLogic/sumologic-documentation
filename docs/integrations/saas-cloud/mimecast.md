@@ -7,10 +7,10 @@ description: The Sumo Logic app for Mimecast enables you to monitor and analyz M
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/Mimecast-icon.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/mimecast-logo.png')} alt="icon" width="50"/>
 
 The Sumo Logic app for Mimecast enables you to leverage advanced security monitoring and analytics capabilities for Mimecast data. Mimecast is a cloud-based cybersecurity platform that ensures email security, continuity, and archiving. The Mimecast app for Sumo Logic is a powerful tool for monitoring and analyzing Mimecast email data, helping you to identify potential threats and improve your email security posture.
- 
+
 Key features of the Mimecast app include:
 - **Email Traffic Monitoring**: Monitor message traffic for both delivered and received emails with a detailed overview of each stage.
 - **Threat Detection Monitoring**: Monitor logs regarding messages with malicious attachments, user activity, and threat detection within the orgaization users.
@@ -74,7 +74,7 @@ The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com
 ```sql title="Messages Delivered Without TLS"
 _sourceCategory="mimecast_app" Delivered Dir
 | json "aCode","Delivered","UseTls" as a_code, delivered, use_tls nodrop
-| where delivered="true" 
+| where delivered="true"
 | where use_tls="No"
 | count_distinct(a_code)
 ```
@@ -130,4 +130,3 @@ The **Mimecast - Email Activity Summary** dashboard provides a comprehensive vie
 ### Target Threat Protection
 
 The **Mimecast - Target Threat Protection** dashboard provides a comprehensive view of the threat protection logs resulting from any malicious activity. This dashboard provides a summary of the recent attachment threats detected, recent activity on malicious URLs, and recent blocked emails. Additionally, this dashboard provides insight into the top 10 recipients and senders of malicious attachment messages and the top 10 malicious senders and targeted recipients.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Target-Threat-Protection.png')} alt="Mimecast-Target-Threat-Protection" width="750"/>
-
