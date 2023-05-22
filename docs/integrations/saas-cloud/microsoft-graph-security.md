@@ -16,7 +16,7 @@ Key features of the Microsoft Graph Security app include:
 - High-level overview of the organizational security posture, including metrics such as the number of alerts, alert severity, and status.
 - Allows security teams to identify potential threats and take appropriate action based on the trends and patterns of security alerts over time.
 
-## Log Types
+## Log types
 
 This app uses Sumo Logic’s Microsoft Graph Security Source to collect [Alerts](https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) from Microsoft Graph Security. 
 
