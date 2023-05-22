@@ -2,7 +2,7 @@
 id: palo-alto-cortex-xdr
 title: Palo Alto Cortex XDR
 sidebar_label: Palo Alto Cortex XDR
-description: The Sumo Logic App for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents to improve overall security posture.
+description: The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents to improve overall security posture.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -17,7 +17,7 @@ Key features of the Palo Alto Networks Cortex XDR app include:
 
 ## Log Types
 
-This App uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) source to collect [alerts](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Alerts) and [incidents](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Incidents) from Palo Alto Cortex XDR.
+This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) source to collect [alerts](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Alerts) and [incidents](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Incidents) from Palo Alto Cortex XDR.
 
 ## Sample Log Message
 
