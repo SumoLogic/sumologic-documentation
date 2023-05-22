@@ -11,14 +11,14 @@ This guide has information about Cloud SIEM Enterprise (CSE) schemas. In this se
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/cse/schema/schema-attributes"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="icon" width="40"/><h4>CSE Schema Attributes</h4></a>
-  <p>Learn about CSE schema attributes.</p>
+  <a href="/docs/cse/schema/record-processing-pipeline"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="icon" width="40"/><h4>Record Processing Pipeline</h4></a>
+  <p>Learn how CSE transforms incoming raw messages into Records.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/cse/schema/record-processing-pipeline"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="icon" width="40"/><h4>Record Processing Pipeline</h4></a>
-  <p>Learn how CSE transforms incoming raw messages into Records.</p>
+  <a href="/docs/cse/schema/schema-attributes"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="icon" width="40"/><h4>CSE Schema Attributes</h4></a>
+  <p>Learn about CSE schema attributes.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
