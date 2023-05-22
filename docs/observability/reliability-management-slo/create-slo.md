@@ -154,7 +154,7 @@ To add a tag while creating a new SLO:
 1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
 1. Click **Save**.
 
-#### Filter Tags
+#### Filter SLOs By Tags
 
 After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
 
