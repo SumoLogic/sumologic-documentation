@@ -18,7 +18,7 @@ This Source is available in the Fed deployment.
 
 ## Data types
 
-The CrowdStrike FDR integration will ingests the [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) logs.
+The CrowdStrike FDR integration will ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) logs.
 
 ## Prerequisite
 
