@@ -15,11 +15,11 @@ Key features of the Palo Alto Networks Cortex XDR app include:
 - **Interactive Dashboards**. Explore interactive dashboards that provide a holistic view of alerts, incidents, and threat intelligence. Visualize data with pre-built charts, graphs, and tables to understand trends, patterns, and anomalies.
 - **Incident Management**. Streamline incident management processes by tracking security incidents. Monitor incident status, and collaborate with your security team for effective incident response.
 
-## Log Types
+## Log types
 
 This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) source to collect [alerts](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Alerts) and [incidents](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Incidents) from Palo Alto Cortex XDR.
 
-## Sample Log Message
+## Sample log message
 
 <details><summary>View Sample Log Message</summary>
 
@@ -183,10 +183,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Palo Alto Cortex XDR dashboards​
 
-### Palo Alto Cortex XDR - Alerts Overview
+### Alerts Overview
 
 Palo Alto Cortex XDR - Alerts Overview dashboard provides real-time analysis of the alerts triggered and white-listed. This dashboard offers insights into the alerts based on severity over time, most frequent sources, types of triggered alerts,  geo location of all alerts, and alerts originating from high-risk countries. This dashboard provides information on the most frequent actions taken in response to alerts, the top categories of alerts, and a summary of recent alerts for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Alerts-Overview.png')} alt="Palo-Alto-Cortex-XDR-Alerts-Overview" width="800"/>
 
-### Palo Alto Cortex XDR - Incidents Overview
+### Incidents Overview
 
 **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo-Alto-Cortex-XDR-Incidents-Overview" width="800"/> 
