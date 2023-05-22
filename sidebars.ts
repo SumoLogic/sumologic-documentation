@@ -2098,6 +2098,7 @@ integrations: [
           'integrations/saas-cloud/pagerduty-v3',
           'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
+          'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
