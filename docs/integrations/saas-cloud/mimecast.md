@@ -2,7 +2,7 @@
 id: mimecast
 title: Mimecast
 sidebar_label: Mimecast
-description: The Sumo Logic App for Mimecast enables you to monitor and analyz Mimecast email data to identify potential threats and improve email security posture.
+description: The Sumo Logic app for Mimecast enables you to monitor and analyz Mimecast email data to identify potential threats and improve email security posture.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,11 +16,11 @@ Key features of the Mimecast app include:
 - **Threat Detection Monitoring**: Monitor logs regarding messages with malicious attachments, user activity, and threat detection within the orgaization users.
 - **Data Loss Monitoring**: Monitor data loss resulting from breaches and malicious attacks.
 
-## Log Types
+## Log types
 
 The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) and [DLP](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-dlp-logs/) logs from Mimecast platform.
 
-## Sample Log Message
+## Sample log message
 
 <details><summary>View Sample Log Message</summary>
 
@@ -119,15 +119,15 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Mimecast - Overview
+### Overview
 
 The **Mimecast - Overview** dashboard provides a comprehensive view of the message logs and related Data Loss Prevention(DLP) policies. This dashboard provides insight into the total number of messages delivered and messages delivered and received without TLS. Additionally, this dashboard enables monitoring of messages that triggered DLP policies over time, the top 10 DLP policies, and a summary of recent messages that triggered DLP.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Overview.png')} alt="Mimecast-Overview" />
 
-### Mimecast - Email Activity Summary
+### Email Activity Summary
 
 The **Mimecast - Email Activity Summary** dashboard provides a comprehensive view of the message traffic for both incoming and outgoing messages. This dashboard provides insight into the geographic locations of senders and recipients, rejection types for messages, received message status, delivered message direction, and a summary of both message types. Additionally, this dashboard displays information on the most frequently used ciphers, domains that are not using TLS, and reasons for messages being on hold.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Email-Activity-Summary.png')} alt="Mimecast-Email-Activity-Summary"/>
 
-### Mimecast - Target Threat Protection
+### Target Threat Protection
 
 The **Mimecast - Target Threat Protection** dashboard provides a comprehensive view of the threat protection logs resulting from any malicious activity. This dashboard provides a summary of the recent attachment threats detected, recent activity on malicious URLs, and recent blocked emails. Additionally, this dashboard provides insight into the top 10 recipients and senders of malicious attachment messages and the top 10 malicious senders and targeted recipients.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Mimecast-Target-Threat-Protection.png')} alt="Mimecast-Target-Threat-Protection" width="750"/>
 
