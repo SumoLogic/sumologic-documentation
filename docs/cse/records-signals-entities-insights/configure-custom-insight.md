@@ -12,7 +12,26 @@ keywords:
 As described in the [Insight Generation Process](insight-generation-process.md) topic, CSE automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want CSE to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated
 whenever a particular set of Signals are fired in a particular order. 
 
-This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes CSE to generate Insights based purely on one or more Signals being fired. There are two ways you can define a Custom Insight. You can specify that the Insight should be generated each time:
+This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes CSE to generate Insights based purely on one or more Signals being fired. 
+
+Watch this micro lesson to learn how to create Custom Insights.
+
+<Iframe url="https://www.youtube.com/embed/4qiap2e9HCY?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+## Ways to define a Custom Insight
+
+There are two ways you can define a Custom Insight. You can specify that the Insight should be generated each time:
 
 * One or more selected rules fire a Signal.
 * Signals whose name matches a specified wildcard expression are fired. 
@@ -26,6 +45,8 @@ This example Custom Insight configuration will generate an Insight as a result o
 
 ![custom-insight-example.png](/img/cse/custom-insight-example.png)  
  
+## Create a Custom Insight
+
 To create a Custom Insight:
 
 1. Choose **Custom Insights** on the **Content** menu.

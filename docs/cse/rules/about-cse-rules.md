@@ -8,6 +8,22 @@ description: Learn about CSE rules, rules syntax, and how to write rules.
 
 A CSE rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
+Watch this micro lesson to learn more about rules.
+
+<Iframe url="https://www.youtube.com/embed/RVGk2dDeHmk?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 ## About rule expressions
 
 The key element of a CSE rule is a *rule expression*. A rule expression defines what conditions the rule will look for. A rule expression includes one or more equality statements, each of which evaluates a field value in incoming Records, typically comparing it to a constant value, for example `description = 'CMS Domain Match'`. A simple rule expression might be a single equality expression, or multiple expressions combined with logical operators. A rule expression evaluates to a boolean value. When a rule’s conditions are met, it creates a Signal. 

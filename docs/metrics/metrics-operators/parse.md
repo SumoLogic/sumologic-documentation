@@ -12,7 +12,7 @@ If you are querying Graphite metrics, and do not specify the field to be parsed
 
 Each wildcard in the pattern corresponds to a specified field. The parse operator supports both lazy (shortest match) and greedy (longest match wildcard matches.  Use '\*' for a lazy match, or '\*\*' for a greedy match.
 
-## parse syntax
+## Syntax
 
 ```sql
 parse [field=FIELD] PATTERN as PARSED_FIELD [, PARSED_FIELD, ...]
@@ -24,7 +24,7 @@ Where:
 * `PATTERN` is an expression in which wildcards indicate how to parse `FIELD`
 * `PARSED_FIELD` is a field that results from the parsing process
 
-## parse examples
+## Examples
 
 ### parse three fields from a metric field
 

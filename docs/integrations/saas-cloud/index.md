@@ -123,40 +123,46 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox18 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/miro"><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40"/><h4>Miro</h4></a>
-  <p>Monitoring and investigate Miro potential security threats</p>
+  <p>Monitoring and investigate Miro potential security threats.</p>
   </div>
 </div>
 <div className="box smallbox19 card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/ms-graph-azure-ad-reporting"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>MS Graph Azure AD Reporting</h4></a>
+  <p>Monitor and analyze user activity, sign-in patterns and provisioning activities.</p>
+  </div>
+</div>
+<div className="box smallbox20 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/opsgenie"><img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="icon" width="50"/><h4>Opsgenie</h4></a>
   <p>Gain insight into your incidents and event handling operations.</p>
   </div>
 </div>
-<div className="box smallbox20 card">
+<div className="box smallbox21 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/pagerduty-v2"><img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="icon" width="45"/><h4>PagerDuty V2</h4></a>
   <p>Monitor PagerDuty V2 incident data.</p>
   </div>
 </div>
-<div className="box smallbox21 card">
+<div className="box smallbox22 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/pagerduty-v3"><img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="icon" width="45"/><h4>PagerDuty V3</h4></a>
   <p>Monitor PagerDuty V3 incident data.</p>
   </div>
 </div>
-<div className="box smallbox22 card">
+<div className="box smallbox23 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/proofpoint-on-demand"><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="120"/><h4>Proofpoint on Demand</h4></a>
   <p>Analyze message logs and improve your security posture.</p>
   </div>
 </div>
-<div className="box smallbox23 card">
+<div className="box smallbox24 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/qualys-vmdr"><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="icon" width="120"/><h4>Qualys VMDR</h4></a>
   <p>Track errors, health, start-up progress, and cloud security.</p>
   </div>
 </div>
-<div className="box smallbox24 card">
+<div className="box smallbox25 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/rapid7"><img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="icon" width="120"/><h4>Rapid7</h4></a>
   <p>Monitor asset and vulnerability management activities.</p>
