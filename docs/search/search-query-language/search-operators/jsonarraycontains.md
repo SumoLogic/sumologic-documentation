@@ -1,6 +1,5 @@
 ---
 id: jsonarraycontains
-
 title: jsonArrayContains Search Operator
 sidebar_label: jsonArrayContains
 ---
