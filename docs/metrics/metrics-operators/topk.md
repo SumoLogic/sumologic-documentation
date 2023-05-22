@@ -6,7 +6,7 @@ sidebar_label: topk
 
 The `topk` operator applies a specified aggregation function to the time series that match the query selector, and returns the *n* time series that have the highest evaluated value over the query time range.  
 
-## topk syntax
+## Syntax
 
 ```sql
 topk (N, SCALAR_EXPRESSION) [by FIELD [, FIELD, ...]]
@@ -24,14 +24,14 @@ Where: 
     * `pct(n)`. Return the n time series for which the calculated percentile of the metric values across the time range was lowest, and return the top n. 
     * `latest`. Rank matching time series by when the most recent data point was received, and return the top n time series. 
 
-## topk examples
+## Examples
 
 ### Top 10 time series by maximum value
 
-This query ranks the time series that match the query selector by the maximum value of the CPU_Sys metric over the time range, and returns the top 10 time series.
+This query ranks the time series that match the query selector by the maximum value of the `CPU_Sys` metric over the time range, and returns the top 10 time series.
 
 ```sql
-metric=cpu_system | topk (10, max)
+metric=CPU_Sys | topk (10, max)
 ```
 
 Top 10 time series based on a calculated value.
@@ -39,5 +39,5 @@ Top 10 time series based on a calculated value.
 This query applies a math expression — `(max / avg * 2)` — to each time series that matches the query selector. The time series are ranked by the calculated value, and the top 10 time series are returned.
 
 ```sql
-metric=cpu_system |topk (10, max / avg * 2)
+metric=CPU_Sys |topk (10, max / avg * 2)
 ```
