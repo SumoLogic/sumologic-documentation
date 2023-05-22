@@ -2089,6 +2089,7 @@ integrations: [
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
+          'integrations/saas-cloud/mimecast',
           'integrations/saas-cloud/miro',
           'integrations/saas-cloud/ms-graph-azure-ad-reporting',
           'integrations/saas-cloud/opsgenie',
