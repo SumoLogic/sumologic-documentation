@@ -214,7 +214,7 @@ This section has instructions for installing the Sumo Logic app for Rapid7 and d
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
-1. Configure **Rapid7** app using the steps described in the [Rapid7 Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure the **Rapid7** app using the steps described in the [Rapid7 Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
