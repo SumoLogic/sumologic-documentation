@@ -154,16 +154,14 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 
 1. Select the **Single Sign On** menu item of your Sumo Logic application in Azure AD.
 1. Click **Edit** under **Attribute and Claims**.
-2. Select **Add a group claim**
-3. Select **Groups assigned to the application** from the Group Claims pane.
-4. Select **sAMAccountName** from the Source Attribute drop down. 
-5. Check the box for **Emit group name for cloud-only groups**.
-6. Under the **Advanced options**, check the box for **Customize the name of the group claim**.
-7. Check the box for **Emit groups as role claims**.
-8. CLick **Save** to add the new group claim.  
-9. Select the **Roles Attribute** checkbox within your Sumo Logic SAML configuration and enter the group claim name.
-    `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
-
+1. Select **Add a group claim**
+1. Select **Groups assigned to the application** from the Group Claims pane.
+1. Select **sAMAccountName** from the Source Attribute drop down. 
+1. Check the box for **Emit group name for cloud-only groups**.
+1. Under the **Advanced options**, check the box for **Customize the name of the group claim**.
+1. Check the box for **Emit groups as role claims**.
+1. Click **Save** to add the new group claim.  
+1. Select the **Roles Attribute** checkbox within your Sumo Logic SAML configuration and enter the group claim name: `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
 1. **Save** the Sumo Logic configuration.
 
 ### Test SAML Authentication
