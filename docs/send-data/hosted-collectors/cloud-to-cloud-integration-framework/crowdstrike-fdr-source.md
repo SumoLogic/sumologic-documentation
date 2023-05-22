@@ -60,7 +60,7 @@ To configure a CrowdStrike FDR Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **CrowdStrike FDR**.
+1. Select **CrowdStrike FDR**.<br/>
     ![CrowdStrike FDR icon.png](/img/send-data/CrowdStrike-FDR-icon.png)
 1. Enter a **Name** for the Source. The description is optional. <br/><img src={useBaseUrl('/img/send-data/CrowdStrike-FDR-create-input.png')} alt="/img/send-data/CrowdStrike-FDR-create-input" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -73,8 +73,7 @@ To configure a CrowdStrike FDR Source:
 1. **SQS Queue URL**. Provide your SQS Queue URL you copied from CrowdStrike, see the [Prerequisite](#prerequisite).
 1. **S3 Region**. Select the S3 Region your data is in, this normally is the same region specified in the **SQS Queue**.
 1. (Optional) **Historical Data Collection**. Select the specified time range to ingest only the desired data. By default, it is seven days.
-    - All messages are ingested into Sumo Logic without any filtering. However, with the appropriate configuration, you can ensure that only the desired data within the specified time range is ingested.
-    - This configuration allows the data source to retrieve the queued data from Crowdstrike FDR while filtering out messages that are older than the selected historical days. For instance, if you want to ingest data from the last three days only, they you should configure the source by selecting `3 Days` as the value.
+    - By default, all messages are ingested into Sumo Logic without any filtering. However, with the appropriate configuration, customers can ensure that only the desired data within the specified time range is ingested. For instance, if you want to ingest data from the last three days only, then you should configure the source by selecting `3 Days` as the value.
     - Crowdstrike FDR will queue up to 7 days worth of data, if it's configured without any consumer ingesting the events. You should be aware that this historical data will be collected only with the C2C integration.
     - Crowdstrike FDR doesn't allow Sumo Logic to pass any parameter to collect data from a specific time range.
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/). 
@@ -122,7 +121,7 @@ The following table shows the **config** parameters for a CrowdStrike FDR S
 | `SqsQueueURL` | String | Yes |  | The SQS Queue URL you got from CrowdStrike. | modifiable |
 | `accessKeyId` | String | Yes |  | The AWS Access Key ID you got from CrowdStrike. | modifiable |
 | `s3Region` | String | Yes | other | The S3 Region your data is in. | modifiable |
-| `historicaldatacollection` | String | No | other | Time range to ingest the desired data. | modifiable |
+| `startTime` | Integer | No | other | Time range to ingest the desired data. | modifiable |
 
 ### JSON example
 
@@ -148,6 +147,7 @@ The following table shows the **config** parameters for a CrowdStrike FDR S
       "category":"Sumo/FDR",
       "timestampFormatAutoDetection":false,
       "s3Region":"us-west-1",
+      "startTime": 0
       "useAutolineMatching":true
     },
     "state":{
