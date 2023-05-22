@@ -143,7 +143,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
 ### Configure Azure AD to send Group assignments to Sumo (Optional)
 
-In this step, you configure Azure AD to send group membership information in the SAML assertions it sends, so that Sumo Logic can assign roles to a user at each logon. This allows you to manage Sumo role assignments via Azure AD. If you don’t want to manage Sumo roles via Azure AD, skip these steps and proceed to [Test SAML Authentication](#test_saml_authentication) below.
+In this step, you configure Azure AD to send group membership information in the SAML assertions it sends, so that Sumo Logic can assign roles to a user at each logon. This allows you to manage Sumo role assignments via Azure AD. If you don’t want to manage Sumo roles via Azure AD, skip these steps and proceed to [Test SAML Authentication](#test-saml-authentication) below.
 
 These instructions assume that:
 
