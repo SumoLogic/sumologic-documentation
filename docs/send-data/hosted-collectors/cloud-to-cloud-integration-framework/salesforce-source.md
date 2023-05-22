@@ -224,7 +224,9 @@ To resolve this:
 1. Check **View Event Log Files**
 1. Save it
 
-NOTE: If the error still occurs after following above instructions, please contact Salesforce Support Team as most probably it is a licensing issue that has to be resolved with their help.
+:::note 
+If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
+:::
 
 **Error**: Object type ‘SetupAuditTrail’ is not supported
 
@@ -234,7 +236,9 @@ To resolve this:
 1. Edit specific Profile which is assigned to the user
 1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail
 
-NOTE: If the error still occurs after following above instructions, please contact Salesforce Support Team as most probably it is a licensing issue that has to be resolved with their help.
+:::note 
+If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
+:::
 
 **Error** : Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
