@@ -55,7 +55,7 @@ The steps below are for the new Azure Management Console. For general steps for 
 
     ![download-cert.png](/img/security/download-cert.png)
 1. In the **SAML Signing Certificate** tile, click the **Download** link for **Federation Metadata XML** to download the `<app-name>.xml` file.
-1. In the **Set Up <app-name>** section, copy and paste the contents of the following fields into a text document. You may need these values when in the next step.
+1. In the **Set Up <\app-name\>** section, copy and paste the contents of the following fields into a text document. You may need these values when in the next step.
 
    * Login URL
    * Azure AD identifier
