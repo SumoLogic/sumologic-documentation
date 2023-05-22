@@ -158,7 +158,7 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 3. Select **Groups assigned to the application** from the Group Claims pane.
 4. Select **sAMAccountName** from the Source Attribute drop down. 
 5. Check the box for **Emit group name for cloud-only groups**.
-6. Under the **Advanced options** check the box for **Customize the name of the group claim**
+6. Under the **Advanced options**, check the box for **Customize the name of the group claim**.
 7. Check the box for **Emit groups as role claims**.
 8. CLick **Save** to add the new group claim.  
 9. Select the **Roles Attribute** checkbox within your Sumo Logic SAML configuration and enter the group claim name.
