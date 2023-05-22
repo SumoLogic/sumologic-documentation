@@ -142,7 +142,7 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 * Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Microsoft Graph Security - Alerts Overview
+### Alerts Overview
 
 The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories. 
 
