@@ -4,9 +4,10 @@ title: Rapid7
 sidebar_label: Rapid7
 description: The Rapid7 app for Sumo Logic provides an improved security posture by analyzing message logs.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="80" />
+<img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="rapid7-logo" width="100" />
 
 The Sumo Logic app for Rapid7 enables you to gain deeper insights into asset and vulnerability management activities by collecting asset and vulnerability activities using Sumo Logic's cloud-to-cloud Rapid7 source.
 
