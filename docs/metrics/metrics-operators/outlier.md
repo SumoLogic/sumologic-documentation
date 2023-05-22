@@ -11,9 +11,11 @@ The metrics `outlier` operator identifies metrics data points that are outside t
 
 At this time, using the `outlier` operator in a metric monitor is not supported.
 
-## outlier syntax
+## Syntax
 
-`metric query | outlier [window=<#>, threshold=<#>, direction=[ +- | + | - ]]`
+```sql
+outlier [window=<time_unit_or_number>, threshold=<number>, direction=[ +- | + | - ]]
+```
 
 Where:
 

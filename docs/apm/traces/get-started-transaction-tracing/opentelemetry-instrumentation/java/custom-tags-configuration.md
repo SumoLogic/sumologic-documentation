@@ -9,7 +9,7 @@ description: Custom tags configuration for Java OpenTelemetry Instrumentation.
 
 You can use `OTEL_RESOURCE_ATTRIBUTES=` startup parameter to pass a custom static tag to all spans generated in the service. For example:
 
-```
+```bash
 OTEL_RESOURCE_ATTRIBUTES="service.name=Accounts"
 OTEL_RESOURCE_ATTRIBUTES="application=OnlineBanking,exampleKey=exampleValue"
 ```
@@ -45,7 +45,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
 
 Import dependencies in the application Java class file:
 
-```
+```java
 import io.opentelemetry.api.trace.Span;
 ```
 
