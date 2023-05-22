@@ -13,7 +13,7 @@ The Sumo Logic app for Rapid7 enables you to gain deeper insights into asset and
 
 Rapid7 app provides vital information, including asset count, distribution of assets based on risk score and type, and a detailed breakdown of vulnerabilities based on severity and status. This app also tracks the count of newly identified vulnerabilities, vulnerabilities based on severity, and the most frequently occurring vulnerabilities. Using this information, you can prioritize remediation efforts, minimize attack surfaces, and make well-informed decisions to enhance your overall security posture.
 
-## Log Types
+## Log types
 
 This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
 
