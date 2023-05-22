@@ -20,9 +20,9 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMWare:
 
 * VMWare Events using the Events API. See [Events API](https://code.vmware.com/apis/196/vsphere/doc/vim.event.EventManager.html) for more details.
-* VMWare Metrics using the Performance API. For more information, see [Performance API.](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html)
+* VMWare Metrics using the Performance API. For more information, see [Performance API](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html).
 
-The dashboards provide real-time monitoring with visual data displays, allowing you to analyze events and performance metrics for efficient detection and troubleshooting. The following image illustrates the collection process.
+The dashboards provide real-time monitoring with visual data displays, allowing you to analyze events and performance metrics for efficient detection and troubleshooting.
 
 ### Sample log message
 

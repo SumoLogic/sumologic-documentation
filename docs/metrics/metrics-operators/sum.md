@@ -7,26 +7,26 @@ sidebar_label: sum
 
 The sum operator calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
 
-## sum syntax
+## Syntax
 
 ```sql
 sum [by FIELD [, FIELD, ...]]
 ```
 
-## sum examples
+## Examples
 
 ### Sum the value of a metric 
 
-This query calculates the total of the `cpu_system` metric values across all time series whose `dep` tag equals “prod”.
+This query calculates the total of the `CPU_Sys` metric values across all time series whose `dep` tag equals “prod”.
 
 ```sql
-dep=prod metric=cpu_system | sum
+dep=prod metric=CPU_Sys | sum
 ```
 
 ### Sum the value of a metric by one field 
 
-This query calculates the total of the `cpu_system` metric values across all time series whose `dep` tag equals “prod” by node.
+This query calculates the total of the `CPU_Sys` metric values across all time series whose `dep` tag equals “prod” by node.
 
 ```sql
-cluster=search metric=cpu_idle | sum by node
+dep=prod metric=CPU_Sys | sum by node
 ```  
