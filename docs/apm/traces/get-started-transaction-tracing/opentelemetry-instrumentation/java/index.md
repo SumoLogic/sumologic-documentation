@@ -49,11 +49,9 @@ Ensure that the agent has root permissions for the Java jar files.
 Either of the following options could be used as the template, with the following changes:
 
 * The path to the javaagent JAR file needs to replaced with the location of the file downloaded and distributed in step 1.
-* `COLLECTOR_HOSTNAME` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [Sumo Logic HTTP Traces source](../../http-traces-source.md). Refer to the following setup instructions if you don't have yet collector installed:
-
+* `COLLECTOR_HOSTNAME` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [Sumo Logic HTTP Traces source](../../http-traces-source.md). Refer to the following setup instructions if you don't yet have the collector installed:
   * [Set up traces collection for Kubernetes environments](../../set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments](../../set-up-traces-collection-for-other-environments.md)
-
 * `SERVICE_NAME` needs to be replaced with the name used for the identification of the service.
 * `APPLICATION_NAME` needs to be replaced with the name used for the identification of the application.
 
@@ -61,7 +59,7 @@ Either of the following options could be used as the template, with the followin
 
 The following environment variables need to be made accessible by JVM:
 
-```
+```bash
 JAVA_TOOL_OPTIONS="-javaagent:path/to/opentelemetry-javaagent.jar"
 
 OTEL_TRACES_EXPORTER=otlp
@@ -96,7 +94,7 @@ To confirm the instrumentation was installed, after starting the service, the f
 [otel.javaagent 2022-08-19 09:58:00:822 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.16.0
 ```
 
-When errors are present in the console, describing that some system libraries are missing or that connection cannot be established, a Zipkin exporter can be used instead of OTLP, for example:
+When errors are present in the console, describing that some system libraries are missing or that connection cannot be established, a Zipkin exporter can be used instead of OTLP. For example:
 
 ```
 OTEL_TRACES_EXPORTER=zipkin

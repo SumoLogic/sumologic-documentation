@@ -1,6 +1,6 @@
 ---
 id: bottomk
-title: bottomk Operator
+title: bottomk Metrics Operator
 sidebar_label: bottomk
 ---
 
