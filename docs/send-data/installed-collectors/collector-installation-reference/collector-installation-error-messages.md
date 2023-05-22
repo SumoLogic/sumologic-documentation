@@ -100,8 +100,9 @@ These messages are warnings that, in this case, both the Wrapper and its JVM pro
 
 To solve this issue and improve the resilience of the Wrapper and its JVM process when facing a lack of CPU, you can modify the `wrapper.conf` file by adding the following configurations at the end.
 
-```wrapper.cpu.timeout=85
-   wrapper.ping.timeout=95
-   wrapper.startup.timeout=90
-   wrapper.shutdown.timeout=90
-```
+  ```
+  wrapper.cpu.timeout=85
+  wrapper.ping.timeout=95
+  wrapper.startup.timeout=90
+  wrapper.shutdown.timeout=90
+  ```
