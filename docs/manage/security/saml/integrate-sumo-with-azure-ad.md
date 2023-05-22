@@ -162,7 +162,6 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 7. Check the box for **Emit groups as role claims**.
 8. CLick **Save** to add the new group claim.  
 9. Select the **Roles Attribute** checkbox within your Sumo Logic SAML configuration and enter the group claim name.
-
     http://schemas.microsoft.com/ws/2008/06/identity/claims/role
 
 1. **Save** the Sumo Logic configuration.
