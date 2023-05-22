@@ -123,7 +123,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox18 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/mimecast"><img src={useBaseUrl('/img/send-data/Mimecast-icon.png')} alt="icon" width="40"/><h4>Mimecast</h4></a>
-  <p>Monitor and analyz Mimecast email data to identify potential threats and improve email security posture.</p>
+  <p>Monitor and analyze Mimecast email data to identify potential threats and improve email security posture.</p>
   </div>
 </div>
 <div className="box smallbox19 card">
