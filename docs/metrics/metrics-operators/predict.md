@@ -16,8 +16,9 @@ The `predict` operator takes a single time series metric to predict future value
 The `predict` operator outputs two time series: the original input time series and the predicted time series that extends into the future. The predicted time series is also depicted over a portion of the historical time range so that the user can validate forecast accuracy at a glance against actual values.   
 
 ## Syntax
+
 ```sql
-… | predict [model=<model>] [forecast=<forecast>] [ar.window=<ar.window>]
+predict [model=<model>] [forecast=<forecast>] [ar.window=<ar.window>]
 ```
 
 Where:
