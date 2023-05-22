@@ -65,10 +65,7 @@ _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "Memory" AND "NonKernel 
 
 ### Sumo Logic Scripts for VMware
 
-The Sumo Logic scripts required to work with the app are located here:
-
-* **[vSphere5.0.zip ](https://help.sumologic.com/@api/deki/files/23/vSphere5.0.zip?revision=1)**(MD5: b2a9da81125066bc4d81c1fd6153a926)
-* **[vSphere5.5.zip](https://help.sumologic.com/@api/deki/files/24/vSphere5.5.zip?revision=1)** (MD5: eb643b01f217ceec20e1a2fb1c285fa4)
+The Sumo Logic scripts required to work with the app are located at [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
 
 For vMA 6.0, use the script package for vSphere 5.5.
 
