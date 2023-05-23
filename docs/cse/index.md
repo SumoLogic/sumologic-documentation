@@ -31,26 +31,26 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/cse/integrations"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Integrations</h4></a>
-  <p>CSE integration with Sumo Logic and threat intel sources, and leveraging the CSE Insight Enrichment Server.</p>
-  </div>
-</div>
-<div className="box smallbox4 card">
-  <div className="container">
   <a href="/docs/cse/rules"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Rules</h4></a>
   <p>Learn how to write rules, rules syntax, and CSE built-in rules.</p>
   </div>
 </div>
-<div className="box smallbox5 card">
+<div className="box smallbox4 card">
   <div className="container">
   <a href="/docs/cse/schema"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Schema</h4></a>
   <p>Learn about CSE Schema v3, schema attributes, and the Record processing pipeline.</p>
   </div>
 </div>
-<div className="box smallbox6 card">
+<div className="box smallbox5 card">
   <div className="container">
   <a href="/docs/cse/sensors"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Sensors</h4></a>
   <p>CSE Sensors collect log and event data from your infrastructure and applications.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/cse/integrations"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Integrations</h4></a>
+  <p>CSE integration with Sumo Logic and threat intel sources, and leveraging the CSE Insight Enrichment Server.</p>
   </div>
 </div>
 <div className="box smallbox7 card">
