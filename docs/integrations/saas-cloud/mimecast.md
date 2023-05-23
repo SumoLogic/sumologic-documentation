@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/mimecast-logo.png')} alt="icon" width="50"/>
 
-The Sumo Logic app for Mimecast enables you to leverage advanced security monitoring and analytics capabilities for Mimecast data. Mimecast is a cloud-based cybersecurity platform that ensures email security, continuity, and archiving. The Mimecast app for Sumo Logic is a powerful tool for monitoring and analyzing Mimecast email data, helping you to identify potential threats and improve your email security posture.
+The Sumo Logic app for Mimecast enables you to leverage advanced security monitoring and analytics capabilities for Mimecast data. Mimecast is a cloud-based cybersecurity platform that ensures email security, continuity, and archiving. Our app is a powerful tool for monitoring and analyzing Mimecast email data, helping you to identify potential threats and improve your email security posture.
 
 Key features of the Mimecast app include:
 - **Email Traffic Monitoring**: Monitor message traffic for both delivered and received emails with a detailed overview of each stage.
