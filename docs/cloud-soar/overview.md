@@ -45,7 +45,7 @@ This section lists the retention period for each type of data generated.
 
 #### Default retention periods by data type
 
-We automatically delete the following customer data according to the table retention period below, except for those that need to ensure HIPAA compliance.
+Sumo Logic automatically deletes the following customer data according to the table retention period below, except for customers required to ensure HIPAA compliance (see second table).
 
 | Data type | Retention period |
 | :-- | :-- |
