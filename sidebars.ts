@@ -88,7 +88,6 @@ module.exports = {
             'send-data/opentelemetry-collector/install-collector-linux',
             'send-data/opentelemetry-collector/install-collector-macos',
             'send-data/opentelemetry-collector/install-collector-windows',
-            'send-data/opentelemetry-collector/prometheus',
             {
               type: 'category',
               label: 'Data Source and Configurations',
