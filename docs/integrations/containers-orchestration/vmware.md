@@ -66,9 +66,9 @@ This section provides instructions for collecting logs and metrics for VMware.
 
 You can use the following method for setting up a server to collect data for the VMware App:
 
-If you have an existing VM, you can go directly to [Installing the Sumo Logic scripts on a VM](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) and proceed with following the instructions.
+If you have an existing VM, you can go directly to Installing the Sumo Logic scripts on a VM and proceed with following the instructions.
 
-[Install the Sumo Logic scripts](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) for events and metrics on a vCenter server, or another host with access to vCenter API’s.
+Install the Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter API’s.
 
 
 #### Installing Sumo Logic scripts on a vCenter server, another host, or VM
@@ -96,11 +96,11 @@ An Installed Collector is a Java agent that receives logs and metrics from its S
 
 ### Step 3: Collect logs and metrics for the VMware App
 
-This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic App for VMware. Click a link to jump to a topic.
+This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic App for VMware.
 
-1. [Collecting event messages](#A._Collecting_event_messages)
-2. [Collecting performance metrics](#B._Collecting_performance_metrics)
-3. [Collecting historical events](#C._Collecting_historical_events)
+1. Collecting event messages
+2. Collecting performance metrics
+3. Collecting historical events
 
 
 #### Collecting event messages
@@ -108,8 +108,8 @@ This section explains how to set up a vCenter server, host, or VM to collect log
 An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere python SDK.
 
 This procedure includes the following tasks:
-* [Configuring logs to be collected](#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
-* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/remote-file-source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
+* Configuring logs to be collected—Test running a python script from the directory containing the Sumo Logic scripts.
+* Configuring a syslog or a file source —A Sumo Logic[ Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/installed-collectors/sources/local-file-source) or [Remote](/docs/send-data/installed-collectors/sources/remote-file-source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
 To configure logs to be collected, do the following:
 
