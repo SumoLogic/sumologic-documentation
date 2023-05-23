@@ -54,7 +54,11 @@ Sumo Logic automatically deletes the following customer data according to the ta
 | Entities | 2 years |
 | Playbook and action executions | 2 years |
 
-For those that need to ensure HIPAA compliance, we delete data following the retention periods below. If you need to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
+For HIPAA-compliant customers, we delete data following the retention periods below. 
+
+:::info
+If you need to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
+:::
 
 | Data type | Retention period |
 | :-- | :-- |
