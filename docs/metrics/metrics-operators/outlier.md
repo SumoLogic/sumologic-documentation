@@ -9,7 +9,7 @@ The metrics `outlier` operator identifies metrics data points that are outside t
 `outlier` tracks the moving average and standard deviation of a time series over a specified time window, and calculates a threshold band, outside of which data points are considered outliers. You can use optional qualifiers to specify the time window, the number of standard deviations beyond which a data point is considered an outlier, and the directionality of the deviation.
 
 :::note
-You can't directly reference the `outlier` operator in a metrics monitor, however, you can use the outlier detection method in a metrics monitor to be able to alert based on outlier events.
+You can't directly reference the `outlier` operator in a metrics monitor, however, you can use the outlier detection method in a metrics monitor to alert based on outlier events.
 :::
 
 ## Syntax
