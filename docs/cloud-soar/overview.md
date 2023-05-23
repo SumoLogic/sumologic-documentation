@@ -35,9 +35,9 @@ Cloud SOAR acts as the connective tissue between your existing tools to automate
 Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
 
 ### Comprehensive security portfolio
-Cloud SOAR is part of Sumo Logic’s comprehensive security portfolio including security monitoring and analytics and Cloud SIEM, to help your organization modernize security operations.
+Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
 
-## Support and complaince
+## Support and compliance
 
 ### Data retention
 
@@ -62,9 +62,6 @@ For clients that need to ensure HIPAA compliance, we delete data following the r
 | Triage | 7 years |
 | Entities | 7 years |
 | Playbook and action executions | 7 years |
-| CSE Records | Records (normalized logs) are stored in the partitions whose names begin with the string `sec_records`. There is one partition for each Record type. <br/><br/>There is no additional charge for storage of Records.| 90 days |
-| CSE Signals | Stored in the `sec_signal` partition.<br/><br/>There is no additional charge for storage of Signals. | 2 years |   
-| CSE Insights | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/><br/>The `sumologic_audit_events` partition contains Insights and Insight-related events that result from user actions.<br/><br/>There is a charge for storage of Insight-related data in the audit indexes. Note however the volume of data is typically very low compared to log ingestion levels. | By default, these partitions have a retention period of 30 days. This period is [customer-configurable](/docs/get-started/help#support). |
 
 #### Custom retention periods
 
