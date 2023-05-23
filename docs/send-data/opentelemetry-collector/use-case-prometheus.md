@@ -1,5 +1,5 @@
 ---
-id: prometheus
+id: use-case-prometheus
 title: Monitoring Custom Metrics Using OpenTelemetry
 sidebar_label: Use case - Prometheus
 description: Learn how to import and monitor your existing Prometheus-formatted metrics into Sumo Logic.
@@ -7,19 +7,17 @@ description: Learn how to import and monitor your existing Prometheus-formatted 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
+If you're using Prometheus, a popular tool for monitoring app performance, to collect metrics, it can be challenging to visualize and analyze that data in a single location. You can use our OpenTelemetry Collector to import your Prometheus-formatted metrics into Sumo Logic and create a custom dashboard for them.
 
-Prometheus, a popular tool for monitoring application performance, provides a flexible query language and wide range of integrations with various systems. Once you have collected metrics with Prometheus, it can be challenging to visualize and analyze that data in a single location.
-
-You can use our OpenTelemetry Collector to import your Prometheus-formatted metrics into Sumo Logic and create a custom dashboard for them.
-
-This diagram shows the flow of metrics data from a custom application which has been instrumented to provide Prometheus-formatted metrics. The metrics are scraped by the Open Telemetry Collector using the `prometheus` receiver, then sent to Sumo Logic’s OLTP-compatible ingest API via the `sumologic` exporter. The data is stored and indexed by Sumo Logic, where it can then be queried and displayed in a custom dashboard within Sumo Logic.
+This diagram shows the flow of metrics data from a custom application which has been instrumented to provide Prometheus-formatted metrics.
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/prometheus.png')} alt="prometheus.png" />
 
-In this example, we use a simple simulator to provide some custom metrics, but you can use anything that exports metrics in Prometheus format. Prometheus is just the most convenient format to use here, but there are receivers for all popular metrics formats, so it should work for whatever your device is producing.
+Metrics are scraped by our OpenTelemetry Collector using the `prometheus` receiver, then sent to Sumo Logic’s OLTP-compatible ingest API via the `sumologic` exporter. The data is stored and indexed by Sumo Logic, where it can then be queried and displayed in a custom dashboard within Sumo Logic.
+
+The OpenTelemetry Collector is a vendor-agnostic agent that can collect, process, and export telemetry data to various backends. It supports various protocols, including Prometheus.
+
+In this use case example below, we use a simple simulator to provide some custom metrics, but you can use anything that exports metrics in Prometheus format. You don't have to use Prometheus; receivers are available for all popular metrics formats and should work for whatever your device is producing.
 
 
 ## Step 1: Set up the Prometheus Metrics Server Simulator
@@ -73,9 +71,9 @@ gauges:
       - "client3"%
 ```
 
-Of course you can modify that configuration to produce whatever custom metrics you want to mock.
+Of course, you can modify that configuration to produce whatever custom metrics you want to mock.
 
-You can verify that it is up and running by curling the metrics endpoint to see the Prometheus formatted metrics it is generating. You should see something like this:
+You can verify that it is up and running by curling the metrics endpoint to see the Prometheus-formatted metrics it is generating. You should see something like this:
 
 ```bash
 curl localhost:8080/metrics
@@ -105,45 +103,37 @@ mock_metric_gauges_3{app="prometheus-mock-metrics-server",client_addr="client3"}
 mock_metric_request_total{app="prometheus-mock-metrics-server"} 0
 ```
 
-
-
 ## Step 2: Add Prometheus receiver to your OpenTelemetry Collector configuration
 
-Next, we will set up the OpenTelemetry Collector to receive metrics from the Prometheus Metrics Server Simulator and forward them to Sumo Logic. The OpenTelemetry Collector is a vendor-agnostic agent that can collect, process, and export telemetry data to various backends. It supports various protocols, including Prometheus. Using our [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), you can easily connect OpenTelemetry to Sumo Logic using the built-in `sumologic` exporter.
+Next, we'll configure our [Sumo Logic OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) to receive metrics from the Prometheus Metrics Server Simulator, and then forward them to Sumo Logic.
 
-First, you need to [install the Sumo Logic OpenTelemetry Collector](https://help.sumologic.com/docs/send-data/opentelemetry-collector/).
+1. [Install the Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/).
+2. Create a new configuration file for the OpenTelemetry Collector with the following content:
+  ```yml title="/etc/otelcol-sumo/conf.d/prom.yaml"
+  receivers:
+    prometheus:
+      config:
+        scrape_configs:
+          - job_name: 'mock-metrics'
+            scrape_interval: 10s
+            static_configs:
+              - targets: ['localhost:8080']
+  service:
+    pipelines:
+      metrics:
+        receivers: [prometheus]
+        exporters: [sumologic]
+  ```
+  In the above configuration, we define a `prometheus` receiver that scrapes metrics from the Prometheus Metrics Server Simulator running on `localhost:8080`. We then define a metrics pipeline that uses the `prometheus` receiver to scrape the metrics and send them to Sumo Logic via the `sumologic` exporter.
+3. Save the configuration file as `/etc/otelcol-sumo/conf.d/prom.yaml`.
+4. Start the OpenTelemetry Collector with the following command:
+  ```bash
+  sudo otelcol-sumo \
+  --config=/etc/otelcol-sumo/sumologic.yaml \
+  --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+  ```
 
-Next, create a new configuration file for the OpenTelemetry Collector with the following content:
-
-```yml title="/etc/otelcol-sumo/conf.d/prom.yaml"
-receivers:
-  prometheus:
-    config:
-      scrape_configs:
-        - job_name: 'mock-metrics'
-          scrape_interval: 10s
-          static_configs:
-            - targets: ['localhost:8080']
-service:
-  pipelines:
-    metrics:
-      receivers: [prometheus]
-      exporters: [sumologic]
-```
-
-In the above configuration, we define a `prometheus` receiver that scrapes metrics from the Prometheus Metrics Server Simulator running on `localhost:8080`. We then define a metrics pipeline that uses the `prometheus` receiver to scrape the metrics and send them to Sumo Logic via the `sumologic` exporter.
-
-Save the configuration file as `/etc/otelcol-sumo/conf.d/prom.yaml`.
-
-Finally, start the OpenTelemetry Collector with the following command:
-
-```bash
-sudo otelcol-sumo \
---config=/etc/otelcol-sumo/sumologic.yaml \
---config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-```
-
-This will start the collector with the configuration you defined, and it should start receiving and exporting metrics to Sumo Logic.
+This will start the collector with the configuration you defined, and begin receiving and exporting metrics to Sumo Logic.
 
 
 ## Step 3: Create a New Dashboard in Sumo Logic
