@@ -45,7 +45,7 @@ This section lists the retention period for each type of data generated.
 
 #### Default retention periods by data type
 
-We automatically delete the following customer data according to the table retention period below, except for clients that need to ensure HIPAA compliance.
+We automatically delete the following customer data according to the table retention period below, except for those that need to ensure HIPAA compliance.
 
 | Data type | Retention period |
 | :-- | :-- |
@@ -54,7 +54,7 @@ We automatically delete the following customer data according to the table reten
 | Entities | 2 years |
 | Playbook and action executions | 2 years |
 
-For clients that need to ensure HIPAA compliance, we delete data following the retention periods below. Please keep in mind that if a customer needs to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
+For those that need to ensure HIPAA compliance, we delete data following the retention periods below. Please keep in mind that if a customer needs to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
 
 | Data type | Retention period |
 | :-- | :-- |
