@@ -19,7 +19,7 @@ Key features of the Palo Alto Networks Cortex XDR app include:
 
 This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) source to collect [alerts](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Alerts) and [incidents](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-Prevent-Administrator-Guide/Incidents) from Palo Alto Cortex XDR.
 
-## Sample log message
+## Sample log messages
 
 <details><summary>View Sample Log Message</summary>
 
