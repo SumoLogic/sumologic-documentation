@@ -17,7 +17,6 @@ Key features and benefits of the Cato Networks app include:
 - **Audit summary**. This app includes pre-built reports and visualizations of audit logs which facilitates effective monitoring, analysis, and identification of any unusual or suspicious activities within the system.
 - **Customization and Integration**. Customize and tailor your dashboards, reports, and alerts to align specific monitoring and security needs. It also supports integration with other security tools and platforms, enabling a centralized view of the overall security landscape.
 
-
 ## Log types
 
 This app uses Sumo Logic’s Cato Networks source to collect [Events Feed](https://support.catonetworks.com/hc/en-us/articles/360019839477-Cato-API-EventsFeed-Large-Scale-Event-Monitoring) and [Audit Feed](https://support.catonetworks.com/hc/en-us/articles/360017900857-Cato-API-AuditFeed) data from Cato Networks platform.
@@ -137,7 +136,6 @@ The **Cato Networks - Events** dashboard provides a detailed summary of the even
 - **Top 10 POP Names**. The top POP names shed light on specific points of presence that might require attention. 
 - **Source Site/VPN Details**. Source site/VPN details offer insights into the source of events and the usage of VPNs. 
 
-
 ### Threat Analysis
 
 The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overview of threat-related information, enabling you to understand and address potential risks effectively.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Threat-Analysis.png')} alt="Cato-Networks-Threat-Analysis" />
@@ -152,7 +150,6 @@ The **Cato Networks - Threat Analysis** dashboard provides a comprehensive overv
 - **MTRE Attack Summary**. The MITRE summary provides a concise overview of the relevant MITRE AT and CK framework for understanding the tactics and techniques associated with threats. 
 - **Threats Over Time**.The threats over time widget shows the trend of threats, assisting in monitoring the evolving threat landscape.
 
-
 ### Audit Feed
 
 The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of audit log activities, which provides valuable insights into system administration and changes. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Audit-Feed.png')} alt="Cato-Networks-Audit-Feed"/>
@@ -163,4 +160,3 @@ The **Cato Networks - Audit Feed** dashboard offers a comprehensive summary of a
 - **Top 10 Modules Changed**. The top modules changed widget identifies the specific modules that have undergone the most modifications, offering insights into areas that require further investigation or monitoring. 
 - **Top 10 Objects Changed**. The top objects changed widget identifies the specific objects that have undergone the most modifications, offering insights into areas that require further investigation or monitoring. 
 - **Audit Summary**. The audits summary widget provides a concise summary of key audit log details, helping you to quickly understand the nature of the recorded activities. 
-
