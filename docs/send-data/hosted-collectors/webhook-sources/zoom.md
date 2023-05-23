@@ -39,7 +39,7 @@ Follow the below steps to get the required fields for user configuration:
     - Developer Name
     - Developer Email Address 
   <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
-1. Click **Continue**, to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
+1. Click **Continue** to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
 1. Keep this window open and configure the Zoom source on Sumo Logic.
 
 ## Create Zoom Source
