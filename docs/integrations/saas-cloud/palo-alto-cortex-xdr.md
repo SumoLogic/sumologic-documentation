@@ -164,7 +164,7 @@ To set up [Cloud to Cloud Integration Palo Alto Cortex XDR Source](/docs/send-da
 
 ## Installing the Palo Alto Cortex XDR app​
 
-This section has instructions for installing the Palo Alto Cortex XDR app for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR and descriptions of each of the dashboards.
 
 1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. Click **Add Integration**.
