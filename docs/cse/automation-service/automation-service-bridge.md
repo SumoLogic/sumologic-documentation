@@ -52,6 +52,8 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
    ```
    systemctl enable docker
    ```
+
+### Using a proxy   
 1. If docker has to use a proxy to pull images, follow the below instructions:
    ```
    mkdir -p /etc/systemd/system/docker.service.d
@@ -108,6 +110,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    ```
    sudo yum install automation-bridge-X.X.rpm
    ```
+
+### Installation configuration
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
    * `1SOAR_URL1`
    * `1SOAR_TOKEN1`
@@ -154,6 +158,10 @@ If you are not using the SIEM:
    systemctl restart automation-bridge
    ```
 :::
+
+### Configuring the automation bridge for high availability
+
+You may elect to deploy and register multiple bridges to your CSE tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 

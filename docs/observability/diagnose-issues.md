@@ -25,6 +25,6 @@ Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](..
 
 ![metrics-explorer.png](/img/observability/metrics-explorer.png)
 
-## Benchmark KPIs with Rest of world
+## Benchmark KPIs with the rest of the world
 
 You can isolate or detect AWS errors using [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops). The service provides comparison benchmarks that on-call engineers can use to identify abnormal patterns and issues in your AWS service compared to the rest of the world, and then take action to remediate those issues.  

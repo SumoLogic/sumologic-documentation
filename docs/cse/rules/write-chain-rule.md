@@ -16,17 +16,28 @@ If you are new to writing rules, see [About CSE Rules](about-cse-rules.md) fo
 
 A Chain rule is similar to a Threshold rule. A Threshold rule fires when one rule expression is matched at least a certain number times during a specified length of time. In a Chain rule you configure two more rule expressions, and for each expression, the number of matches that are required for the rule to fire a Signal. The interval you define within which the matches must occur applies to all of the rule expressions in the rule.
 
+Watch this micro lesson to learn how to create a Chain rule.
+
+<Iframe url="https://www.youtube.com/embed/58h2mVnw1oE?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Create a Chain rule
 
 1. Choose **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the Chain card. 
-
-    ![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor:
-
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
-
     ![chain.png](/img/cse/chain.png)
 
 ## Configure “If Triggered” settings
