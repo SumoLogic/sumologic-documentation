@@ -160,7 +160,7 @@ _sourceCategory="palo_alto_cortex_xdr" "incident_id" "incident_name"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Palo Alto Cortex XDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) for the Palo Alto Cortex XDR app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Palo Alto Cortex XDR Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Palo Alto Cortex XDR app is properly integrated and configured to collect and analyze your Palo Alto Cortex XDR data.
+Prior to installing the Palo Alto Cortex XDR app, you'll first need to set up the source by following the instructions provided at [Cloud-to-Cloud Integration Palo Alto Cortex XDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source). By following these steps, you can ensure that your Palo Alto Cortex XDR app is properly integrated and configured to collect and analyze your Palo Alto Cortex XDR data.
 
 ## Installing the Palo Alto Cortex XDR app​
 
