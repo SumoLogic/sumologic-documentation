@@ -190,7 +190,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **Palo Alto Networks 9 - Overview** dashboard provides an at-a-glance view of threats and events by type and severity. Panels also display information on user activity, source hosts geographic locations, and bandwidth consumption by app and virtual system.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 **Use this dashboard to*:
 * Analyze activities by severity level, geo-location, and bandwidth consumption.
@@ -202,7 +202,7 @@ The **Palo Alto Networks 9 - Overview** dashboard provides an at-a-glance view o
 
 The Palo Alto Networks 9 - Threat Overview dashboard provides insights into the types of threats on your network, threat severity, and threat comparisons over time. Panels also display information on threats impacting the most IPs, IPs receiving multiple threats, IPs generating threats, and users who are impacted by threats.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Threat_Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Identify threat subtypes.
@@ -214,7 +214,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - Threat Analysis dashboard provides detailed information on threats by type, severity, outliers, and trends over time. Panels also display details on non-critical and critical threat events, top source and destination IPs, as well as apps by severity, and threat categories.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Threat_Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 
@@ -226,7 +226,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - High Severity Threats dashboard provides visibility into high severity threats that are coming from and impacting the most hosts.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_High_Severity_Threats.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-High-Severity-Threats.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Identify the impact of high severity threats, including the most involved source and destination IP addresses.
@@ -237,7 +237,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - Traffic Insight - File Activity dashboard provides visibility into file activity detected by PANOS firewall devices. Panels also display top apps, trends for events and file activity, and trends for file outlier activity.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Traffic_Insight_File_Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-File-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Monitor end user file upload and download activities.
@@ -249,7 +249,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - Traffic Insight Web Activity dashboard provides insights into user web activity on your network with the number of events, activity by category, top apps, URLs, and zones. Panels also show details on content types, zones, event and web activity trends, and web activity outliers.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Traffic_Insight_Web_Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-Web-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Monitor end user web browsing activities.
@@ -262,7 +262,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - Traffic Monitoring dashboard provides insights into the traffic on your network, including protocol trends, top source and destination IPs, top app activities, geographic locations of public IPs, and top destination ports.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Traffic_Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Detect sudden changes in allowed or rejected traffic via the outlier panels.
@@ -275,7 +275,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - Configuration Analysis dashboard provides visibility into device configuration activity on your network.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_Configuration_Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Configuration-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 
@@ -292,7 +292,7 @@ The Palo Alto Networks 9 - HIPMatch Monitoring dashboard provides visibility int
 The [GlobalProtect Host Information Profile (HIP) matching](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/configure-hip-based-policy-enforcement.html) collects information on the security status of the end devices accessing your network. A firewall can allow or deny access to a host based on HIP-based security rules. HIP Match logs display traffic flows that match a [HIP Object](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) or [HIP Profile](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) configured for rules.
 
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_HIPMatch_Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-HIPMatch-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Analyze the security status and policies violations of your endpoints and hosts.
@@ -303,7 +303,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - System Monitoring dashboard provides insights into events on your network by type, severity, and trends. Panels also display data for objects by event type and severity level, and details on recent system feeds.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_System_Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-System-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Identify system issues, such as hardware failures, HA failures, links down and dropped connections with external devices.
@@ -315,7 +315,7 @@ Use this dashboard to:
 
 The Palo Alto Networks 9 - USERID Monitoring dashboard provides insights into user activity on your network, with information on authentication factor, content type, and trends for content and new user activity. Panels also show details on the top firewall devices, source IPs, active users, and users who connected from multiple IPs.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_USERID_Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-USERID-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
 Use this dashboard to:
 * Monitor users logged into a device on an IP generating the traffic.

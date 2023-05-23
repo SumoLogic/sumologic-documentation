@@ -125,7 +125,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Bandwidth Served.** Shows the amount of bandwidth served as a single value chart for the last hour.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Overview.png')} alt="Cisco_ASA dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Overview.png')} alt="Cisco_ASA dashboards" />
 
 ### Firewall Detail
 
@@ -149,8 +149,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Top Denying ACLs.** Displays the top ten denying ACL connections over the last hour in a bar chart.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Firewall_Detail.png')} alt="Cisco_ASA dashboards" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Firewall-Detail.png')} alt="Cisco_ASA dashboards" />
 
 ### Logs Analytics
 
@@ -160,4 +159,4 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Parameterized Search.** Log Details with counts.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Logs_Analytics.png')} alt="Cisco_ASA dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Logs-Analytics.png')} alt="Cisco_ASA dashboards" />
