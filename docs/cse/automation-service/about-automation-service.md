@@ -184,7 +184,7 @@ This section lists the retention period for each type of data generated.
 
 #### Default retention periods by data type
 
-We automatically delete the following customer data according to the table retention period below, except for clients that need to ensure HIPAA compliance.
+We automatically delete the following customer data according to the table retention period below, except for those that need to ensure HIPAA compliance.
 
 | Data type | Retention period |
 | :-- | :-- |
