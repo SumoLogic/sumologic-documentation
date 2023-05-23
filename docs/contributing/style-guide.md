@@ -26,13 +26,13 @@ For terminology usage guidance, see our [Word List](/docs/contributing/word-list
 
 If you're new to writing tech content or would like to learn more, check out these resources:
 * [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/). Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
-* [Google Technical Writing Courses](https://developers.google.com/tech-writing). Self-paced courses to refine your writing. The courses may use a style different from ours, but still an excellent to get started.
+* [Google Technical Writing Courses](https://developers.google.com/tech-writing). Self-paced courses to refine your writing. The courses may use a style different from ours, but still an excellent way to get started.
 * [Every Page is Page One](https://everypageispageone.com/examples-of-eppo-topics/). A helpful method for considering what goes into a page is to think of every page as page one. With the extreme use of search engines or sharing a link to find content, users may land in the middle of a section or tutorial. These ideas help hone your content and focus on user needs.
 
 Helpful blogs on tech writing:
-* [Usability and Tech Writing](https://www.nngroup.com/topic/writing-web/). Jakob Neilson defined usability, including insights on technical writing and learning, helpful for writing docs
-* [Feathers tech writing](https://ffeathers.wordpress.com/). Pioneered API and technical tech writing, insights and instructions
-* [I'd rather be writing](https://idratherbewriting.com/). Guides and thoughts on tech writing process and content
+* [Writing for the Web](https://www.nngroup.com/topic/writing-web/). Guidance on writing for the web, including insights on technical writing and learning.
+* [Feathers](https://ffeathers.wordpress.com/). Blog for technical and fiction writing.
+* [I'd rather be writing](https://idratherbewriting.com/). Guides and thoughts on tech writing process and content.
 
 The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
@@ -48,7 +48,7 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
-* Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com/tester/grade_level.php).
+* Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We have a sense of humor! Conveying that we do serious work, but we don't take ourselves too seriously, makes Sumo Logic feel likable.
 
@@ -79,10 +79,10 @@ This gives a call to action for the reader or user to effectively get something 
 By writing inclusively and using culturally neutral language, our words resonate with global audiences and make everyone feel welcome, no matter their race, gender, socioeconomic status, and ability.
 
 * Do not use idioms, slang, expressions, or terminology only understood by a specific region or group.
-* Avoid overly technical jargon.
+* Avoid overly-technical jargon.
 * Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
 * Unless you're referring to a specific person, do not use gender pronouns (he/she).
-
+* Use culturally-neutral terms to replace terms with negative connotations. For example:
 <div class="container-boxes">
 <div class="dos-box">
   &#9989; "allowlist"<br/>
@@ -106,7 +106,7 @@ By writing inclusively and using culturally neutral language, our words resonate
 * Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
 * Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
 * Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
-* Keep instructions concise, easy to follow, not too many screenshots.
+* Keep instructions concise, easy to follow, and with not too many screenshots.
 * Include any notes, warnings, tips, or other admonitions.
 
 
@@ -120,9 +120,9 @@ Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Alth
 
 ## Acronyms
 
-An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query, etc. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. For example: Secure Shell (SSH).
+An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. For example: Secure Shell (SSH).
 
-All companies have numerous acronyms for product, features, solutions, and more. Our documentation includes acronyms for Sumo Logic and third party software. Always fully spell out the first instance of the acronym on the page, then you can use it throughout. Do not spell out in a heading, but in paragraphs or bullets.
+All companies have numerous acronyms for products, features, solutions, and more. Our documentation includes acronyms for Sumo Logic and third-party software. Always fully spell out the first instance of the acronym on the page, then you can use it throughout. Do not spell out in a heading, but in paragraphs or bullets.
 
 For example, the first time you use AWS Application Load Balancer (ALB), you introduce or use it like that the first time on the page. Through the rest of the page, you can use ALB.
 
@@ -233,8 +233,10 @@ Here's a cool tip.
 
 ### Closed Beta
 
+A closed beta release is limited to customers participating in the beta. Help topics for a closed beta feature have a **Beta** label at the top, but do not appear in the site table of contents or [Beta Features](/docs/beta/). Sumo Logic representatives provide links for closed beta topics only to customers participating in the closed beta. At the end of the beta period, we remove the **Beta** label and and publish the topics so they are available to everyone.
+
 For a Closed Beta release:
-1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** badge.
+1. Underneath the frontmatter, add the [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag) (to prevent search crawlers from picking it up) and the **Beta** label.
   ```
   ---
   id: xyz-source
@@ -251,11 +253,14 @@ For a Closed Beta release:
   First paragraph goes here...
   ```
 1. Do _not_ add the doc to `sidebars.ts`.
-1. Publish the doc.
+2. Do _not_ list the feature in [Beta Features](/docs/beta/).
+3. Publish the doc.
 
-When the feature moves from Beta to GA, remove the Robots meta tag, remove the Beta label, and add the doc to sidebars.ts.
+When the feature moves from Beta to GA, remove the Robots meta tag, remove the **Beta** label, and add the doc to `sidebars.ts`.
 
 ### Open Beta
+
+An open beta release is available to all customers. Help topics for an open beta feature have a **Beta** label at the top, appear in the site table of contents, and are linked from a description of the feature in [Beta Features](/docs/beta/). At the end of the beta period, we remove the **Beta** label and remove the description of the feature from [Beta Features](/docs/beta/).
 
 For an Open Beta release:
 1. Underneath the frontmatter, add the **Beta** label.
@@ -271,9 +276,10 @@ For an Open Beta release:
   First paragraph goes here...
   ```
 1. Add the doc in `sidebars.ts`.
-1. Publish the doc.
+2. List the feature in [Beta Features](/docs/beta/).
+3. Publish the doc.
 
-When the feature moves from Beta to GA, remove the Beta label.
+When the feature moves from Beta to GA, remove the **Beta** label and remove a description of the feature from [Beta Features](/docs/beta/).
 
 ## Capitalization
 
@@ -425,7 +431,7 @@ _sourceCategory=reinvent/travel/checkout
 </TabItem>
 </Tabs>
 
-For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-cheat-sheet/code-blocks).
+For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
 
 ## Collapsible text blocks
@@ -631,7 +637,7 @@ When a topic provides instructions for a significant multi-step process, organiz
 
 ## Hub pages
 
-To generated a full list of docs within a folder, add this code to the file:
+To generate a full list of docs within a folder, add this code to the file:
 
 ```
 import DocCardList from '@theme/DocCardList';
@@ -644,7 +650,7 @@ In this section, we'll introduce the following concepts:
 <DocCardList items={useCurrentSidebarCategory().items}/>
 ```
 
-This is best used in an index file, including a list of all files and folders in that folder to the file. See any category file for a section in the site for how this looks.
+This is best used in an index file. Include a list of all files and folders in that folder to the file. See any category file for a section in the site for how this looks.
 
 
 <!--
@@ -667,27 +673,27 @@ You can use a link to a file embedding the entire file, or embed a range of code
 ### Add an image
 
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
-   * When updating an existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
+   * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
    * File format be .png or .gif.
-2. Add the import line to the top of your doc, underneath the [front matter header](#front-matter), if it's not already there.
+2. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
   ```
   import useBaseUrl from '@docusaurus/useBaseUrl';
   ```
-3. Copy the below code snippet and paste it where you want your image to appear.
+1. Copy the below code snippet and paste it where you want your image to appear.
    ```
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
    ```
-4. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+2. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
    For web-hosted images, do not use the `useBaseUrl` syntax.
    * &#9989; Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
    * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
-5. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description what the image is meant to show. Alt text is a label, not a caption, doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
+3. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
 
   <details><summary>More about <code>alt text</code></summary>
 
-  Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/section508_faqs) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
+  Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
   </details>
 
@@ -971,9 +977,9 @@ For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/ext
 ## Markdown
 
 Markdown is a simple, text-based format you can write using text editors, IDEs, or the GitHub website to write content. We use Docusaurus to manage, style, and build our site. We use GitHub-flavored Markdown, with some additional options. You can find more info at:
-* [Docusaurus | Markdown Cheat Sheet](https://docusaurus.io/docs/markdown-features)
+* [Docusaurus | Markdown Features](https://docusaurus.io/docs/markdown-features)
 * [Markdown Guide](https://www.markdownguide.org/)
-* [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [GitHub | Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ### File naming convention
 
@@ -1000,9 +1006,9 @@ tags: [apm, metrics]
 | :-- | :-- |
 | `id:` | **(Required)** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
 | `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
-| `title:` | **(Required)** For SEO, be sure to sure main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
+| `title:` | **(Required)** For SEO, be sure to use main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
-| `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull first couple sentences instead. |
+| `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull the first couple of sentences instead. |
 | `keywords:` | (Optional) List of page keywords, which boosts SEO. |
 | `tags:` | (Optional) A string or list of tags that adds a label and permalink to tag to help with sorting. |
 
