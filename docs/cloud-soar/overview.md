@@ -36,3 +36,39 @@ Automated workflow processes help analysts function at an optimal level and redu
 
 ### Comprehensive security portfolio
 Cloud SOAR is part of Sumo Logic’s comprehensive security portfolio including security monitoring and analytics and Cloud SIEM, to help your organization modernize security operations.
+
+## Support and complaince
+
+### Data retention
+
+This section lists the retention period for each type of data generated. 
+
+#### Default retention periods by data type
+
+We automatically delete the following customer data according to the table retention period below, except for clients that need to ensure HIPAA compliance.
+
+| Data type | Retention period |
+| :-- | :-- |
+| Incidents | 2 years |
+| Triage | 2 years |
+| Entities | 2 years |
+| Playbook / action executions | 2 years |
+
+For clients that need to ensure HIPAA compliance, we delete data following the retention periods below. Please keep in mind that if a customer needs to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
+
+| Data type | Retention period |
+| :-- | :-- |
+| Incidents | 7 years |
+| Triage | 7 years |
+| Entities | 7 years |
+| Playbook and action executions | 7 years |
+| CSE Records | Records (normalized logs) are stored in the partitions whose names begin with the string `sec_records`. There is one partition for each Record type. <br/><br/>There is no additional charge for storage of Records.| 90 days |
+| CSE Signals | Stored in the `sec_signal` partition.<br/><br/>There is no additional charge for storage of Signals. | 2 years |   
+| CSE Insights | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/><br/>The `sumologic_audit_events` partition contains Insights and Insight-related events that result from user actions.<br/><br/>There is a charge for storage of Insight-related data in the audit indexes. Note however the volume of data is typically very low compared to log ingestion levels. | By default, these partitions have a retention period of 30 days. This period is [customer-configurable](/docs/get-started/help#support). |
+
+#### Custom retention periods
+
+Customers can request retention period times different from those declared in the tables above, as long as the retention
+period requested is greater than 1 day yet less than 5000 days.
+
+In order, to do that please open a [Support ticket](/docs/get-started/help#support) with your request.
