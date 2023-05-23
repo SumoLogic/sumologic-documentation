@@ -6,16 +6,11 @@ tags: [cse, cloud siem, security]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="60"/>
-
 Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the following functionality: 
 
-* Collection of log and event data from your infrastructure and
-    applications, on-premise and in-cloud.
-* Correlation of the collected data to reduce the volume of info
-    you need to sift through to investigate issues.
-* A rich interface that analysts and admins can use to investigate
-    security issues and administer CSE itself.
+* Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
+* Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.
+* A rich interface that analysts and admins can use to investigate security issues and administer CSE itself.
 * Integration with the Sumo Logic platform.
 
 
@@ -24,104 +19,56 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/cse/administration/onboarding-checklist-cse"><img src={useBaseUrl('img/icons/security/compliance.png')} alt="icon" width="40"/><h4>Onboarding Checklist for Cloud SIEM</h4></a>
-  <p>Learn about onboarding tasks and best practices for Cloud SIEM Enterprise administrators.</p>
+  <a href="/docs/cse/administration"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Administration</h4></a>
+  <p>Learn how to set up user accounts and roles, Actions, Network Blocks, custom Insight status and sub-resolutions, and more.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/cse/administration/filter-search"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Filter and Search</h4></a>
-  <p>Learn how to filter and search CSE list pages.</p>
+  <a href="/docs/cse/ingestion"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Ingestion</h4></a>
+  <p>Learn how to configure ingestion for supported products and services.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/cse/administration/create-use-network-blocks"><img src={useBaseUrl('img/icons/operations/microservices.png')} alt="icon" width="40"/><h4>Network Blocks</h4></a>
-  <p>Learn about Network Blocks, their purpose, and instructions for setting them up and using them.</p>
+  <a href="/docs/cse/integrations"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Integrations</h4></a>
+  <p>CSE integration with Sumo Logic and threat intel sources, and leveraging the CSE Insight Enrichment Server.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/cse/administration/create-a-custom-tag-schema"><img src={useBaseUrl('img/icons/operations/schema.png')} alt="icon" width="40"/><h4>Create a Custom Tag Schema</h4></a>
-  <p>Learn how to create a custom tag schema in CSE. </p>
+  <a href="/docs/cse/rules"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Rules</h4></a>
+  <p>Learn how to write rules, rules syntax, and CSE built-in rules.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/cse/administration/create-custom-threat-intel-source"><img src={useBaseUrl('img/icons/security/world-class-security.png')} alt="icon" width="40"/><h4>Create a Custom Threat Intelligence Source</h4></a>
-  <p>Learn how to create and manage Custom Threat Sources.</p>
+  <a href="/docs/cse/schema"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Schema</h4></a>
+  <p>Learn about CSE Schema v3, schema attributes, and the Record processing pipeline.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/cse/administration/create-cse-actions"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Create CSE Actions</h4></a>
-  <p>Learn how to issue a notification to another service when certain events occur in CSE.</p>
+  <a href="/docs/cse/sensors"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Sensors</h4></a>
+  <p>CSE Sensors collect log and event data from your infrastructure and applications.</p>
   </div>
 </div>
 <div className="box smallbox7 card">
   <div className="container">
-  <a href="/docs/cse/administration/create-cse-context-actions"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Create CSE Context Actions</h4></a>
-  <p>Learn to query an external system for details about an Entity, IOC, or data encountered in a Record.</p>
+  <a href="/docs/cse/match-lists-suppressed-lists"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Match Lists and Suppressed Lists</h4></a>
+  <p>Learn about creating a Match list and their usage in rules.</p>
   </div>
 </div>
 <div className="box smallbox8 card">
   <div className="container">
-  <a href="/docs/cse/administration/cse-apis"><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="icon" width="40"/><h4>CSE APIs</h4></a>
-  <p>Learn how to access CSE APIs and API documentation.</p>
+  <a href="/docs/cse/records-signals-entities-insights"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Records, Signals, Entities, and Insights</h4></a>
+  <p>Learn about Insight generation, working with Entities, and how to query CSE Records.</p>
   </div>
 </div>
 <div className="box smallbox9 card">
   <div className="container">
-  <a href="/docs/cse/administration/cse-data-retention"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Data Retention</h4></a>
-  <p>Learn about retention periods for different types of CSE data.</p>
-  </div>
-</div>
-<div className="box smallbox10 card">
-  <div className="container">
-  <a href="/docs/cse/administration/cse-audit-logging"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Audit Logging</h4></a>
-  <p>Learn how to search the Audit Event Index for CSE log events.</p>
-  </div>
-</div>
-<div className="box smallbox11 card">
-  <div className="container">
-  <a href="/docs/cse/administration/cse-user-accounts-and-roles"><img src={useBaseUrl('img/icons/business/regional-partner-sales.png')} alt="icon" width="40"/><h4>CSE User Accounts and Roles</h4></a>
-  <p>Learn how to create and manage user accounts and roles for CSE.</p>
-  </div>
-</div>
-<div className="box smallbox12 card">
-  <div className="container">
-  <a href="/docs/cse/administration/custom-inventory-sources"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Custom Inventory Source</h4></a>
-  <p>Learn how to extract Inventory Data from logs in Sumo Logic and send it to CSE.</p>
-  </div>
-</div>
-<div className="box smallbox13 card">
-  <div className="container">
-  <a href="/docs/cse/administration/save-inventory-data-lookup-table"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Save Inventory Data to a Lookup Table</h4></a>
-  <p>Learn how to use a saved Sumo Logic search to populate a Lookup Table with CSE inventory data.</p>
-  </div>
-</div>
-<div className="box smallbox14 card">
-  <div className="container">
-  <a href="/docs/cse/administration/manage-custom-insight-resolutions"><img src={useBaseUrl('img/icons/operations/correlation-engine.png')} alt="icon" width="40"/><h4>Manage Custom Insight Resolutions</h4></a>
-  <p>Learn how to create and manage Custom Insight Resolutions.</p>
-  </div>
-</div>
-<div className="box smallbox15 card">
-  <div className="container">
-  <a href="/docs/cse/administration/manage-custom-insight-statuses"><img src={useBaseUrl('img/icons/operations/retain-and-visualize-logs.png')} alt="icon" width="40"/><h4>Managing Custom Insight Statuses</h4></a>
-  <p>Learn how to create and manage Custom Insight Statuses.</p>
-  </div>
-</div>
-<div className="box smallbox16 card">
-  <div className="container">
-  <a href="/docs/cse/administration/using-sensor-zones"><img src={useBaseUrl('img/icons/cloud/events.png')} alt="icon" width="40"/><h4>Sensor Zones</h4></a>
-  <p>Learn how to use Sensor Zones to distinguish between CSE Entities that have the same IP address.</p>
-  </div>
-</div>
-<div className="box smallbox17 card">
-  <div className="container">
-  <a href="/docs/cse/administration/inventory-sources-and-data"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Inventory Sources and Data</h4></a>
-  <p>Learn about Inventory Sources and the Inventory Data they collect.</p>
+  <a href="/docs/cse/automation-service"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Automation Service</h4></a>
+  <p>Learn how the Automation Service helps you automate smart actions.</p>
   </div>
 </div>
 </div>
