@@ -52,7 +52,7 @@ We automatically delete the following customer data according to the table reten
 | Incidents | 2 years |
 | Triage | 2 years |
 | Entities | 2 years |
-| Playbook / action executions | 2 years |
+| Playbook and action executions | 2 years |
 
 For clients that need to ensure HIPAA compliance, we delete data following the retention periods below. Please keep in mind that if a customer needs to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
 
