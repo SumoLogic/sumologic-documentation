@@ -59,7 +59,6 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
     "DS:PANW/XDR Agent"
   ]
 }
-
 ```
 
 ```json title="Incident Message"
