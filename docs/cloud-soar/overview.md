@@ -54,7 +54,7 @@ We automatically delete the following customer data according to the table reten
 | Entities | 2 years |
 | Playbook and action executions | 2 years |
 
-For those that need to ensure HIPAA compliance, we delete data following the retention periods below. Please keep in mind that if a customer needs to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
+For clients that need to ensure HIPAA compliance, we delete data following the retention periods below. If you need to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
 
 | Data type | Retention period |
 | :-- | :-- |
@@ -65,7 +65,6 @@ For those that need to ensure HIPAA compliance, we delete data following the ret
 
 #### Custom retention periods
 
-Customers can request retention period times different from those declared in the tables above, as long as the retention
-period requested is greater than 1 day yet less than 5000 days.
+You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
-In order, to do that please open a [Support ticket](/docs/get-started/help#support) with your request.
+In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.
