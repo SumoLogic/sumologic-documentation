@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/pan6.png')} alt="icon" width="100"/>
 
-The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents from the Palo Alto Networks Cortex XDR platform. The Palo Alto Cortex XDR app for Sumo Logic empowers your security teams to proactively monitor and respond to security threats, strengthen incident response processes, improve overall security posture, and protect critical assets from advanced threats and attacks.
+The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents from the Palo Alto Networks Cortex XDR platform. Our app empowers your security teams to proactively monitor and respond to security threats, strengthen incident response processes, improve overall security posture, and protect critical assets from advanced threats and attacks.
 
 Key features of the Palo Alto Networks Cortex XDR app include:
 - **Real-Time Monitoring**. Gain real-time visibility into security events and incidents across your organization's infrastructure. Monitor and analyze alerts, threats, and suspicious activities to detect and promptly respond to potential threats.
