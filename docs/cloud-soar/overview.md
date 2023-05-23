@@ -67,4 +67,4 @@ For clients that need to ensure HIPAA compliance, we delete data following the r
 
 You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
-In order, to do that please open a [Support ticket](/docs/get-started/help#support) with your request.
+In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.
