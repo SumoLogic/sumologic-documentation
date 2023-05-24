@@ -85,7 +85,7 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
    * Describe your updates.
    * Apply a [label](https://github.com/SumoLogic/sumologic-documentation/wiki#github-labels) that best describes your contribution.
 1. [Optional]: For urgent, high-priority PRs (for example, doc edits tied to a GA release happening within 24 hours):
-   1. Add the GA release date to the title. F or example, `AWS Integration release (GA: Jan 1, 2023)`.
+   1. Add the GA release date to the title. For example, `AWS Integration release (GA: Jan 1, 2023)`.
    1. From the labels list, select the `hot🔥` label, signifying it's an extremely urgent PR.
    1. For internal Sumos only: after completion of all GitHub checks, send your PR link to the `#doc-int` and `#open-source` Slack channels for review.
 1. Click **Create pull request**.<br/> ![pull request](/img/contributing/pull-request.png)
