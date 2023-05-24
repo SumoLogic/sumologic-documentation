@@ -1,5 +1,5 @@
 ---
-title: May 19, 2023 (Apps)
+title: Microsoft Graph Security (Apps)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps
