@@ -12,8 +12,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
 We offer two different ECS versions, which have separate data collection steps:
-* [Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service). This version collects [ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
-* [Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) - This version collects[ ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)[ECS CloudWatch Metrics](http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both ec2 and fargate based ecs deployments.
+* **[Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics) and [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
+* **[Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)**. This version collect [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both ec2 and fargate based ecs deployments.
 
 This page has instructions for collecting logs and metrics for the Amazon ECS App. It uses the following data:
 * CloudWatch Metrics
@@ -56,48 +56,16 @@ Parse Expression:
 | fields region, namespace, accountid
 ```
 
-## Centralized AWS CloudTrail Log Collection 
-
-In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create or update the following Field Extraction Rule to map proper AWS account(s) friendly name/alias:
-```sql
-Rule Name: AWS Accounts
-Applied at: Ingest Time
-Scope (Specific Data):
-_sourceCategory=aws/observability/cloudtrail/logs
-```
-
-**Parse Expression**
-
-Enter a parse expression to create an `account` field that maps to the alias you set for each sub-account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like this:
-```sql
-| json "recipientAccountId"
-// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
-| "" as account
-| if (recipientAccountId = "528560886094",  "dev", account) as account
-| if (recipientAccountId = "567680881046",  "prod", account) as account
-| fields account
-```
-
 ## Collect Metrics for Amazon ECS 
 
-To set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics):
+Sumo Logic supports collecting metrics using two source types:
 
-1.  Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-2.  Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3.  In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
-4.  Navigate to the hosted collector you configured above and select **Add > Add Source**.
-5.  Select Amazon CloudWatch Source for Metrics.
-6.  **Name. **Enter a name to display the new source.
-7.  **Description.** Enter an optional description.
-8.  **Regions.** Select your Amazon Regions for ECS.
-9.  **Namespaces.** Select **AWS/ECS**.
-10. **Source Category.** Enter **ecs_metrics**.
-11. **AWS Access**. There are two options for AWS access: 
-    - **Role-based access**. This is the preferred method. Use this option if you are granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For role-based access, enter the Role ARN that was provided by AWS after creating the role.
-    - **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
-12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-13. **Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the `account field`.
-14. Click **Save**.
+  * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
+  * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+  
+**Namespace** for **Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch** service is **AWS/ECS**.
+  
+**Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the `account field`.
 
 ### Collect Container Insights Metrics for Amazon ECS 
 
@@ -106,7 +74,8 @@ When you enable Container Insights, CloudWatch collects [additional metrics](ht
 In this step, you'll enable Container Insights and set up a collection to ingest those metrics.
 
 1. Enable Container Insights by referring to the AWS [docs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-cluster.html) by using cli or AWS console.
-2. Update the source created in "Collect Metrics for Amazon ECS" section to include `ECS/ContainerInsights` in custom namespaces field.<br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs1.png')} alt="ECS/ContainerInsights" />
+2. If Cloudwatch source is selected for collecting metrics, update the source created in "Collect Metrics for Amazon ECS" section to include `ECS/ContainerInsights` in custom namespaces field; or <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs1.png')} alt="ECS/ContainerInsights" />
+3. If Kinesis Firehose source is selected for collecting metrics, update the [Metrics Stream](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#include-metrics-by-namespace) to include `ECS/ContainerInsights` in custom namespaces field.
 
 ### Collect ECS events using CloudTrail
 
@@ -136,6 +105,29 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 19. **Enable Multiline Processing.** Select the check box, and select** Infer Boundaries**.
 20. Click **Save**.
 
+
+## Centralized AWS CloudTrail Log Collection 
+
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create or update the following Field Extraction Rule to map proper AWS account(s) friendly name/alias:
+```sql
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
+```
+
+**Parse Expression**
+
+Enter a parse expression to create an `account` field that maps to the alias you set for each sub-account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like this:
+```sql
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
+
 ## Collect Container Insights performance log events for Task and Container 
 
 Container Insights collects data as performance log events using [embedded metric format](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html). More details [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights.html).
@@ -148,7 +140,7 @@ In this step, you'll create a source to collect Task and Container level perform
 4.  Click on Create and in opened window fill in the below parameters
     1.  Get the delivery stream name from the arn copied in step 2 and fill in the KinesisLogsDeliverStream  field.
     2.  Get the role name from the arn copied in step 2 and fill in the role.
-    3.  Specify the filter pattern `**{ $.Type = "Container" || $.Type = "Task" }**`
+    3.  Specify the filter pattern `{ $.Type = "Container" || $.Type = "Task" }`
     4.  Specify the filter name
     5.  Test the pattern and click Start streaming. <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs5.png')} alt="ECS" />
 
@@ -434,9 +426,7 @@ To set up collection for traces:
 
 </details>
 
-
 ### Sample Query
-
 
 ```sql title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
@@ -452,14 +442,17 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 ### Install the Sumo Logic App 
 
-Now that you have set up a [collection](/docs/integrations/amazon-aws/elastic-container-service) for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app. 
-2. Select the **With Container Insights and Traces** version and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library).
+2. Select the **With Container Insights and Traces** version and click **Add to Library**. 
+:::note
+Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library).
+:::
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name or enter the app's name of your choice. 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
