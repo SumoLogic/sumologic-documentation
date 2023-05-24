@@ -113,6 +113,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/installed-collectors/index'},
           items: [
+            'send-data/installed-collectors/configuration',
             'send-data/installed-collectors/macos',
             'send-data/installed-collectors/windows',
             'send-data/installed-collectors/linux',

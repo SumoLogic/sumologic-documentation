@@ -14,31 +14,31 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/send-data/installed-collectors/configuration"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Install and Configure a Collector</h4></a>
-  <p>Set up Hosted Collectors so you can move data to Sumo Logic.</p>
+  <p>Install and configure a collector to gather and send data to Sumo Logic.</p>
   </div>
 </div>
-  <div className="box smallbox2 card">
-  <div className="container">
-  <a href="/docs/send-data/installed-collectors/sources"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Sources</h4></a>
-  <p>Learn how to configure a variety of local and remote Sources for your Installed Collector.</p>
-  </div>
-</div>
-<div className="box smallbox3 card">
+<div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/send-data/installed-collectors/macos"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>For macOS</h4></a>
   <p>Install or uninstall a Collector on a macOS system.</p>
   </div>
 </div>
-<div className="box smallbox4 card">
+<div className="box smallbox3 card">
   <div className="container">
   <a href="/docs/send-data/installed-collectors/linux"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>For Linux</h4></a>
   <p>Install or uninstall a Collector on a Linux system.</p>
   </div>
 </div>
-  <div className="box smallbox5 card">
+  <div className="box smallbox4 card">
   <div className="container">
   <a href="/docs/send-data/installed-collectors/windows"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>For Windows</h4></a>
   <p>Install or uninstall a Collector on a Windows system.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+<div className="container">
+  <a href="/docs/send-data/installed-collectors/sources"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Sources</h4></a>
+  <p>Learn how to configure a variety of local and remote Sources for your Installed Collector.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
