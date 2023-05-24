@@ -29,6 +29,21 @@ There is another benefit of using tuning built-in rules instead of writing custo
 
 You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules.
 
+Watch this micro lesson to learn how to create a rule tuning expression.
+
+<Iframe url="https://www.youtube.com/embed/3BUKLtJtPI8?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Writing a tuning expression
 
 Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and CSE [rules language](/docs/cse/rules/cse-rules-syntax.md) functions. For more information, see [About rule expressions](about-cse-rules.md#About_rule_expressions).

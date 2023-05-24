@@ -17,46 +17,27 @@ The most commonly used parameter is `span`, which allows you to specify the numb
 If you run `ewma` without specifying either `alpha` or `span`, it runs by default with `alpha=0.5` (or`span=3`).
 
 
-## ewma syntax
+## Syntax
 
-```
-metric query | ewma [alpha=<#> |span=<#>]
-```
-
-
-#### Syntax using alpha parameter
-
-```
-query selector | ewma alpha=<#>
-```
-
-
-Where:
-
-* `alpha`, the smoothing parameter, is a decimal value (0.0 ≤ alpha ≤ 1.0)
-* The default value of `alpha` is 0.5
-
-**Example**
-
-```
-metrics=xyz | ewma alpha=0.1
-```
-
-
-
-### Syntax using span parameter  
-
-```
-query selector | ewma span=<#>
+```sql
+ewma [alpha=<decimal> | span=<integer>]
 ```
 
 Where:
 
-* `span` is the number of data points. Must be an integer value greater than zero. If you set `span=5`, the last five data points will be used to calculate the average.
-* The default value of `span` is 3.
+* `alpha`, the smoothing parameter, is a decimal value (0.0 ≤ alpha ≤ 1.0) The default value of `alpha` is 0.5
+* `span` is the number of data points. Must be a positive integer. If you set `span=5`, the last five data points will be used to calculate the average.  The default value of `span` is 3.
 
-**Example**
+## Examples
 
+### Using alpha
+
+```sql
+metric=CPU_Idle | ewma alpha=0.1
 ```
-metrics=xyz | ewma span=10
+
+### Using span
+
+```sql
+metric=CPU_Idle | ewma span=10
 ```

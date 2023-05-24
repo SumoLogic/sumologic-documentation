@@ -141,6 +141,15 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 
 {@import ../../../reuse/restart-c2c-source.md}
 
+### Base URL
+
+Internally, the source will use the following base URL depending on the respective cloud region:
+
+| BASE_URL | Value |
+| :--- | :--- |
+| Azure Government | https://graph.microsoft.us |
+| Azure Global Service | https://graph.microsoft.com |
+
 ### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
@@ -163,6 +172,7 @@ The following table shows the **config** parameters for a Microsoft Graph Se
 | `tenant_id` | String | Yes |  | The Directory (tenant) ID of the Azure AD application. | modifiable |
 | `secret_key` | Boolean | Yes |  | The Application Client Secret Key created with access to the Azure AD application. | modifiable |
 | `application_id` | String | Yes |  | The Application (client) ID of the Azure AD application.	modifiable |
+| `azure_gov` | Boolean | No | false | Set to true if Azure tenant uses Azure Government region. | modifiable |
 | `polling_interval` | Integer | Yes | 300 | This sets how many seconds the Source checks for new data. | modifiable |
 
 Microsoft Graph Security API Source JSON example:
