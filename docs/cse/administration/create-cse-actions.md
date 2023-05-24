@@ -26,6 +26,22 @@ You can use CSE Actions to issue a notification to another service when certain 
 
 An Action can be configured for Insight-related activity as described below in [Insight Actions](create-cse-actions.md#insight-actions). You can also configure an Action to be run when a rule is automatically disabled, as described below in [Rule Actions](create-cse-actions.md#rule-actions).
 
+Watch this micro lesson to learn how to configure an Action.
+
+<Iframe url="https://www.youtube.com/embed/uHY-r04edn0?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 ## Insight Actions
 
 You can configure an Action to send information about an Insight to another system, automatically when the Insight is created or on-demand from the Insight's **Actions** menu, and in the case of an HTTP POST v2 Action, when an Insight is closed.
