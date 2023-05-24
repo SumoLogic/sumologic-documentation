@@ -118,19 +118,25 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox17 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/knowbe4"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="160" /><h4>KnowBe4</h4></a>
-  <p>Monitoring and analyzing KnowBe4 Phishing Security logs</p>
+  <p>Monitor and analyze KnowBe4 Phishing Security logs.</p>
   </div>
 </div>
 <div className="box smallbox18 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="60"/><h4>Microsoft Exchange Trace Logs</h4></a>
+  <a href="/docs/integrations/saas-cloud/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs.png')} alt="icon" width="50"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Monitor Delivered, Failed, Quarantined, Pending, and Spam messages.</p>
   </div>
 </div>
 <div className="box smallbox19 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/microsoft-graph-security"><img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="60"/><h4>Microsoft Graph Security </h4></a>
-  <p>Identify security threats by analysing alert logs.</p>
+  <a href="/docs/integrations/saas-cloud/mimecast"><img src={useBaseUrl('img/integrations/saas-cloud/mimecast-logo.png')} alt="icon" width="50"/><h4>Mimecast</h4></a>
+  <p>Monitor and analyze Mimecast email data to identify potential threats and improve email security posture.</p>
+  </div>
+</div>
+<div className="box smallbox20 card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/microsoft-graph-security"><img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="60"/><h4>Microsoft Graph Security</h4></a>
+  <p>Identify security threats by analyzing alert logs.</p>
   </div>
 </div>
 <div className="box smallbox20 card">
