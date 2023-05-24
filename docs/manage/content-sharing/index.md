@@ -25,51 +25,33 @@ In either location, you click the kabob icon to locate the **Share** option and 
 
 When you share content, the users with whom you have shared it are notified by email. A user can also see shared content in the Library (listed in the left nav bar). By default, any user or role with which you share content receives an email notification that names the person who is sharing the content, the Organization, and the type of content that is shared. You can also add text to the email notification to explain why you think the content is useful to them.
 
-![Emailnotification.png](/img/content-sharing/Emailnotification.png)
+<img src={useBaseUrl('img/content-sharing/Emailnotification.png')} alt="Emailnotification.png" width="400"/>
 
 To find content in the Library that has been shared with you:
 
 1. Click the clock image in the top of the left nav bar.
-1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.   
-
-    ![Dash3.png](/img/content-sharing/Dash3.png)
+1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.<br/><img src={useBaseUrl('img/content-sharing/Dash3.png')} alt="dashboard" width="250"/>
 
 ## Sharing dashboards, log searches, metric queries, and folders
 
 To share content from the Left-nav or the Library:
 
 1. Click the Details icon ![details](/img/content-sharing/details.png) for the content you want to share.
-1. Select **Share** from the dropdown menu.
-
-    ![Share Search](/img/content-sharing/share-search.png)
-
+1. Select **Share** from the dropdown menu.<br/>  ![Share Search](/img/content-sharing/share-search.png)
     :::note
     The **View in Library** option is present when you click the Details icon from the Left-nav. 
     :::
-
-1. In the Share dialog, enter the user name or role name to receive access. For example, if you want all users with the **Analyst** role to be able to edit the content, choose **Analyst**:    
-
-    ![analyst](/img/content-sharing/analyst.png)
-
-    If you have an unsaved search, these options will not be available to you. We need a name saved for your search before we can offer this dialog. If you want to share an unsaved search, you can share a link from the available dialog.   
-
-    ![unsaved-search](/img/content-sharing/unsaved-search.png)
+1. In the Share dialog, enter the user name or role name to receive access. For example, if you want all users with the **Analyst** role to be able to edit the content, choose **Analyst**:  <br/>  ![analyst](/img/content-sharing/analyst.png)<br/>  
+    If you have an unsaved search, these options will not be available to you. We need a name saved for your search before we can offer this dialog. If you want to share an unsaved search, you can share a link from the available dialog. <br/>  ![unsaved-search](/img/content-sharing/unsaved-search.png)
 1. Optional. If you are sharing with a large Role, or a user who already expects access to this search, you can turn off **Notify recipients by email**. If you do want to send an email notification, we recommend that you include a note in the email for the recipients to indicate what to do with their new content and leave the option enabled.
 1. Choose the level of access from View, Edit, or Manage. For details on permission levels, see [Available Permission Levels](#available-permission-levels).
-1. Optional. Choose **Advanced Options** to further refine access to the content. For details on these options, see [Available Permission Levels](#available-permission-levels).
-
-    ![PermissionsShare](/img/content-sharing/PermissionsShare.png)
+1. Optional. Choose **Advanced Options** to further refine access to the content. For details on these options, see [Available Permission Levels](#available-permission-levels).<br/>  ![PermissionsShare](/img/content-sharing/PermissionsShare.png)
 
 ## Navigate Content Sharing Tabs
 
-Sumo provides a few ways to navigate your content based on what you want to view.
+Sumo Logic provides a few ways to navigate your content based on what you want to view.
 
-| Icon | Tab Name | Definition |
-| :-- | :-- | :-- |
-| ![](/img/content-sharing/icon-recents.png) | Recents | Access recent content:<ul><li>Content you’ve recently accessed.</li><li>Content recently shared with you.</li></ul> |
-| ![](/img/content-sharing/icon-favorites.png) | Favorites | Content you’ve marked as favorite. |
-| ![](/img/content-sharing/icon-personal.png) | Personal | Content you manage. |
-| ![](/img/content-sharing/icon-library.png) | Library | List of all accessible content, including your creations and the content shared with you. |
+{@import ../../reuse/ui-elements.md}
 
 ## Available Permission Levels
 
