@@ -145,8 +145,8 @@ _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
 | where alert_type matches "{{alert_type}}"
 | where is_whitelisted matches "{{is_whitelisted}}"
 | count_distinct(alert_id)
-
 ```
+   
 ```sql title="Incidents Created"
 _sourceCategory="palo_alto_cortex_xdr" "incident_id" "incident_name"
 | json "incident_id","incident_name","creation_time","modification_time","status","severity","assigned_user_mail","alert_count","high_severity_alert_count","critical_severity_alert_count","user_count","xdr_url","wildfire_hits","alerts_grouping_status","mitre_tactics_ids_and_names","mitre_techniques_ids_and_names" as incident_id,incident_name,creation_time,modification_time,status,severity,assigned_user_mail,alert_count,high_severity_alert_count,critical_severity_alert_count,user_count,xdr_url,wildfire_hits,alerts_grouping_status,mitre_tactics_ids_and_names,mitre_techniques_ids_and_names nodrop
