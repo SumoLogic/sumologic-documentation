@@ -16,7 +16,6 @@ The Citrix Cloud source collects the system, operation, and session logs using t
 - The System logs are obtained using the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis). 
    - To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account. 
    - Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls. 
-
 - The Operation and Session logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview). 
    - To collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. Make sure this by signing in to the Citrix Cloud platform and checking the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, then you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" />
 
