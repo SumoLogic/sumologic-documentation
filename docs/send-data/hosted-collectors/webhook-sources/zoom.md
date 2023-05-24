@@ -70,7 +70,7 @@ To configure a Zoom Source:
 
 ## Enable Events Subcriptions
 
-1. Go back to the page in the Zoom Marketplace which you left open in the step 1(#setup-and-configuration).
+1. Go back to the Zoom Marketplace page that you left open in [step 1](#setup-and-configuration).
 1. Enable **Event Subscriptions**. <br/><img src={useBaseUrl('img/send-data/events-subscriptions.png')} alt="events-subscriptions" width="550"/>
 1. Click **Add new event subscription** and provide the following information:
    * **Subscription Name** (for example, Sumo Logic)
