@@ -5,7 +5,7 @@ keywords:
   - apps
   - app catalog
   - saas cloud
-  - symantec
+  - palo alto cortex xdr
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
