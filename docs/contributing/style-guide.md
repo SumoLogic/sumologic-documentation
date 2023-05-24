@@ -1172,12 +1172,14 @@ We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orang
 
 Keep release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
 
+Add your release note in the appropriate blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)) found at the top level of [sumologic-documentation](https://github.com/SumoLogic/sumologic-documentation). Those folders correspond to the different release note sections:<br/><img src={useBaseUrl('img/contributing/release-notes-dropdown-menu.png')} alt="Release notes menu" width="200"/>
+
 
 ### Text only
 
 To add release notes without images:
 
-1. In the Blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
+1. In the blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
 1. Add the following frontmatter:
     ```markdown
     ---
@@ -1195,7 +1197,7 @@ To add release notes without images:
     ---
     ```
     * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags, including:
+    * `tags`: Add a comma-separated list of existing tags.
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Document the release notes. Add links, bullets, and images as needed.
 
@@ -1207,7 +1209,7 @@ For lengthy release notes, we recommend introducing the notes and adding a trunc
 
 To add release notes with images:
 
-1. In the Blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
+1. In the blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
 1. In the new folder, create a markdown file named `index.md`. Add your release notes with frontmatter:
     ```markdown
     ---
@@ -1217,7 +1219,7 @@ To add release notes with images:
     ---
     ```
     * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags, including:
+    * `tags`: Add a comma-separated list of existing tags.
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
 
@@ -1429,7 +1431,7 @@ Info for the second tab would go here! Content can include markdown, code blocks
 
 For clarity and search engine discoverability:
 
-* Doc titles are very important for SEO. Use primary target keywords, try to mention "Sumo Logic, and keep length under 60 characters.
+* Doc titles are very important for SEO. Use primary target keywords, try to mention "Sumo Logic", and keep length under 60 characters.
    * Example: ~~_Monitoring with the Observability Solution_~~ &rarr; _Monitoring with Sumo Logic Observability_
 * Use H2 sections to break up content and try to use primary keywords here as well.
    * Example: _AWS Observability Solution_.
@@ -1437,7 +1439,7 @@ For clarity and search engine discoverability:
    * Example: _System architecture and monitoring_.
 
 :::sumo For internal contributors
-* If you change a URL, set up a redirect so that users don’t get a 404 page.
+* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::
 
