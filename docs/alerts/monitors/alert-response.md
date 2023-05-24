@@ -216,7 +216,7 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 ## Subscribe to Alert Monitors
 
 :::note Terminology
-A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
+A _monitor_ creates an _alert_. Using the options below, you're subscribing to an alert's monitor.
 :::
 
 
@@ -231,8 +231,31 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
+## Subscribe to a folder
 
-### Notification Preferences
+If folder is subscribed, then all nested monitors and folders are automatically subscribed (“SubscribedByAncestor”).
+
+If you create a subscription on “monitor A”, and then move it to subscribed “folder B”, “monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder.
+
+To cancel an inherited subscription, you need to remove subscription from a parent folder or move the monitor or folder into another location outside folder with direct subscription.
+
+When you click **Unsubscribe**, you'll be informed about how to remove subscription.
+
+#### Alerts list & Alert Page
+
+You can subscribe to a monitor that has produced alerts by firing “Subscribe” action on a specific alert on the Alerts list.
+
+You can unsubscribe from monitor that has produced alert by firing “Unsubscribe” action on a specific alert on the Alerts list.
+
+If an alert has been produced by monitor subscribed by ancestor, then you shouldn’t be able to remove subscription. In a such case, you should be informed about next steps and what can be done to remove subscription.
+On Monitors, Alerts list we should differentiate between subscription states:
+
+Yes - direct subscription
+No - no direct subscription, no inherited subscription
+Yes (inherited from folder)
+
+
+## Notification Preferences
 
 Alert notification preferences give you granular control over specific monitor activity you want to follow. <img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
