@@ -25,23 +25,23 @@ This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https
 
 ```json title="Events Feed"
 {
- account_id: "1714",
- action: "Succeeded",
- api_name: "eventsFeed",
- api_type: "query",
- authentication_type: "APIKEY",
- event_count: "1",
- event_sub_type: "ApiKey",
- event_type: "Connectivity",
- internalId: "9jlo",
- key_name: "Peter",
- login_type: "API",
- src_country: "Ireland",
- src_country_code: "IE",
- src_ip: "128.200.100.1",
- src_is_site_or_vpn: "API",
- src_site: "US",
- time: "1682856852500"
+   account_id: "1714",
+   action: "Succeeded",
+   api_name: "eventsFeed",
+   api_type: "query",
+   authentication_type: "APIKEY",
+   event_count: "1",
+   event_sub_type: "ApiKey",
+   event_type: "Connectivity",
+   internalId: "9jlo",
+   key_name: "Peter",
+   login_type: "API",
+   src_country: "Ireland",
+   src_country_code: "IE",
+   src_ip: "128.200.100.1",
+   src_is_site_or_vpn: "API",
+   src_site: "US",
+   time: "1682856852500"
 }
 ```
 ```json title="Audit Feed"
