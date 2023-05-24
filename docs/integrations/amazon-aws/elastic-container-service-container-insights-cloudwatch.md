@@ -105,10 +105,10 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 19. **Enable Multiline Processing.** Select the check box, and select** Infer Boundaries**.
 20. Click **Save**.
 
-
 ## Centralized AWS CloudTrail Log Collection 
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create or update the following Field Extraction Rule to map proper AWS account(s) friendly name/alias:
+
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
@@ -119,6 +119,7 @@ _sourceCategory=aws/observability/cloudtrail/logs
 **Parse Expression**
 
 Enter a parse expression to create an `account` field that maps to the alias you set for each sub-account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like this:
+
 ```sql
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
@@ -140,8 +141,8 @@ In this step, you'll create a source to collect Task and Container level perform
 4.  Click on Create and in opened window fill in the below parameters
     1.  Get the delivery stream name from the arn copied in step 2 and fill in the KinesisLogsDeliverStream  field.
     2.  Get the role name from the arn copied in step 2 and fill in the role.
-    3.  Specify the filter pattern `{ $.Type = "Container" || $.Type = "Task" }`
-    4.  Specify the filter name
+    3.  Specify the filter pattern `{ $.Type = "Container" || $.Type = "Task" }`.
+    4.  Specify the filter name.
     5.  Test the pattern and click Start streaming. <br/> <img src={useBaseUrl('img/integrations/amazon-aws/ecs5.png')} alt="ECS" />
 
 ## Collect Application Logs for Amazon ECS
