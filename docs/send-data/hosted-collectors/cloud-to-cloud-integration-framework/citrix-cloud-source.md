@@ -9,21 +9,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
 
-The Citrix Cloud source p ingests the system, operation, and session logs from the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis) to Sumo Logic.. It is a workspace management platform for IT administrators to design, deliver and manage virtual desktops and applications and other services, such as file sharing, on any device.
+The Citrix Cloud source collects the system, operation, and session logs using the Citrix Cloud API and Citrix DaaS REST API to Sumo Logic. Citrix Cloud is a workspace management platform for IT administrators to design, deliver, and manage virtual desktops and applications, and other services, such as file sharing, on any device.
 
 ## Prerequisites
 
-- To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account. Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls. Get access to Citrix Cloud APIs [here](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis). The steps must be taken exactly as directed.
+- The System logs are obtained using the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis). 
+   - To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account. 
+   - Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls. 
 
-- The Operation and Session logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview). Hence, to collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. To confirm this, sign in to the Citrix Cloud platform and check the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, it means you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" />
+- The Operation and Session logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview). 
+   - To collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. Make sure this by signing in to the Citrix Cloud platform and checking the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, then you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" />
 
 ## Data sources
 
-- **[System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords)**. This API provides logs related to administrator and secure client operations. It allows monitoring activities in the Citrix Cloud, providing insights into what changes were made and who initiated those changes.
-- **Operation Log API**. This API provides logs related to configuration changes within a customer site. There are two types of logs available:
+- **[System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords)**. This API provides logs related to the administrator and secures client operations. It allows you to monitor activities in the Citrix Cloud, providing insights into what changes are made and who initiated those changes.
+- **Operation Log API**. This API provides logs related to configuration changes within a customer site. Two types of logs are available:
    - **[Config Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetOperations)**. This API provides logs that give a high-level summary of configuration operations within a customer site.
-   - **[Low-Level Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations)**. This API provides detailed logs about specific configuration operations. It offers in-depth insights into the low-level details of a particular operation, which can be accessed using the Operation Logs API.
-- **[Session Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview)**. This API provides details about all the sessions in the Citrix Cloud, captured through the Citrix Monitor Service.
+   - **[Low-Level Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations)**. This API provides detailed logs about specific configuration operations and offers in-depth insights into the low-level details of a particular operation.
+- **[Session Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview)**. TThis API provides details about all the sessions in the Citrix Cloud, captured through the Citrix Monitor Service.
 
 ## Metadata Fields
 
@@ -118,28 +121,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 
 ### Restarting your Source
 
-If your Source encounters ThirdPartyConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
-
-#### UI
-
-To restart your source in the Sumo Logic platform, follow the steps below:
-1. Open the Collection page, and go to **Manage Data** > **Collection** > **Collection**.
-2. Select the source and click the **information** icon on the right side of the row.
-3. The API usage information popup is displayed. Click the **Restart Source** button on the bottom left. <br/><img src={useBaseUrl('img/send-data/restart-source-button.png')} alt="restart-source-button.png" width="550" />
-4. Click **Confirm** to send the restart request. <br/><img src={useBaseUrl('img/send-data/restart-source-confirm.png')} alt="restart-source-confirm.png" width="550" />
-5. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/send-data/source-restart-initiated.png')} alt="source-restart-initiated.png" width="550" />
-
-#### API
-
-To restart your source using the Sumo Management API, follow the instructions below:
-* Method: POST
-* Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
-
-<details><summary>Which API endpoint should I use?</summary>
-
-{@import ../../../reuse/api-endpoints.md}
-
-</details>
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration
 
@@ -206,47 +188,66 @@ This section provides information on how to troubleshoot failures while configur
 #### Error message
 
 ```
-{"error": "invalid_client","error_description": "Invalid client id or client secret."}
+{
+   "error": "invalid_client",
+   "error_description": "Invalid client id or client secret."
+}
 ```
 
 #### Solution
 
-Make sure that you have used correct `baseURL`, `clientId`, and `clientSecret` while configure the source.
+Make sure that you have used the correct `baseURL`, `clientId`, and `clientSecret` while configure the source.
 
 ### System Logs API errors
 
 #### Error message
 
 ```
-{"statusCode": 500,"message": "Internal server error","activityId": "XXXXXX"}
+{
+   "statusCode": 500,
+   "message": "Internal server error",
+   "activityId": "XXXXXX"
+}
 ```
 
 #### Solution
 
-Make sure the correct `baseURL` is used to configure the source.
+Make sure that you have used the correct `baseURL` is used to configure the source.
 
 #### Error message
 
 ```
-{"type": "https://errors-api.cloud.com/common/authentication","detail":"Missing or invalid authentication details","parameters": [{"name":"reason","value": "invalid"}]}
+{
+   "type": "https://errors-api.cloud.com/common/authentication",
+   "detail":"Missing or invalid authentication details",
+   "parameters": [
+      {
+         "name":"reason","value": "invalid"
+      }
+   ]
+}
 ```
 
 #### Solution
 
-Make sure the correct `customerId` is used to configure the source.
+Make sure that you have used the correct `customerId` is used to configure the source.
 
 ### SiteID, Operation Logs, and Low-Level Operation Logs API error
 
 #### Error message
 
 ```
-{"statusCode": 500,"message": "Internal server error","activityId": "XXXXXX"}
+{
+   "statusCode": 500,
+   "message": "Internal server error",
+   "activityId": "XXXXXX"
+}
 ```
 
 #### Solution
 
-- Make sure the correct `customerId` and `baseURL` are used to configure the source.
-- Make sure the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+- Make sure that you have used the correct `customerId` and `baseURL` are used to configure the source.
+- Make sure that the provided `customerId` has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
 
 ### Session Logs API error
 
@@ -256,5 +257,5 @@ Make sure the correct `customerId` is used to configure the source.
 
 #### Solution
 
-- Make sure the correct `customerId` and `baseURL` are used to configure the source.
-- Make sure the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+- Make sure that the correct `customerId` and `baseURL` are used to configure the source.
+- Make sure that the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
