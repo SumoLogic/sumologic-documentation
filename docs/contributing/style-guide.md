@@ -484,21 +484,6 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 Using contractions contributes to our goals of striking a conversational, friendly tone. Use common contractions, like “don’t”, “won’t”, and “you’ll”. Avoid less common contractions, like “should’ve”, or “it’ll”. Do not use negative contractions (don't, can't, shouldn't), as they can be easily mistaken for the opposite meaning. Spell out those words.
 
-<!--
-### UI Element Names
-
-Not everything has an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
-
-| What does it look like? | What does Sumo call it? |
-|:------------------------|:--------------------|
-| x                       | Three-dot icon     |
-| x                       | Navigation Menu     |
-| x                       | Favorites           |
-| x                       | Personal Folder     |
-| x                       | Recents             |
-| x                       | Library             |
--->
-
 ## Downloadable files
 
 To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
@@ -530,6 +515,14 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 Nearly all file formats are supported. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
 
 If your file is available in another public Sumo Logic repo, provide the standard URL link. [Here's an example](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/fargate/install-metrics.sh).
+
+## Elements, UI
+
+Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
+
+{@import ../reuse/ui-elements.md}
+
+When providing instructions that involve multiple UI elements, list them sequentially and in cascading order. For example: Click **More Actions** > **Delete**.
 
 ## Emphasis
 
