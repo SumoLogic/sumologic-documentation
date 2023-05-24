@@ -82,7 +82,7 @@ By writing inclusively and using culturally neutral language, our words resonate
 * Avoid overly-technical jargon.
 * Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
 * Unless you're referring to a specific person, do not use gender pronouns (he/she).
-* Use culturally-neutral terms to replace terms with negative connotations. For example:
+* Use culturally neutral terms to replace terms with negative connotations. For example:
 <div class="container-boxes">
 <div class="dos-box">
   &#9989; "allowlist"<br/>
