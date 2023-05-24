@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="Thumbnail icon" width="80"/>
 
-The Sumo Logic app for Cato Networks provides real-time insights into the events and helps you to identify potential security threats with admin activities. This app offers a comprehensive suite of dashboards that enables you to monitor network events, analyze threats, and track administrative activities, which empowers you with actionable intelligence for network management and security.
+The Sumo Logic app for Cato Networks provides real-time insights into the events and helps you to identify potential security threats with admin activities. This app offers a comprehensive suite of dashboards that monitor network events, analyze threats, and track administrative activities, which empowers you with actionable intelligence for network management and security.
 
 Key features and benefits of the Cato Networks app include:
 - **Security event analysis**. Detect and respond to security threats in the Cato Networks environment. It provides a holistic view of event-related metrics and insights. This dashboard enables users to identify trends, assess risks, and make informed decisions regarding network events.
