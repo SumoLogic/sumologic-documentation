@@ -675,7 +675,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
    * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
    * File format be .png or .gif.
-2. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
+1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
   ```
   import useBaseUrl from '@docusaurus/useBaseUrl';
   ```
@@ -683,13 +683,13 @@ You can use a link to a file embedding the entire file, or embed a range of code
    ```
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
    ```
-2. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+1. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
    For web-hosted images, do not use the `useBaseUrl` syntax.
    * &#9989; Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
    * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
-3. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
+1. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
 
   <details><summary>More about <code>alt text</code></summary>
 
@@ -697,7 +697,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
   </details>
 
-6. Use the `width` to resize oversized and/or pixelated images, if needed.
+1. Use the `width` to resize oversized and/or pixelated images, if needed.
 
   <Tabs
     className="unique-tabs"
