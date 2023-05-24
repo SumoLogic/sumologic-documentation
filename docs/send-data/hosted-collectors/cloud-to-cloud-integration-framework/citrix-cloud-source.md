@@ -9,15 +9,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
 
-The Citrix Cloud Source provides a secure endpoint to receive System Log data from the [Citrix Cloud System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords). It is a workspace management platform for IT administrators to design, deliver and manage virtual desktops and applications and other services, such as file sharing, on any device.
+The Citrix Cloud source p ingests the system, operation, and session logs from the [Citrix Cloud API](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis) to Sumo Logic.. It is a workspace management platform for IT administrators to design, deliver and manage virtual desktops and applications and other services, such as file sharing, on any device.
 
 ## Prerequisites
 
-To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account. Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls. Get access to Citrix Cloud APIs [here](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis). The steps must be taken exactly as directed.
+- To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account. Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls. Get access to Citrix Cloud APIs [here](https://developer.cloud.com/citrix-cloud/citrix-cloud-api-overview/docs/get-started-with-citrix-cloud-apis). The steps must be taken exactly as directed.
+
+- The Operation and Session logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview). Hence, to collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. To confirm this, sign in to the Citrix Cloud platform and check the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, it means you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" />
 
 ## Data sources
 
-The Citrix Cloud API integration retrieves system logs every 5 minutes.
+- **[System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords)**. This API provides logs related to administrator and secure client operations. It allows monitoring activities in the Citrix Cloud, providing insights into what changes were made and who initiated those changes.
+- **Operation Log API**. This API provides logs related to configuration changes within a customer site. There are two types of logs available:
+   - **[Config Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetOperations)**. This API provides logs that give a high-level summary of configuration operations within a customer site.
+   - **[Low-Level Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations)**. This API provides detailed logs about specific configuration operations. It offers in-depth insights into the low-level details of a particular operation, which can be accessed using the Operation Logs API.
+- **[Session Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview)**. This API provides details about all the sessions in the Citrix Cloud, captured through the Citrix Monitor Service.
 
 ## Metadata Fields
 
@@ -62,12 +68,6 @@ To get the **Citrix Cloud API token**, follow the steps below:
 1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#set-up-citrix-cloud-source). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
 1. After closing the previous dialogue box, copy and paste the **Customer Id**, which is written straight above the **Create Client** button, into a folder. Look at the red highlighted box.<br/><img src={useBaseUrl('img/send-data/customer-id.png')} alt="<customer-id.png>" width="650" />
 
-:::note
-Remember, you will need to enter this key while creating the [Citric Cloud-to-Cloud Source](#set-up-citrix-cloud-source).
-:::
-
-The Citrix Cloud API sends a maximum of 200 system log records in one page. For additional records, integration paginates the output using the continuation token received in the API response.
-
 ## States
 
 A Citrix Cloud Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
@@ -92,18 +92,19 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 
 To configure the Citrix Cloud API:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
-2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **Citrix Cloud** icon.  <br/>  <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon.svg" width="120" />
-4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/citrix-cloud-config-main.png')} alt="citrix-cloud-config-main.png" width="400" />
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
+1. On the Collectors page, click **Add Source** next to a Hosted Collector.
+1. Select **Citrix Cloud** icon.  <br/>  <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon.svg" width="120" />
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/citrix-cloud-config-main.png')} alt="citrix-cloud-config-main.png" width="400" />
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-7. In **Base URL**, choose the URL where your Citrix Cloud account is located. See [Base URL](#base-url) section to know your base URL.
-8. In **Customer ID**, enter the Customer ID you generated and secured from the [API Client](#api-client) section in step 6.
-9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client) section in step 5.
-10. In **Client Secret**, authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
-11. When you are finished configuring the Source, click **Save**.
+1. **Base URL**. Choose the URL where your Citrix Cloud account is located. See [Base URL](#base-url) section to know your base URL.
+1. **Customer ID**. Enter the Customer ID you generated and secured from the [API Client](#api-client) section in step 6.
+1. **Client ID**. Enter the Client ID you generated and secured from the [API Client](#api-client) section in step 5.
+1. **Client Secret**. Authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
+1. (Optional) **Supported APIs to Collect**. Select any or all of the data sources such as System Logs, Operation Logs, Monitor Data Session Logs.
+1. When you are finished configuring the Source, click **Save**.
 
 ### Error types
 
@@ -161,7 +162,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `baseURL` | String | Yes | Region URL of the Citrix Cloud application. | modifiable |
 | `customerID` | String | Yes | Customer ID of the environment. | modifiable |
 | `clientID` | String | Yes | Client ID for the API client. | modifiable |
-| `clientSecret` | String | Yes | Client Secret for the API client | modifiable |
+| `clientSecret` | String | Yes | Client Secret for the API client. | modifiable |
+| `supportedAPI` | Array | Yes | Select any of the given data sources or all the data sources, such as System Logs, Operation Logs, Monitor Data Session Logs. | modifiable |
 
 ### JSON example
 
@@ -177,7 +179,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
          "customerId":"customer_id",
          "clientId":"client_id",
          "clientSecret":"client_secret",
-         "fields":{
+         "supportedAPIs": [
+    	"systemLogs",
+    	"operationLogs",
+    	"sessionLogs",
+    	"all"
+          ],
+                "fields":{
             "_siemForward":false
          }
       },
@@ -188,3 +196,65 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
    }
 }
 ```
+
+## Troubleshooting
+
+This section provides information on how to troubleshoot failures while configuring our Citrix Cloud Source.
+
+### Authentication API error
+
+#### Error message
+
+```
+{"error": "invalid_client","error_description": "Invalid client id or client secret."}
+```
+
+#### Solution
+
+Make sure that you have used correct `baseURL`, `clientId`, and `clientSecret` while configure the source.
+
+### System Logs API errors
+
+#### Error message
+
+```
+{"statusCode": 500,"message": "Internal server error","activityId": "XXXXXX"}
+```
+
+#### Solution
+
+Make sure the correct `baseURL` is used to configure the source.
+
+#### Error message
+
+```
+{"type": "https://errors-api.cloud.com/common/authentication","detail":"Missing or invalid authentication details","parameters": [{"name":"reason","value": "invalid"}]}
+```
+
+#### Solution
+
+Make sure the correct `customerId` is used to configure the source.
+
+### SiteID, Operation Logs, and Low-Level Operation Logs API error
+
+#### Error message
+
+```
+{"statusCode": 500,"message": "Internal server error","activityId": "XXXXXX"}
+```
+
+#### Solution
+
+- Make sure the correct `customerId` and `baseURL` are used to configure the source.
+- Make sure the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
+
+### Session Logs API error
+
+#### Error message
+
+`Access denied to query Monitor objects : Invalid Customer.`
+
+#### Solution
+
+- Make sure the correct `customerId` and `baseURL` are used to configure the source.
+- Make sure the provided customerId has the DaaS Service enabled. Refer [Prerequisites](#prerequisites) section.
