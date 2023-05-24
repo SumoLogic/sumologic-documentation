@@ -24,40 +24,40 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 <details><summary>View Sample Log Message</summary>
 
 ```json title="Alert Message"
- {
-  "action": "DETECTED",
-  "action_pretty": "Detected",
-  "agent_os_sub_type": "Windows 11 [10.0 (Build 22621)]",
-  "agent_os_type": "Windows",
-  "agent_version": "7.9.1.26645",
-  "alert_id": "161",
-  "alert_type": "Unclassified",
-  "bioc_category_enum_key": "IP",
-  "category": "IP",
-  "description": "IOC ( IP = 103.36.10.156 )",
-  "detection_timestamp": 1677153320321,
-  "endpoint_id": "eba0735df9a24a67b95b75ecfdf3c77f",
-  "external_id": "6d6806d1-dbc2-4da0-b3b6-b16d097f20eb",
-  "host_ip": [
-    "192.168.5.5"
-  ],
-  "host_name": "DESKTOP-DLU1NRR",
-  "is_pcap": false,
-  "is_whitelisted": false,
-  "local_insert_ts": 1677153820311,
-  "matching_service_rule_id": "5",
-  "matching_status": "MATCHED",
-  "name": "IOC (103.36.10.156)",
-  "original_tags": [
-    "DS:PANW/XDR Agent"
-  ],
-  "resolution_status": "STATUS_010_NEW",
-  "severity": "critical",
-  "source": "XDR IOC",
-  "starred": false,
-  "tags": [
-    "DS:PANW/XDR Agent"
-  ]
+{
+   "action": "DETECTED",
+   "action_pretty": "Detected",
+   "agent_os_sub_type": "Windows 11 [10.0 (Build 22621)]",
+   "agent_os_type": "Windows",
+   "agent_version": "7.9.1.26645",
+   "alert_id": "161",
+   "alert_type": "Unclassified",
+   "bioc_category_enum_key": "IP",
+   "category": "IP",
+   "description": "IOC ( IP = 103.36.10.156 )",
+   "detection_timestamp": 1677153320321,
+   "endpoint_id": "eba0735df9a24a67b95b75ecfdf3c77f",
+   "external_id": "6d6806d1-dbc2-4da0-b3b6-b16d097f20eb",
+   "host_ip": [
+      "192.168.5.5"
+   ],
+   "host_name": "DESKTOP-DLU1NRR",
+   "is_pcap": false,
+   "is_whitelisted": false,
+   "local_insert_ts": 1677153820311,
+   "matching_service_rule_id": "5",
+   "matching_status": "MATCHED",
+   "name": "IOC (103.36.10.156)",
+   "original_tags": [
+      "DS:PANW/XDR Agent"
+   ],
+   "resolution_status": "STATUS_010_NEW",
+   "severity": "critical",
+   "source": "XDR IOC",
+   "starred": false,
+   "tags": [
+      "DS:PANW/XDR Agent"
+   ]
 }
 ```
 
