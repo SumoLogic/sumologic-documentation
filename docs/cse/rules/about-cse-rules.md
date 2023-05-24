@@ -100,7 +100,7 @@ This section describes two key CSE features that enable you to write richer rule
 
 ### Match Lists
 
-The subsections below explain how Match Lists work, and how to leverage them in CSE rules.
+The subsections below explain how Match Lists work, and how to leverage them in CSE rules. For more information about Match Lists, see [Match Lists and Suppressed Lists](/docs/cse/match-lists-suppressed-lists/).
 
 #### Match Lists are used to enrich Record data
 
@@ -153,19 +153,19 @@ This example below checks a Record for a field named `listMatches` that contains
 ...AND NOT (array_contains(listMatches, 'vuln_scanners') OR array_contains(listMatches, 'business_ips'))
 ```
 
-### Threat Intel
+### Threat Intelligence
 
-CSE’s Threat Intel lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intel lists contain values that, when encountered in a Record, are clear indicators of compromise. 
+CSE’s Threat Intelligence lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intelligence lists contain values that, when encountered in a Record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source/).
 
-Here’s an example of a Threat Intel list in the CSE UI, at **Content > Threat Intel**. 
+Here’s an example of a Threat Intelligence list in the CSE UI, at **Content > Threat Intelligence**. 
 
 ![example-threat-intl.png](/img/cse/example-threat-intl.png)
 
-Like Match Lists, Threat Intel lists are used at the time of Record ingestion. When a Record is ingested, CSE determines whether any of the fields in the Record exist in any of your configured Threat Intel lists.
+Like Match Lists, Threat Intelligence lists are used at the time of Record ingestion. When a Record is ingested, CSE determines whether any of the fields in the Record exist in any of your configured Threat Intelligence lists.
 
-When a Record contains a value that matches an entry in one or more Threat Intel lists, just like with Match List data, two fields in the Record get populated: a `listMatches` field that contains the names of Threat Intel lists that the Record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
+When a Record contains a value that matches an entry in one or more Threat Intelligence lists, just like with Match List data, two fields in the Record get populated: a `listMatches` field that contains the names of Threat Intelligence lists that the Record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
 
-For example, given a Record whose `SourceIp` column matches a entry in My Threat Intel List, the `listMatches` field added to the Record would look like this:
+For example, given a Record whose `SourceIp` column matches a entry in My Threat Intelligence List, the `listMatches` field added to the Record would look like this:
 
 ```sql
 listMatches: \['threat_Ip_My_Threat_Intel_List', 'source:My_Threat_Intel_List', 'column:Ip', 'column:SrcIp' 'threat'\]
@@ -174,14 +174,14 @@ where:
 
 * `threat_Ip_My_Threat_Intel_List` is formed by concatenating the following, separated by underscore characters (_):
    * the string `threat` 
-   * the type of the column–Ip Domain, FileHash, and so on–in the Record that matched an Indicator from the threat intel source
-* The name of the threat intel source, with embedded spaces replaced by underscore characters (_).
-* `source:My_Threat_Intel_List` identifies the threat intel list.
+   * the type of the column–Ip Domain, FileHash, and so on–in the Record that matched an Indicator from the threat intelligence source
+* The name of the threat intelligence source, with embedded spaces replaced by underscore characters (_).
+* `source:My_Threat_Intel_List` identifies the threat intelligence list.
 * `column:Ip` identifies the type of the field where the match was found.
 * `column:SrcIp` identifies the name of the field where the match was found.
 * `threat `is a string that CSE uses to indicate that the Record field matched a threat source, rather than another type of list.
   
-Because the threat intel information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
+Because the threat intelligence information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
 
 ```sql
 array_contains(listMatches, "threat-intel-list-name")
@@ -189,8 +189,8 @@ array_contains(listMatches, "threat-intel-list-name")
 
 where 
 
-`threat-intel-list`  is the name of the Threat Intel list.
+`threat-intel-list`  is the name of the Threat Intelligence list.
 
 :::note
-If your `array_contains` statement refers to a threat intel source whose name contains embedded spaces, be sure to replace the spaces with underscores.
+If your `array_contains` statement refers to a threat intelligence source whose name contains embedded spaces, be sure to replace the spaces with underscores.
 ::: 
