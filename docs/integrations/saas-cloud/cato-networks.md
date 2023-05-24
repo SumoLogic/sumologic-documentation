@@ -44,6 +44,7 @@ This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https
    time: "1682856852500"
 }
 ```
+
 ```json title="Audit Feed"
 {
    account_id: "1714",
