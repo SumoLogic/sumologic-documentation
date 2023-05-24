@@ -179,7 +179,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox28 card">
   <div className="container">
   <a href="/docs/cse/ingestion/sentinelone"><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="icon" width="40"/><h4>SentinelOne</h4></a>
-  <p>Learn how to collect SentinelOne log messages and send them to Sumo Logic to be ingested by CSE.</p>
+  <p>Learn how to collect SentinelOne log messages and send them to be ingested by CSE.</p>
   </div>
  </div>
 <div className="box smallbox29 card">
