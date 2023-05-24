@@ -79,7 +79,7 @@ This gives a call to action for the reader or user to effectively get something 
 By writing inclusively and using culturally neutral language, our words resonate with global audiences and make everyone feel welcome, no matter their race, gender, socioeconomic status, and ability.
 
 * Do not use idioms, slang, expressions, or terminology only understood by a specific region or group.
-* Avoid overly-technical jargon.
+* Avoid overly technical jargon.
 * Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
 * Unless you're referring to a specific person, do not use gender pronouns (he/she).
 * Use culturally neutral terms to replace terms with negative connotations. For example:
