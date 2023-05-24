@@ -46,15 +46,15 @@ This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https
 ```
 ```json title="Audit Feed"
 {
- account_id: "1714",
- admin: "peter@mail.com",
- admin_id: "4472",
- change_type: "DELETED",
- creation_date: "1682683010000",
- insertion_date: "1682684083127",
- model_name: "Temp jscript driveby",
- model_type: "IPSWISTRULE",
- module: "Ips Whitelist Rule"
+   account_id: "1714",
+   admin: "peter@mail.com",
+   admin_id: "4472",
+   change_type: "DELETED",
+   creation_date: "1682683010000",
+   insertion_date: "1682684083127",
+   model_name: "Temp jscript driveby",
+   model_type: "IPSWISTRULE",
+   module: "Ips Whitelist Rule"
 }
 ```
 
