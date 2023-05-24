@@ -28,9 +28,9 @@ The Citrix Cloud source collects the system, operation, and session logs using t
    - **[Low-Level Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations)**. This API provides detailed logs about specific configuration operations and offers in-depth insights into the low-level details of a particular operation.
 - **[Session Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview)**. TThis API provides details about all the sessions in the Citrix Cloud, captured through the Citrix Monitor Service.
 
-## Metadata Fields
+## Metadata Field
 
-Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
+Metadata field will be set, if the integration is configured with the SIEM forward option. See **Metadata Field** table below:
 
 | Field Name | Value |
 | :--- | :--- |
