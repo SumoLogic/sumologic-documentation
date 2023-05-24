@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker-icon.png')} alt="Thumbnail icon" width="120"/>
 
-The Sumo Logic app for Docker is a unified logs and metrics app that enables you to monitor Docker deployment. The app provides preconfigured dashboards that include information about container state and resource usage, including information on CPU, memory, block I/O, and network.
+The Sumo Logic app for Docker is a unified logs and metrics app that enables you to monitor Docker deployments. The app provides preconfigured dashboards that include information about container state and resource usage, including information on CPU, memory, block I/O, and network.
 
 The Sumo Logic OpenTelemetry collector will run on the same host as Docker and collects Docker metric and container event logs. 
 
