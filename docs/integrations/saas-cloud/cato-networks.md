@@ -19,7 +19,7 @@ Key features and benefits of the Cato Networks app include:
 
 ## Log types
 
-This app uses Sumo Logic’s Cato Networks source to collect [Events Feed](https://support.catonetworks.com/hc/en-us/articles/360019839477-Cato-API-EventsFeed-Large-Scale-Event-Monitoring) and [Audit Feed](https://support.catonetworks.com/hc/en-us/articles/360017900857-Cato-API-AuditFeed) data from Cato Networks platform.
+This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https://support.catonetworks.com/hc/en-us/articles/360019839477-Cato-API-EventsFeed-Large-Scale-Event-Monitoring) and [Audit Feed](https://support.catonetworks.com/hc/en-us/articles/360017900857-Cato-API-AuditFeed) data from Cato Networks platform.
 
 ## Sample log messages
 
