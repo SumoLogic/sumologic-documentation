@@ -1,7 +1,7 @@
 ---
 id: active-directory-json
 title: Active Directory JSON - Classic Collector
-sidebar_label: Active Directory (JSON)
+sidebar_label: Active Directory JSON
 description: The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format.
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
 
-The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
+The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 

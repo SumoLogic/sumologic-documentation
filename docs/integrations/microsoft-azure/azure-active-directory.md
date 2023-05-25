@@ -173,7 +173,7 @@ img/integrations/microsoft-azure/Azure-ActiveDirectory-Group-Management.png Azur
 - **Groups Added.** Shows an aggregation table of groups added with columns for the time, operation names, result types, target source name, identity, and count.
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 
-### Authorization - Authentication - Other
+### Authorization-Authentication-Other
 
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.
 
@@ -186,7 +186,7 @@ img/integrations/microsoft-azure/Azure-Active-Directory-Authorization_Authentica
 - **Failed Events.** Shows an aggregation table of failed events with columns for the operation names,  result types, result descriptions, identity, target source name, and count.
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 
-### Successful Sign-In Events
+### Successful Sign in Events
 
 See information about successful sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
@@ -203,7 +203,7 @@ img/integrations/microsoft-azure/azure-ad-successful-sign-in-events.png Azure Ac
 - **Sign in by Application.** Shows successful sign-in events by Application.
 - **Anomaly in Total Login Count.** Shows any Anomaly in the total successful login count.
 
-### Failure Sign-in Events
+### Failure Sign in Events
 
 See information about failure sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
