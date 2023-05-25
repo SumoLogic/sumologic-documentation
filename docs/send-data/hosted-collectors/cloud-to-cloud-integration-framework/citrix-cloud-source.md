@@ -105,7 +105,7 @@ To configure the Citrix Cloud API:
 1. **Customer ID**. Enter the Customer ID you generated and secured from the [API Client](#api-client) section in step 6.
 1. **Client ID**. Enter the Client ID you generated and secured from the [API Client](#api-client) section in step 5.
 1. **Client Secret**. Authenticate your account by entering your Secret API key. Enter the **Secret** key you have generated and secured from [API Client](#api-client) section in step 5.
-1. (Optional) **Supported APIs to Collect**. Select any or all of the data sources such as System Logs, Operation Logs, Monitor Data Session Logs.
+1. **Supported APIs to Collect**. Select any or all of the data sources such as System Logs, Operation Logs, Monitor Data Session Logs. By default, the **System Logs** data source will be selected.
 1. When you are finished configuring the Source, click **Save**.
 
 ### Error types
@@ -164,7 +164,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
             "systemLogs",
             "operationLogs",
             "sessionLogs",
-            "all"
          ],
          "fields":{
             "_siemForward":false
