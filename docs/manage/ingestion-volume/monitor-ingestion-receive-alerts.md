@@ -1,14 +1,14 @@
 ---
 id: monitor-ingestion-receive-alerts
 title: Monitor Log Ingestion and Alerts
-description: Add scheduled searches that monitor ingestion and send alerts. The following alerts apply to log ingestion only.
+description: Add scheduled searches that monitor log ingestion and send alerts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs only, not metrics. 
+Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling.
 
-For metrics volume queries use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
+With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs only, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
 Some of the alerts are based on your billing period or ingest plan limit. You must make the appropriate changes for the alert to function and return valid results. The alerts approximate ingest rates and might not precisely match the actual ingest volume used for invoicing purposes.
 
@@ -217,7 +217,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 | format ("%s Has not collected data in the past 60 minutes", collector) as message
 ```
 
-You can run a similar query across Sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for Sources, `"sourcehost_volume"`for sourceHosts, `"sourcename_volume"`  for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
+You can run a similar query across Sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for Sources, `"sourcehost_volume"`for sourceHosts, `"sourcename_volume"` for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
 
 If you don't want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
 
@@ -240,9 +240,9 @@ After completing the setup steps, you'll need to create a monitor. 
         | where mins_since_last_logs\>= 15
         ```
 
-## Throttling Alert
+## Throttling alert
 
-This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15 minute period.
+This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
 All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](../partitions-data-tiers/data-tiers.md).
