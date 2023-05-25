@@ -301,7 +301,7 @@ Folder A ("No")
 
 </details>
 
-## Notification Preferences
+### Notification Preferences
 
 Alert notification preferences give you granular control over specific monitor activity you want to follow. <img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
