@@ -112,7 +112,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
     * If a host stops sending data for more than 24 hours, then remove that host from the list of hosts for a service. Evaluate again if `missingData` is resolved based on the remaining hosts. If yes, then resolve; if not, then keep it open.<br/><img src={useBaseUrl('img/monitors/usecase5x.png')} alt="alert-grouping" />
 
 
-## Recommended Monitors
+## Sumo Logic Recommended Monitors
 
 This alert can be useful if you suspect that one of your collectors has stopped sending data. Once you set this up, you'll get an alert about collector if it's stopped sending data. This alert will work without any issues, even if you add new collectors to your Sumo Logic account.
 
