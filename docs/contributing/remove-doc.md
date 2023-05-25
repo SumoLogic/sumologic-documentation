@@ -45,7 +45,7 @@ Remove the doc from the navigation menu ([sidebars.ts](https://github.com/SumoLo
 
 ## Step 5: Add deprecation note (optional)
 
-If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide/#notes-and-admonitions) in the new doc stating the legacy solution has been deprecated. Check with a SME to be sure.
+If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide#admonitions) in the new doc stating the legacy solution has been deprecated. Check with a SME to be sure.
 
 
 ## Step 6: Hide from Google results (optional)
