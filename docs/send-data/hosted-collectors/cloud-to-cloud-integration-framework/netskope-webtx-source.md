@@ -49,9 +49,9 @@ Netskope Web Transactions integration needs to be configured using Netskope Stre
 
 ### Create a Netskope WebTx API Source
 
-When you create an Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-**To configure an Netskope WebTx API Source:**
+**To configure a Netskope WebTx API Source:**
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted** **Collector.
