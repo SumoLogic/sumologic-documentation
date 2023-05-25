@@ -905,6 +905,7 @@ module.exports = {
         'dashboards-new/scheduled-report',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/link-dashboards',
+        'dashboards-new/set-data-access-level',
         'dashboards-new/share-dashboard-new',
         'dashboards-new/filter-template-variables',
         {
