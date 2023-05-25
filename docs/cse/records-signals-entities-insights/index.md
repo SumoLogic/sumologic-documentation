@@ -14,13 +14,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox1 card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/insight-generation-process"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Insight Generation</h4></a>
-  <p>Learn how CSE correlates Singals by entity to create Insights.</p>
+  <p>Learn how CSE correlates Signals by entity to create Insights.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/view-manage-entities"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>View and Manage Entities</h4></a>
-  <p>Learn about all the Enitities in CSE and their Activity Scores.</p>
+  <p>Learn about all the Entities in CSE and their Activity Scores.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
