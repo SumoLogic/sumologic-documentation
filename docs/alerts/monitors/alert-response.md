@@ -244,59 +244,59 @@ Click **Unsubscribe** to learn how to remove a subscription.
 #### Example 1
 
 ```bash title="Initial state"
-Folder A ("No")
-  |- Monitor B ("No")
-  |- Monitor C ("No")
+📁 Folder A ("No")
+├── Monitor B ("No")
+└── Monitor C ("No")
 ```
 
 ```bash title="Create subscription on Folder A"
-Folder A ("Yes")
-|- Monitor B ("Yes (inherited from folder)")
-|- Monitor C ("Yes (inherited from folder)")
+📁 Folder A ("Yes")
+├──Monitor B ("Yes (inherited from folder)")
+└──Monitor C ("Yes (inherited from folder)")
 ```
 
 #### Example 2
 
 ```bash title="Initial state"
-Folder A ("No")
-  |- Monitor B ("No")
-  |- Monitor C ("No")
-  |- Folder D ("No")
-       |- Monitor E ("No")
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("No")
+    └── Monitor E ("No")
 ```
 
 ```bash title="Create subscription on Folder D"
-Folder A ("No")
-  |- Monitor B ("No")
-  |- Monitor C ("No")
-  |- Folder D ("Yes")
-       |- Monitor E ("Yes (inherited from folder)")
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes (inherited from folder)")
  ```
 
 #### Example 3
 
 ```bash title="Initial state"
-Folder A ("No")
-  |- Monitor B ("No")
-  |- Monitor C ("No")
-  |- Folder D ("No")
-       |- Monitor E ("Yes")
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└──  📁 Folder D ("No")
+    └── Monitor E ("Yes")
 ```       
 
 ```bash title="Create subscription on Folder D"
-Folder A ("No")
-  |- Monitor B ("No")
-  |- Monitor C ("No")
-  |- Folder D ("Yes")
-       |- Monitor E ("Yes")
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes")
 ```       
 
 ```bash title="Remove subscription on Monitor E"
-Folder A ("No")
-  |- Monitor B ("No")
-  |- Monitor C ("No")
-  |- Folder D ("Yes")
-       |- Monitor E ("Yes (inherited from folder)"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes (inherited from folder)"
 ```
 
 </details>
