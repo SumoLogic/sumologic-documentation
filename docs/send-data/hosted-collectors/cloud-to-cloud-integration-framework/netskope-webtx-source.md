@@ -39,12 +39,12 @@ You can click on the status icon to open a Health Events panel with details on e
 
 ## Data Sources
 
-The netskope-webtx access a PubSub lite service hosted by Google to retrieve web transaction logs. Details on what is ingested can be found [here](https://docs.netskope.com/en/transaction-event-fields.html)
+The netskope-webtx access a PubSub lite service hosted by Google to retrieve web transaction logs using the [v2 dataexport Iterator Endpoint](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints.html). Details on what is ingested can be found [here](https://docs.netskope.com/en/transaction-event-fields.html).
 
 
 ## Setup and Configuration
 
-Netskope Web Transactions integration needs to be configured using Netskope Streaming credentials. You can collect the subscription path and credentials [here](https://docs.netskope.com/en/netskope-transaction-events.html)
+Netskope Web Transactions integration needs to be configured using Netskope Streaming credentials. You can collect the subscription path and credentials [here](https://docs.netskope.com/en/netskope-transaction-events.html).
 
 
 ### Create an Netskope WebTx API Source
