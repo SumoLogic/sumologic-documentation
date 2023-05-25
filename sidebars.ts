@@ -113,9 +113,10 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/installed-collectors/index'},
           items: [
+            'send-data/installed-collectors/configuration',
             'send-data/installed-collectors/macos',
-            'send-data/installed-collectors/windows',
             'send-data/installed-collectors/linux',
+            'send-data/installed-collectors/windows',
             {
               type: 'category',
               label: 'Sources',
@@ -1935,6 +1936,7 @@ integrations: [
             collapsible: true,
             collapsed: true,
             items: [
+              'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
             ],
