@@ -115,8 +115,8 @@ module.exports = {
           items: [
             'send-data/installed-collectors/configuration',
             'send-data/installed-collectors/macos',
-            'send-data/installed-collectors/windows',
             'send-data/installed-collectors/linux',
+            'send-data/installed-collectors/windows',
             {
               type: 'category',
               label: 'Sources',
