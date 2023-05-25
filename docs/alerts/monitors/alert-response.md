@@ -216,7 +216,7 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 ## Subscribe to Alert Monitors
 
 :::note Terminology
-A _monitor_ creates an _alert_. Using the options below, you're subscribing to an alert's monitor.
+A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
 :::
 
 #### From your Alerts list
