@@ -219,41 +219,87 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 A _monitor_ creates an _alert_. Using the options below, you're subscribing to an alert's monitor.
 :::
 
-
 #### From your Alerts list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
 * Single-click on a row item > on the opened Alert page, click the three-dot kebab menu > **Subscribe to Monitor**
-
 
 #### From your Monitors list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
-## Subscribe to a folder
+#### From a folder
 
-If folder is subscribed, then all nested monitors and folders are automatically subscribed (“SubscribedByAncestor”).
+If a folder is subscribed, then all nested monitors and folders are automatically subscribed (“SubscribedByAncestor”).
 
-If you create a subscription on “monitor A”, and then move it to subscribed “folder B”, “monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder.
+For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder.
 
 To cancel an inherited subscription, you need to remove subscription from a parent folder or move the monitor or folder into another location outside folder with direct subscription.
 
-When you click **Unsubscribe**, you'll be informed about how to remove subscription.
+Click **Unsubscribe** to learn how to remove a subscription.
 
-#### Alerts list & Alert Page
+<details><summary>Click to see examples</summary>
 
-You can subscribe to a monitor that has produced alerts by firing “Subscribe” action on a specific alert on the Alerts list.
+#### Example 1
 
-You can unsubscribe from monitor that has produced alert by firing “Unsubscribe” action on a specific alert on the Alerts list.
+```bash title="Initial state"
+Folder A ("No")
+  |- Monitor B ("No")
+  |- Monitor C ("No")
+```
 
-If an alert has been produced by monitor subscribed by ancestor, then you shouldn’t be able to remove subscription. In a such case, you should be informed about next steps and what can be done to remove subscription.
-On Monitors, Alerts list we should differentiate between subscription states:
+```bash title="Create subscription on Folder A"
+Folder A ("Yes")
+|- Monitor B ("Yes (inherited from folder)")
+|- Monitor C ("Yes (inherited from folder)")
+```
 
-Yes - direct subscription
-No - no direct subscription, no inherited subscription
-Yes (inherited from folder)
+#### Example 2
 
+```bash title="Initial state"
+Folder A ("No")
+  |- Monitor B ("No")
+  |- Monitor C ("No")
+  |- Folder D ("No")
+       |- Monitor E ("No")
+```
+
+```bash title="Create subscription on Folder D"
+Folder A ("No")
+  |- Monitor B ("No")
+  |- Monitor C ("No")
+  |- Folder D ("Yes")
+       |- Monitor E ("Yes (inherited from folder)")
+ ```
+
+#### Example 3
+
+```bash title="Initial state"
+Folder A ("No")
+  |- Monitor B ("No")
+  |- Monitor C ("No")
+  |- Folder D ("No")
+       |- Monitor E ("Yes")
+```       
+
+```bash title="Create subscription on Folder D"
+Folder A ("No")
+  |- Monitor B ("No")
+  |- Monitor C ("No")
+  |- Folder D ("Yes")
+       |- Monitor E ("Yes")
+```       
+
+```bash title="Remove subscription on Monitor E"
+Folder A ("No")
+  |- Monitor B ("No")
+  |- Monitor C ("No")
+  |- Folder D ("Yes")
+       |- Monitor E ("Yes (inherited from folder)"
+```
+
+</details>
 
 ## Notification Preferences
 
