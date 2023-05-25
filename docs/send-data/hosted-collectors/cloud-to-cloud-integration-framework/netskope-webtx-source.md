@@ -47,7 +47,7 @@ The netskope-webtx access a PubSub lite service hosted by Google to retrieve web
 Netskope Web Transactions integration needs to be configured using Netskope Streaming credentials. You can collect the subscription path and credentials [here](https://docs.netskope.com/en/netskope-transaction-events.html).
 
 
-### Create an Netskope WebTx API Source
+### Create a Netskope WebTx API Source
 
 When you create an Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
