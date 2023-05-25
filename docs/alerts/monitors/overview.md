@@ -102,7 +102,7 @@ Custom variables used inside the Action Payload.
 ### General
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* [LogReduce](/docs/search/logreduce/logreduce-operator) / [LogCompare](../../search/logcompare/) operators are not supported in Monitors. If your query contains these operators, you will not be able to create the monitor.  
+* [LogReduce](/docs/search/logreduce/logreduce-operator) / [LogCompare](../../search/logcompare.md) operators are not supported in Monitors. If your query contains these operators, you will not be able to create the monitor.  
 * Monitors only support the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
