@@ -11,7 +11,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're excited to announce the release of the new MS Graph Azure AD Reporting app for Sumo Logic. This app leverages Sumo Logic's [Cloud-to-Cloud MS Graph Azure AD Reporting source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/) to provide insights into usage of Azure AD platform and identify potential security issues. Here are some of the key features that this app offers:
+We're excited to announce the release of the new MS Graph Azure AD Reporting app for Sumo Logic. This app leverages Sumo Logic [Cloud-to-Cloud MS Graph Azure AD Reporting source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/) to provide insights into usage of Azure AD platform and identify potential security issues. Here are some of the key features that this app offers:
 
 - **Analyze Audit Activities**. Provides real-time user activity for every resource category and shows the distribution of audits by operations and services.
 - **Monitor Sign-In activities**. Monitor sign-in activities for your organization, including the number of successful and failed sign-ins, sign-ins by user location, sign-ins by application, and sign-ins from risky countries.
