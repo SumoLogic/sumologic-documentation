@@ -51,12 +51,16 @@ To add a Custom List variable to a dashboard, do the following:
 
 1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
 
-![Create Template Variable dialog.png](/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog.png)
+    ![Create Template Variable dialog.png](/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog.png)
 
 1. Select **Custom List** as the **Variable Type**.
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
-1. Optional: Provide a **Default Value** for the variable.
-1. Optional: Toggle ON **Include the option to select all values (\*) **to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Default Value**. Provide a **Default Value** for the variable.
+1. (Optional) **Include the option to select all values**. Toggle ON to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Allow multiple values**. Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
+:::note
+You can add a maximum of 20 values.
+:::
 1. Click **Create Template Variable** to apply the variable to the dashboard. 
 
 ### Add a Metrics Metadata Search variable
@@ -80,11 +84,14 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
     ![dashboard new metrics metadata search variable.png](/img/dashboards-new/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png)
 
 1. Select **Metrics Metadata Search** as the **Variable Type**.
-1. The **Fields (key)** is the metadata field you want to use as the
-    filter.
-1. Optional: **Filters** allow you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
-1. Optional: Toggle ON **Include the option to select all values (\*)** to include a wildcard asterisk (\*) in the available options.
-1. Optional: Provide a **Default Value** for the variable.
+1. The **Fields (key)** is the metadata field you want to use as the filter.
+1. (Optional) **Filters**. Allows you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
+1. (Optional) **Include the option to select all values**. Toggle ON to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Allow multiple values**. Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
+:::note
+You can add a maximum of 20 values.
+:::
+1. (Optional) **Default Value**. Provide a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
 ### Add a Logs Search variable
@@ -108,7 +115,11 @@ To add a Logs Search variable to a dashboard, do the following:
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
-1. Optional: Toggle ON **Include the option to select all values** to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Include the option to select all values**: Toggle ON to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Allow multiple values**: Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
+:::note
+You can add a maximum of 20 values.
+:::
 1. Optional: Enter a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
