@@ -451,9 +451,6 @@ Locate and install the app you need from the **App Catalog**. If you want to se
 
 1. From the **App Catalog**, search for and select the app. 
 2. Select the **With Container Insights and Traces** version and click **Add to Library**. 
-:::note
-Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library).
-:::
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name or enter the app's name of your choice. 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
