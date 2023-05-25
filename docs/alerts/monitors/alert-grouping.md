@@ -112,7 +112,7 @@ A user wants to get an alert if all hosts from a given service has stopped sendi
     * If a host stops sending data for more than 24 hours, then remove that host from the list of hosts for a service. Evaluate again if `missingData` is resolved based on the remaining hosts. If yes, then resolve; if not, then keep it open.<br/><img src={useBaseUrl('img/monitors/usecase5x.png')} alt="alert-grouping" />
 
 
-## Sumo Logic Recommended Monitors
+## Recommended Monitors
 
 This alert can be useful if you suspect that one of your collectors has stopped sending data. Once you set this up, you'll get an alert about collector if it's stopped sending data. This alert will work without any issues, even if you add new collectors to your Sumo Logic account.
 
@@ -154,6 +154,6 @@ We do support high cardinality for Alert Grouping, but there is a limit. If you 
 
 For example, let's say that you configured a monitor to generate one alert per customer when the count of Error messages (in Logs) is more than 5. Now let's assume that when the monitor ran at t0, it found that 5000 customers had an Error count more than 5. In this case, it would only generate 1000 alerts for the first 1000 customers that it found with an Error count more than 5.
 
-### What fields are not allowed for Alert Grouping?
+#### What fields are not allowed for Alert Grouping?
 
 Fields with very high cardinality such as `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for Alert Grouping.

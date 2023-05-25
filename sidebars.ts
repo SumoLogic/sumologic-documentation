@@ -791,6 +791,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
+            'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
             'alerts/monitors/edit-settings',
             'alerts/monitors/monitor-faq',
@@ -1723,6 +1724,7 @@ module.exports = {
           link: {type: 'doc', id: 'observability/reliability-management-slo/index'},
           items: [
             'observability/reliability-management-slo/create-slo',
+            'observability/reliability-management-slo/alerts',
             'observability/reliability-management-slo/dashboards',
             'observability/reliability-management-slo/use-cases',
           ],
@@ -1738,7 +1740,6 @@ module.exports = {
       link: {type: 'doc', id: 'observability/sdo/index'},
       items: [
         'observability/sdo/about-sdo',
-        'observability/sdo/supported-tools-schema',
         {
           type: 'category',
           label: 'Setting Up SDO',
@@ -1750,7 +1751,8 @@ module.exports = {
             'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
           ],
         },
-        `observability/sdo/install-sdo-app-view-dashboards`,
+        'observability/sdo/install-sdo-app-view-dashboards',
+        'observability/sdo/supported-tools-schema',
         'observability/sdo/jenkins-plugin-build-deploy-events',
         'observability/sdo/integrate-tools-with-sdo',
       ],
