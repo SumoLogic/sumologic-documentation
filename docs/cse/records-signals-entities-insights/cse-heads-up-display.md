@@ -7,6 +7,22 @@ description: Learn about CSE's Heads Up Display (HUD), a UI that provides an at-
 
 This topic describes CSE’s *Heads Up Display (HUD)*, the landing page for the CSE UI. The HUD provides an at-a-glance overview of Insight status and activity.
 
+Watch this micro lesson to learn how to use the Heads Up Display to perform threat investigations.
+
+<Iframe url="https://www.youtube.com/embed/cDUOzQ63zmc?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 ## HUD overview
 
 The left side of the HUD is a compact view of Insight activity and status in your environment. You can see the volume of Records being processed and how many Signals and Insights those Records result in. The HUD tells you how long it’s taking your team to spot, respond, and close Insights. You can see how many Insights are open, in progress, and closed. You can adjust the time range of the display depending on your interest. 

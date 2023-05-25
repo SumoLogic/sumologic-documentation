@@ -184,7 +184,7 @@ Sumo Logic does not support the deletion of specific log messages. You can eithe
 - If you do not want to delete all the data in the specified time range, an alternative is hiding the selective messages. You can achieve this in one of the two available ways:
     - Create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
     - You can reach out to [Sumo Logic Support](https://support.sumologic.com) through your account administrator, who can help in applying filters across your account so that all users in your organization are not able to access the unwanted logs.
-    
+
 It is also important to note that deleting data has no effect on the log ingestion rate that is displayed on the Accounts Page. Once data has been received by Sumo Logic it is counted against your account limits. However, on-demand charges are based on a daily average across the entire billing cycle and most daily spikes can be absorbed over a billing period. 
 
 ## Enabling updated Remote Windows Event Collection with 19.155 Collector
@@ -329,7 +329,7 @@ To monitor collectors for out-of-memory issues, ingest the collector logs, and�
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
-| "/docs/Send-Data/collector-faq#Increase-memory-in-a-Collector" as sumoHelp
+| "/docs/send-data/collector-faq#increase-memory-in-a-collector" as sumoHelp
 | concat ("collector: ", _collector, " identified with insufficient max heap memory. Increase java heap space allocation for it. Refer: ", sumoHelp) as msg
 | sort by _timeslice, _collector | fields -sumoHelp
 ```

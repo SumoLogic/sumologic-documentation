@@ -6,8 +6,6 @@ description: Learn how to manage the ingestion of data by Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="70"/>
-
 Learn how to manage the ingestion of data by Sumo Logic.
 
 In this section, we'll introduce the following concepts:

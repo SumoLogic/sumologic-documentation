@@ -10,7 +10,7 @@ You can use the `where` operator to filter out either entire time series, or ind
 ## Syntax
 
 ```sql
-selectors | where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
+where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 ```
 
 Where:
@@ -49,7 +49,7 @@ For more examples, see [Filtering time series](#filtering-time-series).
 **Syntax**
 
 ```sql
-metric query | where [VALUE BOOLEAN EXPRESSION]
+where [VALUE BOOLEAN EXPRESSION]
 ```
 
 **Examples**
@@ -57,13 +57,13 @@ metric query | where [VALUE BOOLEAN EXPRESSION]
 This query filters out data points that are less or equal than 5.
 
 ```sql
-metric=cpu | where _value > 5
+metric=CPU_Idle | where _value > 5
 ```
 
 This query filters out data points that are less or equal than the minimum value minus 5.
 
 ```sql
-metric=cpu | where _value > min - 5
+metric=CPU_Idle | where _value > min - 5
 ```
 
 ### Filtering time series
@@ -73,7 +73,7 @@ metric=cpu | where _value > min - 5
 This query returns the time series where the average value of its data points is greater than 3.
 
 ```sql
-metric=cpu | where avg > 3
+metric=CPU_Idle | where avg > 3
 ```
 
 **Syntax 2**
@@ -81,7 +81,7 @@ metric=cpu | where avg > 3
 This query filters out time series based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
 ```sql
-metric query | where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
+where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
 Where:
@@ -97,11 +97,11 @@ Where:
 This query only returns the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-metric=cpu | where _value > 3 all any 5m
+metric=CPU_Idle | where _value > 3 all any 5m
 ```
 
 This query only returns the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-metric=cpu | where _value > 3 atleast 3 any 5m
+metric=CPU_Idle | where _value > 3 atleast 3 any 5m
 ```
