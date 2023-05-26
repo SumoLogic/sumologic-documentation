@@ -60,7 +60,7 @@ You'll need an ECS Cluster where the AWS OpenTelemetry Collector will be deploye
     ```
 1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**. <br/>  ![stack status.png](/img/traces/stack_status.png)
 1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running. <br/>  ![task status running.png](/img/traces/task-status-running.png)
-1. Finally, click on the task and expand the **Containers** list. In he **Network Bindings > External Link** section, you will find the information on where to send telemetry data.<br/>![external links.png](/img/traces/external-links.png)
+1. Finally, click on the task and expand the **Containers** list. In the **Network Bindings > External Link** section, you'll find the information on where to send telemetry data.<br/>![external links.png](/img/traces/external-links.png)
   If you plan to send data to the ECS Collector service from a container running in the bridge network mode using the same host, you can use Docker Gateway IP - 172.17.0.1 on EC2 Linux in the application environment variables. For example:
   ```bash
   OTEL_EXPORTER_OTLP_ENDPOINT=http://172.17.0.1:55681
