@@ -400,10 +400,10 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
   gather_file_events_stats = true
   gather_perf_events_statements = true
   [inputs.mysql.tags]
-   environment: "ENV_TO_BE_CHANGED"
+   environment = "ENV_TO_BE_CHANGED"
    component = "database"
    db_system = "mysql"
-   db_cluster: "ENV_TO_BE_CHANGED"
+   db_cluster = "ENV_TO_BE_CHANGED"
    db_cluster_address = "ENV_TO_BE_CHANGED"
    db_cluster_port = "ENV_TO_BE_CHANGED"
 [[outputs.sumologic]]
