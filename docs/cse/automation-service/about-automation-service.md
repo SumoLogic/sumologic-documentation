@@ -25,7 +25,7 @@ Cloud SOAR automation [App Central](/docs/cloud-soar/automation/#app-central), w
 The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service only supports automated enrichment, notification, and custom action types. 
 * Automation Service playbooks can only be triggered from CSE.
-* The Automation Service allows you to execute up to 10,000 actions per day.
+* The Automation Service does not allow you to execute an unlimited number of actions per day.
 * The Automation Service does not include the incident and case management features from Cloud SOAR.
 * Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
 
@@ -160,6 +160,7 @@ To use [integrations](/docs/cse/automation-service/automation-service-integratio
 1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
+## Support and compliance
 
 ### API and Terraform support
 
@@ -177,3 +178,35 @@ The Sumo Logic Terraform provider also supports automations. For more informatio
 The Automation Service uses the Cloud SOAR API. For more information about the API, click the **?** button in the upper right of the Cloud SOAR UI to see the API Documentation manual.
 :::
 
+### Data retention
+
+This section lists the retention period for each type of data generated. 
+
+#### Default retention periods by data type
+
+We automatically delete the following customer data according to the table retention period below, except for those that need to ensure HIPAA compliance.
+
+| Data type | Retention period |
+| :-- | :-- |
+| Incidents | 2 years |
+| Triage | 2 years |
+| Entities | 2 years |
+| Playbook and action executions | 2 years |
+
+For those that need to ensure HIPAA compliance, we delete data following the retention periods below. Please keep in mind that if a customer needs to follow HIPAA compliance, it is important to explicitly communicate this when requesting Automation Service activation.
+
+| Data type | Retention period |
+| :-- | :-- |
+| Incidents | 7 years |
+| Triage | 7 years |
+| Entities | 7 years |
+| Playbook and action executions | 7 years |
+| CSE Records | Records (normalized logs) are stored in the partitions whose names begin with the string `sec_records`. There is one partition for each Record type. <br/><br/>There is no additional charge for storage of Records.| 90 days |
+| CSE Signals | Stored in the `sec_signal` partition.<br/><br/>There is no additional charge for storage of Signals. | 2 years |   
+| CSE Insights | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/><br/>The `sumologic_audit_events` partition contains Insights and Insight-related events that result from user actions.<br/><br/>There is a charge for storage of Insight-related data in the audit indexes. Note however the volume of data is typically very low compared to log ingestion levels. | By default, these partitions have a retention period of 30 days. This period is [customer-configurable](/docs/get-started/help#support). |
+
+#### Custom retention periods
+
+You can request retention periods different from those declared in the tables above, as long as the retention period requested is greater than 1 day and less than 5000 days.
+
+In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.

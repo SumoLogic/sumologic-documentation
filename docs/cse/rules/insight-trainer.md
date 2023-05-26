@@ -13,6 +13,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse#insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity Signals, resulting in generation of more meaningful Insights. 
 
+Watch this micro lesson to learn how to use the Insight Trainer dashboard.
+
+<Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
+
 ## About Insight Trainer
 
 When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
@@ -50,7 +65,7 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
-1. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
+1. **Date Range**. The date range displayed is the model training period and is read-only. Model retraining is weekly based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
 1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 
 ### Recommendations Summary
