@@ -34,22 +34,9 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic Apps.
 :::
 
-To install an application:
+To install a Sumo Logic app:
 
-1. From the left nav, select **App Catalog**.<br/>  ![App_Catalog.png](/img/get-started/library/App-Catalog.png)
-1. Click the name of the app you'd like to install.
-1. Select the version of the service you're using and click **Add Integration**. Version selection is applicable only to a few apps currently.
-1. In the the **Add to Library** popup:<br/>  
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-   * **Log Source.** Select either of these options for the data source.
-      * Choose **Source Category**, and select a source category from the list.
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). For more information, see [Custom Data Filters](#custom-data-filters). 
-   * **Advanced**. (Optional) Select the **Location in Library**, the default is the Personal folder in the library.
-1. Click **Add to Library**.
-
-Once an app is installed, it will appear in the folder you selected. Your **Personal** folder is selected by default. From here, you can share it with your organization.
-
-Panels will start and fill automatically. Each Panel slowly fills with data matching the time range query and received since the Panel was created. Results won't immediately be available, but with a bit of time you'll see full graphs and maps.
+{@import ../reuse/apps/app-install.md}
 
 ## Install Apps in Multiple Environments
 
