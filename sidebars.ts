@@ -2243,6 +2243,8 @@ integrations: [
           items: [
             'cse/get-started-with-cloud-siem/introduction-to-cloud-siem',
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
+            'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/insight-generation-process',
           ],
         },
         {
@@ -2252,7 +2254,6 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/records-signals-entities-insights/index'},
           items: [
-            'cse/records-signals-entities-insights/insight-generation-process',
             'cse/records-signals-entities-insights/view-manage-entities',
             'cse/records-signals-entities-insights/create-custom-entity-type',
             'cse/records-signals-entities-insights/create-an-entity-group',
@@ -2263,7 +2264,6 @@ integrations: [
             'cse/records-signals-entities-insights/search-cse-records-in-sumo',
             'cse/records-signals-entities-insights/view-records-signal',
             'cse/records-signals-entities-insights/about-signal-suppression',
-            'cse/records-signals-entities-insights/about-cse-insight-ui',
             'cse/records-signals-entities-insights/configure-entity-lookup-table',
             'cse/records-signals-entities-insights/configure-custom-insight',
           ],
