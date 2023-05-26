@@ -113,9 +113,10 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/installed-collectors/index'},
           items: [
+            'send-data/installed-collectors/configuration',
             'send-data/installed-collectors/macos',
-            'send-data/installed-collectors/windows',
             'send-data/installed-collectors/linux',
+            'send-data/installed-collectors/windows',
             {
               type: 'category',
               label: 'Sources',
@@ -791,6 +792,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
+            'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
             'alerts/monitors/edit-settings',
             'alerts/monitors/monitor-faq',
@@ -798,6 +800,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'manage/ingestion-volume/monitor-ingestion-receive-alerts',
           ],
         },
         {
@@ -1723,6 +1726,7 @@ module.exports = {
           link: {type: 'doc', id: 'observability/reliability-management-slo/index'},
           items: [
             'observability/reliability-management-slo/create-slo',
+            'observability/reliability-management-slo/alerts',
             'observability/reliability-management-slo/dashboards',
             'observability/reliability-management-slo/use-cases',
           ],
@@ -1738,7 +1742,6 @@ module.exports = {
       link: {type: 'doc', id: 'observability/sdo/index'},
       items: [
         'observability/sdo/about-sdo',
-        'observability/sdo/supported-tools-schema',
         {
           type: 'category',
           label: 'Setting Up SDO',
@@ -1750,7 +1753,8 @@ module.exports = {
             'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
           ],
         },
-        `observability/sdo/install-sdo-app-view-dashboards`,
+        'observability/sdo/install-sdo-app-view-dashboards',
+        'observability/sdo/supported-tools-schema',
         'observability/sdo/jenkins-plugin-build-deploy-events',
         'observability/sdo/integrate-tools-with-sdo',
       ],
@@ -1935,6 +1939,7 @@ integrations: [
             collapsible: true,
             collapsed: true,
             items: [
+              'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
             ],
