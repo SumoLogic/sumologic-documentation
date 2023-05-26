@@ -4,9 +4,13 @@ title: Get Started with Cloud SIEM
 description: Learn how to get started using Cloud SIEM for threat hunting.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This guide helps you get started using Cloud SIEM for threat hunting.
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+:::tip
+If you are an administrator who wants to get started installing and configuring Cloud SIEM, see our [Onboarding Checklist for Cloud SIEM administrators](/docs/cse/administration/onboarding-checklist-cse/).
+:::
 
 In this section, we'll introduce the following concepts:
 
