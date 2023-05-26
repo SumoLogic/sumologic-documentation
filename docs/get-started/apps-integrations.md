@@ -36,10 +36,10 @@ Applications can be installed only by users with a Sumo Logic Professional or a
 
 To install an application:
 
-1. From the left nav, select **App Catalog**.
-1. Click the name of the app you'd like to install.<br/>  ![App_Catalog.png](/img/get-started/library/App-Catalog.png)
-1. Select the version of the service you're using and click **Add to Library.**  Version selection is applicable only to a few apps currently.<br/> ![Install_App_Version.png](/img/get-started/library/Install_App_Version.png)
-1. In the the **Add to Library** popup:<br/>  ![App_Add-to-Library_Dialog.png](/img/get-started/library/App_Add-to-Library_Dialog.png)
+1. From the left nav, select **App Catalog**.<br/>  ![App_Catalog.png](/img/get-started/library/App-Catalog.png)
+1. Click the name of the app you'd like to install.
+1. Select the version of the service you're using and click **Add Integration**. Version selection is applicable only to a few apps currently.
+1. In the the **Add to Library** popup:<br/>  
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Log Source.** Select either of these options for the data source.
       * Choose **Source Category**, and select a source category from the list.
@@ -116,7 +116,7 @@ Searches from Enterprise Apps, which require a paid Professional Services contr
 
 To run a search from a Sumo Logic App:
 
-1. Find the Sumo Logic App for the data Source you would like to search in the App Catalog (**Library > Apps** in the classic UI). For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/>  ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
+1. Find the Sumo Logic App for the data Source you would like to search in the **App Catalog**. For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/>  ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
 1. Find the search you want to run and click it.
 1. In the **Run Search** dialog, select a **Source Category** or enter a **Custom data filter** to run the search against.<br/>  ![Run a Search from an app](/img/get-started/library/RunSearch.png)
 1. Click **Run Search**.
@@ -139,8 +139,8 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 
 #### Define a custom data filter
 
-1. In the App Catalog, select the application you want to install and click **Add to Library**.
-1. The **Add `<AppName>` to Library** popup, click the down arrow next to **Source Category**.<br/>  ![Custom Data Filter](/img/get-started/library/add-apache.png)
+1. In the App Catalog, select the application you want to install and click **Add Integration**.
+1. Click the down arrow next to **Source Category**.<br/>  ![Custom Data Filter](/img/get-started/library/add-apache.png)
 1. A **Custom Data Filter** option appears. Click the option.<br/>  ![apache-custom-filter.png](/img/get-started/library/apache-custom-filter.png)
 1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/> ![apache-custom-filter-field.png](/img/get-started/library/apache-custom-filter-field.png)
 
@@ -159,25 +159,26 @@ The table below has examples of custom data filters.
 
 ## Log Analysis QuickStart App
 
-The Log Analysis QuickStart App, created for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated. Whether you are new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
+The Log Analysis QuickStart App, created for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated.
+
+Whether you're new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 
 ### Installation
 
 To install the app:
 
-1. From **App Catalog**, search for the **Log Analysis QuickStart App** app.
-1. Click **Log Analysis QuickStart App**.
-1. Click **Add to Library**, this will open a window.<br/> ![LogAnalysis.png](/img/get-started/library/LogAnalysis.png)
-    :::note
-    If you do not select the correct _sourceCategory, data will not be loaded into the app. If you don't know which _sourceCategory to select, ask the administrator who configured the Source.
-    :::
-1. **Select from `_sourceCategory` values**. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
-1. Click on **Advanced**, choose either the Personal folder or a subfolder in the Personal folder. (Click the blue + to create a new subfolder).
-1. Click **Add to Library**. A dialog will confirm the app is installed successfully.
+1. From **App Catalog**, search for and select the **Log Analysis QuickStart** app.
+1. Click **Add Integration**.<br/> ![log-quickstart-analysis.png](/img/get-started/library/log-quickstart-analysis.png)
+1. Select from **Source Category** values. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
+  :::info
+  If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you don't know which `_sourceCategory` to select, ask your administrator who configured the Source.
+  :::
+1. Leave the app in the default folder location (**Personal** folder in your **Library**) or choose a different location. You can also click **New Folder** to add it to a new folder.
+1. Click **Next**. A dialog will confirm the app is installed successfully.
 
-### Visits
+### Visits Dashboard
 
-The Visits Dashboards displays identifying information about external and internal visitors across you deployment, including email addresses visitors are using.
+The Visits Dashboard displays identifying information about external and internal visitors across you deployment, including email addresses visitors are using.
 
 ![log_analysis_app_visits](/img/get-started/library/log-analysis-qs-visits.png)
 
