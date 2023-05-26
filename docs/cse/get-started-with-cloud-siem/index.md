@@ -23,4 +23,16 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to use the Heads Up Display to perform threat investigations.</p>
   </div>
 </div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>CSE Insight UI</h4></a>
+  <p>Learn about the contents of the Insights UI in CSE.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/cse/get-started-with-cloud-siem/insight-generation-process"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Insight Generation</h4></a>
+  <p>Learn how CSE correlates Signals by entity to create Insights.</p>
+  </div>
+</div>
 </div>
