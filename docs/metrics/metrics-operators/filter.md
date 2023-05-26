@@ -10,15 +10,27 @@ The functionality provided by the `filter` operator has been incorporated into t
 
 You can use the `filter` operator to limit the results returned by a metric query. There are several ways you can restrict results. You can apply an aggregation function, such as `avg`, to a time series. You can also filter based on how many times the value of individual data points meet a value condition over a particular duration.
 
-## filter syntax
+## Syntax
 
 There are two supported syntaxes for the `filter` operator.
+
+```sql
+filter [REDUCER BOOLEAN EXPRESSION]
+```
+
+or
+
+```sql
+filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
+```
 
 ### Syntax 1
 
 The first variant filters based on a function (usually an aggregation function) applied to the time series.
 
-`metric query | filter [REDUCER BOOLEAN EXPRESSION]`
+```sql
+filter [REDUCER BOOLEAN EXPRESSION]
+```
 
 Where:
 
@@ -40,20 +52,24 @@ The supported functions are:
 
 Return the time series in which the average value of the CPU_User metric is greater than 95:
 
-`metric=CPU_User | filter avg > 95`
+```sql
+metric=CPU_User | filter avg > 95`
+```
 
 **Example 2**
 
 Return the time series in which the latest value of the CPU_User metric is greater than 50:
 
-`metric=CPU_User | filter latest > 50`
+```sql
+metric=CPU_User | filter latest > 50
+```
 
 ### Syntax 2
 
 The second variant filters based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
 ```sql
-SELECTOR | filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
+filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
 Where:
@@ -74,7 +90,7 @@ There must be a least one data point in the last 5 minutes of the time range for
 :::
 
 ```sql
-filter _value > 3 all last 5m
+metric=CPU_User | filter _value > 3 all last 5m
 ```
 
 **Example 2**
@@ -82,7 +98,7 @@ filter _value > 3 all last 5m
 Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range. 
 
 ```sql
-filter _value > 3 atleast 1 last 5m
+metric=CPU_User | filter _value > 3 atleast 1 last 5m
 ```
 
 **Example 3**
@@ -90,7 +106,7 @@ filter _value > 3 atleast 1 last 5m
 Return only the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
-filter _value > 3 all any 5m
+metric=CPU_User | filter _value > 3 all any 5m
 ```
 
 **Example 4**
@@ -102,6 +118,5 @@ There must be a least one data point in the first 5 minutes of the time range fo
 :::
 
 ```sql
-filter _value > 3 all first 5m
+metric=CPU_User | filter _value > 3 all first 5m
 ```  
- 
