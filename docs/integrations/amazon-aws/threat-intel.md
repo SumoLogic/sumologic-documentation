@@ -48,7 +48,7 @@ All Dashboards include filters that you can use in Interactive Mode for further 
 
 High-level view of the threats identified by Threat Intel in your AWS CloudTrail, VPC Flow Logs, and ELB systems.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Threat-Intel-overview.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-Overview.png')} alt="AWS Threat Intel" />
 
 * **Welcome to Threat Intel for AWS.** See an informational panel to help you get started with Threat Intel. You can close this panel once you’ve read the text and visited the FAQs.
 * **Scanned Events Over Time.**  See the number of events scanned while looking for threats during the last 24 hours, broken down by source type.  
@@ -67,7 +67,7 @@ High-level view of the threats identified by Threat Intel in your AWS CloudTrail
 
 Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSCloudTrail.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-CloudTrail.png')} alt="AWS Threat Intel" />
 
 * **Threats by Geo Location.** View the geo location of threats by IP address that have been identified by Crowdstrike with a malicious confidence of High over the last 24 hours.
 * **Threats Associated with CloudTrail Events.** Track events in CloudTrail by event time where the malicious confidence is High by source user, source IP address, event name, AWS region, result, malicious confidence, label name, threat malware families, threat last updated, and count for the last 24 hours.
@@ -81,7 +81,7 @@ Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
 Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Logs.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSVPCFlowLogs.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-Amazon-VPC-Flow-Logs.png')} alt="AWS Threat Intel" />
 
 * **Geo Location of Threats with Rejected Flow Logs.** View the location of the source IP address of threats identified as High malicious confidence and rejected VPC flow logs for the last 24 hours.
 * **Geo Location of Threats with Accepted Flow Logs.** View the location of the source IP address of threats identified as High malicious confidence and accepted VPC flow logs for the last 24 hours
@@ -96,7 +96,7 @@ Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Lo
 
 Use this dashboard for details on potential threats and IOCs for Elastic Load Balancing.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSELB.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-Elastic-Load-Balancing-Classic.png')} alt="AWS Threat Intel" />
 
 * **Threats by Geo Location. **View the latest threats identified the geo location of their by source IP address.
 * **Threats Associated with Client IP. ** View an aggregation table of threats by client IP with a malicious confidence of High that contains the ELB server, ELB status code, full request, source IP,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated.
