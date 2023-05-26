@@ -10,6 +10,22 @@ This page explains CSE's Insight generation process. 
 
 The concept of an *entity* is central to the process CSE uses to correlate Signals and create Insights. So, what is an entity? In CSE, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about Entities and Entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
 
+Watch this micro lesson to learn how Insights are created.
+
+<Iframe url="https://www.youtube.com/embed/MjzJlozR6mE?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 ## Entities in messages are mapped to entity-type schema attributes
 
 During the next step of the [Record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
