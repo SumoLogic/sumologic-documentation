@@ -189,10 +189,6 @@ The cumulative severity value is color coded: cyan for less than 12, orange for 
 
 #### About the Entities tab graph view
 
-:::note
-This section describes a feature which is available to all customers but is currently in Beta. If you encounter any issues with this feature, please report them to Sumo Logic Support. Thank you!
-:::
-
 The screenshot below shows the **Entities** tab **graph** view for an Insight.
 
 ![related-entity-graph.png](/img/cse/related-entity-graph.jpg)
@@ -222,6 +218,21 @@ If you hover over an Entity, it and all connections to it will be highlighted in
 Any Entity with an Indicator will have an additional icon in the upper right **(9)** and if the Indicator is Malicious or Suspicious, the Entity will be highlighted in red or yellow accordingly.
 
 Finally, if CSE has detected additional relationships *outside* of the Insight during the selected time frame, an expand/contract control **(10)** will appear on the Entity. Clicking on that control will reveal (or hide) those additional relationships. 
+
+Watch this micro lesson to learn more about the Entity relationship graph.
+
+<Iframe url="https://www.youtube.com/embed/GTTwjB8y_5k?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
 
 #### Entity details in the right pane
 

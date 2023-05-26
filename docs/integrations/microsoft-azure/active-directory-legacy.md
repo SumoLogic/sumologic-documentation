@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
 
-The Active Directory Legacy App allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
+The Sumo Logic app for Active Directory Legacy (2008+) allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory App in combination with the Windows App.
 
@@ -191,7 +191,7 @@ The **Frequency** option should be set according to your environment. We use a s
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

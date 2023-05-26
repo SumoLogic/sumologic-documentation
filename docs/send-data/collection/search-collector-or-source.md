@@ -6,7 +6,7 @@ description: Search for a Collector or Source on the Manage Collection page.
 
 Many Sumo Logic customers have hundreds of collectors and sources installed and configured. But even with only 10 Collectors, sometimes it can be hard to find the one you need in the list.
 
-On the **Manage Data > Collection > Collection** page, a search field allows you to search for collectors and sources by name or sourceCategory using complete keywords.
+On the **Manage Data** > **Collection** > **Collection** page, a search field allows you to search for collectors and sources by name or sourceCategory using complete keywords.
 
 To match partial keywords use a wildcard. For example, use "**apache\***" to match "apacheprod".
 
@@ -19,7 +19,7 @@ In addition to the search field, you have a couple of dropdown selections to fur
 * **Expand** to expand or collapse the Collector's displayed Sources.
 
 To search for a collector or source:
-1. Go to **Manage Data > Collection > Collection**.
+1. Go to **Manage Data** > **Collection** > **Collection**.
 1. Enter a complete keyword (or keyword and wildcard) in the search field, and click **Search** or press Enter.
 
 Search results are displayed.

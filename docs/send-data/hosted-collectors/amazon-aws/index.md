@@ -39,13 +39,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/><h4>AWS S3 Scan Interval</h4></a>
+  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/><h4>Amazon S3 Scan Interval</h4></a>
   <p>Define the waiting time between scans of the objects in your S3 bucket.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/><h4>AWS S3</h4></a>
+  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source"><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/><h4>Amazon S3</h4></a>
   <p>Add an Amazon S3 Source to upload messages to Sumo Logic.</p>
   </div>
 </div>
@@ -69,41 +69,35 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox10 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-cost-explorer-source"><img src='https://s3.amazonaws.com/app_icons/AWS_Cost_Explorer.png' alt="icon" width="40"/><h4>AWS Cost Explorer</h4></a>
-  <p>Collect cost and usage reports from AWS Cost Explorer.</p>
-  </div>
-</div>
-<div className="box smallbox11 card">
-  <div className="container">
   <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source"><img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="40"/><h4>AWS Elastic Load Balancing</h4></a>
   <p>Add the AWS ELB Source to upload messages to Sumo Logic.</p>
   </div>
 </div>
-<div className="box smallbox12 card">
+<div className="box smallbox11 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source"><img src={useBaseUrl('img/send-data/aws-metadata-tag.png')} alt="icon" width="40"/><h4>AWS Metadata (Tag)</h4></a>
   <p>Collect tags from EC2 instances running on AWS.</p>
   </div>
 </div>
-<div className="box smallbox13 card">
+<div className="box smallbox12 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source"><img src={useBaseUrl('img/send-data/aws-kinesis-firehose-logs.png')} alt="icon" width="50"/><h4>AWS Kinesis Firehose Logs</h4></a>
-  <p>Ingest logs from AWS Kinesis Data Firehose.</p>
+  <p>Ingest logs from Amazon Kinesis Data Firehose.</p>
+  </div>
+</div>
+<div className="box smallbox13 card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source"><img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/><h4>AWS Kinesis Firehose Metrics</h4></a>
+  <p>Ingest CloudWatch metrics from Amazon Kinesis Data Firehose.</p>
   </div>
 </div>
 <div className="box smallbox14 card">
-  <div className="container">
-  <a href="/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source"><img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/><h4>AWS Kinesis Firehose Metrics</h4></a>
-  <p>Ingest CloudWatch metrics from AWS Kinesis Data Firehose.</p>
-  </div>
-</div>
-<div className="box smallbox15 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud"><img src={useBaseUrl('img/send-data/AWSGovCloudUS-Logo.jpeg')} alt="icon" width="90"/><h4>AWS GovCloud</h4></a>
   <p>AWS GovCloud are specific regions authorized to a FedRAMP-High baseline.</p>
   </div>
 </div>
-<div className="box smallbox16 card">
+<div className="box smallbox15 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation"><img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="icon" width="30"/><h4>AWS CloudFormation Configuration</h4></a>
   <p>Use CloudFormation to set up AWS products.</p>

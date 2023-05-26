@@ -2,13 +2,13 @@
 slug: /integrations/hosts-operating-systems
 title: Host and Operating Systems
 sidebar_label: Host and Operating Systems
-description: Docs for Sumo apps for hosts and Linux.
+description: Learn about Sumo Logic apps for monitoring host metrics and the Linux operating system.
 ---
 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/hosts.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/hosts.png')} alt="Thumbnail icon" width="45"/>
 
 This guide has documentation for Sumo apps for monitoring host metrics and the Linux operating system.  
 

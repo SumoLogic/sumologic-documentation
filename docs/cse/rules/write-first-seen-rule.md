@@ -8,7 +8,6 @@ keywords:
   - cloud siem
   - cse
   - first seen rule
-  - ueba
   - behavioral analytics
 ---
 
@@ -31,6 +30,21 @@ First Seen rules allow you to generate a Signal when behavior by an Entity (such
 A First Seen rule is different from other CSE rule types in that you don’t define the criteria for firing a Signal. Instead, the rule expression in a First Seen rule is simply a filter condition that defines what incoming Records the rule will apply to. For each First Seen rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression. After the baseline learning period is completed, when an incoming Record includes matching activity not seen during the baseline learning period, the rule creates a Signal.
 
 For example, for the “First time a user logged in from a new geographic location” use case, CSE will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, CSE will create a Signal for every new geolocation detected and incrementally add to the baseline.
+
+Watch this micro lesson to learn more about First Seen rules.
+
+<Iframe url="https://www.youtube.com/embed/ssfL_c3j_r8?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
 
 ## Example rule
 The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
@@ -67,9 +81,9 @@ The settings in the **If triggered** section determine what Records the rule wil
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
 :::tip
-Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and First Seen Rules are no exception. 
+Sumo Logic ensures that Rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a Rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and First Seen Rules are no exception.
 
-On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment. 
+On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
 
 ## Use case: Monitor login from first seen geolocation

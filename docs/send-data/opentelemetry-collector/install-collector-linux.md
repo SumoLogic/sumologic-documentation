@@ -48,7 +48,7 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   sudo curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
+   sudo curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
    ```
 * By first downloading the script, inspecting its contents for security, and then running it:
    ```bash
@@ -328,7 +328,7 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 
 ### Install Script
 
-If you installed the Collector with the install script, you can use it to uninstall the Collector:
+If you installed the Collector with the install script, you can this command to uninstall the Collector:
 
 ```bash
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y

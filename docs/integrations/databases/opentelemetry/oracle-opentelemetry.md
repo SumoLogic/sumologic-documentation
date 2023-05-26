@@ -82,7 +82,7 @@ The location of these logs will be required when you set up the app through the 
 
 To set up the performance metrics script on Linux and Windows for the Oracle app:
 
-1. Follow [these instructions](/docs/integrations/databases/oracle/performance-metrics/) for your operating system. You don't need to configure the Sumo Logic Script Source at this time.
+1. Follow [these instructions](/docs/integrations/databases/oracle/#performance-metrics-script-setup) for your operating system. You don't need to configure the Sumo Logic Script Source at this time.
 2. As per the above instructions, once the python script is available locally, you need to trigger this script periodically by copying the [cronJob.py](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-data-collection/Utils/cronJob.py) file. This will generate an output log file, path for which needs to be given at the time of app installation. Based on your platform please follow the steps below:
 
 <Tabs
@@ -126,11 +126,11 @@ The `.bat` file created above can then be triggered periodically using windows T
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up the Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Collector.png' alt="Collector" />
 
@@ -153,7 +153,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -197,7 +197,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 

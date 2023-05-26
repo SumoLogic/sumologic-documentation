@@ -312,12 +312,12 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="K8s dashboards" />
 
 
-### Health Check
+### Collection Health Check
 
-The **Kubernetes - Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
+The **Kubernetes - Collection Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
 
 Use this dashboard to:  
-* Monitor the health of FluentD and FluentBit pods in your Kubernetes environment
+* Monitor the health of OpenTelemetry based collection in your Kubernetes environment.
   :::note 
   Currently, in default configurations, [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) is used instead of FluentD and Fluent Bit.
   :::

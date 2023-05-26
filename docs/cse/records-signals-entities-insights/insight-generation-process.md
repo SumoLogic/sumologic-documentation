@@ -8,11 +8,27 @@ description: Learn how CSE correlates Signals by entity to create Insights.
 
 This page explains CSE's Insight generation process. 
 
-The concept of an *entity* is central to the process CSE uses to correlate Signals and create Insights. So, what is an entity? In CSE, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about Entities and Entity types, see [View and Manage Entities](docs/cse/records-signals-entities-insights/view-manage-entities.md).
+The concept of an *entity* is central to the process CSE uses to correlate Signals and create Insights. So, what is an entity? In CSE, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about Entities and Entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
+
+Watch this micro lesson to learn how Insights are created.
+
+<Iframe url="https://www.youtube.com/embed/MjzJlozR6mE?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [Record processing flow](../schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
+During the next step of the [Record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
 
 | Entity Type | Schema Attributes |
 |:----- |:----- |
@@ -29,7 +45,7 @@ During the next step of the [Record processing flow](../schema/record-processing
 | User Agent | `http_userAgent` |
 | Username | `fromUser_username`, `fromUser_username_raw`, `user_username`, `user_username_raw` |
 
-Which particular attribute an entity gets mapped to depends on the [field mappings](../schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
+Which particular attribute an entity gets mapped to depends on the [field mappings](/docs/cse/schema/create-structured-log-mapping) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
 
 ## Rules have one or more On Entity attributes
@@ -56,7 +72,7 @@ Note that the screenshot above shows an *Activity Score* for each entity. The fo
 
 ## Understanding Entity Activity Scores
 
-An entity’s Activity Score is the sum of the severities of the unique Signals associated with that entity during the previous two weeks, unless a [different detection period is configured](set-insight-generation-window-threshold.md). What makes a Signal unique? A Signal takes its name from the rule that fired it, so unless a rule's name has a unique templated value in it, the Signals that the rule generates are not unique. 
+An entity’s Activity Score is the sum of the severities of the unique Signals associated with that entity during the previous two weeks, unless a [different detection period is configured](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold). What makes a Signal unique? A Signal takes its name from the rule that fired it, so unless a rule's name has a unique templated value in it, the Signals that the rule generates are not unique. 
 
 Here are a couple practical examples:
 
@@ -68,9 +84,9 @@ Here are a couple practical examples:
 
 The severities of the `RDP Brute Force Attempt bad` and the `RDP Brute Force Attempt worse` Signals would be included in the entity’s Activity Score.
 
-By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](set-insight-generation-window-threshold.md) for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
+By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold) for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
 
-After CSE fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](set-insight-generation-window-threshold.md), below. 
+After CSE fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below. 
 
 ### Example of an Entity that has reached Activity Score threshold
 
@@ -84,7 +100,7 @@ The severity of each Signal is also shown. CSE generated an Insight for entity �
 
 Under certain circumstances, CSE suppresses Signals to preventgeneration of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
 
-This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. CSE prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or 24 hours if Signals for the Signal-Entity combination are firing continuously.   
+This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. CSE prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or up to 72 hours if Signals for the Signal-Entity combination are firing continuously.   
 
 **Example 1**
 
@@ -104,8 +120,8 @@ Prototype Signals, which are are not included in Insights, are not suppressed.
 
 The severity of an Insight is indicated as Low, Medium, High, or Critical. Note that there are only two situations in which an Insight can have the Critical severity level:
 
-* You can assign a severity of Critical to a [Custom Insight](configure-custom-insight.md) configuration.
-* You can change the severity of an Insight from the severity it was assigned by CSE at generation time. In the [Insight details](about-cse-insight-ui.md) pane, click the icon that appears next to **Severity** to display the severity levels, and select a new level. 
+* You can assign a severity of Critical to a [Custom Insight](/docs/cse/records-signals-entities-insights/configure-custom-insight) configuration.
+* You can change the severity of an Insight from the severity it was assigned by CSE at generation time. In the [Insight details](/docs/cse/records-signals-entities-insights/about-cse-insight-ui/) pane, click the icon that appears next to **Severity** to display the severity levels, and select a new level. 
 
 Insights that are generated by the CSE Insight generation algorithm will only have severity levels of Low, Medium, or High. Severity is a function of the Entity Activity Score of the Insight’s Entity.
 

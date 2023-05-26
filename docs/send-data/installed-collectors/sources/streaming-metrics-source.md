@@ -20,7 +20,7 @@ The procedure below assumes you will use an installed collector on each host fro
 Perform these steps on each host from which you want to collect metrics:
 
 1. Set up an [installed collector](/docs/send-data/installed-collectors). (Skip this step if you have already set up the collector.) 
-1. In Sumo select **Manage Data > Collection > Collection**.  
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.  
 1. Click **Add**, and then **Add Source**.
 1. On the **Select Source for Collector** page, select **Streaming Metrics**. 
 1. On the source configuration page, supply the following fields:
