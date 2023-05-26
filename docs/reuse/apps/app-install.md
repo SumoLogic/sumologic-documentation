@@ -2,7 +2,10 @@ To install the app:
 
 1. Click **App Catalog**, then search for and select the app.
    * If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. Select the version of the service you're using and click **Add to Library**.
+1. Select the version of the service you're using and click **Add Integration**.
+   :::note
+   Not all apps have versions.
+   :::
 1. To install the app, complete the following fields:
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source**. Select either of these options for the data source.
