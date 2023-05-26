@@ -142,13 +142,10 @@ To configure a Microsoft Azure AD Inventory Source:
 10. **Supported APIs to collect**. Select one or more of the available APIs: **Devices** and **Users**.
 
 11. **Collect Users SignInActivity Data**. By enabling the checkbox, you can also include the sign in activity information in your user response. [Learn more](https://learn.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0&tabs=http#example-10-get-users-including-their-last-sign-in-time).
-
-:::note
-  To collect the `signInActivity` information you should have `Azure AD Premium P1/P2` license.
-:::
-
+   :::note
+   To collect the `signInActivity` information you should have `Azure AD Premium P1/P2` license.
+   :::
 12. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-
 13. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
