@@ -88,9 +88,9 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
 1. (Optional) **Filters**. Allows you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
 1. (Optional) **Include the option to select all values**. Toggle ON to include a wildcard asterisk (\*) in the available options.
 1. (Optional) **Allow multiple values**. Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
-:::note
-You can add a maximum of 20 values.
-:::
+    :::note
+    You can add a maximum of 20 values.
+    :::
 1. (Optional) **Default Value**. Provide a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
@@ -117,9 +117,9 @@ To add a Logs Search variable to a dashboard, do the following:
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
 1. (Optional) **Include the option to select all values**: Toggle ON to include a wildcard asterisk (\*) in the available options.
 1. (Optional) **Allow multiple values**: Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
-:::note
-You can add a maximum of 20 values.
-:::
+    :::note
+    You can add a maximum of 20 values.
+    :::
 1. Optional: Enter a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
