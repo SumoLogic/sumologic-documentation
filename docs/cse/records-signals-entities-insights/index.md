@@ -95,10 +95,4 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to set up Custom Insight configurations.</p>
   </div>
 </div>
-<div className="box smallbox15 card">
-  <div className="container">
-  <a href="/docs/cse/records-signals-entities-insights/cse-heads-up-display"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>CSE Heads Up Display</h4></a>
-  <p>Learn how to use the Heads Up Display to perform threat investigations.</p>
-  </div>
-</div>
 </div>

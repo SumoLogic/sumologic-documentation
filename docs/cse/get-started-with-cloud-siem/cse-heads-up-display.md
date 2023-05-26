@@ -4,7 +4,6 @@ title: CSE Heads Up Display
 description: Learn about CSE's Heads Up Display (HUD), a UI that provides an at-a-glance overview of Insight status and activity.
 ---
 
-
 This topic describes CSE’s *Heads Up Display (HUD)*, the landing page for the CSE UI. The HUD provides an at-a-glance overview of Insight status and activity.
 
 Watch this micro lesson to learn how to use the Heads Up Display to perform threat investigations.
