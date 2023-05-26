@@ -38,106 +38,73 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
 ### Scenario 1: AWS OpenTelemetry Collector installation on ECS EC2
 
 1. Download the CloudFormation template file which will be used later to install the Collector:  
-
-    ```
+    ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/opentelemetry-collector-contrib/main/examples/non-kubernetes/aws-otel-ecs-ec2-deployment.yaml
     ```
-
 1. Download the AWS OpenTelemetry Collector configuration file:  
-
-    ```
+    ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/opentelemetry-collector-contrib/main/examples/non-kubernetes/aws-otel-config-file.yaml
     ```
-
 1. Set up the following environment variables that are needed to perform the AWS OpenTelemetry Collector deployment.
-
    * `CLUSTER_NAME` - your ECS Cluster name previously set up.
    * `AWS_REGION` - your ECS Cluster deployment region.
    * `TEMPLATE_PATH` - path to the template file from the first step.
    * `CONFIG_FILE_PATH` - path to the config file from the second step.
-   * SUMO_HTTP_TRACES_URL - mandatory [Sumo HTTP Traces  URL](http-traces-source.md) from prerequisites section.
-
+   * `SUMO_HTTP_TRACES_URL` - mandatory [Sumo HTTP Traces  URL](http-traces-source.md) from prerequisites section.
 1. It is necessary to provide the configuration to the AWS OpenTelemetry Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
-
     ```
     aws ssm put-parameter --name "sumologic-otel-col-config" --type "String" --data-type "text" --value "$(cat ${CONFIG_FILE_PATH} | awk -v url=$SUMO_HTTP_TRACES_URL '{gsub(/SUMO_HTTP_TRACES_URL/,url)}1')"
     ```
-
 1. Execute the command below to create an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that deploys the AWS OpenTelemetry Collector on your cluster:  
-
     ```
     aws cloudformation create-stack --stack-name sumologic-aws-otel-col-ecs-ec2 --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=ClusterName,ParameterValue=${CLUSTER_NAME} --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
     ```
-
-1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**.  
-
-    ![stack status.png](/img/traces/stack_status.png)
-
-1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running.  
-
-    ![task status running.png](/img/traces/task-status-running.png)
-
-1. Finally, click on the task and expand the **Containers** list. In he **Network Bindings > External Link** section, you will find the information on where to send telemetry data.  
-
-    ![external links.png](/img/traces/external-links.png)
+1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**. <br/>  ![stack status.png](/img/traces/stack_status.png)
+1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running. <br/>  ![task status running.png](/img/traces/task-status-running.png)
+1. Finally, click on the task and expand the **Containers** list. In he **Network Bindings > External Link** section, you will find the information on where to send telemetry data.<br/>![external links.png](/img/traces/external-links.png)
+  If you plan to send data to the ECS Collector service from a container running in the bridge network mode using the same host, you can use Docker Gateway IP - 172.17.0.1 on EC2 Linux in the application environment variables. For example:
+  ```bash
+  OTEL_EXPORTER_OTLP_ENDPOINT=http://172.17.0.1:55681
+  OTEL_TRACES_EXPORTER=otlp
+  ```
+  However, with this configuration, the collector service task must be running in each of the used EC2 instances.
 
 ### Scenario 2: AWS OpenTelemetry Collector installation on ECS Fargate
 
 1. Download the CloudFormation template file which will be used later to install the Collector:  
-
-    ```
+    ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/opentelemetry-collector-contrib/main/examples/non-kubernetes/aws-otel-ecs-fargate-deployment.yaml
     ```
-
 1. Download the AWS OpenTelemetry Collector configuration file.  
-
-    ```
+    ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/opentelemetry-collector-contrib/main/examples/non-kubernetes/aws-otel-config-file.yaml
     ```
-
 1. Set up the following environment variables that are needed to perform the AWS OpenTelemetry Collector deployment:
-
    * `CLUSTER_NAME` - your ECS Cluster name setup from prerequisite
    * `AWS_REGION` - your ECS Cluster deployment region
    * `TEMPLATE_PATH` - path to the template file from the first step
    * `CONFIG_FILE_PATH` - path to the config file from the second step
    * `SUMO_HTTP_TRACES_URL` - mandatory [Sumo HTTP Traces URL](http-traces-source.md)
    * `SECURITY_GROUPS` - it is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as, `sg-xyz,sg-xyz`.  
-
-        :::note
-        The AWS OpenTelemetry Collector receives data from various receivers - these ports should be configured in the Security Group:
-
+    :::note
+    The AWS OpenTelemetry Collector receives data from various receivers - these ports should be configured in the Security Group:
      * AWSXRAY - port: 2000/udp
      * OTLP - ports: 4317/tcp, 55681/tcp
      * JAEGER - ports: 6831/udp, 6832/udp, 14250/tcp, 14268/tcp
      * ZIPKIN - port: 9411/tcp
-        :::
-
+    :::
    * SUBNETS - same as Security Groups, Subnets have to be configured for AWS Fargate. To find Subnets used on the cluster, use the VPC ID from Security Group and search for it on the list [here](https://console.aws.amazon.com/vpc/home#subnets:). In the case of multiple Subnets use a comma as a separator, such as, `subnet-xyz,subnet-xyz`.
-
 1. It is necessary to provide the configuration to the AWS OpenTelemetry Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
-
     ```
     aws ssm put-parameter --name "sumologic-otel-col-config" --type "String" --data-type "text" --value "$(cat ${CONFIG_FILE_PATH} | awk -v url=$SUMO_HTTP_TRACES_URL '{gsub(/SUMO_HTTP_TRACES_URL/,url)}1')"
     ```
-
 1. Execute the command below to create an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that deploys the AWS OpenTelemetry Collector on your cluster:  
-
     ```
     aws cloudformation create-stack --stack-name sumologic-aws-otel-col-ecs-fargate --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=ClusterName,ParameterValue=${CLUSTER_NAME} ParameterKey=SecurityGroups,ParameterValue=\"${SECURITY_GROUPS}\" ParameterKey=Subnets,ParameterValue=\"${SUBNETS}\" --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
     ```
-
-1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-fargate** stack status is **CREATE_COMPLETE**.  
-
-    ![ecs ec2 stack status.png](/img/traces/ecs-ec2-stack-status.png)
-
-1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running.  
-
-    ![task status es2 ecs.png](/img/traces/task-status-es2-ecs.png)
-
-1. Finally, click on the task and expand the **Containers** list. In the **Network > Private IP** or **Public** **IP** sections, you will find the information on where to send telemetry data.  
-
-    ![network ips.png](/img/traces/network-ips.png)
+1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-fargate** stack status is **CREATE_COMPLETE**. <br/> ![ecs ec2 stack status.png](/img/traces/ecs-ec2-stack-status.png)
+1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running.<br/>  ![task status es2 ecs.png](/img/traces/task-status-es2-ecs.png)
+1. Finally, click on the task and expand the **Containers** list. In the **Network > Private IP** or **Public** **IP** sections, you will find the information on where to send telemetry data.<br/>  ![network ips.png](/img/traces/network-ips.png)
 
 ## Amazon Elastic Computing (EC2)
 
