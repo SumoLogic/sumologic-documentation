@@ -146,7 +146,9 @@ To configure a Microsoft Azure AD Inventory Source:
     - An Azure AD Premium P1/P2 license.
     - Read all audit log data[AuditLog.Read.All] permission. 
 
-12. When you are finished configuring the Source, click **Submit**.
+12. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+
+13. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
