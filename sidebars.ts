@@ -2240,6 +2240,7 @@ integrations: [
           link: {type: 'doc', id: 'cse/get-started-with-cloud-siem/index'},
           items: [
             'cse/get-started-with-cloud-siem/introduction-to-cloud-siem',
+            'cse/get-started-with-cloud-siem/cse-heads-up-display',
           ],
         },
         {
@@ -2263,7 +2264,6 @@ integrations: [
             'cse/records-signals-entities-insights/about-cse-insight-ui',
             'cse/records-signals-entities-insights/configure-entity-lookup-table',
             'cse/records-signals-entities-insights/configure-custom-insight',
-            'cse/records-signals-entities-insights/cse-heads-up-display',
           ],
         },
         {
