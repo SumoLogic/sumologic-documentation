@@ -58,9 +58,9 @@ To add a Custom List variable to a dashboard, do the following:
 1. (Optional) **Default Value**. Provide a **Default Value** for the variable.
 1. (Optional) **Include the option to select all values**. Toggle ON to include a wildcard asterisk (\*) in the available options.
 1. (Optional) **Allow multiple values**. Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
-:::note
-You can add a maximum of 20 values.
-:::
+  :::note
+  You can add a maximum of 20 values.
+  :::
 1. Click **Create Template Variable** to apply the variable to the dashboard. 
 
 ### Add a Metrics Metadata Search variable
