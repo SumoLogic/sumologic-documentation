@@ -48,7 +48,7 @@ In CSE, an Entity is a unique actor that a Signal fired upon. CSE has a number o
 
 You can create custom Entity types as well. For more information, see [Create a Custom Entity Type](docs/cse/records-signals-entities-insights/create-custom-entity-type.md).
 
-When a Signal is fired, if an Entity doesn’t already exist in CSE for the item that the Signal fired on, CSE creates an Entity for it. For more information about Entities and Signal and Insight generation, see [Insight Generation Process](docs/cse/records-signals-entities-insights/insight-generation-process.md).
+When a Signal is fired, if an Entity doesn’t already exist in CSE for the item that the Signal fired on, CSE creates an Entity for it. For more information about Entities and Signal and Insight generation, see [Insight Generation Process](docs/cse/get-started-with-cloud-siem/insight-generation-process.md).
 
 ## About the Entities list page
 
