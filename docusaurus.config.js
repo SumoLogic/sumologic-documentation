@@ -130,6 +130,17 @@ module.exports = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            spec: 'sumologic-api.yaml',
+            route: '/api/',
+          },
+        ],
+      },
+    ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
