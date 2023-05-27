@@ -1839,7 +1839,7 @@ html[data-theme='dark'] .featureImage {
 
 
 
-// Sumo badges
+// Sumo Logic badges/labels
 
 .beta {
   background: #C6007E;
@@ -1939,6 +1939,8 @@ html[data-theme='dark'] .featureImage {
   transform: rotate(45deg);
 }
 
+//Style Guide Dos and Don'ts
+
 .container-boxes {
   overflow: hidden; /* Clear the floats */
 }
@@ -1971,8 +1973,6 @@ html[data-theme='dark'] .featureImage {
   line-height: 26pt;
 }
 
-
-
 .yes-box {
   background-color: #91CF91;
   color: #212121;
@@ -1991,14 +1991,33 @@ html[data-theme='dark'] .featureImage {
   border-radius: 4px;
 }
 
+// redocusaurus overrides
+
 .redocusaurus table > tbody > tr {
-  border: 1px solid #F1F1F1;
-  background-color: transparent;
-  color: #000000;
+  background-color: var(--ifm-table-cell-color) !important;
+}
+
+html[data-theme=light] pre {
+    background-color: var(--docusaurus-highlighted-code-line-bg) !important;
 }
 
 .CvlqJ pre code {
-  border: 20px solid #383c44;
-  background-color: #383c44 !important;
   text-shadow: none !important;
+  font-size: 16px;
+}
+
+.CvlqJ code {
+  font-size: 16px !important;
+}
+
+.gTGgei pre code {
+  font-size: 16px;
+}
+
+.gTGgei code {
+  font-size: 16px !important;
+}
+
+.jsxWoY {
+  color: #000000 !important;
 }
