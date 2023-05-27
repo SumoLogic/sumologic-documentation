@@ -54,7 +54,7 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
   </div>
   <div className="box smallbox6 card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/troubleshooting-faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Troubleshooting and FAQ</h4></a>
+    <a href="/docs/send-data/opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Troubleshooting and FAQ</h4></a>
     <p>Find solutions to common issues and answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>
   </div>
