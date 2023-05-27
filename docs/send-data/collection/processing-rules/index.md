@@ -74,7 +74,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/send-data/collection/processing-rules/include-and-exclude-rule/"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Include and Exclude Rules</h4></a>
+  <a href="/docs/send-data/collection/processing-rules/include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Include and Exclude Rules</h4></a>
   <p>Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic.</p>
   </div>
 </div>
