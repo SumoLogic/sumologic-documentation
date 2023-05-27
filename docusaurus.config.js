@@ -136,6 +136,7 @@ module.exports = {
         specs: [
           {
             spec: 'sumologic-api.yaml',
+            //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
             route: '/api/',
           },
         ],
