@@ -1,15 +1,13 @@
 ---
-id: azure-active-directory
+id: active-directory-azure1
 title: Azure Active Directory
 sidebar_label: Azure Active Directory
-description: The Sumo Logic App for Azure Active Directory provides insight into your Azure Active Directory activity, including management of roles, users, groups, directories, and applications.
+description: The Sumo Logic App for Azure Active Directory provides insight into to your Azure Active Directory activity, including management of roles, users, groups, directories, and applications.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="40"/>
 
 Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection.
 
@@ -19,7 +17,7 @@ The Sumo Logic App for Azure helps you monitor activity in the Azure Active Dire
 * Event Hub streams the logs collected by Azure Monitor to an Azure function.
 * The Azure function is a small piece of code that is triggered by Event Hub to send Azure Active Directory logs to the Sumo HTTP Source. The function also logs to one Storage Account and logs failover data to another.
 
-img/integrations/microsoft-azure/CollectLogsforAzureAD.png CollectLogsforAzureAD
+<img src={useBaseUrl('img/integrations/microsoft-azure/CollectLogsforAzureAD.png')} alt="CollectLogsforAzureAD" />
 
 ## Prerequisites
 
@@ -77,13 +75,14 @@ Now that you have set up collection for the Azure Active Directory, install the 
 {@import ../../reuse/apps/app-install.md}
 
 
+
 ## Viewing Azure Active Directory Dashboards
 
-<h3 id="#overview">Overview</h3>
+### Overview
 
 See an overview of Azure Active Directory activity, including operation names, audit event categories, log levels, and result types.
 
-img/integrations/microsoft-azure/azure-ad-overview.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-ad-overview.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of operations along with a count, and compares it to the count of operations from one day before.
@@ -94,11 +93,11 @@ img/integrations/microsoft-azure/azure-ad-overview.png Azure Active Directory da
 - **Geo Location of Events.** Performs a geo lookup query and displays the location and number of events on a map of the world .
 - **Category Breakdown.** Shows a breakdown of the categories on a pie chart.
 
-<h3 id="#role-management">Role Management</h3>
+### Role Management
 
 See information about role management in Azure Activity Directory, including role updates, successful events, and users added or removed from roles.
 
-img/integrations/microsoft-azure/Azure-AD-Role-Management.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-AD-Role-Management.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of role management operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of role management operations along with a count, and compares it to the count of operations from one day before.
@@ -109,12 +108,11 @@ img/integrations/microsoft-azure/Azure-AD-Role-Management.png Azure Active Direc
 - **Role Updates.** Shows an aggregation table of role updates with columns for the operation names, result types, result description identity, role name, target source name, and count.
 - **Added/Removed User from Role.** Shows an aggregation table of users added or removed from a role with columns for the operation names, result types, result description identity, user name, and target source name.
 
-
-<h3 id="#user-management">User Management</h3>
+### User Management
 
 See information about user management in Azure Activity Directory, including external user invites, updated and deleted users, users added and outliers in user management events.
 
-img/integrations/microsoft-azure/Azure-AD-User-Management.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-AD-User-Management.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of user management operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of user management operations along with a count, and compares it to the count of operations from one day before.
@@ -128,12 +126,11 @@ img/integrations/microsoft-azure/Azure-AD-User-Management.png Azure Active Direc
 - **Deleted User.** Shows an aggregation table of deleted users with columns for the time, operation names, result types, target source name, identity, and count.
 - **User Management Events - Outlier.** Shows outliers in user management events with count and thresholds on a line chart.
 
-
-<h3 id="#application-management">Application Management</h3>
+### Application Management
 
 See information about application management in Azure Activity Directory, including application consent, deleted applications, applications added or updated, and service principal updates.
 
-img/integrations/microsoft-azure/Azure-ActiveDirectory-Application-Management.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-ActiveDirectory-Application-Management.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of application management operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of application management operations along with a count, and compares it to the count of operations from one day before.
@@ -143,12 +140,11 @@ img/integrations/microsoft-azure/Azure-ActiveDirectory-Application-Management.pn
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 - **Summary.** Shows an aggregation table of activity types with columns for the operation names, logged by service, level, result type, result reason, identity, target resource name, and frequency.
 
-
-<h3 id="#directory-management">Directory Management</h3>
+### Directory Management
 
 See information about directory management in Azure Activity Directory, including failed events, successful events, and disables desktop SSOs.
 
-img/integrations/microsoft-azure/Azure_Active_Directory-Directory_Management.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure_Active_Directory-Directory_Management.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of directory management operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of directory management operations along with a count, and compares it to the count of operations from one day before.
@@ -158,12 +154,11 @@ img/integrations/microsoft-azure/Azure_Active_Directory-Directory_Management.png
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 - **Disable Desktop SSO.** Shows an aggregation table of disabled desktop SSOs with columns for the operation names, result types, result descriptions, identity, target source name, and count.
 
-
-<h3 id="#group-management">Group Management</h3>
+### Group Management
 
 See information about group management in Azure Activity Directory, including groups added, and a list of members added or removed from groups.
 
-img/integrations/microsoft-azure/Azure-ActiveDirectory-Group-Management.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-ActiveDirectory-Group-Management.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of group management operations, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of group management operations along with a count, and compares it to the count of operations from one day before.
@@ -174,12 +169,11 @@ img/integrations/microsoft-azure/Azure-ActiveDirectory-Group-Management.png Azur
 - **Groups Added.** Shows an aggregation table of groups added with columns for the time, operation names, result types, target source name, identity, and count.
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 
-
-<h3 id="#authorization-authentication-other">Authorization Authentication Other</h3>
+### Authorization - Authentication - Other
 
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.
 
-img/integrations/microsoft-azure/Azure-Active-Directory-Authorization_Authentication_Other.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Active-Directory-Authorization_Authentication_Other.png')} alt="Azure Active Directory dashboards" />
 
 - **Operation Name.** Shows the name of authorizations or authentication, and a count of how many times they happened on a bar chart.
 - **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of authorizations or authentication along with a count, and compares it to the count of operations from one day before.
@@ -188,12 +182,11 @@ img/integrations/microsoft-azure/Azure-Active-Directory-Authorization_Authentica
 - **Failed Events.** Shows an aggregation table of failed events with columns for the operation names,  result types, result descriptions, identity, target source name, and count.
 - **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart.
 
-
-<h3 id="#successful-sign-in-events">Successful Sign-in Events</h3>
+### Successful Sign-In Events
 
 See information about successful sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
-img/integrations/microsoft-azure/azure-ad-successful-sign-in-events.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-ad-successful-sign-in-events.png')} alt="Azure Active Directory dashboards" />
 
 - **Geo Location of Sign-in.** Performs a geo lookup query and displays the location and number of successful sign-in events on a map of the world.
 - **Sign-In by User - One Day Time Comparison.** Shows an aggregation table with the names of users with successful sign-in events along with a count, and compares it to the count of operations from one day before.
@@ -206,12 +199,11 @@ img/integrations/microsoft-azure/azure-ad-successful-sign-in-events.png Azure Ac
 - **Sign in by Application.** Shows successful sign-in events by Application.
 - **Anomaly in Total Login Count.** Shows any Anomaly in the total successful login count.
 
-
-<h3 id="#failure-sign-in-events">Failure Sign-in Events</h3>
+### Failure Sign-in Events
 
 See information about failure sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
-img/integrations/microsoft-azure/azure-ad-failure-sign-in-event.png Azure Active Directory dashboards
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-ad-failure-sign-in-event.png')} alt="Azure Active Directory dashboards" />
 
 - **Geo Location of Sign-in.** Performs a geo lookup query and displays the location and number of failure sign-in events on a map of the world.
 - **Sign-In by User - One Day Time Comparison.** Shows an aggregation table with the names of users with failed sign-in events along with a count, and compares it to the count of operations from one day before.
