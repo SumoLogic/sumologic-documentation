@@ -47,3 +47,5 @@ Log-Level pattern detection is automatic, meaning you do not need to parse log l
 ```sql
 | where isNull(_loglevel)
 ```
+
+Log level of a log line is stored under `_loglevel` field. You can override its value using a [field extraction rule (FER)](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/).
