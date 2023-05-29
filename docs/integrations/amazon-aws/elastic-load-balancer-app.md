@@ -53,7 +53,7 @@ Now that you have set up collection for AWS ELB, install the Sumo Logic App for 
 
 ### Application Overview
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-App-overview.png')} alt="AWS Elastic Load Balancer - Application" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Overview.png')} alt="AWS Elastic Load Balancer - Application" />
 
 * **Requests by Geolocation**. Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last fifteen minutes.
 * **Browsers and Operating Systems.** Reports the breakdown of the client’s browser by operating system in a stacked column chart for the last fifteen minutes.
@@ -68,7 +68,7 @@ Now that you have set up collection for AWS ELB, install the Sumo Logic App for 
 
 ### Latency Analysis
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-elb-AppLatencyAnalysis.png')} alt="AWS Elastic Load Balancer - Application" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Latency-Analysis.png')} alt="AWS Elastic Load Balancer - Application" />
 
 * **Total Process Time Latency 90th, 95 pct.** Shows the 90th and 95th percentile trend as an average across your deployment.
 * **Latency by Protocol.** Shows the average latency by protocol across your deployment.
@@ -83,7 +83,7 @@ Now that you have set up collection for AWS ELB, install the Sumo Logic App for 
 
 ### Request Analysis
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-elb-app-request.png')} alt="AWS Elastic Load Balancer - Application" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Request-Analysis.png')} alt="AWS Elastic Load Balancer - Application" />
 
 * **Requests by Geolocation.** Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last fifteen minutes.
 * **Requests by Target Group Over Time. **Shows the trend of requests by Target Group over time for the last fifteen minutes.
@@ -95,7 +95,7 @@ Now that you have set up collection for AWS ELB, install the Sumo Logic App for 
 
 ### Status Code Analysis
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-elb-app-status-codes.png')} alt="AWS Elastic Load Balancer - Application" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Status-Codes-Analysis.png')} alt="AWS Elastic Load Balancer - Application" />
 
 * **ELB Status Over Time. **Displays a bar chart representing the application status over a specified time period.
 * **Target Status Over Time. **Displays a bar chart representing the status of the target over a specified time period.
@@ -111,7 +111,7 @@ Now that you have set up collection for AWS ELB, install the Sumo Logic App for 
 
 ### Failed Dispatch Monitoring
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-elb-app-failed-dispatch.png')} alt="AWS Elastic Load Balancer - Application" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Failed-Dispatch-Monitoring.png')} alt="AWS Elastic Load Balancer - Application" />
 
 * **Failed Dispatches Client Geolocation.** Uses geolocation to map IP addresses for clients with failed dispatches.
 * **Failed Dispatch Outlier.** Shows the number of failed dispatches, the threshold for “normal” failures and identifies any outliers outside that threshold.  
