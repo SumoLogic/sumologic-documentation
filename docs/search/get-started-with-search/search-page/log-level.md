@@ -48,4 +48,7 @@ Log-Level pattern detection is automatic, meaning you do not need to parse log l
 | where isNull(_loglevel)
 ```
 
-Log level of a log line is stored under `_loglevel` field. You can override its value using a [field extraction rule (FER)](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/).
+Log level of a log line is stored under `_loglevel` field. You can override its value using a [field extraction rule (FER)](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/). Example:
+
+<img width="439" alt="image" src="https://github.com/SumoLogic/sumologic-documentation/assets/13195152/dc42bc2d-a453-4170-b929-6de9074394ad">
+
