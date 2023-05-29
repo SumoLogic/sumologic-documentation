@@ -12,7 +12,7 @@ This topic has information about the **Entities** page in CSE UI, which lists al
 
 The **Entities** page is useful for monitoring Entities that are close to having an Insight created. On the **Entities > Details** page, you can view Signals and Insights for an Entity, and, as desired, manually create an Insight from Signals associated with the Entity.
 
-You can also update the [tags](tags-insights-signals-entities-rules.md), [suppression](about-signal-suppression.md) state, and [Criticality](entity-criticality.md) assigned to Entities, as described below in the [Update Multiple Entities](view-manage-entities.md) section below. 
+You can also update the [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) state, and [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) assigned to Entities, as described below in the [Update Multiple Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/) section below. 
 
 Watch this micro lesson to learn more about Entities.
 
@@ -46,9 +46,9 @@ In CSE, an Entity is a unique actor that a Signal fired upon. CSE has a number o
 * User Agent
 * Username
 
-You can create custom Entity types as well. For more information, see [Create a Custom Entity Type](docs/cse/records-signals-entities-insights/create-custom-entity-type.md).
+You can create custom Entity types as well. For more information, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
 
-When a Signal is fired, if an Entity doesn’t already exist in CSE for the item that the Signal fired on, CSE creates an Entity for it. For more information about Entities and Signal and Insight generation, see [Insight Generation Process](docs/cse/get-started-with-cloud-siem/insight-generation-process.md).
+When a Signal is fired, if an Entity doesn’t already exist in CSE for the item that the Signal fired on, CSE creates an Entity for it. For more information about Entities and Signal and Insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
 
 ## About the Entities list page
 
@@ -67,9 +67,9 @@ Here’s a screenshot of the Entities page.
 | c | In this area you can sort Entities by Activity Score, Name, or Type.  |
 | d | The Import Metadata option allows you to upload a .csv file of updates to Entity tags, suppression state, and Criticality, as described in [Update Multiple Entities](#update-multiple-entities). |
 | e | Shows the Entity Type and its value.  |
-| f | The **Criticality** column shows whether a [Criticality](entity-criticality.md) has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default". |
-| g | The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](insight-generation-process.md), in the *Insight Generation Process* topic. |
-| h | If you see a link below the Entity value, it’s a [tag](tags-insights-signals-entities-rules.md). You can click it to filter Entities by that tag. |
+| f | The **Criticality** column shows whether a [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default". |
+| g | The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
+| h | If you see a link below the Entity value, it’s a [tag](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/). You can click it to filter Entities by that tag. |
 | i | If an Entity has the **Suppressed** indicator, that means that Signals will not be fired on the Entity.   |
 
 ## About the Entities Details page
@@ -81,9 +81,9 @@ the Entity appears.
 
 | Letter | Description |
 |:--|:--|
-| a | Suppression slider. Shows whether or not the Entity is currently [suppressed](docs/cse/records-signals-entities-insights/about-signal-suppression.md). You can use the slider to suppress the Entity so that it is excluded from the Insight generation process.  |
-| b | **Tags**. Lists any [tags](tags-insights-signals-entities-rules.md) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity. |
-| c | **Criticality**. An Entity’s [Criticality](entity-criticality.md) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here. |
+| a | Suppression slider. Shows whether or not the Entity is currently [suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression). You can use the slider to suppress the Entity so that it is excluded from the Insight generation process.  |
+| b | **Tags**. Lists any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity. |
+| c | **Criticality**. An Entity’s [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here. |
 | d | **Metadata**. This section lists the contents of enrichment fields  that were added during Record processing. |
 | e | **Inventory**. If the selected Entity is standard Entity type (as opposed to a custom Entity type), this area provides selected information about the Inventory object associated with the Entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. CSE joins inventory data on demand with data from Entities in Insights data to provide context to Signals. |
 | f | **Notes**. Contains any notes added to the Entity.|
@@ -93,7 +93,7 @@ the Entity appears.
 | j | **Enrichments** tab. If you use CSE’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
 | k | **Entity Timeline**. If the selected Entity is a username, an **Entity Timeline** tab is present. For more information, see [Entity Timeline](#entity-timline).|
 | l | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
-| m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](set-insight-generation-window-threshold.md) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the CSE UI.) |
+| m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the CSE UI.) |
 | n | The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity.  |
 
 ## About the Entity Timeline tab

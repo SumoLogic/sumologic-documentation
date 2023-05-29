@@ -31,9 +31,9 @@ Here’s one row from the List view. The numbered definitions below correspond t
 1. **Dwell time**. The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated. 
 1. **Age**. The elapsed time since the Insight was created in minutes, hours, and so on.
 1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
-1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
+1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight is shown. 
 1. **Assignee**. The analyst assigned to the Incident.
-1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
+1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).
 1. **Entity**. The Entity associated with the Insight.
 1. **Signal data**. This area has three bits of information:
    * The count of Signals that caused the Insight to be created.
@@ -43,7 +43,7 @@ Here’s one row from the List view. The numbered definitions below correspond t
 
 ### Board view
 
-This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight Status value. (One of the Status values shown is a [custom Insight Status](../administration/manage-custom-insight-statuses.md)).
+This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight Status value. (One of the Status values shown is a [custom Insight Status](/docs/cse/administration/manage-custom-insight-statuses/)).
 
 The information displayed in the Board view is similar to the information in the [List view](#list-view). 
 
@@ -62,7 +62,7 @@ You can use the **Filters** area near the top of the page to narrow down the Ins
 * Event Time
 * Severity
 * Resolution
-* [Custom Resolution](../administration/manage-custom-insight-resolutions.md)
+* [Custom Resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
 * Name
 * Tags
 * Rule ID
@@ -101,7 +101,7 @@ At the top of the **Insight** > **Details** page, you’ll see a Signal timeline
 ![top-bit.png](/img/cse/top-bit.png)
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
-2. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](../integrations/insight-enrichment-server.md).
+2. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 3. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
 4. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
 5. **Legend**. Key to the symbols used to represent the Signals:
@@ -170,15 +170,15 @@ How does CSE detect Entity relationships outside of the Insight? Within the time
 * `*_file`
 
 :::note
-[Custom Entities](/docs/cse/records-signals-entities-insights/create-custom-entity-type.md) that match will also be included in the results.
+[Custom Entities](/docs/cse/records-signals-entities-insights/create-custom-entity-type) that match will also be included in the results.
 :::
 
 #### What’s in an Entity card
 
-The card for an Entity displays any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) that have been assigned the Entity, along with the following information:
+The card for an Entity displays any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) that have been assigned the Entity, along with the following information:
 
 * The number of times that Entity was referenced in the Signals in the Insight.
-* The number of Insights, created during the Insight generation [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold.md), in which the current Entity is the primary Entity.
+* The number of Insights, created during the Insight generation [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), in which the current Entity is the primary Entity.
 :::note
 The detection window is 14 days by default, but can be configured to be a different duration.
 :::
@@ -243,8 +243,8 @@ When you select an Entity on the page, the right pane displays details about tha
 * Geographic location
 * Suppression Status
 * Tags
-* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality.md), if it is set to something other than the default
-* Metadata such as geographic location, Inventory information, the [Network Blocks](/docs/cse/administration/create-use-network-blocks.md) it falls within, as applicable, and so on.
+* [Entity Criticality](/docs/cse/records-signals-entities-insights/entity-criticality), if it is set to something other than the default
+* Metadata such as geographic location, Inventory information, the [Network Blocks](/docs/cse/administration/create-use-network-blocks) it falls within, as applicable, and so on.
 * A Signal graph if the Entity was the primary Entity in any Signals during the detection window (time/date is the horizontal axis and severity of each Signal is the vertical axis; the icon/color for each point depends on the Signal type)
 * Lists of the recent Signals and Insights the Entity has been associated with, and links to each object’s details page.
 
