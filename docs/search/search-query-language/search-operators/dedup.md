@@ -42,18 +42,18 @@ dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]
 
 The following examples use this sample data.
 
-| Timestamp	City | Country | Continent | Population (in millions) |
-|:-- |:-- |:-- |:-- |
-| 05/09/2021 11:32:00 | Las Vegas | USA	North | America	2.31 |
-| 05/09/2021 11:32:00 | Paris | France |  | 6.945 |
-| 05/09/2021 11:30:00 | Karachi | | Asia | 16.1 |
+| Timestamp | City | Country | Continent | Population (in millions) |
+|:---|:---|:---|:---|:---|
+| 05/09/2021 11:32:00 | Las Vegas | USA | North America | 2.31 |
+| 05/09/2021 11:32:00 | Paris | France |   | 6.945 |
+| 05/09/2021 11:30:00 | Karachi |   | Asia | 16.1 |
 | 05/09/2021 11:29:00 | Chennai | India | Asia | 4.7 |
 | 05/09/2021 11:28:05 | Mumbai | India | Asia | 20.7 |
 | 05/09/2021 11:28:00 | Bangalore | India | Asia | 12.7 |
 | 05/09/2021 11:27:00 | Florida | USA | North America | 2.4 |
 | 05/09/2021 11:26:00 | Washington | USA | North America | 7.6 |
 | 05/09/2021 11:25:00 | New York | USA | North America | 8.8 |
-| 05/09/2021 11:24:00 | San Francisco | USA	North America | 8.5 |
+| 05/09/2021 11:24:00 | San Francisco | USA | North America | 8.5 |
 | 05/09/2021 11:23:00 | Delhi | India | Asia | 11 |
 | 05/09/2021 11:22:00 | Kolkata | India | Asia | 4.5 |
 
