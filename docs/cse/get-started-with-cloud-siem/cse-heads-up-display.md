@@ -53,11 +53,11 @@ The **Insight Metrics** section, labeled **e**, displays the following metrics f
 * **Response**. The average response time, which is the average time between when an Insight was generated and when its status was set to **In Progress**, in seconds. 
 * **Remediation**. The average remediation time, which is the average time between when the Insight was created and when its status was set to **Closed**, in seconds. 
 
-If you use an [HTTP POST V2 Action](../administration/create-cse-actions.md) to send Insights to the Sumo Logic platform or another system, the Insight metrics are included in the Insight JSON object. The fields are `timeToDetection`, `timeToResponse` , and `timeToRemediation`. 
+If you use an [HTTP POST V2 Action](./docs/cse/administration/create-cse-actions/) to send Insights to the Sumo Logic platform or another system, the Insight metrics are included in the Insight JSON object. The fields are `timeToDetection`, `timeToResponse` , and `timeToRemediation`. 
 
 ## Insights by Status 
 
-The **Insights by Status** section, labeled **f** in the screenshot, provides a quick view of what analysts are working on. The counts are a breakdown, by current Status—**New**, **In Progress**, **Closed**, and **Custom**—of the Insights created during the currently selected time range. Note that the count labeled **Custom** includes all Insights that have a [custom Status](../administration/manage-custom-insight-statuses.md).
+The **Insights by Status** section, labeled **f** in the screenshot, provides a quick view of what analysts are working on. The counts are a breakdown, by current Status—**New**, **In Progress**, **Closed**, and **Custom**—of the Insights created during the currently selected time range. Note that the count labeled **Custom** includes all Insights that have a [custom Status](/docs/cse/administration/manage-custom-insight-statuses/).
 
 ## Insights created and closed
 
@@ -83,12 +83,12 @@ The card at the top of the pane provides key information about the latest new In
 
 * The Insight ID and name, separated by a dash character. The name is typically formed from the MITRE stage(s) associated with the Signals in the Insight. In the case of a custom Insight, the name is the one supplied when the Insight was configured.  
 * The Insight description, typically formed from the MITRE stage(s) associated with the Signals in the Insight. In the case of a custom Insight, the description is the one supplied when the Insight was configured.
-* The Entity the Insight fired on. You can click on the Entity to view its details. Note that there is a six-button context menu that has options for searching for the Entity in other Insights and in Signals and Records. It also has the built-in **Add to Match List** and **Add to Suppressed** **List** actions, along with any custom [Context Actions](../administration/create-cse-actions.md) defined in your environment.
+* The Entity the Insight fired on. You can click on the Entity to view its details. Note that there is a six-button context menu that has options for searching for the Entity in other Insights and in Signals and Records. It also has the built-in **Add to Match List** and **Add to Suppressed** **List** actions, along with any custom [Context Actions](/docs/cse/administration/create-cse-actions/) defined in your environment.
 * The analyst assigned to the Insight, if the Insight has been assigned to one.
 * The number of Signals in the Insight.
 * Duration of the Insight. The time between the moment of first activity observation (when the oldest Signal in the Insight was fired) and when the Insight was created.  
-* [Global Confidence](global-intelligence-security-insights.md) for the Insight, if available.
-* The [severity](insight-generation-process.md) of the Insight.
+* [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight, if available.
+* The [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) of the Insight.
 * **Review** button. Click this button to view Insight details
 * **Close** button. Click this button to close the Insight.
 * Today’s Insight activity. The list in the lower part of the pane contains recent Insight changes: Insights created today, and status changes and comments made today, in chronological order, with the newest first.
