@@ -10,7 +10,7 @@ keywords:
 ---
 
 In CSE, a *suppressed Signal* is a Signal that CSE’s Insight algorithm will exclude from the Insight generation process. In other words, a suppressed Signal does not contribute to or become a part of an Insight. Some suppression of Signals is automatic. CSE also has features that allow you to suppress Signals for a specific
-[Entity](view-manage-entities.md), indicator, or [Network Block](../administration/create-use-network-blocks.md).
+[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/), indicator, or [Network Block](/docs/cse/administration/create-use-network-blocks/).
 
 This topic describes the various ways that Signals can get suppressed.
 
@@ -24,7 +24,7 @@ You can suppress multiple Entities at once on the **Entities** page in the CSE U
 
 ![entity-page.png](/img/cse/entity-page.png)
 
-When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to CSE. For details, see the [View and Manage Entities](view-manage-entities.md) topic. You can see what Entities are currently suppressed on the **Entities** page,by filtering the list by **Suppressed**.
+When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to CSE. For details, see the [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities) topic. You can see what Entities are currently suppressed on the **Entities** page,by filtering the list by **Suppressed**.
 
 ![suppressed-entities-page.png](/img/cse/suppressed-entities-page.png)
 
@@ -40,9 +40,9 @@ You can suppress Signals on all of the IP addresses in a Network Block. You can 
 
 ![network-block-page.png](/img/cse/network-block-page.png)
 
-For more information, see [Create and Use Network Blocks](../administration/create-use-network-blocks.md).
+For more information, see [Create and Use Network Blocks](/docs/cse/administration/create-use-network-blocks/).
 
 ## Automatic suppression of redundant Signals
 
-CSE suppresses redundant Signals to prevent the generation of multiple, virtually identical Insights. For information about how this works, see [Redundant Signal suppression](insight-generation-process.md) in the *Insight Generation Process* topic.  
+CSE suppresses redundant Signals to prevent the generation of multiple, virtually identical Insights. For information about how this works, see [Redundant Signal suppression](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) in the *Insight Generation Process* topic.  
  

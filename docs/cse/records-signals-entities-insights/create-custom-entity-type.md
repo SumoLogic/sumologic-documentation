@@ -7,9 +7,9 @@ description: Learn how to create a custom Entity type.
 
 This topic has instructions for how to create custom Entity types in CSE.
 
-In CSE, *Entities* are fundamental to the Insight generation process. When a CSE Rule fires, it generates a Signal for each “on-Entity” attribute configured for the rule. CSE correlates Signals by Entity to create Insights. This process is described in the [Insight Generation Process](insight-generation-process.md) topic.
+In CSE, *Entities* are fundamental to the Insight generation process. When a CSE Rule fires, it generates a Signal for each “on-Entity” attribute configured for the rule. CSE correlates Signals by Entity to create Insights. This process is described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic.
 
-CSE has a number of built-in [Entity types](docs/cse/records-signals-entities-insights/view-manage-entities.md#about-entities), for example, IP Address, Hostname, and Username.
+CSE has a number of built-in [Entity types](/docs/cse/records-signals-entities-insights/view-manage-entities#about-entities), for example, IP Address, Hostname, and Username.
 
 When you create a Rule, in the Signal configuration section, the Rules Editor prompts you to select an “On-Entity” attribute from a list of all of the CSE schema attributes that hold Entities. What if you want to correlate Signals by something other than an item that is one of CSE standard Entity types? That’s what custom Entity types are for.
 
