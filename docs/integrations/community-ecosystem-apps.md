@@ -41,6 +41,7 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [Citrix Netscaler VPN](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/VPN) (Rating: None)
 * [Citrix XenServer](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/XenServer) (Rating: None)
 * [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
+* [F5 Distributed Cloud Services](https://github.com/SumoLogic/sumologic-content/tree/master/F5) (Rating: 4)
 * [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
 * [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF) (Rating: 3.5)
 * [Microsoft Defender for Endpoint](https://github.com/SumoLogic/sumologic-content/tree/master/Microsoft/Defender_4_EndPoint) (Rating: None)
