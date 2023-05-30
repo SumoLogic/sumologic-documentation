@@ -25,7 +25,7 @@ We'll show a simple example of running a single collector, on a single machine, 
 ## Before you begin
 
 * You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
-* Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting-faq/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
+* Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
 
 
 ## Installation
