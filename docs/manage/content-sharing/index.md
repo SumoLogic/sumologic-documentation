@@ -4,8 +4,7 @@ title: Content Sharing in Sumo Logic
 description: Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles.
 ---
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles. As an Admin, you can use content sharing to transfer ownership of searches and dashboards, or to highlight key content to specific users and groups. As a user, you can now choose how widely shared your content is within your Org.
 
@@ -65,12 +64,7 @@ To share content from the Left-nav or the Library:
 
 Sumo provides a few ways to navigate your content based on what you want to view.
 
-| Icon | Tab Name | Definition |
-| :-- | :-- | :-- |
-| ![](/img/content-sharing/icon-recents.png) | Recents | Access recent content:<ul><li>Content you’ve recently accessed.</li><li>Content recently shared with you.</li></ul> |
-| ![](/img/content-sharing/icon-favorites.png) | Favorites | Content you’ve marked as favorite. |
-| ![](/img/content-sharing/icon-personal.png) | Personal | Content you manage. |
-| ![](/img/content-sharing/icon-library.png) | Library | List of all accessible content, including your creations and the content shared with you. |
+{@import ../../reuse/ui-elements.md}
 
 ## Available Permission Levels
 
@@ -90,4 +84,23 @@ your content:
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/manage/content-sharing/admin-mode"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
+  <p>Learn how to control your content and add important items to the Admin Recommended folder.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/manage/content-sharing/changing-alerts"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
+  <p>Learn how to modify or turn off alerts created by another user.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/manage/content-sharing/content-sharing-faq"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
+  <p>Get to know the answers to basic questions around Content Sharing.</p>
+  </div>
+</div>
+</div>

@@ -36,14 +36,30 @@ The screenshot below shows the **If Triggered** configuration for the example ru
 
 <img src={useBaseUrl('img/cse/agg-rule.png')} alt="agg-rule.png" width="400"/>
 
+Watch this micro lesson to learn how to create an Aggregation rule.
+
+<Iframe url="https://www.youtube.com/embed/XaqQES5suWQ?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 ## Create an Aggregation rule
 
 1. Select **Rules** from the Content menu.
-1. On the **Create a Rule** page, click **Create** in the **Aggregation** card. <br/><img src={useBaseUrl('img/cse/select-rule-type.png')} alt="agg-rule.png" width="700"/>
+1. On the **Create a Rule** page, click **Create** in the **Aggregation** card. 
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.   
-
+   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  
+   
 ## Configure “If Triggered” settings
 
 On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made: <br/><img src={useBaseUrl('img/cse/agg-rule-if-triggered.png')} alt="agg-rule-if-triggered.png" width="400"/>
