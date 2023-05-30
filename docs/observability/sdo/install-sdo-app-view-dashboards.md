@@ -1,6 +1,7 @@
 ---
 id: install-sdo-app-view-dashboards
-title: SDO App and Dashboards
+title: Installing the SDO App and Dashboards
+sidebar_label: Install SDO App and Dashboards
 description: Learn how to install the Sumo Logic SDO app and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
 ---
 

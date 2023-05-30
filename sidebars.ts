@@ -102,7 +102,8 @@ module.exports = {
               ]
             },
             'send-data/opentelemetry-collector/performance-benchmarks',
-            'send-data/opentelemetry-collector/troubleshooting-faq',
+            'send-data/opentelemetry-collector/troubleshooting',
+            'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
@@ -113,9 +114,10 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/installed-collectors/index'},
           items: [
+            'send-data/installed-collectors/configuration',
             'send-data/installed-collectors/macos',
-            'send-data/installed-collectors/windows',
             'send-data/installed-collectors/linux',
+            'send-data/installed-collectors/windows',
             {
               type: 'category',
               label: 'Sources',
@@ -791,6 +793,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
+            'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
             'alerts/monitors/edit-settings',
             'alerts/monitors/monitor-faq',
@@ -798,6 +801,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'manage/ingestion-volume/monitor-ingestion-receive-alerts',
           ],
         },
         {
@@ -1723,6 +1727,7 @@ module.exports = {
           link: {type: 'doc', id: 'observability/reliability-management-slo/index'},
           items: [
             'observability/reliability-management-slo/create-slo',
+            'observability/reliability-management-slo/alerts',
             'observability/reliability-management-slo/dashboards',
             'observability/reliability-management-slo/use-cases',
           ],
@@ -1738,7 +1743,6 @@ module.exports = {
       link: {type: 'doc', id: 'observability/sdo/index'},
       items: [
         'observability/sdo/about-sdo',
-        'observability/sdo/supported-tools-schema',
         {
           type: 'category',
           label: 'Setting Up SDO',
@@ -1750,7 +1754,8 @@ module.exports = {
             'observability/sdo/set-up-sdo/sdo-setup-with-terraform-script',
           ],
         },
-        `observability/sdo/install-sdo-app-view-dashboards`,
+        'observability/sdo/install-sdo-app-view-dashboards',
+        'observability/sdo/supported-tools-schema',
         'observability/sdo/jenkins-plugin-build-deploy-events',
         'observability/sdo/integrate-tools-with-sdo',
       ],
@@ -1935,6 +1940,7 @@ integrations: [
             collapsible: true,
             collapsed: true,
             items: [
+              'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
             ],
@@ -2079,6 +2085,7 @@ integrations: [
           'integrations/saas-cloud/armis',
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
+          'integrations/saas-cloud/cato-networks',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
@@ -2090,12 +2097,14 @@ integrations: [
           'integrations/saas-cloud/istio',
           'integrations/saas-cloud/knowbe4',
           'integrations/saas-cloud/microsoft-exchange-trace-logs',
+          'integrations/saas-cloud/mimecast',
           'integrations/saas-cloud/microsoft-graph-security',
           'integrations/saas-cloud/miro',
           'integrations/saas-cloud/ms-graph-azure-ad-reporting',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
+          'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
