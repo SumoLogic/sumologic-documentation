@@ -7,11 +7,23 @@ description: Learn basic concepts about Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic introduces basic concepts about Cloud SIEM.
+Cloud SIEM Enterprise (CSE) is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. 
 
-Cloud SIEM Enterprise (CSE) is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. 
+Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. As shown below, the process starts when logs from data sources enter a collector, then flow through an ingestion process that generates messages. The messages are parsed, mapped to normalized values, and enriched with additional data before becoming records. 
 
-Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. 
+<img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-1.png')} alt="Records creation" width="800"/>
+
+When records enter Cloud SIEM, rules analyze Entities on the records to produce Signals. The Signals are correlated, and if an Entity's activity score is 12 or more in a two-week period, [an Insight is generated](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) for that Entity. 
+
+<img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-2.png')} alt="Insights creation" width="725"/>
+
+Following are definitions for some of these terms: 
+* [**Messages**](/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab). Logs ingested into Sumo Logic.  
+* [**Records**](/docs/cse/records-signals-entities-insights/view-records-signal/). Collections of normalized data created from messages.
+* [**Rules**](/docs/cse/rules/about-cse-rules/). Sets of logic that create Signals based on information in incoming Records. 
+* [**Signals**](/docs/cse/records-signals-entities-insights/view-records-signal/). Indicators of an event of interest that fire when rule conditions are met.
+* [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities). Unique actors encountered in incoming messages, such as users, IP addresses, or hosts.
+* [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). Groups of Signals clustered around a single Entity that are generated when an Entity’s Activity Score exceeds the threshold of 12.
 
 ## Getting your data into Cloud SIEM
 
@@ -19,7 +31,7 @@ Because Cloud SIEM designed for larger data volumes, most organizations need to 
 
 If you already use the Sumo Logic core platform, you’re probably familiar with the data pipeline:
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-data-pipeline.png')} alt="Data pipeline" width="600"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-data-pipeline.png')} alt="Data pipeline" width="700"/>
 
 1. **Data collection**. To use Sumo Logic, first you must set up either an installed collector or a hosted collector and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
 2. **Search and analyze**. Once data is in Sumo Logic, you can write queries to search and correlate events in real-time from the analytics platform UI. Or, you might configure the collector to forward data to Cloud SIEM, and let it do all the correlation work for you.
@@ -47,7 +59,7 @@ So, what’s the balance between too much and too little data? It depends. Work 
 
 Before Cloud SIEM can generate security Insights, your log messages must go through a little processing first. First, Cloud SIEM processes the messages into Records. Each Record contains the information from a message, which is parsed into key-value pairs, mapped to a Cloud SIEM schema, and enriched with other data.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.png')} alt="Messages generate records" width="600"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.png')} alt="Messages generate records" width="500"/>
 
 Let’s follow a simple log message down this pipeline:
 ```
@@ -100,7 +112,7 @@ Threat investigation is an iterative process, much like troubleshooting. In both
 
 Cloud SIEM acts as your first line of defense, monitoring your system. Cloud SIEM’s threat intelligence and correlation algorithms organize related potential security events into Insights. When you get alerted to an Insight, it’s up to you to diagnose the problem and take action.
 
-The Insight page shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
+The [Insight page](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
 
 * Who is behind the event?
 * What assets did the event affect?
@@ -113,17 +125,17 @@ When Signals cluster together, Cloud SIEM uses their tactics and techniques to n
 
 For example, an Insight is named Discovery with Execution. Why did the event occur? Probably so the adversary could discover your information. How did the event occur? By using an executable file or a similar technique. 
 
-The timeline can tell you when the event occurred. You can see whether each signal was triggered at the same time, or sequentially, as well as whether everything happened over minutes, hours, or days. By default, Insights are related Signals that cluster together within the last 14 days.
+The [timeline](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#signal-visualization-area) can tell you when the event occurred. You can see whether each signal was triggered at the same time, or sequentially, as well as whether everything happened over minutes, hours, or days. By default, Insights are related Signals that cluster together within the last 14 days.
 
-The entities within each Signal can help point to who, what, or where the event occurred. An entity might point to the IP address of a hacked device, the location of the adversary, the location of the database that leaked, the owner of a website or domain, or some other piece of the puzzle.
+The [entities within each Signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#entities-tab) can help point to who, what, or where the event occurred. An entity might point to the IP address of a hacked device, the location of the adversary, the location of the database that leaked, the owner of a website or domain, or some other piece of the puzzle.
 
-Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the Insight Radar, under the Insight Activity pane, or from the Insights panel. 
+Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#insight-radar), under the [Insight Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#insight-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). 
 
 Once you choose an Insight, you can dig through all the raw logs and Signals to conduct deep-dive investigations and even proactive threat hunts. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each Insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
 
-You can also take certain actions directly from the Insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
+You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
 
-Finally, you can update the Insight. You can mark it as “in progress” or “closed”. When you close it, you can mark it as “resolved,” “false positive”, “duplicate”, or “no action”. Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future. 
+Finally, you can [update the Insight](/docs/cse/administration/manage-custom-insight-resolutions#about-insight-resolutions). You can mark it as “in progress” or “closed”. When you close it, you can mark it as “resolved,” “false positive”, “duplicate”, or “no action”. Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future. 
 
 Of course, this process will repeat each day as new Insights are generated for you to investigate. 
 
@@ -153,7 +165,7 @@ The Entities tab lists all the entities that your rules have detected in the las
 
 Sometimes you want to take your investigation even further. An in-depth threat investigation will use the most of both Cloud SIEM and Sumo Logic’s core search functionality. 
 
-There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One context action is Sumo Logic Search. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn’t detected by a rule in Cloud SIEM.
+There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is Sumo Logic Search. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn’t detected by a rule in Cloud SIEM.
 
 Many entities in the Insights, Signals, and Entities pages have context actions (six dots icon). Hover next to certain entities and the six dot icon may appear, if context actions are available for that object. Use the context actions to insert the entity into an API call, do a DNS lookup, or many other tasks. Your admin can add custom context actions too.
 
@@ -161,7 +173,7 @@ You can also work with your admin to set up dashboards in Sumo Logic that track 
 
 ### Take action on Insights
 
-In addition to the context actions available in the Cloud SIEM UI, there are many other actions you might take in response to an Insight.  For example, you might work with your IT team to isolate and wipe laptops infected with malware to prevent spread of malicious code. Or, you might work with your HR team to enforce mandatory anti-phishing training among all employees to prevent future attacks.
+In addition to the context actions available in the Cloud SIEM UI, there are many other [actions](/docs/cse/administration/create-cse-actions/) you might take in response to an Insight.  For example, you might work with your IT team to isolate and wipe laptops infected with malware to prevent spread of malicious code. Or, you might work with your HR team to enforce mandatory anti-phishing training among all employees to prevent future attacks.
 
 In Cloud SIEM, there are several different actions you can take on each Insight. You can comment on the Insight, or close it or assign a status to it. When you close an Insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the Insight lets you keep working on it, and keep track of your progress. 
 
@@ -183,17 +195,17 @@ If you read the news, or are familiar with other cybersecurity frameworks like t
 
 Once you’ve completed a few investigations, you may want to add or modify the rules, data sources, match lists, and other pieces of the Cloud SIEM puzzle. These modifications can help further reduce false positives or alert you even faster. The most common things to customize are rules and Insights. 
 
-Rules are one of the most important pieces of Cloud SIEM’s threat detection engine. All the records that are ingested in Cloud SIEM are compared to every rule in Cloud SIEM. If there’s a match, an entity is extracted and a Signal is created. Those entities are tracked and may correlate with other Signals to create an Insight, which is where most threat investigations begin.
+[Rules](/docs/cse/rules/about-cse-rules/) are one of the most important pieces of Cloud SIEM’s threat detection engine. All the records that are ingested in Cloud SIEM are compared to every rule in Cloud SIEM. If there’s a match, an entity is extracted and a Signal is created. Those entities are tracked and may correlate with other Signals to create an Insight, which is where most threat investigations begin.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-records-to-signals.png')} alt="Records to signals" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-records-to-signals.png')} alt="Records to signals" width="400"/>
 
-You don’t have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of out-of-the box rules, to get you started. These rules are updated frequently, often every few days. You can check out the most recent updates in the Announcements page. 
+You don’t have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of [out-of-the box rules](/docs/cse/rules/cse-built-in-rules/), to get you started. These rules are updated frequently, often every few days. You can check out the most recent updates in the [Cloud SIEM release notes page](/release-notes-cse/). 
 
 If you do decide to write a custom rule, Insight, or rule tuning expression, these aren’t updated or deleted by Sumo Logic during the regular updates. They’re independent from the default rules.
 
 ### Rule tuning
 
-With rule tuning, you can modify existing rules without rewriting them from scratch. This lets you customize them without a lot of work. When you use rule tuning instead of custom rules, your tuning expressions are retained when Sumo updates that rule. So you still get to take advantage of the rules Sumo pushes out to all users.
+With [rule tuning](docs/cse/rules/rule-tuning-expressions/), you can modify existing rules without rewriting them from scratch. This lets you customize them without a lot of work. When you use rule tuning instead of [custom rules](/docs/cse/rules/before-writing-custom-rule/), your tuning expressions are retained when Sumo updates that rule. So you still get to take advantage of the rules Sumo pushes out to all users.
 
 Once you’ve written a tuning expression, you can apply that tuning expression to multiple rules. You can also apply multiple tuning expressions to each rule, so they’re very flexible. We’ll learn how to apply one tuning expression to multiple rules, and we’ll also learn how to apply multiple tuning expressions to one rule today.
 
@@ -201,7 +213,7 @@ A rule tuning expression is an AND statement that you add to an existing rule. I
 
 ### Custom rules
 
-Adding a rule-tuning expression to an existing rule is one of the easiest and most common ways to customize your rules. But sometimes you need to write a new rule from scratch. You might do this if your system has a source that isn’t covered by the default rules, or if you’re looking for a threat that isn’t covered by the default rules.
+Adding a rule-tuning expression to an existing rule is one of the easiest and most common ways to customize your rules. But sometimes you need to [write a new rule from scratch](/docs/cse/rules/before-writing-custom-rule/). You might do this if your system has a source that isn’t covered by the default rules, or if you’re looking for a threat that isn’t covered by the default rules.
 
 See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of rules you can create.
 
@@ -217,34 +229,34 @@ So, if you want an Insight to be created with the default settings, you’d have
 
 You can have a large number of low-severity score Signals that won’t create an Insight. Or, you can have a small number of high-severity score Signals that will create an Insight. Keep this in mind when you’re configuring the severity scores of your custom rules.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-to-insights.png')} alt="Signals to insights" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-to-insights.png')} alt="Signals to insights" width="450"/>
 
 But what if you want to be alerted right away when a certain rule is triggered?
 
-Custom Insights let you create Insights based on one specific Signal, or a chain of Signals. This is great for known threats specific to your system. You won’t need to change any of your existing rules and Insights. They’ll keep working normally.
+[Custom Insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) let you create Insights based on one specific Signal, or a chain of Signals. This is great for known threats specific to your system. You won’t need to change any of your existing rules and Insights. They’ll keep working normally.
 
 ### Other customizations and best practices
 
 Remember, Cloud SIEM’s out-of-the-box rules and Insights are great. But we want you to have the flexibility to customize your environment. There are three simple three ways to customize Cloud SIEM’s rules and Insights.
 
-* First, rule tuning expressions are simple ways to add small exceptions and other clauses to existing rules.
-* Second, custom rules let you write logic that’s unique to your system, to cover threats or data sources that aren’t covered by built-in rules. 
-* Finally, Custom Insights allow you to get alerts based on just one rule or a chain of rules. 
+* First, [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are simple ways to add small exceptions and other clauses to existing rules.
+* Second, [custom rules](/docs/cse/rules/before-writing-custom-rule/) let you write logic that’s unique to your system, to cover threats or data sources that aren’t covered by built-in rules. 
+* Finally, [Custom Insights](/docs/cse/records-signals-entities-insights/configure-custom-insight/) allow you to get alerts based on just one rule or a chain of rules. 
 
 Before you create custom rules from scratch, there are some best practices you’ll want to follow.
 
-* **Check existing rules**. Sumo Logic already has hundreds of built-in rules, so you might not need to write a new one. Or, you may only need to make small changes to existing rules, like adding a rule tuning expression or adjusting a severity score.
-* **Know your system**. You’ll need to understand the schema and log mappings of all the records ingested into Cloud SIEM to write effective rules. You might want to work with an administrator on your team who knows this to write better rules. 
+* **Check existing rules**. Sumo Logic already has hundreds of [built-in rules](/docs/cse/rules/cse-built-in-rules/), so you might not need to write a new one. Or, you may only need to make small changes to existing rules, like adding a rule tuning expression or adjusting a severity score.
+* **Know your system**. You’ll need to understand the [schema](/docs/cse/schema/) and [log mappings](/docs/cse/schema/create-structured-log-mapping/) of all the records ingested into Cloud SIEM to write effective rules. You might want to work with an administrator on your team who knows this to write better rules. 
 * **Know your risk appetite**. In addition to your system’s details about log mappings and other metadata, you need to understand your company’s risk appetite and risk tolerance. For example, some companies might want to monitor a large amount of outbound traffic, but not consider this a threat. So, they’d assign this rule a severity of zero. However, other companies might be alarmed by outbound traffic and consider it data exfiltration, assigning the same rule a severity of five.
-* **Know the rule types**. You also need to understand all the types of rules. If your use case requires a chain rule, but you try writing a threshold rule, the rule might not be as efficient or effective. 
+* **Know the rule types**. You also need to understand all [the types of rules](/docs/cse/rules/about-cse-rules/#rule-types). If your use case requires a chain rule, but you try writing a threshold rule, the rule might not be as efficient or effective. 
 * **Make small changes**. As a best practice, when you do write a new rule or edit an existing one, make small changes. For example, instead of decreasing a severity score from 8 to 2, try decreasing it from 8 to 7 and monitoring the change for a while.
-* **Save as a prototype**. Another best practice is to save all new rules as a prototype. This allows you to monitor the rule’s behavior, without creating new Insights and alerts.
+* **Save as a prototype**. Another best practice is to [save all new rules as a prototype](/docs/cse/rules/write-match-rule#save-as-prototype). This allows you to monitor the rule’s behavior, without creating new Insights and alerts.
 
-Rule tuning, custom rules, and custom Insights are just a taste of what you can customize in Cloud SIEM. However, some customizations, like configuring the Actions button, need admin privileges. You can work with your admin or your Sumo Logic account rep to customize:
-* Log mappings
-* Match lists
-* APIs and other plugins
-* How much data Cloud SIEM ingests 
+Rule tuning, custom rules, and custom Insights are just a taste of what you can customize in Cloud SIEM. However, some customizations, like configuring the [Actions button](/docs/cse/administration/create-cse-actions), need admin privileges. You can work with your admin or your Sumo Logic account rep to customize:
+* [Log mappings](/docs/cse/schema/create-structured-log-mapping/)
+* [Match lists](/docs/cse/match-lists-suppressed-lists/)
+* [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
+* How much data Cloud SIEM [ingests](/docs/cse/ingestion/)
 
 
 
