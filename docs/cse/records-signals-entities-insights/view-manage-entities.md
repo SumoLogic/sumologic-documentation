@@ -8,6 +8,8 @@ keywords:
     - entities
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has information about the **Entities** page in CSE UI, which lists all of the Entities in CSE and their Activity Scores, and the **Entities > Details** page, which presents information about a particular Entity, including Signals and Insights associated with the Entity.
 
 The **Entities** page is useful for monitoring Entities that are close to having an Insight created. On the **Entities > Details** page, you can view Signals and Insights for an Entity, and, as desired, manually create an Insight from Signals associated with the Entity.
@@ -138,27 +140,27 @@ or Criticality for one or more Entities.
 #### Update tags
 
 1. After selecting the Entities you want to update, click **Update Tags**. 
-1. Click the down arrow to display the options: <br/>![tag-options.png](/img/cse/tag-options.png)
+2. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" width="400"/>
    * **Add.** Select this option to add one or more tags to the Entity, without affecting any tags already assigned to the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add.
    * **Remove**. Select his option to remove one or more tags from the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected Entity doesn't have the specified tags, no change will be made to the Entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the Entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
     :::important
     When you use the **Replace** option, be sure to specify new tags. If you don't, the existing tags will still be removed.
     :::
-1. As you select tags, they’ll appear in the update popup. <br/> ![tags-to-add.png](/img/cse/tags-to-add.png)
-1. When you are done selecting tags, click **Update Entity Tags**.
+3. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to Entities" width="400"/>
+4. When you are done selecting tags, click **Update Entity Tags**.
 
 #### Update suppression
 
 1. After selecting the Entities you want to update, click **Update Suppression**. 
-1. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/>![before-suppression.png](/img/cse/before-suppression.png)
-1. If you want to unsuppress the selected Entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the Entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
+2. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**. <br/><img src={useBaseUrl('img/cse/before-suppression.png')} alt="Update suppression" width="400"/>
+3. If you want to unsuppress the selected Entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the Entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
 
 #### Update Criticalities
 
 1. After selecting the Entities you want to update, click **Update Criticalities**. 
-1. The **Update Criticalities** popup appears. <br/> ![update-criticalities.png](/img/cse/update-criticalities.png)
-1. If you want to assign default Criticality to the selected Entities, click **Update Entity Criticalities**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticalities**.
+2. The **Update Criticalities** popup appears. <br/><img src={useBaseUrl('img/cse/update-criticalities.png')} alt="Update criticalities" width="400"/>
+3. If you want to assign default Criticality to the selected Entities, click **Update Entity Criticalities**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticalities**.
 
 ### Import Entity updates from a CSV file
 
