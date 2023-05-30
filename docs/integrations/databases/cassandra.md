@@ -99,73 +99,73 @@ Follow the steps listed below to collect Cassandra metrics from a Kubernetes env
 
 1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Cassandra Pods, add the following annotations:
-```
+```sql
 annotations:
  telegraf.influxdata.com/class: sumologic-prometheus
  prometheus.io/scrape: "true"
  prometheus.io/port: "9273"
  telegraf.influxdata.com/inputs: |+
 [[inputs.jolokia2_agent]]
- urls = ["http://localhost:8778/jolokia"]
- name_prefix = "cassandra_java_"
-[inputs.jolokia2_agent.tags]
- environment="prod"
- component="database"
- db_system="cassandra"
- db_cluster="cassandra_on_premise"
- dc = "IDC1"
- [[inputs.jolokia2_agent.metric]]
-   name  = "Memory"
-   mbean = "java.lang:type=Memory"
- [[inputs.jolokia2_agent.metric]]
-   name  = "GarbageCollector"
-   mbean = "java.lang:name=*,type=GarbageCollector"
-   tag_keys = ["name"]
-   field_prefix = "$1_"
+  urls = ["http://localhost:8778/jolokia"]
+  name_prefix = "cassandra_java_"
+  [inputs.jolokia2_agent.tags]
+    environment = "prod"
+    component = "database"
+    db_system = "cassandra"
+    db_cluster = "cassandra_on_premise"
+    dc = "IDC1"
+[[inputs.jolokia2_agent.metric]]
+  name  = "Memory"
+  mbean = "java.lang:type=Memory"
+[[inputs.jolokia2_agent.metric]]
+  name  = "GarbageCollector"
+  mbean = "java.lang:name=*,type=GarbageCollector"
+  tag_keys = ["name"]
+  field_prefix = "$1_"
 [[inputs.jolokia2_agent.metric]]
   name=”OperatingSystem”
   mbean=”java.lang:type=OperatingSystem”
   paths = [“FreePhysicalMemorySize", "AvailableProcessors", "SystemCpuLoad", "TotalPhysicalMemorySize", "TotalSwapSpaceSize", "SystemLoadAverage"]
 [[inputs.jolokia2_agent]]
- urls = ["http://localhost:8778/jolokia"]
- name_prefix = "cassandra_"
-[inputs.jolokia2_agent.tags]
- environment="ENV_TO_BE_CHANGED"
- component="database"
- db_system="cassandra"
- db_cluster="cassandra_on_premise"
- db_cluster_address = “ENV_TO_BE_CHANGED”
- db_cluster_port = “ENV_TO_BE_CHANGED”
- dc = "IDC1"
- [[inputs.jolokia2_agent.metric]]
-   name  = "TableMetrics"
-   mbean = "org.apache.cassandra.metrics:name=*,scope=*,keyspace=*,type=Table"
-   tag_keys = ["name", "scope","keyspace"]
-   field_prefix = "$1_"
- [[inputs.jolokia2_agent.metric]]
-   name = "DroppedMessageMetrics"
-   mbean = "org.apache.cassandra.metrics:name=*,scope=*,type=DroppedMessage"
-   tag_keys = ["name", "scope"]
-   field_prefix = "$1_"
- [[inputs.jolokia2_agent.metric]]
-   name = "ClientMetrics"
-   mbean = "org.apache.cassandra.metrics:type=Client,name=*"
-   tag_keys = ["name"]
-   field_prefix = "$1_"
- [[inputs.jolokia2_agent.metric]]
-   name = "ThreadPoolMetrics"
-   mbean = "org.apache.cassandra.metrics:type=ThreadPools,path=*,scope=*,name=*"
-   tag_keys = ["name", "scope", "path"]
-   field_prefix = "$1_"
- [[inputs.jolokia2_agent.metric]]
-   name = "CacheMetrics"
-   mbean = "org.apache.cassandra.metrics:type=Cache,scope=*,name=*"
-   tag_keys = ["name", "scope"]
-   field_prefix = "$1_"
- [[inputs.jolokia2_agent.metric]]
-   name = "CommitLogMetrics"
-   mbean = "org.apache.cassandra.metrics:type=CommitLog,name=*"
-   tag_keys = ["name"] field_prefix = "$1_"
+  urls = ["http://localhost:8778/jolokia"]
+  name_prefix = "cassandra_"
+  [inputs.jolokia2_agent.tags]
+    environment="ENV_TO_BE_CHANGED"
+    component="database"
+    db_system="cassandra"
+    db_cluster="cassandra_on_premise"
+    db_cluster_address = “ENV_TO_BE_CHANGED”
+    db_cluster_port = “ENV_TO_BE_CHANGED”
+    dc = "IDC1"
+[[inputs.jolokia2_agent.metric]]
+  name  = "TableMetrics"
+  mbean = "org.apache.cassandra.metrics:name=*,scope=*,keyspace=*,type=Table"
+  tag_keys = ["name", "scope","keyspace"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "DroppedMessageMetrics"
+  mbean = "org.apache.cassandra.metrics:name=*,scope=*,type=DroppedMessage"
+  tag_keys = ["name", "scope"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "ClientMetrics"
+  mbean = "org.apache.cassandra.metrics:type=Client,name=*"
+  tag_keys = ["name"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "ThreadPoolMetrics"
+  mbean = "org.apache.cassandra.metrics:type=ThreadPools,path=*,scope=*,name=*"
+  tag_keys = ["name", "scope", "path"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "CacheMetrics"
+  mbean = "org.apache.cassandra.metrics:type=Cache,scope=*,name=*"
+  tag_keys = ["name", "scope"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "CommitLogMetrics"
+  mbean = "org.apache.cassandra.metrics:type=CommitLog,name=*"
+  tag_keys = ["name"] field_prefix = "$1_"
 ```
 Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
@@ -330,21 +330,21 @@ This section provides instructions for configuring metrics collection for the Su
     db_system="cassandra"
     db_cluster="<Your_Cassandra_Cluster_Name>"
     dc = "IDC1"
-    [[inputs.jolokia2_agent.metric]]
-      name  = "Memory"
-      mbean = "java.lang:type=Memory"
-    [[inputs.jolokia2_agent.metric]]
-      name  = "GarbageCollector"
-      mbean = "java.lang:name=*,type=GarbageCollector"
-      tag_keys = ["name"]
-      field_prefix = "$1_"
-    [[inputs.jolokia2_agent.metric]]
-      name="OperatingSystem"
-      mbean="java.lang:type=OperatingSystem"
-      paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhysicalMemorySize","TotalSwapSpaceSize","SystemLoadAverage"]
-    [[inputs.jolokia2_agent]]
-      urls = ["http://localhost:8778/jolokia"]
-      name_prefix = "cassandra_"
+[[inputs.jolokia2_agent.metric]]
+  name  = "Memory"
+  mbean = "java.lang:type=Memory"
+[[inputs.jolokia2_agent.metric]]
+  name  = "GarbageCollector"
+  mbean = "java.lang:name=*,type=GarbageCollector"
+  tag_keys = ["name"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name="OperatingSystem"
+  mbean="java.lang:type=OperatingSystem"
+  paths=["FreePhysicalMemorySize","AvailableProcessors","SystemCpuLoad","TotalPhysicalMemorySize","TotalSwapSpaceSize","SystemLoadAverage"]
+[[inputs.jolokia2_agent]]
+  urls = ["http://localhost:8778/jolokia"]
+  name_prefix = "cassandra_"
   [inputs.jolokia2_agent.tags]
     environment="<Your_Environment_Name>"
     component="database"
@@ -353,36 +353,36 @@ This section provides instructions for configuring metrics collection for the Su
     db_cluster_address = "ENV_TO_BE_CHANGED"
     db_cluster_port = "ENV_TO_BE_CHANGED"
     dc = "IDC1"
-    [[inputs.jolokia2_agent.metric]]
-      name  = "TableMetrics"
-      mbean = "org.apache.cassandra.metrics:name=*,scope=*,keyspace=*,type=Table"
-      tag_keys = ["name", "scope","keyspace"]
-      field_prefix = "$1_"
-    [[inputs.jolokia2_agent.metric]]
-      name = "DroppedMessageMetrics"
-      mbean = "org.apache.cassandra.metrics:name=*,scope=*,type=DroppedMessage"
-      tag_keys = ["name", "scope"]
-      field_prefix = "$1_"
-    [[inputs.jolokia2_agent.metric]]
-      name = "ClientMetrics"
-      mbean = "org.apache.cassandra.metrics:type=Client,name=*"
-      tag_keys = ["name"]
-      field_prefix = "$1_"
-    [[inputs.jolokia2_agent.metric]]
-      name = "ThreadPoolMetrics"
-      mbean = "org.apache.cassandra.metrics:type=ThreadPools,path=*,scope=*,name=*"
-      tag_keys = ["name", "scope", "path"]
-      field_prefix = "$1_"
-    [[inputs.jolokia2_agent.metric]]
-      name = "CacheMetrics"
-      mbean = "org.apache.cassandra.metrics:type=Cache,scope=*,name=*"
-      tag_keys = ["name", "scope"]
-      field_prefix = "$1_"
-    [[inputs.jolokia2_agent.metric]]
-      name = "CommitLogMetrics"
-      mbean = "org.apache.cassandra.metrics:type=CommitLog,name=*"
-      tag_keys = ["name"]
-      field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name  = "TableMetrics"
+  mbean = "org.apache.cassandra.metrics:name=*,scope=*,keyspace=*,type=Table"
+  tag_keys = ["name", "scope","keyspace"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "DroppedMessageMetrics"
+  mbean = "org.apache.cassandra.metrics:name=*,scope=*,type=DroppedMessage"
+  tag_keys = ["name", "scope"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "ClientMetrics"
+  mbean = "org.apache.cassandra.metrics:type=Client,name=*"
+  tag_keys = ["name"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "ThreadPoolMetrics"
+  mbean = "org.apache.cassandra.metrics:type=ThreadPools,path=*,scope=*,name=*"
+  tag_keys = ["name", "scope", "path"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "CacheMetrics"
+  mbean = "org.apache.cassandra.metrics:type=Cache,scope=*,name=*"
+  tag_keys = ["name", "scope"]
+  field_prefix = "$1_"
+[[inputs.jolokia2_agent.metric]]
+  name = "CommitLogMetrics"
+  mbean = "org.apache.cassandra.metrics:type=CommitLog,name=*"
+  tag_keys = ["name"]
+  field_prefix = "$1_"
 [[outputs.sumologic]]
   url = "<URL Created in Step 3>"
   data_format = "prometheus"

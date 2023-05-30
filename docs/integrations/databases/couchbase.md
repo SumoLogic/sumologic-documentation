@@ -108,13 +108,13 @@ annotations:
 [[inputs.couchbase]]
   servers = ["http://<USER_TO_BE_CHANGED>:<PASS_TO_BE_CHANGED>@A@localhost:8091"]
   bucket_stats_included = ["*"]
-[inputs.couchbase.tags]
-  db_cluster="ENV_TO_BE_CHANGED"--If you haven’t defined a cluster in Couchbase, enter `default`
-  component="database"
-  environment="ENV_TO_BE_CHANGED"
-  db_system="couchbase"
-  db_cluster_address = "ENV_TO_BE_CHANGED"
-  db_cluster_port = "ENV_TO_BE_CHANGED"
+  [inputs.couchbase.tags]
+    db_cluster ="ENV_TO_BE_CHANGED"--If you haven’t defined a cluster in Couchbase, enter `default`
+    component ="database"
+    environment ="ENV_TO_BE_CHANGED"
+    db_system ="couchbase"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
@@ -154,10 +154,10 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 1. **Add labels on your Couchbase pods to capture logs from standard output on Kubernetes (recommended)**.
    1. Apply following labels to the Couchbase pod:
     ```sql
-    environment="prod_CHANGEME"
-    component="database"
-    db_system="couchbase"
-    db_cluster="<cluster_CHANGEME>"
+    environment = "prod_CHANGEME"
+    component = "database"
+    db_system = "couchbase"
+    db_cluster = "<cluster_CHANGEME>"
     db_cluster_address: <your cluster’s hostname or ip address or service endpoint>
     db_cluster_port: <database port>
     ```
@@ -330,10 +330,10 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
   servers = ["http://<USER_TO_BE_CHANGED>:<PASS_TO_BE_CHANGED>@localhost:8091"]
   bucket_stats_included = ["*"]
   [inputs.couchbase.tags]
-    db_cluster="<ClusterName_TO_BE_CHANGED>"
-    component="database"
-    environment="<env_TO_BE_CHANGED>"
-    db_system="couchbase"
+    db_cluster ="<ClusterName_TO_BE_CHANGED>"
+    component ="database"
+    environment ="<env_TO_BE_CHANGED>"
+    db_system ="couchbase"
     db_cluster_address = "ENV_TO_BE_CHANGED"
     db_cluster_port = "ENV_TO_BE_CHANGED"
 [[outputs.sumologic]]

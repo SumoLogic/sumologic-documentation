@@ -128,12 +128,12 @@ Follow the steps listed below to collect Memcached metrics from a Kubernetes env
     telegraf.influxdata.com/inputs: |+
   servers = ["localhost:11211"]
   [inputs.memcached.tags]
-  environment="dev_ENV_TO_BE_CHANGED"
-  component="database"
-  db_system="memcached"
-  db_cluster="memcached_on_k8s_ENV_TO_BE_CHANGED"
-  db_cluster_address = "ENV_TO_BE_CHANGED"
-  db_cluster_port = "ENV_TO_BE_CHANGED"
+    environment ="dev_ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="memcached"
+    db_cluster ="memcached_on_k8s_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
@@ -257,14 +257,14 @@ This section provides instructions for configuring logs and metrics collection f
 ```sql
  servers = ["localhost:11211"]
   [inputs.memcached.tags]
-  environment="dev_ENV_TO_BE_CHANGED"
-  component="database"
-  db_system="memcached"
-  db_cluster="memcached_on_premise_ENV_TO_BE_CHANGED"
-  db_cluster_address = "ENV_TO_BE_CHANGED"
-  db_cluster_port = "ENV_TO_BE_CHANGED"
-  url = "<URL Created in Step 3_ENV_TO_BE_CHANGED>"
-  data_format = "prometheus"
+    environment ="dev_ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="memcached"
+    db_cluster="memcached_on_premise_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
+    url = "<URL Created in Step 3_ENV_TO_BE_CHANGED>"
+    data_format = "prometheus"
 ```
 5. Please enter values for the following parameters (marked in `ENV_TO_BE_CHANGED` above):
   * In the input plugins section (`[[inputs.memcached]]`):

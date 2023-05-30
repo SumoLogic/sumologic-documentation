@@ -116,13 +116,13 @@ annotations:
   gather_file_events_stats = true
   gather_perf_events_statements = true
   interval_slow = "30m"
-[inputs.mysql.tags]
-   environment="ENV_TO_BE_CHANGED"
-   component="database"
-   db_system="mariadb"
-   db_cluster="ENV_TO_BE_CHANGED"
-   db_cluster_address = "ENV_TO_BE_CHANGED"
-   db_cluster_port = "ENV_TO_BE_CHANGED" --Enter `default` if you haven’t defined a cluster in MariaDB
+  [inputs.mysql.tags]
+    environment ="ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="mariadb"
+    db_cluster ="ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED" --Enter `default` if you haven’t defined a cluster in MariaDB
 ```
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
@@ -387,10 +387,10 @@ After a few minutes, your new Source should be propagated down to the Collector 
     gather_perf_events_statements = true
     interval_slow = "30m"
     [inputs.mysql.tags]
-      environment="dev_ENV_TO_BE_CHANGED"
-      component="database"
-      db_system="mariadb"
-      db_cluster="mariadb_on_premise_ENV_TO_BE_CHANGED"
+      environment ="dev_ENV_TO_BE_CHANGED"
+      component ="database"
+      db_system ="mariadb"
+      db_cluster ="mariadb_on_premise_ENV_TO_BE_CHANGED"
       db_cluster_address = "ENV_TO_BE_CHANGED"
       db_cluster_port = "ENV_TO_BE_CHANGED"
    [[outputs.sumologic]]

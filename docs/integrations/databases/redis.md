@@ -284,9 +284,9 @@ This section provides instructions for configuring metrics collection for the Su
       namepass = ["redis"]
       fieldpass = ["blocked_clients", "clients", "cluster_enabled", "cmdstat_calls", "connected_slaves", "evicted_keys", "expired_keys", "instantaneous_ops_per_sec", "keyspace_hitrate", "keyspace_hits", "keyspace_misses", "master_repl_offset", "maxmemory", "mem_fragmentation_bytes", "mem_fragmentation_ratio", "rdb_changes_since_last_save", "rejected_connections", "slave_repl_offset", "total_commands_processed", "total_net_input_bytes", "total_net_output_bytes", "tracking_total_keys", "uptime", "used_cpu_sys", "used_cpu_user", "used_memory", "used_memory_overhead", "used_memory_rss", "used_memory_startup"]
       [inputs.redis.tags]
-      environment: "ENV_TO_BE_CHANGED"
-      component="database"
-      db_system="redis"
+      environment = "ENV_TO_BE_CHANGED"
+      component ="database"
+      db_system ="redis"
       db_cluster: "ENV_TO_BE_CHANGED"
       db_cluster_address = "ENV_TO_BE_CHANGED"
       db_cluster_port = "ENV_TO_BE_CHANGED"

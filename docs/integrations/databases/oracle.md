@@ -159,12 +159,12 @@ annotations:
           timeout = "5s"
           data_format = "influx"
           [inputs.exec.tags]
-          environment="dev_ENV_TO_BE_CHANGED"
-           component="database"
-           db_system="oracle"
-           db_cluster="oracle_on_premise_ENV_TO_BE_CHANGED"
-           db_cluster_address = "ENV_TO_BE_CHANGED"
-           db_cluster_port = "ENV_TO_BE_CHANGED"
+            environment ="dev_ENV_TO_BE_CHANGED"
+            component ="database"
+            db_system ="oracle"
+            db_cluster ="oracle_on_premise_ENV_TO_BE_CHANGED"
+            db_cluster_address = "ENV_TO_BE_CHANGED"
+            db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
 * If you haven’t defined a cluster in Oracle, enter `default` for `db_cluster`.
@@ -447,10 +447,10 @@ You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file
   timeout = "5s"
   data_format = "influx"
   [inputs.exec.tags]
-  environment="DEV_ENV_TO_BE_CHANGED"
-  component="database"
-  db_system="oracle"
-  db_cluster="PROD_ENV_TO_BE_CHANGED"
+  environment ="DEV_ENV_TO_BE_CHANGED"
+  component ="database"
+  db_system ="oracle"
+  db_cluster ="PROD_ENV_TO_BE_CHANGED"
   db_cluster_address = "ENV_TO_BE_CHANGED"
   db_cluster_port = "ENV_TO_BE_CHANGED"
 

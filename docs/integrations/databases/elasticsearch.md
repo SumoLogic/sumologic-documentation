@@ -131,10 +131,10 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 1. **(Recommended Method) Add labels on your Elasticsearch pods to capture logs from standard output on Kubernetes**.
    1. Apply the following labels to the Elasticsearch pods:
     ```sql
-    environment: "dev_CHANGE_ME"
-    component: "database"
-    db_system: "elasticsearch"
-    db_cluster: "elasticsearch_on_k8s_CHANGE_ME"
+    environment = "dev_CHANGE_ME"
+    component = "database"
+    db_system = "elasticsearch"
+    db_cluster = "elasticsearch_on_k8s_CHANGE_ME"
     db_cluster_address = `ENV_TO_BE_CHANGED`
     db_cluster_port = `ENV_TO_BE_CHANGED`
     ```
@@ -217,10 +217,10 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
   indices_include = ["_all"]
   indices_level = "cluster"
   [inputs.elasticsearch.tags]
-    environment: "ENV_TO_BE_CHANGED"
-    component: "database"
-    db_system: "elasticsearch"
-    db_cluster: "ENV_TO_BE_CHANGED"
+    environment = "ENV_TO_BE_CHANGED"
+    component = "database"
+    db_system = "elasticsearch"
+    db_cluster = "ENV_TO_BE_CHANGED"
     db_cluster_address = `ENV_TO_BE_CHANGED`
     db_cluster_port = `ENV_TO_BE_CHANGED`
 ```
@@ -281,10 +281,10 @@ This section provides instructions for configuring logs and metrics collection f
   indices_level = "cluster"
   node_stats = ["indices", "os", "process", "jvm", "thread_pool", "fs", "transport", "http"]
   [inputs.elasticsearch.tags]
-    environment="ENV_TO_BE_CHANGED"
-    component="database"
-    db_system="elasticsearch"
-    db_cluster="ENV_TO_BE_CHANGED"
+    environment ="ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="elasticsearch"
+    db_cluster ="ENV_TO_BE_CHANGED"
     db_cluster_address = `ENV_TO_BE_CHANGED`
     db_cluster_port = `ENV_TO_BE_CHANGED`
 [[outputs.sumologic]]
