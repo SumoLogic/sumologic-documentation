@@ -523,7 +523,7 @@ The **ElasticSearch - Errors And Warnings** dashboard shows errors and warnings 
 
 ### Garbage Collection
 
-The **Elasticsearch - Garbage Collecton** dashboard provides information on the garbage collection of the Java Virtual Machine.
+The **Elasticsearch - Garbage Collection** dashboard provides information on the garbage collection of the Java Virtual Machine.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-garbage.png')} alt="elasticsearch dashboards" />
 
