@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into uptime, operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 
-The Sumo Logic App for Memcached is tested for Version: 1.4.15.
+The Sumo Logic app for Memcached is tested for Version: 1.4.15.
 
 ## Sample Log Messages
 
@@ -50,7 +50,7 @@ Jun 23 07:35:01 node03 memcached: \
 
 ## Collecting Logs and Metrics for Memcached
 
-Configuring log and metric collection for the Memcached App includes the following tasks.
+Configuring log and metric collection for the Memcached app includes the following tasks.
 
 
 ### Step 1: Configure Fields in Sumo Logic
@@ -128,12 +128,12 @@ Follow the steps listed below to collect Memcached metrics from a Kubernetes env
     telegraf.influxdata.com/inputs: |+
   servers = ["localhost:11211"]
   [inputs.memcached.tags]
-  environment="dev_ENV_TO_BE_CHANGED"
-  component="database"
-  db_system="memcached"
-  db_cluster="memcached_on_k8s_ENV_TO_BE_CHANGED"
-  db_cluster_address = "ENV_TO_BE_CHANGED"
-  db_cluster_port = "ENV_TO_BE_CHANGED"
+    environment ="dev_ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="memcached"
+    db_cluster ="memcached_on_k8s_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
@@ -165,7 +165,6 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Memcached
   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
-
 
 #### Configure Logs Collection
 
@@ -247,8 +246,7 @@ In non-Kubernetes environments, we use the Telegraf operator for Memcached metri
 
 Telegraf runs on the same system as Memcached and uses the [Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain Memcached metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Memcached on the other hand are sent to a Sumo Logic Local File source.
 
-This section provides instructions for configuring logs and metrics collection for the Sumo Logic App for Memcached. Follow the below instructions to set up the logs and metrics collection:
-
+This section provides instructions for configuring logs and metrics collection for the Sumo Logic app for Memcached. Follow the below instructions to set up the logs and metrics collection:
 
 #### Configure Metrics Collection
 
@@ -259,14 +257,14 @@ This section provides instructions for configuring logs and metrics collection f
 ```sql
  servers = ["localhost:11211"]
   [inputs.memcached.tags]
-  environment="dev_ENV_TO_BE_CHANGED"
-  component="database"
-  db_system="memcached"
-  db_cluster="memcached_on_premise_ENV_TO_BE_CHANGED"
-  db_cluster_address = "ENV_TO_BE_CHANGED"
-  db_cluster_port = "ENV_TO_BE_CHANGED"
-  url = "<URL Created in Step 3_ENV_TO_BE_CHANGED>"
-  data_format = "prometheus"
+    environment ="dev_ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="memcached"
+    db_cluster="memcached_on_premise_ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
+    url = "<URL Created in Step 3_ENV_TO_BE_CHANGED>"
+    data_format = "prometheus"
 ```
 5. Please enter values for the following parameters (marked in `ENV_TO_BE_CHANGED` above):
   * In the input plugins section (`[[inputs.memcached]]`):
@@ -298,7 +296,7 @@ At this point, Memcached metrics should start flowing into Sumo Logic.
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Memcached running on a non-Kubernetes environment for the Sumo Logic App for Memcached.
+This section provides instructions for configuring log collection for Memcached running on a non-Kubernetes environment for the Sumo Logic app for Memcached.
 
 By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
@@ -443,9 +441,9 @@ email_notifications = [
    3. Run `terraform apply`.
 
 
-## Installing the Memcached App
+## Installing the Memcached app
 
-This section demonstrates how to install the Memcached App.
+This section demonstrates how to install the Memcached app.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -460,8 +458,6 @@ Once an app is installed, it will appear in your **Personal** folder or another 
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see full graphs and maps in a bit of time.
 
-
-
 ## Viewing Memcached Dashboards
 
 :::tip Filter with template variables    
@@ -474,13 +470,11 @@ The **Memcached - Overview** dashboard provides an at-a-glance view of the Memca
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Overview.png')} alt="Memcached dashboards" />
 
-
 ### Operations
 
 The **Memcached - Operations** Dashboard provides detailed analysis on connections, thread requested, network bytes, hash expansion size, table size.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Operations.png')} alt="Memcached dashboards" />
-
 
 ### Command Stats
 
@@ -499,8 +493,6 @@ The **Memcached - Cache Information** dashboard provides insight into cache stat
 The **Memcached - Logs** dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
 
 <img src={useBaseUrl('img/integrations/databases/Memcached-Logs.png')} alt="Memcached dashboards" />
-
-
 
 ## Memcached Alerts
 
