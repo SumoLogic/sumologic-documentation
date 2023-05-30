@@ -24,7 +24,7 @@ For information on creating customized alerts, see [Monitors](/docs/alerts/monit
 | `Kubernetes -Multiple Terminated Pods (Errored Out)` | This alert is fired when we determine that there are pods that have been terminated because of an error. | Critical | \\>5 | \<=5 |
 | `Kubernetes - Multiple Terminated Pods (Container Cannot Run)` | This alert is fired when we determine that there are pods that have been terminated because the container cannot run. | Critical | \\>5 | \<=5 |
 | `Kubernetes - Multiple Terminated Pods (OOM Killed)` | This alert is fired when we determine that there are pods that have been terminated because the pods have been OOM Killed. | Critical | \\>5 | \<=5 |
-| `Kubernetes - Multiple Terminated Pods (Deadline Exceeded)` | This alert is fired when we determine that there are pods that have been terminated because the deadline has exceeded. | Critical | \\>5 | \<=5 |
+| `Kubernetes - Multiple Terminated Pods (Deadline Exceeded)` | This alert is fired when we determine that there are pods that have been terminated because the deadline was exceeded. | Critical | \\>5 | \<=5 |
 | `Kubernetes - Pod Crash Looping` | This alert is fired when we determine that a pod is crash looping. | Warning | \\>0 | \<=0 |
 | `Kubernetes - Container Waiting` | This alert is fired when a pod container waits longer than 1 hour. | Warning | \\>0 | \<=0 |
 | `Kubernetes - DaemonSet Not Scheduled` | This alert is fired when DaemonSet pods are not scheduled. | Warning | \\>0 | \<=0 |
