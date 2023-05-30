@@ -7,16 +7,39 @@ description: Get started with our Kubernetes solution in minutes.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
-This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in easy steps. This will:
+This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in a few easy steps. This will:
 
 * Install the [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) in your Kubernetes environment
 * Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data)
-* Install the relevant app dashboards to view data from your Kubernetes environment, and share it with others in your org
+* Install the relevant app dashboards to view data from your Kubernetes environment and share them with others in your org
 * Install the necessary alert monitors to get alerted of any issues
 
 :::tip
-As an alternative to this quickstart, you can use our Kubernetes Setup Quickstart Wizard, located at **App Catalog** > **Kubernetes** > **Begin Integration**.
+As an alternative to this quickstart, you can use our in-product onboarding to accomplish the same tasks in single setup workflow. Go to **App Catalog** > **Kubernetes** > **Begin Integration**.
+
+<img src={useBaseUrl('img/observability/k8s-onboarding.png')} alt="k8s-onboarding" />
+:::
+
+
+:::sumo Micro lesson
+
+Video: Quick Onboarding with Kubernetes.
+
+<Iframe url="https://www.youtube.com/embed/lLRtK1FaTgM?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+
 :::
 
 ## Before you begin
@@ -30,7 +53,11 @@ A list of supported platforms for the [Sumo Logic Kubernetes solution](https://g
 
 ### Resource requirements
 
-The [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) uses less than 1 CPU and less than 2 Gi memory deployed in default configuration in single-node Kubernetes environment where only the Sumo Logic Kubernetes Helm Chart is deployed. However, [resource requests](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) for components of the Sumo Logic Kubernetes Helm Chart are set to a higher level (about 7 CPU and 10 Gi memory). To deploy the Sumo Logic Kubernetes Helm Chart in the cluster with very limited resources, you need to modify default configuration and decrease resource requests and number of replicas. For example, to decrease resource requests and number of replicas for `otelcol-metrics`, you'd need to add the following configuration to your `values.yaml`:
+The [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) uses less than 1 CPU and less than 2 Gi memory deployed in default configuration in single-node Kubernetes environment where only the Sumo Logic Kubernetes Helm Chart is deployed.
+
+However, [resource requests](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) for components of the Sumo Logic Kubernetes Helm Chart are set to a higher level (about 7 CPU and 10 Gi memory).
+
+To deploy the Sumo Logic Kubernetes Helm Chart in the cluster with very limited resources, you need to modify default configuration and decrease resource requests and number of replicas. For example, to decrease resource requests and number of replicas for `otelcol-metrics`, you'd need to add the following configuration to your `values.yaml`:
 
 ```yaml
 metadata:
@@ -43,11 +70,13 @@ metadata:
           cpu: 50m
 ```
 
-:::note 
+:::note
 Resource consumption depends on data traffic in your cluster. In clusters with huge data traffic, you will need to increase [resource limits](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#resourcerequirements-v1-core) and/or increase number of replicas for components.
 :::
 
 ## Installation
+
+This will install the Sumo Logic Kubernetes collection as well as the core [dashboards](/docs/observability/kubernetes/monitoring.md) and [alerts](/docs/observability/kubernetes/alerts).
 
 <Tabs
 className="unique-tabs"
@@ -116,18 +145,37 @@ If you're adding additional configuration, we recommend using the [helm values f
 </TabItem>
 </Tabs>
 
-
 ## Next Steps
 
-Once you have completed the above steps, you'll have installed the collection, as well as the core [Kubernetes Dashboards](/docs/observability/kubernetes/monitoring.md) and [alerts](/docs/observability/kubernetes/alerts). To get started, open a new Explore tab in Sumo Logic and view your Kubernetes App Dashboards.
+To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
 
-If you're not seeing data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
+If you're looking to monitor specific aspects of Kubernetes control plane provided by different cloud vendors (such as GKE, AKS, EKS), you'll need to install those [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
 
-You will have to install other K8s-related apps depending upon whether you want to monitor specific aspects of Kubernetes control plane provided by different cloud vendors.
-For more details, see [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
+If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
 ## Additional Resources
 
 * [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
 * [Share a Dashboard (New)](/docs/dashboards-new/share-dashboard-new.md)
 * [Link a dashboard to Explore](/docs/dashboards-new/link-dashboards.md)
+
+
+### Kubernetes Partner Apps
+
+We provide an array of Partner Apps designed specifically for Kubernetes. The following CI/CD Partner Apps are initially available.
+
+![K8s_PartnerApps_CI-CD.png](/img/kubernetes/K8s_PartnerApps_CI-CD.png)
+
+
+### Sumo Logic Security Partner Apps
+
+We also provide a selection of security-focused Partner Apps with specialized detection and investigation features.
+
+![K8s_PartnerApps_Security.png](/img/kubernetes/K8s_PartnerApps_Security.png)
+
+
+### Get Certified
+
+Make the most of our Kubernetes Observability offerings by enrolling in our free training, where you'll learn more about using OpenTelemetry collectors, tracing agents, and our Reliability Management features. The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
+
+<a href="https://www.sumologic.com/learn/training/"><img src={useBaseUrl('img/kubernetes/K8s_Kubernetes_Analyst_Cert.png')} alt="K8s_Kubernetes_Analyst_Cert.png" width="450"/></a>
