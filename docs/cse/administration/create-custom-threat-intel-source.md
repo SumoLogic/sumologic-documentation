@@ -1,31 +1,42 @@
 ---
 id: create-custom-threat-intel-source
-title: Create a Custom Threat Intel Source
-sidebar_label: Create a Custom Threat Intel Source
+title: Create a Custom Threat Intelligence Source
+sidebar_label: Create a Custom Threat Intelligence Source
 description: Learn how to create and manage custom threat sources.
 ---
 
-This topic has information about setting up a *custom threat intel source* in CSE, which is a threat intel list that you can populate manually, as opposed to using an automatic feed. 
+This topic has information about setting up a *custom threat intelligence source* in CSE, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
 
-You can set up and populate custom threat intel sources interactively from the CSE UI, by uploading a .csv file, or using CSE APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
+You can set up and populate custom threat intelligence sources interactively from the CSE UI, by uploading a .csv file, or using CSE APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
+
+Watch this micro lesson to learn more about Cloud SIEM threat intelligence.
+
+<Iframe url="https://www.youtube.com/embed/-DHQ2IBy5Ko?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
 
 ### How CSE uses indicators
 
 When CSE encounters an indicator from your threat source in an incoming
-Record it adds relevant information to the Record. Because threat intel
+Record it adds relevant information to the Record. Because threat intelligence
 information is persisted within Records, you can reference it downstream
 in both rules and search. The built-in rules that come with CSE
 automatically create a Signal for Records that have been enriched in
 this way.
 
-Rule authors can also write rules that look for threat intel information
-in Records. To leverage the information in a rule, you can extend your
-custom rule expression, or add a Rule Turning Expression to a built-in
-rule. For a more detailed explanation of how to use threat intel
-information in rules, see [Threat Intel](/docs/cse/rules/about-cse-rules/#threat-intel) in the
+Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Turning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About CSE Rules* topic.
 
-### Create a threat intel source from CSE UI
+### Create a threat intelligence source from CSE UI
 
 1. Click the Content menu and select **Threat Intelligence**.
 1. Click **Add Source** on the **Threat Intelligence** page.  
@@ -75,7 +86,7 @@ The .csv file can contain up to three columns, which are described below. 
 | value  | Required. Must be one of the following: <br/>- A valid IPV4 or IPv6 address<br/>- A valid, complete URL <br/>- A valid email address<br/>- A hostname (without protocol or path)<br/>- A hexadecimal string of 32, 40, 64, or 128 characters |
 | description | Optional.  |  
 | expires| Optional. The data and time when you want the indicator to be removed, in any ISO date format. |
-| active | Required. Specifies whether the indicator actively looks for threat intel in Records. Valid values are `true` or `false`. |
+| active | Required. Specifies whether the indicator actively looks for threat intelligence in Records. Valid values are `true` or `false`. |
 
 **Example .csv file**
 
@@ -94,5 +105,5 @@ value,description,expires,active
 
 ### Manage sources and indicators using APIs
 
-You can use CSE threat intel APIs to create and manage indicators and custom threat sources. For information about CSE APIs and how to access the API documentation, see [CSE APIs](cse-apis.md).  
+You can use CSE threat intelligence APIs to create and manage indicators and custom threat sources. For information about CSE APIs and how to access the API documentation, see [CSE APIs](cse-apis.md).  
  

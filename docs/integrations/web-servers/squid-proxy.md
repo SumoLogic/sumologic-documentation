@@ -13,14 +13,14 @@ import TabItem from '@theme/TabItem';
 
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
-This App is tested with the following Squid Proxy versions:
+This app is tested with the following Squid Proxy versions:
 * For Kubernetes environments: Squid Proxy version: 6.0.0
 * Non-Kubernetes environments: Squid Proxy version: 6.0.0
 
 
-## Collecting Logs and Metrics for the Squid Proxy App
+## Collecting Logs and Metrics for the Squid Proxy app
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Squid Proxy.
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Squid Proxy.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -114,163 +114,160 @@ annotations:
   name = "squid"
   community = "public"
   [inputs.snmp.tags]
-   proxy_cluster="<Squid Proxy_TO_BE_CHANGED>"
-   component="proxy"
-   environment="env_TO_BE_CHANGED"
-   proxy_system="squidproxy"
-
+    proxy_cluster="<Squid Proxy_TO_BE_CHANGED>"
+    component="proxy"
+    environment="env_TO_BE_CHANGED"
+    proxy_system="squidproxy"
   [[inputs.snmp.field]]
-     name = "uptime"
-     oid = "1.3.6.1.4.1.3495.1.1.3.0"
+    name = "uptime"
+    oid = "1.3.6.1.4.1.3495.1.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheMemUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
+    name = "cacheMemUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheCpuUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-      name = "cacheClients"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-      name = "cacheProtoClientHttpRequests"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
+    name = "cacheProtoClientHttpRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
   [[inputs.snmp.field]]
-  name = "cacheHttpHits"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
+    name = "cacheHttpHits"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
   [[inputs.snmp.field]]
     name = "cacheHttpErrors"
     oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
     name = "uidcacheHttpInKb"
     oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
-
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
-
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheServerInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
+    name = "cacheServerInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheServerOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
+    name = "cacheServerOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
   [[inputs.snmp.field]]
-   name = "cacheClients"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheMemMaxSize"
-   oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
+    name = "cacheMemMaxSize"
+    oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
   [[inputs.snmp.field]]
-   name = "cacheServerRequests"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
+    name = "cacheServerRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
+    name = "cacheHttpInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheNumObjCount"
-   oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
+    name = "cacheNumObjCount"
+    oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
+    name = "cacheHttpAllSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
+    name = "cacheDnsSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
+    name = "cacheHttpMissSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
   [[inputs.snmp.field]]
-   name = " cacheHttpHitSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
+    name = " cacheHttpHitSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
   [[inputs.snmp.field]]
-   name = "cacheIpEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
+    name = "cacheIpEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheIpMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
+    name = "cacheIpMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheVersionId"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    name = "cacheVersionId"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheSysPageFaults"
-   oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
+    name = "cacheSysPageFaults"
+    oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
+    name = "cacheHttpErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheServerErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
+    name = "cacheServerErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuUsage"
-   oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheSysVMsize"
-   oid = "1.3.6.1.4.1.3495.1.1.1.0"
+    name = "cacheSysVMsize"
+    oid = "1.3.6.1.4.1.3495.1.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheSysNumReads"
-   oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
+    name = "cacheSysNumReads"
+    oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentUnusedFDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
+    name = "cacheCurrentUnusedFDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
+    name = "cacheCurrentFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheMaxResSize"
-   oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
+    name = "cacheMaxResSize"
+    oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentResFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
+    name = "cacheCurrentResFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheIpRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
+    name = "cacheIpRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheIpHits"
-   oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
+    name = "cacheIpHits"
+    oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
+    name = "cacheFqdnEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
+    name = "cacheFqdnRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnHits"
-   oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
+    name = "cacheFqdnHits"
+    oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
+    name = "cacheFqdnMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
+    name = "cacheDnsRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsReplies"
-   oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
+    name = "cacheDnsReplies"
+    oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsNumberServers"
-   oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
+    name = "cacheDnsNumberServers"
+    oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
   [[inputs.snmp.field]]
-   name = "version"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    name = "version"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
    is_tag = true
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
+    name = "cacheHttpAllSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
+    name = "cacheHttpMissSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
   [[inputs.snmp.field]]
    name = "cacheHttpHitSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime5"
+    name = "cacheDnsSvcTime5"
    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.5"
 ```
 
@@ -298,7 +295,6 @@ Here’s an explanation for additional values set by this configuration that we 
 
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
-
 
 #### Configure Logs Collection
 
@@ -462,158 +458,156 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     name = "uptime"
     oid = "1.3.6.1.4.1.3495.1.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheMemUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
+    name = "cacheMemUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheCpuUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-      name = "cacheClients"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-      name = "cacheProtoClientHttpRequests"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
+    name = "cacheProtoClientHttpRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
   [[inputs.snmp.field]]
-  name = "cacheHttpHits"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
+    name = "cacheHttpHits"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
+    name = "cacheHttpErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
-   name = "uidcacheHttpInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
-
+    name = "uidcacheHttpInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
-
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheServerInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
+    name = "cacheServerInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheServerOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
+    name = "cacheServerOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
   [[inputs.snmp.field]]
-   name = "cacheClients"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheMemMaxSize"
-   oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
+    name = "cacheMemMaxSize"
+    oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
   [[inputs.snmp.field]]
-   name = "cacheServerRequests"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
+    name = "cacheServerRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
+    name = "cacheHttpInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheNumObjCount"
-   oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
+    name = "cacheNumObjCount"
+    oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
+    name = "cacheHttpAllSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
+    name = "cacheDnsSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
+    name = "cacheHttpMissSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
   [[inputs.snmp.field]]
-   name = " cacheHttpHitSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
+    name = " cacheHttpHitSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
   [[inputs.snmp.field]]
-   name = "cacheIpEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
+    name = "cacheIpEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheIpMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
+    name = "cacheIpMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheVersionId"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    name = "cacheVersionId"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheSysPageFaults"
-   oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
+    name = "cacheSysPageFaults"
+    oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
+    name = "cacheHttpErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheServerErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
+    name = "cacheServerErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuUsage"
-   oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheSysVMsize"
-   oid = "1.3.6.1.4.1.3495.1.1.1.0"
+    name = "cacheSysVMsize"
+    oid = "1.3.6.1.4.1.3495.1.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheSysNumReads"
-   oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
+    name = "cacheSysNumReads"
+    oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentUnusedFDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
+    name = "cacheCurrentUnusedFDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
+    name = "cacheCurrentFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheMaxResSize"
-   oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
+    name = "cacheMaxResSize"
+    oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentResFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
+    name = "cacheCurrentResFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheIpRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
+    name = "cacheIpRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheIpHits"
-   oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
+    name = "cacheIpHits"
+    oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
+    name = "cacheFqdnEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
+    name = "cacheFqdnRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnHits"
-   oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
+    name = "cacheFqdnHits"
+    oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
+    name = "cacheFqdnMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
+    name = "cacheDnsRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsReplies"
-   oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
+    name = "cacheDnsReplies"
+    oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsNumberServers"
-   oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
+    name = "cacheDnsNumberServers"
+    oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
   [[inputs.snmp.field]]
-   name = "version"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
-   is_tag = true
+    name = "version"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    is_tag = true
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
+    name = "cacheHttpAllSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
+    name = "cacheHttpMissSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
   [[inputs.snmp.field]]
-   name = "cacheHttpHitSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
+    name = "cacheHttpHitSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.5"
+    name = "cacheDnsSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.5"
 [[outputs.sumologic]]
-  url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
-  data_format = "prometheus"
+    url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
+    data_format = "prometheus"
 ```
 
 </details>
@@ -658,7 +652,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 ## Installing Squid Proxy Monitors
 
-This section and below provide instructions for installing the Squid Proxy App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described above.
+This section and below provide instructions for installing the Squid Proxy app, as well as examples of each of the app dashboards. These instructions assume you have already set up the collection as described above.
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
@@ -752,9 +746,9 @@ email_notifications = [
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-## Installing the Squid Proxy App
+## Installing the Squid Proxy app
 
-This section demonstrates how to install the Squid Proxy App.
+This section demonstrates how to install the Squid Proxy app.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -844,7 +838,7 @@ The **Squid Proxy -  HTTP Response Analysis** dashboard provides insights into H
 Use this dashboard to:
 * Gain insights into the count of HTTP responses, such as redirections, successes, client errors, or server errors, on an area chart.
 * Gain insights into client error URLs with information fields: URL, status code, and event count.
-* Get detailed information on any outliers in redirection, client error, server error events on a line chart with thresholds
+* Get detailed information on any outliers in redirection, client error, server error events on a line chart with thresholds.
 
 <img src={useBaseUrl('img/integrations/web-servers/squid-proxy-http-response-analysis.png')} alt="Squid Proxy" />
 
@@ -855,7 +849,7 @@ The **Squid Proxy - Quality of Service** dashboard provides insights into latenc
 
 Use this dashboard to:
 * To identify locations with slow average request response times.
-* Gain insights into the response times according to HTTP actions
+* Gain insights into the response times according to HTTP actions.
 
 <img src={useBaseUrl('img/integrations/web-servers/Squid-Proxy-Quality-of-Service.png')} alt="Squid Proxy" />
 

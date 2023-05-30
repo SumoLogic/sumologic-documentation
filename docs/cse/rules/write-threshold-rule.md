@@ -13,17 +13,28 @@ If you are new to writing rules, see [About CSE Rules](about-cse-rules.md) for
 
 A Threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. 
 
+Watch this micro lesson to learn how to create a Threshold rule.
+
+<Iframe url="https://www.youtube.com/embed/uei_TDOy5QM?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Create a Threshold rule
 
 1. Choose **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the **Threshold** card. 
-
-    ![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor:
-
    1. **Name**. Enter a name for the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
-
     ![threshold.png](/img/cse/threshold.png)
 
 ## Configure “If Triggered” settings

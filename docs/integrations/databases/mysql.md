@@ -11,14 +11,14 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="100" />
 
-The Sumo Logic App for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins and error logs.
+The Sumo Logic app for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins and error logs.
 
-The MySQL App supports following versions:
+The MySQL app supports following versions:
 * MySQL 5.5.35-1 and later
 * Percona MySQL 5.6.17 and later
 * MySQL 8.0.x
 
-## MySQL App Searches
+## MySQL app Searches
 The predefined searches in the MySQL app are based on the following log types.
 
 ### Searches based on Error logs
@@ -32,9 +32,8 @@ The predefined searches in the MySQL app are based on the following log types.
 ### Searches based on Slow Query logs
 * Slow Query Server Location. If your servers are not using private IP addresses, you can use the Slow Query Server Location search to visualize their locations on a map of the world.
 
-
 ## Log and Metrics Types
-The Sumo Logic App for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](#MySQL_Metrics).
+The Sumo Logic app for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](#MySQL_Metrics).
 * The **MySQL - Overview** dashboard is based on logs from both the Error and Slow Query log formats, so as to correlate information between the two.
 * Dashboards in the Metrics folder are based on MySQL metrics.
 * Dashboards in the Logs folder are based on MySQL logs from both the Error and Slow Query log formats.
@@ -80,7 +79,6 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 </TabItem>
 </Tabs>
-
 
 ### Sample Queries
 
@@ -140,7 +138,7 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 
 ## Collecting Logs and Metrics for MySQL
 
-Configuring log and metric collection for the MySQL App includes the following tasks.
+Configuring log and metric collection for the MySQL app includes the following tasks.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -179,7 +177,6 @@ If you're using MySQL in a non-Kubernetes environment, create the fields:
 
 </TabItem>
 </Tabs>
-
 
 ### Step 2: Configure MySQL Logs and Metrics Collection
 
@@ -232,12 +229,12 @@ primary:
         gather_file_events_stats = true
         gather_perf_events_statements = true
         [inputs.mysql.tags]
-        environment = "ENV_TO_BE_CHANGED"
-        component = "database"
-        db_system = "mysql"
-        db_cluster = "ENV_TO_BE_CHANGED"
-        db_cluster_address = "ENV_TO_BE_CHANGED"
-        db_cluster_port = "ENV_TO_BE_CHANGED"
+          environment = "ENV_TO_BE_CHANGED"
+          component = "database"
+          db_system = "mysql"
+          db_cluster = "ENV_TO_BE_CHANGED"
+          db_cluster_address = "ENV_TO_BE_CHANGED"
+          db_cluster_port = "ENV_TO_BE_CHANGED"
     tailing-sidecar: sidecarconfig;slowlog:data:/bitnami/mysql/data/mysql-release-0-slow.log
 ```
 
@@ -313,7 +310,7 @@ There are additional configuration options that you should **not** modify, as ch
 
 For information about properties that can be configured globally in the Telegraf agent, see the [Configuration](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) documentation for Telegraf.
 
-The Sumo Logic Kubernetes Collection process will automatically capture the logs from stdout and send the logs to Sumo Logic. For more information on deploying the sumologic-kubernetes-collection, see [Collect Logs and Metrics for the Kubernetes App](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumo Logic Kubernetes Collection process will automatically capture the logs from stdout and send the logs to Sumo Logic. For more information on deploying the sumologic-kubernetes-collection, see [Collect Logs and Metrics for the Kubernetes app](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 </details>
 
@@ -379,7 +376,6 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 
 <img src={useBaseUrl('img/integrations/databases/non-k8s.png')} alt="non-K8s flow" />
 
-
 #### Configure Metrics collection
 
 1. **Configure a Hosted Collector**. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -400,10 +396,10 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
   gather_file_events_stats = true
   gather_perf_events_statements = true
   [inputs.mysql.tags]
-   environment: "ENV_TO_BE_CHANGED"
+   environment = "ENV_TO_BE_CHANGED"
    component = "database"
    db_system = "mysql"
-   db_cluster: "ENV_TO_BE_CHANGED"
+   db_cluster = "ENV_TO_BE_CHANGED"
    db_cluster_address = "ENV_TO_BE_CHANGED"
    db_cluster_port = "ENV_TO_BE_CHANGED"
 [[outputs.sumologic]]
@@ -476,7 +472,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
    ```
      * [Error Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
      * [Slow Query Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
-     * [General Query Logs](https://dev.mysql.com/doc/refman/5.7/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
+     * [General Query Logs](https://dev.mysql.com/doc/refman/5.7/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL app.
    3. Save the `my.cnf` file.
    4. Restart the MySQL server:
     ```bash
@@ -561,7 +557,6 @@ At this point, MySQL slow query logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-
 ## Installing MySQL Monitors
 
 The next few sections provide instructions for installing Sumo Logic Monitors for MySQL, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in Collecting MySQL Logs and Metrics.
@@ -573,7 +568,6 @@ To install these monitors, you must have the **Manage Monitors** role capability
 You can install monitors by importing a JSON file or using a Terraform script.
 
 There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
-
 
 ### Method A: Install Monitors by importing a JSON file
 
@@ -642,33 +636,30 @@ email_notifications = [
   ]
 ```
 
-
 6. Install Monitors.
    1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory and run `terraform init`. This will initialize Terraform and download the required components.
    2. Run `terraform plan` to view the monitors that Terraform will create or modify.
    3. Run `terraform apply`.
 
 
-## Installing the MySQL App  
+## Installing the MySQL app  
 
-Now that you have set up collection for MySQL, install the Sumo Logic App for MySQL to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for MySQL, install the Sumo Logic app for MySQL to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the App Catalog, search for and select the app.
 1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
 1. To install the app, complete the following fields.
-   * App Name. You can retain the existing name or enter the app's name of your choice. 
-   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+   * **App Name**. You can retain the existing name or enter the app's name of your choice.
+   * **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 1. Click Add to Library.
 
 Once an app is installed, it will appear in your Personal folder or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
-
-## Viewing MySQL Dashboards
+## Viewing MySQL dashboards
 
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
@@ -676,21 +667,21 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview  
 
-The Overview dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
+The** MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
 
 Use this dashboard to:
-* Quickly identify the state of a given database cluster
+* Quickly identify the state of a given database cluster.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Overview.png')} alt="MySQL dashboard" />
 
 ### Error Logs  
 
-The Error Logs dashboard provides insight into database error logs by specifically monitoring database shutdown/start events, errors over time, errors, warnings and crash recovery attempts.
+The **MySQL - Error Logs** dashboard provides insight into database error logs by specifically monitoring database shutdown/start events, errors over time, errors, warnings, and crash recovery attempts.
 
 Use this dashboard to:
-* Quickly identify errors and patterns in logs for troubleshooting
-* Monitor trends in error logs and identify outliers
-* Ensure that server start, server stop and crash recovery events are in line with expectations
+* Quickly identify errors and patterns in logs for troubleshooting.
+* Monitor trends in error logs and identify outliers.
+* Ensure that server start, server stop and crash recovery events are in line with expectations.
 * Dashboard filters allow you to narrow a search for database cluster.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Error-Logs.png')} alt="MySQL dashboard" />
@@ -698,63 +689,60 @@ Use this dashboard to:
 
 ### Failed Logins  
 
-The Failed Logins dashboard provides insights into all failed login attempts by location, users and hosts.
+The **MySQL - Failed Logins** dashboard provides insights into all failed login attempts by location, users, and hosts.
 
 Use this dashboard to:
-* Monitor all failed login attempts and identify any unusual or suspicious activity
+* Monitor all failed login attempts and identify any unusual or suspicious activity.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Failed-Logins.png')} alt="MySQL dashboard" />
 
 ### Replication  
 
-The Replication dashboard provides insights into the state of database replication.
+The **MySQL - Replication** dashboard provides insights into the state of database replication.
 
 Use this dashboard to:
-* Quickly determine reasons for replication failures
-* Monitor replication status trends
+* Quickly determine reasons for replication failures.
+* Monitor replication status trends.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Replication.png')} alt="MySQL dashboard" />
 
-
 ### Slow Queries
 
-The Slow Queries dashboard provides insights into all slow queries executed on the database.
+The **MySQL - Slow Queries** dashboard provides insights into all slow queries executed on the database.
 
 Note: Slow queries are queries that take 10 seconds or more to execute (default value is 10 seconds as per mysql configuration which can be altered) and excessive slow queries are those that take 15 seconds or more to execute.  
 
 Use this dashboard to:
-* Identify all slow queries
-* Quickly determine which queries have been identified as slow or excessive slow queries
-* Monitor users and hosts running slow queries
-* Determine which SQL commands are slower than others
-* Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
+* Identify all slow queries.
+* Quickly determine which queries have been identified as slow or excessive slow queries.
+* Monitor users and hosts running slow queries.
+* Determine which SQL commands are slower than others.
+* Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Slow-Queries.png')} alt="MySQL dashboard" />
 
 ### Performance and Resource Metrics
 
-The Performance and Resource Metrics dashboard allows you to monitor the performance and resource usage of your database clusters.
+The **MySQL - Performance and Resource Metrics** dashboard allows you to monitor the performance and resource usage of your database clusters.
 
 Use this dashboard to:
-* Understand the behavior and performance of your database clusters
-* Monitor key operational metrics around connections, network traffic, threads running, innodb waits and locks.
-* Monitor query execution trends to ensure they match up with expectations
-* Dashboard filters allow you to narrow a search for a specific database cluster
+* Understand the behavior and performance of your database clusters.
+* Monitor key operational metrics around connections, network traffic, threads running, innodb waits, and locks.
+* Monitor query execution trends to ensure they match up with expectations.
+* Dashboard filters allow you to narrow a search for a specific database cluster.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Performance-and-Resource-Metrics.png')} alt="MySQL dashboard" />
 
 ### Performance Schema Metrics
 
-The Performance Schema Metrics Dashboard provides insights into the metrics provided by the MySQL Performance Schema, which is a feature for monitoring MySQL Server execution at a low level.
+The **MySQL - Performance Schema Metrics** dashboard provides insights into the metrics provided by the MySQL Performance Schema, which is a feature for monitoring MySQL Server execution at a low level.
 
 Use this dashboard to:
-* Monitor errors and warning for SQL statements
-* Monitor statements running without use of index columns
-* Monitor statistics such as Table and Index waits and read and write lock waits to optimize the performance of your database
+* Monitor errors and warning for SQL statements.
+* Monitor statements running without use of index columns.
+* Monitor statistics such as Table and Index waits and read and write lock waits to optimize the performance of your database.
 
 <img src={useBaseUrl('img/integrations/databases/MySQL-Performance-Schema-Metrics.png')} alt="MySQL dashboard" />
-
-
 
 ## MySQL Alerts
 
@@ -884,7 +872,6 @@ This section describes the monitors provided with the MySQL app. These monitors 
    </td>
   </tr>
 </table>
-
 
 
 ## MySQL Metrics

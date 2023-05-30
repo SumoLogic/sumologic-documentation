@@ -2,7 +2,7 @@
 id: mongodb-atlas
 title: MongoDB Atlas
 sidebar_label: MongoDB Atlas
-description: The Sumo Logic App for MongoDB Atlas provides visibility into the security posture of your clusters and allows for easy monitoring of performance KPIs and database operational activities with predefined dashboards for visibility into MongoDB alerts and user activity audit logs, insights into slow queries, database and hardware metrics, and monitoring database operations.
+description: The Sumo Logic app for MongoDB Atlas provides visibility into the security posture of your clusters and allows for easy monitoring of performance KPIs and database operational activities with predefined dashboards for visibility into MongoDB alerts and user activity audit logs, insights into slow queries, database and hardware metrics, and monitoring database operations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/mongodbatlas.png')} alt="Thumbnail icon" width="100"/>
 
-The Sumo Logic App for MongoDB Atlas allows you to monitor database operations, performance KPIs and provides visibility into the security posture of your clusters with the following dashboard types:  
+The Sumo Logic app for MongoDB Atlas allows you to monitor database operations, performance KPIs and provides visibility into the security posture of your clusters with the following dashboard types:  
 
 * **Operations** Dashboard: For monitoring database operations and cluster health.
 * **Performance** Dashboard: For insights into slow queries, database and hardware metrics.
@@ -19,16 +19,15 @@ The Sumo Logic App for MongoDB Atlas allows you to monitor database operations, 
 
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is a global cloud database service designed specifically for cloud-based applications. MongoDB Atlas runs in AWS, Azure, or GCP environments, with guaranteed availability, scalability, and compliance with data security and privacy standards.
 
-The MongoDB Atlas App supports MongoDB Version 3.4 and above.
+The MongoDB Atlas app supports MongoDB Version 3.4 and above.
 
-## Log and Metric Types
+## Log and Metric types
 
-MongoDB Atlas uses logs and metrics. MongoDB Atlas logs are in JSON format and metrics are in Carbon 2.0 format. The Sumo Logic App for MongoDB Atlas uses five types of logs and two types of metrics.
+MongoDB Atlas uses logs and metrics. MongoDB Atlas logs are in JSON format and metrics are in Carbon 2.0 format. The Sumo Logic app for MongoDB Atlas uses five types of logs and two types of metrics.
 
+### Sample log messages
 
-### Sample Log Messages
-
-MongoDB Atlas logs are all in JSON format and metrics are in Carbon2.0 format. The MongoDB Atlas utilizes five types of logs and two types of metrics. This section provides examples of the log types utilized by the MongoDB Atlas App.
+MongoDB Atlas logs are all in JSON format and metrics are in Carbon2.0 format. The MongoDB Atlas utilizes five types of logs and two types of metrics. This section provides examples of the log types utilized by the MongoDB Atlas app.
 
 The Sumo Logic `mongodbatlas` collector enhances logs by adding a few metadata fields. For this reason, the raw logs from the MongoDB Atlas API may differ in format.
 
@@ -128,7 +127,7 @@ For more information, see [https://www.mongodb.com/docs/atlas/reference/api/even
 
 ### Sample Metrics
 
-This section provides examples of the metric types utilized by the MongoDB Atlas App.
+This section provides examples of the metric types utilized by the MongoDB Atlas app.
 
 <details><summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
 
@@ -219,9 +218,9 @@ This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Eve
 
 </details>
 
-## Collecting Logs and Metrics for the MongoDB Atlas App
+## Collecting Logs and Metrics for the MongoDB Atlas app
 
-This section explains how to collect logs from MongoDB Atlas for mongo version 6.0 and ingest them into Sumo Logic for use with the MongoDB Atlas App predefined dashboards and searches. Most of the panels for this app work for logs coming in from mongo version 4.4 and 5.
+This section explains how to collect logs from MongoDB Atlas for mongo version 6.0 and ingest them into Sumo Logic for use with the MongoDB Atlas app predefined dashboards and searches. Most of the panels for this app work for logs coming in from mongo version 4.4 and 5.
 
 Sumo Logic provides a solution which pulls logs and metrics from MongoDB Atlas with API calls. You can configure the log types to be collected, and the logs and metrics are then forwarded to Sumo Logic’s HTTP endpoint.
 
@@ -258,16 +257,16 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 
 ### Step 3: Configure Collection for MongoDB Atlas
 
-In this section, we explore various mechanisms to collect database logs, events, metrics and alerts from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas App. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running a script on a Linux machine as a cron job. Choose the method that is best suited for you:
+In this section, we explore various mechanisms to collect database logs, events, metrics and alerts from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas app. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running a script on a Linux machine as a cron job. Choose the method that is best suited for you:
 * [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) via a Serverless Application Model (SAM) application
 * [Script-based collection](#Configure_script_based_collection_for_mongodb-atlas) from a Linux machine
 
 A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#Configure_collection_for_multiple_projects) if you have multiple projects.
 
 
-#### Step 3A: Deploy the Sumo Logic MongoDB Atlas SAM Application
+#### Step 3A: Deploy the Sumo Logic MongoDB Atlas SAM application
 
-In this section, you deploy the SAM application, which creates the necessary resources in your AWS account. To deploy the Sumo Logic MongoDB Atlas SAM Application, do the following:
+In this section, you deploy the SAM application, which creates the necessary resources in your AWS account. To deploy the Sumo Logic MongoDB Atlas SAM application, do the following:
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-mongodb-atlas**, select the **Show apps that create custom IAM roles or resource policies** check box, and click the app link when it appears.
 3. When the Sumo Logic app page appears, click **Deploy**.
@@ -292,8 +291,6 @@ In this section, you deploy the SAM application, which creates the necessary res
 
 The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in Monitor > Logs to see the logs of the function.
 
-
-
 #### Step 3B: Configure Collection for Multiple Projects (optional)
 
 This section shows you how to configure collection for multiple projects, assuming you are already collecting Atlas data for one project. This task requires that you do the following:
@@ -305,10 +302,9 @@ To configure collection for multiple projects, do the following:
 2. After the deployment is complete, change the database name by adding environment variable (`DBNAME`) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html), as shown in the following example.
 3. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of org events, because they are already being collected by the first collector.
 
-
 #### Step 3C: Configure Script-Based Collection for MongoDB Atlas
 
-This section shows you how to configure script-based log collection for the Sumo Logic MongoDB Atlas App. The _sumologic-mongodb-atlas_ script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
+This section shows you how to configure script-based log collection for the Sumo Logic MongoDB Atlas app. The _sumologic-mongodb-atlas_ script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 
 :::note prerequisites
 This task makes the following assumptions:
@@ -441,7 +437,6 @@ You configure Webhooks for real-time alerts. This section explains how to config
 1. Go to the **MongoDBAtlas** console and select **Project Integrations.** Click **Configure** under **Webhook Settings**.
 2. Copy and paste the Logs endpoint from [Step](#Add_a_Hosted_Collector_and_HTTP_Source) to set up Webhook.
 3. When configuring an alert, specify the **Webhook** as shown in the following example, and then click **Save**.
-
 
 ### Advanced Configuration
 
@@ -675,10 +670,9 @@ Traceback (most recent call last):
 Exception: Invalid config
 ```
 
+## Installing the MongoDB Atlas app
 
-## Installing the MongoDB Atlas App
-
-This section provides instructions on how to install the MongoDB Atlas App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the MongoDB Atlas app, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
 {@import ../../reuse/apps/app-install.md}
 
@@ -694,7 +688,7 @@ You can use filters to drill down and examine the data on a granular level.
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-#### MongoDB Atlas - Overview
+#### Overview
 
 The **MongoDB Atlas - Overview** dashboard provides an at-a-glance overview of server availability, messages, and commands. Panels display information on messages by severity and component, trends in messages by component and severity, as well as trends for database (DB) commands and create, read, update, and delete (**CRUD**) function commands.
 
@@ -709,8 +703,7 @@ Use this dashboard to:
 
 The MongoDB Atlas Security dashboards aim to provide a comprehensive view of Atlas security and audit aspects via the Atlas audit logs, alerts, and events logs.
 
-
-#### MongoDB Atlas - Events
+#### Events
 
 The **MongoDB Atlas - Events** dashboard provides information on Atlas project and organization-level changes. Panels show information on the type, number, location and recent events.
 
@@ -720,71 +713,64 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Events.png')} alt="MongoDB Atlas dashboards" />
 
-
-
-#### MongoDB Atlas - Alerts
+#### Alerts
 
 The **MongoDB Atlas - Alerts** dashboard provides an at-a-glance view view of alerts triggered in your Atlas environment. Panels show information around the total number and number of  open alerts, recent alerts, alert types and status.
 
 Use this dashboard to:
-* Identify and address all open and recent alerts
-* Monitor unusually high number of  alerts by analyzing trend graphs
+* Identify and address all open and recent alerts.
+* Monitor unusually high number of  alerts by analyzing trend graphs.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Alerts.png')} alt="MongoDB Atlas dashboards" />
 
-
-
-#### MongoDB Atlas - Audit
+#### Audit
 
 The **MongoDB Atlas - Audit** dashboard provides information around security events in your Atlas environment such as failed authentication, authorization and audit events, audit event trends, and originating geographic locations. Panels also display details on audit events by action type and user, and recent audit events by created and deleted resources.
 
 Use this dashboard to:
-* Identify unusually high number of eventsfailed eventby analyzing trend graphs
-* Identify most affected hosts and users associated with failed audit events
-* Monitor most recent audit events and database operations to ensure they are in line with expectations
-* Track database read and write operations, spikes in failed events, as well as the users who performed the events
+* Identify unusually high number of eventsfailed eventby analyzing trend graphs.
+* Identify most affected hosts and users associated with failed audit events.
+* Monitor most recent audit events and database operations to ensure they are in line with expectations.
+* Track database read and write operations, spikes in failed events, as well as the users who performed the events.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Audit.png')} alt="MongoDB Atlas dashboards" />
-
 
 ### Performance Dashboards
 
 Performance dashboards provide visual representations of key MongoDB Atlas metrics. You can use this data to correlate system health and performance and use Atlas logs to identify and fix the root cause of any problems. These dashboards are also provide the ability to fine tune your queries and database operations.
 
 
-#### MongoDB Atlas - Cluster Metrics
+#### Cluster Metrics
 
 
 The **MongoDB Atlas - Cluster Metrics** dashboard provides a high-level view of cluster performance, disk and cache usage. Panel graphs show details for read and write operations and their execution times, network traffic, connections, data sizes, and disk read and write IOPs.
 
 Use this dashboard to:
-* Identify anomalous changes in database metrics
-* Monitor resource usage and determine how to optimize your Atlas databases and clusters
+* Identify anomalous changes in database metrics.
+* Monitor resource usage and determine how to optimize your Atlas databases and clusters.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Cluster_Metrics.png')} alt="MongoDB Atlas dashboards" />
 
-
-#### MongoDB Atlas - Metrics
+#### Metrics
 
 The **MongoDB Atlas - Metrics** dashboard provides an at-a-glance view of database performance with graphs showing memory availability, data size, cache in bytes, and returned document ratios.
 
 Use this dashboard to:
 * Determine node health based on page faults, cache dirty bytes, replication headroom, queued operations, and  disk write latency.
 * Monitor resource usage (cache and disk) and active connections. You can set up alerts for notification on these metrics.
-* Drill-down into the underlying queries and use the the Sumo Logic [Log Overlay](/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations.md) feature to correlate performance metrics with underlying logs to identify the root cause of performance degradations
+* Drill-down into the underlying queries and use the the Sumo Logic [Log Overlay](/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations.md) feature to correlate performance metrics with underlying logs to identify the root cause of performance degradations.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Metrics.png')} alt="MongoDB Atlas dashboards" />
 
-
-#### MongoDB Atlas - Slow Queries
+#### Slow Queries
 
 The **MongoDB Atlas - Slow Queries** dashboard provides details on the number of slow queries by type,trends, and slow server status.
 
 Use this dashboard to:
-* Identify and fix slow queries
-* Identify changes in the number and types of slow queries by analyzing trends
-* Identify databases, connections collections experiencing slow queries
-* Determine queries and operations that are using Scanned Objects/Returned objects and Keys Scanned Keys/Returned objects ratios to identify the potential fields for indexing
+* Identify and fix slow queries.
+* Identify changes in the number and types of slow queries by analyzing trends.
+* Identify databases, connections collections experiencing slow queries.
+* Determine queries and operations that are using Scanned Objects/Returned objects and Keys Scanned Keys/Returned objects ratios to identify the potential fields for indexing.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Slow_Queries.png')} alt="MongoDB Atlas dashboards" />
 
@@ -792,45 +778,43 @@ Use this dashboard to:
 
 The Operations dashboards monitor database operations, such as indexing, sharding, and replication. These dashboards allow you to view detailed error logs for troubleshooting and track login activities in your database including failed attempts.
 
-
-#### MongoDB Atlas - Errors and Warnings
+#### Errors and Warnings
 
 The **MongoDB Atlas - Errors and Warnings** dashboard provides information on errors, warnings by component, severity and type.. Panels also show information on daily error and warning summaries, socket exceptions, timeout events, and MongoDB exit events.
 
 Use this dashboard to:
-* Identify and fix errors and warnings
-* Troubleshoot problems in your cluster by analyzing errors and warnings
-* Identify hosts with most errors and correct issues accordingly
+* Identify and fix errors and warnings.
+* Troubleshoot problems in your cluster by analyzing errors and warnings.
+* Identify hosts with most errors and correct issues accordingly.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Errors_and_Warnings.png')} alt="MongoDB Atlas dashboards" />
 
-
-#### MongoDB Atlas - Logins and Connections
+#### Logins and Connections
 
 The **MongoDB Atlas - Logins and Connections** dashboard provides a high-level view of the geographic locations of client connection requests, logins from malicious remote IPS, and geographic locations of failed logins. Panels also display information on overall failed login attempts, threat intel by remote IP, and failed logins by user.
 
 Use this dashboard to:
-* Identify requests coming in malicious remote IPs and their geographic locations and use this information to fix your firewall or WAF devices
-* Validate locations of incoming client connections are in line with expected locations
+* Identify requests coming in malicious remote IPs and their geographic locations and use this information to fix your firewall or WAF devices.
+* Validate locations of incoming client connections are in line with expected locations.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Logins_and_Connections.png')} alt="MongoDB Atlas dashboards" />
 
-#### MongoDB Atlas - Replication
+#### Replication
 
 The **MongoDB Atlas - Replication** dashboard provides information on changes in replication configurations. Panels display details on replication errors, warnings, events, as well as information around primary and secondary nodes.
 
 Use this dashboard to:
-* Identify and fix replication and availability errors
-* Monitor changes in replication lag performance
+* Identify and fix replication and availability errors.
+* Monitor changes in replication lag performance.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Replication.png')} alt="MongoDB Atlas dashboards" />
 
-#### MongoDB Atlas - Sharding
+#### Sharding
 
 The **MongoDB Atlas - Sharding** dashboard provides information on Atlas cluster sharding. Panels show details on warnings, errors, chunk split failures, balancer failures, chunks moving by collection, and chunks moving between shards.
 
 Use this dashboard to:
-* Identify and fix sharding and balancing related errors and warnings
-* Track chunk move operations to ensure they are in line with expectations
+* Identify and fix sharding and balancing related errors and warnings.
+* Track chunk move operations to ensure they are in line with expectations.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Sharding.png')} alt="MongoDB Atlas dashboards" />
