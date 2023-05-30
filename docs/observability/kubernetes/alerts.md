@@ -5,7 +5,7 @@ description: To help determine if the Kubernetes cluster is available and perfor
 hide_table_of_contents: true
 ---
 
-Sumo Logic monitors provide you with out-of-box alerts that help determine if your Kubernetes cluster is available and performing well. The alerts, listed on this page, are installed by default when [set up data collection using Helm or YAML](/docs/observability/kubernetes/quickstart/#installation). They are built based on metrics datasets and have preset thresholds.
+Sumo Logic monitors provide you with out-of-box alerts that help determine if your Kubernetes cluster is available and performing well. The alerts, listed on this page, are installed by default when you [set up data collection using Helm or YAML](/docs/observability/kubernetes/quickstart/#installation). They are built based on metrics datasets and have preset thresholds.
 
 :::info
 For information on creating customized alerts, see [Monitors](/docs/alerts/monitors).
