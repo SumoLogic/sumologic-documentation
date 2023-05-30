@@ -47,3 +47,9 @@ Log-Level pattern detection is automatic, meaning you do not need to parse log l
 ```sql
 | where isNull(_loglevel)
 ```
+
+The log level of a log line is stored under the `_loglevel` field. You can override its value using a [field extraction rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). For example:
+
+<img src={useBaseUrl('img/search/get-started-search/search-page/add-field-extraction-rule.png')} alt="Add field extraction rule" width="400"/>
+
+
