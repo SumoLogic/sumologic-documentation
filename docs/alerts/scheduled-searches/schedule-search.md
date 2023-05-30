@@ -105,7 +105,7 @@ When an alert condition is satisfied, Sumo Logic sends an email (or triggers a s
 
 ### CSE Signal
 
-You can trigger the creation of a CSE Signal with a scheduled search. Signals are otherwise generated when the conditions of a CSE rule are satisfied by a Record. Signals are correlated with other Signals to create a [CSE Insight](../../cse/get-started-with-cloud-siem/insight-generation-process.md). For instructions, see [Generate CSE Signals With a Scheduled Search](generate-cse-signals.md).
+You can trigger the creation of a CSE Signal with a scheduled search. Signals are otherwise generated when the conditions of a CSE rule are satisfied by a Record. Signals are correlated with other Signals to create a [CSE Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/). For instructions, see [Generate CSE Signals With a Scheduled Search](generate-cse-signals.md).
 
 ## FAQ
 
