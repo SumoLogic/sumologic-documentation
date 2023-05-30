@@ -11,13 +11,13 @@ The `delta` operator updates the `metric` dimension, if present, to `delta($metr
 
 You can use the `increasing` or `decreasing` option, to make `delta` consider only pairs of consecutive points where the second point is greater or less than the first point. This functionality is useful when you are calculating the positive or the negative difference of a counter over time.
 
-## delta syntax
+## Syntax
 
 ```sql
-metric query | delta [increasing | decreasing]
+delta [increasing | decreasing]
 ```
 
-## delta examples
+## Examples
 
 ### Difference in a metric value from previous point
 

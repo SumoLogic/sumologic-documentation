@@ -9,13 +9,15 @@ The `in` operator functionality can be used in a metrics query selector as short
 
 ## Syntax
 
-`selectors dimension = (value1, value2, value3, …)| metric query `
+```sql
+<selectors> <field>=(<value>[, <value>, …])
+```
 
 Where:
 
-* `selectors` is one or more metadata key-value pairs or keywords that scope your query.
-* `dimension` is the dimension (field) you want to match.
-`value1`, `value2`, `value3`, and so on are values of dimension that you want to limit your query to.
+* `<selectors>` is one or more metadata key-value pairs or keywords that scope your query.
+* `<field>` is the field (dimension) you want to match.
+* `<value>` is the value of dimension that you want to limit your query to.
 
 
 ## Example
