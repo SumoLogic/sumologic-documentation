@@ -31,8 +31,8 @@ The API server is the front door to Kubernetes. Any changes you make in the envi
 * Requests per minute (RPM)
 * Threshold issues with etcd
 
-#### ectd
-The ectd of the control plane is a value store that Kubernetes uses this for storing all of the desired states for the cluster. Changes in the cluster are compared to the desired state to determine the necessary response. For ectd, you should monitor the following:
+#### etcd
+The etcd of the control plane is a value store that Kubernetes uses this for storing all of the desired states for the cluster. Changes in the cluster are compared to the desired state to determine the necessary response. For etcd, you should monitor the following:
 * Leader changes
 * Quorum - if quorum is lost, etcd falls into a read-only state and you can't make changes to the API or get new state coming back from your cluster
 * Disk space - if you lose your backup for etcd you may lose all the state for the entire cluster

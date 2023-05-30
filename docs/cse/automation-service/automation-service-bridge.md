@@ -1,8 +1,8 @@
 ---
 id: automation-service-bridge
-title: Bridge
-sidebar_label: Bridge
-description: Learn how to install a bridge to allow running custom actions or integrations in an on-premise environment.   
+title: Automation Service Bridge
+sidebar_label: Automation Service Bridge
+description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,10 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 {@import ../../reuse/automation-service-la-note.md}
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
-
-<!-- github-comment
-Write. The content below was copied from the doc accessed from the ? menu option.
--->
 
 ## Requirements 
 
@@ -56,6 +52,8 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
    ```
    systemctl enable docker
    ```
+
+### Using a proxy   
 1. If docker has to use a proxy to pull images, follow the below instructions:
    ```
    mkdir -p /etc/systemd/system/docker.service.d
@@ -85,7 +83,14 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### Ubuntu
 
-1. Download the `automation-bridge-X.X.deb` and copy it on the bridge virtual machine.
+1. Access the Automation Service:
+   1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
+   1. Under **Integrations**, select **Automation**.
+   1. At the top of the screen, click **Manage Playbooks**.
+1. Click **?** in the upper-right.
+1. In the **Automation Bridge** box, click **UBUNTU**.
+1. Click **Download** to download the `automation-bridge-X.X.deb` file.
+1. Copy the file to the bridge virtual machine.
 1. To install the package run from ssh:
    ```
    sudo dpkg -i automation-bridge-X.X.deb
@@ -93,25 +98,34 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. Download the `automation-bridge-X.X.rpm` and copy it on the bridge virtual machine.
+1. Access the Automation Service:
+   1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
+   1. Under **Integrations**, select **Automation**.
+   1. At the top of the screen, click **Manage Playbooks**.
+1. Click **?** in the upper-right.
+1. In the **Automation Bridge** box, click **CENTOS/REDHAT**.
+1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
+1. Copy the file to the bridge virtual machine.
 1. To install the package run from ssh:
    ```
    sudo yum install automation-bridge-X.X.rpm
    ```
+
+### Installation configuration
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
    * `1SOAR_URL1`
    * `1SOAR_TOKEN1`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
-And you can set this optional parameter: `ALIAS`
+And you can set this optional parameter (do not include spaces): `ALIAS`
 
 An example of a configuration file would be:
 ```
 {
-"SOAR_URL": "https://
-"SOAR_TOKEN": "
-"SIEM_URL":"https://
-"ALIAS": "
+   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
+   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
+   "SIEM_URL":"https://YOUR_CSE_URL/sec",
+   "ALIAS":"YOUR_ALIAS_NO_SPACES"
 }
 ```
 
@@ -144,6 +158,10 @@ If you are not using the SIEM:
    systemctl restart automation-bridge
    ```
 :::
+
+### Configuring the automation bridge for high availability
+
+You may elect to deploy and register multiple bridges to your CSE tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 

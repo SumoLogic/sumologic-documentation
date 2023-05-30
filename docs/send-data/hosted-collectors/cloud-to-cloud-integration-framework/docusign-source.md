@@ -17,7 +17,7 @@ The DocuSign provides a secure endpoint to receive customer event data from the
 
 To collect event data from the DocuSign Monitor, you must meet the following criteria:
 * **Administrator access to an organization**. To call the DocuSign Monitor endpoint, you must impersonate a user with administrator access to your organization.
-   * Your organization must have access to DocuSign Monitor to call the endpoint.
+* **Enable DocuSign Monitor**. [Enable DocuSign Monitor](https://developers.docusign.com/docs/monitor-api/how-to/enable-monitor/) for your organization to call the endpoint.
 * **Integration Key**. An integration key identifies your integration and links to its configuration values. [Create an integration key](https://developers.docusign.com/platform/configure-app/#how-to-get-an-integration-key)
 * **Redirect Uri**. The redirect URI is the URI (URL) to which DocuSign will redirect the browser after authentication. [Set a redirect URI](https://developers.docusign.com/platform/configure-app/#how-to-set-a-redirect-uri)
 * **RSA Key Pair**. [Add the RSA key pair](https://developers.docusign.com/platform/configure-app/#add-the-rsa-key-pair)
@@ -26,6 +26,14 @@ To collect event data from the DocuSign Monitor, you must meet the following cri
 ## Data Source
 
 The DocuSign API integration retrieves events data every 5 minutes.
+
+## Metadata Fields
+
+Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
+
+| Field Name | Value |
+| :--- | :--- |
+| _siemparser | /Parsers/System/DocuSign/DocuSign Monitor |
 
 ## Setup and Configuration
 
@@ -45,7 +53,7 @@ You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-
 
 You must first create an app to get integration key and configure RSA Key Pair and Redirect URI. This key is required to get access token which will be used to authenticate DocuSign API. To create an app follow the steps below:
 
-1. Log in to your **DocuSign** account.
+1. Sign in to your **DocuSign** account.
 2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
 3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="400" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="400" />
@@ -64,7 +72,6 @@ You must first create an app to get integration key and configure RSA Key Pair a
   You'll need a redirect URI while requesting [application consent](#app-consent).
   :::
 10. Click **SAVE** to finish new app configuration.
-
 
 ### App Consent
 

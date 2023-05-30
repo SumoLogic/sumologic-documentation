@@ -104,7 +104,7 @@ To configure a Duo Source:
 
 1. **Supported APIs to collect**. Select one or more of the available APIs, **Events** and **Users**.
 
-1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 
 1. When you are finished configuring the Source, click **Submit**.
 

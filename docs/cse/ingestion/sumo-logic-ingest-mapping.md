@@ -11,6 +11,35 @@ This topic has instructions for creating a CSE ingest mapping for a data source.
 The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [CSE Ingestion Best Practices](cse-ingestion-best-practices.md).
 :::
 
+Watch this micro lesson to learn more about ingest mapping for Cloud SIEM:
+
+<Iframe url="https://www.youtube.com/embed/luPl_IB9b8A?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+Watch this micro lesson to learn about forwarding ingested data to Cloud SIEM:
+
+<Iframe url="https://www.youtube.com/embed/XCcu-YU9B5U?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+
 ## Before you start
 
 Before you create ingest mapping for your messages, you need to determine the information described in the following subsections.
