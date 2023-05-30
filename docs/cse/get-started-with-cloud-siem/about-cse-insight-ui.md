@@ -5,6 +5,8 @@ sidebar_label: CSE Insight UI
 description: Learn about the contents of the Insights UI in CSE.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic describes the CSE UI for working with Insights. 
 
 ## Insights list page
@@ -76,23 +78,23 @@ This section describes the **Insight > Details** page.
 
 The left pane of the **Insight > Details** page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the **Details** pane is defined below.
 
-![insight](/img/cse/insight-details.png)
+<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" width="300"/>
 
 1. **Actions.** The dropdown lists Insight Actions defined in your environment.
-1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
-1. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
-1. **Status.** Current status of the Insight.
-1. **Assignee and Assign to me.** Shows the current assignee and allows you to assign yourself the Insight.
-1. **Entity.** The Entity the Insight fired on.
-1. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
-1. **Global Confidence.** The Global Confidence score for the Insight, if available.
-1. **Signal Data.** The number of Signals in the Insight.
-1. **Event Time.** The event time for the of the last Signal in the Insight.
-1. **Dwell Time.** The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated.
-1. **Insight Created.** When the Insight was created.
-1. **Tags and Create a Tag.** Displays any Tags that have already been assigned to the Insight, and a field for adding a tag.
-1. **Comments.** Displays any comments that have been made on the Insight, and a field for adding a comment.
-1. **Show Comments/History.** The controls allow you to switch between viewing comments, and viewing the Insight history, for example, when a tag was assigned to the Insight.
+2. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
+3. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
+4. **Status.** Current status of the Insight.
+5. **Assignee and Assign to me.** Shows the current assignee and allows you to assign yourself the Insight.
+6. **Entity.** The Entity the Insight fired on.
+7. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
+8. **Global Confidence.** The Global Confidence score for the Insight, if available.
+9. **Signal Data.** The number of Signals in the Insight.
+10. **Event Time.** The event time for the of the last Signal in the Insight.
+11. **Dwell Time.** The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated.
+12. **Insight Created.** When the Insight was created.
+13. **Tags and Create a Tag.** Displays any Tags that have already been assigned to the Insight, and a field for adding a tag.
+14. **Comments.** Displays any comments that have been made on the Insight, and a field for adding a comment.
+15. **Show Comments/History.** The controls allow you to switch between viewing comments, and viewing the Insight history, for example, when a tag was assigned to the Insight.
 
 ### Signal visualization area
 

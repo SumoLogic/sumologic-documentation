@@ -36,7 +36,7 @@ Each node in the graph represents a single Entity. The graph also displays the r
 
 The graph also includes a number of controls for zoom, full screen mode, filtering by Entity type, and adjusting the time frame for relationship detection. 
 
-For more information about how to use the Entity Relationship Graph, see the [online documentation](https://help.sumologic.com/docs/cse/records-signals-entities-insights/about-cse-insight-ui/#about-the-entities-tab-graph-view). You will also see an introduction to the feature the first time you visit an Insight details page.
+For more information about how to use the Entity Relationship Graph, see the [online documentation](https://help.sumologic.com/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#about-the-entities-tab-graph-view). You will also see an introduction to the feature the first time you visit an Insight details page.
 
 ### Minor Changes and Enhancements
 
