@@ -47,4 +47,16 @@ In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (da
       <p>Learn more about effectively monitoring your Kubernetes environment architecture with Sumo Logic.</p>
       </div>
     </div>
+    <div className="box smallbox7 card">
+      <div className="container">
+      <a href="/docs/metrics/kubernetes-metrics"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes Metrics</h4></a>
+      <p>Learn which Kubernetes metrics are collected when you deploy our [sumologic-kubernetes-collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).</p>
+      </div>
+    </div>
+    <div className="box smallbox8 card">
+      <div className="container">
+      <a href="/docs/observability/kubernetes/troubleshoot-with-explore"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Troubleshooting with Explore</h4></a>
+      <p>Explore navigation allows you to quickly locate an object in your physical K8s stack that needs to be debugged.</p>
+      </div>
+    </div>
   </div>

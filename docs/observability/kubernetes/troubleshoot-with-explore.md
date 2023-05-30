@@ -1,6 +1,6 @@
 ---
 id: troubleshoot-with-explore
-title: Troubleshoot with Explore
+title: Troubleshoot Kubernetes with Explore
 sidebar_label: Troubleshooting
 description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
 ---
