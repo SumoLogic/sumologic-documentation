@@ -395,19 +395,19 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Comment on Insights
    </td>
-   <td>Add comments to <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
+   <td>Add comments to <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Create Insights
    </td>
-   <td>Create <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
+   <td>Create <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Delete Insights
    </td>
-   <td>Delete <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
+   <td>Delete <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
@@ -419,7 +419,7 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Manage Insight Assignee
    </td>
-   <td>Change the user that is assigned to an <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
+   <td>Change the user that is assigned to an <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
@@ -431,13 +431,13 @@ Cloud SIEM Enterprise (CSE) capabilities only appear in the Roles UI if CSE has 
   <tr>
    <td>Manage Insight Status
    </td>
-   <td>Change the status of an <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
+   <td>Change the status of an <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
    <td>Manage Insight Tags
    </td>
-   <td>Add and delete tags assigned to <a href="/docs/cse/records-signals-entities-insights/about-cse-insight-ui">Insights</a>.
+   <td>Add and delete tags assigned to <a href="/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui">Insights</a>.
    </td>
   </tr>
   <tr>
