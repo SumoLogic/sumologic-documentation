@@ -274,6 +274,8 @@ Sumo supports several methods for collecting logs from Amazon CloudWatch. You ca
    - Add a **region** field and assign it the value of the respective AWS region where the RDS exists.
    - Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
 
+   <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
+
 ### Field in Field Schema
 
 Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `dbidentifier` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
