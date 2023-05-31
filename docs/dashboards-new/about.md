@@ -37,21 +37,27 @@ Dashboards and Dashboard (New).
 
 | Feature | Classic |Dashboard (New)|
 | :-- | :-- | :-- |
-| Filtering a Dashboard | Filters | Variables |
-| Adding Queries to Dashboards | Add a Panel from Search or Metrics | Add a panel from Search or Metrics<br/>Ability to add panels inline through Add a Panel button |
-| Log Visualizations | Area Bar Box Plot<br/>Bubble is not supported<br/>Column<br/>Honeycomb is not supported<br/>Line<br/>Map - Cluster Map<br/>Pie<br/>Sankey Diagram<br/>Scatter is not supported<br/>Single Value<br/>Table | Area<br/>Bar<br/>Bubble<br/>Column<br/>Honeycomb<br/>Line<br/>Map - Heat Map/Cluster Map<br/>Pie<br/>Scatter<br/>Single Value<br/>Table |
-| Metric Visualizations | Area<br/>Line<br/>Single Value | Area<br/>Bar<br/>Column<br/>Line<br/>Pie<br/>Single Value<br/>Table |
-| Real Time Dashboarding | Live Mode | Supported via Auto Refresh |
-| Dashboards as Wall Monitors | Public Dashboards<br/>Whitelisting<br/>Dashboard Pop-Out | Not supported |
-| Dashboard Sharing | Share with variables and time range preserved | Supported without variables and time range |
-| Dashboard Content Item Sharing | Supported | Supported |
-| Run As Creator / Data Access Level Control | Supported | Not supported |
-| Dark Theme | Supported | Supported |
-| Configured Dashboard Linking | Supported | Supported |
-| Recommended Dashboards & Logs Drilldowns | Not supported | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. |
+| Filtering a Dashboard | Filters | [Template Variable Based Filters](/docs/dashboards-new/filter-template-variables/) with greater control on filter values, data type, and acceptable input. |
+| Adding Queries to Dashboards | Add a Panel from Search or Metrics | Add a panel from Search or Metrics<br/>Ability to [add panels inline](/docs/dashboards-new/filter-template-variables/) through Add a Panel button |
+| Log Visualizations | Area Bar Box Plot<br/>Bubble is not supported<br/>Column<br/>Honeycomb is not supported<br/>Line<br/>Map - Cluster Map<br/>Pie<br/>Sankey Diagram<br/>Scatter is not supported<br/>Single Value<br/>Table | [Area](/docs/dashboards-new/panels/area-charts/)<br/>[Bar](/docs/dashboards-new/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards-new/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards-new/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards-new/panels/map-charts/)<br/>[Column](/docs/dashboards-new/panels/column-charts/)<br/>[Combo](/docs/dashboards-new/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards-new/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards-new/panels/line-charts/)<br/>[Pie](/docs/dashboards-new/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards-new/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards-new/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards-new/panels/single-value-charts/)<br/>[Table](/docs/dashboards-new/panels/table-charts/) |
+| Metric Visualizations | Area<br/>Line<br/>Single Value |  [Area](/docs/dashboards-new/panels/area-charts/)<br/>[Bar](/docs/dashboards-new/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards-new/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards-new/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards-new/panels/map-charts/)<br/>[Column](/docs/dashboards-new/panels/column-charts/)<br/>[Combo](/docs/dashboards-new/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards-new/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards-new/panels/line-charts/)<br/>[Pie](/docs/dashboards-new/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards-new/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards-new/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards-new/panels/single-value-charts/)<br/>[Table](/docs/dashboards-new/panels/table-charts/) |
+| Text Panel | Supported | [Supported](/docs/dashboards-new/panels/markdown-syntax/) |
+| Real Time Dashboarding | Live Mode | [Auto Refresh](/docs/dashboards-new/about/#auto-refresh) |
+| Dashboards as Wall Monitors | Public Dashboards<br/>Whitelisting<br/>Dashboard Pop-Out | Public Dashboards<br/>Whitelisting |
+| Dashboard Sharing with Variables and Time Range preserved | Supported | [Supported](/docs/dashboards-new/share-dashboard-new/) |
+| Dashboard Content Item Sharing | Supported | [Supported](/docs/dashboards-new/share-dashboard-new/#sharing-a-dashboard-within-your-organization) |
+| Run As Creator / Data Access Level Control | Supported | Supported |
+| Dark Theme | Supported | [Supported](/docs/dashboards-new/about/#dark-theme) |
+| Configured Dashboard Linking | Supported | [Supported](/docs/dashboards-new/link-dashboards/) |
+| Recommended Dashboards & Logs Drilldowns | Not supported | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts.See [documentation](/docs/dashboards-new/drill-down-to-discover-root-causes/) for more details.|
 | Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards-new/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
-| Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to modify a chart. |
-| Colors by Value Range | Supported | Not supported |
+| Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards-new/panels/modify-chart/). |
+| Colors by Value Range | Supported | Supported |
+| Export to PDF/PNG/JSON File | Not supported | [Supported](/docs/dashboards-new/export-dashboard-new/) |
+| Scheduled Dashboard Report | Not supported | [Supported](/docs/dashboards-new/scheduled-report/) |
+| Link Dashboard to Explore | Not supported | [Supported](/docs/dashboards-new/link-dashboards/#link-a-dashboard-new-to-explore) |
+| Locate Deviations in a Time Series | Not supported | [Supported](/docs/dashboards-new/locate-deviations-time-series/) |
+| Longer Time Range Queries | Not supported | [Supported](/docs/dashboards-new/set-custom-time-ranges/) |
 
 ## Restricted Operators in Dashboard (New)
 
