@@ -187,6 +187,3 @@ In this section, we'll introduce the following concepts:
  </div>
 </div>
 
-
-In this section, we'll introduce the following concepts:
-
