@@ -102,7 +102,7 @@ By writing inclusively and using culturally neutral language, our words resonate
 
 ## Doc structure summary
 
-* [Frontmatter (metadata)](#metadata-frontmatter) goes at the top
+* [Frontmatter (metadata)](#metadata-frontmatter) goes at the top.
 * Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
 * Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
 * Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
@@ -675,6 +675,13 @@ You can use a link to a file embedding the entire file, or embed a range of code
 1. Copy the below code snippet and paste it where you want your image to appear.
    ```
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
+   ```
+   Or
+
+   Use the following code to add a border to the image.
+
+  ```
+   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid black'}} width="insert-pixel-number" /> 
    ```
 1. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
