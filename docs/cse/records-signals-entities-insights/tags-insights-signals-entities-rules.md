@@ -5,6 +5,8 @@ sidebar_label: Using Tags
 description: Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## What are tags?
 
 Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag.
@@ -52,9 +54,7 @@ The screenshot below shows an Entity to which a schema tag is attached.
 The actions menu for a tag allows you to:
 
 * Open an URL, if the tag is a schema tag, and an URL is configured for the selected tag value.
-* Copy the raw tag to your clipboard.
-
-    ![tag-action-menu.png](/img/cse/tag-action-menu.png)
+* Copy the raw tag to your clipboard.<br/><img src={useBaseUrl('img/cse/tag-action-menu.png')} alt="Tag actions" width="350"/>
 
 ## Find the tagging UI
 
@@ -66,18 +66,14 @@ difference is where you do the tagging. 
 1. Select **Rules** from the **Content** menu.
 1. Navigate to a custom rule.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the **Rule Editor**.
-1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
-
-![tag-a-rule.png](/img/cse/tag-a-rule.png)
+1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag). <br/><img src={useBaseUrl('img/cse/tag-a-rule.png')} alt="Tag a rule" width="400"/>
 
 ### UI for tagging an Entity
 
 1. Click the **Entities** tab at the top of the CSE UI.
 1. Navigate to the Entity to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
-1. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).
-
-![tag-an-entity.png](/img/cse/tag-an-entity.png)
+2. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-entity.png')} alt="Tag an Entity" width="350"/>
 
 ### UI for tagging an CSE-generated Insight
 
@@ -86,18 +82,14 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. Click the **Insight** tab at the top of the CSE UI.
 1. Navigate to the Insight to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
-1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
-
-![tag-an-insight.png](/img/cse/tag-an-insight.png)
+1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-insight.png')} alt="Tag an Insight" width="350"/>
 
 ### UI for tagging a custom Insight
 
 1. Select **Custom Insights** from the Content menu.
 1. Navigate to a custom Insight.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the Insight Editor.
-1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
-
-![custom-insight.png](/img/cse/custom-insight.png)
+1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a Custom Insight" width="350"/>
 
 ## Apply a schema key tag
 
