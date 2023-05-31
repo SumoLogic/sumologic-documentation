@@ -213,7 +213,7 @@ A rule tuning expression is an AND statement that you add to an existing rule. I
 
 ### Custom rules
 
-Adding a rule-tuning expression to an existing rule is one of the easiest and most common ways to customize your rules. But sometimes you need to [write a new rule from scratch](/docs/cse/rules/before-writing-custom-rule/). You might do this if your system has a source that isn’t covered by the default rules, or if you’re looking for a threat that isn’t covered by the default rules.
+Adding a rule tuning expression to an existing rule is one of the easiest and most common ways to customize your rules. But sometimes you need to [write a new rule from scratch](/docs/cse/rules/before-writing-custom-rule/). You might do this if your system has a source that isn’t covered by the default rules, or if you’re looking for a threat that isn’t covered by the default rules.
 
 See [Rule types](/docs/cse/rules/about-cse-rules#rule-types) for the types of rules you can create.
 
