@@ -102,7 +102,8 @@ module.exports = {
               ]
             },
             'send-data/opentelemetry-collector/performance-benchmarks',
-            'send-data/opentelemetry-collector/troubleshooting-faq',
+            'send-data/opentelemetry-collector/troubleshooting',
+            'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
           ]
         },
@@ -1708,8 +1709,8 @@ module.exports = {
             'observability/kubernetes/quickstart',
             'observability/kubernetes/collection-setup',
             'observability/kubernetes/apps',
-            'observability/kubernetes/alerts',
             'observability/kubernetes/monitoring',
+            'observability/kubernetes/alerts',
             'metrics/kubernetes-metrics',
             'observability/kubernetes/troubleshoot-with-explore',
           ],

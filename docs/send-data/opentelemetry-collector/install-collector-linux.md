@@ -22,7 +22,7 @@ Minimal resource requirements are the following:
 
 Supported Versions
 
-* RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2, CentOS (7, 8) 
+* RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2, CentOS (7, 8)
 
 ## Install
 
@@ -383,6 +383,6 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-For information on troubleshooting and solutions, refer to [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq).
+For information on troubleshooting and solutions, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
 
 [service file]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/systemd/otelcol-sumo.service
