@@ -53,7 +53,7 @@ The **Insight Metrics** section, labeled **e**, displays the following metrics f
 * **Response**. The average response time, which is the average time between when an Insight was generated and when its status was set to **In Progress**, in seconds. 
 * **Remediation**. The average remediation time, which is the average time between when the Insight was created and when its status was set to **Closed**, in seconds. 
 
-If you use an [HTTP POST V2 Action](./docs/cse/administration/create-cse-actions/) to send Insights to the Sumo Logic platform or another system, the Insight metrics are included in the Insight JSON object. The fields are `timeToDetection`, `timeToResponse` , and `timeToRemediation`. 
+If you use an [HTTP POST V2 Action](/docs/cse/administration/create-cse-actions/) to send Insights to the Sumo Logic platform or another system, the Insight metrics are included in the Insight JSON object. The fields are `timeToDetection`, `timeToResponse` , and `timeToRemediation`. 
 
 ## Insights by Status 
 
