@@ -74,6 +74,7 @@ For more information, see [Filtering events](https://docs.microsoft.com/en-us/az
 It is assumed that:
 
 * The Azure service updates the blob (adding new blocks) in small chunks and has been tested with block blobs.
+* Any JSON file in the JSON lines format that is uploaded into a storage account will result in JSON objects being extracted and sent to Sumo.
 * Log files have a file extension of .csv, .json, .blob, or .log.
   * In .csv files, it is assumed the delimiting character is a comma (,). The .csv files are converted to JSON and sent to Sumo.
   * If the file is .json, the JSON objects are extracted and sent to Sumo.
