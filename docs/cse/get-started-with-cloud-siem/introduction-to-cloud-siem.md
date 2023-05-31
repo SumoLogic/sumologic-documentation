@@ -47,7 +47,7 @@ Your company collects and [ingests](/docs/cse/ingestion/) millions of log messag
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-data-collection.png')} alt="Data collection" width="600"/>
 
-As a data analyst, you should periodically examine the data that’s being ingested into Sumo Logic and Cloud SIEM. After you’ve been using Cloud SIEM for a while, you may want to fine-tune it to fit your organization’s needs. If you discover that you’re ingesting too much or too little data to do threat hunting, you can work with your admin to find that balance.
+As a data analyst, you should periodically examine the data that’s being ingested by Sumo Logic and Cloud SIEM. After you’ve been using Cloud SIEM for a while, you may want to fine-tune it to fit your organization’s needs. If you discover that you’re ingesting too much or too little data to do threat hunting, you can work with your admin to find that balance.
 
 So, what’s the balance between too much and too little data? It depends. Work with your admin to answer these questions:
 
