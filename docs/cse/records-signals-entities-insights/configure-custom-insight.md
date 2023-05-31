@@ -41,7 +41,7 @@ Custom Insight configuration to generate Insights for Signals fired by normalize
 
 When the conditions of a Custom Insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an Insight will be generated for each Entity involved. In other words, if each of the Signals in a Custom Insight configuration fired on a different Entity, an Insight will be created on each of those Entities. The generated Insights will include not only the Signals that it fired on, but also any related Signals. 
 
-This example Custom Insight configuration will generate an Insight as a result of the **McAfee ePO - Virus Outbreak** rule firing a Signal. 
+This example Custom Insight configuration will generate an Insight as a result of the **Mimecast - Message with Virus Detections from IP** rule firing a Signal. 
 
 ![custom-insight-example.png](/img/cse/custom-insight-example.png)  
  
