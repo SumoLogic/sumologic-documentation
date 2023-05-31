@@ -127,7 +127,7 @@ To configure a local file source for IIS Access Logs, do the following:
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
-    3. **File Path** (Required).C:\inetpub\Logs\LogFiles\W3SVC*\*.log
+    3. **File Path** (Required). C:\inetpub\Logs\LogFiles\W3SVC*\*.log
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Access.
