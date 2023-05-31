@@ -9,7 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 {@import ../../reuse/automation-service-la-note.md}
 
-Following are examples that show you how to create automations with the Automation Service. The examples build from simple to complex, illustrating how to perform a simple automation using an out-of-the-box integration, all the way up to creating a custom integration. Once you follow these examples, you'll have most of the skills you need to create your own automations. 
+Following are examples that show you how to create automations with the Automation Service. The examples build from simple to complex, illustrating how to perform a simple automation using an out-of-the-box integration, all the way up to creating a custom integration. These examples illustrate many of the tasks you’ll perform on a regular basis when you create your own automations. 
+ 
 
 ## Simple example: Configure an enrichment
 
@@ -265,4 +266,118 @@ The preceding example shows how to use a custom integration to add enrichment to
 
 The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-entity-enrichment.png')} alt="Custom playbook for Entity enrichment" width="700"/>
  
+## Advanced example: Build a complex playbook
 
+The following example pulls together elements of the [Simple example](#simple-example-configure-an-enrichment) and [Intermediate example](#intermediate-example-configure-a-notification) above. The resulting playbook runs an enrichment using VirusTotal, performs a Sumo Logic search, and sends an email notification. 
+
+1. Edit the VirusTotal OIF resource:
+   1. Click the **Configuration** button (gear icon) at the top of the UI.
+   1. Under **Integrations**, select **Automation**.
+   1. From the Automation screen, click **Manage Playbooks**.
+   1. Click **Integrations** in the navigation menu.
+   1. Select **VirusTotal OIF**.
+   1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-resource-edit-button.png')} alt="Resource edit button" width="500"/>
+   1. In the **Edit resource** dialog, enter the **API URL**: `https://www.virustotal.com`.
+   1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key. 
+   1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" width="400"/>
+1. Edit the Sumo Logic CIP resource:
+   1. Click the **Configuration** button (gear icon) at the top of the UI.
+   1. Under **Integrations**, select **Automation**.
+   1. From the Automation screen, click **Manage Playbooks**.
+   1. Click **Integrations** in the navigation menu.
+   1. Select **Sumo Logic CIP**.
+   1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" width="600"/>
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
+   1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
+   1. Enter the **Access ID** and the **Access Key**. 
+   1. Select your **Time Zone**.
+   1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-edit-sumo-logic-resource.png')} alt="Edit a resource" width="400"/>
+1. Create the playbook:
+   1. Click **Playbook** in the navigation menu.
+   1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
+   1. In the **New playbook** dialog, give your playbook a **Name**. 
+   1. For **Type**, enter **CSE**. 
+   1. Enter a **Description**.
+   1. Click **Create**.
+1. Add the “IP Reputation V3” action to the playbook:
+   1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
+   1. Click the **Edit** button (pencil icon) on the **START** node.
+   1. In the **Edit node** dialog, select **Insight** from the dropdown menu and click **UPDATE**.
+   1. Click the **Add Node** button (**+** icon) on the **START** node.
+   1. Select **Action**.
+   1. In the **Add node** dialog, for **Integration** select **VirusTotal OIF**.
+   1. Ensure that **Type** is **Enrichment**.
+   1. For **Action**, select **IP reputation V3**.
+   1. To the right of the **IPs** field, click the gear icon.
+   1. Click **Playbook inputs** and select **input.entity.value**.
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-ip-reputation-v3-add-node.png')} alt="Add node for IP Reputation V3" width="500"/> 
+1. Add an enrichment action to the playbook:
+   1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
+   1. Select **Action**.
+   1. In the **Add node** dialog, for **Integration**, select **CSE Tools**.
+   1. For **Type**, select **Notification**.
+   1. For **Action**, select **Add Insight Enrichment**.
+   1. To the right of the **Insight ID** field click the gear icon.
+   1. Click **Playbook inputs** and select **input.readableId**.
+   1. In the **Enrichment name** field enter **VirusTotal IP reputation**.
+   1. To the right of the **Raw JSON** field click the gear icon.
+   1. Click **IP reputation V3** and select **output.raw**.
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichmeent-node.png')} alt="Add node for Insight enrichment" width="500"/> 
+   1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. 
+1. Add a condition to validate IP addresses:
+    1. Click the **Add Node** button (**+** icon) on the **Add Insight Enrichment** node.
+    1. In the **Add node** dialog, click **Condition**. 
+    1. Just below **Condition #1**, click the top **Select a value** in the dialog. 
+    1. Under **Get value from a previous action**, select **IP Reputation V3**.
+    1. Select **output.total_reputation**. 
+    1. Click the **>** (is greater than) operator.
+    1. Click **Select a value**.
+    1. In the **Get value** field, type **1** and press Enter.
+    1. Click **Create**. <br/><img src={useBaseUrl('img/cse/automation-examples-complex-condition-1.png')} alt="Condition to validate IPs" width="500"/> 
+1. Add the "Search Sumo Logic" action to the playbook:
+    1. Click the **Edit** button (pencil icon) at the bottom of the playbook view.
+    1. Click the **Edit** button (pencil icon) on the **START** node.
+    1. In the **Edit node** dialog, select **Insight** from the dropdown menu and click **UPDATE**.
+    1. Click the **Add Node** button (**+** icon) on **START**.
+    1. In the **Add node** dialog, select **Action**.
+    1. For **Integration**, select **Sumo Logic CIP**.
+    1. Ensure that **Type** is **Enrichment**.
+    1. For **Action**, select **Search Sumo Logic**.
+    1. In the **Query** box enter the search query you want to make in the Sumo Logic core platform (for example,  `_sourceCategory=collection`). For help with queries, see [General Search Examples Cheat Sheet](https://help.sumologic.com/docs/search/search-cheat-sheets/general-search-examples/). 
+    1. For **Last Period** select **15 Minutes** (or any time period you want).
+    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-search-sumo-logic-node.png')} alt="Add Search Sumo Logic node" width="500"/>  
+    1. Click and hold on the right semicircle of the new Search Sumo Logic node and drag to the semicircle of the **END** node and release.
+1. Add the “Send Email” action to the playbook which will run if the Insight enrichment fails:
+    1. Click the **Add Node** button (**+** icon) on the new **Condition**.
+    1. In the **Add node** dialog, ensure **Failure** is selected under **Select an exit port**.
+    1. Select **Action**.
+    1. In the **Add node** dialog, for **Integration** select **Basic Tools**.
+    1. Ensure that **Type** is **Notification**.
+    1. For **Action** select **Send Email**. 
+    1. In **Recipients** enter your email address and press Enter.
+    1. For **Subject** type a subject line for the email (for example, “Playbook completed”). 
+    1. In **Plain text** content enter the text you want to appear in the body of the email (for example, “Playbook completed. Click ‘View Playbook’  to see details”).
+    1. Copy the plain text content into **HTML content** and add formatting if desired.
+    1. Click **Create**. <br/><img src={useBaseUrl('img/cse/automation-example-playbook-4-send-email.png')} alt="Send Email action" width="500"/>  
+    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
+1. Save the playbook:
+    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
+    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" width="800"/> 
+1. Create an automation to run the playbook:
+   1. Return to the main Cloud SIEM screen.
+   1. Click the **Configuration** button (gear icon) at the top of the UI.
+   1. Under **Integrations**, select **Automation**.
+   1. At the top of the automations screen, click **New Automation**. 
+   1. For **Playbook**, select the playbook you created in the previous steps.
+   1. For **Expects attributes for**, select **Insight**.
+   1. For **Executes when**, select **Manually Done**.
+   1. Click **Add to List**.
+1. Run the automation:
+   1. Select **Insights** from the main Cloud SIEM screen.
+   1. Select an Insight.
+   1. Click the Actions button.
+   1. Under **Insight Automation**, select the automation you created in the previous step (it will have the same name as the playbook). The playbook runs.
+   1. To see the results of the run, click the **Automations** tab at the top of the Insight.
+   1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**. 
+   1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**. 
+   1. Click a node to download results of that node’s run. 
