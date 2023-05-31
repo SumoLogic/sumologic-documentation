@@ -167,7 +167,7 @@ Sometimes you want to take your investigation even further. An in-depth threat i
 
 There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is Sumo Logic Search. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn’t detected by a rule in Cloud SIEM.
 
-Many entities in the Insights, Signals, and Entities pages have context actions (six dots icon). Hover next to certain entities and the six dot icon may appear, if context actions are available for that object. Use the context actions to insert the entity into an API call, do a DNS lookup, or many other tasks. Your admin can add custom context actions too.
+Many entities in the Insights, Signals, and Entities pages have context actions (six-dot icon). Hover next to certain entities and the six-dot icon may appear, if context actions are available for that object. Use the context actions to insert the entity into an API call, do a DNS lookup, or many other tasks. Your admin can add custom context actions too.
 
 You can also work with your admin to set up dashboards in Sumo Logic that track Insights and other activity in Cloud SIEM. This allows you to monitor what’s going on in Cloud SIEM without ever leaving Sumo Logic’s core platform.
 
