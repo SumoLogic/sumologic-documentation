@@ -143,15 +143,16 @@ This section provides instructions for setting up log and metric collection.
 
 ### Collect Amazon CloudWatch Logs
 
-Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
+Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch. You can choose either of them to collect logs.
+- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
+- **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
-* You can configure collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo-provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
-* To configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function.md).
-* While configuring the cloud Watch log source, following Field can be added in the source:
-    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-    * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
-    * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
+* While configuring the cloudwatch log source, following Fields can be added in the source:
+    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account" field.
+    * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
+    * Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
 
 ### Collect CloudTrail Lambda Data Events
 
@@ -310,7 +311,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     * Click **Add to Library**.
 
