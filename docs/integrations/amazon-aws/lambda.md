@@ -150,7 +150,7 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 * While configuring the cloudwatch log source, following Fields can be added in the source:
     * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
     * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
-    * Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
+    * Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
 
