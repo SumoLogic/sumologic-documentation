@@ -10,8 +10,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-As described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, CSE automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want CSE to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated
-whenever a particular set of Signals are fired in a particular order. 
+As described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, CSE automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want CSE to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated whenever a particular set of Signals are fired in a particular order. 
 
 This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes CSE to generate Insights based purely on one or more Signals being fired. 
 
