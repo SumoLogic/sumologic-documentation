@@ -440,6 +440,9 @@ Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** sec
 
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
+## Report
+
+<!-- Add new section here. -->
 
 ## User Settings
 
