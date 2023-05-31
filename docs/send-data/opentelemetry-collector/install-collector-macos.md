@@ -48,7 +48,7 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   sudo curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+   sudo curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
    ```
 * Or by first downloading the script, inspecting its contents for security, and then running it:
    ```bash
@@ -216,7 +216,7 @@ You can also use flag `-p` to remove all existing configurations as well:
 sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
-You can also run the following command to clear the cache. This will remove any cached data associated with the Collector. 
+You can also run the following command to clear the cache. This will remove any cached data associated with the Collector.
 
 ```bash
 sudo rm -rf /var/cache/otelcol-sumo
@@ -265,4 +265,4 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-For information on troubleshooting and solutions, refer to [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq).
+For information on troubleshooting and solutions, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
