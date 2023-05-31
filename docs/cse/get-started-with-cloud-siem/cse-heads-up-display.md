@@ -83,7 +83,7 @@ The card at the top of the pane provides key information about the latest new In
 
 * The Insight ID and name, separated by a dash character. The name is typically formed from the MITRE stage(s) associated with the Signals in the Insight. In the case of a custom Insight, the name is the one supplied when the Insight was configured.  
 * The Insight description, typically formed from the MITRE stage(s) associated with the Signals in the Insight. In the case of a custom Insight, the description is the one supplied when the Insight was configured.
-* The Entity the Insight fired on. You can click on the Entity to view its details. Note that there is a six-button context menu that has options for searching for the Entity in other Insights and in Signals and Records. It also has the built-in **Add to Match List** and **Add to Suppressed** **List** actions, along with any custom [Context Actions](/docs/cse/administration/create-cse-actions/) defined in your environment.
+* The Entity the Insight fired on. You can click on the Entity to view its details. Note that there is a six-button context menu that has options for searching for the Entity in other Insights and in Signals and Records. It also has the built-in **Add to Match List** and **Add to Suppressed List** actions, along with any custom [Context Actions](/docs/cse/administration/create-cse-actions/) defined in your environment.
 * The analyst assigned to the Insight, if the Insight has been assigned to one.
 * The number of Signals in the Insight.
 * Duration of the Insight. The time between the moment of first activity observation (when the oldest Signal in the Insight was fired) and when the Insight was created.  
