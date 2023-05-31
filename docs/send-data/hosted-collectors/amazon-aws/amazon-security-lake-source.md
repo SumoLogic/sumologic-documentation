@@ -7,16 +7,6 @@ description: Learn how to configure the Amazon Security Lake source setup using 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::note
-This feature is in Beta. To participate, contact your Sumo account executive.
-:::
-
 Amazon Security Lake source provides a web services interface that can be used to manage data from multiple AWS sources through a single interface for multiple AWS organizations.
 
 This makes AWS log setup relatively easy. In addition, the data available from various AWS services is in the OCSF format, making it simple to parse and correlate across different sources.
