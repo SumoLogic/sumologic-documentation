@@ -143,7 +143,7 @@ This section provides instructions for setting up log and metric collection.
 
 ### Collect Amazon CloudWatch Logs
 
-Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch. You can choose either of them to collect logs.
+Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch. You can choose any of them to collect logs.
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended).
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
