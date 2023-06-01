@@ -51,7 +51,7 @@ If for whatever reason you can't disable this, configure X-Ray context propagati
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                            |
-|----------------|------------------------------------------------------------------------------------------------|
+|:----------------|:------------------------------------------------------------------------------------------------|
 | af-south-1     | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1     |
 | ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1      |
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1 |
