@@ -1,14 +1,14 @@
 ---
-id: sql-server-windows-opentelemetry
-title: Microsoft SQL Server for Windows - OpenTelemetry Collector
-sidebar_label: Microsoft SQL Server for Windows - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Microsoft SQL Server (Windows).
+id: sql-server-opentelemetry
+title: Microsoft SQL Server - OpenTelemetry Collector
+sidebar_label: Microsoft SQL Server - OTel Collector
+description: Learn about the Sumo Logic OpenTelemetry App for Microsoft SQL Server.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The SQL Server app for Windows is a unifies logs and metrics app to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
+The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
 This App has been tested with following SQL Server versions:
 
