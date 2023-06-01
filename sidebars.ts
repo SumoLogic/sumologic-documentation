@@ -2246,6 +2246,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/administration/onboarding-checklist-cse',
           ],
         },
         {
@@ -2430,7 +2431,6 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
-            'cse/administration/onboarding-checklist-cse',
             'cse/administration/filter-search',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',

@@ -8,12 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide helps you get started using Cloud SIEM for threat hunting.
 
-:::tip
-If you are an administrator who wants to get started installing and configuring Cloud SIEM, see our [Onboarding Checklist for Cloud SIEM administrators](/docs/cse/administration/onboarding-checklist-cse/).
-:::
-
-In this section, we'll introduce the following concepts:
-
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
@@ -39,5 +33,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn about the contents of the Insights UI in CSE.</p>
   </div>
 </div>
-
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/cse/administration/onboarding-checklist-cse"><img src={useBaseUrl('img/icons/security/compliance.png')} alt="icon" width="40"/><h4>Onboarding Checklist for Cloud SIEM</h4></a>
+  <p>Get up and running quickly with Cloud SIEM Enterprise administrator tasks.</p>
+  </div>
+</div>
 </div>
