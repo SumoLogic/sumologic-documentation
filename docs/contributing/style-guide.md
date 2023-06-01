@@ -681,7 +681,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
    Use the following code to add a border to the image.
 
   ```
-   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid black'}} width="insert-pixel-number" /> 
+   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid black'}} width="<insert-pixel-number>" /> 
    ```
 1. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
