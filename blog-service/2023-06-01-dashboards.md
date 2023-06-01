@@ -9,7 +9,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-Our new **Data Access Level** feature enables you to control the data that your users can see in the shared dashboard and this is governed by the user's role search filter. Role search filter affect the data that the users can see based on how you configure the data access level.
+Our new **Data Access Level** feature enables you to control the data that your users see in the shared dashboard, which is governed by the user's role search filter. Based on how you configure the data access level, the role search filter affects the data that users can see.
 
 Here are some of the key features that this feature offers:
 
