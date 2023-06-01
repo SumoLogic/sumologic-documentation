@@ -244,7 +244,7 @@ If a folder is subscribed, then all nested monitors and folders are automaticall
 
 For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder.
 
-To cancel an inherited subscription, you need to remove subscription from a parent folder or move the monitor or folder into another location outside folder with direct subscription.
+To cancel an inherited subscription, you need to remove subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription.
 
 Click **Unsubscribe** to learn how to remove a subscription.
 
