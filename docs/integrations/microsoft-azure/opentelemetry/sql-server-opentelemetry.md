@@ -17,7 +17,7 @@ This App has been tested with following SQL Server versions:
 The diagram below illustrates the components of the SQL Server collection for each database server. OpenTelemetry collector runs on the same host as SQL Server, and uses the [SQL Server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/sqlserverreceiver) to obtain SQL Server metrics. This receiver grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. Because of this, it is a Windows only receiver. Thus metrics for SQL Server can be collected only if its in a windows machine. 
 SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Windows-Schematics.png' alt="Redis Logs dashboards"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Schematics.png' alt="Redis Logs dashboards"/>
 
 ## Fields creation in Sumo Logic for SQL Server
 
@@ -55,7 +55,7 @@ The Microsoft SQL Server App's queries and dashboards depend on logs from the SQ
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-windows-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-windows-YAML.png' alt="YAML" />
 
 ### Step 3: Send logs to Sumo
 
@@ -138,7 +138,7 @@ Use this dashboard to:
 - Keep track of Deadlock, Error, Backup failure, mirroring errors, and insufficient space issue counts.
 - Examine Login activities, failures, and failure reasons.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
 
 ### SQL Server - General Health
 
@@ -149,7 +149,7 @@ Use this dashboard to:
 - Monitor server events trends including SQL Server wait time.
 - Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
 
 ### SQL Server - Backup Restore Mirroring
 
@@ -161,7 +161,7 @@ The **SQL Server - Backup Restore Mirroring** dashboard provides information abo
 - Backup failures and reasons
 - Mirroring errors
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
 
 ### SQL Server - Operations
 
@@ -171,7 +171,7 @@ Use this dashboard to:
 - Get insights into configuration changes and updates to SQL server instances.
 - Monitor any errors and warnings.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Operations.png' alt="Operations"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Operations.png' alt="Operations"/>
 
 ### SQL Server - Transaction and Transaction Logs
 
@@ -182,7 +182,7 @@ Use this dashboard to:
 - Get info with respect to time for Transaction and write Transaction per sec.
 - Insight into Transaction log related metrics like flush rate, flush data rate, and flush wait rate along with Transaction log % usage.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
 
 ### SQL Server - Performance Counters
 
@@ -193,4 +193,4 @@ Use this dashboard to:
 - Get info for Page buffer hit %, page split rate.
 - Insight into Lock waits rate, Page read and write rate along with Patch request rate and SQL compilation and recompilation per sec.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Windows-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Performance-Counters" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Performance-Counters.png' alt="Performance-Counters" />
