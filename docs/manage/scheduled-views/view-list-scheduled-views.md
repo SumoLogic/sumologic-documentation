@@ -18,7 +18,7 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Retention Period**. The number of days configured as the retention period.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 bucket, this column contains the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination.  
 1. To view details of a scheduled view configuration, click the row that contains the view. <br/>![sched-view-more-options.png](/img/scheduled-views/sched-view-more-options.png)
-1. A pane pops up on the right side of the page with the following information:
+1. A pane pops up on the right side of the page with the following information.
     * **Name**. Displays the name of the scheduled view.
     * **Query**. The query that returns that data to be written to the scheduled view
     * **Search Mode**. Indicates the type of search mode, such as Manual Mode, Auto Parse Mode.
