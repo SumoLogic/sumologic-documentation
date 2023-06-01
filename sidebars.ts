@@ -677,6 +677,7 @@ module.exports = {
         'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
+        'manage/data-forwarding/view-list-data-forwarding',
       ]
     },
     {
