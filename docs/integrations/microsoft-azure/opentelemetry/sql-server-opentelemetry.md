@@ -147,7 +147,7 @@ The **SQL Server - General Health** dashboard gives you the overall health of SQ
 Use this dashboard to:
 - Analyze server events including stopped/up servers, and corresponding down/uptime.
 - Monitor server events trends including SQL Server wait time.
-- Get insight into app-domain and percentage disk utilization issues by SQL Server.
+- Get insight into app domain and percentage disk utilization issues by SQL Server.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
 
