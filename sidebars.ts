@@ -1839,7 +1839,7 @@ integrations: [
            collapsed: true,
            items: [
              'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
-             'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
+             'integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry',
            ],
          },
          'integrations/microsoft-azure/active-directory-json',
