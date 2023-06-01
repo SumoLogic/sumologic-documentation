@@ -79,7 +79,7 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                           |
-|----------------|-----------------------------------------------------------------------------------------------|
+|:----------------|:-----------------------------------------------------------------------------------------------|
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1 |
 | ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1 |
 | ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1     |
