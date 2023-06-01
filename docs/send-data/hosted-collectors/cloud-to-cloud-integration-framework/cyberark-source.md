@@ -87,7 +87,7 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. **Rate Limit C2C**. This option removes the request limitations imposed on the CyberArk C2C source, allowing it to make as many requests as possible. By default, the request limitations are set to 5 requests per minute for admin audit events and 1000 requests per 5 minutes for detailed raw and aggregated policy audit events. If you need to make more requests than the default limits allow, you can contact the CyberArk support team to request the limitations be removed.
 1. **Collect detailed raw events**. This option enables the CyberArk C2C Source to collect detailed raw events from the CyberArk EPM (Endpoint Privilege Manager).
 1. **Collect aggregated policy audit events**. This option enables the C2C Source to collect aggregated policy audit events from the CyberArk EPM (Endpoint Privilege Manager).
-1. **Collect policy audit raw events**. This option enables the C2C Source to collect policy audit raw events from the CyberArk EPM (Endpoint Privilege Manager).
+1. **Collect policy audit raw events**. This option enables the C2C Source to collect policy audit raw events from the CyberArk EPM.
 1. **Polling Interval**. The polling interval is the frequency at which the CyberArk C2C Source will check for updates from the CyberArk EPM (Endpoint Privilege Manager). This field is pre-filled with 600.
 1. When you are finished configuring the Source, click **Save**.
 
