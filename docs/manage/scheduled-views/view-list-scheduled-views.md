@@ -20,7 +20,7 @@ You must have a role that grants you the View Scheduled Views [role capability
 1. To view details of a scheduled view configuration, click the row that contains the view. <br/>![sched-view-more-options.png](/img/scheduled-views/sched-view-more-options.png)
 1. A pane pops up on the right side of the page with the following information.
     * **Name**. Displays the name of the scheduled view.
-    * **Query**. The query that returns that data to be written to the scheduled view
+    * **Query**. The query that returns the data for the scheduled view.
     * **Search Mode**. Indicates the type of search mode, such as Manual Mode or Auto Parse Mode.
     * **Progress**. Indicates how up-to-date the scheduled view is.
     * **Data scanned to fill this scheduled view**. Provides temporal information about the data scanned and indicates the total data scanned for the selected time to run the query. A higher spike in the graph indicates more data being scanned, which increases the cost or credit burn.
