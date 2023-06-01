@@ -7,8 +7,7 @@ description: Learn how to set Data Access Level for a Dashboard (New) to control
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
-In Sumo Logic, the data that a user can view is governed by the user's role search filter. When you run a query, the role search filter is silently prepended to the query. Role search filters are described on [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role.md).
+In Sumo Logic, the data that a user can view is governed by the user's role search filter. When you run a query, the role search filter is silently prepended to the query. Role search filters are described on [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role).
 
 Role search filters affect the data that a viewer can see in the shared dashboard, based on how you configure the data access level. The data access level governs whose role search filter will be applied to the dashboard when it is shared with other viewers.
 
