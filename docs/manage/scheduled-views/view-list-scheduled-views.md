@@ -23,7 +23,7 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Query**. The query that returns the data for the scheduled view.
     * **Search Mode**. Indicates the type of search mode, such as Manual Mode or Auto Parse Mode.
     * **Progress**. Indicates how up-to-date the scheduled view is.
-    * **Data scanned to fill this scheduled view**. Provides temporal information about the data scanned and indicates the total data scanned for the selected time to run the query. A higher spike in the graph indicates more data being scanned, which increases the cost or credit burn.
+    * **Data scanned to fill this scheduled view**.Provides trend information about the data scanned over time and displays the total data scanned for the selected time to run the query.
     * **Retention Period**. The period of time data in the scheduled view is retained.
     * **Start Date**. The date that data was first added to the scheduled view.
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
