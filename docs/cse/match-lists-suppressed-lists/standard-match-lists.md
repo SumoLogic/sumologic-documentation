@@ -96,6 +96,46 @@ The following CSE rules refer to this Match List:
 * PowerShell Remote Administration
 * SMB write to admin hidden share
 
+### admin_accounts
+
+**Target column:** Username
+
+**Description:** Accounts that are known to be involved with specific administrative or privileged activity.
+
+The following CSE rules refer to this Match List:
+
+* Windows - Excessive User Interactive Logons Across Multiple Hosts
+
+### admin_username
+
+**Target column:** Username
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity.
+
+The following CSE rules refer to this Match List:
+
+* Lateral Movement Using the Windows Hidden Admin Share
+
+### Alibaba_admin_users
+
+**Target column:** Username
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
+
+The following CSE rules refer to this Match List:
+
+* Alibaba ActionTrail KMS Activity
+
+### Alibaba_admin_ips
+
+**Target column:** IP Address
+
+**Description:** IPs that are known to be involved with specific administrative or privileged activity on the network.
+
+The following CSE rules refer to this Match List:
+
+* Alibaba ActionTrail KMS Activity
+
 ### auth_servers
 
 **Target column:** IP Address
@@ -105,6 +145,16 @@ The following CSE rules refer to this Match List:
 The following CSE rules refer to this Match List:
 
 * DNS Lookup of High Entropy Domain
+
+### authorized_third_party_domains
+
+**Target column:** Domain
+
+**Description:** Authorized third party domains.
+
+The following CSE rules refer to this Match List:
+
+* Salesforce LoginAs Event
 
 ### AWS_admin_ips
 
@@ -307,6 +357,23 @@ The following CSE rules refer to this Match List:
 * Possible DNS over TLS (DoT) Activity
 * Too many empty/refused DNS queries
 
+### domain_controllers
+
+**Target column:** IP Address
+
+**Description:** Domain controllers.
+
+The following CSE rules refer to this Match List:
+
+* Brute Force Attempt
+* Domain Brute Force Attempt
+* Domain Password Attack
+* First Seen Anonymous Logon Change Activity to Domain Controller
+* Interactive Logon to Domain Controller
+* Password Attack
+* Successful Brute Force
+* Suspicious DC Logon
+
 ### downgrade_krb5_etype_authorized_users
 
 **Target column:** Username
@@ -330,6 +397,32 @@ This should be populated with list of account names confirmed in `event_data['Su
 The following CSE rules refer to this Match List:
 
 none
+
+### dyndns_exception_domains
+
+**Target column:** Domain
+
+**Description:** Authorized domains.
+
+The following CSE rules refer to this Match List:
+
+* Connection to High Entropy Domain
+* DNS query for dynamic DNS provider
+* HTTP request for single character file name
+* Possible DNS Data Exfiltration
+
+### dyndns_exception_hostnames
+
+**Target column:** Hostname
+
+**Description:** Authorized hostnames.
+
+The following CSE rules refer to this Match List:
+
+* Connection to High Entropy Domain
+* DNS query for dynamic DNS provider
+* HTTP request for single character file name
+* Possible DNS Data Exfiltration
 
 ### ftp_servers
 
@@ -451,6 +544,16 @@ The following CSE rules refer to this Match List:
 * Web Request to IP Address
 * Web Request to Punycode Domain
 
+### honeypot_ip_addresses
+
+**Target column:** IP Address
+
+**Description:** List of IPs for Honeypots.
+
+The following CSE rules refer to this Match List:
+
+* Traffic to Honeypot IP
+
 ### http_servers
 
 **Target column:** IP Address
@@ -521,6 +624,16 @@ The following CSE rules refer to this Match List:
 * Internal Port Sweep
 * Port Scan - Internal
 * Traffic to Honeypot IP
+
+### Okta_Admins
+
+**Target column:** Username
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity.
+
+The following CSE rules refer to this Match List:
+
+* Okta Admin App Accessed
 
 ### palo_alto_sinkhole_ips
 
@@ -596,6 +709,17 @@ The following CSE rules refer to this Match List:
 The following CSE rules refer to this Match List:
 
 none
+
+### public_ips
+
+**Target column:** IP Address
+
+**Description:** Public Ip Addresses.
+
+The following CSE rules refer to this Match List:
+
+* Doublepulsar scan - likely not infected
+* Likely doublepulsar Infected
 
 ### salesforce_admin_ips
 
@@ -694,6 +818,19 @@ The following CSE rules refer to this Match List:
 
 none
 
+### ssl_exception_ips
+
+**Target column:** IP Address
+
+**Description:** SSL exception IPs.
+
+The following CSE rules refer to this Match List:
+
+* SSL Certificate Expired
+* SSL Certificate Expires Soon
+* SSL Certificate Not Valid Yet
+* SSL Invalid Server Cert
+
 ### telnet_servers
 
 **Target column:**     IP Address
@@ -719,6 +856,26 @@ The following CSE rules refer to this Match List:
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
 * Threat Intel - Device IP Matched Threat Intel URL
+
+### unauthorized_external_media
+
+**Target column:** Hostname
+
+**Description:** A list of devices that should not have external media installed on them.
+
+The following CSE rules refer to this Match List:
+
+* Unauthorized External Device Installation
+
+### verified_applications
+
+**Target column:** Application (Custom)
+
+**Description:** Reviewed and validated legitimate or non-threat applications.
+
+The following CSE rules refer to this Match List:
+
+* Lateral Movement Using the Windows Hidden Admin Share
 
 ### verified_domains
 
@@ -791,6 +948,16 @@ The following CSE rules refer to this Match List:
 * Threat Intel - Device IP Matched Threat Intel Domain Name
 * Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to IP Address
+
+### verified_uri_ips
+
+**Target column:** IP Address
+
+**Description:** Reviewed and validated legitimate or non-threat IP addresses.
+
+The following CSE rules refer to this Match List:
+
+* Executable Downloaded - Content-Type Mismatch
 
 ### verified_uri_paths
 
@@ -890,6 +1057,16 @@ The following CSE rules refer to this Match List:
 * Successful Brute Force
 * Suspicious HTTP User-Agent
 * Traffic to Honeypot IP
+
+### web_servers
+
+**Target column:** Hostname or IP Address
+
+**Description:** List of webserver hostnames or IPs.
+
+The following CSE rules refer to this Match List:
+
+* Web Servers Executing Suspicious Processes
 
 ### zoom_admins
 
