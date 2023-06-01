@@ -440,10 +440,6 @@ Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** sec
 
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
-## Report
-
-<!-- Add new section here. -->
-
 ## User Settings
 
 The user icon in the upper right-hand corner allows you to view their profile and settings, as well as log out of the platform.
