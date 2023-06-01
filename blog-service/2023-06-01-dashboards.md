@@ -16,4 +16,4 @@ Here are some of the key features that this feature offers:
 - Newly created dashboards run with the `Viewer's` role search filter with whom the dashboard is shared. 
 - Template variable substitutions will be quoted if they contain any non-alphanumeric characters to prevent the viewer from performing subqueries or widening the scope of a query.
 
-Check out our technical documentation [here](docs/dashboards-new/set-data-access-level) to learn more about data access level.
+Check out our technical documentation [here](/docs/dashboards-new/set-data-access-level) to learn more about data access level.
