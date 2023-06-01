@@ -29,8 +29,8 @@ The page talks about viewing information about the data forwarding configured fo
     <br/><img src={useBaseUrl('/img/data-forwarding/basic-info.png')} alt="basic-info" width="400"/>
 
     * **Details**
-         * **Data Sources**. Indicates the list of sources (Partition or Scheduled View) from which the log data is forwarded to an S3 bucket.
+        * **Data Sources**. Indicates the list of sources (Partition or Scheduled View) from which the log data is forwarded to an S3 bucket.
             * **Data forwarded**. Provides the breakdown information about the data forwarded and indicates the total data forwarded to the given S3 bucket for the selected time.
             * **Query/Routing Expression**. Indicates the query for scheduled views and routing expression for partitions for which the data is forwarded.
     
-     <br/><img src={useBaseUrl('/img/data-forwarding/details.png')} alt="details" width="400"/>
+    <br/><img src={useBaseUrl('/img/data-forwarding/details.png')} alt="details" width="400"/>
