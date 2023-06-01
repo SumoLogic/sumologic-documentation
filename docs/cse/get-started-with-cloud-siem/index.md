@@ -35,7 +35,7 @@ This guide helps you get started using Cloud SIEM for threat hunting.
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/cse/administration/onboarding-checklist-cse"><img src={useBaseUrl('img/icons/security/compliance.png')} alt="icon" width="40"/><h4>Onboarding Checklist for Cloud SIEM</h4></a>
+  <a href="/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse"><img src={useBaseUrl('img/icons/security/compliance.png')} alt="icon" width="40"/><h4>Onboarding Checklist for Cloud SIEM</h4></a>
   <p>Get up and running quickly with Cloud SIEM Enterprise administrator tasks.</p>
   </div>
 </div>
