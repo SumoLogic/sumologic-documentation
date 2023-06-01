@@ -99,12 +99,12 @@ When you mouse over an access key on the **Preferences** page, several controls 
 
 To enhance the security of your account, Sumo Logic will by default automatically deactivate any Access Keys that haven’t been used for over 30 days. Deactivating Access Keys that have gone unused ensures that forgotten keys cannot be later used to access your account. 
 
-An Administrator can adjust the limit to the number of days (between 1 and 365) an Access Key can go unused before being automatically deactivated. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability. 
+An administrator can adjust the limit to the number of days an Access Key can go unused before being automatically deactivated. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability. 
 
 To configure the Access Keys Deactivation policy:
 1. Go to **Administration > Security > Policies**.
-1. Locate the **Access Keys Deactivation** policy setting. 
-1. Enter a value from 1 to 365 in the **No. of Days** field.
+2. Locate the **Access Keys Deactivation** policy setting. 
+3. Select a value in the **No. of Days** field.
    <img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation" width="600"/>
 
 
