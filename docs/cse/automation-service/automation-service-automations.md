@@ -41,7 +41,7 @@ If an automation is set to run when an Insight is created or closed, it runs aut
 
 ### Run an automation manually on Insights
 
-Automations can be run manually from the **Actions** drop-down menu on [Insight details](/docs/cse/records-signals-entities-insights/about-cse-insight-ui#insight-details-page) pages:
+Automations can be run manually from the **Actions** drop-down menu on [Insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#insight-details-page) pages:
 
 <img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" width="200"/>
 

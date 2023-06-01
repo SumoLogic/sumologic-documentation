@@ -17,14 +17,14 @@ The Nginx Plus Ingress app is a unified logs and metrics app that helps you moni
 
 ## Log and Metrics Types
 
-The Sumo Logic App for Nginx Plus Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+The Sumo Logic app for Nginx Plus Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
 All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see [here](http://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-The Sumo Logic App for Nginx Plus Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller. For more details on Nginx Plus Ingress Metrics, see [here](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
+The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller. For more details on Nginx Plus Ingress Metrics, see [here](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```bash title="Access Log Example"
 {"timestamp":1621602688004,"log":"146.158.30.43 - - [21/May/2021:13:11:25 +0000] \"GET /nxp/demo-index.html HTTP/1.1\" 200 5099 \"https://example.com/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\" \"-\"","stream":"stdout","time":"2021-05-21T13:11:25.355302489Z"}
@@ -34,9 +34,9 @@ The Sumo Logic App for Nginx Plus Ingress assumes Prometheus format Metrics for 
 {"timestamp":1619792989032,"log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"","stream":"stderr","time":"2021-04-29T13:26:05.074748065Z"}
 ```
 
-### Sample Queries
+### Sample Query
 
-This sample Query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview** dashboard.
+This sample query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview** dashboard.
 
 ```
 Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}} _sourceCategory = *ingress*
@@ -51,10 +51,9 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 | sort _count
 ```
 
-
 ## Collecting Logs and Metrics for Nginx Plus Ingress
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress. This includes the following tasks:
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus Ingress. This includes the following tasks:
 
 In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
 
@@ -111,7 +110,6 @@ To install these alerts, you need to have the[ Manage Monitors](/docs/manage/use
 
 Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
-
 ### Method A: Importing a JSON file
 
 1. Download the[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
@@ -122,7 +120,6 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 1. Click **Import** to import monitors from the JSON above.
 
 The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](/docs/alerts/monitors#add-a-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
-
 
 ### Method B: Using a Terraform script
 
@@ -185,7 +182,7 @@ email_notifications = [
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-## Installing the Nginx Plus Ingress App
+## Installing the Nginx Plus Ingress app
 
 {@import ../../reuse/apps/app-install.md}
 
@@ -228,7 +225,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Logs-Timeline-Analysis.png')} alt="Nginx Plus Ingress" />
 
-
 ### Outlier Analysis
 
 The **Nginx Plus Ingress - Outlier Analysis** dashboard provides a high-level view of Nginx server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
@@ -262,7 +258,7 @@ Use this dashboard to:
 
 ### Visitor Access Types
 
-The **Nginx Plus Ingress - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
+The **Nginx Plus Ingress - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC, and Mac versions used.
 
 Use this dashboard to:
 * Understand which platform and browsers are used to gain access to your infrastructure.
@@ -371,7 +367,7 @@ Use this dashboard to:
 
 Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-**Sumo Logic provides the following out-of-the-box alerts**:
+Sumo Logic provides the following out-of-the-box alerts:
 
 <table>
   <tr>
