@@ -1,7 +1,7 @@
 ---
 id: apps
 title: Sumo Logic Apps for Kubernetes
-sidebar_label: Kubernetes Apps
+sidebar_label: Install Kubernetes Apps
 description: Learn about the Sumo Logic Kubernetes apps.
 ---
 

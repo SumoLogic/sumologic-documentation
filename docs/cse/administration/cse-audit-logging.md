@@ -71,7 +71,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Entity Criticality Config](../records-signals-entities-insights/entity-criticality.md) | `cseEntityCriticalityConfig` |
 | [Entity Domain Configuration](../schema/username-and-hostname-normalization.md)  | `cseEntityNormalization` |
 | Favorite Field | `cseFavoriteField` |
-| [Insight](../records-signals-entities-insights/about-cse-insight-ui.md) | `cseInsight` |
+| [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui) | `cseInsight` |
 | Inventory Entity Lookup Table | `cseInventoryEntityLookupTable` |
 | [Log Mapping](../schema/create-structured-log-mapping.md)  | `cseLogMapping` |
 | [Match List](../match-lists-suppressed-lists/create-match-list.md) | `cseMatchList` |
