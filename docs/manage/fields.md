@@ -16,8 +16,9 @@ The order of precedence for field assignment from highest to lowest is:
 1. Field Extraction Rule (FER)
 1. Amazon EC2 resource tags
 1. Amazon EC2 instance information
-1. Collector _or_ HTTP Header
+1. HTTP Header
 1. Source
+1. Collector
 
 So, if you have a field defined at the Collector or Source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 

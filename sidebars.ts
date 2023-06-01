@@ -677,6 +677,7 @@ module.exports = {
         'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
+        'manage/data-forwarding/view-list-data-forwarding',
       ]
     },
     {
@@ -904,6 +905,7 @@ module.exports = {
         'dashboards-new/scheduled-report',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/link-dashboards',
+        'dashboards-new/set-data-access-level',
         'dashboards-new/share-dashboard-new',
         'dashboards-new/filter-template-variables',
         {
