@@ -168,7 +168,7 @@ The **SQL Server - Backup Restore Mirroring** dashboard provides information abo
 The **SQL Server - Operations** displays recent server configuration changes, number and type of configuration updates, error and warnings, high severity error, and warning trends.
 
 Use this dashboard to:
-- Get insights into configuration changes and updates to SQL server instances.
+- Get insights into configuration changes and updates to SQL Server instances.
 - Monitor any errors and warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Operations.png' alt="Operations"/>
