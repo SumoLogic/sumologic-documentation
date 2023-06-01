@@ -1,14 +1,14 @@
 ---
 id: macos
-title: Install a Collector on MacOS
-description: Install or uninstall a Collector on a MacOS system.
+title: Install a Collector on macOS
+description: Install or uninstall a Collector on a macOS system.
 ---
 
-Follow the steps in this topic to install or uninstall a Collector on MacOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
+Follow the steps in this topic to install or uninstall a Collector on  macOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
 
 ## System Requirements
 
-* MacOS 10.X
+* macOS 10.X
 * Single core, 512MB RAM
 * 8GB disk space
 
@@ -32,7 +32,7 @@ Install the Collector using either of the following methods:
 
 After installing Collectors, you can configure Sources from Sumo Logic or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the Collector.
 
-If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](collector-installation-reference/binary-package-install-a-collector.md) topic for details.
+If necessary, you can use the binary package to install a Collector on macOS. See this [Collector FAQ](collector-installation-reference/binary-package-install-a-collector.md) topic for details.
 
 ### Install using the UI installer 
 

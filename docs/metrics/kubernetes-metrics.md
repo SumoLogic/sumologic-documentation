@@ -1,7 +1,6 @@
 ---
 id: kubernetes-metrics
 title: Kubernetes Metrics
-sidebar_label: Kubernetes Metrics
 description: This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in sumologic-kubernetes-collection deployment guide.
 ---
 

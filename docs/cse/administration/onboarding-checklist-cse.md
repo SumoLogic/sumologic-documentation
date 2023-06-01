@@ -1,18 +1,21 @@
 ---
 id: onboarding-checklist-cse
-title: Onboarding Checklist for Cloud SIEM
-sidebar_label: Onboarding Checklist for Cloud SIEM
+title: Onboarding Checklist for Cloud SIEM Administrators
 description: Onboarding tasks to get up and running with Cloud SIEM.
 keywords:
   - cloud siem
   - cse
   - onboarding
   - getting started
+  - installation
+  - install
+  - configuration
+  - configure
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides a high-level checklist of onboarding tasks and best practices for Cloud SIEM Enterprise (CSE) administrators. 
+This article provides a high-level checklist of Cloud SIEM installation and configuration tasks for Cloud SIEM administrators. 
 
 ## Onboard with Professional Services
 

@@ -7,7 +7,7 @@ sidebar_label: pct
 
 The pct operator calculates, at each timestamp, the nth percentile of values of the input series for each time interval. If grouping is specified, it calculates the specified percentile for each group.
 
-## pct syntax
+## Syntax
 
 ```sql
 pct(DOUBLE) [by FIELD [, FIELD, ...]]
@@ -15,7 +15,7 @@ pct(DOUBLE) [by FIELD [, FIELD, ...]]
 
 Where `DOUBLE` is floating point number between 0.0 and 100.0, both inclusive.
 
-## pct examples
+## Examples
 
 ### Return the 95th percentile of all input time series
 

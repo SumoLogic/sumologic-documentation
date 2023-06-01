@@ -7,7 +7,13 @@ sidebar_label: Intro to Sumo Logic
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/core-platform.png')} alt="icon" width="60"/>
+Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data.
+
+Visual displays of real-time data allow you to monitor the health, fitness, and security of your application and network, providing insights for troubleshooting and timely resolutions.
+
+<img src={useBaseUrl('img/get-started/sumo-overview.png')} alt="sumo-overview.png" />
+
+## Overview
 
 Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
@@ -29,7 +35,8 @@ Sumo Logic helps businesses build, run, and secure modern applications through f
 
 There are various factors to consider when implementing a Sumo Logic solution in your organization, based on the different collection strategies.
 
-Get to know about benefits through our video, "Benefits of Using Sumo Logic".
+:::sumo micro lesson
+Get to know more about the Benefits of Using Sumo Logic.
 
 <Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o"
         width="854px"
@@ -42,7 +49,7 @@ Get to know about benefits through our video, "Benefits of Using Sumo Logic".
         allowfullscreen
         />
 
-<br/>
+:::
 
 ## Sumo Logic Components
 
@@ -84,7 +91,7 @@ Get to know the Collection process through our video, "Data Collection Strategy"
 
 #### OpenTelemetry Collector (recommended)
 
-The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata from a [variety of sources](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/) to Sumo Logic. The collector uses encryption and compression to send data securely and efficiently and is fault-tolerant to network issues. 
+The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata from a [variety of sources](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/) to Sumo Logic. The collector uses encryption and compression to send data securely and efficiently and is fault-tolerant to network issues.
 
 #### Installed Collector
 

@@ -64,12 +64,7 @@ To share content from the Left-nav or the Library:
 
 Sumo provides a few ways to navigate your content based on what you want to view.
 
-| Icon | Tab Name | Definition |
-| :-- | :-- | :-- |
-| ![](/img/content-sharing/icon-recents.png) | Recents | Access recent content:<ul><li>Content you’ve recently accessed.</li><li>Content recently shared with you.</li></ul> |
-| ![](/img/content-sharing/icon-favorites.png) | Favorites | Content you’ve marked as favorite. |
-| ![](/img/content-sharing/icon-personal.png) | Personal | Content you manage. |
-| ![](/img/content-sharing/icon-library.png) | Library | List of all accessible content, including your creations and the content shared with you. |
+{@import ../../reuse/ui-elements.md}
 
 ## Available Permission Levels
 

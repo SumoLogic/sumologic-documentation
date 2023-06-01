@@ -14,15 +14,14 @@ import TabItem from '@theme/TabItem';
 The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
 
 ## Log Types and Metrics
-The Sumo Logic App for Apache assumes:
+The Sumo Logic app for Apache assumes:
 * The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#Apache-Metrics).
 
 * The **Apache - Overview** dashboard is based on both Apache logs and metrics.
 * Dashboards in the Metrics folder are based on Apache metrics alone.
 * Dashboards and searches in the Logs folder are based on Apache access and error logs
 
-
-### Sample Log Messages
+### Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -82,7 +81,7 @@ webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* o
 | limit 5
 ```
 
-### Apache App Searches
+### Apache app Searches
 The predefined searches in the Apache app are based on the Apache Access logs and Apache Error logs.
 
 #### Searches based on Apache Access logs
@@ -113,7 +112,7 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 
 ## Collecting Logs and Metrics for Apache
 
-This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Apache.
+This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Apache.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -294,7 +293,7 @@ We use the Telegraf Operator for Apache metrics collection and the Sumo Logic In
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="apache-non-k8s" />
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
+This section provides instructions for configuring metrics collection for the Sumo Logic app for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
 
 #### Configure Metrics Collection from a Apache Server
 
@@ -443,7 +442,6 @@ For error logs, following directives are to be noted:
 </TabItem>
 </Tabs>
 
-
 ## Installing Apache Monitors
 
 This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#Collecting-Logs-and-Metrics-for-Apache) page.
@@ -453,7 +451,6 @@ Sumo Logic has provided a predefined set of alerts, which can be imported and av
 For details about individual alerts, see [Apache Alerts](#apache-alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules).
 
 You can install monitors by importing a JSON file or using a Terraform script.
-
 
 ### Method A: Importing a JSON file
 
@@ -528,11 +525,9 @@ email_notifications = [
    2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
    3. Run **terraform apply**.
 
+## Installing the Apache app
 
-
-## Installing the Apache App
-
-Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and dashboards.
+Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic app for Apache to use the pre-configured Searches and dashboards.
 
 To install the app, do the following:
 1. Locate and select the app you need from the **App Catalog**.
@@ -540,11 +535,11 @@ To install the app, do the following:
 3. Click **Add Integration**.
 4. In **Setup Data** step you would see **Open Setup Doc** button with link to this document. Click **Next** to proceed.
 5. In the **Configure Apache** step, complete the following fields.
-   * **Apache Log Source**.  Choose **Enter a Custom Data Filter** and enter a custom filter. Examples:
+   * **Apache Log Source**. Choose **Enter a Custom Data Filter** and enter a custom filter. Examples:
      * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
      * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
    * Select location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-   * **Folder Name** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Folder Name** You can retain the existing name, or enter a name of your choice for the app.
 5. Click **Next**.
 
 For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
@@ -553,8 +548,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
-## Viewing Apache Dashboards
+## Viewing Apache dashboards
 
 This section provides descriptions of each of the app dashboards.
 
@@ -568,9 +562,9 @@ The **Apache - Overview** Dashboard provides an at-a-glance view of the activity
 
 Use this dashboard to:
 
-* Get an at-a-glance view of the state of all your Apache web servers
-* Identify the top URLs causing errors
-* Identify the top critical error messages
+* Get an at-a-glance view of the state of all your Apache web servers.
+* Identify the top URLs causing errors.
+* Identify the top critical error messages.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Overview.png')} alt="test" />
 
@@ -581,10 +575,10 @@ The **Apache - Error Log Analysis** dashboard provides a high-level view of erro
 
 Use this dashboard to:
 
-* Quickly identify critical errors affecting your Apache web servers
-* Analyze types and patterns of log messages in your Apache web servers
-* Identify clients causing the most errors
-* Monitor trends in error logs and identify outliers
+* Quickly identify critical errors affecting your Apache web servers.
+* Analyze types and patterns of log messages in your Apache web servers.
+* Identify clients causing the most errors.
+* Monitor trends in error logs and identify outliers.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Error-Log-Analysis.png')} alt="test" />
 
@@ -593,17 +587,16 @@ Use this dashboard to:
 The **Apache - Trends** dashboard provides trends around HTTP responses, server hits, visitor locations, traffic volume and distribution.
 
 Use this dashboard to:
-* Monitor trends and identify outliers
+* Monitor trends and identify outliers.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Overview.png')} alt="test" />
-
 
 ### Outlier Analysis
 
 The **Apache -  Outlier Analysis** dashboard helps you quickly identify outliers for key Apache metrics such bytes served, number of visitors, server errors, and client errors.
 
 Use this dashboard to:
-* Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed
+* Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Trends.png')} alt="test" />
 
@@ -614,7 +607,7 @@ The **Apache - Threat Intel** dashboard provides an at-a-glance view of incoming
 Dashboard panels show threat counts, geographic locations, actors, threat severity, URLS accessed.
 
 Use this dashboard to:
-* Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs
+* Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Threat_Analysis.png')} alt="test" />
 
@@ -623,7 +616,7 @@ Use this dashboard to:
 The **Apache - Visitor Locations** dashboard provides a high-level view of Apache visitor geographic locations both worldwide and in the United States.
 
 Use this dashboard to:
-* Get insights into geographic locations of your user base
+* Get insights into geographic locations of your user base.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Panel_filter.png')} alt="test" />
 
@@ -632,10 +625,9 @@ Use this dashboard to:
 The **Apache - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, device types, and operating systems.
 
 Use this dashboard to:
-* Understand which platform and browsers are being used to access your applications
+* Understand which platform and browsers are being used to access your applications.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Visitor_Access_Types.png')} alt="test" />
-
 
 ### Visitor Traffic Insight
 
@@ -651,7 +643,7 @@ Use this dashboard to:
 The **Apache - Web Server Operations** Dashboard provides an at-a-glance  view of the operations of your Apache web servers. Dashboard panels show information on bots, geographic locations, errors and URLs.
 
 Use this dashboard to:
-* Get insights into client locations, bots and response codes
+* Get insights into client locations, bots and response codes.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache_Web_Server_Operations.png')} alt="test" />
 
@@ -660,7 +652,7 @@ Use this dashboard to:
 The **Apache - Request State Analysis** dashboard shows trends around the state of incoming requests to your Apache web servers.
 
 Use this dashboard to:
-* Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed
+* Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Request-State-Analysis.png')} alt="test" />
 
@@ -670,19 +662,19 @@ Use this dashboard to:
 The **Apache - Server Resource Utilization** dashboard shows the CPU resource utilization and load across threads and CPU of your Apache web servers.
 
 Use this dashboard to:
-* Monitor CPU utilization and load on your Apache web servers
-* Monitor the number of worker and idle threads
+* Monitor CPU utilization and load on your Apache web servers.
+* Monitor the number of worker and idle threads.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Resource-Utilization.png')} alt="test" />
 
 
 ### Server Status
 
-The **Apache - Server Status** dashboard shows information related to the state of your Apache server and includes information such as requests and bytes served and latency. information on the number of requests served, time taken to serve the request, and bytes served.
+The **Apache - Server Status** dashboard shows information related to the state of your Apache server and includes information such as requests and bytes served and latency information on the number of requests served, time taken to serve the request, and bytes served.
 
 Use this dashboard to:
-* Monitor server uptime
-* Monitor web server performance
+* Monitor server uptime.
+* Monitor web server performance.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Server-Status.png')} alt="test" />
 
