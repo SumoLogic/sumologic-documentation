@@ -1,7 +1,7 @@
 ---
 id: view-list-scheduled-views
 title: View Information About Scheduled Views
-description: Learn how to view a list of scheduled views configured for your org, and to view the details of a scheduled view.
+description: Learn how to view a list of scheduled views configured for your organization and view the details of a scheduled view.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
