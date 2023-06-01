@@ -64,7 +64,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **S3 Bucket Policy Changes.** Shows the count of S3 Bucket Policy changes done by each user for the last 24 hours.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/CIS AWS benchmark-overview.png')} alt="CIS AWS Foundations Benchmark" />
+<img src={useBaseUrl('img/integrations/amazon-aws/CIS-AWS-Benchmark-Monitoring-Change-Control.png')} alt="CIS AWS Foundations Benchmark" />
 
 
 ### CIS AWS Foundations Benchmark App - Access and Authentication
@@ -85,4 +85,4 @@ This Access and Authentication Dashboard includes filters that you can use in In
 
 **Outlier - Failed Console Logins.** Identifies failed console logins outside of 3 standard deviations, for the last 24 hours.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/CIS AWS benchmark monitoring access auth dashboard.png')} alt="CIS AWS Foundations Benchmark" />
+<img src={useBaseUrl('img/integrations/amazon-aws/CIS-AWS-Benchmark-Monitoring-Access-and-Authentication.png')} alt="CIS AWS Foundations Benchmark" />

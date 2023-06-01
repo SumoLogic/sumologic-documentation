@@ -10,7 +10,7 @@ This section has instructions for collecting Corelight Zeek log messages and sen
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
 :::note
-The [CSE Network Sensor](../sensors/network-sensor-deployment-guide.md) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
+The [CSE Network Sensor](/docs/cse/sensors/network-sensor-deployment-guide/) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
 ::: 
 
 ## Step 1: Configure collection
