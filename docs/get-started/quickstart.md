@@ -8,7 +8,7 @@ tags: [get started, getting started]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="35"/>
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third-party applications, and so much more!
 
@@ -22,13 +22,7 @@ What you'll learn:
 
 ## Before you begin
 
-You'll need a Sumo Logic account to proceed. You can sign up for a free trial [here](/docs/get-started/sign-up).
-
-## Your Sumo Logic Journey
-
-Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data. Visual displays of up-to-date data allow you to monitor the health and fitness of your application and network, providing insights for troubleshooting and timely resolutions.
-
-Let's get started!
+You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
 ## Step 1: Get your data into Sumo
 
