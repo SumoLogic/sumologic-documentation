@@ -11,18 +11,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Internet Information Services (IIS) 10 app is a unified logs and metrics app that helps you monitor your IIS web servers' availability, performance, health, and resource utilization. Preconfigured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
-This App is tested with the following IIS versions:
+This app is tested with the following IIS versions:
 * Internet Information Services (Version 10.0.17763.1)
 * Internet Information Services (Version 8.5.9600.16384)
 
 :::note
-IIS App and integration are supported only on Windows.
+IIS app and integration are supported only on Windows.
 :::
 
+## Collecting Logs and Metrics for the IIS app
 
-## Collecting Logs and Metrics for the IIS App
-
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for IIS.
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for IIS.
 
 ### Configure Fields in Sumo Logic
 Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
@@ -31,7 +30,6 @@ Create the following Fields in Sumo Logic prior to configuring the collection. T
 * `webserver_system`
 * `webserver_farm`
 * `pod`
-
 
 ### Configure Collection for IIS
 Sumo Logic supports the collection of logs and metrics data from IIS server in standalone environments. The process to set up collection is done through the following steps:
@@ -56,7 +54,7 @@ Sumo Logic uses the Telegraf operator for IIS metric collection and the [Install
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for IIS running on a standalone environment for the Sumo Logic App for IIS.
+This section provides instructions for configuring log collection for IIS running on a standalone environment for the Sumo Logic app for IIS.
 
 1. **Log Types**
 
@@ -66,7 +64,7 @@ This section covers the following default log formats for IIS 10 and IIS 8.5:
 * HTTP Error Logs
 * Performance Logs
 
-Default log formats are used by IIS App. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
+Default log formats are used by IIS app. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 
 IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`. For example: `c:\inetpub\logs\LogFiles\`.
 
@@ -91,8 +89,8 @@ To enable logging on your IIS Server, do the following:
 
 Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
 
-1. In the Format field under Log File, select **W3C** and then click Select Fields. IIS App works on default fields selection.
-2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default:
+1. In the Format field under Log File, select **W3C** and then click Select Fields. IIS app works on default fields selection.
+2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS app to work by default:
 ```
 date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
 ```
@@ -250,158 +248,159 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     ObjectName = "HTTP Service Request Queues"
     Instances = ["*"]
     Counters = [
-"CurrentQueueSize",
-"RejectedRequests"
-]
+      "CurrentQueueSize",
+      "RejectedRequests"
+    ]
     Measurement = "win_http_queues"
   [[inputs.win_perf_counters.object]]
     # IIS, ASP.NET Applications
     ObjectName = "ASP.NET Applications"
     Counters = [
-"Cache Total Entries",
-"Cache Total Hit Ratio",
-"Cache Total Turnover Rate",
-"Output Cache Entries",
-"Output Cache Hits",
-"Output Cache Hit Ratio",
-"Output Cache Turnover Rate",
-"Compilations Total",
-"Errors Total/Sec",
-"Pipeline Instance Count",
-"Requests Executing",
-"Requests in Application Queue",
-"Requests/Sec"]
+      "Cache Total Entries",
+      "Cache Total Hit Ratio",
+      "Cache Total Turnover Rate",
+      "Output Cache Entries",
+      "Output Cache Hits",
+      "Output Cache Hit Ratio",
+      "Output Cache Turnover Rate",
+      "Compilations Total",
+      "Errors Total/Sec",
+      "Pipeline Instance Count",
+      "Requests Executing",
+      "Requests in Application Queue",
+      "Requests/Sec"
+    ]
     Instances = ["*"]
     Measurement = "win_aspnet_app"
   [[inputs.win_perf_counters.object]]
     # IIS, ASP.NET
     ObjectName = "ASP.NET"
     Counters = [
-"Application Restarts",
-"Applications Running",
-"Request Execution Time",
-"Request Wait Time",
-"Requests Current",
-"Requests Queued",
-"Requests Rejected",
-"State Server Sessions Abandoned",
-"State Server Sessions Active",
-"State Server Sessions Timed Out",
-"State Server Sessions Total",
-"Worker Process Restarts",
-"Worker Processes Running"
-]
+      "Application Restarts",
+      "Applications Running",
+      "Request Execution Time",
+      "Request Wait Time",
+      "Requests Current",
+      "Requests Queued",
+      "Requests Rejected",
+      "State Server Sessions Abandoned",
+      "State Server Sessions Active",
+      "State Server Sessions Timed Out",
+      "State Server Sessions Total",
+      "Worker Process Restarts",
+      "Worker Processes Running"
+    ]
     Instances = ["*"]
     Measurement = "win_aspnet"
   [[inputs.win_perf_counters.object]]
     # IIS, Web Service
     ObjectName = "Web Service"
     Counters = [
-"Service Uptime",
-"Current Connections",
-"Bytes Sent/sec",
-"Total Bytes Sent",
-"Bytes Received/sec",
-"Total Bytes Received",
-"Bytes Total/sec",
-"Total Bytes Transferred",
-"Get Requests/sec",
-"Total Get Requests",
-"Post Requests/sec",
-"Total Post Requests",
-"Put Requests/sec",
-"Total Put Requests",
-"Delete Requests/sec",
-"Total Delete Requests",
-"Head Requests/sec",
-"Options Requests/sec",
-"Total Head Requests",
-"Total Method Requests",
-"Total Options Requests",
-"Anonymous Users/sec",
-"NonAnonymous Users/sec",
-"Files Sent/sec",
-"Total Files Sent",
-"Files Received/sec",
-"Total Files Received",
-"Files/sec",
-"Total Files Transferred",
-"Not Found Errors/sec",
-"Locked Errors/sec",
-"Total Method Requests/sec",
-"Total Allowed Async I/O Requests",
-"Total Blocked Async I/O Requests",
-"Current Blocked Async I/O Requests",
-"Current CGI Requests",
-"Current ISAPI Extension Requests",
-"Current NonAnonymous Users",
-"Total CGI Requests",
-"Total Connection Attempts (all instances)",
-"Total ISAPI Extension Requests",
-"Total Locked Errors",
-"Total Logon Attempts",
-"Total NonAnonymous Users",
-"Total Not Found Errors",
-"Total Rejected Async I/O Requests",
-"Total count of failed CAL requests for authenticated users",
-"Total count of failed CAL requests for SSL connections"
-]
+      "Service Uptime",
+      "Current Connections",
+      "Bytes Sent/sec",
+      "Total Bytes Sent",
+      "Bytes Received/sec",
+      "Total Bytes Received",
+      "Bytes Total/sec",
+      "Total Bytes Transferred",
+      "Get Requests/sec",
+      "Total Get Requests",
+      "Post Requests/sec",
+      "Total Post Requests",
+      "Put Requests/sec",
+      "Total Put Requests",
+      "Delete Requests/sec",
+      "Total Delete Requests",
+      "Head Requests/sec",
+      "Options Requests/sec",
+      "Total Head Requests",
+      "Total Method Requests",
+      "Total Options Requests",
+      "Anonymous Users/sec",
+      "NonAnonymous Users/sec",
+      "Files Sent/sec",
+      "Total Files Sent",
+      "Files Received/sec",
+      "Total Files Received",
+      "Files/sec",
+      "Total Files Transferred",
+      "Not Found Errors/sec",
+      "Locked Errors/sec",
+      "Total Method Requests/sec",
+      "Total Allowed Async I/O Requests",
+      "Total Blocked Async I/O Requests",
+      "Current Blocked Async I/O Requests",
+      "Current CGI Requests",
+      "Current ISAPI Extension Requests",
+      "Current NonAnonymous Users",
+      "Total CGI Requests",
+      "Total Connection Attempts (all instances)",
+      "Total ISAPI Extension Requests",
+      "Total Locked Errors",
+      "Total Logon Attempts",
+      "Total NonAnonymous Users",
+      "Total Not Found Errors",
+      "Total Rejected Async I/O Requests",
+      "Total count of failed CAL requests for authenticated users",
+      "Total count of failed CAL requests for SSL connections"
+    ]
     Instances = ["*"]
     Measurement = "win_websvc"
   [[inputs.win_perf_counters.object]]
     # Web Service Cache / IIS
     ObjectName = "Web Service Cache"
     Counters = [
-"Current Files Cached",
-"Active Flushed Entries",
-"Total Files Cached",
-"Total Flushed Files",
-"File Cache Hits",
-"File Cache Misses",
-"File Cache Hits %",
-"File Cache Flushes",
-"Current File Cache Memory Usage",
-"Maximum File Cache Memory Usage",
-"Current URIs Cached",
-"Total URIs Cached",
-"Total Flushed URIs",
-"URI Cache Hits",
-"URI Cache Misses",
-"URI Cache Hits %",
-"URI Cache Flushes",
-"Current Metadata Cached",
-"Total Metadata Cached",
-"Total Flushed Metadata",
-"Metadata Cache Hits",
-"Metadata Cache Misses",
-"Metadata Cache Hits %",
-"Metadata Cache Flushes",
-"Output Cache Current Flushed Items",
-"Output Cache Current Hits %",
-"Output Cache Current Items",
-"Output Cache Current Memory Usage",
-"Output Cache Total Flushed Items"
-]
+      "Current Files Cached",
+      "Active Flushed Entries",
+      "Total Files Cached",
+      "Total Flushed Files",
+      "File Cache Hits",
+      "File Cache Misses",
+      "File Cache Hits %",
+      "File Cache Flushes",
+      "Current File Cache Memory Usage",
+      "Maximum File Cache Memory Usage",
+      "Current URIs Cached",
+      "Total URIs Cached",
+      "Total Flushed URIs",
+      "URI Cache Hits",
+      "URI Cache Misses",
+      "URI Cache Hits %",
+      "URI Cache Flushes",
+      "Current Metadata Cached",
+      "Total Metadata Cached",
+      "Total Flushed Metadata",
+      "Metadata Cache Hits",
+      "Metadata Cache Misses",
+      "Metadata Cache Hits %",
+      "Metadata Cache Flushes",
+      "Output Cache Current Flushed Items",
+      "Output Cache Current Hits %",
+      "Output Cache Current Items",
+      "Output Cache Current Memory Usage",
+      "Output Cache Total Flushed Items"
+    ]
     Instances = ["*"]
     Measurement = "win_websvc_cache"
   [[inputs.win_perf_counters.object]]
     # APP POOL WAS
     ObjectName = "APP_POOL_WAS"
     Counters = [
-"Current Application Pool State",
-"Current Application Pool Uptime",
-"Current Worker Processes",
-"Maximum Worker Processes",
-"Recent Worker Process Failures",
-"Time Since Last Worker Process Failure",
-"Total Application Pool Recycles",
-"Total Application Pool Uptime",
-"Total Worker Process Failures",
-"Total Worker Process Ping Failures",
-"Total Worker Process Shutdown Failures",
-"Total Worker Process Startup Failures",
-"Total Worker Processes Created"
-]
+      "Current Application Pool State",
+      "Current Application Pool Uptime",
+      "Current Worker Processes",
+      "Maximum Worker Processes",
+      "Recent Worker Process Failures",
+      "Time Since Last Worker Process Failure",
+      "Total Application Pool Recycles",
+      "Total Application Pool Uptime",
+      "Total Worker Process Failures",
+      "Total Worker Process Ping Failures",
+      "Total Worker Process Shutdown Failures",
+      "Total Worker Process Startup Failures",
+      "Total Worker Processes Created"
+    ]
     Instances = ["*"]
     Measurement = "win_app_pool_was"
   [inputs.win_perf_counters.tags]
@@ -463,7 +462,6 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 6. Click Import and then copy-paste the above JSON to import monitors.
 
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
-
 
 ### Method B: Using a Terraform script
 
@@ -534,9 +532,9 @@ email_notifications = [
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-## Installing the IIS App
+## Installing the IIS app
 
-This section demonstrates how to install the IIS App and assumes you have already set up the collection as described in [Collect Logs and Metrics for the IIS](#collecting-logs-and-metrics-for-the-iis-app).
+This section demonstrates how to install the IIS app and assumes you have already set up the collection as described in [Collect Logs and Metrics for the IIS](#collecting-logs-and-metrics-for-the-iis-app).
 
 To install the app:
 
@@ -711,7 +709,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Performance-Trends.png')} alt="IIS-Performance-Trends" />
 
-
 ### Threat Analysis
 
 The **IIS - Threat Analysis** dashboard provides high-level views of threats throughout your IIS network. Dashboard panels display visual graphs and detailed information on Threats by Client IP, Threats by Actors, and Threat by Malicious Confidence.
@@ -752,7 +749,6 @@ The **IIS - Visitor Access Types** Dashboard provides insights into visitor plat
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Access-Types.png')} alt="IIS-Visitor-Access-Types" />
 
-
 ### Visitor Locations  
 
 The **IIS - Visitor Locations** Dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
@@ -765,30 +761,27 @@ The **IIS - Visitor Traffic Insights** Dashboard provides detailed information o
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Traffic-Insights.png')} alt="IIS-Visitor-Traffic-Insights" />
 
-
 ### Application Pool
 
 The **IIS - Application Pool** dashboard provides a high-level view of Application Pool State, Information and Worker Process Metrics.
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-Application-Pool.png')} alt="IIS-Application-Pool" />
 
-
 ### ASP.NET
 
-The IIS - ASP.NET dashboard provides a high-level view of the ASP.NET global performance counters
+The **IIS - ASP.NET** dashboard provides a high-level view of the ASP.NET global performance counters.
 
 Use this dashboard to:
 
-* Analyze State Server Sessions
-* Monitor Applications Information
-* Understand Request execution and wait time
+* Analyze State Server Sessions.
+* Monitor Applications Information.
+* Understand Request execution and wait time.
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-ASP.NET.png')} alt="IIS-ASP.NET" />
 
-
 ### ASP.NET Applications
 
-The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters
+The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters.
 
 Use this dashboard to monitor the following key metrics:
 
@@ -818,6 +811,7 @@ Use this dashboard to monitor the following key metrics:
 
 
 ### Web Service
+
 The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service.
 
 Use this dashboard to monitor the following key metrics:
