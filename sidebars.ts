@@ -215,7 +215,6 @@ module.exports = {
                 'send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics',
                 'send-data/hosted-collectors/amazon-aws/aws-s3-source',
                 'send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source',
-                'send-data/hosted-collectors/amazon-aws/amazon-security-lake-source',
                 'send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources',
                 'send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source',
                 'send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source',
@@ -678,6 +677,7 @@ module.exports = {
         'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
+        'manage/data-forwarding/view-list-data-forwarding',
       ]
     },
     {
