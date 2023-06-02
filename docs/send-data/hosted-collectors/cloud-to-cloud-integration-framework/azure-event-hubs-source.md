@@ -39,14 +39,14 @@ This Source is available in the Fed deployment.
     In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
 1. Copy the Shared Access Policy Key.<br/>  ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
     Copy the Primary/Secondary key associated with this policy.
-1. When [configuring the Azure Event Hubs Source](azure-event-hubs-source.md) in Sumo Logic, our input fields would be:
+1. When [configuring the Azure Event Hubs Source](#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
 
   | Field | Value  |
   |:----------------------------|:----------------------|
-  | Azure Event Hubs Namespace | cnctest              |
+  | Azure Event Hubs Namespace | cnctest.servicebus.windows.net |
   | Event Hubs Instance Name   | my-hub               |
   | Shared Access Policy Name  | SumoCollectionPolicy |
-  | Shared Access Policy Key   | mOsLf3RE…            |
+  | Shared Access Policy Key<br/>(use primary key)  | mOsLf3RE…            |
 
   ![azure-event-configs.png](/img/send-data/azure-event-configs.png)
 
