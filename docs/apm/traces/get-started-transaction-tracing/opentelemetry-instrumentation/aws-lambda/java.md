@@ -23,7 +23,6 @@ You can instrument your AWS Java Lambda function using the [Sumo Logic Distribut
 ### Lambda function requirements
 
 You'll need the following:
-
 * Java8 (Corretto) or Java11 (Corretto)
 * Lambda layers add permissions
 * HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
