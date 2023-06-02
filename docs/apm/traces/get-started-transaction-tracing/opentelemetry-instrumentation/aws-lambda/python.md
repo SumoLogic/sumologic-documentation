@@ -51,7 +51,7 @@ If for whatever reason you can't disable this, configure X-Ray context propagati
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                            |
-|:----------------|:------------------------------------------------------------------------------------------------|
+|:----------------|:----------------------------------------------------------------------------------------------|
 | af-south-1     | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1     |
 | ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1      |
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1 |
@@ -79,7 +79,7 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                           |
-|:----------------|:-----------------------------------------------------------------------------------------------|
+|:----------------|:---------------------------------------------------------------------------------------------|
 | ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1 |
 | ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1 |
 | ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1     |
@@ -92,15 +92,15 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 | us-east-2      | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1      |
 | us-west-2      | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-17-0:1      |
 
-## Sumo Logic AWS OTel Lambda container instrumentation
+## Sumo Logic OTel Lambda container instrumentation
 
-Sumo Logic AWS OTel Lambda also provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries for container based Lambda functions. 
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.17.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.17.0) also provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries for container based Lambda functions.
 
 :::note
 The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
 :::
 
-### Requirements
+### Container based lambda requirements
 
 Instrumentation of container based AWS Lambda function requires some changes in the Dockerfile and image rebuild. You'll need the following:
 
@@ -110,10 +110,10 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 ### Lambda function image changes
 
-1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/release-python-v1.17.0/opentelemetry-python-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/release-python-v1.17.0/opentelemetry-python-arm64.zip).
+1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.17.0/opentelemetry-python-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.17.0/opentelemetry-python-arm64.zip).
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. Please see Dockerfile example:
 
-    ```bash
+    ```dockerfile
     FROM public.ecr.aws/lambda/python:3.8-arm64
 
     # Lambda Function Code  
