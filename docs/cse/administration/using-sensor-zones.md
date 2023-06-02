@@ -19,7 +19,7 @@ Wherever the CSE UI displays a private IP address whose `metadata_sensorZone` va
 
 `10.10.32.168 (europe)`
 
-In the [Insight generation process](/docs/cse/records-signals-entities-insights/insight-generation-process.md), Signals are correlated by the full IP address-sensor zone combination.
+In the [Insight generation process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), Signals are correlated by the full IP address-sensor zone combination.
 
 #### Set sensor zones
 
