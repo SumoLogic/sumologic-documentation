@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on Java and send the data to Sumo Logic.
 
-To obtain tracing data from AWS Lambda functions developed in Java you can use [Sumo Logic Distribution for OpenTelemetry Java Lambda](https://github.com/SumoLogic/sumologic-otel-lambda/tree/main/java). It provides auto instrumentation.  
+To obtain tracing data from AWS Lambda functions developed in Java, you can use [Sumo Logic Distribution for OpenTelemetry Java Lambda](https://github.com/SumoLogic/sumologic-otel-lambda/tree/main/java). It provides auto instrumentation.  
 
 **Sumo Logic OTel Java Lambda layer supports:**
 
