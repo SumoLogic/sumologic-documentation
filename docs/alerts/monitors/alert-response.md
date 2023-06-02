@@ -229,16 +229,37 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 :::
 
 
-#### From your Alerts list
+### From your Alerts list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
 * Single-click on a row item > on the opened Alert page, click the three-dot kebab menu > **Subscribe to Monitor**
 
 
-#### From your Monitors list
+### From your Monitors list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
+
+
+## Muting Schedules
+
+:::note
+Make sure you have the **Viewing and Manage Muting Schedules** permissions.
+:::
+
+Setting a **Muting Schedule** allows you to pause alert notifications from monitors according to a schedule that you define. You can apply this setting to individual alerts and/or folders. For folders, this will mute all nested monitors and subfolders. Here are some scenarios where you might want to mute your alerts:
+
+* **Scheduled System Maintenance**. When you're doing system maintenance, alerts can get triggered because the application and infrastructure are being brought up or turned off. These alerts can be very distracting, and might hamper the maintenance activities.
+* **Off-Business Hours**. If you're configuring alerts with specific thresholds that are only applicable during business hours, that might generate false alerts in off-business hours.
+
+To do this:
+1. Go to **Manage Data** > **Monitoring** > **Muting Schedules** tab.
+1. Click **Add** > **New Schedule**.
+1. Define your **Schedule Configuration** using the provided UI or *RRule*, a syntax that allows you to specify schedule recurrence rules for calendar dates programmatically.
+1. Define your **Scope**, where you associate one or more monitors with this schedule.
+1. Add a **Name** and optionally, a **Description**.
+
+To confirm that your Muting Schedule has been applied successfully, go to **Manage Data** > **Monitoring** > **Monitors** tab. Find your monitor in the list and check the **Status** column, where you should see the muted indicator.
 
 
 ## Notification Preferences
