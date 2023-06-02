@@ -9,7 +9,7 @@ description: Learn how to configure the detection window and the threshold Activ
 
 This section has instructions for changing the detection window and the threshold Activity Score for Insight generation.
 
-By default, the detection window is 14 days, and the threshold Activity Score is 12. That means if an Entity's Activity Score goes from 0 to 13 within a 14 day period, CSE will generate an Insight on that Entity. For information about how that works, see [Understanding Entity Activity Scores](insight-generation-process.md), in the *Insight Generation Process* topic.
+By default, the detection window is 14 days, and the threshold Activity Score is 12. That means if an Entity's Activity Score goes from 0 to 13 within a 14 day period, CSE will generate an Insight on that Entity. For information about how that works, see [Understanding Entity Activity Scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), in the *Insight Generation Process* topic.
 
 To change the Insight Generation settings:
 

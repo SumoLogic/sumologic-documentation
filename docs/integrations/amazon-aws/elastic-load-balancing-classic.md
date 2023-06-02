@@ -122,7 +122,7 @@ Track your Elastic Load Balancer activity at a glance to identify areas for furt
 * **Average Req and Resp Processing Time by ELB.** Compare the request and response time for each ELB for the last three hours.
 * **Latency by Load Balancer.** See the latency of each load balancer in AWS in a stacked column chart for the last three hours.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-overview.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Overview.png')} alt="AWS Elastic Load Balancer Classic" />
 
 ### Latency Analysis
 
@@ -140,7 +140,7 @@ Track your Elastic Load Balancer activity at a glance to identify areas for furt
 * **Top 20 Latencies by Clients.** View the IP addresses of the clients in your deployment with the top 20 latencies in the last 24 hours.
 * **Top 20 Latencies by Backend Instances.** Focus solely on the back end of your Amazon EC2 deployment, review the instances with the top 20 latencies for the last 24 hours
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-LatencyAnalysis.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Latency-Analysis.png')} alt="AWS Elastic Load Balancer Classic" />
 
 ### Requests Analysis
 
@@ -151,7 +151,7 @@ See the geolocation of requests by geolocation, data volume, load balancer, and 
 * **Total Requests by Load Balancer.** Show the requests per load balancer over time in a bar chart for the last three hours.
 * **Requests by Load Balancer Over Time.** Displays a line chart of how many requests are hitting a load balancer on a timeline over the last 24 hours.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Requestanalysis.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Request-Analysis.png')} alt="AWS Elastic Load Balancer Classic" />
 
 ### Status Codes Analysis
 
@@ -167,7 +167,7 @@ See the geolocation of requests by geolocation, data volume, load balancer, and 
 * **ELB Status by Client.** Compare the number of ELB 4xx and 5xx statuses by client IP address over the last 24 hours.
 * **Backend Status by Client.** Compare the number of backend 4xx and 5xx statuses by client.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-status-codes.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Status-Codes-Analysis.png')} alt="AWS Elastic Load Balancer Classic" />
 
 
 
@@ -182,4 +182,4 @@ See failed dispatches broken down by geolocation, outliers, backend, count, clie
 * **Failed Dispatches by Client.** See the count of total dispatch failures for the last 24 hours broken down by client IP address.
 * **Failed Dispatches by Domain.** See the failed dispatches for the last 24 hours broken down by domain and time sliced by 15 minutes. This panel can help you isolate a failure at a particular time or see patterns over time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Failed-Dispatch.png')} alt="AWS Elastic Load Balancer Classic" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Classic-Failed-Dispatch-Monitoring.png')} alt="AWS Elastic Load Balancer Classic" />

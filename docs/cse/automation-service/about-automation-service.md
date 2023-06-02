@@ -174,9 +174,6 @@ The [CSE API](/docs/cse/administration/cse-apis/) supports automations. Endpoint
 
 The Sumo Logic Terraform provider also supports automations. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
-:::tip
-The Automation Service uses the Cloud SOAR API. For more information about the API, click the **?** button in the upper right of the Cloud SOAR UI to see the API Documentation manual.
-:::
 
 ### Data retention
 
