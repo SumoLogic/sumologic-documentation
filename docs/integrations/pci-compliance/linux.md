@@ -34,7 +34,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 ### Required Logs for CentOS, Amazon Linux, and Red Hat
 
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
 * audit/audit.log
 * secure
 * messages
