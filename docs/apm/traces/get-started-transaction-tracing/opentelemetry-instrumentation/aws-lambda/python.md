@@ -16,7 +16,7 @@ Sumo Logic OTel Python Lambda layer supports:
 
 [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.17.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.17.0) provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
-## Requirements
+### Lambda function requirements
 
 It is very simple to instrument your AWS Python Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
 
@@ -24,7 +24,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 * Lambda layers add permissions
 * HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you'll need an endpoint URL from an [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
 
-## Deployment
+### Deployment
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 1. Navigate to the **Layers** section and click **Add a layer**.
@@ -46,7 +46,7 @@ If for whatever reason you can't disable this, configure X-Ray context propagati
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces.md).
 
-## Sumo Logic Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
+### Sumo Logic Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
 
 Go back to Step 3 (_In the Choose a layer menu_...).
 
@@ -74,7 +74,7 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 | us-west-1      | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1      |
 | us-west-2      | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-17-0:1      |
 
-## Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
+### Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
 Go back to Step 3 (_In the Choose a layer menu_...).
 
@@ -132,7 +132,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 1. Rebuild docker image.
 
-## Deployment
+### Deployment
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 1. Deploy new function image.

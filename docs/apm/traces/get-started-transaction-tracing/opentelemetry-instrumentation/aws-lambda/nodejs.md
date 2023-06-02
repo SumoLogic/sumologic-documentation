@@ -18,7 +18,7 @@ To obtain tracing data from AWS Lambda functions developed in Node.js you can us
 
 [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.12.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-nodejs-v1.12.0/nodejs) provides packed [OpenTelemetry NodeJS](https://github.com/open-telemetry/opentelemetry-js) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
-### Lambda Requirements
+### Lambda function requirements
 
 It is very simple to instrument your AWS NodeJS Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
 
@@ -56,9 +56,9 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 
-### amd64 architecture
+### Sumo Logic Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
 
-The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (x86_64) architecture.
+The following are the Sumo Logic OTel Lambda layers for AWS Region for amd64 (x86_64) architecture.
 
 | AWS Region | ARN |
 |:--|:--|
@@ -84,9 +84,9 @@ The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd
 |   us-west-1        |   arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
 |   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
 
-### arm64 architecture
+### Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
-The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for arm64.
+The following are the Sumo Logic OTel Lambda layers for AWS Region for arm64.
 
 | AWS Region                              | ARN                                                                          |
 |:----------------------------------------|:-----------------------------------------------------------------------------|
@@ -148,7 +148,7 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
 1. Rebuild docker image.
 
-## Deployment
+### Deployment
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
