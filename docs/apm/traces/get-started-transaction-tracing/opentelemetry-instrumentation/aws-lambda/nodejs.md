@@ -9,7 +9,7 @@ This document covers how to install and configure OpenTelemetry distributed tra
 
 To obtain tracing data from AWS Lambda functions developed in Node.js you can use [Sumo Logic Distribution for OpenTelemetry NodeJS Lambda](https://github.com/SumoLogic/sumologic-otel-lambda/tree/main/nodejs). It provides auto instrumentation.  
 
-**SSumo Logic OTel NodeJS Lambda supports:**
+**Sumo Logic OTel NodeJS Lambda layer supports:**
 
 * nodejs14.x, nodejs16.x and nodejs18.x runtimes
 * x86_64 and arm64 architectures

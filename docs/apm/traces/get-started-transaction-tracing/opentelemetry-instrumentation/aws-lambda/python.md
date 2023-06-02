@@ -7,7 +7,7 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic. To obtain telemetry data from AWS Lambda functions developed in Python language you can use the [Sumo Logic Distribution for OpenTelemetry Python Lambda](https://github.com/SumoLogic-Labs/sumo-opentelemetry-lambda/tree/main/python).
 
-Sumo Logic OTel Python Lambda supports:
+Sumo Logic OTel Python Lambda layer supports:
 
 * Python version between 3.7 and 3.10
 * x86_64 and arm64 architectures
