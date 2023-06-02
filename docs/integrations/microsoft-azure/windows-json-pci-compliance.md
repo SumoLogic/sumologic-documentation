@@ -78,7 +78,7 @@ Track your user accounts and recent system changes.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-02-08-10-Account-User-System-Monitoring.png')} alt="Windows JSON PCI Compliance dashboards" />
 
-* **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
+* **User Account Created.** Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
 * **User Account Enabled.** Aggregation table of the number of user accounts enabled in the last 24 hours.
 * **User Account Disabled.** Aggregation table of the number of user accounts disabled in the last 24 hours.
@@ -112,8 +112,8 @@ Track user activities such as password changes, password resets, excessive faile
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-08-Other-User-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
-* **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
-* **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Changes.** Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Reset.** Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Unlocked.** Displays an aggregation table of the times a user account was unlocked  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Disabled but not deleted.** Displays an aggregation table of the times a user account was unlocked,  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.

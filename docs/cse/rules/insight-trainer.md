@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Watch this micro lesson to learn how to use the Insight Trainer dashboard.
 
-<Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA"
+<Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA?rel=0"
         width="854px"
         height="480px"
         id="myId"

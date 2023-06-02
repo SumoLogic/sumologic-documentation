@@ -32,7 +32,6 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * dpkg.log
 * kern.log
 
-
 ### Required Logs for CentOS, Amazon Linux, and Red Hat
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
@@ -58,7 +57,6 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-02-07-08-10-Account-User-System-Monitoring.png')} alt="PCI Compliance for Linux dashboards" />
 
-
 ### Login Activity
 
 **Dashboard description: **This dashboard meets PCI Requirements 02 and 10 by tracking login activity. It provides information about failed and successful user logins, and failed and successful super-user logins.
@@ -68,11 +66,10 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-02-10-Login-Activity.png')} alt="PCI Compliance for Linux dashboards" />
 
 
-
 ### Privileged Activity
 
 **Dashboard description: **This dashboard meets PCI Requirement 10. It provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
-**Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
+**Use case.** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps you to monitor actions performed by users with administrative privileges.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-10-Privileged-Activity.png')} alt="PCI Compliance for Linux dashboards" />

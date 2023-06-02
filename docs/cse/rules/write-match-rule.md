@@ -27,10 +27,25 @@ metadata_vendor = 'Amazon AWS' AND metadata_product = 'CloudTrail' AND metadata_
 
 This rule fires a Signal each time a UserPoolClient, which has permission to call unauthenticated API operations, is created.
 
+Watch this micro lesson to learn how to create a Match rule.
+
+<Iframe url="https://www.youtube.com/embed/l7xOBls1ROE?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Create a Match rule
 
 1. Choose **Rules** from the Content menu.
-1. On the **Create a Rule** page, click **Create** in the **Match** card. <br/>![select-rule-type.png](/img/cse/select-rule-type.png)
+1. On the **Create a Rule** page, click **Create** in the **Match** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
    1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/>![match.png](/img/cse/match.png)
