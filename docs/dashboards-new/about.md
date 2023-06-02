@@ -49,7 +49,7 @@ Dashboards and Dashboard (New).
 | Run As Creator / Data Access Level Control | Supported | Supported |
 | Dark Theme | Supported | [Supported](/docs/dashboards-new/about/#dark-theme) |
 | Configured Dashboard Linking | Supported | [Supported](/docs/dashboards-new/link-dashboards/) |
-| Recommended Dashboards & Logs Drilldowns | Not supported | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts.See [documentation](/docs/dashboards-new/drill-down-to-discover-root-causes/) for more details.|
+| Recommended Dashboards & Logs Drilldowns | Not supported | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards-new/drill-down-to-discover-root-causes).|
 | Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards-new/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards-new/panels/modify-chart/). |
 | Colors by Value Range | Supported | Supported |
