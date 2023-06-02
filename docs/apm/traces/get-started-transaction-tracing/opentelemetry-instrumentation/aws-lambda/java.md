@@ -16,7 +16,7 @@ To obtain tracing data from AWS Lambda functions developed in Java, you can use 
 * Java8 (Corretto) and Java11 (Corretto) runtimes
 * x86_64 and arm64 architectures
 
-## Sumo Logic Distribution for OpenTelemetry Lambda Layer
+## Sumo Logic Distribution for OpenTelemetry Lambda layer
 
 You can instrument your AWS Java Lambda function using the [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.24.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.24.0/java). By default calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
 
