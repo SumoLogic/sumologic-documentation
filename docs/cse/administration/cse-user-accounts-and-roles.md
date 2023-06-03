@@ -27,7 +27,7 @@ Roles and capabilities are managed on the Sumo Logic platform. For instructions,
 1. Select **View Cloud SIEM Enterprise**. <br/><img src={useBaseUrl('img/cse/cloud-siem-role-capabilities.png')} alt="Cloud SIEM role capability categories" style={{border: '1px solid black'}} width="250"/>
 1. Select capabilities from the categories:
    *  **Insights**. Provides capabilities to manage [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). 
-   *  **Content**. Provides capabilities to manage elements such as [rules](/docs/cse/rules/), [match lists](/docs/cse/match-lists-suppressed-lists/), [Entities](/cse/records-signals-entities-insights/view-manage-entities/), and more.
+   *  **Content**. Provides capabilities to manage elements such as [rules](/docs/cse/rules/), [match lists](/docs/cse/match-lists-suppressed-lists/), [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/), and more.
    *  **Configuration**. Provides capabilities to manage administrative elements such as [mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping/), [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [automations](/docs/cse/automation-service/), and more.
 
 
