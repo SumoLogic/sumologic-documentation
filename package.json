@@ -68,6 +68,7 @@
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
     "shelljs": "^0.8.5",
+    "staticrypt": "^3.3.0",
     "swc": "^1.0.11",
     "swc-loader": "^0.2.3",
     "trim": "^0.0.3",
