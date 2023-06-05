@@ -2235,7 +2235,6 @@
   "/cid/5966": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework",
   "/cid/6001": "/docs/integrations/app-development/github",
   "/cid/6002": "/docs/integrations/microsoft-azure/sql-server",
-  "/cid/16003": "/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry",
   "/cid/6050": "/docs/integrations/microsoft-azure/microsoft-graph-identity-protection",
   "/cid/6003": "/docs/integrations/security-threat-detection/observable-networks",
   "/cid/60047": "/docs/integrations/saas-cloud/dropbox",
