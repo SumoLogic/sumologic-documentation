@@ -4,13 +4,43 @@ title: Construct a Search Filter for a Role
 description: Construct a role search filter to control what log data users with that role can access.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles/) page.
 
-This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](create-manage-roles.md) page.
+## Index based 
 
-## Understanding search filters
+An index based search filter allows or denies access to [search indexes](/docs/alerts/scheduled-searches/save-to-index/). 
 
-A search filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, metadata fields, and logical operators. Here is a simple role filter:
+1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
+1. Under **Search Filter**, select **Index based**.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
+1. Select one of the following:
+   * **All indexes**. Allow access to all indexes.
+   * **Allow few indexes**. Allow access to only the selected indexes. Choose the indexes in the **Select Indexes** box that appears.
+   * **Deny few indexes**. Deny access to the selected indexes. Choose the indexes in the **Select Indexes** box that appears.
+
+## Advanced filter
+
+An advanced filter allows access only to the logs that match the search filter. 
+
+1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
+1. Under **Search Filter**, select **Advanced filter**.<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
+1. Select one of the following:
+   * **Log Analytics data filter**. Allow access to only the logs that match the defined conditions in log analytics [partition indexes](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
+   * **Audit data filter**. Allow access to only the logs that match the defined conditions in Sumo Logic [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/).
+   * **Security data filter**. Allow access to only the logs that match the defined conditions in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/) and [LiveTail](/docs/search/live-tail/). 
+1. Enter search criteria. For examples, see [Understanding the advanced filter](#understanding-advanced-filters) below.
+
+## Test search filters
+
+1. Go to **Administration** > **Users and Roles** > **Roles**. 
+1. Select a role with search filtering defined. 
+1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index based search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index based filter" style={{border: '1px solid black'}} width="400"/>
+1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
+
+## Understanding the advanced filter
+
+An advanced filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, metadata fields, and logical operators. Here is a simple role filter:
 
 ```sql
 _sourceCategory=labs*
@@ -40,21 +70,21 @@ The role filter above denies access to log data whose  `_sourceCategory` begins
 
 The examples above are simple: they involve a single role, and hence a single role filter. 
 
-Typically however, a Sumo user will have multiple roles. If a user has multiple roles, Sumo ORs the several role filters and prepends that expression to the user’s queries with an AND, as discussed in [Multiple role filters and filter precedence](construct-search-filter-for-role.md).
+Typically however, a Sumo user will have multiple roles. If a user has multiple roles, Sumo ORs the several role filters and prepends that expression to the user’s queries with an AND, as discussed in [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
   
 ### Search filter basics
 
 The sections below list search filter limitations, and describe how you can use keywords, wildcards, metadata, and logical operators in filters. 
 
-The explanations of the behavior of each example filter assume that no other role filters apply. In practice, you will likely assign multiple roles to users. After you understand the basics of how role filters work, see [Multiple role filters and filter precedence](construct-search-filter-for-role.md).
+The explanations of the behavior of each example filter assume that no other role filters apply. In practice, you will likely assign multiple roles to users. After you understand the basics of how role filters work, see [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
 
 #### Search filter limitations
 
 * Role filters cannot include vertical pipes (\|).
 * Role filters apply to log searches, not metric searches.
 * If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role,  LiveTail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* The [_dataTier](../../partitions-data-tiers/searching-data-tiers.md) search modifier is not supported in role filters.
-* For limitations related to the use of Scheduled Views or Partitions in a search filter, see [Using Partitions and Scheduled Views in a search filter](construct-search-filter-for-role.md), below.
+* The [_dataTier](/docs/manage/partitions-data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
+* For limitations related to the use of Scheduled Views or Partitions in a search filter, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
 
 #### Using metadata in a search filter
 
@@ -73,7 +103,7 @@ _collector=HR_Tools AND <user-query>
 #### Using AND and OR in a search filter
 
 :::note
-For information about using logical operators with Partitions and Scheduled Views in role filters, see [Using Partitions and Scheduled Views in a search filter](construct-search-filter-for-role.md), below.
+For information about using logical operators with Partitions and Scheduled Views in role filters, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
 :::
 
 You can use AND and OR in a search filter. For example, this role filter uses OR to grant access to log data from two source categories:
