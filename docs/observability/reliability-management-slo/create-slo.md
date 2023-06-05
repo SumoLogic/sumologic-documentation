@@ -125,6 +125,13 @@ Follow the instructions below based on the query type:
   <img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
 
+## Create an SLO from Log Search page
+
+You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
+
+1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
+1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
+1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
 
 ### SLO Tags and Filters
 
@@ -168,13 +175,90 @@ In this tag filter example query below, it's looking for SLOs where the `app` is
 <img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
 
 
-## Create an SLO from Log Search page
+### SLO as Log Messages
 
-You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
+Sumo Logic continuously computes data for your SLO behind the scenes. This data, which powers your SLO dashboard, is also made available as log messages that conform to the following schema:
 
-1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
-1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
-1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
+* `Time`: timestamp
+* `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
+* `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
+* `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
+* `sloVersion`: version of SLO definition
+
+View the schema by executing the following query:
+
+```sql
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
+-- (replace with a valid SLO Id)
+```
+
+These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
+
+
+### SLO Lookup Tables
+
+You can call a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
+
+There are two ways to use it:
+
+* To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo://content/slos on sloId, sloVersion
+  ```
+* To enlist the contents of the lookup table:
+  ```sql
+  cat sumo://content/slos
+  ```
+
+#### Dashboard example
+
+As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+
+You would need to create a custom graphic that combines multiple SLOs from multiple services:
+
+1. Go to **Manage Data** > **Monitoring** > **SLO**.
+1. Click on any SLO line item.
+1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
+1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo://content/slos on sloId, sloVersion
+  | where !isBlank (sloname) and slofolderpath matches "*"
+  | concat (sloname, " (", sloId, ")") as sloUniqueName
+  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
+  | totalEvents - goodEvents as badEvents
+  | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
+  | 100 * (1 - badEvents / denominator) as sli
+  | 100 * (sli - target) / (100 - target) as budgetRemaining
+  | fields sloUniqueName, budgetRemaining
+  ```
+1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+
+
+#### Tags in SLO Lookup tables
+
+You can leverage your existing SLO tags in **Log Search** queries and SLO lookup tables.
+
+To display all of your SLOs that have one or more tags:
+
+```sql
+CAT sumo://content/slos
+| where !(tags = "{}")
+```
+
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" /><br/>
+
+You can also use tags in your lookup table to correlate SLOs with your other Sumo Logic data. In this example, the query will find SLO output data for all SLOs that belong to service `ingestion`:
+
+```sql
+_view=sumologic_slo_output
+| lookup tags from sumo://content/slos on sloId=sloId
+| json field=tags "service"
+| where service="ingestion"
+```
 
 ## Create an SLO from Metrics page
 
@@ -216,7 +300,7 @@ Any Monitor update that changes the Monitor definition will lead to a change in 
 
 SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. A minute is treated as unsuccessful if the Monitor threshold is violated at any point of time within that minute.
 
-## SLO as Code
+## Create an SLO via Terraform
 
 You can use the Sumo Logic Terraform provider to automate the creation of [SLOs (`sumologic_slo`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [SLO folders (`sumologic_slo_folder`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder). This can be useful for organizations that want to:
 * Templatize SLOs
@@ -224,77 +308,3 @@ You can use the Sumo Logic Terraform provider to automate the creation of [SLOs 
 * Automate SLO-related workflows
 
 You can use the [Monitor Terraform provider (`sumologic_monitor`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.
-
-
-## SLO as Log Messages
-
-Sumo Logic continuously computes data for your SLO behind the scenes. This data, which powers your SLO dashboard, is also made available as log messages that conform to the following schema:
-
-* `Time`: timestamp
-* `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
-* `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
-* `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
-* `sloVersion`: version of SLO definition
-
-View the schema by executing the following query:
-
-```sql
-_view=sumologic_slo_output sloId="<your-SLO-ID>"
-| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
-| max(sloVersion) as sloVersion | compose sloVersion]
--- (replace with a valid SLO Id)
-```
-
-These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
-
-
-### SLO Lookup Tables
-
-You can call a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
-
-There are two ways to use it:
-
-* To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
-  ```sql
-  _view=sumologic_slo_output
-  | lookup * from sumo://content/slos on sloId, sloVersion
-  ```
-* To enlist the contents of the lookup table:
-  ```sql
-  cat sumo://content/slos
-  ```
-
-#### Example 1
-
-As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
-
-You would need to create a custom graphic that combines multiple SLOs from multiple services:
-
-1. Go to **Manage Data** > **Monitoring** > **SLO**.
-1. Click on any SLO line item.
-1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
-1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
-  ```sql
-  _view=sumologic_slo_output
-  | lookup * from sumo://content/slos on sloId, sloVersion
-  | where !isBlank (sloname) and slofolderpath matches "*"
-  | concat (sloname, " (", sloId, ")") as sloUniqueName
-  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
-  | totalEvents - goodEvents as badEvents
-  | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
-  | 100 * (1 - badEvents / denominator) as sli
-  | 100 * (sli - target) / (100 - target) as budgetRemaining
-  | fields sloUniqueName, budgetRemaining
-  ```
-1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
-
-
-#### Example 2
-
-You can leverage SLO tags in **Log Search** queries. Here's a query, for example, to display all SLOs that have tags:
-
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" /><br/>
-
-```sql title="Try it yourself"
-cat sumo://content/slos | where !(tags="{}")
-```
