@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Elasticsearch app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, garbage collection, and search, index, and cache performance.
 
-## Sample Log Messages
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -60,7 +60,7 @@ The Elasticsearch app is a unified logs and metrics app that helps you monitor t
 
 ## Collecting Logs and Metrics for the Elasticsearch app
 
-Configuring log and metric collection for the Elasticsearch App includes the following tasks.
+Configuring log and metric collection for the Elasticsearch app includes the following tasks.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -97,7 +97,6 @@ If you're using Elasticsearch in a non-Kubernetes environment, create the fields
 </TabItem>
 </Tabs>
 
-
 ### Step 2: Configure Collection for Elasticsearch
 
 <Tabs
@@ -132,10 +131,10 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 1. **(Recommended Method) Add labels on your Elasticsearch pods to capture logs from standard output on Kubernetes**.
    1. Apply the following labels to the Elasticsearch pods:
     ```sql
-    environment: "dev_CHANGE_ME"
-    component: "database"
-    db_system: "elasticsearch"
-    db_cluster: "elasticsearch_on_k8s_CHANGE_ME"
+    environment = "dev_CHANGE_ME"
+    component = "database"
+    db_system = "elasticsearch"
+    db_cluster = "elasticsearch_on_k8s_CHANGE_ME"
     db_cluster_address = `ENV_TO_BE_CHANGED`
     db_cluster_port = `ENV_TO_BE_CHANGED`
     ```
@@ -218,12 +217,12 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
   indices_include = ["_all"]
   indices_level = "cluster"
   [inputs.elasticsearch.tags]
-     environment: "ENV_TO_BE_CHANGED"
-     component: "database"
-     db_system: "elasticsearch"
-     db_cluster: "ENV_TO_BE_CHANGED"
-     db_cluster_address = `ENV_TO_BE_CHANGED`
-     db_cluster_port = `ENV_TO_BE_CHANGED`
+    environment = "ENV_TO_BE_CHANGED"
+    component = "database"
+    db_system = "elasticsearch"
+    db_cluster = "ENV_TO_BE_CHANGED"
+    db_cluster_address = `ENV_TO_BE_CHANGED`
+    db_cluster_port = `ENV_TO_BE_CHANGED`
 ```
 3. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
    * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
@@ -262,7 +261,7 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
 
 For non-Kubernetes environments, we use the Telegraf operator for Elasticsearch metric collection and Sumo Logic Installed Collector for collecting Elasticsearch logs. The diagram below illustrates the components of the Elasticsearch collection in a non-Kubernetes environment. Telegraf runs on the same system as Elasticsearch to obtain Elasticsearch metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Elasticsearch on the other hand are sent to a Sumo Logic Local File source.<br/><img src={useBaseUrl('img/integrations/databases/elasticsearchnonk8s.png')} alt="elasticsearch" />
 
-This section provides instructions for configuring logs and metrics collection for the Sumo Logic App for Elasticsearch.
+This section provides instructions for configuring logs and metrics collection for the Sumo Logic app for Elasticsearch.
 
 #### Configure Metrics Collection
 
@@ -281,13 +280,13 @@ This section provides instructions for configuring logs and metrics collection f
   indices_include = ["_all"]
   indices_level = "cluster"
   node_stats = ["indices", "os", "process", "jvm", "thread_pool", "fs", "transport", "http"]
-[inputs.elasticsearch.tags]
-   environment="ENV_TO_BE_CHANGED"
-   component="database"
-   db_system="elasticsearch"
-   db_cluster="ENV_TO_BE_CHANGED"
-   db_cluster_address = `ENV_TO_BE_CHANGED`
-   db_cluster_port = `ENV_TO_BE_CHANGED`
+  [inputs.elasticsearch.tags]
+    environment ="ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="elasticsearch"
+    db_cluster ="ENV_TO_BE_CHANGED"
+    db_cluster_address = `ENV_TO_BE_CHANGED`
+    db_cluster_port = `ENV_TO_BE_CHANGED`
 [[outputs.sumologic]]
   url = "<URL Created in Step 3_CHANGEME>"
   data_format = "prometheus"
@@ -323,7 +322,7 @@ At this point, Elasticsearch metrics should start flowing into Sumo Logic.
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Sumo Logic App for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+This section provides instructions for configuring log collection for Sumo Logic app for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 1. **Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
    * `debug`: a lot of information, useful for development/testing
@@ -369,14 +368,11 @@ At this point, Elasticsearch logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-
-
 ## Installing Elasticsearch Monitors
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#Elasticsearch-Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
-
 
 ### Method 1: Importing a JSON file
 
@@ -390,7 +386,6 @@ To install these monitors, you must have the **Manage Monitors** role capability
 5. Click **Import**.
 6. On the** Import Content popup**, enter **Elasticsearch** in the Name field, paste in the JSON into the popup, and click **Import**.
 7. The monitors are created in a **Elasticsearch** folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
 
 ### Method 2: Using a Terraform script
 
@@ -448,12 +443,11 @@ email_notifications = [
    2. Run `terraform plan` to view the monitors that Terraform will create or modify.
    3. Run `terraform apply`.
 
-
-## Installing Elasticsearch App
+## Installing the Elasticsearch app
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app.
+1. From the **App Catalog**, search and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -467,103 +461,89 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-## Viewing Elasticsearch Dashboards
+## Viewing Elasticsearch dashboards
 
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
 :::
 
-
 ### Overview
 
-The Elasticsearch - Overview dashboard provides the health of Elasticsearch clusters, shards analysis, resource utilization of Elasticsearch host & clusters, search and indexing performance.
+The **Elasticsearch - Overview** dashboard provides the health of Elasticsearch clusters, shards analysis, resource utilization of Elasticsearch host & clusters, search and indexing performance.
 
 <img src={useBaseUrl('img/integrations/databases/Elasticsearch-Overview.png')} alt="elasticsearch dashboards" />
 
 ### Total Operations Stats
 
-The Elasticsearch - Total Operations stats dashboard provides information on the operations of the Elasticsearch system.
+The **Elasticsearch - Total Operations Stats** dashboard provides information on the operations of the Elasticsearch system.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-Total.png')} alt="elasticsearch dashboards" />
 
-
 ### Thread Pool
 
-The Elasticsearch- Thread Pool dashboard analyzes thread pools operations to manage memory consumption of nodes in the cluster.
+The **Elasticsearch- Thread Pool** dashboard analyzes thread pools operations to manage memory consumption of nodes in the cluster.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-thread.png')} alt="elasticsearch dashboards" />
 
 ### Resource
 
-The Elasticsearch - Resource dashboard monitors JVM Memory, Network, Disk, Network and CPU of Elasticsearch node.
+The **Elasticsearch - Resource** dashboard monitors JVM Memory, Network, Disk, Network and CPU of Elasticsearch node.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-resource.png')} alt="elasticsearch dashboards" />
 
 ### Performance Stats
 
-The Elasticsearch - Performance Stats dashboard performance statistics such as latency and Translog operations and size.
+The **Elasticsearch - Performance Stats** dashboard performance statistics such as latency and Translog operations and size.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-perf.png')} alt="elasticsearch dashboards" />
 
-
 ### Indices
 
-The Elasticsearch - Indices dashboard monitors Index operations, size and latency. It also provides analytics on doc values, fields, fixed bitsets, and terms memory.
+The **Elasticsearch - Indices** dashboard monitors Index operations, size and latency. It also provides analytics on doc values, fields, fixed bitsets, and terms memory.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-ind.png')} alt="elasticsearch dashboards" />
 
-
 ### Documents
 
-The Elasticsearch - Documents dashboard provides analytics and monitoring on Elasticsearch documents.
+The **Elasticsearch - Documents** dashboard provides analytics and monitoring on Elasticsearch documents.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-doc.png')} alt="elasticsearch dashboards" />
 
-
 ### Caches
 
-The Elasticsearch - Caches dashboard allows you to monitor query cache size, evictions and field data memory size.
+The **Elasticsearch - Caches** dashboard allows you to monitor query cache size, evictions and field data memory size.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-cache.png')} alt="elasticsearch dashboards" />
 
-
 ### Errors And Warnings
 
-The ElasticSearch - Errors And Warnings dashboard shows errors and warnings by Elasticsearch components.
+The **ElasticSearch - Errors And Warnings** dashboard shows errors and warnings by Elasticsearch components.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-err.png')} alt="elasticsearch dashboards" />
 
-
 ### Garbage Collection
-36
 
-
-The Elasticsearch - Garbage Collector dashboard provides information on the garbage collection of the Java Virtual Machine.
+The **Elasticsearch - Garbage Collection** dashboard provides information on the garbage collection of the Java Virtual Machine.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-garbage.png')} alt="elasticsearch dashboards" />
 
 ### Login And Connections
-38
 
-
-The ElasticSearch - Login And Connections dashboard shows geo location of client connection requests, failed connection logins and count of failed login attempts
+The **ElasticSearch - Login And Connections** dashboard shows geo location of client connection requests, failed connection logins and count of failed login attempts.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-login.png')} alt="elasticsearch dashboards" />
 
-
 ### Operations
 
-The Elasticsearch - Operations dashboard allows you to monitor server stats and events such as node up/down, index creation/deletion. It also provides disk usage and cluster health status.
+The **Elasticsearch - Operations** dashboard allows you to monitor server stats and events such as node up/down, index creation/deletion. It also provides disk usage and cluster health status.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-ops.png')} alt="elasticsearch dashboards" />
 
 ### Queries
 
-The ElasticSearch - Queries dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
+The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-q.png')} alt="elasticsearch dashboards" />
-
-
 
 ## Elasticsearch Alerts
 
