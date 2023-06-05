@@ -1,6 +1,6 @@
 ---
 id: mssp
-title: Cloud SOAR for MSSPs
+title: MSSP
 sidebar_label: Cloud SOAR for MSSPs
 keywords:
     - SOAR
