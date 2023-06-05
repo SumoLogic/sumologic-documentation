@@ -3,6 +3,7 @@ id: view-list-scheduled-views
 title: View Information About Scheduled Views
 description: Learn how to view a list of scheduled views configured for your organization and view the details of a scheduled view.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The page has information about viewing information about the scheduled views configured for your organization.
@@ -12,7 +13,7 @@ You must have a role that grants you the View Scheduled Views [role capability
 :::
 
 1. Go to **Manage Data** > **Logs** > **Scheduled Views**.<br/> ![Scheduled Views page.png](/img/scheduled-views/Scheduled-Views-page.png)
-    * Status. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
+    * **Status**. Indicates whether the scheduled view is currently Completed, Failed, Not Started, Filling, or Paused.
     * **Name**. The name assigned to the scheduled view.
     * **Storage Consumed**. The total volume of uncompressed data ingested across the duration of the retention period.
     * **Retention Period**. The number of days configured as the retention period.
@@ -29,4 +30,4 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 bucket, the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination.  
-    * **Created by and Modified by**. The user that created the view, and the user that most recently modified the view. <br/> <img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} alt="Scheduled Views page" width="400"/>
+    * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/> ![Scheduled Views page.png](/img/scheduled-views/sched-view-details.png)
