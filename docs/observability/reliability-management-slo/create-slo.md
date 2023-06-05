@@ -249,7 +249,7 @@ CAT sumo://content/slos
 | where !(tags = "{}")
 ```
 
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" /><br/>
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" />
 
 You can also use tags in your lookup table to correlate SLOs with your other Sumo Logic data. In this example, the query will find SLO output data for all SLOs that belong to service `ingestion`:
 
