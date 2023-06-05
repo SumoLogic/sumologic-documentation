@@ -2483,6 +2483,8 @@ integrations: [
         'api/access-keys',
         'api/account-management',
         'api/archive-ingestion',
+        'api/cloud-siem-enterprise',
+        'api/cloud-soar',
         {
           type: 'category',
           label: 'Collector Management',
@@ -2497,7 +2499,6 @@ integrations: [
         },
         'api/content-permissions',
         'api/content-management',
-        'api/cloud-siem-enterprise',
         'api/dashboard-new',
         'api/data-forwarding',
         'api/dynamic-parsing',

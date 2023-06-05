@@ -1,7 +1,7 @@
 ---
 id: mssp
-title: MSSP
-sidebar_label: Cloud SOAR for MSSPs
+title: Cloud SOAR for MSSPs
+sidebar_label: MSSP
 keywords:
     - SOAR
     - orchestration
