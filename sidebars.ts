@@ -2108,6 +2108,7 @@ integrations: [
           'integrations/saas-cloud/pagerduty-v3',
           'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
+          'integrations/saas-cloud/proofpoint-TAP',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',
