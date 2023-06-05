@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="ciscomeraki-logo" width="75"/>
 
-The Sumo Logic app for Cisco Meraki provides real-time insights into the events and helps you to identify potential network events along with admin activities. This app can effectively manage and optimize your network performance, enhance security, and proactively respond to potential threats. The comprehensive insights and monitoring capabilities enable efficient network administration and contribute to a robust and secure network infrastructure.
+The Sumo Logic app for Cisco Meraki C2C provides real-time insights into the events and helps you to identify potential network events along with admin activities. This app can effectively manage and optimize your network performance, enhance security, and proactively respond to potential threats. The comprehensive insights and monitoring capabilities enable efficient network administration and contribute to a robust and secure network infrastructure.
 
 Key features and benefits of the Cisco Meraki C2C app include:
 
