@@ -1,7 +1,7 @@
 ---
 id: cloud-soar-integration-framework
 title: Cloud SOAR Integration Framework
-sidebar_label: Cloud SOAR Integration Framework
+sidebar_label: Integration Framework
 description: Learn about the framework used for integrations. 
 ---
 
