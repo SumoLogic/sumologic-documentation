@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="75"/>
 
-Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic App for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
+Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic app for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
 
-This App is tested with the following Nginx versions:
+This app is tested with the following Nginx versions:
 * Kubernetes environments: Nginx version 1.21.4
 * Non-Kubernetes environments: Nginx version 1.19.8
 
@@ -36,9 +36,9 @@ Tutorial: Set up NGINX for non-Kubernetes Sources.
 :::
 
 
-## Collecting Logs for the Nginx App
+## Collecting Logs for the Nginx app
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx. The following tasks are required:
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx. The following tasks are required:
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -119,13 +119,13 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
  [[inputs.nginx]]
    urls = ["http://IP_TO_BE_CHANGED/nginx_status"]
-    response_timeout = "5s"
+   response_timeout = "5s"
 
    [inputs.nginx.tags]
-   environment="<env_TO_BE_CHANGED>"
-   component="webserver"
-   webserver_system="nginx"
-   webserver_farm="<nginx_TO_BE_CHANGED>"--If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
+    environment="<env_TO_BE_CHANGED>"
+    component="webserver"
+    webserver_system="nginx"
+    webserver_farm="<nginx_TO_BE_CHANGED>"--If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
  ```
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
@@ -325,10 +325,10 @@ Create or modify `telegraf.conf` and copy and paste the text below:
   response_timeout = "5s"
 
   [inputs.nginx.tags]
-  environment="env_TO_BE_CHANGED"
-  component="webserver"
-  webserver_system="nginx"
-  webserver_farm="<nginx_TO_BE_CHANGED>"
+    environment="env_TO_BE_CHANGED"
+    component="webserver"
+    webserver_system="nginx"
+    webserver_farm="<nginx_TO_BE_CHANGED>"
 
 [[outputs.sumologic]]
   url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
@@ -454,10 +454,9 @@ If you haven’t enabled alerts and/or configured notifications through the Terr
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 :::
 
+## Installing the Nginx app
 
-## Installing the Nginx App
-
-This section demonstrates how to install the Nginx App.
+This section demonstrates how to install the Nginx app.
 
 First, you'll need to locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -477,14 +476,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
-
 ## Viewing Nginx Dashboards
 
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
 :::
-
 
 ### Overview
 
@@ -497,7 +493,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Overview.png')} alt="Nginx-Overview" />
 
-
 ### Error Logs
 
 The **Nginx - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
@@ -509,7 +504,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Error-Logs.png')} alt="Nginx-Error-Logs" />
 
-
 ### Trends
 
 The **Nginx - Logs Timeline Analysis** dashboard provides a high-level view of the activity and health of Nginx servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
@@ -519,7 +513,6 @@ Use this dashboard to:
 * Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Trends.png')} alt="Nginx-Trends" />
-
 
 ### Outlier Analysis
 
@@ -533,8 +526,8 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Outlier-Analysis.png')} alt="Nginx-Outlier-Analysis" />
 
-
 ### Threat Intel
+
 The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
@@ -569,14 +562,13 @@ Use this dashboard to:
 
 ### Visitor Locations
 
-The Nginx - Visitor Locations dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
+The **Nginx - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
 Use this dashboard to:
 
-* Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
+* Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorLocations.png')} alt="Nginx-VisitorLocations" />
-
 
 ### Visitor Traffic Insight
 
@@ -589,7 +581,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-VisitorTrafficInsight.png')} alt="Nginx-VisitorTrafficInsight" />
 
-
 ### Connections and Requests Metrics
 
 The **Nginx - Connections and Requests Metrics** dashboard provides insight into active, dropped connections, reading, writing, and waiting requests.
@@ -600,8 +591,6 @@ Use this dashboard to:
 * Gain information about the total requests handled by Nginx Server per second. This helps you understand read, write requests on Nginx Server.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Connections-and-Requests.png')} alt="Nginx-Connections-and-Requests" />
-
-
 
 ## Nginx Alerts
 
