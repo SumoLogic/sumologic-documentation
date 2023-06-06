@@ -2,7 +2,7 @@
 id: proofpoint-tap
 title: Proofpoint TAP
 sidebar_label: Proofpoint TAP
-description: The Proofpoint TAP app for Sumo Logic provides comprehensive visibility and analysis of messages and clicks of malicious URLs to improve your security posture.
+description: The Sumo Logic app for Proofpoint TAP provides comprehensive visibility and analysis of messages and clicks of malicious URLs to improve your security posture.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
