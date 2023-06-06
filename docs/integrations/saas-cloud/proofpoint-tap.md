@@ -165,7 +165,7 @@ This section provides instructions on how to install the Proofpoint TAP app, as 
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Proofpoint TAP Dashboards​​
+## Viewing Proofpoint TAP dashboards​​
 
 * All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
