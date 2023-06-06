@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="ciscomeraki-logo" width="75"/>
 
-The Sumo Logic app for Cisco Meraki C2C provides real-time insights into the events and helps you to identify potential network events along with admin activities. This app can effectively manage and optimize your network performance, enhance security, and proactively respond to potential threats. The comprehensive insights and monitoring capabilities enable efficient network administration and contribute to a robust and secure network infrastructure.
+The Sumo Logic app for Cisco Meraki - C2C provides real-time insights into the events and helps you to identify potential network events along with admin activities. This app can effectively manage and optimize your network performance, enhance security, and proactively respond to potential threats. The comprehensive insights and monitoring capabilities enable efficient network administration and contribute to a robust and secure network infrastructure.
 
-Key features and benefits of the Cisco Meraki C2C app include:
+Key features and benefits of the Cisco Meraki - C2C app include:
 
 - **Comprehensive Organization Insights**. Gain valuable insights into your organizational configuration and operations, including API adoption, configuration template usage, and product distribution. Stay updated on the overall organization landscape and monitor key metrics for efficient management and optimization.
 - **Real-time Security Monitoring**. Monitor network security in real-time with insights on security events, blocked events, threat severity, and infected hosts. Identify potential threats, track attack origins and targets, and take proactive measures to enhance network security.
@@ -76,13 +76,13 @@ _sourceCategory=cm_con2006 wiredMacs
 
 To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions provided at [Cisco Meraki Source](/docs/integrations/security-threat-detection/cisco-meraki/). These instructions will guide you through the process of creating a source using the Cisco Meraki source category, which you will need to use when installing the app. By following these steps, you can ensure that your Cisco Meraki - C2C app is properly integrated and configured to collect and analyze your Cisco Meraki data.
 
-## Installing the Cisco Meraki - C2C app​
+## Installing the Cisco Meraki - C2C app
 
 This section provides instructions on how to install the Cisco Meraki - C2C app, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Cisco Meraki - C2C dashboards​​
+## Viewing Cisco Meraki - C2C dashboards
 
 * All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
