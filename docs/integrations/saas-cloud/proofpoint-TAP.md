@@ -21,7 +21,7 @@ Key features of the Proofpoint TAP app include:
 
 ## Log types
 
-This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) to collect messages and click SIEM events using [SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API).
+This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) to collect messages and and retrieves SIEM events through the [SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API).
 
 ## Sample log messages
 
