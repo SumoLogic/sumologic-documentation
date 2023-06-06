@@ -112,7 +112,7 @@ The following example shows how to configure a notification that sends an email 
    1. For **Integration**, select **Sumo Logic CIP**.
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **Search Sumo Logic**.
-   2. In the **Query** box enter the search query you want to make in the Sumo Logic core platform. For help with queries, see [General Search Examples Cheat Sheet](https://help.sumologic.com/docs/search/search-cheat-sheets/general-search-examples/). 
+   2. In the **Query** box enter the search query you want to make in the Sumo Logic core platform. For help with queries, see [General Search Examples Cheat Sheet](/docs/search/search-cheat-sheets/general-search-examples/). 
    3. For **Last Period** select **1 Hour**.
    4. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-search-sumo-logic-node.png')} alt="Add Search Sumo Logic node" width="500"/> 
 2. Add the "Send Email" action to the playbook:
@@ -343,7 +343,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
     6. For **Integration**, select **Sumo Logic CIP**.
     7. Ensure that **Type** is **Enrichment**.
     8. For **Action**, select **Search Sumo Logic**.
-    9. In the **Query** box enter the search query you want to make in the Sumo Logic core platform. In the example below, a placeholder queries for a value obtained from the IP Reputation V3 node. For help with queries, see [General Search Examples Cheat Sheet](https://help.sumologic.com/docs/search/search-cheat-sheets/general-search-examples/). 
+    9. In the **Query** box enter the search query you want to make in the Sumo Logic core platform. In the example below, a placeholder queries for a value obtained from the IP Reputation V3 node. For help with queries, see [General Search Examples Cheat Sheet](/docs/search/search-cheat-sheets/general-search-examples/). 
     10. For **Last Period** select **15 Minutes** (or any time period you want).
     11. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-search-sumo-logic-node-2.png')} alt="Add Search Sumo Logic node" width="500"/>  
     12. Click and hold on the right semicircle of the new Search Sumo Logic node and drag to the semicircle of the **END** node and release.
