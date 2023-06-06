@@ -84,12 +84,6 @@ This section provides instructions on how to install the Cisco Meraki - C2C app,
 
 ## Viewing Cisco Meraki - C2C dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
 ### Organization Overview
 
 The **Cisco Meraki - Organization Overview** dashboard provides valuable insights and essential metrics concerning your organizational configuration and operations. It provides a comprehensive understanding of your network through various panels, including Total Organizations, API Enabled Organizations, Organizations by Product Type, and Organizations by Cloud Region, allowing you to stay updated on the overall organization landscape, monitor API adoption, track configuration template usage, and analyze product distribution within the network. Additionally, the dashboard provides insights on Active Admins, Configuration Change Summary, Geo Locations of Top Threats, and Configuration Change Frequency. By leveraging this dashboard, you can efficiently manage and optimize your organization's performance and enhance its security. <br/><img src={useBaseUrl('img/integrations/saas-cloud/Cisco-Meraki-Organization-Overview.png')} alt="Cisco-Meraki-Organization-Overview" />
