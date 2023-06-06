@@ -159,15 +159,15 @@ _sourceCategory="milan_proofpoint_tap" ("CLICK_PERMITTED" or "CLICK_BLOCKED")
 
 To set up [Cloud to Cloud Integration Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) for the Proofpoint TAP app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint TAP source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
 
-## Installing the Proofpoint TAP app​
+## Installing the Proofpoint TAP app
 
 This section provides instructions on how to install the Proofpoint TAP app, as well as examples of each of the dashboards. The app pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Proofpoint TAP dashboards​​
+## Viewing Proofpoint TAP dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following dashboards. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
  You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
 
