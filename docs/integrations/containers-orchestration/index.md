@@ -26,13 +26,6 @@ This guide has documentation Sumo apps for container management and orchestratio
   <p>A guide to Sumo Logic app for Docker Community Edition.</p>
   </div>
 </div>
-    <div className="box smallbox3 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="165"/>
-      <h4><a href="/docs/integrations/containers-orchestration/docker-enterprise-edition">Docker Enterprise Edition</a></h4>
-      <p>A guide to the Sumo Logic app for Docker Enterprise Edition.</p>
-      </div>
-    </div>
     <div className="box smallbox4 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="150"/>

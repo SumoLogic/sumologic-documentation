@@ -286,13 +286,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <p>A guide to the Sumo Logic app for AWS ELB - Classic.</p>
           </div>
         </div>
-        <div className="box smallbox40 card">
-          <div className="container">
-          <img src={useBaseUrl('img/integrations/amazon-aws/elb-metrics.png')} alt="Thumbnail icon" width="50"/>
-          <h4><a href="/docs/integrations/amazon-aws/elastic-load-balancing-metrics">AWS Elastic Load Balancing Metrics</a></h4>
-          <p>A guide to the Sumo Logic app for AWS ELB Metrics.</p>
-          </div>
-        </div>
         <div className="box smallbox41 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/lambda.png')} alt="Thumbnail icon" width="50"/>
