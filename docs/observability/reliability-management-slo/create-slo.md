@@ -199,7 +199,7 @@ These log messages will be delayed by one hour, as the system ensures consistenc
 
 ### SLO Lookup Tables
 
-You can call a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
+You can query a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
 
 There are two ways to use it:
 
