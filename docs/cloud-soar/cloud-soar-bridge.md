@@ -103,8 +103,11 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Click **?** in the upper-right of the Cloud SOAR UI.
 1. In the **Automation Bridge** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
-1. Copy the file to the bridge virtual machine.
-1. To install the package run from ssh:
+1. Copy the file to the bridge virtual machine. You can use SCP - see example below:
+    ```
+    scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
+    ```
+3. To install the package run from ssh:
    ```
    sudo dpkg -i automation-bridge-X.X.deb
    ```
@@ -114,7 +117,10 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Click **?** in the upper-right of the Cloud SOAR UI.
 1. In the **Automation Bridge** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
-1. Copy the file to the bridge virtual machine.
+1. Copy the file to the bridge virtual machine (You can use SCP, see example below).
+    ```
+    scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
+    ```
 1. To install the package run from ssh:
    ```
    sudo yum install automation-bridge-X.X.rpm
