@@ -183,7 +183,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox27 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/proofpoint-TAP"><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="120"/><h4>Proofpoint TAP</h4></a>
+  <a href="/docs/integrations/saas-cloud/proofpoint-tap"><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="120"/><h4>Proofpoint TAP</h4></a>
   <p>Analyze messages and clicks of malicious URLs to improve your security posture.</p>
   </div>
 </div>
