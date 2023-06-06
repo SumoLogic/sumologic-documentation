@@ -678,6 +678,7 @@ module.exports = {
         'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
+        'manage/data-forwarding/view-list-data-forwarding',
       ]
     },
     {
@@ -905,6 +906,7 @@ module.exports = {
         'dashboards-new/scheduled-report',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/link-dashboards',
+        'dashboards-new/set-data-access-level',
         'dashboards-new/share-dashboard-new',
         'dashboards-new/filter-template-variables',
         {
@@ -2245,6 +2247,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
         },
         {
@@ -2430,7 +2433,6 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
-            'cse/administration/onboarding-checklist-cse',
             'cse/administration/filter-search',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
@@ -2467,6 +2469,7 @@ integrations: [
         'cloud-soar/mssp',
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
+        'cloud-soar/cloud-soar-apis',
       ],
     },
   ],
@@ -2482,6 +2485,8 @@ integrations: [
         'api/access-keys',
         'api/account-management',
         'api/archive-ingestion',
+        'api/cloud-siem-enterprise',
+        'api/cloud-soar',
         {
           type: 'category',
           label: 'Collector Management',
@@ -2496,7 +2501,6 @@ integrations: [
         },
         'api/content-permissions',
         'api/content-management',
-        'api/cloud-siem-enterprise',
         'api/dashboard-new',
         'api/data-forwarding',
         'api/dynamic-parsing',
