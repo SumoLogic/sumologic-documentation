@@ -103,7 +103,7 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Click **?** in the upper-right of the Cloud SOAR UI.
 1. In the **Automation Bridge** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
-1. Copy the file to the bridge virtual machine (You can use SCP, see example below).
+1. Copy the file to the bridge virtual machine. You can use SCP - see example below:
     ```
     scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
     ```
