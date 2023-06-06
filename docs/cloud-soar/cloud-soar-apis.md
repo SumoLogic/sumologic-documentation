@@ -11,23 +11,31 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
-## API documentation
-
 {@import ../reuse/api-intro.md}
 
 {@import ../reuse/csoar-api-table.md}
 
-## Get started
+## Get started with the Cloud SOAR APIs
 
-The Cloud SOAR API documentation lists all the available endpoints and expected parameters. It provides a list of the required and accepted data schema to use for each of the exposed endpoints.
+### API documentation 
 
-The **Request samples** provided for each endpoint should be used for documentation only. The API documentation does not currently support executing API endpoints directly from the documentation.
+In addition to the API documentation available using the links provided above, API documentation is available through your Cloud SOAR instance at the following URL:
+
+```
+http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
+```
+
+The APIs listed at this location are internally-facing and are unique to the tenant. The documentation lists all the available endpoints and expected parameters. It provides a list of the required and accepted data schema to use for each of the exposed endpoints.
+
+The **Try it out** feature provided for each endpoint should be used for documentation only; it does not currently support executing API endpoints directly from the documentation.
 
 ### Base path for API requests
 
-Obtain the base path to be used by clicking the endpoint shown in the upper right of any API in the documentation:
+The base path to be used to access the Cloud SOAR REST API is:
 
-<img src={useBaseUrl('img/cloud-soar/cloud-soar-basepath.png')} alt="API basepath" width="400"/>
+```
+http[s]://<cloudsoarhost>/incmansuite_ng/api/v3/<endpoint>
+```
 
 ### Generate an API token
 
@@ -45,8 +53,8 @@ A Cloud SOAR user can use the token displayed in the **API Token** section to pr
 The following is an example of a GET (or PUT) request which does not contain a data payload using curl:
 
 ```
-curl -X GET http[s]://<host>/api/csoar/v3/<endpoint> 
---header "Authorization: Bearer <token>" 
+curl -X GET http[s]://<cloudsoarhost>/incmansuite_ng/api/v3/<endpoint>
+--header "Authorization: Bearer <token>"
 --header "Accept:application/json"
 ```
 
@@ -56,7 +64,7 @@ The following is an example of a GET (or PUT) request which does not contain a d
 import requests
 import json
 headers = {'Authorization' : 'Bearer <token>', 'Accept' :'application/json'}
-inc = requests.get('http[s]://<host>/api/csoar/v3/incidents/<incidentId>, headers=headers)
+inc = requests.get('http[s]://<cloudsoarhost>/incmansuite_ng/api/v3/incidents/<incidentId>, headers=headers)
 incident = json.loads(inc.text)
 ```
 
@@ -65,9 +73,9 @@ incident = json.loads(inc.text)
 The following is an example of a POST (or PUT) request which contains a data payload using curl:
 
 ```
---header "Authorization: Bearer <token>" 
---header "Accept:application/json" 
---header "Content-Type: application/json" 
+--header "Authorization: Bearer <token>"
+--header "Accept:application/json"
+--header "Content-Type: application/json"
 -d “{”<key1>”:”<value1>”, ”<key2>”:”<value2>”,...,”<keyN>”:”<valueN>”}”
 ```
 
@@ -78,7 +86,7 @@ import requests
 import json
 headers = {'Authorization' : 'Bearer <token>', 'Accept' : 'application/json', 'Content-Type' : 'application/json'}
 new_incident = <incident data in JSON>
-new_inc = requests.post('http[s]://<host>/api/csoar/v3/incidents', data=new_incident, headers=headers)
+new_inc = requests.post('http[s]://<cloudsoarhost>/incmansuite_ng/api/v3/incidents', data=new_incident, headers=headers)
 incident = json.loads(new_inc.text)
 ```
 
