@@ -1,6 +1,7 @@
 ---
 id: amazon-security-lake-source
 title: Amazon Security Lake Source
+sidebar_label: Amazon Security Lake
 description: Learn how to configure the Amazon Security Lake source setup using the Sumo logic environment.
 ---
 
