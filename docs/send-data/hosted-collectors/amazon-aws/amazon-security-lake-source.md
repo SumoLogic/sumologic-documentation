@@ -1,20 +1,11 @@
 ---
 id: amazon-security-lake-source
 title: Amazon Security Lake Source
+sidebar_label: Amazon Security Lake
 description: Learn how to configure the Amazon Security Lake source setup using the Sumo logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::note
-This feature is in Beta. To participate, contact your Sumo account executive.
-:::
 
 Amazon Security Lake source provides a web services interface that can be used to manage data from multiple AWS sources through a single interface for multiple AWS organizations.
 
