@@ -15,3 +15,7 @@ The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR 
 {@import ../reuse/api-intro.md}
 
 {@import ../reuse/cse-api-table.md}
+
+:::tip
+For information on how to obtain authentication tokens and structure API requests, see our documentation on how to [get started with Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis#get-started-with-cloud-soar-apis). 
+:::
