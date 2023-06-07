@@ -22,7 +22,7 @@ Key features and benefits of the Cisco Meraki - C2C app include:
 
 ## Log types
 
-This app uses [Cisco Meraki source](/docs/integrations/security-threat-detection/cisco-meraki/) to collect the data from Cisco Meraki.
+This app uses [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) to collect the data from Cisco Meraki.
 
 ## Sample log messages
 
