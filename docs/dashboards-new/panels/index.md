@@ -41,7 +41,7 @@ Available chart types:
 * [Line](line-charts.md)
 * [Table](table-charts.md)
 * [Box Plot](/docs/dashboards-new/panels/box-plot-charts)
-* [Heatmap](/docs/metrics/metrics-queries/heat-map)
+* [Heat Map](/docs/metrics/metrics-queries/heat-map)
 
 ### What is the difference between a categorical and time series panel?
 The **categorical** panel type contains charts that graph data across categories. This includes:
