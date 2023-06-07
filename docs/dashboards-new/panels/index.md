@@ -68,7 +68,7 @@ The types of charts you’ll find in the time series panel include:
 * Line
 * Table
 * Box Plot
-* Heatmap
+* Heat Map
 
 ## Categorical Panel
 
