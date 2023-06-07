@@ -920,6 +920,7 @@ module.exports = {
             'dashboards-new/dashboards-migration/changes-after-migration',
           ],
         },
+        'dashboards-new/advanced',
         'dashboards-new/faq',
       ],
     },
