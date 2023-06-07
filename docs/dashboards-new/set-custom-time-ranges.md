@@ -16,6 +16,8 @@ After changing the time range for a dashboard or panel, you can set the new rang
 
 You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times.
 
+Dashboard panels are limited to a 32-day maximum time range for regular queries, while the scheduled view queries have no time range limit.
+
 ### Set a predefined time range
 
 **To select a predefined time range:**
