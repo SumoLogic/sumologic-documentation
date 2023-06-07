@@ -15,6 +15,7 @@ Related topics:
 
 * [Modify a Chart](modify-chart.md)
 * [Markdown Syntax](markdown-syntax.md)
+* [Warning and Critical Thresholds](/docs/metrics/metrics-queries/metrics-explorer/#set-warning-and-critical-thresholds)
 
 ## Time Series Panel 
 
@@ -39,16 +40,23 @@ Available chart types:
 * [Column](column-charts.md)
 * [Line](line-charts.md)
 * [Table](table-charts.md)
+* [Box Plot](/docs/dashboards-new/panels/box-plot-charts)
+* [Heatmap](/docs/metrics/metrics-queries/heat-map)
 
 ### What is the difference between a categorical and time series panel?
 The **categorical** panel type contains charts that graph data across categories. This includes:
 
-* Bar charts over categories
+* Line Charts
+* Area Charts
+* Bar Charts over categories
 * Column charts over categories
 * Pie Charts
+* Funnel Charts
 * Tables over categories
 * Bubble Charts
 * Scatter Charts
+* Sankey Diagram
+* Box Plot Charts
 
 The **time series** panel type is designed to graph data over time. Time series panels accept aggregate fields with epoch values (milliseconds since 1970). You can use the timeslice operator to provide a time series.
 
@@ -59,7 +67,8 @@ The types of charts you’ll find in the time series panel include:
 * Column
 * Line
 * Table
-
+* Box Plot
+* Heatmap
 
 ## Categorical Panel
 
@@ -78,6 +87,10 @@ Available chart types:
 * [Pie](pie-charts.md)
 * [Scatter](scatter-charts.md)
 * [Table](table-charts.md)
+* [Line](line-charts.md)
+* [Box Plot](/docs/dashboards-new/panels/box-plot-charts)
+* [Funnel Charts](/docs/metrics/metrics-queries/funnel-chart)
+* [Sankey Diagram](/docs/dashboards-new/panels/sankey-charts)
 
 The following image shows an example of Scatter and Bubble charts.  <br/> ![scatter and bubble charts.png](/img/dashboards-new/panels/scatter-and-bubble-charts.png)
 
@@ -88,7 +101,6 @@ The following image shows an example of Scatter and Bubble charts.  <br/> ![scat
 Single Value Panels are great at providing high level overviews. They look great on executive dashboards and can provide at-a-glance information to help decide where to inspect and troubleshoot further.
 
 Only [single value charts](single-value-charts.md) are supported.<br/>![single value charts.png](/img/dashboards-new/panels/single-value-charts.png)
-
 
 ## Map Panel
 
@@ -101,7 +113,6 @@ You may not see map panels render if hardware acceleration is disabled on your b
 :::
 
 Only [map charts](map-charts.md) are supported.<br/>![new map charts.png](/img/dashboards-new/panels/new-map-charts.png)
-
 
 ## Text Panel
 
