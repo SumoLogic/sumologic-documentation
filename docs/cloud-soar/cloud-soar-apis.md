@@ -7,7 +7,7 @@ description: Learn how to access Cloud SOAR APIs and API documentation.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="60"/>
+<!-- Add this once all customers are moved to Cloud SOAR Delivery 2, and remove all the documentation below for "incmansuite_ng:
 
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
@@ -15,19 +15,17 @@ The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR 
 
 {@import ../reuse/csoar-api-table.md}
 
-## Get started with the Cloud SOAR APIs
+-->
 
 ### API documentation 
 
-In addition to the API documentation available using the links provided above, API documentation is available through your Cloud SOAR instance at the following URL:
+API documentation is available through your Cloud SOAR instance at the following URL:
 
 ```
 http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
 ```
 
 The APIs listed at this location are internally-facing and are unique to the tenant. The documentation lists all the available endpoints and expected parameters. It provides a list of the required and accepted data schema to use for each of the exposed endpoints.
-
-The **Try it out** feature provided for each endpoint should be used for documentation only; it does not currently support executing API endpoints directly from the documentation.
 
 ### Base path for API requests
 
@@ -96,4 +94,3 @@ In addition to JSON, the payload may also be sent in XML format using the header
 "Accept: application/x-www-form-urlencoded"
 "Content-Type: multipart/form-data format"
 ```
-
