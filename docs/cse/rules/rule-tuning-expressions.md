@@ -19,7 +19,7 @@ metadata_vendor = 'Microsoft' and metadata_product = 'Windows' and metadata_devi
 
 If you don’t want the rule to generate a Signal if the person performing the action is “jdoe”, you can add a tuning expression like this to the rule, and configure the tuning expression to exclude Records that match the tuning expression.
 
-`user_userId = jdoe`
+`user_userId = "jdoe"`
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
