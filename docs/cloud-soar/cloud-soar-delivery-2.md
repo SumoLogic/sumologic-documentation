@@ -50,3 +50,23 @@ You can create reports on incidents, and add widgets to the reports such as char
 2. Click **Save**.
 3. Click **Export** to export the report to PDF. 
 4. Click **Open** to open the report later. 
+
+## Dashboards
+
+Write
+
+
+## Integration Builder
+
+Write
+
+
+## Cloud SOAR APIs
+
+The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
+
+{@import ../reuse/api-intro.md}
+
+{@import ../reuse/csoar-api-table.md}
+
+<!-- At Delivery 2 GA, add this same Cloud SOAR API content to https://help.sumologic.com/docs/api/cloud-soar/ -->
