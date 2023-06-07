@@ -678,6 +678,7 @@ module.exports = {
         'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
+        'manage/data-forwarding/view-list-data-forwarding',
       ]
     },
     {
@@ -905,6 +906,7 @@ module.exports = {
         'dashboards-new/scheduled-report',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/link-dashboards',
+        'dashboards-new/set-data-access-level',
         'dashboards-new/share-dashboard-new',
         'dashboards-new/filter-template-variables',
         {
@@ -2087,6 +2089,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
+          'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
@@ -2107,6 +2110,7 @@ integrations: [
           'integrations/saas-cloud/pagerduty-v3',
           'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
+          'integrations/saas-cloud/proofpoint-tap',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',
@@ -2245,6 +2249,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
+            'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
         },
         {
@@ -2429,7 +2434,6 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/administration/index'},
           items: [
-            'cse/administration/onboarding-checklist-cse',
             'cse/administration/filter-search',
             'cse/administration/create-use-network-blocks',
             'cse/administration/create-a-custom-tag-schema',
@@ -2466,6 +2470,7 @@ integrations: [
         'cloud-soar/mssp',
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
+        'cloud-soar/cloud-soar-apis',
       ],
     },
   ],
@@ -2481,6 +2486,8 @@ integrations: [
         'api/access-keys',
         'api/account-management',
         'api/archive-ingestion',
+        'api/cloud-siem-enterprise',
+        'api/cloud-soar',
         {
           type: 'category',
           label: 'Collector Management',
@@ -2495,7 +2502,6 @@ integrations: [
         },
         'api/content-permissions',
         'api/content-management',
-        'api/cloud-siem-enterprise',
         'api/dashboard-new',
         'api/data-forwarding',
         'api/dynamic-parsing',
