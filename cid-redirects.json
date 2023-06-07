@@ -432,7 +432,7 @@
   "/05Search/Search-FAQs/Export-the-Results-of-a-Saved-File": "/docs/search/faq",
   "/05Search/Search-FAQs/How-to-group-messages-based-on-a-field-you-define": "/docs/search/faq",
   "/05Search/Search-FAQs/Searching-by-keyword-returns-no-results-even-though-the-keyword-exists-in-messages": "/docs/search/faq",
-  "/05Search/Search-Overview/Search-Widgets/Add-a-Search-Box-to-a-Dashboard": "docs/search/get-started-with-search",
+  "/05Search/Search-Overview/Search-Widgets/Add-a-Search-Box-to-a-Dashboard": "/docs/search/get-started-with-search",
   "/05Search/Search-Query-Language": "/docs/send-data/collection/search-for-a-collector-or-source",
   "/05Search/Search-Query-Language/01-Parse-Operators": "/docs/search/search-query-language/parse-operators",
   "/05Search/Search-Query-Language/01-Parse-Operators/Parameterized-Queries": "/docs/search/get-started-with-search/build-search/search-templates",
