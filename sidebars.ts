@@ -1059,6 +1059,7 @@ module.exports = {
                 'search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser',
               ],
             },
+            'search/get-started-with-search/search-page/log-level',
             'search/get-started-with-search/search-page/modify-search-from-messages-tab',
             'search/get-started-with-search/search-page/navigate-through-search-results',
             'search/get-started-with-search/search-page/search-highlighting',
