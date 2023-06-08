@@ -229,7 +229,7 @@ Now that you have set up log and metric collection for Amazon Aurora PostgreSQL,
 
 To drill down for details, click the Event Status panel. Details are shown for the of events in the linked dashboard: Aurora PostgreSQL ULM - CloudTrail Event - Details.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_CloudTrailEvent_Overview.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-CloudTrail-Event-Overview.png')} alt="Aurora PostgreSQL ULM" />
 
 
 ### CloudTrail Event - Details
@@ -240,7 +240,7 @@ Use this dashboard to:
 * Keep track of your Aurora PostgreSQL Clusters and Instances. This dashboard provides details about various cluster and instance related activities, such as creation, modification, deletion and reboot of instances. The improper configuration of clusters and instances may have adverse impact on performance.
 * Help identify problems with details about the Aurora PostgreSQL specific events that provide insights into how to solve a particular problem.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_CloudTrailEvent_Details.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-CloudTrail-Event-Details.png')} alt="Aurora PostgreSQL ULM" />
 
 
 ### Metric - Overview
@@ -255,7 +255,7 @@ Use this dashboard to:
 * Monitor Volume Read and Write IOPS to ensure the database is optimally interacting with disk.
 * Monitor replica lags and available free memory to ensure support of heavy read loads with good performance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_Overview.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Overview.png)} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Generic
 
@@ -269,7 +269,7 @@ Use this dashboard to:
 * Monitor cache hit ratio to identify free memory from query performance perspective.
 * Identify deadlocks, if any, and identify free local storage.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_Generic.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Generic.png')} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Latency, Throughput, and IOPS Monitoring
 
@@ -283,7 +283,7 @@ Use this dashboard to:
 * Monitor Read and Write IOPS to ensure your database is interacting with disk optimally.
 * Monitor database wait times for disk access with the Disk Queue Depth panel.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_LTIOPSMonitoring.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Latency,-Throughput-and-IOPS-Monitoring.png')} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Resource Utilization Monitoring
 
