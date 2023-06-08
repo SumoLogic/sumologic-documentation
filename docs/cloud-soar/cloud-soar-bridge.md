@@ -131,7 +131,7 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters: <!-- These parameters differ from those for the Automation Service -->
    * `SOAR_URL`
    * `SOAR_TOKEN`
-1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
+1. Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
 
 And you can set this optional parameter (do not include spaces): `ALIAS`
 
@@ -145,7 +145,6 @@ An example of a configuration file would be:
         "ALIAS": "YOUR_ALIAS_NO_SPACES"
 }
 ```
-Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
 
 ### Bridge ALIAS
 
