@@ -172,8 +172,12 @@ The [CSE API](/docs/cse/administration/cse-apis/) supports automations. Endpoint
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
 
-The Sumo Logic Terraform provider also supports automations. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+The Sumo Logic Terraform provider also supports automations, but does not support the ability to create or modify integrations, playbooks, nor actions. For more information about Terraform, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
 
 :::note
 The Automation Service uses the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis). 
 :::
+
+### Data retention
+
+Automation Service data is retained in accordance with Sumo Logic's policies. For more information, see our [Cloud SIEM data retention](/docs/cse/administration/cse-data-retention/#cse) documentation.
