@@ -26,3 +26,10 @@ This table lists where, and for how long, different types of CSE data are retain
 * Signals that are not attached to Insights are retained in CSE:
     * For 90 days if suppressed. (As of October 1, 2022, this will change to 30 days.)
     * For 365 days if unsuppressed.
+* Playbook and action executions are retained in CSE for 2 years. For those that need to ensure HIPAA compliance, we delete the data after 7 years.
+
+### Custom retention periods
+
+You can request retention periods different from those declared in the tables above, as long as the retention period requested is greater than 1 day and less than 5000 days.
+
+In order to do that, open a [Support ticket](/docs/get-started/help#support) with your request.
