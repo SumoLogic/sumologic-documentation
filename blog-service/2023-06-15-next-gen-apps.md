@@ -17,7 +17,7 @@ In response to many requests for better App management, we are happy to announce
 * To identify which apps have been installed within your org, Next-Gen app icons will display a badge indicating their installed status. 
 * When an update to an installed App becomes available, these new apps will provide a badge noting there is an update available. An upgrade can then be applied with a simple click within the App Catalog.  
 * Installed Apps can be uninstalled and removed through the App Catalog, making it easy to clean up Apps you no longer use.  
-* Additional filter options making it easy to find your installed or upgradeable Apps. 
+* Additional filter options make it easy to find your installed or upgradeable Apps. 
 * To support the ability to upgrade and to make App content easier to locate, App content will be installed into a shared “Installed Apps” folder of the Library.
 * To support the ability to upgrade and to make sure upgrades do not overwrite any customizations you may apply, the content installed by an app is immutable. If you wish to customize the content you will need to first make a custom copy of the content. 
 * Role-based access controls, ensuring that only authorized individuals within your organization can install, uninstall, or update them. To perform these actions you must be an Administrator, or possess the "Manage Apps" capability within your assigned roles.
