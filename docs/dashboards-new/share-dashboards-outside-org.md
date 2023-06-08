@@ -27,7 +27,7 @@ In this step, you enable sharing of dashboards outside your organization. You mu
 
 ## Verify your role allows external sharing
 
-You must have specific role capabilities to share a dashboard with external users:
+You must have specific role capabilities to share a dashboard with external users.
 
 * **Share Dashboards with the Allowlist.** Share dashboards with users only on the allowlist.
 * **Share Dashboards with the World.** Share dashboards with external users. 
