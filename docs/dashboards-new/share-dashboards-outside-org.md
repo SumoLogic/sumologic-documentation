@@ -36,7 +36,7 @@ If you do not already have a role that grants you the required capability, an Ad
 
 ## Add external users to service allowlist
 
-If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled, and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md).
+If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md).
 
 :::note
 Administrator privileges are required to enable the service allowlist.
