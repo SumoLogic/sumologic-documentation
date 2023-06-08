@@ -87,13 +87,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox13 card">
   <div className="container">
   <a href="/docs/dashboards-new/share-dashboard-new"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Sharing Dashboards</h4></a>
-  <p>Learn how to save share a custom dashboard with colleagues.</p>
+  <p>Learn how to share a custom dashboard with colleagues.</p>
   </div>
 </div>
 <div className="box smallbox14 card">
   <div className="container">
   <a href="/docs/dashboards-new/share-dashboard-outside-org"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Sharing Dashboards Outside Your Organization</h4></a>
-  <p>Learn how to save share a custom dashboard outside your organization.</p>
+  <p>Learn how to share a custom dashboard outside your organization.</p>
   </div>
 </div>
 </div>
