@@ -15,7 +15,7 @@ authors:
 We're excited to announce the release of the new Cisco Meraki - C2C app for Sumo Logic. This app uses the Sumo Logic [Cloud-to-Cloud Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) and helps you to effectively manage and optimize your network performance, enhance security, and proactively respond to potential threats. Here are some of the key features that this app offers:
 
 - **Comprehensive Organization Insights**. Gain valuable insights into your organizational configuration and operations, including API adoption, configuration template usage, and product distribution.
-- **Event Analysis and Trend Identification**. Analyze your network events based on type, client associations, and SSIDs. Also, you can identify event patterns and trends to understand network activity and potential security risks.
+- **Event Analysis and Trend Identification**. Analyze your network events based on type, client associations, and SSIDs. You can identify event patterns and trends to understand network activity and potential security risks.
 - **Client and SSID Monitoring**. Monitor your client activity and their association with specific SSIDs to keep track of your client's behaviour and network usage for effective management.
 - **Air Marshal Security Overview**. Provides wireless intrusion detection and prevention by monitoring your security status and identifying potential vulnerabilities in the network.
 - **Enhanced Security Measures**. Prioritize your security efforts by identifying top clients and destinations based on security events and take proactive steps to protect the network and mitigate potential threats.
