@@ -15,7 +15,7 @@ In response to many requests for better App management, we are happy to announce
 **Key Features**
 
 * To identify which apps have been installed within your org, Next-Gen app icons will display a badge indicating their installed status. 
-* When an update to an installed App becomes available these new apps will provide a badge noting their is an update available. An upgrade can then be applied with a simple click within the App Catalog.  
+* When an update to an installed App becomes available, these new apps will provide a badge noting there is an update available. An upgrade can then be applied with a simple click within the App Catalog.  
 * Installed Apps can be uninstalled and removed through the App Catalog, making it easy to clean up Apps you no longer use.  
 * Additional filter options making it easy to find your installed or upgradeable Apps. 
 * To support the ability to upgrade and to make App content easier to locate, App content will be installed into a shared “Installed Apps” folder of the Library.
