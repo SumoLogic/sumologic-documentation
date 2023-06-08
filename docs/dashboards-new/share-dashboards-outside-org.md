@@ -3,7 +3,7 @@ id: share-dashboard-outside-org
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Share a Dashboard Outside Your Organization
+# Share a dashboard outside your organization
 
 This page has information about sharing dashboards with users who do not have a Sumo Logic account. For information about sharing dashboards with other Sumo Logic users, see [Share a Dashboard](/docs/dashboards-new/share-dashboard-new).
 
