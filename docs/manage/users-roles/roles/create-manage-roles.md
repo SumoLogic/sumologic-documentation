@@ -34,7 +34,7 @@ To create a role:
 1. Go to **Administration** > **Users and Roles** > **Roles**.
 1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="User in role count" width="800"/>
 1. A list of users currently assigned to the role appears.<br/><img src={useBaseUrl('img/users-roles/users-assigned-to-role.png')} alt="Users assigned to role" width="350"/>
-1. Click the A**ssign Users** field. A list of users that are not currently assigned to the role appears. Click a user’s name to add the user to the role. 
+1. Click the **Assign Users** field. A list of users that are not currently assigned to the role appears. Click a user’s name to add the user to the role. 
 1. Add additional users to the role, as desired.
 1. Click **Save** when you are done adding users to the role.
 
