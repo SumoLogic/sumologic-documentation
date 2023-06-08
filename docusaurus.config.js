@@ -134,6 +134,15 @@ module.exports = {
   plugins: [
     'docusaurus-plugin-sass',
     'react-iframe',
+    ['docusaurus-plugin-remote-content',
+      {
+        // options here
+        name: "content", // used by CLI, must be path safe
+        sourceBaseUrl: "https://github.com/jasklabs/", // the base url for the markdown (gets prepended to all of the documents when fetching)
+        outDir: "docs", // the base directory to output to.
+        documents: ["my-file.md", "README.md"], // the file names to download
+      },
+    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',

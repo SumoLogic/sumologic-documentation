@@ -41,6 +41,7 @@
     "cacheable-request": "^10.2.7",
     "clsx": "^1.1.1",
     "codespell": "^1.1.7",
+    "docusaurus-plugin-remote-content": "^3.1.0",
     "docusaurus-plugin-sass": "^0.2.1",
     "docusaurus2-dotenv": "^1.4.0",
     "file-loader": "^6.2.0",
