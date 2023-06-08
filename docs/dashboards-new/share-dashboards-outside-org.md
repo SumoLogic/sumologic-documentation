@@ -75,7 +75,6 @@ When a user shares a dashboard outside of the organization, Sumo Logic logs the 
 * Visibility (Anyone or Allowlist only)
 
 When someone views a dashboard without signing in, Sumo Logic logs the following information:
-
 * Dashboard name
 * Dashboard URL
 * Owner name
