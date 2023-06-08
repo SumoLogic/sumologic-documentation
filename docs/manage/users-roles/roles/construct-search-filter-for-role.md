@@ -8,39 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles/) page.
 
-## Index based 
 
-An index based search filter allows or denies access to [search indexes](/docs/alerts/scheduled-searches/save-to-index/). 
+## Understanding search filters
 
-1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
-1. Under **Search Filter**, select **Index based**.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
-1. Select one of the following:
-   * **All indexes**. Allow access to all indexes.
-   * **Allow few indexes**. Allow access to only the selected indexes. Choose the indexes in the **Select Indexes** box that appears.
-   * **Deny few indexes**. Deny access to the selected indexes. Choose the indexes in the **Select Indexes** box that appears.
-
-## Advanced filter
-
-An advanced filter allows access only to the logs that match the search filter. 
-
-1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
-1. Under **Search Filter**, select **Advanced filter**.<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
-1. Select one of the following:
-   * **Log Analytics data filter**. Allow access to only the logs that match the defined conditions in log analytics [partition indexes](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
-   * **Audit data filter**. Allow access to only the logs that match the defined conditions in Sumo Logic [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/).
-   * **Security data filter**. Allow access to only the logs that match the defined conditions in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/) and [LiveTail](/docs/search/live-tail/). 
-1. Enter search criteria. For examples, see [Understanding the advanced filter](#understanding-advanced-filters) below.
-
-## Test search filters
-
-1. Go to **Administration** > **Users and Roles** > **Roles**. 
-1. Select a role with search filtering defined. 
-1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index based search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index based filter" style={{border: '1px solid black'}} width="400"/>
-1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
-
-## Understanding the advanced filter
-
-An advanced filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, metadata fields, and logical operators. Here is a simple role filter:
+A search filter for a role defines what log data a user with that role can access. You can define a search filter using keywords, wildcards, metadata fields, and logical operators. Here is a simple role filter:
 
 ```sql
 _sourceCategory=labs*
