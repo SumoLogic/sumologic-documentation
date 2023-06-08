@@ -15,7 +15,7 @@ Sharing outside an organization is always view-only and need auto-refresh enable
 
 You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist. 
 
-Before you can share a dashboard with users external to your organization, you must enable a security policy, ensure that you have the right role capabilities, and depending on your option selection, enable the service allowlist.
+Before you share a dashboard with users external to your organization, you must enable a security policy, ensure that you have the right role capabilities, and enable the service allowlist depending on your option selection.
 
 ## Enable the Sumo Logic policy
 
