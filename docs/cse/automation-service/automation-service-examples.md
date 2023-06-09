@@ -153,7 +153,9 @@ The following example shows how to configure a notification that sends an email 
 
 ## Advanced example: Configure a custom integration
 
-The following example shows how to create a custom integration with an action that runs a script you provide. The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP reputation information for enrichment. (This example shows how to add enrichment to an Insight. To use the same action to add enrichment to Entities, see [Add Entity enrichment](#add-entity-enrichment) below.)
+The following example shows how to create a custom integration with an action that runs a script you provide. The custom integration and action are defined by YAML files. To learn how to build your own YAML files, see [Integration framework file formats](/docs/cse/automation-service/automation-service-integration-framework/#integration-framework-file-formats).
+
+The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP reputation information for enrichment. (This example shows how to add enrichment to an Insight. To use the same action to add enrichment to Entities, see [Add Entity enrichment](#add-entity-enrichment) below.) 
 
 1. [Install the Automation Service Bridge](/docs/cse/automation-service/automation-service-bridge/). Because this example uses a custom integration, you must first install the Bridge before you proceed.
 1. Obtain an API key from IP Quality Score:
