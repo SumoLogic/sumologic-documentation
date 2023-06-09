@@ -4,7 +4,8 @@ title: Advanced Features
 sidebar_label: Advanced Features
 description: Learn about some of the advanced feature in Dashboard (New).
 ---
-This page has information about the advanced feature in Dashboard (New).
+
+This page describes advanced features in Dashboards (New).
 
 ## Dashboard Throttling
 
