@@ -51,18 +51,11 @@ In this step, you configure an HTTP Source to receive logs from the Azure functi
 
 ### Configure Azure resources using ARM template
 
-
-```
-wiki.page("03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor", "Step 2. Configure Azure resources using ARM template")
-```
-
-
+In this step, you use a Sumo Logic provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub. Configure Azure resources as described in [Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 
 ### Troubleshooting log collection
 
 If logs are not flowing into Sumo Logic, follow the steps in Troubleshooting log collection in the following [document](https://htmlcodeeditor.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor/).
-
-
 
 ## Install the Azure Active Directory App
 

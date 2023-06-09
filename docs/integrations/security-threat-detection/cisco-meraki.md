@@ -151,7 +151,7 @@ Use this dashboard to:
 * Monitor the number high severity threats and scan attacks.
 * Identify trends across messages and appliance names.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Overview.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Overview.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Security Threats
@@ -164,7 +164,7 @@ Use this dashboard to:
 * Identify the most prevalent threats that could have a high impact on your environment.
 * Monitor when, where, and what actions are taken with configured policies in your environment and optimize your policies accordingly.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Security_Threats.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Security-Threats.png')} alt="Cisco Meraki dashboards" />
 
 
 ### URLs Overview
@@ -178,8 +178,8 @@ Use this dashboard to:
 * Monitor destination IP address outliers to check for sudden changes in user behavior and destination location traffic.
 * Monitor destinations visited by users of your network.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-URLs-Overview.png')} alt="Cisco Meraki dashboards" />
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Overview.png')} alt="Cisco Meraki dashboards" />
 
 ### URLs Content and Client Platform
 
@@ -189,7 +189,8 @@ Use this dashboard to:
 * Monitor operating systems (OS) for desktop and mobile devices, as well as browser information available in user agents, to understand how IT should best support your users.
 * Determine which sites, pages, and file types are the most popular with your users, and develop policies accordingly.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Content_and_Client_Platform.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-URLs-Content-and-Client-Platform.png')} alt="Cisco Meraki dashboards" />
+
 
 ### URLs Threat Intel
 
@@ -199,7 +200,7 @@ Use this dashboard to:
 * Identify and remediate potential threats and indicators of compromises to your network.
 * Monitor whether users are accessing web pages or destination IP addresses that have been tagged as malicious by Sumo Logic Threat Intel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Threat_Intel.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-URLs-Threat-Intel.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Flows Overview
@@ -211,7 +212,7 @@ Use this dashboard to:
 * Monitor network traffic that’s been allowed and rejected.
 * Monitor the activity of TCP and UDP ports to identify possible port scan attacks, both horizontal and vertical.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Flows_Overview.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Flows-Overview.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Flows Allowed and Rejected
@@ -222,7 +223,7 @@ Use this dashboard to:
 * Detect sudden changes in allowed or rejected traffic in the outlier panels.
 * Identify systems and hosts involved in insecure data transit over insecure connections and port protocols like ftp, telnet, http, and rlogin. You can also identify successful and rejected network connections for insecure connections.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Flows_Allowed_and_Rejected.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Flows-Allowed-and-Rejected.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Events
@@ -235,4 +236,4 @@ Use this dashboard to:
 * Monitor VPN connectivity and uplink connectivity changes, as well as client DHCP lease details with MX Security Appliances. For details, see [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples#Meraki_MX_Security_Appliance).
 * Monitor [switching events](https://documentation.meraki.com/MS/Monitoring_and_Reporting/MS_Event_Log_Entries_and_Definitions) from Meraki MS Switches. For details, see [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples#Meraki_MS_Switches).
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Events.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Events.png')} alt="Cisco Meraki dashboards" />
