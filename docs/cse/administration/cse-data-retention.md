@@ -24,7 +24,7 @@ This table lists where, and for how long, different types of CSE data are retain
 
 * Insights and Signals that are attached to Insights are retained in CSE indefinitely.
 * Signals that are not attached to Insights are retained in CSE:
-    * For 90 days if suppressed. (As of October 1, 2022, this will change to 30 days.)
+    * For 30 days if suppressed. 
     * For 365 days if unsuppressed.
 * Playbook and action executions are retained in CSE for 2 years. For those that need to ensure HIPAA compliance, we delete the data after 7 years.
 
