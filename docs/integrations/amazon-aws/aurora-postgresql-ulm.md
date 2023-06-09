@@ -255,7 +255,7 @@ Use this dashboard to:
 * Monitor Volume Read and Write IOPS to ensure the database is optimally interacting with disk.
 * Monitor replica lags and available free memory to ensure support of heavy read loads with good performance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Overview.png)} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Overview.png')} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Generic
 
