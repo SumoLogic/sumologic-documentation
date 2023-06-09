@@ -256,7 +256,7 @@ This section provides examples of the Amazon SES App dashboards, along with desc
 
 ### CloudTrail Events Overview
 
-See the overview of SES CloudTrail events including failed, and successful events, error codes, users, and event locations.
+See the overview of SES CloudTrail events including failed and successful events, error codes, users, and event locations.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsOverview.png')} alt="AWS SES CloudTrail Events Overview" />
 
@@ -381,7 +381,7 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 ### Complaint Notifications
 
-See information about complaints (a complaint occurs when a recipient reports that they don't want to receive an email), including the top email addresses, email domains, and UserAgents associated with complaints; and the sending AccountId, AWS region, SourceIP, and Identity associated with complaints.
+See information about complaints (a complaint occurs when a recipient reports that he doesn't want to receive an email), including the top email addresses, email domains, and user agents associated with complaints and the sender's AccountId, AWS region, SourceIP, and identity associated with complaints.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESComplaintNotifications.png')} alt="AWS SES Complaint Notifications" />
 
