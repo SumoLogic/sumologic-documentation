@@ -99,6 +99,16 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
 :::
 
+<details><summary>How does a <a href="/docs/search/search-query-language/search-operators/timeslice"><code>timeslice</code></a> affect a monitor?</summary>
+
+Monitor query output is matched with the threshold. If it matches, the alert triggers.
+If there are multiple rows in the search query output because of [`timeslice`](/docs/search/search-query-language/search-operators/timeslice) or any other reason (such as group by operator), it would match each row with the monitor threshold and if it matches for any row, it would trigger the alert.<br/>
+
+So if the query is `_sourceCategory=abc | timeslice 1m | count by _timeslice`, the timeRange is `15m`, and there are 15 rows in the query output, it would trigger the alert if `_count` for any row matches the threshold and resolve when none of the rows match the alert threshold (and all match resolution threshold).
+
+</details>
+
+
 ## Alert Page
 
 The Alert Page is where you can view granular details about an individual alert. To get to an Alert page, click on any row from your Alert list.
