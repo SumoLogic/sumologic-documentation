@@ -35,13 +35,29 @@ Not all integrations can be installed from App Central. There are more that can 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. IMPORTANT: Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. **IMPORTANT**: Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
 
 Integrations in App Central display a version number. The version indicates when there is a change to the integration. If a newer version of an installed integration is available, you can update the integration from App Central by clicking **Update**.
 
 <img src={useBaseUrl('img/cse/automation-service-app-central-update-integration.png')} alt="Version number" width="400"/>
+
+## Playbooks in App Central
+
+A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.
+
+While [Playbooks](/docs/cse/automation-service/automation-service-playbooks/) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
+
+### Install a playbook from App Central
+
+1. Use the **Search** bar in the upper right of the **Playbooks** tab to find playbooks.
+1. Click **Download** in the corner of the playbook box.
+1. Click **Next**. 
+1. Click **Install** to install the playbook. 
+1. Click **Close**. After installation is complete, **Installed** replaces the **Download** link in the corner of the playbook box.
+1. **IMPORTANT**: Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
+
 
 ## Export from App Central
 
