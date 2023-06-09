@@ -93,7 +93,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox14 card">
   <div className="container">
   <a href="/docs/dashboards-new/advanced/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Advanced Features</h4></a>
-  <p>Learn about some of the advanced features in Dashboard (New).</p>
+  <p>Learn about the Dashboards (New) advanced features.</p>
   </div>
 </div>
 </div>
