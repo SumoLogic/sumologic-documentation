@@ -93,7 +93,7 @@ the Entity appears.
 | h | **Recent Activity**. Provides a count of how many Signals or Insights included the Entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
 | i | **Activity tab**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
 | j | **Enrichments** tab. If you use CSE’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
-| k | **Entity Timeline**. If the selected Entity is a username, an **Entity Timeline** tab is present. For more information, see [Entity Timeline](#entity-timline).|
+| k | **Entity Timeline**. A timeline appears for the Entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | l | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
 | m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the CSE UI.) |
 | n | The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity.  |
