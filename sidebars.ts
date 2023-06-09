@@ -2421,6 +2421,7 @@ integrations: [
           items: [
             'cse/automation-service/about-automation-service',
             'cse/automation-service/automation-service-automations',
+            'cse/automation-service/automation-service-app-central',  
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
             'cse/automation-service/automation-service-integration-framework',
