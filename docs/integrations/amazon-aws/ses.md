@@ -258,7 +258,7 @@ This section provides examples of the Amazon SES App dashboards, along with desc
 
 See the overview of SES CloudTrail events including failed, and successful events, error codes, users, and event locations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsOverview.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsOverview.png')} alt="AWS SES CloudTrail Events Overview" />
 
 **Successful Events Location**. See the count and location of the successful events in the last 24 hours on a world map.
 
@@ -289,7 +289,7 @@ See the overview of SES CloudTrail events including failed, and successful event
 
 See the details of various SES CloudTrail events including the identity, get send, domain, receipt, and email address events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsbyEventName.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsbyEventName.png')} alt="AWS SES Cloud Trail Events by Event Name" />
 
 **Identity Events**. See the count of the identity events in the last seven days on a pie chart.
 
