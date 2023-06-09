@@ -15,7 +15,7 @@ The Sumo Logic App for Docker Community edition (CE) provides operational insigh
 
 This Docker App monitors Docker container logs and metrics (stats) in log format only.
 
-If your system handles metrics, choose one of the following Sumo Logic app: [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm).
+If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm).
 
 ### Sample Event Log Messages  
 

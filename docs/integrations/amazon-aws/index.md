@@ -286,42 +286,42 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
           <p>A guide to the Sumo Logic app for AWS ELB - Classic.</p>
           </div>
         </div>
-        <div className="box smallbox41 card">
+        <div className="box smallbox40 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/lambda.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/lambda">AWS Lambda</a></h4>
           <p>A guide to the Sumo Logic app for AWS Lambda.</p>
           </div>
         </div>
-        <div className="box smallbox42 card">
+        <div className="box smallbox41 card">
           <div className="container">
           <img src={useBaseUrl('/img/integrations/amazon-aws/network-firewall.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/network-firewall">AWS Network Firewall</a></h4>
           <p>A guide to our app for AWS Network Firewall.</p>
           </div>
         </div>
-        <div className="box smallbox43 card">
+        <div className="box smallbox42 card">
           <div className="container">
           <img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
           <h4><a href="/docs/integrations/amazon-aws/security-hub">AWS Security Hub</a></h4>
           <p>A guide to the Sumo Logic app for AWS Security Hub.</p>
           </div>
         </div>
-    <div className="box smallbox44 card">
+    <div className="box smallbox43 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/amazon-aws/waf">AWS WAF</a></h4>
       <p>A guide to the Sumo Logic app for AWS WAF.</p>
       </div>
     </div>
-    <div className="box smallbox45 card">
+    <div className="box smallbox44 card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
     <h5><a href="/docs/integrations/amazon-aws/cis-aws-foundations-benchmark">CIS AWS Foundations Benchmark App</a></h5>
     <p>A guide to our CIS AWS Foundations Benchmark app.</p>
     </div>
   </div>
-  <div className="box smallbox46 card">
+  <div className="box smallbox45 card">
     <div className="container">
     <img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
     <h4><a href="/docs/integrations/amazon-aws/threat-intel">AWS Foundations Benchmark App</a></h4>
