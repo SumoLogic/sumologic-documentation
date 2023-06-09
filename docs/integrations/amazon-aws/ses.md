@@ -316,7 +316,7 @@ See the details of various SES CloudTrail events including the identity, get sen
 
 See the overview of SES notifications including the source IP locations, notification types, mail source, and notification type.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SES-Notification.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/SES-Notification.png')} alt="AWS SES Notification" />
 
 **Mail Source IP Locations**. See the count and location of the mail source IP addresses in the last 24 hours on a world map.
 
@@ -333,7 +333,7 @@ See the overview of SES notifications including the source IP locations, notific
 
 See the details of delivered notifications including the email destinations, domains, reporting MTA, and delivery processing time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SES-Delivered.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/SES-Delivered.png')} alt="AWS SES Delivered" />
 
 **Top Delivered email destinations**. See the top 10 delivered email destinations by event count in the last 24 hours.
 
@@ -352,7 +352,7 @@ See the details of delivered notifications including the email destinations, dom
 
 See the details of bounced notifications by email addresses, domains, bounce types, and bounce subtypes.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESBouncedNotifications.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESBouncedNotifications.png')} alt="AWS SES Bounced Notifications" />
 
 **Top Bounced email Addresses.** See the top 10 bounced email addresses by count in the last 24 hours.
 
@@ -383,7 +383,7 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 See information about complaints (a complaint occurs when a recipient reports that they don't want to receive an email), including the top email addresses, email domains, and UserAgents associated with complaints; and the sending AccountId, AWS region, SourceIP, and Identity associated with complaints.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESComplaintNotifications.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESComplaintNotifications.png')} alt="AWS SES Complaint Notifications" />
 
 **Top Complaint email Addresses.** See the top 10 email addresses sending emails generating complaint notifications by count in the last 24 hours.
 
