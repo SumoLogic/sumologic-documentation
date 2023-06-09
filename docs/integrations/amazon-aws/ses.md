@@ -258,7 +258,7 @@ This section provides examples of the Amazon SES App dashboards, along with desc
 
 See the overview of SES CloudTrail events including failed, and successful events, error codes, users, and event locations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsbyEventName.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsOverview.png')} alt="AWS API Gateway" />
 
 **Successful Events Location**. See the count and location of the successful events in the last 24 hours on a world map.
 
@@ -289,7 +289,7 @@ See the overview of SES CloudTrail events including failed, and successful event
 
 See the details of various SES CloudTrail events including the identity, get send, domain, receipt, and email address events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SES-Notification.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsbyEventName.png')} alt="AWS API Gateway" />
 
 **Identity Events**. See the count of the identity events in the last seven days on a pie chart.
 
@@ -312,11 +312,11 @@ See the details of various SES CloudTrail events including the identity, get sen
 **Email Address Event Details**. See the details of the email address event in the last seven days including the event time, event name, event type, type, user, AWS region, source IP address, event status, account ID, request ID, error code, error message, and event count, displayed in a table.
 
 
-#### Notification Overview
+### Notification Overview
 
 See the overview of SES notifications including the source IP locations, notification types, mail source, and notification type.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/SES-Notification.png')} alt="AWS API Gateway" />
 
 **Mail Source IP Locations**. See the count and location of the mail source IP addresses in the last 24 hours on a world map.
 
