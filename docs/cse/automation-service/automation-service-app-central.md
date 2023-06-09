@@ -7,7 +7,7 @@ description: Learn how to use App Central to get new applications and tools.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-App Central provides apps to help you be more productive in the Automation Service. From here you can search and add new integrations with all the needed components.
+App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components.
 
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" width="800"/>
 
