@@ -13,6 +13,8 @@ This category has documentation for Sumo Logic apps, which you can find in our *
 
 Several of the guides below are partner-specific: Amazon/AWS, Microsoft/Azure, and Google. The rest of the app content is organized by functionality. We support a wide variety of data sources.
 
+Learn the difference between [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-and-classic-apps).
+
 To determine if an app is supported by your pricing plan, see [Apps and Sumo Logic Account Plans](/docs/integrations/account-plans).
 
 <div className="box-wrapper" markdown="1">
