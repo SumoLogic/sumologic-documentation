@@ -160,6 +160,7 @@ To use [integrations](/docs/cse/automation-service/automation-service-integratio
 1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
+## Support and compliance
 
 ### API and Terraform support
 
@@ -171,9 +172,12 @@ The [CSE API](/docs/cse/administration/cse-apis/) supports automations. Endpoint
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
 
-The Sumo Logic Terraform provider also supports automations. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+The Sumo Logic Terraform provider also supports automation, but does not support the ability to create or modify integrations, playbooks, or actions. For more information about Terraform, see the [Sumo Logic Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs) documentation.
 
-:::tip
-The Automation Service uses the Cloud SOAR API. For more information about the API, click the **?** button in the upper right of the Cloud SOAR UI to see the API Documentation manual.
+:::note
+The Automation Service uses the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis). 
 :::
 
+### Data retention
+
+Automation Service data is retained in accordance with Sumo Logic's policies. For more information, see our [Cloud SIEM data retention](/docs/cse/administration/cse-data-retention/#cse) documentation.

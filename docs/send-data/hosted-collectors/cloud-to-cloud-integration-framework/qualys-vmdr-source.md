@@ -93,7 +93,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/api/2.0/fo/asset/host/vm/detection/</code>
    </td>
-   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic.<br />
+   Permissions - <code>Managers</code> view all VM scanned hosts in subscription. <code>Auditors</code> have no permission to view VM scanned hosts. <code>Unit Managers</code> view VM scanned hosts in the user’s assigned business unit. <code>Scanners</code> and <code>Readers</code> view VM scanned hosts in the user’s account.<br />
+   API details are on page 496 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
   <tr>
@@ -101,7 +103,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/api/2.0/fo/knowledge_base/vuln/</code>
    </td>
-   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment. API details are on page 200 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment.<br />
+   Permissions - A subscription must be granted permission to run this API function. Roles <code>Manager</code>, <code>Unit Manager</code>, <code>Scanner</code>, <code>Reader</code> are granted a permission <code>Download vulnerability data from the KnowledgeBase</code>. Role <code>Auditor</code> has no such permission.<br />
+   API details are on page 209 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
   <tr>
@@ -109,7 +113,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/rest/2.0/search/am/asset/</code>
    </td>
-   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>. API details are on page 24 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>.<br />
+   Permissions - User must have the <code>GAV/CSAM</code> module and the <code>App API Enabled</code> option enabled for that role. Additionally, the user must have the <code>Allow user view access to all objects</code> checkbox enabled under <strong>Roles And Scopes</strong> within the user settings.<br/>
+   API details are on page 27 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
 </table>

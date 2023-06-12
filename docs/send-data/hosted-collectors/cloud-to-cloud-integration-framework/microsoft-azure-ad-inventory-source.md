@@ -95,6 +95,12 @@ From there, select (or search for) the following permissions under type **Applic
 | User    | Application (work or school account) | User.Read.All, Directory.ReadAll   |
 | Devices | Application (work or school account) | Device.Read.All, Directory.ReadAll |
 
+You require additional permission to collect `signInActivityData` for User.
+
+| API | Account Type | Permissions |
+|:---------|:---------------------------------------------------|:------------------------------------|
+| Directory Audit | Application (work or school account) | AuditLog.Read.All |
+
 Personal Microsoft accounts are not supported.
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
@@ -135,7 +141,12 @@ To configure a Microsoft Azure AD Inventory Source:
 
 10. **Supported APIs to collect**. Select one or more of the available APIs: **Devices** and **Users**.
 
-11. When you are finished configuring the Source, click **Submit**.
+11. **Collect Users SignInActivity Data**. By enabling the checkbox, you can also include the sign in activity information in your user response. [Learn more](https://learn.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0&tabs=http#example-10-get-users-including-their-last-sign-in-time).
+   :::note
+   To collect the `signInActivity` information you should have `Azure AD Premium P1/P2` license.
+   :::
+12. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+13. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -174,7 +185,9 @@ Azure AD Inventory Source.
 | `secret_key` | String | Yes |  | Provide the Application Client Secret Value you created in Azure. | modifiable
 | `application_id` | String | Yes |  | Provide the Application (client) ID you got after you registered (created) the Azure Application. | modifiable |
 | `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Devices, and Users. For example, for both you'd use: ["Devices","Users"] | modifiable |
+| `userSignInActivity` | Boolean | No | False | Select the checkbox to include the sign in activity information in your user response. | modifiable |
 
+### JSON Example
 Microsoft Azure AD Inventory Source JSON example:
 
 ```json
@@ -190,6 +203,7 @@ Microsoft Azure AD Inventory Source JSON example:
             "supported_apis": ["Devices", "Users"],
             "secret_key": "********",
             "application_id": "ApplicationID",
+            "userSignInActivity": false,
             "fields": {
                 "_siemForward": false
             }

@@ -12,10 +12,9 @@ import TabItem from '@theme/TabItem';
 
 The Oracle app is a unified logs and metrics app that helps you monitor Oracle database cluster availability, performance, and resource utilization. Preconfigured dashboards and searches provide insight into the health of your database clusters, parallel executions, resource utilization, response time, tablespaces, throughput, wait for class/events, listeners, audit logs, and security.
 
-This App is tested with the following Oracle versions:
+This app is tested with the following Oracle versions:
 * Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 * Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
-
 
 ## Log Types
 
@@ -23,9 +22,9 @@ This App is tested with the following Oracle versions:
 * Listener Logs
 * Audit Logs
 
-## Collect Logs and Metrics for the Oracle App
+## Collect Logs and Metrics for the Oracle app
 
-This section provides instructions for configuring logs and metrics collection for the Sumo Logic App for the Oracle.
+This section provides instructions for configuring logs and metrics collection for the Sumo Logic app for the Oracle.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -160,12 +159,12 @@ annotations:
           timeout = "5s"
           data_format = "influx"
           [inputs.exec.tags]
-          environment="dev_ENV_TO_BE_CHANGED"
-           component="database"
-           db_system="oracle"
-           db_cluster="oracle_on_premise_ENV_TO_BE_CHANGED"
-           db_cluster_address = "ENV_TO_BE_CHANGED"
-           db_cluster_port = "ENV_TO_BE_CHANGED"
+            environment ="dev_ENV_TO_BE_CHANGED"
+            component ="database"
+            db_system ="oracle"
+            db_cluster ="oracle_on_premise_ENV_TO_BE_CHANGED"
+            db_cluster_address = "ENV_TO_BE_CHANGED"
+            db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 
 * If you haven’t defined a cluster in Oracle, enter `default` for `db_cluster`.
@@ -448,10 +447,10 @@ You can create a `telegraf.conf` file or modify an existing `telegraf.conf` file
   timeout = "5s"
   data_format = "influx"
   [inputs.exec.tags]
-  environment="DEV_ENV_TO_BE_CHANGED"
-  component="database"
-  db_system="oracle"
-  db_cluster="PROD_ENV_TO_BE_CHANGED"
+  environment ="DEV_ENV_TO_BE_CHANGED"
+  component ="database"
+  db_system ="oracle"
+  db_cluster ="PROD_ENV_TO_BE_CHANGED"
   db_cluster_address = "ENV_TO_BE_CHANGED"
   db_cluster_port = "ENV_TO_BE_CHANGED"
 
@@ -620,8 +619,6 @@ email_notifications = [
 1. **Post Installation.** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
-
-
 
 ## Performance Metrics Script Setup
 
@@ -825,7 +822,6 @@ $ python3 oracle-perf-monitor.py
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your Oracle log files to the Sumo Logic service.
 
-
 ### Windows
 
 This section has instructions for setting up the performance metrics script on Windows OS for the Oracle app.
@@ -877,7 +873,6 @@ BANNER
 -----------------------------------------------------------------
 Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 ```
-
 
 #### Install cx_Oracle on Windows
 
@@ -940,7 +935,6 @@ The script first tries to read password from the config file, if the password is
 oracle_script/sumooracle>python3 oracle-perf-monitor.py
 ```
 
-
 #### Configure the Sumo Logic Script Source
 
 1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
@@ -957,18 +951,17 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
     * Click **Save**.
 
 
+## Installing the Oracle app
 
-## Installing the Oracle App
-
-This section demonstrates how to install the Oracle App.
+This section demonstrates how to install the Oracle app.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the App Catalog, search for and select the app.
+1. From the **App Catalog**, search for and select the app.
 1. Select the service version you're using and click Add to Library. Version selection applies only to a few apps currently. For more information, see the Install the Apps from the Library.
 1. To install the app, complete the following fields.
-   * App Name. You can retain the existing name or enter the app's name of your choice. 
-   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+   * **App Name**. You can retain the existing name or enter the app's name of your choice. 
+   * **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 1. Click Add to Library.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specify. From here, you can share it with your organization.
@@ -980,9 +973,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 :::tip Filter with template variables  
 
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
-
 :::
-
 
 ### Overview
 
@@ -1019,8 +1010,6 @@ See an overview of Oracle listener process activity, including successful DB con
 **Top Client Hosts for __jdbc__**. A table that shows connections initiated from Client Host by appserver using the JDBC Thin Client (host name __jdbc__)  and the connection count for each over the previous 24 hours.
 
 **Top User Program Name**.  A table that shows the top 20 programs that initiated connections over the previous 24 hours.
-
-
 
 
 ### Alert Analysis
@@ -1061,11 +1050,7 @@ See information about Oracle errors, including counts of various error types, OR
 
 **Instance Shutdown Complete**. A table that lists when shutdowns of database instances were initiated during the previous three days.
 
-
-
-
 ### Listener Troubleshooting
-
 
 See details of Oracle listener process activity, including database connections by host and application, connection failures, command execution status and trends, and other data derived from the Oracle Listener log.
 
@@ -1086,8 +1071,6 @@ See details of Oracle listener process activity, including database connections 
 **Listener Stopped Events**. A table that lists listener stop events during the previous 7 days.
 
 **SID or Service Name Detailed Breakup**. A table that shows the count of connections performed with sid or service name, by userhost, clienthost, and databaseuser.
-
-
 
 ### Security Monitoring
 
@@ -1115,9 +1098,6 @@ See information about database connections established by privileged users, conn
 
 **Failed DB Connections by Privileged Users**. A table that provides information about failed database connections from privileged user accounts, such as root and administrator, over the previous 24 hours.
 
-
-
-
 ### Sys Audit Log
 
 See information derived from the syslog audit trail, including successful and failed activities, and top usage by client, database user, and privileges used.
@@ -1137,9 +1117,6 @@ See information derived from the syslog audit trail, including successful and fa
 **Top Privileges Used**. A table that shows the top 10 database privileges used over the previous 24 hours, and a count of the events associated with each.
 
 **Recent Successful Activities**. A table that lists information about successful database actions over the previous 60 minutes.
-
-
-
 
 ### Sys Audit Log - Logon Analysis
 
@@ -1165,15 +1142,11 @@ See logon activity information derived from the syslog audit trail, including su
 
 **Multiple UserHosts Logons with Same Database User**. A table that lists database users  that successfully established connections from the multiple user hosts over the previous 24 hours.
 
-
-
-
 ### XML Audit Log - Logon Analysis
 
 See logon activity information derived from the XML audit trail, including successful and failed logons, logon status trends, multiple database user logons and client user logons from the same UserHost, and multiple UserHost logons with the same database user.
 
 <img src={useBaseUrl('img/integrations/databases/Oracle-XML-Audit-Log-Logon-Analysis.png')} alt="Oracle dashboards" />
-
 
 ### XML Audit Log - SQL Statement Analysis
 
@@ -1201,8 +1174,6 @@ See information derived from the XML audit trail about user management, role man
 
 **TCL Activity Trend**.  A stacked column chart that shows the count of DML actions by action type per one hour timeslice over the last 7 days.
 
-
-
 ### Monitor Performance by DB Script
 
 See database usage information obtained by the Oracle script source, including tablespace and datafile utilization; recent active connections; wait times; and recent jobs.
@@ -1227,21 +1198,17 @@ See database usage information obtained by the Oracle script source, including t
 
 **Recent Jobs in the database**. A table of information about recent database jobs, including when each job ran, low long it ran, and when it will next run.
 
-
-
 ### Wait Events
 
 Every wait event belongs to a class of wait events. The following list describes each of the wait classes.
 
 <img src={useBaseUrl('img/integrations/databases/Oracle-Wait-Class.png')} alt="Oracle dashboards" />
 
-
 ### Wait Class
 
 All the wait events are grouped under wait classes and here are the most important wait classes you must know: Administrative, Application, Commit, Concurrency, Configuration, Idle, Network, Other, System I/O, User I/O.
 
 <img src={useBaseUrl('img/integrations/databases/Oracle-Wait-Events.png')} alt="Oracle dashboards" />
-
 
 ### Throughput
 
@@ -1262,21 +1229,17 @@ The Oracle - System Global Area dashboard provides an at-a-glance view of a grou
 
 <img src={useBaseUrl('img/integrations/databases/Oracle-System-Global-Area.png')} alt="Oracle dashboards" />
 
-
-
 ### Response Time
 
 The Oracle - Response dashboard performance statistics such as database CPU Time, Wait Time Ratio, Response time, Soft Parse Radio, and Execute
 
 <img src={useBaseUrl('img/integrations/databases/Oracle-Response-Time.png')} alt="Oracle dashboards" />
 
-
 ### Resource Utilization
 
 The Oracle - Resource Utilization dashboard performance statistics such as Limit, OS load, CPU, Cursors, PGA, Physical, I/O and VM
 
 <img src={useBaseUrl('img/integrations/databases/Oracle-Resource-Utilization.png')} alt="Oracle dashboards" />
-
 
 ### Parallel Execution
 
