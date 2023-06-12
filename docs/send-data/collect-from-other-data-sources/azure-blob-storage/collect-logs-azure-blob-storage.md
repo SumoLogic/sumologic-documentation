@@ -27,7 +27,7 @@ This section has instructions for configuring a pipeline for shipping logs avail
 
 ## Step 1. Configure Azure storage account 
 
-In this step you configure a storage account to which you will export monitoring data for your Azure service. The storage account must be a General-purpose v2 (GPv2) storage account.
+In this step, you configure a storage account to which you will export monitoring data for your Azure service. The storage account must be a General-purpose v2 (GPv2) storage account.
 
 If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name and container name and proceed to [Step 2](#step-2-configure-an-http-source).
 
