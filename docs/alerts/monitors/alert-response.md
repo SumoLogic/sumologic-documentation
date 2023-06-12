@@ -309,7 +309,7 @@ For example, if you create a subscription on “Monitor A”, and then move it t
 
 </details>
 
-To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription. [Learn more](/docs/alerts/monitors/alert-response/#notification-preferences).
+To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription. 
 
 
 ### Notification Preferences
