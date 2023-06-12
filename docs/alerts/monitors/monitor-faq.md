@@ -1,7 +1,7 @@
 ---
 id: monitor-faq
 title: Monitors FAQ
-description: Frequently asked questions about Sumo Logic Monitors.
+description: Frequently asked questions about Sumo Logic monitors.
 ---
 
 ## Can I convert my existing Scheduled Search to a Monitor?
