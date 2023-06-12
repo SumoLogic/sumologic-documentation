@@ -99,8 +99,6 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
 :::
 
-{@import ../../reuse/alerts-timeslice.md}
-
 
 ## Alert Page
 
