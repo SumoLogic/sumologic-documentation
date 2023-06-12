@@ -75,7 +75,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
    1. Set the values of the following parameters:
 
       * SumoEndpointURL: URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
-      * StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
+      * StorageAccountName: Name of the storage account where you are storing logs from Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * StorageAccountRegion: Name of the region of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
