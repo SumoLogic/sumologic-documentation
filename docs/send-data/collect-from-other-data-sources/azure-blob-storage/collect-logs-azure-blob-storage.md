@@ -7,7 +7,7 @@ description: Configure a pipeline to ship logs from the Azure Blob Storage to an
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info
-This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to a HTTP source on a hosted collector in Sumo Logic. 
+This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. 
 :::
 
 ## Requirements 
