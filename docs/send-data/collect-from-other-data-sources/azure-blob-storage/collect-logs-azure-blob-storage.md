@@ -90,14 +90,14 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
-1. Under **Table Service** do the following:
+1. Under **Data Storage** do the following:
     1. Click **Tables**.
     1. Click **+ Table**.
     1. Enter **FileOffsetMap** as table name and click **OK**.
 
 <img src={useBaseUrl('/img/send-data/Azure_Blob_create-table.png')} alt="Azure_Blob_create-table" width="900"/>
 
-## Step 4. Push NSG flow logs from a Network Security Group to Azure Blob Storage (Example)
+## Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage
 
 This section describes how to push logs from a network security group into Azure Blob Storage by configuring nsg flow Logs. The instructions use a network security group as an example. 
 
