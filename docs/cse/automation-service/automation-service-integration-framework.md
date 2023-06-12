@@ -313,7 +313,7 @@ To export an action, click on the **Export** button below the action name.
 
 ##  Example files
 
-Following are example definition and action files for integrations. To see an explanation of the file contents, see [Integration framework file formats](/docs/cse/automation-service/automation-service-integration-framework#integration-framework-file-formats) above. To see integration definition and action files used in a working integration, see [Configure a custom integration](/docs/cse/automation-service/automation-service-examples#advanced-example-configure-a-custom-integration).
+Following are example definition and action files for integrations. To see an explanation of the file contents, see [Integration framework file formats](#integration-framework-file-formats) above. To see integration definition and action files used in a working integration, see [Configure a custom integration](/docs/cse/automation-service/automation-service-examples#advanced-example-configure-a-custom-integration).
 
 ### Integration definition file (VirusTotal)
 
