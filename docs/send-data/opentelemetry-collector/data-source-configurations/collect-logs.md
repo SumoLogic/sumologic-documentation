@@ -131,7 +131,7 @@ processors:
 
 service:
   pipelines:
-    logs/custom_files:
+    logs/json_files:
       receivers:
       - filelog/json_files
       processors:
