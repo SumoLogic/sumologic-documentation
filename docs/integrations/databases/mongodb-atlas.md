@@ -430,7 +430,7 @@ MongoDBAtlas:
 Collection:
   DBNAME: "newmongodbatlas"
 ```
-Example execution of second yaml file: /usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>
+Example execution of second yaml file: `/usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>`
 
 ### Step 4: Configure Webhooks for Alerts Collection
 
