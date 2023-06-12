@@ -26,7 +26,7 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](/docs/cse/automation-service/automation-service-playbooks/#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central) that does what you need.
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central) that does what you need.
 
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/). 
 
