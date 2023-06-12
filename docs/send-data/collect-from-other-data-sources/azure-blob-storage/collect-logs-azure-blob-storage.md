@@ -103,8 +103,8 @@ This section describes how to push logs from a network security group into Azure
     <li>Login to the Azure Portal.</li>
     <li>Click <strong>Network security groups > Select a network security group</strong>.</li>
     <li>Click on <strong>NSG flow logs</strong> when you see it under <strong>Monitoring</strong>, and click <strong>Create</strong>.</li>
-    <li>Click on <strong>Select resource</strong> and choose a NSG that is present in the same region as the storage account configured in [Step 1](#step-1-configure-azure-storage-account).</li>
-    <li>Under <strong>Subscription > Storage Accounts</strong>, select the storage account configured in [Step 1](#step-1-configure-azure-storage-account).</li>
+    <li>Click on <strong>Select resource</strong> and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-1-configure-azure-storage-account">Step 1</a>.</li>
+    <li>Under <strong>Subscription > Storage Accounts</strong>, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-1-configure-azure-storage-account">Step 1</a>.</li>
     <li>Specify the <strong>Retention (days)</strong> and click <strong>Review + create</strong>. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/></li>
     <li> Review the configuration of the flow log and click <strong>Create</strong>. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/></li>
 </ol>
