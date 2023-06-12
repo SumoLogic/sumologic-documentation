@@ -1,7 +1,7 @@
 ---
 id: collect-logs-azure-blob-storage
 title: Collect Logs from Azure Blob Storage
-sidebar_label: Collecting Metrics
+sidebar_label: Collecting Logs
 description: Instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -103,10 +103,10 @@ This section describes how to push logs from a network security group into Azure
 
 1. Login to the Azure Portal.
 1. Click **Network security groups > Select a network security group**.
-1. Click on NSG flow logs when you see it under **Monitoring**, and click **Create**.
+1. Click on **NSG flow logs** when you see it under **Monitoring**, and click **Create**.
 1. Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
 1. Under **Subscription > Storage Accounts**, select the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
-1. Specify the **Retention (Days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
+1. Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
 1. Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
 :::tip
 If logs from Azure Blob Storage do not start to flow into Sumo, see [Troubleshoot Azure Blob Storage Log Collection](troubleshoot-azure-blob-storage-log-collection.md).
@@ -120,11 +120,11 @@ If you want to ingest data into Sumo from multiple storage accounts, perform fo
 The following steps assume you have noted down the resource group name, storage account name, and container name where the blobs will be ingested from.
 :::
 
-* [Step 1: Authorize App Service read from storage Account](#step-1-authorize-app-service-to-list-storage-account-key) - Enables the Azure functions to read from the storage account.
+* [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-list-storage-account-key) - Enables the Azure functions to read from the storage account.
 * [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
 * [Step 3. Enabling Vnet Integration(Optional)](#step-3-enabling-vnet-integration-optional)
 
-### Step 1: Authorize App Service to read from storage Account
+### Step 1: Authorize App Service to read from storage account
 
 This section provides instructions on authorizing the App Service to list the Storage Account key. This enables the Azure function to read from the storage account.
 
@@ -138,14 +138,14 @@ To authorize the App Service to list the Storage Account key, do the following:
 
     ![AzureBlob_IAM_Add.png](/img/send-data/AzureBlob_IAM_Add.png)
 
-1. Select Add role assignment from dropdown.
-1. In the Add role Assignment window, go to Roles tab and Choose “Storage Blob Data Reader”. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
-1. In Members tab, select Managed Identity.
-1. In the Select Managed identities window.
+1. Select **Add role assignment** from dropdown.
+1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
+1. In **Members** tab, select **Managed Identity**.
+1. In the **Select Managed identities** window,
 
    * **Subscription**: Choose Pay as you Go.
    * **Managed Identity**: Choose Function App.
-   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app     services which are created by the ARM template. Click **Select**.
+   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
 1. Click **Review + assign**
 1. Click **Save**.
 
