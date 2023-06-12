@@ -2,12 +2,12 @@
 id: collect-logs-azure-blob-storage
 title: Collect Logs from Azure Blob Storage
 sidebar_label: Collecting Logs
-description: Instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
+description: Instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to a HTTP source on a hosted collector in Sumo Logic.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::sumo
-This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic. 
+This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to a HTTP source on a hosted collector in Sumo Logic. 
 :::
 
 ## Requirements 
@@ -90,24 +90,26 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
-1. Under **Data Storage**, do the following:
+1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.
     1. Click **+ Table**.
     1. Enter **FileOffsetMap** as table name and click **OK**.
 
 <img src={useBaseUrl('/img/send-data/Azure_Blob_create-table.png')} alt="Azure_Blob_create-table" width="900"/>
 
-## Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage
+<details><summary>Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage</summary>
+This section describes how to push logs from a network security group into Azure Blob Storage by configuring nsg flow Logs. The instructions use a network security group as an example.
+<ol>
+    <li>Login to the Azure Portal.</li>
+    <li>Click <strong>Network security groups > Select a network security group</strong>.</li>
+    <li>Click on <strong>NSG flow logs</strong> when you see it under <strong>Monitoring</strong>, and click <strong>Create</strong>.</li>
+    <li>Click on <strong>Select resource</strong> and choose a NSG that is present in the same region as the storage account configured in [Step 1](#step-1-configure-azure-storage-account).</li>
+    <li>Under <strong>Subscription > Storage Accounts</strong>, select the storage account configured in [Step 1](#step-1-configure-azure-storage-account).</li>
+    <li>Specify the <strong>Retention (days)</strong> and click <strong>Review + create</strong>. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/></li>
+    <li> Review the configuration of the flow log and click <strong>Create</strong>. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/></li>
+</ol>
+</details>
 
-This section describes how to push logs from a network security group into Azure Blob Storage by configuring nsg flow Logs. The instructions use a network security group as an example. 
-
-1. Login to the Azure Portal.
-1. Click **Network security groups > Select a network security group**.
-1. Click on **NSG flow logs** when you see it under **Monitoring**, and click **Create**.
-1. Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
-1. Under **Subscription > Storage Accounts**, select the storage account configured in [Step 1](#step-1-configure-azure-storage-account).
-1. Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
-1. Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
 :::tip
 If logs from Azure Blob Storage do not start to flow into Sumo, see [Troubleshoot Azure Blob Storage Log Collection](troubleshoot-azure-blob-storage-log-collection.md).
 :::
