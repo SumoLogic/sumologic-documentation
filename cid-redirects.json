@@ -2526,7 +2526,7 @@
   "/Default.htm": "/",
   "/Global_Intelligence": "/docs/integrations/global-intelligence",
   "/Global_Intelligence/Global_Intelligence_for_Apache_Tomcat_App": "/docs/integrations/global-intelligence/apache-tomcat",
-  "/Global_Intelligence/Global_Intelligence_for_Apache": "/docs/integrations/global-intelligence/apache-tomcat",
+  "/Global_Intelligence/Global_Intelligence_for_Apache": "/docs/integrations/global-intelligence/apache",
   "/Global_Intelligence/Global_Intelligence_for_Apache_Tomcat_App/Install_the_Global_Intelligence_for_Apache_Tomcat_App_and_View_the_Dashboards": "/docs/integrations/global-intelligence/apache-tomcat",
   "/Global_Intelligence/Global_Intelligence_for_Apache_Tomcat_App/Collect_Logs_for_the_Global_Intelligence_for_Tomcat_App": "/docs/integrations/global-intelligence/apache-tomcat",
   "/Global_Intelligence/Global_Intelligence_for_Nginx": "/docs/integrations/global-intelligence/nginx",
