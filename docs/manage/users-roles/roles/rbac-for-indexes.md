@@ -22,13 +22,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- When the beta period is done, incorporate the following content into /docs/manage/users-roles/roles/construct-search-filter-for-role/ -->
 
-When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can create two kinds of search filters to allow access to logs:
-* [Index based](#index-based)
-* [Advanced filter](#advanced-filter)
+When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) to allow access to data based on search indexes, or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria.
 
-To see the search filters:
+Follow this process to define a search filter:
+
+1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
+2. When you create a role, define the dataset by selecting the indexes through the **Index based** option, and field-specific filters through the **Advanced filter** option. (If the data access is for audit and security Indexes, you need to define one role per set of indexes.)  
+3. Verify the dataset access is correct using [emulation](#test-search-filters).
+4. [Assign the role](/docs/manage/users-roles/roles/add-remove-users-role/) to the relevant users.
+
+
+## View the Search Filter options
+
+To see the **Search Filter** options when you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role):
 1. Go to **Administration > Users and Roles > Roles**.
-1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane appears.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
+1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane diplays the **Search Filter" options.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
 
 ## Index based 
 
@@ -55,7 +63,7 @@ An advanced filter allows access only to the logs that match the search filter.
    * **Security data filter**. Allow access to only the logs that match the defined conditions in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_sec_*`.
 1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
 
-### Test search filters
+## Test search filters
 
 1. Go to **Administration** > **Users and Roles** > **Roles**. 
 1. Select a role with search filtering defined. 
