@@ -15,7 +15,7 @@ Playbooks can be configured to execute automatically without user intervention, 
 
 ## View playbooks
 
-The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](/docs/cse/automation-service/automation-service-playbooks/#create-a-new-playbook), or [install playbooks from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install playbooks from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations**, select **Automation**.
