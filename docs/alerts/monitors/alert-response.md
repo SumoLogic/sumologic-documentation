@@ -264,7 +264,7 @@ Setting a **Muting Schedule** allows you to pause alert notifications from monit
 * **Scheduled System Maintenance**. When you're doing system maintenance, notifications can get triggered because the application and infrastructure are being brought up or turned off. These notifications can be very distracting, and might hamper the maintenance activities.
 * **Off-Business Hours**. If you're configuring alerts with specific thresholds that are only applicable during business hours, that might generate false alerts in off-business hours.
 
-To do this:
+To set a muting schedule:
 1. Go to **Manage Data** > **Monitoring** > **Muting Schedules** tab.
 1. Click **Add** > **New Schedule**.
 1. Define your **Schedule Configuration** using the provided UI or [*RRule*](https://freetools.textmagic.com/rrule-generator), a syntax that allows you to specify schedule recurrence rules for calendar dates programmatically.
