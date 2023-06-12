@@ -88,7 +88,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
     ![notification-success.png](/img/send-data/notification-success.png)
 
-1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
 1. Under **Data Storage** do the following:
     1. Click **Tables**.
