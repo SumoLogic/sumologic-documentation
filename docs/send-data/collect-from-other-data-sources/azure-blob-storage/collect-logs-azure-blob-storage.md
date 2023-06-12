@@ -27,9 +27,9 @@ This section has instructions for configuring a pipeline for shipping logs avail
 
 ## Step 1. Configure Azure storage account 
 
-In this step you configure a storage account to which you will export monitoring data for your Azure service. The storage account must be a General-purpose v2 (GPv2) storage account.
+In this step, you configure a storage account to which you will export monitoring data for your Azure service. The storage account must be a General-purpose v2 (GPv2) storage account.
 
-If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name and container name and proceed to [Step 2](#step-2-configure-an-http-source).
+If you have a storage account with a container you want to use for this purpose, make a note of its resource group, storage account name and container name, and proceed to [Step 2](#step-2-configure-an-http-source).
 
 To configure an Azure storage account, do the following:
 
@@ -75,20 +75,20 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
    1. Set the values of the following parameters:
 
       * SumoEndpointURL: URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
-      * StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
+      * StorageAccountName: Name of the storage account where you are storing logs from Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * StorageAccountRegion: Name of the region of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
-      * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
+      * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following by replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
 
     :::note
     Resource group names should not consist of an underscore.
     :::
-1. Go to **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
-1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
+1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
+1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.
 
     ![notification-success.png](/img/send-data/notification-success.png)
 
-1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
 1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.
