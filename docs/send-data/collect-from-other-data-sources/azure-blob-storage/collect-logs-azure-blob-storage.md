@@ -84,7 +84,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
     Resource group names should not consist of an underscore.
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
-1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
+1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.
 
     ![notification-success.png](/img/send-data/notification-success.png)
 
