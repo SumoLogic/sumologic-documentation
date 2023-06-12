@@ -11,12 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
-Playbooks can be configured to execute
-automatically without user intervention, acting on information from the
-incident, or can be executed in interactive mode, where user input is
-required to authorize predefined actions.
+Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
 ## View playbooks
+
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](/docs/cse/automation-service/automation-service-playbooks/#create-a-new-playbook), or [install playbooks from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations**, select **Automation**.
@@ -26,6 +25,10 @@ required to authorize predefined actions.
 1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/cse/automation-service/automation-service-integrations) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
 
 ## Create a new playbook
+
+Before you create your own playbook, first [view playbooks](/docs/cse/automation-service/automation-service-playbooks/#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central) that does what you need.
+
+The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/). 
 
 1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
 1. Under **Integrations**, select **Automation**.
@@ -45,7 +48,7 @@ screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} 
 
 ## Add an action node to a playbook
 
-An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. 
+An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. For examples of adding actions to playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
 
 :::info
 Before you can add action nodes to a playbook, you must [configure the connection](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) for each integration resource that actions originate from.
@@ -67,7 +70,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 
 ## Add a condition node to a playbook
 
-Define a conditional statement to be met before the next node can be executed.
+Define a conditional statement to be met before the next node can be executed. For examples of adding conditions to playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
