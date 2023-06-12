@@ -242,7 +242,7 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 
 If you subscribe from a monitor folder, then all nested monitors and folders within that folder become automatically subscribed.
 
-For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder.
+For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder ("Folder B").
 
 <details><summary>Click to see examples</summary>
 
