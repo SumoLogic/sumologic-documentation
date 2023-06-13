@@ -11,11 +11,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
+Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service. 
+
 :::info
 Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
 :::
 
 ## View integrations
+
+The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Central](/docs/cse/automation-service/automation-service-app-central/#install-an-integration-from-app-central), or [create a custom integration](/docs/cse/automation-service/automation-service-examples/).
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations**, select **Automation**.
@@ -29,7 +33,9 @@ To add a new resource to an integration, click the **+** button to the left of *
 
 ## Certified integrations
 
-Certified integrations are those that are provided by Sumo Logic. Certified integrations are designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified.png')} alt="Certified integration" width="300"/>
+Certified integrations are those that are provided by Sumo Logic. You can [install certified integrations using App Central](/docs/cse/automation-service/automation-service-app-central/#install-an-integration-from-app-central).
+
+Certified integrations are designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified.png')} alt="Certified integration" width="300"/>
 
 After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Cloud SIEM internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-2.png')} alt="Certified integration message in resource code" width="400"/>
 
