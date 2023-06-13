@@ -4,8 +4,9 @@ title: Troubleshoot Azure Blob Storage Log Collection
 sidebar_label: Troubleshooting
 description: Follow these steps to learn why log data is not flowing into Sumo from Azure Blob Storage.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
+If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
 
 ## Error while deploying the ARM template
 
@@ -46,6 +47,15 @@ If you get namespace invalid error make sure it follows the naming convention sp
 ```
 
 For common deployment errors refer to the following [doc](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
+
+## AutoScaling producer function to handle huge load on creating tasks for consumer function
+
+1. Go to the Producer function app.
+1. Under **Settings** blade, select **Scale out (App Service plan)**.
+1. Select **Rule Based Scaling**.
+1. Add your rules based scaling configuration as defined in [Create your first autoscale setting](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started#create-your-first-autoscale-setting).
+
+<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid black'}} width="800" /> 
 
 ## Verify configurations
 

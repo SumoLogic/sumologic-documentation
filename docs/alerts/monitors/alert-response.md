@@ -99,6 +99,7 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
 :::
 
+
 ## Alert Page
 
 The Alert Page is where you can view granular details about an individual alert. To get to an Alert page, click on any row from your Alert list.
@@ -240,13 +241,9 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 
 #### From a folder
 
-If a folder is subscribed, then all nested monitors and folders are automatically subscribed (“SubscribedByAncestor”).
+If you subscribe from a monitor folder, then all nested monitors and folders within that folder become automatically subscribed.
 
-For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder.
-
-To cancel an inherited subscription, you need to remove subscription from a parent folder or move the monitor or folder into another location outside folder with direct subscription.
-
-Click **Unsubscribe** to learn how to remove a subscription.
+For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder ("Folder B").
 
 <details><summary>Click to see examples</summary>
 
@@ -309,6 +306,9 @@ Click **Unsubscribe** to learn how to remove a subscription.
 ```
 
 </details>
+
+To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription. 
+
 
 ### Notification Preferences
 

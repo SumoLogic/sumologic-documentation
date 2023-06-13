@@ -165,15 +165,6 @@ Now that you have configured log collection for Barracuda WAF, install the Sumo 
 
 ## Viewing Barracuda WAF Dashboards   
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-
-
 ### Dashboard organization
 
 The Barracuda WAF App dashboards are organized according to the type of data they display:
