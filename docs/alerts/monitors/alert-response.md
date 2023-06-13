@@ -229,7 +229,6 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
 :::
 
-
 ### From your Alerts list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
