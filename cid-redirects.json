@@ -1420,6 +1420,8 @@
   "/Traces/03Advanced_Configuration/Working_with_Span_attributes": "/docs/apm/traces/advanced-configuration/working-with-span-attributes",
   "/Traces/HTTP_Traces_Source": "/docs/apm/traces/get-started-transaction-tracing/http-traces-source",
   "/Traces/Real_User_Monitoring": "/docs/apm/real-user-monitoring",
+  "/docs/integrations/microsoft-azure/iis-10-legacy": "/docs/integrations/web-servers/iis-10",
+  "/docs/integrations/security-threat-detection/zscaler-web-security": "/docs/integrations/security-threat-detection/zscaler-internet-access",
   "/cid/0011": "/docs/manage/field-extractions/create-field-extraction-rule",
   "/cid/0071": "/docs/metrics/introduction/get-started-metrics",
   "/cid/1": "/docs/search/get-started-with-search/build-search/search-syntax-overview",
