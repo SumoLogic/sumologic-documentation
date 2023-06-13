@@ -128,13 +128,13 @@ To view the Account page, do the following:
     * **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
     * View consumption by day, week, or month. 
     * View consumption by time period. 
-    * Download a 
+    * Download a report on usage, or just on credits usage as a CSV file. 
 
     ![account-overview-credits.png](/img/account/account-usage-fields.png)
 
-:::note
+   :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
-:::
+   :::
 
 ![Manage_Organization_options.png](/img/subscriptions/Manage_Organization_options.png)
 
@@ -167,31 +167,20 @@ The legend at the bottom of the Usage Details panel contains the following usage
 
 The Sumo Logic Account page allows you to easily monitor your data usage over selected time intervals, including total storage and metrics usage.
 
-:::note
-Red text indicates that you are exceeding your contract capacity.
-:::
-
-To switch between views and time interval displays, do the following:
+To switch between views and time interval displays:
 
 1. Log in to Sumo Logic and select **Administration > Account** in the left navigation pane.
 
-    The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage details for all data types by default. The total number of credits used and a breakdown of how the credits were used is shown in the donut graph on the right.
+    The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 
-    ![credits-usage-all.png](/img/subscriptions/credits-usage-all.png)
-
-1. To only view data for a specific analytic type or types, go to the bottom of the Usage Details panel and click the colored check box next to the analytic type or types you want to toggle Off.
-
-    The colored icon becomes blank, the analytics data (color) is no longer displayed, and the donut chart on the right only shows credit analytics for the remaining data types. In the following example, we toggled off everything but Continuous Ingest.
-
-    ![credits-usage-continuous.png](/img/subscriptions/credits-usage-continuous.png)
+1. To only view data for a specific analytic type or types, go to the bottom of the Usage Details panel and click the check box next to the analytic type or types you want to exclude.
 
 1. To toggle an analytic data type back On, click the blank icon next to the data type name.
 
-    The analytic data type (color) reappears in the graph and the credit usage for the data type is once again included in the donut graph on the right.
+    The analytic data type reappears in the graph and the credit usage for the data type is once again included.
 
-1. To change the aggregation of the data, click the **Group by** arrow and choose **day**, **week**, or **month** from the dropdown list. The default is Group by day.
+1. To change the aggregation of the data, click the **Group by** arrow and choose **day**, **week**, or **month** from the dropdown list. The default is **View By Day**.
 
-    ![CFCredits_GroupBy_menu.png](/img/subscriptions/CFCredits_GroupBy_menu.png)
 
 ### Drilling into usage data
 
@@ -201,35 +190,17 @@ To drill into usage data, do the following:
 
 1. In the Usage Details panel, drag your cursor over the graph intervals you want to analyze in greater detail.
 
-    ![CFCredits_Drilldown_select_interval.png](/img/subscriptions/CFCredits_Drilldown_select_interval.png)
-
-    The display changes accordingly.
-
-    ![CFCredits_Usage_Details_drilldown.png](/img/subscriptions/CFCredits_Usage_Details_drilldown.png)
-
 1. To scroll through the data, click the Zoom (magnifying glass) icon to toggle On the Pan feature, then select the background and drag your cursor to the left and right. Optionally, hover the cursor over an area on the chart to view a pop-up with detailed information.
-
-    ![CFCredits_Usage_Details_drilldown_hover.png](/img/subscriptions/CFCredits_Usage_Details_drilldown_hover.png)
-
-1. To drill down further, repeat step 1 and 2 as needed.
-1. To return to the original data display, click the Reset icon.
-
-    ![CFCredits_Usage_Details_drilldown_reset.png](/img/subscriptions/CFCredits_Usage_Details_drilldown_reset.png)
 
 ### Monitoring Promotional Credit usage
 
 You can filter for a focused credit component to assess your Promotional Credit usage, in the same way you [drill into usage data](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#monitoring-promotional-credit-usage) for paid credits.
 
-To monitor your Promotional Credit usage, do the following:
+To monitor your Promotional Credit usage:
 
-1. In the Usage Details panel, hover the cursor over the graph interval containing Promotional Credits. A tooltip appears showing detailed information.
+1. In the Details Credits Usage panel, deselect all Usage Categories. Only Promotional credits will remain. 
 
-    ![CFC_Promotional_Credits2.png](/img/subscriptions/CFC_Promotional_Credits2.png)
+1. To only view data for a specific analytic type, deselect individual options under Promotional Credits such as Continuous Ingest, Storage, or Infrequent Ingest to see those options removed from the Credits used chart.
+ 
 
-1. To only view data for a specific analytic type or types, go to the bottom of the Usage Details panel and click the colored check box next to the analytic type or types you want to toggle Off.
-
-    The colored icon becomes blank, the analytics data (color) is no longer displayed, and the donut chart on the right only shows credit analytics for the remaining data types. In the following example, we toggled Off Continuous Analytics.
-
-    In the following example, we only left analytic for **Promotional Continuous Credits** and **Promotional Frequent Credits** toggled **On**. All other analytic data was toggled Off.
-
-    ![CFC_Promotional_Credits_ZoomIn2.png](/img/subscriptions/CFC_Promotional_Credits_ZoomIn2.png)
+    
