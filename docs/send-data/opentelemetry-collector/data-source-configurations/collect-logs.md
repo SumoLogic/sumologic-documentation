@@ -13,6 +13,11 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
+* [Collecting logs from SQL databases](#collecting-logs-from-sql-databases)
+  * [Collecting logs from a MySQL database](#collecting-logs-from-a-mysql-database)
+  * [Collecting logs from an Oracle database](#collecting-logs-from-an-oracle-database)
+  * [Collecting logs from a PostgreSQL database](#collecting-logs-from-a-postgresql-database)
+  * [Troubleshooting the SQL Query receiver](#troubleshooting-the-sql-query-receiver)
 
 You can find the full list of receivers on our [Sumo Logic OpenTelemetry Collector page](https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components).
 
@@ -299,9 +304,133 @@ service:
         - sumologic
 ```
 
+## Collecting logs from SQL databases
+
+The [SQL Query receiver][sqlquery_receiver_docs] retrieves logs from SQL databases, including MySQL, Oracle and PostgreSQL. See below for configuration for a specific database engine.
+
+### Collecting logs from a MySQL database
+
+Here's an example configuration for MySQL that you can place in the `conf.d` directory:
+
+```yaml
+receivers:
+  sqlquery/mysql:
+    collection_interval: 30s
+    driver: mysql
+    datasource: user:password@tcp(host:port)/dbname
+    storage: file_storage
+    queries:
+      - sql: select log_text from logs_table where log_id > ? order by log_id
+        tracking_column: log_id
+        tracking_start_value: 1
+        logs:
+          - body_column: log_text
+service:
+  pipelines:
+    logs/mysql:
+      receivers:
+        - sqlquery/mysql
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - batch
+      exporters:
+        - sumologic
+```
+
+With this configuration, the SQL Query receiver will run the SQL query `select log_text from logs_table where log_id > ?` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log.
+
+On the first query run, the parameter represented with the question mark `?` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
+
+The last used tracking value will be stored persistently using the `file_storage` extension, allowing the collector to pick up where it left off between collector restarts.
+
+### Collecting logs from an Oracle database
+
+Here's an example configuration for Oracle database that you can place in the `conf.d` directory:
+
+```yaml
+receivers:
+  sqlquery/oracle:
+    collection_interval: 30s
+    driver: oracle
+    datasource: oracle://user:password@host:port/servicename
+    storage: file_storage
+    queries:
+      - sql: select log_text from logs_table where log_id > :id order by log_id
+        tracking_column: log_id
+        tracking_start_value: 1
+        logs:
+          - body_column: log_text
+service:
+  pipelines:
+    logs/oracle:
+      receivers:
+        - sqlquery/oracle
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - batch
+      exporters:
+        - sumologic
+```
+
+With this configuration, the SQL Query receiver will run the SQL query `select log_text from logs_table where log_id > :id` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log.
+
+On the first query run, the parameter represented with `:id` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
+
+The last used tracking value will be stored persistently using the `file_storage` extension, allowing the collector to pick up where it left off between collector restarts.
+
+### Collecting logs from a PostgreSQL database
+
+Here's an example configuration for PostgreSQL that you can place in the `conf.d` directory:
+
+```yaml
+receivers:
+  sqlquery/postgresql:
+    collection_interval: 30s
+    driver: postgres
+    datasource: "postgresql://user:password@host:port/dbname"
+    storage: file_storage
+    queries:
+      - sql: select log_text from logs_table where log_id > $$1 order by log_id
+        tracking_column: log_id
+        tracking_start_value: 1
+        logs:
+          - body_column: log_text
+service:
+  pipelines:
+    logs/postgresql:
+      receivers:
+        - sqlquery/postgresql
+      processors:
+        - memory_limiter
+        - resourcedetection/system
+        - batch
+      exporters:
+        - sumologic
+```
+
+With this configuration, the SQL Query receiver will run the SQL query `select log_text from logs_table where log_id > $1` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log. Note that you need to escape the dollar character in the YAML config file by adding a second dollar character: `$$`.
+
+On the first query run, the parameter represented with the dollar one `$1` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
+
+The last used tracking value will be stored persistently using the `file_storage` extension, allowing the collector to pick up where it left off between collector restarts.
+
+### Troubleshooting the SQL Query receiver
+
+If you can see the following logs from the collector after applying the configuration:
+
+```console
+'' has invalid keys: storage
+'queries[0]' has invalid keys: logs, tracking_column, tracking_start_value
+```
+
+Make sure you are using collector version `v0.78.0-sumo-0` or higher.
+
 [filelog_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/filelogreceiver/README.md
 [json_parser_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/json_parser.md
 [windows_event_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/README.md
 [syslog_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/syslogreceiver/README.md
 [tcp_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/tcplogreceiver/README.md
 [udp_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/udplogreceiver/README.md
+[sqlquery_receiver_docs]: https://github.com/dmolenda-sumo/opentelemetry-collector-contrib/blob/sqlquery-receiver-add-logs-v0.78.0/receiver/sqlqueryreceiver/README.md
