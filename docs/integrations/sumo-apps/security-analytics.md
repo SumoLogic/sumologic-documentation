@@ -1,23 +1,23 @@
 ---
 id: security-analytics
-title: Sumo Logic Security Analytics App
-sidebar_label: Security Analytics
-description: Allows you to easily see and manage your system's status, including a security operations overview, network, system and change, user monitoring, and vulnerabilities on endpoints.
+title: Sumo Logic Security Foundations App
+sidebar_label: Security Foundations
+description: Shows the most important alerts to investigate and the entities that pose the greatest risk.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic Security Analytics app provides alerts for real time threat detection focusing on adversarial behavior within an organization's environment, providing dashboards for the [MITRE ATT&CK](https://attack.mitre.org/) framework with drill-down capabilities.
+The Sumo Logic Security Foundations app, formerly the “Security Analytics app”, provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
 
-## Install the Sumo Logic Security Analytics​ app
+## Install the Sumo Logic Foundations​ app
 
-The Security Analytics app is available to Sumo Logic Enterprise Security and Enterprise Suite accounts only, and requires a paid Professional Services contract to install and configure.For more information, see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/#Requesting-Sumo-Logic-Enterprise-Apps).
+The Security Foundations app is available to Sumo Logic Enterprise Security and Enterprise Suite accounts only, and requires a paid Professional Services contract to install and configure. For more information, see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/#Requesting-Sumo-Logic-Enterprise-Apps).
 
-## Security Analytics app dashboards​
+## Security Foundations app dashboards​
 
-To access the dashboards, in the **Security Analytics App** folder open the **High Risk Entity Dashboard** folder. 
+To access the dashboards, in the **Security Foundations App** folder open the **High Risk Entity Dashboard** folder. 
 
 ### Alerts overview​
 
