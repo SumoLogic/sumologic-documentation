@@ -243,35 +243,73 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 
 #### From a folder
 
-## Muting Schedules
+If you subscribe from a monitor folder, all nested monitors and folders within that folder become automatically subscribed.
 
-<!--
+For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder ("Folder B").
 
-Waiting for clarification
+<details><summary>Click to see examples</summary>
 
-:::note Prerequisites
-Make sure you've enabled the following user permissions:
-* **View Muting Schedules** - required for viewing muting schedules page and definitions of schedules
-* **Manage Muting Schedules** - required for creating, editing, and deleting schedules
+#### Example 1
 
-You'll need the **Manage Muting Schedules** and **Manage Monitors** capabilities to define/edit a muting schedule if fine-grained permissions are not enabled for your account. If they are, you'll need **Manage Muting Schedules** and [**Admin Monitors**](/docs/manage/users-roles/roles/role-capabilities/#alerts) capabilities.
-:::
--->
+```bash title="Initial state"
+📁 Folder A ("No")
+├── Monitor B ("No")
+└── Monitor C ("No")
+```
 
-Setting a **Muting Schedule** allows you to pause alert notifications from monitors according to a schedule that you define. You can apply this setting to individual monitors and/or folders. For folders, this will mute all nested monitors and subfolders. Here are some scenarios where you might want to mute your alerts:
+```bash title="Create subscription on Folder A"
+📁 Folder A ("Yes")
+├──Monitor B ("Yes (inherited from folder)")
+└──Monitor C ("Yes (inherited from folder)")
+```
 
-* **Scheduled System Maintenance**. When you're doing system maintenance, notifications can get triggered because the application and infrastructure are being brought up or turned off. These notifications can be very distracting, and might hamper the maintenance activities.
-* **Off-Business Hours**. If you're configuring alerts with specific thresholds that are only applicable during business hours, that might generate false alerts in off-business hours.
+#### Example 2
 
-To set a muting schedule:
-1. Go to **Manage Data** > **Monitoring** > **Muting Schedules** tab.
-1. Click **Add** > **New Schedule**.
-1. Define your **Schedule Configuration** using the provided UI or [*RRule*](https://freetools.textmagic.com/rrule-generator), a syntax that allows you to specify schedule recurrence rules for calendar dates programmatically.
-1. Define your **Scope**, where you associate one or more monitors with this schedule.
-1. Add a **Name** and optionally, a **Description**.
+```bash title="Initial state"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("No")
+    └── Monitor E ("No")
+```
 
-To confirm that your Muting Schedule has been applied successfully, go to **Manage Data** > **Monitoring** > **Monitors** tab. Find your monitor in the list and check the **Status** column, where you should see the muted indicator.
+```bash title="Create subscription on Folder D"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes (inherited from folder)")
+ ```
 
+#### Example 3
+
+```bash title="Initial state"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└──  📁 Folder D ("No")
+    └── Monitor E ("Yes")
+```       
+
+```bash title="Create subscription on Folder D"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes")
+```       
+
+```bash title="Remove subscription on Monitor E"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes (inherited from folder)"
+```
+
+</details>
+
+To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription.
 
 ## Notification Preferences
 
