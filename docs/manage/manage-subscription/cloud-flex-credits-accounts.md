@@ -152,7 +152,7 @@ The Usage (Sumo Credits) panel at the bottom of the Account Overview page provi
 
 ### Usage categories
 
-The legend at the bottom of the Usage Details panel contains the following usage categories:
+The Usage Details panel contains the following usage categories:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -162,7 +162,7 @@ The legend at the bottom of the Usage Details panel contains the following usage
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
-* **Promotional categories**. See [Monitoring Promotional Credit usage](cloud-flex-accounts.md) below.
+* **Promotional categories**. See [Monitoring Promotional Credit usage](cloud-flex-accounts.md).
 
 ### Changing views and time intervals
 
