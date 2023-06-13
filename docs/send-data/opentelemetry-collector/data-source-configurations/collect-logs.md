@@ -63,7 +63,7 @@ service:
         - sumologic
 ```
 
-1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, perhaps matching the pipeline name, `custom_files.yaml`.
+1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, perhaps matching the pipeline name, `custom_files.yaml`. Its name has to end with `.yaml`.
 2. Paste the above content.
 3. Restart collector with following command:
    ```bash title="Linux"
