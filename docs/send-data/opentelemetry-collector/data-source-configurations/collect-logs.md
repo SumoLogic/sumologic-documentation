@@ -320,7 +320,7 @@ receivers:
     datasource: user:password@tcp(host:port)/dbname
     storage: file_storage
     queries:
-      - sql: select log_text from logs_table where log_id > ? order by log_id
+      - sql: select log_id, log_text from logs_table where log_id > ? order by log_id
         tracking_column: log_id
         tracking_start_value: 1
         logs:
@@ -338,7 +338,7 @@ service:
         - sumologic
 ```
 
-With this configuration, the SQL Query receiver will run the SQL query `select log_text from logs_table where log_id > ?` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log.
+With this configuration, the SQL Query receiver will run the SQL query `select log_id, log_text from logs_table where log_id > ?` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log.
 
 On the first query run, the parameter represented with the question mark `?` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
 
@@ -356,11 +356,11 @@ receivers:
     datasource: oracle://user:password@host:port/servicename
     storage: file_storage
     queries:
-      - sql: select log_text from logs_table where log_id > :id order by log_id
-        tracking_column: log_id
+      - sql: select log_id, log_text from logs_table where log_id > :id order by log_id
+        tracking_column: LOG_ID
         tracking_start_value: 1
         logs:
-          - body_column: log_text
+          - body_column: LOG_TEXT
 service:
   pipelines:
     logs/oracle:
@@ -374,7 +374,7 @@ service:
         - sumologic
 ```
 
-With this configuration, the SQL Query receiver will run the SQL query `select log_text from logs_table where log_id > :id` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log.
+With this configuration, the SQL Query receiver will run the SQL query `select log_id, log_text from logs_table where log_id > :id` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log.
 
 On the first query run, the parameter represented with `:id` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
 
@@ -392,7 +392,7 @@ receivers:
     datasource: "postgresql://user:password@host:port/dbname"
     storage: file_storage
     queries:
-      - sql: select log_text from logs_table where log_id > $$1 order by log_id
+      - sql: select log_id, log_text from logs_table where log_id > $$1 order by log_id
         tracking_column: log_id
         tracking_start_value: 1
         logs:
@@ -410,7 +410,7 @@ service:
         - sumologic
 ```
 
-With this configuration, the SQL Query receiver will run the SQL query `select log_text from logs_table where log_id > $1` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log. Note that you need to escape the dollar character in the YAML config file by adding a second dollar character: `$$`.
+With this configuration, the SQL Query receiver will run the SQL query `select log_id, log_text from logs_table where log_id > $1` every 30 seconds and create a log record out of each result row, using the value from the `log_text` column as the body of the log. Note that you need to escape the dollar character in the YAML config file by adding a second dollar character: `$$`.
 
 On the first query run, the parameter represented with the dollar one `$1` will be substituted with `1`, which is the value of the `tracking_start_value` property. On subsequent query runs, the last retrieved value of the `log_id` column from the previous run will be used as the value for the parameter.
 
