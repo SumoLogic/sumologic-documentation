@@ -908,7 +908,6 @@ module.exports = {
         'dashboards-new/link-dashboards',
         'dashboards-new/set-data-access-level',
         'dashboards-new/share-dashboard-new',
-        'dashboards-new/share-dashboard-outside-org',
         'dashboards-new/filter-template-variables',
         {
           type: 'category',
