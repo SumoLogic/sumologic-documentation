@@ -5,16 +5,16 @@ description: View information on Sumo Logic Cloud Flex Credits account and intui
 ---
 
 
-Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks utilization, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to manage your account without unnecessary waste.
+Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to manage your account without unnecessary waste.
 
-This page provides information on the Cloud Flex Credits account types from which you can choose, and then explains how you can intuitively monitor and manage your account.
+This page provides information on the Cloud Flex Credits account types you can choose, and then explains how to monitor and manage your account.
 
 ## Cloud Flex Credits - Account Types
 
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Cloud Flex Credits accounts.
 
-* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements from within the Sumo Logic UI. 
-* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information about Trial account features, see the details for [Cloud Flex accounts](#cloud-flex-credits---account-types).  
+* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI. 
+* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex accounts](#cloud-flex-credits---account-types).  
   :::note
   Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
@@ -61,7 +61,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 | Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
 | User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
-\* Contact Sumo Logic Sales to customize your account to meet your organization's needs.
+\* Contact your account manager to customize your account to meet your organization's needs.
 
 ## Account Page
 
@@ -74,27 +74,35 @@ You must have a role that grants you the View Account Overview capability to vie
 [Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
 
 :::note
-For more information on Data Tiers, contact your Sumo Logic Account Representative.
+For more information on Data Tiers, contact your Sumo Logic account manager.
 :::
 
 The Account page provides an at-a-glance view of your account information in the following panels.
 
-### Top panel 
+### Top left panel 
 
 * **Organization.** Displays the name of your Sumo Logic organization, and its hexadecimal organization ID number. This helps Sumo identify your account.
 * **Plan Type.** Displays your account type for your Sumo Logic subscription such as Essentials or Enterprise Suite
 * **Contract Period.** Displays the start and end dates of your contract period.
+* **Live Dashboard Panels and Real Time Alerts Count** A count of all real-time activity in your account.
 
-### Usage (Sumo Credits) 
+### Total Credit Usage 
 
-* **Usage (Sumo Credits).** Displays the usage of the Sumo Credits you purchased for the contract period.
-* **Contract Capacity Utilization.** Displays the total amount of Sumo Credits used since the beginning of the contract period.
-* **Forecast.** Displays the anticipated end date of the current contract period, along with the expected Sumo Credits usage by the end of the contract period based on the current consumption rate.
+* **Credits Used.** Displays the number of credits used and the percentage used since the beginning of your current contract. 
+* **Credits remaining.** Displays number of credits remaining as well as the percentage of credits used since the beginning of your current contract.
 
-### Usage 
 
+### Usage Forecast
+
+The usage forecast gives you an opportunity to see the potential end of the current credtits and an estimate on when those credits will end. 
+
+* **Upgrade Plan** Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
+* **Forecasted use** Predicts your credit usage by end of the contract period. 
+* **Credits exhaust** The predicted number of days and the exact date when we estimate your current credits will be exhausted.
+
+### Usage Details by Category 
 * **Usage Details.** Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
-**Live Dashboard Panels and Real Time Alerts.** Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
+* **Usage Categories** Table displaying the credits used, % of credits used, and units by usage categories, ingest type and promotional credits usage.
 
 ### Promotional Credits
 
@@ -115,11 +123,14 @@ To view the Account page, do the following:
     You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
     :::
 
-    The following visual indicators apply:
+   Be aware of the following features:
 
-    * Red text indicates an overage of your account limit.
+    * **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
+    * View consumption by day, week, or month. 
+    * View consumption by time period. 
+    * Download a 
 
-    ![account-overview-credits.png](/img/subscriptions/account-overview-credits.png)
+    ![account-overview-credits.png](/img/account/account-usage-fields.png)
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
