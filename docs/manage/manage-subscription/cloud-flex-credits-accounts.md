@@ -123,14 +123,14 @@ To view the Account page, do the following:
 You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
-   Be aware of the following features:
+Be aware of the following features:
 
-    * **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
-    * View consumption by day, week, or month. 
-    * View consumption by time period. 
-    * Download a report on usage, or just on credits usage as a CSV file. 
+* **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
+* View consumption by day, week, or month. 
+* View consumption by time period. 
+* Download a report on usage, or just on credits usage as a CSV file. 
 
-    ![account-overview-credits.png](/img/account/account-usage-fields.png)
+![account-overview-credits.png](/img/account/account-usage-fields.png)
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
