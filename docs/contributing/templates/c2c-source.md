@@ -1,7 +1,8 @@
 ---
-id: c2c-source
-title: C2C Source Template
-description: Template for Hosted Collector > Cloud-to-Cloud source docs.
+id: c2c-source  #example: druva-source
+title: XYZ Source #example: Druva Source
+sidebar_label: XYZ #example: Druva
+description: Description goes here. #example: Learn how to configure the Druva Cloud-to-Cloud Source in your Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
