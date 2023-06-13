@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic Security Foundations app, formerly the “Security Analytics app”, provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
+The Sumo Logic Security Foundations app, formerly known as the Security Analytics app, provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
 
 ## Install the Sumo Logic Foundations​ app
 
