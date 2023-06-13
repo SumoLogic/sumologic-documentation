@@ -122,32 +122,30 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 1. Download the [blobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploy.json) ARM template.
 The above template uses Consumption Plan which does not support VNet integration, you can use [blobreaderdeploywithPremiumPlan.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploywithPremiumPlan.json) which uses Elastic Premium plan.
-2. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
-3. On the Custom deployment blade, click **Build your own template in the editor**.
-4. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/edit-template.png')} alt="edit-template" />
-5. Click **Save**.
-6. On the Custom deployment blade, do the following:
+1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
+1. On the Custom deployment blade, click **Build your own template in the editor**.
+1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/edit-template.png')} alt="edit-template" />
+1. Click **Save**.
+1. On the Custom deployment blade, do the following:
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
     3. Set the values of the following parameters:
-* SumoEndpointURL: URL for the HTTP source you configured in [Step 2](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_2._Configure_an_HTTP_source) above.
-* StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
-* StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
-* Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name:
-```bash
-/blobServices/default/containers/<container_name>/
-```
-
-
-Resource group names should not consist of an underscore.
-
-1. Select the check box to **agree to the terms and conditions**, and then click **Purchase**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deployment" />
+    * SumoEndpointURL: URL for the HTTP source you configured in [Step 2](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_2._Configure_an_HTTP_source) above.
+    * StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
+    * StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
+    * StorageAccountRegion: Name of the region of the storage account you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
+    * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name:
+    `/blobServices/default/containers/<container_name>/`
+    :::note
+    Resource group names should not consist of an underscore.
+    :::
+1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deployment" width="400" />
 1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
 1. (Optional) In the same window, click** Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select `sumobrlogs<random-string>`.
-1. Under **Table Service** do the following:
+1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.
-    2. Click** + Table**.
+    2. Click **+ Table**.
     3. For Name, enter **FileOffsetMap**.
 1. Click **OK**.
 
