@@ -234,7 +234,6 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
 * Single-click on a row item > on the opened Alert page, click the three-dot kebab menu > **Subscribe to Monitor**
 
-
 ### From your Monitors list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
