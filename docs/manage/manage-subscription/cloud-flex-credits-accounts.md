@@ -84,7 +84,7 @@ The Account page provides an at-a-glance view of your account information in t
 * **Organization.** Displays the name of your Sumo Logic organization, and its hexadecimal organization ID number. This helps Sumo identify your account.
 * **Plan Type.** Displays your account type for your Sumo Logic subscription such as Essentials or Enterprise Suite
 * **Contract Period.** Displays the start and end dates of your contract period.
-* **Live Dashboard Panels and Real Time Alerts Count** A count of all real-time activity in your account.
+* **Live Dashboard Panels and Real Time Alerts Count**. A count of all real-time activity in your account.
 
 ### Total Credit Usage 
 
