@@ -98,7 +98,7 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 
 * **Upgrade Plan**. Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
 * **Forecasted use**. Predicts your credit usage by end of the contract period. 
-* **Credits exhaust** The predicted number of days and the exact date when we estimate your current credits will be exhausted.
+* **Credits exhaust**. The predicted number of days and the exact date when we estimate your current credits will be exhausted.
 
 ### Usage Details by Category 
 
