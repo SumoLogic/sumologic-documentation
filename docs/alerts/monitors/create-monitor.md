@@ -25,6 +25,8 @@ This topic shows you how to create a monitor.
 
 1. Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
+{@import ../../reuse/alerts-timeslice.md}
+
 #### From your Metrics Explorer
 
 Creating a monitor based on the threshold values defined in the Metrics page can save time and effort. By using the pre-filled monitor editor, you can quickly create a monitor with the same threshold values as defined in the Metrics page. This will ensure that the monitor is using the same criteria as the Metrics page, providing consistency in monitoring.

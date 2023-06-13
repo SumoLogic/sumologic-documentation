@@ -4,6 +4,8 @@ title: CSE Heads Up Display
 description: Learn about CSE's Heads Up Display (HUD), a UI that provides an at-a-glance overview of Insight status and activity.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic describes CSE’s *Heads Up Display (HUD)*, the landing page for the CSE UI. The HUD provides an at-a-glance overview of Insight status and activity.
 
 ## HUD overview
@@ -16,7 +18,7 @@ The right side of the HUD contains a list of recent Insight activity. The card a
 
 See the sections below for more details on each element of the HUD.
 
-![hud.png](/img/cse/hud.png)
+<img src={useBaseUrl('img/cse/hud.png')} alt="Head-up display" width="800"/>
 
 ## Search bar 
 
@@ -34,10 +36,10 @@ The section labeled **c** contains four icons. 
 
 | Icon | Description |
 |:--|:--|
-| ![gear.png](/img/cse/gear.png) | Click this icon to see a menu of CSE configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
-| ![help.png](/img/cse/help.png) | Click this icon to access CSE help, API documentation, release announcements, and service status. |
-| ![switch-apps.png](/img/cse/switch-apps.png) | Click this icon to open the Sumo Logic platform UI in a new tab. |
-| ![profile.png](/img/cse/profile.png) | Click this icon to open your CSE user profile. Your profile is where you can manage your password, browser timezone, security options, and email notifications. |
+| <img src={useBaseUrl('img/cse/gear.png')} alt="Gear icon" width="50"/> | Click this icon to see a menu of CSE configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
+| <img src={useBaseUrl('img/cse/help.png')} alt="Help icon" width="50"/> | Click this icon to access CSE help, API documentation, release announcements, and service status. |
+| <img src={useBaseUrl('img/cse/switch-apps.png')} alt="Help icon" width="50"/> | Click this icon to open the Sumo Logic platform UI in a new tab. |
+| <img src={useBaseUrl('img/cse/profile.png')} alt="Profile icon" width="50"/> | Click this icon to open your CSE user profile. Your profile is where you can manage your password, browser timezone, security options, and email notifications. |
 
 ## Counts
 

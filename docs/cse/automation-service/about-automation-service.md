@@ -63,7 +63,7 @@ An automation runs a playbook, which  runs actions that are provided by integrat
 
 ## Overview: Configure an automation
 
-This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation.
+This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation. For examples, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
 
 :::info
 Before you can configure an automation, you must [configure the connection](#configure-the-connection-for-an-integration-resource) for the integration resources you want the automation to use.
