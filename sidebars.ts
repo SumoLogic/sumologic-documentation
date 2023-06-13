@@ -2427,7 +2427,7 @@ integrations: [
             'cse/automation-service/automation-service-integrations',
             'cse/automation-service/automation-service-examples',
             'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation-service/automation-service-bridge', 
           ],
         },
         {
