@@ -173,6 +173,26 @@ module.exports = {
       },
     ],
     ['@docusaurus/plugin-content-blog',
+      {
+         id: 'blog-csoar',
+         routeBasePath: 'release-notes-csoar',
+         path: './blog-csoar',
+         archiveBasePath: 'archive',
+         blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
+         blogSidebarTitle: 'All posts',
+         blogSidebarCount: 'ALL',
+         postsPerPage: 'ALL',
+         blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+         showReadingTime: false,
+         feedOptions: {
+           type: 'rss',
+           title: 'Sumo Logic Cloud SOAR Release Notes',
+           description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+         },
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
        {
           id: 'blog-developer',
           routeBasePath: 'release-notes-developer',
@@ -379,6 +399,11 @@ module.exports = {
               {
                 label: 'Cloud SIEM',
                 to: 'release-notes-cse',
+                icon: 'rss_feed',
+              },
+              {
+                label: 'Cloud SOAR',
+                to: 'release-notes-csoar',
                 icon: 'rss_feed',
               },
               {
