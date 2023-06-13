@@ -36,7 +36,7 @@ Follow this process to define a search filter:
 
 To see the **Search Filter** options when you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role):
 1. Go to **Administration > Users and Roles > Roles**.
-1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane diplays the **Search Filter" options.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
+1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane displays the **Search Filter** options.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
 
 ## Index based 
 
