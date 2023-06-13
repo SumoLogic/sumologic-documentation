@@ -162,7 +162,7 @@ The Usage Details panel contains the following usage categories:
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
-* **Promotional categories**. See [Monitoring Promotional Credit usage](cloud-flex-accounts.md).
+* **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
 
 ### Changing views and time intervals
 
