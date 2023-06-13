@@ -19,6 +19,9 @@ Automations run playbooks to add enrichments and create notifications for either
 To view the automations that have run on Insights or Entities, see [View results of an automation](#view-results-of-an-automation).
 
 ## Create an automation
+
+The following procedure provides a brief introduction to how to create an automation. For detailed examples, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
+
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.
 1. At the top of the automations screen, click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
