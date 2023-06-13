@@ -101,6 +101,7 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 * **Credits exhaust** The predicted number of days and the exact date when we estimate your current credits will be exhausted.
 
 ### Usage Details by Category 
+
 * **Usage Details.** Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
 * **Usage Categories** Table displaying the credits used, % of credits used, and units by usage categories, ingest type and promotional credits usage.
 
@@ -173,7 +174,7 @@ To switch between views and time interval displays:
 
     The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 
-1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.
+1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude. ![account-details-of-credit-usage.png](/img/account/account-details-of-credit-usage.png)
 
 1. To toggle an analytic data type back on, click the blank icon next to the data type name.
 
