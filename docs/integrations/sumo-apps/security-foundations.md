@@ -1,5 +1,5 @@
 ---
-id: security-analytics
+id: security-foundations
 title: Sumo Logic Security Foundations App
 sidebar_label: Security Foundations
 description: Shows the most important alerts to investigate and the entities that pose the greatest risk.

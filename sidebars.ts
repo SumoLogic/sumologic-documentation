@@ -2181,7 +2181,7 @@ integrations: [
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/infrequent-data-tier',
-          'integrations/sumo-apps/security-analytics',
+          'integrations/sumo-apps/security-foundations',
         ],
       },
       {
