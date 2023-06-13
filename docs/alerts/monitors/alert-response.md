@@ -99,8 +99,6 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
 :::
 
-{@import ../../reuse/alerts-timeslice.md}
-
 
 ## Alert Page
 
@@ -243,6 +241,7 @@ A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to a
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
+#### From a folder
 
 ## Muting Schedules
 
