@@ -24,7 +24,7 @@ See [Additional Configurations Reference](/docs/send-data/opentelemetry-collecto
 
 Following configuration demonstrates:
 
-1. **Collect**: How to collect logs stored in /var/log/syslog and /var/log/audit/audit.log
+1. **Collect**: How to collect logs stored in `/var/log/syslog` and `/var/log/audit/audit.log`.
 2. **Transform**: Set `_sourceCategory` field to `application_logs_prod`
 3. **Export**: Send data to authenticated Sumo Logic organization.
 
