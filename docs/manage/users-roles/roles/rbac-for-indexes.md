@@ -22,7 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- When the beta period is done, incorporate the following content into /docs/manage/users-roles/roles/construct-search-filter-for-role/ -->
 
-When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) to allow access to data based on search indexes, or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria.
+You can restrict access to specific data using roles. When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) to allow access to data based on search indexes, or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria. This ensures that users only see the data they are supposed to.
 
 Follow this process to define a search filter:
 
@@ -57,7 +57,7 @@ An advanced filter allows access only to the logs that match the search filter.
 
 1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
 1. Under **Search Filter**, select **Advanced filter**.
-1. Select one of the following:
+1. Select one of the following query types. You can create only one filter per query type; if you need to create more filters for a query type, you must create new roles for the additional filters and assign all the roles
    * **Log Analytics data filter**. Allow access to only the logs that match the defined conditions in log analytics [partition indexes](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
    * **Audit data filter**. Allow access to only the logs that match the defined conditions in Sumo Logic [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
    * **Security data filter**. Allow access to only the logs that match the defined conditions in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_sec_*`.
