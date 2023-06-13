@@ -197,33 +197,33 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **IIS 7 - Overview Dashboard** provides a high-level view of user visits by country, the number of requests and the response time, top applications used to make requests, operating systems (OSes) used, and the number of server errors.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/Overview.png')} alt="Overview Dashboard" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-7-Overview.png')} alt="Overview Dashboard" />
 
 ### Server Operation - Errors
 
 The **IIS 7 - Server Operation - Errors Dashboard** provides information on server errors by IP address, response code trends, HTTP errors by server IP address, and client errors by IP address.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/ServerOperationErrors.png')} alt="Server Operation - Errors" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-7-Server-Operation-Errors.png')} alt="Server Operation - Errors" />
 
 ### Server Operation - Requests and Response Time
 
 The **IIS 7 - Server Operation - Requests and Response Time Dashboard** provides information on requests by server IP address, the top 10 slowest web pages, the number of requests and the response time per timeslice, top 10 server IP addresses response throughput time in bytes per second, and cumulative response times percentiles.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/ServerOperationsRequestsAndResponseTime.png')} alt="Server Operation - Requests and Response Time" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-7-Server-Operation-Requests-and-Response-Time.png')} alt="Server Operation - Requests and Response Time" />
 
 ### Traffic Insights - Apps and Requests
 
 The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides information on the requests made by each application, the top 10 applications and the number of requests received, the top 10 users making requests, cumulative user request percentiles, the top 10 clients by IP address and the number of requests made, and cumulative client request percentiles**.**
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/TrafficInsightsAppsAndRequests.png')} alt="Traffic Insights - Apps and Requests" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-7-Traffic-Insights-Apps-and-Requests.png')} alt="Traffic Insights - Apps and Requests" />
 
 ### Traffic Insights - Content and Client Platform
 
 The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides information on the number of media file types requested, the top 10 documents requested, the operating systems and web browsers used by visitors, and the operating system platforms used by visitors.
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/TrafficInsightsContentAndClientPlatform.png')} alt="Traffic Insights - Content and Client Platform" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-7-Traffic-Insights-Content-and-Client-Platform.png')} alt="Traffic Insights - Content and Client Platform" />
 
 ### Visitor Insights
 
 The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/IIS/VisitorInsights.png')} alt="Visitor Insights" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-7-Visitor-Insights.png')} alt="Visitor Insights" />
