@@ -1,0 +1,16 @@
+---
+title: Public Dashboards (Dashboards)
+hide_table_of_contents: true
+image: https://help.sumologic.com/img/sumo-square.png
+keywords:
+  - dashboard
+  - public 
+authors:
+  - url: https://help.sumologic.com/release-notes-service/rss.xml
+    image_url: /img/release-notes/rss-orange.png
+---
+
+Our new **Public Dashboards** feature enables you to share your dashboards with users who do not have a Sumo Logic account. With this feature enabled, you are not allowed to share your dashboard outside the organization with the User's data access level, and to view the shared dashboard, users always need to enable the auto-refresh.
+
+Check out our technical documentation [here](/docs/dashboards-new/share-dashboard-outside-org) to learn more about public dashboards.
+
