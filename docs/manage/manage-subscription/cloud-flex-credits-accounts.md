@@ -5,7 +5,7 @@ description: View information on Sumo Logic Cloud Flex Credits account and intui
 ---
 
 
-Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to manage your account without unnecessary waste.
+Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
 This page provides information on the Cloud Flex Credits account types you can choose, and then explains how to monitor and manage your account.
 
@@ -68,7 +68,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 The **Account Overview** tab of the  **Account** page for Cloud Flex Credits displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as live dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
 :::note
-You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
+This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
 [Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
@@ -119,9 +119,9 @@ To view the Account page, do the following:
 1. Log in to your Sumo Logic Cloud Flex Credits account.
 1. In the left navigation bar, select **Administration** > **Account**. The Account Overview tab is shown by default.
 
-    :::note
-    You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
-    :::
+:::note
+You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
+:::
 
    Be aware of the following features:
 
@@ -132,9 +132,9 @@ To view the Account page, do the following:
 
     ![account-overview-credits.png](/img/account/account-usage-fields.png)
 
-   :::note
+:::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
-   :::
+:::
 
 ![Manage_Organization_options.png](/img/subscriptions/Manage_Organization_options.png)
 
@@ -173,9 +173,9 @@ To switch between views and time interval displays:
 
     The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 
-1. To only view data for a specific analytic type or types, go to the bottom of the Usage Details panel and click the check box next to the analytic type or types you want to exclude.
+1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.
 
-1. To toggle an analytic data type back On, click the blank icon next to the data type name.
+1. To toggle an analytic data type back on, click the blank icon next to the data type name.
 
     The analytic data type reappears in the graph and the credit usage for the data type is once again included.
 

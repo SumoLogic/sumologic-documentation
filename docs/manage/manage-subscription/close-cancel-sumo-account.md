@@ -18,7 +18,8 @@ This task deletes your Sumo Logic Organization, all users and data. **This acti
 To delete a Sumo Logic organization and close the account:
 
 1. In the Sumo Logic left navigation bar, go to **Administration** > **Account**.
-1. At the bottom of the page, under the section **Delete this Organization from Sumo Logic?**, click **Delete Org**.
+1. At the top of the page, select the details icon.
+1. Select **Delete this Organization from Sumo Logic?**, click **Delete Org**.
 1. In the dialog **Delete This Organization from Sumo Logic?**, enter **DELETE** to confirm.
 1. Click **Delete Org**.
 
