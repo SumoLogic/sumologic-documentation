@@ -60,7 +60,7 @@ You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo L
 1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
 1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" width="200"/><br/>A blank dashboard appears.
 1. Click on the name of the blank dashboard (such as **Dashboard 1** in the following example), and give the dashboard a name. Click **No description available** and type a description.<img src={useBaseUrl('img/cloud-soar/delivery-2-dashboard-1.png')} alt="Empty dashboard" width="400"/>
-1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>The widgets panel diplays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="300"/>
+1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>The widgets panel displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="300"/>
 1. Select widgets to add to the dashboard from **My Widgets** or **Public**. These are the same widgets that are available to use in [reports](#reports). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. To see all available widgets, click **Show List**. 
 1. To create a new widget, click **New**. The dialog to create a widget appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" width="600"/>
      1. In **Name**, provide a name that clearly explains the widget's purpose.
@@ -69,7 +69,9 @@ You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo L
      1. At the top, query for elements to view in the widget, such as incidents, notes, tasks, and attachments. 
      1. Click **Public** if you want to make the widget available for others to use. 
      1.  Click **Save** when done. 
-1. Rearrange the widgets in the dashboard as needed. 
+1. Rearrange the widgets in the dashboard as desired. 
+1. Click **Public** if you want to make the dashboard available for others to use.
+1. Click **Export** to export the dashboard to PDF.  
 
 
 
