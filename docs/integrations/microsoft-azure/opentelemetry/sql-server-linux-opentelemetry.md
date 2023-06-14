@@ -56,9 +56,9 @@ The Microsoft SQL Server app's queries and dashboards depend on logs from the SQ
 
 `/var/opt/mssql/log/errorlog`
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-linux-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-linux-YAML.png' alt="YAML" style={{border: '1px solid black'}} />
 
 ### Step 3: Send logs to Sumo Logic
 
