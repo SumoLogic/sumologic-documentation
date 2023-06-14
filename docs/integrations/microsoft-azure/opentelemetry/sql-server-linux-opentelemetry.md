@@ -34,7 +34,7 @@ Make sure logging is turned on in SQL Server. Follow [this documentation](https:
 
 The Microsoft SQL Server app's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `/var/opt/mssql/log/errorlog`.
 
-The ERRORLOG is typically in UTF-16LE encoding, but verify the file encoding used in your SQL Server configuration.
+The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
 
 ## Configure SQL Server Logs Collection
 
