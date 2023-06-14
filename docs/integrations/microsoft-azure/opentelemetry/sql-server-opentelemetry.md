@@ -8,6 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
+:::note
+The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
+:::
 The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
 This App has been tested with following SQL Server versions:
@@ -55,7 +58,7 @@ The Microsoft SQL Server App's queries and dashboards depend on logs from the SQ
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-linux-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -134,7 +137,7 @@ Use this dashboard to:
 - Keep track of Deadlock, Error, Backup failure, mirroring errors, and insufficient space issue counts.
 - Examine Login activities, failures, and failure reasons.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
 
 ### General Health
 
@@ -145,7 +148,7 @@ Use this dashboard to:
 - Monitor server events trends including SQL Server wait time.
 - Get insight into app domain and percentage disk utilization issues by SQL Server.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
 
 ### Backup Restore Mirroring
 
