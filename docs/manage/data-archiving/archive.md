@@ -1,6 +1,6 @@
 ---
 id: archive
-title: Archiving Log Data to S3
+title: Archive Log Data to S3
 description: Send data to an Archive that you can ingest from later.
 ---
 
@@ -236,4 +236,4 @@ The metadata field `_archiveJob` is automatically created in your account and
 
 ## Audit ingestion job requests
 
-The [Audit Event Index](security/audit-event-index.md) provides events logs in JSON when ingestion jobs are created, completed, and deleted. 
+The [Audit Event Index](/docs/manage/security/audit-event-index) provides events logs in JSON when ingestion jobs are created, completed, and deleted. 

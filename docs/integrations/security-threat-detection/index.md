@@ -171,12 +171,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
   <p>A guide to the Sumo Logic app for Zscaler Private Access.</p>
   </div>
 </div>
-<div className="box smallbox26 card">
-  <div className="container">
-  <a href="/docs/integrations/security-threat-detection/zscaler-web-security"><img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="95"/><h4>Zscaler Web Security</h4></a>
-  <p>A guide to the Sumo Logic app for Zscaler Web Security.</p>
-  </div>
-</div>
 </div>
 
 <br/>
