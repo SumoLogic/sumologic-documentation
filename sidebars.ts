@@ -675,10 +675,20 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
-        'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Data Archiving',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/data-archiving/index'},
+      items: [
+        'manage/data-archiving/archive',
+        'manage/data-archiving/installed-collectors',
       ]
     },
     {
@@ -774,7 +784,6 @@ module.exports = {
         'manage/security/set-max-web-session-timeout',
        ]
      },
-    'manage/archive',
    ],
   },
 ],
@@ -908,7 +917,6 @@ module.exports = {
         'dashboards-new/link-dashboards',
         'dashboards-new/set-data-access-level',
         'dashboards-new/share-dashboard-new',
-        'dashboards-new/share-dashboard-outside-org',
         'dashboards-new/filter-template-variables',
         {
           type: 'category',
@@ -1856,7 +1864,6 @@ integrations: [
          'integrations/microsoft-azure/sql',
          'integrations/microsoft-azure/web-apps',
          'integrations/microsoft-azure/iis-7',
-         'integrations/microsoft-azure/iis-10-legacy',
          'integrations/microsoft-azure/microsoft-graph-identity-protection',
          'integrations/microsoft-azure/office-365',
          'integrations/microsoft-azure/sql-server',
@@ -2166,7 +2173,6 @@ integrations: [
           'integrations/security-threat-detection/vmware-carbon-black',
           'integrations/security-threat-detection/zscaler-internet-access',
           'integrations/security-threat-detection/zscaler-private-access',
-          'integrations/security-threat-detection/zscaler-web-security',
         ],
       },
       {
@@ -2421,10 +2427,12 @@ integrations: [
           items: [
             'cse/automation-service/about-automation-service',
             'cse/automation-service/automation-service-automations',
+            'cse/automation-service/automation-service-app-central',  
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-examples',
             'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation-service/automation-service-bridge', 
           ],
         },
         {

@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/archive.png')} alt="icon" width="40"/>
 
-The Archive Ingestion Management API allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing [AWS S3 Archive Source](/docs/manage/archive#create-an-aws-s3-archivesource).
+The Archive Ingestion Management API allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing [AWS S3 Archive Source](/docs/manage/data-archiving/archive#create-an-aws-s3-archivesource).
 
 :::info
-You need the [Manage or View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) to manage or view ingestion jobs. For more information, see [Archive](/docs/manage/archive).
+You need the [Manage or View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) to manage or view ingestion jobs. For more information, see [Archive](/docs/manage/data-archiving/archive).
 :::
 
 {@import ../reuse/api-intro.md}
