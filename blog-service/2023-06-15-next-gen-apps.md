@@ -28,7 +28,7 @@ In response to many requests for better App management, we are happy to announce
 
 While the initial set of new apps is designed to help you get started using the Sumo Logic distribution of the Open Telemetry agent, we haven't forgotten about those who may continue to send data through the Sumo Logic Installed Collector and Hosted Sources. We will be converting all the existing Classic Apps to the next gen framework in the coming months and will continue to provide support for these collection methods. In the meantime, our Classic Apps will remain available to you within the Application Catalog.
 
-Over the coming year Sumo Logic will also be making additional improvements within the Applications Catalog to assist with better search, filtering, upgrade notifications, and management. Please lookout for these future updates. 
+Over the coming year, Sumo Logic will be making additional improvements within the Apps Catalog to assist with better search, filtering, upgrade notifications, and management. Stay tuned for these future updates. 
 
 ### Minor Changes and Enhancements
 * [New] When performing create, update, and delete requests through the Sumo Logic APIs the API accessID is now included within the *operator* field of the related [Audit Event Index](docs/manage/security/audit-event-index/) messages.    
