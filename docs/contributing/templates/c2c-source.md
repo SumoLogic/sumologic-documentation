@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 {{source icon}}
 
-The {{source name}} collects {{data/event types}} from {{source of origin}}. {{what the app does}}
+The {{source name}} collects {{data/event types}} from {{source of origin}}. {{What the app does}}.
 
 <!-- Example:
 The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.-->
@@ -51,13 +51,13 @@ After you click on **Error**, you should see a **Health Events** popup modal con
 
 ## Setup and configuration
 
-{{Configure source in Sumo Logic UI}} <!-- Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source -->
-
 {{Configure on source's website (not required for all sources)}} <!-- Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#set-up-a-service-application -->
+
+{{Configure source in Sumo Logic UI}} <!-- Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source -->
 
 ## Error Types
 
-When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows the possible error types, the reason for the error, if the source attempts to retry, and the event log name in the Health Event Index.
+When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows the possible error types, the reason for the error, whether the source attempts to retry, and the event log name in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
@@ -71,32 +71,23 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 Paste this line: {@import ../../reuse/restart-c2c-source.md}
 -->
 
-## JSON configuration
+## JSON Source configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [Using JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| config | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
-| schemaRef | JSON Object  | Yes | Set to `{"type":"MS Graph Azure AD Reporting"}`. | not modifiable |
-| sourceType | String | Yes | Set to `Universal`. | not modifiable |
+| {{`Parameter`}} | {{Type}} | {{Yes/No}} | {{Description}} |   |
 
-### Config parameters
+### JSON config parameters
 
-The following table shows the **config** parameters for a {{source name}}.
+The following table shows the JSON **config** parameters for a {{source name}}.
 
-| Parameter | Type | Required? | Default | Description | Access |
+| Parameter | Type | Required | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
-| `tenant_id` | String | Yes |  | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. | modifiable |
-| `secret_key` | String | Yes |  | Provide the Application Client Secret Value you created in Azure. | modifiable |
-| `application_id` | String | Yes |  | Provide the Application (client) ID you got after you registered (created) the Azure Application. | modifiable |
-| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: `Directory Audit`, `Sign-in`, and `Provisioning`. For example, for both you'd use: `["Directory Audit","Signin"]` | modifiable |
+| {{`Parameter`}} | {{Type}}  | {{Yes/No}} |  | {{Description}} |  |
 
-### Config example
+### JSON config example
 
 ```json
 insert JSON config example
