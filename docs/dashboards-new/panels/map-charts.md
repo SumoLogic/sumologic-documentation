@@ -68,9 +68,9 @@ To add a panel with a Cluster or Heatmap:
 * Colors of map markers cannot be changed.
 :::
 
-## Connection map
+## Missile map
 
-Connection map depicts the points of origin of potential threats and the target destinations. This map helps you to visualize the relationships between these sources and destinations, providing insights into the pathways that threats may follow. By visualizing, the connections between threat sources and target destinations, you can enhance your risk assessment, threat modelling, and decision-making processes.
+Missile map depicts the points of origin and target destinations of the data. This map helps you to visualize the relationships between these sources and destinations, providing insights into the pathways that threats may follow. By visualizing, the connections between threat sources and target destinations, you can enhance your risk assessment, threat modelling, and decision-making processes.
 
 To create Connection map, your query must include:
 
@@ -87,9 +87,9 @@ benchmarkcat guardduty_geo
 //| topk(3, percentage) group by threatpurpose
 ```
 
-### Create a Connection map
+### Create a Missile map
 
-To add a panel with a connection map:
+To add a panel with a missile map:
 
 1. Create or open a Dashboard (New) and click on **Add Panel > Map**. <br/><img src={useBaseUrl('img/dashboards-new/panels/map-charts/map-panel-option.png')} alt="map-panel-option" style={{border: '1px solid black'}} width="600" /> 
 1. Type a supported query in the Search box, including all of the required field names and press **Enter** for it to run.
