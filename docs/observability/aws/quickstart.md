@@ -18,7 +18,7 @@ This guide will walk you through setting up [Sumo Logic's AWS Observability inte
 <details><summary>Example: How to change your AWS region to us-west-1?</summary>
 Run the following command with AWS region as us-west-1.
 <p></p>
-<code>aws configure set region us-west-1 --profile testing</code>
+<code>aws configure set region us-west-1</code>
 </details>
 
 ## Installation
