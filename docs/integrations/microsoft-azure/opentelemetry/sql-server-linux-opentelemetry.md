@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic app for Microsoft SQL Server is a logs based app that provides insight into your SQL Server for Linux. The app consists of predefined dashboards, providing visibility into your environment for real-time or historical analysis on backup, restore mirroring, general health and operations of your system.
+The Sumo Logic app for Microsoft SQL Server is a logs-based app that provides insight into your SQL Server for Linux. The app consists of predefined dashboards, providing visibility into your environment for real-time or historical analysis on backup, restore mirroring, general health and operations of your system.
 
 This app has been tested with following SQL Server versions:
 
