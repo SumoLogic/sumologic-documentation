@@ -1,15 +1,15 @@
 ---
 id: installed-collectors
-title: Forward Data from an Installed Collector
-description: Learn how to set up Data Forwarding destinations for Installed Collectors.
+title: Archive Log Data to Other Destinations
+description: Learn how to set up Data Archiving destinations.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can set up one or more data forwarding destinations and configure an Installed Collector to send raw log data from specified Sources to those destinations. The Collector will send the raw data to external destinations at the same time it sends data to Sumo.
+You can set up one or more data archiving destinations and configure an Installed Collector to send raw log data from specified Sources to those destinations. The Collector will send the raw data to external destinations at the same time it sends data to Sumo.
 
-You can forward raw log data using the following protocols.
+You can archive raw log data using the following protocols.
 
 * Syslog (TCP and UDP)—Send log data to a syslog server.
 * Generic REST API—Send log data to a web services endpoint.
@@ -17,17 +17,17 @@ You can forward raw log data using the following protocols.
 
 Follow the steps below to set up a Collector to forward raw log data to an external destination.
 
-You can set up Installed Collector data forwarding when you first configure Sources or at a later time. If you apply rules at a later time, keep in mind that they are not applied retroactively.
+You can set up Installed Collector data archiving when you first configure Sources or at a later time. If you apply rules at a later time, keep in mind that they are not applied retroactively.
 
 :::note
 Data forwarding processing rules are processed after all other [processing rules](/docs/send-data/collection/processing-rules).
 :::
 
-## Step 1: Configure data forwarding destination
+## Step 1: Configure data archiving destination
 
 You need the [Manage Collectors role capability](../users-roles/roles/role-capabilities.md) to create a data forwarding destination.
 
-To set up a data forwarding destination:
+To set up a data archiving destination:
 
 1. Choose **Manage Data > Collection > Data Archiving**.
 1. Click **+ Destination** to add a new destination.
