@@ -21,7 +21,30 @@ Sumo Logic Apps address these common use cases:
 * **Decrease app time to market.** With Sumo Logic, companies can implement a consistent release process resulting in on-time releases. They can easily identify application issues and configuration changes across development, test and deployment environments.
 * **Enforce compliance.** Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
 
-## Install Apps to your Library
+In our **App Catalog**, you'll find two categories of apps: Next-Gen and Classic.
+
+## App categories
+
+### Next-Gen Apps
+
+Our Next-Gen Apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+
+What makes Next-Gen different from Classic Apps?
+
+* Installation and updates must be performed by an administrator or a user with the **Manage Apps** role capability.
+* App icons will display a badge indicating if it's been installed within your org.
+* App icons will display a badge indicating if there's an app update available. The upgrade can then be applied with a single click.
+* App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
+* Additional filter options make it easy to find your installed or upgradeable apps.
+* Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
+* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
+
+### Classic Apps (Legacy)
+
+All of our existing Classic Apps will be converted to Next-Gen. In the meantime, our Classic Apps will remain available to you within the Application Catalog.
+
+
+## Prerequisites
 
 | Account Type | Account Level |
 | :-- | :-- |
@@ -34,6 +57,7 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic Apps.
 :::
 
+## Install Apps to your Library
 
 {@import ../reuse/apps/app-install.md}
 
@@ -74,7 +98,8 @@ Each Sumo Logic App has unique requirements, so make sure to follow the specific
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=perf`.
    * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Perf**.
 
-### Troubleshooting
+
+## Troubleshooting
 
 If you've installed a Sumo Logic App and no data appears in its Dashboards, you may have chosen the wrong Source Category.
 
