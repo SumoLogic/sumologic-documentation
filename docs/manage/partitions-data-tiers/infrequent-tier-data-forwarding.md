@@ -16,7 +16,7 @@ Previously, data forwarding was only supported in Sumo Logic’s Continuous data
 
 ## Infrequent data forwarding support
 
-To enable data forwarding in Infrequent tier, follow the steps:
+To enable data forwarding in the Infrequent tier, follow the steps:
 1. In Sumo Logic, go to **Manage Data** > **Logs** > **Partitions**, or **Manage Data** > **Logs** > **Scheduled Views**, depending on whether you want to forward data from a Partition or a Scheduled View.
 1. Click the Partition or View for which you want to enable data forwarding and click the **Edit** button. When editing, you'll see an option to **Enable Data Forwarding**. <br/> <img src={useBaseUrl('img/partitions-data-tiers/enable-infrequent.png')} alt="data-forwarding" width="400" />
 1. Click **Enable Data Forwarding** checkbox.
