@@ -85,68 +85,61 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
     </div>
     <div className="box smallbox11 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
-      <h4><a href="/docs/integrations/microsoft-azure/iis-10-legacy">IIS 10 (Legacy)</a></h4>
-      <p>A guide to the Sumo Logic app for IIS 10 Legacy.</p>
-      </div>
-    </div>
-    <div className="box smallbox12 card">
-      <div className="container">
       <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/microsoft-azure/microsoft-graph-identity-protection">Microsoft Graph Identity Protection</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Graph Identity Protection.</p>
       </div>
     </div>
-    <div className="box smallbox13 card">
+    <div className="box smallbox12 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/microsoft-azure/office-365">Microsoft Office Audit 365</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Office Audit 365.</p>
       </div>
     </div>
-    <div className="box smallbox14 card">
+    <div className="box smallbox13 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="45"/>
       <h4><a href="/docs/integrations/microsoft-azure/sql-server">Microsoft SQL Server</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft SQL Server.</p>
       </div>
     </div>
-    <div className="box smallbox15 card">
+    <div className="box smallbox14 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Thumbnail icon" width="43"/>
       <h4><a href="/docs/integrations/microsoft-azure/teams">Microsoft Teams</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Teams.</p>
       </div>
     </div>
-    <div className="box smallbox16 card">
+    <div className="box smallbox15 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/pci-icon_2.png')} alt="Thumbnail icon" width="65"/>
       <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
       <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
       </div>
     </div>
-    <div className="box smallbox17 card">
+    <div className="box smallbox16 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/pci-icon_2.png')} alt="Thumbnail icon" width="75"/>
       <h4><a href="/docs/integrations/microsoft-azure/windows-json-pci-compliance">PCI Compliance for Windows JSON</a></h4>
       <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON.</p>
       </div>
     </div>
-    <div className="box smallbox18 card">
+    <div className="box smallbox17 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="45"/>
       <h4><a href="/docs/integrations/microsoft-azure/windows-json">Windows JSON</a></h4>
       <p>A guide to the Sumo Logic app for Windows JSON.</p>
       </div>
     </div>
-    <div className="box smallbox19 card">
+    <div className="box smallbox18 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="45"/>
       <h4><a href="/docs/integrations/microsoft-azure/windows-legacy">Windows Legacy</a></h4>
       <p>A guide to the Sumo Logic app for Windows Legacy.</p>
       </div>
     </div>
-    <div className="box smallbox20 card">
+    <div className="box smallbox19 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/microsoft-azure/performance">Windows Performance</a></h4>

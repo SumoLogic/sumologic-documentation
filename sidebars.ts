@@ -1855,7 +1855,6 @@ integrations: [
          'integrations/microsoft-azure/sql',
          'integrations/microsoft-azure/web-apps',
          'integrations/microsoft-azure/iis-7',
-         'integrations/microsoft-azure/iis-10-legacy',
          'integrations/microsoft-azure/microsoft-graph-identity-protection',
          'integrations/microsoft-azure/office-365',
          'integrations/microsoft-azure/sql-server',
@@ -2165,7 +2164,6 @@ integrations: [
           'integrations/security-threat-detection/vmware-carbon-black',
           'integrations/security-threat-detection/zscaler-internet-access',
           'integrations/security-threat-detection/zscaler-private-access',
-          'integrations/security-threat-detection/zscaler-web-security',
         ],
       },
       {
