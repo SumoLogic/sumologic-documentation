@@ -1345,7 +1345,6 @@
   "/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints": "/docs/api/troubleshooting",
   "/APIs/Troubleshooting-APIs/Receiving-500-errors-when-using-the-Search-Job-API": "/docs/api/troubleshooting",
   "/APIs/Troubleshooting-APIs/Search-Job-API-Results-into-formatted-JSON-file": "/docs/api/troubleshooting",
-  "/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry/": "/docs/integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry",
   "/APIs/User-Management-API": "/docs/api/user-management",
   "/docs/api/collectors": "/docs/api/collector-management",
   "/docs/api/fields": "/docs/api/field-management",
