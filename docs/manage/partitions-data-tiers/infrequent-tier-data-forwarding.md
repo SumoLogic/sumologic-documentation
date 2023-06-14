@@ -1,7 +1,7 @@
 ---
 id: infrequent-tier-data-forwarding
 title: Infrequent Tier Support for Data Forwarding (Beta)
-description: Learn how to forward log data in Infrequent data tier.
+description: Learn how to forward log data in the Infrequent data tier.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
