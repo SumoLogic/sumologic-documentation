@@ -187,14 +187,15 @@ For customers that do not make use of the Recruiting Functional Area, the standa
     * Browser Type
     * Device is Trusted
 6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**. After configuring all the fields you can verify all the fields using the [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
-7. Go to the **Advanced** tab and click the **Enable As Web Service** checkbox under **Web Service Options**.
-8. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
-9. Click **Done**. You can also test it by clicking the **Run** button.
-10. To get the Report URL, search for **Custom Signons and Attempted Signons Report** in the search bar and run the report.
-11. Click the **Actions** button and go to **Web Service** > View URLs.
-12. Click **OK** and copy the URL from **JSON** link. You will need this later while configuring the collection.
-
-From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should looks like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`
+7.  If you're configuring the [Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/), Go to the **Prompts** tab and look for the **Do Not Prompt at Runtime** column under the **Prompts Defaults** table. Make sure that checkboxes are disabled for the **From_Moment** and **To_Moment** rows.
+  <img src={useBaseUrl('img/integrations/saas-cloud/Workday-SignOn-Report-Prompts-Tab.png')} alt="workday custom sign-on report prompt tab" style={{border: '1px solid black'}} />
+8. Go to the **Advanced** tab and click the **Enable As Web Service** checkbox under **Web Service Options**.
+9. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
+10. Click **Done**. You can also test it by clicking the **Run** button.
+11. To get the Report URL, search for **Custom Signons and Attempted Signons Report** in the search bar and run the report.
+12. Click the **Actions** button and go to **Web Service > View URLs**.
+13. Click **OK** and copy the URL from **JSON** link. You will need this later while configuring the collection.
+From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should look like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`
 
 
 ### Step 2: Add a Hosted Collector and HTTP Source
