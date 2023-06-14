@@ -23,28 +23,25 @@ Sumo Logic Apps address these common use cases:
 
 In our **App Catalog**, you'll find two categories of apps: Next-Gen and Classic.
 
-## Next-Gen and Classic Apps
+## App categories
 
-Next-Gen Apps simplify the management and maintenance of Apps.
+### Next-Gen Apps
 
-* To identify which apps have been installed within your org, Next-Gen app icons will display a badge indicating their installed status.
-* When an update to an installed App becomes available, these new apps will provide a badge noting there is an update available. An upgrade can then be applied with a simple click within the App Catalog.  
-* Installed Apps can be uninstalled and removed through the App Catalog, making it easy to clean up Apps you no longer use.  
-* Additional filter options make it easy to find your installed or upgradeable Apps.
-* To support the ability to upgrade and to make App content easier to locate, App content will be installed into a shared “Installed Apps” folder of the Library.
-* To support the ability to upgrade and to make sure upgrades do not overwrite any customizations you may apply, the content installed by an app is immutable. If you wish to customize the content you will need to first make a custom copy of the content.
-* To install, uninstall, or update Next-Gen Apps, you must be an administrator or a user with the "Manage Apps" role capability.
+Our Next-Gen Apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
 
-Designed to help you get started using the Sumo Logic Distribution for OpenTelemetry Collector agent. However, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+What makes Next-Gen different from Classic Apps?
 
-## Classic Apps (Legacy)
+* Installation and updates must be performed by an administrator or a user with the **Manage Apps** role capability.
+* App icons will display a badge indicating if it's been installed within your org.
+* App icons will display a badge indicating if there's an app update available. The upgrade can then be applied with a single click.
+* App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
+* Additional filter options make it easy to find your installed or upgradeable apps.
+* Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
+* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
+
+### Classic Apps (Legacy)
 
 All of our existing Classic Apps will be converted to Next-Gen. In the meantime, our Classic Apps will remain available to you within the Application Catalog.
-
-
-
-
-
 
 
 ## Prerequisites
