@@ -2,12 +2,15 @@
 id: sql-server-opentelemetry
 title: Microsoft SQL Server - OpenTelemetry Collector
 sidebar_label: Microsoft SQL Server - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Microsoft SQL Server.
+description: Learn about the Sumo Logic OpenTelemetry App for Microsoft SQL Server for Windows.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
+:::note
+The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
+:::
 The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
 This App has been tested with following SQL Server versions:
@@ -31,9 +34,9 @@ Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which
 
 Make sure logging is turned on in SQL Server. Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 
-The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
+The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`.
 
-The ERRORLOG is typically in UTF-16LE encoding, but verify the file encoding used in your SQL Server configuration. On Windows, this can be found by using a tool such as Notepad++.
+The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
 
 ## Configure SQL Server Logs Collection
 
@@ -59,21 +62,17 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ### Step 3: Send logs to Sumo Logic
 
-Once you have the yaml file downloaded in step 2, you can copy it to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1.  Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2.  Restart the collector using:
     ```sh
     Restart-Service -Name OtelcolSumo
     ```
 
-After successful execution of the above command, Sumo will start receiving the data from your host machine.
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
-Press **Next**. This will install the app to your Sumo Logic Org. The app consists of Dashboards.
-
-Panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-## Sample Logs
+## Sample log
 
 ```
 2023-01-09 13:23:31.276 Logon Login succeeded for user 'NT SERVICE\SQLSERVERAGENT'. Connection made using Windows authentication. [CLIENT: ]
@@ -109,13 +108,13 @@ Panels will start to fill automatically. It's important to note that each panel 
   }
 ```
 
-## Sample Log Query
+## Sample log query
 
 Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
 
 ```sql
- %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop 
-| if (isEmpty(_rawlog), _raw, _rawlog) as _raw 
+ %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop 
+| if (isEmpty(_rawlog), _raw, _rawlog) as _raw 
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"
 | count by LogType
 ```
@@ -128,9 +127,9 @@ The following query is from the **SQL Server - Performance Counters** dashboard 
 sumo.datasource=sqlserver deployment.environment=* db.cluster.name=* metric=sqlserver.page.buffer_cache.hit_ratio 
 ```
 
-## Viewing Microsoft SQL Server Dashboards
+## Viewing Microsoft SQL Server dashboards
 
-### SQL Server - Overview
+### Overview
 
 The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server(s) deployed in your cluster. This dashboard also provides information on login activities and methods by users.
 
@@ -140,7 +139,7 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
 
-### SQL Server - General Health
+### General Health
 
 The **SQL Server - General Health** dashboard gives you the overall health of SQL Server. Use this dashboard to analyze server events including stopped/up servers, and corresponding down/uptime, monitor disk space percentage utilization, wait time trend, app-domain issues by SQL server.
 
@@ -151,7 +150,7 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-General-Health.png' alt="General Health" />
 
-### SQL Server - Backup Restore Mirroring
+### Backup Restore Mirroring
 
 The **SQL Server - Backup Restore Mirroring** dashboard provides information about:
 
@@ -163,7 +162,7 @@ The **SQL Server - Backup Restore Mirroring** dashboard provides information abo
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Backup-Restore-Mirroring.png' />
 
-### SQL Server - Operations
+### Operations
 
 The **SQL Server - Operations** displays recent server configuration changes, number and type of configuration updates, error and warnings, high severity error, and warning trends.
 
@@ -173,7 +172,7 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Operations.png' alt="Operations"/>
 
-### SQL Server - Transaction and Transaction Logs
+### Transaction and Transaction Logs
 
 The **SQL Server - Transaction and Transaction Logs** dashboard shows performance counters related metric for Transaction and Transaction Logs.
 
@@ -184,7 +183,7 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Transaction-And-Transaction-Logs.png' alt="Operations" />
 
-### SQL Server - Performance Counters
+### Performance Counters
 
 The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
 
