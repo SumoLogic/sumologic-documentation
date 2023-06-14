@@ -90,7 +90,7 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, memory, and disk utilization of your SQL Server(s) deployed in your cluster. This dashboard also provides login activities and methods by users.
 
 Use this dashboard to:
--   Keep track of deadlocks, errors, backup failures, mirroring errors, and Insufficient space issue counts.
+-   Keep track of deadlocks, errors, backup failures, mirroring errors, and insufficient space issue counts.
 -   Examine login activities, failures, and failure reasons.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-Overview.png' alt="Overview" />
