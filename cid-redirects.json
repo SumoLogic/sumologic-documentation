@@ -1496,6 +1496,7 @@
   "/cid/10143": "/docs/manage/security/saml/set-up-saml",
   "/cid/10144": "/docs/metrics/metrics-operators",
   "/cid/10145": "/docs/cse/records-signals-entities-insights/global-intelligence-security-insights",
+  "/cid/16002": "/docs/integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry",
   "/cid/10146": "/docs/cse/sensors",
   "/cid/10147": "/docs/cse/integrations",
   "/cid/10148": "/docs/cse/rules",
