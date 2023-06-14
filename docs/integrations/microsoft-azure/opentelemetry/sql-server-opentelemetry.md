@@ -64,7 +64,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1.  Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2.  Restart the collector using:
     ```sh
     Restart-Service -Name OtelcolSumo
