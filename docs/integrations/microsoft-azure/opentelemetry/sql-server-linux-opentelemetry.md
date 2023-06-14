@@ -64,8 +64,8 @@ You can add any custom fields which you want to tag along with the data ingested
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1.  Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the SQL Server instance which needs to be monitored.
-1.  Restart the collector using:
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the SQL Server instance which needs to be monitored.
+1. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
