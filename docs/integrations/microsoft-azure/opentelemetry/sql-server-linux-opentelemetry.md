@@ -40,13 +40,7 @@ The ERRORLOG is typically in UTF-16LE encoding, but verify the file encoding use
 
 ### Step 1: Set up Collector
 
-If you want to use an existing Otel Collector then this step can be skipped by selecting the option of using an existing Collector.
-
-If you want to create a new Collector, select the **Add a new Collector** option.
-
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
-
-This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' alt="Collector" />
 
