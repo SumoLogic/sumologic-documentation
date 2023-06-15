@@ -2,7 +2,7 @@
 id: webex-source
 title: Webex Source
 sidebar_label: Webex
-description: Learn to collect admin audit events using Webex API.
+description: Learn how to collect admin audit events using Webex API.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
