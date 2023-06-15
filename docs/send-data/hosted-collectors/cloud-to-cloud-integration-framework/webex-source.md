@@ -59,7 +59,7 @@ Follow the below instructions to colllect your Organization ID.
 
 1. Sign in to [Webex Control Hub Portal](https://admin.webex.com/) using your admin account.
 2. In the **Management** menu, select **Account**.
-3. Navigate to **Info** tab.
+3. Navigate to the **Info** tab.
 4. Copy and save the **Organization ID**. <br/><img src={useBaseUrl('img/send-data/organization-id.png')} alt="organization-id" style={{border: '1px solid black'}} width="800" />
 
 ## States
