@@ -28,27 +28,26 @@ In this configuration, you will create a new [Webex Integration App](https://dev
 A Webex Integration app with specific permissions is required for Sumo Logic to access Admin Audit Events from Webex. Follow the below instructions to create a new Webex Integration app.
 
 1. Sign in to [Webex Developers Portal](https://developer.webex.com/) using your admin account.
-2. Click on your profile in the top right corner.
-3. Select **My Webex Apps** from the dropdown. <br/><img src={useBaseUrl('img/send-data/my-webex-apps.png')} alt="my-webex-apps" style={{border: '1px solid black'}} width="400" />
-4. Click **Create a New App**. <br/><img src={useBaseUrl('img/send-data/create-a-new-app.png')} alt="create-a-new-app" style={{border: '1px solid black'}} width="400" />
-5. Select **Create an Integration** and add the intergration information. <br/><img src={useBaseUrl('img/send-data/create-integration.png')} alt="create-integration" style={{border: '1px solid black'}} width="400" />
+1. Click on your profile in the top right corner, and select **My Webex Apps**. <br/><img src={useBaseUrl('img/send-data/my-webex-apps.png')} alt="my-webex-apps" style={{border: '1px solid black'}} width="700" />
+1. Click **Create a New App**. <br/><img src={useBaseUrl('img/send-data/create-a-new-app.png')} alt="create-a-new-app" style={{border: '1px solid black'}} width="700" />
+1. Select **Create an Integration** and add the intergration information. <br/><img src={useBaseUrl('img/send-data/create-integration.png')} alt="create-integration" style={{border: '1px solid black'}} width="700" />
     - **Integration name**. Name of the integration (example: Sumo-C2C).
     - **Icon**. Select an icon, either from default images or upload an image of your choice.
     - **App Hub Description**. Description of the app (example: This App will be used for Sumo Logic Integration to collect Admin Audit Events).
     - **Redirect URI(s)**. Required to use `https://localhost`.
     - **Scopes**. Check `audit:events_read` (only scope required for collecting admin audit events).
-7. Now click **Add Integration** at the bottom of the page. <br/><img src={useBaseUrl('img/send-data/add-integration.png')} alt="add-integration" style={{border: '1px solid black'}} width="400" />
-8. Copy and save the **Client ID** and **Client Secret**.
-9. Copy and save the **OAuth Authorization URL**. <br/><img src={useBaseUrl('img/send-data/oauth-authorization.png')} alt="oauth-authorization" style={{border: '1px solid black'}} width="400" />
+1. Now click **Add Integration** at the bottom of the page. <br/><img src={useBaseUrl('img/send-data/add-integration.png')} alt="add-integration" style={{border: '1px solid black'}} width="400" />
+1. Copy and save the **Client ID** and **Client Secret**.
+1. Copy and save the **OAuth Authorization URL**. <br/><img src={useBaseUrl('img/send-data/oauth-authorization.png')} alt="oauth-authorization" style={{border: '1px solid black'}} width="600" />
 
 ### Oauth 2.0 Authorization Code
 
 Follow the below instructions to generate Oauth 2.0 Authorization Code.
 
 1. In a web browser, open a new tab and paste the OAuth Authorization URL that was copied from the earlier steps and click **Enter**.
-2. It prompted, sign in to your admin Webex account.
-3. Click **Accept**. <br/><img src={useBaseUrl('img/send-data/accept-page.png')} alt="accept-page" style={{border: '1px solid black'}} width="400" />
-4. Ignore the error message in the webpage. Copy and save the code in the URL, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/code-url.png')} alt="code-url" style={{border: '1px solid black'}} width="400" />
+1. It prompted, sign in to your admin Webex account.
+1. Click **Accept**. <br/><img src={useBaseUrl('img/send-data/accept-page.png')} alt="accept-page" style={{border: '1px solid black'}} width="400" />
+1. Ignore the error message in the webpage. Copy and save the code in the URL, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/code-url.png')} alt="code-url" style={{border: '1px solid black'}} width="700" />
 
 ```
 https://localhost/?code={{REDACTED_AUTHORIZATION_CODE}}&state=set_state_here
@@ -61,7 +60,7 @@ Follow the below instructions to colllect your Organization ID.
 1. Sign in to [Webex Control Hub Portal](https://admin.webex.com/) using your admin account.
 2. In the **Management** menu, select **Account**.
 3. Navigate to **Info** tab.
-4. Copy and save the **Organization ID**. <br/><img src={useBaseUrl('img/send-data/organization-id.png')} alt="organization-id" style={{border: '1px solid black'}} width="400" />
+4. Copy and save the **Organization ID**. <br/><img src={useBaseUrl('img/send-data/organization-id.png')} alt="organization-id" style={{border: '1px solid black'}} width="800" />
 
 ## States
 
@@ -118,7 +117,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
+| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | n/a |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Webex"}` for Webex Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Webex Source. | not modifiable |
 
@@ -138,6 +137,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### JSON Example
 
 ```json
-
+{
+  "api.version":"v1",
+  "source":{
+    "config":{
+      "name":"Webex- sandbox",
+      "authorizationCode":"********",
+      "clientId":"********",
+      "collectAll":false,
+      "orgId":"********",
+      "eventCategories":["LOGINS","LOGOUT","ORG_SETTINGS"],
+      "fields":{
+        "_siemForward":false
+      },
+      "clientSecret":"********",
+      "category":"sandbox/webex/audit"
+    },
+    "schemaRef":{
+      "type":"Webex"
+    },
+    "state":{
+      "state":"Pending"
+    },
+    "sourceType":"Universal"
+  }
+}
 ```
 
