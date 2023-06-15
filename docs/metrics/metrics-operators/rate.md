@@ -11,7 +11,7 @@ The rate operator calculates the per-second rate of change between data points i
 
 The rate operator also assigns the value of the metric tag to be `rate($metric)` and the value of the unit metadata field to be `$unit/second` (for example, 1/second).
 
-You can use the `increasing` or `decreasing` option, to make `rate` consider only positive or negative rate values. This functionality is useful when you are calculating the positive or the negative rate of change of a metric over time.
+You can use the `increasing` or `decreasing` option to make `rate` consider only positive or negative rate values, respectively. This functionality is useful when you are calculating the positive or the negative rate of change of a metric over time.
 
 When working with counters, you can also use a dedicated `counter` mode which accounts for counter resets and always returns non-negative rate values.
 
