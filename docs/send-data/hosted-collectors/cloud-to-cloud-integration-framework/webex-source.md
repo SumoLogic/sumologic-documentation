@@ -40,9 +40,9 @@ A Webex Integration app with specific permissions is required for Sumo Logic to 
 1. Copy and save the **Client ID** and **Client Secret**.
 1. Copy and save the **OAuth Authorization URL**. <br/><img src={useBaseUrl('img/send-data/oauth-authorization.png')} alt="oauth-authorization" style={{border: '1px solid black'}} width="600" />
 
-### Oauth 2.0 Authorization Code
+### OAuth 2.0 Authorization Code
 
-Follow the below instructions to generate Oauth 2.0 Authorization Code.
+Follow the below instructions to generate OAuth 2.0 Authorization Code.
 
 1. In a web browser, open a new tab and paste the OAuth Authorization URL that was copied from the earlier steps and click **Enter**.
 1. It prompted, sign in to your admin Webex account.
