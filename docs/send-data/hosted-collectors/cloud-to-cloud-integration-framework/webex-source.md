@@ -30,7 +30,7 @@ A Webex Integration app with specific permissions is required for Sumo Logic to 
 1. Sign in to [Webex Developers Portal](https://developer.webex.com/) using your admin account.
 1. Click on your profile in the top right corner, and select **My Webex Apps**. <br/><img src={useBaseUrl('img/send-data/my-webex-apps.png')} alt="my-webex-apps" style={{border: '1px solid black'}} width="700" />
 1. Click **Create a New App**. <br/><img src={useBaseUrl('img/send-data/create-a-new-app.png')} alt="create-a-new-app" style={{border: '1px solid black'}} width="700" />
-1. Select **Create an Integration** and add the intergration information. <br/><img src={useBaseUrl('img/send-data/create-integration.png')} alt="create-integration" style={{border: '1px solid black'}} width="700" />
+1. Select **Create an Integration** and add the integration information. <br/><img src={useBaseUrl('img/send-data/create-integration.png')} alt="create-integration" style={{border: '1px solid black'}} width="700" />
     - **Integration name**. Name of the integration (example: Sumo-C2C).
     - **Icon**. Select an icon, either from default images or upload an image of your choice.
     - **App Hub Description**. Description of the app (example: This App will be used for Sumo Logic Integration to collect Admin Audit Events).
