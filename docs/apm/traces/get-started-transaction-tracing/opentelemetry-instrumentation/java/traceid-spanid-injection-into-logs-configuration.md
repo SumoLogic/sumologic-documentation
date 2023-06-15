@@ -24,7 +24,7 @@ It is very simple to configure **traceId** and **spanId** data injection into us
        <dependency>
            <groupId>io.opentelemetry</groupId>
            <artifactId>opentelemetry-api</artifactId>
-           <version>1.16.0</version>
+           <version>1.26.0</version>
        </dependency>
        </dependencies>
        ```
@@ -34,7 +34,7 @@ It is very simple to configure **traceId** and **spanId** data injection into us
        ```
        dependencies {
        runtimeOnly("io.opentelemetry.instrumentation:opentelemetry-log4j-2.13.2:1.9.2-alpha")
-       implementation("io.opentelemetry:opentelemetry-api:1.16.0")
+       implementation("io.opentelemetry:opentelemetry-api:1.26.0")
        }
        ```
      
