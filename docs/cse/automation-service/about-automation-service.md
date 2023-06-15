@@ -63,7 +63,7 @@ An automation runs a playbook, which  runs actions that are provided by integrat
 
 ## Overview: Configure an automation
 
-This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation.
+This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation. For examples, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
 
 :::info
 Before you can configure an automation, you must [configure the connection](#configure-the-connection-for-an-integration-resource) for the integration resources you want the automation to use.
@@ -172,8 +172,12 @@ The [CSE API](/docs/cse/administration/cse-apis/) supports automations. Endpoint
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
 
-The Sumo Logic Terraform provider also supports automations. For more information, see the [Sumo Logic Terraform documentation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+The Sumo Logic Terraform provider also supports automation, but does not support the ability to create or modify integrations, playbooks, or actions. For more information about Terraform, see the [Sumo Logic Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs) documentation.
 
 :::note
 The Automation Service uses the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis). 
 :::
+
+### Data retention
+
+Automation Service data is retained in accordance with Sumo Logic's policies. For more information, see our [Cloud SIEM data retention](/docs/cse/administration/cse-data-retention/#cse) documentation.

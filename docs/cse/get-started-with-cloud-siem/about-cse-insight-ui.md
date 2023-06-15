@@ -23,11 +23,11 @@ CSE displays Insights and the Signals attached to them in the CSE UI through the
 
 This screenshot shows the **Insights** page in List view. 
 
-![insights-page.png](/img/cse/insights-page.png)
+<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" width="800"/>
 
 Here’s one row from the List view. The numbered definitions below correspond to the labels in the screenshot.
 
-![insight-summary.png](/img/cse/insight-summary.png)
+<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" width="800"/>
 
 1. **Creation date and time**. When the Insight was created.
 1. **Dwell time**. The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated. 
@@ -51,7 +51,7 @@ The information displayed in the Board view is similar to the information in the
 
 You can switch back the List view by clicking the Show List icon, near the top right corner of the CSE UI.
 
-![board.png](/img/cse/board.png)
+<img src={useBaseUrl('img/cse/board.png')} alt="Board view" width="800"/>
 
 ### Filtering Insights 
 
@@ -100,7 +100,7 @@ The left pane of the **Insight > Details** page displays detailed information ab
 
 At the top of the **Insight** > **Details** page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
 
-![top-bit.png](/img/cse/top-bit.png)
+<img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" width="800"/>
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
 2. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
@@ -119,7 +119,7 @@ At the top of the **Insight** > **Details** page, you’ll see a Signal timeline
 
 Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
 
-![signal-list-area.png](/img/cse/signal-list-area.png)
+<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" width="800"/>
 
 If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
 
@@ -128,7 +128,7 @@ If you click the **Show Related** checkbox, the page updates and also displays a
 
 Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
 
-![related-signal.png](/img/cse/related-signal.png)  
+<img src={useBaseUrl('img/cse/related-signal.png')} alt="Related signal" width="800"/>
 
 ### Entities tab
 
@@ -142,7 +142,7 @@ The **Entities** tab includes two views, the **list** view and the **graph** vie
 
 The screenshot below shows the **Entities** tab **list** view for an Insight.
 
-![related-entities.png](/img/cse/related-entities.jpg)
+<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" width="800"/>
 
 In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
@@ -193,7 +193,7 @@ The cumulative severity value is color coded: cyan for less than 12, orange for 
 
 The screenshot below shows the **Entities** tab **graph** view for an Insight.
 
-![related-entity-graph.png](/img/cse/related-entity-graph.jpg)
+<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" width="800"/>
 
 By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
 
