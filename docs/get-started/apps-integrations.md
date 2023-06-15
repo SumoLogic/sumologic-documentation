@@ -98,7 +98,6 @@ Each Sumo Logic App has unique requirements, so make sure to follow the specific
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=perf`.
    * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Perf**.
 
-
 ## Troubleshooting
 
 If you've installed a Sumo Logic App and no data appears in its Dashboards, you may have chosen the wrong Source Category.
