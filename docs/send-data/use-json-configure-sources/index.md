@@ -335,7 +335,7 @@ To determine the sinkId for a data forwarding destination, you use the Sumo web 
 
 These instruction assume you have already created a data forwarding destination.
 
-1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-forwarding/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
+1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-archiving/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step:
    1. Select **Manage Data** > **Collection** > **Collection**. 
    1. Click the icon to the right of the source. The API usage information panel appears. Make a note of the sinkId in the filter section of the JSON.<br/>  ![sink id](/img/send-data/sinkId.png)
