@@ -47,11 +47,11 @@ Follow the below instructions to generate OAuth 2.0 Authorization Code.
 1. In a web browser, open a new tab and paste the OAuth Authorization URL that was copied from the earlier steps and click **Enter**.
 1. It prompted, sign in to your admin Webex account.
 1. Click **Accept**. <br/><img src={useBaseUrl('img/send-data/accept-page.png')} alt="accept-page" style={{border: '1px solid black'}} width="400" />
-1. Ignore the error message in the webpage. Copy and save the code in the URL, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/code-url.png')} alt="code-url" style={{border: '1px solid black'}} width="700" />
-
-```
-https://localhost/?code={{REDACTED_AUTHORIZATION_CODE}}&state=set_state_here
-```
+1. Ignore the error message in the webpage.<br/><img src={useBaseUrl('img/send-data/code-url.png')} alt="code-url" style={{border: '1px solid black'}} width="700" /><br/>
+   Copy and save the code in the URL, as shown in the following example. 
+   ```bash
+   https://localhost/?code={{REDACTED_AUTHORIZATION_CODE}}&state=set_state_here
+   ```
 
 ### Organization ID
 
@@ -163,4 +163,3 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   }
 }
 ```
-
