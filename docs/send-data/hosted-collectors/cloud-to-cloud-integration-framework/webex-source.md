@@ -92,7 +92,7 @@ To configure an Webex source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Client ID**. Enter the **Client ID** collected from the [new Webex Integration app](#create-a-new-webex-integration-app).
 1. **Client Secret**. Enter the **Client Secret** collected from the [new Webex Integration app](#create-a-new-webex-integration-app).
-1. **Oauth 2.0 Authorization Code**. Enter the **Oauth 2.0 Authorization Code** collected from the [URL](#oauth-20-authorization-code).
+1. **OAuth 2.0 Authorization Code**. Enter the **OAuth 2.0 Authorization Code** collected from the [URL](#oauth-20-authorization-code).
 1. **Organization ID**. Enter the **Org ID** fcollected from the [Webex Control Hub PortalURL](#organization-id).
 1. **Select Event Categories for Audit Logs**. You have the option to **Collect all events** or **Select events**, where you can specify the exact event categories you would like to collect from the admin audit logs. You can also select from the pre-defined list or type in event categories.
 1. Click **Save**.
