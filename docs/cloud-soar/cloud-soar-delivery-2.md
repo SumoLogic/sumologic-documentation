@@ -18,8 +18,9 @@ This topic describes the features in the Cloud SOAR Delivery 2.
 Delivery 2 of Cloud SOAR offers the following enhancements over our initial Cloud SOAR product:
 
 * New and improved features
-     * [Reports](#reports)
-     * [Dashboards](#dashboards)
+   * [Dashboards](#create-a-dashboard)
+   * [Reports](#create-a-report)
+
  * Open Integration Framework updates
       * [Integration Builder](#integration-builder) allows you to build integrations without needing to provide code
      * Certified integrations allow you to customize JSON and table output schema (with the Bridge)
@@ -30,30 +31,26 @@ Delivery 2 of Cloud SOAR offers the following enhancements over our initial Clou
      * User and profile management is in Sumo Logic core platform instead of Cloud SOAR
      * Automatic scalability based on server load
 
-## Dashboards
+## Create a dashboard
 
 You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo Logic platform. You can also [create widgets](#create-widgets-for-dashboards-or-reports) to use in the dashboards that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
-
-### Create a dashboard
 
 1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
 1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" width="200"/><br/>A blank dashboard appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-empty-dashboard.png')} alt="Empty dashboard" width="700"/>
 1. Click on the name of the blank dashboard (such as **Dashboard 1** in the example), and give the dashboard a name. Click **No description available** and type a description.
 1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>The widgets panel displays to the right of the dashboard.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard-example.png')} alt="Widgets panel on the dashboard" width="700"/>
-1. Select widgets to add to the dashboard from **My Widgets** or **Public**. These are the same widgets that are available to use in [reports](#reports). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets. 
+1. Select widgets to add to the dashboard from **My Widgets** or **Public**. These are the same widgets that are available to use in [reports](#create-a-report). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets. 
 1. Rearrange the widgets in the dashboard as desired. 
 1. Click **Public** at the top of the dashboard panel if you want to make the dashboard available for others to use.
 1. Click **Export** to to the upper-right of the dashboard panel to export the dashboard to PDF.  
 
-## Reports
+## Create a report
 
 You can create reports on incidents to share with others. You can also [create widgets](#create-widgets-for-dashboards-or-reports) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
-### Create a report
-
 1. Select **Report** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/><br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/> 
 1. Click the **+** icon in the upper left corner. 
-1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#dashboards). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
+1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
 1. Rearrange the widgets in the report as needed. You can even add widgets to the header and footer.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
 2. Click **Save**.
 3. Click **Export** to export the report to PDF. 
@@ -64,11 +61,11 @@ You can create reports on incidents to share with others. You can also [create w
 You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table. You can use the same widgets in both dashboards and reports. 
 
 1. Open the widgets panel.
-   * From [dashboards](#dashboards):
+   * From [dashboards](#create-a-dashboard):
       1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
       1. Select a dashboard.
       1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>
-   * From [reports](#reports):
+   * From [reports](#create-a-report):
       1. Select **Report** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/>
 1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="250"/>
 1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" width="600"/>
@@ -84,11 +81,20 @@ You can create widgets as needed to help analysts and administrators quickly get
 Write
 
 
-## Cloud SOAR APIs
+## New Cloud SOAR API endpoints
 
-The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
+[Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/) allow you to manage incidents, triage, and other Cloud SOAR features. With Cloud SOAR Delivery 2, the Cloud SOAR APIs have been changed to use the same infrastructure as APIs in the Sumo Logic core platform. 
 
+Previously, documentation for the APIs was only available through your Cloud SOAR instance at the following URL:
+
+```
+http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
+```
+Now you can access Cloud SOAR APIs documentation at the following URLs.
+
+:::note
 {@import ../reuse/api-intro.md}
+:::
 
 {@import ../reuse/csoar-api-table.md}
 
