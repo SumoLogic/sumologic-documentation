@@ -90,7 +90,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| config | JSON Object | Yes | Contains the configuration parameters for the Source. | na |
+| config | JSON Object | Yes | Contains the configuration parameters for the Source. | n/a |
 | schemaRef | JSON Object | Yes | Use `{"type":"CSE AWS EC2 Inventory"}`. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for CSE AWS EC2 Inventory Source. | not modifiable |
 
