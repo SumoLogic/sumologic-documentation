@@ -1,7 +1,7 @@
 ---
 id: map-charts
 title: Map Charts
-description: Map charts helps you to understand the data patterns, trends, and distribution of the data globally.
+description: Map charts help you to understand your data patterns, trends, and global data distribution.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
