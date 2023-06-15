@@ -18,29 +18,6 @@ To map your data you can: 
 * A `_count` aggregator is required. 
 * Other aggregators like `sum` or `avg` don't provide accurate results. 
 
-For example, you'd use the geoip operator to create a map chart:
-
-```sql
-| parse "remote_ip=*]" as client_ip
-| geoip client_ip
-| count by latitude, longitude
-| sort _count
-```
-
-Or, you'd use the geo lookup operator to create a map chart:
-
-```sql
-_sourceCategory=Error
-| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip
-| count by latitude, longitude, country_code, country_name, region, city, postal_code
-| sort _count
-```
-
-which would produce results such as:
-
-![geo lookup results fields.png](/img/dashboards-new/panels/map-charts/geo-lookup-results-fields.png)
-
 ### Create a Cluster or Heatmap
 
 To add a panel with a Cluster or Heatmap:
@@ -78,14 +55,6 @@ To create Connection map, your query must include:
 - `sourcelon` - Source longitude 
 - `destinationlat` - Destination latittude 
 - `destinationlon` - Destination longitude 
-
-For example, this query can be rendered as a Connection map:
-
-```sql
-benchmarkcat guardduty_geo
-| sum(percentage) as percentage by threatpurpose, threatname, sourcelat, sourcelon, destinationlat, destinationlon
-//| topk(3, percentage) group by threatpurpose
-```
 
 ### Create a Missile map
 
