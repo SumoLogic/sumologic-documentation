@@ -9,7 +9,7 @@ The `delta` operator computes the backward difference at each data point in the 
 
 The `delta` operator updates the `metric` dimension, if present, to `delta($metric)`. If the original time series does not have a `metric` dimension, it creates `metric=delta` dimension. Other dimensions remain unaffected.
 
-You can use the `increasing` or `decreasing` option, to make `delta` consider only pairs of consecutive points where the second point is greater or less than the first point. This functionality is useful when you are calculating the positive or the negative difference of a metric over time.
+You can use the `increasing` or `decreasing` option to make `delta` consider only pairs of consecutive points where the second point is greater (`increasing` option) or less (`decreasing` option) than the first point. This functionality is useful when you are calculating the positive or the negative difference of a metric over time.
 
 When working with counters, you can also use a dedicated `counter` mode which accounts for counter resets and always returns non-negative difference.
 
