@@ -40,7 +40,7 @@ To add a panel with a Cluster or Heatmap:
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 
 
-:::note
+:::note limitations
 * Map charts have a display limit of 10,000 results.
 * Colors of map markers cannot be changed.
 :::
