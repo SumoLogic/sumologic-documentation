@@ -174,7 +174,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Windows Performance Overview
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/WindowsPerformance/Overview.png')} alt="Windows Performance Overview" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Windows-Performance-Overview.png')} alt="Windows Performance Overview" />
 
 **Top 10 Processes by Average Processor Time (%) per Host.** Displays the top 10 processes per host by average processor time in a stacked column chart for the last 15 minutes. The legend lists the processes.
 
@@ -189,7 +189,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### CPU Performance
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/WindowsPerformance/CPUperformance.png')} alt="CPU Performance" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/CPU-Performance.png')} alt="CPU Performance" />
 
 **Average CPU Usage (%) by Host.** Displays the average CPU usage of the systems in your environment as a line graph on a timeline using timeslices of one minute for the last 15 minutes.
 
@@ -204,7 +204,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Disk Performance
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/WindowsPerformance/DiskPerformance.png')} alt="Disk Performance" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Disk-Performance.png')} alt="Disk Performance" />
 
 **Average Disk Time Percentage by Host.** Displays the average disk time percentage for each host as a stacked column chart for the last 15 minutes. The legend lists the disk time status.
 
@@ -221,7 +221,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Memory Performance
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/WindowsPerformance/MemoryPerformance.png')} alt="Memory Performance" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Memory-Performance.png')} alt="Memory Performance" />
 
 **Available Memory (MB) by Host.** Displays the available memory in MBs for each host as a line chart on a timeline using timeslices for one minute for the last 15 minutes.
 
@@ -236,7 +236,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Network Performance
 
-<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/WindowsPerformance/NetworkPerformance.png')} alt="Network Performance" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Memory-Performance.png')} alt="Network Performance" />
 
 **Average Bytes Received per Second by Host.** Displays the average number of bytes received per second for each host as an area chart on a timeline using timeslices of one minute for the last 15 minutes.
 

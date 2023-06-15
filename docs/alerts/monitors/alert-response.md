@@ -7,7 +7,7 @@ description: Quickly investigate and resolve issues you've been alerted about wi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="60"/>
+<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="40"/>
 
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
 
@@ -70,6 +70,10 @@ To open the Alert list, click the bell icon in the top menu. <br/> <img src={use
 
 To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can use the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
 
+:::info Limitations
+The Alert list displays up to 1,000 alerts.
+:::
+
 ### Resolve Alerts
 
 To resolve an alert, click a row to select it, then click **Resolve**.
@@ -94,6 +98,7 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 :::note
 Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
 :::
+
 
 ## Alert Page
 
@@ -129,7 +134,7 @@ The top of the page provides several details and buttons.
 Sumo Logic will resolve the alert automatically when the recovery condition defined on the monitor is met. This behavior is not configurable - that is, you cannot prevent Sumo Logic from resolving a monitor. Although technically you can set a recovery condition that will never allow Sumo Logic to recover a monitor, this is not recommended because it will suppress unrelated alerts from getting fired.
 ::: <br/>![alert page sep 23.png](/img/monitors/alert-page.png)
 * **K**. The red exclamation mark indicates the alert is still active and a white exclamation in the gray circle indicates it's resolved. <br/> <img src={useBaseUrl('img/monitors/k-label.png')} alt="labels" width="300"/>
-  * **Related Alerts**. A panel with Related Alerts and the Monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/monitors/related-alerts.png')} alt="related alerts" width="300"/>
+  * **Related Alerts**. A panel with Related Alerts and the Monitor History. It shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.<br/> <img src={useBaseUrl('img/monitors/related-alerts.png')} alt="related alerts" width="200"/>
     * **Time**. Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
     * **Entity**. Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow ![expand arrow.png](/img/monitors/expand-arrow.png) to view the alert's trigger condition and the white arrow in the square ![open in new tab icon.png](/img/monitors/open-new-tab.png) to open the alert in its own Alert page.
   * **Monitor History**. Shows the past 30 days of similar alerts that were triggered by the Monitor (that generated the current alert). Monitor History can be helpful to determine how frequently an alert has fired in the past and if the alert is flaky. You can then quickly correlate whether the current problem is similar to a past one by comparing the information shared for the alert.
@@ -138,6 +143,11 @@ Sumo Logic will resolve the alert automatically when the recovery condition defi
 * **N**. A table with the raw data that triggered the alert.
 
 Below this, as you scroll down on the page, you'll see context cards covered in the next section.
+
+:::info Limitations
+* The Alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
+* Related Alerts and Monitor History show the top 250 alerts.
+:::
 
 ### Context Cards
 
@@ -219,22 +229,90 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
 :::
 
-
 #### From your Alerts list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
 * Single-click on a row item > on the opened Alert page, click the three-dot kebab menu > **Subscribe to Monitor**
-
 
 #### From your Monitors list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
+#### From a folder
+
+If you subscribe from a monitor folder, then all nested monitors and folders within that folder become automatically subscribed.
+
+For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder ("Folder B").
+
+<details><summary>Click to see examples</summary>
+
+#### Example 1
+
+```bash title="Initial state"
+📁 Folder A ("No")
+├── Monitor B ("No")
+└── Monitor C ("No")
+```
+
+```bash title="Create subscription on Folder A"
+📁 Folder A ("Yes")
+├──Monitor B ("Yes (inherited from folder)")
+└──Monitor C ("Yes (inherited from folder)")
+```
+
+#### Example 2
+
+```bash title="Initial state"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("No")
+    └── Monitor E ("No")
+```
+
+```bash title="Create subscription on Folder D"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes (inherited from folder)")
+ ```
+
+#### Example 3
+
+```bash title="Initial state"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└──  📁 Folder D ("No")
+    └── Monitor E ("Yes")
+```       
+
+```bash title="Create subscription on Folder D"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes")
+```       
+
+```bash title="Remove subscription on Monitor E"
+📁 Folder A ("No")
+├── Monitor B ("No")
+├── Monitor C ("No")
+└── 📁 Folder D ("Yes")
+    └── Monitor E ("Yes (inherited from folder)"
+```
+
+</details>
+
+To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription. 
+
 
 ### Notification Preferences
 
-Alert notification preferences give you granular control over specific monitor activity you want to follow. <img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
+Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
 1. From the left nav, click on your username > **Preferences**.
 2. Click on any of the following checkboxes to enable your desired preferences:
@@ -247,9 +325,3 @@ Alert notification preferences give you granular control over specific monitor a
 ## Create a Monitor-based SLO
 
 See [Create an SLO](/docs/observability/reliability-management-slo/create-slo) to learn how.
-
-## Limitations
-
-* The [Alert list](#alert-list) page displays up to 1,000 alerts.
-* On the [Alert page](#alert-page), the Alert visualization, labeled **M**, is only shown for alerts less than 30 days old. 
-* On the [Alert page](#alert-page), Related Alerts and Monitor History show the top 250 alerts.

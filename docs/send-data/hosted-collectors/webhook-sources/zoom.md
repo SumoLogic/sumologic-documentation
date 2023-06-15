@@ -37,9 +37,10 @@ Follow the below steps to get the required fields for user configuration:
     - Short Description
     - Company Name
     - Developer Name
-    - Developer Email Address 
+    - Developer Email Address
   <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
-1. Click **Continue**, to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
+1. Click **Continue** to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
+1. Keep this window open and configure the Zoom source on Sumo Logic.
 
 ## Create Zoom Source
 
@@ -67,9 +68,9 @@ To configure a Zoom Source:
 1. Copy the HTTP source address.
     * If you need to access the Source's URL again, click **Show URL**.<br/><img src={useBaseUrl('/img/send-data/show-url-zoom.png')} alt="Show URL" width="800"/>
 
-## Enable Events Subcriptions
+## Enable Events Subscriptions
 
-1. Go back to the **Features** tab in the Zoom Marketplace.
+1. Go back to the Zoom Marketplace page that you left open in [step 1](#setup-and-configuration).
 1. Enable **Event Subscriptions**. <br/><img src={useBaseUrl('img/send-data/events-subscriptions.png')} alt="events-subscriptions" width="550"/>
 1. Click **Add new event subscription** and provide the following information:
    * **Subscription Name** (for example, Sumo Logic)
@@ -81,5 +82,3 @@ To configure a Zoom Source:
   You may face ingestion issues if you use more than one subscription per webhook.
   :::
 1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="app-activated-message" width="400"/>
-
-

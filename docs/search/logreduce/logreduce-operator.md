@@ -1,7 +1,7 @@
 ---
 id: logreduce-operator
 title: LogReduce Operator
-description: Allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
+description: The LogReduce Operator allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
 ---
 
 :::important

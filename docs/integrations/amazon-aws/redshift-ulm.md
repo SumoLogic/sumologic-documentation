@@ -265,7 +265,7 @@ This section describes each of the dashboards in the Sumo Logic App for Amazon R
 
 See overviews of connections, user activity, CloudTrail events, and resource utilization.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-overview.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-Overview.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **Authentication Success**. Shows the total number of successful authentications in the last 24 hours.
 
@@ -318,7 +318,7 @@ See overviews of connections, user activity, CloudTrail events, and resource uti
 
 See information about database connections, including authentication failure counts and trends; session statistics and details; and top remote hosts, users, databases, and applications.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-connection-log-analysis.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-Audit-Connection-Log-Analysis.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **Authentication Status**. Shows the statuses of authentications (successful/failed) on a pie chart for the last 24 hours.
 
@@ -357,7 +357,7 @@ See information about database connections, including authentication failure cou
 
 See information about SQL command and statement execution, including top databases, users, SQL statements and commands; and tabular listings of the top 20 delete, truncate, vacuum, create, grant, drop, revoke, and alter command executions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-user-activity-log-analysis.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-Audit-User-Activity-Log-Analysis.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **Top Databases**. Shows a list of the top databases along with the number of events in the last 24 hours.
 
@@ -390,7 +390,7 @@ See information about SQL command and statement execution, including top databas
 
 See information about database user account events, including database user database accounts that were created, dropped, or altered.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-user-log-analysis.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-Audit-User-Log-Analysis.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **Events**. Shows the events executed (drop/alter/create) on a pie chart for the last 24 hours.
 
@@ -409,7 +409,7 @@ See information about database user account events, including database user data
 
 See information about CloudTrail events for Amazon Redshift, including event locations and  event status and trend; event counts by event name, cluster, account ID, region, and user agent; and failed event locations, error codes, and details.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-cloudtrail-events-overview.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-CloudTrail-Events-Overview.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **Successful Event Locations.** Performs a geo lookup query and displays the location and number of successful CloudTrail events on a map of the world for the last 24 hours.
 
@@ -450,7 +450,7 @@ See information about CloudTrail events for Amazon Redshift, including event loc
 
 See cluster-level resource utilization metrics, including CPU, network receive and transmit throughput, database connections, and disk.  
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-resource-utilization-clusteridentifier.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-Resource-Utilization-by-ClusterIdentifier.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **CPU Utilization**. Shows trends in CPU utilization by cluster identifier on a line chart for the last 24 hours.
 
@@ -471,7 +471,7 @@ See cluster-level resource utilization metrics, including CPU, network receive a
 
 See node-level resource utilization metrics, including CPU; disk; network; and read/write latency, throughput and I/O operations per second.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-redshift-resource-utilization-nodeid.png')} alt=" Amazon Redshift ULM dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-Redshift-Resource-Utilization-by-NodeID.png')} alt=" Amazon Redshift ULM dashboards" />
 
 **CPU Utilization**. Shows trends in CPU utilization by NodeID on a line chart for the last 24 hours.
 
