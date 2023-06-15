@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Trellix is a cybersecurity company that provides cloud-based security solutions for cybersecurity attacks. It provides hardware, software, and services to investigate cybersecurity attacks, protect against malicious software, and analyze IT security risks.
 
-mVision ePO is a key component of the Trellix Security Management Platform, which provides Unified Management of Endpoint, Network, and Data Security, which reduces Incident Response Times, Strengthen Protection, Simplify Risk and Security Management with Automation, and End-to-end Network Visibility and Security.
+mVision ePO is a key component of the Trellix security management platform, which provides unified management of endpoint, network, and data security, which reduces incident response time, strengthen protection, simplify risk and security management with automation, and end-to-end network visibility and security.
 
 ## Data Source
 
@@ -18,13 +18,13 @@ The Trellix integration fetches event logs using the [Trellix mVision ePO API](h
 
 ## Set up and configuration
 
-TheTrellix mVision ePO source requires you to provide Client ID, Client Secret, and API key. To obtain these, follow the steps below:
+The Trellix mVision ePO source requires you to provide Client ID, Client Secret, and API key. To obtain these, follow the steps below:
 
-1. Login to the [Trellix Developer Portal](https://developer.manage.trellix.com/).
-1. Go to **Self service > [API Access Management](https://developer.manage.trellix.com/mvision/selfservice/access_manag)**. <br/><img src={useBaseUrl('img/send-data/self-service.png')} alt="self-service.png" style={{border: '1px solid black'}} width="600" />
+1. Log in to the [Trellix Developer Portal](https://developer.manage.trellix.com/).
+1. Go to **Self service** menu, and click **[API Access Management](https://developer.manage.trellix.com/mvision/selfservice/access_manag)**. <br/><img src={useBaseUrl('img/send-data/self-service.png')} alt="self-service.png" style={{border: '1px solid black'}} width="600" />
     1. Copy the **API key** from the API Access Management section. <br/><img src={useBaseUrl('img/send-data/api-key.png')} alt="api-key" style={{border: '1px solid black'}} width="600" />
     1. In the **Credential Configuration** section, select **Events** as the scope in **APIs** for a given **Client Type**.
-    1. Click **Request**, for IAM Client type approval.<br/><img src={useBaseUrl('img/send-data/credential-configuration.png')} alt="credential-configuration" style={{border: '1px solid black'}} width="600" />
+    1. Click **Request** for IAM Client type approval.<br/><img src={useBaseUrl('img/send-data/credential-configuration.png')} alt="credential-configuration" style={{border: '1px solid black'}} width="600" />
     1. Once your IAM Client type is approved, generate **Client ID** and **Client Secret**. <br/><img src={useBaseUrl('img/send-data/generate.png')} alt="generate" style={{border: '1px solid black'}} width="600" />
 
 ## States
