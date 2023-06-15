@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/webex-logo.png')} alt="webex-logo" width="120" />
 
-Cisco Webex is a cloud-based video conferencing and collaboration product suite which comprises software including Webex Meetings, Webex Teams, and Webex Devices. This Webex source collects admin audit events and webhooks (Meeting, rooms, messages, and memberships) data and sends it to Sumo Logic.
+Cisco Webex is a cloud-based video conferencing and collaboration product suite, which comprises software including Webex Meetings, Webex Teams, and Webex Devices. This Webex source collects admin audit events and webhooks (meetings, rooms, messages, and memberships) data and sends it to Sumo Logic.
 
 ## Data Source
 
