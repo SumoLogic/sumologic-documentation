@@ -78,12 +78,38 @@ You can create widgets as needed to help analysts and administrators quickly get
 
 ## Integration Builder
 
-Write
+You can build basic integrations without having to provide custom YAML files. 
 
+1. Select **Automation** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
+1. Select **Integrations** from the navigation menu at the left of the screen.
+1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="300"/>
+1. Fill out the **New Integration** dialog:
+   1. Upload a **Logo** for your integration.
+   1. Provide a **Name**.
+   1. Click **Use Connection Configuration** and fill out the fields for credentials configuration. 
+   1. Click **Add** to add the connection configuration.
+   1. If other fields are needed at the integration resource level, click **+ Field** to add the fields and their information. For example, for an integration like VirusTotal, you would need to add `apikey` and `domain` as required fields.
+   1. Click **Create**. The integration file is created for the integration.
+   <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-integration-dialog.png')} alt="New Integration dialog" width="500"/>
+1. Now that you have created the integration file, you need to create an action file for the integration.
+   1. Hover your mouse over the new integration and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-upload-icon.png')} alt="Upload button" width="300"/>
+   1. In the **Upload** dialog, notice how **Integration File** is highlighted. That's because it was created in the last step.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-upload-files.png')} alt="Upload dialog" width="300"/>
+   1. Click **Action** and **Next**. 
+1. Fill out the **Upload** dialog: 
+   1. Provide a **Name** for the action.
+   1. Select a **Type** for the action, such as enrichment, containment, custom, or notification.
+   1. Click **Use Connection Configuration** if it is needed for the action, fill out the fields for credentials configuration, and click **Add**.
+   1. If other fields are needed at the action level, click **+ Field** to add the fields and their information. 
+   1. Click **Create**. The action file is created for the integration.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-action-file.png')} alt="Create action" width="600"/><br/>The new action displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration.png')} alt="Example integration" width="600"/>
+1. Add the resource information:
+   1. Click the **+** button to the left of **Resources**.
+   1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Example integration" width="400"/>
+   1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="Example integration" width="600"/>
+1. To test the new action, click the action. Click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Example integration" width="400"/>
 
-## New Cloud SOAR API endpoints
+## Standardized Cloud SOAR APIs
 
-[Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/) allow you to manage incidents, triage, and other Cloud SOAR features. With Cloud SOAR Delivery 2, the Cloud SOAR APIs have been changed to use the same infrastructure as APIs in the Sumo Logic core platform. 
+[Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/) allow you to manage incidents, triage, and other Cloud SOAR features. With Cloud SOAR Delivery 2, the Cloud SOAR APIs have been standardized to use the same infrastructure as APIs in the Sumo Logic core platform. 
 
 Previously, documentation for the APIs was only available through your Cloud SOAR instance at the following URL:
 
@@ -92,10 +118,12 @@ http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_doc
 ```
 Now you can access Cloud SOAR APIs documentation at the following URLs.
 
+<!-- At Delivery 2 GA, replace the content at https://help.sumologic.com/docs/api/cloud-soar/ with the following content (but remove the note tag from the reuse bit): -->
+
 :::note
 {@import ../reuse/api-intro.md}
 :::
 
 {@import ../reuse/csoar-api-table.md}
 
-<!-- At Delivery 2 GA, add this same Cloud SOAR API content to https://help.sumologic.com/docs/api/cloud-soar/ -->
+<!-- Also at Delivery 2 GA, add this reuse API content to the "Cloud SOAR APIs" article at https://help.sumologic.com/docs/cloud-soar/cloud-soar-apis/. Also in that article, update the references to the old "incmansuite_ng" in URLs as needed to align with the new API URLs. -->
