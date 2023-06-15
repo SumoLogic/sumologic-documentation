@@ -13,10 +13,13 @@ This guide will walk you through setting up [Sumo Logic's AWS Observability inte
 ## Prerequisites
 
 - You will need the [AWS CLI](https://aws.amazon.com/cli/) command installed and configured for your AWS account.
-- Select/change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution. To change your AWS region to us-west-1, for example, run the command:
-   ```bash
-   aws configure set region us-west-1
-   ```
+- Select/Change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution.
+
+    <details><summary>Example: How to change your default AWS region to us-west-1?</summary>
+    Run the following command with AWS region as us-west-1.
+    <p></p>
+    <code>aws configure set region us-west-1</code>
+    </details>
 
 ## Installation
 
