@@ -21,7 +21,7 @@ Cisco Webex is a cloud-based video conferencing and collaboration product suite 
 
 ## Set up and Configuration
 
-In this configuration, you will create a new [Webex Integration App](https://developer.webex.com/docs/integrations) in [Webex Develops Portal](https://developer.webex.com/) and generate a Client ID, Client Secret, and generate an Oauth 2.0 authorization code. To obtain these, follow the steps below:
+In this configuration, you will create a new [Webex Integration App](https://developer.webex.com/docs/integrations) in [Webex Develops Portal](https://developer.webex.com/) and generate a Client ID, Client Secret, and OAuth 2.0 authorization code.
 
 ### Create a New Webex Integration app
 
