@@ -67,7 +67,7 @@ To configure a CSE AWS EC2 Inventory Source:
     - **Key Access**. Enter the IAM user access key ID and secret key you want to use to authenticate collection requests.<br/><img src={useBaseUrl('/img/send-data/key-based.png')} alt="key-based" style={{border: '1px solid black'}} width="400"/>
 1. **Regions**. Provide a list of AWS regions to query EC2 instances, such as `us-east-2`.
 1. (Optional) The **Polling Interval** is set for 600 minutes by default, you can adjust it based on your needs.
-1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
+1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule/).
 1. When you are finished configuring the Source, click **Save**.
 
 ### Error types
