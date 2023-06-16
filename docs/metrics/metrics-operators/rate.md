@@ -5,7 +5,7 @@ sidebar_label: rate
 ---
 
 
-The rate operator calculates the per-second rate of change between data points in the time series. There are two different modes in which Rate Operator can work
+The rate operator calculates the per-second rate of change between data points in the time series. There are two different modes in which the rate operator can work:
 
 * Regular `rate` (without `over` modifier) calculates the rate of change between consecutive data points. It divides the difference in values of consecutive data points by the difference in their timestamps (in milliseconds) and then multiplies the result by 1000 (to scale up the quantity from a per-millisecond rate to a per-second rate).
 * `rate over TIME`, on the other hand, allows you to calculate an average rate of change over a specified time window. This is achieved by considering the first and the last metric value in the given time window, extrapolating to the ends of the window if necessary.
