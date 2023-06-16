@@ -2241,6 +2241,16 @@ integrations: [
   security: [
     {
       type: 'category',
+      label: 'Cloud Security Analytics (CSA)',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'csa/index'},
+      items: [
+        'csa/get-started-with-cloud-security-analytics',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Cloud SIEM Enterprise (CSE)',
       collapsible: true,
       collapsed: true,

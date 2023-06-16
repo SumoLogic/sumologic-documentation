@@ -1,0 +1,26 @@
+---
+slug: /csa
+title: Cloud Security Analytics (CSA)
+tags: [csa, cloud security analytics, security]
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="60"/>
+
+Cloud Security (CSA) is a cloud-based security system that provides the following functionality: 
+
+* Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
+* Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.
+* Apps, dashboards, and tools to analyze security data.
+
+In this section, we'll introduce the following concepts:
+
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/csa/get-started-with-cloud-security-analytics"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Get Started with Cloud Security Analytics</h4></a>
+  <p>Learn how to start using Cloud Security Analytics for threat hunting.</p>
+  </div>
+</div>
+</div>
