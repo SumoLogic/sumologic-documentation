@@ -19,8 +19,14 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/csa/get-started-with-cloud-security-analytics"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Get Started with Cloud Security Analytics</h4></a>
-  <p>Learn how to start using Cloud Security Analytics for threat hunting.</p>
+  <a href="/docs/csa/introduction-to-csa"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Introduction to Cloud Security Analytics</h4></a>
+  <p>Get an introduction to basic concepts of Cloud Security Analytics.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/csa/search-and-monitor"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Search and Monitor Security Data</h4></a>
+  <p>Learn how to search for security-related data and monitor it on an ongoing basis.</p>
   </div>
 </div>
 </div>

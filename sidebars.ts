@@ -2246,7 +2246,8 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'csa/index'},
       items: [
-        'csa/get-started-with-cloud-security-analytics',
+        'csa/introduction-to-csa',
+        'csa/search-and-monitor',
       ],
     },
     {
