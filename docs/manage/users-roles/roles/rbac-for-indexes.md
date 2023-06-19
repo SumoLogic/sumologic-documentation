@@ -22,12 +22,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <!-- When the beta period is done, incorporate the following content into /docs/manage/users-roles/roles/construct-search-filter-for-role/ -->
 
-You can restrict access to specific data using roles. When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) to allow access to data based on search indexes, or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria. This ensures that users only see the data they are supposed to.
+You can restrict access to specific data using roles. When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) filters to allow access to data based on [indexes](/docs/manage/partitions-data-tiers/), or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria. This ensures that users only see the data they are supposed to.
 
 Follow this process to define a search filter:
 
 1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
-2. When you create a role, define the dataset by selecting the indexes through the **Index based** option, and field-specific filters through the **Advanced filter** option. (If the data access is for audit and security Indexes, you need to define one role per set of indexes.)  
+2. When you create a role, define the dataset by selecting the indexes through the **Index based** option, or field-specific filters through the **Advanced filter** option.   
 3. Verify the dataset access is correct using [emulation](#test-search-filters).
 4. [Assign the role](/docs/manage/users-roles/roles/add-remove-users-role/) to the relevant users.
 
@@ -40,7 +40,7 @@ To see the **Search Filter** options when you [create a role](/docs/manage/users
 
 ## Index based 
 
-An index based search filter allows or denies access to [search indexes](/docs/alerts/scheduled-searches/save-to-index/). 
+An index based search filter allows or denies access to [search indexes](/docs/manage/partitions-data-tiers/). 
 
 1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
 1. Under **Search Filter**, select **Index based**.
@@ -48,7 +48,7 @@ An index based search filter allows or denies access to [search indexes](/docs/a
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 
    * **Deny few indexes**. Deny access to the selected indexes. 
-1. If you chose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appears.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
+1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appears.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
    
 
 ## Advanced filter
@@ -57,10 +57,10 @@ An advanced filter allows access only to the logs that match the search filter.
 
 1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
 1. Under **Search Filter**, select **Advanced filter**.
-1. Select one of the following query types. You can create only one filter per query type; if you need to create more filters for a query type, you must create new roles for the additional filters and assign all the roles
-   * **Log Analytics data filter**. Allow access to only the logs that match the defined conditions in log analytics [partition indexes](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
-   * **Audit data filter**. Allow access to only the logs that match the defined conditions in Sumo Logic [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
-   * **Security data filter**. Allow access to only the logs that match the defined conditions in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_sec_*`.
+1. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. You can create only one filter for each.
+   * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
+   * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
+   * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
 1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
 
 ## Test search filters
