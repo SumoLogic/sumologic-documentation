@@ -35,7 +35,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
                "AccessType": "Full",
                "Pending": "True",
                "FromRecovery": "False",
-               "Requestor": "{\"Firstname\":null,\"Lastname\":null,\"Email\":\"prpatel.ctr@sumologic.com\",\"UCOid\":null}"
+               "Requester": "{\"Firstname\":null,\"Lastname\":null,\"Email\":\"prpatel.ctr@sumologic.com\",\"UCOid\":null}"
            },
            "agentId": "delegatedadministration",
            "serviceProfileName": null,
