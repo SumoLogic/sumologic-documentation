@@ -18,7 +18,7 @@ The Trellix integration fetches event logs using the [Trellix mVision ePO API](h
 
 ## Set up and configuration
 
-The Trellix mVision ePO source requires you to provide Client ID, Client Secret, and API key. To obtain these, follow the steps below:
+The Trellix mVision ePO source requires you to provide a Client ID, Client Secret, and API key. To obtain these, follow the steps below.
 
 1. Log in to the [Trellix Developer Portal](https://developer.manage.trellix.com/).
 1. Go to the **Self service** menu and click [**API Access Management**](https://developer.manage.trellix.com/mvision/selfservice/access_manag).<br/><img src={useBaseUrl('img/send-data/self-service.png')} alt="self-service.png" style={{border: '1px solid black'}} width="600" />
