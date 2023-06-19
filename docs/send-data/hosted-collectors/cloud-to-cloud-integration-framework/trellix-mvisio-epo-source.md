@@ -107,13 +107,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   "api.version": "v1",
   "source": {
     "config": {
-	"name": "Trellix",
-  	"clientID": "xxxxxxxxxxxxxx",
-	"clientSecret": "******",
- 	"apiKey": "*******",
-"pollingInterval": 5
-    	},
-    "schemaRef": {
+      "name": "Trellix",
+      "clientID": "xxxxxxxxxxxxxx",
+      "clientSecret": "******",
+      "apiKey": "*******",
+      "pollingInterval": 5
+    },
+    "schemaRef":{
       "type": "Trellix mVision ePO"
     },
     "sourceType": "Universal"
