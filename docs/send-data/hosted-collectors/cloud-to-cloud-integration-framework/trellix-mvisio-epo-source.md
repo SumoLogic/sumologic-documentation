@@ -25,7 +25,7 @@ The Trellix mVision ePO source requires you to provide Client ID, Client Secret,
     1. Copy the **API key** from the API Access Management section. <br/><img src={useBaseUrl('img/send-data/api-key.png')} alt="api-key" style={{border: '1px solid black'}} width="600" />
     1. In the **Credential Configuration** section, select **Events** as the scope in **APIs** for a given **Client Type**.
     1. Click **Request** for IAM Client type approval.<br/><img src={useBaseUrl('img/send-data/credential-configuration.png')} alt="credential-configuration" style={{border: '1px solid black'}} width="600" />
-    1. Once your IAM Client type is approved, generate **Client ID** and **Client Secret**. <br/><img src={useBaseUrl('img/send-data/generate.png')} alt="generate" style={{border: '1px solid black'}} width="600" />
+    1. Once your IAM Client type is approved, generate the **Client ID** and **Client Secret**. <br/><img src={useBaseUrl('img/send-data/generate.png')} alt="generate" style={{border: '1px solid black'}} width="600" />
 
 ## States
 
