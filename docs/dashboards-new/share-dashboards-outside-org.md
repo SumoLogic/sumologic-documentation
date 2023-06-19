@@ -66,7 +66,7 @@ The URL that external users can use to access the dashboard appears under the **
 
 ## Logging for externally-shared dashboards
 
-If you have the [Audit Index](/docs/manage/security/audit-index.md) enabled, Sumo Logic logs the key-sharing events. 
+If you have the [Audit Index](/docs/manage/security/audit-index) enabled, Sumo Logic logs the key-sharing events. 
 
 When a user shares a dashboard outside of the organization, Sumo Logic logs the following information:
 * Dashboard name
