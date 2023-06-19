@@ -59,7 +59,7 @@ To configure a Trellix mVision ePO Source:
 1. Enter the **Client ID** of your Trellix platform.
 1. Enter the **Client Secret** of your Trellix platform.
 1. Enter the **API Key** for authorization collected from the Trellix platform.
-1. (Optional) The **Polling Interval** is set for 5 minutes by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
+1. (Optional) The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
 
