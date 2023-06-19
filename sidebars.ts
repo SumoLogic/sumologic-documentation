@@ -2248,6 +2248,7 @@ integrations: [
       items: [
         'csa/introduction-to-csa',
         'csa/search-and-monitor',
+        'csa/threat-investigation',
       ],
     },
     {

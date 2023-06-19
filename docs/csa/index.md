@@ -29,4 +29,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to search for security-related data and monitor it on an ongoing basis.</p>
   </div>
 </div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/csa/threat-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Investigation</h4></a>
+  <p>Learn how to use Cloud Security Analytics features to search for security threats.</p>
+  </div>
+</div>
 </div>
