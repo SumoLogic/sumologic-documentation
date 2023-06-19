@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="trellix-logo" width="70" />
 
-Trellix is a cybersecurity company that provides cloud-based security solutions for cybersecurity attacks. It provides hardware, software, and services to investigate cybersecurity attacks, protect against malicious software, and analyze IT security risks.
+Trellix is a cybersecurity company that provides cloud-based security solutions for cybersecurity attacks. It provides hardware, software, and services to investigate cybersecurity attacks, protects against malicious software, and analyzes IT security risks.
 
 mVision ePO is a key component of the Trellix security management platform, which provides unified management of endpoint, network, and data security, which reduces incident response time, strengthen protection, simplify risk and security management with automation, and end-to-end network visibility and security.
 
