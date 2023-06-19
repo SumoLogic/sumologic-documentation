@@ -96,9 +96,7 @@ _index=sumologic_audit and _sourceName=REPORT "Published REPORT"
 | fields -_count
 ```
 
-**Scheduled search report of dashboard views**
-
-```sql
+```sql title="Scheduled search report of dashboard views"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 | parse "Name=*, Id=Some(*)," as dashboardName,dashboardId
 | parse "URL=*, ViewerIP=*" as url,viewerip
