@@ -9,9 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Monitoring user activity helps you understand what they are doing in your environment. By monitoring user activity, you may be able to discover and isolate potential malicious activity before it impacts your system.
 
-## Search and monitor CloudTrail logs
-
-A [CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) log is a record in JSON format. The log contains information about requests for resources in your account, such as:
+In this article, we describe how to create a dashboard to search and monitor [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs. A CloudTrail log is a record in JSON format. The log contains information about requests for resources in your account, such as:
 
 * who made the request
 * the services used
@@ -20,7 +18,7 @@ A [CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) log is a record in JSO
 
 You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. 
 
-### Monitor user activity with a dashboard
+## Step 1: Monitor user activity with a dashboard
 
 We are going to create a dashboard to look at our security activity in several different ways.  In this step you will query CloudTrail logs to create a Top 10 User Activity list, turn it into a bar chart, and add it to your dashboard.  
 
@@ -45,7 +43,7 @@ We are going to create a dashboard to look at our security activity in several d
 1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Rename dashboard panel" style={{border: '1px solid black'}} width="400"/>
 1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="Example dashboard" style={{border: '1px solid black'}} width="800"/>
 
-### Create dashboard template variables
+## Step 2: Create dashboard template variables
 
 You can add more flexibility to your queries and dashboard outputs by using template variables.
 1. In the upper right corner of the dashboard, change the time range to 24 hours. 
@@ -87,5 +85,65 @@ You can add more flexibility to your queries and dashboard outputs by using temp
  Your query should now look something like this:<br/><img src={useBaseUrl('img/csa/new-query.png')} alt="Revised query" style={{border: '1px solid black'}} width="400"/>
  1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the ** * ** option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing. 
 
-### Use geolocation data
+## Step 3: Monitor geolocation of console logins
 
+The [lookup](/docs/search/search-query-language/search-operators/lookup-classic/) operator maps data to other meaningful data stored in Sumo Logic.
+
+To see where your users are logging in from across the world, you can use [geo lookups](/docs/search/search-query-language/search-operators/geo-lookup-map/). You can create maps with geo lookups, which can help you visualize and quickly identify where users are logging in from. You can then use this information to ensure all logins are from expected locations, and detect potential login threats.
+
+For example, if you expect all your users to be located in Europe, but you are getting a large number of logins from South America, this might be worth investigating. There could be potential hackers in the unexpected location, or it could be a sign that an advertising campaign was accidentally deployed in the wrong region. In this step, we'll create a map that monitors where users are logging in from.
+
+As another example, let's say one of your employees logged in from both Canada and Australia, on the same day only two hours apart. You know this employee lives in Toronto and travels frequently. So, the Canadian login is expected. Normally, the Australian login wouldn't be unexpected, since this employee travels so often. However, since it occurred only two hours after a Toronto login, you conclude it's  malicious activity. This type of suspicious activity is called a landspeed violation. We'll show you how to query for them.
+
+We want to see where our users are logging in from around the globe.  So in this step we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located. 
+
+1. Click **Add Panel** and then **Map**.<br/><img src={useBaseUrl('img/csa/add-map-panel.png')} alt="Add a map panel" style={{border: '1px solid black'}} width="300"/>
+1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
+    ```
+    _sourceCategory=Labs/AWS/CloudTrail
+    | json field=_raw "userIdentity.userName" as actor
+    | json field=_raw "eventType" as event_type
+    | json field=_raw "sourceIPAddress" as src_ip
+    | json field=_raw "responseElements.ConsoleLogin" as result
+    | where !isEmpty(actor)
+    | where !isEmpty(event_type)
+    | where event_type matches "{{event_type}}"
+    | where actor matches "{{actor}}"
+    | lookup latitude, longitude, country_name, city, region from geo://location on ip=src_ip 
+    | count by actor,src_ip,latitude,longitude,country_name,event_type
+   ```
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame.
+1. Name the panel **Geo Location of Console Logins**.<br/><img src={useBaseUrl('img/csa/geo-location-panel.png')} alt="Geo location panel" style={{border: '1px solid black'}} width="800"/>
+1. Click the **Add to Dashboard** button.
+    :::note
+    You can change the values of the dashboard template variables you created in the earlier step, and see the effect on your dashboard panels. 
+    :::
+
+## Step 4: Monitor failed login attempts
+
+Now we want to see if users are failing to login, which either might be an indication of users forgetting their passwords, or someone else trying to log in using stolen user credentials.
+
+1. Click **Add Panel** and then **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
+1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
+    ```
+    _sourceCategory=Labs/AWS/CloudTrail
+    | json field=_raw "userIdentity.userName" as actor
+    | json field=_raw "eventType" as event_type
+    | json field=_raw "sourceIPAddress" as src_ip
+    | json field=_raw "responseElements.ConsoleLogin" as result
+    | json field=_raw "eventName" as event_name
+    | where actor matches "{{actor}}"
+    | where !isEmpty(actor)
+    | where !isEmpty(event_type)
+    | where result = "Failure"
+    | where event_type = "AwsConsoleSignIn"
+    | timeslice 1h
+    | count by _timeslice,actor,event_type,event_name,result
+    | top 10 actor by _timeslice,event_type,result,_count
+    ``` 
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame.
+1. Under **Chart Type**, select **Table**.
+1. Rename this panel **Top 10 Number of Failed Login Attempts**.
+1. Click the **Add to Dashboard** button.
+
+Your dashboard should now look something like this:<br/><img src={useBaseUrl('img/csa/dashboard-with-failed-login-attempts-dashboard.png')} alt="Dashboard with failed login attempts panel" style={{border: '1px solid black'}} width="800"/>
