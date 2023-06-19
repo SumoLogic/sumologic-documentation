@@ -33,11 +33,11 @@ You must have specific role capabilities to share a dashboard with external user
 * **Share Dashboards with the Allowlist.** Share dashboards with users only on the allowlist.
 * **Share Dashboards with the World.** Share dashboards with external users. 
 
-If you do not already have a role that grants you the required capability, an admin user can assign you one. See the [Assign Roles to Users](/docs/manage/users-roles/roles/add-remove-users-role.md) documentation. Or create a new role as required, see the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles.md). 
+If you do not already have a role that grants you the required capability, an admin user can assign you one. See the [Assign Roles to Users](/docs/manage/users-roles/roles/add-remove-users-role) documentation. Or create a new role as required, see the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles). 
 
 ## Add external users to service allowlist
 
-If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md).
+If you want to share dashboards with specific external users, rather than the world, the service allowlist must be enabled and you must provide the list of IPs or CIDRs that will be able to view dashboards without logging in. For instructions, see [Enable Dashboard Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).
 
 :::note
 Administrator privileges are required to enable the service allowlist.
