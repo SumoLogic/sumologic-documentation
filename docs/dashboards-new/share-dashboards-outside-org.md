@@ -87,9 +87,7 @@ When someone views a dashboard without signing in, Sumo Logic logs the following
 
 You can use [Scheduled Searches](/docs/alerts/scheduled-searches) to create alerts and reports on sharing dashboards outside your organization.
 
-**Real-time alert when a user shares a dashboard**
-
-```sql
+```sql title="Real-time alert when a user shares a dashboard"
 _index=sumologic_audit and _sourceName=REPORT "Published REPORT"
 | parse "Published REPORT Name=*, UserName=* UserEmail=*} PublisherName=* PublisherEmail=*} Visibility=* URL=*" as dashboardName,userName,userEmail,publisherName,publisherEmail,visibility, URL
 | count by dashboardName, userName, userEmail, visibility, URL
