@@ -23,7 +23,7 @@ Before you share a dashboard with users external to your organization, you must 
 In this step, you enable sharing of dashboards outside your organization. You must have admin privileges to enable the policy.
 
 1. Go to **Administration** > **Security** > **Policies**.
-1. Select the **Enable** check box for **Share Dashboards Outside of the Organization**.
+1. Select the **Enable** checkbox for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
 ## Verify your role allows external sharing
