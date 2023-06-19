@@ -78,15 +78,15 @@ This section provides instructions on configuring log collection for the Imperva
 
 To configure log integration, do the following:
 
-1. Log into your [my.incapsula.com](https://my.incapsula.com/admin/login) account. 
-2. On the sidebar, click **Logs > Log Setup**. 
+1. Log into your [my.incapsula.com](https://my.incapsula.com/admin/login) account.
+2. On the sidebar, click **Logs > Log Setup**.
 3. **Connection**. Select **Amazon S3**.
 4. Next, fill in your credentials:
-    * Your S3 **Access key, Secret key, and Path**, where path is the location of the folder where you want to store the logs. Enter the path in the following format: `<Amazon S3 bucket name>/<log folder>`. For example: MyBucket/MyIncapsulaLogFolder. 
-    * Click **Test connection** to perform a full testing cycle in which a test file will be transferred to your designated folder. The test file does not contain real data, and will be removed by Incapsula when the transfer is complete. 
+    * Your S3 **Access key, Secret key, and Path**, where path is the location of the folder where you want to store the logs. Enter the path in the following format: `<Amazon S3 bucket name>/<log folder>`. For example: MyBucket/MyIncapsulaLogFolder.
+    * Click **Test connection** to perform a full testing cycle in which a test file will be transferred to your designated folder. The test file does not contain real data, and will be removed by Incapsula when the transfer is complete.
 5. Configure the additional options:
-    * **Format**. Select the format for the log files: **CEF** 
-    * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed. 
+    * **Format**. Select the format for the log files: **CEF**
+    * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed.
 
 For detailed instructions, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Enable).
 
@@ -111,7 +111,7 @@ Now that you have set up collection for Imperva Incapsula - Web Application Fire
 
 See the overview of your WAF service including the source IP address, client app, user agent, country, ADR rules, and policy type.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/imperva-overview.png')} alt="Imperva - Incapsula dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Imperva-Incapsula-WAF-Overview.png')} alt="Imperva - Incapsula dashboards" />
 
 **Client App Top Values**. See the top 10 client apps by count in the last 14 days on a bar chart.
 
@@ -134,7 +134,7 @@ See the overview of your WAF service including the source IP address, client app
 
 See the details of blocked countries in your WAF service including the source IP address, browser type, top countries, and user agent.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/imperva-Blocked_Countries.png')} alt="Imperva - Incapsula dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Imperva-Incapsula-WAF-Blocked-Countries.png')} alt="Imperva - Incapsula dashboards" />
 
 **Blocked Countries Top Values**. See the top 10 blocked countries by count in the last 14 days on a pie chart.
 
@@ -151,7 +151,7 @@ See the details of blocked countries in your WAF service including the source IP
 
 See the details of BOT access control in your WAF service including the city, country, browser type, source IP address, and user agent.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/BOTaccessControl.png')} alt="Imperva - Incapsula dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Imperva-Incapsula-WAF-BOT-Access-Control.png')} alt="Imperva - Incapsula dashboards" />
 
 **City Top Values**. See the top 10 cities by count in the last 14 days on a column chart.
 
