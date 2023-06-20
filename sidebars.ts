@@ -286,6 +286,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source',
               ],
@@ -675,10 +676,20 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
-        'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Data Archiving',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/data-archiving/index'},
+      items: [
+        'manage/data-archiving/archive',
+        'manage/data-archiving/installed-collectors',
       ]
     },
     {
@@ -774,7 +785,6 @@ module.exports = {
         'manage/security/set-max-web-session-timeout',
        ]
      },
-    'manage/archive',
    ],
   },
 ],
@@ -920,6 +930,7 @@ module.exports = {
             'dashboards-new/dashboards-migration/changes-after-migration',
           ],
         },
+        'dashboards-new/advanced',
         'dashboards-new/faq',
       ],
     },
@@ -1818,7 +1829,6 @@ integrations: [
         'integrations/amazon-aws/elastic-load-balancer-app',
         'integrations/amazon-aws/elastic-load-balancing',
         'integrations/amazon-aws/elastic-load-balancing-classic',
-        'integrations/amazon-aws/elastic-load-balancing-metrics',
         'integrations/amazon-aws/lambda',
         'integrations/amazon-aws/network-firewall',
         'integrations/amazon-aws/network-load-balancer',
@@ -1843,6 +1853,7 @@ integrations: [
            items: [
              'integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry',
              'integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry',
+             'integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry',
            ],
          },
          'integrations/microsoft-azure/active-directory-json',
@@ -1855,7 +1866,6 @@ integrations: [
          'integrations/microsoft-azure/sql',
          'integrations/microsoft-azure/web-apps',
          'integrations/microsoft-azure/iis-7',
-         'integrations/microsoft-azure/iis-10-legacy',
          'integrations/microsoft-azure/microsoft-graph-identity-protection',
          'integrations/microsoft-azure/office-365',
          'integrations/microsoft-azure/sql-server',
@@ -1950,7 +1960,6 @@ integrations: [
           },
           'integrations/containers-orchestration/activemq',
           'integrations/containers-orchestration/docker-community-edition',
-          'integrations/containers-orchestration/docker-enterprise-edition',
           'integrations/containers-orchestration/docker-ulm',
           'integrations/containers-orchestration/kafka',
           'integrations/containers-orchestration/kubernetes',
@@ -2089,6 +2098,7 @@ integrations: [
           'integrations/saas-cloud/asana',
           'integrations/saas-cloud/box',
           'integrations/saas-cloud/cato-networks',
+          'integrations/saas-cloud/cisco-meraki-c2c',
           'integrations/saas-cloud/cisco-umbrella',
           'integrations/saas-cloud/citrix-cloud',
           'integrations/saas-cloud/cloudflare',
@@ -2109,6 +2119,7 @@ integrations: [
           'integrations/saas-cloud/pagerduty-v3',
           'integrations/saas-cloud/palo-alto-cortex-xdr',
           'integrations/saas-cloud/proofpoint-on-demand',
+          'integrations/saas-cloud/proofpoint-tap',
           'integrations/saas-cloud/qualys-vmdr',
           'integrations/saas-cloud/rapid7',
           'integrations/saas-cloud/salesforce',
@@ -2164,7 +2175,6 @@ integrations: [
           'integrations/security-threat-detection/vmware-carbon-black',
           'integrations/security-threat-detection/zscaler-internet-access',
           'integrations/security-threat-detection/zscaler-private-access',
-          'integrations/security-threat-detection/zscaler-web-security',
         ],
       },
       {
@@ -2419,10 +2429,12 @@ integrations: [
           items: [
             'cse/automation-service/about-automation-service',
             'cse/automation-service/automation-service-automations',
+            'cse/automation-service/automation-service-app-central',  
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
+            'cse/automation-service/automation-service-examples',
             'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation-service/automation-service-bridge', 
           ],
         },
         {
