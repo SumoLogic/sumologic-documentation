@@ -314,6 +314,8 @@ See the details of projects, zones, instances, and message severity in your Goog
 
 See the details of message severities - emergency, alert, critical, error, and warning.
 
+<img src={useBaseUrl('img/integrations/google/google-compute-engine-severity.png')} alt="Google Compute Engine dashboards" />
+
 **Severe Message Count Over Last Hour**. See the count of different severities in the last hour on a column chart.
 
 **Severity Count**. See the count and percentage of different severities in the last 24 hours on a pie chart.

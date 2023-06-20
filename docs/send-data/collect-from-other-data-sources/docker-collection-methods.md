@@ -90,10 +90,9 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 | Docker Swarm | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 | Rancher<br/>(non-Kubernetes) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 
-### Sumo Apps for Docker
+### Sumo Logic apps for Docker
 
-Sumo provides the following apps for Docker:  
+Sumo Logic provides the following apps for Docker:  
 
-* [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition.md): Supports FluentD plugin to collect Docker platform logs and works in conjunction with Docker ULM.
 * [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
 * [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.

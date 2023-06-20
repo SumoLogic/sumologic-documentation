@@ -74,4 +74,4 @@ In this section, we'll introduce the following concepts:
 These ready-to-run apps are a good starting point for monitoring critical parts of your infrastructure that support a work-from-home workforce:  
 * [Work from Home Solution](/docs/observability/work-from-home-vpn). This solution allows you to monitor all aspects of the infrastructure you use to enable employees to work from home, safely and securely—including your productivity apps, and the services you use for SSO, remote access, endpoint security.   
 * [Sumo Logic App for Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki). You can use this app to monitor and troubleshoot network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
-* [Sumo Logic App for Zscaler Web Security](/docs/integrations/security-threat-detection/zscaler-web-security). This app provides visual insights into web traffic behaviors, security, user browsing activities, and risk in Zscaler.
+
