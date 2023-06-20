@@ -30,7 +30,6 @@ The Trellix mVision ePO source requires you to provide a Client ID, Client Secre
 ## States
 
 The Trellix mVision ePO source is a security platform that provides cloud-based security solutions for cybersecurity attacks.
-
 When you create a Trellix mVision ePO source, it goes through the following stages.
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
