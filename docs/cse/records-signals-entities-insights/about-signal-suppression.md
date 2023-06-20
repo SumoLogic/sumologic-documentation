@@ -29,7 +29,7 @@ You can suppress an Entity on its [details page](/docs/cse/records-signals-entit
 
 <img src={useBaseUrl('img/cse/suppression-slider.png')} alt="Entity suppression slider" width="300"/>
 
-You can suppress multiple Entities at once on the [Entities list page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-list-page) in the Cloud SIEM UI. Note that in the  screenshot below, the row for an Entity that is currently suppressed contains a **Suppressed** indicator.
+You can suppress multiple Entities at once on the [Entities list page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-list-page) in the Cloud SIEM UI. Note that in the screenshot below, the row for an Entity that is currently suppressed contains a **Suppressed** indicator.
 
 <img src={useBaseUrl('img/cse/entity-page.png')} alt="Suppression on the Entities page" width="800"/>
 
