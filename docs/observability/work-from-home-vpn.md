@@ -13,7 +13,7 @@ Enable quick, safe, and reliable work-from-home monitoring with our Work from Ho
 This solution provides support in all areas of remote work management for your enterprise, including:
 
 * **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [One Login](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
-* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki), [Zscaler Web Security](/docs/integrations/security-threat-detection/zscaler-web-security)
+* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki)
 * **Productivity Apps**: [Google Workspace](/docs/integrations/google/workspace), [Office 365](/docs/integrations/app-development/jira), [Salesforce](/docs/integrations/saas-cloud/salesforce), [Sailpoint](/docs/integrations/security-threat-detection/sailpoint), [Slack](/docs/integrations/saas-cloud/slack), [Microsoft Teams](/docs/integrations/microsoft-azure/teams), [Workday](/docs/integrations/saas-cloud/workday), [Zoom](/docs/integrations/saas-cloud/zoom)
 * **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/security-threat-detection/cylance)
 
@@ -68,7 +68,7 @@ To find our Work from Home apps, go to the **App Catalog** > **Work from Home So
 To install any of these apps, follow their directions by clicking on an app link below:
 
 * **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [One Login](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
-* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki), [Zscaler Web Security](/docs/integrations/security-threat-detection/zscaler-web-security)
+* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki)
 * **Productivity Apps**: [Google Workspace](/docs/integrations/google/workspace), [Office 365](/docs/integrations/app-development/jira), [Salesforce](/docs/integrations/saas-cloud/salesforce), [Sailpoint](/docs/integrations/security-threat-detection/sailpoint), [Slack](/docs/integrations/saas-cloud/slack), [Microsoft Teams](/docs/integrations/microsoft-azure/teams), [Workday](/docs/integrations/saas-cloud/workday), [Zoom](/docs/integrations/saas-cloud/zoom)
 * **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/security-threat-detection/cylance)
 

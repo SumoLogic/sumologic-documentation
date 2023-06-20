@@ -368,11 +368,23 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox53 card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="100"/><h4>Trellix mVision ePO</h4></a>
+        <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
+        </div>
+      </div>
+      <div className="box smallbox54 card">
+        <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="250"/><h4>Webex</h4></a>
+        <p>Learn to collect admin audit events using Webex API.</p>
+        </div>
+      </div>
+      <div className="box smallbox55 card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/><h4>Workday</h4></a>
         <p>Learn to create a Workday Source.</p>
         </div>
       </div>
-      <div className="box smallbox53 card">
+      <div className="box smallbox56 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="50"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>

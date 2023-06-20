@@ -212,7 +212,7 @@ You can use the pre-configured searches and dashboards for visibility into your 
 
 See the overview of your Google Cloud IAM including the operations, project, IAM role, and service account activities.
 
-<img src={useBaseUrl('img/integrations/google/Google-Cloud-AM-Overview.png')} alt="Google Cloud IAM dashboards" />
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-IAM-Overview.png')} alt="Google Cloud IAM dashboards" />
 
 
 **Messages by Project**. See the count and trend of messages by project in the last 24 hours on a line chart.
