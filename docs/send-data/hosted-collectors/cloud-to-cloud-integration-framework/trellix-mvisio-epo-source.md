@@ -39,7 +39,6 @@ When you create a Trellix mVision ePO source, it goes through the following stag
 1. **Collecting**. The Source is actively collecting data from Trellix mVision ePO.
 
 If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
