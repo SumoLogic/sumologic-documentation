@@ -39,7 +39,7 @@ Sumo Logic supports several methods for collecting logs from Event Hub. You can 
 In this task, you export logs for your Azure Active Directory app. For related information see [Export Azure Active Directory logs](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
 
 1. In the search bar, search, and select **Activity Log**.
-1. In the **Activity Log** window, click **Export Activity Logs**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/export-activity-log.png')} style={{border: '1px solid black'}} alt="activity-log" width="700"/>
+1. In the **Activity Log** window, click **Export Activity Logs**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/export-activity-log.png')} style={{border: '1px solid black'}} alt="activity-log" width="800"/>
 1. Select the log type in **Category details** that you want to ingest.
 1. Select the **Stream to an event hub** checkbox and then select the following:
     * **Subscription.** Pull-down, select a subscription.
