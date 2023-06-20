@@ -26,7 +26,7 @@ Outlier Rules operate based on a baseline. During this period - typically betwee
 
 CSE will include a set of Outlier Rules out of the box. These rules can be tuned and customized like any other rule type, and custom Outlier Rules can also be created.
 
-For more information about how to use Outlier Rules, see the online [documentation](/docs/cse/rules/write-Outlier-rule/). You can also see an introduction to the feature by navigating to a new Outlier Rule in the CSE.
+For more information about how to use Outlier Rules, see the online [documentation](/docs/cse/rules/write-Outlier-rule/). You can also see an introduction to the feature by navigating to the Rules page in CSE.
 
 ### Minor Changes and Enhancements
 
