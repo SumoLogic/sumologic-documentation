@@ -104,8 +104,7 @@ An administrator can adjust the limit to the number of days an Access Key can go
 To configure the Access Keys Deactivation policy:
 1. Go to **Administration > Security > Policies**.
 2. Locate the **Access Keys Deactivation** policy setting. 
-3. Select a value in the **No. of Days** field.
-   <img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation" width="600"/>
+3. Select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation" width="600"/>
 
 
 ## Manage all users’ access keys on Access Keys page
