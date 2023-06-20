@@ -47,7 +47,7 @@ On the [Collection page](/docs/manage/health-events#collection-page), the Health
 
 When you create a Trellix mVision ePO Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Trellix mVision ePO Source:
+To configure a Trellix mVision ePO Source, follow the steps below:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Trellix mVision ePO**.<br/> <img src={useBaseUrl('img/send-data/trellix-icon.png')} alt="trellix-icon" style={{border: '1px solid black'}} width="100" />
