@@ -30,6 +30,6 @@ For more information about how to use Outlier Rules, see the online [documentati
 
 ### Minor Changes and Enhancements
 
-* [New] Users can now customize the global Signal Suppression period. During this period, which is set to 72 hours by default, duplicate signals (with identical names and Entities) are suppressed (e.g. they do not “count” towards Insights). With this new feature, this period can be lowered globally (for all rules) to as low as 24 hours. (Note that lowering this value can lead to a higher number of potentially duplicate Insights.) The setting is accessible via a the **Workflow** > **Detection** option in the Configuration menu.
+* [New] Users can now customize the global Signal Suppression period. During this period, which is set to 72 hours by default, duplicate signals (with identical names and Entities) are suppressed (for example, they do not “count” towards Insights). With this new feature, this period can be lowered globally (for all rules) to as low as 24 hours. (Note that lowering this value can lead to a higher number of potentially duplicate Insights.) The setting is accessible via the **Workflow** > **Detection** option in the Configuration menu.
 * [Updated] CSE application status will now be published on the main Sumo Logic status page, [https://status.sumologic.com/](https://status.sumologic.com/). (Previously it was published on [https://cse-status.sumologic.com/](https://cse-status.sumologic.com/).) Existing email subscriptions and status notifications will be moved to the new page automatically.
 
