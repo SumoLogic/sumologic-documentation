@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section has instructions for changing the detection window and the threshold Activity Score for Insight generation.
 
-By default, the detection window is 14 days, and the threshold Activity Score is 12. That means if an Entity's Activity Score goes from 0 to 13 within a 14 day period, CSE will generate an Insight on that Entity. For information about how that works, see [Understanding Entity Activity Scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), in the *Insight Generation Process* topic.
+By default, the detection window is 14 days, and the threshold Activity Score is 12. That means if an Entity's Activity Score goes from 0 to 13 within a 14 day period, CSE will generate an Insight on that Entity. For information about how that works, see [Unders tanding Entity Activity Scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), in the *Insight Generation Process* topic.
 
 To change the Insight Generation settings:
 
@@ -17,5 +17,5 @@ To change the Insight Generation settings:
 2. The **Detection Threshold** popup appears and shows your current detection settings.<br/><img src={useBaseUrl('img/cse/detection-threshold-popup.png')} alt="Detection threshold settings" width="700"/><!-- We need a new screenshot -->
 3. **Detection Window**. Enter the duration, in days, during which an Entity's Activity Score must reach the Threshold to result in an Insight being generated for the Entity. 
 4. **Threshold**. Enter the threshold Activity Score value that an Entity must reach during the Detection window to result in an Insight being generated for the Entity. 
-5. **Global Signal Suppression**. By default, signals are automatically suppressed from the Insight generation process for 72 hours. To change this setting, select the number of hours to suppress signals, anywhere from 24 hours to 72 hours. For additional ways to control signal suppression, see [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/).
+5. **Global Signal Suppression Window**. By default, signals are automatically suppressed from the Insight generation process for 72 hours. To change this setting, select the number of hours to suppress signals, anywhere from 24 hours to 72 hours. For additional ways to control signal suppression, see [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/).
 5. Click **Save**. 
