@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Outlier Rules 
 
-Sumo Logic is pleased to announce a new rule type for Cloud SIEM Enterprise (CSE): Outlier Rules. This new rule time further enhances CSE’s User and Entity Behavioral Analytics (UEBA) capabilities. With these rules, CSE can detect events that deviate from the usual behavior of an Entity, such as a spike in login failures from a user, without having to define a static threshold. Once the rule is set, CSE automatically builds a normal behavior baseline for each Entity based on the rule expression. It creates a signal only when a deviation from normal behavior is detected (in this case, too many login failures compared to their normal baseline behavior). Other examples include detecting a spike in Windows administrative privileges granted and a spike in AWS calls from a user.
+Sumo Logic is pleased to announce a new rule type for Cloud SIEM Enterprise (CSE): Outlier Rules. This new rule type further enhances CSE’s User and Entity Behavioral Analytics (UEBA) capabilities. With these rules, CSE can detect events that deviate from the usual behavior of an Entity, such as a spike in login failures from a user, without having to define a static threshold. Once the rule is set, CSE automatically builds a normal behavior baseline for each Entity based on the rule expression. It creates a signal only when a deviation from normal behavior is detected (in this case, too many login failures compared to their normal baseline behavior). Other examples include detecting a spike in Windows administrative privileges granted and a spike in AWS calls from a user.
 
 Outlier Rules are defined like any other rule type through the Content menu in CSE. 
 
