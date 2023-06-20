@@ -2349,6 +2349,7 @@ integrations: [
             'cse/rules/write-aggregation-rule',
             'cse/rules/write-threshold-rule',
             'cse/rules/write-first-seen-rule',
+            'cse/rules/write-outlier-rule',
             'cse/rules/cse-built-in-rules',
             'cse/rules/import-yara-rules',
             'cse/rules/normalized-authentication-rules',
