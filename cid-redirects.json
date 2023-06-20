@@ -1484,6 +1484,7 @@
   "/cid/10192": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source",
   "/cid/10195": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source",
   "/cid/10196": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source",
+  "/cid/10213": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source",
   "/cid/10122": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source",
   "/cid/10135": "/docs/manage/manage-subscription/manage-org-settings",
   "/cid/10136": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source",
