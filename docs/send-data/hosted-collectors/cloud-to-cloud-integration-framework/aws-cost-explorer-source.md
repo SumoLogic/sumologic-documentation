@@ -10,17 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The AWS Cost Explorer Source collects cost and usage reports from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You have the option to collect from one or more specific [AWS cost types](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) and set how often reports are collected.
 
-## Create an AWS Cost Explorer Source
+## Data Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, identify the hosted collector you want to use or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+This C2C collects cost and usage reports from the [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/).
 
-{@import ../../../reuse/aws-cost-explorer.md}
-
-:::note
-It can take up to 48 hours for AWS to generate your billing data. For accuracy, Sumo Logic does not present any billing analysis for the previous 48-60 hours.
-:::
-
-### States
+## States
 
 The AWS Cost Explorer Source reports errors, its health, and initialization status. Other than indicating that the source is healthy, you are also informed, in real-time, if the source is running into trouble communicating with AWS API, or if there's an error that requires user action indicated by [Sumo Logic Health Events](/docs/manage/health-events).
 
@@ -32,7 +26,7 @@ An AWS Cost Explorer Source goes through the following states when created:
 4. **Authenticated**. The Source has successfully authenticated with AWS
 5. **Collecting**. The Source is actively collecting data from AWS accounts.
 
-If the Source has any issues during any one of these states, it is placed in an **Error** state.<br/>![Health and Status columns.png](/img/send-data/health-status.png)
+If the Source has any issues during any one of these states, it is placed in an **Error** state.<br/><img src='/img/send-data/azure-cost-status.png' alt="Health and Status columns" width="800"/>
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/>![error status.png](/img/send-data/hover-status.png)
 
@@ -40,6 +34,15 @@ When you delete the Source, it is placed in a **Stopping** state. When it has su
 
 On the Collection page, the [Health](/docs/manage/health-events#Collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 
+## Create an AWS Cost Explorer Source
+
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, identify the hosted collector you want to use or simply create a new hosted collector. For further instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+
+{@import ../../../reuse/aws-cost-explorer.md}
+
+:::note
+It can take up to 48 hours for AWS to generate your billing data. For accuracy, Sumo Logic does not present any billing analysis for the previous 48-60 hours.
+:::
 
 ### Error types
 
@@ -96,7 +99,6 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
   </tr></small>
 </table>
 
-
 ### JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
@@ -151,9 +153,9 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
   </tr></small>
 </table>
 
+### Config Parameters
 
 The following table shows the **config** parameters for an AWS Cost Explorer Source.
-
 
 <table><small>
   <tr>
@@ -299,8 +301,9 @@ The following table shows the **config** parameters for an AWS Cost Explorer Sou
   </tr></small>
 </table>
 
+### JSON Example
 
-```json title="AWS Cost Explorer Source JSON Example"
+```json
 {
   "api.version":"v1",
   "source":{

@@ -174,45 +174,39 @@ _sourceCategory=ZIA
 | top 10 baseurl by _count
 ```
 
+## Install the Zscaler Internet Access app
 
-
-## Install the Zscaler Internet Access App
-
-This section provides instructions on how to install the Zscaler Internet Access App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](/docs/integrations/security-threat-detection/Zscaler-Web-Security#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Zscaler Internet Access app, and provides examples of each of the dashboards. The preconfigured searches and dashboards provides you an easy-to-access visual insights into your data.
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing ZIA Dashboards
+## Viewing ZIA dashboards
 
-
-### Zscaler - Overview  
+### Overview  
 
 The **Zscaler - Overview** Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Overview.png')} alt="zscaler internet access Dashboard" />
 
-
-### Zscaler- Behavior  
+### Behavior  
 
 The **Zscaler - Behavior** Dashboard focuses on allowed traffic behaviors, showing trends and deviations by users, content types accessed, content categories, super categories, and bandwidth trends.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Behavior.png')} alt="zscaler internet access Dashboard" />
 
-### Zscaler - Blocked Traffic  
+### Blocked Traffic  
 
 The **Zscaler - Blocked** Traffic Dashboard illustrates outliers in both blocked traffic peaks and multi-dimensional outliers for blocked activity specific to user.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Blocked-Traffic.png')} alt="zscaler internet access Dashboard" />
 
-
-### Zscaler - File Classification Activity
+### File Classification Activity
 
 The **Zscaler - File Classification Activity** Dashboard focuses on file-based threats by users, threat name, file types, and subtypes for a overarching view of blocked files across the Zscaler environment.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-File-Classification-Activity.png')} alt="zscaler internet access Dashboard" />
 
-
-### ZIA - DNS
+### DNS
 
 The **ZIA - DNS** Dashboard focuses on DNS activity specifically around denied requests and responses, server locations across the Zscaler environment.
 
@@ -222,8 +216,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-DNS.png')} alt="zscaler internet access Dashboard" />
 
-
-### ZIA - Logs
+### Logs
 
 The **ZIA - Logs** Dashboard gives insights into different logs being produced in the Zscaler environment.
 
@@ -233,7 +226,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Logs.png')} alt="zscaler internet access Dashboard" />
 
-### ZIA - Threats
+### Threats
 
 The **ZIA - Threats** Dashboard focuses on threats in your Zscaler environment.
 
