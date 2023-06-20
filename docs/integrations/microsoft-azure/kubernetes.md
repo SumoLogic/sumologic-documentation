@@ -41,59 +41,12 @@ The following are the minimum supported requirements for this application:
 ## Log types  
 
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
-* kube-apiserver
-* kube-scheduler
-* kube-controller-manager
-
-## Collect logs for the AKS - Control Plane app
-
-This section provides instructions for configuring a pipeline to collect Azure managed master node logs in your Azure Kubernetes Service (AKS) to an event hub.
-
-### AKS - Control Plane Logs
-
-The AKS - Control Plane app uses Azure managed master node logs in your Azure Kubernetes Service (AKS). The AKS - Control Plane app collects logs for the following services:
 
 * **kube-apiserver** - The API server exposes the underlying Kubernetes APIs. This component provides the interaction for management tools, such as kubectl or the Kubernetes dashboard.
 * **kube-scheduler** - The Scheduler determines what nodes can run the workload when you create or scale applications and then starts them.
 * **kube-controller-manager** - The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
 
-The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane app and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
-
-### Collection process
-
-Configuring logs and metrics for the AKS - Control Plane app is a two step process:
-
-* Setting up collection and installing the Sumo Logic Kubernetes app.
-* Configuring Azure monitor and enabling the master node logs in AKS.
-
-The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
-
-#### Step 1. Setup and Install the Sumo Logic Kubernetes app  
-
-The Sumo Logic Kubernetes app provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes app before configuring collection for the AKS - Control Plane app. You will configure log and metric collection during this process.
-
-**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
-
-#### Step 2. Configure Azure Monitor and enable logs in AKS
-
-This section walks you through the process of configuring a pipeline to send logs from Azure Monitor to Sumo Logic. The AKS - Control Plane app utilizes the following log types:
-
-* kube-apiserver
-* kube-scheduler
-* kube-controller-manager
-
-Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
-
-- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
-- [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection). Follow [Step 1](#step-1-setup-and-install-the-sumo-logic-kubernetes-app) and [Step 2](#step-2-configure-azure-monitor-and-enable-logs-in-aks) on this page to collect logs.
-
-Enable the Kubernetes master node logs in Azure Kubernetes Service to send logs to an event hub created in the previous step. For related information see [Send logs to Azure Monitor](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
-
-While exporting logs for an Azure Kubernetes Service Control Plane app, do the following:
-* **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
-* **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
-
-#### Sample log messages
+### Sample log messages
 
 ```json title="kube-apiserver"
 {
@@ -143,7 +96,7 @@ While exporting logs for an Azure Kubernetes Service Control Plane app, do the f
 }
 ```
 
-#### Sample Queries
+### Sample Queries
 
 ```sql title="kube-apiserver"
 _sourceCategory="azure/aks" "kube-apiserver"
@@ -180,6 +133,42 @@ _sourceCategory="azure/aks" "kube-scheduler"
 | transpose row _timeslice column severity
 | fillmissing timeslice(1h)
 ```
+
+## Collecting Logs for the Kubernetes and AKS - Control Plane
+
+The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) works in conjunction with the AKS - Control Plane app and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+
+### Collecting logs and installing the Kubernetes app  
+
+The Sumo Logic Kubernetes app provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes app before configuring collection for the AKS - Control Plane app. You will configure log and metric collection during this process.
+
+To set up collection and install the Kubernetes app, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
+
+### Collecting logs for the AKS - Control Plane app  
+
+This section walks you through the process of configuring a pipeline to send logs from Azure Monitor to Sumo Logic.
+
+1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
+
+	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
+
+	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AKS/ControlPlane/Logs`.
+
+  Enable the Kubernetes master node logs in Azure Kubernetes Service to send logs to an event hub created in the previous step.
+
+2. Push logs from Azure Monitor to Event Hub.
+	1. Sign in to [Azure Portal](https://portal.azure.com/).
+	2. Go to **Kubernetes Services**. Select your AKS cluster from which you want to collect logs.
+	3. In the Monitoring Section, the **Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
+	4. Enter a name.
+	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
+	6. Select an Azure subscription.
+	7. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
+	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
+	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-kuberetes.png')} style={{border: '1px solid black'}} alt="diagnostic-setting-kuberetes" width="800"/>
+	11. Click **Save**.
 
 ## Installing the AKS Control Plane app
 

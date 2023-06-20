@@ -41,45 +41,44 @@ _sourceCategory=Azure/Web-app
 
 ## Collecting Logs for Azure Web Apps
 
-Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
 
-- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
-- [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
+1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
+    - [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+    - Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
+    When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApps/Logs`.
+2. Push logs from Azure Monitor to Event Hub.
+    1. Sign in to [Azure Portal](https://portal.azure.com/).
+    1. Go to your Azure Web App and in the left pane, go to **Monitoring** > **Diagnostics Settings.**
+    1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
+    1. Select the **Stream to an event hub box** checkbox.
+    1. Select an Azure subscription.
+    1. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+    1. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
+    1. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
+    1. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-web-apps.png')} style={{border: '1px solid black'}} alt="diagnostic-setting-web-apps" width="800"/>
+    1. Click **Save**.
 
-### Solution Overview
+## Collecting Metrics for Azure Web Apps (Optional)
 
-The following is how the solution fits together:
+In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md). For exporting metrics you need to create another diagnostic setting and select All Metrics only with the following Event Hub configurations.
 
-* Azure Monitor collects logs for most Microsoft Azure services, including Azure Web Apps, and streams the data to an Azure Event Hub.
-* Azure Event Hub is a data streaming platform and event ingestion service. In this pipeline, an Event Hub streams the logs collected by Azure Monitor to an Azure function.
-* The Azure function is a small piece of code that is triggered by Event Hub to send logs to the Sumo HTTP Source, function logs to one Storage Account, and failover data to another.
+The current Sumo Logic app for Web Apps does not support metric content so this step is optional.
 
-### Export logs for a particular Web App to Event Hub
-
-In this task, you enable logs for your Azure Web app. For related information see [Enable diagnostics logging for web apps in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs#send-logs-to-azure-monitor-preview) in the Azure help documentation.
-
-To enable logs for an Azure web app, do the following:
-1. Sign in to [Azure Portal](https://portal.azure.com/).
-1. Go to your Azure Web App and in the left pane, go to **Monitoring >** **Diagnostics Settings.**
-1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
-2. Select the **Stream to an event hub box** checkbox.
-3. Select an Azure subscription.
-4. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
-5. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
-6. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
-7. Select the checkbox for log types under **Category Details** which you want to ingest.
-8. Click **Save**.
-
-### Export metrics for a particular web app to Event Hub (Optional)
-
-The current Sumo Logic app for Web Apps does not support metric content so this step is optional. For exporting metrics you need to create another diagnostic setting and select All Metrics only with the following Event Hub configurations.
-
-**Event hub namespace.** Namespace created in [Step 2](#Step_2._Configure_Azure_resources_using_ARM_template) by Metrics ARM template starting with `SumoMetricsNamespace<unique suffix>`
-
-**Event hub name.** Select **insights-metrics-pt1m** from the **Select Event hub name** dropdown.
-
-**Event hub policy.** Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
+1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor).  
+In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApp/Metrics`
+2. Push metrics from Azure Monitor to Event Hub.
+    1. Sign in to [Azure Portal](https://portal.azure.com/).
+    1. Go to your Azure Web App and in the left pane, go to **Monitoring** > **Diagnostics Settings.**
+    1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
+    1. Select the **Stream to an event hub box** checkbox.
+    1. Select an Azure subscription.
+    1. **Event hub namespace.** Namespace created in [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor) by Metrics ARM template starting with `SumoMetricsNamespace<unique suffix>`.
+    1. **Event hub name (optional).** Select **insights-metrics-pt1m** from the **Select Event hub name** dropdown.
+    1. **Event hub policy.** Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
+    1. Select the checkbox for **AllMetrics** types under **Metrics** which you want to ingest.
+    1. Click **Save**.
 
 ## Installing the Azure Web Apps app
 
