@@ -96,7 +96,7 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to share a custom dashboard outside your organization.</p>
   </div>
 </div>
-<div className="box smallbox14 card">
+<div className="box smallbox15 card">
   <div className="container">
   <a href="/docs/dashboards-new/advanced/"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Advanced Features</h4></a>
   <p>Learn about the Dashboards (New) advanced features.</p>
