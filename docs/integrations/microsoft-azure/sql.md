@@ -118,24 +118,24 @@ In this step, you configure a pipeline for shipping metrics from Azure Monitor t
 In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
-   * From the left pane, select **ALL Services**.
-   * Search for and select **Monitor**.
-   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
-   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings**.
-   * Once diagnostics are enabled, click **Add a diagnostic setting**.
-   * The **Diagnostic Settings** page appears.
-   * In the left pane:
-      * Enter a name for the diagnostic setting.
-      * Click the **Stream to an event hub** checkbox.
-      * Select **Configure event hub.** The right pane appears.
-   * In the right pane:
-      * Choose a **Subscription**.
-      * Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
-      * Select **insights-metrics-pt1m** as the event hub name.
-      * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
-   * Check the **AllMetrics** box.
-   * Click **OK**.
-   * Save the **Diagnostics Setting**.
+   1. From the left pane, select **ALL Services**.
+   1. Search for and select **Monitor**.
+   1. In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
+   1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings**.
+   1. Once diagnostics are enabled, click **Add a diagnostic setting**.
+   1. The **Diagnostic Settings** page appears.
+   1. In the left pane:
+      1. Enter a name for the diagnostic setting.
+      1. Click the **Stream to an event hub** checkbox.
+      1. Select **Configure event hub.** The right pane appears.
+   1. In the right pane:
+      1. Choose a **Subscription**.
+      1. Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
+      1. Select **insights-metrics-pt1m** as the event hub name.
+      1. Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
+   1. Check the **AllMetrics** box.
+   1. Click **OK**.
+   1. Save the **Diagnostics Setting**.
 
 ## Installing the Azure SQL app
 
