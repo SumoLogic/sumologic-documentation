@@ -92,7 +92,7 @@ This example creates two fields from the sample log message: `user=jsmith@demo.
 You can create field names that contain special characters, for example, spaces, dashes, and backslashes or forward slashes, using the following syntax:
 
 ```sql
-... | parse \<strin\>" as %\<field name with special character\>"
+... | parse \<string\>" as %\<field name with special character\>"
 ```
 
 For example, this query will allow you to parse the phrase "Class ID", including the space:
