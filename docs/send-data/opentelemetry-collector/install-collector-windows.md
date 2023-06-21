@@ -57,6 +57,7 @@ The script is going to perform the following operations:
 |:---------------|:----------------|:-------------|
 | `-InstallationToken` | Installation token      | Yes       |
 | `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
+| `-InstallHostMetrics` | Installs the hostmetrics configuration to collect host metrics. The default is `$False`. | Yes, for example: `-InstallHostMetrics $True` or `-InstallHostMetrics $False`. |
 
 ### UI Installation via App Catalog
 
