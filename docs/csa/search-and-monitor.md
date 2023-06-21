@@ -7,9 +7,9 @@ description: Learn how to search for security-related data and monitor it on an 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Monitoring user activity helps you understand what they are doing in your environment. By monitoring user activity, you may be able to discover and isolate potential malicious activity before it impacts your system.
+How you use Cloud Security Analytics features is up to you. But in this article, we'll help you get started by showing you how to build a dashboard to search and monitor security data. Monitoring user activity helps you understand what they are doing in your environment. By monitoring user activity, you may be able to discover and isolate potential malicious activity before it impacts your system.
 
-In this article, we describe how to create a dashboard to search and monitor [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs. A CloudTrail log is a record in JSON format. The log contains information about requests for resources in your account, such as:
+In this article, we describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs. A CloudTrail log is a record in JSON format. The log contains information about requests for resources in your account, such as:
 
 * who made the request
 * the services used

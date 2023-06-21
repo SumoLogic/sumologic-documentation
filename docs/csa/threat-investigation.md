@@ -7,7 +7,7 @@ description: Learn how to use Cloud Security Analytics features to search for se
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-After you have configured queries and dashboards (see [Search and Monitor Security Data](/docs/csa/search-and-monitor/)), you are ready to use Cloud Security Analytics to perform threat investigation.
+After you have configured queries and created a dashboard to [search and monitor security data](/docs/csa/search-and-monitor/), you are ready to enhance your dashboard to perform threat investigation.
 
 To illustrate, in this article we'll do the following:
 
