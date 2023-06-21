@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="40"/>
 
-Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic app for Azure helps you to monitor activity in the Azure Active Directory. This dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
+Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic app for Azure helps you to monitor activity in the Azure Active Directory. These dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
 
 ## Log types
 
@@ -38,7 +38,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Export Azure Active Directory logs to Event Hub
 
-In this task, you export logs for your Azure Active Directory app. For related information see [Export Azure Active Directory logs](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
+In this task, you export logs for your Azure Active Directory app. For related information see [Send Logs to Azure Monitor](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
 
 While exporting logs for an Azure Active Directory app, do the following:
 * **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
