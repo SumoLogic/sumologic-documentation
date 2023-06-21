@@ -11,4 +11,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're excited to announce the release of our new cloud-to-cloud source for Trellix mVision ePO, this source collects event logs using the Trellix mVision ePO API. [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source).
+We're excited to announce the release of our new cloud-to-cloud source for Trellix mVision ePO. This source collects event logs using the Trellix mVision ePO API. [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source).
