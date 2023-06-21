@@ -249,7 +249,7 @@ To configure Acquia log forwarding, follow the instructions in the Acquia [docum
 
 ## Installing the Acquia App
 
-This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
 {@import ../../reuse/apps/app-install.md}
 

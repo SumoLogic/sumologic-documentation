@@ -398,7 +398,7 @@ At this point, PostgreSQL logs should start flowing into Sumo Logic.
 
 ## Installing PostgreSQL Alerts
 
-This section provides instructions for installing the Sumo app and Alerts for PostgreSQL, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the Collect Logs and Metrics from PostgreSQL app section.
+This section provides instructions for installing the Sumo app and Alerts for PostgreSQL. These instructions assume you have already set up collection as described in the Collect Logs and Metrics from PostgreSQL app section.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts, please see the [alerts section](#postgresql-alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
