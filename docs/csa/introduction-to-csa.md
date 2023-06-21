@@ -62,3 +62,5 @@ Queries are the core of Sumo Logic's data processing platform. With queries, SOC
 * [Security Analytics](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment. 
 * [Security and threat detection](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For example, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes pre-loaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database. 
 * [Cloud security monitoring and analytics](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls. 
+* [Global Intelligence Service](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
+

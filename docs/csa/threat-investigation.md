@@ -7,16 +7,16 @@ description: Learn how to use Cloud Security Analytics features to search for se
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-After you have configured queries and created a dashboard to [search and monitor security data](/docs/csa/search-and-monitor/), you are ready to enhance your dashboard to perform threat investigation.
+To help you get started with Cloud Security Analytics, the [Search and Monitor Security Data](/docs/csa/search-and-monitor/) article showed you how to create a dashboard that displays the results of CloudTrail log queries. In this article, we show you how to enhance the dashboard to perform threat investigation.
 
-To illustrate, in this article we'll do the following:
+We'll do the following:
 
 * Detect brute force attempts by monitoring AWS CloudTrail data for a high number of failed login attempts within a period of time. Brute force attacks are when a hacker tries many different passwords to attempt to gain access. These attacks are a common cause of security breaches on governments, businesses, organizations, and private individuals. 
 * Detect land speed violations by using geo lookup location data and combining it with timestamps and the Haversine formula. Land speed violations, also known as impossible travel, are a type of suspicious activity where a user logs in to an account in two different locations within a short period of time. If there are two logins to the same account on opposite sides of the globe in the same hour, at least one of those logins was probably illegitimate.
 * Look up user information with CrowdStrike to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
 
 :::note
-The steps in this article build on steps performed in [Search and Monitor Security Data](/docs/csa/search-and-monitor/). Perform the steps in that article first before performing the steps below.
+The steps in this article build on steps performed in [Search and Monitor Security Data](/docs/csa/search-and-monitor/). Perform the steps in that article first before performing the steps below. 
 :::
 
 ## Step 1: Detect brute force attacks

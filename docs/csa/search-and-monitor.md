@@ -7,9 +7,9 @@ description: Learn how to search for security-related data and monitor it on an 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-How you use Cloud Security Analytics features is up to you. But in this article, we'll help you get started by showing you how to build a dashboard to search and monitor security data. Monitoring user activity helps you understand what they are doing in your environment. By monitoring user activity, you may be able to discover and isolate potential malicious activity before it impacts your system.
+In this article, we'll help you get started with Cloud Security Analytics by showing you how to build a dashboard to search and monitor security data. Monitoring user activity helps you understand what they are doing in your environment. By monitoring user activity, you may be able to discover and isolate potential malicious activity before it impacts your system.
 
-In this article, we describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs. A CloudTrail log is a record in JSON format. The log contains information about requests for resources in your account, such as:
+In this article, we describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs. (To perform the steps in the article, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)). A CloudTrail log is a record in JSON format. The log contains information about requests for resources in your account, such as:
 
 * who made the request
 * the services used
