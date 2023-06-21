@@ -88,7 +88,7 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 ## Installing the Qualys VMDR App​
 
-This section provides instructions for installing the Qualys VMDR Sumo Logic App, as well as the descriptions of each of the app dashboards.
+This section provides instructions for installing the Qualys VMDR Sumo Logic App.
 
 {@import ../../reuse/apps/app-install.md}
 
