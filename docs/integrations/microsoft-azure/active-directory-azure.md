@@ -38,7 +38,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Export Azure Active Directory logs to Event Hub
 
-In this task, you export logs for your Azure Active Directory app. For related information see [Export Azure Active Directory logs](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
+In this task, you export logs for your Azure Active Directory app. For related information see [Send Logs to Azure Monitor](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
 
 While exporting logs for an Azure Active Directory app, do the following:
 * **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
