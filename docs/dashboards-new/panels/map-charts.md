@@ -47,7 +47,7 @@ To add a panel with a Cluster or Heatmap:
 
 ## Missile map
 
-Missile map is used to depict the data that has an origin and destination. This map helps you to visualize the relationships between these sources and destinations, providing insights into the pathways that may follow. By visualizing, the connections between sources and target destinations, you can enhance your risk assessment, threat modelling, and decision-making processes.
+Missile map is used to geographically depict any data that has an origin and destination. This map helps you to visualize the relationships between the source and destination by providing insights into the pathways that may follow.
 
 To create Connection map, your query must include:
 
