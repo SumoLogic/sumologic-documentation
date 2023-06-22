@@ -51,27 +51,27 @@ The following steps show you how to create a service application:
 
 1. Select **Azure Active Directory** in the left menu.
 
-    ![ms_graph_azure_portal.png](/img/send-data/ms_graph_azure_portal.png)
+    <img src={useBaseUrl('/img/send-data/ms_graph_azure_portal.png')} alt="ms_graph_azure_portal" width="800" style={{border: '1px solid black'}} />
 
 1. Select **App Registrations**.
 
-    ![2a_ms_graph_app_registration.png](/img/send-data/2a_ms_graph_app_registration.png)
+    <img src={useBaseUrl('/img/send-data/2a_ms_graph_app_registration.png')} alt="2a_ms_graph_app_registration" width="400" style={{border: '1px solid black'}} />
 
 1. Select **New Registration**. Go through the [registration process](https://docs.microsoft.com/en-us/graph/auth-register-app-v2), providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
 
-    ![ms_graph_new_registration.png](/img/send-data/ms_graph_new_registration.png)
+    <img src={useBaseUrl('/img/send-data/ms_graph_new_registration.png')} alt="ms_graph_new_registration" width="800"style={{border: '1px solid black'}} />
 
 1. After the application is registered ensure you copy the **Application (client) ID** and **Directory (tenant) ID** displayed on the **Overview** page. These are needed when creating the Source in Sumo Logic.
 
-    ![3_ms_graph_app_settings.png](/img/send-data/3_ms_graph_app_settings.png)
+    <img src={useBaseUrl('/img/send-data/3_ms_graph_app_settings.png')} alt="3_ms_graph_app_settings" width="800"style={{border: '1px solid black'}} />
 
 1. Within the application configuration page, select **Certificates and Secrets** and create an [Application Client Secret Key](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration#app-certificates-and-secrets).
 
-    ![4_ms_graph_app_client_secret.png](/img/send-data/4_ms_graph_app_client_secret.png)
+    <img src={useBaseUrl('/img/send-data/4_ms_graph_app_client_secret.png')} alt="4_ms_graph_app_client_secret" width="800"style={{border: '1px solid black'}} />
 
 1. Copy the Client Secret value, you'll need it when creating the Source in Sumo Logic.
 
-    ![5_ms_graph_app_client_secret_created.png](/img/send-data/5_ms_graph_app_client_secret_created.png)
+    <img src={useBaseUrl('/img/send-data/5_ms_graph_app_client_secret_created.png')} alt="5_ms_graph_app_client_secret_created" width="800"style={{border: '1px solid black'}} />
 
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
@@ -81,11 +81,19 @@ The following steps show you how to create a service application:
     An Administrator must approve (grant) these permissions before the Source will function.
     :::
 
-    ![6_ms_graph_app_add_permissions.png](/img/send-data/6_ms_graph_app_add_permissions.png)
+    <img src={useBaseUrl('/img/send-data/6_ms_graph_app_add_permissions.png')} alt="6_ms_graph_app_add_permissions" width="800"style={{border: '1px solid black'}} />
 
-1. Also, an Application permission role is required. Click on **App roles**, then **Create app role**. Under this provide a display name for the role. Select **Applications** as the allowed member type. Provide **SecurityEvents.Read.All** as the value and provide a proper description for the same. Select the checkbox to enable the role and click **Apply**.
+1. Follow the steps below to enable Application permission role.
+    - In the Manage menu select App roles.
+    - Click the Create app role tab.
+      - Display name. Enter the display name for the role.
+      - Allowed member types. Select Applications as the allowed member type.
+      - Value. Enter SecurityEvents.Read.All as the value.
+      - Description. Enter a brief description.
+      - Select the checkbox to enable the app role .
+    - Click Apply.
 
-    ![7_ms_graph_app_add_role.png](/img/send-data/7_ms_graph_app_add_role.png)
+    <img src={useBaseUrl('/img/send-data/7_ms_graph_app_add_role.png')} alt="7_ms_graph_app_add_role" width="800"style={{border: '1px solid black'}} />
 ### Create a Microsoft Graph Security API Source
 
 When you create a Microsoft Graph Security API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -102,14 +110,14 @@ To configure a Microsoft Graph Security API Source:
 
 1. Enter a **Name** for the Source. The description is optional.
 
-    ![Mircrosoft Graph Security API Source input.png](/img/send-data/Microsoft-Graph-Security-API-Source-input.png)
+    <img src={useBaseUrl('/img/send-data/Microsoft-Graph-Security-API-Source-input.png')} alt="Microsoft-Graph-Security-API-Source-input" width="400" style={{border: '1px solid black'}} />
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    | Field Name | Value   |
-   | :-- | :-- | :-- |
-   | _siemForward  | true |  
+   | :-- | :-- |
+   | _siemForward  | True |  
    | _siemVendor  | Microsoft  |
    | _siemProduct | Graph Security API |  
    | _siemFormat	| JSON |
