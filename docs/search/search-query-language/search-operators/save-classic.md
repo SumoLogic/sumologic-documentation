@@ -18,6 +18,7 @@ save [append]\<myFolder/mySubFolder/myFileNam\>
 
 ## Rules
 
+* The file size limit for lookup tables is 8MB.
 * The file size limit for saved data is 500MB.
 * Queries that use the Save operator can't be [pinned](/docs/get-started/library#search-the-library).
 
