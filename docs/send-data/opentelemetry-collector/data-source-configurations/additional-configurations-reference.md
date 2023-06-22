@@ -49,7 +49,7 @@ Each collector name must be unique. Collector by default uses hostname of the ma
 
 ## Forcing a Collector's Name with Clobber
 
-Use the clobber flag as true if you want to delete the existing collector if a new collector is installed on a machine with same hostname. This is usefull for scenrio where a VM is deleted and initiaed again with same hostname. To enable this property true, create a file sumo-ot-clobber.yaml in otelcol-sumo/conf.d , add below configuration and restart your collector.
+Use the clobber flag as true if you want to delete the existing collector if a new collector is installed on a machine with same hostname. This is useful for scenario where a VM is deleted and initiated again with the same hostname. To enable this property true, create a file `sumo-ot-clobber.yaml` in `otelcol-sumo/conf.d`, add below configuration and restart your collector.
 
 ```yaml
 extensions:
