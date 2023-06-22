@@ -23,7 +23,7 @@ This App uses [Symantec Web Security Service](docs/send-data/hosted-collectors/c
 
 ```json title="Access Log"
  {
- "data": 
+ "data":
     [
         {
             "x-bluecoat-request-tenant-id": "24786",
@@ -66,22 +66,9 @@ To set up [Cloud to Cloud Integration Symantec Web Security Service Source](/doc
 
 ## Installing the Symantec Web Security Service App​
 
-This section has instructions for installing the Symantec Web Security Service App for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
 
-1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. Click **Add Integration**.
-1. Configure **Symantec Web Security Service** app using the steps described in the [Symantec Web Security Service Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/). If you already have set up your data, skip this step and click **Next**.
-1. Complete the following fields.
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and enter a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data that matches the time range query and has been received since the panel was created. Results will not be available right away, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Symantec Web Security Service Dashboards​
 
