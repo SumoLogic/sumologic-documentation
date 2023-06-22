@@ -346,7 +346,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'security',
-                label: 'Cloud SIEM/SOAR',
+                label: 'Security',
                 icon: 'security',
               },
               {

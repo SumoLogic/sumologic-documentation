@@ -176,7 +176,7 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "severity_score": 4,
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
-``` 
+```
 ## Sample Query
 
 ```sql title="Assets by Type"
@@ -191,7 +191,7 @@ _sourceCategory="Rapid7" assessed_for_policies // fetches assets
 ```
 
 ```sql title="Top 10 Vulnerabilities"
-_sourceCategory="Rapid7" (cvss_v2_access_complexity or asset_id) 
+_sourceCategory="Rapid7" (cvss_v2_access_complexity or asset_id)
 | join
 (json "id","severity","risk_score" as id, severity,risk_score) as vulnerability,
 (json "vulnerability_id","asset_id","finding_status" as vulnerability_id, asset_id, finding_status) as asset_vulnerability
@@ -209,7 +209,7 @@ To set up [Cloud to Cloud Integration Rapid7 Source](/docs/send-data/hosted-coll
 
 ## Installing the Rapid7 app​
 
-This section has instructions for installing the Sumo Logic app for Rapid7 and descriptions of each of the dashboards.
+This section has instructions for installing the Sumo Logic app for Rapid7.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.
