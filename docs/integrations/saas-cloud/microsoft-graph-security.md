@@ -1,7 +1,7 @@
 ---
 id: microsoft-graph-security
-title: Microsoft Graph Security 
-sidebar_label: Microsoft Graph Security 
+title: Microsoft Graph Security
+sidebar_label: Microsoft Graph Security
 description: The Microsoft Graph Security app for Sumo Logic enables you to identify security threats by analysing alert logs.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,7 +18,7 @@ Key features of the Microsoft Graph Security app include:
 
 ## Log types
 
-This app uses Sumo Logic’s Microsoft Graph Security Source to collect [Alerts](https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) from Microsoft Graph Security. 
+This app uses Sumo Logic’s Microsoft Graph Security Source to collect [Alerts](https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) from Microsoft Graph Security.
 
 :::info
 Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/resources/alert?view=graph-rest-1.0).
@@ -116,23 +116,9 @@ Follow the instructions for setting up [Cloud to Cloud Integration for Microsoft
 
 ## Installing the Microsoft Graph Security app​
 
-This section has instructions for installing the Microsoft Graph Security app for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Microsoft Graph Security app for Sumo Logic.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **Microsoft Graph Security** app using the steps described in the [Microsoft Graph Security Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft Graph Security dashboards​​
 
@@ -144,6 +130,6 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 
 ### Alerts Overview
 
-The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories. 
+The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories.
 
 The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
