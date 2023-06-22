@@ -14,7 +14,7 @@ An administrator can use CSE’s _Entity Groups_ feature to define groups of Ent
 
 Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that Entities will automatically inherit the properties of Entity Groups they match without manual edits.
 
-You can assign [criticality](entity-criticality.md), [tags](tags-insights-signals-entities-rules.md), and [suppression](about-signal-suppression.md) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
+You can assign [criticality](/cse/records-signals-entities-insights/entity-criticality/), [tags](/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), and [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
 
 Consider an Entity Group configured to:
 
@@ -106,7 +106,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
 
 ## Using tags in CSE rule expressions
 
-If you've applied a tag to an Entity, you can use the tag in a [rule expression](/docs/cse/rules/about-cse-rules.md#About_rule_expressions). For example, if you've attached a keyword tag "DB Server" to an Entity, this `array_contains` statement will return "true" if the Entity in a Record's `srcDevice_ip` field has the tag "DB Server"
+If you've applied a tag to an Entity, you can use the tag in a [rule expression](/docs/cse/rules/about-cse-rules/#about-rule-expressions). For example, if you've attached a keyword tag "DB Server" to an Entity, this `array_contains` statement will return "true" if the Entity in a Record's `srcDevice_ip` field has the tag "DB Server"
 
 ```
 array_contains(fieldTags["srcDevice_ip"], "DB Server")
