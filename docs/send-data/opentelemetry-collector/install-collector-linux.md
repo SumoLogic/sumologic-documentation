@@ -28,9 +28,20 @@ Supported Versions
 
 You can install our OpenTelemetry Collector using one of the following methods:
 
+* [UI Installation](#ui-installation)
 * [Install script](#install-script)
-* [UI Installation via App Catalog](#ui-installation-via-app-catalog)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+
+### UI Installation
+
+1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. On the OpenTelemetry Collection page, click **Add Collector**.
+1. On the left panel select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal.png')} alt="linux-terminal" style={{border: '1px solid black'}} width="900"/>
+1. Select/create installation token and customize your tags.
+1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
+1. Copy command and execute it in your system terminal where the collector needs to be installed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
+1. Wait for the installation to complete.
+1. Click **Next** to complete the installation process.
 
 ### Install Script
 
@@ -92,18 +103,6 @@ The following env variables can be used along with script:
 | name               | description        |
 |:-------------------|:-----------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
-
-### UI Installation via App Catalog
-
-1. Go to **App Catalog** and select **Linux**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux.png')} alt="linux in app catalog" />
-1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-overview.png')} alt="linux app overview" width="550" />
-1. Select **Add New Collector** and click **Next**. <br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-collector.png')} alt="set up collector" />
-1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-register-collector.png')} alt="add new collector" />
-1. Copy command and execute it in your system terminal.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal-installation.png')} alt="execute command in terminal" width="900"/>
-1. Wait for the installation to complete.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-registration-success.png')} alt="application installed successfully" />
-1. Read the prerequisite section.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-prerequisite.png')} alt="collector successfully registered" />
-1. Customize your source configuration, download it, place it in the directory `/etc/otelcol-sumo/conf.d`, and then restart your collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-configure.png')} alt="source customisation" />
-1. Wait for the installation to complete.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-linux-success.png')} alt="application installed successfully" />
 
 ### Manual step-by-step Installation
 
