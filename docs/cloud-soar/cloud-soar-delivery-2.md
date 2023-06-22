@@ -23,10 +23,10 @@ Delivery 2 of Cloud SOAR offers the following enhancements over our initial Clou
 
  * Open Integration Framework updates
       * [Integration Builder](#integration-builder) allows you to build integrations without needing to provide code
-     * Certified integrations allow you to customize JSON and table output schema (with the Bridge)
-     * Playbook actions configuration is rearranged for easier use
+     * Certified integrations allow you to customize JSON and table output schema
+     * Actions configuration during  playbook design is rearranged for easier use
+     * Integrations, and related action execution, can be done [in the cloud or through the Bridge](#cloud-or-bridge-execution). Only certified integrations can be executed in the cloud.
 * Architectural improvements
-     * Multi-tenant
      * Fully-functional in the Cloud (the Bridge is only required for custom integrations)
      * User and profile management is in Sumo Logic core platform instead of Cloud SOAR
      * Automatic scalability based on server load
@@ -52,7 +52,11 @@ You can create reports on incidents to share with others. You can also [create w
 1. Click the **+** icon in the upper left corner. 
 1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
 1. Rearrange the widgets in the report as needed. You can even add widgets to the header and footer.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
-2. Click **Save**.
+2. Click **Save**.  In the dialog:
+    1. Provide a **Report name** and a **Description**.
+    1. Click **Schedule** to schedule the report to run on a regular basis.
+    1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
+    1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
 3. Click **Export** to export the report to PDF. 
 4. Click **Open** to open the report later. 
 
@@ -106,6 +110,16 @@ You can build basic integrations without having to provide custom YAML files.
    1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Example integration" width="400"/>
    1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="Example integration" width="600"/>
 1. To test the new action, click the action. Click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Example integration" width="400"/>
+
+## Cloud or Bridge execution
+
+You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/cloud-soar/cloud-soar-bridge/).
+
+1. Select **Automation** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
+1. Select **Integrations** from the navigation menu at the left of the screen.
+1. Select an integration.
+1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-button.png')} alt="Resource edit button" width="600"/>
+1. In the **Edit resource** dialog, click the **Automation engine** field to select **Cloud execution** (for certified integrations only) or select a Bridge option (for custom integrations).<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-cloud-execution.png')} alt="Automation engine field" width="400"/>
 
 ## Standardized Cloud SOAR APIs
 
