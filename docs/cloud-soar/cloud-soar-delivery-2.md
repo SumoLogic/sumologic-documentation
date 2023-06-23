@@ -73,7 +73,7 @@ You can create widgets as needed to help analysts and administrators quickly get
 1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="250"/>
 1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" width="600"/>
 1. In **Name**, provide a name that clearly explains the widget's purpose.
-1.  In **Group by**, select whether you want incidents listed in the widget to be grouped by **Status**, **Incident ID**, or **Start time**.
+1. In **Group by**, select whether you want incidents listed in the widget to be grouped by **Status**, **Incident ID**, or **Start time**.
 1. On the left, select the type of widget to create (pie chart, bar chart, graph, table, or text).
 1. At the top, query for elements to view in the widget, such as incidents, notes, tasks, and attachments. 
 1. Click **Public** if you want to make the widget available for others to use. 
