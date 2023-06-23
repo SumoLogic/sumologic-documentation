@@ -101,44 +101,6 @@ When a user with that role filter runs a query, Sumo prepends the filter to the 
 (_collector=HR_Tools AND _sourceCategory=insurance) AND <user-query>
 ```
 
-#### Using Partitions and Scheduled Views in a search filter
-
-You can use Scheduled Views or Partitions in a search filter. For example, this role filter uses OR to grant access to log data from two partitions belonging to same tier:
-
-```sql
-(_index=indexA OR _index=indexB) 
-```
-
-When a user with that role filter runs a query, Sumo prepends the filter to the query with an AND:
-
-```sql
-(_index=indexA OR _index=indexB) AND <user-query>
-```
-
-This role filter below uses AND to grant access to log data with the partition “indexA” from the collector named “HR_Tools”:
-
-`_collector=HR_Tools AND _index=indexA`
-
-When a user with that role filter runs a query, Sumo  prepends the role filter to the  query with an AND:
-
-```sql
-(_collector=HR_Tools AND _index=indexA) AND <user-query>
-```
-
-When you use Scheduled Views or Partitions in a search filter,
-keep limitations and considerations in mind:
-
-* The use of a logical NOT to restrict access by Scheduled View or
-    Partition is not supported. For example, you cannot use expressions
-    like the following in a search filter:
-    * `!index = ipso`
-    * `!view = facto`
-* If you refer to multiple Scheduled Views or Partitions in a search
-    filter, you must separate them with an OR. For example, these are
-    not valid search filters:
-    * `_index=A _index = B`
-    * `_index=A AND _index=B `
-
 #### Using keywords in a search filter 
 
 You can include a string you want to search for in a role search filter. This role filter grants access to logs from the collector named “HR_Tools” that contain the string “enrollment”: 
@@ -178,22 +140,6 @@ When a user with that role filter runs a query, Sumo runs it like this:
 ```sql
 (_collector=HR* AND violation) AND <user-query>
 ```
-
-This role filter grants access to logs that contain the string “violation” from partitions whose name starts with “app”:
-
-```sql
-_index=app* AND violation
-```
-
-When a user with that role filter runs a query, Sumo runs it like this:
-
-```sql
-(_index=app* AND violation) AND <user-query>
-```
-
-:::note
-You can grant access to multiple Partitions using a wildcard only if the multiple Partitions reside in the same data tier. For example, if the filter `app*` matches partitions in two data tiers, it is not a valid search filter.
-:::
 
 #### Using ! as a NOT in a search filter
 
