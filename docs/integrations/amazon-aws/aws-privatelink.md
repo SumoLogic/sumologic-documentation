@@ -18,7 +18,75 @@ To send data to Sumo Logic through AWS PrivateLink, you'll need to configure an
 
 With the NLB-created and ALB-registered as a target, requests over AWS PrivateLink to the NLB are forwarded to the ALB.
 
-Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend on your Sumo Logic deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). If you're using the VPC in a different region, you need to set up VPC peering. Either way, you need to create an endpoint.
+Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend on your Sumo Logic deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). If you're using the VPC in a different region where Sumo's Privatelink endpoint service is set up, you need to set up VPC peering. Either way, you need to create an endpoint.
+
+<table><small>
+  <tr>
+    <td>Deployment</td>
+    <td>Collection Endpoint</td>
+    <td>AWS Region of Sumo PrivateLink Endpoint Service</td>
+  </tr>
+  <tr>
+    <td>AU</td>
+    <td>https://collectors.au.sumologic.com</td>
+    <td>ap-southeast-2</td>
+  </tr>
+  <tr>
+    <td>CA</td>
+    <td>https://collectors.ca.sumologic.com</td>
+    <td>ca-central-1</td>
+  </tr>
+  <tr>
+    <td>DE</td>
+    <td>https://collectors.de.sumologic.com</td>
+    <td>eu-central-1</td>
+  </tr>
+  <tr>
+    <td>EU</td>
+    <td>https://collectors.eu.sumologic.com<br/>
+    https://endpoint1.collection.eu.sumologic.com</td>
+    <td>eu-west-1</td>
+  </tr>
+  <tr>
+    <td>FED</td>
+    <td>https://collectors.fed.sumologic.com</td>
+    <td>us-east-1</td>
+  </tr>
+  <tr>
+    <td>IN</td>
+    <td>https://collectors.in.sumologic.com</td>
+    <td>ap-south-1</td>
+  </tr>
+  <tr>
+    <td>JP</td>
+    <td>https://collectors.jp.sumologic.com</td>
+    <td>ap-northeast-1</td>
+  </tr>
+  <tr>
+    <td>US1</td>
+   <td>https://collectors.sumologic.com<br/>
+   https://endpoint1.collection.sumologic.com<br/>
+   https://endpoint2.collection.sumologic.com<br/>
+   https://endpoint3.collection.sumologic.com<br/>
+   https://endpoint4.collection.sumologic.com<br/>
+   https://endpoint5.collection.sumologic.com</td>
+   <td>us-east-1</td>
+  </tr>
+  <tr>
+    <td>US2</td>
+    <td>https://collectors.us2.sumologic.com<br/>
+https://endpoint1.collection.us2.sumologic.com<br/>
+https://endpoint2.collection.us2.sumologic.com<br/>
+https://endpoint3.collection.us2.sumologic.com<br/>
+https://endpoint4.collection.us2.sumologic.com<br/>
+https://endpoint5.collection.us2.sumologic.com<br/>
+https://endpoint6.collection.us2.sumologic.com<br/>
+https://endpoint7.collection.us2.sumologic.com<br/>
+https://endpoint8.collection.us2.sumologic.com<br/>
+https://endpoint9.collection.us2.sumologic.com/</td>
+   <td>us-west-2</td>
+  </tr>
+</small></table>
 
 ## Create an endpoint to connect with the Sumo Logic endpoint service
 
