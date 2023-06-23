@@ -14,7 +14,7 @@ An administrator can use CSE’s _Entity Groups_ feature to define groups of Ent
 
 Note that membership in an Entity Group is not configured by explicitly assigning individual Entities to the group. Instead you define an Entity Group in terms of criteria, like name or IP address, so that Entities will automatically inherit the properties of Entity Groups they match without manual edits.
 
-You can assign [criticality](/cse/records-signals-entities-insights/entity-criticality/), [tags](/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), and [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
+You can assign [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/), [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), and [suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) status to an Entity Group, and those settings will be applied to all of the Entities in the group.
 
 Consider an Entity Group configured to:
 
