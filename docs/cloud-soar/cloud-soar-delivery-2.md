@@ -41,7 +41,7 @@ You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo L
 1. Under **My Widgets** or **Public**, select widgets you'd like to add to the dashboard. These are the same widgets that are available to use in [reports](#create-a-report). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets. 
 1. Rearrange the widgets in the dashboard as desired. 
 1. (Optional) Click **Public** at the top of the dashboard panel if you want to make the dashboard available for others to use. 
-1. Click **Export** to to the upper-right of the dashboard panel to export the dashboard to PDF.  
+1. (Optional) Click **Export** to to the upper-right of the dashboard panel to export the dashboard to PDF.  
 
 ## Create a report
 
