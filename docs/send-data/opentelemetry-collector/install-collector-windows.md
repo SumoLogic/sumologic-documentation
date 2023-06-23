@@ -32,7 +32,7 @@ You can install our OpenTelemetry Collector using either of the following method
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid black'}} width="900"/>
+1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid black'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
 1. Copy the command and execute it in the powershell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="900" />
