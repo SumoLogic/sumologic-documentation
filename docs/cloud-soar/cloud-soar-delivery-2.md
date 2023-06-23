@@ -83,7 +83,7 @@ You can create widgets as needed to help analysts and administrators quickly get
 
 You can build basic integrations without having to provide custom YAML files. 
 
-1. Select **Automation** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
+1. Click the gear icon in the upper-right corner and select **Automation**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
 1. Select **Integrations** from the navigation menu at the left of the screen.
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="300"/>
 1. Fill out the **New Integration** dialog:
