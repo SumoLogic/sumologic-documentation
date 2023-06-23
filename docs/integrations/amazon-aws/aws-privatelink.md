@@ -26,9 +26,9 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 
 <table><small>
   <tr>
-    <td>Deployment</td>
-    <td>Collection Endpoint</td>
-    <td>AWS Region of Sumo PrivateLink Endpoint Service</td>
+    <td><strong>Deployment</strong></td>
+    <td><strong>Collection Endpoint</strong></td>
+    <td><strong>AWS Region of Sumo PrivateLink Endpoint Service</strong></td>
   </tr>
   <tr>
     <td>AU</td>
