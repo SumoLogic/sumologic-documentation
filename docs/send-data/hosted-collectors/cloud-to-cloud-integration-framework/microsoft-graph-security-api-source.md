@@ -75,7 +75,7 @@ The following steps show you how to create a service application:
 
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
-    You need to find and select the **SecurityAlert.Read.All**, **SecurityAlert.ReadWrite.All**, **SecurityIncident.Read.All**, **SecurityIncident.ReadWrite.All** and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) of all the available security permissions.
+    You need to find and select the **SecurityAlert.Read.All**, **SecurityAlert.ReadWrite.All**, **SecurityIncident.Read.All**, **SecurityIncident.ReadWrite.All** and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
 
     :::note
     An Administrator must approve (grant) these permissions before the Source will function.
@@ -83,15 +83,15 @@ The following steps show you how to create a service application:
 
     <img src={useBaseUrl('/img/send-data/6_ms_graph_app_add_permissions.png')} alt="6_ms_graph_app_add_permissions" width="800"style={{border: '1px solid black'}} />
 
-1. Follow the steps below to enable Application permission role.
-    - In the Manage menu select App roles.
-    - Click the Create app role tab.
-      - Display name. Enter the display name for the role.
-      - Allowed member types. Select Applications as the allowed member type.
-      - Value. Enter SecurityEvents.Read.All as the value.
-      - Description. Enter a brief description.
-      - Select the checkbox to enable the app role .
-    - Click Apply.
+1. Follow the steps below to enable the Application permission role.
+   - In the Manage menu, select App roles.
+   - Click the **Create app role** tab.
+      - **Display name**. Enter the display name for the role.
+      - **Allowed member types**. Select Applications as the allowed member type.
+      - **Value**. Enter `SecurityEvents.Read.All` as the value.
+      - **Description**. Enter a brief description.
+      - Select the checkbox to enable the app role.
+    - Click **Apply**.
 
     <img src={useBaseUrl('/img/send-data/7_ms_graph_app_add_role.png')} alt="7_ms_graph_app_add_role" width="800"style={{border: '1px solid black'}} />
 ### Create a Microsoft Graph Security API Source
@@ -113,29 +113,29 @@ To configure a Microsoft Graph Security API Source:
     <img src={useBaseUrl('/img/send-data/Microsoft-Graph-Security-API-Source-input.png')} alt="Microsoft-Graph-Security-API-Source-input" width="400" style={{border: '1px solid black'}} />
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    | Field Name | Value   |
    | :-- | :-- |
-   | _siemForward  | True |  
+   | _siemForward  | true |  
    | _siemVendor  | Microsoft  |
    | _siemProduct | Graph Security API |  
    | _siemFormat	| JSON |
    | _siemEventID| 	This field is dynamically set based on the value of the category key in the log. <br/> `{{category}}` |
 
-
-2. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-3. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [prerequisite](#prerequisite) step.
+1. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [prerequisite](#prerequisite) step.
 
-4. The **Polling Interval** is set to 5 minutes by default, you can adjust it based on your needs.
+1. The **Polling Interval** is set to 5 minutes by default. You can adjust it based on your needs.
 
-5. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
+1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 
-5. When you are finished configuring the Source, click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
