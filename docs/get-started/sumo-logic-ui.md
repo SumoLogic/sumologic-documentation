@@ -3,7 +3,7 @@ id: sumo-logic-ui
 title: Tour the Sumo Logic UI
 ---
 
-[**Getting Started**](/docs/get-started/onboarding) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
+The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the Left Navigation Bar
 

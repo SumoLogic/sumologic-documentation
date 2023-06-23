@@ -1,8 +1,8 @@
 ---
 id: sql
-title: Sumo Logic App for Azure SQL
+title: Azure SQL
 sidebar_label: Azure SQL
-description: The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL.
+description: The Sumo Logic app for Azure SQL Database helps you monitor activity in Azure SQL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ Azure SQL Database is a managed relational cloud database service. The Sumo Logi
 
 ## Log types
 
-The Sumo Logic App for Azure SQL App uses the following log types:
+The Sumo Logic app for Azure SQL app uses the following log types:
 
 * Metric
 * QueryStoreRuntimeStatisticsEvent
@@ -27,9 +27,9 @@ The Sumo Logic App for Azure SQL App uses the following log types:
 For details on Azure SQL logs and metrics, see [Enable logging](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#enable-logging) in Azure help.
 
 
-### Sample Log Messages
+### Sample log messages
 
-```json title="ErrorEvent"
+```json title="Error Event"
 {
 	"LogicalServerName":"npande-test-db-server",
 	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a",
@@ -52,8 +52,7 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 }
 ```
 
-
-```json title="DatabaseWaitStatisticsEvent"
+```json title="Database Wait Statistics Event"
 {
 	"LogicalServerName":"npande-test-db-server",
 	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"",""ResourceGroup"":""npandeTestDBResGrp"",""time"":""2018-07-09T05":"13":34.520Z",""resourceId"":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB",
@@ -73,7 +72,6 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 }
 ```
 
-
 ### Sample Query
 
 ```sql title="Top 10 Errors"
@@ -85,85 +83,69 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 | top 10 message by eventCount, message asc
 ```
 
-
 ## Collecting Logs and Metrics
 
-This section has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
+This section has instructions for collecting logs and metrics for the Azure SQL app, as well as a sample log message and a query sample.
 
 ### Collect diagnostic logs from Azure Monitor by streaming to EventHub
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and logs. The pipeline is described on [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).  
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
 
-1. Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).   \
-In Step 1, you create an HTTP Source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
-`Azure/DB/SQL/Logs`
+1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
+
+	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
+
+	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
+
 2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
-    1. Login into Azure Portal.
-    2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
-    3. In the Monitoring Section, the** Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
-    4. Enter a name.
-    5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
-    6. Select an Azure subscription.
-    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md). It should start with `“SumoAzureLogsNamespace<UniqueSuffix>”`.
-    8. Select insights-operational-logs from the **Select event hub name** dropdown.
-    9. Select RootManageSharedAccessKey from **Select event hub policy name **dropdown.
-    10. Click **OK** to exit event hub configuration.
-    11. Check the box under **Logs** labeled “Audit”.
-    12. Click **Save**.
+	1. Sign in to [Azure Portal](https://portal.azure.com/).
+	2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
+	3. In the Monitoring Section, the** Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
+	4. Enter a name.
+	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
+	6. Select an Azure subscription.
+	7. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
+	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
+	10. Select the **Audit** label under **Logs**.
+	11. Click **Save**.
 
-### Collect metrics from Azure Monitor  by streaming to EventHub
+### Collect metrics from Azure Monitor by streaming to EventHub
 
 In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
 1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
-In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
+In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
-   * From the left pane, select **ALL Services.
-   * Search for and select "Monitor".
-   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
-   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.
-   * Once diagnostics are enabled, click **Add a diagnostic setting**.
-   * The **Diagnostic Settings** page appears.
-   * In the left pane:
-      * Enter a name for the diagnostic setting.
-      * Click the  **Stream to an event hub **checkbox.
-      * Select **Configure event hub.** The right pane appears.
-   * In the right pane:
-      * Choose a **Subscription**.
-      * Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
-      * Select **insights-metrics-pt1m** as the event hub name.
-      * Select an event hub policy name. You can use the default policy** RootManageSharedAccessKey**.
-   * Check the AllMetrics box.
-   * Click **OK**.
-   * Save the **Diagnostics Setting**.
+   1. From the left pane, select **ALL Services**.
+   1. Search for and select **Monitor**.
+   1. In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
+   1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings**.
+   1. Once diagnostics are enabled, click **Add a diagnostic setting**.
+   1. The **Diagnostic Settings** page appears.
+   1. In the left pane:
+      1. Enter a name for the diagnostic setting.
+      1. Click the **Stream to an event hub** checkbox.
+      1. Select **Configure event hub.** The right pane appears.
+   1. In the right pane:
+      1. Choose a **Subscription**.
+      1. Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
+      1. Select **insights-metrics-pt1m** as the event hub name.
+      1. Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
+   1. Check the **AllMetrics** box.
+   1. Click **OK**.
+   1. Save the **Diagnostics Setting**.
 
+## Installing the Azure SQL app
 
+This section provides instructions on how to install the Azure SQL app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-## Installing the Azure SQL App
+{@import ../../reuse/apps/app-install.md}
 
-Now that you have set up a collection of Azure SQL logs and metrics, install the Azure SQL App to use the pre-configured searches and dashboards.
+## Viewing the Azure SQL dashboards
 
-**To install the app**
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**.
-3. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-4. **Azure SQL Metrics Source**. Select the source category that you configured for the .... source.
-5. **Azure SQL Log Source**. Select the source category that you configured for the ... source.
-6. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-7. Click **Add to Library**.
-
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing the Azure SQL Dashboards
-
-This section describes the dashboards in the Sumo Logic App for Azure SQL.
-
+This section describes the dashboards in the Sumo Logic app for Azure SQL.
 
 ### Overview
 
@@ -203,7 +185,6 @@ See the count of logical servers, databases, errors; and the “top 10” active
 
 **Operations Trend**. A stacked bar chart that shows the count of different operations over the last 24 hours.
 
-
 ### Blocking Stats
 
 See information about blocking queries in Azure SQL, including lock mode usage, lock duration, and details about block events.
@@ -222,9 +203,7 @@ See information about blocking queries in Azure SQL, including lock mode usage, 
 
 **Blocks by Database Trend**. A bar chart that shows the total lock duration by logical server and database on a timeline for the last 7 days.
 
-**Azure SQL - DatabaseWait Stats**
-
-Wait Events by Database. A donut chart that shows the count of wait events by logical server-database combination over the last 24 hours.
+**Azure SQL - DatabaseWait Stats**. Wait Events by Database. A donut chart that shows the count of wait events by logical server-database combination over the last 24 hours.
 
 **Wait Events Breakdown by Database**. A stacked bar chart that shows the breakdown of wait events by wait type on a timeline over the last 24 hours.
 
@@ -234,10 +213,9 @@ Wait Events by Database. A donut chart that shows the count of wait events by lo
 
 **Detailed Stats.** A table that lists information about wait events in the last 24 hours.
 
-
 ### Errors
 
-See information about errors in Azure SQL, including total error count, top 10 error numbers and error messages, errors by severity and database, error trend and comparison analyses, and error details.
+See information about errors in Azure SQL, including total error count, top 10 error numbers and error messages, errors by severity and database, error trend and comparison analyzes, and error details.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/AzureSQL/azure-sql-errors.png')} alt="Errors" />
 
@@ -258,7 +236,6 @@ See information about errors in Azure SQL, including total error count, top 10 e
 **Top 10 Error Messages**. A table that lists the top 10 error messages, and the count of each over the last 24 hours.
 
 **Error Details**. A table that lists the details of errors that occurred during the previous 24 hours.
-
 
 ### Metrics
 
@@ -351,7 +328,6 @@ For more information about the statistics presented on the QueryStoreRuntime Sta
 
 **Execution Type of Query**. A stacked column chart that shows the count of queries by execution type: Regular, Aborted, or Exception over the last 24 hours.
 
-
 ### QueryStoreWait Stats
 
 See information about how much time a database spent waiting on different wait types.
@@ -394,7 +370,6 @@ For more information about the data presented on the SQLInsights dashboard, see 
 **Issue State**. A table that shows the current state of unique issues, along with additional information about the issues over the last 7 days.
 
 **Issue Details**. Displays information about the progress of issues throughout the resolution process.
-
 
 ### Timeouts
 

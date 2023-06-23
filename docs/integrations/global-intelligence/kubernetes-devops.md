@@ -5,6 +5,10 @@ sidebar_label: Global Intelligence for Kubernetes DevOps
 description: The Global Intelligence for Kubernetes DevOps application helps infrastructure engineers and DevOps users benchmark the maturity of their Kubernetes adoption and minimize risk of Kubernetes infrastructure incidents by optimizing resource requests and limits for containers.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="50"/>
+
 The Global Intelligence for Kubernetes DevOps application helps infrastructure engineers and DevOps users benchmark the maturity of their Kubernetes adoption and minimize risk of Kubernetes infrastructure incidents by optimizing resource requests and limits for containers.
 
 ## Availability
@@ -38,9 +42,13 @@ The Sumo Global Intelligence for Kubernetes DevOps app provides insights into yo
 
 Follow the steps on the [Sumo Logic Kubernetes Deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#metrics) to configure the collection for Kubernetes Benchmark metrics.
 
-## Installing the Global Intelligence for Kubernetes DevOps App and Viewing Dashboards
+## Installing the GI for Kubernetes DevOps App
 
-Below are the instructions for installing the Sumo App for Kubernetes DevOps as well as descriptions of each of the app dashboards. 
+Below are the instructions for installing the Sumo App for Kubernetes DevOps.
+
+{@import ../../reuse/apps/app-install.md}
+
+## Viewing GI Kubernetes DevOps Dashboards
 
 ### Dashboard Filters  
 

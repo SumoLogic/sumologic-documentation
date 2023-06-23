@@ -12,9 +12,48 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 ## Before you start
 
-You need to install apps and determine account aliases before deploying.
+* If this is the first time you've deployed our AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/) topic for more information.
+* Complete the prerequisites for StackSets as described in the [AWS documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html).
 
-## Step 1: Install Apps
+## Step 1: Open the CloudFormation template
+
+1. Sign in to the AWS Management console.
+1. Choose an option to invoke AWS CloudFormation Template:
+    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
+    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
+    :::note
+    If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
+    :::
+1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
+    :::warning
+    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
+    :::
+1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
+
+## Step 2: Sumo Logic access configuration 
+
+The below table displays the response to each prompt during Step 2.
+
+| Prompt | Guideline |
+|:--|:--|
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for more information on Sumo Logic deployments. |
+| Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys.md) for more information. |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
+| Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
+| Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
+
+## Step 3: AWS account alias 
+
+The below table displays the response to each prompt during Step 3.
+
+| Prompt | Guideline |
+|:--|:--|
+| Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). This name will appear in the Sumo Logic Explorer View, metrics and logs can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/> Leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
+| S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
+
+## Step 4: Install Apps
+
+Perform the following steps to install apps.
 
 1. Complete the prerequisites for StackSets as described in the [AWS documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html).
 1. Install the apps by running the AWS CloudFormation Stack once in any given account and region. Use the configuration below to set up only app dashboards.
@@ -26,9 +65,9 @@ You need to install apps and determine account aliases before deploying.
 1. Enable ELB Classic Access logging as **None** and Create Sumo Logic ELB Classic Logs Source as **No**. <br/>  ![Multiaccount6.png](/img/observability/Multiaccount6.png)
 1. Location where you want the App to be Installed as **PersonalFolder**. And for **Do you want to share App with whole organization**, set as **True**.<br/>  ![Multiaccount7.png](/img/observability/Multiaccount7.png)
 
-## Step 2: Determine Account Aliases
+## Step 5: Determine account aliases
 
-If you are going to deploy the solution in multiple AWS accounts, we highly recommend that you prepare a CSV file that maps your AWS Account-ids to account aliases. These aliases should be something that makes it easy for you to identify what this AWS account is being used for (for example dev, prod, billing, and marketplace). These names will appear in the Sumo Logic Explorer View, metrics, and logs and can be queried using the “account field”.
+If you are going to deploy the solution in multiple AWS accounts, we highly recommend that you prepare a CSV file that maps your AWS Account-ids to account aliases. These aliases should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). These names will appear in the Sumo Logic Explorer View, metrics, and logs and can be queried using the “account field”.
 
 The following is an example of the CSV file format to use:
 
@@ -48,7 +87,7 @@ In case you do not provide a CSV file or if we detect that it does not have the 
     in your AWS account.
 1. Click **Create StackSet**.  
     ![CloudFormation_Stackset 1.png](/img/observability/ClodFormation_Stackset_1.png)
-1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.1/sumologic_observability.master.template.yaml` in the Amazon S3 URL option and click **Next**. If you would like to download or inspect this or other versions of this template, please visit the [change log](../changelog.md) page.<br/>  ![multi-create-stack.png](/img/observability/multi-create-stack.png)
+1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option and click **Next**. If you'd like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).<br/>  ![multi-create-stack.png](/img/observability/multi-create-stack.png)
 1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy the AWS Observability Solution](/docs/observability/aws/deploy-use-aws-observability) section with the following exception:
     * Leave the field “Alias for AWS Account Identification” blank.  <br/>  ![aws-field.png](/img/observability/aws-field.png)
     * Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  <br/>  ![aws-url.png](/img/observability/aws-url.png)

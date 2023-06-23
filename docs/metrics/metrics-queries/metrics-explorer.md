@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page describes the Metrics Explorer UI and how to use it.
 
 :::tip
-If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](/docs/metrics/metrics-queries/metrics-explorer).
+If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](/docs/metrics/metrics-queries/metrics-explorer/#switch-to-the-classic-metrics-ui).
 :::
 
 ## About the UI
@@ -18,8 +18,8 @@ If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics
 The Metrics Explorer appears when you open a new metrics tab. The page
 has two modes:
 
-* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](/docs/metrics/metrics-queries/metrics-explorer).
-* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](/docs/metrics/metrics-queries/metrics-explorer).
+* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](/docs/metrics/metrics-queries/metrics-explorer/#about-basic-mode-ui).
+* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui).
 
 If your query supports basic mode, you can freely move between basic and advanced mode to build and run your query.
 
@@ -62,7 +62,7 @@ The key components of the UI are:
 | B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
 | D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
-| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart.  |
+| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards-new/panels/modify-chart).  |
 | F | The icons on the right of the **Panel Type** area allow you to add a query, hide a query, clear a query, enter advanced mode, and duplicate a query. |
 | G | The icons in this area allow you to add another query row, hide a query, and open the more options menu.
 | H | The icons in this area allow you to save and share metric queries. |
@@ -162,7 +162,7 @@ If the query editor mode can't be adjusted, it is changed to advanced mode so th
 
     ![query-visualization.png](/img/metrics/query-visualization.png)
 
-1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) syntax and a description of the operator.
+1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui) syntax and a description of the operator.
 
     ![delta-hover.png](/img/metrics/delta-hover.png)
 
@@ -189,7 +189,7 @@ For some chart types, you can use the **Thresholds** tab in the **Display Settin
     * **includes.** Any value between the two values you specify will violate the threshold.
     * **excludes**. Every value NOT between the two values you specify will violate the threshold.
 5. Threshold bands appear on the chart. The red band shows the Critical threshold, the yellow band is Warning. <br/>
-  The chart type in the screenshot below is a line chart. For other chart types, the threshold visualization may vary. For example in bar and column charts, the bars and columns are shaded yellow, red, and green  in accordance with the thresholds defined.<br/>
+  The chart type in the screenshot below is a line chart. For other chart types, the threshold visualization may vary. For example, in bar and column charts, the bars and columns are shaded yellow, red, and green  in accordance with the thresholds defined.<br/>
   The critical threshold has higher priority than the warning threshold. If the thresholds you define overlap, only the Critical shading (red) is applied to the overlapping area. fill-green.png
 6. If you toggle the **Fill remaining area as green** option, the portion of the chart with no thresholds is shaded in green. <br/><img src={useBaseUrl('img/metrics/fill-green.png')} alt="fill-green.png"/>
 7. If you toggle the **Highlight Violations** option, the horizontal threshold shading is removed. Instead you’ll see vertical red and yellow highlighting in the timelices where those thresholds were violated. <br/> <img src={useBaseUrl('img/metrics/highlight-mode.png')} alt="highlig-mode.png"/>
@@ -202,7 +202,7 @@ To add an additional query:
 
 1. Click **Add Query** to the right of the query builder area. <br/>![add-query.png](/img/metrics/add-query.png)
 1. A new row, labeled #B, is added to the query builder area.
-1. Follow the steps in [Create a metric query](/docs/metrics/metrics-queries/metrics-explorer) to build another query, and click the run icon to run the query.
+1. Follow the steps in [Create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) to build another query, and click the run icon to run the query.
 1. Your visualization is updated to chart the additional query. <br/>![two-queries.png](/img/metrics/two-queries.png)
 
 ## Join metric queries

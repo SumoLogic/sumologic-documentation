@@ -2,9 +2,12 @@
 id: netskope-webtx-source
 title: Netskope WebTx Source
 sidebar_label: Netskope WebTx
+description: Our Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
 
 The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.html) integration ingests Web Transaction logs from Netskope Event Stream.
 
@@ -36,19 +39,19 @@ You can click on the status icon to open a Health Events panel with details on e
 
 ## Data Sources
 
-The netskope-webtx access a PubSub lite service hosted by Google to retrieve web transaction logs. Details on what is ingested can be found [here](https://docs.netskope.com/en/transaction-event-fields.html)
+The netskope-webtx access a PubSub lite service hosted by Google to retrieve web transaction logs using the [v2 dataexport Iterator Endpoint](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints.html). Details on what is ingested can be found [here](https://docs.netskope.com/en/transaction-event-fields.html).
 
 
 ## Setup and Configuration
 
-Netskope Web Transactions integration needs to be configured using Netskope Streaming credentials. You can collect the subscription path and credentials [here](https://docs.netskope.com/en/netskope-transaction-events.html)
+Netskope Web Transactions integration needs to be configured using Netskope Streaming credentials. You can collect the subscription path and credentials [here](https://docs.netskope.com/en/netskope-transaction-events.html).
 
 
-### Create an Netskope WebTx API Source
+### Create a Netskope WebTx API Source
 
-When you create an Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Netskope WebTx API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-**To configure an Netskope WebTx API Source:**
+**To configure a Netskope WebTx API Source:**
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted** **Collector.
@@ -173,7 +176,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>

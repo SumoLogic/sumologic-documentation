@@ -5,8 +5,7 @@ description: Partitions speed the search process by allowing an Admin to filter 
 ---
 
 import Iframe from 'react-iframe';
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition allows you to improve search performance by searching over a smaller number of messages. Use the Partitions page to set up and manage partitions. To access the Partitions page, go to **Manage Data** > **Logs** > **Partitions**.
 
@@ -31,16 +30,12 @@ You define the data that will reside in a partition by defining a routing expres
 * To create and manage partitions, you must be an Admin or you must have the Manage Partitions [role capability](../users-roles/roles/role-capabilities.md). 
 * There is a limit of 50 partitions per account.
 * You can make the following edits to an existing partition:
-
-  * You can change the routing expression, unless the partition is decommissioned.
-
+   * You can change the routing expression, unless the partition is decommissioned.
 * You cannot make the following changes to a partition: 
-
-  * You can’t change or reuse a partition name.
-  * You can’t change the data tier the partition resides in.
-
+   * You can’t change or reuse a partition name.
+   * You can’t change the data tier the partition resides in.
 * Partitions cannot be deleted, although you can [decommission](decommission-partition.md) them. This is because a partition may include log messages that aren’t stored anywhere else, so if it’s deleted, messages will be lost. If you no longer need a partition, you can decommission it.
-* A Partition name cannot start with `sumologic_` or an underscore `_`. 
+* Partition names cannot start with `sumologic_` or an underscore `_`. 
 
 ## Micro Lesson: Partitions Basics
 
@@ -59,4 +54,59 @@ You define the data that will reside in a partition by defining a routing expres
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/create-edit-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <p>Learn how to create and edit a Partition in an Index.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/view-partition-details"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <p>Learn how to view details about a Sumo Logic Partition.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/run-search-against-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <p>Learn how to run a search against data in a Partition.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/edit-data-forwarding-destinations-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
+  <p>Learn how to specify Data Forwarding settings for a Partition.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Rentention</h4></a>
+  <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/decommission-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
+  <p>Learn how to decommission a Partition to keep it from being started.</p>
+  </div>
+</div>
+<div className="box smallbox7 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
+  <p>Get to know about Sumo Logic's Data Tiers feature.</p>
+  </div>
+</div>
+<div className="box smallbox8 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/data-tiers-faqs">  <img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
+  <p>Get answers on various FAQs about Data Tiers.</p>
+  </div>
+</div>
+<div className="box smallbox9 card">
+  <div className="container">
+  <a href="/docs/manage/partitions-data-tiers/searching-data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
+  <p>Learn how to search specific Data Tiers.</p>
+  </div>
+</div>
+</div>

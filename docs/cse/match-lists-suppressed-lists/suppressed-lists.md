@@ -17,7 +17,7 @@ Here is an example of a Suppressed List.
 
 ![suppressed-list.png](/img/cse/suppressed-list.png)
 
-Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used)?
+Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used).
 
 When you create a Suppressed List, you can choose one of the following as its Target Column.
 
@@ -38,6 +38,14 @@ When you create a Suppressed List, you can choose one of the following as its Ta
 * Destination IP ASN
 * Destination IP ISP
 * Destination IP Organization
+
+## Suppressed List or Match List?
+
+When deciding whether to put an indicator on a Suppressed List or a Match List, consider the following.
+
+Suppressed Lists are intended for situations in which you want to suppress *any* Signal with a Record that contains a suppressed indicator. You don’t need to reference a suppressed list in a rule expression for suppression to occur. 
+
+Match Lists are for when you want to use the existence or absence of an indicator to determine whether a specific rule or set of rules should fire a Signal. So, a Match List only has an effect when referenced by a rule expression.
 
 ## How are Suppressed Lists used? 
 
@@ -60,13 +68,6 @@ If any of the IP addresses within the Record match one of the “vuln_scanner”
 
 For more information about referring to Suppressed List data in rules, see [Match Lists](/docs/cse/match-lists-suppressed-lists) in the *About CSE Rules* topic.
 
-## Suppressed List or Match List?
-
-When deciding whether to put an indicator on a Suppressed List or a Match List, consider the following.
-
-Suppressed Lists are intended for situations in which you want to suppress *any* Signal with a Record that contains a suppressed indicator. You don’t need to reference a suppressed list in a rule expression for suppression to occur. 
-
-Match Lists are for when you want to use the existence or absence of an indicator to determine whether a specific rule or set of rules should fire a Signal. So, a Match list only has an effect when referenced by a rule expression.
 
 ## Suppressed List limitations 
 
@@ -83,7 +84,7 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
    1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
    1. **Target Column**. The type of Record field to which items on the list should be compared.
     :::note
-    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information see [Custom Match List Columns](custom-match-list-columns.md).
+    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](custom-match-list-columns.md).
     :::
    1. Click **Create**.
 1. The Suppressed List now appears on the **Suppressed Lists** page.  <br/>  ![suppressed-list-page-2.png](/img/cse/suppressed-list-page-2.png)

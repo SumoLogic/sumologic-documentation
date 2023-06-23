@@ -85,7 +85,7 @@ CSE compares the contents of every message to your Match Lists. When it finds a 
 
 ## Suppressed List processing
 
-CSE’s Suppressed Lists feature is similar to Match Lists. A Suppressed List is a list of values of a particular field type, for example an IP address or a file hash. When an incoming message contains a value found on a Suppressed List, CSE prevents any rules that the incoming message matches from firing.
+Cloud SIEM's Suppressed Lists feature is similar to Match Lists. A Suppressed List is a list of values of a particular field type, for example, an IP address or a file hash. When an incoming message contains a value found on a Suppressed List, Cloud SIEM prevents any rules that the incoming message matches from firing.
 
 ## Threat Intel processing
 

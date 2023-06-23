@@ -1,11 +1,13 @@
 ---
 id: qualys-vmdr-source
-title: Qualys VMDR
+title: Qualys VMDR Source
 sidebar_label: Qualys VMDR
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="120" />
 
 The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), knowledgeBase data from [KnowledgeBase API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf)
 
@@ -91,7 +93,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/api/2.0/fo/asset/host/vm/detection/</code>
    </td>
-   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic.<br />
+   Permissions - <code>Managers</code> view all VM scanned hosts in subscription. <code>Auditors</code> have no permission to view VM scanned hosts. <code>Unit Managers</code> view VM scanned hosts in the user’s assigned business unit. <code>Scanners</code> and <code>Readers</code> view VM scanned hosts in the user’s account.<br />
+   API details are on page 496 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
   <tr>
@@ -99,7 +103,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/api/2.0/fo/knowledge_base/vuln/</code>
    </td>
-   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment. API details are on page 200 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment.<br />
+   Permissions - A subscription must be granted permission to run this API function. Roles <code>Manager</code>, <code>Unit Manager</code>, <code>Scanner</code>, <code>Reader</code> are granted a permission <code>Download vulnerability data from the KnowledgeBase</code>. Role <code>Auditor</code> has no such permission.<br />
+   API details are on page 209 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
   <tr>
@@ -107,7 +113,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/rest/2.0/search/am/asset/</code>
    </td>
-   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="https://help.sumologic.com/docs/cse/administration/inventory-sources-and-data/">inventory data</a>. API details are on page 24 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>.<br />
+   Permissions - User must have the <code>GAV/CSAM</code> module and the <code>App API Enabled</code> option enabled for that role. Additionally, the user must have the <code>Allow user view access to all objects</code> checkbox enabled under <strong>Roles And Scopes</strong> within the user settings.<br/>
+   API details are on page 27 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
 </table>
@@ -115,7 +123,7 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 
 ### Is anything changed with data for computer inventory?
 
-Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](https://help.sumologic.com/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
+Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
 
 - The `openPortListData` key only contains information about ports open since the last time computer asset was ingested instead of listing all open port history from all time.
 - The `softwareListData` is reduced down from the full details to simply a list/array of software names using the full name.

@@ -66,7 +66,7 @@ The following AWS Lambda environment variables are supported in both the Lambda 
 
 If you are configuring log collection for VPC flow logs, see the Environment variables for VPC flow log collection section on Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation.
 
-Define variables in the `Environment `section of the Cloud Formation template.
+Define variables in the `Environment` section of the CloudFormation template.
 
 ```
 "Environment": {
@@ -179,7 +179,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
    * **EmailID** (Optional) Used for alerts.
    * **IncludeLogGroupInfo.**  Set to true to include loggroup/logstream values in logs. The default value is     False. For AWS Lambda Logs **IncludeLogGroupInfo** must be set to **True**; for VPC Flow Logs it's optional. 
    * **LogFormat.** For VPC logs, choose either VPC-JSON (JSON format) or VPC-RAW (raw messages). The default value is Others. 
-   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
+   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
 
     :::note
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
@@ -213,7 +213,7 @@ If you receive an alarm email like the one shown in the previous section, the n
 
  * `SumoCWProcessDLQLambda` may not be able to process messages as quickly as the messages are received. In this case, you may want to use the Lambda console to increase the number of workers specified by the `NUM_OF_WORKERS` environment variable.
 
- * `SumoCWProcessDLQLambda` may be unable process incoming messages because of an error in the message format or a configuration problem, for example an error in the HTTP endpoint configuration. Test the function with the message in the Lambda console to see whether it is able to process the message and send it to Sumo.
+ * `SumoCWProcessDLQLambda` may be unable process incoming messages because of an error in the message format or a configuration problem, for example, an error in the HTTP endpoint configuration. Test the function with the message in the Lambda console to see whether it is able to process the message and send it to Sumo.
 
 ## Subscribe SumoCWLogsLambda to CloudWatch Log Groups
 

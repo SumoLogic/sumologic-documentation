@@ -41,7 +41,7 @@ The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
 
 For example, a **scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching _sourceCategory will fall under the scope of the given budget.
 
-See more [budget assignment examples](#budget-assignment) below and review the [rules](#rules) above.
+See more [budget assignment examples](#budget-assignment-examples) below and review the [rules](#rules) above.
 
 ### Versions
 
@@ -293,11 +293,23 @@ _index=sumologic_system_events "IngestBudget"
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Warning"
 ```
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Assign Collector to Ingest Budget</h4></a>
+  <p>Learn how to assign a Collector to an Ingest Budget.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Ingest Budgets Quickstart Tutorial</h4></a>
+  <p>Learn how to create and use Ingest Budgets.</p>
+  </div>
+</div>
+</div>

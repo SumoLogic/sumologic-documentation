@@ -5,7 +5,9 @@ sidebar_label: Generate CSE Signals With a Scheduled Search
 description: You can generate a CSE Signal with a scheduled search.
 ---
 
-This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. Before you start using scheduled searches to create CSE Signals, it is helpful to understand what Signals are, and how they relate to the generation of CSE Insights. For information about how it all works see [Insight Generation Process](../../cse/records-signals-entities-insights/insight-generation-process.md). 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. Before you start using scheduled searches to create CSE Signals, it is helpful to understand what Signals are, and how they relate to the generation of CSE Insights. For information about how it all works see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/). 
 
 :::note
 For a more detailed description of the options you can configure for a scheduled search, see [Schedule a Search](schedule-search.md).
@@ -63,8 +65,11 @@ type you select. A field whose name does not match a CSE attribute will not be p
 
 ## Scheduling the search
 
-1. After creating and saving your search, click the save icon.<br/> ![save-as.png](/img/alerts/save-as.png)
-1. The **Save Item** popup appears. <br/>![save-item.png](/img/alerts/save-item.png)
+1. After creating and saving your search, click the save icon.<br/><img src={useBaseUrl('img/alerts/save-as.png')} alt="Save the search" width="800"/>
+  :::note
+  The required fields (`normalizedseverity`, `stage`, and fields for entities) need to come after the `where` and `count` operators, otherwise an error will occur when saving the scheduled search.
+  :::
+1. The **Save Item** popup appears. <br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="600"/>
 1. Click **Schedule this search**.
 1. The **Save Item** popup prompts you to select a run frequency.<br/> ![run-frequency.png](/img/alerts/run-freq-signal-gen.png)
 1. Select a frequency from the pull-down list and click **Save**.  Scheduling a run frequency that matches your query time range will reduce overlapping searches and duplicate alerts. When you have a search scheduled to run over the same results as a previously scheduled search you would trigger an alert on the same data. 
@@ -73,7 +78,7 @@ type you select. A field whose name does not match a CSE attribute will not be p
   :::note
   This setting is different than the Time Range option configured for the Saved Search. The first time range is only used when you run the Saved Search from the Library. This Time Range applies to your Scheduled Search.
   :::
-1. **Timezone for scheduled search**. Select the time zone you would like your scheduled search to use. The schedule's time is based on this time zone. This time zone is not related to the time zone of your data. If you don't make a selection, the scheduled search will use the time zone from your browser, which is the default selection
+1. **Timezone for scheduled search**. Select the time zone you would like your scheduled search to use. The schedule's time is based on this time zone. This time zone is not related to the time zone of your data. If you don't make a selection, the scheduled search will use the time zone from your browser, which is the default selection.
 1. **Send notification**. Select **If the following condition is met**, and enter an alert condition and the number of results that should trigger the alert.
 1. **Alert Type**. Select **CSE Signal**.
 1. The popup refreshes.<br/> ![alert-type-selected.png](/img/alerts/alert-type-selected.png)
@@ -87,7 +92,7 @@ To view Signals that were created from a scheduled search, run a keyword search 
 Below is a screenshot of a Signal that was created from a scheduled search. Note that:
 
 * The **Mapping** section at the bottom of the page shows that the Signal was the result of a scheduled search.
-* If the Signal is not part of an Insight, there’s a **Create Insight** link you can use to create an Insight for the Signal. For more information, see [Create an Insight from Signal](generate-cse-signals.md).
+* If the Signal is not part of an Insight, there’s a **Create Insight** link you can use to create an Insight for the Signal. For more information, see [Create an Insight from Signal](#create-an-insight-from-signal).
 * You can click the **Full Details** link for more information about the Signal. See [View Signal details](#view-signal-details) below for a screenshot.
 
 ![ss-signal.png](/img/alerts/ss-signal.png)

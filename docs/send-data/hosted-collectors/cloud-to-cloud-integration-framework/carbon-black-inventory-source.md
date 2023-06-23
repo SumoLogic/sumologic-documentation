@@ -2,9 +2,12 @@
 id: carbon-black-inventory-source
 title: Carbon Black Inventory Source
 sidebar_label: Carbon Black Inventory
+description: The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
 
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -40,7 +43,7 @@ When you create a Carbon Black Inventory Source, you add it to a Hosted Collect
 
 To configure a Carbon Black Inventory Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **Carbon Black Inventory**.<br/>  ![cb inventory icon.png](/img/send-data/cb-inventory-icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/> ![CB inventory create pane.png](/img/send-data/CB-inventory-create-pane.png)
@@ -76,7 +79,7 @@ When Sumo Logic detects an issue, it's tracked by [Health Events](/docs/manage/
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|

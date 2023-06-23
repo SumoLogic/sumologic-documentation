@@ -1,57 +1,62 @@
 ---
 id: knowbe4-api-source
 title: KnowBe4 API Source
-sidebar_label: KnowBe4 API Source
-description: This document explains how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
+sidebar_label: KnowBe4 API
+description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup using the Sumo logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
+<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100"/>
 
-:::important
-Note that access to KnowBe4 APIs is limited to Platinum and Diamond customers, and the `_siemparser` is currently only available for the External Events source.
-:::
+The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
 
 ## Prerequisites
 
-Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Base URL** and **KnowBe4 API Token**.
+Before you begin setting up your **KnowBe4** Source, which is required to connect to the KnowBe4 API, you'll need to configure your integration with the **Region** and **KnowBe4 API Token**.
 
-### Base URL
+:::important
+KnowBe4 APIs are only limited to Platinum and Diamond customers.
+:::
 
-The **Base URL** is the URL where your **KnowBe4** account is located. To get the base URL, follow the steps below:
-1. Log in to the **KnowBe4** application.
-2. At the top of the browser, you will see the **Base URL** inside the address bar.
-3. Choose the Base URL from the table below. The following table contains the base URLs based on the location of your **KnowBe4** account:
+### Region
 
-  | Server location | Server located at  | Base URLs |
-  | :---|:---|:---|
-  | US Server |	training.knowbe4.com | `https://us.api.knowbe4.com` |
-  | EU Server | eu.knowbe4.com | `https://eu.api.knowbe4.com` |
-  | CA Server |	ca.knowbe4.com | `https://ca.api.knowbe4.com` |
-  | UK Server | uk.knowbe4.com | `https://uk.api.knowbe4.com` |
-  | DE server | de.knowbe4.com | `https://de.api.knowbe4.com` |
+The **Region** is the region where your **KnowBe4** account is located. To know your region, follow the steps below:
+1. Sign in to the **KnowBe4** application.
+2. At the top of the browser, you will see the **Region** inside the address bar.
+3. Choose the **Region** from the dropdown based on the location of your **KnowBe4** account. The following are the supported regions:
+   * US
+   * EU
+   * CA
+   * UK
+   * DE
 
 ### API Token
 
-The **API security token** is used to authenticate with KnowBe4 HTTP API. To get the **KnowBe4 API token**, follow the steps below:
-1. Log in to the **KnowBe4** application.
-1. Navigate to the **Events** section from left panel and click **Settings**.
-1. Select **User Profile**. The **KnowBe4** Secure API token is displayed in the UI.
-1. You can copy the generated token for use, or click the **Reset Token** button to generate a new one.
-:::note
-When you reset the token, the previous token issued becomes invalid immediately.
-:::
+The **API security token** is used to authenticate with KnowBe4 API. To get the **KnowBe4 API token**, follow the steps below:
+1. Sign in to the **KnowBe4** application as an Admin user.
+1. Navigate to the **Account Settings**.
+1. Click **Account Integrations** from the left menu, and then click **API** option.
+1. Under the API section, checkmark the **Enable Reporting API Access**. The **KnowBe4** Secure API token is displayed.
+1. Save this API key to use while configuring the Source.
+1. Click **Save Changes**.
 
 ## Metadata Field
 
 If the Source is configured with the **SIEM forward** option, the metadata field `_siemparser` will be set to */Parsers/System/KnowBe4/KnowBe4 KMSAT*.
 
+:::important
+The `_siemparser` is currently available only for the External Events source.
+:::
+
 ## Data Sources
 
 The KnowBe4 integration fetches two types of data sources for the KnowBe4 account.
-1. **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default and can only be enabled on request; contact Sumo Logic Support for more information.
-2. **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
+- **Phishing Tests**.  Our integration fetches a list of all recipients for each phishing security test on the KnowBe4 account.
+:::note
+C2C will skip the record if `started_at` data is not in the format of `yyyy-MM-ddTHH:mm:ss.SSSZ`.
+:::
+- **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default.
 
 ## States
 
@@ -86,11 +91,11 @@ To configure the KnowBe4 API Source:
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-7. In **Base URL**, choose the URL where your KnowBe4 account is located. See [Base URL](#base-url) section to know your base URL.
+7. In **Region**, choose the region where your KnowBe4 account is located. See [Region](#region) section to know your Region.
 1. In **API Key**, authenticate your account by entering your secret API key. You can access your API key or generate a new one from **User Event API Management Console**. See [API Token](#api-token) section.
-1. In **Data Types**, you can select the **Phishing Tests** data type to fetch a list of all recipients for each phishing security test on the KnowBe4 account. To retrieve the **External User events** data, you need to raise a request to Sumo Logic support to enable this data type.
+1. In **Data Types**, you can select the **Phishing Tests** data type to fetch a list of all recipients for each phishing security test on your KnowBe4 account.
 1. In **Phishing Poll Interval**, enter the phishing poll interval frequency, which must be between 1 hour and 24 hours.
-1. When you are finished configuring the Source, click **Save**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -122,9 +127,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 |:---|:---|:---|:---|:---|
 | `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
+| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `baseURL` | String | Yes | Region URL of the KnowBe4 application. | modifiable |
+| `region` | String | Yes | Region of the KnowBe4 application. | modifiable |
 | `apiKey` | String | Yes | Secret api key to authenticate your account. | modifiable |
 | `dataTypes` | Array | Yes | Data sources to fetch from KnowBe4. | modifiable |
 | `phishingPollInterval` | Integer | Yes | The Polling interval for phishing data requests. The minimum interval is 1 hour, and the maximum is 24 hours. | modifiable |
@@ -139,7 +144,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   		"name": "KnowBe4",
  	 	"description": "Test Source",
   		"category": "source_category",
-  		"baseURL": "https://us.api.knowbe4.com",
+  		"region": "US",
   		"apiKey": "************",
 		"dataTypes": [
     		         "phishingTests"

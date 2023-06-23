@@ -28,7 +28,7 @@ This section describes how to list all available dashboards and their definition
 **Endpoint**: `https://api.sumologic.com/api/v1/dashboards`
 
 :::note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ### Headers
@@ -114,7 +114,7 @@ This section describes how to get a dashboard, its definition, and the definitio
 **Endpoint**: `https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID`
 
 :::note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ### Headers
@@ -236,7 +236,7 @@ This section describes how to get the data for all monitors contained on a dashb
 **Endpoint**: `https://api.sumologic.com/api/v1/dashboards/DASHBOARD_ID/data`
 
 :::note
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. You need to specify your deployment in the endpoint. For example `api.**YOUR_DEPLOYMENT**.sumologic.com` you would specify `**YOUR_DEPLOYMENT**` as either `au`, `ca`, de, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 :::
 
 ### Headers

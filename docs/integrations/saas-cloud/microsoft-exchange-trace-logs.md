@@ -1,6 +1,6 @@
 ---
 id: microsoft-exchange-trace-logs
-title: Sumo Logic App for Microsoft Exchange Trace Logs
+title: Microsoft Exchange Trace Logs
 sidebar_label: Microsoft Exchange Trace Logs
 description: This Sumo Logic App for Microsoft Exchange Trace logs provides visibility into Delivered, Failed, Quarantined, Pending, and Spam messages.
 ---
@@ -90,30 +90,11 @@ _sourceCategory="o365dummy"
 
 ## Collecting logs from Microsoft Exchange Trace Logs App
 
-This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace logs Api Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app.
+This section explains how to collect logs from Microsoft Exchange Trace logs Api and ingest them into Sumo Logic. Refer to the [Microsoft Exchange Trace Logs API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs) to create the source and use the same source category while installing the app.
 
 ## Installing the Microsoft Exchange Trace Logs app
 
-Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is applicable only to a few apps currently. For details, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-:::
-3. To install the app, enter the following fields.
-   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft Exchange Trace Logs Dashboards
 

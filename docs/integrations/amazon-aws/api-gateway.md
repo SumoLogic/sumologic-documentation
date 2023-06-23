@@ -1,7 +1,6 @@
 ---
 id: api-gateway
 title: AWS API Gateway
-sidebar_label: AWS API Gateway
 description: Amazon API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
@@ -105,7 +104,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md):
 1. **Name**. Enter a name to display the new Source.
 2. **Description**. Enter an optional description.
-3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
+3. **S3 Region**. Select the Amazon Region for your **API Gateway** S3 bucket.
 4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
 5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string.
   :::note NOTES
@@ -146,7 +145,7 @@ Parse Expression:
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time

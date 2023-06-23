@@ -10,10 +10,9 @@ This page describes prerequisites and guidelines for deploying Sumo Logic’s AW
 ## Prerequisites
 
 * **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with Explore by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) for CloudFormation Template.
-* **Sumo Logic Collectors and Sources**. The AWS Observability Solution relies upon an Installed Collector with a Host Metrics Source on each of your AWS EC2 hosts. The solution relies upon host metrics collection rather than AWS CloudWatch EC2 metrics because AWS EC2 metrics from Cloudwatch have high latency and can increase the costs of your AWS account. Host metrics have the advantage of near-zero latency and more information at a lower cost. Instructions are provided in [Configure Host Metric Source](#before-you-deploy) below.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * **Role capabilities**. Make sure you have a Sumo Logic role that have the following capabilities:
-* Manage field extraction rules
+  * Manage field extraction rules
   * Manage connections
   * View Account Overview
   * View Fields
@@ -43,7 +42,31 @@ You have two options for deploying:
 * Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
 * Deploy using a [Terraform Script](deploy-with-terraform.md)
 
-## Deployment Considerations  
+The Sumo Logic AWS Observability solution supports the following AWS regions:
+* Asia Pacific (Hong Kong)
+* Asia Pacific (Tokyo)
+* Asia Pacific (Seoul)
+* Asia Pacific (Mumbai)
+* Asia Pacific (Singapore)
+* Asia Pacific (Sydney)
+* Canada (Central)
+* Europe (Frankfurt)
+* Europe (Stockholm)
+* Europe (Ireland)
+* Europe (London)
+* Europe (Paris)
+* Middle East (Bahrain)
+* South America (São Paulo)
+* US East (N. Virginia)
+* US East (Ohio)
+* US West (N. California)
+* US West (Oregon)
+
+:::note
+The region(s) must be enabled and active before deploying the solution.
+:::
+
+## Deployment considerations  
 
 You deploy the solution by either running an AWS CloudFormation template or via Terraform scripts. When doing so, consider the following.
 
@@ -151,7 +174,7 @@ Here’s a sample `sources.json` file that you can include in your AMI.
 
 Before setting up the AWS Observability solution we recommend testing permissions for both AWS and Sumo Logic by using a test AWS CloudFormation template. To execute this template:
 
-1. Invoke the AWS CloudFormation template at this [URL](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/permissionchecker/permissioncheck.template.yaml).
+1. Invoke the AWS CloudFormation template at this [URL](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
 1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/>  ![Testing_sumo_Permission_1.png](/img/observability/Testing_sumo_Permission_1.png)
 1. Click **Create Stack.**

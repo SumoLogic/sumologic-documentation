@@ -21,7 +21,7 @@ At this time, an administrator can:
 
 1. Select the row for the user you want to unlock and choose **Unlock** from the three-dot options menu.
 
-    :::noteIf you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information see [SAML Lockdown Limitations](../../security/saml/set-up-saml.md).
+    :::noteIf you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](../../security/saml/set-up-saml.md).
     :::
      
 1. The user's account is unlocked, and Sumo Logic automatically sends an email to alert the user. 

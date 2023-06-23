@@ -5,6 +5,7 @@ sidebar_label: Log Mapping
 description: Learn how to create a log mapping for structured messages.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has instructions for creating a log mapping for structured messages using the CSE UI. Log mapping is the process of telling CSE how to build a Record from the key-value pairs extracted from messages. For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](record-processing-pipeline.md) topic.
 
@@ -66,6 +67,7 @@ The sections that follow have instructions for setting up each type of mapping:
   - [constant mapping](#constant-mapping)
   - [extracted mapping](#extracted-mapping)
   - [format mapping](#format-mapping)
+  - [joined mapping](#joined-mapping)
   - [lookup mapping](#lookup-mapping)
   - [split mapping](#split-mapping)
   - [standard mapping](#standard-mapping)
@@ -128,6 +130,23 @@ To define a format mapping:
 1. **Format Parameters**. Enter the message fields to which the formatting will be applied.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 1. Click **Add Field** to save the field mapping.
+
+### joined mapping
+
+You can use a joined mapping to join multiple values together and map them to a CSE attribute.
+
+**Example joined mapping** 
+
+In the screenshot below, we're configuring a mapping that joins the value of the `actor.firstname` and `actor.lastname` fields and maps the result to the `user_username` attribute. For example, if the value of `actor.firstname` is "zaya", and the value of `actor.lastname` is "hedad", this mapping would result in "zayahedad" being written to the `user_username` attribute. 
+
+<img src={useBaseUrl('img/cse/joined-mapping.png')} alt="Joined mapping"/>
+
+1. **Input Fields**. Enter the names of input fields. These are the fields from incoming messages whose values you want to join.
+1. **Delimiter.** Enter the character that delimits the segments of the input fields.
+1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
+   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above don't exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the CSE attribute you’ll specify later in this procedure.
+   1. **Default value**. Enter the value you want to write to the CSE attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
+1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 
 ### lookup mapping
 

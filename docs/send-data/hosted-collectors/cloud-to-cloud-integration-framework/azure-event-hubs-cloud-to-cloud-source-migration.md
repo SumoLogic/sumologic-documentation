@@ -4,6 +4,10 @@ title: Migrating to Azure Event Hubs Cloud-to-Cloud Source
 sidebar_label: Azure Event Hubs C2C Source Migration
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
+
 As **Cloud-to-Cloud Event Hub source** supports logs, you can migrate your [ARM-based Azure Monitor Logs Collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor) (functions prefixed with SUMOAzureLogs). This source is available in all deployments, including FedRAMP.
 
 Cloud-to-Cloud sources have several advantages, including:
@@ -17,6 +21,7 @@ Choose a migration strategy that is more convenient for you. Migration can be do
 ### Strategy A. Existing event hub namespaces
 
 If you want to continue using the existing **Event hubs namespaces** that are created by the ARM template, jump to the [Configuring Parameters](#step-2-configure-parameters-for-your-event-hub-cloud-to-cloud-sources) section in step 2.
+
 The advantage of using the existing strategy is that you don’t have to recreate diagnostic settings in Azure Monitor for exporting the logs to the event hub.
 
 :::note
@@ -35,23 +40,20 @@ After choosing one of the above two strategies, you will now have an event hub n
 
 ## Step 2. Configure parameters for your event hub cloud-to-cloud sources
 
-1. **Create a shared access policy**. You can create it at the namespace level if you have multiple event hubs by selecting **Shared Access Policies** on the left menu of the **Event Hubs Namespace page**.
-
-![shared-access-policy.png](/img/send-data/shared-access-policy.png)
-
+1. **Create a shared access policy**. You can create it at the namespace level if you have multiple event hubs by selecting **Shared Access Policies** on the left menu of the **Event Hubs Namespace page**.<br/> ![shared-access-policy.png](/img/send-data/shared-access-policy.png)
 2. **Create a consumer group**.
    1. Go to your **Event Hub**.
    2. Select **Consumer groups** on left panel.
    3. Add consumer groups by clicking **+Consumer groups**.
    4. Click **Create**.
 
-   :::note
-   Creating **Consumer Groups** is needed only for the customers using the older event hub namespace, see [Existing event hub namespace](#strategy-1-existing-event-hub-namespaces) section in step 1. The default consumer group is already in use by function so we need to create a new one.
-   :::
+:::note
+Creating **Consumer Groups** is needed only for the customers using the older event hub namespace, see [Existing event hub namespace](#strategy-1-existing-event-hub-namespaces) section in step 1. The default consumer group is already in use by function so we need to create a new one.
+:::
 
-  ![consumer-groups.png](/img/send-data/consumer-groups.png)
+![consumer-groups.png](/img/send-data/consumer-groups.png)
 
-  After completing the above steps, you will have **Azure Event Hubs Namespace**, **Event Hubs Instance Name**, **Shared Access Policy**, and **Consumer Group Name** - all four parameters are required for creating an event hub source.
+After completing the above steps, you will have **Azure Event Hubs Namespace**, **Event Hubs Instance Name**, **Shared Access Policy**, and **Consumer Group Name** - all four parameters are required for creating an event hub source.
 
 ## Step 3. Create event hub cloud-to-cloud sources
 

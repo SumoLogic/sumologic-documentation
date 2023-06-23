@@ -1,6 +1,6 @@
 ---
 id: office-365
-title: Sumo Logic App for Microsoft Office 365
+title: Microsoft Office 365
 sidebar_label: Microsoft Office Audit 365
 description: The Sumo Logic App for Microsoft Office 365 ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint.
 ---
@@ -121,7 +121,7 @@ We recommend the following Source Category naming convention:
 
 ## Installing the Microsoft Office 365 App
 
-Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
 
 To install the app:
 

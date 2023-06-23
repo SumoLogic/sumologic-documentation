@@ -203,9 +203,9 @@ which CSE provides built-in log mapping and parsing support. 
 
 * ThreatInsight
 
-## Github
+## GitHub
 
-* Github
+* GitHub
 
 ## Google
 

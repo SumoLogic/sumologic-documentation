@@ -1,6 +1,7 @@
 ---
 id: install-telegraf
 title: Installing Telegraf for Sumo Logic
+sidebar_label: Installing Telegraf
 description: Learn how to install Telegraf.
 ---
 

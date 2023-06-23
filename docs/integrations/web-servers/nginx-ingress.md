@@ -1,8 +1,8 @@
 ---
 id: nginx-ingress
-title: Sumo Logic App for Nginx Ingress
+title: Nginx Ingress
 sidebar_label: Nginx Ingress
-description: The Sumo Logic App for Nginx Ingress helps you monitor webserver activity in Nginx Ingress Controller.
+description: The Sumo Logic app for Nginx Ingress helps you monitor webserver activity in Nginx Ingress Controller.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,29 +11,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Nginx Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Ingress web servers. Preconfigured dashboards and searches provide insight into connections, requests, ingress controller metrics, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
-This App is tested with the following Nginx Ingress versions:
+This app is tested with the following Nginx Ingress versions:
 * For Kubernetes environments: Nginx version 1.21.3
 
 ## Log and Metrics Types
 
-The Sumo Logic App for Nginx Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+The Sumo Logic app for Nginx Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
 All [Dashboards](#viewing-nginx-ingress-dashboards) (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
 
 For more details on Nginx logs, see [http://nginx.org/en/docs/http/ngx_http_log_module.html](http://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-The Sumo Logic App for Nginx Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller.
+The Sumo Logic app for Nginx Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller.
 
 For more details on Nginx Ingress Metrics, see [https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
 
 
 ## Collecting Logs and Metrics for Nginx Ingress
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Ingress.
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Ingress.
 
 In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
 
-Configuring log and metric collection for the Nginx Ingress App includes the following tasks:
+Configuring log and metric collection for the Nginx Ingress app includes the following tasks:
 
 
 ### Step 1: Configure Fields in Sumo Logic
@@ -57,7 +57,7 @@ It’s assumed that you are using the latest helm chart version if not please up
 :::
 
 1. Before you can configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx Ingress pods, so Prometheus can find the Nginx Ingress metrics. For instructions on Nginx Open Source, refer to [this documentation](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
-2. Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+2. Ensure you have deployed the [Sumologic-Kubernetes-Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) instances, which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
 3. Apply following labels to the Nginx Ingress pod.
 ```sql
 environment="prod_CHANGEME"
@@ -81,20 +81,20 @@ Here’s an explanation for additional values set by this configuration that we 
      * **Applied At.** Choose **Ingest Time.**
      * **Scope**. Select **Specific Data.**
      * **Scope**: Enter the following keyword search expression.
-```sql
-pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_farm=* pod_labels_webserver_system=*
-```
+      ```sql
+        pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_farm=* pod_labels_webserver_system=*
+      ```
      * **Parse Expression**. Enter the following parse expression.
-```sql
-if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_webserver_system as webserver_system
-| pod_labels_webserver_farm as webserver_farm
-```
+      ```sql
+      if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+      | pod_labels_component as component
+      | pod_labels_webserver_system as webserver_system
+      | pod_labels_webserver_farm as webserver_farm
+      ```
 
 ## Installing Nginx Ingress Monitors
 
-After [setting up collection](/docs/integrations/web-servers/nginx-legacy), you can proceed to installing the Nginx Ingress monitors, App, and view examples of each of dashboard.
+After [setting up collection](/docs/integrations/web-servers/nginx-legacy), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
@@ -180,9 +180,9 @@ email_notifications = [
 7. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 
-## Installing the Nginx Ingress App
+## Installing the Nginx Ingress app
 
-This section demonstrates how to install the Nginx Ingress App. These instructions assume you have already set up the collection as described above.
+This section demonstrates how to install the Nginx Ingress app. These instructions assume you have already set up the collection as described above.
 
 To install the app:
 
@@ -208,7 +208,7 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Nginx Ingress Dashboards
+## Viewing Nginx Ingress dashboards
 
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
@@ -224,8 +224,6 @@ Use this dashboard to:
 * Get insights into Active and dropped connection.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Overview.png')} alt="Nginx-Overview" />
-
-
 
 ### Error Logs
 
@@ -274,7 +272,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Threat-Intel.png')} alt="Nginx-Ingress-Threat-Intel" />
 
-
 ### Web Server Operations
 
 The Nginx - Web Server Operations dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by a server, and the top URIs responsible for 404 responses.
@@ -295,7 +292,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Access-Types.png')} alt="Nginx-Ingress-Visitor-Access-Types" />
 
-
 ### Visitor Locations
 
 The **Nginx Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
@@ -314,7 +310,6 @@ Use this dashboard to:
 * It helps in allocating IT resources according to the content types.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Traffic-Insight.png')} alt="Nginx-Ingress-Visitor-Traffic-Insight" />
-
 
 ### Connections and Requests Metrics
 
@@ -336,8 +331,6 @@ Use this dashboard to:
 * Gain information about Nginx reload time and any reload errors.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Controller-Metrics.png')} alt="Nginx-Ingress-Controller-Metrics" />
-
-
 
 ## Nginx Ingress Alerts
 

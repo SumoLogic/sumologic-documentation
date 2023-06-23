@@ -2,7 +2,7 @@
 id: configure-hosted-collector
 title: Configure a Hosted Collector and Source
 sidebar_label: Configure a Hosted Collector and Source
-description: Set up Hosted Collectors so you can move data from an Amazon S3 bucket or HTTP Source to Sumo Logic.
+description: Set up Hosted Collectors so you can move data to Sumo Logic from an Amazon S3 bucket and other sources like Microsoft, Cloud Syslog, Google, and HTTP.
 ---
 
 import DocCardList from '@theme/DocCardList';
@@ -17,7 +17,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 
 Steps to configure a Hosted Collector:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted** Collector.
 1. Provide a **Name** for the Collector. **Description** is optional.

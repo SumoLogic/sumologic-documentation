@@ -2,9 +2,12 @@
 id: microsoft-graph-security-api-source
 title: Microsoft Graph Security API Source
 sidebar_label: Microsoft Graph Security API
+description: The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
 affected device.
@@ -86,7 +89,7 @@ When you create a Microsoft Graph Security API Source, you add it to a Hosted C
 
 To configure a Microsoft Graph Security API Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 
@@ -138,6 +141,15 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 
 {@import ../../../reuse/restart-c2c-source.md}
 
+### Base URL
+
+Internally, the source will use the following base URL depending on the respective cloud region:
+
+| BASE_URL | Value |
+| :--- | :--- |
+| Azure Government | https://graph.microsoft.us |
+| Azure Global Service | https://graph.microsoft.com |
+
 ### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
@@ -160,6 +172,7 @@ The following table shows the **config** parameters for a Microsoft Graph Se
 | `tenant_id` | String | Yes |  | The Directory (tenant) ID of the Azure AD application. | modifiable |
 | `secret_key` | Boolean | Yes |  | The Application Client Secret Key created with access to the Azure AD application. | modifiable |
 | `application_id` | String | Yes |  | The Application (client) ID of the Azure AD application.	modifiable |
+| `azure_gov` | Boolean | No | false | Set to true if Azure tenant uses Azure Government region. | modifiable |
 | `polling_interval` | Integer | Yes | 300 | This sets how many seconds the Source checks for new data. | modifiable |
 
 Microsoft Graph Security API Source JSON example:

@@ -16,23 +16,34 @@ If you are new to writing rules, see [About CSE Rules](about-cse-rules.md) fo
 
 A Chain rule is similar to a Threshold rule. A Threshold rule fires when one rule expression is matched at least a certain number times during a specified length of time. In a Chain rule you configure two more rule expressions, and for each expression, the number of matches that are required for the rule to fire a Signal. The interval you define within which the matches must occur applies to all of the rule expressions in the rule.
 
+Watch this micro lesson to learn how to create a Chain rule.
+
+<Iframe url="https://www.youtube.com/embed/58h2mVnw1oE?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Create a Chain rule
 
 1. Choose **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the Chain card. 
-
-    ![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor:
-
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
-
     ![chain.png](/img/cse/chain.png)
 
 ## Configure “If Triggered” settings
 
-1. **When ... Records match the expression.** Enter two or more rule expressions. For each, select the number of matches that are required.
-1. **Grouped by**.  By default, a chain rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the matches grouped by option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
+1. **When ... Record matches expression.** Enter two or more rule expressions. For each, select the number of matches that are required.
+1. **grouped by**.  By default, a chain rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the matches grouped by option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
 1. **in ... order.** Choose either:
 
    * **any** if matches can occur in any order.
@@ -51,7 +62,7 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 
 ## Configure “Then Create a Signal” settings
 
-1. **On Entity**. Define the Entity field—for example an IP address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Define the Entity field — for example, an IP address, hostname, and so on — in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary.**
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
@@ -63,6 +74,6 @@ If you are not sure that your rule is ready for prime time, you can save it as a
 To make the rule a prototype, click the box next to **Save this rule as a prototype**. When you are satisfied with the rule's behavior you can uncheck the box.
 
 ### Duplicate Signals?
-If you determine that a Threshold, Chain, or Aggregation rule is firing identical Signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than Match rules, because they support time duration conditions. For example, a Threshold rule fires when its rule expression is matched at least a certain number times during a specified length of time.
+If you determine that a Threshold, Chain, or Aggregation rule is firing identical Signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than Match rules, because they support time duration conditions. For example, a Threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in Automatic suppression of redundant Signals.
+To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](../records-signals-entities-insights/about-signal-suppression.md).

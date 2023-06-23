@@ -6,9 +6,11 @@ sidebar_label: Azure Event Hubs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note
-If you're using our new Cloud-to-Cloud source collection, please see [Migration from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+:::info
+If you're using our new Cloud-to-Cloud source collection, see [Migrating from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
 :::
+
+<img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -29,7 +31,7 @@ This Source is available in the Fed deployment.
 1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/> ![AzureEventHubstep1.png](/img/send-data/AzureEventHubstep1.png)
 1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
 1. Create an Event Hub Instance.<br/> ![AzureEventHubstep4.png](/img/send-data/AzureEventHubstep4.png)
-    Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/>![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
+    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/>![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
     In this example, Event Hub Instance is set to **my-hub**.
 1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:<br/>  ![AzureEventHubstep6.png](/img/send-data/AzureEventHubstep6.png)<br/>
     ![AzureEventHubstep7.png](/img/send-data/AzureEventHubstep7.png)<br/>
@@ -37,14 +39,14 @@ This Source is available in the Fed deployment.
     In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
 1. Copy the Shared Access Policy Key.<br/>  ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
     Copy the Primary/Secondary key associated with this policy.
-1. When [configuring the Azure Event Hubs Source](azure-event-hubs-source.md) in Sumo Logic, our input fields would be:
+1. When [configuring the Azure Event Hubs Source](#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
 
   | Field | Value  |
   |:----------------------------|:----------------------|
-  | Azure Event Hubs Namespace | cnctest              |
+  | Azure Event Hubs Namespace | cnctest.servicebus.windows.net |
   | Event Hubs Instance Name   | my-hub               |
   | Shared Access Policy Name  | SumoCollectionPolicy |
-  | Shared Access Policy Key   | mOsLf3RE…            |
+  | Shared Access Policy Key<br/>(use primary key)  | mOsLf3RE…            |
 
   ![azure-event-configs.png](/img/send-data/azure-event-configs.png)
 
@@ -74,10 +76,10 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 1. Select **Azure Event Hubs**.<br/> ![Azure Event Hubs Icon.png](/img/send-data/Azure-Event-Hubs-Icon.png)
-1. Enter a **Name** for the Source. The description is optional.<br/>  ![azure-event-hubs-input.png](/img/send-data/azure-event-hubs-input.png)
+1. Enter a **Name** for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/azure-event-hubs-input.png')} alt="azure-event-hubs-input" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Microsoft

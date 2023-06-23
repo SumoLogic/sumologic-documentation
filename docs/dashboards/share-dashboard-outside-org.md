@@ -10,7 +10,7 @@ This page has information about sharing dashboards with users who do not have a 
 [Dashboard (New)](/docs/dashboards-new) does not support sharing outside of your account.
 :::
 
-Dashboards often contain sensitive information, so typically you share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in, for example if your dashboard is displayed on a monitor in your operations center, or if you want to send an external person a link to a dashboard that reveals a critical problem.
+Dashboards often contain sensitive information, so typically you share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in, for example, if your dashboard is displayed on a monitor in your operations center, or if you want to send an external person a link to a dashboard that reveals a critical problem.
 
 :::note
 Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode](restricted-operators-dashboards.md). Also, if this is the first time that live mode is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards](about.md).

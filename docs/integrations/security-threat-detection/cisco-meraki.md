@@ -1,6 +1,6 @@
 ---
 id: cisco-meraki
-title: Sumo Logic App for Cisco Meraki
+title: Cisco Meraki
 sidebar_label: Cisco Meraki
 description: The Sumo Logic App for Cisco Meraki provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management in your environment.
 ---
@@ -128,27 +128,11 @@ For more information on configuring log forwarding from Cisco Meraki, see the [C
 
 
 
-## Install the Cisco Meraki App
+## Installing the Cisco Meraki App
 
-This section provides instructions on how to install the Cisco Meraki App, as well as examples of each of the dashboards. The App's pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Cisco Meraki App. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    *  **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## View Cisco Meraki Dashboards
 
@@ -167,7 +151,7 @@ Use this dashboard to:
 * Monitor the number high severity threats and scan attacks.
 * Identify trends across messages and appliance names.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Overview.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Overview.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Security Threats
@@ -180,7 +164,7 @@ Use this dashboard to:
 * Identify the most prevalent threats that could have a high impact on your environment.
 * Monitor when, where, and what actions are taken with configured policies in your environment and optimize your policies accordingly.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Security_Threats.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Security-Threats.png')} alt="Cisco Meraki dashboards" />
 
 
 ### URLs Overview
@@ -194,8 +178,8 @@ Use this dashboard to:
 * Monitor destination IP address outliers to check for sudden changes in user behavior and destination location traffic.
 * Monitor destinations visited by users of your network.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-URLs-Overview.png')} alt="Cisco Meraki dashboards" />
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Overview.png')} alt="Cisco Meraki dashboards" />
 
 ### URLs Content and Client Platform
 
@@ -205,7 +189,8 @@ Use this dashboard to:
 * Monitor operating systems (OS) for desktop and mobile devices, as well as browser information available in user agents, to understand how IT should best support your users.
 * Determine which sites, pages, and file types are the most popular with your users, and develop policies accordingly.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Content_and_Client_Platform.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-URLs-Content-and-Client-Platform.png')} alt="Cisco Meraki dashboards" />
+
 
 ### URLs Threat Intel
 
@@ -215,7 +200,7 @@ Use this dashboard to:
 * Identify and remediate potential threats and indicators of compromises to your network.
 * Monitor whether users are accessing web pages or destination IP addresses that have been tagged as malicious by Sumo Logic Threat Intel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Threat_Intel.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-URLs-Threat-Intel.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Flows Overview
@@ -227,7 +212,7 @@ Use this dashboard to:
 * Monitor network traffic that’s been allowed and rejected.
 * Monitor the activity of TCP and UDP ports to identify possible port scan attacks, both horizontal and vertical.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Flows_Overview.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Flows-Overview.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Flows Allowed and Rejected
@@ -238,7 +223,7 @@ Use this dashboard to:
 * Detect sudden changes in allowed or rejected traffic in the outlier panels.
 * Identify systems and hosts involved in insecure data transit over insecure connections and port protocols like ftp, telnet, http, and rlogin. You can also identify successful and rejected network connections for insecure connections.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Flows_Allowed_and_Rejected.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Flows-Allowed-and-Rejected.png')} alt="Cisco Meraki dashboards" />
 
 
 ### Events
@@ -251,4 +236,4 @@ Use this dashboard to:
 * Monitor VPN connectivity and uplink connectivity changes, as well as client DHCP lease details with MX Security Appliances. For details, see [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples#Meraki_MX_Security_Appliance).
 * Monitor [switching events](https://documentation.meraki.com/MS/Monitoring_and_Reporting/MS_Event_Log_Entries_and_Definitions) from Meraki MS Switches. For details, see [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples#Meraki_MS_Switches).
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Events.png')} alt="Cisco Meraki dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Events.png')} alt="Cisco Meraki dashboards" />

@@ -5,6 +5,10 @@ sidebar_label: Amazon S3 Audit
 description: Add an Amazon S3 Audit Source to upload messages to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
+
 The Amazon S3 Audit Source, also called Server Access Logging, tracks and collects your Amazon S3 bucket's activity logs. Each access log record provides details about a single access request, such as the requester, bucket name, request time, request action, response status, and error code, if any. Add an Amazon S3 Audit Source to upload these messages to Sumo Logic.
 
 To configure an Amazon S3 Audit Source:

@@ -85,10 +85,26 @@ sources and the acted upon automatically or through manual actions.
 
 ### ARK
 
-ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR)algorithm.
-CBR solves new problems by adapting previously successful solutions to similar problems, in Cloud SOAR this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
+ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR) algorithm.
+CBR solves new problems by adapting previously successful solutions to similar problems. In Cloud SOAR, this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
 
 ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
+
+Watch this micro lesson to learn more about ARK.
+
+<Iframe url="https://www.youtube.com/embed/mUpaTFtKAMM?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+
+#### Enable ARK
 
 To enable ARK, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Settings** > **ARK** and make sure you have it set to **ON**.
 
@@ -99,7 +115,7 @@ From this page, it’s possible to configure also other ARK Settings such as the
 
 When an incident is created in Cloud SOAR, the Incident Type field will be the one defining which Playbooks you can attach to that incident.
 
-**ARK Usage**
+#### ARK Usage
 
 ARK has a correlation and deduplication or merging mechanism you can use with the ARK OIF.
 
@@ -121,9 +137,9 @@ Alert deduplication or merging can be achieved by utilizing ARK OIF enrichment a
 
 Triage is a customizable section which can be used for enriching and preprocessing multiple different scenarios.
 
-By dispatching the ingested alerts into Triage events, Cloud SOAR can automatically enrich each event, deduplicate them based on the logic configured in our associated Playbooks (which can invoke Ark OIF enrichment) and decide if Cloud SOAR should aggregate multiple entries in 1 unique incident, create multiple incidents for each event or if a similar incident has already been created, to update the existing incident with updated information.
+By dispatching the ingested alerts into Triage events, Cloud SOAR can automatically enrich each event, deduplicate them based on the logic configured in our associated Playbooks (which can invoke Ark OIF enrichment) and decide if Cloud SOAR should aggregate multiple entries in one unique incident, create multiple incidents for each event or if a similar incident has already been created, to update the existing incident with updated information.
 
-Cloud SOAR is also able to correlate existing incidents in order to check if specific data is already present in Cloud SOAR Database or not. Merging or deduplication must be done prior to conversion of an alert into incident, for example as a Triage event which allows you to invoke 1 or multiple playbooks for each Triage event created.
+Cloud SOAR can also correlate existing incidents to check if specific data is already present in the Cloud SOAR Database. It is crucial that all merging or deduplication must be done prior to conversion of an alert into incident. For example, a Triage event that allows you to invoke one or multiple playbooks for each Triage event created.
 
 ## Settings
 
@@ -252,7 +268,7 @@ Cloud SOAR platform are displayed. These permissions are as follows:
 - **Incident** refer to the **Main Menu** modules highlighted previously. Configuring these permissions will determine what access a user has to different areas of the Incident section.
 - **Settings** refer to the **Settings** module located in the Global Functions menu. Configuring these permissions will determine what modules under Settings the user can view/modify.
 - **Search and Reporting** refer to the Home section located in the Main Menu.
-- **Automation** refers to the Automation Section in the settings menu. Configuring these permissions will determine for example what integrations can be viewed or modified
+- **Automation** refers to the Automation Section in the settings menu. Configuring these permissions will determine for example, what integrations can be viewed or modified
 - **Entities** refers to the Entities section located in the Global Functions menu. Configuring these permissions will determine what the user can view/modify within the entities module.
 
 #### Groups

@@ -69,24 +69,24 @@ Complementary to the [resource](schema-attributes.md) field, this field describe
 
 | Enforced Output Value | Description |
 |:--|:--|
-| network | Use where the resource being acted upon or referenced in a Record is or pertains to network traffic. |
-| email | Use where the resource being acted upon or referenced in a Record pertains to email or email delivery. |
-| malware | Use where the resource being acted upon or referenced in a Record pertains to malware itself or the prevention, detection, or removal of malware. |
-| service | Use where the resource being acted upon or referenced in a Record pertains to a service. |
-| application | Use where the resource being acted upon or referenced in a Record pertains to an application. |
-| process | Use where the resource being acted upon or referenced in a Record pertains to a process |
-| operating system | Use where the resource being acted upon or referenced in a Record pertains to an operating system component. |
 | account | Use where the resource being acted upon or referenced in a Record pertains to an account. |
-| group | Use where the resource being acted upon or referenced in a Record pertains to a group, for example, an organizational unit, security group, user group, computer group, access control list, and so on. |
-| role | Use where the resource being acted upon or referenced in a Record pertains to a role. Common in cloud computing. |
-| file | Use where the resource being acted upon or referenced in a Record pertains to a file. |
-| directory | Use where the resource being acted upon or referenced in a Record pertains to a directory or similar hierarchical organizational unit. |
-| instance | Use where the resource being acted upon or referenced in a Record pertains to a specific machine instance, typically virtual. Common in cloud computing. |
+| application | Use where the resource being acted upon or referenced in a Record pertains to an application. |
+| backup | Use where the resource being acted upon or referenced in a Record pertains to a backup. |
 | bucket | Use where the resource being acted upon or referenced in a Record pertains to a specific bucket. Common in cloud computing. |
 | database | Use where the resource being acted upon or referenced in a Record pertains to a database. |
-| backup | Use where the resource being acted upon or referenced in a Record pertains to a backup. |
-| scheduled task | Use where the resource being acted upon or referenced in a Record pertains to a scheduled task or analogous functionality. |
+| directory | Use where the resource being acted upon or referenced in a Record pertains to a directory or similar hierarchical organizational unit. |
+| email | Use where the resource being acted upon or referenced in a Record pertains to email or email delivery. |
+| file | Use where the resource being acted upon or referenced in a Record pertains to a file. |
+| group | Use where the resource being acted upon or referenced in a Record pertains to a group, for example, an organizational unit, security group, user group, computer group, access control list, and so on. |
+| instance | Use where the resource being acted upon or referenced in a Record pertains to a specific machine instance, typically virtual. Common in cloud computing. |
 | key | Use where the resource being acted upon or referenced in a Record pertains to a cryptographic key. |
+| malware | Use where the resource being acted upon or referenced in a Record pertains to malware itself or the prevention, detection, or removal of malware. |
+| network | Use where the resource being acted upon or referenced in a Record is or pertains to network traffic. |
+| operating system | Use where the resource being acted upon or referenced in a Record pertains to an operating system component. |
+| process | Use where the resource being acted upon or referenced in a Record pertains to a process |
+| role | Use where the resource being acted upon or referenced in a Record pertains to a role. Common in cloud computing. |
+| scheduled task | Use where the resource being acted upon or referenced in a Record pertains to a scheduled task or analogous functionality. |
+| service | Use where the resource being acted upon or referenced in a Record pertains to a service. |
 
 ## normalizedCause
 

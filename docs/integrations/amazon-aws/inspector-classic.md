@@ -1,7 +1,6 @@
 ---
 id: inspector-classic
-title: Sumo Logic App for Amazon Inspector - Classic
-sidebar_label: Amazon Inspector App - Classic
+title: Amazon Inspector - Classic
 description: Allows you to monitor your AWS resources for potential security risks.
 ---
 
@@ -9,7 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
 
-For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector.md).
+:::caution Newer version available
+You're viewing legacy documentation. For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector.md).
+:::
 
 Amazon Inspector allows you to monitor your AWS resources for potential security risks. The Sumo Logic App for Amazon Inspector provides preconfigured searches and Dashboards that give you instant access to an overview of Amazon Inspector as well as details on assessments, runs, and findings.
 
@@ -172,7 +173,7 @@ Details are provided in the following sections.
 
 ## Installing the Amazon Inspector Classic App
 
-Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

@@ -25,7 +25,7 @@ If you need to collect from different channels you need to create a separate So
 
 To configure a Windows Event Log Source:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 
 1. Find the name of the Installed Collector to which you'd like to add a source. Click **Add** and then choose** Add Source** from the pop-up menu.
 
@@ -71,7 +71,7 @@ To configure a Windows Event Log Source:
      * Collect Forwarded Events
      * Custom Event Channels (except for custom forwarding channels)            
 
-   * **Custom Event Channels** allows you to specify, in a comma-separated list, the channels you'd like to collect from. You can specify custom Forwarded Events Channels. If you need help finding channels on the machine where the Source is installed, see [Windows Event Source Custom Channels](local-windows-event-log-source.md).  Do not enter Standard Event Channels or Forwarded Events in the Custom Events Channels text box. To collect from custom event channels in a Local Event Source, the Collector must have version 19.118 or later installed.
+   * **Custom Event Channels** allows you to specify, in a comma-separated list, the channels you'd like to collect from. You can specify custom Forwarded Events Channels. If you need help finding channels on the machine where the Source is installed, see [Windows Event Source Custom Channels](windows-event-source-custom-channels.md). Do not enter Standard Event Channels or Forwarded Events in the Custom Events Channels text box. To collect from custom event channels in a Local Event Source, the Collector must have version 19.118 or later installed.
    * Depending on the **Event Format** selected, you'll have different options.
 
      * **Event Collection Level**. When JSON format is selected you have the option to select:

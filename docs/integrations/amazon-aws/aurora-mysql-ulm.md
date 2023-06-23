@@ -1,8 +1,7 @@
 ---
 id: aurora-mysql-ulm
-title: Sumo Logic App for Amazon Aurora MySQL ULM
-sidebar_label: Amazon Aurora MySQL ULM
-description: The Sumo Logic App for Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+title: Aurora MySQL ULM
+description: The Sumo Logic App for Amazon Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -217,8 +216,8 @@ This section provides instructions for collecting logs and metrics for ingest in
 Before you configure log and metric sources for the Sumo Logic App for Aurora MySQL ULM, you must decide upon the source category to assign to each source.  Taking a hierarchical approach allows you to make use of wildcards when performing searches, as shown in the following examples:
 
 * For the AWS CloudTrail source for CloudTrail Events, you could specify a source category of AWS/CloudTrail
-* For the AWS CloudWatch Metric source to collect cloudwatch metric, you could specify a source category of AWS/RDS/Metric.
-* For the AWS CloudWatch Logs source to collect various Aurora MySQL cloudwatch logs (Error, SlowQuery, Audit and General), you could specify a source category of AWS/RDS/Aurora/MySQL/Error, AWS/RDS/Aurora/MySQL/SlowQuery, AWS/RDS/Aurora/MySQL/Audit, AWS/RDS/Aurora/MySQL/General
+* For the AWS CloudWatch Metric source to collect CloudWatch metrics, you could specify a source category of AWS/RDS/Metric.
+* For the AWS CloudWatch Logs source to collect various Aurora MySQL CloudWatch logs (Error, SlowQuery, Audit and General), you could specify a source category of AWS/RDS/Aurora/MySQL/Error, AWS/RDS/Aurora/MySQL/SlowQuery, AWS/RDS/Aurora/MySQL/Audit, AWS/RDS/Aurora/MySQL/General
 
 
 ### Step 2: Collect AWS CloudTrail events using AWS CloudTrail Source  
@@ -233,7 +232,7 @@ To collect AWS CloudTrail events, do the following:
    * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category**. Enter a source category, for example, AWS/Cloudtrail.
+   * **Source Category**. Enter a source category, for example, AWS/CloudTrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
    * **Enable Timestamp Parsing**. Select the checkbox to enable.
@@ -280,27 +279,9 @@ To collect Aurora CloudWatch metrics, do the following:
 
 ## Installing the Aurora MySQL ULM App
 
-Now that you have set up log and metric collection for Amazon Aurora MySQL, you can install the Sumo Logic App for Aurora MySQL ULM, and use its pre-configured searches and [dashboards](#viewing-dashboards).
+Now that you've set up logs and metrics collection for Amazon Aurora MySQL, you can install the Sumo Logic App for Aurora MySQL ULM and use its pre-configured searches and [dashboards](#viewing-aurora-mysql-ulm-dashboards).
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 
 ## Viewing Aurora MySQL ULM Dashboards
@@ -320,7 +301,7 @@ Use this dashboard to:
 * Identify the number of slow queries and the users and client hosts that are responsible for them. For more granular data, click the Slow Queries and Top Users and IPs Firing Slow Queries panels to bring up the Slow Query Log dashboard.
 * Identify the breakdown of connection protocols. For more granular data, clicking the Connection Type Used panel to bring up the General Query Logs dashboard.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Overview.png')} alt="Aurora MySQL ULM" />
 
 
 
@@ -337,7 +318,7 @@ Use this dashboard to:
 * Identify connection abort events.
 * Monitor database instance start up, ready for connection events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Error-Logs-Analysis.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - Slow Query
@@ -354,7 +335,7 @@ Use this dashboard to:
 * Check if SQL SELECT type queries can be shifted to read replicas.
 * Monitor trends of slow queries, comparing history to analyze the cause and troubleshoot a solution.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_SlowQuery.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Slow-Query.png')} alt="Aurora MySQL ULM" />
 
 
 
@@ -374,7 +355,7 @@ Use this dashboard to:
 
 You can drill deeper into SQL Statements and or commands that are being executed by clicking “Top SQL Commands” panel. This opens “Aurora MySQL ULM - Logs - Audit Log SQL Statements” dashboard for further details.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_AuditLogAnalysis.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Audit-Log-Analysis.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - Audit Log SQL Statements
@@ -392,7 +373,7 @@ Use this dashboard to:
 * Identify user management activities.
 * Identify objects that have been dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_AuditLogSQLStatements.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Audit-Log-SQL-Statements.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - General Log Analysis
@@ -408,7 +389,7 @@ Use this dashboard to:
 * Monitor failures by checking the executables the clients sent to the server.
 * Monitor the types of SQL statements and queries (DML, DDL, DCL, TCL, and others) that are sent by a client.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_GeneralLogAnalysis.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-General-Log-Analysis.png')} alt="Aurora MySQL ULM" />
 
 
 ### CloudTrail Event - Overview
@@ -424,7 +405,7 @@ Use this dashboard to:
 
 To drill down for details, click “Event Status” panel for details of events in the linked dashboard “Aurora MySQL ULM - CloudTrail Event - Details”.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_CloudTrailEvent_Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-CloudTrail-Event-Overview.png')} alt="Aurora MySQL ULM" />
 
 
 ### CloudTrail Event - Details
@@ -433,7 +414,7 @@ To drill down for details, click “Event Status” panel for details of events 
 
 **Use this dashboard to** keep track of your Aurora MySQL Clusters and Instances. This dashboard provides details about various cluster and instance related activities, such as creation, modification, deletion and reboot of instances. Improper configuration of clusters and instances may have an adverse impact on performance. This dashboard helps to identify these issues from the details of the Aurora MySQL-specific events, so you can effectively remedy the situation.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_CloudTrailEvent_Details.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-CloudTrail-Event-Details.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Overview
@@ -448,7 +429,7 @@ Use this dashboard to:
 * Monitor replica lags, and select latency and free memory to ensure it can support heavy read loads with sustained performance.
 * Detect failed login and connection attempts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Overview.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Generic
@@ -463,7 +444,7 @@ Use this dashboard to:
 * Monitor cache hit ratio, to analyze free memory from a query performance perspective.
 * Identify deadlocks, volume used in bytes, to analyze free local storage and engine uptime.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_Generic_Dashboard.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Generic.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Latency, Throughput, and IOPS Monitoring
@@ -477,7 +458,7 @@ Use this dashboard to:
 * Monitor latency and throughput for performance analysis.
 * Monitor, select, insert, update, delete, commit, DML and DDL latency and throughput.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_LatencyThroughputIOPS.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Latency,-Throughput-and-IOPS-Monitoring.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Resource Utilization Monitoring
@@ -492,4 +473,4 @@ Use this dashboard to:
 * Monitor bin og replica lag.
 * Monitor Result Set Cache Hit Ratio from a performance perspective.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_ResourceUtilizationMonitoring.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Resource-Utilization-Monitoring.png')} alt="Aurora MySQL ULM" />

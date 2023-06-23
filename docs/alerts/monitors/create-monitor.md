@@ -25,6 +25,29 @@ This topic shows you how to create a monitor.
 
 1. Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
+{@import ../../reuse/alerts-timeslice.md}
+
+#### From your Metrics Explorer
+
+Creating a monitor based on the threshold values defined in the Metrics page can save time and effort. By using the pre-filled monitor editor, you can quickly create a monitor with the same threshold values as defined in the Metrics page. This will ensure that the monitor is using the same criteria as the Metrics page, providing consistency in monitoring.
+
+To create a monitor from the Metrics Explorer, follow the steps below:
+
+1. Open the Metrics Explorer page and enter the metrics query to create a monitor from it.
+1. In the **Threshold** section, define the critical and warning thresholds for your metrics query.<br/> <img src={useBaseUrl('img/monitors/metrics-explorer-view.png')} alt="metrics-explorer-view" width="800"/>
+1. Click the **Create a Monitor** button located at the top right of the page.<br/> <img src={useBaseUrl('img/monitors/create-monitor.png')} alt="create-monitor" width="400"/>
+1. The Monitor Editor will open with prefilled data based on the threshold values set on the Metrics page.<br/> <img src={useBaseUrl('img/monitors/new-monitor-window.png')} alt="create-monitor" width="600"/>
+1. In the **Trigger Type** section of the monitor editor, enable the checkbox that corresponds to the threshold value that you want to use (either "Critical", "Warning", or both).
+1. The threshold values will be the same as defined in the Metrics page for both Critical and Warning thresholds.
+1. All other parameters should be set to default, including the window (15 minutes) and the "at all times" box.
+1. Ensure that the Recover value is set to the default, which is the opposite of the Alert value. The Edit Recovery button should be off.
+1. Once all values have been set, click on **Save** to create the monitor.
+1. The same threshold will also be applied to the histogram chart.
+
+:::note
+Note that the same threshold translating functionality supports to [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
+:::
+
 ## Step 2: Select Monitor type and Detection Method
 
 1. Select a **Monitor Type** (Logs, Metrics, or SLO). <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="300"/>

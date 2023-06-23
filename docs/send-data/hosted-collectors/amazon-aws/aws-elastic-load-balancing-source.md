@@ -5,7 +5,9 @@ sidebar_label: AWS Elastic Load Balancing
 description: Add an AWS ELB Source to upload messages to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="45"/>
 
 AWS Elastic Load Balancing (ELB) distributes incoming application traffic across multiple Amazon EC2 instances in the AWS cloud. The access logs for AWS ELB capture detailed information for all requests made to your load balancer and stores them as log files in an Amazon S3 bucket. Add an AWS ELB Source to upload these messages to Sumo Logic.
 

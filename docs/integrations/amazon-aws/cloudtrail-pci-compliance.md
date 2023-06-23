@@ -1,7 +1,6 @@
 ---
 id: cloudtrail-pci-compliance
-title: PCI Compliance for AWS CloudTrail App
-sidebar_label: PCI Compliance For AWS CloudTrail
+title: PCI Compliance For AWS CloudTrail
 description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
@@ -18,38 +17,18 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail
 This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
 
 To configure an AWS CloudTrail Source, do the following:
-1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
-5. Install the Sumo Logic App for [PCI Compliance for AWS CloudTrail](#Install_the_Sumo_Logic_App).
+4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to Sumo Logic.
+5. Install the Sumo Logic App for [PCI Compliance for AWS CloudTrail](#installing-the-pci-compliance-for-aws-cloudtrail-app).
 
 
 ## Installing the PCI Compliance for AWS CloudTrail App
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
-To install the app:
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [dashboards](#viewing-pci-compliance-for-aws-cloudtrail-dashboards) that provide insight into your data.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing PCI Compliance for AWS CloudTrail Dashboards
 
@@ -64,9 +43,9 @@ The Sumo Logic PCI Compliance for AWS CloudTrail App provides dashboards and sam
 
 See the details of security group activities and all AWS activities in compliance with PCI Requirement 01.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-AccessMonitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-01-Access-Monitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
 
-* **Security Group Activity. **Pie chart of the security group activity over the last 24 hours.
+* **Security Group Activity.** Pie chart of the security group activity over the last 24 hours.
 * **Security Group Activity.** Aggregation table of the security group activity over the last 24 hours.
 * **Security Group Activity Over Time.** Bar chart of security group activity time sliced by 30 minutes for the last 24 hours.
 * **(All AWS Activities) Non Read Only Events.** Aggregation table of the user, event, and count of non-read only events.
@@ -77,9 +56,9 @@ See the details of security group activities and all AWS activities in complianc
 
 See the details of failed logins and successful logins in compliance with PCI Requirement 10.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq10-LoginActivity.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-10-Login-Activity.png')} alt="PCI Compliance for AWS CloudTrail" />
 
-* **Failed API Calls. **Total number of failed API calls over the last 24 hours. Adjust time range as needed.
+* **Failed API Calls.** Total number of failed API calls over the last 24 hours. Adjust time range as needed.
 * **Failed API Calls- Reason - Login Credentials and Permission Issues.** Aggregation table detailing failed API calls, source IP, destination user, event type, error code, region, and account ID.
 * **Failed API Calls - Acct Breakup.** Aggregation table of accounts with failed API calls and the number of events.
 * **Console Root Login Failures**. See the count of console root login failures in the last 24 hours.
@@ -96,7 +75,7 @@ See the details of failed logins and successful logins in compliance with PCI Re
 
 Search user account and IAM activity in compliance with PCI Requirement 08.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq08-AccountSystemMonitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-08-Account-System-Monitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Created Users.** Aggregation table of users created in the last 24 hours.
 * **Deleted Users.** Aggregation table of users deleted in the last 24 hours.
@@ -116,7 +95,7 @@ Search user account and IAM activity in compliance with PCI Requirement 08.
 
 See the successful and failed configuration changes, policy changes, and security group activity.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq0810-PrivilegedActivity.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-08-10-Privileged-Activity.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 #### Successful Configuration Changes
 * **Successful Configuration Changes.** Pie chart of the successful configuration changes over the last 24 hours.
@@ -133,6 +112,6 @@ See the successful and failed configuration changes, policy changes, and securit
 * **Operation Success - Authorize, Revoke Security Groups Ingress, Egress Rules**. See the details of successful events - authorize security group ingress, authorize security group egress, revoke security group ingress, and revoke security group egress, in the last 24 hours, including the event time, event name, user, group ID, account ID, AWS region, and source IP address.
 * **Security Group Activity Over Time. **Histogram of security group activity over the last 24 hours time sliced by hour.
 
-**Policy Operations**
+#### Policy Operations
 * **Failed Policy Changes**. See the details of failed policy changes, in the last 24 hours, including the event time, event name, event source, policy name, user, account ID, AWS region, source IP address, error code, and error message.
 * **Successful Policy Changes**. See the details of successful policy changes, in the last 24 hours, including the event time, event name, event source, policy name, user, account ID, AWS region, and source IP address.

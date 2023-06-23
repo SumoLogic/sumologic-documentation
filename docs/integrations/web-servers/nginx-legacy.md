@@ -1,8 +1,8 @@
 ---
 id: nginx-legacy
-title: Sumo Logic App for Nginx (Legacy)
+title: Nginx (Legacy)
 sidebar_label: Nginx (Legacy)
-description: The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx.
+description: The Sumo Logic app for Nginx (Legacy) helps you monitor webserver activity in Nginx.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,20 +13,20 @@ import TabItem from '@theme/TabItem';
 
 Nginx (Legacy) is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
-The Sumo Logic App for Nginx (Legacy) support logs for Open Source Nginx, Nginx Plus, as well as Metrics for Open Source Nginx.
+The Sumo Logic app for Nginx (Legacy) support logs for Open Source Nginx, Nginx Plus, as well as Metrics for Open Source Nginx.
 
-The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information.
+The Sumo Logic app for Nginx (Legacy) helps you monitor webserver activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information.
 
 ## Log and Metrics Types
 
-The Sumo Logic App for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+The Sumo Logic app for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
 All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
 
-The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used. For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
+The Sumo Logic app for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used. For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```txt title="Access Log Example"
 50.1.1.1 - example [23/Sep/2016:19:00:00 +0000] "POST /api/is_individual HTTP/1.1" 200 58 "-"
@@ -39,9 +39,9 @@ failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "G
 HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 ```
 
-### Sample Queries
+### Sample Query
 
-This sample Query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
+This sample query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
 
 ```
 _sourceCategory = Labs/Nginx/Logs
@@ -54,15 +54,13 @@ _sourceCategory = Labs/Nginx/Logs
 | sort count
 ```
 
-
 ## Collecting Logs and Metrics for Nginx (Legacy)
 
-This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Nginx (Legacy), which is for non-Kubernetes environment.
+This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Nginx (Legacy), which is for non-Kubernetes environment.
 
 ### Collecting Logs
 
 Nginx (Legacy) app supports the default access logs and error logs format.
-
 
 #### Step 1. Configure logging in Nginx
 
@@ -131,7 +129,6 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 </TabItem>
 </Tabs>
 
-
 ### Field Extraction Rules
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
@@ -160,27 +157,11 @@ For **FER for Error Logs**, use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
+## Installing the Nginx (Legacy) app
 
-## Installing the Nginx (Legacy) App
+This section has instructions for installing the Sumo app for Nginx (Legacy). These instructions assume you have already set up the collection as described above.
 
-This section has instructions for installing the Sumo App for Nginx (Legacy). These instructions assume you have already set up the collection as described above.
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Nginx (Legacy) Dashboards
 

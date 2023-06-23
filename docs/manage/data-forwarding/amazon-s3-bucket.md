@@ -1,7 +1,7 @@
 ---
 id: amazon-s3-bucket
-title: Forwarding Data from Sumo Logic to S3
-description: After granting access to an Amazon S3 bucket, you can use Sumo Logic to set up Data Forwarding.
+title: Forward Data from Sumo Logic to S3
+description: Learn about how to forward data from Sumo Logic to S3.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,8 +19,8 @@ After data forwarding is configured, you should start to see file objects poste
 ## Prerequisites
 
 * An administrator role on the Partition where you want to set up forwarding.
-* Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
-* A Partition or Scheduled View to push to AWS S3.
+* Follow the instructions on [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to grant Sumo permission to send data to the destination S3 bucket.
+* A Partition or Scheduled View to push to Amazon S3.
 
 ## Forwarding interval 
 
@@ -91,7 +91,7 @@ Where:
     You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
     :::
 1. **Description**. You can provide a meaningful description of the connection.
-1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+1. **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID** and **Secret Access Key**. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.

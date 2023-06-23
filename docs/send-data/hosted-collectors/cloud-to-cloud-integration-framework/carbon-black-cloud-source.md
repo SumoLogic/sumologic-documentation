@@ -2,14 +2,17 @@
 id: carbon-black-cloud-source
 title: Carbon Black Cloud Source
 sidebar_label: Carbon Black Cloud
+description: The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
+
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
-The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic AWS S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black.md).
+The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic Amazon S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black).
 :::
 
 ## Authentication
@@ -55,7 +58,7 @@ When you create a Carbon Black Cloud Source, you add it to a Hosted Collector. 
 
 To configure a Carbon Black Cloud Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a **Hosted Collector**.
 1. Select **Carbon Black Cloud**.<br/>  ![CB Cloud icon.png](/img/send-data/CB-Cloud-icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/> ![CB Cloud input pane.png](/img/send-data/CB-Cloud-input-pane.png)
@@ -90,7 +93,7 @@ When Sumo Logic detects an issue, it's tracked by [Health Events](/docs/manage/
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access |
 |:--|:--|:--|:--|:--|

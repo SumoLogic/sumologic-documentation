@@ -4,8 +4,6 @@ title: Local File Source
 description: Create a Local File Source to collect log messages from the same machine where a Collector is installed.
 ---
 
-
-
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
 * The Source will run a scan to the target path every two seconds.
@@ -40,7 +38,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
 ## Configure a Local File Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose** Add **Source from the pop-up menu.
 
     ![img](/img/send-data/add-source.png)    
@@ -53,17 +51,17 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 
-   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\].
+   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. File paths in both Linux and Windows are case sensitive.
 
     :::note
-    You can have up to 32 nested symbolic links within a path expression.
+    You can have up to 32 nested symbolic links within a path expression. 
     :::
 
    * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp.
 
-     :::note
-     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
-     :::
+    :::note
+    Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
+    :::
 
     Review [timestamp considerations](/docs/send-data/reference-information/time-reference) to understand how Sumo interprets and processes timestamps.
 

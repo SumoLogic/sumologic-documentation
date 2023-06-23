@@ -24,13 +24,13 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 * We recommend running the Sumo collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see https://hub.docker.com/r/sumologic/collector.
 * The Sumo Logic Collector uses the Docker Remote API to collect Docker logs. This requires that the log driver configured on the container uses either the `json-file` or `journald` option, as described in https://docs.docker.com/engine/admin/logging/overview.
-* If you're using Kubernetes we recommend using an open source [Kubernetes Fluentd plugin](../../collect-from-other-data-sources/kubernetes-fluentd-plugin.md).
+* If you're using Kubernetes we recommend using an open source [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 * The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/reference-information/time-reference) and the Source is configured to detect it properly. If there are issues with timestamp detection and the Docker container is restarted the Source will reingest all log data since there are no timestamps to track.
 * Docker truncates logs at 16kb and Sumo Logic does not stitch them back together.
 
 ## Add a Docker Logs Source
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 1. Select **Docker Logs**. The Docker Logs page appears.
 
@@ -84,7 +84,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 ## Add a Docker Stats Source
 
-1. In Sumo select **Manage Data > Collection > Collection**.
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 1. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs.
 

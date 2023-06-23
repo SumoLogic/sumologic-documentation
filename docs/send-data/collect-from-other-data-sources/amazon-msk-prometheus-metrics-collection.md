@@ -1,6 +1,7 @@
 ---
 id: amazon-msk-prometheus-metrics-collection
 title: Amazon MSK Prometheus metrics collection
+sidebar_label: Amazon MSK Prometheus
 description: The Amazon Managed Streaming for Apache Kafka (Amazon MSK) open monitoring feature exposes Kafka metrics that Sumo Logic can collect. This page provides instructions for configuring metrics collection for Amazon MSK.
 ---
 

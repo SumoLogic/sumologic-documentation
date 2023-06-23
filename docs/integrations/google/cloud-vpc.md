@@ -1,6 +1,6 @@
 ---
 id: cloud-vpc
-title: Sumo Logic App for Google Cloud VPC
+title: Google Cloud VPC
 sidebar_label: Google Cloud VPC
 description: The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in GCP.
 ---
@@ -138,7 +138,7 @@ However, this is not recommended since you cannot define specific Source Categor
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
@@ -151,7 +151,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
   * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 10. When you are finished configuring the Source, click **Save**.
 
 
@@ -198,7 +198,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 ## Installing the Google Cloud VPC App
 
-Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

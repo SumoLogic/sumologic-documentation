@@ -6,7 +6,16 @@ tags: [get started, getting started]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting, and visualizing data from your application and network environment. The onboarding steps provides the tasks you'll need to start your Sumo Logic experience.
+Sumo Logic is an all-in-one cloud data analytics platform focused on Security, Operations, and Business Intelligence use cases. We provide:
+
+* Monitoring, analyzing, troubleshooting, and visualizing data from your application and network environment.
+* Elastic processing to collect, manage, and analyze the log data, regardless of type, volume, or location.
+* Real-time insights into online operations, customer behavior, and security operations, helping you to protect against evolving security threats.
+
+<!--  is an ingest and storage platform. Its intuitive web-based interface makes it easy to visualize, query, and analyze all kinds of observability data. It's highly customizable and flexible, allowing you to build detailed dashboards, and alerts and integrate external workflows. It’s a proven platform known for its excellent handling of log-based data with OpenTelemetry, metrics, and tracing.
+-->
+
+Let's get started!
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
@@ -17,31 +26,31 @@ Sumo Logic is an all-in-one platform for monitoring, analyzing, troubleshooting,
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/get-started/onboarding"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Getting started</h4></a>
+  <a href="/docs/get-started/quickstart"><img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/><h4>Sumo Quickstart</h4></a>
   <p>Get up and running quickly with Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/business/video.png')} alt="icon" width="50"/><h4>Quickstart videos</h4></a>
-  <p>Before diving in, check out our microlesson videos.</p>
+  <a href="/docs/get-started/overview"> <img src={useBaseUrl('img/icons/cloud/core-platform.png')} alt="icon" width="49"/><h4>Sumo Overview</h4></a>
+  <p>Before diving in, check out our Sumo Logic overview and micro lessons.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/get-started/onboarding-checklists"><img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="50"/><h4>Onboarding Tasks</h4></a>
+  <a href="/docs/get-started/onboarding-checklists"><img src={useBaseUrl('img/icons/general/check-mark.png')} alt="icon" width="40"/><h4>Onboarding Tasks</h4></a>
   <p>Must-do onboarding tasks for users and admins.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/get-started/account-settings-preferences"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/><h4>Account Preferences</h4></a>
+  <a href="/docs/get-started/account-settings-preferences"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Account Preferences</h4></a>
   <p>Account settings, access keys, and credentials.</p>
   </div>
 </div>
 <div className="box smallbox6 card">
   <div className="container">
-  <a href="/docs/get-started/system-requirements"><img src={useBaseUrl('img/icons/cloud/machine.png')} alt="icon" width="50"/><h4>System Req.</h4></a>
+  <a href="/docs/get-started/system-requirements"><img src={useBaseUrl('img/icons/cloud/machine.png')} alt="icon" width="40"/><h4>System Req.</h4></a>
   <p>Supported browsers and other requirements.</p>
   </div>
 </div>

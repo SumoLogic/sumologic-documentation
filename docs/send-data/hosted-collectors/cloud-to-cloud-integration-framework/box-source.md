@@ -2,9 +2,12 @@
 id: box-source
 title: Box Source
 sidebar_label: Box
+description: The Box API integration ingests events from the Get Events API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="60" />
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -47,15 +50,15 @@ You can click the text in the Health column, such as **Error**, to open the issu
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/><img src={useBaseUrl('img/send-data/health-error-generic.png')} alt="Box" />
 
 
-## Create a BOX Source
+## Create a Box Source
 
 When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
 To configure a Box Source:
 1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" />
-4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" />
+3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" width="100"/>
+4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 
@@ -101,7 +104,7 @@ Field Name
         * A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
         * An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 2. Upload the JSON file.
-3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/Processing-Rules/Create-Processing-Rule).
+3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 4. When you are finished configuring the Source, click **Submit**.
 
 
@@ -166,7 +169,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>

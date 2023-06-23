@@ -2,16 +2,16 @@
 id: tenable-source
 title: Tenable Source
 sidebar_label: Tenable
+description: The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="150"/>
+
 The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the [Tenable.io APIs](https://developer.tenable.com). It securely stores the required authentication, scheduling, and state tracking information.
-
    * The Vulnerability [Export API](https://developer.tenable.com/reference/exports-vulns-request-export) first exports vulnerabilities that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-vulns-export-status) and then [downloads exported vulnerabilities](https://developer.tenable.com/reference/exports-vulns-download-chunk) in a chunk.
-
    * The Audit Log API is used to collect [audit logs](https://developer.tenable.com/reference/audit-log-events). It does not provide a pagination function. Logs are polled every 24 hours with a limit of 5,000.
-
    * The Asset Export API first [exports assets](https://developer.tenable.com/reference/exports-assets-request-export) that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-assets-request-export) and then [downloads exported assets](https://developer.tenable.com/reference/exports-assets-download-chunk) in a chunk.
 
 :::note
@@ -90,7 +90,7 @@ To configure A Tenable Source:
 
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Vulnerability Data**, **Audit Logs**, and **Asset Data**.
 
-1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule.md).
+1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 
 1. When you are finished configuring the Source, click **Submit**.
 
@@ -108,6 +108,14 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/
 
 {@import ../../../reuse/restart-c2c-source.md}
 
+### Base URL
+
+Internally, the source will use the following base URL depending on the respective environment:
+
+| BASE URL | Value |
+|:--|:--|
+| Non-Fed Env. | https://cloud.tenable.com |
+| Fed Env. | https://fedcloud.tenable.com |
 
 #### JSON configuration
 
@@ -131,6 +139,7 @@ The following table shows the **config** parameters for a Tenable Source.
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `access_key` | String | Yes |  | The Tenable access key you want to use to authenticate collection requests. | modifiable |
 | `secret_key` | String | Yes |  | The Tenable secret key you want to use to authenticate collection requests. | modifiable |
+| `fed_cloud` | Boolean | No | False | Set to true if tenable.io uses FedRAMP environment. | modifiable |
 | `include_unlicensed_assets` | Boolean | No | False | Set to true if you want to collect unlicensed objects. | modifiable |
 | `supported_apis` | Array of strings | No | Vulnerability Data | Define one or more of the available APIs to collect:<br/>Vulnerability Data, Audit Logs, and Asset Data.<br/>For example, for both you'd use:["Vulnerability Data","Audit Logs","Asset Data"] | modifiable |
 

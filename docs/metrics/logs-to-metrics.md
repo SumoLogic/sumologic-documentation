@@ -76,7 +76,7 @@ Once you save a Logs-to-Metrics rule, Sumo will commence creating metrics. Sumo 
 
 ### Supported and unsupported parsing operators
 
-Not all Sumo parsing operators are supported. For more information see [Create a Logs-to-Metrics rule](logs-to-metrics.md).
+Not all Sumo parsing operators are supported. For more information, see [Create a Logs-to-Metrics rule](logs-to-metrics.md).
 
 ### Scheduled views and indexes are not supported
 

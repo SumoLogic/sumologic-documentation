@@ -1,13 +1,13 @@
 ---
 id: airtable-source
 title: Airtable Source
-sidebar_label: Airtable Source
-description: This document explains how to retrieve Airtable audit logs into the Sumo Logic environment.
+sidebar_label: Airtable
+description: Learn how to retrieve Airtable audit logs into the Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="150" />
+<img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="50" />
 
 The Airtable API integration ingests audit logs periodically from the Airtable app platform into the Sumo Logic environment for storing and analyzing data.
 
@@ -60,16 +60,17 @@ In this configuration, you will set up an Airtable source account with your Ente
 
 To configure an Airtable Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-2. On the Collection page, click **Add Source** next to a **Hosted Collector**.
-3. Search for and select **Airtable**.<br/><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="150" />
-4. Enter a **Name** for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/airtable-config-main.png')} alt="airtable-config-main.png" width="500" />
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
+1. On the Collection page, click **Add Source** next to a **Hosted Collector**.
+1. Search for and select **Airtable**.<br/><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="150" />
+1. Enter a **Name** for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/airtable-config-main.png')} alt="airtable-config-main.png" width="500" />
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse)
+1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
-7. In **Account ID**, enter an account ID that will be a unique identifier for your enterprise account.
-8. In **Personal Access Token**, enter the access token that you have generated in the [authentication](#authentication) section.
-9. When you are finished configuring the Source, click **Save**.
+1. In **Account ID**, enter an account ID that will be a unique identifier for your enterprise account.
+1. In **Personal Access Token**, enter the access token that you have generated in the [authentication](#authentication) section.
+1. When you are finished configuring the Source, click **Save**.
 
 
 ## Error Types

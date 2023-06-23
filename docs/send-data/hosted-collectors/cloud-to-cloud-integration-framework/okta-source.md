@@ -10,6 +10,8 @@ description: The Okta Source provides a secure endpoint to receive event data fr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
+
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
 It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -56,7 +58,7 @@ When you create an Okta Source, you add it to a Hosted Collector. Before creatin
 
 To configure an Okta Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Okta**.
 

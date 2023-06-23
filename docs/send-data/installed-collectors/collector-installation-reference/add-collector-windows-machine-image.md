@@ -72,7 +72,7 @@ Download the appropriate collector from the **Manage Data > Collection > Collec
 
     When you see the `Finishing installation...` message you can close the command prompt window. The installation is complete.
 
-1. (For Windows hosts launched on AWS EC2 instances) There can be a delay on AWS EC2 instances before a Windows host name is provided. If you would like the collector to wait for the host name to be available, you can enable a delay during registration. To set the delay parameter, add the following to the **collector.properties** file, which is created during installation at **C:\\Program Files\\Sumo Logic Collector\\config\\collector.properties:**
+1. (For Windows hosts launched on Amazon EC2 instances) There can be a delay on Amazon EC2 instances before a Windows host name is provided. If you would like the collector to wait for the host name to be available, you can enable a delay during registration. To set the delay parameter, add the following to the **collector.properties** file, which is created during installation at **C:\\Program Files\\Sumo Logic Collector\\config\\collector.properties:**
 
     ```bash
     collector.registration.delay.ms = 30000

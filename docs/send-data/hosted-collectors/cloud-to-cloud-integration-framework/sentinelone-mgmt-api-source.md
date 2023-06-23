@@ -9,6 +9,8 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" />
+
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
 Data from the following object types are collected from [SentinelOne APIs](https://usea1-partners.sentinelone.net/api-doc/overview):
@@ -75,7 +77,7 @@ When you create a SentinelOne Mgmt API Source, you add it to a Hosted Collector
 
 To configure a SentinelOne Mgmt API Source:**
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

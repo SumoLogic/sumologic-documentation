@@ -19,7 +19,7 @@ This tutorial provides the steps to create and use ingest budgets. Details about
 API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/getting-started#authentication) for details.
 
 In addition, you need to specify the correct endpoint to send your API requests. The following steps have the
-argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ## Ingest Budgets API Documentation
 
@@ -166,7 +166,7 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Use Collector API
 
-To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
+To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
 
 First make a GET request to get the Collector's JSON configuration:
 
@@ -250,7 +250,7 @@ Our updated file's content is:
 
 ## Step 1. Obtain the ETag value to identify Collector
 
-To assign a Collector to a budget you'll need to make a PUT request with the [Collector Management API](/docs/api/collectors). This request requires an "ETag" header value for verification. To get this value use a GET request for the Collector you want to assign and the response will have the value, like `< ETag: "a2c82c407ea4ae70ac4f6425b50942a1"`. You did this in step 2.
+To assign a Collector to a budget you'll need to make a PUT request with the [Collector Management API](/docs/api/collector-management). This request requires an "ETag" header value for verification. To get this value use a GET request for the Collector you want to assign and the response will have the value, like `< ETag: "a2c82c407ea4ae70ac4f6425b50942a1"`. You did this in step 2.
 
 :::note
 Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`.
@@ -262,7 +262,7 @@ curl -v -u '<accessid:accesskey>' https://api.<your deployment>.sumologic.com/ap
 
 ## Step 5. Assign Collector to the Budget
 
-Use a PUT request with the [Collector Management API](/docs/api/collectors) to update the Collector with the ingest budget assignment. Your PUT request needs to provide the "ETag" value from step 4 and the updated JSON file you created in step 3.
+Use a PUT request with the [Collector Management API](/docs/api/collector-management) to update the Collector with the ingest budget assignment. Your PUT request needs to provide the "ETag" value from step 4 and the updated JSON file you created in step 3.
 
 :::note
 Customize `<accessid:accesskey>`, `a2c82c407ea4ae70ac4f6425b50942a1`, `updated_collector.json`, `<your deployment>`, and id like `150905330`.

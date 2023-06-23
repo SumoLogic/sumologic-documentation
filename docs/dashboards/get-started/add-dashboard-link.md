@@ -36,23 +36,15 @@ To create a link from one dashboard to another, we'll first get the link
 we want to put on the other dashboard:
 
 1. Open the dashboard you want to link to another dashboard and select the Share ![share-icon](/img/dashboards/share-icon.png) icon.
-
 1. Select **Shareable URL**. You can toggle any of the options to share with filters, the timerange, and accessibility.
-
-1. Select **Copy**. The button text changes to **Copied** when the link has been copied to the clipboard.   
-
-    ![Dashboard_Share_URL.png](/img/dashboards/Dashboard_Share_URL.png)
-
+1. Select **Copy**. The button text changes to **Copied** when the link has been copied to the clipboard.   <br/>![Dashboard_Share_URL.png](/img/dashboards/Dashboard_Share_URL.png)
 1. Now, go to the dashboard where you want the link to appear and click the **Show In Search** icon to edit the query of the desired panel. The following is an example query we'll edit for this task.      
-
     ```sql
     _sourceCategory=mycategory keyword
     | json "score", "orgId"
     | avg(score) as avg_score by orgId
     ```
-
 1. Add a line to the end of your query using the [toURL](/docs/search/search-query-language/search-operators/tourl) operator. The following assigns the Dashboard URL to the name **Account Dashboard** and adds it to the field **org**.
-
     ```sql
     _sourceCategory=mycategory keyword
     | json "score", "orgId"
@@ -65,16 +57,11 @@ we want to put on the other dashboard:
 A Dashboard that is configured with filters can be provided with custom filter values through its URL.  
 
 [Dashboard filters](/docs/dashboards/edit-dashboards/use-filters-dashboards) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
-
 ```sql
 &filters=_source*eq*CrowdStrike
 ```  
 
-The full dashboard URL and this filter would look like:  
-
-```
-https://service.sumologic.com/ui/dashboard.html?k=abcdefghi&f=&t=r&filters=_source*eq*CrowdStrike
-```
+The full dashboard URL and this filter would look like: `https://service.sumologic.com/ui/dashboard.html?k=abcdefghi&f=&t=r&filters=_source*eq*CrowdStrike`.
 
 To apply a filter value through a query, use the [concat](/docs/search/search-query-language/search-operators/concat) operator to concatenate the custom value to the location in the URL where the filter value is located. Using the same query example from the previous section, we'll use the value of the **orgId** field as a filter value in the Dashboard URL.
 
@@ -115,12 +102,10 @@ Probably more common than linking a Dashboard to a Dashboard is linking a Dash
     :::
 
 1. Create a hyperlink with the appropriate description using the [toURL](/docs/search/search-query-language/search-operators/tourl) operator.  For example:
-
     ```sql
     | tourl(search_query_link , "Click Here") as search_query_link
     ```    
-
-1. Add the search to the dashboard. The field **search_query_link** automatically converts to hyperlink in the dashboard. In our example dashboard **Click Here** displays**.**   
+1. Add the search to the dashboard. The field **search_query_link** automatically converts to hyperlink in the dashboard. In our example dashboard, **Click Here** displays.
 
     ![Screen Shot 2019-08-15 at 8.27.00 PM.png](/img/dashboards/search-query-link.png)
 
@@ -132,18 +117,18 @@ Probably more common than linking a Dashboard to a Dashboard is linking a Dash
 
 Threat data provided by the GuardDuty provides a lot of data into threats you are facing. With a linked dashboard, we can drill down into one particular threat to understand it better. 
 
-For example we can modify the  default Amazon GuardDuty - Threat Details Benchmark dashboard of the GuardDuty app, making the threatName column a link to threatDetails.
+For example, we can modify the default Amazon GuardDuty - Threat Details Benchmark dashboard of the GuardDuty app, making the threatName column a link to threatDetails.
 
 ![image1.png](/img/dashboards/amazon-guarddog.png)
 
-Clicking on the threatDetails link gives us the raw guard duty event associated with that particular threatType and threatPurpose. This allows users to get more details about the particular threat, like  which resource was affected by the threat:
+Clicking on the threatDetails link gives us the raw guard duty event associated with that particular threatType and threatPurpose. This allows users to get more details about the particular threat, like which resource was affected by the threat:
 
 * Name
 * ID
 * IP address
 * Security permissions applied to the resource.
 
-All this information can help your users investigate security incidents quickly and effectively.  To create this link, add the following snippet to your to the existing GuardDuty panel query.  Include the section at the end of your query:
+All this information can help your users investigate security incidents quickly and effectively. To create this link, add the following snippet to your to the existing GuardDuty panel query. Include the section at the end of your query:
 
 ```
 | urlencode(concat("_sourceCategory={SumoGuardDutysourceCategoryName}

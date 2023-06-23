@@ -205,6 +205,6 @@ You can use the following operators with Lookup Tables in Sumo Logic log searche
 
 * `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](/docs/search/search-query-language/search-operators/cat).
 * `lookup`—You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](/docs/search/search-query-language/search-operators/lookup).
-* `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](/docs/search/search-query-language/search-operators/lookupContains).
+* `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](/docs/search/search-query-language/search-operators/lookupcontains).
 * `save`—You can use the `save` operator to save the results of a Sumo log query to a Lookup Table you created using the Lookup UI or API. For more information, see [save](/docs/search/search-query-language/search-operators/save).  
      

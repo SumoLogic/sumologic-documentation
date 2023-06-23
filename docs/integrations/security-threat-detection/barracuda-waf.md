@@ -1,6 +1,6 @@
 ---
 id: barracuda-waf
-title: Sumo Logic App for Barracuda Web Application Firewall
+title: Barracuda Web Application Firewall
 sidebar_label: Barracuda WAF
 description: The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and the Sumo Logic Threat Intelligence database.
 ---
@@ -8,7 +8,6 @@ description: The Barracuda WAF App analyzes traffic flowing through the Barracud
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="thumbnail icon" width="100"/>
-
 
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 
@@ -158,43 +157,13 @@ parse regex "(?<Unit_Name>[^ ]+) NF(?<Log>.*)"
 
 ## Install the Barracuda WAF App
 
-
 This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
 
-Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [dashboards](#viewing-dashboards).
+Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and dashboards.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Barracuda WAF Dashboards   
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-
 
 ### Dashboard organization
 

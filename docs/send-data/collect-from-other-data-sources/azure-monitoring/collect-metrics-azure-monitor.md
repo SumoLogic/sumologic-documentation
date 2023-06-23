@@ -1,6 +1,7 @@
 ---
 id: collect-metrics-azure-monitor
 title: Collect Metrics from Azure Monitor
+sidebar_label: Collecting Metrics 
 description: Instructions for configuring a pipeline for shipping metrics available from Azure Monitor to  Sumo Logic.
 ---
 

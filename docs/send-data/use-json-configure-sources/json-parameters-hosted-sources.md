@@ -4,14 +4,12 @@ title: JSON Parameters for Hosted Sources
 description: This topic describes JSON Source parameters for hosted Collectors.
 ---
 
-
-
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
 
  * [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
  * Source API Methods and Examples for information on creating Sources.
  * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources).
- * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
+ * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration) from Sumo Logic.
 
 :::note
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
@@ -19,12 +17,13 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 :::note Common Parameters
 See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a list of common parameters.
+:::
 
 ## Source types for Hosted Collectors
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-The G Suite Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
+The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
 
 ## Log Sources for Installed Collectors
 
@@ -54,37 +53,38 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 
 | Field Type | Type Value |
 |:--|:--|
-| [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
+| [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source) | Universal |
 | [Amazon S3 Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-source) | Polling |
 | [AWS S3 Archive Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-archive-source) | Polling |
 | [AWS CloudFront Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudfront-source) | Polling |
 | [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
-| [AWS S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
+| [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-metadata-tag-source) | Polling |
-| [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
-| [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
-| [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
+| [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) | Universal |
+| [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) | Universal |
+| [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Universal |
 | [Cloud Syslog Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#cloud-syslog-source) | Cloudsyslog |
-| [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
-| [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
-| [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
-| [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
-| [Cybereason Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
-| [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
+| [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source) | Universal |
+| [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source) | Universal |
+| [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Universal |
+| [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) | 	Universal |
+| [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source) | Universal |
+| [Cybereason Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source) | Universal |
+| [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) | Universal |
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
-| [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
-| [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
-| [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
-| [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
-| [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
-| [Proofpoint On Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
-| [Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
-| [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
-| [Sophos Central Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
-| [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
+| [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) | Universal |
+| [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
+| [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) | Universal |
+| [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Universal |
+| [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source) | Universal |
+| [Proofpoint On Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) | Universal |
+| [Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source) | Universal |
+| [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source) | Universal |
+| [Sophos Central Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source) | Universal |
+| [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source) | Universal |
 
 ### Metrics sources for hosted collectors
 
@@ -181,7 +181,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 | `url` | String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
 | `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
 | `snsTopicOrSubscriptionArn`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
-| `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your AWS S3 bucket. | Modifiable |
+| `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
 | `pathExpression`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Wildcard pattern that matches the S3 objects you'd like to collect. | Modifiable |
 
 
@@ -227,7 +227,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 
 #### AWS S3 Archive Source
 
-The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources)  section. This is an Amazon S3 Archive Source JSON example:
+The parameters for this Source can be referenced in the [AWS Log Sources](#aws-log-sources) section. This is an AWS S3 Archive Source JSON example:
 
 ```json
 {
@@ -468,11 +468,41 @@ The parameters for this Source can be referenced in the [AWS Log Sources](#aws-l
 
 #### AWS Kinesis Firehose for Logs Source
 
-This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `thirdPartyRef` parameter to enable **S3 Replay**. Leave `thirdPartyRef` empty if you don't want to enable S3 replay.
+This is an AWS Kinesis Firehose for Logs Source JSON example. It uses the `thirdPartyRef` parameter to enable **S3 Replay**.
 
-```
+```json
 {
-  "source":{ "name":"test-source", "automaticDateParsing":true, "multilineProcessingEnabled":true, "useAutolineMatching":true, "contentType":"AwsS3Bucket", "forceTimeZone":false, "filters":[], "cutoffTimestamp":1634972400000, "encoding":"UTF-8", "fields":{}, "thirdPartyRef":{   "resources":[{     "serviceType":"AwsS3Bucket",     "path":{       "type":"S3BucketPathExpression",       "bucketName":"test-kinesis-bucket-name",       "pathExpression":"http-endpoint-failed/*",       "useVersionedApi":true     },     "authentication":{       "type":"S3BucketAuthentication",       "awsId":"XXX",       "awsKey":"XXX"     }   }] }, "sourceType":"HTTP"
+  "source":
+     {
+           "name":"test-source",
+           "automaticDateParsing":true,
+           "multilineProcessingEnabled":true,
+           "useAutolineMatching":true,
+           "contentType":"AwsS3Bucket",
+           "forceTimeZone":false,
+           "filters":[],
+           "cutoffTimestamp":1634972400000,
+           "encoding":"UTF-8",
+           "fields":{},
+           "thirdPartyRef":{   
+               "resources":[
+                   {     
+                        "serviceType":"AwsS3Bucket",
+                        "path":{       
+                            "type":"S3BucketPathExpression",       
+                            "bucketName":"test-kinesis-bucket-name",       
+                            "pathExpression":"http-endpoint-failed/*",       
+                            "useVersionedApi":true     
+                        },     
+                        "authentication":{       
+                            "type":"S3BucketAuthentication",
+                            "awsId":"XXX",
+                            "awsKey":"XXX"
+                        }   
+                    }
+                ]
+            },
+            "sourceType":"HTTP"
   }
 }
 ```

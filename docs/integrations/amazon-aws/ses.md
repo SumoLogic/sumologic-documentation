@@ -1,7 +1,6 @@
 ---
 id: ses
 title: Amazon SES
-sidebar_label: Amazon SES
 description: The Sumo App for Amazon SES provides operational insight into Amazon Simple Email Service. The app includes dashboards that allow you to  view information about bounced notifications, delivered notifications, and CloudTrail events.
 ---
 
@@ -108,7 +107,7 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 ### Step 2: Configure CloudTrail
 
 1. Enable CloudTrail in your AWS account. You'll be offered the option to create an S3 bucket.
-2. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to the Amazon S3 bucket created or selected above.
+2. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to the Amazon S3 bucket created or selected above.
 
 
 ### Step 3: Collect Amazon SES events using CloudTrail
@@ -133,7 +132,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). Then define the fields you want to associate, each field needs a name (key) and value.
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.  \
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
@@ -142,7 +141,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
     <details><summary>Set up SNS in AWS</summary>
 
-    The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
+    The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint).
 
     1. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step 3.
 
@@ -183,7 +182,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
-14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
+14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the AWS Source.
 15. When you are finished configuring the Source, click **Save**.
 
 
@@ -230,7 +229,7 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 
 ## Installing the Amazon SES App
 
-Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 1. From the **App Catalog**, search for and select the app. You can click **Preview Dashboards** to verify that you have the app you need.
@@ -238,7 +237,7 @@ To install the app:
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source**. Select either of these options for **SES CloudTrail Log Source**, and **SES Notification Log Source**.
         * Choose **Source Category**, and select a source category from the list.
-            * For SES CloudTrail Logs, provide sourceCategory as **AWS/Cloudtrail**
+            * For SES CloudTrail Logs, provide sourceCategory as **AWS/CloudTrail**
             * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
         * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
@@ -257,9 +256,9 @@ This section provides examples of the Amazon SES App dashboards, along with desc
 
 ### CloudTrail Events Overview
 
-See the overview of SES CloudTrail events including failed, and successful events, error codes, users, and event locations.
+See the overview of SES CloudTrail events including failed and successful events, error codes, users, and event locations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsbyEventName.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsOverview.png')} alt="AWS SES CloudTrail Events Overview" />
 
 **Successful Events Location**. See the count and location of the successful events in the last 24 hours on a world map.
 
@@ -290,7 +289,7 @@ See the overview of SES CloudTrail events including failed, and successful event
 
 See the details of various SES CloudTrail events including the identity, get send, domain, receipt, and email address events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SES-Notification.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESCloudTrailEventsbyEventName.png')} alt="AWS SES Cloud Trail Events by Event Name" />
 
 **Identity Events**. See the count of the identity events in the last seven days on a pie chart.
 
@@ -313,11 +312,11 @@ See the details of various SES CloudTrail events including the identity, get sen
 **Email Address Event Details**. See the details of the email address event in the last seven days including the event time, event name, event type, type, user, AWS region, source IP address, event status, account ID, request ID, error code, error message, and event count, displayed in a table.
 
 
-#### Notification Overview
+### Notification Overview
 
 See the overview of SES notifications including the source IP locations, notification types, mail source, and notification type.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/SES-Notification.png')} alt="AWS SES Notification" />
 
 **Mail Source IP Locations**. See the count and location of the mail source IP addresses in the last 24 hours on a world map.
 
@@ -334,7 +333,7 @@ See the overview of SES notifications including the source IP locations, notific
 
 See the details of delivered notifications including the email destinations, domains, reporting MTA, and delivery processing time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/SES-Delivered.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/SES-Delivered.png')} alt="AWS SES Delivered" />
 
 **Top Delivered email destinations**. See the top 10 delivered email destinations by event count in the last 24 hours.
 
@@ -353,7 +352,7 @@ See the details of delivered notifications including the email destinations, dom
 
 See the details of bounced notifications by email addresses, domains, bounce types, and bounce subtypes.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESBouncedNotifications.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESBouncedNotifications.png')} alt="AWS SES Bounced Notifications" />
 
 **Top Bounced email Addresses.** See the top 10 bounced email addresses by count in the last 24 hours.
 
@@ -382,9 +381,9 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 ### Complaint Notifications
 
-See information about complaints (a complaint occurs when a recipient reports that they don't want to receive an email), including the top email addresses, email domains, and UserAgents associated with complaints; and the sending AccountId, AWS region, SourceIP, and Identity associated with complaints.
+See information about complaints (a complaint occurs when a recipient reports that he doesn't want to receive an email), including the top email addresses, email domains, and user agents associated with complaints and the sender's AccountId, AWS region, SourceIP, and identity associated with complaints.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESComplaintNotifications.png')} alt="AWS API Gateway" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AmazonSESComplaintNotifications.png')} alt="AWS SES Complaint Notifications" />
 
 **Top Complaint email Addresses.** See the top 10 email addresses sending emails generating complaint notifications by count in the last 24 hours.
 

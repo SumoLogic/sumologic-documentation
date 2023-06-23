@@ -7,6 +7,8 @@ description: The Microsoft Graph Identity Protection Source collects Risk Detect
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+
 The [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Identity Protection Source collects [Risk Detection](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) and [Risky User](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) data from the Microsoft Graph [Identity Protection API](https://docs.microsoft.com/en-us/graph/api/resources/identityprotectionroot?view=graph-rest-1.0). It
 securely stores the required authentication, scheduling, and state tracking information.
 
@@ -90,7 +92,7 @@ When you create a Microsoft Graph Identity Protection Source, you add it to a H
 
 To configure a Microsoft Graph Identity Protection Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

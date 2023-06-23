@@ -12,7 +12,7 @@ The Sumo Logic App for Host and Process Metrics allows you to monitor the perfor
 
 This app uses Telegraf and associated input plugins to collect both host and process metrics. To use the installed collector to collect and analyze host metrics, please see the [Host Metrics app](/docs/integrations/hosts-operating-systems/host-metrics).
 
-This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft Windows Server 2019) and higher using Telegraf 1.18.2. This app is not recommended in Kubernetes environments; instead please use the [Kubernetes app](/docs/integrations/containers-orchestration/Kubernetes).
+This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft Windows Server 2019) and higher using Telegraf 1.18.2. This app is not recommended in Kubernetes environments; instead please use the [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes).
 
 
 ## Collecting Metrics for Host and Processes
@@ -232,7 +232,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 ## Installing the Alerts
 
-The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
+The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
@@ -358,26 +358,7 @@ This section demonstrates how to install the Host and Process Metrics App.
 
 Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and dashboards.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-7
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-* Choose **Source Category**, and select a source category from the list. 
-    * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-1. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library.**
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Host and Process Metrics Dashboards
 

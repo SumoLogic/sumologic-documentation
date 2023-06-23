@@ -243,7 +243,7 @@ export const features6 = [
       description='SDO description'>
       Monitor your CI/CD pipelines and accelerate release velocity.
     </Translate>),
-    link: 'docs/sdo',
+    link: 'docs/observability/sdo',
   },
   {
     title: translate({

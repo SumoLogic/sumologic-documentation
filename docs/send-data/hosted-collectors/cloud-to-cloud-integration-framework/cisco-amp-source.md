@@ -2,9 +2,12 @@
 id: cisco-amp-source
 title: Cisco AMP Source
 sidebar_label: Cisco AMP
+description: The Cisco AMP Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Amp System Log API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="90"/>
 
 The Cisco AMP Source provides a secure endpoint to receive data from the Cisco Amp [System Log API](https://api-docs.amp.cisco.com/api_resources?api_host=api.amp.cisco.com&api_version=v1). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -44,7 +47,7 @@ When you create a Cisco AMP Source, you add it to a Hosted Collector. Before cr
 
 To configure a Cisco AMP Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Cisco AMP**.
 

@@ -27,8 +27,9 @@ This query will NOT work:
 
 Instead, separate the `where` operator from the preceding `parse` operator like this:
 
-`...| parse "seconds=*;" as time  | where time\> 5`
-
+```sql
+...| parse "seconds=*;" as time  | where time > 5
+```
 ## Syntax
 
 ```sql
@@ -40,7 +41,7 @@ Instead, separate the `where` operator from the preceding `parse` operator l
 * The pipe delimiter is required to separate the `where` operator as a distinct query operator.
 * The `where` operator *can't* be used inline as a query clause, like ".`.. | extract a where b==something |...`"
 * You must use the `matches` syntax with the `where` operator when using wildcards `*`.
-* Multiple `where` operators are processed in the order they are specified, with each subsequent `where` perator further filtering results.
+* Multiple `where` operators are processed in the order they are specified, with each subsequent `where` operator further filtering results.
 * [Keyword expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) can be used in the boolean expression, such as OR and AND.
 * If defining a [built-in metadata field](/docs/search/get-started-with-search/search-basics/built-in-metadata) value in the boolean expression you need to quote the value. If it is not wrapped in quotes the value is interpreted as a field name.
 * If you're using [`in`](in.md) or **not in** to match integers, [cast "x" to a number first](/docs/search/search-query-language/search-operators/manually-cast-data-string-number).

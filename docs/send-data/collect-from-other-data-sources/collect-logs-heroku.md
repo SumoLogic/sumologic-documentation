@@ -1,6 +1,7 @@
 ---
 id: collect-logs-heroku
 title: Collect Logs from Heroku
+sidebar_label: Heroku
 description: Learn how to upload data from your Heroku app directly to the Sumo Logic Cloud by pointing a Heroku log drain to the URL for an HTTP Source.
 ---
 

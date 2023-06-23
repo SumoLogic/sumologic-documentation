@@ -1,8 +1,7 @@
 ---
 id: dynamodb
 title: Amazon DynamoDB
-sidebar_label: Amazon DynamoDB
-description: The Sumo App for DynamoDB provides operational insight into your database environment. The app includes Dashboards that allow you to view the events, errors, latency, and capacity of your DynamoDB environment.
+description: The Sumo Logic app for DynamoDB provides operational insight into your database environment and Dashboards displaying the events, errors, latency, and capacity of your DynamoDB environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -137,7 +136,7 @@ Parse Expression:
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time

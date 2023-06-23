@@ -5,13 +5,13 @@ sidebar_label: Metrics
 description: Use HTTP endpoints to access your metric data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
 
-This API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
-
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
-
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+{@import ../reuse/api-intro.md}
 
 ## Before You Begin
 
@@ -31,98 +31,11 @@ An `HTTP 301 Moved` error suggests that the wrong endpoint was specified.
 
 ## Rate limiting
 
-* A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
-
-If a rate is exceeded, a rate limit exceeded 429 status code is returned.
+{@import ../reuse/api-rate-limit.md}
 
 ## Errors
 
-Generic errors that apply to all APIs.
-
-<table>
-  <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>301
-   </td>
-   <td>moved
-   </td>
-   <td>The requested resource SHOULD be accessed through returned URI in Location Header.
-   </td>
-  </tr>
-  <tr>
-   <td>401
-   </td>
-   <td>unauthorized</td>
-   <td>Credential could not be verified.
-   </td>
-  </tr>
-  <tr>
-   <td>403
-   </td>
-   <td>forbidden
-   </td>
-   <td>This operation is not allowed for your account type.
-   </td>
-  </tr>
-  <tr>
-   <td>404
-   </td>
-   <td>notfound
-   </td>
-   <td>Requested resource could not be found.
-   </td>
-  </tr>
-  <tr>
-   <td>405
-   </td>
-   <td>method.unsupported
-   </td>
-   <td>Unsupported method for URL.
-   </td>
-  </tr>
-  <tr>
-   <td>415
-   </td>
-   <td>contenttype.invalid
-   </td>
-   <td>Invalid content type.
-   </td>
-  </tr>
-  <tr>
-   <td>429
-   </td>
-   <td>rate.limit.exceeded
-   </td>
-   <td>The API request rate is higher than 4 request per second.
-   </td>
-  </tr>
-  <tr>
-   <td>500
-   </td>
-   <td>internal.error
-   </td>
-   <td>Internal server error.
-   </td>
-  </tr>
-  <tr>
-   <td>503
-   </td>
-   <td>service.unavailable
-   </td>
-   <td>Service is currently unavailable.
-   </td>
-  </tr>
-</table>
-
-
+{@import ../reuse/api-errors.md}
 
 ## API details
 
@@ -134,7 +47,11 @@ To execute a metrics query, send a JSON request to the endpoint.
 
 **Example endpoint:** [https://api.sumologic.com/api/v1/metrics/results](https://api.sumologic.com/api/v1/metrics/results)
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<details><summary>Which API endpoint should I use?</summary>
+
+{@import ../reuse/api-endpoints.md}
+
+</details>
 
 
 ### Headers
@@ -242,7 +159,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
    </td>
    <td>No
    </td>
-   <td>Desired granularity of temporal quantization (DAVID A TODO LINK), in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
+   <td>Desired granularity of temporal quantization in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
    </td>
   </tr>
 </table>

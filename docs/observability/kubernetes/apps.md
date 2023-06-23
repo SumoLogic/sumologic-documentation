@@ -1,13 +1,11 @@
 ---
 id: apps
 title: Sumo Logic Apps for Kubernetes
-sidebar_label: Kubernetes Apps
+sidebar_label: Install Kubernetes Apps
 description: Learn about the Sumo Logic Kubernetes apps.
 ---
 
 Sumo Logic provides a selection of Kubernetes apps to monitor various different aspects of your Kubernetes platform and environment. The apps provide out-of-box dashboards and other content relevant for you to monitor your K8s environment.
-
-![k8s_App_Catalog.png](/img/kubernetes/k8s_App_Catalog.png)
 
 ## Kubernetes app
 

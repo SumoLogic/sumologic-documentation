@@ -1,15 +1,15 @@
 ---
 id: active-directory-legacy
-title: Sumo Logic App for Active Directory Legacy
+title: Active Directory Legacy
 sidebar_label: Active Directory (Legacy)
 description: Allows you to analyze Windows Active Directory logs and gain insight into your deployment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Windows-Server-Active-Directory.jpg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
 
-The Active Directory Legacy App allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
+The Sumo Logic app for Active Directory Legacy (2008+) allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory App in combination with the Windows App.
 
@@ -191,7 +191,7 @@ The **Frequency** option should be set according to your environment. We use a s
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -208,7 +208,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/Windows-Legacy).
+Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/windows-legacy).
 
 
 ## Viewing Active Directory Legacy Dashboards

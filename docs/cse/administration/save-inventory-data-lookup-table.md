@@ -41,16 +41,16 @@ To create the Lookup Table schema:
 1. The **Create Lookup Table** page appears. <br/>  ![create-in-cip.png](/img/cse/create-in-cip.png)
 1. **Name**. Enter a name for the Lookup Table.
 1. **Description**. (Optional)
-1. **Do you want a TTL for table entries**? Click **No**.
-1. **Size Limit Handling**. This option controls how additions to the Lookup table will be handled when it reaches its size limit (100 MB). Click **Delete Old Data.**
-1. **How do you want to create lookup?** Click **Create Schema only**.
+1. **Set a TTL (Time to Live) for table entries**? Click **No**.
+1. **Choose a size limit handling option**. This option controls how additions to the Lookup table will be handled when it reaches its size limit (100 MB). Click **Delete Old Data.**
+1. **Create Lookup Table** Click **Create Schema only**.
 1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.) <br/>  ![schema.png](/img/cse/schema.png)
 1. For the first column, enter:
-   * **Field**. Enter *mail*.
+   * **Fields**. Enter *mail*.
    * **Value Type**. Leave the default, *string*, selected.
-   * **Primary Key.** Click the **Yes** checkbox.
+   * **Primary Key Field(s)**. Click the **Yes** checkbox.
 1. For the second column, enter:
-   * **Field**. Enter *samaccountname*.
+   * **Fields**. Enter *samaccountname*.
    * **Value Type**. Leave the default, *string,* selected.
 1. Click **Create**. 
 
@@ -75,7 +75,7 @@ Where:
 
     ![tree-dot.png](/img/cse/tree-dot.png)
 
-### Step 3: Save and schedule the search
+## Step 3: Save and schedule the search
 
 In this step you save and schedule the search created in [Step 2](#step-2-create-a-search-to-populate-the-table) to run on a regular basis. Daily is a good choice. 
 

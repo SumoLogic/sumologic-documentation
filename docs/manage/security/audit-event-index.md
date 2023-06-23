@@ -17,7 +17,7 @@ This index is improved and different from the [Audit Index](audit-index.md), and
 
 ## Documentation 
 
-All available audited events are documented for your reference. This documentation is hosted on each deployment, instead of on this document. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
+All available audited events are documented for your reference. This documentation is hosted on each deployment, instead of on this document. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
 
 Select the documentation link for your deployment:
 
@@ -38,7 +38,7 @@ Select the documentation link for your deployment:
 Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
-* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example throttling events, rules triggered, and so on.  
+* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example, throttling events, rules triggered, and so on.  
 
 For example, to search for user action events:
 
@@ -68,6 +68,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | [Access Keys](access-keys.md) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Collection](/docs/send-data/collection) | `collection` |
+| [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
@@ -84,10 +85,13 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | Security Policy: [Support Account Access](enable-support-account.md) | `supportAccount` |
 | [Service Allowlist](create-allowlist-ip-cidr-addresses.md) | `serviceAllowlist` |
 | [Support Account](enable-support-account.md) | `supportAccount` |
+| [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
 | [Transformation Rules](../../metrics/metrics-transformation-rules.md) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |
 | [2-Step Verification](about-2-step-verification.md) | `multiFactorAuthentication` |
+
+When performing create, update, and delete requests through Sumo Logic APIs, you can find the API accessID within the operator field of your related Audit Event Index messages.
 
 ## Metadata assignment
 

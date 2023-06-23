@@ -1,6 +1,6 @@
 ---
 id: couchbase
-title: Sumo Logic App for Couchbase
+title: Couchbase - Classic Collector
 sidebar_label: Couchbase
 description: Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities.
 ---
@@ -15,7 +15,7 @@ Couchbase, a modern database for enterprise applications, is a distributed docum
 
 The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Health of the Cluster, the Status of the Buckets, I/O of Reading/Writing, Errors, the Events of Couchbase Servers that help you understand your clusters.
 
-This App has been tested with the following Couchbase with Telegraf versions:
+This app has been tested with the following Couchbase with Telegraf versions:
 * Kubernetes: Couchbase version: 7.0.2 - enterprise with Telegraf version 1.21.1
 * Non-Kubernetes: Couchbase version: 7.0.2 - enterprise with Telegraf version 1.21.1
 
@@ -23,10 +23,9 @@ This App has been tested with the following Couchbase with Telegraf versions:
 Telegraf 1.14 default of Kubernetes Collection will not work.
 :::
 
-## Collecting Logs and Metrics for the Couchbase App
+## Collecting Logs and Metrics for the Couchbase app
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Couchbase.
-
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Couchbase.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -63,7 +62,6 @@ If you're using Couchbase in a non-Kubernetes environment, create the fields:
 </TabItem>
 </Tabs>
 
-
 ### Step 2: Configure Collection for Couchbase
 
 Sumo Logic supports the collection of logs and metrics data from Couchbase in both Kubernetes and non-Kubernetes environments. Click on the appropriate tab below based on the environment where your Couchbase clusters are hosted.
@@ -78,9 +76,15 @@ Sumo Logic supports the collection of logs and metrics data from Couchbase in bo
 
 <TabItem value="k8s">
 
-The following diagram illustrates how data is collected from Couchbase in Kubernetes environments. There are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.<img src={useBaseUrl('img/integrations/databases/couchbase1.png')} alt="couchbase1" />
+The following diagram illustrates how data is collected from Couchbase in Kubernetes environments. There are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Couchbase. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+<img src={useBaseUrl('img/integrations/databases/couchbase1.png')} alt="couchbase1" />
+
+The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from Couchbase. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
+The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
 It’s assumed that you are using the latest helm chart version if not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md). When you upgrade the helm chart, you must upgrade telegraf version to 1.21.1 by adding the statement below in the upgrade command helm chart:
@@ -88,7 +92,6 @@ It’s assumed that you are using the latest helm chart version if not, upgrade 
 --set telegraf-operator.image.sidecarImage=telegraf:1.21.1
 ```
 :::
-
 
 #### Configure Metrics Collection
 
@@ -98,20 +101,20 @@ To collect Couchbase metrics from a Kubernetes environment, we use the Telegraf 
 2. On your Couchbase Pods, add the following annotations:
 ```sql
 annotations:
-   telegraf.influxdata.com/class: sumologic-prometheus
-   prometheus.io/scrape: "true"
-   prometheus.io/port: "9273"
-   telegraf.influxdata.com/inputs: |+
+  telegraf.influxdata.com/class: sumologic-prometheus
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "9273"
+  telegraf.influxdata.com/inputs: |+
 [[inputs.couchbase]]
   servers = ["http://<USER_TO_BE_CHANGED>:<PASS_TO_BE_CHANGED>@A@localhost:8091"]
   bucket_stats_included = ["*"]
-[inputs.couchbase.tags]
-  db_cluster="ENV_TO_BE_CHANGED"--If you haven’t defined a cluster in Couchbase, enter `default`
-  component="database"
-  environment="ENV_TO_BE_CHANGED"
-  db_system="couchbase"
-  db_cluster_address = "ENV_TO_BE_CHANGED"
-  db_cluster_port = "ENV_TO_BE_CHANGED"
+  [inputs.couchbase.tags]
+    db_cluster ="ENV_TO_BE_CHANGED"--If you haven’t defined a cluster in Couchbase, enter `default`
+    component ="database"
+    environment ="ENV_TO_BE_CHANGED"
+    db_system ="couchbase"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
@@ -125,7 +128,7 @@ annotations:
 
      :::note
      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
-     For example if your application uses “couchbase-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`
+     For example, if your application uses “couchbase-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`
 
      If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
 
@@ -151,10 +154,10 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 1. **Add labels on your Couchbase pods to capture logs from standard output on Kubernetes (recommended)**.
    1. Apply following labels to the Couchbase pod:
     ```sql
-    environment="prod_CHANGEME"
-    component="database"
-    db_system="couchbase"
-    db_cluster="<cluster_CHANGEME>"
+    environment = "prod_CHANGEME"
+    component = "database"
+    db_system = "couchbase"
+    db_cluster = "<cluster_CHANGEME>"
     db_cluster_address: <your cluster’s hostname or ip address or service endpoint>
     db_cluster_port: <database port>
     ```
@@ -165,7 +168,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
     :::note
     `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
-    For example if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
+    For example, if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
 
     If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`.
 
@@ -175,7 +178,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
      * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
      * `db_system: “couchbase”` - This value identifies the database system.
      See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    4. Verify logs in Sumo Logic.
 2. **Collecting Couchbase Logs from a Log File on Kubernetes (optional)**.
    1. Determine the location of the Couchbase log file on Kubernetes. This can be determined from the config file /opt/couchbase/etc/couchbase/static_config squid.conf for your Couchbase cluster along with the mounts on the Couchbase pods.
@@ -218,7 +221,6 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
       | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
       ```
    5. Click **Save** to create the rule.
-
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -327,13 +329,13 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 [[inputs.couchbase]]
   servers = ["http://<USER_TO_BE_CHANGED>:<PASS_TO_BE_CHANGED>@localhost:8091"]
   bucket_stats_included = ["*"]
-[inputs.couchbase.tags]
-   db_cluster="<ClusterName_TO_BE_CHANGED>"
-   component="database"
-   environment="<env_TO_BE_CHANGED>"
-   db_system="couchbase"
-   db_cluster_address = "ENV_TO_BE_CHANGED"
-   db_cluster_port = "ENV_TO_BE_CHANGED"
+  [inputs.couchbase.tags]
+    db_cluster ="<ClusterName_TO_BE_CHANGED>"
+    component ="database"
+    environment ="<env_TO_BE_CHANGED>"
+    db_system ="couchbase"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED"
 [[outputs.sumologic]]
   url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
   data_format = "prometheus"
@@ -351,7 +353,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
   :::note
   `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-  For example if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
+  For example, if your application uses `“couchbase-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=couchbase-prod.sumologic.com db_cluster_port=3306`.
 
   If your application connects directly to a given Couchbase node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=couchbase-prod.sumologic.com`
 
@@ -375,10 +377,9 @@ At this point, Telegraf should start collecting the Couchbase metrics and forwar
 </Tabs>
 
 
-
 ## Installing Couchbase Monitors
 
-The next sections provides instructions for installing the Couchbase App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the **Collecting Logs and Metrics for the Couchbase App** section.
+The next sections provides instructions for installing the Couchbase app, as well as examples of each of the app dashboards. These instructions assume you have already set up the collection as described in the **Collecting Logs and Metrics for the Couchbase app** section.
 
 #### Pre-Packaged Alerts
 
@@ -403,14 +404,13 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 5. Click Import and then copy-paste the above JSON to import monitors.
 6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors#add-a-monitor).
 
-
 ### Method B: Using a Terraform script method
 
-1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**.
 3. **Download the Sumo Logic Terraform package for Couchbase alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/`
-5. **Edit the **couchbase.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
+4. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/`
+5. Edit the **couchbase.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
 ```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
@@ -465,19 +465,19 @@ email_notifications = [
   ]
 ```
 
-7. **Install the Alerts**: navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/` and run **terraform init**. This will initialize Terraform and will download the required components.
+7. **Install the Alerts**. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/` and run **terraform init**. This will initialize Terraform and will download the required components.
 8. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
 9. Run **terraform apply**.
 10. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-## Installing the Couchbase App
+## Installing the Couchbase app
 
-This section demonstrates how to install the Couchbase App.
+This section demonstrates how to install the Couchbase app.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app.
+1. From the **App Catalog**, search and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -492,7 +492,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
 
 ## Viewing Couchbase Dashboards
 
@@ -521,7 +520,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/Couchbase-Bucket-I-O.png')} alt="Cassandra dashboards" />
 
-
 ### Cluster Resources
 
 The **Couchbase - Cluster Resources** dashboard provides an insight into the resources of clusters: the memory resource usage, the CPU resource usage, the disk resource usage.
@@ -542,7 +540,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/Couchbase-DCP-Queues.png')} alt="Cassandra dashboards" />
 
-
 ### Disk Queues
 
 The **Couchbase - Disk Queues** dashboard provides an insight into the DCP queues of buckets in couchbase clusters: the number of active items waiting to be written to disk, the number of items being put to disk queue, the average age of items in queues.
@@ -561,7 +558,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/Couchbase-vBucket.png')} alt="Cassandra dashboards" />
 
-
 ### XDCR
 
 The **Couchbase - XDCR** dashboard provides insights into replicate operations of buckets cross-cluster: the number of XDCR connections, the number of XDCR items remaining, the number of read-set-delete operations for XDCR.
@@ -570,7 +566,6 @@ Use this dashboard to:
 * Gain insights into replicate operations of buckets cross-cluster
 
 <img src={useBaseUrl('img/integrations/databases/Couchbase-XDCR.png')} alt="Cassandra dashboards" />
-
 
 ### Errors
 
@@ -599,8 +594,6 @@ Use this dashboard to:
 * To understand user behavior accessing clusters and servers through Rest API.
 
 <img src={useBaseUrl('img/integrations/databases/Couchbase-HTTP-Access.png')} alt="Cassandra dashboards" />
-
-
 
 ## Couchbase Alerts
 

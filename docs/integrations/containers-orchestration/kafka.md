@@ -1,6 +1,6 @@
 ---
 id: kafka
-title: Sumo Logic App for Kafka
+title: Kafka - Classic Collector
 sidebar_label: Kafka
 description: This guide provides an overview of Kafka related features and technologies.
 ---
@@ -65,7 +65,7 @@ messaging_cluster=* messaging_system="kafka" \
 
 ## Collecting Logs and Metrics for Kafka
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kakfa.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 
 ### Configure Fields in Sumo Logic
 
@@ -116,11 +116,13 @@ Click on the appropriate link below based on the environment where your Kafka cl
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Kafka in Kubernetes environments. In the following architecture, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Kafka in Kubernetes environments. In the following architecture, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="non k8s-diagram" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="kafka-k8s" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Kafka. We’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment. In other words, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Jolokia input plugin ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Kafka. We’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment. In other words, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 #### Configure Metrics Collection
 
@@ -344,13 +346,16 @@ This section provides instructions for configuring log collection for Kafka runn
 At this point, Kafka logs should start flowing into Sumo Logic.
 
 
-#### Using Open Telemetry  
+#### Using OpenTelemetry  
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Kafka metric collection and the Filelog receiver for collecting Kafka logs. Sumo Logic OT distro runs on the same system as Kafka, and uses the Kafka Jolokia input plugin for Telegraf to obtain Kafka metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic using the Filelog receiver.
 
 ##### Configure Collection of Kafka Metrics and Logs  
 
-* Install sumologic-otel-collector by following the instructions mentioned [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md).
+* Install sumologic-otel-collector by following the instructions for your operating system:
+  * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux)
+  * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos)
+  * [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows)
 * Configure and start `sumologic-otel-collector`.
 
 As part of collecting metrics data from Kafka, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for Telegraf to get data from otel and then send data to Sumo Logic.
@@ -659,7 +664,7 @@ Use this dashboard to:
 The **Kafka Broker - Garbage Collection** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
 
 Use this dashboard to:
-* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kakfa brokers may have more CPU usage.
+* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kafka brokers may have more CPU usage.
 * Understand the amount of memory cleared by garbage collectors across memory pools and their impact on the Heap memory.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />

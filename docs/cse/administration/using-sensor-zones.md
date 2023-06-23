@@ -19,7 +19,7 @@ Wherever the CSE UI displays a private IP address whose `metadata_sensorZone` va
 
 `10.10.32.168 (europe)`
 
-In the [Insight generation process](/docs/cse/records-signals-entities-insights/insight-generation-process.md), Signals are correlated by the full IP address-sensor zone combination.
+In the [Insight generation process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), Signals are correlated by the full IP address-sensor zone combination.
 
 #### Set sensor zones
 
@@ -31,7 +31,7 @@ Sensor zones will only apply to IP addresses in private address ranges.
 
 To define a sensor zone for a Source:
 
-1. In the Sumo Logic UI, navigate to the Source you want to update, at **Manage Data > Collection > Collection**.  
+1. In the Sumo Logic UI, navigate to the Source you want to update, at **Manage Data** > **Collection** > **Collection**.  
 2. In the **Fields/Metadata** area, define a [Field](/docs/manage/fields.md) named `_siemSensorZone` and set it to the desired value.
 <img src={useBaseUrl('img/cse/source.png')} alt="source.png" />
 3. Click **Save**.

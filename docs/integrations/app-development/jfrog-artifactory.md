@@ -1,6 +1,6 @@
 ---
 id: jfrog-artifactory
-title: Sumo Logic App for JFrog Artifactory
+title: JFrog Artifactory - Classic Collector
 sidebar_label: JFrog Artifactory
 description: Provides insight into your JFrog Artifactory binary repository.
 ---
@@ -360,24 +360,7 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source**. Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing JFrog Artifactory Dashboards
 
@@ -385,166 +368,34 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Overview.png')} alt="JFROG artifactory" />
 
-#### Traffic
-
-**Download Traffic by Geolocation.** Uses a geo lookup operation to display download traffic by IP address on a map of the world for the last 24 hours.
-
-**Upload Traffic by Geolocation.** Uses a geo lookup operation to display upload traffic by IP address on a map of the world for the last 24 hours.
-
-**Data Transfers (GBs) Over Time.** Displays data transfers in GBs for uploads and downloads as a stacked column chart on a timeline for the last 24 hours.
-
-**Data Upload-Download (GBs).** Compares the upload and download count in GB displayed in a pie chart for the last 24 hours.
-
-
-#### Request
-
-**Requests by Status Code (Every 10 Minutes).** Displays requests by status code every 10 minutes in a stacked column chart on a timeline for the last 24 hours.
-
-**Requests by Repo.** Shows the number of requests by repo as a bar chart for the last 24 hours.
-
-**5xx Status Codes.** Displays the number of 5xx status codes in a single value chart for the last 24 hours.
-
-
-#### Activity
-
-**Non-Cached Accepted Deploys by Repo.** Shows information about non-cached accepted deploys by repo in a table chart, including details on the repo and count, for the last 24 hours.  
-
-**Cache Hit Ratio.** Displays information on the cache hit ratio in a table chart, including details on repo, accepted cache deploy, accepted cache downloads, and cache hit ratio for the last 24 hours.
-
-**Accepted Downloads by Repo. **Shows information on accepted downloads by repo including details on repo and count for the last 24 hours.
-
-**Remote Download Size (GB). **Displays the remote download size in GBs as a single value chart for the last 24 hours.
-
-**Remote Incomplete Downloads. **Displays the remote incomplete downloads in GB as a single value chart for the last 24 hours.
-
+{@import ../../reuse/apps/jfrog/artifactory-overview.md}
 
 ### Traffic
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Traffic.png')} alt="JFROG artifactory" />
 
-**Overall Traffic by Geolocation.** Uses a geo lookup operation to display overall traffic by IP address on a map of the world for the last 24 hours.
-
-**Download Traffic by Geolocation.** Uses a geo lookup operation to display download traffic by IP address on a map of the world for the last 24 hours.
-
-**Upload Traffic by Geolocation.** Uses a geo lookup operation to display upload traffic by IP address on a map of the world for the last 24 hours.
-
-**Data Upload-Download.** Compares the upload and download count in GB displayed in a pie chart for the last 24 hours.
-
-**Data Transfer Over Time.** Displays the amount of data transferred by upload and download over time as a stacked column chart on a timeline for the last 24 hours.
-
-**Active Downloading IPs.** Shows the top 10 active downloading IPs in GB in a bar chart for the last 24 hours.
-
-**Active Uploading IPs.** Provides the top 10 active uploading IPs in GB in a bar chart for the last 24 hours.
-
-**Most Active Repos by Data Transfer.** Displays the top 10 most active repos by data transfer in GB in a bar chart for the last 24 hours.
-
-**Most Active Repos by Action.** Shows the top 10 most active repos by action in GB in a bar chart for the last 24 hours.
-
-**Most Active IPs by Action.** Provides information on the top 10 most active IPs by action in GB in a bar chart for the last 24 hours.
-
-**Most Active Locations.** This aggregation table provides a list of the top 10 most active locations by country name, region, city, and the number of actions for the last 24 hours.
-
-**Top Referred Files.** Displays a list of the top 10 referred files by file path and number of actions in an aggregation table for the last 24 hours.
-
+{@import ../../reuse/apps/jfrog/artifactory-traffic.md}
 
 ### Request and Access
 
 <img src={useBaseUrl('img/integrations/app-development/artifactory_app_request_access.png')} alt="JFROG artifactory" />
 
-**Requests by Status Code (Every 10 Minutes).** Displays requests by status code every 10 minutes in a stacked column chart on a timeline for the last 24 hours.
-
-**5xx Status Codes.** Provides the number of 5xx status codes in a single value chart for the last 24 hours.
-
-**Requests by Repo.** Shows the number of requests by repo as a bar chart for the last 24 hours.
-
-**Uploads by Repo.** Displays the number of uploads by repo as a bar chart for the last 24 hours.
-
-**Non-Anonymous Access.** Displays the top 10 accepted non-anonymous access attempts in a table chart, including details on user name and count for the last 24 hours.
-
-**Denied Login Attempts.** Displays the number of denied login attempts in a table chart, including details on  IP address, user name, and number of attempts for the last 24 hours.
-
-**Accepted Login Attempts.** Shows the number of accepted login attempts in a table chart, including details on  IP address, user name, and number of attempts for the last 24 hours.
-
+{@import ../../reuse/apps/jfrog/artifactory-request-access.md}
 
 ### Download Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Download.png')} alt="JFROG artifactory" />
 
-#### Accepted Downloads
-
-**Accepted Downloads by Geolocation.** Uses a geo lookup operation to display accepted downloads by IP address on a map of the world for the last six hours.
-
-**Accepted Downloads by IP.** Displays the number of accepted downloads by IP address in an aggregation table for the last six hours.
-
-**Unique Paths Accepted Downloads.** Shows the number of unique paths of accepted downloads in a single value chart for the last six hours.
-
-**Unique Paths Accepted Downloads.** Provides details on the number of unique paths of accepted downloads in a outlier combo chart on a timeline for the last six hours.
-
-**Accepted Downloads by Repo.** Displays the number of accepted downloads by repo in an aggregation table for the last six hours.
-
-
-#### Denied Downloads
-
-**Denied Downloads by Geolocation.** Uses a geo lookup operation to display denied downloads by IP address on a map of the world for the last six hours.
-
-**Denied Downloads by IP.** Displays the number of denied downloads by IP address in an aggregation table for the last six hours.
-
-**Unique Paths Denied.** Shows the number of unique paths of denied downloads in a single value chart for the last six hours.
-
-**Unique Paths Denied Downloads.** Provides details on the number of unique paths of denied downloads in a outlier combo chart on a timeline for the last six hours.
-
-**Denied Downloads by Repo.** Provides details on the number of denied downloads per repo in an aggregation table for the last six hours.
-
+{@import ../../reuse/apps/jfrog/artifactory-download.md}
 
 ### Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Cached.png')} alt="JFROG artifactory" />
 
-#### Accepted Deploys
-
-**Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
-
-**Accepted Deploys by IP.** Displays the number of accepted deploys by IP address in an aggregation table for the last six hours.
-
-**Unique Paths Accepted.** Shows the number of unique paths of accepted deploys in a single value chart for the last six hours.
-
-**Unique Paths Accepted Deploys.** Provides details on the number of unique paths of accepted deploys in a outlier combo chart on a timeline for the last six hours.
-
-**Accepted Deploys by Repo.** Displays the number of accepted deploys by repo in an aggregation table for the last six hours.
-
-
-#### Denied Deploys
-
-**Denied Deploys by Geolocation.** Uses a geo lookup operation to display denied deploys by IP address on a map of the world for the last six hours.
-
-**Denied Deploys by IP.** Displays the number of denied deploys by IP address in an aggregation table for the last six hours.
-
-**Unique Paths Denied Deploys.** Shows the number of unique paths of denied deploys in a single value chart for the last six hours.
-
-**Unique Paths Denied Deploys.** Provides details on the number of unique paths of denied deploys in a outlier combo chart on a timeline for the last six hours.
-
-**Denied Deploys by Repo.** Provides details on the number of denied downloads per repo in an aggregation table for the last six hours.
-
+{@import ../../reuse/apps/jfrog/artifactory-cached.md}
 
 ### Non-Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Non-Cached.png')} alt="JFROG artifactory" />
 
-#### Accepted Deploys
-
-**Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
-
-**Accepted Deploys by IP.** Displays the number of accepted deploys by IP address in an aggregation table for the last six hours.
-
-**Unique Paths Accepted Deploys.** Shows the number of unique paths of accepted deploys in a single value chart for the last six hours.
-
-**Unique Paths Accepted Deploys.** Provides details on the number of unique paths of accepted deploys in a outlier combo chart on a timeline for the last six hours.
-
-**Accepted Deploys by Repo.** Displays the number of accepted deploys by repo in an aggregation table for the last six hours.
-
-
-#### Denied Deploys
-
-**Denied Deploys.** Shows the number of denied deploys in a single value chart for the last six hours.
-
-**Denied Deploys Detail.** Displays details on the number of denied deploys in an aggregation table, including IP address, repo name, user, path, and count for the last six hours.
+{@import ../../reuse/apps/jfrog/artifactory-noncached.md}

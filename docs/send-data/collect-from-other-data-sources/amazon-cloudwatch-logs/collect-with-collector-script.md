@@ -1,9 +1,9 @@
 ---
 id: collect-with-collector-script
 title: Collect Amazon CloudWatch Logs using a Collector Script
+sidebar_label: Collect Logs using a Collector Script
 description: For small data volumes, you can use an installed Sumo Logic Collector with a script Source instead of using AWS lambda or Amazon Kinesis to collect Amazon CloudWatch logs.
 ---
-
 
 
 For small data volumes, you can use an installed Sumo Logic Collector with a script Source instead of using AWS lambda or Amazon Kinesis to collect Amazon CloudWatch logs.
@@ -14,7 +14,7 @@ We recommend the alternative collection process described on [Amazon CloudWatch
 
 ## Create an AWS Access ID and Key pair
 
-Create an AWS user with an AWS Access ID and Key pair. You can follow the instructions in AWS user with an AWS Access ID and Key pair. You can follow the instructions in [Grant Access to an AWS S3 Bucket](../../hosted-collectors/amazon-aws/grant-access-aws-product.md). Specifically, use the instructions from **Step 1 to Step 12** to create the user, but at **Step 11**, use the permission provided below. (To be clear, no S3 bucket permission is required.)
+Create an AWS user with an AWS Access ID and Key pair. You can follow the instructions in AWS user with an AWS Access ID and Key pair. You can follow the instructions in [Grant Access to an Amazon S3 Bucket](../../hosted-collectors/amazon-aws/grant-access-aws-product.md). Specifically, use the instructions from **Step 1 to Step 12** to create the user, but at **Step 11**, use the permission provided below. (To be clear, no S3 bucket permission is required.)
 
 :::important
 Its a best practice to separate multiple policies to one policy per user. For example, if you have one policy for your S3 bucket and one policy for VPC Flow Logs, attach them to two separate users. 

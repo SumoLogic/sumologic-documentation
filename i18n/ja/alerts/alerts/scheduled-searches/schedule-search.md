@@ -58,7 +58,7 @@ You can create a scheduled search at the time you create a search, or edit a s
     The maximum allowed time range for different scheduled search frequencies is as below:
 
     | Frequency          | Max Allowed Time Range |
-    |--------------------|------------------------|
+    |:--------------------|:------------------------|
     | Real Time          | 15 minutes             |
     | 15 min             | 1 Day                  |
     | 15 min -1 hour     | 7 Days                 |

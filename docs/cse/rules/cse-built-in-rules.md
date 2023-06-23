@@ -71,7 +71,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - IAM Privileged Policy Applied to Group
 
 
- This rule identifies both 'attach' and 'put' actions with this privileged policy.  The difference between 'attach' and 'put' is that 'attach' actions apply a managed policy to an item, where a 'put' action indicates the policy is defined in-line and is part of the items definition. Applying privileged policies to items could indicate hostile action that attempts to increase the privilege level of a user or set of users.  There are legitimate times when this will occur, consider this signal in context of other activities that may indicate suspicious behavior.
+ This rule identifies both 'attach' and 'put' actions with this privileged policy. The difference between 'attach' and 'put' is that 'attach' actions apply a managed policy to an item, where a 'put' action indicates the policy is defined in-line and is part of the items definition. Applying privileged policies to items could indicate hostile action that attempts to increase the privilege level of a user or set of users. Because there are legitimate times when this will occur, consider this signal in context of other activities that may indicate suspicious behavior.
 
 ## AWS CloudTrail - IAM Privileged Policy Applied to Group (Username)
 
@@ -116,7 +116,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - Reconnaissance related event
 
 
- This signal identifies a small number of CloudTrail API actions that when observed could indicate an actors intent to enumerate the environment.  These events are generally benign, and occur during normal operations.  Use this signal as context around an unfolding security story.
+ This signal identifies a small number of CloudTrail API actions that when observed could indicate an actor's intent to enumerate the environment.  These events are generally benign, and occur during normal operations.  Use this signal as context around an unfolding security story.
 
 ## AWS CloudTrail - Root Console Successful Login Observed
 
@@ -126,7 +126,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudTrail - S3 Bucket Public Access Block Disabled
 
 
- Detects when GetPublicAccessBlock returns NoSuchPublicAccessBlockConfiguration, indicating the public access block has all values are set to false or the feature is disabled.
+ Detects when GetPublicAccessBlock returns NoSuchPublicAccessBlockConfiguration, indicating the public access block has all values set to false or the feature is disabled.
 
 ## AWS CloudTrail - SQS List Queues Event
 
@@ -161,7 +161,7 @@ This IOC detects indicators associated with the ADPassHunt Tool. This tool is us
 ## AWS CloudWatch Alarm Deletion
 
 
- Detects the AWS CloudWatch DeleteAlarms API action. DeleteAlarms deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include no more than one composite alarm. For example, you could delete 99 metric alarms and one composite alarms with one operation, but you can't delete two composite alarms with one operation.
+ Detects the AWS CloudWatch DeleteAlarms API action. DeleteAlarms deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include no more than one composite alarm. For example, you could delete 99 metric alarms and one composite alarm with one operation, but you can't delete two composite alarms with one operation.
 
 ## AWS CloudWatch Anomaly Detector Deletion
 
@@ -247,7 +247,7 @@ After the configuration recorder is deleted, AWS Config will not record resource
 ## AWS Route 53 Reconnaissance
 
 
- Detects a variety of AWS Route 53 API actions that when observed together could indicate an actors intent to enumerate the environment.
+ Detects a variety of AWS Route 53 API actions that when observed together could indicate an actor's intent to enumerate the environment.
 
 ## AWS Route 53 Service Tampering
 
@@ -277,7 +277,7 @@ After the configuration recorder is deleted, AWS Config will not record resource
 ## AWS WAF Reconnaissance
 
 
- Detects a variety of AWS WAF API actions that when observed together could indicate an actors intent to enumerate the environment.
+ Detects a variety of AWS WAF API actions that when observed together could indicate an actor's intent to enumerate the environment.
 
 ## AWS WAF Rule Group Updated
 
@@ -307,7 +307,7 @@ After the configuration recorder is deleted, AWS Config will not record resource
 ## Accessibility Executables Replaced
 
 
- Observes Sysmon 11 events for accessibility binaries being replaced
+ Observes Sysmon 11 events for accessibility binaries being replaced.
 
 ## Active Directory Domain Enumeration
 
@@ -397,7 +397,7 @@ After the configuration recorder is deleted, AWS Config will not record resource
 ## Attempt to Add Certificate to Store
 
 
- Observes for attempts to add a certificate to the untrusted store
+ Observes for attempts to add a certificate to the untrusted store.
 
 ## Attempt to Clear Windows Event Logs Using Wevtutil
 
@@ -440,7 +440,7 @@ The built in Windows utility attrib.exe can be used by adversaries to hide files
 ## Azorult Malware Registry Key
 
 
- Observes for a Windows registry key associated with Azorult malware on a system
+ Observes for a Windows registry key associated with Azorult malware on a system.
 
 ## Azure - Add Member to Group
 
@@ -514,7 +514,7 @@ Adding a user to a role, especially one with administrative privileges, outside 
 ## Azure - External User Invitation Redeemed
 
 
- Detecets when an external user redeems an invitation to create an Azure account. This can be routine activity, but could be used as a mechanism for adversary persistence.
+ Detects when an external user redeems an invitation to create an Azure account. This can be routine activity, but could be used as a mechanism for adversary persistence.
 
 ## Azure - External User Invited
 
@@ -524,7 +524,7 @@ Adding a user to a role, especially one with administrative privileges, outside 
 ## Azure - Group Information Downloaded
 
 
- Detects group information enumeration. This could be used by an adversary to learn about the environment
+ Detects group information enumeration. This could be used by an adversary to learn about the environment.
 
 ## Azure - High Risk Sign-In (Aggregate)
 
@@ -549,12 +549,12 @@ Adding a user to a role, especially one with administrative privileges, outside 
 ## Azure - Key Deletion
 
 
- Detects deletions of Azure Key Vault Keys. If a key is not backed up or otherwise recoverable (See soft-delete) it may render content indecipherable, leading to data loss.
+ Detects deletions of Azure Key Vault Keys. If a key is not backed up or otherwise recoverable (see soft-delete) it may render content indecipherable, leading to data loss.
 
 ## Azure - Key Purged
 
 
- Detects purges of Azure Key Vault Keys. If a key is not backed up it may render content indecipherable, leading to data loss. Key purges are performed on already deleted keys and must be explicitly allowed by the access policy as it redners them unrecoverable unless a backup was made.
+ Detects purges of Azure Key Vault Keys. If a key is not backed up it may render content indecipherable, leading to data loss. Key purges are performed on already deleted keys and must be explicitly allowed by the access policy as it renders them unrecoverable unless a backup was made.
 
 ## Azure - Key Vault Deleted
 
@@ -579,17 +579,17 @@ Adding a user to a role, especially one with administrative privileges, outside 
 ## Azure - Policy Added
 
 
- This rule is designed to monitor for conditional access policy additions. It is recommended to include or exclude certain policies from monitoring for better security value, expressions are below for inclusion and exclusion.   AND application in ('policy','example')   AND application not in ('policy','example')
+ This rule is designed to monitor for conditional access policy additions. It is recommended to include or exclude certain policies from monitoring for better security value. Expressions are below for inclusion and exclusion.   AND application in ('policy','example')   AND application not in ('policy','example')
 
 ## Azure - Policy Deleted
 
 
- This rule is designed to monitor for conditional access policy deletions. It is recommended to include or exclude certain policies from monitoring for better security value, expressions are below for inclusion and exclusion.  AND application in ('policy','example'). AND application not in ('policy','example')
+ This rule is designed to monitor for conditional access policy deletions. It is recommended to include or exclude certain policies from monitoring for better security value. Expressions are below for inclusion and exclusion.  AND application in ('policy','example'). AND application not in ('policy','example')
 
 ## Azure - Policy Updated
 
 
- This rule is designed to monitor for conditional access policy updates. It is recommended to include or exclude certain policies from monitoring for better security value, expressions are below for inclusion and exclusion.  AND application in ('policy','example')  AND application not in ('policy','example')
+ This rule is designed to monitor for conditional access policy updates. It is recommended to include or exclude certain policies from monitoring for better security value. Expressions are below for inclusion and exclusion.  AND application in ('policy','example')  AND application not in ('policy','example')
 
 ## Azure - Protected Item Deletion Attempt
 
@@ -699,7 +699,7 @@ Network detection   rule that looks for specific HTTP headers related to the HTT
 ## Backdoor.HTTP.BEACON.[CSBundle NYTIMES Server]
 
 
- From FireEye Red Team Tool Countermeasures:
+ From FireEye Red Team Tool Countermeasures: Network detection rule that looks for specific response body content specified within Cobalt Strike malleable C2 profile. This is used as an attempt to blend in and provide a resemblance of legitimate network communications.
 
 ## Backdoor.HTTP.BEACON.[CSBundle Original GET]
 
@@ -795,7 +795,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## BlueMashroom DLL Load
 
 
- Detects a suspicious DLL loading from AppData Local path as described in BlueMashroom report
+ Detects a suspicious DLL loading from AppData Local path as described in BlueMashroom report.
 
 ## Bluecoat Proxy - Suspicious or Malicious Categories
 
@@ -935,7 +935,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Container Management Utility in Container
 
 
- Container Management Utility in Container
+ Detects execution of a container management utility (for example, kubectl or docker) in a container.
 
 ## Container Running as Root
 
@@ -950,7 +950,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## CrashControl Registry Modification
 
 
- Detects changes to the CrashControl registry key, this can be used to disable crash dumps as an anti-forensic technique.
+ Detects changes to the CrashControl registry key. This can be used to disable crash dumps as an anti-forensic technique.
 
 ## Create Windows Share
 
@@ -960,7 +960,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Cred Dump-Tools Named Pipes
 
 
- Detects well-known credential dumping tools execution via specific named pipes
+ Detects well-known credential dumping tools execution via specific named pipes.
 
 ## Credential Dumping Via Copy Command From Shadow Copy
 
@@ -975,7 +975,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Credential Dumping by LaZagne
 
 
- Detects LSASS process access by LaZagne for credential dumping
+ Detects LSASS process access by LaZagne for credential dumping.
 
 ## Critical Severity Intrusion Signature
 
@@ -990,7 +990,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Crypto Miner User Agent
 
 
- Observes for several known cryptominer user agents
+ Observes for several known cryptominer user agents.
 
 ## Curl Start Combination
 
@@ -1045,7 +1045,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
  ## DCE-RPC Service Control Call
 
 
- The Remote Procedure Call (RPC) protocol allows remote administrative commands to be executed.  Creating/Deleting Services , when combined with other signals can be part of an attempt to expand influence inside a network using SMB and related protocols.
+ The Remote Procedure Call (RPC) protocol allows remote administrative commands to be executed.  Creating/Deleting Services, when combined with other signals can be part of an attempt to expand influence inside a network using SMB and related protocols.
 
 ## DCERPC - SAMR Enumeration of All Users
 
@@ -1065,7 +1065,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## DNS RCE Exploit CVE-2020-1350
 
 
- Detects exploitation of DNS RCE bug reported in CVE-2020-1350 by the detection of suspicious sub process
+ Detects exploitation of DNS RCE bug reported in CVE-2020-1350 by the detection of suspicious sub process.
 
 ## DNS query for dynamic DNS provider
 
@@ -1090,7 +1090,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## DTRACK Process Creation
 
 
- Detects specific process parameters as seen in DTRACK infections
+ Detects specific process parameters as seen in DTRACK infections.
 
 ## Delete Windows Share
 
@@ -1130,7 +1130,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Dnscat Execution
 
 
- Observes for keywords associated with execution of DNScat malware via powershell
+ Observes for keywords associated with execution of DNScat malware via powershell.
 
 ## Domain Brute Force Attempt
 
@@ -1152,12 +1152,12 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 
 ## Dridex Process Pattern
 
- Detects typical Dridex process patterns
+ Detects typical Dridex process patterns.
 
  ## Elise Backdoor
 
 
- Observes for indicators associated with Elise backdoor activity as used by APT32
+ Observes for indicators associated with Elise backdoor activity as used by APT32.
 
 ## Email Files Written Outside Of The Outlook Directory
 
@@ -1172,12 +1172,12 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Empire PowerShell Launch Parameters
 
 
- Observes for several command line parameters associated with Empire PowerShell
+ Observes for several command line parameters associated with Empire PowerShell.
 
 ## Equation Group DLL_U Load
 
 
- Observes for a tool and export tied to the Equation Group
+ Observes for a tool and export tied to the Equation Group.
 
 ## Excavator Utility
 
@@ -1192,7 +1192,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Excessive Outbound Firewall Blocks
 
 
- Observes for a firewall blocking a large amount traffic from a single host in a short period of time. This may be indicative of C2 traffic
+ Observes for a firewall blocking a large amount of traffic from a single host in a short period of time. This may be indicative of C2 traffic.
 
 ## Excessive Use of Escape Characters in Command Line
 
@@ -1217,12 +1217,12 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## Exposed AWS SQS Queue Created
 
 
- An AWS Simple Queue Service (SQS) can be created with a custom access policy, this signal triggers when a policy is applied to an SQS queue which allows global access from the internet with an IP range of 0.0.0.0/32 (all)
+ An AWS Simple Queue Service (SQS) can be created with a custom access policy. This signal triggers when a policy is applied to an SQS queue which allows global access from the internet with an IP range of 0.0.0.0/32 (all).
 
 ## External Device Installation Denied
 
 
- Detects a denied attempt to attached a removable media device. External media can be used to exfiltrate sensitive data and is also a common source of infections. Attempts to use these devices could indicate the intent for malicious activity.
+ Detects a denied attempt to attach a removable media device. External media can be used to exfiltrate sensitive data and is also a common source of infections. Attempts to use these devices could indicate the intent for malicious activity.
 
 ## Fake Windows Processes
 
@@ -1256,17 +1256,17 @@ Note that this rule requires creating a match list 'known_windows_processes' con
  This signal fires when Fortinet identifies a critical risk application in use within the network.
 
 ## Fortinet High App-Risk
-This signal fires when Fortinet detects a high risk application within the environment
+This signal fires when Fortinet detects a high risk application within the environment.
 
 ## G Suite - Access - Access Transparency
 
 
- Google Access Transparency Activity Events
+ Detects Google Access Transparency Activity Events.
 
 ## G Suite - Admin - User Settings - Turn Off 2SV
 
 
- Admin disabled 2SV for user
+ Detects admin disabled 2SV for user.
 
 ## G Suite - Admin Activity
 
@@ -1276,7 +1276,7 @@ This signal fires when Fortinet detects a high risk application within the envir
 ## G Suite - Drive - Drive Open To Public
 
 
- Google Drive resource shared publicly
+ Detects Google Drive resource shared publicly.
 
 ## G Suite - Excessive OAuth Application Permissions Scope
 
@@ -1286,17 +1286,17 @@ This signal fires when Fortinet detects a high risk application within the envir
 ## G Suite - Login - Account Warning
 
 
- Google Accounts warnings
+ Detects Google Accounts warnings.
 
 ## G Suite - Login - Government Attack Warning
 
 
- Government-backed attack warnings
+ Detects government-backed attack warnings.
 
 ## G Suite - Mobile - Suspicious Activity
 
 
- Google G Suite alert for mobile suspicious activity
+ Google G Suite alert for mobile suspicious activity.
 
 ## G Suite - Unauthorized OAuth Application
 
@@ -1306,7 +1306,7 @@ This signal fires when Fortinet detects a high risk application within the envir
 ## G Suite - User Accounts - 2SV Disabled
 
 
- User disabled 2SV
+ Detects user disabled 2SV.
 
 ## GCP Audit Cloud SQL Database Modified
 
@@ -1351,7 +1351,7 @@ This signal fires when Fortinet detects a high risk application within the envir
 ## GCP Audit IAM DisableServiceAccount Observed
 
 
- Identifies when a service account is disabled in Google Cloud Platform (GCP). A service account is a special type of account used by an application or a virtual machine (VM) instance, not a person. Applications use service accounts to make authorized API calls, authorized as either the service account itself, or as G Suite or Cloud Identity users through domain-wide delegation. An adversary may disable a service account in order to disrupt to disrupt their target's business operations.
+ Identifies when a service account is disabled in Google Cloud Platform (GCP). A service account is a special type of account used by an application or a virtual machine (VM) instance, not a person. Applications use service accounts to make authorized API calls, authorized as either the service account itself, or as G Suite or Cloud Identity users through domain-wide delegation. An adversary may disable a service account in order to disrupt their target's business operations.
 
 ## GCP Audit KMS Activity
 
@@ -1475,13 +1475,12 @@ This signal fires when Fortinet detects a high risk application within the envir
 
 ## GitHub Raw URL Resource Request
 
-
- Github.com is the most popular code repo site on the internet. Typically users of GitHub will look at the code from the Github.com website or clone it locally to their system. You can however request a raw version of a individual file directly. Attackers like to use GitHub as well to host their malicious code and will often download malicious files and scripts directly from the site which uses the domain raw.githubusercontent.com instead of github.com. This signal looks for HTTP requests to that raw domain to monitor individual file downloads from the site.
+ GitHub.com is the most popular code repo site on the internet. Typically, users of GitHub will look at the code from the GitHub.com website or clone it locally to their system. You can however request a raw version of a individual file directly. Attackers like to use GitHub as well to host their malicious code and will often download malicious files and scripts directly from the site which uses the domain raw.githubusercontent.com instead of github.com. This signal looks for HTTP requests to that raw domain to monitor individual file downloads from the site.
 
 ## Global YARA Rule
 
 
- A YARA rule matched on a collected file
+ A YARA rule matched on a collected file.
 
 ## Golden SAML Indicator : Certificate Export
 
@@ -1498,7 +1497,7 @@ This rule utilizes indicators from Windows command line auditing, PowerShell aud
 ## Greenbug Campaign Indicators
 
 
- Detects tools and process executions as observed in a Greenbug campaign in May 2020
+ Detects tools and process executions as observed in a Greenbug campaign in May 2020.
 
 ## HTTP CloudFlare Protocol Violation or Empty Response
 
@@ -1581,17 +1580,17 @@ This rule utilizes indicators from Windows command line auditing, PowerShell aud
 ## IP Address Scan - External
 
 
- A scan of IP addresses
+ A scan of IP addresses.
 
 ## IP Address Scan - Internal
 
 
- A scan of IP addresses
+ A scan of IP addresses.
 
 ## Impacket Lateralization Detection
 
 
- Detects wmiexec/dcomexec/atexec/smbexec from Impacket framework
+ Detects wmiexec/dcomexec/atexec/smbexec from Impacket framework.
 
  ## Impacket-Obfuscation SMBEXEC Utility
 
@@ -1661,12 +1660,12 @@ This rule utilizes indicators from Windows command line auditing, PowerShell aud
  ## Judgement Panda Credential Access Activity
 
 
- Detects Russian group activity as described in Global Threat Report 2019 by Crowdstrike
+ Detects Russian group activity as described in Global Threat Report 2019 by Crowdstrike.
 
 ## Judgement Panda Exfil Activity
 
 
- Detects Judgement Panda activity as described in Global Threat Report 2019 by Crowdstrike
+ Detects Judgement Panda activity as described in Global Threat Report 2019 by Crowdstrike.
 
 ## KeePass Brute Force Tool Detection
 
@@ -1804,7 +1803,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## Likely doublepulsar Infected
 
 
- Hosts infected with the Doublepulsar typically exhibit this type of SMB behavior
+ Hosts infected with the Doublepulsar typically exhibit this type of SMB behavior.
 
 ## Linux Host Entered Promiscuous Mode
 
@@ -1859,7 +1858,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
  ## MS Office Memory Corruption Vulnerability Exploit
 
 
- Observes for exploitation of Microsoft Office Memory Corruption Vulnerability (CVE-2015-1641)
+ Observes for exploitation of Microsoft Office Memory Corruption Vulnerability (CVE-2015-1641).
 
 ## MS Office Product Spawning Msdt.exe - CVE-2022-30190
 
@@ -1894,7 +1893,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## Malicious Named Pipes
 
 
- Observes for known pipe names associated with malicious activity
+ Observes for known pipe names associated with malicious activity.
 
 ## Malicious PowerShell Get Commands
 
@@ -1914,7 +1913,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## Malicious Service Installs
 
 
- Observes for several known malicious services being installed on a system
+ Observes for several known malicious services being installed on a system.
 
 ## Malware Cleaned
 
@@ -1934,12 +1933,12 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## MavInject Process Injection
 
 
- Detects process injection using the signed Windows tool Mavinject32.exe
+ Detects process injection using the signed Windows tool Mavinject32.exe.
 
 ## McAfee Web Gateway - Poor Reputation
 
 
- Observes for sites categorized as having a poor reputation by McAfee Web Gateway
+ Observes for sites categorized as having a poor reputation by McAfee Web Gateway.
 
 ## McAfee Web Gateway - Suspicious or Malicious Categories
 
@@ -2024,7 +2023,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## Multiple File Extensions
 
 
- Observes for common file extensions appearing before the actual file extension (ex. totallynotmalware.pdf.exe)
+ Observes for common file extensions appearing before the actual file extension (ex. totallynotmalware.pdf.exe).
 
 ## Multiple Windows Account Lockouts On Endpoint
 
@@ -2089,7 +2088,7 @@ For this rule to work, Microsoft SysInternal Sysmon must be running on the endpo
 ## New Container Uploaded to AWS ECR
 
 
- New Container Uploaded to AWS ECR
+ New Container Uploaded to AWS ECR.
 
 ## New Kubernetes Namespace Created
 
@@ -2340,12 +2339,12 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## Possible Black Energy Command and Control
 
 
- Black Energy is a botnet with HTTP based Command and Control communication
+ Black Energy is a botnet with HTTP based Command and Control communication.
 
 ## Possible Credential Abuse
 
 
- This signal logic is designed to catch repetitive attempts to call (and presumably attempt to auth via) login pages for drupal, wordpress, and jira.
+ This signal logic is designed to catch repetitive attempts to call (and presumably attempt to auth via) login pages for Drupal, WordPress, and Jira.
 
 ## Possible DNS Data Exfiltration
 
@@ -2385,7 +2384,7 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## Potential Inbound VNC Traffic
 
 
- Observes for successful TCP traffic to default VNC ports or explicit VNC/RFB traffic detected
+ Observes for successful TCP traffic to default VNC ports or explicit VNC/RFB traffic detected.
 
 ## Potential InstallUtil Allow List Bypass
 
@@ -2425,12 +2424,12 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## Potential malicious document executed
 
 
- A document was downloaded and opened followed shortly by an executable or dll download shortly thereafter
+ A document was downloaded and opened followed shortly by an executable or dll download shortly thereafter.
 
 ## Potentially vulnerable software detected
 
 
- The software version has a known vulnerability
+ The software version has a known vulnerability.
 
 ## PowerShell Encoded Command
 
@@ -2460,16 +2459,12 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## Powershell Execution Policy Bypass
 
 
- Observes for parameters used to bypass the Powershell execution policy
-
-Requires command line auditing or Sysmon to function
-
-It is recommended to tune this rule to hosts/users that are not ordinarily bypassing Powershell execution policy.
+ Observes for parameters used to bypass the Powershell execution policy. Requires command line auditing or Sysmon to function. It is recommended to tune this rule to hosts/users that are not ordinarily bypassing Powershell execution policy.
 
 ## Powerview Add-DomainObjectAcl DCSync AD Extend Right
 
 
- Backdooring domain object to grant the rights associated with DCSync to a regular user or machine account using Powerview\Add-DomainObjectAcl DCSync Extended Right cmdlet, will allow to re-obtain the pwd hashes of any user/computer
+ Backdooring domain object to grant the rights associated with DCSync to a regular user or machine account using Powerview\Add-DomainObjectAcl DCSync Extended Right cmdlet, will allow to re-obtain the pwd hashes of any user/computer.
 
 ## Process Dump via Rundll32 and Comsvcs.dll
 
@@ -2553,12 +2548,12 @@ It is recommended to tune this rule to hosts/users that are not ordinarily bypas
 
 ## Pwndrp Access
 
- Observes for possible attempts to download PwnDrp red team tooling
+ Observes for possible attempts to download PwnDrp red team tooling.
 
  ## QBot Process Creation
 
 
- Observes for Qbot process creation behavior
+ Observes for Qbot process creation behavior.
 
 ## QuarksPwDump Dump File Observed
 
@@ -2645,7 +2640,7 @@ Note that this rule requires the creation and population of a match list for kno
 ## Registry Modification - Time Providers
 
 
- Malicious time providers can be added via the Windows Registry. This rule requires registry monitoring to be setup on the endpoint.
+ Malicious time providers can be added via the Windows Registry. This rule requires registry monitoring to be set up on the endpoint.
 
 ## Registry Modification - Windows Logon Script
 
@@ -2655,12 +2650,12 @@ Note that this rule requires the creation and population of a match list for kno
 ## Registry Modification - Winlogon Helper DLL
 
 
- Malicious Winlogon Helper Dlls can be added via the Windows Registry. This rule requires registry monitoring to be setup on the endpoint.
+ Malicious Winlogon Helper Dlls can be added via the Windows Registry. This rule requires registry monitoring to be set up on the endpoint.
 
 ## Registry Persistence Mechanisms
 
 
- Observes for registry keys associated with persistence activity
+ Observes for registry keys associated with persistence activity.
 
 ## Regsvr32.exe Silent Mode from TEMP Directory
 
@@ -2685,12 +2680,12 @@ Note that this rule requires the creation and population of a match list for kno
 ## Rogue DHCP Server - Cisco
 
 
- Observes for Cisco events indicating the presence of a rogue DHCP server
+ Observes for Cisco events indicating the presence of a rogue DHCP server.
 
 ## Rubeus Hack Tool
 
 
- Detects command line parameters associated with use of the Rubeus hack tool
+ Detects command line parameters associated with use of the Rubeus hack tool.
 
 ## Rubeus Hack Tool Logon Process Name
 
@@ -2711,7 +2706,7 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
  # SC Exe Manipulating Windows Services
 
 
- Observes for command line arguments with sc.exe indicating Windows services being modified
+ Observes for command line arguments with sc.exe indicating Windows services being modified.
 
 ## SMB - Remote execution and/or persistence via scheduled task using ATSVC
 
@@ -2726,7 +2721,7 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
 ## SMB External to Internal File Share Access
 
 
- This signal identifies external sources connecting to file shares.  Do to the vulnerabilities and insecurities of SMB this type of traffic should be prohibited.
+ This signal identifies external sources connecting to file shares.  Due to the vulnerabilities and insecurities of SMB this type of traffic should be prohibited.
 
 ## SMB Internal to External traffic
 
@@ -2736,7 +2731,7 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
 ## SMB Scanning Detected
 
 
- This rule looks for a host scanning other SMB hosts for specific commands similar to WannaCry
+ This rule looks for a host scanning other SMB hosts for specific commands similar to WannaCry.
 
 ## SMB write to hidden admin share
 
@@ -2751,12 +2746,12 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
 ## SQL Injection Attacker
 
 
- SQL Injection attempt detected
+ SQL Injection attempt detected.
 
 ## SQL Injection Victim
 
 
- Successful SQL Injection attack detected
+ Successful SQL Injection attack detected.
 
 ## SQL-Select-From
 
@@ -2796,12 +2791,12 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
 ## SSL Heartbleed Attack
 
 
- SSL Heartbleed Attack detected
+ SSL Heartbleed Attack detected.
 
 ## SSL Heartbleed Attack Successful
 
 
- SSL Heartbleed Attack Successful
+ Detects SSL Heartbleed Attack Successful.
 
 ## SSL Heartbleed Many Requests
 
@@ -2811,7 +2806,7 @@ Rubeus is a utility  that provides Kerberos abuse capabilities. This rule is loo
 ## SSL Heartbleed Odd Length
 
 
- SSL Heartbleed Odd Length
+ Detects SSL Heartbleed Odd Length.
 
 ## SSL Invalid Server Cert
 
@@ -2832,72 +2827,72 @@ SafetyKatz is a combination of slightly modified version of Mimikatz project and
 ## Salesforce Custom Permission Creation
 
 
- Custom Permissions in Salesforce are used to give access to users for certain apps or processes that you have configured and which cannot be controlled by profile or permission set directly. This rule is used to monitor this activity as adversaries could abuse this to escalate privileges. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Custom Permissions in Salesforce are used to give access to users for certain apps or processes that you have configured and which cannot be controlled by profile or permission set directly. This rule is used to monitor this activity as adversaries could abuse this to escalate privileges. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Excessive Documents Downloaded
 
 
- Detects when an entity downloads multiple documents or attachments in a short timeframe. This type of activity is indicative of exfiltration. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects when an entity downloads multiple documents or attachments in a short timeframe. This type of activity is indicative of exfiltration. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Login Attempt from Disabled Account
 
 
- Detects when a disabled account attempts to log into Salesforce
+ Detects when a disabled account attempts to log into Salesforce.
 
 ## Salesforce LoginAs Event
 
 
- Generates severity 0 signals for LoginAs Salesforce events. The purpose of this rule is to track LoginAs activity for both the source and target user to provide additional context for Insights. The third party match list exclusion should be populated to exclude known permitted third party domains from triggering this rule. Its common for third party support accounts to use the LoginAs function. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Generates severity 0 signals for LoginAs Salesforce events. The purpose of this rule is to track LoginAs activity for both the source and target user to provide additional context for Insights. The third party match list exclusion should be populated to exclude known permitted third party domains from triggering this rule. It's common for third party support accounts to use the LoginAs function. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Permission Set Addition
 
 
- Detects permission set additions in Salesforce. While these additions can be routine, their function can be abused for malicious intent. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects permission set additions in Salesforce. While these additions can be routine, their function can be abused for malicious intent. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Permission Set Assigned
 
 
- Detects permission set assignments. While this is a routine activity, permission assignments could be used by an adversary for persistence and privilege escalation. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects permission set assignments. While this is a routine activity, permission assignments could be used by an adversary for persistence and privilege escalation. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Permission Set Creation
 
 
- Detects permission set creations in Salesforce. While these creations can be routine, their function can be abused for malicious intent. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects permission set creations in Salesforce. While these creations can be routine, their function can be abused for malicious intent. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Permission Set Deletion
 
 
- Detects permission set deletions in Salesforce. While these deletions can be routine, their function can be abused for malicious intent. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects permission set deletions in Salesforce. While these deletions can be routine, their function can be abused for malicious intent. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Permission Set Modification
 
 
- Detects various permission set changes in Salesforce. While these changes can be routine, their function can be abused for malicious intent. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects various permission set changes in Salesforce. While these changes can be routine, their function can be abused for malicious intent. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Report Exported
 
 
- Detects when a report is exported. Reports contain a variety of information that adversaries may attempt to exfiltrate. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects when a report is exported. Reports contain a variety of information that adversaries may attempt to exfiltrate. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce Role Creation
 
 
- Detects role creation. While this is a routine activity, role creation could be used by an adversary for persistence and privilege escalation. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects role creation. While this is a routine activity, role creation could be used by an adversary for persistence and privilege escalation. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce User Creation
 
 
- Detects user creation. While this is a routine activity, user creation could be used by an adversary for persistence. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects user creation. While this is a routine activity, user creation could be used by an adversary for persistence. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce User Role Changed
 
 
- Detects role changes. While this is a routine activity, role changes could be used by an adversary for persistence and privilege escalation. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Detects role changes. While this is a routine activity, role changes could be used by an adversary for persistence and privilege escalation. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Salesforce WaveDownload Event
 
 
- Wave Download events represent downloads made from lens explorations and dashboard widgets in the Tableau CRM user interface. A Wave Download event type is captured when a user downloads images ( .png ), Microsoft Excel data ( .xls ), or comma-separated values ( .csv ) files. Salesforce admin match lists are exclude in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
+ Wave Download events represent downloads made from lens explorations and dashboard widgets in the Tableau CRM user interface. A Wave Download event type is captured when a user downloads images ( .png ), Microsoft Excel data ( .xls ), or comma-separated values ( .csv ) files. Salesforce admin match lists are excluded in this rule in an attempt to reduce the false positives due to expected admin activity. These match lists should be created and populated with Salesforce admin usernames and IPs.
 
 ## Samsam Test File Write
 
@@ -2954,7 +2949,7 @@ It is recommended this rule be tuned to exclude hosts/users that are expected to
 ## SecurityXploded Tool
 
 
- Detects the execution of SecurityXploded Tools
+ Detects the execution of SecurityXploded Tools.
 
 ## Self-signed Certificates
 
@@ -2964,7 +2959,7 @@ It is recommended this rule be tuned to exclude hosts/users that are expected to
 ## Sensitive Registry Key (WDigest) Edit
 
 
- Enabling of Wdigest authentication may enable the storage of plain text credential material on Windows systems. WDigest is disabled by default on newer versions of Windows systems, manual enablement of this registry key may indicate suspicious activity and attempts at credential theft.
+ Enabling of Wdigest authentication may enable the storage of plain text credential material on Windows systems. WDigest is disabled by default on newer versions of Windows systems. Manual enablement of this registry key may indicate suspicious activity and attempts at credential theft.
 
 ## Server-Side Code Injection in URL
 
@@ -3043,12 +3038,12 @@ SharpStomp is a C# utility that can be used to timestomp the specified file's cr
 ## Snatch Ransomware
 
 
- Detects specific process characteristics of Maze ransomware word document droppers
+ Detects specific process characteristics of Maze ransomware word document droppers.
 
 ## Sofacy Trojan Loader
 
 
- Detects Trojan loader acitivty as used by APT28
+ Detects Trojan loader acitivty as used by APT28.
 
 ## Solarwinds Suspicious Child Processes
 
@@ -3068,7 +3063,7 @@ SharpStomp is a C# utility that can be used to timestomp the specified file's cr
 ## Spoolsv Child Process Created
 
 
- Observes for Spoolsv launching unexpected child processes. This may be related to behavior in CVE-2018-8440
+ Observes for Spoolsv launching unexpected child processes. This may be related to behavior in CVE-2018-8440.
 
 ## Spring4Shell Exploitation - URL
 
@@ -3088,7 +3083,7 @@ SharpStomp is a C# utility that can be used to timestomp the specified file's cr
 ## Sumo Logic Scheduled Searches
 
 
- This rule passes through Sumo Logic CIP scheduled search hits to CSE as signals.
+ This rule passes through Sumo Logic core platform scheduled search hits to CSE as signals.
 
 ## Sunburst Suspicious File Writes
 
@@ -3127,12 +3122,12 @@ This rule identifies writes of specific file types associated with activity rela
 ## Suspicious Curl File Upload
 
 
- Detects a suspicious curl process start the adds a file to a web request.
+ Detects a suspicious curl process that adds a file to a web request.
 
 ## Suspicious DC Logon
 
 
- Shows RemoteInteractive logons, such as RDP sessions, to domain controllers. Requires customer to setup the domain_controllers match list
+ Shows RemoteInteractive logons, such as RDP sessions, to domain controllers. Requires customer to set up the domain_controllers match list
 
 ## Suspicious Email Attachment Extension
 
@@ -3143,7 +3138,7 @@ This rule identifies writes of specific file types associated with activity rela
 ## Suspicious Email Origin
 
 
- The email has originated from a suspicious location
+ The email has originated from a suspicious location.
 
 ## Suspicious Execution of Search Indexer
 
@@ -3247,7 +3242,7 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 ## Telegram API Access
 
 
- Detects suspicious requests to Telegram API without the usual Telegram User-Agent
+ Detects suspicious requests to Telegram API without the usual Telegram User-Agent.
 
 ## The Audit Log was Cleared - 1102
 
@@ -3257,17 +3252,17 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 ## Threat Intel - Device IP Matched Threat Intel Domain Name
 
 
- A record flagged a hostname or domain from a threat intelligence match list
+ A record flagged a hostname or domain from a threat intelligence match list.
 
 ## Threat Intel - Device IP Matched Threat Intel File Hash
 
 
- A record flagged a file hash from a threat intelligence match list
+ A record flagged a file hash from a threat intelligence match list.
 
 ## Threat Intel - Device IP Matched Threat Intel URL
 
 
- A record flagged a URL from a threat intelligence match list
+ A record flagged a URL from a threat intelligence match list.
 
 ## Threat Intel - Inbound Traffic Context
 
@@ -3277,7 +3272,7 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 ## Threat Intel - Matched Domain Name
 
 
- A record flagged a hostname or domain from a threat intelligence match list
+ A record flagged a hostname or domain from a threat intelligence match list.
 
 ## Threat Intel - Successful Authentication from Threat IP
 
@@ -3287,7 +3282,7 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 ## Threat Intel Match - IP Address
 
 
- A record flagged an IP address from a threat intelligence match list
+ A record flagged an IP address from a threat intelligence match list.
 
 ## Too Many Kerberos Encryption Downgrade SPNs (Kerberoasting)
 
@@ -3327,7 +3322,7 @@ This alert looks for evidence of the native signed Windows binary InstallUtil.ex
 ## Turla Group Commands
 
 
- Observes for command lines associated with Turla group
+ Observes for command lines associated with Turla group.
 
  ## Unauthorized Access Attempt Detected
 
@@ -3369,12 +3364,12 @@ Note that this rule requires Microsoft SysInternals Sysmon installed with Image 
 ## Unusual Staging Directory - PolicyDefinitions
 
 
- Detects executable file extension written to the PolicyDefinitions directory. This activity has been associated with destructive malware
+ Detects executable file extension written to the PolicyDefinitions directory. This activity has been associated with destructive malware.
 
 ## Ursnif Malware Registry Key
 
 
- Observes for the creation of a registry key associated with Ursnif malware
+ Observes for the creation of a registry key associated with Ursnif malware.
 
 ## User Account Created and Deleted in 24 Hours
 
@@ -3415,7 +3410,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## WMI Launching Shell
 
 
- Observes for Windows Management Instrumentation (WMI) launching a shell
+ Observes for Windows Management Instrumentation (WMI) launching a shell.
 
 ## WMI Managed Object Format (MOF) Process Execution
 
@@ -3460,7 +3455,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## WMIPRVSE Spawning Process
 
 
- Observes for child processes spawned by WMIPRVSE
+ Observes for child processes spawned by WMIPRVSE.
 
 ## WannaCry Ransomware
 
@@ -3520,7 +3515,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - Domain Trust Discovery
 
 
- Suspicious Domain Trust Discovery Activity - T1482
+ Suspicious Domain Trust Discovery Activity - T1482.
 
 ## Windows - Excessive User Interactive Logons Across Multiple Hosts
 
@@ -3535,7 +3530,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - Local System executing whoami.exe
 
 
- Local system account - Suspicious System Owner/User Discovery Activity - T1033 - requires commandline auditing 4688
+ Local system account - Suspicious System Owner/User Discovery Activity - T1033 - requires commandline auditing 4688.
 
 ## Windows - Microsoft Office Add-In File Created
 
@@ -3550,12 +3545,12 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - Network trace capture using netsh.exe
 
 
- Detects capture of a network trace via the netsh.exe trace functionality
+ Detects capture of a network trace via the netsh.exe trace functionality.
 
 ## Windows - Permissions Group Discovery
 
 
- Suspicious Permissions Group Discovery Activity - T1069
+ Suspicious Permissions Group Discovery Activity - T1069.
 
 ## Windows - Possible Impersonation Token Creation Using Runas
 
@@ -3565,7 +3560,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - Possible Squiblydoo Technique Observed
 
 
- The Squiblydoo technique is a way for unapproved scripts to run on a machine that is setup to allow only approved scripts to run. Squiblydoo utilizes regsvr32.exe to download an XML file that contains scriptlets for executing code on the victim machine.
+ The Squiblydoo technique is a way for unapproved scripts to run on a machine that is set up to allow only approved scripts to run. Squiblydoo utilizes regsvr32.exe to download an XML file that contains scriptlets for executing code on the victim machine.
 
 ## Windows - PowerShell Process Discovery
 
@@ -3580,7 +3575,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - Remote System Discovery
 
 
- Suspicious Remote System Discovery Activity - T1018
+ Suspicious Remote System Discovery Activity - T1018.
 
 ## Windows - Rogue Domain Controller - dcshadow
 
@@ -3605,7 +3600,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - System Network Configuration Discovery
 
 
- Suspicious System Network Configuration Discovery Activity - T1016
+ Suspicious System Network Configuration Discovery Activity - T1016.
 
 ## Windows - System Time Discovery
 
@@ -3615,12 +3610,12 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows - User Adds Self to Security Group
 
 
- A user adding themselves to a security group may indicate the attempt to escalate their privileges
+ A user adding themselves to a security group may indicate the attempt to escalate their privileges.
 
 ## Windows - WiFi Credential Harvesting with netsh
 
 
- Harvesting of Wifi Credentials Using netsh.exe
+ Detects harvesting of Wifi Credentials Using netsh.exe.
 
 ## Windows Account Added To Privileged Security Group
 
@@ -3635,7 +3630,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Windows Adfind Exe
 
 
- This rule looks for the execution of adfind.exe with command-line arguments that it uses by default. Specifically the filter or search functions. This has been seen used before by Wizard Spider, FIN6 and actors whom also launched SUNBURST. AdFind.exe is usually used a recon tool to enumare a domain controller.
+ This rule looks for the execution of adfind.exe with command-line arguments that it uses by default, specifically the filter or search functions. This has been seen used before by Wizard Spider, FIN6 and actors whom also launched SUNBURST. AdFind.exe is usually used a recon tool to enumare a domain controller.
 
 ## Windows Admin User Remote Logon
 
@@ -3730,7 +3725,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Winnti Pipemon Characteristics
 
 
- Detects specific process characteristics of Winnti Pipemon malware reported by ESET
+ Detects specific process characteristics of Winnti Pipemon malware reported by ESET.
 
 ## Write-only SNMP attempt from external
 
@@ -3745,7 +3740,7 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## XSL Script Processing
 
 
- Extensible Stylesheet Language (XSL) files are commonly used to describe the processing and rendering of data within XML files, rule detects when adversaries abuse this functionality to execute arbitrary files while potentially bypassing application whitelisting defenses.
+ Extensible Stylesheet Language (XSL) files are commonly used to describe the processing and rendering of data within XML files. This rule detects when adversaries abuse this functionality to execute arbitrary files while potentially bypassing application whitelisting defenses.
 
 ## ZScaler Proxy-Traffic to Malicious Categorized Domain
 
@@ -3760,12 +3755,12 @@ MSBuild is the build system for Visual Studio. This IOC detects the suspicious e
 ## Zoom Child Process
 
 
- Observes for Zoom creating child processes
+ Observes for Zoom creating child processes.
 
 ## Zscaler - Allowed Elevated Risk Score Events
 
 
- Observes for a high risk event that was permitted by ZScaler
+ Observes for a high risk event that was permitted by ZScaler.
 
 ## iOS Implant URL Pattern
 

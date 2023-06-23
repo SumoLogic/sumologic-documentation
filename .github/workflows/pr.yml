@@ -4,6 +4,7 @@ on:
     pull_request:
       branches:
         - main
+    merge_group:
 
 jobs:
     build-and-deploy:
@@ -37,5 +38,5 @@ jobs:
         name: Check spelling
         with:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
-          ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp,fo,seldomly"
+          ignore_words_list: "aks,atleast,cros,fiel,ist,ot,pullrequest,ser,shttp,fo,seldomly,delt,cruzer,plack,te"
           path: docs

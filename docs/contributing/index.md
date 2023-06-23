@@ -6,11 +6,11 @@ description: Learn how to provide feedback and contribute to Sumo Logic Docs, an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="75"/>
+<img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="45"/>
 
 We're a developer/practitioner community building reliable and secure modern apps. We welcome all contributions, from minor typo fixes to new docs/topics. Your expertise and sharing can help fellow users learn and expand their knowledge of Sumo Logic.
 
-Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation). This section will grow as we answer questions and provide support for submissions and new content. Here you'll information on creating files, writing in markdown, using our templates, submitting pull requests (PRs), and more.
+Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation). This section will grow as we answer questions and provide support for submissions and new content. Here you'll find information on creating files, writing in markdown, using our templates, submitting pull requests (PRs), and more.
 
 There are many ways to contribute to Sumo Docs, beyond writing code. Here's a high-level overview of how you can get involved.
 
@@ -19,6 +19,12 @@ There are many ways to contribute to Sumo Docs, beyond writing code. Here's a hi
 
 * [Edit an existing doc](/docs/contributing/edit-doc)
 * [Create a new doc](/docs/contributing/create-doc)
+
+## Delete a Doc
+
+:::warning
+Never delete a doc! See [How to Remove a Sumo Doc](/docs/contributing/remove-doc) for instructions.
+:::
 
 ## Submit an Issue
 
@@ -30,7 +36,7 @@ Before submitting an issue, you can browse our [existing GitHub issues](https://
 
 You can [submit a Sumo Docs feature request](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=).
 
-If you're looking to submit a Sumo Logic (not docs) feature request, [click here](/docs/get-started/help/#feature-requests).
+If you're looking to submit a Sumo Logic (not docs) feature request, go to the [Sumo Logic Community](/docs/get-started/help#community).
 
 
 ## Guides

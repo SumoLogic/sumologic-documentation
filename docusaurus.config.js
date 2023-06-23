@@ -28,15 +28,19 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
-      async: true,
-    },
-    {
       src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
       async: true,
     },
     {
       src: './src/helper/google-translate.js',
+      async: true,
+    },
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
+      async: true,
+    },
+    {
+      src: './src/helper/google-analytics.js',
       async: true,
     },
   ],
@@ -92,6 +96,12 @@ module.exports = {
               'caution',
             ],
           },
+        },
+        gtag: {
+          trackingID: [
+            'G-CVH19TBVSL',
+            'UA-16579649-3',
+          ],
         },
         googleAnalytics: {
           trackingID: 'UA-16579649-3',
@@ -149,6 +159,26 @@ module.exports = {
            type: 'rss',
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+         },
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
+         id: 'blog-csoar',
+         routeBasePath: 'release-notes-csoar',
+         path: './blog-csoar',
+         archiveBasePath: 'archive',
+         blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
+         blogSidebarTitle: 'All posts',
+         blogSidebarCount: 'ALL',
+         postsPerPage: 'ALL',
+         blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+         showReadingTime: false,
+         feedOptions: {
+           type: 'rss',
+           title: 'Sumo Logic Cloud SOAR Release Notes',
+           description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
       },
@@ -227,15 +257,12 @@ module.exports = {
       appId: '2SJPGMLW1Q',
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
-      // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Algolia search parameters
-      //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false,
-      //... other Algolia params
+      //searchPagePath: false,
+      getMissingResultsUrl({ query }) {
+        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
+      },
     },
     prism: {
       theme: lightCodeTheme,
@@ -251,6 +278,11 @@ module.exports = {
         items: [
         // activeregex controls the top nav content
         // icon uses Google Material name code https://fonts.google.com/icons?query=material
+          {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'left',
+            className: 'header-trial',
+          },
           {
             label: 'Guides',
             position: 'left',
@@ -273,7 +305,7 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'searchlogs',
                 label: 'Log Search',
-                icon: 'manage_search',
+                icon: 'article',
               },
               {
                 type: 'docSidebar',
@@ -290,14 +322,14 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'dashboards',
-                label: 'Alerts, Monitors',
+                label: 'Alerts',
                 icon: 'notifications',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'metricslogs',
                 label: 'Metrics',
-                icon: 'timeline',
+                icon: 'stacked_line_chart',
               },
               {
                 type: 'docSidebar',
@@ -314,7 +346,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'security',
-                label: 'Cloud SIEM/SOAR',
+                label: 'Security',
                 icon: 'security',
               },
               {
@@ -361,6 +393,11 @@ module.exports = {
                 icon: 'rss_feed',
               },
               {
+                label: 'Cloud SOAR',
+                to: 'release-notes-csoar',
+                icon: 'rss_feed',
+              },
+              {
                 label: 'Collector',
                 to: 'release-notes-collector',
                 icon: 'rss_feed',
@@ -373,14 +410,13 @@ module.exports = {
             ]
           },
           {
+            type: 'search',
+            position: 'left',
+          },
+          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
-          },
-          {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'right',
-            className: 'header-login',
           },
           {
             position: 'right',
@@ -391,11 +427,13 @@ module.exports = {
             items:[
               {
                 label: 'Send Feedback',
-                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                icon: 'rate_review',
               },
               {
                 label: 'Contribute to Docs',
                 href: '/docs/contributing',
+                icon: 'edit_note',
               },
             ]
           },

@@ -1,7 +1,6 @@
 ---
 id: threat-intel
-title: Sumo Logic App for AWS Threat Intel
-sidebar_label: AWS Threat Intel
+title: AWS Threat Intel
 description: The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks.
 ---
 
@@ -27,8 +26,8 @@ If you are not already collecting your AWS logs, follow the instructions below t
 * [Collect AWS CloudTrail Logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)
 * [Collect AWS ELB Logs](/docs/integrations/amazon-aws/classic-load-balancer#collecting-logs-and-metrics)
 
-VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
-* [Using an AWS S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
+* [Using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
 * [Using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
 
@@ -38,24 +37,7 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 
 Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](/docs/integrations/amazon-aws/threat-intel#viewing-threat-intel-dashboards) that provide insight into your data.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Threat Intel Dashboards
 
@@ -66,7 +48,7 @@ All Dashboards include filters that you can use in Interactive Mode for further 
 
 High-level view of the threats identified by Threat Intel in your AWS CloudTrail, VPC Flow Logs, and ELB systems.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Threat-Intel-overview.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-Overview.png')} alt="AWS Threat Intel" />
 
 * **Welcome to Threat Intel for AWS.** See an informational panel to help you get started with Threat Intel. You can close this panel once you’ve read the text and visited the FAQs.
 * **Scanned Events Over Time.**  See the number of events scanned while looking for threats during the last 24 hours, broken down by source type.  
@@ -85,7 +67,7 @@ High-level view of the threats identified by Threat Intel in your AWS CloudTrail
 
 Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSCloudTrail.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-CloudTrail.png')} alt="AWS Threat Intel" />
 
 * **Threats by Geo Location.** View the geo location of threats by IP address that have been identified by Crowdstrike with a malicious confidence of High over the last 24 hours.
 * **Threats Associated with CloudTrail Events.** Track events in CloudTrail by event time where the malicious confidence is High by source user, source IP address, event name, AWS region, result, malicious confidence, label name, threat malware families, threat last updated, and count for the last 24 hours.
@@ -99,7 +81,7 @@ Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
 Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Logs.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSVPCFlowLogs.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-Amazon-VPC-Flow-Logs.png')} alt="AWS Threat Intel" />
 
 * **Geo Location of Threats with Rejected Flow Logs.** View the location of the source IP address of threats identified as High malicious confidence and rejected VPC flow logs for the last 24 hours.
 * **Geo Location of Threats with Accepted Flow Logs.** View the location of the source IP address of threats identified as High malicious confidence and accepted VPC flow logs for the last 24 hours
@@ -114,7 +96,7 @@ Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Lo
 
 Use this dashboard for details on potential threats and IOCs for Elastic Load Balancing.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSELB.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-Elastic-Load-Balancing-Classic.png')} alt="AWS Threat Intel" />
 
 * **Threats by Geo Location. **View the latest threats identified the geo location of their by source IP address.
 * **Threats Associated with Client IP. ** View an aggregation table of threats by client IP with a malicious confidence of High that contains the ELB server, ELB status code, full request, source IP,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated.

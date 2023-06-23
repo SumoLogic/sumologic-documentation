@@ -66,14 +66,14 @@ The table below lists defines the fields returned for an audit event. Note that 
 
 | Field | Description |
 |:--|:--|
-| Time (_messagetime) | The time that the event occurred |
-| Message (_raw) | The raw log message written to the audit index.  |
+| Time (`_messagetime`) | The time that the event occurred |
+| Message (`_raw`) | The raw log message written to the audit index.  |
 | Action | The action that was performed. Actions vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions).    |
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| _sourceCategory | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
-| _sourcehost | IP address of the source's host, or "no_sourcehost". |
+| `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
+| `_sourcehost` | IP address of the source's host, or "no_sourcehost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
 | Status | The status of the action, which can be success or failure |
@@ -81,7 +81,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 
 ## Audit event classes and actions
 
-The sections list the classes of objects—for example collectors, users, and sessions—for which Sumo writes audit logs, and the actions, such as create or delete, that result in a message to the audit log.  
+The sections list the classes of objects — for example: collectors, users, and sessions—for which Sumo writes audit logs, and the actions, such as create or delete, that result in a message to the audit log.  
 
 When you query the audit index, the search results will include the class and action for each audit log. The `class` and `action` are hidden by default. To display a hidden field, click the checkbox next to it in the **Hidden Fields** section of the **Messages** tab. You can also perform targeted searches of the audit index using the `class` and `action` fields in your query.
 
@@ -158,7 +158,7 @@ _sourceCategory=account_management _sourceName=VOLUME_QUOTA  "rate limit"
 
 yields the following throttling notification.
 
-`An automatic data ingest rate limit has been temporarily enabled for your account. (Resource type: LogIngest) `
+`An automatic data ingest rate limit has been temporarily enabled for your account. (Resource type: LogIngest)`
 
 ### Amazon CloudWatch metrics throttling events
 

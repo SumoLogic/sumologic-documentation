@@ -2,7 +2,7 @@
 id: vmware-carbon-black
 title: VMware Carbon Black
 sidebar_label: VMware Carbon Black
-description: The VMware Carbon Black App provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of a breach across your environment. The App provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
+description: The VMware Carbon Black App provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of a breach across your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -323,38 +323,14 @@ _sourceCategory="Labs/cb-edr-json" | parse regex "(?:process_name)(?:\"\:\"|=')
  count by process_name | sort by _count | limit 10
 ```
 
-
-
 ## Installing the VMware Carbon Black App
-
 
 This section demonstrates how to install the VMware Carbon Black EDR and Cloud Endpoint Standard App and has examples of each of the App dashboards. The VMware Carbon Black App dashboards are organized in the following categories, according to their function:
 
 * **[VMware Carbon Black Endpoint Detection and Response (EDR)](https://www.carbonblack.com/products/edr/)** is an incident response and threat hunting solution that continuously records and stores unfiltered endpoint data, allowing security professionals to track potential threats in real-time.
 * **[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** is a next-generation antivirus (NGAV) and endpoint detection and  EDR solution.
 
-
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing VMware Carbon Black Dashboards
 
@@ -373,7 +349,7 @@ You can use filters to drill down and examine the data on a granular level.
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 
@@ -513,7 +489,7 @@ Use this dashboard to:
 
 The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 * Quickly review your infrastructure security status.

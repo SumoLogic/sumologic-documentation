@@ -1,7 +1,6 @@
 ---
 id: cis-aws-foundations-benchmark
-title: CIS AWS Foundations Benchmark App
-sidebar_label: CIS AWS Foundations Benchmark App
+title: CIS AWS Foundations Benchmark
 description: Gain operational visibility into your AWS security posture using the Sumo Logic for CIS AWS Foundations Benchmark App, which maps to Section 3 (Monitoring) of the CIS AWS Benchmarks Foundation recommendations.
 ---
 
@@ -33,28 +32,9 @@ The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations
 
 ## Installing the CIS AWS Foundations Benchmark App
 
-Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and [dashboards](/#Dashboards) to analyze your data.
+Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 For context regarding the CIS AWS Foundation Benchmark App, check out this [blog](https://www.sumologic.com/blog/cis-aws-foundations-benchmark-monitoring/) where we describe the monitoring controls.
 
@@ -84,7 +64,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **S3 Bucket Policy Changes.** Shows the count of S3 Bucket Policy changes done by each user for the last 24 hours.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/CIS AWS benchmark-overview.png')} alt="CIS AWS Foundations Benchmark" />
+<img src={useBaseUrl('img/integrations/amazon-aws/CIS-AWS-Benchmark-Monitoring-Change-Control.png')} alt="CIS AWS Foundations Benchmark" />
 
 
 ### CIS AWS Foundations Benchmark App - Access and Authentication
@@ -105,4 +85,4 @@ This Access and Authentication Dashboard includes filters that you can use in In
 
 **Outlier - Failed Console Logins.** Identifies failed console logins outside of 3 standard deviations, for the last 24 hours.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/CIS AWS benchmark monitoring access auth dashboard.png')} alt="CIS AWS Foundations Benchmark" />
+<img src={useBaseUrl('img/integrations/amazon-aws/CIS-AWS-Benchmark-Monitoring-Access-and-Authentication.png')} alt="CIS AWS Foundations Benchmark" />

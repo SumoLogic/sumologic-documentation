@@ -2,9 +2,12 @@
 id: crowdstrike-source
 title: CrowdStrike Source
 sidebar_label: CrowdStrike
+description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
 The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike [Streams API](https://falcon.crowdstrike.com/support/documentation/89/event-streams-apis). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -63,7 +66,7 @@ When you create a CrowdStrike Source, you add it to a Hosted Collector. Before 
 
 To configure a CrowdStrike Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **CrowdStrike**.<br/>  ![crowdstrike icon.png](/img/send-data/crowdstrike-icon.png)
 1. Enter a **Name** for the Source. The description is optional. <br/>  ![crowdstrike src 10.png](/img/send-data/crowdstrike-src.png)

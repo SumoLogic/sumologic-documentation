@@ -26,6 +26,22 @@ You can use CSE Actions to issue a notification to another service when certain 
 
 An Action can be configured for Insight-related activity as described below in [Insight Actions](create-cse-actions.md#insight-actions). You can also configure an Action to be run when a rule is automatically disabled, as described below in [Rule Actions](create-cse-actions.md#rule-actions).
 
+Watch this micro lesson to learn how to configure an Action.
+
+<Iframe url="https://www.youtube.com/embed/uHY-r04edn0?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 ## Insight Actions
 
 You can configure an Action to send information about an Insight to another system, automatically when the Insight is created or on-demand from the Insight's **Actions** menu, and in the case of an HTTP POST v2 Action, when an Insight is closed.
@@ -65,7 +81,7 @@ The notification sent by a Rule Action contains the name of the rule and the re
 2. **Active**. Move the slider to the right if you’d like the Action to be enabled upon creation.
 3. **Type**. Choose one of the following options, and follow the instructions for that Action type to complete creating your Action.
     * [AWS Simple Notification Service](#aws-simple-notification-service-sns)
-    * [Demisto](#demisto-corex-xsoar)
+    * [Demisto](#demistocorex-xsoar)
     * [Email](#email)
     * [HTTP POST v2](#http-post-v2)
     * [HipChat](#hipchat)
@@ -79,7 +95,7 @@ The notification sent by a Rule Action contains the name of the rule and the re
 
 When you run this Action type for an Insight, CSE sends the full Insight in JSON format to SNS.
 
-You can configure the action to authenticate with SNS using your AWS Access Key and Secret Access Key, or using the **AssumeRole** method
+You can configure the action to authenticate with SNS using your AWS Access Key and Secret Access Key, or using the **AssumeRole** method.
 
 1. **Access Key**. Enter your AWS Access Key, if you're using AWS Access Keys to authenticate.
 1. **Secret Key**. Enter your AWS Secret Access Key, if you're using AWS Access Keys to authenticate.
@@ -156,7 +172,7 @@ This Action type sends a Webhook notification to Microsoft Teams.
 
 #### Configure Webhook connection in Microsoft Teams
 
-Create a Webhook connection for the Microsoft Teams channel to which emails should be sent. Follow the instructions in [Create Incoming Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft help.
+Create a Webhook connection for the Microsoft Teams channel to which emails should be sent. Follow the instructions in [Create Incoming Webhooks](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft help.
 
 #### Configure Action in CSE
 

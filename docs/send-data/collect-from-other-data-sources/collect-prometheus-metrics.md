@@ -1,6 +1,7 @@
 ---
 id: collect-prometheus-metrics
 title: Collect Prometheus Metrics
+sidebar_label: Prometheus
 description: You can collect Prometheus metrics in Kubernetes or outside of Kubernetes using Telegraf to collect and a plugin to send data to Sumo Logic.
 ---
 
@@ -69,9 +70,7 @@ You can scrape for the following annotations:
 
 **Pod scrape scope.** Get a list of pods to scrape with one of the
 following scopes:
-
  * cluster: The Kubernetes watch API. This is used by default.
-
  * node: The local cadvisor API used for scalability. If using this scope, you will need to set a node IP and pod scrape interval. See the following options.
      pod_scrape_scope = "cluster"
 
@@ -160,21 +159,20 @@ tls_ca = /path/to/cafile tls_cert = /path/to/certfile tls_key = /path/to/keyfile
 insecure_skip_verify = false
 ```
 
-### Collecting Prometheus Metrics Outside of Kubernetes
+## Collecting Prometheus Metrics Outside of Kubernetes
 
 Use the Prometheus Input Plugin to read data into Telegraf, then use the [Sumo Logic output plugin](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic) to send data into Sumo Logic.
 
-#### Requirements
+### Requirements
 
 Install and configure Telegraf to read your data for sending through the Sumo Logic output plugin.
 
 1. [Install Telegraf](collect-metrics-telegraf/install-telegraf.md).
-
 1. [Configure Telegraf Inputs](collect-metrics-telegraf/configure-telegraf-input-plugins.md) to receive data from the [Prometheus Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/prometheus). 
 
 ### Configure and Collect Metrics
 
-To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../hosted-collectors/http-source/upload-metrics.md) for additional Sumo supported options.
+To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../hosted-collectors/http-source/logs-metrics/upload-metrics.md) for additional Sumo supported options.
 
 **URL.** A unique URL generated for your HTTP Metrics Source. Use the following address to send metrics to:
 
@@ -182,7 +180,7 @@ To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://githu
 url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 ```
 
-**Data Format.** This plugin sends metrics to the [Sumo Logic HTTP Source](../hosted-collectors/http-source/upload-metrics.md) in HTTP messages, encoded using one of the following output data formats, set for the header "Content-Type". For more information, see [Content-type header for metrics](../hosted-collectors/http-source/upload-metrics.md).
+**Data Format.** This plugin sends metrics to the [Sumo Logic HTTP Source](../hosted-collectors/http-source/logs-metrics/upload-metrics.md) in HTTP messages, encoded using one of the following output data formats, set for the header "Content-Type". For more information, see [Content-type header for metrics](../hosted-collectors/http-source/logs-metrics/upload-metrics.md).
 
 :::note
 When unset, Telegraf will use the influx serializer by default which is currently unsupported in HTTP Source.
@@ -192,7 +190,7 @@ When unset, Telegraf will use the influx serializer by default which is current
 |:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon2](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2`<br/>This is the default setting. |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../hosted-collectors/http-source/upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../hosted-collectors/http-source/logs-metrics/upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
 
 **Timeout.** Set a timeout for the HTTP request.
 

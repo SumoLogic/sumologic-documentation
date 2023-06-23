@@ -12,7 +12,7 @@ If you are querying Graphite metrics, and do not specify the field to be parsed
 
 Each wildcard in the pattern corresponds to a specified field. The parse operator supports both lazy (shortest match) and greedy (longest match wildcard matches.  Use '\*' for a lazy match, or '\*\*' for a greedy match.
 
-## parse syntax
+## Syntax
 
 ```sql
 parse [field=FIELD] PATTERN as PARSED_FIELD [, PARSED_FIELD, ...]
@@ -24,7 +24,7 @@ Where:
 * `PATTERN` is an expression in which wildcards indicate how to parse `FIELD`
 * `PARSED_FIELD` is a field that results from the parsing process
 
-## parse examples
+## Examples
 
 ### parse three fields from a metric field
 
@@ -44,7 +44,7 @@ The `parse` operator creates fields named `type`, `name`, and `id` that have the
 
 ### Use a parsed field in a query
 
-You can use the field(s) you’ve parsed within the same query, after the `parse` operator. For example this query parses the `name` field out of the  `LoadBalancer` field, returns the average value of the `HTTPCode_Target_2XX_Count` metric by the `name` field.
+You can use the field(s) you’ve parsed within the same query, after the `parse` operator. for example, this query parses the `name` field out of the  `LoadBalancer` field, returns the average value of the `HTTPCode_Target_2XX_Count` metric by the `name` field.
 
 ```
 AvailabilityZone=us-west-1a metric=HTTPCode_Target_2XX_Count | parse field=LoadBalancer */*/* as type, name, id | avg by name

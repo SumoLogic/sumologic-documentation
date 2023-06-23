@@ -5,6 +5,11 @@ sidebar_label: MS Office 365 Audit Source
 description: Collect Audit Log content types to track and monitor usage of Microsoft Office 365.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="40"/>
+
+
 ## Office 365 Audit Log Workload types
 
 :::note
@@ -30,7 +35,7 @@ Create only one Source for a given workload type. If you create an additional So
 Audit log data can contain sensitive information. When you configure any audit log Source, make sure that you implement the appropriate RBAC permissions to limit access to the content as needed. 
 :::
 
-## Requirements
+## Prerequisites
 
  * Enable unified auditing for your Office 365 organization. To enable, see https://docs.microsoft.com/en-us/office365/securitycompliance/turn-audit-log-search-on-or-off
  * [Office 365 admin roles](#office-365-admin-roles)
@@ -46,7 +51,7 @@ When you configure a Microsoft Office 365 Audit Source in Sumo you will need t
 Using the Global Administrator role is recommended:
 
 | Role  |   Description |
-|:-----------------------|:------------------------------------------------------------------------------------------|
+|:-----------------------|:-------------|
 | Global Administrator  | This role enables access to all administrative features in your Office 365 subscription. |
 
 You could take a different, more granular, approach to assign roles to
@@ -77,7 +82,7 @@ see [Office 365 Management Activity API Schema](https://msdn.microsoft.com/EN-US
 
 Each log file from Microsoft contains one or more log messages formatted as a JSON array. If there is more than one message in the array, we separate each log line in the JSON array into an individual log line message within Sumo Logic.
 
-## Configure a Microsoft Office 365 Source
+## Configure a Microsoft Office 365 Audit Source
 
 You must configure a separate Source for each Office 365 application you want to collect logs for. These can all be configured on the same Hosted Collector. 
 
@@ -85,35 +90,28 @@ You must configure a separate Source for each Office 365 application you want to
 During the configuration, you will need to authenticate to Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. Refer to the API references in this article for additional information on Microsoft admin rights.
 :::
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**. 
-1. Click **Add Source** next to a Hosted Collector. See [Set Up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for instructions on setting up a new Hosted Collector.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. Click **Add Source** next to a Hosted Collector. If you dont already have a hosted collector, see [Set Up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for instructions on setting up a new Hosted Collector.
 1. Select **Office 365 Audit**. 
 1. Enter a name to identify the Source. **Description** is optional.
 1. For **O365 Region**, select the region that corresponds to your Microsoft 365 or Office 365 subscription plan, the supported regions are Commercial, GCC, and GCC High. See [Activity API operations](https://docs.microsoft.com/en-us/office/office-365-management-api/office-365-management-activity-api-reference#activity-api-operations) for more details.
-
   :::note
   Source creation will fail if an incorrect **O365 Region** is selected. You cannot change the **O365 Region** setting on an existing Source.
   :::
-
 1. For **Content Type**, select the type of log to collect. If you want to collect from additional content types, create additional instances of this Source type.
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called `_sourceCategory`.) This is an important part of limiting access to this content using RBAC. Recommended Source Category naming conventions:
-
-  * For SharePoint: **O365/SharePoint**
-  * For Exchange: **O365/Exchange**
-  * For Azure: **O365/Azure**
-
+   * For SharePoint: **O365/SharePoint**
+   * For Exchange: **O365/Exchange**
+   * For Azure: **O365/Azure**
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. Click **Sign in with Office 365** to authenticate to Microsoft using standard OAuth v2 interaction.  
-
   :::note
   Sumo Logic never receives your Microsoft Office 365 credentials.
   :::
-
-1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the new Source.
-1. When you are finished configuring the Source. click **Save**.
+1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the new Source.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Audit Index events
 
@@ -135,7 +133,6 @@ Here are a few important items:   
 * (From Microsoft) “When a subscription is created, it can take up to 12 hours for the first content blobs to become available for that subscription.”  We have found that data starts to arrive at Sumo Logic much sooner than this, but please wait this long before contacting Support.
 * (From Microsoft) “The content blobs are created by collecting and aggregating actions and events across multiple servers and data centers. As a result of this distributed process, the actions and events contained in the content blobs will not necessarily appear in the order in which they occurred. One content blob can contain actions and events that occurred prior to the actions and events contained in an earlier content blob. We are working to decrease the latency between the occurrence of actions and events and their availability within a content blob, but we cannot guarantee that they appear sequentially.”
 * There can be a significant delay between when an event occurs in O365, and when an audit log is available from Microsoft.  We receive the log files as soon as they are made available to us. The latency for log line available varies between content types, and from our observation, is not consistent. This is not within Sumo Logic’s control.  You may monitor this latency by querying the difference between the event time stamp and the receipt time stamp (when we processed the log message).
-* In your Office 365 logs, you might see intermittent messages that say `"Message":"Authorization has been denied for this request."` This is due to an authorization token synchronization defect that is being fixed and will be rolled out shortly. Until then, please ignore this message.
 
 ## OAuth 2.0 access token and subscription expiration
 

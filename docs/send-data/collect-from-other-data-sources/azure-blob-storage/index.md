@@ -4,14 +4,12 @@ title: Azure Blob Storage
 description: This Sumo integration provides a event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.
 ---
 
+Logs and metrics for most Azure services can be exported to Azure Storage Account as block blobs. This page describes a Sumo integration that provides an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic. 
 
-
-:::sumo
-Logs and metrics for most Azure services can be exported to Azure Storage Account as block blobs. This page describes a Sumo integration that provides an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.  This solution is good for monitoring Azure services that do not support exporting logs to Azure Monitor, for example, Azure Web Apps and Azure Storage Accounts.
-:::
+This solution is good for monitoring Azure services that do not support exporting logs to Azure Monitor, for example, Azure Web Apps and Azure Storage Accounts.
 
 :::note
-This solution is not for existing blobs but newly created blobs only. 
+This solution is for newly created blobs only (not for existing blobs). 
 :::
 
 For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).
@@ -66,18 +64,22 @@ Sumo provides an Azure Resource Management (ARM) template to build most of the c
 * Three Azure functions—TaskProducer, TaskConsumer, and DLQTaskConsumer—that are responsible for sending monitoring data to Sumo.
 * A storage account to which the Azure functions write their log messages about successful and failed transmissions.
 
-You download the Sumo-provided ARM template, upload the template to the Azure Portal, set the parameters that identify the URL of your Sumo HTTP source, and the connection string of for the Azure Storage Account (where Azure services export their logs), and deploy the template. After deployment, you create an Event Grid subscription with an Azure Storage Account as a publisher and the event hub created by the ARM template as the subscriber. You can also specify prefix/suffix filters to filter the events based container name and blob name. For more information, see [Filtering events](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-overview#filtering-events) in Azure help. Then, you can start exporting your monitoring data from the Azure Service to Azure Blob Storage.   
+You download the Sumo-provided ARM template, upload the template to the Azure Portal, set the parameters that identify the URL of your Sumo HTTP source, and the connection string of for the Azure Storage Account (where Azure services export their logs), and deploy the template.
+
+After deployment, you create an Event Grid subscription with an Azure Storage Account as a publisher and the event hub created by the ARM template as the subscriber. You can also specify prefix/suffix filters to filter the events based container name and blob name.
+
+For more information, see [Filtering events](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-overview#filtering-events) in Azure help. Then, you can start exporting your monitoring data from the Azure Service to Azure Blob Storage.   
 
 :::note
 It is assumed that:
 
 * The Azure service updates the blob (adding new blocks) in small chunks and has been tested with block blobs.
+* Any JSON file in the JSON lines format that is uploaded into a storage account will result in JSON objects being extracted and sent to Sumo Logic.
 * Log files have a file extension of .csv, .json, .blob, or .log.
-
-  * In .csv files, it is assumed the delimiting character is a comma (,). The .csv files are converted to JSON and sent to Sumo.
-  * If the file is .json, the JSON objects are extracted and sent to Sumo.
-  * If the file is .blob, the JSON objects are extracted and sent to Sumo.
-  * If the file is .log, log lines are sent to Sumo as is.  
+  * In .csv files, it is assumed the delimiting character is a comma (,). The .csv files are converted to JSON and sent to Sumo Logic.
+  * If the file is .json, the JSON objects are extracted and sent to Sumo Logic.
+  * If the file is .blob, the JSON objects are extracted and sent to Sumo Logic.
+  * If the file is .log, log lines are sent to Sumo Logic as is.  
 :::
 
 For instructions, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).

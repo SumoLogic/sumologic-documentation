@@ -38,21 +38,24 @@ You select an existing HTTP Source on a Hosted Collection as the destination for
 
 ## Telegraf in a Kubernetes deployment
 
-The diagram below illustrates where Telegraf fits into a Kubernetes environment monitored by Sumo Logic. In this example, we’re monitoring an Nginx deployment in a Kubernetes cluster. The cluster contains two nodes. Node 1 contains a single pod with an Nginx container. Node 2 contains two Nginx containers.
+The diagram below illustrates where Telegraf fits into a Kubernetes environment monitored by Sumo Logic.
+In this example, we’re monitoring an Nginx in a Kubernetes cluster.
 
 ![Telegraf-K8s.png](/img/send-data/Telegraf-K8s.png)
 
-The [Telegraf Operator](https://github.com/influxdata/telegraf-operator), part of Node 1, monitors the dynamic nature of a Kubernetes cluster: pods coming and going, IP addresses changing. It defines a common output destination for all collected metrics and configures Sidecar monitoring on application pods using annotations. Note that pods have the annotations, and injects a Telegraf container to each. These pod annotations provide the instructions for the operator to configure each Telegraf sidecar.
+[Telegraf Operator](https://github.com/influxdata/telegraf-operator) intercepts requests related to pods in the cluster, using the mutating webhooks functionality in Kubernetes.
+Telegraf Operator reads the pod annotations in the request and if an annotation says to add a Telegraf sidecar, then Telegraf Operator adds that instance as an additional container within that pod.
 
-To summarize:
-1. User add annotations to the pods where they want Telegraf to collect data from.
+To summarize, here's how to collect metrics using the Telegraf Operator:
+
+1. User adds annotations to the pods where they want Telegraf to collect data from.
 1. Prometheus connects to Telegraf via the user's annotations. Sumo Logic preconfigures Prometheus to fetch the metrics.
-1. Prometheus then sends metrics to Fluentd.
-1. Fluentd sends the metrics on to the HTTP Source running on a Sumo Logic Hosted Collector.
+1. Prometheus then sends metrics to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
+2. The [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) processes metrics, enriches metadata, and sends metrics to Sumo Logic.
 
 ### Metrics collection pipeline
 
-In the architecture shown above, there are three services that make up the metrics collection pipeline: Telegraf, Prometheus, and Fluentd.
+In the architecture shown above, there are three services that make up the metrics collection pipeline: Telegraf, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx. Note that we’re running Telegraf in each pod we want to collect metrics from. This is known as a *sidecar deployment*: Telegraf runs in the same pod as the containers it monitors. Telegraf uses an input plugin to obtain metrics, in this case, the Nginx input plugin. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator shown above.
 
@@ -60,24 +63,32 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from Ng
 There is no need for the Telegraf sidecar if your application can already expose metrics in the Prometheus format. In this case, you need to configure the application so that Prometheus knows it should scrape metrics from it.
 :::
 
-Prometheus is the next service in the pipeline — its job is to scrape metrics from each of the Telegraf containers. Prometheus knows what to scrape and how by referring to Kubernetes `prometheus.io` annotations attached to the pods in the cluster. Prometheus sends the metrics to Fluentd using the remote write capabilities of Prometheus.
+Prometheus is the next service in the pipeline — its job is to scrape metrics from each of the Telegraf containers. Prometheus knows what to scrape and how by referring to Kubernetes `prometheus.io` annotations attached to the pods in the cluster. Prometheus sends the metrics to Sumo Logic Distribution for OpenTelemetry Collector using the remote write capabilities of Prometheus.
 
-Fluentd runs on one of the nodes in the cluster, and listens on its TCP port for metrics from Prometheus. Fluentd enriches the metrics with metadata and sends the metrics to an HTTP Source running on a Sumo Logic Hosted Collector. 
+Sumo Logic Distribution for OpenTelemetry Collector enriches the metrics with metadata and sends the metrics to Sumo Logic.
 
 ### Configuration process
 
-1. To start collecting metrics from a Telegraf-supported application input plugin, you'll need to install the [Sumo Logic Helm chart for Kubernetes](https://github.com/SumoLogic/sumologic-kubernetes-collection), which packages up all of these components as part of the collection process for the [Sumo Logic Kubernetes Solution](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+1. To start collecting metrics from a Telegraf-supported application input plugin, you'll need to install the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection),
+   which packages up all of these components as part of the collection process for the [Sumo Logic Kubernetes Solution](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
   :::info What is Helm?
   Helm is a Kubernetes package and operations manager. Helm charts simplify the process of deploying components to Kubernetes environments.
   :::
-2. Add the Telegraf Operator to your Kubernetes deployment by adding the annotation `telegraf-operator.enabled=true` to your Kubernetes Helm chart. This installs the Telegraf operator in your cluster. For example, suppose you're running Nginx in your Kubernetes cluster, and you've enabled the status module for Nginx. Adding the following snippet to the Nginx deployment results in the annotation being added to each pod in the deployment. The following annotation instructs the Telegraf Operator to configure an Nginx input for telegraf to read those metrics.
-  ```sql
+
+1. Enable the Telegraf Operator by setting `telegraf-operator.enabled=true` in configuration for the Sumo Logic Kubernetes Collection Helm Chart.
+
+  For example, suppose you're running Nginx in your Kubernetes cluster, and you've enabled the status module for Nginx.
+  The following annotation added the Nginx deployment instructs the Telegraf Operator to configure an Nginx input for telegraf to read those metrics.
+
+  ```yaml
   telegraf.influxdata.com/inputs: |+  
     [[inputs.nginx]]
       urls = ["http://localhost:8080/stub_status"]
   ```
-3. Add these annotations to tell Telegraf to make its metrics available to Prometheus, and instruct Prometheus to discover the metrics.
-  ```yml
+
+1. Add these annotations to tell Telegraf to make its metrics available to Prometheus, and instruct Prometheus to discover the metrics.
+
+  ```yaml
   telegraf.influxdata.com/class: sumologic-prometheus
   prometheus.io/scrape: "true"
   prometheus.io/port: "9273"

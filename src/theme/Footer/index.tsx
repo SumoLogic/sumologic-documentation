@@ -84,7 +84,7 @@ export const Footer = () => {
                     primaryTypographyProps={{
                       color: '#e3e3e3',
                       fontFamily: 'Lab Grotesque',
-                      fontSize: 14,
+                      fontSize: 16,
                     }}
                   >
                     {label}
@@ -138,7 +138,8 @@ export const Footer = () => {
               alt: 'Sumo Logic YouTube',
               color: '#e3e3e3',
               href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
-              icon: faYoutube,
+              'aria-label': 'Sumo Logic YouTube',
+              icon: 'faYoutube', 'aria-hidden': "true",
               size: 'lg',
               sx: {
                 cursor: 'pointer',
@@ -151,7 +152,8 @@ export const Footer = () => {
               alt: 'Sumo Logic Twitter',
               color: '#e3e3e3',
               href: 'https://twitter.com/SumoLogic',
-              icon: faTwitter,
+              'aria-label': 'Sumo Logic Twitter',
+              icon: 'faTwitter', 'aria-hidden': "true",
               size: 'lg',
               sx: {
                 cursor: 'pointer',

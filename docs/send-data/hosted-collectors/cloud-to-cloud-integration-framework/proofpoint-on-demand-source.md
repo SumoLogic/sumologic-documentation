@@ -2,10 +2,12 @@
 id: proofpoint-on-demand-source
 title: Proofpoint On Demand Source
 sidebar_label: Proofpoint On Demand
+description: The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
 
 The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol to stream logs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -55,7 +57,7 @@ When you create a Proofpoint On Demand Source, you add it to a Hosted Collecto
 
 To configure a Proofpoint On Demand Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **Proofpoint On Demand**. <br/>   ![proofpoint icon.png](/img/send-data/proofpoint-icon.png)
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![proofpoint on demand input window.png](/img/send-data/proofpoint-on-demand-input-window.png)

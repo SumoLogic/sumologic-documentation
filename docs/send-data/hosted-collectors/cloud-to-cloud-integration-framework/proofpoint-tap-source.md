@@ -2,9 +2,12 @@
 id: proofpoint-tap-source
 title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
+description: The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint TAP SIEM API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
 
 The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint [TAP SIEM API](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -192,7 +195,7 @@ When you create a Proofpoint TAP Source, you add it to a Hosted Collector. Befo
 
 To configure a Proofpoint TAP Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 

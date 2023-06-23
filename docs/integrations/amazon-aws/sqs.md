@@ -1,8 +1,7 @@
 ---
 id: sqs
-title: Sumo Logic App for Amazon SQS
-sidebar_label: Amazon SQS
-description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
+title: Amazon SQS
+description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -96,8 +95,8 @@ account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 
 Sumo Logic supports collecting metrics using two source types:
 
-1. Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source). (recommended) Or
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
+1. Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). (recommended) Or
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics).
 
 :::note
 Namespace for **Amazon SQS** Service is **AWS/SQS**
@@ -109,12 +108,12 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
 
 ### Collect Amazon SQS Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
     :::note
     The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     :::
@@ -234,7 +233,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your AWS SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+The **3. Amazon SQS - Threat Intel** dashboard provides insights into incoming requests to your Amazon SQS services from malicious sources determined via Sumo Logic’s Threat Intel feature. Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Monitor details of threat locations and count.

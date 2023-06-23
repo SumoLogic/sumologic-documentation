@@ -1,6 +1,7 @@
 ---
 id: aws-fargate-log-collection
 title: Collect AWS ECS Fargate Container Logs
+sidebar_label: AWS ECS Fargate
 description: This page describes how to collect application container logs from AWS ECS Fargate and EC2 using AWS Firelens.
 ---
 

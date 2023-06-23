@@ -1,6 +1,7 @@
 ---
 id: collect-logs-azure-monitor
 title: Collect Logs from Azure Monitor
+sidebar_label: Collecting Logs
 description: Instructions for configuring a pipeline for shipping logs available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 
@@ -180,7 +181,7 @@ Managed Exception = System.AccessViolationException:Attempted to read or write p
 
 CallStack - Managed Exception
 
-The above error occurs in certain situations the runtime initiates a host shutdown via HostingEnvironment.InitiateShutdown, for example when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
+The above error occurs in certain situations the runtime initiates a host shutdown using HostingEnvironment.InitiateShutdown, for example, when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
 
 If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 

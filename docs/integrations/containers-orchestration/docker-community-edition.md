@@ -1,6 +1,6 @@
 ---
 id: docker-community-edition
-title: Sumo Logic App for Docker Community Edition
+title: Docker Community Edition
 sidebar_label: Docker Community Edition
 description: The Docker App monitors Docker container logs and metrics (stats) in log format, providing operational insight into your Docker containers.
 ---
@@ -15,7 +15,7 @@ The Sumo Logic App for Docker Community edition (CE) provides operational insigh
 
 This Docker App monitors Docker container logs and metrics (stats) in log format only.
 
-If your system handles metrics, choose one of the following Sumo Logic apps: [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm) or [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition).
+If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm).
 
 ### Sample Event Log Messages  
 
@@ -185,7 +185,7 @@ Follow the instructions for the operating system of the host where you will inst
 
 ### Step 3: Configure Docker log source
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
@@ -229,7 +229,7 @@ Follow the instructions for the operating system of the host where you will inst
 
 ### Step 4: Add a Docker stats source
 
-1. In Sumo select **Manage Data > Collection > Collection**.
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats**, then for Content Type select **Logs (JSON)** to collect data as JSON logs.
 4. Configure the following source fields:
@@ -354,26 +354,9 @@ If a user-defined variable doesn’t exist, that portion of the metadata field w
 
 ## Installing the Docker CE App
 
-The Sumo App for Docker provides operational insight into your Docker containers. The app includes [dashboards](#viewing-dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
+The Sumo App for Docker provides operational insight into your Docker containers. The app includes dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Docker CE Dashboards
 

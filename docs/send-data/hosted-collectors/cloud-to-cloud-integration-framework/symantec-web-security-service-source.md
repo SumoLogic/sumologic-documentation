@@ -2,15 +2,18 @@
 id: symantec-web-security-service-source
 title: Symantec Web Security Service Source
 sidebar_label: Symantec Web Security Service
+description: The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
+
 The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API. It securely stores the required authentication, scheduling, and state tracking information.
 
- * See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.
- * Logs are ingested in batches of 1,000.
- * Logs are polled every five minutes.
+* See the [Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/web-security-service/help/wss-reference/accesslogformats-ref.html) for reference.
+* Logs are ingested in batches of 1,000.
+* Logs are polled every five minutes.
 
 ## Prerequisite
 
@@ -60,7 +63,7 @@ When you create a Symantec Web Security Service Source, you add it to a Hosted 
 
 To configure a Symantec Web Security Service Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Symantec Web Security Service**.<br/> ![symantec source icon.png](/img/send-data/symantec-source-icon.png)
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![Symantec WSS version 1.2.3.png](/img/send-data/Symantec-WSS.png)
@@ -93,7 +96,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|

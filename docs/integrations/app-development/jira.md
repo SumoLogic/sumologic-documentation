@@ -1,6 +1,6 @@
 ---
 id: jira
-title: Sumo Logic App for Jira
+title: Jira
 sidebar_label: Jira
 description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
@@ -442,12 +442,11 @@ The Jira App supports Jira Server. For Jira Cloud, please see documentation for 
 
 To install the app, do the following:
 
-
 1. From the App Catalog, search for and select the app.
 2. To install the app, click **Add to Library**.
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   * **Jira Server Log data source. **Set **Source Category** to `Atlassian/Jira/Server*`.
-   * **Jira Webhook source. **Set **Source Category** to `Atlassian/Jira/Events`.
+   * **Jira Server Log data source.** Set **Source Category** to `Atlassian/Jira/Server*`.
+   * **Jira Webhook source.** Set **Source Category** to `Atlassian/Jira/Events`.
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
