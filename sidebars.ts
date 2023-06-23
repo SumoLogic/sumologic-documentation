@@ -84,7 +84,6 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
-            //'send-data/opentelemetry-collector/quickstart',
             'send-data/opentelemetry-collector/install-collector-linux',
             'send-data/opentelemetry-collector/install-collector-macos',
             'send-data/opentelemetry-collector/install-collector-windows',
