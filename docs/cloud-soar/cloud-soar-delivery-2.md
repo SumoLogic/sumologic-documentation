@@ -51,13 +51,13 @@ You can create reports on incidents to share with others. You can also [create w
 1. Click the **+** icon in the upper left corner. 
 1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets). Click **Show List** to see all available widgets.  
 1. Rearrange the widgets in the report as needed. You can even add widgets to the header and footer.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
-2. Click **Save**.  In the dialog:
+1. Click **Save**. In the dialog:
     1. Provide a **Report name** and a **Description**.
     1. Click **Schedule** to schedule the report to run on a regular basis.
     1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
-3. Click **Export** to export the report to PDF. 
-4. Click **Open** to open the report later. 
+1. Click **Export** to export the report to PDF. 
+1. Click **Open** to open the report later. 
 
 ## Create widgets for dashboards or reports
 
