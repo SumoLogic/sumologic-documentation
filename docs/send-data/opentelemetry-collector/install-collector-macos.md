@@ -39,7 +39,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 1. On the left panel select **macOs** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid black'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
-1. Copy command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
+1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
 1. Wait for the installation to complete.
 1. Click **Next** to complete the installation process.
 
