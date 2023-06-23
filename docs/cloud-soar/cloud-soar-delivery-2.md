@@ -23,7 +23,7 @@ Delivery 2 of Cloud SOAR offers the following enhancements over our initial Clou
  * Open Integration Framework updates:
     * [Integration Builder](#integration-builder) allows you to build integrations without needing to provide code
     * Certified integrations allow you to customize JSON and table output schema
-    * Actions configuration during  playbook design is rearranged for easier use
+    * Actions configuration during playbook design is rearranged for easier use
     * Integrations, and related action execution, can be done [in the cloud or through the Bridge](#cloud-or-bridge-execution). Only certified integrations can be executed in the cloud.
 * Architectural improvements:
      * Fully-functional in the Cloud (the Bridge is only required for custom integrations)
