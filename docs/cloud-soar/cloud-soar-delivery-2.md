@@ -77,7 +77,7 @@ You can create widgets as needed to help analysts and administrators quickly get
 1. On the left, select the type of widget to create (pie chart, bar chart, graph, table, or text).
 1. At the top, query for elements to view in the widget, such as incidents, notes, tasks, and attachments. 
 1. Click **Public** if you want to make the widget available for others to use. 
-1.  Click **Save** when done. 
+1. Click **Save** when done. 
 
 ## Integration Builder
 
