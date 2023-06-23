@@ -48,7 +48,7 @@ An index based search filter allows or denies access to [search indexes](/docs/m
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 
    * **Deny few indexes**. Deny access to the selected indexes. 
-1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appears.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
+1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appear.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
    
 
 ## Advanced filter
