@@ -87,7 +87,7 @@ https://endpoint5.collection.us2.sumologic.com<br/>
 https://endpoint6.collection.us2.sumologic.com<br/>
 https://endpoint7.collection.us2.sumologic.com<br/>
 https://endpoint8.collection.us2.sumologic.com<br/>
-https://endpoint9.collection.us2.sumologic.com/</td>
+https://endpoint9.collection.us2.sumologic.com</td>
    <td>us-west-2</td>
   </tr>
 </small></table>
