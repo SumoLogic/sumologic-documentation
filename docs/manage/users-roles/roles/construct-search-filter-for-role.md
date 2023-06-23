@@ -41,7 +41,7 @@ The role filter above denies access to log data whose  `_sourceCategory` begins
 
 The examples above are simple: they involve a single role, and hence a single role filter. 
 
-Typically however, a Sumo user will have multiple roles. If a user has multiple roles, Sumo ORs the several role filters and prepends that expression to the user’s queries with an AND, as discussed in [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
+Typically however, a Sumo user will have multiple roles. If a user has multiple roles, Sumo `OR`s the several role filters and prepends that expression to the user’s queries with an `AND`, as discussed in [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
   
 ### Search filter basics
 
