@@ -36,8 +36,7 @@ You can install our OpenTelemetry Collector using either of the following method
 1. Select/create installation token and customize your tags.
 1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
 1. Copy command and execute it in the powershell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="900" />
-1. Wait for the installation to complete.
-1. Click **Next** to complete the installation process.
+1. Wait for the installation process to complete, then click **Next** to proceed.
 
 ### Install Script
 
