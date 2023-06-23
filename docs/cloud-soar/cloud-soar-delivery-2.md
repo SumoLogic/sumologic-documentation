@@ -124,11 +124,7 @@ You can set integrations, and their related action execution, to be executed in 
 
 [Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/) allow you to manage incidents, triage, and other Cloud SOAR features. With Cloud SOAR Delivery 2, the Cloud SOAR APIs have been standardized to use the same infrastructure as APIs in the Sumo Logic core platform. 
 
-Previously, documentation for the APIs was only available through your Cloud SOAR instance at the following URL:
-
-```
-http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
-```
+Previously, documentation for the APIs was only available through your Cloud SOAR instance at the following URL: `http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3`.
 Now you can access Cloud SOAR APIs documentation at the following URLs.
 
 <!-- At Delivery 2 GA, replace the content at https://help.sumologic.com/docs/api/cloud-soar/ with the following content (but remove the note tag from the reuse bit): -->
