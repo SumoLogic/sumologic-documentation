@@ -1,7 +1,7 @@
 ---
 id: nginx
 title: Global Intelligence for Nginx App
-sidebar_label: Global Intelligence for Nginx 
+sidebar_label: Global Intelligence for Nginx
 description: The Global Intelligence for Nginx app provides you with information regarding Golden Signals and Visitor Benchmarks for your company's Nginx servers, and compares them to all servers from all customers.
 ---
 
@@ -58,12 +58,13 @@ Follow the steps on the [Sumo Logic Nginx App](/docs/integrations/web-servers/ng
 
 ## Installing the Global Intelligence for Nginx App
 
-This section has instructions for installing the Sumo Logic App for Global Intelligence for Nginx and descriptions of each of the app dashboards. 
+This section has instructions for installing the Sumo Logic App for Global Intelligence for Nginx.
 
+{@import ../../reuse/apps/app-install.md}
 
-## Global Intelligence for Nginx App Dashboards
+## Viewing Global Intelligence for Nginx Dashboards
 
-## Dashboard Filters  
+### Dashboard Filters  
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. 
 
@@ -73,7 +74,7 @@ You can use filters to drill down and examine the data on a granular level.  On
 
 ![](/img/global-intelligence/nginx-filter.png)
 
-## GI Nginx - 01 Golden Signals
+### GI Nginx - 01 Golden Signals
 
 The **GI Nginx - 01 Golden Signals** dashboard tabulates requests per second, HTTP method mix,  GB per request, response types (success, error, redirect) per request, and errors in your company’s Nginx servers and compares them to all servers from all customers. Filter results by nginx server to profile a given server against all  Nginx servers in the Sumo Logic customer base. If your stats are different compared to the benchmark, it is a strong signal that your Nginx cluster’s load profile is different or is incorrectly provisioned compared to request load when compared to other customers. Refer to [https://www.nginx.com/blog/testing-t...s-web-servers/](https://www.nginx.com/blog/testing-the-performance-of-nginx-and-nginx-plus-web-servers/) to validate your nginx configuration relative to load configuration.
 

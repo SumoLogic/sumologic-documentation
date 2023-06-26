@@ -2,16 +2,16 @@
 id: active-directory-azure
 title: Azure Active Directory
 sidebar_label: Azure Active Directory
-description: The Sumo Logic App for Azure Active Directory provides insight into to your Azure Active Directory activity, including management of roles, users, groups, directories, and applications.
+description: The Sumo Logic app for Azure Active Directory provides insight into your Azure Active Directory activity, including management of roles, users, groups, directories, and applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="40"/>
 
-Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic App for Azure helps you monitor activity in the Azure Active Directory. The dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
+Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic app for Azure helps you to monitor activity in the Azure Active Directory. These dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
 
-## Log Types
+## Log types
 
 The app uses the following log types:
 
@@ -19,21 +19,16 @@ The app uses the following log types:
 
 Only global administrators, security administrators, security readers, and report readers can view sign-ins and enable collection for Sign-in Events.
 
-The Sumo Logic App for Azure Active Directory presents information about activity in Azure Active Directory, including role management, user management, group management, directory management, and application management.
+The Sumo Logic app for Azure Active Directory presents information about activity in Azure Active Directory, including role management, user management, group management, directory management, and application management.
 
+## Collect Logs for the Azure Active Directory app
 
-## Collect Logs for the Azure Active Directory App
+Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
-Instructions for configuring log collection for the Sumo Logic App for Azure Active Directory.
+- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
-This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
-
-The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
-
-* Azure Monitor collects logs for Azure Active Directory and streams the data to an Azure Event Hub.
-* Event Hub streams the logs collected by Azure Monitor to an Azure function.
-* The Azure function is a small piece of code that is triggered by Event Hub to send Azure Active Directory logs to the Sumo HTTP Source. The function also logs to one Storage Account and logs failover data to another.
-
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
 
 ### Prerequisites
 
@@ -41,39 +36,28 @@ The sections below are either for FedRamp Sumo Logic deployments or if you have 
 * To export Azure Activity logs to reports, be sure you have met the [Azure Active Directory requirements](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor).
 
 
-### Configure an HTTP Source
+### Export Azure Active Directory logs to Event Hub
 
-In this step, you configure an HTTP Source to receive logs from the Azure function.
+In this task, you export logs for your Azure Active Directory app. For related information see [Send Logs to Azure Monitor](https://learn.microsoft.com/en-us/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics#send-logs-to-azure-monitor) in the Azure help documentation.
 
-1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](https://htmlcodeeditor.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector/).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://htmlcodeeditor.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/).
+While exporting logs for an Azure Active Directory app, do the following:
+* **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
+* **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
+<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting.png')} style={{border: '1px solid black'}} alt="diagnostic-setting" width="800"/>
 
+## Install the Azure Active Directory app
 
-### Configure Azure resources using ARM template
-
-In this step, you use a Sumo Logic provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub. Configure Azure resources as described in [Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-
-### Troubleshooting log collection
-
-If logs are not flowing into Sumo Logic, follow the steps in Troubleshooting log collection in the following [document](https://htmlcodeeditor.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor/).
-
-## Install the Azure Active Directory App
-
-Now that you have set up collection for the Azure Active Directory, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
-
-**To install the app:**
+Now that you have set up collection for the Azure Active Directory, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 {@import ../../reuse/apps/app-install.md}
 
-
 ## Viewing Azure Active Directory Dashboards
-
 
 ### Overview
 
 See an overview of Azure Active Directory activity, including operation names, audit event categories, log levels, and result types.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Overview.png')} alt="Azure-Active-Directory-Overview" />
 
 **Operation Name.** Shows the name of operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -91,10 +75,13 @@ See an overview of Azure Active Directory activity, including operation names, a
 
 **Category Breakdown.** Shows a breakdown of the categories on a pie chart for the last 24 hours.
 
-
 ### Role Management
 
-See information about role management in Azure Activity Directory, including role updates, successful events, and users added or removed from roles.** Operation Name.** Shows the name of role management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
+See information about role management in Azure Activity Directory, including role updates, successful events, and users added or removed from roles.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Role-Management.png')} alt="Azure-Active-Directory-Role-Management" />
+
+**Operation Name.** Shows the name of role management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
 **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of role management operations that have happened in the last 24 hours along with a count, and compares it to the count of operations from one day before.
 
@@ -110,12 +97,11 @@ See information about role management in Azure Activity Directory, including rol
 
 **Added/Removed User from Role.** Shows an aggregation table of users added or removed from a role with columns for the operation names, result types, result description identity, user name, and target source name for the last 24 hours.
 
-
 ### User Management
 
 See information about user management in Azure Activity Directory, including external user invites, updated and deleted users, users added and outliers in user management events.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-User-Management.png')} alt="Azure-Active-Directory-User-Management" />
 
 **Operation Name.** Shows the name of user management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -139,12 +125,11 @@ See information about user management in Azure Activity Directory, including ext
 
 **User Management Events - Outlier.** Shows outliers in user management events with count and thresholds on a line chart, for the last 24 hours.
 
-
 ### Application Management
 
 See information about application management in Azure Activity Directory, including application consent, deleted applications, applications added or updated, and service principal updates.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Application-Management.png')} alt="Azure-Active-Directory-Application-Management" />
 
 **Operation Name.** Shows the name of application management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -168,10 +153,11 @@ See information about application management in Azure Activity Directory, includ
 
 **Applications Added or Updated.** Shows an aggregation table of applications added or updated with columns for the operation names, result types, result descriptions, identity, target source name, and count for the last 24 hours.
 
-
 ### Directory Management
 
 See information about directory management in Azure Activity Directory, including failed events, successful events, and disables desktop SSOs.** Operation Name.** Shows the name of directory management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Directory-Management.png')} alt="Azure-Active-Directory-Directory-Management" />
 
 **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of directory management operations that have happened in the last 24 hours along with a count, and compares it to the count of operations from one day before.
 
@@ -185,12 +171,11 @@ See information about directory management in Azure Activity Directory, includin
 
 **Disable Desktop SSO.** Shows an aggregation table of disabled desktop SSOs with columns for the operation names, result types, result descriptions, identity, target source name, and count for the last 24 hours.
 
-
 ### Group Management
 
 See information about group management in Azure Activity Directory, including groups added, and a list of members added or removed from groups.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Group-Management.png')} alt="Azure-Active-Directory-Group-Management" />
 
 **Operation Name.** Shows the name of group management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -208,12 +193,11 @@ See information about group management in Azure Activity Directory, including gr
 
 **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart, for the last 24 hours.
 
-
 ### Authorization/Authentication/Other
 
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Authorization-Authentication-Other.png')} alt="Azure-Active-Directory-Authorization-Authentication-Othe" />
 
 **Operation Name.** Shows the name of authorizations or authentication, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -227,12 +211,11 @@ See information about Authorization in Azure Active Directory including the name
 
 **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart, for the last 24 hours.
 
-
 ### Successful Sign-In Events
 
 See information about successful sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Successful-Sign-In-Events.png')} alt="Azure-Active-Directory-Successful-Sign-In-Events" />
 
 **Geo Location of Sign-in.** Performs a geo lookup query and displays the location and number of successful sign-in events on a map of the world for the last 24 hours.
 
@@ -254,12 +237,11 @@ See information about successful sign-in events in your Azure AD, including the 
 
 **Anomaly in Total Login Count.** Shows any Anomaly in the total successful login count over 7 days.
 
-
 ### Failure Sign-in Events
 
 See information about failure sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Azure-Active-Directory/Azure-Active-Directory-Failure-Sign-In-Events.png')} alt="Azure-Active-Directory-Failure-Sign-In-Events" />
 
 **Geo Location of Sign-in.** Performs a geo lookup query and displays the location and number of failure sign-in events on a map of the world for the last 24 hours.
 
