@@ -23,7 +23,7 @@ When deciding which mode you should use, here are some guidelines:
 * You need to get an instant rate of a counter - use `rate counter`.
 * You need to get an average rate of a counter over an interval - use `rate counter over INTERVAL`.
 * You need to get an instant rate of a non-counter metric - use `rate`.
-* You need to get an average rate of a non-counter metric over an interval  - use `rate over INTERVAL`
+* You need to get an average rate of a non-counter metric over an interval  - use `rate over INTERVAL`.
 
 The usage of `counter` mode is recommended for counter-like metrics, because it accounts for counter resets and always returns non-negative rate values
 
