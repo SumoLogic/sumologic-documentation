@@ -1,7 +1,7 @@
 ---
 id: azure-event-hubs-cloud-to-cloud-source-migration
-title: Migrating to Azure Event Hubs
-sidebar_label: Azure Event Hubs
+title: Migrating to Azure Event Hubs Cloud-to-Cloud Source
+sidebar_label: Azure Event Hubs C2C Source Migration
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
