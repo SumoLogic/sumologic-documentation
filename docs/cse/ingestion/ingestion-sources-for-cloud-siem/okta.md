@@ -5,6 +5,8 @@ sidebar_label: Okta
 description: Configure an Okta source to ingest Okta log messages and send them to CSE’s Okta system parser.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Step 1: Configure collection
 
 In this step, you configure an Okta Source to collect Okta log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Create an Okta Source](#create-an-okta-source) below. Otherwise, create a new collector as described in [Configure a Hosted Collector](#configure-a-hosted-collector) below, and then create the Okta Source on the collector.
@@ -30,9 +32,6 @@ In this step, you configure an Okta Source to collect Okta log messages. You can
 
 In this step, you verify that your logs are successfully making it into CSE. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
-1. On the **Log Mappings** page search for Okta and check under **Record Volume**.  
-    ![auth0-reocrd-volume.png](/img/cse/okta-record-volume.png)
-1. For a more granular look at the incoming records, you can also use the Sumo Logic platform to search for Okta security records.  
-    ![okta-search.png](/img/cse/okta-search.png)
+1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
+1. On the **Log Mappings** page search for Okta and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/okta-record-volume.png')} alt="Okta record volume" width="600"/> 
+1. For a more granular look at the incoming records, you can also use the Sumo Logic platform to search for Okta security records.<br/><img src={useBaseUrl('img/cse/okta-search.png')} alt="Okta search" width="500"/>   

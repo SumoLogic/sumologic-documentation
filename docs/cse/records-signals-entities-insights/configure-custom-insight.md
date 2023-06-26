@@ -14,21 +14,6 @@ As described in the [Insight Generation Process](/docs/cse/get-started-with-clou
 
 This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes CSE to generate Insights based purely on one or more Signals being fired. 
 
-Watch this micro lesson to learn how to create Custom Insights.
-
-<Iframe url="https://www.youtube.com/embed/4qiap2e9HCY?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe'; 
-
 ## Ways to define a Custom Insight
 
 There are two ways you can define a Custom Insight. You can specify that the Insight should be generated each time:
@@ -43,14 +28,15 @@ When the conditions of a Custom Insight configuration are met during the current
 
 This example Custom Insight configuration will generate an Insight as a result of the **Mimecast - Message with Virus Detections from IP** rule firing a Signal. 
 
-![custom-insight-example.png](/img/cse/custom-insight-example.png)  
+<img src={useBaseUrl('img/cse/custom-insight-example.png')} alt="Custom Insight example" width="800"/>  
+
  
 ## Create a Custom Insight
 
 To create a Custom Insight:
 
 1. Choose **Custom Insights** on the **Content** menu.
-2. Click **Create** on the [**Custom Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) page. ![custom-insights-page.png](/img/cse/custom-insights-page.png)
+2. Click **Create** on the [**Custom Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) page.<br/><img src={useBaseUrl('img/cse/custom-insights-page.png')} alt="Custom Insights page" width="800"/> 
 3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" width="400"/>
 4. In the **Name** field, enter a name for the Custom Insight.
 5. If you want the Custom Insight to be generated based on one or more rules firing Signals, jump to step 6, below. Otherwise: 
