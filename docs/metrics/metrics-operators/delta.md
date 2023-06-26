@@ -16,7 +16,7 @@ delta [increasing | decreasing | counter]
 ```
 
 When deciding which mode you should use, here are some guidelines:
-* You need to get the difference of a counter - use `delta counter`
+* You need to get the difference of a counter - use `delta counter`.
 * You need to get the difference of a non-counter metric - use `delta`.
 
 You can also use the `increasing` or `decreasing` option to make `delta` consider only pairs of consecutive points where the second point is greater (`increasing` option) or less (`decreasing` option) than the first point. However, these options are mostly kept for backward compatibility and so their usage is not recommended.
