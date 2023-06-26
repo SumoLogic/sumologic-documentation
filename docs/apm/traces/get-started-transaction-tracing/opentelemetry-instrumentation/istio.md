@@ -17,7 +17,7 @@ To send data to Sumo Logic collector either in a Kubernetes or standalone setup,
 
 ### OpenCensus Agent exporter
 
-Set`meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.address=` to the endpoint of the receiving collector:
+Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.address=` to the endpoint of the receiving collector:
 
 * For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):  
     ```
