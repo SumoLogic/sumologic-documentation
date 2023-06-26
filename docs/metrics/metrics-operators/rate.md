@@ -21,7 +21,7 @@ where `INTERVAL` is the duration over which you want to calculate and average ra
 
 When deciding which mode you should use, here are some guidelines:
 * You need to get an instant rate of a counter - use `rate counter`.
-* You need to get an average rate of a counter over an interval - use `rate counter over INTERVAL`
+* You need to get an average rate of a counter over an interval - use `rate counter over INTERVAL`.
 * You need to get an instant rate of a non-counter metric - use `rate`
 * You need to get an average rate of a non-counter metric over an interval  - use `rate over INTERVAL`
 
