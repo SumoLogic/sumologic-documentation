@@ -58,7 +58,7 @@ The URL that external users can use to access the dashboard appears under the **
 ## Restrictions and limitations for external sharing 
 
 * Sharing outside an organization is always view-only and you must enable auto-refresh. When enabling auto-refresh for the first time, it may take some time to backfill the data, depending on your queries and time ranges. See [About Dashboards](about.md).
-* Panels that are incompatible with auto-refresh, shows data only for viewers who have a login.
+* Panels that are incompatible with auto-refresh will only show data for viewers who have a login.
 * Panels must use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not currently supported.
 * Viewers without a login will see dashboards with auto-refresh enabled as well as default time ranges and default template variable applied. To specify a different set of filters for another viewer, create a copy of the dashboard, provide new filter values, and share it with the new URL.
 * If **User's data access level** is enabled for a dashboard, you cannot share it outside your organization.
