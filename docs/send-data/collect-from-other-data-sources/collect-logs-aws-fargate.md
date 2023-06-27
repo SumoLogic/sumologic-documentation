@@ -13,4 +13,4 @@ Configure containers for CloudWatch logging by following the instructions in [Cr
 
 ## Step 2: Collect Amazon CloudWatch Logs
 
-Sumo provides multiple methods to collect logs from Amazon CloudWatch. Follow the instructions in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/).
+Sumo Logic provides multiple methods to collect logs from Amazon CloudWatch. Follow the instructions in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/).
