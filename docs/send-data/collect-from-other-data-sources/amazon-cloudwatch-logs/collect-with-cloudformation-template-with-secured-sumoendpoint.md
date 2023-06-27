@@ -1,13 +1,16 @@
 ---
 id: collect-with-cloudformation-template-with-secured-sumoendpoint
-title: Collect Amazon CloudWatch Logs using a CloudFormation Template with Secured Sumo Endpoint
-sidebar_label: Collect Logs using CloudFormation with Secured Sumo Endpoint
+title: Collect Amazon CloudWatch Logs using a CloudFormation Template with Secured Endpoint
+sidebar_label: Collect Logs using CloudFormation with Secured Endpoint
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo EndPoint.
 ---
+:::note
+We strongly recommend the alternative collection process described on [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/), which is more robust and reliable, where you do not need to manage resources. Lambda based collection methods are limited by time out, concurrency, and memory limits.
+:::
 
-This method is similar to Collect CloudWatch Logs using a CloudFormation Template the only difference is that this method stores the Sumo Logic Endpoint securely in system manager.
+This method is similar to [Collect CloudWatch Logs using a CloudFormation Template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template) the only difference is that this method stores the Sumo Logic Endpoint securely in system manager.
 
-To collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo EndPoint, follow the below instructions.
+To collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic EndPoint, follow the below instructions.
 
 ## Step 1: Add a Hosted Collector and HTTP Source
 
@@ -22,9 +25,9 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 You can create the parameter via AWS CLI or via Console.
 
-If you're using AWS CLI use the below command:
+If you are using AWS CLI then use the below command:
 
-```
+```json
 aws ssm put-parameter --region us-east-1 --cli-input-json '{
   "Name": "SUMO_ENDPOINT",
   "Value": \<Paste the endpoint of the HTTP source created in step >",
@@ -46,7 +49,7 @@ If you're using AWS Console do the following:
    * **KMS Key Source.** Select the KMS Key ID or you can use the default KMS key.
    * **Value.** Paste the value of the SUMO_ENDPOINT_URL copied while creating the HTTP source.
 
-1. Click **Save Parameter.**
+1. Click **Create Parameter.**
 
 ![Create_SecureString_Parameter.png](/img/send-data/Create_SecureString_Parameter.png)
 
@@ -61,7 +64,7 @@ Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/devel
 
 ## Step 3: Download the CloudFormation template
 
-Sumo Logic provides a CloudFormation template to make setup easier. If you want to make any of the optional modifications described in this [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), download the [DLQLambdaCloudFormationWithSecuredEndpoint.json](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json) CloudFormation template and make modifications Otherwise, proceed creating the SecureString Parameter console.
+Sumo Logic provides a CloudFormation template to make setup easier. Download the [DLQLambdaCloudFormationWithSecuredEndpoint.json](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json) CloudFormation template and make modifications. Otherwise, proceed to [Step 5](#step-5-create-a-stack-on-the-aws-cloudformation-console​).
 
 ## Step 4: Tailor the CloudFormation template
 
@@ -111,4 +114,10 @@ After a few minutes, you will see CREATE_COMPLETE in the Status column.
 If you're using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).
 :::
 
-Now go back to the [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs) and follow the instructions for remaining steps.
+## Step 6: Validate email address for alarms
+
+For instructions, follow [Step 5](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-5-validate-email-address-for-alarms) in the Collect CloudWatch Logs using a CloudFormation Template page.
+
+## Step 7:  Subscribe SumoCWLogsLambda to CloudWatch Log Groups
+
+For instructions, follow [Step 6](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups) in the Collect CloudWatch Logs using a CloudFormation Template page. 

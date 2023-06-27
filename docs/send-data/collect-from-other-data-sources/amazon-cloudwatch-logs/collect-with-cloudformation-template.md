@@ -4,6 +4,11 @@ title: Collect Amazon CloudWatch Logs using a CloudFormation Template
 sidebar_label: Collect Logs using CloudFormation
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+:::note
+We strongly recommend the alternative collection process described on [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/), which is more robust and reliable, where you do not need to manage resources. Lambda based collection methods are limited by time out, concurrency, and memory limits.
+:::
 
 This page has instructions for creating AWS resources using a Sumo Logic provided CloudFormation template. The template specifies the resources necessary to send Amazon CloudWatch Logs to Sumo Logic, including a Lambda function for sending logs, another Lambda function configured with a dead letter queue for resending messages as necessary, and associated roles and permissions. For more information about the resources created, see [Download the CloudFormation template](#download-the-cloudformation-template).
 
@@ -148,11 +153,10 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 ## Step 4: Create a stack on the AWS CloudFormation console
 
 1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com).
-1. Under **Management Tools**, select **CloudFormation**.
-1. Create a new stack by clicking **Create Stack**, then select “**With new resources (standard)**.”    
+1. In the **Management Tools** menu, select **CloudFormation**.
+1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard)**.   
 
-![CF_animated.gif](/img/send-data/CF_animated.gif)  
- 
+    ![CF_animated.gif](/img/send-data/CF_animated.gif)
 1. On the **Specify Template** window, do one of the following:
 
    * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormation.json` file, and then click **Next**.
@@ -192,10 +196,10 @@ If you're using an existing log group or if you don’t want to send logs to the
 ## Step 5: Validate email address for alarms
 
 :::note
-If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed then you need to verify the email provided in [Step 4](#step-4-create-a-stack-on-the-aws-cloudformation-console).
+If alarm resources in [Step 3](#remove-alarm-resources-optional) is not removed then you need to verify the **EmailID** provided in [Step 4](#step-4-create-a-stack-on-the-aws-cloudformation-console), else skip to [Step 6](#step-6-subscribe-sumocwlogslambda-to-cloudwatch-log-groups).
 :::
 
-Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject "AWS Notification - Subscription Confirmation", like the example shown below.
+Sign in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject `AWS Notification - Subscription Confirmation`, like the example shown below.
 
 ![aws-notification.png](/img/send-data/aws-notification.png)  
 
@@ -211,16 +215,15 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
-1. Select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Lambda subscription Filte**.
+1. Select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Lambda subscription filter**.<br/><img src={useBaseUrl('img/send-data/create-lambda-subscription-filter.png')} style={{border: '1px solid black'}} alt="create-lambda-subscription-filter" width="700"/>
 1. In the Create Lambda subscription filter page, go to **Choose Destination** section and select the Lambda function that begins with `SumoCWLogsLambda`.
 1. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
     :::info
     - If no subscription filter pattern is provided it will stream all the logs present in the log group.
     - Sometimes log format will be specified in the Sumo Logic app specific collection page, so use that specific format otherwise dashboards may not light up.
     :::
-1. (Optional) In the **Test Pattern** page, select the log data to test, then click Test pattern. If test results look fine, then click **Start Streaming**.<br/> ![test-pattern.png](/img/send-data/test-pattern.png)
-
-![stream-to-aws-lambda.png](/img/send-data/stream-to-aws-lambda.png)
+    <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid black'}} alt="create-destination" width="700"/>
+1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid black'}} alt="test-pattern" width="700"/>
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
@@ -228,8 +231,8 @@ If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGr
 
 ## Dealing with alarms​
 
-If you receive an alarm email like the one shown in the previous section, the number of messages in the dead letter queue exceeds the threshold defined in the CloudFormation template, which by default is 100,000. This could be because:
+If you receive an alarm email then the number of messages in the dead letter queue exceeding the threshold defined in the CloudFormation template, which by default is 100,000. This could be because:
 
 - `SumoCWProcessDLQLambda` may not be able to process messages as quickly as the messages are received. In this case, you may want to use the Lambda console to increase the number of workers specified by the NUM_OF_WORKERS environment variable.
 
-- `SumoCWProcessDLQLambda` may be unable process incoming messages because of an error in the message format or a configuration problem, for example, an error in the HTTP endpoint configuration. Test the function with the message in the Lambda console to see whether it is able to process the message and send it to Sumo.
+- `SumoCWProcessDLQLambda` may be unable process incoming messages because of an error in the message format or a configuration problem, for example, an error in the HTTP endpoint configuration. [Test the function with the message in the Lambda console](https://docs.aws.amazon.com/lambda/latest/dg/testing-functions.html) to see whether it is able to process the message and send it to Sumo Logic.
