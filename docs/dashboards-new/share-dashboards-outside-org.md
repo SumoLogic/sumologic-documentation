@@ -61,7 +61,7 @@ The URL that external users can use to access the dashboard appears under the **
 * Panels that are incompatible with auto-refresh, shows data only for viewers who have a login.
 * Panels must use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not currently supported.
 * Viewers without a login will see a auto-refresh of the dashboard with any default time ranges and default template variable applied. To specify a different set of filters for another viewer, create a copy of the dashboard, provide new filter values and share it with the new URL.
-* If the dashboard is set with **User's data access level**, then you are not allowed to share the dashboard outside organization.
+* If **User's data access level** is enabled for a dashboard, you cannot share it outside your organization.
 * Spans, Traces, and Service maps panels are not supported in public dashboards.
 
 ## Logging for externally shared dashboards
