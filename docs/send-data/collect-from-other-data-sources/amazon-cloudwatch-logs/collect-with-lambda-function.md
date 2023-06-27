@@ -33,10 +33,10 @@ To add an Amazon Lambda function:
 1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Click **Lambda** in the **Compute** section.
 1. On the Functions page, click **Create a Function**.
-1. On the **Create Fuctions** page, select **Use a blueprint** option.
+1. On the **Create Functions** page, select **Use a blueprint** option.
 1. In the **Basic information** section, enter the following.<br/><img src={useBaseUrl('img/send-data/basic-information.png')} style={{border: '1px solid black'}} alt="basic-information" width="700"/>
     * **Blueprint name**. Enter `sumologic` and select **Send Cloudwatch logs to Sumologic**.
-    * **Fuction name**. Enter a name for the function. Default is `sumologic-cwl-lambda-prod`.
+    * **Function name**. Enter a name for the function. Default is `sumologic-cwl-lambda-prod`.
     * **Role**. Choose one of the following options.
       * **Use an existing role.** If you have any appropriate roles, you can select one.
       * **Create a new role with basic Lambda permissions**. If you select this option, you can continue without choosing any policy templates—it will create a role with basic Lambda execution privileges by default.
