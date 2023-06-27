@@ -12,13 +12,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sophos Central Source provides a secure endpoint to receive authentication logs from the [Sophos Central APIs](https://developer.sophos.com/). It securely stores the required authentication, scheduling, and state tracking information.
 
 The Sophos Central Source ingests:
-
  * Alerts from the Sophos [Alerts API Endpoint](https://developer.sophos.com/docs/common-v1/1/routes/alerts/get).
-    - Endpoint data is consumed for the alerts whose product value is of type `endpoint`.
+    * Endpoint data is consumed for alerts with a product value of type `endpoint` from the Sophos [Endpoint API](https://developer.sophos.com/docs/endpoint-v1/1/routes/endpoints/get).
  * Events from the Sophos [Events API Endpoint](https://developer.sophos.com/docs/siem-v1/1/routes/events/get)
 
 :::note
-To link the endpoint data to the alert, users can map the `alert.ManagedAgent.ID` field from the alert response with the `endpointID` field from the endpoint response.
+To link the endpoint data to the alert, you can map the `alert.ManagedAgent.ID` field from the alert response with the `endpointID` field from the endpoint response.
 :::
 :::note
 This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
