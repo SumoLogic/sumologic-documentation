@@ -64,7 +64,7 @@ The URL that external users can use to access the dashboard appears under the **
 * If the dashboard is set with **User's data access level**, then you are not allowed to share the dashboard outside organization.
 * Spans, Traces, and Service maps panels are not supported in public dashboards.
 
-## Logging for externally-shared dashboards
+## Logging for externally shared dashboards
 
 If you have the [Audit Index](/docs/manage/security/audit-index) enabled, Sumo Logic logs the key-sharing events. 
 
