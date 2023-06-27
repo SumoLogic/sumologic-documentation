@@ -116,3 +116,22 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
     }
 }
 ```
+
+## Troubleshooting
+
+This section provides information on how to troubleshoot failures while configuring our Druva Cyber Resilience source.
+
+### 400 error
+
+#### Error Message
+
+```
+{
+    "error": "invalid_grant. (#10010003b)"
+}
+```
+
+#### Solution
+
+If the source is configured with either an invalid **Base URL** or **Client ID**, the API will return a 400 error code. To rectify this error, validate and enter the correct **Base URL** and **Client ID**.
+
