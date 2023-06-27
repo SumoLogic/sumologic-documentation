@@ -9,7 +9,7 @@ description: Using the Sumo Logic Partner App Template.
 Copy this file and edit it for your App integration.
 :::
 
-This application has been developed and is supported by <Partner Name\>. In case of technical questions, please contact <Partner Name\> support at <email address\> or <phone number\>.
+This application has been developed and is supported by \<Partner Name\>. In case of technical questions, please contact \<Partner Name\> support at \<email address\> or \<phone number\>.
 
 **Product Description:**
 
@@ -18,35 +18,35 @@ Describe the application, then fill in the following table.
 
 | Dashboard | Description |
 | :-- | :-- |
-| <dashboard name\> | <dashboard description\> |
+| \<dashboard name\> | \<dashboard description\> |
 
-## <App Name\> Page
+## \<App Name\> Page
 
-<Add the description from the app description above.\>
+\<Add the description from the app description above.\>
 
 ### Log Types
 
-The <AppName\> App uses ...
+The \<AppName\> App uses ...
 
-<Enter a list of log types, usually hyperlinked to vendor docs.\>
+\<Enter a list of log types, usually hyperlinked to vendor docs.\>
 
 ### Sample Log Message
 
-<Get a sample from app developer and replace this text with it.\>
+\<Get a sample from app developer and replace this text with it.\>
 
 ### Sample Query
 
 ```
-<add your query here\>
+\<add your query here\>
 ```
 
-## Collect Logs for <AppName\>
+## Collect Logs for \<AppName\>
 
 :::note
 Write the section heading and section to reflect what’s being collected: logs, metrics, or logs and metrics.
 :::
 
-This section has instructions for collecting logs for the Sumo App for <AppName\>.
+This section has instructions for collecting logs for the Sumo App for \<AppName\>.
 
 ### Collection process overview
 
@@ -65,20 +65,20 @@ Include a description and numbered list of steps. Copy, paste, and fill out for 
 
 ### Collection step n. Step Description
 
-## Install the <AppName\> App
+## Install the \<AppName\> App
 
-This section has instructions for installing the Sumo App for <AppName\>.
+This section has instructions for installing the Sumo App for \<AppName\>.
 
-## View the <AppName\> Dashboards
+## View the \<AppName\> Dashboards
 
-<Descriptions of each app dashboard.\>
+\<Descriptions of each app dashboard.\>
 
 ## Install the Sumo Logic App
 
-Now that you have set up collection, install the Sumo Logic App for <app name\> to use the preconfigured searches and Dashboards that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for \<app name\> to use the preconfigured searches and Dashboards that provide insight into your data.
 
 Uncomment this line to add app install steps:
-<!-- {@import ../reuse/apps/app-install.md} -->
+\<!-- {@import ../reuse/apps/app-install.md} -->
 
 ## Dashboard filters
 
@@ -92,18 +92,18 @@ You can use filters to drill down and examine the data on a granular level.
 
 Replace sample image with panel from your App Dashboard, using red box callout:
 
-Use the instructions from [Install Sumo Logic Apps](/docs/get-started/apps-integrations#install-apps-from-the-library) to install the <Partner\> App.
+Use the instructions from [Install Sumo Logic Apps](/docs/get-started/apps-integrations#install-apps-from-the-library) to install the \<Partner\> App.
 
-## <Dashboard name\>
+## \<Dashboard name\>
 
-<Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.\> Use this dashboard to:
+\<Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.\> Use this dashboard to:
 
 * Enter a list of features. Example below.
 
 Use this dashboard to:
 
 * Monitor high severity threats and scan attacks.
-* Review <fill in\> for troubleshooting configuration issues.
-* Understand how to fine-tune <fill in your product name\> based on <fill in panel names\>.
+* Review \<fill in\> for troubleshooting configuration issues.
+* Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
 
-<Add your dashboard screenshot.\>
+\<Add your dashboard screenshot.\>
