@@ -77,7 +77,7 @@ This section has instructions for installing the Sumo App for <AppName\>.
 
 Now that you have set up collection, install the Sumo Logic App for <app name\> to use the preconfigured searches and Dashboards that provide insight into your data.
 
-Uncomment this line to add app install steps: 
+Uncomment this line to add app install steps:
 <!-- {@import ../reuse/apps/app-install.md} -->
 
 ## Dashboard filters
@@ -87,8 +87,6 @@ Uncomment this line to add app install steps:
 :::note
 You can use filters to drill down and examine the data on a granular level.
 :::
-
-Replace this sample image with one of your App Dashboard, using red box callout:
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
