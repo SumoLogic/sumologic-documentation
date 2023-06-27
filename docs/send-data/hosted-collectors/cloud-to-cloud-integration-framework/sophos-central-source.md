@@ -14,8 +14,12 @@ The Sophos Central Source provides a secure endpoint to receive authentication l
 The Sophos Central Source ingests:
 
  * Alerts from the Sophos [Alerts API Endpoint](https://developer.sophos.com/docs/common-v1/1/routes/alerts/get).
+    - Endpoint data is consumed for the alerts whose product value is of type `endpoint`.
  * Events from the Sophos [Events API Endpoint](https://developer.sophos.com/docs/siem-v1/1/routes/events/get)
 
+:::note
+To link the endpoint data to the alert, users can map the `alert.ManagedAgent.ID` field from the alert response with the `endpointID` field from the endpoint response.
+:::
 :::note
 This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
 :::
