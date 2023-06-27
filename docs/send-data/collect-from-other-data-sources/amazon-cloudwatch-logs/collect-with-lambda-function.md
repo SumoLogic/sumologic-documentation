@@ -30,13 +30,12 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 Sumo provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
 
 To add an Amazon Lambda function:
-1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
-1. Go to **Functions** page in the AWS Lambda console.
+1. Sign in to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/home#/functions).
 1. On the **Functions** page, click **Create a Function**.
 1. On the **Create Functions** page, select **Use a blueprint** option.
 1. In the **Basic information** section, enter the following.<br/><img src={useBaseUrl('img/send-data/basic-information.png')} style={{border: '1px solid black'}} alt="basic-information" width="700"/>
     * **Blueprint name**. Enter `sumologic` and select **Send Cloudwatch logs to Sumologic**.
-    * **Function name**. Enter a name for the function. Default is `sumologic-cwl-lambda-prod`.
+    * **Function name**. Enter a name for the function. Default is `sumologic-cwl-lambda`.
     * **Role**. Choose one of the following options.
       * **Use an existing role.** If you have any appropriate roles, you can select one.
       * **Create a new role with basic Lambda permissions**. If you select this option, you can continue without choosing any policy templates—it will create a role with basic Lambda execution privileges by default.
@@ -65,8 +64,7 @@ You will need at least one CloudWatch Log Group to assign to your Lambda functio
 If you have more than one CloudWatch Log Group to assign to your Lambda function, repeat the below steps for each Log Group, else skip this step.
 :::
 
-1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
-1. Go to **Functions** page in the AWS Lambda console.
+1. Sign in to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/home#/functions).
 1. On the **Functions** page, select the Lambda function created in [Step 2](#create-lambda-function).
 1. In the **Function overview** section, click the **+ Add trigger** button.<br/><img src={useBaseUrl('img/send-data/add-trigger.png')} style={{border: '1px solid black'}} alt="add-trigger" width="700"/>
 1. In the **Add Trigger** prompt, select **CloudWatch Logs** from the **Select a source** dropdown.<br/><img src={useBaseUrl('img/send-data/select-a-source.png')} style={{border: '1px solid black'}} alt="select-a-source" width="700"/>
