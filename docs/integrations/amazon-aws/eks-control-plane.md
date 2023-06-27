@@ -1,33 +1,32 @@
 ---
 id: eks-control-plane
 title: Amazon EKS - Control Plane
-description: The Sumo Logic App for Amazon EKS - Control Plane App provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
+description: The Sumo Logic app for Amazon EKS - Control Plane app provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="Thumbnail icon" width="50"/>
 
-[Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS) allows you to readily deploy, manage, and scale container-based applications with [Kubernetes](https://aws.amazon.com/kubernetes/) on AWS. The Sumo Logic App for Amazon EKS - Control Plane provides visibility into the EKS control plane with operational insights into the api server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
+[Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS) allows you to readily deploy, manage, and scale container-based applications with [Kubernetes](https://aws.amazon.com/kubernetes/) on AWS. The Sumo Logic app for Amazon EKS - Control Plane provides visibility into the EKS control plane with operational insights into the api server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 
 ## Prerequisites
 
 The list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
-## Log Types
+## Log types
 
 Amazon EKS utilizes the following log types:
-* **Kubernetes API server component logs (api)** – The cluster API server is the control plane component that exposes the Kubernetes API.
-* **Audit (audit)** – Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
-* **Authenticator (authenticator)** – Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
-* **Controller manager (controllerManager)** – The controller manager manages the core control loops that are shipped with Kubernetes.
-* **Scheduler (scheduler)** – The scheduler component manages when and where to run pods in your cluster.
+* **Kubernetes API server component logs (api)**. The cluster API server is the control plane component that exposes the Kubernetes API.
+* **Audit (audit)**. Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
+* **Authenticator (authenticator)**. Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
+* **Controller manager (controllerManager)**. The controller manager manages the core control loops that are shipped with Kubernetes.
+* **Scheduler (scheduler)**. The scheduler component manages when and where to run pods in your cluster.
 
 For more details about EKS logging, refer the [Amazon documentation](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
 
-
-### Sample Log Messages  
+### Sample log messages  
 
 ```json title="API Server Audit"
 {
@@ -106,7 +105,6 @@ please apply your changes to the latest version and try again"}
 scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 ```
 
-
 ### Sample Query
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
@@ -125,33 +123,32 @@ and _sourceName = kube-apiserver-audit*
 | limit 10
 ```
 
+## Collecting Logs and Metrics for the Amazon EKS - Control Plane app
 
-## Collecting Logs and Metrics for the Amazon EKS - Control Plane App
-
-This section has instructions for collecting logs and metrics for the Sumo App for Amazon EKS - Control Plane. This is a two step process:
-* Setting up collection and installing the Sumo Logic Kubernetes App.
+This section has instructions for collecting logs and metrics for the Sumo app for Amazon EKS - Control Plane. This is a two step process:
+* Setting up collection and installing the Sumo Logic Kubernetes app.
 * Configuring CloudWatch log collection.
 
-The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
+The Sumo Logic [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
 
 
-### Step 1. Set up and install the Kubernetes App  
+### Step 1. Set up and install the Kubernetes app  
 
-The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes App before configuring collection for the EKS - Control Plane App. You will configure log and metric collection during this process.
+The Sumo Logic Kubernetes app provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes app before configuring collection for the EKS - Control Plane app. You will configure log and metric collection during this process.
 
-**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
+To set up and install the Kubernetes app, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
 
 
 ### Step 2. Configure CloudWatch log collection
 
 To configure Amazon CloudWatch log collection, do the following:
-1. Follow the instructions for [Collecting Logs using a CloudFormation Template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
+1. Follow the instructions for [Collecting Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
 2. Refer to [Amazon EKS Logs](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html) for Amazon specific details.
 
 
-## Installing the Amazon EKS - Control Plane App
+## Installing the Amazon EKS - Control Plane app
 
-Now that you have set up collection for EKS, install the Sumo Logic App for EKS - Control Plane to use the pre-configured Kubernetes dashboards that provide visibility into your EKS environment.
+Now that you have set up collection for EKS, install the Sumo Logic app for EKS - Control Plane to use the pre-configured Kubernetes dashboards that provide visibility into your EKS environment.
 
 To install the app, do the following:
 1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
@@ -172,7 +169,6 @@ Filter with template variables
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-template-variables.md) help page.
 
 You can use template variables to drill down and examine the data on a granular level.
-
 
 ### API Server Audit
 
