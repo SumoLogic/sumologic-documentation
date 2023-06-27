@@ -31,8 +31,8 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
 
 To add an Amazon Lambda function:
 1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
-1. Click **Lambda** in the **Compute** section.
-1. On the Functions page, click **Create a Function**.
+1. Go to **Functions** page in the AWS Lambda console.
+1. On the **Functions** page, click **Create a Function**.
 1. On the **Create Functions** page, select **Use a blueprint** option.
 1. In the **Basic information** section, enter the following.<br/><img src={useBaseUrl('img/send-data/basic-information.png')} style={{border: '1px solid black'}} alt="basic-information" width="700"/>
     * **Blueprint name**. Enter `sumologic` and select **Send Cloudwatch logs to Sumologic**.
@@ -66,8 +66,8 @@ If you have more than one CloudWatch Log Group to assign to your Lambda function
 :::
 
 1. Sign in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
-1. Click **Lambda** in the **Compute** section.
-1. On the Functions page, click **Create a Function**
+1. Go to **Functions** page in the AWS Lambda console.
+1. On the **Functions** page, select the Lambda function created in [Step 2](#create-lambda-function).
 1. In the **Function overview** section, click the **+ Add trigger** button.<br/><img src={useBaseUrl('img/send-data/add-trigger.png')} style={{border: '1px solid black'}} alt="add-trigger" width="700"/>
 1. In the **Add Trigger** prompt, select **CloudWatch Logs** from the **Select a source** dropdown.<br/><img src={useBaseUrl('img/send-data/select-a-source.png')} style={{border: '1px solid black'}} alt="select-a-source" width="700"/>
 1. Select a **CloudWatch Log Group** to add to your function. You need at least one CloudWatch Log Group to see this option.
