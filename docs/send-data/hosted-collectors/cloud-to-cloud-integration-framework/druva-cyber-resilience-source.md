@@ -133,5 +133,5 @@ This section provides information on how to troubleshoot failures while configur
 
 #### Solution
 
-If the source is configured with either an invalid **Base URL** or **Client ID**, the API will return a 400 error code. To rectify this error, validate and enter the correct **Base URL** and **Client ID**.
+If the source is configured with either an invalid **Base URL**, **Client ID**, or **Secret Key** the API will return a 400 error code. To rectify this error, validate and enter the correct **Base URL**, **Client ID**, and **Secret Key**.
 
