@@ -25,7 +25,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 You can create the parameter via AWS CLI or via Console.
 
-If you are using AWS CLI then use the below command:
+If you're using the AWS CLI, run the below command:
 
 ```json
 aws ssm put-parameter --region us-east-1 --cli-input-json '{
