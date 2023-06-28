@@ -9,15 +9,17 @@ The `delta` operator computes the backward difference at each data point in the 
 
 The `delta` operator updates the `metric` dimension, if present, to `delta($metric)`. If the original time series does not have a `metric` dimension, it creates `metric=delta` dimension. Other dimensions remain unaffected.
 
-You can use the `increasing` or `decreasing` option to make `delta` consider only pairs of consecutive points where the second point is greater (`increasing` option) or less (`decreasing` option) than the first point. This functionality is useful when you are calculating the positive or the negative difference of a metric over time.
-
-When working with counters, you can also use a dedicated `counter` mode which accounts for counter resets and always returns non-negative difference.
-
 ## Syntax
 
 ```sql
 delta [increasing | decreasing | counter]
 ```
+
+When deciding which mode you should use, here are some guidelines:
+* You need to get the difference of a counter - use `delta counter`.
+* You need to get the difference of a non-counter metric - use `delta`.
+
+You can also use the `increasing` or `decreasing` option to make `delta` consider only pairs of consecutive points where the second point is greater (`increasing` option) or less (`decreasing` option) than the first point. However, these options are mostly kept for backward compatibility and so their usage is not recommended.
 
 ## Examples
 
