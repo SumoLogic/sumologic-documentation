@@ -1,5 +1,5 @@
 ---
-title: Trellix mVision ePO (Apps)
+title: Trellix mVision ePO (Collection)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps
