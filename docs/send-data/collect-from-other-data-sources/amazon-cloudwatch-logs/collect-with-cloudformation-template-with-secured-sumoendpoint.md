@@ -118,6 +118,6 @@ If you're using an existing log group or if you don’t want to send logs to the
 
 For instructions, follow [Step 5](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-5-validate-email-address-for-alarms) in the Collect CloudWatch Logs using a CloudFormation Template page.
 
-## Step 7:  Subscribe SumoCWLogsLambda to CloudWatch Log Groups
+## Step 7: Subscribe SumoCWLogsLambda to CloudWatch Log Groups
 
 For instructions, follow [Step 6](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups) in the Collect CloudWatch Logs using a CloudFormation Template page. 
