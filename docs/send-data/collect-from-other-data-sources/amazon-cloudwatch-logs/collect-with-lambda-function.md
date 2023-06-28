@@ -4,6 +4,7 @@ title: Collect Amazon CloudWatch Logs using a Lambda Function
 sidebar_label: Collect Logs using a Lambda Function
 description: Learn how to collect Amazon CloudWatch Logs with a Lambda function.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
