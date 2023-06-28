@@ -11,4 +11,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We have revised the method of collecting endpoint data from the Sophos Central platform. Previously, endpoint data was combined with alerts and then sent to Sumo Logic. Now we have adopted a new approach where endpoint and alert data are sent separately to Sumo Logic. [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/).
+We have introduced a new approach where endpoint and alert data from Sophos Central platform are sent separately to Sumo Logic using two different APIs: [Alerts](https://developer.sophos.com/docs/common-v1/1/routes/alerts/get) and [Endpoint](https://developer.sophos.com/docs/endpoint-v1/1/routes/endpoints/get). [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/).
