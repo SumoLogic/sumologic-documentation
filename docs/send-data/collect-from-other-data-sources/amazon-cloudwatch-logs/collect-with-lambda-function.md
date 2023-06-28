@@ -46,7 +46,7 @@ To add an Amazon Lambda function:
 1. In the **CloudWatch Logs trigger** section, you can create a trigger, or click **Remove** if you prefer to create it later in [Step 3](#step-3-assign-cloudwatch-log-groups-to-your-lambda-function). To create the trigger:<br/><img src={useBaseUrl('img/send-data/cloudWatch-logs-trigger.png')} style={{border: '1px solid black'}} alt="cloudWatch-logs-trigger" width="700"/>
     * **Log Group**. Select the log group that serves as the event source. Events sent to the log source will trigger your Lambda function. 
     * **Filter Name**. Enter a filter name.
-    * **Filter Pattern (Optional)**. May be left blank. For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
+    * **Filter Pattern (Optional)**. May be left blank. For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS Help.
 1. In the **Environment Variables** section, set the value of the variable to the URL of the HTTP source from [Step 1](#step-1-add-a-hosted-collector-and-http-source) to which your logs will be sent. In addition, you can set any of the following optional variables:<br/><img src={useBaseUrl('img/send-data/environment-variables.png')} style={{border: '1px solid black'}} alt="environment-variables" width="700"/>
     * **ENCODING (Optional)**. Use when decoding CloudWatch log events, default is **utf-1**.
     * **SOURCE_CATEGORY_OVERRIDE (Optional)**. Override `_sourceCategory` value configured for the HTTP source.  
