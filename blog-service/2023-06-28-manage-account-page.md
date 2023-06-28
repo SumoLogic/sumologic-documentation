@@ -1,5 +1,5 @@
 ---
-title: Manage Account Page Updates
+title: Manage Account Page Updates (Account)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   -  account usage
