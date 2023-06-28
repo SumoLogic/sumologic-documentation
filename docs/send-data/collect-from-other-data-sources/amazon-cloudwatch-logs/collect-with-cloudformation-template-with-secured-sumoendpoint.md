@@ -40,7 +40,7 @@ aws ssm put-parameter --region us-east-1 --cli-input-json '{
 The above command uses the default AWS Managed Key. If you want to use Customer Managed CMK, refer [Create a SecureString parameter using a customer managed CMK](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-securestring.html#sysman-param-defaultkms).
 :::
 
-If you're using AWS Console do the following:
+If you're using the AWS Console, do the following:
 
 1. Go to https://console.aws.amazon.com/systems-manager/parameters.
 
