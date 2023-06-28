@@ -61,7 +61,7 @@ You will need at least one CloudWatch Log Group to assign to your Lambda functio
 :::
 
 :::note
-If you have more than one CloudWatch Log Group to assign to your Lambda function, repeat the below steps for each Log Group, else skip this step.
+If you have more than one CloudWatch Log Group to assign to your Lambda function, repeat the below steps for each Log Group. Otherwise, skip this step.
 :::
 
 1. Sign in to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/home#/functions).
