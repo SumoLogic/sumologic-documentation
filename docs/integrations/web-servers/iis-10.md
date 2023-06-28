@@ -117,7 +117,7 @@ This section demonstrates how to configure sources for the following log types:
 * IIS Performance (Perfmon) Logs
 * **Configure Source for IIS Access Logs**
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
@@ -153,7 +153,7 @@ To configure a local file source for IIS Access Logs, do the following:
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
 
 * Configure Source for HTTP Error Logs
-This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
+This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10).
 
 
 To configure a local file source for HTTP Error Logs, do the following:
@@ -185,7 +185,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
 * Configure Source for IIS Performance (Perfmon) Logs
 
-This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
+This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10).
 
 
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
@@ -659,10 +659,10 @@ Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors
 </table>
 
 
-## View IIS Dashboards
+## Viewing IIS Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
 :::
 
 ### Overview
