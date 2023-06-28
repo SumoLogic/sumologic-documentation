@@ -42,7 +42,6 @@ To add an Amazon Lambda function:
       * **Create a new role from AWS policy templates**.
         * **Role Name**. Enter a name for the role.
         * **Policy templates**. Choose the template and make sure that the policy has following permissions `logs:CreateLogGroup, logs:CreateLogStream, logs:PutLogEvents` so that Lambda can push the logs to Cloudwatch. 
-
 1. In the **CloudWatch Logs trigger** section, you can create a trigger, or click **Remove** if you prefer to create it later in [Step 3](#step-3-assign-cloudwatch-log-groups-to-your-lambda-function). To create the trigger:<br/><img src={useBaseUrl('img/send-data/cloudWatch-logs-trigger.png')} style={{border: '1px solid black'}} alt="cloudWatch-logs-trigger" width="700"/>
     * **Log Group**. Select the log group that serves as the event source. Events sent to the log source will trigger your Lambda function. 
     * **Filter Name**. Enter a filter name.
