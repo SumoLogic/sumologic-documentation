@@ -111,7 +111,7 @@ For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-source
 After a few minutes, you will see CREATE_COMPLETE in the Status column.
 
 :::important
-If you're using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).
+If you're using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup**, you must do one of the following: [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).
 :::
 
 ## Step 6: Validate email address for alarms
