@@ -1,7 +1,7 @@
 ---
 id: eks-control-plane
 title: Amazon EKS - Control Plane
-description: The Sumo Logic app for Amazon EKS - Control Plane app provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
+description: The Sumo Logic app for Amazon EKS - Control Plane provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
