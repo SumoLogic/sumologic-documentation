@@ -10,7 +10,7 @@ We strongly recommend the alternative collection process described on [AWS Kines
 
 This method is similar to [Collect CloudWatch Logs using a CloudFormation Template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template) the only difference is that this method stores the Sumo Logic Endpoint securely in system manager.
 
-To collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic EndPoint, follow the below instructions.
+To collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic Endpoint, follow the below instructions.
 
 ## Step 1: Add a Hosted Collector and HTTP Source
 
