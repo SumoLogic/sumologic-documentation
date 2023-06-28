@@ -2,16 +2,16 @@
 id: collect-with-cloudformation-template-with-secured-sumo-endpoint
 title: Collect Amazon CloudWatch Logs using a CloudFormation Template with Secured Endpoint
 sidebar_label: Collect Logs using CloudFormation with Secured Endpoint
-description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo EndPoint.
+description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic endPoint.
 ---
 
 :::note
 We strongly recommend the alternative collection process described on [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/), which is more robust and reliable, where you do not need to manage resources. Lambda based collection methods are limited by time out, concurrency, and memory limits.
 :::
 
-This method is similar to [Collect CloudWatch Logs using a CloudFormation Template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template) the only difference is that this method stores the Sumo Logic Endpoint securely in system manager.
+This method is similar to [Collect CloudWatch Logs using a CloudFormation Template](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template) the only difference is that this method stores the Sumo Logic endpoint securely in system manager.
 
-To collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic Endpoint, follow the below instructions.
+To collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic endpoint, follow the below instructions.
 
 ## Step 1: Add a Hosted Collector and HTTP Source
 
