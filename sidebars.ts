@@ -402,7 +402,7 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/index'},
               items: [
                 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template',
-                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template-with-secured-sumoendpoint',
+                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template-with-secured-sumo-endpoint',
                 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function',
               ],
             },
