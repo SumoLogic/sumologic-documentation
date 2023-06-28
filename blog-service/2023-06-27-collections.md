@@ -1,5 +1,5 @@
 ---
-title: Sophos Central (Collection)
+title: Sophos Central Source (Collection)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - collection
