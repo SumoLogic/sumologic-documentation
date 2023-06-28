@@ -56,7 +56,7 @@ You can verify whether the parameter is created successfully by going to https:/
 
 #### Get the KMS Key ID
 
-Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) to get the Key ID used to encrypt/decrypt the parameter created earlier. If you're using default AWS Managed Key the Key ID should be corresponding to the alias value [aws/ssm](https://console.aws.amazon.com/kms/home?region=us-east-1#/kms/defaultKeys/629673c1-9f21-4c2d-bf75-19617579c558/). 
+Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) to get the Key ID used to encrypt/decrypt the parameter created earlier. If you're using the default AWS Managed Key, the Key ID should correspond to the alias value [aws/ssm](https://console.aws.amazon.com/kms/home?region=us-east-1#/kms/defaultKeys/629673c1-9f21-4c2d-bf75-19617579c558/). 
 
 
 ## Step 3: Download the CloudFormation template
