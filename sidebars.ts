@@ -257,6 +257,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
