@@ -127,7 +127,7 @@ Add the following environment variables to your Lambda function:
 | Variable Name | Description | Type |
 |:--|:--|:--|
 | `SUMO_HTTP_ENDPOINT` | This is the URL of the Sumo Logic HTTP source created in Step 1. | Required |
-| `SUMO_LOG_TYPES` | Please provide a comma-separated list of values that are one or more "platform", "function" or "extension" to indicate which AWS Lambda logs you want to send to Sumo Logic. By default, all of these three values are assumed. | Optional
+| `SUMO_LOG_TYPES` | Provide a comma-separated list of values that are one or more "platform", "function" or "extension" to indicate which AWS Lambda logs you want to send to Sumo Logic. By default, all of these three values are assumed. | Optional
 | `SUMO_ENABLE_FAILOVER` | Set to True to failover in case you would like the extension to send logs to an Amazon S3 bucket. In the case of throttling or, exceptions the default value assumed is False. | Optional
 | `SUMO_S3_BUCKET_NAME` | The name of an Amazon S3 bucket. | Optional |
 | `SUMO_S3_BUCKET_REGION` | The Region where the above Amazon S3 bucket is located. | Optional |
@@ -135,6 +135,7 @@ Add the following environment variables to your Lambda function:
 | `SUMO_LOG_LEVEL` | Log level, which can be one of info, error, or debug. The default value is info. | Optional |
 | `SOURCE_CATEGORY_OVERRIDE` | The Source Category for all incoming data is set to that of the HTTP endpoint by default. You can however override it with this parameter | Optional |
 | `SUMO_SPAN_DROP` | Set to true in case you would like the extension to drop spans from ingested into Sumo Logic. The default value assumed is false. | Optional |
+| `SUMO_ENHANCE_JSON_LOGS` | Ingest the logs in JSON format with a message key containing raw log message and other metadata such as loggroup, isColdStart, and logStream. Default is true. | Optional |
 
 1. Once you have set your parameters, execute your AWS Lambda function, and validate that the logs are coming into Sumo Logic. 
 1. If you have enabled failover, do the following:
