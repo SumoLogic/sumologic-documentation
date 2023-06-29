@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### New RBAC Capabilities
 
-Starting **Thursday, July 6**, a new RBAC capability will be introduced for Cloud SIEM Enterprise (CSE). They are *View Entities* and *Manage Entities*. Users with the built-in administrator role will received these capabilities automatically, but **admins must manually add these capabilities** to other roles as appropriate. If a user has neither role, they will not be able to see Entity details or interact with/manage Entities in any way.
+Starting **Thursday, July 6**, we're introducing new RBAC capabilities for Cloud SIEM Enterprise (CSE): *View Entities* and *Manage Entities*. Users with the built-in administrator role will receive these capabilities automatically, but **admins must manually add these capabilities** to other roles as appropriate. If a user does not have either role, they will not be able to see Entity details or interact with/manage Entities in any way.
 
 ### Minor Changes and Enhancements
 
