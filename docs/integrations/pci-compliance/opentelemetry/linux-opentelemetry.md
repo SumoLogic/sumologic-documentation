@@ -36,7 +36,7 @@ In this step, you will configure the yaml required for Linux Collection. The app
 
 #### Required Logs for Ubuntu
 
-The following logs located in  `/var/log` folder is required for using the Sumo Logic app for PCI compliance for Linux with Ubuntu.
+The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for PCI compliance for Linux with Ubuntu.
 
 - auth.log
 - syslog
