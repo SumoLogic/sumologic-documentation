@@ -151,13 +151,15 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 
 ### Windows - Overview
 
-The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, and system restarts.
+The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes system restarts and changes to administrative groups.
 
 Use this dashboard to:
 
 - Monitor systems experiencing fatal errors, warnings, and system restarts.
 - View system login attempts. 
 - Monitor policy changes performed on the system.
+- Monitor services installed on the systems.
+- Monitor the number of changes performed on the Administrative groups.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Overview.png' alt="Windows - Overview" />
 
@@ -173,6 +175,17 @@ Use this dashboard to:
 - Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Default.png' alt="Windows - Default" />
+
+### Windows - Login Status
+
+The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
+
+Use this dashboard to:
+* Monitor Successful and Failed logins by the user and track their locations with successful and failed login attempts.
+* Monitor RDP (Remote Desktop) reconnect events.
+* Track if there are failed login outliers to identify mischievous login activities.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Login-Status.png')} alt="Windows - Login Status" />
 
 ### Windows - Event Errors
 
