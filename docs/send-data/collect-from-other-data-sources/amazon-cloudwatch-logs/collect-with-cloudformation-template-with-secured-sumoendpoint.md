@@ -43,7 +43,7 @@ The above command uses the default AWS Managed Key. If you want to use Customer 
 If you're using the AWS Console, do the following:
 
 1. Go to https://console.aws.amazon.com/systems-manager/parameters.
-   * **Name**. SUMO_ENDPOINT.
+   * **Name**. `SUMO_ENDPOINT`.
    * **Tier**. Standard.
    * **Type**. Select SecureString.
    * **KMS Key Source**. Select the KMS Key ID or use the default KMS key.
