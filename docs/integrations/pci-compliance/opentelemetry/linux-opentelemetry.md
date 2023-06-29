@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-The PCI Compliance for Linux - OpenTelemetry is a unified log app. The preconfigured dashboards helps you to monitor systems, account, and users activity to ensure login activity and privileged users are within the expected ranges. Linux log data are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The PCI Compliance for Linux - OpenTelemetry is a unified log app that sends Linux log data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards help you to monitor system, account, and user activity to ensure that login activity and privileged users are within the expected ranges.
 
 :::info
 The PCI Compliance for Linux app covers PCI requirements 02, 07, 08, and 10.
