@@ -5,16 +5,16 @@ description: View information on Sumo Logic Cloud Flex Credits account and intui
 ---
 
 
-Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks utilization, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to manage your account without unnecessary waste.
+Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
-This page provides information on the Cloud Flex Credits account types from which you can choose, and then explains how you can intuitively monitor and manage your account.
+This page provides information on the Cloud Flex Credits account types you can choose, and then explains how to monitor and manage your account.
 
 ## Cloud Flex Credits - Account Types
 
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Cloud Flex Credits accounts.
 
-* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements from within the Sumo Logic UI. 
-* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information about Trial account features, see the details for [Cloud Flex accounts](#cloud-flex-credits---account-types).  
+* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI. 
+* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex accounts](docs/manage/manage-subscription/cloud-flex-accounts/).  
   :::note
   Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
@@ -61,40 +61,49 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 | Traces | ![check](/img/reuse/check.png)<br/>Up to 1.5GB per day* | ![check](/img/reuse/check.png)<br/>Up to 5GB per day | ![check](/img/reuse/check.png)<br/>5GB per day | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
 | User and Role APIs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
-\* Contact Sumo Logic Sales to customize your account to meet your organization's needs.
+\* Contact your account manager to customize your account to meet your organization's needs.
 
 ## Account Page
 
 The **Account Overview** tab of the  **Account** page for Cloud Flex Credits displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as live dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
 :::note
-You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
+This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
 [Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
 
 :::note
-For more information on Data Tiers, contact your Sumo Logic Account Representative.
+For more information on Data Tiers, contact your Sumo Logic account manager.
 :::
 
 The Account page provides an at-a-glance view of your account information in the following panels.
 
-### Top panel 
+### Top left panel 
 
 * **Organization.** Displays the name of your Sumo Logic organization, and its hexadecimal organization ID number. This helps Sumo identify your account.
 * **Plan Type.** Displays your account type for your Sumo Logic subscription such as Essentials or Enterprise Suite
 * **Contract Period.** Displays the start and end dates of your contract period.
+* **Live Dashboard Panels and Real Time Alerts Count**. A count of all real-time activity in your account.
 
-### Usage (Sumo Credits) 
+### Total Credit Usage 
 
-* **Usage (Sumo Credits).** Displays the usage of the Sumo Credits you purchased for the contract period.
-* **Contract Capacity Utilization.** Displays the total amount of Sumo Credits used since the beginning of the contract period.
-* **Forecast.** Displays the anticipated end date of the current contract period, along with the expected Sumo Credits usage by the end of the contract period based on the current consumption rate.
+* **Credits Used.** Displays the number of credits used and the percentage used since the beginning of your current contract. 
+* **Credits remaining.** Displays number of credits remaining as well as the percentage of credits used since the beginning of your current contract.
 
-### Usage 
+
+### Usage Forecast
+
+The usage forecast gives you an opportunity to see the potential end of the current credtits and an estimate on when those credits will end. 
+
+* **Upgrade Plan**. Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
+* **Forecasted use**. Predicts your credit usage by end of the contract period. 
+* **Credits exhaust**. The predicted number of days and the exact date when we estimate your current credits will be exhausted.
+
+### Usage Details by Category 
 
 * **Usage Details.** Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
-**Live Dashboard Panels and Real Time Alerts.** Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
+* **Usage Categories**. Table displaying the credits used, % of credits used, and units by usage categories, ingest type and promotional credits usage.
 
 ### Promotional Credits
 
@@ -111,15 +120,18 @@ To view the Account page, do the following:
 1. Log in to your Sumo Logic Cloud Flex Credits account.
 1. In the left navigation bar, select **Administration** > **Account**. The Account Overview tab is shown by default.
 
-    :::note
-    You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
-    :::
+:::note
+You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
+:::
 
-    The following visual indicators apply:
+Be aware of the following features:
 
-    * Red text indicates an overage of your account limit.
+* **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
+* View consumption by day, week, or month. 
+* View consumption by time period. 
+* Download a report on usage, or just on credits usage as a CSV file. 
 
-    ![account-overview-credits.png](/img/subscriptions/account-overview-credits.png)
+![account-overview-credits.png](/img/account/account-usage-fields.png)
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
@@ -140,7 +152,7 @@ The Usage (Sumo Credits) panel at the bottom of the Account Overview page provi
 
 ### Usage categories
 
-The legend at the bottom of the Usage Details panel contains the following usage categories:
+The Usage Details panel contains the following usage categories:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -150,37 +162,26 @@ The legend at the bottom of the Usage Details panel contains the following usage
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
-* **Promotional categories**. See [Monitoring Promotional Credit usage](cloud-flex-accounts.md) below.
+* **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
 
 ### Changing views and time intervals
 
 The Sumo Logic Account page allows you to easily monitor your data usage over selected time intervals, including total storage and metrics usage.
 
-:::note
-Red text indicates that you are exceeding your contract capacity.
-:::
-
-To switch between views and time interval displays, do the following:
+To switch between views and time interval displays:
 
 1. Log in to Sumo Logic and select **Administration > Account** in the left navigation pane.
 
-    The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage details for all data types by default. The total number of credits used and a breakdown of how the credits were used is shown in the donut graph on the right.
+    The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 
-    ![credits-usage-all.png](/img/subscriptions/credits-usage-all.png)
+1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude. ![account-details-of-credit-usage.png](/img/account/account-details-of-credit-usage.png)
 
-1. To only view data for a specific analytic type or types, go to the bottom of the Usage Details panel and click the colored check box next to the analytic type or types you want to toggle Off.
+1. To toggle an analytic data type back on, click the blank icon next to the data type name.
 
-    The colored icon becomes blank, the analytics data (color) is no longer displayed, and the donut chart on the right only shows credit analytics for the remaining data types. In the following example, we toggled off everything but Continuous Ingest.
+    The analytic data type reappears in the graph and the credit usage for the data type is once again included.
 
-    ![credits-usage-continuous.png](/img/subscriptions/credits-usage-continuous.png)
+1. To change the aggregation of the data, click the **Group by** arrow and choose **day**, **week**, or **month** from the dropdown list. The default is **View By Day**.
 
-1. To toggle an analytic data type back On, click the blank icon next to the data type name.
-
-    The analytic data type (color) reappears in the graph and the credit usage for the data type is once again included in the donut graph on the right.
-
-1. To change the aggregation of the data, click the **Group by** arrow and choose **day**, **week**, or **month** from the dropdown list. The default is Group by day.
-
-    ![CFCredits_GroupBy_menu.png](/img/subscriptions/CFCredits_GroupBy_menu.png)
 
 ### Drilling into usage data
 
@@ -190,35 +191,17 @@ To drill into usage data, do the following:
 
 1. In the Usage Details panel, drag your cursor over the graph intervals you want to analyze in greater detail.
 
-    ![CFCredits_Drilldown_select_interval.png](/img/subscriptions/CFCredits_Drilldown_select_interval.png)
-
-    The display changes accordingly.
-
-    ![CFCredits_Usage_Details_drilldown.png](/img/subscriptions/CFCredits_Usage_Details_drilldown.png)
-
 1. To scroll through the data, click the Zoom (magnifying glass) icon to toggle On the Pan feature, then select the background and drag your cursor to the left and right. Optionally, hover the cursor over an area on the chart to view a pop-up with detailed information.
-
-    ![CFCredits_Usage_Details_drilldown_hover.png](/img/subscriptions/CFCredits_Usage_Details_drilldown_hover.png)
-
-1. To drill down further, repeat step 1 and 2 as needed.
-1. To return to the original data display, click the Reset icon.
-
-    ![CFCredits_Usage_Details_drilldown_reset.png](/img/subscriptions/CFCredits_Usage_Details_drilldown_reset.png)
 
 ### Monitoring Promotional Credit usage
 
-You can filter for a focused credit component to assess your Promotional Credit usage, in the same way you [drill into usage data](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#monitoring-promotional-credit-usage) for paid credits.
+You can filter for a focused credit component to assess your Promotional Credit usage, in the same way you [drill into usage data](#drilling-into-usage-data) for paid credits.
 
-To monitor your Promotional Credit usage, do the following:
+To monitor your Promotional Credit usage:
 
-1. In the Usage Details panel, hover the cursor over the graph interval containing Promotional Credits. A tooltip appears showing detailed information.
+1. In the Details Credits Usage panel, deselect all Usage Categories. Only Promotional credits will remain. 
 
-    ![CFC_Promotional_Credits2.png](/img/subscriptions/CFC_Promotional_Credits2.png)
+1. To only view data for a specific analytic type, deselect individual options under Promotional Credits such as Continuous Ingest, Storage, or Infrequent Ingest to see those options removed from the Credits used chart.
+ 
 
-1. To only view data for a specific analytic type or types, go to the bottom of the Usage Details panel and click the colored check box next to the analytic type or types you want to toggle Off.
-
-    The colored icon becomes blank, the analytics data (color) is no longer displayed, and the donut chart on the right only shows credit analytics for the remaining data types. In the following example, we toggled Off Continuous Analytics.
-
-    In the following example, we only left analytic for **Promotional Continuous Credits** and **Promotional Frequent Credits** toggled **On**. All other analytic data was toggled Off.
-
-    ![CFC_Promotional_Credits_ZoomIn2.png](/img/subscriptions/CFC_Promotional_Credits_ZoomIn2.png)
+    
