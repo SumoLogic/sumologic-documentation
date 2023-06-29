@@ -43,9 +43,9 @@ The above command uses the default AWS Managed Key. If you want to use Customer 
 If you're using the AWS Console, do the following:
 
 1. Go to https://console.aws.amazon.com/systems-manager/parameters.
-   * **Name**. SUMO_ENDPOINT
-   * **Tier**. Standard
-   * **Type**. Select SecureString
+   * **Name**. SUMO_ENDPOINT.
+   * **Tier**. Standard.
+   * **Type**. Select SecureString.
    * **KMS Key Source**. Select the KMS Key ID or use the default KMS key.
    * **Value**. Paste the value of the SUMO_ENDPOINT_URL copied while creating the HTTP source.
 1. Click **Create Parameter**.<br/> ![Create_SecureString_Parameter.png](/img/send-data/Create_SecureString_Parameter.png)
