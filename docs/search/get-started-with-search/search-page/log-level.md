@@ -1,22 +1,12 @@
 ---
 id: log-level
-title: Log Level Detection and Insights (Beta)
+title: Log Level Detection and Insights
 description: You can highlight a time range in the histogram for your search results to filter the search results based on that time range.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::info
-This beta isn't accepting any new testers right now.
-:::
-
-When performing **Log Search** queries in the UI, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
+When performing **Log Search** queries, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
 
 * Quickly identify anomalies
 * Drill down quickly into high severity logs
@@ -51,5 +41,3 @@ Log-Level pattern detection is automatic, meaning you do not need to parse log l
 The log level of a log line is stored under the `_loglevel` field. You can override its value using a [field extraction rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). For example:
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/add-field-extraction-rule.png')} alt="Add field extraction rule" width="400"/>
-
-
