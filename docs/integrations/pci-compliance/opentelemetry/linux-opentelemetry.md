@@ -46,7 +46,7 @@ The following logs located in  `/var/log` folder is required for using the Sumo 
 
 #### Required Logs for CentOS, Amazon Linux, and Red Hat
 
-The following logs located in  `/var/log` folder is required for using the Sumo Logic app for PCI compliance for Linux with CentOS, Amazon Linux, and Red Hat.
+The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for PCI compliance for Linux with CentOS, Amazon Linux, and Red Hat.
 
 - audit/audit.log
 - secure
