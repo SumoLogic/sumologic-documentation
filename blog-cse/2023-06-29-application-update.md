@@ -20,7 +20,7 @@ Starting **Thursday, July 6**, we're introducing new RBAC capabilities for Cloud
 ### Minor Changes and Enhancements
 
 * [New] Nodes can now be moved around individually on the Insight Related Entities Graph.
-* [Update] To align more closely with accepted industry definitions, we are changing the *Dwell Time* label on Insight metrics in the UI to *Detection Time*. Note that only the label is changing, not now the metric is calculated (i.e. the period of time between when the first record in an Insight was observed and when the Insight was created).
+* [Update] To align more closely with accepted industry definitions, we are changing the *Dwell Time* label on Insight metrics in the UI to *Detection Time*. Note that only the label is changing, not now the metric is calculated (i.e., the period of time between when the first record in an Insight was observed and when the Insight was created).
 * [Update] Match list update containing more than 1000 entries are now supported by our Terraform provider.
 * [Update] When a custom product or vendor is selected in log mapping, the string entered by the user is now indexed instead of the word "Custom", so that the custom entry can be searchable/filterable. This only applies to mappings configured going forward.
 * [New] Custom tag schemas can now be retrieved via API (`GET /tag-schemas`). 
