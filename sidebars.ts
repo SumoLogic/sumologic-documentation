@@ -1977,6 +1977,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
+            ],
+          },
           'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
           'integrations/cloud-security-monitoring-analytics/amazon-vpc-flow',
           'integrations/cloud-security-monitoring-analytics/aws-cloudtrail',
