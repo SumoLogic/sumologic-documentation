@@ -22,7 +22,7 @@ The Windows App, which is based on the Windows event log format, consists of pre
 
 ## Fields Created in Sumo Logic for Windows
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
 
 - **`sumo.datasource`**. Has a fixed value of **windows**.
 
@@ -61,9 +61,9 @@ By default the collector will be sending process metrics to Sumo Logic. Since th
 
 ```sh
 process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
+  include:
+    names: [ <process name1>, <process name2> ... ]
+    match_type: <strict|regexp>
 ```
 :::
 
@@ -113,14 +113,14 @@ process:
 This sample metrics query is from the **Host Metric - CPU** dashboard > **CPU User Time** panel.
 
 ```sql title="Metrics Query String"
-sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.utilization state=user | avg by host.name
+sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.utilization state=user | avg by host.name
 ```
 
 This sample log query is from the **Windows - Overview** dashboard > **System Restarts** panel.
 
 ```sql title="Log Query String"
-%"sumo.datasource"=windows  "\"channel\":\"Security\""
-| json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
+%"sumo.datasource"=windows  "\"channel\":\"Security\""
+| json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id
 | parse regex field=msg_summary "(?<msg_summary>.*\.*)" nodrop
 | where event_id = "4608" and channel = "Security" and host.name matches "{{host.name}}"
@@ -151,15 +151,13 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 
 ### Windows - Overview
 
-The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes system restarts and changes to administrative groups.
+The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, and system restarts.
 
 Use this dashboard to:
 
 - Monitor systems experiencing fatal errors, warnings, and system restarts.
 - View system login attempts. 
 - Monitor policy changes performed on the system.
-- Monitor services installed on the systems.
-- Monitor the number of changes performed on the Administrative groups.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Overview.png' alt="Windows - Overview" />
 
@@ -175,17 +173,6 @@ Use this dashboard to:
 - Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Default.png' alt="Windows - Default" />
-
-### Windows - Login Status
-
-The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
-
-Use this dashboard to:
-* Monitor successful and failed logins by the user and track their locations with successful and failed login attempts.
-* Monitor RDP reconnect events.
-* Track failed login outliers to identify mischievous login activities.
-
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Login-Status.png')} alt="Windows - Login Status" />
 
 ### Windows - Event Errors
 
@@ -210,7 +197,7 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Application.png' alt="Windows - Application" />
 
-## Windows - Host Metric Based Dashboards 
+## Windows - Host Metric Based Dashboards 
 
 ### Host Metrics - Overview
 
