@@ -181,9 +181,9 @@ Use this dashboard to:
 The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
 
 Use this dashboard to:
-* Monitor Successful and Failed logins by the user and track their locations with successful and failed login attempts.
-* Monitor RDP (Remote Desktop) reconnect events.
-* Track if there are failed login outliers to identify mischievous login activities.
+* Monitor successful and failed logins by the user and track their locations with successful and failed login attempts.
+* Monitor RDP reconnect events.
+* Track failed login outliers to identify mischievous login activities.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Login-Status.png')} alt="Windows - Login Status" />
 
