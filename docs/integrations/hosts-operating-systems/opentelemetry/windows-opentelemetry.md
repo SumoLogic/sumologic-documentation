@@ -22,7 +22,7 @@ The Windows App, which is based on the Windows event log format, consists of pre
 
 ## Fields Created in Sumo Logic for Windows
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
+Following are the [fields](/docs/manage/fields/) that will be created as part of Windows App install if not already present. 
 
 - **`sumo.datasource`**. Has a fixed value of **windows**.
 
