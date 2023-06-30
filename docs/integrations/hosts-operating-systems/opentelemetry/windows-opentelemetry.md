@@ -151,7 +151,7 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 
 ### Windows - Overview
 
-The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, system restarts and changes to administrative groups.
+The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
 Use this dashboard to:
 
