@@ -133,47 +133,6 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
 1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
 
-### SLO Tags and Filters
-
-You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
-
-#### Limitations
-
-- Tag keys cannot start with the prefixes `sumo.` or `_`
-- Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
-- Tag values can only contain letters, white space, numbers, `_`, `.`, `/`, `=`, `+`, `-`, `@`
-
-You can associate a maximum of 50 tags per SLO.
-
-#### Add a Tag
-
-To add a tag(s) to an existing SLO:
-
-1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
-1. Click on any SLO line item in your list, then click **Edit**.
-1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
-1. Click **Save**.
-
-To add a tag while creating a new SLO:
-
-1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
-1. Click **Add** > **New SLO**.
-1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
-1. Click **Save**.
-
-#### Filter SLOs By Tags
-
-After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
-
-1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
-1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
-
-If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
-
-In this tag filter example query below, it's looking for SLOs where the `app` is either `sumo+1` OR `sumologic`, AND the `event` is `api-call`.
-
-<img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
-
 
 ### SLO as Log Messages
 
@@ -259,6 +218,64 @@ _view=sumologic_slo_output
 | json field=tags "service"
 | where service="ingestion"
 ```
+
+
+## Managing your SLOs
+
+Below are some best practices for managing your SLOs. To get to your SLOs list, click **Manage Data** > **Monitoring** > **SLOs** tab.
+
+### Tags and Filters
+
+You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
+
+:::note Limitations
+- Tag keys cannot start with the prefixes `sumo.` or `_`
+- Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
+- Tag values can only contain letters, white space, numbers, `_`, `.`, `/`, `=`, `+`, `-`, `@`
+- You can associate a maximum of 50 tags per SLO.
+:::
+
+#### Add a Tag
+
+To add a tag(s) to an existing SLO:
+
+1. Click on any SLO line item in your list, then click **Edit**.
+1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+To add a tag while creating a new SLO:
+
+1. Click **Add** > **New SLO**.
+1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+#### Filter SLOs By Tags
+
+After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
+
+1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
+1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
+
+In this tag filter example query below, it's looking for SLOs where the `app` is either `sumo+1` OR `sumologic`, AND the `event` is `api-call`.
+
+<img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
+
+### Save filter
+
+You can create and save custom filter views, allowing you to focus on the SLOs and insights most important to you. In this example, we'll create a view that contains the filters we've created above.
+
+1. Click in the **Add a filter** field.
+1. Enter the names of the filters (`product=xyz`, `product=abc`).
+1. Click the funnel icon > **Create New Filter**.
+1. Enter a name for the filter (we'll call it `Product filter`).
+1. Optionally, you can set this as your default view so that when you load SLOs list page, this set of filters will be rendered by default.
+   :::note
+   You can also do this by clicking the funnel icon > pin icon (**Set as default**).
+   :::
+1. Click **Save**.
+
 
 ## Create an SLO from Metrics page
 
