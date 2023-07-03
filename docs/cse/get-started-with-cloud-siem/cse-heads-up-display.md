@@ -1,12 +1,12 @@
 ---
 id: cse-heads-up-display
-title: CSE Heads Up Display
-description: Learn about CSE's Heads Up Display (HUD), a UI that provides an at-a-glance overview of Insight status and activity.
+title: Cloud SIEM Heads Up Display
+description: Learn about Cloud SIEM's Heads Up Display (HUD), a UI that provides an at-a-glance overview of Insight status and activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes CSE’s *Heads Up Display (HUD)*, the landing page for the CSE UI. The HUD provides an at-a-glance overview of Insight status and activity.
+This topic describes Cloud SIEM *Heads Up Display (HUD)*, the landing page for the Cloud SIEM UI. The HUD provides an at-a-glance overview of Insight status and activity.
 
 ## HUD overview
 
@@ -34,10 +34,10 @@ The command center contains four icons. 
 
 | Icon | Description |
 |:--|:--|
-| <img src={useBaseUrl('img/cse/gear.png')} alt="Gear icon" width="50"/> | **Configuration**. Click this icon to see a menu of CSE configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
-| <img src={useBaseUrl('img/cse/help.png')} alt="Help icon" width="50"/> | **Help**. Click this icon to access CSE help, API documentation, release announcements, and service status. |
+| <img src={useBaseUrl('img/cse/gear.png')} alt="Gear icon" width="50"/> | **Configuration**. Click this icon to see a menu of Cloud SIEM configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
+| <img src={useBaseUrl('img/cse/help.png')} alt="Help icon" width="50"/> | **Help**. Click this icon to access Cloud SIEM help, API documentation, release announcements, and service status. |
 | <img src={useBaseUrl('img/cse/switch-apps.png')} alt="Help icon" width="50"/> | **Switch Apps**. Click this icon to open the Sumo Logic platform UI in a new tab. |
-| <img src={useBaseUrl('img/cse/profile.png')} alt="Profile icon" width="50"/> | **Profile**. Click this icon to open your CSE user profile. Your profile is where you can manage your password, browser timezone, security options, and email notifications. |
+| <img src={useBaseUrl('img/cse/profile.png')} alt="Profile icon" width="50"/> | **Profile**. Click this icon to open your Cloud SIEM user profile. Your profile is where you can manage your password, browser timezone, security options, and email notifications. |
 
 ## 4. System Metrics
 
@@ -49,7 +49,7 @@ The default time range is 24 hours. You can change the time range using the drop
 
 The **Insight Metrics** section displays the following metrics for the currently selected time range:
 
-* **Detection**. The average period of time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated, in days. 
+* **Detection**. The average period of time between when the first event happened (when the first Record in the Insight occurred) and when the Insight was generated, in days. (This differs from "dwell time", which is the time between when the first Record and the last Record occurred in an Insight.)
 * **Response**. The average response time, which is the average time between when an Insight was generated and when its status was set to **In Progress**, in seconds. 
 * **Remediation**. The average remediation time, which is the average time between when the Insight was created and when its status was set to **Closed**, in seconds. 
 
@@ -57,7 +57,7 @@ If you use an [HTTP POST V2 Action](/docs/cse/administration/create-cse-actions
 
 ## 6. Insights by Status 
 
-The **Insights by Status** section provides a quick view of what analysts are working on. The counts are a breakdown, by current Status—**New**, **In Progress**, **Custom**, and **Closed**—of the Insights created during the currently selected time range. Note that the count labeled **Custom** includes all Insights that have a [custom status](/docs/cse/administration/manage-custom-insight-statuses/).
+The **Insights by Status** section provides a quick view of what analysts are working on. The counts are a breakdown by current status of the Insights created during the currently selected time range. Note that the count labeled **Custom** includes all Insights that have a [custom status](/docs/cse/administration/manage-custom-insight-statuses/).
 
 ## 7. Insights created and closed
 
@@ -83,11 +83,11 @@ The card at the top of the pane provides key information about the latest new In
 
 * The Insight ID and name, separated by a dash character. The name is typically formed from the MITRE stage(s) associated with the Signals in the Insight. In the case of a custom Insight, the name is the one supplied when the Insight was configured.  
 * The Insight description, typically formed from the MITRE stage(s) associated with the Signals in the Insight. In the case of a custom Insight, the description is the one supplied when the Insight was configured.
-* The Entity the Insight fired on. You can click on the Entity to view its details. Note that there is a six-button context menu that has options for searching for the Entity in other Insights and in Signals and Records. It also has the built-in **Add to Match List** and **Add to Suppressed List** actions, along with any custom [Context Actions](/docs/cse/administration/create-cse-actions/) defined in your environment.
+* The Entity the Insight fired on. You can click on the Entity to view its details. Note that there is a six-button context menu that has options for searching for the Entity in other Insights and in Signals and Records. It also has the built-in **Add to Match List** and **Add to Suppressed List** actions, along with any custom [Context Actions](/docs/cse/administration/create-cse-context-actions/) defined in your environment.
 * The analyst assigned to the Insight, if the Insight has been assigned to one.
-* **Detection Time**. The time between the moment of first activity observation (when the oldest Signal in the Insight was fired) and when the Insight was created.  
-**Signals**. The number of Signals in the Insight.
-* **Severity**. The [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) of the Insight.
+* **Detection Time**. The time between the moment of first activity observation (when the oldest Signal in the Insight was fired) and when the Insight was created. (This differs from "dwell time", which is the time between when the first Record and the last Record occurred in an Insight.)
+* **Signals**. The number of Signals in the Insight.
+* **Severity**. The [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity) of the Insight.
 * **Global Confidence**. [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight, if available.
-* **Most Active Entities**. [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/) that are currently appearing the most in activity.
-* **Today**. Today’s Insight activity. The list in the lower part of the pane contains recent Insight changes: Insights created today, and status changes and comments made today, in chronological order, with the newest first.
+* **Most Active Entities**. [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/) that are currently appearing the most in activity. Hover your mouse over an Entity and click **View Timeline** to see the [Entity timeline](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entity-timeline-tab). 
+* **Today**. Shows changes made today, such as Insights created, status changes, and comments. Items are listed in chronological order, with the newest first.
