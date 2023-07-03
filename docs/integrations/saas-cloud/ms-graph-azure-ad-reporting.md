@@ -293,7 +293,7 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 ## Installing the Microsoft Graph Azure AD Reporting app​
 
-This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.

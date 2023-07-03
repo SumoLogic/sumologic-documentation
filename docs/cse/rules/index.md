@@ -61,7 +61,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox9 card">
   <div className="container">
-  <a href="/docs/cse/rules/write-Outlier-rule"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Outlier Rule</h4></a>
+  <a href="/docs/cse/rules/write-outlier-rule"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Outlier Rule</h4></a>
   <p>Learn how to write an Outlier rule.</p>
   </div>
 </div>

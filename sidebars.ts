@@ -257,6 +257,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
@@ -400,10 +401,9 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/index'},
               items: [
-                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-collector-script',
-                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function',
-                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-amazon-kinesis',
                 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template',
+                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template-with-secured-sumo-endpoint',
+                'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function',
               ],
             },
             'send-data/collect-from-other-data-sources/amazon-msk-prometheus-metrics-collection',
@@ -2074,6 +2074,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/pci-compliance/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/pci-compliance/opentelemetry/linux-opentelemetry',
+            ],
+          },
           'integrations/pci-compliance/setup',
           'integrations/amazon-aws/cloudtrail-pci-compliance',
           'integrations/amazon-aws/vpc-flow-logs-pci-compliance',
