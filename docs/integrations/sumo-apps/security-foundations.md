@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic Security Foundations app, formerly known as the Security Analytics app, provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
+The Sumo Logic Security Foundations app provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
 
 The app supports the following security technologies:
 * Audit
@@ -130,5 +130,5 @@ Click an Entity name to drill down to see rules and [MITRE ATT&CK](https://attac
 
 Sometimes you may want to exclude certain Entities from being reported in alerts because you know they are safe and do not pose a threat. You can suppress Entities for a given rule by entering a comma-separated value which includes the rule ID and the Entity that you want to suppress. Suppression is a one-time action and cannot be reversed.
 
-1. Open the Security **Analytics Apps Suppression Lookup Update** search. 
-1. In the supplied field, replace `rule_id,entity` with the rule ID and Entity you want to suppress.
+1. Open the **Security Analytics App Suppression Lookup Update** search. 
+1. In the supplied field, replace `rule_id,entity` with the rule ID and Entity you want to suppress. If you need to suppress multiple Entities, create a CSV file with the comma-separated values and [append](/docs/search/search-query-language/search-operators/save#using-save-with-append) the CSV file to the existing lookup table.
