@@ -219,7 +219,6 @@ _view=sumologic_slo_output
 | where service="ingestion"
 ```
 
-
 ## Managing your SLOs
 
 Below are some best practices for managing your SLOs. To get to your SLOs list, click **Manage Data** > **Monitoring** > **SLOs** tab.
