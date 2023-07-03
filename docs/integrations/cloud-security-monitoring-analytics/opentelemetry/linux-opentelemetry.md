@@ -21,7 +21,7 @@ Following tag will be created as part of Linux app installation, if not already 
 ## Collection configuration and app installation
 
 :::note
-You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or Linux PCI app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
 ### Step 1: Set up Collector
@@ -36,7 +36,7 @@ In this step, you will configure the yaml required for Linux collection. The app
 
 #### Required Logs for Ubuntu
 
-The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for PCI compliance for Linux with Ubuntu.
+The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for Cloud Security Monitoring and Analytics for Linux with Ubuntu.
 
 - auth.log
 - syslog
@@ -46,7 +46,7 @@ The following logs, located in the `/var/log` folder, are required for using the
 
 #### Required Logs for CentOS, Amazon Linux, and Red Hat
 
-The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for PCI compliance for Linux with CentOS, Amazon Linux, and Red Hat.
+The following logs, located in the `/var/log` folder, are required for using the Sumo Logic app for Cloud Security Monitoring and Analytics for Linux with CentOS, Amazon Linux, and Red Hat.
 
 - audit/audit.log
 - secure
