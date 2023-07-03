@@ -113,7 +113,3 @@ In this section, we'll introduce the following concepts:
 </div>
 
 <br/>
-
-:::tip
-Use our [Root Cause Explorer](/docs/observability/root-cause-explorer) to investigate usage and issues.
-:::
