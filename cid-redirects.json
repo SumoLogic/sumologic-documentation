@@ -98,8 +98,8 @@
   "/Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
   "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect_Amazon_CloudWatch_Logs_using_a_Lambda_Function": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function",
   "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect_CloudWatch_Logs_using_a_CloudFormation_Template_with_secured_Sumo_Endpoint": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template",
-  "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect-Amazon-CloudWatch-Logs-using-a-Collector-Script": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-collector-script",
-  "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect-Amazon-CloudWatch-Logs-using-Amazon-Kinesis": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-amazon-kinesis",
+  "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect-Amazon-CloudWatch-Logs-using-a-Collector-Script": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
+  "/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect-Amazon-CloudWatch-Logs-using-Amazon-Kinesis": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
   "/03Send-Data/Collect-from-Other-Data-Sources/Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function": "/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination",
   "/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection": "/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection",
   "/03Send-Data/Collect-from-Other-Data-Sources/AWS_Fargate_log_collection": "/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection",
@@ -1684,6 +1684,7 @@
   "/cid/1981": "/docs/integrations/saas-cloud/slack",
   "/cid/1982": "/docs/integrations/saas-cloud/istio",
   "/cid/1983": "/docs/integrations/pci-compliance/palo-alto-networks-9",
+  "/cid/10216": "/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry",
   "/cid/1984": "/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection",
   "/cid/1985": "/docs/integrations/saas-cloud/acquia",
   "/cid/1986": "/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops",
@@ -3519,5 +3520,7 @@
   "/docs/cse/records-signals-entities-insights/about-cse-insight-ui": "/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui",
   "/docs/cse/records-signals-entities-insights/cse-heads-up-display": "/docs/cse/get-started-with-cloud-siem/cse-heads-up-display",
   "/docs/cse/records-signals-entities-insights/insight-generation-process": "/docs/cse/get-started-with-cloud-siem/insight-generation-process",
+  "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-amazon-kinesis": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
+  "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-collector-script": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
   "/cid/-1": "/"
 }
