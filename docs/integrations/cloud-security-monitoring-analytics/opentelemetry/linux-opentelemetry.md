@@ -66,8 +66,8 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1.  Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
-2.  Restart the collector using:
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
+2. Restart the collector using:
     ```sh
     sudo systemctl restart otelcol-sumo
     ```
