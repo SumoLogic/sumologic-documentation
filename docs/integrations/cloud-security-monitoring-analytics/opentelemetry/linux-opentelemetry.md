@@ -103,7 +103,7 @@ sumo.datasource=linux deployment.environment=* host.group=* host.name=*
 
 ### Overview
 
-The **Linux - Security Analytics - Overview** dashboard provides an overview of security statistics relevant for Linux systems and presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts, and total Services.
+The **Linux - Security Analytics - Overview** dashboard provides an overview of security statistics relevant for Linux systems and presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts, and total services.
 
 Use this dashboard to:
 
