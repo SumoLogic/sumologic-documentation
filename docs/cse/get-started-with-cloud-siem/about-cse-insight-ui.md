@@ -30,12 +30,14 @@ Here’s one row from the List view. The numbered definitions below correspond t
 <img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" width="800"/>
 
 1. **Creation date and time**. When the Insight was created.
-1. **Dwell time**. The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated. 
+1. **Detection time**. The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated. 
 1. **Age**. The elapsed time since the Insight was created in minutes, hours, and so on.
 1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
+1. **Related incidents**. Incidents that share common Entities and other characteristics.
 1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the Insight is shown. 
 1. **Assignee**. The analyst assigned to the Incident.
-1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).
+1. The [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques exhibited by the Insight.
+1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [About Insight Severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process#about-insight-severity).
 1. **Entity**. The Entity associated with the Insight.
 1. **Signal data**. This area has three bits of information:
    * The count of Signals that caused the Insight to be created.
@@ -45,11 +47,11 @@ Here’s one row from the List view. The numbered definitions below correspond t
 
 ### Board view
 
-This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight Status value. (One of the Status values shown is a [custom Insight Status](/docs/cse/administration/manage-custom-insight-statuses/)).
+This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight status value. (One of the status values shown is a [custom Insight status](/docs/cse/administration/manage-custom-insight-statuses/)).
 
 The information displayed in the Board view is similar to the information in the [List view](#list-view). 
 
-You can switch back the List view by clicking the Show List icon, near the top right corner of the CSE UI.
+You can switch back to the List view by clicking the Show List icon, near the top right corner of the CSE UI.
 
 <img src={useBaseUrl('img/cse/board.png')} alt="Board view" width="800"/>
 
@@ -57,18 +59,18 @@ You can switch back the List view by clicking the Show List icon, near the top r
 
 You can use the **Filters** area near the top of the page to narrow down the Insights that appear on the Insights page. You can filter by:
 
-* Status
+
 * Assignee
-* Severity
-* Created
-* Event Time
-* Severity
-* Resolution
 * [Custom Resolution](/docs/cse/administration/manage-custom-insight-resolutions/)
-* Name
-* Tags
-* Rule ID
+* Created
 * Entity
+* Event Time
+* Name
+* Resolution
+* Rule ID
+* Severity
+* Status
+* Tags
 
 ## Insight Details page
 
@@ -81,20 +83,22 @@ The left pane of the **Insight > Details** page displays detailed information ab
 <img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" width="300"/>
 
 1. **Actions.** The dropdown lists Insight Actions defined in your environment.
-2. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
-3. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
-4. **Status.** Current status of the Insight.
-5. **Assignee and Assign to me.** Shows the current assignee and allows you to assign yourself the Insight.
-6. **Entity.** The Entity the Insight fired on.
-7. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
-8. **Global Confidence.** The Global Confidence score for the Insight, if available.
-9. **Signal Data.** The number of Signals in the Insight.
-10. **Event Time.** The event time for the of the last Signal in the Insight.
-11. **Dwell Time.** The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated.
-12. **Insight Created.** When the Insight was created.
-13. **Tags and Create a Tag.** Displays any Tags that have already been assigned to the Insight, and a field for adding a tag.
-14. **Comments.** Displays any comments that have been made on the Insight, and a field for adding a comment.
-15. **Show Comments/History.** The controls allow you to switch between viewing comments, and viewing the Insight history, for example, when a tag was assigned to the Insight.
+1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
+1. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
+1. **Status.** Current status of the Insight.
+1. **Assignee** and **Assign to me.** Shows the current assignee and allows you to assign yourself the Insight.
+1. **Entity.** The Entity the Insight fired on.
+1. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
+1. **Global Confidence.** The Global Confidence score for the Insight, if available.
+1. **Related Incidents and Triages**. Incidents and triages that are related to this Insight.
+1. **Create Incident | Add to Incident**. Create an incident for the Insight, or add the Insight to an existing incident.
+1. **Signal Data.** The number of Signals in the Insight.
+1. **Event Time.** The event time for the of the last Signal in the Insight.
+1. **Detection Time.** The time between when the first event occurred (when the first Record in the Insight was generated) and when the Insight was generated.
+1. **Insight Created.** When the Insight was created.
+1. **Tags** and **Create a tag.** Displays any Tags that have already been assigned to the Insight, and a field for adding a tag.
+1. **Comments.** Displays any comments that have been made on the Insight, and a field for adding a comment.
+1. **Show Comments/History.** The controls allow you to switch between viewing comments, and viewing the Insight history, for example, when a tag was assigned to the Insight.
 
 ### Signal visualization area
 
@@ -103,17 +107,17 @@ At the top of the **Insight** > **Details** page, you’ll see a Signal timeline
 <img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" width="800"/>
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
-2. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
-3. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
-4. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
-5. **Legend**. Key to the symbols used to represent the Signals:
+1. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
+1. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how often the Signals fire. 
+1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
+1. **Legend**. Key to the symbols used to represent the Signals:
    * Anomalies—Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
    * Threat intelligence—Signals that were fired by Threat Intel rules.
    * File Analysis—Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
    * Rules—Signals that were triggered by other rules.
-6. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
-7. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
-8. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
+1. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
+1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
+1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
 
 ### Signal list area 
 
