@@ -276,6 +276,10 @@ You can create and save custom filter views, allowing you to focus on the SLOs a
    :::
 1. Click **Save**.
 
+:::note  
+* A maximum of 10 saved views are allowed per user.
+* Saved filter views are only visible to you and cannot be shared with other users in your org.
+:::
 
 ## Create an SLO from Metrics page
 
