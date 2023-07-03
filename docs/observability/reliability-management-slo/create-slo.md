@@ -109,15 +109,21 @@ Follow the instructions below based on the query type:
   </tr>
 </table>
 
-<img src={useBaseUrl('img/observability/slo-logs.gif')} alt="Reliability Management SLO SLI" />
+   <img src={useBaseUrl('img/observability/slo-logs.gif')} alt="Reliability Management SLO SLI" />
 
 8. Define your SLO for target amount and duration period to monitor:
-    * **Target**. The value in percentage you want to target for the SLO, for example 99 for 99%.
-    * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculator over a window of time for a Week.
-    * **Timezone**. Select a timezone. This is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" />
-9. Enter SLO Details, including a **Name** and **Description**. This is used in the list and for searches.<br/><img src={useBaseUrl('img/observability/slo-create-details.png')} alt="Reliability Management SLO SLI" />
+   * **Target**. The value in percentage you want to target for the SLO (for example, you'd enter `99` for 99%).
+   * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculates over a window of time for a Week.
+   * **Timezone**. Selecting a timezone is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" width="400"/>
+9. Enter SLO Details:
+   * **Name**. Name of the SLO.
+   * **Description**. Short explanation of your SLO.
+   * **Tags**. Tags are key/value pairs that allow you to apply additional metadata to your SLOs beyond the name and description. [Learn more here](#slo-tags-and-filters). Tags can help you categorize, search, and filter your SLOs. They also enable you to correlate your other content items and data with SLOs.<br/>Select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.<br/>
+  :::info
+  You can associate multiple tags with your SLO.
+  :::
+  <img src={useBaseUrl('img/observability/slo-details.png')} alt="SLO Details" width="800"/>
 10. Click **Save**. To create a monitor, click [Save and Create Monitor](#create-an-slo-monitor).
-
 
 ## Create an SLO from Log Search page
 
@@ -126,6 +132,133 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
 1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
 1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
+
+### SLO Tags and Filters
+
+You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
+
+#### Limitations
+
+- Tag keys cannot start with the prefixes `sumo.` or `_`
+- Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
+- Tag values can only contain letters, white space, numbers, `_`, `.`, `/`, `=`, `+`, `-`, `@`
+
+You can associate a maximum of 50 tags per SLO.
+
+#### Add a Tag
+
+To add a tag(s) to an existing SLO:
+
+1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
+1. Click on any SLO line item in your list, then click **Edit**.
+1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+To add a tag while creating a new SLO:
+
+1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
+1. Click **Add** > **New SLO**.
+1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+#### Filter SLOs By Tags
+
+After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
+
+1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
+1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
+
+In this tag filter example query below, it's looking for SLOs where the `app` is either `sumo+1` OR `sumologic`, AND the `event` is `api-call`.
+
+<img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
+
+
+### SLO as Log Messages
+
+Sumo Logic continuously computes data for your SLO behind the scenes. This data, which powers your SLO dashboard, is also made available as log messages that conform to the following schema:
+
+* `Time`: timestamp
+* `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
+* `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
+* `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
+* `sloVersion`: version of SLO definition
+
+View the schema by executing the following query:
+
+```sql
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
+-- (replace with a valid SLO Id)
+```
+
+These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
+
+
+### SLO Lookup Tables
+
+You can query a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
+
+There are two ways to use it:
+
+* To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo://content/slos on sloId, sloVersion
+  ```
+* To enlist the contents of the lookup table:
+  ```sql
+  cat sumo://content/slos
+  ```
+
+#### Dashboard example
+
+As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+
+You would need to create a custom graphic that combines multiple SLOs from multiple services:
+
+1. Go to **Manage Data** > **Monitoring** > **SLO**.
+1. Click on any SLO line item.
+1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
+1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
+  ```sql
+  _view=sumologic_slo_output
+  | lookup * from sumo://content/slos on sloId, sloVersion
+  | where !isBlank (sloname) and slofolderpath matches "*"
+  | concat (sloname, " (", sloId, ")") as sloUniqueName
+  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
+  | totalEvents - goodEvents as badEvents
+  | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
+  | 100 * (1 - badEvents / denominator) as sli
+  | 100 * (sli - target) / (100 - target) as budgetRemaining
+  | fields sloUniqueName, budgetRemaining
+  ```
+1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+
+
+#### Tags in SLO Lookup tables
+
+You can leverage your existing SLO tags in **Log Search** queries and SLO lookup tables.
+
+To display all of your SLOs that have one or more tags:
+
+```sql
+CAT sumo://content/slos
+| where !(tags = "{}")
+```
+
+<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" />
+
+You can also use tags in your lookup table to correlate SLOs with your other Sumo Logic data. In this example, the query will find SLO output data for all SLOs that belong to service `ingestion`:
+
+```sql
+_view=sumologic_slo_output
+| lookup tags from sumo://content/slos on sloId=sloId
+| json field=tags "service"
+| where service="ingestion"
+```
 
 ## Create an SLO from Metrics page
 
@@ -167,8 +300,11 @@ Any Monitor update that changes the Monitor definition will lead to a change in 
 
 SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. A minute is treated as unsuccessful if the Monitor threshold is violated at any point of time within that minute.
 
-## SLO as Code
+## Create an SLO via Terraform
 
-You can use the Sumo Logic Terraform provider to automate [SLO folder](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder) and [SLO creation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo). This can be useful for organizations that want to templatize SLOs, standardize SLO configuration, Monitors and dashboards and automate SLO-related workflows.
+You can use the Sumo Logic Terraform provider to automate the creation of [SLOs (`sumologic_slo`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [SLO folders (`sumologic_slo_folder`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder). This can be useful for organizations that want to:
+* Templatize SLOs
+* Standardize the configuration of SLOs, monitors, and dashboards
+* Automate SLO-related workflows
 
-Use the [Monitor Terraform provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create Monitors associated with SLOs.
+You can use the [Monitor Terraform provider (`sumologic_monitor`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.

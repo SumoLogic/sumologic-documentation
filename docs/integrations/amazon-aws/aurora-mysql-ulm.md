@@ -301,7 +301,7 @@ Use this dashboard to:
 * Identify the number of slow queries and the users and client hosts that are responsible for them. For more granular data, click the Slow Queries and Top Users and IPs Firing Slow Queries panels to bring up the Slow Query Log dashboard.
 * Identify the breakdown of connection protocols. For more granular data, clicking the Connection Type Used panel to bring up the General Query Logs dashboard.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Overview.png')} alt="Aurora MySQL ULM" />
 
 
 
@@ -318,7 +318,7 @@ Use this dashboard to:
 * Identify connection abort events.
 * Monitor database instance start up, ready for connection events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Error-Logs-Analysis.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - Slow Query
@@ -335,7 +335,7 @@ Use this dashboard to:
 * Check if SQL SELECT type queries can be shifted to read replicas.
 * Monitor trends of slow queries, comparing history to analyze the cause and troubleshoot a solution.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_SlowQuery.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Slow-Query.png')} alt="Aurora MySQL ULM" />
 
 
 
@@ -355,7 +355,7 @@ Use this dashboard to:
 
 You can drill deeper into SQL Statements and or commands that are being executed by clicking “Top SQL Commands” panel. This opens “Aurora MySQL ULM - Logs - Audit Log SQL Statements” dashboard for further details.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_AuditLogAnalysis.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Audit-Log-Analysis.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - Audit Log SQL Statements
@@ -373,7 +373,7 @@ Use this dashboard to:
 * Identify user management activities.
 * Identify objects that have been dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_AuditLogSQLStatements.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Audit-Log-SQL-Statements.png')} alt="Aurora MySQL ULM" />
 
 
 ### Logs - General Log Analysis
@@ -389,7 +389,7 @@ Use this dashboard to:
 * Monitor failures by checking the executables the clients sent to the server.
 * Monitor the types of SQL statements and queries (DML, DDL, DCL, TCL, and others) that are sent by a client.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Logs_GeneralLogAnalysis.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-General-Log-Analysis.png')} alt="Aurora MySQL ULM" />
 
 
 ### CloudTrail Event - Overview
@@ -405,7 +405,7 @@ Use this dashboard to:
 
 To drill down for details, click “Event Status” panel for details of events in the linked dashboard “Aurora MySQL ULM - CloudTrail Event - Details”.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_CloudTrailEvent_Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-CloudTrail-Event-Overview.png')} alt="Aurora MySQL ULM" />
 
 
 ### CloudTrail Event - Details
@@ -414,7 +414,7 @@ To drill down for details, click “Event Status” panel for details of events 
 
 **Use this dashboard to** keep track of your Aurora MySQL Clusters and Instances. This dashboard provides details about various cluster and instance related activities, such as creation, modification, deletion and reboot of instances. Improper configuration of clusters and instances may have an adverse impact on performance. This dashboard helps to identify these issues from the details of the Aurora MySQL-specific events, so you can effectively remedy the situation.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_CloudTrailEvent_Details.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-CloudTrail-Event-Details.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Overview
@@ -429,7 +429,7 @@ Use this dashboard to:
 * Monitor replica lags, and select latency and free memory to ensure it can support heavy read loads with sustained performance.
 * Detect failed login and connection attempts.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_Overview.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Overview.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Generic
@@ -444,7 +444,7 @@ Use this dashboard to:
 * Monitor cache hit ratio, to analyze free memory from a query performance perspective.
 * Identify deadlocks, volume used in bytes, to analyze free local storage and engine uptime.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_Generic_Dashboard.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Generic.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Latency, Throughput, and IOPS Monitoring
@@ -458,7 +458,7 @@ Use this dashboard to:
 * Monitor latency and throughput for performance analysis.
 * Monitor, select, insert, update, delete, commit, DML and DDL latency and throughput.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_LatencyThroughputIOPS.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Latency,-Throughput-and-IOPS-Monitoring.png')} alt="Aurora MySQL ULM" />
 
 
 ### Metric - Resource Utilization Monitoring
@@ -473,4 +473,4 @@ Use this dashboard to:
 * Monitor bin og replica lag.
 * Monitor Result Set Cache Hit Ratio from a performance perspective.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraMySQL_Metric_ResourceUtilizationMonitoring.png')} alt="Aurora MySQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Metric-Resource-Utilization-Monitoring.png')} alt="Aurora MySQL ULM" />
