@@ -1797,6 +1797,7 @@
   "/cid/210701": "/docs/apm/real-user-monitoring",
   "/cid/210729": "/docs/integrations/databases/elasticsearch",
   "/cid/210804": "/docs/integrations/databases/memcached",
+  "/cid/10217": "/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry",
   "/cid/210817": "/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty",
   "/cid/210818": "/docs/integrations/amazon-aws/security-hub",
   "/cid/210819": "/docs/integrations/cloud-security-monitoring-analytics/aws-waf",
