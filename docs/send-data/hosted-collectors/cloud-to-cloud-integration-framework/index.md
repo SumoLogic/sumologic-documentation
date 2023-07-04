@@ -153,7 +153,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox17 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
-  <p>Learn how to collect alerts, file events, and audit logs from the Code42 Incydr.</p>
+  <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
 </div>
 <div className="box smallbox18 card">
