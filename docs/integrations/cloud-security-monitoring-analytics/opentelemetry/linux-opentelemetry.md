@@ -53,7 +53,7 @@ The following logs, located in the `/var/log` folder, are required for using the
 - Messages
 - yum.log 
 
-Click on the **Download YAML File** button to get the yaml file.
+Click on the **Download YAML File** button to get the YAML file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid black'}}/>
 
