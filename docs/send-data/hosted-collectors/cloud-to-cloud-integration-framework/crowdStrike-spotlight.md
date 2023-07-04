@@ -54,7 +54,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 
 The CrowdStrike Spotlight source tracks errors and reports its health and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
 
-A CrowdStrike FSpotlight Source goes through the following states when created:
+The CrowdStrike Spotlight source goes through the following states when created:
 
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
