@@ -1,7 +1,7 @@
 ---
 id: infrequent-tier-monitors
 title: Infrequent Tier Support for Monitors and Alert Responge Page (Beta)
-description: Learn how to mointor and view the details about the alert against the Infrequent data tier.
+description: Learn how to monitor and view the details about the alert against the Infrequent data tier.
 ---
 
 <head>
