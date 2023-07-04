@@ -1,10 +1,8 @@
 ---
 id: infrequent-tier-monitors
 title: Infrequent Tier Support for Monitors and Alert Responge Page (Beta)
-description: Learn how to mointor and ARP against the Infrequent data tier.
+description: Learn how to mointor and view the details about the alert against the Infrequent data tier.
 ---
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>
   <meta name="robots" content="noindex" />
@@ -22,5 +20,5 @@ Monitors track your Metrics, Logs, or SLO infrequent data in real time and send 
 
 ### Alert Response page
 
-The Alert Page is where you can view granular details about an individual alert. [Learn more](https://help.sumologic.com/docs/alerts/monitors/alert-response/#alert-page).
+The Alert page is where you can view granular details about an individual alert. [Learn more](https://help.sumologic.com/docs/alerts/monitors/alert-response/#alert-page).
 
