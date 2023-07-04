@@ -29,6 +29,7 @@ In this configuration, you will set up the CrowdStrike Spotlight and configure i
 ### API Client and API Secret
 
 The **API security token** is used to authenticate with CrowdStrike Spotlight API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
+
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike Spotlight Platform](https://falcon.crowdstrike.com/login/).
 1. Sign in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border: '1px solid black'}} alt="crowdstrike-spotlight-login-screen.png" width="600" />
