@@ -2083,6 +2083,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/pci-compliance/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/pci-compliance/opentelemetry/linux-opentelemetry',
+            ],
+          },
           'integrations/pci-compliance/setup',
           'integrations/amazon-aws/cloudtrail-pci-compliance',
           'integrations/amazon-aws/vpc-flow-logs-pci-compliance',

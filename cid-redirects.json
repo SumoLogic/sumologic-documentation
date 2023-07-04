@@ -1684,6 +1684,7 @@
   "/cid/1981": "/docs/integrations/saas-cloud/slack",
   "/cid/1982": "/docs/integrations/saas-cloud/istio",
   "/cid/1983": "/docs/integrations/pci-compliance/palo-alto-networks-9",
+  "/cid/10216": "/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry",
   "/cid/1984": "/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection",
   "/cid/1985": "/docs/integrations/saas-cloud/acquia",
   "/cid/1986": "/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops",

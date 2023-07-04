@@ -19,9 +19,9 @@ Signal suppression can occur for a variety of reasons, including [Entity suppres
 
 ## Set the global Signal suppression value
 
-By default, Signals are automatically suppressed for 72 hours. You can change this value to anywhere from 24 hours to 72 hours with the **Global Signal Suppression Window** setting on the **Detection Threshold** page. See [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/).
+By default, Signals are automatically suppressed for 72 hours. You can change this value to anywhere from 24 hours to 72 hours with the **Global Signal Suppression** setting on the **Insight Detection** page. See [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/).
 
-<img src={useBaseUrl('img/cse/detection-threshold-global-signal-suppression.png')} alt="Detection threshold settings" width="700"/>
+<img src={useBaseUrl('img/cse/detection-threshold-global-signal-suppression.png')} alt="Detection threshold settings" width="500"/>
 
 ## Suppress by Entity
 
