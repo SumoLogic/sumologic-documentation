@@ -16,7 +16,7 @@ Previously, monitors and alert response page (ARP) were only supported in Sumo L
 
 Monitors track your Metrics, Logs, or SLO infrequent data in real time and send notifications when noteworthy changes happen in your production applications. To create Monitors, you can refer to the [Create a Monitor](/docs/alerts/monitors/create-monitor/).
 
-## Alert Response page
+## Alert Response Page
 
 The Alert page is where you can view granular details about an individual alert. [Learn more](/docs/alerts/monitors/alert-response/#alert-page).
 
