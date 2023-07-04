@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike Spotlight Soucrce will collect CrowdStrike Spotlight combined endpoint vulnerabilities data from the Crowdstrike Falcon instance with Spotlight module enabled. This combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
+The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. This combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
 
 ## Prerequisites
 
