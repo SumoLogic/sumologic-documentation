@@ -14,7 +14,7 @@ Linux - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log
 
 ## Fields created in Sumo Logic for Linux - Security Analytics
 
-Following tag will be created as part of Linux app installation, if not already present. 
+The following tag will be created as part of Linux app installation, if not already present. 
 
 - `sumo.datasource`. Has a fixed value of **linux**.
 
