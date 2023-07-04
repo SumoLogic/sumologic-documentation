@@ -4,11 +4,12 @@ title: Code42 Incydr Source
 sidebar_label: Code42 Incydr
 description: Learn how to collect alerts, file events, and audit logs from the Code42 Incydr.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="code42-incydr-icon" width="90" />
+<img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="code42-incydr-icon" width="100" />
 
-The Code42 Incydr is an Insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
+The Code42 Incydr is an insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
 
 Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
 
@@ -141,4 +142,3 @@ After configuring your source, you should check the status of the source in the 
 To resolve these errors:
 - Make sure the **Base URL** matches your domain.
 - Make sure correct **Client ID or Secret Key** is used to configure the source.
-
