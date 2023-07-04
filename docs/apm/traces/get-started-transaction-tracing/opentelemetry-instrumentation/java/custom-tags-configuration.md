@@ -9,7 +9,7 @@ description: Custom tags configuration for Java OpenTelemetry Instrumentation.
 
 You can use `OTEL_RESOURCE_ATTRIBUTES=` startup parameter to pass a custom static tag to all spans generated in the service. For example:
 
-```
+```bash
 OTEL_RESOURCE_ATTRIBUTES="service.name=Accounts"
 OTEL_RESOURCE_ATTRIBUTES="application=OnlineBanking,exampleKey=exampleValue"
 ```
@@ -20,7 +20,7 @@ If the default tags are not providing enough relevant data you can add custom t
 
 ## Step 1: Satisfy project dependencies
 
-Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.16.0) library.
+Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.26.0) library.
 
 * Maven projects
 
@@ -29,7 +29,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
     <dependency>
         <groupId>io.opentelemetry</groupId>
         <artifactId>opentelemetry-sdk</artifactId>
-        <version>1.16.0</version>
+        <version>1.26.0</version>
     </dependency>
     ```
 
@@ -37,7 +37,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
 
     ```
     dependencies {
-    compile 'io.opentelemetry:opentelemetry-sdk:1.16.0'
+    compile 'io.opentelemetry:opentelemetry-sdk:1.26.0'
     }
     ```
 
@@ -45,7 +45,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
 
 Import dependencies in the application Java class file:
 
-```
+```java
 import io.opentelemetry.api.trace.Span;
 ```
 

@@ -1,6 +1,7 @@
 ---
 id: cisco-meraki-source
 title: Cisco Meraki Source
+sidebar_label: Cisco Meraki
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -52,7 +53,7 @@ For more detailed steps with troubleshooting examples, visit the official docume
 You will need to provide a single Meraki organization identifier in the configuration. Run the following curl command using your Cisco Meraki API key to see the list of Meraki organizations and note the ID number for the organizations you wish to collect data from.
 
 ```
-curl --location 'https://api.meraki.com/api/v1/organizations' --header 'Authorization: Bearer {{api_key}}'
+curl --location 'https://api.meraki.com/api/v1/organizations' --header 'X-Cisco-Meraki-API-Key: {{api_key}}'
 ```
 
 ## Create a Cisco Meraki Source

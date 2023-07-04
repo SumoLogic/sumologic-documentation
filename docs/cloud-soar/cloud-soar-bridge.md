@@ -1,7 +1,7 @@
 ---
 id: cloud-soar-bridge
 title: Cloud SOAR Bridge
-sidebar_label: Cloud SOAR Bridge
+sidebar_label: Bridge
 description: Learn how to install a bridge for Cloud SOAR to allow running custom actions or integrations in an on-premise environment.   
 ---
 
@@ -52,7 +52,7 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    systemctl enable docker
    ```
 
-### Using a Proxy
+### Using a proxy
 
 1. If docker has to use a proxy to pull images, follow the below instructions:
    ```
@@ -103,8 +103,11 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Click **?** in the upper-right of the Cloud SOAR UI.
 1. In the **Automation Bridge** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
-1. Copy the file to the bridge virtual machine.
-1. To install the package run from ssh:
+1. Copy the file to the bridge virtual machine. You can use SCP - see example below:
+    ```
+    scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
+    ```
+3. To install the package run from ssh:
    ```
    sudo dpkg -i automation-bridge-X.X.deb
    ```
@@ -114,18 +117,21 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Click **?** in the upper-right of the Cloud SOAR UI.
 1. In the **Automation Bridge** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
-1. Copy the file to the bridge virtual machine.
+1. Copy the file to the bridge virtual machine (You can use SCP, see example below).
+    ```
+    scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
+    ```
 1. To install the package run from ssh:
    ```
    sudo yum install automation-bridge-X.X.rpm
    ```
 
-### Installation Configuration
+### Installation configuration
 
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters: <!-- These parameters differ from those for the Automation Service -->
    * `SOAR_URL`
    * `SOAR_TOKEN`
-1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
+1. Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
 
 And you can set this optional parameter (do not include spaces): `ALIAS`
 
@@ -139,7 +145,6 @@ An example of a configuration file would be:
         "ALIAS": "YOUR_ALIAS_NO_SPACES"
 }
 ```
-Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
 
 ### Bridge ALIAS
 
@@ -170,6 +175,10 @@ If you are not using the SIEM:
    systemctl restart automation-bridge
    ```
 :::
+
+### Configuring the automation bridge for high availability
+
+You may elect to deploy and register multiple bridges to your Cloud SOAR tenant for high availability. To cluster automation bridges together logically within Cloud SOAR and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 

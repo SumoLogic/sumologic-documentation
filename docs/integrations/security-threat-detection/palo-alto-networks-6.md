@@ -91,7 +91,7 @@ Now that you have set up collection for Palo Alto Networks, install the Sumo Log
 
 The Overview Dashboard keeps you up-to-speed on the higher level operations of your PAN deployment.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_Overview_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Overview.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Source Host Locations.** Using a geolocation query, this Panel maps the location of source hosts using their IP addresses.
 
@@ -104,7 +104,7 @@ The Overview Dashboard keeps you up-to-speed on the higher level operations of y
 
 ### Threat Analysis
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_ThreatAnalysis_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Threat-Analysis.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Threat Type.** Get an idea of the number of threats as well as the type of threats detected by Palo Alto Networks. Top Destination IPs. Shows the top 10 destination IPs (the IPs that have made the most attempts).
 
@@ -123,7 +123,7 @@ Top Destination IPs. Ranks the top 10 destination IPs as a bar chart.
 
 The Traffic Monitoring Dashboard includes several Panels that display information about incoming and outgoing traffic, including bytes sent and received.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_TrafficMonitoring_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Events by Protocol.** Displays the breakdown of events, sorted by protocol (ICMP, TCP, UDP, HOPOPT).
 
@@ -146,7 +146,7 @@ The Traffic Monitoring Dashboard includes several Panels that display informatio
 
 This advanced Dashboard includes specialized, targeted Panels that are typically used by IT Admins.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_Generic_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Generic.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Top 10 Source IPs by Byte.** Watch for unexpected spikes in traffic from the top 10 Source IP addresses.
 

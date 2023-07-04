@@ -7,7 +7,7 @@ description: Learn how to install Collector
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on macOS. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
+Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Windows. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
 ## System Requirements
 
@@ -57,6 +57,7 @@ The script is going to perform the following operations:
 |:---------------|:----------------|:-------------|
 | `-InstallationToken` | Installation token      | Yes       |
 | `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
+| `-InstallHostMetrics` | Installs the hostmetrics configuration to collect host metrics. The default is `$False`. | Yes, for example: `-InstallHostMetrics $True` or `-InstallHostMetrics $False`. |
 
 ### UI Installation via App Catalog
 
@@ -96,7 +97,7 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
-Alternatively, you can open `Services.msc` and check whether Sumo Logic OTel Collector Service is running or not. 
+Alternatively, you can open `Services.msc` and check whether Sumo Logic OTel Collector Service is running or not.
 
 ## Additional Settings
 
@@ -164,4 +165,4 @@ At line:1 char:1
 
 Ensure that you run **PowerShell** as an Administrator.
 
-For information on troubleshooting and solutions, refer to the [Troubleshooting and FAQ](/docs/send-data/opentelemetry-collector/troubleshooting-faq).
+For information on troubleshooting and solutions, refer to the [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).

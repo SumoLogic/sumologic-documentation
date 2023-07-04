@@ -25,7 +25,7 @@ When performing **Log Search** queries in the UI, you can visualize and filter l
 
 <details><summary>What are log levels?</summary>
 
-Sumo Logic detects six log levels out of the box: FATAL, ERROR, WARN, INFO, DEBUG, and TRACE. If we're unable to find one of these log levels in a message, it is categorized under the OTHERS bucket.
+Sumo Logic detects five log levels out of the box: FATAL, ERROR, WARN, INFO, and DEBUG. If we're unable to find one of these log levels in a message, it is categorized under the OTHERS bucket.
 
 </details>
 
@@ -47,3 +47,9 @@ Log-Level pattern detection is automatic, meaning you do not need to parse log l
 ```sql
 | where isNull(_loglevel)
 ```
+
+The log level of a log line is stored under the `_loglevel` field. You can override its value using a [field extraction rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). For example:
+
+<img src={useBaseUrl('img/search/get-started-search/search-page/add-field-extraction-rule.png')} alt="Add field extraction rule" width="400"/>
+
+
