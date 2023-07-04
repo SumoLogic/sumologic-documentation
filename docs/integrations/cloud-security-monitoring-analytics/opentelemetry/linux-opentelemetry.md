@@ -32,7 +32,7 @@ You can skip this section if you have already set up the logs collection through
 
 ### Step 2: Configure integration
 
-In this step, you will configure the yaml required for Linux collection. The app requires path for system log file based on the Linux version used.
+In this step, you will configure the YAML required for Linux collection. The app requires path for system log file based on the Linux version used.
 
 #### Required Logs for Ubuntu
 
