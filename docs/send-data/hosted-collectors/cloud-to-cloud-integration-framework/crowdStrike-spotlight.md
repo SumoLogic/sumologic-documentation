@@ -112,7 +112,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"CrowdStrike Spotlight"}` for CCrowdStrike Spotlight Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for CrowdStrike Spotlight Source. | not modifiable |
 
-### Config Parameters
+### Config parameters
 
 | Parameter | Type | Required | Default | Description | Access |
 |:---|:---|:---|:---|:---| :--- |
