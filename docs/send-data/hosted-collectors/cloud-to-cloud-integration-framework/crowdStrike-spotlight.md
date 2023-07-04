@@ -129,22 +129,26 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ```json
 {
-   "api.version":"v1",
-   "source":{
-      "config":{
-      "name": "crowdstrike-fdr",
-      "description": "crowdstrike-fdr-inventory",
-      "region": "US-1",
-      "clientID": "client id",
-      "clientSecret": "client secret",
-         "fields":{
-            "_siemForward":false
-         }
-      },
-      "schemaRef":{
-         "type":"CrowdStrike FDR Host Inventory Source"
-      },
-      "sourceType":"Universal"
-   }
+  "api.version":"v1",
+  "source":{
+    "config":{
+      "name":"crowdstrike-spotlight",
+      "apiBaseUrl":"api.crowdstrike.com",
+      "clientId":"********",
+      "clientSecret":"********",      
+      "evaluationLogic":true,
+      "hostInfo":true,
+      "remediation":true,
+      "cve":true,      
+      "pollingInterval":1,
+      "fields":{
+        "_siemForward":false
+      }      
+    },
+    "schemaRef":{
+      "type":"Crowdstrike Spotlight"
+    },
+    "sourceType":"Universal"
+  }
 }
 ```
