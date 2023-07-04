@@ -74,13 +74,11 @@ The JSON operator supports the following JSONPath expressions:
 
 ## Special characters
 
-If you have spaces or other special characters like `@` in your property names you must use bracket notation, `['foo bar']`.
+If you have spaces or other special characters like `@` in your property names you must use bracket notation, `['foo bar']`. Below are some examples:
 
-For example, if your property name is `@something`, you need to use `['@something']`.
-
-Example 2, if your property name is `fie@ld`, you need to use `['fie@ld']`.
-
-Example 3, if your property name is  `abc.pqr`, you need to use `['abc.pqr']`.
+* If your property name was `@something`, you need to use `['@something']`.
+* If your property name was `fie@ld`, you need to use `['fie@ld']`.
+* If your property name was `abc.pqr`, you need to use `['abc.pqr']`.
 
 ## Case sensitivity
 
