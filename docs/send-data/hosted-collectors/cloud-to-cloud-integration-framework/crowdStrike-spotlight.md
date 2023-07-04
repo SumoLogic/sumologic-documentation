@@ -52,7 +52,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 
 ## States
 
-A CrowdStrike SpotlightSource tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
+The CrowdStrike Spotlight source tracks errors and reports its health and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
 
 A CrowdStrike FSpotlight Source goes through the following states when created:
 
