@@ -24,7 +24,7 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 
 ## Set up and Configuration
 
-In this configuration, you will set up the CrowdStrike Spotlight and configure it to be authorized and authenticated to use device information from CrowdStrike Spotlight API. To obtain the auth token, you will need the following parameters.
+In this configuration, you will set up the CrowdStrike Spotlight and configure it to be authorized and authenticated to use vulnerabilities information from CrowdStrike Spotlight API. To obtain the auth token, you will need the following parameters.
 
 ### API Client and API Secret
 
