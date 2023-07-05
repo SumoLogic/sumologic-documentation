@@ -50,6 +50,9 @@ An index based search filter allows or denies access to [search indexes](/docs/m
    * **Deny few indexes**. Deny access to the selected indexes. 
 1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appear.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
    
+### Index based filter example
+
+For example, let’s say you want to deny access to partition and security indexes. In our example environment, the `accessLogs` and `authenticationLogs` indexes give access to partitions, and the “sec_*” indexes give access to security information. To deny access to these indexes, click **Deny few indexes** and select those indexes. 
 
 ## Advanced filter
 
@@ -62,6 +65,14 @@ An advanced filter allows access only to the logs that match the search filter.
    * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
    * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
 1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
+
+### Advanced filter examples
+
+Following are examples for advanced filtering:
+* Let’s say you want to deny access to all logs that contain `error` in log analytics, and contain `malicious=high` in security logs. Select **Log Analytics data filter** and add `!error` to the filter, and then select **Security data filter** and add `!malicious=high` to the filter. 
+* Let’s say you want to deny access to all error logs in log analytics, and deny access to all audit indexes. In this case, you will have to create two roles. For role 1, select **Advanced filter > Log Analytics filter** and add `!error` to the filter. For role 2, select **Index based > Deny few indexes** and select all audit indexes.  
+
+Keep in mind that these are examples only, and you must adapt them for use in your environment. For more filter examples, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
 
 ## Test search filters
 
