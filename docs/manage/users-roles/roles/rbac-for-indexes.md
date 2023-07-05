@@ -52,7 +52,7 @@ An index based search filter allows or denies access to [search indexes](/docs/m
    
 ### Index based filter example
 
-For example, let’s say you want to deny access to partition and security indexes. In our example environment, the “accessLogs” and “authenticationLogs” indexes give access to partitions, and the “sec_*” indexes give access to security information. To deny access to these indexes, click **Deny few indexes** and select those indexes. 
+For example, let’s say you want to deny access to partition and security indexes. In our example environment, the `accessLogs` and `authenticationLogs` indexes give access to partitions, and the “sec_*” indexes give access to security information. To deny access to these indexes, click **Deny few indexes** and select those indexes. 
 
 ## Advanced filter
 
