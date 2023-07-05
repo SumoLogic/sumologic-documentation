@@ -41,7 +41,7 @@ To open the MITRE Coverage page, select **Content > MITRE Coverage**.
 
 ## MITRE details
 
-When you click a square in the tactics/techniques matrix, details about coverage for that tactic/technique display in a panel. The panel has a full description of the tactic/technique, with an assessment of your coverage (None, Low, Medium, and High). A coverage of "None" does not mean you have no coverage, it only means you may not have enough rules to adequately cover the tactic/technique.
+When you click a square in the tactics/techniques matrix, details about coverage for that tactic/technique display in a panel. The panel has a full description of the tactic/technique, with an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the tactic/technique.
 
 Click **Rules** at the bottom of the panel to get links to all the rules that contribute to coverage for the tactic/technique.  
 
