@@ -68,7 +68,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | [Access Keys](access-keys.md) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Collection](/docs/send-data/collection) | `collection` |
-| [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` | 
+| [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
@@ -90,6 +90,8 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |
 | [2-Step Verification](about-2-step-verification.md) | `multiFactorAuthentication` |
+
+When performing create, update, and delete requests through Sumo Logic APIs, you can find the API accessID within the operator field of your related Audit Event Index messages.
 
 ## Metadata assignment
 
