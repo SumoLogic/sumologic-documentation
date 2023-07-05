@@ -57,7 +57,7 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic Apps.
 :::
 
-## Install Apps to your Library
+## Installing Apps to your Library
 
 {@import ../reuse/apps/app-install.md}
 
