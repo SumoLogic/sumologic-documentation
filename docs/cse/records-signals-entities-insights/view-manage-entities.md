@@ -56,11 +56,12 @@ When a Signal is fired, if an Entity doesn’t already exist in CSE for the item
 
 To view the **Entities** page, click **Entities** at the top of the CSE UI.
 
-![entities-icon.png](/img/cse/entities-icon.png)
+<img src={useBaseUrl('img/cse/entities-icon.png')} alt="Entities icon" width="800"/>
 
 Here’s a screenshot of the Entities page.
 
-![entities-page-2.png](/img/cse/entities-page-2.png)
+<img src={useBaseUrl('img/cse/entities-page-2.png')} alt="Entities page" width="800"/>
+
 
 | Letter | Description |
 |:--|:--|
@@ -79,7 +80,7 @@ Here’s a screenshot of the Entities page.
 When you click an Entity on the **Entities** page, a details page for
 the Entity appears.
 
-![entity-details-new-host.png](/img/cse/entity-details-new-host.png)
+<img src={useBaseUrl('img/cse/entity-details-new-host.png')} alt="Entity details page" width="800"/>
 
 | Letter | Description |
 |:--|:--|
@@ -93,7 +94,7 @@ the Entity appears.
 | h | **Recent Activity**. Provides a count of how many Signals or Insights included the Entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
 | i | **Activity tab**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
 | j | **Enrichments** tab. If you use CSE’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
-| k | **Entity Timeline**. If the selected Entity is a username, an **Entity Timeline** tab is present. For more information, see [Entity Timeline](#entity-timline).|
+| k | **Entity Timeline**. A timeline appears for the Entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | l | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
 | m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the CSE UI.) |
 | n | The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity.  |
@@ -106,21 +107,22 @@ The right side of the tab organizes Records by Record Type and vendor, with a Re
 
 Similarly, a red icon indicates that the Record set contains an Insight, and the link below the summary is a link to the Insight.
 
-![entity-timeline.png](/img/cse/entity-timeline.png)
+<img src={useBaseUrl('img/cse/entity-timeline.png')} alt="Entity timeline" width="800"/>
 
 You can view a summary of the Records in a Record set by clicking on it. The Records are listed on the right side of the **Entity Timeline** tab. To view the complete Record, click the link in the upper right corner of the card for a Record.
 
-![timeline-records.png](/img/cse/timeline-records.png)
+<img src={useBaseUrl('img/cse/timeline-records.png')} alt="Timeline records" width="800"/>
 
 ## Create an Insight
 
 You can create an Insight for an Entity based on one or more Signals on the Entity. To do so, checkmark each Signal you want to include in the Insight, and click **Create Insight**.
 
-![create-insight.png](/img/cse/create-insight.png)
+<img src={useBaseUrl('img/cse/create-insight.png')} alt="Create Insight" width="800"/>
+
 
 The page refreshes and shows the selected Signals grouped in a new Insight.
 
-![insight-created.png](/img/cse/insight-created.png)
+<img src={useBaseUrl('img/cse/insight-created.png')} alt="Signals grouped in Insight" width="800"/>
 
 ## Update multiple Entities
 
@@ -130,8 +132,8 @@ or Criticality for one or more Entities.
 ### Update Entities from the UI
 
 1. Click **Entities** at the top of the CSE UI.
-1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/>![entities-page.png](/img/cse/entities-page.png)
-1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/> ![update-options.png](/img/cse/update-options.png)
+1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" width="800"/>
+1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/><br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" width="800"/> 
 1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below:
    * [Update Tags](#update-tags)
    * [Update Suppression](#update-suppression)

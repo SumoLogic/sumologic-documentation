@@ -7,7 +7,7 @@ description: You can highlight a time range in the histogram for your search res
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When performing **Log Search** queries in the UI, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
+When performing **Log Search** queries, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
 
 * Quickly identify anomalies
 * Drill down quickly into high severity logs
@@ -16,7 +16,7 @@ When performing **Log Search** queries in the UI, you can visualize and filter l
 
 <details><summary>What are log levels?</summary>
 
-Sumo Logic detects six log levels out of the box: FATAL, ERROR, WARN, INFO, DEBUG, and TRACE. If we're unable to find one of these log levels in a message, it is categorized under the OTHERS bucket.
+Sumo Logic detects five log levels out of the box: FATAL, ERROR, WARN, INFO, and DEBUG. If we're unable to find one of these log levels in a message, it is categorized under the OTHERS bucket.
 
 </details>
 
