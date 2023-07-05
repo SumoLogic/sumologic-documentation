@@ -329,7 +329,7 @@ The pE flag is used to specify whether the password is encrypted or not. Default
 
 ## Installing the VMware App
 
-This section provides instructions for installing the VMware App, as well as the descriptions of each of the app dashboards.
+This section provides instructions for installing the VMware App.
 
 Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
 

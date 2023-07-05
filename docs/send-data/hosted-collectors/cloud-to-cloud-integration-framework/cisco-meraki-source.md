@@ -1,6 +1,7 @@
 ---
 id: cisco-meraki-source
 title: Cisco Meraki Source
+sidebar_label: Cisco Meraki
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
