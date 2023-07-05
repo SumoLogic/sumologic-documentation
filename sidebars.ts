@@ -249,6 +249,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
@@ -1977,6 +1978,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
+            ],
+          },
           'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
           'integrations/cloud-security-monitoring-analytics/amazon-vpc-flow',
           'integrations/cloud-security-monitoring-analytics/aws-cloudtrail',
