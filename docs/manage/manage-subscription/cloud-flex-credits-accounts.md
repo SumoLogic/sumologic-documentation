@@ -14,7 +14,7 @@ This page provides information on the Cloud Flex Credits account types you can c
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Cloud Flex Credits accounts.
 
 * **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI. 
-* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex accounts](docs/manage/manage-subscription/cloud-flex-accounts/).  
+* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex accounts](/docs/manage/manage-subscription/cloud-flex-accounts).  
   :::note
   Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
@@ -88,19 +88,19 @@ The Account page provides an at-a-glance view of your account information in t
 
 ### Total Credit Usage 
 
-* **Credits Used.** Displays the number of credits used and the percentage used since the beginning of your current contract. 
+* **Credits Used.** Displays the number of credits used and the percentage used since the beginning of your current contract.
 * **Credits remaining.** Displays number of credits remaining as well as the percentage of credits used since the beginning of your current contract.
 
 
 ### Usage Forecast
 
-The usage forecast gives you an opportunity to see the potential end of the current credtits and an estimate on when those credits will end. 
+The usage forecast gives you an opportunity to see the potential end of the current credtits and an estimate on when those credits will end.
 
 * **Upgrade Plan**. Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
-* **Forecasted use**. Predicts your credit usage by end of the contract period. 
+* **Forecasted use**. Predicts your credit usage by end of the contract period.
 * **Credits exhaust**. The predicted number of days and the exact date when we estimate your current credits will be exhausted.
 
-### Usage Details by Category 
+### Usage Details by Category
 
 * **Usage Details.** Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
 * **Usage Categories**. Table displaying the credits used, % of credits used, and units by usage categories, ingest type and promotional credits usage.
@@ -127,9 +127,9 @@ You must have a role that grants you the View Account Overview capability to vie
 Be aware of the following features:
 
 * **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
-* View consumption by day, week, or month. 
-* View consumption by time period. 
-* Download a report on usage, or just on credits usage as a CSV file. 
+* View consumption by day, week, or month.
+* View consumption by time period.
+* Download a report on usage, or just on credits usage as a CSV file.
 
 ![account-overview-credits.png](/img/account/account-usage-fields.png)
 
@@ -199,9 +199,6 @@ You can filter for a focused credit component to assess your Promotional Cred
 
 To monitor your Promotional Credit usage:
 
-1. In the Details Credits Usage panel, deselect all Usage Categories. Only Promotional credits will remain. 
+1. In the Details Credits Usage panel, deselect all Usage Categories. Only Promotional credits will remain.
 
 1. To only view data for a specific analytic type, deselect individual options under Promotional Credits such as Continuous Ingest, Storage, or Infrequent Ingest to see those options removed from the Credits used chart.
- 
-
-    
