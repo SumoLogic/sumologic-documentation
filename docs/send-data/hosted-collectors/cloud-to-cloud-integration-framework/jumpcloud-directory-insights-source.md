@@ -41,7 +41,7 @@ On the [Collection page](/docs/manage/health-events#collection-page), the Health
 
 ## Create JumpCloud Directory Insights Source
 
-When you create an JumpCloud Directory Insights source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a JumpCloud Directory Insights source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Code42 Incydr Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
