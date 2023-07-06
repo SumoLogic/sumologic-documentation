@@ -13,12 +13,12 @@ import TabItem from '@theme/TabItem';
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
-The Sumo Logic App for **JMX** allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
+The Sumo Logic App for JMX allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
 
 
-## Metric Types
+## Metrics types
 
-The Sumo Logic App for JMX collects metrics from Java applications, via the [JMX Receiver for opentelemetry.](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver)
+The Sumo Logic App for JMX collects metrics from Java applications via the [JMX Receiver for OpenTelemetry](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver).
 
 The following types of metrics are collected from JMX:
 
@@ -28,10 +28,9 @@ The following types of metrics are collected from JMX:
 * Threads
 * ClassLoader
 
-For more information on different metrics collected refer to receiver [docs](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/jvm.md).
+For more information on different metrics collected, refer to the [JMX receiver docs](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/jvm.md).
 
-### Sample Query
-
+### Sample query
 
 ```sql
 sumo.datasource=jmx metric=jvm.memory.heap.used
@@ -39,14 +38,14 @@ sumo.datasource=jmx metric=jvm.memory.heap.used
 
 ## Fields creation in Sumo Logic for MySQL
 
-  sumo.datasource - Has fixed value of jmx
-  jmx.endpoint - The endpoint of the activemq broker
+* `sumo.datasource`. Has fixed value of `jmx`.
+* `jmx.endpoint`. The endpoint of the ActiveMQ broker.
 
 ## Prerequisites
 
 The JMX Receiver uses the OpenTelemetry JMX Metric Gatherer. For more details, [see their docs](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
-* Download the jar from [releases](https://github.com/open-telemetry/opentelemetry-java-contrib/releases) and place it in `/opt/` or in `C:\ProgramData`. Remember the path of the jar it will be used in configuring JMX app.
+* Download the jar from [releases](https://github.com/open-telemetry/opentelemetry-java-contrib/releases) and place it in `/opt/` or in `C:\ProgramData`. Remember the path of the jar, which you'll use to configure the JMX app.
 * Make sure the see the `opentelemetry-java-contrib-jmx-metrics` version is supported in the OpenTelemetry version you are using by going through the [releases](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases) section and searching for jmxreceiver in that page. You can also check [supported jars code](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/jmxreceiver/supported_jars.go#L33).
 * JMX Metric Gatherer metric extension supports Java 8+, though SASL is only supported where `com.sun.security.sasl.Provider` is available.
 * Configure your java application to enable JMX. In most cases, you'll need to set below system variables in your applications's startup script.
