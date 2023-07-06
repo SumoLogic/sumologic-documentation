@@ -24,7 +24,8 @@ For Cloud Flex Credits:
 ![manage-org-links-cfc.png](/img/subscriptions/manage-org-links-cfc.png)
 
 For Cloud Flex:
-<br/>![manage-org-links.png](/img/subscriptions/manage-org-links.png)
+
+![manage-org-links.png](/img/subscriptions/manage-org-links.png)
 
 ## Change organization name
 
