@@ -186,11 +186,11 @@ The `sumologicexporter` sends data to Sumo in batches. If the batches are small,
 
 If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo Logic OpenTelemetry collector**) and have a custom `config.yaml` file to collect data, then you might see this error. Sumo Logic expects specific tags on the data, which the Sumo Logic Distribution for OpenTelemetry Collector creates by default.
 
-## Ping checks
+## HTTP checks
 
-#### Does Sumo OpenTelemetry support ping checks?
+#### Does Sumo OpenTelemetry support HTTP checks?
 
-Yes, our OpenTelemetry collector supports ping checks so that you can monitor up/down status for public https URLs.
+Yes, our OpenTelemetry collector supports HTTP checks, allowing you to ping public HTTPs URLs and monitor up/down status.
 
 How it works - the OpenTelemetry receiver produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors.
 <!--
