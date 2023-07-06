@@ -2,7 +2,7 @@
 title: July 13, 2023 (Reliability Management)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
-  - SLO
+  - slo
   - observability
   - metrics
   - operators
