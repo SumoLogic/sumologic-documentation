@@ -87,10 +87,10 @@ In this step we will be configuring the yaml required for JMX Collection.
 
 Below is the input required:
 
-- **JMX Endpoint**: Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use (default: `localhost:11099`).
-- **Jar File Path**: Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
-- **UserName**: Username for JMX authentication, if applicable.
-- **Password**: Password for JMX authentication, if applicable.
+- **JMX Endpoint**. Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use (default: `localhost:11099`).
+- **Jar File Path**. Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
+- **UserName**. Username for JMX authentication, if applicable.
+- **Password**. Password for JMX authentication, if applicable.
 
 Click on the **Download YAML File** button to get the yaml file.
 
@@ -111,7 +111,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <TabItem value="Linux">
 
-1. Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the Kafka instance which needs to be monitored.
+1. Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the Java application which needs to be monitored.
 2. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
@@ -129,7 +129,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="macOS">
 
-1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Kafka instance which needs to be monitored.
+1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Java application which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
@@ -149,11 +149,12 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview
 
-The **JMX - Overview** dashboard provides a quick summary of CPU and memory usage by different deployments. It also shows key statistics like JVM uptime, process versus system CPU load, committed versus used memory, objects collected by GC, and time taken by the last GC run server-wise.
+The **JMX - Overview** dashboard provides a quick summary of Heap Memory, Memory Pool and Garbage Collection time by different java processes.
 
 Use this dashboard to:
 * Identify the java processes using maximum heap memory and memory pool.
 * Monitor the Percentage Heap Usage and Percentage Memory Pool Usage to avoid OOM errors.
+* Compare the Heap Memory, Memory Pool and Garbage Collection time with last week's trends.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Overview.png' alt="Overview" />
 
