@@ -50,6 +50,9 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * `messaging.system`. Has fixed value of `activemq`.
 * `sumo.datasource`. Has fixed value of `activemq`.
 
+If Process Metrics are enabled it will also create [fields for JMX metrics](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry/#fields-creation-in-sumo-logic-for-jmx)
+
+
 ## Prerequisites
 
 #### Configure logging in ActiveMQ:
@@ -135,7 +138,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <TabItem value="Linux">
 
-1.  Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the Kafka instance which needs to be monitored.
+1.  Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the ActiveMQ instance which needs to be monitored.
 2.  Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
@@ -153,7 +156,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Kafka instance which needs to be monitored.
+1.  Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance which needs to be monitored.
 2.  Restart the otelcol-sumo process using the below command:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
