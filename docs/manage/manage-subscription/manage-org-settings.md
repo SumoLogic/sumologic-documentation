@@ -20,7 +20,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page has information about the options available to your Sumo Logic account owner on the **Account Overview** tab of the **Administration** > **Accounts** page. The options are at the top of the page under the details icon.
 
 For Cloud Flex Credits:
-<br/>![manage-org-links-cfc.png](/img/subscriptions/manage-org-links-cfc.png)
+
+![manage-org-links-cfc.png](/img/subscriptions/manage-org-links-cfc.png)
 
 For Cloud Flex:
 <br/>![manage-org-links.png](/img/subscriptions/manage-org-links.png)
