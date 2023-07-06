@@ -93,7 +93,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `orgID` | String | Yes | Organization ID generated from the JumpCloud Directory Insights platform. | modifiable |
 | `service` | String | Yes | Type of logs from which you want to collect the data from. | modifiable |
 
-### JSON Example
+### JSON example
 
 ```json
 {
