@@ -13,7 +13,7 @@ JumpCloud's open directory platform unifies your technology stack across identit
 
 JumpCloud Directory Insights Source is used to collect Directory Insights Events from the JumpCloud platform using the REST API and send it to Sumo Logic.
 
-## Data Source
+## Data source
 
 The integration fetches events data using [REST API](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Overview) provided by JumpCloud Directory Insight platform.
 
