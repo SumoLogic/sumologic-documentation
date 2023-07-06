@@ -57,7 +57,7 @@ To configure a JumpCloud Directory Insights source:
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.
 1. When you are finished configuring the Source, click **Save**.
 
-### Error Types
+### Error types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
 
