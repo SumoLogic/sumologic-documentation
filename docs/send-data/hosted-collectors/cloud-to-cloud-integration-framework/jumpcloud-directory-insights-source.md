@@ -85,7 +85,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:---|:---|:---|:---|:---|
-| `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
+| `name` | String | Yes | Type the desired name of the Source. It must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
