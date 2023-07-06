@@ -1927,6 +1927,7 @@ integrations: [
             items: [
               'integrations/app-development/opentelemetry/puppet-opentelemetry',
               'integrations/app-development/opentelemetry/jira-opentelemetry',
+              'integrations/app-development/opentelemetry/jmx-opentelemetry',
               'integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry',
             ],
           },
