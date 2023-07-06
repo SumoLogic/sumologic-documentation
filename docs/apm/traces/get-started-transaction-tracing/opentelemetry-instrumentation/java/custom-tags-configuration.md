@@ -14,6 +14,8 @@ OTEL_RESOURCE_ATTRIBUTES="service.name=Accounts"
 OTEL_RESOURCE_ATTRIBUTES="application=OnlineBanking,exampleKey=exampleValue"
 ```
 
+{@import ../../../../../reuse/otel-deployment-environment-tag.md}
+
 ## Custom tags configuration through your code
 
 If the default tags are not providing enough relevant data you can add custom tags or attributes into spans. Follow these steps:

@@ -28,6 +28,7 @@ Remember to provide configuration using environment variables:
    * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 * `OTEL_SERVICE_NAME` - a logical service name that represents its business logic
 * `OTEL_RESOURCE_ATTRIBUTES` - set "application" name attribute which should represent its business logic and extra attributes attached to all spans
+* {@import ../../../../../reuse/otel-deployment-environment-tag.md}
 
 **Example:**
 

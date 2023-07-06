@@ -1,0 +1,1 @@
+Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels (for example, add it to the `OTEL_RESOURCE_ATTRIBUTES` environment variable). For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).

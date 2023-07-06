@@ -168,7 +168,7 @@ Environment variables:
       - name: OTEL_RESOURCE_ATTRIBUTES
         value: application=my-app,key=value
  ```
-
+   {@import ../../../../reuse/otel-deployment-environment-tag.md}
 * Other parameters:
     * **OTEL_PROPAGATORS.** If not provided, the operator sets the default value `tracecontext,baggage`. Some additional context propagators can be enabled (b3 - common for service meshes, xray - used by AWS services).
     * **OTEL_TRACES_SAMPLER.** Default value: `always_on`. For details, see other sampling possibilities [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk.md#Sampling).

@@ -123,3 +123,4 @@ export OTEL_EXPORTER_OTLP_ENDPOINT="ENDPOINT_ADDRESS"
 export OTEL_SERVICE_NAME="SERVICE_NAME"
 export OTEL_RESOURCE_ATTRIBUTES="application=APPLICATION_NAME"
 ```
+{@import ../../../../../reuse/otel-deployment-environment-tag.md}

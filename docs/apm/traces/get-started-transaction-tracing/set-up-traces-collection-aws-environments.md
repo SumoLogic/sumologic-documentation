@@ -5,6 +5,8 @@ sidebar_label: AWS Environment Setup
 description: To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including Fargate), you can install an OpenTelemetry Collector from the AWS Distro for OpenTelemetry.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including Fargate), you can install an OpenTelemetry Collector from the [AWS Distro for OpenTelemetry](https://aws.amazon.com/otel/). This specific AWS OpenTelemetry Collector distribution is secure and officially supported by AWS. Collecting telemetry data and sending it to Sumo Logic, the official partner and contributor to the project, has never been easier.
 
 ## Prerequisites
@@ -49,7 +51,8 @@ You'll need an ECS Cluster where the AWS OpenTelemetry Collector will be deploye
    * `AWS_REGION`. Your ECS Cluster deployment region.
    * `TEMPLATE_PATH`. Path to the template file from the first step.
    * `CONFIG_FILE_PATH`. Path to the config file from the second step.
-   * `SUMO_HTTP_TRACES_URL`. mandatory [Sumo HTTP Traces  URL](http-traces-source.md) from prerequisites section.
+   * `SUMO_HTTP_TRACES_URL`. Mandatory [Sumo HTTP Traces  URL](http-traces-source.md) from prerequisites section.
+   * {@import ../../../reuse/otel-deployment-environment-tag.md}
 1. It is necessary to provide the configuration to the AWS OpenTelemetry Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
     ```
     aws ssm put-parameter --name "sumologic-otel-col-config" --type "String" --data-type "text" --value "$(cat ${CONFIG_FILE_PATH} | awk -v url=$SUMO_HTTP_TRACES_URL '{gsub(/SUMO_HTTP_TRACES_URL/,url)}1')"
@@ -83,8 +86,9 @@ You'll need an ECS Cluster where the AWS OpenTelemetry Collector will be deploye
    * `AWS_REGION`. Your ECS Cluster deployment region
    * `TEMPLATE_PATH`. Path to the template file from the first step
    * `CONFIG_FILE_PATH`. Path to the config file from the second step
-   * `SUMO_HTTP_TRACES_URL`. mandatory [Sumo HTTP Traces URL](http-traces-source.md)
-   * `SECURITY_GROUPS`. it is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as `sg-xyz,sg-xyz`.  
+   * `SUMO_HTTP_TRACES_URL`. Mandatory [Sumo HTTP Traces URL](http-traces-source.md)
+   * `SECURITY_GROUPS`. It is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as `sg-xyz,sg-xyz`.
+   * {@import ../../../reuse/otel-deployment-environment-tag.md}
     :::note
     The AWS OpenTelemetry Collector receives data from various receivers - these ports should be configured in the Security Group:
      * AWSXRAY - port: 2000/udp
@@ -118,9 +122,10 @@ You'll need an ECS Cluster where the AWS OpenTelemetry Collector will be deploye
 1. Set up the following environment variables that are needed to perform the AWS OpenTelemetry Collector deployment. 
    * `AWS_REGION`. Your ECS Cluster deployment region
    * `TEMPLATE_PATH`. Path to the template file from the first step
-   * `SUMO_HTTP_TRACES_URL`. mandatory [Sumo Logic HTTP Traces URL](http-traces-source.md)
+   * `SUMO_HTTP_TRACES_URL`. Mandatory [Sumo Logic HTTP Traces URL](http-traces-source.md)
    * `SSH_KEY_NAME`. [Amazon EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) needed to ssh to the EC2 instance
    * `AMI_ID`. an Amazon image ID, depends on the region. To obtain it go to [EC2 Launch Instances](https://console.aws.amazon.com/ec2/v2/home#LaunchInstanceWizard:) and get AMI ID for **Amazon Linux 2 AMI** image, such as, `ami-0a6dc7529cd559185`. Note that the AMI ID depends on the region.
+   * {@import ../../../reuse/otel-deployment-environment-tag.md}
 1. Execute the command below to create the [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that will create an EC2 instance and install it on the AWS OpenTelemetry Collector:  
     ```
     aws cloudformation create-stack --stack-name sumologic-aws-otel-col-ec2 --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=SumoHttpTracesURL,ParameterValue=${SUMO_HTTP_TRACES_URL} ParameterKey=SSHKeyName,ParameterValue=${SSH_KEY_NAME} ParameterKey=InstanceAMI,ParameterValue=${AMI_ID} --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}

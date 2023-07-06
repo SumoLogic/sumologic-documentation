@@ -70,6 +70,8 @@ OTEL_SERVICE_NAME=SERVICE_NAME
 OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
 ```
 
+{@import ../../../../../reuse/otel-deployment-environment-tag.md}
+
 ### Option 2: Changing the java command line
 
 The command line of the service needs to be appended with the following

@@ -98,6 +98,8 @@ The final step is to configure the exporter host, service and application name.
 
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
+* {@import ../../../../reuse/otel-deployment-environment-tag.md}
+
 ## TraceID, SpanID and operation data injection into logs
 
 Additional information like TraceID, SpanID or operation data in the application logs could be very helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
