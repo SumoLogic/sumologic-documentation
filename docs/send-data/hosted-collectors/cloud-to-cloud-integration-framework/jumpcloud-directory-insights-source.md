@@ -27,7 +27,7 @@ The JumpCloud Directory Insights source requires you to provide the **API Key** 
 ## States
 
 JumpCloud Directory Insights source is a security platform that provides cloud-based security in a cost-effective manner that doesn't sacrifice security or functionality.
-When you create an JumpCloud Directory Insights source, it goes through the following stages:
+When you create a JumpCloud Directory Insights source, it goes through the following stages:
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
