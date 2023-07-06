@@ -36,10 +36,10 @@ For more information on different metrics collected, refer to the [JMX receiver 
 sumo.datasource=jmx metric=jvm.memory.heap.used
 ```
 
-## Fields creation in Sumo Logic for MySQL
+## Fields creation in Sumo Logic for JMX
 
 * `sumo.datasource`. Has fixed value of `jmx`.
-* `jmx.endpoint`. The endpoint of the ActiveMQ broker.
+* `jmx.endpoint`. The endpoint in the form of `localhost:port` used by JMX Metric Gatherer.
 
 ## Prerequisites
 
