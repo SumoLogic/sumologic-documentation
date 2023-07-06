@@ -1,8 +1,9 @@
 ---
 id: faq
 title: FAQ
-description: Frequently asked questions about Sumo Logic OpenTelemetry Collector from our customers and field teams.
+description: Frequently asked questions about the Sumo Logic OpenTelemetry Collector from our customers and field teams.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -10,7 +11,7 @@ import TabItem from '@theme/TabItem';
 This document contains frequently asked questions about OpenTelemetry Collector.
 
 
-### Accessing the collector's configuration
+## Accessing the collector's configuration
 
 By default, the collector's configuration can be found in `/etc/otelcol-sumo/` directory.
 
@@ -186,7 +187,17 @@ The `sumologicexporter` sends data to Sumo in batches. If the batches are small,
 
 If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo Logic OpenTelemetry collector**) and have a custom `config.yaml` file to collect data, then you might see this error. Sumo Logic expects specific tags on the data, which the Sumo Logic Distribution for OpenTelemetry Collector creates by default.
 
+## Ping checks
 
+#### Does Sumo OpenTelemetry support ping checks?
+
+Yes, our OpenTelemetry collector supports ping checks so that you can monitor up/down status for public https URLs.
+
+How it works - the OpenTelemetry receiver produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors.
+
+You can get alerted in 3 minutes or less when a OpenTelemetry collector disappears and is not marked ephemeral (i.e., server or VM crashes).
+
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="otel-ping.png" width="450" />
 
 ## Filtering metrics and logs
 
