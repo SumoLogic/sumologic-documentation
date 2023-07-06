@@ -17,7 +17,7 @@ JumpCloud Directory Insights Source is used to collect Directory Insights Events
 
 The integration fetches events data using [REST API](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Overview) provided by JumpCloud Directory Insight platform.
 
-## Set up and Configuration
+## Setup and configuration
 
 The JumpCloud Directory Insights source requires you to provide the **API Key** and **Organization ID** to access the source data.
 
