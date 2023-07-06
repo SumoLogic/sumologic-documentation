@@ -115,7 +115,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   "clientID": "key-xxxx0316-xxxx-492d-xxxx-308184abxxx3",
   "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
   "dataCollection": [
-    "auditLogs",
+    "auditEvents",
     "alerts",
     "fileEvents"
   ]
