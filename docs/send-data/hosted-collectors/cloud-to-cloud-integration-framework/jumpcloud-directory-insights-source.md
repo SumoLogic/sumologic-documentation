@@ -22,7 +22,7 @@ The integration fetches events data using [REST API](https://docs.jumpcloud.com/
 The JumpCloud Directory Insights source requires you to provide the **API Key** and **Organization ID** to access the source data.
 
 - To generate the **API Key**, follow the instructions mentioned in the [Jumpcloud documentation](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Authentication-and-Authorization/Authentication).
-- To generate the **Organization ID**, follow the instructions mentioned in the [Jumpcloud documentation](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Authentication-and-Authorization/Authentication).
+- To generate the **Organization ID**, follow the instructions mentioned in the [Jumpcloud documentation](https://jumpcloud.com/support/settings-in-admin-portal).
 
 ## States
 
