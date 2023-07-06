@@ -77,7 +77,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | n/a |
+| `config` | JSON Object  | Yes | Contains the [configuration parameters](#config-parameters) of the Source. | n/a |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"JumpCloud Directory Insights"}` for JumpCloud Directory Insights Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for JumpCloud Directory Insights. | not modifiable |
 
