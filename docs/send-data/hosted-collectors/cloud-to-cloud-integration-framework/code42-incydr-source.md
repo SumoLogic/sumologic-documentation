@@ -80,7 +80,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
@@ -101,7 +101,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `secretKey` | String | No | Secret Key generated secured from the Code42 Incydr platform. | modifiable |
 | `dataCollection` | String | No | Type of source from which you want to collect the data from. | modifiable |
 
-### JSON Example
+### JSON example
 
 ```json
 {
@@ -115,7 +115,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   "clientID": "key-xxxx0316-xxxx-492d-xxxx-308184abxxx3",
   "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
   "dataCollection": [
-    "auditLogs",
+    "auditEvents",
     "alerts",
     "fileEvents"
   ]
