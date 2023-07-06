@@ -34,7 +34,7 @@ For more information on different metrics collected refer to receiver [docs](htt
 
 
 ```sql
-sumo.datasource=jmx metric=jvm.memory.heap.used 
+sumo.datasource=jmx metric=jvm.memory.heap.used
 ```
 
 ## Fields creation in Sumo Logic for MySQL
@@ -44,46 +44,35 @@ sumo.datasource=jmx metric=jvm.memory.heap.used
 
 ## Prerequisites
 
+The JMX Receiver uses the OpenTelemetry JMX Metric Gatherer. For more details, [see their docs](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
-
-1. The JMX Receiver uses the OpenTelemetry JMX Metric Gatherer. For more details refer [docs](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
-
-  Download the jar from [releases](https://github.com/open-telemetry/opentelemetry-java-contrib/releases) and place it in `/opt/` or in `C:\ProgramData`. Remember the path of the jar it will be used in configuring JMX app.
-
-  Make sure the see the opentelemetry-java-contrib-jmx-metrics version is supported in the opentelemetry version you are using by going through the [releases](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases) section  and searching for jmxreceiver in that page or in [supported jars code](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/jmxreceiver/supported_jars.go#L33).
-
-  JMX Metric Gatherer metric extension supports Java 8+, though SASL is only supported where com.sun.security.sasl.Provider is available.
-
-
-2. Configure your java application to enable jmx
-
-  In most cases you need to set below system variables in your applications's startup script
-
-  ```-Dcom.sun.management.jmxremote.port=11099
+* Download the jar from [releases](https://github.com/open-telemetry/opentelemetry-java-contrib/releases) and place it in `/opt/` or in `C:\ProgramData`. Remember the path of the jar it will be used in configuring JMX app.
+* Make sure the see the `opentelemetry-java-contrib-jmx-metrics` version is supported in the OpenTelemetry version you are using by going through the [releases](https://github.com/open-telemetry/opentelemetry-collector-contrib/releases) section and searching for jmxreceiver in that page. You can also check [supported jars code](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/jmxreceiver/supported_jars.go#L33).
+* JMX Metric Gatherer metric extension supports Java 8+, though SASL is only supported where `com.sun.security.sasl.Provider` is available.
+* Configure your java application to enable JMX. In most cases, you'll need to set below system variables in your applications's startup script.
+  ```sh
+  -Dcom.sun.management.jmxremote.port=11099
   -Dcom.sun.management.jmxremote.authenticate=false
   ```
-
-  If you want to set up authentication then set below system variables
-
-  ```
+* If you want to set up authentication, set the below system variables:
+  ```sh
   -Dcom.sun.management.jmxremote.authenticate=true
   -Dcom.sun.management.jmxremote.password.file=<application conf directory>/jmx.password
   -Dcom.sun.management.jmxremote.access.file=<application conf directory>/jmx.access
   ```
 
-  Below are docs for popular java applications:
+:::info
+Below are docs for popular Java applications:
+* [Active MQ](https://activemq.apache.org/jmx)
+* [Kafka](https://kafka.apache.org/documentation/#remote_jmx)
+* [Apache Tomcat](https://tomcat.apache.org/tomcat-9.0-doc/monitoring.html#Enabling_JMX_Remote)
+* [Cassandra](https://cassandra.apache.org/doc/4.1/cassandra/operating/security.html#jmx-access)
+* [HBase](https://hbase.apache.org/metrics.html)
+* [Solr](https://solr.apache.org/guide/8_3/using-jmx-with-solr.html#configuring-jmx)
+* [Zookeeper](https://zookeeper.apache.org/doc/r3.4.2/zookeeperJMX.html#ch_starting)
+:::
 
-    * [Active MQ](https://activemq.apache.org/jmx)
-    * [Kafka](https://kafka.apache.org/documentation/#remote_jmx)
-    * [Apache Tomcat](https://tomcat.apache.org/tomcat-9.0-doc/monitoring.html#Enabling_JMX_Remote)
-    * [Cassandra](https://cassandra.apache.org/doc/4.1/cassandra/operating/security.html#jmx-access)
-    * [HBase](https://hbase.apache.org/metrics.html)
-    * [Solr](https://solr.apache.org/guide/8_3/using-jmx-with-solr.html#configuring-jmx)
-    * [Zookeeper](https://zookeeper.apache.org/doc/r3.4.2/zookeeperJMX.html#ch_starting)
-
-
-
-## Collecting Metrics and Installing App for JMX
+## Collecting Metrics and Installing the JMX App
 
 The process to set up collection for JMX Metrics is done through the following steps.
 
@@ -123,8 +112,8 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <TabItem value="Linux">
 
-1.  Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the Kafka instance which needs to be monitored.
-2.  Restart the collector using:
+1. Copy the yaml to the`/etc/otelcol-sumo/conf.d/` folder for the Kafka instance which needs to be monitored.
+2. Restart the collector using:
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
@@ -132,8 +121,8 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="Windows">
 
-1.  Copy the yaml to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using:
+1. Copy the yaml to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
+2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
@@ -141,8 +130,8 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="macOS">
 
-1.  Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Kafka instance which needs to be monitored.
-2.  Restart the otelcol-sumo process using the below command:
+1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Kafka instance which needs to be monitored.
+2. Restart the otelcol-sumo process using the below command:
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
