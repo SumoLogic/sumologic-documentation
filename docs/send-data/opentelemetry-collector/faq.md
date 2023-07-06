@@ -197,7 +197,7 @@ How it works - the OpenTelemetry receiver produces metrics that can be ingested 
 1. To come...
 1. ...
 -->
-You can get alerted in 3 minutes or less when a OpenTelemetry collector disappears and is not marked ephemeral (i.e., server or VM crashes).
+You can get alerted in 3 minutes or less when a OpenTelemetry collector disappears and is not marked ephemeral (that is, server or VM crashes).
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="otel-ping.png" width="450" />
 
