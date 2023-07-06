@@ -106,10 +106,10 @@ In this step we will be configuring the yaml required for ActiveMQ Collection.
 
 Below is the input required:
 
-- **JMX Endpoint**: Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use (default: `localhost:11099`).
-- **Jar File Path**: Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
-- **UserName**: Username for JMX authentication, if applicable.
-- **Password**: Password for JMX authentication, if applicable.
+- **JMX Endpoint**. Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use (default: `localhost:11099`).
+- **Jar File Path**. Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
+- **UserName**. Username for JMX authentication, if applicable.
+- **Password**. Password for JMX authentication, if applicable.
 - **ActiveMQ Log File Path**. Enter the path to the ActiveMQ log file for your ActiveMQ instance.
 - **Audit Log File path**. Enter the path to the Audit log file for your ActiveMQ instance.
 - **Fields**. `messaging.cluster.name` User configured. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
