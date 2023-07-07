@@ -1626,6 +1626,7 @@
   "/cid/1089": "/docs/metrics/metric-charts/line-area-metric-charts",
   "/cid/1090": "/docs/send-data/installed-collectors/sources/docker-sources",
   "/cid/1091": "/docs/search/search-query-language/group-aggregate-operators/first-last",
+  "/cid/10230": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source",
   "/cid/1092": "/docs/search/search-query-language/group-aggregate-operators/stddev",
   "/cid/1093": "/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations",
   "/cid/1094": "/docs/dashboards/share-dashboard-outside-org",
