@@ -820,7 +820,7 @@ See information about CPU usage and container throttling over the last three hou
 
 ### Memory Usage
 
-See information about container memory usage, and page faults over the last three hours.
+See information about container memory usage and page faults over the last three hours.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker-memory-usage.png')} alt="Docker ULM dashboards" />
 
