@@ -1864,6 +1864,7 @@
   "/cid/25641": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source",
   "/cid/25642": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs",
   "/cid/25643": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source",
+  "/cid/10225": "/docs/integrations/app-development/opentelemetry/jmx-opentelemetry",
   "/cid/30489": "/docs/metrics/introduction",
   "/cid/32746": "/docs/integrations/pci-compliance/palo-alto-networks-9",
   "/cid/34998": "/docs/search/search-query-language/parse-operators/parsedate",
