@@ -248,161 +248,167 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox33 card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="120"/><h4>JumpCloud Directory Insights </h4></a>
+  <p>Collect events data from the JumpCloud Directory Insight.</p>
+  </div>
+</div>
+<div className="box smallbox34 card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source"><img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="120"/><h4>KnowBe4 API Source</h4></a>
   <p>Collects user events data into Sumo Logic for storage, analysis, and alerting.</p>
   </div>
 </div>
-<div className="box smallbox34 card">
+<div className="box smallbox35 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source"><img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="25"/><h4>Microsoft Azure AD Inventory (Tag)</h4></a>
   <p>Collects user and device data from the Microsoft Graph API Security endpoint.</p>
   </div>
 </div>
-<div className="box smallbox35 card">
+<div className="box smallbox36 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs"><img src={useBaseUrl('img/send-data/microsoft-exchange-logo.svg')} alt="icon" width="120"/><h4>Microsoft Exchange Trace Logs</h4></a>
   <p>Collects email trace logs from the Office 365 reporting web service.</p>
   </div>
 </div>
-<div className="box smallbox36 card">
+<div className="box smallbox37 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Security API</h4></a>
   <p>Provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.</p>
   </div>
 </div>
-<div className="box smallbox37 card">
+<div className="box smallbox38 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
   <p>Collects Directory Audit, Sign-in, and Provisioning data from MS Graph API Azure AD activity reports.</p>
   </div>
 </div>
-<div className="box smallbox38 card">
+<div className="box smallbox39 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
   <p>Collects Risk Detection and Risky User data from the Microsoft Graph Identity Protection API.</p>
   </div>
 </div>
-<div className="box smallbox39 card">
+<div className="box smallbox40 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source"><img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="50"/><h4>Mimecast</h4></a>
   <p>Supports collecting SIEM, DLP, Audit, and Hold Message List data from the Mimecast API.</p>
   </div>
 </div>
-<div className="box smallbox40 card">
+<div className="box smallbox41 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source"><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="50"/><h4>Miro</h4></a>
   <p>Ingests audit logs obtained from the Audit log API.</p>
   </div>
 </div>
-<div className="box smallbox41 card">
+<div className="box smallbox42 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source"><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope</h4></a>
   <p>Provides a secure endpoint to receive event data from the Netskope API.</p>
   </div>
 </div>
-<div className="box smallbox42 card">
+<div className="box smallbox43 card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source"><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope WebTx</h4></a>
   <p>The Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.</p>
   </div>
 </div>
-  <div className="box smallbox43 card">
+  <div className="box smallbox44 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source"><img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/><h4>Okta</h4></a>
     <p>Provides a secure endpoint to receive event data from the Okta System Log API and Users API.</p>
   </div>
 </div>
-    <div className="box smallbox44 card">
+    <div className="box smallbox45 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source"><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
     <p>Allows you to ingest incidents from your Cortex XDR application.</p>
     </div>
   </div>
-  <div className="box smallbox45 card">
+  <div className="box smallbox46 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source"><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/><h4>Proofpoint On Demand</h4></a>
     <p>Collects data and uses the secure WebSocket protocol to stream logs.</p>
     </div>
   </div>
-  <div className="box smallbox46 card">
+  <div className="box smallbox47 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source"><img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/><h4>Proofpoint TAP</h4></a>
     <p>Provides a secure endpoint to receive data from the Proofpoint TAP SIEM API.</p>
     </div>
   </div>
-    <div className="box smallbox47 card">
+    <div className="box smallbox48 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source"><img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="150" /><h4>Qualys VMDR</h4></a>
     <p>The Qualys VMDR Source tracks errors, reports its health, and start-up progress.</p>
     </div>
 </div>
-    <div className="box smallbox48 card">
+    <div className="box smallbox49 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source"><img src={useBaseUrl('img/send-data/rapid7-logo.png')} width="120"/><h4>Rapid7</h4></a>
     <p>Collects asset and vulnerabilities data from Rapid7 InsightVM.</p>
     </div>
   </div>
-    <div className="box smallbox49 card">
+    <div className="box smallbox50 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source"><img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="120"/><h4>SailPoint</h4></a>
     <p>Provides a secure endpoint to receive Events and User Inventory data from the IdentityNow V3 API.</p>
     </div>
   </div>
-  <div className="box smallbox50 card">
+  <div className="box smallbox51 card">
     <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source"><img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/><h4>Salesforce</h4></a>
         <p>Provides a secure endpoint to receive event data from the Salesforce through its Rest API.</p>
         </div>
       </div>
-      <div className="box smallbox51 card">
+      <div className="box smallbox52 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source"><img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" /><h4>SentinelOne Mgmt API</h4></a>
         <p>Collects data from the SentinelOne Management Console.</p>
         </div>
       </div>
-      <div className="box smallbox52 card">
+      <div className="box smallbox53 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source"><img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/><h4>Slack</h4></a>
         <p>Learn about the Slack Source, part of Sumo Logic's Cloud-to-Cloud Integration Framework.</p>
         </div>
       </div>
-      <div className="box smallbox53 card">
+      <div className="box smallbox54 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source"><img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="50"/><h4>Sophos Central</h4></a>
         <p>Learn to receive authentication logs from the Sophos Central APIs.</p>
         </div>
       </div>
-      <div className="box smallbox54 card">
+      <div className="box smallbox55 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="150"/><h4>Symantec Web Security Service</h4></a>
         <p>Learn to receive WSS Access logs from the Symantec WSS API.</p>
         </div>
       </div>
-      <div className="box smallbox55 card">
+      <div className="box smallbox56 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="190"/><h4>Tenable</h4></a>
         <p>Learn to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>
       </div>
-      <div className="box smallbox56 card">
+      <div className="box smallbox57 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source"><img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="icon" width="100"/><h4>Trellix mVision ePO</h4></a>
         <p>Learn how to collect event logs using the Trellix mVision ePO.</p>
         </div>
       </div>
-      <div className="box smallbox57 card">
+      <div className="box smallbox58 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source"><img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="250"/><h4>Webex</h4></a>
         <p>Learn to collect admin audit events using Webex API.</p>
         </div>
       </div>
-      <div className="box smallbox58 card">
+      <div className="box smallbox59 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/><h4>Workday</h4></a>
         <p>Learn to create a Workday Source.</p>
         </div>
       </div>
-      <div className="box smallbox59 card">
+      <div className="box smallbox60 card">
         <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source"><img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="50"/><h4>Zero Networks Segment</h4></a>
         <p>Learn to collect audit logs and network activity data from Zero Networks Segment.</p>
