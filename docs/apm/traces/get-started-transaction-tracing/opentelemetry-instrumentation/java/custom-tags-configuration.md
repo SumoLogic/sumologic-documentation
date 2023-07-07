@@ -14,7 +14,7 @@ OTEL_RESOURCE_ATTRIBUTES="service.name=Accounts"
 OTEL_RESOURCE_ATTRIBUTES="application=OnlineBanking,exampleKey=exampleValue"
 ```
 
-{@import ../../../../../reuse/otel-deployment-environment-tag.md}
+Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
 
 ## Custom tags configuration through your code
 

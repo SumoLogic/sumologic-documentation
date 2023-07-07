@@ -48,8 +48,7 @@ The final step is to configure the exporter endpoint, service and application na
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
 * `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelagent.sumologic:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
-* `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
-* {@import ../../../../../reuse/otel-deployment-environment-tag.md}
+* `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
 
 More extensive description of all available options can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md)
 

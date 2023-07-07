@@ -48,7 +48,7 @@ You'll need the following:
      * `/opt/otel-stream-handler` - if implementing RequestStreamHandler
 
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
-   * Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment  variable.
+   * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment  variable:
 
      * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
 
@@ -56,9 +56,7 @@ You'll need the following:
 
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.  
-
-     * {@import ../../../../../reuse/otel-deployment-environment-tag.md}
+   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.  
 
     ![img](/img/traces/lambda-java3.png)
 
@@ -181,14 +179,14 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 2. Deploy new function image.
 3. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
-   * **AWS_LAMBDA_EXEC_WRAPPER** environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
-     * **/opt/otel-handler** - if implementing **RequestHandler**
-     * **/opt/otel-proxy-handler** - if implementing **RequestHandler** but proxied through **API Gateway**
-     * **/opt/otel-stream-handler** -  if implementing **RequestStreamHandler**
-   * **OTEL_SERVICE_NAME = YOUR_SERVICE_NAME** - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
-   * **OTEL_TRACES_SAMPLER = always_on** - enables traces sampling
-   * Tracing **application** and **cloud.account.id** are set with the **OTEL_RESOURCE_ATTRIBUTES** environment variable.
-     * **application=YOUR_APPLICATION_NAME** - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
-     * **cloud.account.id=YOUR_CLOUD_ACCOUNT_ID** - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, **OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012**.
-   * **SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL** has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source#view-the-endpoint-url). You can use an existing Source or create a new one if needed. <br/><img src={useBaseUrl('img/traces/image2.png')} alt="otel" />
+   * `AWS_LAMBDA_EXEC_WRAPPER` environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
+     * `/opt/otel-handler` - if implementing `RequestHandler`
+     * `/opt/otel-proxy-handler` - if implementing `RequestHandler` but proxied through **API Gateway**
+     * `/opt/otel-stream-handler` -  if implementing `RequestStreamHandler`
+   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
+   * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling
+   * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
+     * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
+     * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
+   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source#view-the-endpoint-url). You can use an existing Source or create a new one if needed. <br/><img src={useBaseUrl('img/traces/image2.png')} alt="otel" />
 4. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces). The instructions above instrument only requests related to the handler function. To instrument other calls like HTTP calls, DB calls additional libraries have to be added to the Docker image. See [supported libraries, frameworks and application servers](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers).
