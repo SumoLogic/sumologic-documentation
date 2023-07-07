@@ -84,7 +84,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
-            'send-data/opentelemetry-collector/quickstart',
+           // 'send-data/opentelemetry-collector/quickstart', 
             'send-data/opentelemetry-collector/install-collector-linux',
             'send-data/opentelemetry-collector/install-collector-macos',
             'send-data/opentelemetry-collector/install-collector-windows',
@@ -249,6 +249,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
@@ -265,6 +266,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
@@ -1978,6 +1980,15 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/index'},
         items: [
+          {
+            type: 'category',
+            label: 'OpenTelemetry',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
+            ],
+          },
           'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
           'integrations/cloud-security-monitoring-analytics/amazon-vpc-flow',
           'integrations/cloud-security-monitoring-analytics/aws-cloudtrail',
