@@ -152,6 +152,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox17 card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike</h4></a>
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
@@ -164,7 +165,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox19 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>Crowdstrike FDR</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike FDR</h4></a>
   <p>Provides a secure endpoint to ingest Falcon Data Replicator events using the S3 ingestion.</p>
   </div>
 </div>
@@ -172,6 +173,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike FDR Host Inventory</h4></a>
   <p>Provides a secure endpoint to receive device data from the CrowdStrike Host and Host Group Management APIs.</p>
+  </div>
+</div>
+<div className="box smallbox21 card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Spotlight</h4></a>
+  <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
 <div className="box smallbox21 card">
@@ -318,7 +325,7 @@ In this section, we'll introduce the following concepts:
     <p>Provides a secure endpoint to receive event data from the Okta System Log API and Users API.</p>
   </div>
 </div>
-    <div className="box smallbox45 card">
+  <div className="box smallbox45 card">
     <div className="container">
     <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source"><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
     <p>Allows you to ingest incidents from your Cortex XDR application.</p>
