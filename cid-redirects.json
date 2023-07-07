@@ -1853,6 +1853,7 @@
   "/cid/25620": "/docs/integrations/security-threat-detection/duo-security",
   "/cid/25621": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source",
   "/cid/25622": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source",
+  "/cid/10222": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source",
   "/cid/25623": "/docs/integrations/security-threat-detection/netskope",
   "/cid/25624": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source",
   "/cid/25625": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source",
