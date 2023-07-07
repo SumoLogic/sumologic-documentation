@@ -4,6 +4,7 @@ title: OpenTelemetry Collector Quickstart
 sidebar_label: Quickstart
 description: Get up and running quickly with the Sumo Logic OpenTelemetry Collector.
 ---
+<!-- temporarily pulled from docs -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
