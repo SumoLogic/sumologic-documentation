@@ -18,7 +18,7 @@ To successfully collect the root-owned data from the remote file source, make su
 - Sudo should be passwordless on the remote machine where the logfile is present.
 - SFTP server path and sudo path should be `/usr/libexec/openssh/sftp-server` and `/bin/sudo`.
 
-To collect data from a remote host using Sudo privileges, follow the instructions:
+To collect data from a remote host using sudo privileges, follow the instructions:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Add source/ Edit source** > **Remote file**.
 1. In the **Credentials** section, click the **Privilege Escalations** checkbox.
 
