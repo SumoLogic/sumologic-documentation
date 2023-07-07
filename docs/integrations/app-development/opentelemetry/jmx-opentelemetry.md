@@ -87,9 +87,10 @@ In this step we will be configuring the yaml required for JMX Collection.
 
 Below is the input required:
 
-- **JMX Endpoint**. Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use (default: `localhost:11099`).
-- **Jar File Path**. Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
-- **UserName**. Username for JMX authentication, if applicable.
+- **JMX Endpoint**. Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use.
+- **JMX Gatherer file path**. Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
+- **Enable password authentication**. Toggle this if you are using password based jmx authentication.
+- **Username**. Username for JMX authentication, if applicable.
 - **Password**. Password for JMX authentication, if applicable.
 
 Click on the **Download YAML File** button to get the yaml file.
