@@ -22,6 +22,7 @@ The diagram below illustrates the components of the ActiveMQ collection for each
 
 This app has been tested with following ActiveMQ versions:
   * 5.17.4
+  * 5.18.2
 
 ## Log types and metrics
 
@@ -87,10 +88,10 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
        </broker>
        ```
 
-     If you are using [Bitnami image for ActiveMQ](https://docs.bitnami.com/general/infrastructure/activemq/) one can update the `/opt/bitnami/activemq/bin/env` file and change the below parameter.
+  3. Set the JMX port by changing the `ACTIVEMQ_SUNJMX_START` parameter. Usually it is set in `/opt/activemq/bin/env` or `C:\Program Files\apache-activemq\bin\activemq.bat` file.
 
       ```
-       ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
+      ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
       ```
 
 ## Collecting logs and metrics, and installing the ActiveMQ app
@@ -109,19 +110,22 @@ In this step we will be configuring the YAML required for ActiveMQ Collection.
 
 Below is the input required:
 
-- **JMX Endpoint**. Enter the value in `host:port` form which will be used to construct the Service URL the Metric Gatherer's JMX client should use (default: `localhost:11099`).
-- **Jar File Path**. Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
+- **ActiveMQ Server logs file path**. Enter the path to the ActiveMQ log file for your ActiveMQ instance.
+- **ActiveMQ Audit logs file path**. Enter the path to the Audit log file for your ActiveMQ instance.
+- **JMX Endpoint**. Enter the value in `host:port` form which will be used to construct the Service URL, the Metric Gatherer's JMX client should use.
+- **JMX Gatherer file path**. Enter the path to the OpenTelemetry JMX Metric Gatherer file configured in the prerequisites section.
+- **Enable password authentication**. Toggle this if you are using password based jmx authentication.
 - **UserName**. Username for JMX authentication, if applicable.
 - **Password**. Password for JMX authentication, if applicable.
-- **ActiveMQ Log File Path**. Enter the path to the ActiveMQ log file for your ActiveMQ instance.
-- **Audit Log File path**. Enter the path to the Audit log file for your ActiveMQ instance.
+- **Enable ActiveMQ process metrics**. Toggle this to collect ActiveMQ Process metrics. Disable this if you are already collecting process metrics from the host.
+- **ActiveMQ process name**. Enter the ActiveMQ process name.It will be used for filtering process metrics based on process name.
 - **Fields**. `messaging.cluster.name` User configured. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 
 
 Click on the **Download YAML File** button to get the YAML file.
 
-<!-- <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' alt="YAML" /> -->
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 
