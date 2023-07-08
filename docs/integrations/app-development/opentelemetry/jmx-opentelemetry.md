@@ -83,7 +83,7 @@ The process to set up collection for JMX Metrics is done through the following s
 
 ### Step 2: Configure integration
 
-In this step we will be configuring the yaml required for JMX Collection.
+In this step, we'll configure the yaml required for JMX Collection.
 
 Below is the input required:
 
