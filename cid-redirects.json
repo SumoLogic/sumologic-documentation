@@ -1862,6 +1862,7 @@
   "/cid/25627": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source",
   "/cid/25628": "/docs/integrations/saas-cloud/salesforce",
   "/cid/25629": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source",
+  "/cid/10226": "/docs/integrations/containers-orchestration/opentelemetry/activemq-opentelemetry",
   "/cid/25631": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source",
   "/cid/25632": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source",
   "/cid/25634": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source",

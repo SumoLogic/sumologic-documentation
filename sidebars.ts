@@ -1961,6 +1961,7 @@ integrations: [
               'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/activemq-opentelemetry',
             ],
           },
           'integrations/containers-orchestration/activemq',
