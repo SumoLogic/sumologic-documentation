@@ -230,7 +230,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 ### Overview
 
-The ActiveMQ - Overview dashboard gives you an at-a-glance view of your ActiveMQ deployment across brokers, queues, topics, and messages.
+The **ActiveMQ - Overview** dashboard gives you an at-a-glance view of your ActiveMQ deployment across brokers, queues, topics, and messages.
 
 Use this dashboard to:
 * Analyze memory, errors and connections.
@@ -244,7 +244,7 @@ Use this dashboard to:
 
 ### Brokers
 
-The ActiveMQ - Brokers dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
+The **ActiveMQ - Brokers** dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
 
 Use this dashboard to:
 * Gain insights into the storage and temp storage for your ActiveMQ brokers.
@@ -257,7 +257,7 @@ Use this dashboard to:
 
 ### Destinations
 
-The ActiveMQ - Destinations dashboard provides an at-a-glance view of the state of your topics/queues in ActiveMQ clusters.
+The **ActiveMQ - Destinations** dashboard provides an at-a-glance view of the state of your topics/queues in ActiveMQ clusters.
 
 Use this dashboard to:
 * Monitor enqueue latency across topics/queues.
@@ -271,7 +271,7 @@ Use this dashboard to:
 
 ### Resource utilization
 
-The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: Virtual memory usage, physical memory usage, CPU utilization, disk operations, disk writes, and I/O wait.
+The **ActiveMQ - Resource Utilization** dashboard provides an at-a-glance view of the state of system loads in clusters: Virtual memory usage, physical memory usage, CPU utilization, disk operations, disk writes, and I/O wait.
 
 Use this dashboard to:
 * Analyze memory and CPU utilization of activemq process.
@@ -284,7 +284,7 @@ Use this dashboard to:
 
 ### Logs
 
-This dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
+The **ActiveMQ - Logs** dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
 
 Use this dashboard to:
 * Identify critical events in your ActiveMQ cluster.
@@ -296,7 +296,7 @@ Use this dashboard to:
 
 ### Audit
 
-This dashboard helps you quickly analyze your ActiveMQ audit logs across all clusters.
+This **ActiveMQ - Audit** dashboard helps you quickly analyze your ActiveMQ audit logs across all clusters.
 
 Use this dashboard to:
 * Identify locations of users performing management action.
