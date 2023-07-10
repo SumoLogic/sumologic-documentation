@@ -182,7 +182,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
    * `AWS_LAMBDA_EXEC_WRAPPER` environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
      * `/opt/otel-handler` - if implementing `RequestHandler`
      * `/opt/otel-proxy-handler` - if implementing `RequestHandler` but proxied through **API Gateway**
-     * `/opt/otel-stream-handler` -  if implementing `RequestStreamHandler`
+     * `/opt/otel-stream-handler` - if implementing `RequestStreamHandler`
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling
    * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
