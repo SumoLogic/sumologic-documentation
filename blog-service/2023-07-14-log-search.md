@@ -1,5 +1,5 @@
 ---
-title: July 14, 2023 (Search)
+title: July 10, 2023 (Search)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - log_level
