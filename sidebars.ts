@@ -1074,6 +1074,7 @@ module.exports = {
                 'search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser',
               ],
             },
+            'search/get-started-with-search/search-page/log-level',
             'search/get-started-with-search/search-page/modify-search-from-messages-tab',
             'search/get-started-with-search/search-page/navigate-through-search-results',
             'search/get-started-with-search/search-page/search-highlighting',
@@ -1929,6 +1930,7 @@ integrations: [
             items: [
               'integrations/app-development/opentelemetry/puppet-opentelemetry',
               'integrations/app-development/opentelemetry/jira-opentelemetry',
+              'integrations/app-development/opentelemetry/jmx-opentelemetry',
               'integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry',
             ],
           },
@@ -1960,6 +1962,7 @@ integrations: [
               'integrations/containers-orchestration/opentelemetry/docker-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry',
               'integrations/containers-orchestration/opentelemetry/kafka-opentelemetry',
+              'integrations/containers-orchestration/opentelemetry/activemq-opentelemetry',
             ],
           },
           'integrations/containers-orchestration/activemq',
@@ -2452,12 +2455,12 @@ integrations: [
           items: [
             'cse/automation-service/about-automation-service',
             'cse/automation-service/automation-service-automations',
-            'cse/automation-service/automation-service-app-central',  
+            'cse/automation-service/automation-service-app-central',
             'cse/automation-service/automation-service-playbooks',
             'cse/automation-service/automation-service-integrations',
             'cse/automation-service/automation-service-examples',
             'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge', 
+            'cse/automation-service/automation-service-bridge',
           ],
         },
         {
