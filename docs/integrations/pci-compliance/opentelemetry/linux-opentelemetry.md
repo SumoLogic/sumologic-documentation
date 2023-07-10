@@ -24,6 +24,12 @@ Following tag will be created as part of Linux app installation, if not already 
 
 ## Collection configuration and app installation
 
+:::note
+You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+:::
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+
 ### Step 1: Set up Collector
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
