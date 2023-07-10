@@ -24,9 +24,20 @@ Supported Versions
 
 You can install our OpenTelemetry Collector using either of the following methods:
 
+* [UI Installation](#ui-installation)
 * [Install script](#install-script)
-* [UI Installation via App Catalog](#ui-installation-via-app-catalog)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+
+### UI Installation
+
+1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. On the OpenTelemetry Collection page, click **Add Collector**.
+1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid black'}} width="900"/>
+1. Select/create installation token and customize your tags.
+1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
+1. Copy the command.
+1. Open PowerShell and execute the command in the PowerShell where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="900" />
+1. Wait for the installation process to complete, then click **Next** to proceed.
 
 ### Install Script
 
@@ -57,18 +68,7 @@ The script is going to perform the following operations:
 |:---------------|:----------------|:-------------|
 | `-InstallationToken` | Installation token      | Yes       |
 | `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
-
-### UI Installation via App Catalog
-
-1. Go to **App Catalog** and select **Windows - OpenTelemetry**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-1.png')} alt="windows-ui-installation-1.png" width="550" />
-1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-2.png')} alt="windows-ui-installation-2.png" width="550" />
-1. Select **Add New Collector** and click **Next**.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-3.png')} alt="windows-ui-installation-3.png" width="550" />
-1. Select the installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-4.png')} alt="windows-ui-installation-4.png" width="550" />
-1. Open Powershell.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-5.png')} alt="windows-ui-installation-5.png" width="550" />
-1. Copy the installation command to PowerShell, run it, and click **Next** after the successful installation.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-6.png')} alt="windows-ui-installation-6.png" width="550" />
-1. Customize the configuration, download it, and save it in the desired location.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-7.png')} alt="windows-ui-installation-7.png" width="550" />
-1. Open **Powershell** as an Administrator and restart the service by running this command.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-8.png')} alt="windows-ui-installation-8.png" width="550" />
-1. Wait for the dashboards to be installed and for data to be ingested into Sumo Logic.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-ui-install-9.png')} alt="windows-ui-installation-9.png" width="550" />
+| `-InstallHostMetrics` | Installs the hostmetrics configuration to collect host metrics. The default is `$False`. | Yes, for example: `-InstallHostMetrics $True` or `-InstallHostMetrics $False`. |
 
 ### Manual Step-by-Step Installation
 

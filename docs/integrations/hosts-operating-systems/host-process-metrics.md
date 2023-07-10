@@ -232,7 +232,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 ## Installing the Alerts
 
-The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
+The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
