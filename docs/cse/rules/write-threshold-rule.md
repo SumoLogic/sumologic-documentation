@@ -71,7 +71,7 @@ When you're configuring a Threshold and Chain rule, you don't supply a Signal na
 :::
 
 1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
-1. **with the summary**.
+1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Define the description for the Signal. You can use text and Record fields. The Signal description should be a good indication of what the rule looks for.
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, and Entities. You can also search for and filter items by tag. For more information, see [Using Tags with Insights, Signals, Entities, and Rules](../records-signals-entities-insights/tags-insights-signals-entities-rules.md).
