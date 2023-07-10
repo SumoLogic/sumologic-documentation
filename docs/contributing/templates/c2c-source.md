@@ -50,11 +50,12 @@ After you click on **Error**, you should see a **Health Events** popup modal con
 
 ## Setup and configuration
 
-We need to configure on source's website before configuring source in sumo logic. For example, we may be needed to collect API key from customer platform for authorization and use it when configuring source in sumo logic.
 
 ### Configure on {{source}}
 
-<!-- NOTE: This section doesn't apply to all sources; only where needed
+<!--
+
+NOTE: This section doesn't apply to all sources; only where needed. When it is needed, user must configure on source's website before configuring source in Sumo. For example, they may need to collect API key from customer platform for authorization and use it when configuring source in Sumo.
 
 Insert steps to configure on source's website
 
