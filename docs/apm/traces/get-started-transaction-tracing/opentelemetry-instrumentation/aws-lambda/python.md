@@ -33,7 +33,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 1. Navigate to the **Configuration** > **Environment variables** section and set up the following environment variables:
    * `AWS_LAMBDA_EXEC_WRAPPER= /opt/otel-instrument` - Enables auto-instrumentation.
    * `OTEL_TRACES_SAMPLER = always_on` - Enables traces sampling.
-   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
+   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Sets the tracing service name in Sumo Logic. Make sure to define it as a string value that represents the function name and its business logic such as "Check SQS Lambda".
    * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME` - The string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - Set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.
