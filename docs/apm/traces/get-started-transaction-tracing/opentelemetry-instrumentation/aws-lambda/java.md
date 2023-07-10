@@ -181,7 +181,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 3. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
    * `AWS_LAMBDA_EXEC_WRAPPER` environment variable configures the appropriate wrapper for a specific type of lambda handler function. Set the value appropriate for your handler:
      * `/opt/otel-handler` - if implementing `RequestHandler`
-     * `/opt/otel-proxy-handler` - if implementing `RequestHandler` but proxied through **API Gateway**
+     * `/opt/otel-proxy-handler` - if implementing `RequestHandler`, but proxied through **API Gateway**
      * `/opt/otel-stream-handler` - if implementing `RequestStreamHandler`
    * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
    * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling
