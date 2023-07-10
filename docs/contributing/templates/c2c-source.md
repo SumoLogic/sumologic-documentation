@@ -55,7 +55,7 @@ After you click on **Error**, you should see a **Health Events** popup modal con
 
 {{Configure source in Sumo Logic UI}} <!-- Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source -->
 
-## Error Types
+### Error Types
 
 When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows the possible error types, the reason for the error, whether the source attempts to retry, and the event log name in the Health Event Index.
 
