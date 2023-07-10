@@ -11,20 +11,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-{{source icon}}
+<!--
+<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>
 
 The {{source name}} collects {{data/event types}} from {{source of origin}}. {{What the app does}}.
 
-<!-- Example:
-The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.-->
+Example: The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.-->
 
 
 ## Prerequisites
 
-{{if any}}
+<!-- NOTE: This section doesn't apply to all sources; use only where needed
 
-<!-- Example:
-You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ....
+Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ....
 -->
 
 ## States
@@ -51,9 +50,25 @@ After you click on **Error**, you should see a **Health Events** popup modal con
 
 ## Setup and configuration
 
-{{Configure on source's website (not required for all sources)}} <!-- Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#set-up-a-service-application -->
+We need to configure on source's website before configuring source in sumo logic. For example, we may be needed to collect API key from customer platform for authorization and use it when configuring source in sumo logic.
 
-{{Configure source in Sumo Logic UI}} <!-- Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source -->
+### Configure on {{source}}
+
+<!-- NOTE: This section doesn't apply to all sources; only where needed
+
+Insert steps to configure on source's website
+
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#set-up-a-service-application
+-->
+
+
+### Configure {{source}} on Sumo Logic
+
+<!--
+Insert steps to configure the Source in the Sumo Logic UI
+
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source
+-->
 
 ### Error Types
 
