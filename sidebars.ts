@@ -2272,8 +2272,8 @@ integrations: [
       link: {type: 'doc', id: 'csa/index'},
       items: [
         'csa/introduction-to-csa',
-        'csa/search-and-monitor',
-        'csa/threat-investigation',
+        'csa/threat-detection-and-investigation',
+        'csa/audit-and-compliance',
       ],
     },
     {
