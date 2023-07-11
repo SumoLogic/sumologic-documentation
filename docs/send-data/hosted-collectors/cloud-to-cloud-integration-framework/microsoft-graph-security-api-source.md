@@ -75,7 +75,7 @@ The following steps show you how to create a service application:
 
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
-    You need to find and select the **SecurityAlert.Read.All**, **SecurityAlert.ReadWrite.All**, **SecurityIncident.Read.All**, **SecurityIncident.ReadWrite.All** and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
+    You need to find and select the **SecurityAlert.Read.All**, **SecurityIncident.Read.All**, and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
 
     :::note
     An Administrator must approve (grant) these permissions before the Source will function.
