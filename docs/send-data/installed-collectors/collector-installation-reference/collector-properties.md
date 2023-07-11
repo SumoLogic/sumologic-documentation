@@ -164,3 +164,4 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | wrapper.out.oom | string   | Custom message to log upon OutOfMemory exception from Wrapper. | The JVM has run out of memory. |
 | wrapper.out.stop | string   | Custom message to log upon stopping the Wrapper. | Wrapper Stopped |
 | collector.windows.active.directory.log.escape.special.characters | boolean | Allows escaping of special characters in Windows Active Directory Inventory Logs Source. | false  |
+| collector.windows.constant.sleep.interval.retry.windows.event | boolean | Allows to wait for a constant time to retry sending data whenever we get some invalid data. | false  |
