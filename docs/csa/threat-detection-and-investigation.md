@@ -7,11 +7,11 @@ description: Learn how to monitor security data and investigate incidents.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use Cloud Security Analytics for threat detection and investigation, you can use pre-built security apps, or build your own dashboards.
+To use Cloud Security Analytics for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
 
 ## Pre-built apps for threat detection and investigation
 
-[Install](/docs/get-started/apps-integrations)  the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation. 
+[Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation. 
 * [Security Analytics](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment. 
 * [Security and threat detection](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For example, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes pre-loaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database. 
 * [Cloud security monitoring and analytics](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls. 

@@ -7,11 +7,11 @@ description: Learn basic concepts about Cloud Security Analytics.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud Security Analytics (CSA) is a cloud-based, enterprise-grade security analytics system. Cloud Security Analytics leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud Security Analytics is comprised of apps, dashboards, and tools to analyze security data.
+Cloud Security Analytics (CSA) is a cloud-based, enterprise-grade security system comprised of apps, dashboards, and tools to analyze security data. It leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence, to produce findings that help you protect vulnerable attack surfaces from internal and external threats.
 
-Cloud Security Analytics lets you uncover security-related issues to help you protect vulnerable attack surfaces from internal and external threats. Cloud Security Analytics also makes it possible to store and use your data, both structured and unstructured, in a single security "data lake".
-
-In this article, you'll learn some of the basics for how to use Sumo Logic's Cloud Security Analytics platform for real-time threat detection and detailed log analysis. 
+Use Cloud Security Analytics to perform:
+* [Threat detection and investigation](/docs/csa/threat-detection-and-investigation/)
+* [Audit and compliance](/docs/csa/audit-and-compliance/)
 
 
 ## The Sumo Logic data pipeline
