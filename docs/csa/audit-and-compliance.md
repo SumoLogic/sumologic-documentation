@@ -11,7 +11,7 @@ To use Cloud Security Analytics for audit and compliance, you can use [pre-built
 
 ## About audit and compliance
 
-Compliance standards are enforced by various governments and organizations to protect end users and keep information private and secure. Meeting compliance standards is usually the first step in making sure your apps and data are secure. However, in most cases additional security measures, such as [threat monitoring](/csa/threat-detection-and-investigation/), are also recommended.
+Compliance standards are enforced by various governments and organizations to protect end users and keep information private and secure. Meeting compliance standards is usually the first step in making sure your apps and data are secure. However, in most cases additional security measures, such as [threat monitoring](/docs/csa/threat-detection-and-investigation/), are also recommended.
 
 A compliance audit is an inspection of an organization to check whether compliance standards are being met. You may have an internal audit, conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. You might also have an external audit, where a government or other external, independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
 
