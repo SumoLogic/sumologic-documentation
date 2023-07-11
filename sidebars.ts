@@ -84,7 +84,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
-           // 'send-data/opentelemetry-collector/quickstart', 
+           // 'send-data/opentelemetry-collector/quickstart',
             'send-data/opentelemetry-collector/install-collector-linux',
             'send-data/opentelemetry-collector/install-collector-macos',
             'send-data/opentelemetry-collector/install-collector-windows',
@@ -270,7 +270,8 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-v1-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-v2-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source',

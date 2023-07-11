@@ -279,7 +279,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox37 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Security API</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-v1-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Security API</h4></a>
   <p>Provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.</p>
   </div>
 </div>
