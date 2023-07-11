@@ -33,8 +33,8 @@ Remember to provide configuration using environment variables:
 
 ```bash
 OTEL_SERVICE_NAME=api
-OTEL_RESOURCE_ATTRIBUTES="application=banking-app,deployment=test"
-OTEL_EXPORTER_OTLP_TENDPOINT=http://examplehost:4318
+OTEL_RESOURCE_ATTRIBUTES="application=banking-app,deployment.environment=dev"
+OTEL_EXPORTER_OTLP_ENDPOINT=http://examplehost:4318
 npx @sumologic/opentelemetry-node index.js
 ```
 
