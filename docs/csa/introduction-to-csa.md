@@ -12,7 +12,7 @@ Cloud Security Analytics (CSA) is a cloud-based, enterprise-grade security syste
 Read other articles in this guide to learn how to use Cloud Security Analytics for:
 * [Threat detection and investigation](/docs/csa/threat-detection-and-investigation/)
 * [Audit and compliance](/docs/csa/audit-and-compliance/)
-* Data lakes 
+* [Data lakes](/docs/csa/data-lakes/)
 
 
 ## The Sumo Logic data pipeline
