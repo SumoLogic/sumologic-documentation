@@ -2275,6 +2275,7 @@ integrations: [
         'csa/introduction-to-csa',
         'csa/threat-detection-and-investigation',
         'csa/audit-and-compliance',
+        'csa/data-lakes',
       ],
     },
     {

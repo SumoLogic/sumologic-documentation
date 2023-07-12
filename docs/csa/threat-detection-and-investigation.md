@@ -2,7 +2,7 @@
 id: threat-detection-and-investigation
 title: Threat Detection and Investigation
 sidebar_label: Threat Detection and Investigation
-description: Learn how to monitor security data and investigate incidents. 
+description: Learn how to use Cloud Security Analytics to monitor security data and investigate incidents. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,9 +19,9 @@ To use Cloud Security Analytics for threat detection and investigation, you can 
 
 ## Build a dashboard for threat detection and investigation
 
-While the pre-built apps can meet many of your needs, you can also build your own dashboards. In this section we show you how to build a dashboard for threat detection and investigation. 
+While the pre-built apps can meet many of your needs, you can also build your own dashboards. In this section we show you how to build an example dashboard for threat detection and investigation. 
 
-The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)). You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. A CloudTrail log is a record in JSON format. The log contains information about requests for resources in your account, such as:
+The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)). AWS CloudTrail logs contain information about requests for resources in your account, such as:
 
 * who made the request
 * the services used

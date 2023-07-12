@@ -32,7 +32,13 @@ In this section, we'll present the following concepts:
 <div className="box smallbox3 card">
   <div className="container">
   <a href="/docs/csa/audit-and-compliance"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit and Compliance</h4></a>
-  <p>Learn how to use Cloud Security Analytics to assist with audit and compliance</p>
+  <p>Learn how to use Cloud Security Analytics to assist with audit and compliance.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/csa/data-lakes"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Data Lakes</h4></a>
+  <p>Learn how to use data lakes with Cloud Security Analytics.</p>
   </div>
 </div>
 </div>
