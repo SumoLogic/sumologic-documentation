@@ -53,7 +53,7 @@ To set up a webhook connection:
     :::
 1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
+1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#configure-webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
     :::note
     Variables are escaped according to the JSON standard, meaning that they can be used in application JSON. 
     :::
