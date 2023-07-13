@@ -39,11 +39,19 @@ Standard Windows event channels include:
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/). Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+As part of data collection setup and app installation, you can select the App from **App Catalog** and click on **Install App**. Follow the steps below.
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+:::note
+If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
+:::
+
+To create a new Collector:
+1. Select the **Add a new Collector** option.
+2. Select the platform where you want to install the Sumo Logic OpenTelemetry Collector.
+
+This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" />
 
@@ -60,7 +68,7 @@ Once the details are filled in, click on the **Download YAML File** button to ge
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+Once you have downloaded the yaml file as described in the previous step, follow the below steps based on your platform.
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using:
@@ -68,7 +76,11 @@ Once the details are filled in, click on the **Download YAML File** button to ge
   Restart-Service -Name OtelcolSumo
   ```
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+After successfully executing the above command, Sumo Logic will start receiving data from your host machine.
+
+Click **Next**. This will install the app (dashboards and monitors) to your Sumo Logic Org.
+
+Dashboard panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
 
 ## Sample Queries
 
