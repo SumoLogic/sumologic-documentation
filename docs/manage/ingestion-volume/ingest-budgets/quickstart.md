@@ -14,6 +14,10 @@ description: Learn how to create and use Ingest Budgets.
 
 This tutorial provides the steps to create and use ingest budgets. Details about this feature can be found in [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
 
+:::note
+This tutorial is only relevant for V1 Ingest Budgets. V2 Ingest Budgets assign budgets to your log data by **Fields** or built-in metadata fields, and do not use the reserved **`_budget`** field.
+:::
+
 ## Requirements
 
 API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/getting-started#authentication) for details.
