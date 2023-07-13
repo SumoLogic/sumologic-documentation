@@ -23,14 +23,14 @@ To open the MITRE Coverage page, select **Content > MITRE Coverage**.
 
 1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and procedures. 
 1. [**Vendor/Product**](#productvendor-filter). Click to filter on vendors and products that provide data sources. 
-1. Additional filtering:
-   * **Show Rule Count**. Shows the number of rules covering techniques in the matrix.
-   * **Show Technique ID**. Shows IDs for techniques in the matrix. 
-   * **Show Technique Name**. Shows the names of techniques in the matrix.
+1. Additional filtering for text in the tiles:
+   * **Show Rule Count**. Shows the number of rules covering the technique.
+   * **Show Technique ID**. Shows the technique ID. 
+   * **Show Technique Name**. Shows the name of the technique.
 1. **Export**. Export the filtered coverage to a JSON file. The file includes a score from 0 to 3 for each tactic/technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
-1. **Theoretical Coverage**. Displays coverage for all rules and data sources in your environment if all theoretically possible data sources were in use in your environment. If this is selected, the **Vendor/Product** filter is disabled.
-1. **Recent Signals**. Shows coverage for your organization based on signals received recently.<!-- What does recent mean? The last 30 days? 60 days? --> 
-1. **All Detected Activity**. Shows coverage for all activity detected in the last 180 days.  
+1. **Theoretical Coverage**. Shows coverage if all Sumo Logic content were enabled and all data sources were connected. If this is selected, the **Vendor/Product** filter is disabled.
+1. **Recent Signals**. Shows activity for your organization based on your Signals over the last 180 days. 
+1. **All Detected Activity**. Shows activity for all organizations (as detected by Sumo Logic Threat Labs) over the last 180 days.  
 1. **Total Coverage**. Estimated coverage for all tactics/techniques in the MITRE Enterprise Matrix. 
 1. **Technique Coverage**. The number of techniques covered.
 1. **Sub-Technique Coverage**. The number of sub-techniques covered.
