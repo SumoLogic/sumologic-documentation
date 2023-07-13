@@ -33,17 +33,26 @@ Standard Windows event channels include:
 - Security
 - System
 
+## Collection Configuration and App installation
+
 :::note
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/). Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-## Collection Configuration and App installation
-
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+As part of data collection setup and app installation, you can select the App from App Catalog and click on Install App. Follow the steps below.
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+:::note
+If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the Use an existing Collector option.
+:::
+
+To create a new Collector:
+
+- Select the Add a new Collector option.
+- Select the platform where you want to install the Sumo Logic OpenTelemetry Collector.
+
+This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" />
 
