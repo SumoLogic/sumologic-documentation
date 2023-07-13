@@ -1,5 +1,5 @@
 ---
-id: pci-windows-json-opentelemetry
+id: windows-json-opentelemetry
 title: PCI Compliance for Windows JSON - OpenTelemetry
 dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
@@ -92,7 +92,97 @@ sumo.datasource=windows deployment.environment={{deployment.environment}} host.g
 ## Sample Logs
 
 ```json
-{ "record_id":161812, "channel":"Security", "event_data":{ "WorkstationName":"-", "TargetDomainName":"", "SubjectUserSid":"S-1-0-0", "LogonProcessName":"NtLmSsp ", "TargetUserName":"ADMINISTRATOR", "TargetUserSid":"S-1-0-0", "IpAddress":"3.137.149.192", "ProcessId":"0x0", "KeyLength":"0", "ProcessName":"-", "SubjectUserName":"-", "LogonType":"3", "TransmittedServices":"-", "FailureReason":"%%2313", "SubjectLogonId":"0x0", "IpPort":"0", "AuthenticationPackageName":"NTLM", "Status":"0xc000006d", "LmPackageName":"-", "SubStatus":"0xc000006a", "SubjectDomainName":"-" }, "task":"Logon", "provider":{ "name":"Microsoft-Windows-Security-Auditing", "guid":"{54849625-5478-4994-a5ba-3e3b0328c30d}", "event_source":"" }, "system_time":"2023-07-11T14:14:51.1731050Z", "computer":"EC2AMAZ-V57A85N", "opcode":"Info", "keywords":[ "Audit Failure" ], "details":{ "Account For Which Logon Failed":{ "Security ID":"S-1-0-0", "Account Name":"ADMINISTRATOR", "Account Domain":"-" }, "Network Information":{ "Workstation Name":"-", "Source Network Address":"3.137.149.192", "Source Port":"0" }, "Failure Information":{ "Failure Reason":"Unknown user name or bad password.", "Status":"0xC000006D", "Sub Status":"0xC000006A" }, "Detailed Authentication Information":{ "Transited Services":"-", "Key Length":"0", "Logon Process":"NtLmSsp", "Authentication Package":"NTLM", "Package Name (NTLM only)":"-" }, "Subject":{ "Security ID":"S-1-0-0", "Account Name":"-", "Account Domain":"-", "Logon ID":"0x0" }, "Process Information":{ "Caller Process ID":"0x0", "Caller Process Name":"-" }, "Logon Type":"3", "Additional Context":[ "This event is generated when a logon request fails. It is generated on the computer where access was attempted.", "The Subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.", "The Logon Type field indicates the kind of logon that was requested. The most common types are 2 (interactive) and 3 (network).", "The Process Information fields indicate which account and process on the system requested the logon.", "The Network Information fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.", "The authentication information fields provide detailed information about this specific logon request.", "- Transited services indicate which intermediate services have participated in this logon request.", "- Package name indicates which sub-protocol was used among the NTLM protocols.", "- Key length indicates the length of the generated session key. This will be 0 if no session key was requested." ] }, "message":"An account failed to log on.", "event_id":{ "qualifiers":0, "id":4625 }, "level":"Information" }
+{
+  "record_id":161812,
+  "channel":"Security",
+  "event_data":{
+    "WorkstationName":"-",
+    "TargetDomainName":"",
+    "SubjectUserSid":"S-1-0-0",
+    "LogonProcessName":"NtLmSsp ",
+    "TargetUserName":"ADMINISTRATOR",
+    "TargetUserSid":"S-1-0-0",
+    "IpAddress":"3.137.149.192",
+    "ProcessId":"0x0",
+    "KeyLength":"0",
+    "ProcessName":"-",
+    "SubjectUserName":"-",
+    "LogonType":"3",
+    "TransmittedServices":"-",
+    "FailureReason":"%%2313",
+    "SubjectLogonId":"0x0",
+    "IpPort":"0",
+    "AuthenticationPackageName":"NTLM",
+    "Status":"0xc000006d",
+    "LmPackageName":"-",
+    "SubStatus":"0xc000006a",
+    "SubjectDomainName":"-"
+  },
+  "task":"Logon",
+  "provider":{
+    "name":"Microsoft-Windows-Security-Auditing",
+    "guid":"{54849625-5478-4994-a5ba-3e3b0328c30d}",
+    "event_source":""
+  },
+  "system_time":"2023-07-11T14:14:51.1731050Z",
+  "computer":"EC2AMAZ-V57A85N",
+  "opcode":"Info",
+  "keywords":[
+    "Audit Failure"
+  ],
+  "details":{
+    "Account For Which Logon Failed":{
+      "Security ID":"S-1-0-0",
+      "Account Name":"ADMINISTRATOR",
+      "Account Domain":"-"
+    },
+    "Network Information":{
+      "Workstation Name":"-",
+      "Source Network Address":"3.137.149.192",
+      "Source Port":"0"
+    },
+    "Failure Information":{
+      "Failure Reason":"Unknown user name or bad password.",
+      "Status":"0xC000006D",
+      "Sub Status":"0xC000006A"
+    },
+    "Detailed Authentication Information":{
+      "Transited Services":"-",
+      "Key Length":"0",
+      "Logon Process":"NtLmSsp",
+      "Authentication Package":"NTLM",
+      "Package Name (NTLM only)":"-"
+    },
+    "Subject":{
+      "Security ID":"S-1-0-0",
+      "Account Name":"-",
+      "Account Domain":"-",
+      "Logon ID":"0x0"
+    },
+    "Process Information":{
+      "Caller Process ID":"0x0",
+      "Caller Process Name":"-"
+    },
+    "Logon Type":"3",
+    "Additional Context":[
+      "This event is generated when a logon request fails. It is generated on the computer where access was attempted.",
+      "The Subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.",
+      "The Logon Type field indicates the kind of logon that was requested. The most common types are 2 (interactive) and 3 (network).",
+      "The Process Information fields indicate which account and process on the system requested the logon.",
+      "The Network Information fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.",
+      "The authentication information fields provide detailed information about this specific logon request.",
+      "- Transited services indicate which intermediate services have participated in this logon request.",
+      "- Package name indicates which sub-protocol was used among the NTLM protocols.",
+      "- Key length indicates the length of the generated session key. This will be 0 if no session key was requested."
+    ]
+  },
+  "message":"An account failed to log on.",
+  "event_id":{
+    "qualifiers":0,
+    "id":4625
+  },
+  "level":"Information"
+}
 ```
 
 ## Viewing Windows Event Log-Based Dashboards
