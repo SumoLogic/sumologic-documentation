@@ -18,7 +18,7 @@ The PCI Compliance for Windows JSON app covers PCI requirements 02, 06, 08, and 
 
 ## Fields created in Sumo Logic for PCI Compliance Windows JSON App
 
-Following tag will be created as part of Linux app installation, if not already present. 
+Following tag will be created as part of Linux app installation, if not already present.
 
 - `sumo.datasource`: has the fixed value of **windows**.
 - `host.group`: user configured tag which signifies a group of hosts for the operating system.
@@ -53,7 +53,7 @@ To create a new Collector:
 
 This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" />
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" />
 
 ### Step 2: Configure integration
 
