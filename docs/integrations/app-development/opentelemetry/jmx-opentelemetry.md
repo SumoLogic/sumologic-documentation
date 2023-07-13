@@ -142,7 +142,7 @@ Click on the **Download YAML File** button to get the yaml file.
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 :::note
-If you have multiple Java processes running on the same host then you need to select **Add another Host** option under **More Actions** when installing an app to generate a new yaml configuration file for each of the Java process.
+If you have multiple Java processes running on the same host, then you need to select **Add another Host** option under **More Actions** when installing an app to generate a new YAML configuration file for each of the Java process.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/JMX-OpenTelemetry/JMX-Add-New-Host.png' alt="Add Another Host" />
 :::
