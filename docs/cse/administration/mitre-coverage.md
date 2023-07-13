@@ -41,13 +41,13 @@ To open the MITRE Coverage page, select **Content > MITRE Coverage**.
    * None (10 or fewer rules)
    * Not detectable (no rules found)
    * Filter not applied
-1. **Tactics and Techniques matrix**. The tactics and techniques from the MITRE Enterprise matrix. Click a square to see the coverage you have for that technique. A panel appears showing [MITRE details](#mitre-details).
+1. **Tactics and Techniques matrix**. The tactics and techniques from the MITRE Enterprise matrix. Click a square to see the coverage you have for that technique. A panel appears showing [technique details](#technique-details).
 
-## MITRE details
+## Technique details
 
-When you click a square in the matrix, details about coverage for that technique display in a panel. The panel has a full description of the technique, with an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
+When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The panel has a full description of the technique, with an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
 
-Click **Rules** at the bottom of the panel to get links to all the rules that contribute to coverage for the technique.  
+Click **Rules** at the bottom of the panel to see a list of all the rules that contribute to coverage for the technique. Click a rule in the list to open the rule. 
 
 <img src={useBaseUrl('img/cse/mitre-details.png')} alt="MITRE TTP filter" width="300"/>
 
