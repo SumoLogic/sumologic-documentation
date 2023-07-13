@@ -65,7 +65,6 @@ Once the details are filled in, click on the **Download YAML File** button to ge
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' alt="YAML" />
 
-
 ### Step 3: Send logs to Sumo
 
 Once you have downloaded the yaml file as described in the previous step, follow the below steps based on your platform.
