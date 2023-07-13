@@ -164,6 +164,10 @@ The Usage Details panel contains the following usage categories:
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
 * **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
 
+:::note
+The usage data on this page is updated frequently to reflect the near-real time status of your account. However, please note that storage is calculated based on the total daily storage volume and reported on the next day. It may take some time before the storage usage for the previous day is fully displayed on the UI.
+:::
+
 ### Changing views and time intervals
 
 The Sumo Logic Account page allows you to easily monitor your data usage over selected time intervals, including total storage and metrics usage.
