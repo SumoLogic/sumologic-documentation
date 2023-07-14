@@ -321,7 +321,7 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'dashboards',
+                sidebarId: 'alerts',
                 label: 'Alerts',
                 icon: 'notifications',
               },
