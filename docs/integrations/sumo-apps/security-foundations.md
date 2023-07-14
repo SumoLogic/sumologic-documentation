@@ -34,7 +34,7 @@ The app supports the following security technologies:
 
 ## Install the Sumo Logic Foundations​ app
 
-The Security Foundations app is available to Sumo Logic Enterprise Security and Enterprise Suite accounts only, and requires a Professional Services contract to install and configure. For more information about this app and to request installation, send an email to `sales@sumologic.com`, contact your account manager, or see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/#Requesting-Sumo-Logic-Enterprise-Apps).
+The Security Foundations app is available to Sumo Logic Enterprise Security and Enterprise Suite accounts only, and requires a Professional Services contract to install and configure. For more information about this app and to request installation, send an email to [sales@sumologic.com](mailto:sales@sumologic.com), contact your account manager, or see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/#Requesting-Sumo-Logic-Enterprise-Apps).
 
 ## Security Foundations app dashboards​
 
