@@ -3540,5 +3540,6 @@
   "/docs/cse/records-signals-entities-insights/insight-generation-process": "/docs/cse/get-started-with-cloud-siem/insight-generation-process",
   "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-amazon-kinesis": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
   "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-collector-script": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
+  "/docs/cse/get-started-with-cloud-siem/introduction-to-cloud-siem/": "/docs/cse/introduction-to-cloud-siem/",
   "/cid/-1": "/"
 }

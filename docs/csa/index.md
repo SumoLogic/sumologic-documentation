@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="60"/>
 
-Cloud Security (CSA) is a cloud-based security system that provides the following functionality: 
+Cloud Security Analytics (CSA) is a cloud-based security system that provides the following functionality: 
 
 * Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
 * Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.

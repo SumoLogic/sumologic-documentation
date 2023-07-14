@@ -2267,6 +2267,16 @@ integrations: [
   security: [
     {
       type: 'category',
+      label: 'Sumo Logic Security Solutions',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'security/index'},
+      items: [
+        'security/introduction-to-security-solutions',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Cloud Security Analytics (CSA)',
       collapsible: true,
       collapsed: true,
@@ -2285,6 +2295,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},
       items: [
+        'cse/introduction-to-cloud-siem',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2292,7 +2303,6 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/get-started-with-cloud-siem/index'},
           items: [
-            'cse/get-started-with-cloud-siem/introduction-to-cloud-siem',
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
