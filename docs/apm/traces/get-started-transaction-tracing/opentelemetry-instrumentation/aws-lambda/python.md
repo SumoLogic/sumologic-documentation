@@ -150,6 +150,6 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 ### Context propagation
 
-In case of an external request to the Lambda function, it is important to propagate the context. Enabling [AWS X-Ray context propagation](https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.tml#xray-concepts-tracingheader) on the client side will help to visualize the complex flow of the trace.
+In case of an external request to the Lambda function, it is important to propagate the context. Enabling [AWS X-Ray context propagation](https://docs.aws.amazon.com/xray/latest/devguide/xray-services-s3.html) on the client side will help to visualize the complex flow of the trace.
 
-For applications instrumented by OpenTelemetry SDK, it is enough to install AWS X-Ray propagator dependency specific for an instrumentation and configure the [`OTEL_PROPAGATORS` environment variable](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/sdk-environment-variables.md#general-sdk-configuration) (for example: `export OTEL_PROPAGATORS= tracecontext,baggage,xray`).
+For applications instrumented by OpenTelemetry SDK, it is enough to install AWS X-Ray propagator dependency specific for an instrumentation and configure the [`OTEL_PROPAGATORS` environment variable](https://opentelemetry.io/docs/concepts/sdk-configuration/general-sdk-configuration/#otel_propagators) (for example: `export OTEL_PROPAGATORS= tracecontext,baggage,xray`).
