@@ -2097,6 +2097,7 @@ integrations: [
             collapsed: true,
             items: [
               'integrations/pci-compliance/opentelemetry/linux-opentelemetry',
+              'integrations/pci-compliance/opentelemetry/windows-json-opentelemetry',
             ],
           },
           'integrations/pci-compliance/setup',
