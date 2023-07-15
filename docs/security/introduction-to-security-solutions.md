@@ -22,16 +22,58 @@ Watch the following micro lesson to learn about Sumo Logic's security solutions.
 
 import Iframe from 'react-iframe';
 
-Sumo Logic supports the entire spectrum of security use cases, from security monitoring and analytics, to security incident and event management (SIEM) and security orchestration, automation, and response (SOAR):
+## Security solutions
 
-* Cloud Security Analytics
+Sumo Logic supports the entire spectrum of security use cases, from security monitoring and analytics, to security incident and event management (SIEM), and security orchestration, automation, and response (SOAR):
+
+* [Cloud Security Analytics (CSA)](/docs/csa/) 
 
    Provides cloud security monitoring to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure.
 
-* Cloud SIEM
+* [Cloud SIEM](/docs/cse/)
 
-   Gives analysts prioritized and contextualized actionable threats with automated security workflows. This removes common technology limitations that burden a security operations center (SOC) team’s efficiency and ability to mitigate risk. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
+   Gives analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
 
-* Cloud SOAR
+* [Cloud SOAR](/docs/cloud-soar/)
 
    Fully automates triage, investigation, and resolution of threats. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, significantly accelerating mean time to respond (MTTR). 
+
+## Feature comparison
+
+   | Feature | CSA | Cloud SOAR | Cloud SOAR |
+| :-- | :-- | :-- | :-- |
+| Log collection | x | x | x |
+| App catalog (out-of-the-box analytics) | x | x | x |
+| Dashboard | x | x | x |
+| Deep search (Sumo Logic Search Query Language) | x | x | x |
+| Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | x | x | x |
+| Monitoring | x | x | x |
+| Alerts | x <br/>(only in UI) | x | x |
+| Threat Intelligence (CrowdStrike threat intel feed and threat analysis app) | x | x | x |
+| Normalization with parsing of unstructured data and Field Extraction Rules | x | x | x |
+| Normalization with parsing, mapping, and enrichment | | x | |
+| Streaming processing | | x | |
+| Out-of-the-box detection contents | | x | |
+| Advanced analytics for user behavior | | x | |
+| Rules Engine (built-in, types, custom, criticality, Rule Expression tuning) | | x | |
+| Correlation of Signals to an Entity | | x | |
+| Insight Engine (including case management) | | x | |
+| Entity Types (Entity Normalization, Related Entities, Entity Crticality) | | x | |
+| Entity Relationship Graph | | x | |
+| Entity Timeline | | x | |
+| Machine learning capabilities (Global Confidence Score for Insights, Insight Trainer) | | x | |
+| Tags (MITRE ATT&CK, custom tag schema, network blocks) | | x | |
+| Automation Service (full automated playbooks for enrichment and notification) | | x | |
+| Open Integration Framework (OIF) | | x | x |
+| App Central (enrichment and notification actions and playbooks ) | | x | x |
+| App Central (all actions and the complete playbooks catalog) | | | x |
+| Playbook | | | x |
+| SecOps dashboard | | | x |
+| Case Manager | | | x |
+| War Room | | | x |
+| Supervised active intelligence with alert triage and playbooks suggestions | | | x |
+| Progressive automation | | | x |
+| Highly customizable dashboards and KPIs | | | x |
+| Automatic incident reports | | | x |
+
+

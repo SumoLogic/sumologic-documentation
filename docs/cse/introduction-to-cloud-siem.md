@@ -7,6 +7,22 @@ description: Learn basic concepts about Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+Watch the following micro lesson to learn how to get started using Cloud SIEM for threat investigation.
+
+<Iframe url="https://www.youtube.com/embed/cDUOzQ63zmc?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
+
 Cloud SIEM Enterprise (CSE) is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. 
 
 Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. As shown below, the process starts when logs from data sources enter a collector, then flow through an ingestion process that generates messages. The messages are parsed, mapped to normalized values, and enriched with additional data before becoming records. 
@@ -88,21 +104,6 @@ Cloud SIEM takes everything one step further and correlates those Signals into a
 An Insight is a group of Signals clustered around a single entity. An Insight is created when the sum of the severity scores of Signals with the same entity goes above a certain activity score within a certain timeframe. By default, this is an activity score of 12 within the last 14 days. For example, if a rule was triggered with a severity of 5, and then ten days later another rule with the same entity and a severity of 5 was triggered, the total activity score would only be 10 in the last 14 days, so an Insight would not be created. However, if those same two rules had a severity score of 7, an Insight would be created.
 
 ## Get started with threat investigation
-
-Watch this micro lesson to learn how to get started using Cloud SIEM for threat investigation.
-
-<Iframe url="https://www.youtube.com/embed/cDUOzQ63zmc?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe'; 
 
 Threat investigation is reactive while threat hunting is proactive. Typically, threat investigation happens in response to an alert. Once you’ve investigated a threat, you can hunt for similar threats and take precautionary steps to prevent attacks from happening again. 
 
