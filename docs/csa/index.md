@@ -41,4 +41,10 @@ In this section, we'll present the following concepts:
   <p>Learn about using data lakes with Cloud Security Analytics.</p>
   </div>
 </div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/csa/application-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Application Security</h4></a>
+  <p> Learn about using Cloud Security Analytics for application security.</p>
+  </div>
+</div>
 </div>

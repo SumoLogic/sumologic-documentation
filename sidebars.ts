@@ -2287,6 +2287,7 @@ integrations: [
         'csa/threat-detection-and-investigation',
         'csa/audit-and-compliance',
         'csa/data-lakes',
+        'csa/application-security',
       ],
     },
     {

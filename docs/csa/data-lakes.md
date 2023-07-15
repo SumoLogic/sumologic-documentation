@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To use a data lake with Cloud Security Analytics, you must first [install a data lake](#install-a-data-lake-for-use-with-cloud-security-analytics). Cloud Security Analytics is optimized to work with Amazon Data Lake, but you can use the data lake of your choice. Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up a data lake for use with Cloud Security Analytics.
 
-## What is a data lake?
+## About data lakes
 
 A data lake is a centralized repository to store data. Data in the lake can then be used for analytics. A data lake can store both structured and unstructured date, unlike a data warehouse, which typically only stores structured data. You have much more flexibility with a data lake than a data warehouse, because you can retrieve the data in any format used by your consuming services. Data lakes are ideal to use with  Cloud Security Analytics, since Sumo Logic's parsing and mapping capabilities can transform data quickly and at scale. 
 
-## Why use a data lake?
+### Why use a data lake?
 
 Scattered data is a security risk. When it comes to quickly addressing security threats, it’s common for data to be spread throughout different tools, clouds and functions, making it hard to access, see and use effectively. Under these circumstances, identifying potential threats is an arduous task. To get ahead of potential threats, most organizations need detailed security data they can act on in an easy-to-access location. A security data lake is one solution.
 
@@ -43,7 +43,7 @@ A security data lake allows you to store and access various data types and forma
 * **User access**. Tracking a user’s Windows authentication, single sign-on, and Active Directory are great sources to tie one user to the event in the system, even if they change IP addresses in the middle of their activity.
 * **Threat intelligence**. Accessing logs and data from recent threats at other organizations can help you recognize similar patterns or behaviors faster.
 
-### How do I build a security data lake?
+### Best practices guide to building a security data lake
 
 Following are the basic process steps involved in building a security data lake. 
 
