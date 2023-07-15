@@ -94,9 +94,4 @@ Benchmark against industry standards and other internal software protection leve
 ## Pre-built apps for application security
 
 * [Software Development Optimization Solution](/docs/observability/sdo/). Solution that includes the [SDO app](/docs/observability/sdo/install-sdo-app-view-dashboards/), which monitors your development pipeline and provides metrics and actionable insights generated automatically from your development tools.
-* [App Development](/docs/integrations/app-development/). Apps for platforms and tools that support software development processes.
-
-Install the following additional apps to support application security:
-* [Asana](/docs/integrations/saas-cloud/asana/)
-* [Qualsys](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/)
-* [Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/)
+* [App Development](/docs/integrations/app-development/). Apps for platforms and tools that support software development processes, including GitHub, Jenkins, JFrog Artifactory, and Jira, and many others.
