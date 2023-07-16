@@ -10,7 +10,7 @@ This topic has information about how you can identify specific Entities or indic
 :::tip
 The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
 :::
-* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below.
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](https://help.sumologic.com/docs/api/cloud-siem-enterprise/) API action, the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target Column:** Source IP Address (`SrcIp`)."
 
 
 ## Schema tag keys for Entities
@@ -86,7 +86,7 @@ Assign the _userGroup tag to users accounts  known to be involved with specific 
 
 ### admin_ips
 
-**Target column:** Source IP Address
+**Target Column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -98,7 +98,7 @@ The following CSE rules refer to this Match List:
 
 ### admin_accounts
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Accounts that are known to be involved with specific administrative or privileged activity.
 
@@ -108,7 +108,7 @@ The following CSE rules refer to this Match List:
 
 ### admin_username
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity.
 
@@ -118,7 +118,7 @@ The following CSE rules refer to this Match List:
 
 ### Alibaba_admin_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
 
@@ -128,7 +128,7 @@ The following CSE rules refer to this Match List:
 
 ### Alibaba_admin_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** IPs that are known to be involved with specific administrative or privileged activity on the network.
 
@@ -138,7 +138,7 @@ The following CSE rules refer to this Match List:
 
 ### auth_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Network authentication servers, including Active Directory, LDAP, Kerberos, RADIUS/TACACS, and NIS servers. May be used in analytics designed to detect [DCSync](https://attack.mitre.org/techniques/T1003/006/) attacks.
 
@@ -148,7 +148,7 @@ The following CSE rules refer to this Match List:
 
 ### authorized_third_party_domains
 
-**Target column:** Domain
+**Target column:** Domain (`Domain`)
 
 **Description:** Authorized third party domains.
 
@@ -158,7 +158,7 @@ The following CSE rules refer to this Match List:
 
 ### AWS_admin_ips
 
-**Target column:** Source IP Address
+**Target Column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -201,7 +201,7 @@ The following CSE rules refer to this Match List:
 
 ### AWS_admin_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -244,7 +244,7 @@ The following CSE rules refer to this Match List:
 
 ### business_asns
 
-**Target column:** ASN
+**Target column:** ASN (`Asn`)
 
 **Description:** Remote ASNs supporting business processes.
 
@@ -260,7 +260,7 @@ The following CSE rules refer to this Match List:
 
 ### business_domains
 
-**Target column:** Domain
+**Target column:** Domain (`Domain`)
 
 **Description:** DNS domain names that are known business-related domains. This is intended to capture domains related to validated, expected, or critical business functions and may be used for allowlisting or filtering related uninteresting results from query result sets.
 
@@ -290,7 +290,7 @@ The following CSE rules refer to this Match List:
 
 ### business_hostnames
 
-**Target column:** Hostname
+**Target column:** Hostname (`Hostname`)
 
 **Description:** DNS hostnames that are known to be business-related FQDNs.
 
@@ -320,7 +320,7 @@ The following CSE rules refer to this Match List:
 
 ### business_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Remote IP addresses supporting business processes. Can be used for things like SSH servers for SFTP file exchanges (similarly, FTP servers).
 
@@ -347,7 +347,7 @@ The following CSE rules refer to this Match List:
 
 ### dns_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** DNS caching resolvers/authoritative content servers in customer environments.
 
@@ -359,7 +359,7 @@ The following CSE rules refer to this Match List:
 
 ### domain_controllers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Domain controllers.
 
@@ -376,7 +376,7 @@ The following CSE rules refer to this Match List:
 
 ### downgrade_krb5_etype_authorized_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Known account names that utilize downgraded encryption types with multiple SPNs. This is an exception Match List that should be populated with a list of Kerberos principal names (for example,  jdoe@EXAMPLE.COM) matched in endpoint username that are known to trigger content around legacy downgraded encryption types. This is directly related to the detection of [*Kerberoasting*](https://attack.mitre.org/techniques/T1208/) attacks.
 
@@ -388,7 +388,7 @@ The following CSE rules refer to this Match List:
 
 ### ds_replication_authorized_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Authorized account names to initiate Directory Service Replication requests to Active Directory.
 
@@ -400,7 +400,7 @@ none
 
 ### dyndns_exception_domains
 
-**Target column:** Domain
+**Target column:** Domain (`Domain`)
 
 **Description:** Authorized domains.
 
@@ -413,7 +413,7 @@ The following CSE rules refer to this Match List:
 
 ### dyndns_exception_hostnames
 
-**Target column:** Hostname
+**Target column:** Hostname (`Hostname`)
 
 **Description:** Authorized hostnames.
 
@@ -426,7 +426,7 @@ The following CSE rules refer to this Match List:
 
 ### ftp_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Known FTP servers.
 
@@ -436,7 +436,7 @@ none
 
 ### GCP_admin_ips
 
-**Target column:** Source IP Address
+**Target Column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -453,7 +453,7 @@ The following CSE rules refer to this Match List:
 
 ### GCP_admin_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -470,7 +470,7 @@ The following CSE rules refer to this Match List:
 
 ### gcp_admin
 
-**Target column:** Username or Source IP Address
+**Target Column:** Username (`Username`) or Source IP Address (`SrcIp`)
 
 **Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -494,7 +494,7 @@ The following CSE rules refer to this Match List:
 
 ### Google_Workspace_admin_ips
 
-**Target column:** Source IP Address
+**Target Column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -504,7 +504,7 @@ The following CSE rule refers to this Match List:
 
 ### Google_Workspace_admin_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -514,7 +514,7 @@ The following CSE rule refers to this Match List:
 
 ### guest_networks
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Known guest WLAN and other guests/BYOD network addresses.
 
@@ -546,7 +546,7 @@ The following CSE rules refer to this Match List:
 
 ### honeypot_ip_addresses
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** List of IPs for Honeypots.
 
@@ -556,7 +556,7 @@ The following CSE rules refer to this Match List:
 
 ### http_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Web servers in your environment.
 
@@ -566,7 +566,7 @@ The following CSE rules refer to this Match List:
 
 ### lan_scanner_exception_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** IP addresses excepted from analytics identifying LAN protocol scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports, etc. Not an across-the-board allowlist. This Match List is not intended for vulnerability scanners, which should be listed instead in vuln scanners.
 
@@ -595,7 +595,7 @@ The following CSE rules refer to this Match List:
 
 ### nat_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Source NAT addresses. Can be used as an exception Match List to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts. Note that this can also be applied using [proxy_servers](#proxy_servers) as an example of a specific case.
 
@@ -605,7 +605,7 @@ The following CSE rules refer to this Match List:
 
 ### nms_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:**
 
@@ -627,7 +627,7 @@ The following CSE rules refer to this Match List:
 
 ### Okta_Admins
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity.
 
@@ -637,7 +637,7 @@ The following CSE rules refer to this Match List:
 
 ### palo_alto_sinkhole_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** IP addresses for the sinkhole IP or IPs configured for [Palo Alto DNS sinkhole](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClGECA0).
 
@@ -649,7 +649,7 @@ None
 
 ### proxy_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Forward proxy servers, including HTTP and SOCKS proxies.
 
@@ -669,7 +669,7 @@ The following CSE rules refer to this Match List:
 
 ### proxy_servers_dst
 
-**Target column:** Destination IP Address
+**Target column:** Destination IP Address (`DstIp`)
 
 **Description:** Copy of the [proxy_servers](#proxy_servers) Match List for directional matches.
 
@@ -702,7 +702,7 @@ The following CSE rules refer to this Match List:
 
 ### proxy_servers_src
 
-**Target column:** Source IP Address
+**Target Column:** Source IP Address (`SrcIp`)
 
 **Description:** Copy of the [proxy_server](#proxy_servers) Match List for directional matches.
 
@@ -712,7 +712,7 @@ none
 
 ### public_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Public Ip Addresses.
 
@@ -723,7 +723,7 @@ The following CSE rules refer to this Match List:
 
 ### salesforce_admin_ips
 
-**Target column:** Source IP Address
+**Target Column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -745,7 +745,7 @@ The following CSE rules refer to this Match List:
 
 ### salesforce_admin_users
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -767,7 +767,7 @@ The following CSE rules refer to this Match List:
 
 ### sandbox_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Malware sandboxes or security devices interacting with malicious infrastructure.
 
@@ -780,7 +780,7 @@ The following CSE rules refer to this Match List:
 
 ### scanner_targets
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Destination networks that are authorized/standard targets of vulnerability scans in customer environment.
 
@@ -790,7 +790,7 @@ none
 
 ### smtp_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** SMTP sending/receiving hosts in customer environment.
 
@@ -800,7 +800,7 @@ none
 
 ### sql_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Database servers in customer environment.
 
@@ -810,7 +810,7 @@ none
 
 ### ssh_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Known SSH servers.
 
@@ -820,7 +820,7 @@ none
 
 ### ssl_exception_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** SSL exception IPs.
 
@@ -833,7 +833,7 @@ The following CSE rules refer to this Match List:
 
 ### telnet_servers
 
-**Target column:**     IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Telnet servers in your environment.
 
@@ -843,7 +843,7 @@ none
 
 ### threat
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** A record flagged an IP address from a threat intelligence Match List.
 
@@ -859,7 +859,7 @@ The following CSE rules refer to this Match List:
 
 ### unauthorized_external_media
 
-**Target column:** Hostname
+**Target column:** Hostname (`Hostname`)
 
 **Description:** A list of devices that should not have external media installed on them.
 
@@ -879,7 +879,7 @@ The following CSE rules refer to this Match List:
 
 ### verified_domains
 
-**Target column:** Domain
+**Target column:** Domain (`Domain`)
 
 **Description:** Reviewed and validated legitimate or non-threat domains.
 
@@ -907,7 +907,7 @@ The following CSE rules refer to this Match List:
 
 ### verified_hostnames
 
-**Target column:** Hostname
+**Target column:** Hostname (`Hostname`)
 
 **Description:** Reviewed and validated legitimate or non-threat hostnames.
 
@@ -935,7 +935,7 @@ The following CSE rules refer to this Match List:
 
 ### verified_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Reviewed and validated legitimate or non-threat ips.
 
@@ -951,7 +951,7 @@ The following CSE rules refer to this Match List:
 
 ### verified_uri_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Reviewed and validated legitimate or non-threat IP addresses.
 
@@ -976,7 +976,7 @@ The following CSE rules refer to this Match List:
 
 ### vpn_networks
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** VPN/remote access user address pools and DHCP scopes.
 
@@ -986,7 +986,7 @@ none
 
 ### vpn_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** VPN/remote access servers, including IKE/IPsec/SSL VPN concentrators, OpenVPN endpoints, and so on.
 
@@ -996,7 +996,7 @@ none
 
 ### vuln_scanners
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Vulnerability scanner and network mapping hosts.
 
@@ -1060,7 +1060,7 @@ The following CSE rules refer to this Match List:
 
 ### web_servers
 
-**Target column:** Hostname or IP Address
+**Target column:** Hostname (`Hostname`) or IP Address (`Ip`)
 
 **Description:** List of webserver hostnames or IPs.
 
@@ -1070,7 +1070,7 @@ The following CSE rules refer to this Match List:
 
 ### zoom_admins
 
-**Target column:** Username
+**Target Column:** Username (`Username`)
 
 **Description:** Known admin users of Zoom.
 
