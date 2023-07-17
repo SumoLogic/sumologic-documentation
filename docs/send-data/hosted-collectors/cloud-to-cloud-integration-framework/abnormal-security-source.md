@@ -15,7 +15,7 @@ The Abnormal Security integration ingests threat data identified by the abnormal
 
 ## Data Source
 
-The Abnormal Security fetches the list of threat IDs using the [Threats API ](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats) and for each threat ID you can fetch details of the threat using the [Threat Details API](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats__threatId_).
+The Abnormal Security source fetches the list of threat IDs using the [Threats API ](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats) and for each threat ID it fetches details of the threat using the [Threat Details API](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1#/Threats/get_threats__threatId_).
 
 ## Set up and configuration
 
