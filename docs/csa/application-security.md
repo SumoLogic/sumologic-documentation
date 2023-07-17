@@ -47,20 +47,16 @@ Monitor the entire app script output to identify misconfigurations and determine
 The CI/CD pipeline is a point of vulnerability within a tech stack since it is the center of everyday development operations. Monitoring who has access to this sensitive area and managing the users within this space is vital.
 
 Access to pipeline components should be controllable by multiple factors for optimum security. These include:
-* Role-based access allows staff with particular job
-descriptions to have access only to what they need.
-* Task-based access, so team members have access only
-when working on specific tasks.
-* Time-based access, so no one has access longer than
-they need it.
-* Pipeline-based access, so each pipeline only has access
-to necessary data sources.
+* Role-based access allows staff with particular job descriptions to have access only to what they need.
+* Task-based access, so team members have access only when working on specific tasks.
+* Time-based access, so no one has access longer than they need it.
+* Pipeline-based access, so each pipeline only has access to necessary data sources.
 
 Regularly auditing access to all elements within the pipeline enhances app security. 
 
 ### Best practices guide to implementing application security
 
-Following are the basic process steps involved in building a security data lake.
+Following are the basic steps involved in implementing an application security process.
 
 #### Step 1: Build threat modeling into every app development
 
@@ -70,11 +66,11 @@ Monitor security tool output throughout the development process with Sumo Logic�
 
 This granular level of protection allows for greater coverage than implementing broader, less precise measures. Bring detailed security data into Sumo Logic’s easy-to-use platform to get the most benefit from it.
 
-### Step 3: Automate security installations and configurations
+#### Step 3: Automate security installations and configurations
 
 To avoid missing vital coverage due to human error. Sumo Logic promotes DevSecOps best practices with unified log management and analysis to best support your team.
 
-### Step 4: Focus on unique value adds and outsource other applications
+#### Step 4: Focus on unique value adds and outsource other applications
 
 Let the DevSecOps team devote their time to creating and protecting applications only their business can provide. Sumo Logic’s extensive integrations mean our platform can monitor many security tools you already use.
 

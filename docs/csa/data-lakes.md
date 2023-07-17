@@ -45,7 +45,7 @@ A security data lake allows you to store and access various data types and forma
 
 ### Best practices guide to building a security data lake
 
-Following are the basic process steps involved in building a security data lake. 
+Following are the basic steps involved in building a security data lake. 
 
 #### Step 1: Define your security data goals
 

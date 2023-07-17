@@ -21,6 +21,66 @@ Sumo Logic can also help you and your company meet compliance requirements. For 
 Compliance varies by geography and industry. For example, the Health Insurance Portability and Accountability Act (HIPAA) applies to hospitals and other health-related services in the United States. For companies in other industries or in other countries, HIPAA compliance might not be a concern. Similarly, General Data Protection Regulation (GDPR) only applies to companies with users in the European Union. However, with increasing global commerce, more and more companies based outside of Europe must still comply with GDPR. Sumo Logic itself meets many security compliance standards, including HIPAA, FedRAMP-Moderate Authorized, ISO 27001, and many others. This means you can feel safe ingesting your data into the Sumo Logic platform.
 :::
 
+### Regulatory compliance and security controls
+
+There are two important categories of compliance: regulatory compliance and security controls.
+
+* [Regulatory compliance](#regulatory-compliance) may be required depending on factors such as the industry a company operates within. 
+
+* [Security controls](#security-controls) define how certain data types will be collected, organized, processed, or used to aid the business without creating security vulnerabilities or risking compliance penalties.
+
+The biggest difference between regulatory compliance and security controls is that regulatory compliance mainly relates to standards set by third-party organizations and enforcement bodies. In contrast, security controls are developed, implemented, and enforced internally.
+
+#### Regulatory compliance
+
+Following are regulatory framework examples:
+* [**GDPR**](https://gdpr.eu/what-is-gdpr/). The General Data Protection Regulation (GDPR) is a compliance framework that “imposes obligations onto organizations anywhere” if “they target or collect data related to people in the EU.” It’s a set of standards primarily governing data privacy and security. 
+* [**HIPAA**](https://www.cdc.gov/phlp/publications/topic/hipaa.html). The Health Insurance Portability and Accountability Act, or HIPAA, is a U.S. federal law that requires “the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge.”
+* [**NIST**](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/nist-framework). The National Institute of Standards and Technology, or NIST, is responsible for multiple compliance frameworks related to cybersecurity and privacy controls. Similar to some HIPAA applications, adherence to the NIST framework is voluntary, but its implementation helps companies identify, protect, detect, respond and recover from cybersecurity threats and attacks. 
+* [**CMMC**](https://dodcio.defense.gov/CMMC/about/). The Cybersecurity Maturity Model Certification (CMMC) is an assessment framework developed in alignment with the U.S. Department of Defense (DoD)’s information security requirements. It generally applies to companies that are either DoD contractors or engage with the [Defense Industrial Base Sector](https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors/defense-industrial-base-sector) or DIB.
+* [**ISO 27001**](https://www.iso.org/standard/27001). The International Standards Organization (ISO) publishes various industrial and commercial standards. These standards, such as ISO 27001, are vital to world trade initiatives and work to establish common standards for organizations that must adhere to different countries’ requirements and priorities.
+* [**PCI-DSS**](https://www.pcisecuritystandards.org/). The Payment Card Industry Data Security Standard (PCI DSS) outlines best practices and drives “adoption of data security standards and resources for safe payments worldwide.” It is mandatory for any organization handling payment cardholder data. Failure to adhere to it can result in financial penalties.
+
+#### Security controls
+
+Security controls refer to internally-defined protective measures taken to prevent, detect, or mitigate security risks as they apply to physical assets, information, computer networks, or other assets, and can include: 
+* **Physical**. Controls that relate to physical facilities and assets, for example, restricting access to server rooms or other sensitive areas, or using surveillance cameras for real-time monitoring.
+* **Digital**. Controls that relate to basic network and application security protocols, like required formats for usernames and passwords, two-factor authentication, and up-to-date antivirus software.
+* **Cybersecurity**. Controls to prevent cyber attacks, or quickly mitigate them if they do occur or are suspected. Examples include data encryption and firewalls.
+* **Cloud security**. Controls that generally apply to the protection of cloud based data and infrastructure across key assets and workflows. Cloud security controls can be more complex because they often involve CI/CD software development pipelines that can change and be updated frequently.
+
+### Best practices guide for implementing audit and compliance
+
+Following are the basic steps involved in implementing an audit and compliance process.
+
+#### Step 1: Centralize data collection
+
+Capture and collect a wide range of organizational data from wherever it originates, to empower you to monitor and learn from it.
+
+#### Step 2: Increase visibility
+
+Make various types of data available with 100% visibility, and visualize it in compelling, configurable dashboards for real-time monitoring and insights.
+
+#### Step 3: Find insights fast
+
+Create filters and search parameters with Sumo Logic to find any data at any time, whether it relates to regulatory compliance or internal security controls.
+
+#### Step 4: Use out-of-the-box content
+
+Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Out-of-the-box integrations, like our PCI Dashboard, mean you can monitor many security tools you already use.
+
+#### Step 5 Retain data
+
+Retain data for as long as you need it to perform your audit and compliance process.  
+
+#### Step 6: Monitor in real-time
+
+Sumo Logic monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
+
+#### Step 7: Create a unified system
+
+Use Sumo Logic's countless data integrations and out-of-the box applications ensure that all data is properly collected and cataloged as it’s generated.
+
 ## Pre-built apps for audit and compliance
 
 [Install](/docs/get-started/apps-integrations) the following apps for audit and compliance:
