@@ -234,6 +234,7 @@ module.exports = {
               link: {type: 'doc', id: 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source',
