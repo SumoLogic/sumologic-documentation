@@ -290,8 +290,8 @@ If the connection is successful, you'll see a message appearing in the third-par
 
 If the integration is not working as expected, there shall be a payload issue. You shall need to troubleshoot the generated payload. Here are some HTTP debugging tools that shall help you capture the generated payload and troubleshoot.
 
-* [Beeceptor](https://beeceptor.com/): Helps in troubleshooting HTTP payload and configuration issues when working with webhooks and HTTP POST requests. You can inspect the JSON payload in real-time, enabling you to gain insights into the data being sent and received. 
-* [Request Inspector](https://requestinspector.com/) Helps you in capturing HTTP requests and responding with 200 OK. You can review the raw payload and find discrepancies between actual and expected. 
+* [Beeceptor](https://beeceptor.com/). Helps troubleshoot HTTP payload and configuration issues when working with webhooks and HTTP POST requests. You can inspect the JSON payload in real-time, enabling you to gain insights into the data being sent and received. 
+* [Request Inspector](https://requestinspector.com/). Helps you in capturing HTTP requests and responding with `200 OK`. You can review the raw payload and find discrepancies between actual and expected. 
 
 ## Editing and deleting connections
 
