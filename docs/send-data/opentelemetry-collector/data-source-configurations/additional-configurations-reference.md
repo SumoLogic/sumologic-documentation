@@ -58,7 +58,7 @@ extensions:
 ```
 
 :::important
-Using the clobber flag as true deletes (clobbers) any existing collector with the same collector name/hostname, so make sure that is what you want to do. Clobber is effective only before the new collector has been registered (activated) with Sumo Logic.
+Setting the clobber flag to `true` deletes (clobbers) any existing collector with the same collector name/hostname, so make sure that is what you want to do. Clobber is effective only before the new collector has been registered (activated) with Sumo Logic.
 :::
 
 ## Custom Configuration
