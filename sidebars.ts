@@ -2273,7 +2273,6 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'security/index'},
       items: [
-        'security/introduction-to-security-solutions',
       ],
     },
     {
