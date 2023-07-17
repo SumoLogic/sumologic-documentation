@@ -15,19 +15,19 @@ Application security monitors a company’s software offerings to ensure they ar
 
 DevSecOps teams are often already incorporating solutions like code scanning, posture management, and workload protection into their processes, but more is needed. Siloed solutions don’t adequately address developers' increasingly complex application security needs. 
 
-An IT team must see its full security posture to give applications the protection they require. These practices start by collecting security and event log data from every infrastructure, application and the network supporting the application. 
+An IT team must see its full security posture to give applications the protection they require. These practices start by collecting security and event log data from every infrastructure, application, and network supporting the application. 
 
 ### Protecting applications during the CI/CD lifecycle
 
 Cloud Security Analytics offers full-stack visibility throughout the following phases of the CI/CD lifecycle, so you can monitor security, increase reliability, and speed up processes all in one place:
-* [Coding](#coding). Manage access to sources of code and building environments.
-* [Building and testing](#building-and-testing). Ensure code does not introduce vulnerabilities before it is executed.
-* [Deploying and running](#building-and-testing). Identify outage causes quickly to limit downtime.
-* [Monitoring](#monitoring). Examine employee access and overall application usage for ongoing threat detection.
+* **Coding**. Manage access to sources of code and building environments.
+* **Building and testing**. Ensure code does not introduce vulnerabilities before it is executed.
+* **Deploying and running**. Identify outage causes quickly to limit downtime.
+* **Monitoring**. Examine employee access and overall application usage for ongoing threat detection.
 
 #### Coding
 
-Code environment and repository access should be monitored from a central location, enabling DevSecOps teams to see data from all applications in one place for complete visibility. This enhances a team’s capabilities to glean extra information from logs by adding contextual relationships to data and distinguishing static code.
+Code environment and repository access should be monitored from a central location, such as a [data lake](/docs/csa/data-lakes/), enabling DevSecOps teams to see data from all applications in one place for complete visibility. This enhances a team’s capabilities to glean extra information from logs by adding contextual relationships to data and distinguishing static code.
 
 Build tools and code repositories can become entry points for malicious code. With poisoned pipeline execution (PPE), attackers insert unauthorized code into these environments, which runs as part of the CI/CD lifecycle to infect the larger application. Visualizing who is in
 these environments, when and where they are accessing them, and what changes they are making helps identify problematic user behavior. Sumo Logic’s consolidated log data uses additional context to enrich access information, helping identify unauthorized access and code insertion. 
@@ -64,28 +64,28 @@ Monitor security tool output throughout the development process with Sumo Logic�
 
 #### Step 2: Apply security to each component within every application 
 
-This granular level of protection allows for greater coverage than implementing broader, less precise measures. Bring detailed security data into Sumo Logic’s easy-to-use platform to get the most benefit from it.
+This granular level of protection allows for greater coverage than implementing broader, less precise measures. Bring detailed security data into Sumo Logic’s platform to get the most benefit from it.
 
 #### Step 3: Automate security installations and configurations
 
-To avoid missing vital coverage due to human error. Sumo Logic promotes DevSecOps best practices with unified log management and analysis to best support your team.
+To avoid missing vital coverage due to human error, Sumo Logic promotes DevSecOps best practices with unified log management and analysis.
 
 #### Step 4: Focus on unique value adds and outsource other applications
 
-Let the DevSecOps team devote their time to creating and protecting applications only their business can provide. Sumo Logic’s extensive integrations mean our platform can monitor many security tools you already use.
+To let the DevSecOps team devote their time to creating and protecting applications, Sumo Logic’s extensive integrations can monitor many security tools you already use.
 
 #### Step 5: Assume infrastructure is insecure and protect applications accordingly
 
-Cloud, hybrid and even on-premises servers are also susceptible to threats, so it’s
+Cloud, hybrid, and even on-premises servers are also susceptible to threats, so it’s
 important to design systems that protect against infrastructure vulnerabilities.
 
 #### Step 6: Monitor consistently
 
-With cybersecurity breaches, it is now a matter of when, not if, a business will fall victim to an attack. Never assume applications are fully protected. Never stop monitoring.
+Never assume applications are fully protected. Monitor consistently to uncover problems no matter when they arise.
 
 #### Step 7: Use benchmarks to know where application security stands
 
-Benchmark against industry standards and other internal software protection levels.
+[Benchmark](/docs/csa/audit-and-compliance/) against industry standards and other internal software protection levels.
 
 ## Pre-built apps for application security
 

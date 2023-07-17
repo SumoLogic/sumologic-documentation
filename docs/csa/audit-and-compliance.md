@@ -11,11 +11,11 @@ To use Cloud Security Analytics for audit and compliance, you can use [pre-built
 
 ## About audit and compliance
 
-Compliance standards are enforced by various governments and organizations to protect end users and keep information private and secure. Meeting compliance standards is usually the first step in making sure your apps and data are secure. However, in most cases additional security measures, such as [threat monitoring](/docs/csa/threat-detection-and-investigation/), are also recommended.
+Compliance standards are enforced by various governments and organizations to protect end users and keep information safe. Meeting compliance standards is usually the first step in making sure your apps and data are secure. However, in most cases additional security measures, such as [threat monitoring](/docs/csa/threat-detection-and-investigation/), are also recommended.
 
-A compliance audit is an inspection of an organization to check whether compliance standards are being met. You may have an internal audit, conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. You might also have an external audit, where a government or other external, independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
+A compliance audit is an inspection of an organization to check whether compliance standards are being met. You may have an internal audit, conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. You might also have an external audit, where a government or other independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
 
-Sumo Logic can also help you and your company meet compliance requirements. For example, you can use Sumo Logic's queries, alerts, and dashboards to monitor your data, and make sure only authorized users have access to sensitive information.
+Cloud Security Analytics can help your organization meet compliance requirements. For example, you can use Sumo Logic's queries, alerts, and dashboards to monitor your data, and make sure only authorized users have access to sensitive information.
 
 :::note
 Compliance varies by geography and industry. For example, the Health Insurance Portability and Accountability Act (HIPAA) applies to hospitals and other health-related services in the United States. For companies in other industries or in other countries, HIPAA compliance might not be a concern. Similarly, General Data Protection Regulation (GDPR) only applies to companies with users in the European Union. However, with increasing global commerce, more and more companies based outside of Europe must still comply with GDPR. Sumo Logic itself meets many security compliance standards, including HIPAA, FedRAMP-Moderate Authorized, ISO 27001, and many others. This means you can feel safe ingesting your data into the Sumo Logic platform.
@@ -25,9 +25,9 @@ Compliance varies by geography and industry. For example, the Health Insurance P
 
 There are two important categories of compliance: regulatory compliance and security controls.
 
-* [Regulatory compliance](#regulatory-compliance) may be required depending on factors such as the industry a company operates within. 
+* Regulatory compliance may be required depending on factors such as the industry a company operates within. 
 
-* [Security controls](#security-controls) define how certain data types will be collected, organized, processed, or used to aid the business without creating security vulnerabilities or risking compliance penalties.
+* Security controls define how certain data types will be collected, organized, processed, or used to aid the business without creating security vulnerabilities or risking compliance penalties.
 
 The biggest difference between regulatory compliance and security controls is that regulatory compliance mainly relates to standards set by third-party organizations and enforcement bodies. In contrast, security controls are developed, implemented, and enforced internally.
 
@@ -55,7 +55,7 @@ Following are the basic steps involved in implementing an audit and compliance p
 
 #### Step 1: Centralize data collection
 
-Capture and collect a wide range of organizational data from wherever it originates, to empower you to monitor and learn from it.
+Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/csa/data-lakes/) for speed and effectiveness of analysis.
 
 #### Step 2: Increase visibility
 
@@ -67,7 +67,7 @@ Create filters and search parameters with Sumo Logic to find any data at any tim
 
 #### Step 4: Use out-of-the-box content
 
-Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Out-of-the-box integrations, like our PCI Dashboard, mean you can monitor many security tools you already use.
+Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance/setup#pci-dashboards), mean you can monitor many security tools you already use.
 
 #### Step 5 Retain data
 
@@ -75,7 +75,7 @@ Retain data for as long as you need it to perform your audit and compliance proc
 
 #### Step 6: Monitor in real-time
 
-Sumo Logic monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
+Cloud Security Analytics monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
 
 #### Step 7: Create a unified system
 
@@ -95,7 +95,7 @@ In this use case, we'll show you how to use the  PCI app for Palo Alto Networks 
 
 #### PCI requirements
 
-[Payment Card Industry Data Security Standards](https://www.pcisecuritystandards.org/merchants/) (PCI DSS) affects any company that accepts or processes payment cards. There are 12 requirements that meet six security goals. Your company needs to meet all 12 requirements to be compliant. 
+[Payment Card Industry Data Security Standards](https://www.pcisecuritystandards.org/merchants/) (PCI DSS) affects any company that accepts or processes payment cards. There are 12 requirements that meet 6 security goals. Your company needs to meet all 12 requirements to be compliant. 
 
 You can read the goals and requirements in this table:
 
@@ -142,7 +142,7 @@ In this use case, we'll show you how to query AWS CloudTrail data for any messag
 
 #### What is a root account?
 
-Most operating systems have a small handful of super user accounts. These accounts may be known as su (super user), root, or admin. These accounts have special access above and beyond what normal accounts have. They can often add and delete data, create and delete users, and perform other privileged actions. 
+Most operating systems have a small handful of super user accounts. These accounts may be known as su (super user), root, or admin. These accounts have special access beyond what normal accounts have. They can often add and delete data, create and delete users, and perform other privileged actions. 
 
 While it's important to have a few administrators in any organization, not every action needs to be performed by super user account. If everyone has access to administrator privileges, there is a risk of accidental or malicious data deletion, manipulation, or exfiltration.
 

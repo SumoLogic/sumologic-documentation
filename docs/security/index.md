@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic's security solutions support the entire spectrum of security use cases, from analytics to SIEM and SOAR:
 
-* [Cloud Security Analytics (CSA)](/docs/csa/) 
+* [Cloud Security Analytics](/docs/csa/) 
 
    Provides cloud security monitoring to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure.
 
-* [Cloud SIEM](/docs/cse/)
+* [Cloud SIEM Enterprise](/docs/cse/)
 
    Gives analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
 
@@ -41,7 +41,7 @@ import Iframe from 'react-iframe';
 
 ## Feature comparison
 
-   | Feature | CSA | Cloud SOAR | Cloud SOAR |
+   | Feature | Cloud Security Analytics | Cloud SIEM Enterprise | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
 | Log collection | x | x | x |
 | App catalog (out-of-the-box analytics) | x | x | x |
@@ -77,25 +77,3 @@ import Iframe from 'react-iframe';
 | Highly customizable dashboards and KPIs | | | x |
 | Automatic incident reports | | | x |
 
-
-
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
-  <div className="container">
-  <a href="/docs/csa/index"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Cloud Security Analytics</h4></a>
-  <p>A cloud-based, enterprise-grade security system comprised of apps, dashboards, and tools to monitor and analyze security data.</p>
-  </div>
-</div>
-<div className="box smallbox2 card">
-  <div className="container">
-  <a href="/docs/cse/index"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Cloud SIEM</h4></a>
-  <p>A cloud-based security information and event management (SIEM) system for threat hunting. </p>
-  </div>
-</div>
-<div className="box smallbox3 card">
-  <div className="container">
-  <a href="/docs/cloud-soar/index"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR</h4></a>
-  <p>A cloud-based security orchestration, automation, and response (SOAR) system for security incident remediation and resolution.</p>
-  </div>
-</div>
-</div>

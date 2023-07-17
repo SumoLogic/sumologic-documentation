@@ -9,6 +9,39 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To use Cloud Security Analytics for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
 
+## About threat detection and investigation
+
+Threat detection and investigation refers to identifying and exploring threats or security-related events within an asset, application, or network as quickly and
+effectively as possible.
+
+*Threat detection* identifies threats within cloud-based, hybrid, and on-premises infrastructure and applications before they cause major issues for a business. The sooner security teams uncover a security-related event, the quicker they can investigate and mitigate it.
+
+*Threat investigation* analyzes a threat or potential threat to glean more information about it. When a threat is detected, SecOps teams use behavioral, forensic, and log data to investigate and uncover as much information as possible. From there, teams can respond appropriately to
+the threat and plan for system improvements to reduce risk in the future.
+
+Advanced security analytics platforms like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure.
+
+###  Best practices guide for implementing threat detection and investigation
+
+Following are the basic steps involved in implementing a threat detection and investigation process.
+
+#### Step 1. Collect and aggregate all security data into a single, unified location
+
+Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [Data lakes](/docs/csa/data-lakes/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
+
+#### Step 2. Use integrations to discover trends or potential threats
+
+Increase the velocity and accuracy of threat detection with integrations to applications that provide insight to threats. Cloud Security Analytics offers numerous [out-of-the-box integrations](#pre-built-apps-for-threat-detection-and-investigation) with queries for custom searching and monitoring.
+
+#### Step 3. Configure robust alerting policies to notify SecOps teams when changes or outliers occur
+
+The quicker your team can get to work, the quicker investigation and mitigation can happen. With
+[Sumo Logic Monitors](/docs/alerts/monitors/create-monitor/), teams can track and build alerts that fit their unique requirements.
+
+#### Step 4. Perform root cause analysis to investigate the threat fully
+
+Attacks may persist without further investigation and patches, so it’s critical to find and patch any vulnerabilities as soon as possible. Sumo Logic provides powerful [search capabilities](/docs/search/search-query-language/) so teams can perform extensive threat investigations quickly.
+
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation. 
@@ -21,12 +54,12 @@ To use Cloud Security Analytics for threat detection and investigation, you can 
 
 While the pre-built apps can meet many of your needs, you can also build your own dashboards. In this section we show you how to build an example dashboard for threat detection and investigation. 
 
-The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)). AWS CloudTrail logs contain information about requests for resources in your account, such as:
+The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).) AWS CloudTrail logs contain information about requests for resources in your account, such as:
 
-* who made the request
-* the services used
-* the actions performed
-* and parameters for the action
+* who made the request.
+* the services used.
+* the actions performed.
+* parameters for the action.
 
 After you build the dashboard to find and monitor security events, we'll show you how to enhance the dashboard to do the following threat investigations: 
 
@@ -109,7 +142,7 @@ To see where your users are logging in from across the world, you can use [geo l
 
 For example, if you expect all your users to be located in Europe, but you are getting a large number of logins from South America, this might be worth investigating. There could be potential hackers in the unexpected location, or it could be a sign that an advertising campaign was accidentally deployed in the wrong region. In this step, we'll create a map that monitors where users are logging in from.
 
-As another example, let's say one of your employees logged in from both Canada and Australia, on the same day only two hours apart. You know this employee lives in Toronto and travels frequently. So, the Canadian login is expected. Normally, the Australian login wouldn't be unexpected, since this employee travels so often. However, since it occurred only two hours after a Toronto login, you conclude it's  malicious activity. This type of suspicious activity is called a landspeed violation. We'll show you how to query for them.
+As another example, let's say one of your employees logged in from both Canada and Australia, on the same day only two hours apart. You know this employee lives in Toronto and travels frequently. So, the Canadian login is expected. Normally, the Australian login would be expected too, since this employee travels so often. However, since it occurred only two hours after a Toronto login, you conclude it's  malicious activity. This type of suspicious activity is called a landspeed violation. We'll show you how to query for them.
 
 We want to see where our users are logging in from around the globe.  So in this step we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located. 
 

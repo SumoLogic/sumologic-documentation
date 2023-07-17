@@ -7,6 +7,8 @@ description: Learn basic concepts about Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+Cloud SIEM, also known as Cloud SIEM Enterpirse (CSE), is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. 
+
 Watch the following micro lesson to learn how to get started using Cloud SIEM for threat investigation.
 
 <Iframe url="https://www.youtube.com/embed/cDUOzQ63zmc?rel=0"
@@ -22,8 +24,7 @@ Watch the following micro lesson to learn how to get started using Cloud SIEM fo
 
 import Iframe from 'react-iframe'; 
 
-
-Cloud SIEM Enterprise (CSE) is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. 
+## Getting your data into Cloud SIEM
 
 Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. As shown below, the process starts when logs from data sources enter a collector, then flow through an ingestion process that generates messages. The messages are parsed, mapped to normalized values, and enriched with additional data before becoming records. 
 
@@ -41,7 +42,6 @@ Following are definitions for some of these terms:
 * [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities). Unique actors encountered in incoming messages, such as users, IP addresses, or hosts.
 * [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). Groups of Signals clustered around a single Entity that are generated when an Entity’s Activity Score exceeds the threshold of 12.
 
-## Getting your data into Cloud SIEM
 
 Because Cloud SIEM designed for larger data volumes, most organizations need to ingest a large amount of data each day for Insights to surface in Cloud SIEM. 
 
