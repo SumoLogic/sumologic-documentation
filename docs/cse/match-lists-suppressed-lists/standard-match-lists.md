@@ -10,7 +10,7 @@ This topic has information about how you can identify specific Entities or indic
 :::tip
 The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
 :::
-* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/) API action, the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target Column:** Source IP Address (`SrcIp`)."
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
 
 
 ## Schema tag keys for Entities
@@ -86,7 +86,7 @@ Assign the _userGroup tag to users accounts  known to be involved with specific 
 
 ### admin_ips
 
-**Target Column:** Source IP Address (`SrcIp`)
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -98,7 +98,7 @@ The following CSE rules refer to this Match List:
 
 ### admin_accounts
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Accounts that are known to be involved with specific administrative or privileged activity.
 
@@ -108,7 +108,7 @@ The following CSE rules refer to this Match List:
 
 ### admin_username
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity.
 
@@ -118,7 +118,7 @@ The following CSE rules refer to this Match List:
 
 ### Alibaba_admin_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
 
@@ -158,7 +158,7 @@ The following CSE rules refer to this Match List:
 
 ### AWS_admin_ips
 
-**Target Column:** Source IP Address (`SrcIp`)
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -201,7 +201,7 @@ The following CSE rules refer to this Match List:
 
 ### AWS_admin_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -376,7 +376,7 @@ The following CSE rules refer to this Match List:
 
 ### downgrade_krb5_etype_authorized_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Known account names that utilize downgraded encryption types with multiple SPNs. This is an exception Match List that should be populated with a list of Kerberos principal names (for example,  jdoe@EXAMPLE.COM) matched in endpoint username that are known to trigger content around legacy downgraded encryption types. This is directly related to the detection of [*Kerberoasting*](https://attack.mitre.org/techniques/T1208/) attacks.
 
@@ -388,7 +388,7 @@ The following CSE rules refer to this Match List:
 
 ### ds_replication_authorized_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Authorized account names to initiate Directory Service Replication requests to Active Directory.
 
@@ -436,7 +436,7 @@ none
 
 ### GCP_admin_ips
 
-**Target Column:** Source IP Address (`SrcIp`)
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -453,7 +453,7 @@ The following CSE rules refer to this Match List:
 
 ### GCP_admin_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -470,7 +470,7 @@ The following CSE rules refer to this Match List:
 
 ### gcp_admin
 
-**Target Column:** Username (`Username`) or Source IP Address (`SrcIp`)
+**Target column:** Username (`Username`) or Source IP Address (`SrcIp`)
 
 **Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -494,7 +494,7 @@ The following CSE rules refer to this Match List:
 
 ### Google_Workspace_admin_ips
 
-**Target Column:** Source IP Address (`SrcIp`)
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -504,7 +504,7 @@ The following CSE rule refers to this Match List:
 
 ### Google_Workspace_admin_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -627,7 +627,7 @@ The following CSE rules refer to this Match List:
 
 ### Okta_Admins
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity.
 
@@ -702,7 +702,7 @@ The following CSE rules refer to this Match List:
 
 ### proxy_servers_src
 
-**Target Column:** Source IP Address (`SrcIp`)
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Copy of the [proxy_server](#proxy_servers) Match List for directional matches.
 
@@ -723,7 +723,7 @@ The following CSE rules refer to this Match List:
 
 ### salesforce_admin_ips
 
-**Target Column:** Source IP Address (`SrcIp`)
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -745,7 +745,7 @@ The following CSE rules refer to this Match List:
 
 ### salesforce_admin_users
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -1070,7 +1070,7 @@ The following CSE rules refer to this Match List:
 
 ### zoom_admins
 
-**Target Column:** Username (`Username`)
+**Target column:** Username (`Username`)
 
 **Description:** Known admin users of Zoom.
 
