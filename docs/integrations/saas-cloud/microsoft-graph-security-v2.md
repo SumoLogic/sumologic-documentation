@@ -24,7 +24,7 @@ Overall, the Sumo Logic app for Microsoft Graph Security V2 is designed to help 
 
 ## Log Types
 
-This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security API endpoint. Refer to [this document](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) for alert fields.
+This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security API endpoint. Refer to [this document](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) for alert fields. 
 
 ### Sample log message
 
