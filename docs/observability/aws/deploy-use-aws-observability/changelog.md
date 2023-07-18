@@ -20,7 +20,7 @@ Security Fixes and Updates:
    * SAM: sumologic-s3-logging-auto-enable - Semantic v1.0.5
    * SAM: sumologic-loggroup-connector - Semantic v1.0.7
    * SumoLogicAWSObservabilityHelperv2.0.16.zip
- * Removed unused permissions (AddTags, RemoveTags) from SAM: sumologic-s3-logging-au**to-enable
+ * Removed unused permissions (AddTags, RemoveTags) from SAM: sumologic-s3-logging-auto-enable
  * Fine tuned IAM role permission to invoke lambda function in SAM: sumologic-loggroup-connector
 
 ## v2.6.0, 25-April-2023
