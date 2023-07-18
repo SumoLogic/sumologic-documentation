@@ -1,8 +1,8 @@
 ---
-id: microsoft-graph-security-api-v1-source
-title: Microsoft Graph Security API V1 Source
-sidebar_label: Microsoft Graph Security API V1
-description: The Microsoft Graph Security API V1 Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.
+id: microsoft-graph-security-api-source
+title: Microsoft Graph Security API Source
+sidebar_label: Microsoft Graph Security API
+description: The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,21 +10,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
 :::caution
-This version of the app uses alerts from Microsoft Graph API V1 (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are  bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by ***the new app (new app docs link)***.
+This version of the app uses alerts from Microsoft Graph API (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by ***the new app (new app docs link)***.
 :::
 
-The Microsoft Graph Security API V1 Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
+The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
 affected device.
 
 ## Collected data
 
-The Microsoft Graph Security API V1 Source consumes [alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) from the Microsoft Graph [Security API Endpoint](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0).
+The Microsoft Graph Security API Source consumes [alerts](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) from the Microsoft Graph [Security API Endpoint](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0).
 
 ## States
 
-A Microsoft Graph Security API V1 Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
+A Microsoft Graph Security API Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
 
-A Microsoft Graph Security API V1 Source goes through the following states when created:
+A Microsoft Graph Security API Source goes through the following states when created:
 
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
@@ -100,9 +100,9 @@ The following steps show you how to create a service application:
 
 ### Create a Microsoft Graph Security API Source
 
-When you create a Microsoft Graph Security API V1 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Microsoft Graph Security API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Microsoft Graph Security API V1 Source:
+To configure a Microsoft Graph Security API Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
@@ -174,7 +174,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | schemaRef | JSON Object | Yes | Use `{"type":"Microsoft Graph Security API"}` for a Microsoft Graph Security API Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Microsoft Graph Security API Source. | not modifiable |
 
-The following table shows the **config** parameters for a Microsoft Graph Security API V1 Source.
+The following table shows the **config** parameters for a Microsoft Graph Security API Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -188,7 +188,7 @@ The following table shows the **config** parameters for a Microsoft Graph Se
 | `azure_gov` | Boolean | No | false | Set to true if Azure tenant uses Azure Government region. | modifiable |
 | `polling_interval` | Integer | Yes | 5 | This sets how many minutes the Source checks for new data. | modifiable |
 
-Microsoft Graph Security API V1 Source JSON example:
+Microsoft Graph Security API Source JSON example:
 
 ```json
 {

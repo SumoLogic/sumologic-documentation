@@ -75,7 +75,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) | Universal |
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
-| [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-v1-source) | Universal |
+| [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) | Universal |
 | [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
 | [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) | Universal |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Universal |
