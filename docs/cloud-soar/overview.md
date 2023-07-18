@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Cloud SOAR Overview
 sidebar_label: Overview
 ---
 
