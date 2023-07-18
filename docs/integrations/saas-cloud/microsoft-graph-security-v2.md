@@ -13,14 +13,14 @@ The Microsoft Graph Security V2 app for Sumo Logic empowers you to analyze secur
 
 The app utilizes Sumo Logic's cloud-to-cloud [Microsoft Graph Security source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) to collect and analyze alerts from the Microsoft Graph Security API endpoint. With this information, organizations can swiftly detect and respond to potential security incidents.
 
-With the Microsoft Graph Security app, you can:
+With the Microsoft Graph Security  V2 app, you can:
 
 * Detect and mitigate potential ransomware attacks.
 * Monitor endpoint security and pinpoint potential threats.
 * Have a high-level overview of the security posture of the organization, including metrics such as the number of alerts, alert severity, and status.
 * Allow security teams to identify potential threats and take appropriate action based on the trends and patterns of security alerts over time.
 
-Overall, the Sumo Logic app for Microsoft Graph Security is designed to help organizations improve their web security posture and protect their users and assets from potential threats. The app enables security teams to proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
+Overall, the Sumo Logic app for Microsoft Graph Security V2 is designed to help organizations improve their web security posture and protect their users and assets from potential threats. The app enables security teams to proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
 
 ## Log Types
 
