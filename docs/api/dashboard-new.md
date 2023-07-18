@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
-The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](/docs/dashboards-new/) platform from HTTP endpoints to organize your content.
+The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](/docs/dashboards/) platform from HTTP endpoints to organize your content.
 
 {@import ../reuse/api-intro.md}
 

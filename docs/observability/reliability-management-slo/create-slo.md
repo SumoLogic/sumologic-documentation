@@ -215,7 +215,7 @@ There are two ways to use it:
 
 #### Dashboard example
 
-As an example, say you had a SLO [dashboard](/docs/dashboards-new) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+As an example, say you had a SLO [dashboard](/docs/dashboards) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
 
 You would need to create a custom graphic that combines multiple SLOs from multiple services:
 

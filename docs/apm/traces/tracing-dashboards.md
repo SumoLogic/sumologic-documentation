@@ -55,7 +55,7 @@ Once an app is installed, it will appear in your **Personal** folder or the fol
 
 There are three tracing-specific dashboard panels available out of the box: **Services Map**, **Services List**, and **Trace List** panels, which explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
 
-See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+See the [Dashboard (New) guide](/docs/dashboards) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ### Services panels
 

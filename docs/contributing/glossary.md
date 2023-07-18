@@ -63,7 +63,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## D
 
-**[Dashboard](/docs/dashboards-new)**. Dashboards contain a collection of real time Panels that provide a graphical representation of your organization's data. Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
+**[Dashboard](/docs/dashboards)**. Dashboards contain a collection of real time Panels that provide a graphical representation of your organization's data. Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
 **[Dashboard Theme](/docs/dashboards/edit-dashboards/manage-dashboards)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
 
@@ -96,7 +96,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you don't want to send to Sumo Logic, think of it as an "allowlist" filter.
 
-**[Explore](/docs/dashboards-new/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
+**[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
 
 
 
@@ -283,7 +283,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
-**[Time series](/docs/dashboards-new/panels#time-series-panel)**. A set of timestamped values of a specific measurement.
+**[Time series](/docs/dashboards/panels#time-series-panel)**. A set of timestamped values of a specific measurement.
 
 **[Timeslice operator](/docs/search/search-query-language/search-operators/timeslice)**. Timeslice segregates search results by a time period, or by a number of buckets over a search's time range.
 

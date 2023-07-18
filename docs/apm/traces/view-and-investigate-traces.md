@@ -255,7 +255,7 @@ If the **Datapoint** is the same as **Now**, the selector will not allow yo
 #### Triggered monitors
 
 :::note
-Alerts are only visible when the [Time Selector](../../dashboards-new/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
+Alerts are only visible when the [Time Selector](../../dashboards/drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
 :::
 
 Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.<br/>![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)

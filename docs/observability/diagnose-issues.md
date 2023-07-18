@@ -9,7 +9,7 @@ After you have identified an issue using the available monitoring tools, the nex
 
 ## Connect the dots with Entity Inspector
 
-You can use [Entity Inspector](../dashboards-new/drill-down-to-discover-root-causes.md) to connect the dots between your various data streams of logs, metrics, and traces. Using the guided experience, you can start from an alert and drill down to the root cause quickly.
+You can use [Entity Inspector](../dashboards/drill-down-to-discover-root-causes.md) to connect the dots between your various data streams of logs, metrics, and traces. Using the guided experience, you can start from an alert and drill down to the root cause quickly.
 
 ![entity-inspector.png](/img/observability/entity-inspector.png)
 

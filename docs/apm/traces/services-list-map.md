@@ -114,5 +114,5 @@ To add a Services panel to your Dashboard:
 1. Click **Add to Dashboard**. The panel loads in your Dashboard to review your applications and services according to filtering.
 
 :::tip
-See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+See the [Dashboard (New) guide](/docs/dashboards) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 :::
