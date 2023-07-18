@@ -8,6 +8,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes Global Intelligence for Security Insights, implemented in CSE as Global Confidence scores. This feature helps security analysts triage and prioritize Insights.
 
+Watch this micro lesson to learn more about Global Intelligence for Insights.
+
+<Iframe url="https://www.youtube.com/embed/toAvKsfVbHc?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
+import Iframe from 'react-iframe';
+
 ## What is a Global Confidence score?
 An Insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the Insight is actionable. 
 
