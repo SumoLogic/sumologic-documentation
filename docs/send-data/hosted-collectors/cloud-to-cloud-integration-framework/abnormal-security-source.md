@@ -19,7 +19,7 @@ The Abnormal Security source fetches the list of threat IDs using the [Threats A
 
 ## Set up and configuration
 
-The Abnormal Security source requires you to provide an authentication token. To obtain these, follow the steps below.
+The Abnormal Security source requires you to provide an authentication token. To obtain the token, follow the steps below.
 1. Sign in to the [Abnormal Security](https://portal.abnormalsecurity.com/) platform.<br/><img src={useBaseUrl('img/send-data/abnormal-login.png')} alt="abnormal-login" style={{border: '1px solid black'}} width="400" />
 1. In the **Enhance** section, click on the **Settings** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid black'}} width="800" />
 1. From the **Settings** page, copy and save the authentication token.
