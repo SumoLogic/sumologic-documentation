@@ -4,12 +4,29 @@ title: Global Intelligence for Security Insights
 description: Insight Confidence scores, predicted by Sumo Logic’s Global Intelligence machine learning model, help you triage and prioritize Insights.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page describes Global Intelligence for Security Insights, implemented in CSE as Global Confidence scores. This feature helps security analysts triage and prioritize Insights.
 
-## What is a Global Confidence score?
-An Insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the Insight is actionable.  
+Watch this micro lesson to learn more about Global Intelligence for Insights.
 
-![closeup.png](/img/cse/closeup.png)
+<Iframe url="https://www.youtube.com/embed/toAvKsfVbHc?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
+import Iframe from 'react-iframe';
+
+## What is a Global Confidence score?
+An Insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the Insight is actionable. 
+
+<img src={useBaseUrl('img/cse/closeup.png')} alt="Global confidence score example" width="400"/>
 
 The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM Enterprise customers—so it can generate a Confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the CSE installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
 
@@ -28,4 +45,5 @@ The Global Confidence score is a valuable data point to consider when prioritizi
 
 An Insight’s Confidence score is shown for each Insight on the Insights list page. You can sort the Insight list by the Global Confidence score, as well as by Severity.
 
-![insight-list-confidence.png](/img/cse/Confidence-Screenshot.png)  
+<img src={useBaseUrl('img/cse/Confidence-Screenshot.png')} alt="Global confidence screen image example" width="800"/>
+ 

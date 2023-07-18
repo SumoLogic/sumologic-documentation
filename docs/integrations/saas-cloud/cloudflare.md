@@ -77,7 +77,7 @@ To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
 
 ## Installing the Cloudflare App
 
-This section has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
+This section has instructions for installing the Cloudflare App for Sumo Logic.
 
 Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and dashboards.
 

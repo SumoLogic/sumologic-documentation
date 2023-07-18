@@ -21,4 +21,3 @@ The **Migrate to New Dashboards** functionality allows you to transform **Dashbo
 | Incompatibility | Description |   
 | :-----------------| :--------------|
 | Panels | <ul><li>Incompatible panels are automatically migrated to **text** panels with all the information about the panel preserved.</li> <li>Retained information in text panel:</li> <ul> <li>Query</li> <li>Time range</li> <li>Panel title</li></ul> </ul> |
-| Public dashboards | <ul><li>Public dashboards are not supported by New Dashboards.</li> </ul> |

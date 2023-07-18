@@ -70,41 +70,47 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox4 card">
   <div className="container">
+  <a href="/docs/search/get-started-with-search/search-page/log-level"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>View log-level distribution</h4></a>
+  <p>View the filter log-level distribution in your Histogram results.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Modify a Search from the results table</h4></a>
   <p>Modify past searches by selecting text displayed in the Messages tab.</p>
   </div>
 </div>
-<div className="box smallbox5 card">
+<div className="box smallbox6 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/navigate-through-search-results"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Navigate Messages in Search Results</h4></a>
   <p>When you run a search query, messages display in the Message, Aggregates, and Summarize tabs.</p>
   </div>
 </div>
-<div className="box smallbox6 card">
+<div className="box smallbox7 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/search-highlighting"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search Highlighting</h4></a>
   <p>When your search results are returned, your search terms are highlighted in the Messages tab.</p>
   </div>
 </div>
-<div className="box smallbox7 card">
+<div className="box smallbox8 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/search-load-indicator"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search Load Indicator</h4></a>
   <p>Learn how to reduce system load by making your queries more specific.</p>
   </div>
 </div>
-<div className="box smallbox8 card">
+<div className="box smallbox9 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/search-modes"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search Modes</h4></a>
   <p>Learn about the new search modes of our Log Search page.</p>
   </div>
 </div>
-<div className="box smallbox9 card">
+<div className="box smallbox10 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/set-messages-tab-preferences"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Set Messages Tab Preferences</h4></a>
   <p>The Preferences menu allows you to customize how messages are displayed.</p>
   </div>
 </div>
-<div className="box smallbox10 card">
+<div className="box smallbox11 card">
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/wildcards-in-full-text-searches"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Wildcards in Full Text Searches</h4></a>
   <p>You can use wildcards in full text searches.</p>
@@ -113,7 +119,3 @@ In this section, we'll introduce the following concepts:
 </div>
 
 <br/>
-
-:::tip
-Use our [Root Cause Explorer](/docs/observability/root-cause-explorer) to investigate usage and issues.
-:::

@@ -1,15 +1,15 @@
 ---
 id: arm-integration-faq
-title: Azure Integration with ARM FAQs
-sidebar_label: Azure-ARM Integration FAQs
-description: This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM.
+title: Azure Integration with ARM FAQ
+sidebar_label: Azure-ARM Integration FAQ
+description: This guide provides answers to frequently asked questions about integrating Azure into an enterprise environment using ARM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-faq.png')} alt="thumbnail icon" width="75"/>
 
-This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture.
+This guide provides answers to frequently asked questions (FAQ) about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture.
 
 ## Integration overview
 
@@ -18,8 +18,9 @@ For an introduction to Sumo Logic’s solution for obtaining application and inf
 For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blog Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage).
 
 
-## General FAQs
-This page provides answers for general questions regarding Azure integrations.
+## General FAQ
+
+This section provides answers for general questions regarding Azure integrations.
 
 #### What types of logs does Azure support?
 
@@ -48,7 +49,6 @@ For Event Hub, do the following:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_EventHub_Logs.png')} alt="Azure ARM FAQs" />
 
-
 For Blob Storage, do the following:
 1. Go to the **BlockTaskConsumer** function created by the ARM template.
 2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the metadata(url ,containerName ,blobName ,storageName ,resourceGroupName ,subscriptionId ) present in **serviceBusTask.
@@ -65,7 +65,7 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 #### How do I export Azure function logs?
 
-**To export Azure function logs, do the following:
+To export Azure function logs, do the following:
 1. Install [Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/) from [here](https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-relnotes).
 2. Click **Export**.
 
@@ -78,23 +78,21 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 * For Event Hub, see  [Event Hub error messages](#event-hub-error-messages).
 * For Blob Storage, see [Blob Reader error messages](#blob-reader-error-messages).
 
-
 ## Event Hub FAQs
 
 This page provides answers for frequently asked integration questions about Azure Event Hub.
 
-
 #### What log sources are supported by Event Hub?
 
 1. Exporting data from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor): Includes the majority of services, including Network Watcher, SQL DB, EventHubs, Cosmos DB, Data Factory, KeyVault, and Stream Analytics export their logs and metrics to Azure Monitor.
-* [Azure Diagnostic Logs](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs) [Supported Services](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema)
-* Supported [Metrics](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
-* [Activity Logs](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs)
+   * [Azure Diagnostic Logs](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs) [Supported Services](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema)
+   * Supported [Metrics](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-supported-metrics)
+   * [Activity Logs](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs)
 1. Security Alerts from Azure Security Center: [Setup](https://docs.microsoft.com/en-us/azure/security-center/security-center-export-data-to-siem)
-2. Azure SQL (audit logs are in preview, Diagnostic logs/Activity logs can be exported to event hub)
-3. Virtual Machines Activity logs and Diagnostic logs [Setup](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/monitor#logs)
-4. Guest OS Monitoring Data via Agent: [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-guest-os-monitoring-data-to-be-streamed-to-an-event-hub)
-5. Azure Active Directory
+1. Azure SQL (audit logs are in preview, Diagnostic logs/Activity logs can be exported to event hub)
+1. Virtual Machines Activity logs and Diagnostic logs [Setup](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/monitor#logs)
+1. Guest OS Monitoring Data via Agent: [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-guest-os-monitoring-data-to-be-streamed-to-an-event-hub)
+1. Azure Active Directory.
 
 
 #### What if there is an existing storage account or Event Hub?
@@ -161,10 +159,7 @@ For detailed information, see the [Troubleshooting log collection](/docs/send-da
 #### Where can I find historic logs for the Azure function?
 
 1. Install[ Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/).
-2. Log in using your Azure Account credentials.
-
-Built-in logging uses the storage account specified by the connection string in the AzureWebJobsDashboard app setting.
-
+1. Log in using your Azure Account credentials. Built-in logging uses the storage account specified by the connection string in the AzureWebJobsDashboard app setting.
 1. Go to **functionname > Tables > AzureWebJobsHostLogs**. The ones with the "I" partition key are invocation logs, as shown in the previous example.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure_function_historic_logs.png')} alt="Azure ARM FAQs" />
@@ -178,17 +173,13 @@ The default timeout for functions on a Consumption plan is 5 minutes. You can in
 
 #### How do I enable Application Insights?
 
-
-
 Follow the instructions in the Microsoft Azure documentation for [Enabling Application Insights integration](https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring#enable-application-insights-integration).
 
 
 #### How can I debug using print statements?
 
-
-
 1. Under the **Function app edit mode** section, change the edit mode in **Function App Settings**. You can now edit the function.
-2. Enter context.log(“debug statements”)  and save.
+2. Enter context.log(“debug statements”) and save.
 3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 
@@ -203,10 +194,7 @@ If events are not getting into the Event Hub, the event grid subscription publis
 
 Event Hub error messages:
 
-* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'.
-
-  This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region.
-
+* **Resources should be in the same region.** Resource `/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg` is in region `eastus` and resource `/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw` is in region `westus`. This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region.
 * **Create or update activity logprofilesfailure.** If you get this error message in Azure when setting up an Event Hub Export, do the following:
     1. Search for Subscriptions in all services.
     2. Select your subscription > Resource Providers.
@@ -241,32 +229,29 @@ From the Application settings page, you can do any of the following to scale the
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Increase_BatchSize.png')} alt="Azure ARM FAQs" />
 
 
-
 #### How do I ingest logs from Azure Blob Storage into multiple sourceCategories?
 
 The following is a Field Extraction Rule (FER) solution.
 
 You extract the container name in FERs  and override the `_sourceCategory`  with `_sourceCategory/<containername>` so that when a user searches the new sourcecategory is used. For example:
 
-
 ```
 _sourceCategory = azure_logs | json auto | parse field=resource_id  "/NETWORKSECURITYGROUPS/*"
 as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```
-
 
 Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](#how-do-i-route-logs-to-different-source-categories-based-on-log)
 
 
 #### How do I filter events by container name?
 
-**To filter events by container name, do the following:
+To filter events by container name, do the following:
 
 1. Go to **Event subscription > Filters** tab.
 2. Enter the following in the Subject Begins With field, replacing `<container_name>` with the name of the container from where you want to export logs.
-```sql
-/blobServices/default/containers/<container_name>/
-```
+   ```sql
+   /blobServices/default/containers/<container_name>/
+   ```
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Event-Subscription.png')} alt="Azure ARM FAQs" />
 
@@ -282,7 +267,6 @@ Another approach is to modify the function to send source category in headers. F
 
 ## Blob Reader error messages
 
-
 ```
 Error: The request is being throttled. at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
 ```
@@ -295,18 +279,15 @@ Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exceptio
 
 Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-3-configure-azure-resources-using-arm-template), substep 11.
 
-
 Error: You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  
 
-Tenant ID, application ID, principal ID, and scope are not allowed to be updated.  (Code: RoleAssignmentUpdateNotPermitted) \
-  \
-For more information, see the following articles: \
- \
-[https://social.msdn.microsoft.com/Forums/en-US/5267ce3b-8e48-4b1b-8e40-276006ad23e4/create-roleassignment-fails-with-error-quottenant-id-application-id-principal-id-and-scope-are?forum=WindowsAzureAD \
- \
-http://answers.flyppdevportal.com/MVC/Post/Thread/afc10f35-fa20-467e-b927-aeefdbf35eaf?category=azurescripting \
- \
-](https://social.msdn.microsoft.com/Forums/en-US/5267ce3b-8e48-4b1b-8e40-276006ad23e4/create-roleassignment-fails-with-error-quottenant-id-application-id-principal-id-and-scope-are?forum=WindowsAzureAD)
+Tenant ID, application ID, principal ID, and scope are not allowed to be updated. (Code: RoleAssignmentUpdateNotPermitted)
+
+For more information, see the following articles:
+
+* https://social.msdn.microsoft.com/Forums/en-US/5267ce3b-8e48-4b1b-8e40-276006ad23e4/create-roleassignment-fails-with-error-quottenant-id-application-id-principal-id-and-scope-are?forum=WindowsAzureAD
+* http://answers.flyppdevportal.com/MVC/Post/Thread/afc10f35-fa20-467e-b927-aeefdbf35eaf?category=azurescripting
+* https://social.msdn.microsoft.com/Forums/en-US/5267ce3b-8e48-4b1b-8e40-276006ad23e4/create-roleassignment-fails-with-error-quottenant-id-application-id-principal-id-and-scope-are?forum=WindowsAzureAD
 
 Solution: Create a new resource group for the Sumo Logic collection resources. If that doesn't fix the problem, then change the variables in the ARM template from this:
 ```
@@ -330,10 +311,9 @@ Solution: Run `npm install` from the console.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobTaskConsumer.png')} alt="Azure ARM FAQs" />
 
-
 * Error: Subscription for Microsoft.EventGrid is not registered.
 
-Solution: To register the provider do the following: \
+Solution: To register the provider do the following:
 1. Go to subscriptions.
 2. Select the subscription name where ARM template is deployed.
 3. Select the Resource providers under settings on the left.
