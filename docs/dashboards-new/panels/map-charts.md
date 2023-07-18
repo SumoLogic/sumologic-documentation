@@ -27,11 +27,7 @@ To add a panel with a Cluster or Heatmap:
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-1. A map chart is available in two types, **Cluster** or **Heatmap**.  
-
-    ![new cluster map.png](/img/dashboards-new/panels/map-charts/new-cluster-map.png)  
-
-    ![new heat map.png](/img/dashboards-new/panels/map-charts/new-heat-map.png)
+1. A map chart is available in two types, **Cluster** or **Heatmap**.<br/><img src={useBaseUrl('img/dashboards-new/panels/map-charts/cluster.png')} alt="cluster" style={{border: '1px solid black'}} width="800"/> <br/><img src={useBaseUrl('img/dashboards-new/panels/map-charts/heatmap.png')} alt="heatmap" style={{border: '1px solid black'}} width="800"/>
 
 1. [Modify the chart](/docs/dashboards-new/panels/modify-chart) as desired.
 
