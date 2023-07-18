@@ -154,7 +154,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox23 card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/ms-graph-azure-ad-reporting"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>MS Graph Azure AD Reporting</h4></a>
+  <a href="/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>MS Graph Azure AD Reporting</h4></a>
   <p>Monitor and analyze user activity, sign-in patterns and provisioning activities.</p>
   </div>
 </div>
