@@ -85,7 +85,7 @@ Never assume applications are fully protected. Monitor consistently to uncover p
 
 #### Step 7: Use benchmarks to know where application security stands
 
-[Benchmark](/docs/csa/audit-and-compliance/) against industry standards and other internal software protection levels.
+Benchmark against industry standards and other internal software protection levels.
 
 ## Pre-built apps for application security
 

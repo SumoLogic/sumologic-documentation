@@ -87,7 +87,7 @@ Use Sumo Logic's countless data integrations and out-of-the box applications ens
 * [PCI Compliance](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
 * [Google Cloud Audit](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
 * [AWS Security Hub](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
-* [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source/). App to to track and monitor usage of Microsoft Office 365. 
+* [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source/). App to track and monitor usage of Microsoft Office 365. 
 
 ### Use case: PCI compliance
 

@@ -14,7 +14,7 @@ Cloud Security Analytics is a cloud-based security system that provides the foll
 * Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.
 * Apps, dashboards, and tools to analyze security data.
 
-In this section, we'll present the following concepts:
+In this guide, we'll present the following concepts:
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
