@@ -16,12 +16,12 @@ AWS Observability Solution (S3 Link for cloudformation template):`https://sumolo
 AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 Security Fixes and Updates: 
- * Security fixes ([CVE-2022-23491](https://nvd.nist.gov/vuln/detail/CVE-2022-23491) and [CVE-2021-33503](https://nvd.nist.gov/vuln/detail/CVE-2021-33503)) for following
+ * Security fixes ([CVE-2022-23491](https://nvd.nist.gov/vuln/detail/CVE-2022-23491) and [CVE-2021-33503](https://nvd.nist.gov/vuln/detail/CVE-2021-33503)) for following.
    * SAM: sumologic-s3-logging-auto-enable - Semantic v1.0.5
    * SAM: sumologic-loggroup-connector - Semantic v1.0.7
    * SumoLogicAWSObservabilityHelperv2.0.16.zip
- * Removed unused permissions (AddTags, RemoveTags) from SAM: sumologic-s3-logging-auto-enable
- * Fine tuned IAM role permission to invoke lambda function in SAM: sumologic-loggroup-connector
+ * Removed unused permissions (AddTags, RemoveTags) from SAM: sumologic-s3-logging-auto-enable.
+ * Fine tuned IAM role permission to invoke lambda function in SAM: sumologic-loggroup-connector.
 
 ## v2.6.0, 25-April-2023
 
