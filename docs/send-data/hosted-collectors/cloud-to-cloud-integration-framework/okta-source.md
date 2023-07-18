@@ -12,16 +12,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
 
-The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
+The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/), [Users API](https://developer.okta.com/docs/reference/api/users/), and [User's Group API](https://developer.okta.com/docs/reference/api/users/#get-user-s-groups).
 It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
 This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
-## Okta API rate limits
+## Setup and Configuration
 
-During a polling interval, an Okta Source will make a request for every 1,000 logs available. The Okta API uses paging and only 1,000 logs are returned at a time.
+The Okta source requires you to provide the API token to access the data. To create an Okta API token, following instructions in [Okta help](https://support.okta.com/help/s/article/How-do-I-create-an-API-token). 
 
 ## States
 
@@ -48,52 +48,34 @@ the detected issue.
 
 ![error status.png](/img/send-data/okta-error-status.png)
 
-## Generate the Okta API token
-
-Create an Okta API token, following instructions in [Okta help](https://support.okta.com/help/s/article/How-do-I-create-an-API-token). You will add the token to the Okta source, later in this procedure.
-
 ## Create an Okta Source
 
 When you create an Okta Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Okta Source:
-
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **Okta**.
-
-   ![okta source icon.png](/img/send-data/okta-source-icon.png)
-
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
-
-   ![Okta version .png](/img/send-data/Okta-version.png)
-
+1. Select **Okta**.<br/><img src={useBaseUrl('img/send-data/okta-source-icon.png')} alt="[okta source icon" width="100"/>
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional. <br/><img src={useBaseUrl('img/send-data/Okta-version.png')} alt="okta-connfig" style={{border: '1px solid black'}} width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
-
    * `_siemVendor`: Okta
    * `_siemProduct`: SSO
    * `_siemFormat`: JSON
    * `_siemEventID`: `<eventType>` Where `<eventType>` is the value of the field from the JSON event, such as user.session.start. See the list of possible event types.
    * `_siemDataType`: Inventory (only for user inventory data)
-
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-
-1. **Okta API** **Key**. Provide the Okta API key you want to use to authenticate collection requests.
-
+1. **Okta API Key**. Provide the Okta API key you want to use to authenticate collection requests.
 1. **Okta Domain**. Provide your specific Okta domain, such as `mydomain.okta.com`.
-
 1. **Okta Event Types to Request**. By default, the Source will ingest all Okta events. You can instead configure a subset of events to collect. Click **Select Events** to specify the events you want to collect.
 
    ![okta events to collect.png](/img/send-data/okta-events-to-collect.png) 
 
 1. **Inventory**. Select if you want to fetch user inventory data once every 24 hours. This uses the List Users API.
-
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
-
+1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
@@ -121,7 +103,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | schemaRef         | JSON Object  | Yes               | Use `{"type":"Okta"}` for an Okta Source.                                               | not modifiable |
 | sourceType        | String       | Yes               | Use `Universal` for an Okta Source.                                                     | not modifiable |
 
-The following table shows the **config** parameters for an Okta Source.
+### Config parameters
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -136,7 +118,7 @@ The following table shows the **config** parameters for an Okta Source.
 eventTypes | String | No |  | Comma separated list of events to collect. Required if collectAll is false. | modifiable|
 | `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable|
 
-Okta Source JSON example:
+### JSON example
 
 ```json
 {
@@ -162,3 +144,7 @@ Okta Source JSON example:
   }
 }
 ```
+
+## Limitation
+
+During a polling interval, an Okta Source will make a request for every 1,000 logs available. The Okta API uses paging and only 1,000 logs are returned at a time.

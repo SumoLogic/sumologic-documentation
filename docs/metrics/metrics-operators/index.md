@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide describes Sumo Logic metrics operators and provides usage examples.
 
-[Download a Metrics Cheatsheet](https://drive.google.com/file/d/1XczfDjpI562UPek172zQFr9Cw2j_c7-N/view) 
+[Download a Metrics Cheatsheet](https://drive.google.com/file/d/1g-KSPHxuXXHbAMFs8PQ0M2dVHmFAwAS5/view) 
 
 ## Guide contents
 
