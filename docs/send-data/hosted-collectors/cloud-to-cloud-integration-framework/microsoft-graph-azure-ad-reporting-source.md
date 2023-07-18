@@ -1,5 +1,5 @@
 ---
-id: ms-graph-azure-ad-reporting-source
+id: microsoft-graph-azure-ad-reporting-source
 title: Microsoft Graph Azure AD Reporting Source
 sidebar_label: Microsoft Graph Azure AD Reporting
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
