@@ -42,7 +42,7 @@ On the [Collection page](/docs/manage/health-events#collection-page), the Health
 
 When you create a Abnormal Security Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Abnormal Security Source, follow the steps below:
+To configure an Abnormal Security Source, follow the steps below:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Abnormal Security**.<br/> <img src={useBaseUrl('img/send-data/abnormal-security-icon.png')} alt="abnormal-security-icon" style={{border: '1px solid black'}} width="100" />
