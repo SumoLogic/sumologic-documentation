@@ -27,7 +27,7 @@ The Abnormal Security source requires you to provide an authentication token. To
 ## States
 
 The Abnormal Security source is a security platform that provides AI-based email security.
-When you create a Abnormal Security source, it goes through the following stages.
+When you create an Abnormal Security source, it goes through the following stages.
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
