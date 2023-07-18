@@ -7,11 +7,7 @@ description: The Microsoft Graph Security API Source provides a secure endpoint 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
-
-:::caution
-This version of the app uses alerts from Microsoft Graph API (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by ***the new app (new app docs link)***.
-:::
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
 affected device.
@@ -24,7 +20,8 @@ The Microsoft Graph Security API Source consumes [alerts](https://learn.microso
 
 A Microsoft Graph Security API Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
 
-A Microsoft Graph Security API Source goes through the following states when created:
+A Microsoft Graph Security API Source goes through the following states
+when created:
 
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
@@ -97,7 +94,6 @@ The following steps show you how to create a service application:
     - Click **Apply**.
 
     <img src={useBaseUrl('/img/send-data/7_ms_graph_app_add_role.png')} alt="7_ms_graph_app_add_role" width="800"style={{border: '1px solid black'}} />
-
 ### Create a Microsoft Graph Security API Source
 
 When you create a Microsoft Graph Security API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
