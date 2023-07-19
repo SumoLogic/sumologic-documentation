@@ -2,7 +2,7 @@
 id: abnormal-security-source
 title: Abnormal Security Source
 sidebar_label: Abnormal Security
-description: Learn how to collect abnormal threat log from the Abnormal Security.
+description: Learn how to collect abnormal threat logs from the Abnormal Security source.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
