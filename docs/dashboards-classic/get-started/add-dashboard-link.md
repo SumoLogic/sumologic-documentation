@@ -56,7 +56,7 @@ we want to put on the other dashboard:
 
 A Dashboard that is configured with filters can be provided with custom filter values through its URL.  
 
-[Dashboard filters](/docs/dashboards/edit-dashboards/use-filters-dashboards) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
+[Dashboard filters](/docs/dashboards-classic/edit-dashboards/use-filters-dashboards) are in the format: `filters=<filtername>*eq*<value>`. For example, if you have a filter on the field `_source` and that filter has a value of **CrowdStrike** your filter would be appended as:  
 ```sql
 &filters=_source*eq*CrowdStrike
 ```  

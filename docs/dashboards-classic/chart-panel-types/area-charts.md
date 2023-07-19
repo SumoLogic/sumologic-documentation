@@ -33,4 +33,4 @@ The data in the **Aggregates** tab is represented as an area chart.
 
 ![AreaChart.png](/img/dashboards/AreaChart.png)
 
-For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards/edit-dashboards).
+For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards-classic/edit-dashboards).

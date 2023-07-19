@@ -15,4 +15,4 @@ In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
 
-See [Edit Dashboards and Panels](/docs/dashboards/edit-dashboards) for options to view and edit settings.
+See [Edit Dashboards and Panels](/docs/dashboards-classic/edit-dashboards) for options to view and edit settings.

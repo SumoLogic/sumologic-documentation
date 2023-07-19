@@ -31,7 +31,7 @@ The data in the **Aggregates** tab is represented as a column chart.
 
 ![Column chart](/img/dashboards/ColumnChart.png)
 
-For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards/edit-dashboards)..
+For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards-classic/edit-dashboards).
 
 ## Creating Stacked Column Charts
 

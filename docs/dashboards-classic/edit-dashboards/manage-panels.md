@@ -18,7 +18,7 @@ To edit data panels on a dashboard:
 
     ![gear-icon-panel.png](/img/dashboards/gear-icon-panel.png)  
      
-1. For details on the various options shown, see [Edit Dashboards and Panels](/docs/dashboards/edit-dashboards).
+1. For details on the various options shown, see [Edit Dashboards and Panels](/docs/dashboards-classic/edit-dashboards).
 1. When you are done making edits, click **Done Editing**.
 
 You can also edit a Data Panel on the [Search](#edit-data-panels-on-the-search-page) page. But the **Settings** dialogs are different.

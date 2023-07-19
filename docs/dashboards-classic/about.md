@@ -23,7 +23,7 @@ The information you save in a dashboard provides insight into the current state 
 For more information, see the following topics:
 
 * [Adding Text and Title Panels](get-started/add-text-panel.md)
-* [Get Started with Dashboards and Panels](/docs/dashboards/get-started)
+* [Get Started with Dashboards and Panels](/docs/dashboards-classic/get-started)
 * Share Dashboards [Inside](share-dashboard-inside-org.md) and [Outside](share-dashboard-outside-org.md) Your Organization
 
 ## Live mode

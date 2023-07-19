@@ -31,4 +31,4 @@ The data in the **Aggregates** tab is represented as a bar chart.
 
 ![BarChart .png](/img/dashboards/BarChart.png)
 
-For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards/edit-dashboards).
+For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards-classic/edit-dashboards).

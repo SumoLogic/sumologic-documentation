@@ -140,7 +140,7 @@ To add a Text Panel:
 
 Text panels can provide links to URLs or other Dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
 
-To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard Link](/docs/dashboards/get-started/add-dashboard-link).
+To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard Link](/docs/dashboards-classic/get-started/add-dashboard-link).
 
 ### Syntax
 

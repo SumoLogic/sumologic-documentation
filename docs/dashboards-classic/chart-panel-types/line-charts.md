@@ -33,4 +33,4 @@ To create a Line Chart:
 
     ![Line Chart](/img/dashboards/LineChart.png)
 
-For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards/edit-dashboards).
+For details on customizing the way your chart is displayed, see [Edit Dashboards and Panels](/docs/dashboards-classic/edit-dashboards).
