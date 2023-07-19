@@ -1931,6 +1931,7 @@
   "/cid/4025": "/docs/search/search-query-language/search-operators/total",
   "/cid/4026": "/docs/search/search-query-language/search-operators/fillmissing",
   "/cid/4027": "/docs/search/search-query-language/search-operators/transpose",
+  "/cid/10233": "/docs/integrations/containers-orchestration/strimzi-kafka",
   "/cid/4028": "/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs",
   "/cid/4029": "/docs/search/search-query-language/search-operators/trace",
   "/cid/4031": "/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source",
