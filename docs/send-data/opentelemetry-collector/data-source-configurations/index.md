@@ -15,7 +15,7 @@ To collect data from a source the OpenTelemetry collector requires **source conf
 
 
 ### How the OpenTelemetry Collector sends data to Sumo Logic
-OpenTelemetry Collector starts sending data to the Sumo service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo service over HTTPS using SumoLogic Exporter.
+Our OpenTelemetry Collector starts sending data to the Sumo Logic service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo service over HTTPS using the SumoLogic Exporter.
 
 ## Guides
 
