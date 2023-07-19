@@ -47,6 +47,12 @@ To configure an HTTP Logs and Metrics Source:
 1. When you are finished configuring the Source, click **Save**.
 1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.<br/> ![img](/img/send-data/http-source-address.png)
 
+:::note
+1. Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Please make sure that the Metrics sent HTTP Endpoint have appropriate timestamps.
+2. Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see Data Limits for Metrics. 
+:::
+
+
 ## Upload data to the HTTP Logs and Metrics Source
 
 You can upload both logs and supported metric types to an HTTP Source. There are different requirements depending on whether you are uploading logs or metrics to the Source. 
