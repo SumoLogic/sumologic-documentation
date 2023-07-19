@@ -37,10 +37,10 @@ To create a Custom Insight:
 
 1. Choose **Custom Insights** on the **Content** menu.
 2. Click **Create** on the [**Custom Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) page.<br/><img src={useBaseUrl('img/cse/custom-insights-page.png')} alt="Custom Insights page" width="800"/> 
-3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" width="400"/>
+3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" width="600"/>
 4. In the **Name** field, enter a name for the Custom Insight.
 5. If you want the Custom Insight to be generated based on one or more rules firing Signals, jump to step 6, below. Otherwise: 
-   1. Leave the **When Signals are created from the following...** clause set to **signal names**.
+   1. Leave the **When Signals are created from the following...** clause set to **Signal names**.
    2. Enter an expression that matches the name(s) of the Signals of interest. For example: `Critical Severity Intrusion Signature *`
    3. Click **Add**.
    4. If you want to, you can enter one or more additional Signal expressions.
