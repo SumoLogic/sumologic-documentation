@@ -32,7 +32,7 @@ Code environment and repository access should be monitored from a central locati
 Build tools and code repositories can become entry points for malicious code. With poisoned pipeline execution (PPE), attackers insert unauthorized code into these environments, which runs as part of the CI/CD lifecycle to infect the larger application. Visualizing who is in
 these environments, when and where they are accessing them, and what changes they are making helps identify problematic user behavior. Sumo Logic’s consolidated log data uses additional context to enrich access information, helping identify unauthorized access and code insertion. 
 
-####  Building and testing
+#### Building and testing
 
 Quality assurance (QA) at the creation stage will improve the software development lifecycle by identifying any vulnerabilities before introducing new code. Reviewing output from test logs and building pipelines ensures greater compliance with product expectations over the entire application lifespan.
 
