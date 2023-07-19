@@ -7,6 +7,8 @@ description: Learn how to get started with metrics and create your first visuali
 
 The easiest way get started with metrics is to add a Host Metrics Source, which allows you to collect data pertaining to the local Installed Collector host. Check out this webinar for an overview of what you can do with host metrics. For reference, the slides are available [here](http://www.slideshare.net/Sumo_Logic/sumo-logic-webinar-visibility-into-your-host-metrics).
 
+:::note Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped:::
+
 <Iframe url="https://www.youtube.com/embed/WOeR_ukK01A"
         width="854px"
         height="480px"
