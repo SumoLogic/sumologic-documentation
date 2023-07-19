@@ -184,7 +184,7 @@ _sourceCategory="ms_alerts"
 
 ## Set up collection
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for Microsoft Graph Security](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) app to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud-to-Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) app to create the source and use the same source category while installing the app.
 
 ## Installing the Microsoft Graph Security app​
 
