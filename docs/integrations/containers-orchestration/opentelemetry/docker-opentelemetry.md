@@ -47,7 +47,7 @@ Path to this JSON file will be required in the [next step](#step-2-configure-int
 
 ## Collecting Logs, Metrics, and Installing app for Docker​
 
-Follow the below steps for collecting logs, metrics, and installing the app.
+As part of data collection setup and app installation, you can select the **Docker - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

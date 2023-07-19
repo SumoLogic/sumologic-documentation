@@ -39,7 +39,7 @@ Standard Windows event channels include:
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/). Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-As part of data collection setup and app installation, you can select the App from **App Catalog** and click on **Install App**. Follow the steps below.
+As part of data collection setup and app installation, you can select the **PCI Compliance for Windows JSON - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

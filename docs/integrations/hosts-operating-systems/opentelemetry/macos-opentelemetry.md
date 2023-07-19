@@ -29,7 +29,7 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 ## Collecting Logs, Metrics, and installing macOS app
 
-Here are the steps for collecting metrics and installing the app.
+As part of data collection setup and app installation, you can select the **macOS - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

@@ -71,7 +71,7 @@ When you configure the webhook, enter the URL for the [HTTP source you created](
 
 ## Logs Collection Configuration and App Installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+As part of data collection setup and app installation, you can select the **Jira - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

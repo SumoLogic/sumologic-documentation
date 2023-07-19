@@ -36,9 +36,7 @@ Standard Windows event channels include:
 
 ## Collection Configuration and App Installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
-
-As part of the setting up the collection process and app installation, you can select the App from App Catalog and click on Install App. Please follow the steps below:
+As part of data collection setup and app installation, you can select the **Active Directory JSON - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

@@ -45,7 +45,7 @@ All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/
 
 ## Collecting Logs, Metrics, and installing Elasticsearch app
 
-Here are the steps for collecting logs, metrics, and installing the app.
+As part of data collection setup and app installation, you can select the **Elasticsearch - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

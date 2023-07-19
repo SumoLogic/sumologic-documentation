@@ -31,7 +31,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+As part of data collection setup and app installation, you can select the **Squid Proxy - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

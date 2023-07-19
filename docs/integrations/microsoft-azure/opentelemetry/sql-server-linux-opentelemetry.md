@@ -38,6 +38,8 @@ The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the f
 
 ## Configure SQL Server Logs Collection
 
+As part of data collection setup and app installation, you can select the **Microsoft SQL Server for Linux - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+
 ### Step 1: Set up Collector
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}

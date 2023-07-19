@@ -37,7 +37,7 @@ By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default dire
 
 ## Collecting Logs and Installing the Apache Tomcat app
 
-Here are the steps for Collecting Logs and installing the app.
+As part of data collection setup and app installation, you can select the **Apache Tomcat - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

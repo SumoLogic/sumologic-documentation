@@ -46,7 +46,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Collecting Logs, Metrics, and Installing Nginx App
 
-The process to set up collection for Nginx data is done through the following steps.
+As part of data collection setup and app installation, you can select the **Nginx - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up OpenTelemetry Collector
 

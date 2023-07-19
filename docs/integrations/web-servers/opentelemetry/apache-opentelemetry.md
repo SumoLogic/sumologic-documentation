@@ -46,7 +46,7 @@ The receiver used gets stats from an Apache Web Server instance using the `serve
 
 ## Collecting Logs, Metrics, and Installing App for Apache
 
-Here are the steps for collecting Logs, metrics, and installing the app:
+As part of data collection setup and app installation, you can select the **Apache - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

@@ -96,7 +96,7 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
 
 ## Collecting logs and metrics, and installing the ActiveMQ app
 
-The process to set up collection for ActiveMQ data is done through the following steps.
+As part of data collection setup and app installation, you can select the **ActiveMQ - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up OpenTelemetry Collector
 

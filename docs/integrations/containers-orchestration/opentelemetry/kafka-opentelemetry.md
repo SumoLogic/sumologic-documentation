@@ -44,7 +44,7 @@ Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller
 
 ## Collecting Logs, Metrics and Installing App for Kafka
 
-The process to set up collection for Kafka data is done through the following steps.
+As part of data collection setup and app installation, you can select the **Kafka - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up OpenTelemetry Collector
 

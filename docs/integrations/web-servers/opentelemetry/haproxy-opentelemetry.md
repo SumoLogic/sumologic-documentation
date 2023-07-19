@@ -77,7 +77,7 @@ All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/
 
 ## Collecting Logs, Metrics and installing HAProxy app
 
-Here are the steps for Collecting Logs and installing the app.
+As part of data collection setup and app installation, you can select the **HAProxy - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

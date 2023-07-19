@@ -73,7 +73,7 @@ Below are docs for popular Java applications:
 
 ## Collecting Metrics and Installing the JMX App
 
-The process to set up collection for JMX Metrics is done through the following steps.
+As part of data collection setup and app installation, you can select the **JMX - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up OpenTelemetry Collector
 

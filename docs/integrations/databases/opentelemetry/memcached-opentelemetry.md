@@ -46,6 +46,8 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Configure Memcached Logs Collection and App installation
 
+As part of data collection setup and app installation, you can select the **Memcached - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+
 ### Step 1: Set up Collector
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}

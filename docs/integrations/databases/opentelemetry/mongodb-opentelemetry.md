@@ -45,6 +45,8 @@ By default, MongoDB logs are stored in a log file.
 
 ## Configure MongoDB Logs Collection
 
+As part of data collection setup and app installation, you can select the **MongoDB - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+
 ### Step 1: Set up Collector
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}

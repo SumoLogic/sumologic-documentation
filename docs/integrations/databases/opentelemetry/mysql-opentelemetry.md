@@ -57,13 +57,14 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 1. Open `my.cnf` in a text editor.
 2. Set the following parameters in the `[mysqld]` section:
+
   ```sql
   [mysqld]
-      log_error = /var/log/mysql/error.log
-      slow_query_log=1
-      slow_query_log_file = /var/log/mysql/mysql-slow.log
-      long_query_time=2
-      long_query_time=2
+        log_error = /var/log/mysql/error.log
+        slow_query_log=1
+        slow_query_log_file = /var/log/mysql/mysql-slow.log
+        long_query_time=2
+        long_query_time=2
   ```
 
 [Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
@@ -77,9 +78,9 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 ## Collecting Logs, Metrics, and installing App for MySQL
 
-Here are the steps for collecting logs, metrics, and installing the app.
+As part of data collection setup and app installation, you can select the **MySQL - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
-### Step 1 : Set up collector
+### Step 1: Set up collector
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 

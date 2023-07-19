@@ -1,6 +1,6 @@
 ---
 id: windows-opentelemetry
-title: windows - OpenTelemetry Collector
+title: Windows - OpenTelemetry Collector
 sidebar_label: Windows - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry App for Windows.
 ---
@@ -38,7 +38,7 @@ Standard Windows event channels include:
 
 ## Collection Configuration and App installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+As part of data collection setup and app installation, you can select the **Windows - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
 
 ### Step 1: Set up Collector
 

@@ -36,6 +36,8 @@ By default, the Couchbase will write the log to the log directory that was confi
 
 ## Configure Couchbase Logs Collection
 
+As part of data collection setup and app installation, you can select the **Couchbase - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+
 ### Step 1: Set up Collector
 
 If you want to use an existing OTel Collector, this step can be skipped by selecting the option of using an existing Collector.
