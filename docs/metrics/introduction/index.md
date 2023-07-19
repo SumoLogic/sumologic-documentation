@@ -45,7 +45,9 @@ Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. For more
 
 ## Metrics sources
 
-:::note Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped:::
+:::note
+Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped.
+:::
 
 Currently available metric sources are:
 
