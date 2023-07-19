@@ -45,6 +45,8 @@ Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. For more
 
 ## Metrics sources
 
+:::note Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped:::
+
 Currently available metric sources are:
 
 * [HTTP Logs and Metrics source.](/docs/send-data/hosted-collectors/http-source/logs-metrics) You can use an HTTP source on hosted collector to collect Graphite, Carbon 2.0, and Prometheus metrics from environments where it is impractical to deploy an installed collector.
