@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/strimzi.png')} alt="icon" width="150"/>
 
-This guide provides an overview of Kafka metrics collection from kafka pods deployed with Strimzi Kafka operator.
+This guide provides an overview of Kafka metrics collection from kafka pods deployed with the Strimzi Kafka operator.
 
 The Sumo Logic App for Strimzi Kafka is a unified logs and metrics app. The app helps you to monitor the availability, performance, and resource utilization of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the cluster status, throughput, broker operations, topics, replication, zookeepers, node resource utilization, and error logs.
 
@@ -77,7 +77,7 @@ Before configuring the collection you will require below items
 
 3. Generate the Sumo Logic access ids and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#generate-an-access-key).
 
-4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operator using the credentials geneerated in previous step and deploys the 2.10.0 helm chart version.
+4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
 
   ```bash
   helm upgrade --install sumologic sumologic/sumologic \
@@ -279,7 +279,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:
      * For all Kafka clusters `messaging_cluster=*`
-     * For a specific cluster: `messaging_cluster=Kafka.dev.01`. This should be same as `<<Cluster Name>>` value provided while defining annotations and labels.
+     * For a specific cluster: `messaging_cluster=Kafka.dev.01`. This should be the same as `<<Cluster Name>>` value provided while defining annotations and labels.
      * Clusters within a specific environment: `messaging_cluster=Kafka-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection. This should be same as `<<Cluster Name>>` and `<<ENVIRONMENT>>` values provided while defining annotations and labels.
 4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
@@ -291,4 +291,4 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing the Kafka Dashboards
 
-The dashboards are identical to Kafka and their usecases can be found [here](/docs/integrations/containers-orchestration/kafka/#viewing-the-kafka-dashboards).
+The dashboards are identical to Kafka and their use cases can be found [here](/docs/integrations/containers-orchestration/kafka/#viewing-the-kafka-dashboards).
