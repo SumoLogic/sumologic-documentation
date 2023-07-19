@@ -10,8 +10,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Data sources or Source in Sumo refers to a specific application/infrastructure component from which the collector can collect telemetry (Logs, Metrics, and Traces). The sources include all configuration including protocol, receivers, processors, and exporters required to collect telemetry data from a given source. MySQL, Nginx, Kafka, Cassandra, and JMX are all examples of sources from where Sumo Logic collector can collect and send data. 
 
 
-### Configuration
+### Configuration 
 To collect data from a source the OpenTelemetry collector requires **source configuration**, that instructs the collector how to collect the data. [Learn More](https://opentelemetry.io/docs/collector/configuration/) about OpenTelemetry Collector configuration. 
+
+
+### How  OpenTelemetry Collector sends data to the Sumo service
+OpenTelemetry Collector starts sending data to the Sumo service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo service over HTTPS using SumoLogic Exporter.
 
 ## Guides
 
