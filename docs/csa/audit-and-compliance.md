@@ -91,7 +91,7 @@ Use Sumo Logic's countless data integrations and out-of-the box applications ens
 
 ### Use case: PCI compliance
 
-In this use case, we'll show you how to use the  PCI app for Palo Alto Networks to perform an audit to ensure that you meet one of the PCI requirements.
+In this use case, we'll show you how to use our PCI app for Palo Alto Networks to perform an audit to ensure that you meet one of the PCI requirements.
 
 #### PCI requirements
 
