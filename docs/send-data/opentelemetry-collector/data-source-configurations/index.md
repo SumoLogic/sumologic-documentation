@@ -14,7 +14,7 @@ Data sources or Source in Sumo refers to a specific application/infrastructure c
 To collect data from a source the OpenTelemetry collector requires **source configuration**, that instructs the collector how to collect the data. [Learn More](https://opentelemetry.io/docs/collector/configuration/) about OpenTelemetry Collector configuration. 
 
 
-### How  OpenTelemetry Collector sends data to the Sumo service
+### How the OpenTelemetry Collector sends data to Sumo Logic
 OpenTelemetry Collector starts sending data to the Sumo service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo service over HTTPS using SumoLogic Exporter.
 
 ## Guides
