@@ -188,7 +188,7 @@ Follow the instructions for setting up [Cloud-to-Cloud Integration for Microsoft
 
 ## Installing the Microsoft Graph Security app​
 
-This section has instructions for installing the Microsoft Graph Security app for Sumo Logic and a description of the dashboard. Configure Microsoft Graph Security app using the steps described in the [Microsoft Graph Security Cloud-to-Cloud Source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/).
+This section has instructions for installing the Microsoft Graph Security app for Sumo Logic and a description of the dashboard. Configure Microsoft Graph Security app using the steps described in the [Microsoft Graph Security Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/).
 
 Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboard included with the app before installing, click **Preview Dashboards**.
 
