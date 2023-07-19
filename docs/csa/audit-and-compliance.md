@@ -130,7 +130,7 @@ To perform the audit:
 1. Click the **Aggregates** tab.
 1. Click the Table icon. The aggregates table will only show the potential incidents. 
 
-For example, there may be log messages on destination port 80. While these might not be true incidents, the query has flagged them as worthy of investigation. You can try to determine which network this IP address is on, and whether or not the data is insecure. Recall requirement 4: "Encrypt transmission of cardholder data across open, public networks." If this data is on an open, public network, you'll need to make sure it’s encrypted so you can meet this compliance standard.
+For example, there may be log messages on destination `port 80`. While these might not be true incidents, the query has flagged them as worthy of investigation. You can try to determine which network this IP address is on, and whether or not the data is insecure. Recall requirement 4: "Encrypt transmission of cardholder data across open, public networks." If this data is on an open, public network, you'll need to make sure it’s encrypted so you can meet this compliance standard.
 
 ## Build queries for audit and compliance
 
