@@ -918,7 +918,7 @@ module.exports = {
         'dashboards/locate-deviations-time-series',
         'dashboards/set-custom-time-ranges',
         'dashboards/scheduled-report',
-        'dashboards/export-dashboard',
+        'dashboards/export-dashboard-new',
         'dashboards/link-dashboards',
         'dashboards/set-data-access-level',
         'dashboards/share-dashboard-new',
