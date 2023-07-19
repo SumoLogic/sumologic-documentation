@@ -38,6 +38,10 @@ Perform these steps on each host from which you want to collect metrics:
 
 1. Click **Save**.
 
+:::note
+Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Please make sure that the Metrics sent to the Streaming Metrics source have appropriate timestamps.
+:::
+
     ![streaming-metrics-source.png](/img/send-data/streaming-metrics-source.png)
 
 ## Specify the network interface for a streaming metrics source 
