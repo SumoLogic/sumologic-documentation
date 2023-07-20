@@ -39,7 +39,8 @@ Perform these steps on each host from which you want to collect metrics:
 1. Click **Save**.
 
 :::note
-Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Please make sure that the Metrics sent to the Streaming Metrics source have appropriate timestamps.
+* Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to the Streaming Metrics source have appropriate timestamps.
+* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
 :::
 
     ![streaming-metrics-source.png](/img/send-data/streaming-metrics-source.png)

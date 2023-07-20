@@ -39,8 +39,8 @@ To configure an OTLP/HTTP Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::note
-1. Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Please make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
-2. Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see Data Limits for Metrics.
+* Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to OTLP Endpoint have appropriate timestamps.
+* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
 :::
 
 ### View the endpoint URL
