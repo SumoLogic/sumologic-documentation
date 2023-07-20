@@ -5,6 +5,30 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/**
+ * const googleTranslateElementInit = () => {
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      autoDisplay: false,
+    },
+    'google_translate_element'
+  );
+};
+
+const GoogleTranslate = () => {
+  useEffect(() => {
+    const addScript = document.createElement('script');
+    addScript.src =
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    addScript.defer = true; // Set defer attribute to delay script execution
+    document.body.appendChild(addScript);
+
+    // Initialize Google Translate element once the script is loaded
+    addScript.onload = googleTranslateElementInit;
+  }, []);
+ */
+
 import React, {useEffect} from 'react';
 import clsx from 'clsx';
 
@@ -27,13 +51,16 @@ export default function HtmlNavbarItem({
     );
   };
   useEffect(() => {
-    var addScript = document.createElement("script");
+    const addScript = document.createElement("script");
     addScript.setAttribute(
       "src",
       "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     );
+    addScript.defer = true;
     document.body.appendChild(addScript);
-    window.googleTranslateElementInit = googleTranslateElementInit;
+
+    googleTranslateElementInit();
+
   }, []);
   return (
     <Comp
