@@ -7,7 +7,7 @@ description: Learn about the Record types to which you can map schema attributes
 
 
 
-This topic defines the Record Types that CSE supports. For related information, see [Attributes You Can Map to Records](attributes-map-to-records.md).
+This topic defines the Record Types that CSE supports. For related information, see [Attributes You Can Map to Records](/docs/cse/schema/attributes-map-to-records).
 
 Each message that CSE maps must be assigned one, and only one, Record Type.
 

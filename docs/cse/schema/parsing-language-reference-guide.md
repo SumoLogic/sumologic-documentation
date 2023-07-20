@@ -9,7 +9,7 @@ This topic describes the CSE parsing language, which you can use to write custom
 
 ## What is parsing?
 
-Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](record-processing-pipeline.md) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
+Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](/docs/cse/schema/record-processing-pipeline) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
 Parsers are written in a specialized Sumo Parsing Language. The parser code resides in a a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
