@@ -12,7 +12,6 @@ Sumo Logic does not store metrics data points that are more than 24 hours in the
 
 :::note
 Too old or too new data points will be accepted by Sumo Logic, but they will not be stored.
-:::
 
 ## Metric retention
 
