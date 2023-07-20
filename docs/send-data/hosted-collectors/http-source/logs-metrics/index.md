@@ -49,7 +49,8 @@ To configure an HTTP Logs and Metrics Source:
 
 :::note
 * Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to HTTP Endpoint have appropriate timestamps.
-* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).:::
+* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
+:::
 
 
 ## Upload data to the HTTP Logs and Metrics Source
