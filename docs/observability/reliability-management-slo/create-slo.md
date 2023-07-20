@@ -225,12 +225,28 @@ Below are some best practices for managing your SLOs. To get to your SLOs list, 
 
 ### Tags and Filters
 
-You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
+You can add key/value pair tags to your SLOs to allow you to better organize and filter them. For example, you might find it useful to add tags for `team`, `service`, and `application`.
+
+<!--
+<img src={useBaseUrl('img/observability/FilterByTagKey.png')} alt="FilterByTagKey.png" />
+
+<img src={useBaseUrl('img/observability/FilterByTagValue.png')} alt="FilterByTagValue.png" />
+
+<img src={useBaseUrl('img/observability/DefaultView.png')} alt="DefaultView.png" />
+
+<img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
+
+<img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
+
+<img src={useBaseUrl('img/observability/SaveANewFilter.png')} alt="SaveANewFilter.png" />
+
+<img src={useBaseUrl('img/observability/SaveANewFilterDialogue.png')} alt="SaveANewFilterDialogue.png" />
+-->
 
 :::note Limitations
 - Tag keys cannot start with the prefixes `sumo.` or `_`
-- Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
-- Tag values can only contain letters, white space, numbers, `_`, `.`, `/`, `=`, `+`, `-`, `@`
+- Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
+- Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
 - You can associate a maximum of 50 tags per SLO.
 :::
 
