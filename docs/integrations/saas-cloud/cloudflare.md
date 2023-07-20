@@ -65,7 +65,13 @@ Ensure Log Share permissions are enabled in Cloudflare before attempting to read
 1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Follow the instructions to [Configure an HTTP Logs & Metrics Source](https://help-opensource.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/).
 3. Optional: To forward logs to Cloud SIEM Enterprise, click **+Add Field** with the key `_parser` and value `/Parsers/System/Cloudflare/Cloudflare Logpush`
-4. Click **Save** to save the source.
+4. Click **Advanced**, if the settings are not already shown.
+5. For Timestamp Format, select **Specify a format** and enter the following:
+   * **Format:** `yyyy-MM-dd'T'HH:mm:ss'Z'`
+   * **Timestamp Locator:** `\"EdgeStartTimestamp\"\s*:\s*\"(.*)\"`
+6. Click **Test**. A Test Timestamp Parsing dialog appears.
+7. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: **"EdgeStartTimestamp":"2022-12-19T23:38:10Z"**. A dialog confirming that your timestamp format matched should appear.
+8. Click **Done** and then click **Save** to save the timestamp parsing to the source.
 
 ### Configure Logpush to Sumo Logic via the Cloudflare Dashboard
 
