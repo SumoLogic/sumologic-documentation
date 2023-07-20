@@ -3012,8 +3012,7 @@
   "/Send_Data/Sources/AWS_S3_Source": "/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source",
   "/Send_Data/01_Design_Your_Deployment/Best_Practices:_Good_Source_Category,_Bad_Source_Category": "/docs/send-data/best-practices",
   "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon_Web_Services/AWS_S3_Source": "/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source",
-  "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon_Web_Services/Amazon_CloudWatch_Sour
-ce_for_Metrics": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
+  "/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon_Web_Services/Amazon_CloudWatch_Source_for_Metrics": "/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs",
   "/Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon_Web_Services/AWS_S3_Source": "/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source",
   "/Send_Data/Hosted_Collectors": "/docs/send-data/hosted-collectors",
   "/Send_Data/Sources/01Sources_for_Installed_Collectors/Script_Action": "/docs/send-data/installed-collectors/sources/script-action",
