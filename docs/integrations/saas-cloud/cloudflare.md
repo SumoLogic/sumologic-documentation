@@ -58,7 +58,7 @@ To send Cloudflare logs to Sumo Logic directly, you can follow the steps outline
 
 Cloudflare Logpush supports pushing logs directly to Sumo Logic via the Cloudflare dashboard or via API. Cloudflare can send logs to a Hosted Collector with HTTP Logs and Metrics as the source. Once you have set up a collector, you simply provide the HTTP Source Address (a unique URL) to which logs can be posted.
 
-Ensure Log Share permissions are enabled in Cloudflare before attempting to read or configure a Logpush job. For more information refer to the Roles section in  Cloudflare.
+Ensure Log Share permissions are enabled in Cloudflare before attempting to read or configure a Logpush job. For more information, refer to the [Roles](https://developers.cloudflare.com/fundamentals/account-and-billing/members/roles/#roles) section in  Cloudflare documentation.
 
 ### Configure a Hosted Collector
 
