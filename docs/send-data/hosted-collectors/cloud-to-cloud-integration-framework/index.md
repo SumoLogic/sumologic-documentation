@@ -285,7 +285,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox38 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
   <p>Collects Risk Detection and Risky User data from the Microsoft Graph Identity Protection API.</p>
   </div>
 </div>
