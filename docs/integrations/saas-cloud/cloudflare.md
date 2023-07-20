@@ -63,7 +63,7 @@ Ensure Log Share permissions are enabled in Cloudflare before attempting to read
 ### Configure a Hosted Collector
 
 1. Follow the instructions to [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector) in Sumo Logic to start collecting logs.
-2. Follow the instructions to [Configure an HTTP Logs & Metrics Source](https://help-opensource.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/).
+2. Follow the instructions to [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics#configure-an-httplogs-and-metrics-source).
 3. Optional: To forward logs to Cloud SIEM Enterprise, click **+Add Field** with the key `_parser` and value `/Parsers/System/Cloudflare/Cloudflare Logpush`
 4. Click **Advanced**, if the settings are not already shown.
 5. For Timestamp Format, select **Specify a format** and enter the following:
