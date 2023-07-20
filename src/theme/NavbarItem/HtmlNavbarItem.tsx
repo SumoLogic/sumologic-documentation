@@ -5,10 +5,23 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import clsx from 'clsx';
 
 import type {Props} from '@theme/NavbarItem/HtmlNavbarItem';
+
+(function () {
+  if (typeof window !== "undefined") {
+  window.googleTranslateElementInit = function () {
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+  }
+}}
+)
+
+();
 
 export default function HtmlNavbarItem({
   value,
@@ -17,24 +30,6 @@ export default function HtmlNavbarItem({
   isDropdownItem = false,
 }: Props): JSX.Element {
   const Comp = isDropdownItem ? 'li' : 'div';
-  const googleTranslateElementInit = () => {
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: "en",
-        autoDisplay: false
-      },
-      "google_translate_element"
-    );
-  };
-  useEffect(() => {
-    var addScript = document.createElement("script");
-    addScript.setAttribute(
-      "src",
-      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    );
-    document.body.appendChild(addScript);
-    window.googleTranslateElementInit = googleTranslateElementInit;
-  }, []);
   return (
     <Comp
       className={clsx(
