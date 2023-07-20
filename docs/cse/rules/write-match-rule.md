@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic has information about Match rules and how to create them in the CSE UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](about-cse-rules.md) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About Match rules
@@ -48,7 +48,7 @@ import Iframe from 'react-iframe'; 
 1. On the **Create a Rule** page, click **Create** in the **Match** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
-   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/>![match.png](/img/cse/match.png)
+   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/match.png')} alt="Match rule" width="600"/>
 
 ## Configure "Then Create a Signal" settings
 
@@ -93,7 +93,7 @@ After creating a rule expression, you can test it against existing Records in CS
 1. If no matches were returned, try changing the time range.
 
 :::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.
+If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions), you can test it without the tuning expressions, or with selected tuning expressions.
 :::
 
 
