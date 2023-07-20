@@ -14,8 +14,8 @@ The Halo Event Connector is free to use, and will work with any Halo subscriptio
 
 **To integrate Halo events into Sumo Logic:**
 
-1. Make sure you have set up accounts for [CloudPassage Halo](http://pages.cloudpassage.com/halo-pro.html) and Sumo Logic.
-1. [Generate an API key](https://support.cloudpassage.com/entries/23631996-Generating-an-API-key) in your CloudPassage Halo portal.  
+1. Make sure you have set up [accounts](https://portal.cloudpassage.com/registrations/new) for [CloudPassage Halo](https://fidelissecurity.com/wp-content/uploads/2021/08/Fidelis_Halo_Solution_Brief_02.1.pdf) and Sumo Logic.
+1. [Generate an API key](https://api-doc.cloudpassage.com/help#call-authentication) in your CloudPassage Halo portal. To retrieve your API Keys, access the Halo Portal web interface, select a group in the group tree, and navigate to Edit Group Settings > API Keys. The existing keys for that group are listed.
 1. Once you have an API key, follow the steps provided in the [Sumo Logic - Halo Documentation](https://github.com/cloudpassage/halo-event-connector-python/blob/master/Halo-Event-Connector_SumoLogic.pdf), using the files provided on [GitHub](https://github.com/cloudpassage/halo-event-connector-python).
 
 The documentation available with those files on GitHub walks you through the process of testing the Halo Event Connector script.  
