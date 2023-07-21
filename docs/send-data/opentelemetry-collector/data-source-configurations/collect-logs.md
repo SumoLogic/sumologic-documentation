@@ -236,7 +236,7 @@ The following table shows the comparison of these components.
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog sent using UDP protocol to 172.31.93.11 on port 5140
+1. **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
 2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
 3. **Export**: Send data to authenticated Sumo Logic organization
 
