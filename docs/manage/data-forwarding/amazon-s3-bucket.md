@@ -58,10 +58,10 @@ These file objects will contain the messages received as well as the system met
  
 ### Limitations
 
-* The ordering for the system fields are fixed and the order is `messageId, sourceName, sourceHost, sourceCategory, messageTime, receiptTime, sourceId, collectorId, count, format, view, encoding, message`.
-* User defined fields are represented in lower case only.
-* User defined fields are ordered based on ascending ASCII value.
-* User defined fields are always present after the system or built-in fields.
+* The order of the system fields is fixed, and the order is `messageId, sourceName, sourceHost, sourceCategory, messageTime, receiptTime, sourceId, collectorId, count, format, view, encoding, message`.
+* User-defined fields are represented in lowercase only.
+* User-defined fields are ordered based on ascending ASCII value.
+* User-defined fields are always present after the system or built-in fields.
 
 ### Example
 
