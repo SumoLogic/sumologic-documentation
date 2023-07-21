@@ -288,9 +288,9 @@ This is how default filter rendering looks like:
 
 <img src={useBaseUrl('img/observability/DefaultView.png')} alt="DefaultView.png" />
 
-   :::note
-   You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
-   :::
+:::note
+You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
+:::
 
 You can see the list of all saved filter views by clicking on the funnel icon.
 
