@@ -266,7 +266,7 @@ service:
 ```
 
 1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, e.g. `local_syslog.yaml`.
-2. Paste the above content to local_syslog.yaml
+2. Paste the above content to `local_syslog.yaml`
 3. Restart collector with following command:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
