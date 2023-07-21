@@ -1,7 +1,7 @@
 ---
 id: about
 title: About Dashboard
-sidebar_label: Getting Started
+sidebar_label: About Dashboard
 description: Learn the benefits of Dashboard and how it seamlessly integrates log, metric, and trace data.
 ---
 
