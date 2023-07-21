@@ -94,9 +94,9 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
       ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
       ```
 
-## Collecting logs and metrics, and installing the ActiveMQ app
+## Collection configuration and app installation
 
-The process to set up collection for ActiveMQ data is done through the following steps.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 

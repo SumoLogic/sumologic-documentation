@@ -27,9 +27,9 @@ Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which
 
 - **`sumo.datasource`** - Has fixed value of **mac**.
 
-## Collecting Logs, Metrics, and installing macOS app
+## Collection configuration and app installation
 
-Here are the steps for collecting metrics and installing the app.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
