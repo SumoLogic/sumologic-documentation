@@ -227,22 +227,6 @@ Below are some best practices for managing your SLOs. To get to your SLOs list, 
 
 You can add key/value pair tags to your SLOs to allow you to better organize and filter them. For example, you might find it useful to add tags for `team`, `service`, and `application`.
 
-<!--
-<img src={useBaseUrl('img/observability/FilterByTagKey.png')} alt="FilterByTagKey.png" />
-
-<img src={useBaseUrl('img/observability/FilterByTagValue.png')} alt="FilterByTagValue.png" />
-
-<img src={useBaseUrl('img/observability/DefaultView.png')} alt="DefaultView.png" />
-
-<img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
-
-<img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
-
-<img src={useBaseUrl('img/observability/SaveANewFilter.png')} alt="SaveANewFilter.png" />
-
-<img src={useBaseUrl('img/observability/SaveANewFilterDialogue.png')} alt="SaveANewFilterDialogue.png" />
--->
-
 :::note Limitations
 - Tag keys cannot start with the prefixes `sumo.` or `_`
 - Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
@@ -269,27 +253,52 @@ To add a tag while creating a new SLO:
 After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
 
 1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
-1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+2. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+<img src={useBaseUrl('img/observability/FilterByTagKey.png')} alt="FilterByTagKey.png" />
 
 If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
 
-In this tag filter example query below, it's looking for SLOs where the `app` is either `sumo+1` OR `sumologic`, AND the `event` is `api-call`.
+In this tag filter example query below, it's looking for SLOs where the `service` is either `cart` OR `checkout` OR `coffee-machine`.
 
-<img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
+<img src={useBaseUrl('img/observability/FilterByTagValue.png')} alt="FilterByTagValue.png" />
 
 ### Save filter
 
 You can create and save custom filter views, allowing you to focus on the SLOs and insights most important to you. In this example, we'll create a view that contains the filters we've created above.
 
 1. Click in the **Add a filter** field.
-1. Enter the names of the filters (`product=xyz`, `product=abc`).
-1. Click the funnel icon > **Create New Filter**.
-1. Enter a name for the filter (we'll call it `Product filter`).
-1. Optionally, you can set this as your default view so that when you load SLOs list page, this set of filters will be rendered by default.
+
+2. Enter the filters. In this example (see screenshot below #3), we are using tag filters. To use a tag filter, select `tag` -> select tag key (`application` in this example) -> select value for that tag key (`coffee-bar` in this example). You can select multiple filters for a saved filters.
+
+3. Click the **Save Filter** icon on the right.
+
+<img src={useBaseUrl('img/observability/SaveANewFilter.png')} alt="SaveANewFilter.png" />
+
+4. Enter a name for the filter (we'll call it `Coffee Bar Application`).
+
+<img src={useBaseUrl('img/observability/SaveANewFilterDialogue.png')} alt="SaveANewFilterDialogue.png" />
+
+5. Optionally, you can set this as your default view so that when you load SLOs list page, this set of filters will be rendered by default.
+
+6. Click **Save**.
+
+This is how default filter rendering looks like:
+
+<img src={useBaseUrl('img/observability/DefaultView.png')} alt="DefaultView.png" />
+
    :::note
-   You can also do this by clicking the funnel icon > pin icon (**Set as default**).
+   You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
    :::
-1. Click **Save**.
+
+You can see the list of all saved filter views by clicking on the funnel icon.
+
+<img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
+
+You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon. 
+
+<img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
 
 :::note  
 * A maximum of 10 saved views are allowed per user.
