@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Dashboard allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
-Sumo Logic classic [Dashboards](/docs/dashboards) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard, and outlines recommended [best practices](#best-practices) for when to use each. 
+Sumo Logic [classic Dashboards](/docs/dashboards-classic/) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard, and outlines recommended best practices for when to use each. 
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
