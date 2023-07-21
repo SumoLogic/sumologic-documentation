@@ -34,8 +34,8 @@ export default function HtmlNavbarItem({
     );
     addScript.defer = true;
     document.body.appendChild(addScript);
-
-    googleTranslateElementInit();
+    window.googleTranslateElementInit = googleTranslateElementInit;
+    //googleTranslateElementInit();
 
   }, []);
   return (
