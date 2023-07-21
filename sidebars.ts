@@ -882,9 +882,6 @@ module.exports = {
         },
       ],
     },
-  ],
-// *** DASHBOARDS and VISUALS:
-  dashboards: [
     {
       type: 'category',
       label: 'Dashboards (New)',
