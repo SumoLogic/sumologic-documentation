@@ -1,14 +1,19 @@
 ---
-id: microsoft-graph-security
-title: Microsoft Graph Security
-sidebar_label: Microsoft Graph Security
-description: The Microsoft Graph Security app for Sumo Logic enables you to identify security threats by analysing alert logs.
+id: microsoft-graph-security-v1
+title: Microsoft Graph Security V1
+sidebar_label: Microsoft Graph Security V1
+description: The Microsoft Graph Security V1 app for Sumo Logic enables you to identify security threats by analyzing alert logs.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
-The Sumo Logic App for Microsoft Graph Security enables you to identify security threats by analysing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
+The Sumo Logic App for Microsoft Graph Security V1 enables you to identify security threats by analyzing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
+
+:::caution
+This version of the app uses alerts from Microsoft Graph API (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by the [Microsoft Graph Security V2 app](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
+:::
 
 Key features of the Microsoft Graph Security app include:
 - Detect and mitigate potential ransomware attacks.
@@ -112,7 +117,7 @@ _sourceCategory="ms_graph"
 
 ## Set up collection
 
-Follow the instructions for setting up [Cloud to Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) source and use the same source category while installing the app.
+Follow the instructions for setting up the [Cloud-to-Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) source and use the same source category while installing the app.
 
 ## Installing the Microsoft Graph Security app​
 

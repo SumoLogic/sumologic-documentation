@@ -5,7 +5,7 @@ sidebar_label: Normalized Threat Rules
 description: CSE's built-in threat rules pass alerts from a security product to the Signal generation process, and are normalized work across multiple security products.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about CSE’s built-in normalized threat rules.
 
@@ -28,7 +28,7 @@ For example, a normalized threat rule that looks for intrusions would work with 
 * IPS/IDS Appliances
 * Microsoft Graph Security API
 
-Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](../schema/field-mapping-security-event-sources.md).
+Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](/docs/cse/schema/field-mapping-security-event-sources).
 
 <!--
 threat_rules.csv comes from https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv
