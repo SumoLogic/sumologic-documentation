@@ -1,7 +1,7 @@
 ---
 id: set-data-access-level
-sidebar_label: Set the Data Access Level for a Dashboards
-title: Set the Data Access Level for a Dashboards
+sidebar_label: Set the Data Access Level for a Dashboard
+title: Set the Data Access Level for a Dashboard
 description: Learn how to set Data Access Level for a Dashboard to control the data that the user can see.
 ---
 
