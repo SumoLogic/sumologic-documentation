@@ -1,14 +1,14 @@
 ---
-id: ms-graph-azure-ad-reporting
-title: MS Graph Azure AD Reporting
-sidebar_label: MS Graph Azure AD Reporting
+id: microsoft-graph-azure-ad-reporting
+title: Microsoft Graph Azure AD Reporting
+sidebar_label: Microsoft Graph Azure AD Reporting
 description: The Sumo Logic App for MS Graph Azure AD Reporting helps you to monitor and analyze user activity, sign-in patterns and provisioning activities.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
 
-The Sumo Logic App for MS Graph Azure AD Reporting enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. It helps you to gain insights into how your organization uses Azure AD and identify potential security issues. 
+The Sumo Logic App for Microsoft Graph Azure AD Reporting enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. It helps you to gain insights into how your organization uses Azure AD and identify potential security issues. 
 
 Key features of the Microsoft Graph Azure AD Reporting app include:
 - **Analyze Audit Activities**. Provides real-time user activity for every resource category and shows the distribution of audits by operations and services.
@@ -289,7 +289,7 @@ _sourceCategory="azure_ad_reporting" "provisioningAction" "provisioningSteps" "p
 
 ## Set up collection
 
-Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/) source and use the same source category while installing the app.
+Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source/) source and use the same source category while installing the app.
 
 ## Installing the Microsoft Graph Azure AD Reporting app​
 
@@ -298,7 +298,7 @@ This section has instructions for installing the Microsoft Graph Azure AD Report
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.
 1. Select **Add Integration** button to install the app.
-1. Configure **Microsoft Graph Azure AD Reporting** app using the steps described in the [Microsoft Graph Azure AD Reporting Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source/). If you already have set up your data, skip this step by clicking on **Next**.
+1. Configure **Microsoft Graph Azure AD Reporting** app using the steps described in the [Microsoft Graph Azure AD Reporting Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source/). If you already have set up your data, skip this step by clicking on **Next**.
 1. Complete the following fields:
    1. **Data Source**. Select either of these options for the data source:
       * Choose **Source Category** and then choose a source category from the list.
@@ -329,4 +329,3 @@ The panels will begin to fill automatically. It's worth noting that each panel g
 ### Microsoft Graph Azure AD Reporting - Provisioning Activities
 
 **Microsoft Graph Azure AD Reporting - Provisioning Activities** dashboard provides valuable insights into all provisioning activities occurring in your account. It displays the average time for each provisioning activity and provides a distribution of provisioning activities by status, actions, and initiators. Additionally, you can view the most frequently used service principal during provisioning. The dashboard also gives you visibility into recent provisioning activities, making it a useful tool for monitoring and managing your organization's provisioning processes.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities.png')} alt="Microsoft-Graph-Azure-AD-Reporting-Provisioning-Activities" width="750"/>
-

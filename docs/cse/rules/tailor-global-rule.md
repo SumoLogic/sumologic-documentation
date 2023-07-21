@@ -5,7 +5,7 @@ sidebar_label: Tailor a Global Rule
 description: You can override selected fields in all CSE rule types. After you have overridden a field, you can revert to the original field value.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has instructions for tailoring global (built-in) rules in CSE. 
 
@@ -15,7 +15,7 @@ You can override selected rule fields in all CSE rule types: Match, Threshold, C
 You cannot override fields in legacy rules—rules whose ID looks like LEGACY-*xxxxxxx*.
 :::
 
-If you want to tailor a rule expression—the expression to which incoming Records are compared—see [Rule Tuning Expressions](rule-tuning-expressions.md).
+If you want to tailor a rule expression—the expression to which incoming Records are compared—see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
 
 ## Signal generation fields you can override
 
@@ -30,7 +30,7 @@ You can override any of the settings in the **Then Create a Signal** section on 
 | Severity settings | You can change the severity type from constant to dynamic and vice versa, change the severity level for a constant severity, or change the field used for dynamic severity. |
 | Tags | You can add tags, but you can’t edit or delete the tags already configured for the rule. |
 
-![then-create.png](/img/cse/then-create.png)
+<img src={useBaseUrl('img/cse/then-create.png')} alt="Create a signal" width="300"/>
 
 ## “If triggered” fields you can override
 
@@ -47,7 +47,7 @@ You can override some of the fields in the **If Triggered** section on the left 
 
 | Aggregation rule | Chain Rule | Threshold rule |
 |:--|:--|:--|
-| ![aggregation-rule-edits.png](/img/cse/aggregation-rule-edits.png) | ![chain-rule-edits.png](/img/cse/chain-rule-edits.png) | ![thresh-rule-edits.png](/img/cse/thresh-rule-edits.png) |
+| <img src={useBaseUrl('img/cse/aggregation-rule-edits.png')} alt="Aggregation rule"/> | <img src={useBaseUrl('img/cse/chain-rule-edits.png')} alt="Chain rule"/> | <img src={useBaseUrl('img/cse/thresh-rule-edits.png')} alt="Threshold rule"/> |
 
 ## Reverting overridden settings
 
@@ -55,6 +55,6 @@ You can revert any overrides you’ve made at any time back to the original valu
 
 Once you save the overrides to a rule, a revert button appears next to each edited field, as shown in the screenshot below. If you hover over the revert button, you can see what the original value was.
 
-![revert-icons.png](/img/cse/revert-icons.png)
+<img src={useBaseUrl('img/cse/revert-icons.png')} alt="Revert settings" width="600"/>
 
 To revert an override, just click the revert button next to it. After reverting all desired fields, click **Save Edits** at the bottom of the page. 
