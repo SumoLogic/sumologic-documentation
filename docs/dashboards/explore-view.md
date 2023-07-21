@@ -21,7 +21,7 @@ To open Explore, do the following:
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
 2. From the dropdown menu, choose **Explore**.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore-open.png')} alt="Explore" />
-3. In the **Explore By** navigation panel, select your desired category (e.g., AWS Observability), then drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. See [Application Components View](/docs/dashboards/explore-view/#application-components-view) for an example walkthrough.
+3. In the **Explore By** navigation panel, select your desired category (e.g., AWS Observability), then drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. See [Application Components View](#application-service-view) for an example walkthrough.
 
 ## Explore dashboard categories
 
