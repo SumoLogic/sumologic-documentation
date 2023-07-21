@@ -38,9 +38,9 @@ Follow the instructions to set up log collection:
 
 Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo.
 
-## Collection configuration and App installation
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **RabbitMQ - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

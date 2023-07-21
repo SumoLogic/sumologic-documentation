@@ -71,9 +71,9 @@ Below are docs for popular Java applications:
 * [Zookeeper](https://zookeeper.apache.org/doc/r3.4.2/zookeeperJMX.html#ch_starting)
 :::
 
-## Collecting Metrics and Installing the JMX App
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **JMX - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 

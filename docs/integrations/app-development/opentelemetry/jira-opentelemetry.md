@@ -69,9 +69,9 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
 
 When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
-## Logs Collection Configuration and App Installation
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **Jira - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

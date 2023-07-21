@@ -44,9 +44,9 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * Configure your Nginx server to expose status endpoint for collecting metrics: The receiver used gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
 * Configure and retrieve access and error log files: Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 
-## Collecting Logs, Metrics, and Installing Nginx App
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **Nginx - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 

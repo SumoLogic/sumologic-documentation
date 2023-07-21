@@ -45,9 +45,9 @@ docker events docker events -f 'type=container' --format '{{json .}}' > <PATH_TO
 ```
 Path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/). 
 
-## Collecting Logs, Metrics, and Installing app for Docker​
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **Docker - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

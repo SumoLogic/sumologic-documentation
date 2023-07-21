@@ -115,9 +115,9 @@ Configure a cron job to trigger the python script using crontab. Frequency of th
 
 Please modify the location of the `puppetReport.sh` if required in the above command. The execution of the script above will generate a log file named `puppet_rpt_conversion.log`. The path to this log file needs to be provided during the app installation.
 
-## Collection configuration and App installation
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **Puppet - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

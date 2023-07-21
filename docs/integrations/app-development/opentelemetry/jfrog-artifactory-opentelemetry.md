@@ -48,9 +48,9 @@ artifactory.traffic.collectionActive=true
 ```
 A restart is required for traffic collection to take effect.
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **JFrog Artifactory - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

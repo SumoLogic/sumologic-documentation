@@ -76,9 +76,9 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 1. Save the `my.cnf` file.
 2. Restart the MySQL server: `sudo mysql.server restart`
 
-## Collecting Logs, Metrics, and installing App for MySQL
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **MySQL - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up collector
 

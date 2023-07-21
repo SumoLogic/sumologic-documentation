@@ -34,9 +34,9 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
 
-## Configure Couchbase Logs Collection
+## Collection configuration and app installation
 
-As part of data collection setup and app installation, you can select the **Couchbase - OpenTelemetry** app from the **App Catalog** and click on **Install App**. Follow the steps below to configure the collection.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
