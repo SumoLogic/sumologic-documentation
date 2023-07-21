@@ -4,7 +4,7 @@ title: Create a Dashboard
 ---
 
 :::caution
-We strongly recommend using our [Dashboards (New)](/docs/dashboards), which allows you to analyze metrics and log data on the same dashboard in a streamlined user experience. Sumo Logic will cease updates and support for Classic Dashboards.
+We strongly recommend using our upgraded [Dashboards](/docs/dashboards), which allows you to analyze metrics and log data on the same dashboard in a streamlined user experience. Sumo Logic will cease updates and support for Classic Dashboards.
 :::
 
 Almost any query you run that produces aggregate results can be saved as a Data Panel in a Live or an Interactive Dashboard. [Aggregating (grouping) functions](/docs/search/search-query-language/group-aggregate-operators) evaluate
