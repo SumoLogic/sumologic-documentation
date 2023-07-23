@@ -53,7 +53,7 @@ To set up a webhook connection:
     :::
 1. (Optional) If the third-party system requires an **Authorization Header**, enter it here. For more information, see [Example Authorization Header](#example-authorization-header) below.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
+1. (Optional) Under **Alert Payload**, which allows you to customize how the alert notification will look, enter a JSON object in the format required by the target endpoint. For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](#configure-webhook-payload-variables), below. <br/><img src={useBaseUrl('img/connection-and-integration/alert-payload.png')} alt="recovery payload" />
     :::note
     Variables are escaped according to the JSON standard, meaning that they can be used in application JSON. 
     :::
@@ -285,6 +285,13 @@ This test does not use the same static IP addresses that send notifications, it 
 ![test connection button.png](/img/connection-and-integration/test-connection-button.png)
 
 If the connection is successful, you'll see a message appearing in the third-party tool. This won't contain any information from the scheduled search, it will just have the text in the payload.
+
+### Troubleshooting Webhook payload
+
+If the integration is not working as expected, there shall be a payload issue. You shall need to troubleshoot the generated payload. Here are some HTTP debugging tools that shall help you capture the generated payload and troubleshoot.
+
+* [Beeceptor](https://beeceptor.com/). Helps troubleshoot HTTP payload and configuration issues when working with webhooks and HTTP POST requests. You can inspect the JSON payload in real-time, enabling you to gain insights into the data being sent and received. 
+* [Request Inspector](https://requestinspector.com/). Helps you in capturing HTTP requests and responding with `200 OK`. You can review the raw payload and find discrepancies between actual and expected. 
 
 ## Editing and deleting connections
 

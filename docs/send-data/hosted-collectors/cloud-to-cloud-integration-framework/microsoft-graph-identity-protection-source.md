@@ -1,13 +1,13 @@
 ---
-id: ms-graph-identity-protection-source
-title: MS Graph Identity Protection Source
-sidebar_label: MS Graph Identity Protection
+id: microsoft-graph-identity-protection-source
+title: Microsoft Graph Identity Protection Source
+sidebar_label: Microsoft Graph Identity Protection
 description: The Microsoft Graph Identity Protection Source collects Risk Detection and Risky User from the Microsoft Graph Identity Protection API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
 
 The [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Identity Protection Source collects [Risk Detection](https://docs.microsoft.com/en-us/graph/api/riskdetection-list?view=graph-rest-1.0) and [Risky User](https://docs.microsoft.com/en-us/graph/api/riskyuser-list?view=graph-rest-1.0) data from the Microsoft Graph [Identity Protection API](https://docs.microsoft.com/en-us/graph/api/resources/identityprotectionroot?view=graph-rest-1.0). It
 securely stores the required authentication, scheduling, and state tracking information.

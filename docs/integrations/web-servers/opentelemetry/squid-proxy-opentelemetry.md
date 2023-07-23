@@ -29,7 +29,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `webengine.system`. Has a fixed value of **squidproxy**.
 - `sumo.datasource`. Has a fixed value of **squidproxy**.
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 

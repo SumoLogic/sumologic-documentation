@@ -57,7 +57,10 @@ To configure a Qualys VMDR Source:
 10. **Collect vulnerability data**. This option will fetch the list of hosts with the host's latest vulnerability data based on the host-based scan data available in the user’s account. We recommend leaving the polling interval at the default 1 hour.
 11. (Optional) **Collect KnowledgeBase Information**. This option is only available if you choose to collect vulnerability data. If selected, it will automatically download the vulnerability details from the Qualys KnowledgeBase for vulnerabilities detected within your environment.
 12. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
-13. When you are finished configuring the Source, click **Submit**.
+   * To forward Qualys VMDR assetInventory to CSE, it is recommended to create a [Field Extraction Rule](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/) with the following criteria:
+   * Scope: `_sourceCategory="<enter your source category here from Step 5>" "assetInventory"`
+   * Parse Expression: `"true" as _siemForward`
+14. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 

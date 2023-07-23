@@ -5,7 +5,7 @@ sidebar_label: Rules Syntax
 description: Learn about the functions you can use when writing CSE Rules.
 ---
 
-This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](about-cse-rules.md).
+This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](/docs/cse/rules/about-cse-rules).
 
 ## &&
 
@@ -272,7 +272,7 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
+CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 

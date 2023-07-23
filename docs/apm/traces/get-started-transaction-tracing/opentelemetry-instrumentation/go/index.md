@@ -111,7 +111,7 @@ func main() {
 The last step is to configure few other things like:
 
 * `SERVICE_NAME` - insert the application service name. Ensure the string value represents its business logic, such as "SumoWebCall". This will appear as a tracing service name in Sumo Logic.
-* `APPLICATION_NAME` - insert the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
+* `APPLICATION_NAME` - insert the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs. For example, add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels (for more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)).
 * `ENDPOINT_ADDRESS` - OTLP HTTP (default port 4318) endpoint address must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [Sumo Logic HTTP Traces source](../../http-traces-source.md). Refer to the following setup instructions if you haven't yet installed a collector:
    * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
    * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
@@ -121,5 +121,5 @@ All of them can be configured by [environment variables](https://github.com/ope
 ```
 export OTEL_EXPORTER_OTLP_ENDPOINT="ENDPOINT_ADDRESS"
 export OTEL_SERVICE_NAME="SERVICE_NAME"
-export OTEL_RESOURCE_ATTRIBUTES="application=APPLICATION_NAME"
+export OTEL_RESOURCE_ATTRIBUTES="application=APPLICATION_NAME,deployment.environment=ENVIRONMENT_NAME"
 ```
