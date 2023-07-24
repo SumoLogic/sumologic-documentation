@@ -13,7 +13,6 @@ This section has instructions for configuring a pipeline for shipping logs avail
 ## Requirements 
 
 * Only General-purpose v2 (GPv2) and Blob storage accounts are supported. This integration does not support General-purpose v1 (GPv1) accounts.  
-* Configure your storage account in the same location as your Azure Service.
 * This solution supports only log files from Blob storage that have file extensions of .csv, .json, .blob, or .log. 
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
 
