@@ -21,7 +21,7 @@ Observe apps and microservices using [Transaction Tracing](/docs/apm/traces) and
 
 ## Analyze Key Metrics quickly using Metrics Explorer 
 
-Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md) that comes with a new structured query builder, and an extended range of visualizations for ad-hoc analysis.  Mimicking the Dashboard (New) workflow, you now have the same unified experience in the main metrics tab.
+Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md) that comes with a new structured query builder, and an extended range of visualizations for ad-hoc analysis.  Mimicking the Dashboard workflow, you now have the same unified experience in the main metrics tab.
 
 ![metrics-explorer.png](/img/observability/metrics-explorer.png)
 

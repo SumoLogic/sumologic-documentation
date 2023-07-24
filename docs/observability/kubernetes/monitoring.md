@@ -114,7 +114,7 @@ Once you have created the stack linking, your custom dashboard should appear in 
 
 ![K8s_Views_overview.png](/img/kubernetes/K8s_Views_overview.png)
 
-Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard (New) framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
+Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
 
 In the following example, we chose the Kubernetes Node View and selected the k8s-freno-2 cluster. We then selected the Kubernetes - Cluster Overview dashboard, for a high-level view of the health and performance of the cluster.
 

@@ -156,7 +156,7 @@ If you don't see data in Sumo Logic, review our [troubleshooting guide](https://
 ## Additional Resources
 
 * [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
-* [Share a Dashboard (New)](/docs/dashboards/share-dashboard-new.md)
+* [Share a Dashboard](/docs/dashboards/share-dashboard-new.md)
 * [Link a dashboard to Explore](/docs/dashboards/link-dashboards.md)
 
 

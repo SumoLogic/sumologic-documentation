@@ -7,7 +7,7 @@ id: share-dashboard-outside-org
 This page has information about sharing dashboards with users who do not have a Sumo account. For information about sharing dashboards with other Sumo users, see [Share a Dashboard Within Your Org](share-dashboard-inside-org.md).
 
 :::important
-[Dashboard (New)](/docs/dashboards) does not support sharing outside of your account.
+[Dashboard](/docs/dashboards) does not support sharing outside of your account.
 :::
 
 Dashboards often contain sensitive information, so typically you share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in, for example, if your dashboard is displayed on a monitor in your operations center, or if you want to send an external person a link to a dashboard that reveals a critical problem.
