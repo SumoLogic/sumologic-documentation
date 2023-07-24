@@ -133,47 +133,6 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
 1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
 
-### SLO Tags and Filters
-
-You can add key/value pair tags to your SLOs to allow you to better organize and filter them. You might find it useful to add tags for `team`, `service`, and `application`, for example.
-
-#### Limitations
-
-- Tag keys cannot start with the prefixes `sumo.` or `_`
-- Tag keys can only contain letters, numbers, `_`, `.`, `/`, `+`, `-`, `@`
-- Tag values can only contain letters, white space, numbers, `_`, `.`, `/`, `=`, `+`, `-`, `@`
-
-You can associate a maximum of 50 tags per SLO.
-
-#### Add a Tag
-
-To add a tag(s) to an existing SLO:
-
-1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
-1. Click on any SLO line item in your list, then click **Edit**.
-1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
-1. Click **Save**.
-
-To add a tag while creating a new SLO:
-
-1. In Sumo Logic, click **Manage Data** > **Monitoring** > **SLOs** tab.
-1. Click **Add** > **New SLO**.
-1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
-1. Click **Save**.
-
-#### Filter SLOs By Tags
-
-After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
-
-1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
-1. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
-
-If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
-
-In this tag filter example query below, it's looking for SLOs where the `app` is either `sumo+1` OR `sumologic`, AND the `event` is `api-call`.
-
-<img src={useBaseUrl('img/observability/slo-tags-query.png')} alt="slo-tags-query.png" width="500"/>
-
 
 ### SLO as Log Messages
 
@@ -259,6 +218,92 @@ _view=sumologic_slo_output
 | json field=tags "service"
 | where service="ingestion"
 ```
+
+## Managing your SLOs
+
+Below are some best practices for managing your SLOs. To get to your SLOs list, click **Manage Data** > **Monitoring** > **SLOs** tab.
+
+### Tags and Filters
+
+You can add key/value pair tags to your SLOs to allow you to better organize and filter them. For example, you might find it useful to add tags for `team`, `service`, and `application`.
+
+:::note Limitations
+- Tag keys cannot start with the prefixes `sumo.` or `_`
+- Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
+- Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
+- You can associate a maximum of 50 tags per SLO.
+:::
+
+#### Add a Tag
+
+To add a tag(s) to an existing SLO:
+
+1. Click on any SLO line item in your list, then click **Edit**.
+1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+To add a tag while creating a new SLO:
+
+1. Click **Add** > **New SLO**.
+1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+#### Filter SLOs By Tags
+
+After you've added a tag, you'll see it populate in the **Tags** column next to your SLO in the list.
+
+1. Click **Add a filter** at the top of the screen, then click **Tag**.<br/><img src={useBaseUrl('img/observability/slo-tags.png')} alt="slo-tags.png" width="400"/>
+
+2. Scroll through the list of tags or type in the tag name you're looking for.<br/><img src={useBaseUrl('img/observability/slo-tags.gif')} alt="slo-tags.gif" />
+
+<img src={useBaseUrl('img/observability/FilterByTagKey.png')} alt="FilterByTagKey.png" />
+
+If you run a query with multiple values for same tag key, they are `OR`'d. Tag filters for different tag keys are `AND`'d.
+
+In this tag filter example query below, it's looking for SLOs where the `service` is either `cart` OR `checkout` OR `coffee-machine`.
+
+<img src={useBaseUrl('img/observability/FilterByTagValue.png')} alt="FilterByTagValue.png" />
+
+### Save filter
+
+You can create and save custom filter views, allowing you to focus on the SLOs and insights most important to you. In this example, we'll create a view that contains the filters we've created above.
+
+1. Click in the **Add a filter** field.
+
+2. Enter the filters. In this example (see screenshot below #3), we are using tag filters. To use a tag filter, select `tag` -> select tag key (`application` in this example) -> select value for that tag key (`coffee-bar` in this example). You can select multiple filters for a saved filters.
+
+3. Click the **Save Filter** icon on the right.
+
+<img src={useBaseUrl('img/observability/SaveANewFilter.png')} alt="SaveANewFilter.png" />
+
+4. Enter a name for the filter (we'll call it `Coffee Bar Application`).
+
+<img src={useBaseUrl('img/observability/SaveANewFilterDialogue.png')} alt="SaveANewFilterDialogue.png" />
+
+5. Optionally, you can set this as your default view so that when you load SLOs list page, this set of filters will be rendered by default.
+
+6. Click **Save**.
+
+This is how default filter rendering looks like:
+
+<img src={useBaseUrl('img/observability/DefaultView.png')} alt="DefaultView.png" />
+
+:::note
+You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
+:::
+
+You can see the list of all saved filter views by clicking on the funnel icon.
+
+<img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
+
+You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon. 
+
+<img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
+
+:::note  
+* A maximum of 10 saved views are allowed per user.
+* Saved filter views are only visible to you and cannot be shared with other users in your org.
+:::
 
 ## Create an SLO from Metrics page
 
