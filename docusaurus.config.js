@@ -28,14 +28,6 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
-      async: true,
-    },
-    {
-      src: './src/helper/google-translate.js',
-      async: true,
-    },
-    {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
       async: true,
     },
