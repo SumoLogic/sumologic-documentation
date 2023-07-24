@@ -25,9 +25,9 @@ Retaining data in its original, raw format is also a benefit of security data la
 
 ### Database versus data lake
 
-“Database” and “data lake” are sometimes used in similar contexts, but they aren’t interchangeable terms. Databases enable teams to efficiently access and manage large amounts of structured or semi-structured data electronically. Database design supports Online Transaction Processing (OLTP), allowing for real-time data processing and record keeping. However, much of the data that organizations need to use is unstructured. Additionally, databases are not a preferred option for analyzing cloud security data. They function primarily for operational and transactional workloads rather than analytical workloads. 
+“Database” and “data lake” are sometimes used in similar contexts, but they aren’t interchangeable terms. Databases require structured or semi-structured data for real-time data processing and record keeping, whereas data lakes use both structured and unstructured data for analytical workloads. 
 
-Data lakes fill in the gaps in database functionality. They can:
+Data lakes can:
 * Store structured, semi-structured, and unstructured data.
 * Ingest data without having to define schema.
 * Optimize performance and efficiency due to separated storage and compute functions.
@@ -49,7 +49,7 @@ Following are the basic steps involved in building a security data lake.
 
 #### Step 1: Define your security data goals
 
-Determine what data you need to analyze. Data may come from your security detection tools, network devices, applications, servers, and endpoints. For example, collecting data on user activity and access logs is a great place to start if you’re concerned about insider threats.
+Determine what data you need to analyze by considering your use case. Data may come from your security detection tools, network devices, applications, servers, and endpoints, but what data addresses your biggest concerns? For example, if you’re concerned about insider threats, collecting data on user activity and access logs is a great place to start.
 
 #### Step 2: Choose a data lake solution
 
