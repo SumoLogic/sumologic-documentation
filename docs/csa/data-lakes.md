@@ -53,8 +53,7 @@ Determine what data you need to analyze. Data may come from your security detect
 
 #### Step 2: Choose a data lake solution
 
-Choose a storage solution that manages vast amounts of data efficiently and adheres to compliance requirements. Certain platforms may require saving data in cold storage, which hinders your investigation capabilities. Sumo Logic offers data tiering, allowing you to store data affordably
-without compromising accessibility.
+Choose a storage solution that manages vast amounts of data efficiently and adheres to compliance requirements. Certain platforms may require saving data in cold storage, which hinders your investigation capabilities. Sumo Logic offers data tiering, allowing you to store data without compromising accessibility.
 
 If you’re not sure where to start, consider asking these questions:
 * What kind of data sources can you ingest from?

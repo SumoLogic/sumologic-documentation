@@ -17,7 +17,7 @@ You can use Cloud Security Analytics for:
 
 ## The Sumo Logic data pipeline
 
-The Sumo Logic data pipeline makes collected data available for use in Cloud Security Analytics:
+The Sumo Logic data pipeline makes collected data available for use in Cloud Security Analytics. At a high level, it follows four steps:
 
 <img src={useBaseUrl('img/csa/data-pipeline.png')} alt="Sumo Logic data pipeline" width="700"/>
 
@@ -31,12 +31,12 @@ Once you understand how your data is ingested and processed, you can design your
 
 ## Build security operations center (SOC) assets
 
-Using Sumo Logic's core platform, you can make elements for use in Cloud Security Analytics: 
+Using the following skills with Sumo Logic's core platform, build the infrastructure you need to be successful in Cloud Security Analytics: 
 * write queries
 * build dashboards
 * create alerts
 
-Once your data is ingested, you’ll need to search and filter it to find log messages of interest for your security operations center (SOC). With field extraction rules (FERs) and scheduled searches, data processing and querying can be automated. Once you've written these queries, you can visualize them with dashboards and create alerts based on certain thresholds.
+Once your data is ingested, you’ll need to search and filter it to find log messages of interest for your security operations center (SOC). With field extraction rules (FERs) and scheduled searches, data processing and querying can be automated. Finally, once you've written these queries, you can visualize them with dashboards and create alerts based on certain thresholds.
 
 With queries, dashboards, and alerts, you can build a SOC without any additional tools, apps, or add-ons. However, Cloud Security Analytics offers many other features, including:
 * Integrations for common apps and services like AWS, Office365, SalesForce, and others

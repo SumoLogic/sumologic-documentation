@@ -13,13 +13,13 @@ To use Cloud Security Analytics for audit and compliance, you can use [pre-built
 
 Compliance standards are enforced by various governments and organizations to protect end users and keep information safe. Meeting compliance standards is usually the first step in making sure your apps and data are secure. However, in most cases additional security measures, such as [threat monitoring](/docs/csa/threat-detection-and-investigation/), are also recommended.
 
-A compliance audit is an inspection of an organization to check whether compliance standards are being met. You may have an internal audit, conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. You might also have an external audit, where a government or other independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
+A compliance audit is an inspection of an organization to check whether compliance standards are being met. There are two types of audits Sumo Logic Security Analytics can support:
+* **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
+* **External audit**. Where a government or other independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
 
-Cloud Security Analytics can help your organization meet compliance requirements. For example, you can use Sumo Logic's queries, alerts, and dashboards to monitor your data, and make sure only authorized users have access to sensitive information.
+Both internal and external audits can be scheduled or they can be random. For example, you can use Sumo Logic's queries, alerts, and dashboards to monitor your data, and make sure only authorized users have access to sensitive information.
 
-:::note
-Compliance varies by geography and industry. For example, the Health Insurance Portability and Accountability Act (HIPAA) applies to hospitals and other health-related services in the United States. For companies in other industries or in other countries, HIPAA compliance might not be a concern. Similarly, General Data Protection Regulation (GDPR) only applies to companies with users in the European Union. However, with increasing global commerce, more and more companies based outside of Europe must still comply with GDPR. Sumo Logic itself meets many security compliance standards, including HIPAA, FedRAMP-Moderate Authorized, ISO 27001, and many others. This means you can feel safe ingesting your data into the Sumo Logic platform.
-:::
+Because Sumo Logic itself meets many security compliance standards, including HIPAA, FedRAMP-Moderate Authorized, ISO 27001, and many others, you can feel safe ingesting your data into the Sumo Logic platform.
 
 ### Regulatory compliance and security controls
 
@@ -87,7 +87,6 @@ Use Sumo Logic's countless data integrations and out-of-the box applications ens
 * [PCI Compliance](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
 * [Google Cloud Audit](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
 * [AWS Security Hub](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
-* [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source/). App to track and monitor usage of Microsoft Office 365. 
 
 ### Use case: PCI compliance
 
@@ -97,12 +96,12 @@ In this use case, we'll show you how to use our PCI app for Palo Alto Networks t
 
 [Payment Card Industry Data Security Standards](https://www.pcisecuritystandards.org/merchants/) (PCI DSS) affects any company that accepts or processes payment cards. There are 12 requirements that meet 6 security goals. Your company needs to meet all 12 requirements to be compliant. 
 
-You can read the goals and requirements in this table:
+You can read the goals and requirements in the following table. In [Perform a PCI compliance audit](#perform-a-pci-compliance-audit) below, we’ll show how to perform an audit for requirement 4:
 
 | Goal | PCI DSS requirements |
 | :-- | :-- |
 | Build and maintain a secure network | 1. Install and maintain a firewall configuration to protect cardholder data. <br/>2. Do not use vendor-supplied defaults for system passwords and other security parameters. |
-| Protect cardholder data | 3. Protect stored cardholder data. <br/>4. Encrypt transmission of cardholder data across open, public networks. |
+| Protect cardholder data | 3. Protect stored cardholder data. <br/>**4. Encrypt transmission of cardholder data across open, public networks.** |
 | Maintain a vulnerability management program | 5. Use and regularly update anti-virus software or programs. <br/>6. Develop and maintain secure systems and applications |
 | Implement strong access control measures | 7. Restrict access to cardholder data on a business need-to-know basis. <br/>8. Assign a unique ID to each person with computer access. <br/>9. Restrict physical access to cardholder data. |
 | Regularly monitor and test networks | 10. Track and monitor all access to network resources and cardholder data. <br/>11. Regularly test security systems and processes. |

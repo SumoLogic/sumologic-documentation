@@ -19,7 +19,8 @@ effectively as possible.
 *Threat investigation* analyzes a threat or potential threat to glean more information about it. When a threat is detected, SecOps teams use behavioral, forensic, and log data to investigate and uncover as much information as possible. From there, teams can respond appropriately to
 the threat and plan for system improvements to reduce risk in the future.
 
-Advanced security analytics platforms like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure.
+Advanced security analytics platforms like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevOps teams to observe and investigate security threats within your cloud infrastructure.
+
 
 ###  Best practices guide for implementing threat detection and investigation
 
@@ -35,18 +36,17 @@ Increase the velocity and accuracy of threat detection with integrations to appl
 
 #### Step 3. Configure robust alerting policies to notify SecOps teams when changes or outliers occur
 
-The quicker your team can get to work, the quicker investigation and mitigation can happen. With
-[Sumo Logic Monitors](/docs/alerts/monitors/create-monitor/), teams can track and build alerts that fit their unique requirements.
+The quicker your team can get to work, the quicker investigation and mitigation can happen. With [Sumo Logic Monitors](/docs/alerts/monitors/create-monitor/), teams can track and build alerts that fit their unique requirements, instead of getting hit with alerts that are too vague or numerous. You can create fine-grained conditions under which alerts trigger, letting you customize them to reduce noise.
 
 #### Step 4. Perform root cause analysis to investigate the threat fully
 
-Attacks may persist without further investigation and patches, so it’s critical to find and patch any vulnerabilities as soon as possible. Sumo Logic provides powerful [search capabilities](/docs/search/search-query-language/) so teams can perform extensive threat investigations quickly.
+Attacks may persist without further investigation and patches, so it’s critical to find and patch any vulnerabilities as soon as possible. Sumo Logic provides broad-reaching [search capabilities](/docs/search/search-query-language/) so teams can perform extensive threat investigations quickly.
 
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation. 
-* [Security Analytics](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment. 
-* [Security and threat detection](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For example, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes pre-loaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database. 
+* [Security Foundations](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment. 
+* [Security and threat detection](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database. 
 * [Cloud security monitoring and analytics](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls. 
 * [Global Intelligence Service](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
@@ -56,10 +56,10 @@ While the pre-built apps can meet many of your needs, you can also build your ow
 
 The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).) AWS CloudTrail logs contain information about requests for resources in your account, such as:
 
-* who made the request.
-* the services used.
-* the actions performed.
-* parameters for the action.
+* who made the request
+* the services used
+* the actions performed
+* parameters for the action
 
 After you build the dashboard to find and monitor security events, we'll show you how to enhance the dashboard to do the following threat investigations: 
 
@@ -73,7 +73,7 @@ We are going to create a dashboard to look at our security activity in several d
 
 1. From the Sumo Logic interface, click on the **+ New** button and select the **Dashboard (New)** option.<br/><img src={useBaseUrl('img/csa/create-new-dashboard.png')} alt="Create new dashboard" style={{border: '1px solid black'}} width="200"/>
 1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="Time series panel" style={{border: '1px solid black'}} width="600"/>
-1. Create a CloudTrail query.  
+1. Create a CloudTrail query to identify bad actors.  
    1. Copy or type the following query to the query window. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
      _sourceCategory=Labs/AWS/CloudTrail
