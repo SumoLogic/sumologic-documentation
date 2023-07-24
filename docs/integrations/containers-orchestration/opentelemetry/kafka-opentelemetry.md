@@ -42,9 +42,9 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller.log`) are stored in the directory called `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of this logs directory.
 
-## Collecting Logs, Metrics and Installing App for Kafka
+## Collection configuration and app installation
 
-The process to set up collection for Kafka data is done through the following steps.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 

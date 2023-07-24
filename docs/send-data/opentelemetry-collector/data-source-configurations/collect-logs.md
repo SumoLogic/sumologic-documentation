@@ -231,11 +231,12 @@ The following table shows the comparison of these components.
 | Field Parsing         | Collector side                                                     | Not on collector side                                                 |
 | Protocol Verification | Strict parsing; logs sent to the wrong endpoint will not be parsed | No protocol verification; all formats are treated the same            |
 
+
 ### Parsing Syslog logs into structured logs
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog sent using UDP protocol to 127.0.0.1 on port 514
+1. **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
 2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
 3. **Export**: Send data to authenticated Sumo Logic organization
 
@@ -243,7 +244,8 @@ Following configuration demonstrates:
 receivers:
   syslog/local_syslog:
     udp:
-      listen_address: "127.0.0.1:514"
+      listen_address: "172.31.93.11:5140"
+    protocol: rfc5424
 
 processors:
   resource/local_syslog:
@@ -264,7 +266,7 @@ service:
 ```
 
 1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, e.g. `local_syslog.yaml`.
-2. Paste the above content.
+2. Paste the above content to `local_syslog.yaml`
 3. Restart collector with following command:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
@@ -276,12 +278,19 @@ For more details, see the [Syslog receiver][syslog_receiver_docs].
 
 To collect Syslog logs in format compatible with the Sumo Logic Installed Collector, use the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 
+Following configuration demonstrates:
+
+1. **Collect**: Collect syslog UDP on IP `172.31.93.11` port `5140` and TCP on IP `172.31.93.11` port `1514`.
+2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
+3. **Export**: Send data to authenticated Sumo Logic organization
+
+
 ```yaml
 receivers:
   tcplog/syslog_plain:
-    listen_address: "127.0.0.1:1514"
+    listen_address: "172.31.93.11:1514"
   udplog/syslog_plain:
-    listen_address: "127.0.0.1:5140"
+    listen_address: "172.31.93.11:5140"
 
 processors:
   resource/syslog_plain:
@@ -303,6 +312,15 @@ service:
       exporters:
         - sumologic
 ```
+
+1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, e.g. `tcp_udp_log.yaml`.
+2. Paste the above content to `tcp_udp_log.yaml`
+3. Restart collector with following command:
+   ```bash title="Linux"
+   systemctl restart otelcol-sumo
+   ```
+
+For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 
 ## Collecting logs from SQL databases
 

@@ -5,6 +5,8 @@ sidebar_label: Network Sensor Deployment
 description: Learn about Network Sensor deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This section has instructions for deploying the CSE Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
 ## Network Sensor overview
@@ -39,7 +41,7 @@ Forward proxies, such as HTTP web proxies, broker client connections to the inte
 
 The following diagram Illustrates optimal sensor positioning prior to a web proxy.
 
-![Network Sensor Deployment Guide_SS_1.png](/img/cse/Network_Sensor_Deployment_Guide_SS_1.png)
+<img src={useBaseUrl('img/cse/Network_Sensor_Deployment_Guide_SS_1.png')} alt="Network sensor deployment" width="800"/>
 
 Sumo Logic advises positioning network sensors for visibility at a monitoring point immediately in front of the proxy server(s). This allows the sensor to record client source addresses and to see all web requests prior to content filtering. This is an important factor for a number of CSE’s rules and analytics, which rely on knowing the “true” source of requests. Because a number of threats beacon to remote internet servers, seeing even those requests that are filtered by a proxy server is important for monitoring and response.
 
@@ -226,7 +228,7 @@ Link settings
 
 ## Install the Network Sensor
 
-Download the installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md). Start the installer using the command provided on that page, and then respond to the prompts as described below.
+Download the installer using the download link for your deployment shown on [Sensor Download Locations](/docs/cse/sensors/sensor-download-locations/). Start the installer using the command provided on that page, and then respond to the prompts as described below.
 
 ## Uninstall the Network Sensor
 

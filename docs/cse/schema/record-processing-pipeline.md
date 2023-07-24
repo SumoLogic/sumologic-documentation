@@ -26,7 +26,7 @@ For each incoming message, CSE creates a set of key-value pairs that reflect all
 * **C2C Connector**. Sumo Logic’s Cloud-to-Cloud (C2C) Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. For a list of available C2C collectors, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 * **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data > Logs > Parsers** in the Sumo Logic UI.  
 
-For more information on these alternatives, see [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices.md).
+For more information on these alternatives, see [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices).
 
 The key-value pairs are input to the next step of the process: mapping.
 
@@ -55,7 +55,7 @@ The values of the following schema attributes are normalized into a standard for
 
 ## Entity Lookup Table processing
 
-[Entity Lookup Tables](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md) allow you to define your own hostname and username normalization rules. After the normalization described in the previous step is performed, any normalization you’ve configured in Entity Lookup Tables is applied. 
+[Entity Lookup Tables](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table) allow you to define your own hostname and username normalization rules. After the normalization described in the previous step is performed, any normalization you’ve configured in Entity Lookup Tables is applied. 
 
 ## Enrich Records with IP address, URL, and domain info
 
@@ -81,7 +81,7 @@ CSE’s Match List feature allows you to leverage lists of important identifiers
 
 For example, vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a Match List is for. A CSE analyst can populate a Match List called “vuln_scanners” that contains the IP addresses of your scanners.
 
-CSE compares the contents of every message to your Match Lists. When it finds a match, it appends fields two fields to the Record: `listMatches` and `matchedItems`. `listMatches` contains the names of lists that were matched against the Record, and  `matchedItems` contains the actual key-value pairs that were matched. You can take advantage of the appended data in searches and rules. So, a CSE rule can see from a Record that matches a rule condition that the IP address in the Record is on the  “vuln_scanners” Match List, and thus know that the rule shouldn’t fire. For more information, see [Create a Match List](../match-lists-suppressed-lists/create-match-list.md).
+CSE compares the contents of every message to your Match Lists. When it finds a match, it appends fields two fields to the Record: `listMatches` and `matchedItems`. `listMatches` contains the names of lists that were matched against the Record, and  `matchedItems` contains the actual key-value pairs that were matched. You can take advantage of the appended data in searches and rules. So, a CSE rule can see from a Record that matches a rule condition that the IP address in the Record is on the  “vuln_scanners” Match List, and thus know that the rule shouldn’t fire. For more information, see [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list).
 
 ## Suppressed List processing
 
@@ -91,4 +91,4 @@ Cloud SIEM's Suppressed Lists feature is similar to Match Lists. A Suppressed Li
 
 CSE has another feature that is similar to Match Lists: Threat Intel. Like Match Lists, Threat Intel lists are lists of indicators and identifiers configured by a CSE analyst. While similar to Match Lists, Threat Intel lists are intended for negative identifiers that should definitely fire a Signal. So, whenever a rule detects a Record field that matches an item on a Threat Intel list, it always results in a Signal. 
 
-CSE’s Threat Intel list processing is similar to Match List processing. Incoming messages are compared to all Threat Intel lists. When a match is found, CSE updates the `listMatches` field in the Record with the name of the matched threat list, the matching key-value pair from the message, and the string “threat”. For more information, see the [Threat Intel](../rules/about-cse-rules.md) section in the *About CSE Rules* topic.  
+CSE’s Threat Intel list processing is similar to Match List processing. Incoming messages are compared to all Threat Intel lists. When a match is found, CSE updates the `listMatches` field in the Record with the name of the matched threat list, the matching key-value pair from the message, and the string “threat”. For more information, see the [Threat Intelligence](/docs/cse/rules/about-cse-rules#threat-intelligence) section in the *About CSE Rules* topic.  
