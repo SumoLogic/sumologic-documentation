@@ -1,6 +1,6 @@
 ---
 id: windows-opentelemetry
-title: windows - OpenTelemetry Collector
+title: Windows - OpenTelemetry Collector
 sidebar_label: Windows - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry App for Windows.
 ---
@@ -36,7 +36,7 @@ Standard Windows event channels include:
 - System
 - Application
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
