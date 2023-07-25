@@ -76,7 +76,7 @@ To configure Gmail Trace Logs Source:
 1. **Project ID**. Enter the unique identifier number. You can find this from the Google Cloud Console.
 1. **Dataset ID**. Enter the ID. The Dataset ID is the project-wise unique identifier for your dataset. 
 1. **Data Location**. Enter the location of DataSet which is set while creating Dataset in BigQuery.
-1. **Private Key**. Enter the private key of Service Account JSON, it is a security key which is required for authentication. You can find this from the Google Cloud Console.
+1. **Private Key**. Enter the private key of Service Account JSON. This is a security key which is required for authentication. You can find this from the Google Cloud Console.
 1. **Client Email**. Enter the user email collected from the Google Cloud Console.
 1. **Token URI**. Enter the token URI used for generating the token. You can find this from the Google Cloud Console.
 1. The **Collection should begin** is set to **24 Hours ago** by default. You can adjust it based on your needs.
