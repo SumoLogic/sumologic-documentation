@@ -12,5 +12,5 @@ authors:
 
 Our new **Public Dashboards** feature enables you to share your dashboard with users who do not have a Sumo Logic account. You can share with the world, or fine tune with your security policies to restrict unauthenticated access from specific IP addresses.
 
-Check out our technical documentation [here](/docs/dashboards-new/share-dashboard-outside-org) to learn more about public dashboards.
+Check out our technical documentation [here](/docs/dashboards/share-dashboard-outside-org) to learn more about public dashboards.
 

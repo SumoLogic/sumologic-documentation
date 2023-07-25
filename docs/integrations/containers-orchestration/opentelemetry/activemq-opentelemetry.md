@@ -226,7 +226,7 @@ sumo.datasource=activemq deployment.environment={{deployment.environment}} messa
 
 ### Dashboard filters with template variables
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-template-variables.md) help page.
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
 
 ### Overview
 
