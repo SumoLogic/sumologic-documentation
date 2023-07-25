@@ -1376,7 +1376,7 @@
   "/docs/api/roles": "/docs/api/role-management",
   "/docs/api/users": "/docs/api/user-management",
   "/Dashboards-and-Alerts/Dashboards": "/docs/dashboards-new",
-  "/Dashboards-and-Alerts/Dashboards/01-About-Dashboards": "/docs/dashboards/about-dashboard",
+  "/Dashboards-and-Alerts/Dashboards/01-About-Dashboards": "/docs/dashboards/about",
   "/Dashboards-and-Alerts/Dashboards/Chart-Panel-Types": "/docs/dashboards-classic/chart-panel-types",
   "/Dashboards-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Change-the-Color-of-a-Chart-by-Value-Range-on-the-Search-Page": "/docs/dashboards-classic/edit-dashboards/manage-charts",
   "/Dashboards-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Change-the-Color-of-a-Chart": "/docs/dashboards-classic/edit-dashboards/manage-charts",
