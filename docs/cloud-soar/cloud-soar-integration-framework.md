@@ -951,7 +951,7 @@ fields:
 ```
 
 Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
-```
+```json
 {
   "title": "test",
   "hours": 2,
