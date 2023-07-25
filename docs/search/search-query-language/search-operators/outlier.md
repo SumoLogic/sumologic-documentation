@@ -213,7 +213,7 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 | transpose row _timeslice column _sourceCategory
 ```
 
-When you select a [line chart](/docs/dashboards-new/panels/line-charts), this example will display something like the following:
+When you select a [line chart](/docs/dashboards/panels/line-charts), this example will display something like the following:
 
 ![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
 
@@ -234,7 +234,7 @@ _sourceCategory=Apache*
 | transpose row _timeslice column status_code
 ```
 
-When you select a [line chart](/docs/dashboards-new/panels/line-charts), this example will display something like the following:
+When you select a [line chart](/docs/dashboards/panels/line-charts), this example will display something like the following:
 
 ![Outlier Ranking](/img/search/searchquerylanguage/search-operators/OutlierRanking.png)
 

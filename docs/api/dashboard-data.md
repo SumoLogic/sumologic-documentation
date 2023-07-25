@@ -14,7 +14,7 @@ description: Sumo Logic Dashboard Data APIs allow you to access available dashbo
 The Dashboard Data API is currently in Beta. For questions or support, please contact [beta-dashboard-api-group@sumologic.com](mailto:beta-dashboard-api-group@sumologic.com).
 :::
 
-The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](/docs/dashboards-new/about).
+The Dashboard Data API allows you to access available dashboards, retrieve a specific dashboard, or retrieve the data for all monitors (i.e., panels) on a dashboard. In order to retrieve data from a dashboard via the API, the dashboard must be in [live mode](/docs/dashboards/about).
 
 ## Authentication
 

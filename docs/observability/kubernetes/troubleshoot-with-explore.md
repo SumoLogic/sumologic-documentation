@@ -5,7 +5,7 @@ sidebar_label: Troubleshooting
 description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
 ---
 
-[Explore navigation](/docs/dashboards-new/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+[Explore navigation](/docs/dashboards/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
@@ -72,4 +72,4 @@ After further investigation, we discovered that Kenneth left the company and wa
 
 ## More Information
 
-* [Explore navigation](/docs/dashboards-new/explore-view)
+* [Explore navigation](/docs/dashboards/explore-view)

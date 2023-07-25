@@ -37,7 +37,7 @@ Updating the Apps will create a backup of the old apps in a folder called as **�
 To update an existing stack to the latest version:
 
 1. Locate the **Main Stack** created using AWS CloudFormation template and Click **Update**. <br/>  ![Stack_Step1.png](/img/observability/Stack_Step1.png)
-1. Select **Replace Current Template**, paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option, and then select **Next**.
+1. Select **Replace Current Template**, paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml` in the Amazon S3 URL option, and then select **Next**.
     :::note
     If you would like to download or inspect this or other versions of this template, please visit the [Change Log](changelog.md) page.
     :::
