@@ -45,7 +45,7 @@ You can skip this section if you have already set up the logs collection through
 
 ### Step 2: Configure integration
 
-In this step, you will configure the yaml file required for Windows event logs and metrics Collection.
+In this step, you will configure the YAML file required for Windows event logs and metrics Collection.
 
 Any custom fields can be tagged along with the data in this step.
 
