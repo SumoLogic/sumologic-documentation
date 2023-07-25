@@ -1994,6 +1994,7 @@ integrations: [
             collapsed: true,
             items: [
               'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
+              'integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry',
             ],
           },
           'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
