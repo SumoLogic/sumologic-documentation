@@ -133,7 +133,7 @@ The content of the Facets panel is affected by your current active filters and t
 
 ### Aggregates tab
 
-The Aggregates tab shows your data charted. See Panels from Dashboard (New) for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
+The Aggregates tab shows your data charted. See Panels from Dashboard for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
 
 ![sumo-logic-spans-aggregates-visualize.png](/img/traces/sumo-logic-spans-aggregates-visualize.png)
 
