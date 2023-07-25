@@ -257,24 +257,12 @@ service:
    Restart-Service -Name OtelcolSumo
    ```
 
-Configuration details:
+#### Configuration details
 
-* **receivers**:
-  * `windowseventlog/sysmon/localhost/1690233479:` Collect logs from sysmon channel with name “Microsoft-Windows-Sysmon/Operational”.
- 
-
-* **processors**:
-  * `resource/windows_resource_attributes/localhost/1690233479` Adds the resource attribute `_sourceCategory` with value `windows_event_log_prod_sysmon`
-
-* **exporters**:
-  * `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
-
-* **service**:
-  * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
-
-
-
-
+* **receivers**: `windowseventlog/sysmon/localhost/1690233479:` Collect logs from sysmon channel with name “Microsoft-Windows-Sysmon/Operational”.
+* **processors**: `resource/windows_resource_attributes/localhost/1690233479` Adds the resource attribute `_sourceCategory` with value `windows_event_log_prod_sysmon`
+* **exporters**: `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
+* **service**: `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
 For more details, see the [Windows Event Log receiver][windows_event_log_receiver_docs].
 
