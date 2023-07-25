@@ -913,6 +913,69 @@ output:
     - path : 'exit_condition'
 ```
 
+### Trigger webhook definition file
+
+```
+integration: 'Testing Purpose'
+name: 'testing webhook'
+type: Trigger
+hook:
+    - webHook
+script:
+ code: |
+    import json 
+    import argparse
+    from datetime import datetime
+    import sys
+    import os
+    import time
+    class EnvDefault(argparse.Action):
+        def __init__(self, required=True, default=None, **kwargs):
+            envvar = kwargs.get("dest")
+            default = os.environ.get(envvar, default) if envvar in os.environ else default
+            required = False if required and default else required
+            super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+        def __call__(self, parser, namespace, values, option_string=None):
+            setattr(namespace, self.dest, values)
+                    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--payload', help='payload', required=True, action=EnvDefault)
+    args, unknown = parser.parse_known_args()
+    payload = json.loads(args.payload)
+    print(payload.get("title"))
+fields:
+  - id: payload
+    label: 'payload'
+    type: text      
+    required: true
+```
+
+Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
+```
+{
+"title": "test",
+"hours": 2,
+"percentage": 90,
+"priority": 88,
+"report_time": "2023-01-19T15:28:38.000Z",
+"start_time": "2023-01-19T15:28:34.000Z",
+"end_time": "2023-01-19T15:28:37.000Z",
+"status": 776,
+"assigned_to": 3,
+"additional_info": "lorem ipsum additional info text"
+}
+```
+
+Your script will print `(print(payload.get("title")))` tests. (Cloud SOAR saves log-only action errors, but doesn’t save webhook trigger results.)
+
+You can add more than one webhook trigger. While you cannot discriminate execution at the API request, you can do so inside an action script. For example:
+```
+if payload.get("title") == "test":
+   print("OK")
+else:
+   return
+``` 
+
 ## Using a custom Docker image
 
 You can execute all the actions of an integration in a container built from a custom Docker image. This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts. However, there are many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
