@@ -1,5 +1,5 @@
 ---
-id: ms-graph-identity-protection-source
+id: microsoft-graph-identity-protection-source
 title: Microsoft Graph Identity Protection Source
 sidebar_label: Microsoft Graph Identity Protection
 description: The Microsoft Graph Identity Protection Source collects Risk Detection and Risky User from the Microsoft Graph Identity Protection API.

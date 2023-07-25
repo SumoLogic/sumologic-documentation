@@ -5,6 +5,8 @@ sidebar_label: ThreatQ Source
 description: Learn how to set up a ThreatQ source.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has information about configuring a ThreatQ source in CSE.
 
 ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. 
@@ -15,10 +17,10 @@ To do so, you simply configure a ThreatQ source in CSE. You supply the informati
 
 ## Configure a ThreatQ source
 
-1. In the CSE UI, select **Threat Intelligence** from the **Content** menu. <br/>![threat-intel-icon.png](/img/cse/threat-intel-icon.png)
-1. On the **Threat Intelligence** page, click **Add Source**. <br/>  ![threatq-add-source-icon.png](/img/cse/threatq-add-source-icon.png)
-1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/>  ![threatq-create-icon.png](/img/cse/threatq-create-icon.png)
-1. The **Add New Source** page updates. <br/>  ![threatq-add-source.png](/img/cse/threatq-add-source.png)
+1. In the CSE UI, select **Threat Intelligence** from the **Content** menu. <br/><img src={useBaseUrl('img/cse/threat-intel-icon.png')} alt="Threat Intelligence menu" width="800"/>
+1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threatq-add-source-icon.png')} alt="Add Source" width="800"/>
+1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/><img src={useBaseUrl('img/cse/threatq-create-icon.png')} alt="ThreatQ create icon" width="800"/>
+1. The **Add New Source** page updates. <br/><img src={useBaseUrl('img/cse/threatq-add-source.png')} alt="ThreatQ Add New Source" width="800"/>
 1. **Name**. Enter a name for the source.
 1. **Description**. (Optional) Enter a description of the source.
 1. **Enabled**. By default, the new source will be enabled. Use the slider if you want to disable it.
@@ -55,5 +57,5 @@ where 
 If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
 :::
 
-For more information, see the [Rules and other content](../rules/about-cse-rules.md) in the *About CSE Rules* topic.  
+For more information, see the [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About CSE Rules* topic.  
  

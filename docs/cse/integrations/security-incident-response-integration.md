@@ -5,6 +5,8 @@ sidebar_label: Security Incident Response (SIR)
 description: Install and configure the integration between Sumo Logic CSE and ServiceNow's Security Incident Response (SIR).
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This section has instructions for installing and configuring the integration between Sumo Logic CSE and ServiceNow's Security Incident Response (SIR).
 
 The screenshots in this topic were captured from SIR UI16. If you have a different UI enabled, your view may be different.
@@ -34,7 +36,7 @@ Your CSE role must allow you to use API keys and to retrieve and modify Insights
 
 In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-CSE integration in [Step 5](#step-5-install-the-sir-cse-integration) below. 
 
-You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys.md#create-an-access-keyon-preferences-page).
+You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page).
 
 ## Step 2: Install ServiceNow plugins
 
@@ -44,8 +46,8 @@ In this step you install two ServiceNow plugins. 
 Plugin installation can fail if another installation is running in the background. Make sure you complete one installation of one starting another.
 :::
 
-1. Install the Security Incident Response plugin from the ServiceNow store.  <br/>  ![sir-plugin.png](/img/cse/sir-plugin.png)
-1. Install the Threat Intelligence add-on from the ServiceNow store.  <br/>  ![threat-plugin.png](/img/cse/threat-plugin.png)
+1. Install the Security Incident Response plugin from the ServiceNow store.  <br/><img src={useBaseUrl('img/cse/sir-plugin.png')} alt="Security Incident Response plugin" width="600"/>
+1. Install the Threat Intelligence add-on from the ServiceNow store.  <br/><img src={useBaseUrl('img/cse/threat-plugin.png')} alt="Threat Intelligence add-on" width="600"/>
 
 ## Step 3: Configure MITRE ATT&CK threat feed data
 
@@ -55,8 +57,8 @@ This step is required only if you don’t already have MITRE ATT&CK threat feed 
 1. Under **Threat Sources**, select **Sources**. 
 1. From **Threat Sources**, select **Enterprise ATT&CK** .
 1. Click **Execute Now** to populate your MITRE framework data. 
-1. To verify the population succeeded,  in the navigation bar search for "MITRE ATT&CK Repository" and click **Techniques**. <br/>  ![techniques-option.png](/img/cse/techniques-option.png)
-1. You should see several pages of data similar to the screenshot below. <br/> ![techniques-table.png](/img/cse/techniques-table.png)
+1. To verify the population succeeded,  in the navigation bar search for "MITRE ATT&CK Repository" and click **Techniques**. <br/><img src={useBaseUrl('img/cse/techniques-option.png')} alt="Techniques option" width="300"/>
+1. You should see several pages of data similar to the screenshot below. <br/><img src={useBaseUrl('img/cse/techniques-table.png')} alt="Techniques table" width="800"/>
 1. If the table is still empty, contact your ServiceNow administrator and review the integration runs logs to determine how the error occurred. Otherwise proceed to the next step.
 
 ## Step 4: Configure CI Lookup Rules
@@ -64,14 +66,14 @@ This step is required only if you don’t already have MITRE ATT&CK threat feed 
 CI Lookup Rules are required to enable discovery of configuration items and avoid duplicate CI item creation. If no rules, or no appropriate rules exist, follow the steps below to create appropriate rules.
 
 1. Navigate to **CI Lookup Rules** under **Security Operations** in the navigation bar. 
-1. Select **New** and create three rules shown in the screenshot below. For instructions, see [Create a CI Lookup Rule](https://docs.servicenow.com/bundle/orlando-security-management/page/product/security-operations-common/task/create-ci-identifier-rules.html) in ServiceNow help. <br/>  ![rules.png](/img/cse/rules.png)
+1. Select **New** and create three rules shown in the screenshot below. For instructions, see [Create a CI Lookup Rule](https://docs.servicenow.com/bundle/orlando-security-management/page/product/security-operations-common/task/create-ci-identifier-rules.html) in ServiceNow help. <br/><img src={useBaseUrl('img/cse/rules.png')} alt="CI Lookup rules" width="800"/>
 
 ## Step 5: Install the SIR-CSE integration
 
 1. Search for **Integration Configurations** under **Security Operations** in the navigation bar. 
-1. Locate **Sumo Logic SIR** and click **Configure**. <br/>  ![config-button.png](/img/cse/config-button.png)
-1. The **Sumo Logic SIR Configuration** popup appears.  <br/>  ![config-page.png](/img/cse/api-credentials.png)
-1. **Host**. Enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Locate **Sumo Logic SIR** and click **Configure**. <br/><img src={useBaseUrl('img/cse/config-button.png')} alt="SumoLogic SIR" width="300"/>
+1. The **Sumo Logic SIR Configuration** popup appears.  <br/><img src={useBaseUrl('img/cse/api-credentials.png')} alt="API credentials" width="600"/>
+1. **Host**. Enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. **Access ID and Access Key**. Enter the Sumo Logic Access ID and Key you copied in [Step 1](#step-1-copy-your-api-credentials).
 1. **Default Incident State**. Enter the Incident State you want to assign to Incidents created by the integration. The value you enter must by a valid state in your ServiceNow account. To view available options in your environment, enter `sys_choice.list` in your **Environments** sidebar and filter for `table=sn_si_incident`, `inactive=false`. Alternatively, you can directly view the available options in the **State** dropdown in any Incident. This field is case-sensitive. If you supply an invalid value, it will be ignored. The  default state for your Incidents created by the integration will be set based on your business rules.  
 
@@ -91,7 +93,7 @@ This section describes configuration changes you can make to the integration.
 
 If desired, you can change the mapping between the fields in CSE Insights and the fields in Incidents that the integration creates in ServiceNow.
 
-1. Navigate to the **Table Transform Maps** page in ServiceNow. <br/>  ![table-transform-maps.png](/img/cse/table-transform-maps.png)
+1. Navigate to the **Table Transform Maps** page in ServiceNow. <br/><img src={useBaseUrl('img/cse/table-transform-maps.png')} alt="Table Transform Maps" width="800"/>
 1. Open the “Sumo Insight Mapper” for editing.
 1. Make your edits and save your changes. 
 
@@ -113,23 +115,23 @@ Double-click a property to edit it.
 
 The URL to the ServiceNow Incident generated for an Insight is shown on the details page for the Insight.
 
-![incident-created-popup.png](/img/cse/incident-created-popup.png)
+<img src={useBaseUrl('img/cse/incident-created-popup.png')} alt="Generated incident" width="400"/>
 
 ## Example Incident created by integration
 
 The screenshot below shows a ServiceNow Incident that was created for a CSE Insight.
 
-![incident-draft-tab.png](/img/cse/incident-draft-tab.png)
+<img src={useBaseUrl('img/cse/incident-draft-tab.png')} alt="Incident draft" width="800"/>
 
 ## See closed Insight in CSE
 
 After an Incident created by the integration is closed in ServiceNow, the Insight from which it was generated will be closed in CSE as well.
 
-![insight-actions-icon.png](/img/cse/insight-actions-icon.png)
+<img src={useBaseUrl('img/cse/insight-actions-icon.png')} alt="Insight Actions" width="300"/>
 
 ## View integration log messages
 
 To view log messages written by the integration:
 
 1. Choose **System Log > All** in the ServiceNow left-nav pane.
-1. Search the messages for “Sumo CSE”. <br/> ![messages-sumo-cse.png](/img/cse/messages-sumo-cse.png)
+1. Search the messages for “Sumo CSE”. <br/><img src={useBaseUrl('img/cse/messages-sumo-cse.png')} alt="Integration log messages" width="800"/>
