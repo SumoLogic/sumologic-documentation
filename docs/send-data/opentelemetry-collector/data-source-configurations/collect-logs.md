@@ -219,7 +219,6 @@ Configuration details:
 
 ### Collect from Custom channels (Powershell, Sysmon)
 
-
 Following configuration demonstrates:
 
 1. **Collect**: Collect Sysmon logs.
