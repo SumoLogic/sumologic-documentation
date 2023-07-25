@@ -889,7 +889,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'dashboards/index'},
       items: [
-        'dashboards/about-dashboard',
+        'dashboards/about',
         'dashboards/create-dashboard-new',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
