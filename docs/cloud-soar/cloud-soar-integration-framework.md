@@ -953,17 +953,17 @@ fields:
 Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
 ```
 {
-"title": "test",
-"hours": 2,
-"percentage": 90,
-"priority": 88,
-"report_time": "2023-01-19T15:28:38.000Z",
-"start_time": "2023-01-19T15:28:34.000Z",
-"end_time": "2023-01-19T15:28:37.000Z",
-"status": 776,
-"assigned_to": 3,
-"additional_info": "lorem ipsum additional info text"
-}
+  "title": "test",
+  "hours": 2,
+  "percentage": 90,
+  "priority": 88,
+  "report_time": "2023-01-19T15:28:38.000Z",
+  "start_time": "2023-01-19T15:28:34.000Z",
+  "end_time": "2023-01-19T15:28:37.000Z",
+  "status": 776,
+  "assigned_to": 3,
+  "additional_info": "lorem ipsum additional info text"
+} 
 ```
 
 Your script will print `(print(payload.get("title")))` tests. (Cloud SOAR saves log-only action errors, but doesn’t save webhook trigger results.)
