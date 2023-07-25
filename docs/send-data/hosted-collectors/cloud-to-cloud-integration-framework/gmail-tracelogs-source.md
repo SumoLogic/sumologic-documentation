@@ -74,7 +74,7 @@ To configure Gmail Trace Logs Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Project ID**. Enter the unique identifier number. You can find this from the Google Cloud Console.
-1. **Dataset ID**. Enter the The Dataset ID is the project-wise unique identifier for your dataset. 
+1. **Dataset ID**. Enter the ID. The Dataset ID is the project-wise unique identifier for your dataset. 
 1. **Data Location**. Enter the location of DataSet which is set while creating Dataset in BigQuery.
 1. **Private Key**. Enter the private key of Service Account JSON, it is a security key which is required for authentication. You can find this from the Google Cloud Console.
 1. **Client Email**. Enter the user email collected from the Google Cloud Console.
