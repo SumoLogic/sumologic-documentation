@@ -10,6 +10,8 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
 * [Collecting logs from local files](#collecting-logs-from-local-files)
   * [Parsing JSON logs](#parsing-json-logs)
 * [Collecting logs from Windows Event Log](#collecting-logs-from-windows-event-log)
+  * [Collecting Application, Security and System channels](#collecting-application-security-and-system-channels)
+  * [Collect from Custom channels (Powershell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
@@ -152,6 +154,8 @@ service:
 
 Windows Log Event Receiver reads and parses logs from windows event log API to collect local events as you see on Windows Event Viewer.
 
+### Collecting Application, Security and System channels
+
 Following configuration demonstrates:
 
 1. **Collect**: Collect Application, Security and System channels.
@@ -211,6 +215,54 @@ Configuration details:
 
 * **service**:
   * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
+
+
+### Collect from Custom channels (Powershell, Sysmon)
+
+Following configuration demonstrates:
+
+* **Collect**: Collect Sysmon logs.
+* **Transform**: Set `_sourceCategory` field to `windows_event_log_prod_sysmon`.
+* **Export**: Send data to authenticated Sumo Logic organization.
+
+```yaml
+receivers:
+  windowseventlog/sysmon/localhost/1690233479:
+    channel: Microsoft-Windows-Sysmon/Operational 
+
+processors:
+  resource/windows_resource_attributes/localhost/1690233479:
+    attributes:
+      - key: _sourceCategory
+        value: windows_event_log_prod_sysmon
+        action: insert
+
+service:
+  pipelines:
+    logs/windows/localhost/1690233479:
+      receivers:
+        -  windowseventlog/sysmon/localhost/1690233479
+      processors:
+        - memory_limiter
+        - resource/windows_resource_attributes/localhost/1690233479
+        - batch
+      exporters:
+        - sumologic
+```
+
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sysmon_windows.yaml`.
+2. Paste the above content into the file.
+3. Restart collector with following command:
+   ```bash title="Windows"
+   Restart-Service -Name OtelcolSumo
+   ```
+
+#### Configuration details
+
+* **receivers**: `windowseventlog/sysmon/localhost/1690233479:` Collect logs from sysmon channel with name “Microsoft-Windows-Sysmon/Operational”.
+* **processors**: `resource/windows_resource_attributes/localhost/1690233479` Adds the resource attribute `_sourceCategory` with value `windows_event_log_prod_sysmon`
+* **exporters**: `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
+* **service**: `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
 For more details, see the [Windows Event Log receiver][windows_event_log_receiver_docs].
 
