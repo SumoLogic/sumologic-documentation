@@ -14,7 +14,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/dashboards/about-dashboard"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>About Dashboards </h4></a>
+  <a href="/docs/dashboards/about"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>About Dashboards </h4></a>
   <p>Learn the benefits of Dashboard and how it seamlessly integrates log, metrics, and trace data.</p>
   </div>
 </div>
