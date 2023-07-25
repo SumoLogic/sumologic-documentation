@@ -221,9 +221,9 @@ Configuration details:
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect Sysmon logs.
-2. **Transform**: Set `_sourceCategory` field to `windows_event_log_prod_sysmon`.
-3. **Export**: Send data to authenticated Sumo Logic organization.
+* **Collect**: Collect Sysmon logs.
+* **Transform**: Set `_sourceCategory` field to `windows_event_log_prod_sysmon`.
+* **Export**: Send data to authenticated Sumo Logic organization.
 
 ```yaml
 receivers:
