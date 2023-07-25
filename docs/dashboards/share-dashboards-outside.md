@@ -1,5 +1,5 @@
 ---
-id: share-dashboard-outside-org
+id: share-dashboard-outside
 title: Share a dashboard outside your organization
 sidebar_label: Share a dashboard outside your org
 ---

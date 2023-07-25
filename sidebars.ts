@@ -924,7 +924,7 @@ module.exports = {
         'dashboards/link-dashboards',
         'dashboards/set-data-access-level',
         'dashboards/share-dashboard-new',
-        'dashboards/share-dashboard-outside-org',
+        'dashboards/share-dashboard-outside',
         'dashboards/filter-template-variables',
         {
           type: 'category',
