@@ -1,5 +1,5 @@
 ---
-slug: /dashboards-new
+slug: /dashboards
 title: Dashboard
 description: The Dashboard platform allows you to analyze metric and log data on the same dashboard, in a streamlined user experience.
 tags: [dashboards, dashboard]
