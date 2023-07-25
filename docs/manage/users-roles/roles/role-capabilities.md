@@ -222,7 +222,7 @@ Following are just some of the capabilities you can assign when you [create rol
   <tr>
    <td>Manage Share dashboards outside of the organization
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-inside-org">Share a dashboard</a> with users who don't have access to Sumo Logic.
+   <td><a href="/docs/dashboards-classic/share-dashboard-inside-org">Share a dashboard</a> with users who don't have access to Sumo Logic.
    </td>
   </tr>
   <tr>
@@ -234,7 +234,7 @@ Following are just some of the capabilities you can assign when you [create rol
   <tr>
    <td>Change Data Access Level
    </td>
-   <td>Users with this capability can change the <a href="/docs/dashboards/get-started/set-data-access-level-dashboard">data access level</a> of dashboards or scheduled searches to which they have edit or manage permission.
+   <td>Users with this capability can change the <a href="/docs/dashboards-classic/get-started/set-data-access-level-dashboard">data access level</a> of dashboards or scheduled searches to which they have edit or manage permission.
    </td>
   </tr>
 </table>
@@ -253,13 +253,13 @@ Following are just some of the capabilities you can assign when you [create rol
   <tr>
    <td>Share dashboards with the allowlist
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-inside-org">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/manage/security/create-allowlist-ip-cidr-addresses/#enable-dashboard-allowlist">service allowlist</a>.
+   <td><a href="/docs/dashboards-classic/share-dashboard-inside-org">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/manage/security/create-allowlist-ip-cidr-addresses/#enable-dashboard-allowlist">service allowlist</a>.
    </td>
   </tr>
   <tr>
    <td>Share dashboards with the world
    </td>
-   <td><a href="/docs/dashboards/share-dashboard-outside-org">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
+   <td><a href="/docs/dashboards-classic/share-dashboard-outside-org">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
    </td>
   </tr>
 </table>
