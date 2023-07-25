@@ -92,7 +92,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox14 card">
   <div className="container">
-  <a href="/docs/dashboards/share-dashboard-outside-org"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Sharing Dashboards Outside Your Organization</h4></a>
+  <a href="/docs/dashboards/share-dashboard-outside"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Sharing Dashboards Outside Your Organization</h4></a>
   <p>Learn how to share a custom dashboard outside your organization.</p>
   </div>
 </div>
