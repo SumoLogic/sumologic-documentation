@@ -251,6 +251,6 @@ The **WWindows - Security Monitoring - Critical Events** dashboard provides anal
 
 ### Inventory​
 
-The **Windows - Security Monitoring - Inventory** dashboard helps you to monitor windows events provided by computer, channel, and provider. This dashboard also provides sdditional information on computer reboots.
+The **Windows - Security Monitoring - Inventory** dashboard helps you to monitor windows events provided by computer, channel, and provider. This dashboard also provides additional information on computer reboots.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Inventory.png' style={{border: '1px solid black'}} alt="Windows-Security-Monitoring-Inventory" />
