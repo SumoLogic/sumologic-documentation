@@ -13,7 +13,7 @@ Windows - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified l
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid black'}} />
 
-## Fields created in Sumo Logic for the Cloud Security Monitoring and Analytics JSON App​
+## Fields created in Sumo Logic for Windows
 
 The following tag will be created as part of Windows app installation, if not already present. 
 
