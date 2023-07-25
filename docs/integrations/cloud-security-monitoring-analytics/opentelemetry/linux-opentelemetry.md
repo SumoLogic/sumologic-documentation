@@ -2,7 +2,7 @@
 id: linux-opentelemetry
 title: Linux - Cloud Security Monitoring and Analytics - OpenTelemetry
 sidebar_label: Linux - OpenTelemetry
-description: The Sumo Logic app for Linux Cloud Security Monitoring and Analytics - OpenTelemetry provides better understanding of your production environments, and surface relevant insights by tuning out-of-the-box content to align with your security team’s focus.
+description: The Sumo Logic app for Linux Cloud Security Monitoring and Analytics - OpenTelemetry provides better understanding of your production environments, and surfaces relevant insights by tuning out-of-the-box content to align with your security team’s focus.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
