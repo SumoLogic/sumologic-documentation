@@ -1635,7 +1635,7 @@
   "/cid/10230": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source",
   "/cid/1092": "/docs/search/search-query-language/group-aggregate-operators/stddev",
   "/cid/1093": "/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations",
-  "/cid/1094": "/docs/dashboards/share-dashboard-outside",
+  "/cid/1094": "/docs/dashboards/share-dashboard-outside-org",
   "/cid/1095": "/docs/integrations/amazon-aws/cis-aws-foundations-benchmark",
   "/cid/1100": "/docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance",
   "/cid/1101": "/docs/search/search-query-language/math-expressions/floor",
