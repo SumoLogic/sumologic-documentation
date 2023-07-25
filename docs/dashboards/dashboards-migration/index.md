@@ -16,8 +16,3 @@ The **Migrate to Dashboards** functionality allows you to transform **Dashboards
 - You can control the visual display of metric and log data.
 - Streamline dashboard configuration and on-the-fly analytic visualizations with its new templating features.
 
-## Limitations
-
-| Incompatibility | Description |   
-| :-----------------| :--------------|
-| Panels | <ul><li>Incompatible panels are automatically migrated to **text** panels with all the information about the panel preserved.</li> <li>Retained information in text panel:</li> <ul> <li>Query</li> <li>Time range</li> <li>Panel title</li></ul> </ul> |
