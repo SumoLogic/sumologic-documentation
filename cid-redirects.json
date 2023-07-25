@@ -3589,6 +3589,7 @@
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source",
   "/docs/integrations/saas-cloud/ms-graph-azure-ad-reporting": "/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting",
+  "/docs/integrations/sumo-apps/security-analytics": "/docs/integrations/sumo-apps/security-foundations",
   "/docs/integrations/saas-cloud/microsoft-graph-security": "/docs/integrations/saas-cloud/microsoft-graph-security-v1",
   "/cid/-1": "/"
 }
