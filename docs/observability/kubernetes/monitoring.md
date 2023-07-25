@@ -19,7 +19,7 @@ We currently provide four hierarchical Views of the Kubernetes system: Node, Dep
 
 ![K8s_Views_overview.png](/img/kubernetes/K8s_Views_overview.png)
 
-These intuitive hierarchies can be accessed from the [Explore](/docs/dashboards-new/explore-view) tab.
+These intuitive hierarchies can be accessed from the [Explore](/docs/dashboards/explore-view) tab.
 
 
 ### Open Explore
@@ -28,7 +28,7 @@ These intuitive hierarchies can be accessed from the [Explore](/docs/dashboards-
 To start monitoring your Kubernetes environment, you'll need to set up data collection and core dashboards installation ([learn more](/docs/observability/kubernetes/quickstart)).
 :::
 
-Sumo Logic [Explore](/docs/dashboards-new/explore-view) is an out-of-the-box view that provides a visual representation of your Kubernetes stack.
+Sumo Logic [Explore](/docs/dashboards/explore-view) is an out-of-the-box view that provides a visual representation of your Kubernetes stack.
 
 To navigate and analyze your Kubernetes environment, do the following:
 
@@ -72,7 +72,7 @@ To discover and view related content, select the graph data point you are inte
 
 Select links from the **Summary** tab, to go directly to:
 
-* [Linked Dashboards](/docs/dashboards-new/panels/modify-chart#Modify-general-settings)
+* [Linked Dashboards](/docs/dashboards/panels/modify-chart#Modify-general-settings)
 * Recommended Dashboards - Currently, only dashboards from the Kubernetes App are supported.
 
 #### Infrastructure tab
@@ -114,7 +114,7 @@ Once you have created the stack linking, your custom dashboard should appear in 
 
 ![K8s_Views_overview.png](/img/kubernetes/K8s_Views_overview.png)
 
-Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard (New) framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
+Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
 
 In the following example, we chose the Kubernetes Node View and selected the k8s-freno-2 cluster. We then selected the Kubernetes - Cluster Overview dashboard, for a high-level view of the health and performance of the cluster.
 
