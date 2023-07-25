@@ -5,6 +5,8 @@ sidebar_label: TAXII Feed
 description: Learn how to integrate CSE with a TAXII feed.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has instructions for integrating CSE with a TAXII threat intelligence feed. In this configuration, CSE is a TAXII client, and polls a TAXII Server. 
 
 :::note
@@ -28,9 +30,9 @@ CSE supports TAXII v1.1 and v1.2. 
 ## Configure the integration
 
 1. Click the **Content menu** and select **Threat Intelligence**.
-1. On the **Threat Intelligence** page, click **Add Source**. <br/>  ![threat-intel-page.png](/img/cse/threat-intel-page.png)
-1. On the **Add New Source** popup, click **TAXII Feed**. <br/>  ![taxii-feed-option.png](/img/cse/taxii-feed-option.png)
-1. The **Add Source** page appears. <br/>  ![add-new-source.png](/img/cse/add-new-source.png)
+1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threat-intel-page.png')} alt="Add Source" width="800"/>
+1. On the **Add New Source** popup, click **TAXII Feed**. <br/><img src={useBaseUrl('img/cse/taxii-feed-option.png')} alt="TAXII Feed option" width="600"/>
+1. The **Add Source** page appears. <br/><img src={useBaseUrl('img/cse/add-new-source.png')} alt="Add new source" width="600"/>
 1. **Name**. Enter a name for the feed.
 1. **Description**. Enter a description of the feed.
 1. **URL**. Enter the URL for the feed provider’s TAXII discovery service endpoint.

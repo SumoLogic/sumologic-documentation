@@ -36,7 +36,9 @@ The Microsoft SQL Server app's queries and dashboards depend on logs from the SQ
 
 The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
 
-## Configure SQL Server Logs Collection
+## Collection configuration and app installation
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
