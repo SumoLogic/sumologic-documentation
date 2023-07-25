@@ -86,7 +86,7 @@ For each Apache server, hourly signals for the past 7 days are used to construct
 
 ### Dashboard Filters  
 
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. See how to [filter with template variables](../../dashboards-new/filter-template-variables.md)
+Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. See how to [filter with template variables](../../dashboards/filter-template-variables.md)
 for details.
 
 :::note

@@ -185,5 +185,5 @@ You can add additional fields such as project, product, or server names to the a
     * The [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload) function in the Jenkins plugin.
     * Add [metadata fields](/docs/manage/fields) at the Sumo Logic source.  
 1. Write and test Sumo Logic searches using this new field to derive the insights you want.
-1. Add [panels](/docs/dashboards-new/panels) based on the above searches to the existing set of dashboards.
-1. Add [filters](../../dashboards/edit-dashboards/use-filters-dashboards.md) to the dashboards.
+1. Add [panels](/docs/dashboards/panels) based on the above searches to the existing set of dashboards.
+1. Add [filters](../../dashboards-classic/edit-dashboards/use-filters-dashboards.md) to the dashboards.
