@@ -1,14 +1,11 @@
 ---
 id: rbac-for-indexes
-title: Index Based Search Filter
+title: Index Based Search Filter (Beta)
 description: The index based search filter allows you to use rule permissions to determine who gets access to certain indexes.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
