@@ -1488,6 +1488,7 @@
   "/cid/10125": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source",
   "/cid/10135": "/docs/manage/manage-subscription/manage-org-settings",
   "/cid/10136": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source",
+  "/cid/10213": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source",
   "/cid/10213": "/docs/integrations/microsoft-azure/office-365",
   "/cid/10214": "/docs/integrations/microsoft-azure/kubernetes",
   "/cid/10215": "/docs/integrations/sumo-apps/infrequent-data-tier",
