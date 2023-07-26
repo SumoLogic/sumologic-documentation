@@ -61,6 +61,7 @@ The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service is intended to replace the legacy [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/cse/automation-service/automation-service-bridge)). Those capabilities will be deprecated later in 2023. 
 * Actions can run directly from the Sumo Logic cloud or from other environments via a [bridge](/docs/cse/automation-service/automation-service-bridge/). For security and performance reasons, only certified integrations and actions can run directly from the Sumo Logic cloud environment.
 * The Automation Service is not available in FedRAMP environments at this time.
+* If you have [Cloud SOAR Delivery 2](/docs/cloud-soar/cloud-soar-delivery-2), you use Cloud SOAR for all your automation. The playbooks can include all the Cloud SOAR features, including containment actions.
 :::
 
 ## Access the Automation Service

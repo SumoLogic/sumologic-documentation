@@ -7,7 +7,7 @@ description: Learn about the features in the Cloud SOAR Delivery 2 release.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes the features in Cloud SOAR Delivery 2. Delivery 2 has new features, including [dashboards](#create-a-dashboard), [reports](#create-a-report), and an [Integration Builder](#integration-builder). 
+This topic describes the features in Cloud SOAR Delivery 2, the latest release of Cloud SOAR. Delivery 2 has new features, including [dashboards](#create-a-dashboard), [reports](#create-a-report), and an [Integration Builder](#integration-builder). 
 
 :::note
 Delivery 2 is available only to organizations as a new installation, or to organizations that have migrated to Delivery 2 from the original version of Cloud SOAR (Delivery 1). For help getting Cloud SOAR Delivery 2, reach out to your Sumo Logic account team.
