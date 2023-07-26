@@ -1,9 +1,9 @@
 ---
 id: set-limit-user-concurrent-sessions
 title: Set a Limit for User Concurrent Sessions
+description: To prevent abandoned user sessions and increase account security by limiting the number of concurrent sessions each user can have open.
 ---
 
-#
 
 User Concurrent sessions refer to the number of interactive, UI based, sessions an individual user can have open and active per Sumo Logic account. Users may create multiple user sessions as they log in to an account from different browser types and devices. By default, there are no limits applied to the number of concurrent sessions a user may create. 
 
@@ -13,7 +13,7 @@ To configure this option, you must be a Sumo Logic Administrator or have the "M
 
 To configure a concurrent sessions limit:
 
-1. Go to **Administration** \> **Security** \> **Policies**.
+1. Go to **Administration** > **Security** > **Policies**.
 1. Click the checkbox in the **Per User Concurrent Sessions Limit** section.
 1. Enter a value from 1 to 100 in the **Number of concurrent sessions** field.   
 

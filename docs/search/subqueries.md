@@ -3,23 +3,24 @@ id: subqueries
 title: Subqueries
 ---
 
+Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria, and you can write a short query to set them for you.
 
-Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a join, where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
+Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a `join`, where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
 
-Subqueries are not supported in live dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
+Subqueries are a powerful way to filter for specific criteria, such as behaviors by a malicious actor or the shopping interests of your most effective user. However, because you are running two or more standalone queries to generate results, you'll need to factor in time for all of these separate queries to complete.
 
 In a subquery, the parent query contains the main body of the query while the child query contains the results necessary for filtering the parent query.
 
 * **Child query.** Handles the filtering. Runs first and provides intermediate input for the parent query. You can specify a different time range than the parent query.
 * **Parent query.** Depends on the input from a child query or queries to finish its execution.
 
-:::note
-Subqueries are a really powerful way to filter for specific criteria, such as behaviors by a malicious actor, or the shopping interests of your most effective user. Unfortunately you are running two, and sometimes multiple standalone queries to generate results. You have to factor in time for all of these queries to complete.
+:::note Limitations
+Subqueries are not supported in live dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
 :::
 
 ## Syntax
 
-You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](/docs/search/search-query-language/search-operators/where) and [if](/docs/search/search-query-language/search-operators/if) operators.
+You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, `|`) and with [where](/docs/search/search-query-language/search-operators/where) and [if](/docs/search/search-query-language/search-operators/if) operators.
 
 :::important
 This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an optional argument, however these highlighted brackets are required for subqueries.
@@ -79,13 +80,13 @@ work with a subquery.
 For example, if the subquery generated the following results:
 
 | `_sourceHost`  | `_sourcecatagory` | `clientip`    |
-|---------------|------------------|-------------|
+|:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
 
 This would be converted to a single output as follows:
 
-```
+```sql
 (( _sourcehost="prod-search-1" AND _sourcecatagory=”stream” AND clientip=”1.1.1.1”) OR
 (_sourcehost=”prod-remix-1” AND _sourcecatagory=”remix” AND clientip=”10.10.10.10”))
 ```
@@ -115,7 +116,7 @@ The keywords clause is not supported with `where` and `if` operations.
 Specifying `keywords` will only return the values from the key-value pairs, where the key is the field name. For example, if the subquery generated the following results:
 
 | `_sourceHost`  | `_sourcecatagory` | `clientip` |
-|---------------|------------------|-------------|
+|:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
 
@@ -159,7 +160,7 @@ case to get the desired results using the following steps:
 
 1. Create a query that gives us items checked out and items purchased by a specific user (parent query).
 1. Create a query that tracks the most active user on the website (child query).
-1. Using subquery, pass the user_id or user_ip from the child query to the parent query, so that the complete workflow happens within a single query.
+1. Using subquery, pass the `user_id` or `user_ip` from the child query to the parent query, so that the complete workflow happens within a single query.
 
 ### Step 1: Create a parent query
 
@@ -198,9 +199,7 @@ Combine the two queries into a subquery to allow the parent query to harness the
 * Include `keywords` so the IP address from the child query is used as a keyword in the search expression (before the first pipe, \|).
 * Exclude the `keywords` argument so results are returned as a table, in key-value pairs, note that any fields (keys) returned must exist in the parent query results.
 * Use a subquery with a `where` or `if` operator.
-
     * If you filter the IP address in a `where` clause then you can substitute it with a subquery that dynamically generates the filter expression.
-
     * If you use the IP address as an `if` condition you can assign values to a new field based on if the condition is returned as true or false.
 
 #### Keywords
@@ -397,9 +396,9 @@ _sourceCategory=weblogs
 
 ### Reference data from child query using save and lookup
 
-When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](docs/search/search-query-language/search-operators/save-classic) and [lookup](docs/search/search-query-language/search-operators/lookup-classic) operators to get the data you need in the parent query.
+When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](/docs/search/search-query-language/search-operators/save-classic) and [lookup](/docs/search/search-query-language/search-operators/lookup-classic) operators to get the data you need in the parent query.
 
-Updates to the newer version of [Lookup Tables](docs/search/lookup-tables) are performed asynchronously. For this reason, saving to such lookup tables from a subquery isn't allowed. If you were to save data to a lookup table from a subquery and then query the same table from the parent query, it's possible that the data written to the table by the subquery might not be available, resulting in incorrect results.
+Updates to the newer version of [Lookup Tables](/docs/search/lookup-tables) are performed asynchronously. For this reason, saving to such lookup tables from a subquery isn't allowed. If you were to save data to a lookup table from a subquery and then query the same table from the parent query, it's possible that the data written to the table by the subquery might not be available, resulting in incorrect results.
 
 This query identifies specific sessions and correlates them to status messages across services from different data sources:
 

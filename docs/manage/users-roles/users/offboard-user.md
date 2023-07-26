@@ -11,11 +11,11 @@ To safeguard content in your organization's Sumo Logic account perform the foll
 
 ## Transfer account owner (if necessary)
 
-A user designated as Account Owner cannot be deleted. To transfer ownership, the account owner must do this on the **Account** page. For more information, see [Cloud Flex Accounts](docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits Accounts](docs/manage/manage-subscription/cloud-flex-credits-accounts.md), depending on your Sumo Logic packaging.
+A user designated as Account Owner cannot be deleted. To transfer ownership, the account owner must do this on the **Account** page. For more information, see [Cloud Flex Accounts](/docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts.md), depending on your Sumo Logic packaging.
 
 ## Check for allowlisted IP addresses
 
-Verify if the user has an IP address that should be removed under **Administration** \> **Security**.
+Verify if the user has an IP address that should be removed under **Administration** > **Security**.
 
 ## Check for access to any shared Access IDs and Keys
 

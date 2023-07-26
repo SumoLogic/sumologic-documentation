@@ -4,10 +4,7 @@ title: save Search Operator
 sidebar_label: save
 ---
 
-
-
-
-The save operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the <a href="#lookup">lookup</a> and <a href="#cat">cat</a> operator to access the saved data.
+The `save` operator allows you to save the results of a query to a lookup table you have already created, as described in <a href="/docs/search/lookup-tables/create-lookup-table">Create a Lookup Table</a>. You can use the [lookup](/docs/search/search-query-language/search-operators/lookup/) and [cat](/docs/search/search-query-language/search-operators/cat/) operator to access the saved data.
 
 You can use the `append` option with `save` to merge new and changed rows into a lookup table. If you use `save` without `append`, any existing rows in the lookup table will be overwritten by your search results. 
 
@@ -31,19 +28,20 @@ Be sure to specify the path to the table in in this format: `path://”<path-to-
 
 To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot more options menu for the table.
 
-**Rules** 
+## Rules 
 
 * Your search schema must match the schema of the Lookup Table that you are writing to, including the data types of the fields you want to save to the lookup table. Make sure your search returns all of the fields defined for the lookup table and no additional fields. Additional fields will be dropped and not saved to the lookup table. If your search returns fewer fields than that defined for the lookup table, the search will fail.
 * The file size limit for lookup tables is 100 MB.
-* You can't create a lookup table with the `save` operator. You must first create a lookup table, as described in [Create a Lookup Table](docs/search/lookup-tables/create-lookup-table.md). 
+* You can't create a lookup table with the `save` operator. You must first create a lookup table, as described in [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table.md). 
 * The `save` operator is not supported with Scheduled Views.
 * Queries that use the `save` operator can't be pinned.
+* Any operator that follows a `save` in a log search query will not be processed.
 
-**Example** 
+## Example 
 
-#### Using save without append
+### Using save without append
 
-This example saves search results data about new user accounts to the lookup table on Sumo Logic  .
+This example saves search results data about new user accounts to the lookup table on Sumo Logic.
 
 ```sql
 | parse "name=*," as name
@@ -57,12 +55,12 @@ This example saves search results data about new user accounts to the lookup ta
 The above search would populate the lookup table to have these rows:
 
 | Name | Action | Date |
-|-|||
+|:--      |:--       |:--
 | John     | sign-up    | 2012-08-20 |
 | Bill     | sign-up    | 2012-08-21 |
 | Bob      | sign-up    | 2012-08-21 |
 
-#### Using save with append
+### Using save with append
 
 You can use the `append` option to add rows to a lookup table and to update existing rows. For example, you'd run a scheduled search once a day and use `save append` to merge new and changed rows into the table. If a row in your search results has the same primary key as a row in the lookup, the lookup table row will be updated. If the primary key in a row in the search results does not match a row in the lookup table, the new row will be added to the lookup. Fields returned by your search that are not in the Lookup Table schema will be dropped and not saved to the lookup table. If your search returns fewer fields than that defined for the lookup table, the search will fail.
 

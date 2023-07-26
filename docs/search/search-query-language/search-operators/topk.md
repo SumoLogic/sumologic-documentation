@@ -4,12 +4,10 @@ title: topk Search Operator
 sidebar_label: topk
 ---
 
-
-
-Allows you to select the top values from fields and group them by fields. The topk operator can replace the top operator and adds the ability to choose the top of top.
+The `topk` operator allows you to select the top values from fields and group them by fields. It can replace the `top` operator and adds the ability to choose the top of top.
 
 :::tip
-If you're using top, we recommend switching to topk for all your queries so that you can take advantage of the additional functionality of topk.
+If you're using `top`, we recommend switching to `topk` for all your queries so that you can take advantage of the additional functionality of `topk`.
 :::
 
 ## Syntax
@@ -24,7 +22,7 @@ topk(<#>, <top_field>[, <top_field_2>, ...]) [by <group_by_fields>]
 
 * `_rank` - the order number of the result.
 
-**Example**
+## Example
 
 #### Top 5 source hosts generating errors
 

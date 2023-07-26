@@ -1,24 +1,23 @@
 ---
 id: download-collector-from-static-url
 title: Download a Collector from a Static URL
-description: Static URLs provide download links to the most recent version of a Collector. 
+description: Static URLs provide download links to the most recent version of a Collector.
 ---
 
 Use our static URLs to download the most recent version of a Collector. The version of the Collector will be updated each time there is a release or patch.
 
 :::note
-This document provides static URLs to download our [Installed Collector](/docs/send-data/installed-collectors) agent. If you need our **Distribution of OpenTelemetry**, go to our [GitHub repository](https://github.com/SumoLogic/sumologic-otel-collector/releases).
+This document provides static URLs to download our [Installed Collector](/docs/send-data/installed-collectors) agent. If you're looking for our OpenTelemetry distribution, go to our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) for more details.
 :::
 
 
 1. Open a terminal window or command prompt, depending on your host type.
-1. Invoke a web request utility such as wget or Invoke-WebRequest.   For example if you're on a Linux 64-bit host, you can wget the Collector from the command line:
-
+1. Invoke a web request utility such as `wget` or `Invoke-WebRequest`. For example, if you're on a Linux 64-bit host, you can `wget` the Collector from the command line:
   ```bash
   wget "https://collectors.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && chmod +x SumoCollector.sh
   ```
 
-  Or, f you're using PowerShell on a 64-bit Windows host you can use Invoke-WebRequest:
+  Or, if you're using PowerShell on a 64-bit Windows host, you can use Invoke-WebRequest:
 
   ```
   # configure usage of TLS
@@ -30,7 +29,7 @@ This document provides static URLs to download our [Installed Collector](/docs/s
   Invoke-WebRequest 'https://collectors.sumologic.com/rest/download/win64' -outfile '<download_path>\SumoCollector.exe'
   ```
 
-  Replace the `<download_path>` with the location where you want to download the Collector. For example, **C:\\user\\download\\sumouser\\SumoCollector.exe**.
+  Replace the `<download_path>` with the location where you want to download the Collector. For example, `C:\user\download\sumouser\SumoCollector.exe`.
 
 :::important
 Older versions of PowerShell might fail to download the installer executable with a message "Could not create SSL/TLS secure channel." In such cases it is recommended that you upgrade to the latest version of PowerShell or use an alternative utility, such as "grep," to perform the download.

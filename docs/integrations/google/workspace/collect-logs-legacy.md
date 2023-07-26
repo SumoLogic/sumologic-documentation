@@ -7,8 +7,10 @@ description: Instructions for configuring log collection from Google Workspace A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
+
 :::note legacy
-For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
+For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
 :::
 
 This section explains how to collect logs from Google Workspace Alert Center and ingest them into Sumo Logic for use with the Google Workspace App predefined dashboards and searches.
@@ -95,19 +97,14 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 
 ## Configure collection for Google Workspace Alert Center
 
-In this section, we explore various mechanisms to collect findings from Google Workspace Alert Center and send them to Sumo Logic, where they are shown in dashboards as part of the Google Workspace App. You can configure a Google Workspace Alert Center collector in Google Cloud Platform (GCP), or via a script on a Linux machine. Choose the method that is best suited for you:
+In this section, we explore various mechanisms to collect findings from Google Workspace Alert Center and send them to Sumo Logic, where they are shown in dashboards as part of the Google Workspace App. You can configure your Google Workspace Alert Center collector in Google Cloud Platform (GCP) or by deploying script-based collection on a Linux machine.
 
-* [Google Cloud Platform (GCP) collection](#configure-collection-for-google-workspace-alert-center)
-* [Script-based collection](#configure-script-based-collection-for-google-workspace-alert-center)
+### Using GCP Collection
 
-
-
-### Using Google Cloud Platform Collection
-
-This section provides instructions for configuring Google Workspace Alert Center collection in your Google Cloud Platform (GCP) environment. The Google Workspace Alert Center collector function fetches the findings from Google Workspace and sends them to Sumo Logic.
+This section provides instructions for configuring Google Workspace Alert Center collection in your GCP environment. The Google Workspace Alert Center collector function fetches the findings from Google Workspace and sends them to Sumo Logic.
 
 To configure Google Workspace Alert Center collection in your GCP environment, do the following:
-1. Go to the [Cloud Shell Editor](https://console.cloud.google.com/cloudshell/)
+1. Go to the [Cloud Shell Editor](https://console.cloud.google.com/cloudshell/).
 2. Run the following command:
   ```bash
   wget https://raw.githubusercontent.com/SumoLogic/sumologic-gsuitealertcenter/master/sumo_gsuite_alerts_collector_deploy.sh
@@ -135,7 +132,7 @@ This section explains how to configure Google Workspace Alert Center to allow AP
 
 Follow the step 2 and step 3 under “Set up the Alert Center API” [docs](https://developers.google.com/admin-sdk/alertcenter/guides/prerequisites) to enable alert center API and grant domain-wide access to the application.
 
-To Configure Google Cloud Platform Collection for Google Workspace Alert Center, use the **Client ID** for the service account copied in Step 6 [here](#google-cloud-platform-gcp-collection).
+To configure GCP Collection for Google Workspace Alert Center, use the **Client ID** for the service account copied in Step 6 [here](#google-cloud-platform-gcp-collection).
 
 If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#configure-script-based-collection-for-google-workspace-alert-center) use the **Client ID** present in the JSON generated after adding the key in the service account.
 
@@ -249,12 +246,12 @@ This section provides a list of environment variables for Google Workspace Alert
   </tr></small>
 </table>
 
-#### Troubleshooting the Google Cloud Platform Function
+#### Troubleshooting the GCP Function
 
 This section shows you how to troubleshoot the function and resolve errors you may have encountered.
 
 To verify the function, do the following:
-1. Log in to your Google Cloud Platform account, navigate to the cloud function you created, and click **Testing**.
+1. Log in to your GCP account, navigate to the cloud function you created, and click **Testing**.
 2. Click the **Test the function** button.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Troubleshooting_TestFunction.png')} alt="google workspace" />
 3. Click the **View Logs** button to view the function logs. If an environment variable was not set, you will see error messages similar to the following.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Troubleshooting_ErrorLogs.png')} alt="google workspace" />
 4. Set the missing environment variable to resolve the issue.

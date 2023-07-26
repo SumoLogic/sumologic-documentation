@@ -60,7 +60,7 @@ Hover over a location in the chart area to see the details for an individual rea
 
 In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval.
 
-Quantization is the process by which Sumo aggregates metric data points for time series over an interval, for example an hour or a minute, using a particular aggregation function: avg, min, max, sum, or  count. You can use the `quantize` operator in a metric query to explicitly specify a quantization interval and aggregation function.
+Quantization is the process by which Sumo aggregates metric data points for time series over an interval, for example, an hour or a minute, using a particular aggregation function: avg, min, max, sum, or  count. You can use the `quantize` operator in a metric query to explicitly specify a quantization interval and aggregation function.
 
 Otherwise, if you run a metric query without using the `quantize` operator, Sumo automatically determines an optimal quantization interval, based on the age of the data you are querying and the number of data points. The quantization interval is shown at the top of the metric query tab. (This area is labeled 1 in the screenshot in [Interacting with the chart area](#interacting-with-the-chart-area) above.) The quantization interval aligns your time series data to common intervals on the time axis (for example every one minute) to optimize the visualization and performance.
 

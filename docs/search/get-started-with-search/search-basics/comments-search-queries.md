@@ -39,4 +39,4 @@ Sumo Logic Apps are a great resource of example search queries. You can review a
 
 ![library icon.png](/img/reuse/library-icon.png)
 
-at the top of the UI (**Library \> Apps** in the classic UI). You can also [copy content from the Library](/docs/get-started/library), and use it as a starting point to create your own queries. When you do that, you can comment out the aggregation lines of the query and replace them with your own. You can also delete them of course, but commenting them out instead would make them available for reference later.
+at the top of the UI (**Library > Apps** in the classic UI). You can also [copy content from the Library](/docs/get-started/library), and use it as a starting point to create your own queries. When you do that, you can comment out the aggregation lines of the query and replace them with your own. You can also delete them of course, but commenting them out instead would make them available for reference later.

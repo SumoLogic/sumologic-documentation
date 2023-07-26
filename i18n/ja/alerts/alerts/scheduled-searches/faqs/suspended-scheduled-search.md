@@ -14,7 +14,7 @@ Scheduled Searches must run within the limits of a [timeout period](prevent-sche
 
 When a Scheduled Search query fails Sumo Logic attempts to run the query again a few more times. If all attempts fail the scheduled search is temporarily or permanently suspended depending on the issue detected. The owner of the scheduled search will receive an email alert with details of the suspension including the reason.
 
-The [Audit Index](docs/manage/security/audit-index.md) stores events on your scheduled search events.
+The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events.
 
 ## Examples of Scheduled Search suspensions
 
@@ -24,7 +24,7 @@ The following is an example of a temporary suspension email:
 
 ![suspension email.png](/img/alerts/suspension-email.png)
 
-The [Audit Index](docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
+The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
 
 ![temp sus.png](/img/alerts/temp-sus.png)
 
@@ -34,7 +34,7 @@ The following is an example of a permanent suspension email:
 
 ![permanent sus.png](/img/alerts/permanentsus.png)
 
-The [Audit Index](docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a permanent suspension log:
+The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a permanent suspension log:
 
 ![perm sus.png](/img/alerts/perm-sus.png)
 

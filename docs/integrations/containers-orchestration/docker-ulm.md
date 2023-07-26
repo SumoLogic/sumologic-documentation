@@ -1,6 +1,6 @@
 ---
 id: docker-ulm
-title: Sumo Logic App for Docker ULM
+title: Docker ULM
 sidebar_label: Docker ULM
 description: The Docker ULM App is a unified logs and metrics (ULM) app that utilizes data from Docker container logs, engine events, and container stats to monitor your Docker deployment.
 ---
@@ -8,6 +8,10 @@ description: The Docker ULM App is a unified logs and metrics (ULM) app that uti
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+
+:::note
+The Docker App will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
+:::
 
 The Sumo Logic App for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network. This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
 
@@ -39,14 +43,14 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 * We recommend running the Sumo collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see [https://hub.docker.com/r/sumologic/collector/](https://hub.docker.com/r/sumologic/collector/).
 * The Sumo Logic Collector uses the Docker Remote API to collect Docker logs. This requires that the log driver configured on the container uses either the `json-file` or `journald` option, as described in [https://docs.docker.com/engine/admin/logging/overview/](https://docs.docker.com/engine/admin/logging/overview/).
-* If you're using Kubernetes we recommend using an open source [Kubernetes Fluentd plugin](/docs/send-data/collect-from-other-data-sources/kubernetes-fluentd-plugin.md).
-* The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/reference-information/time-reference) and the Source is configured to detect it properly. If there are issues with timestamp detection and the Docker container is restarted the Source will reingest all log data since there are no timestamps to track.
+* If you're using Kubernetes, we recommend using an open source [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). To learn more, see [Kubernetes Observability](/docs/observability/kubernetes).
+* The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/reference-information/time-reference) and the Source is configured to detect it properly. If there are issues with timestamp detection and the Docker container is restarted, the Source will reingest all log data since there are no timestamps to track.
 * Docker truncates logs at 16kb and Sumo Logic does not stitch them back together.
 
 
 ### Add a Docker Logs Source
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
@@ -70,7 +74,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
    * **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [more about defining container filters](#More_about_defining_container_filters-851) below.
       * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) for details on modifying this configuration file.
    * **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
-   * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
+   * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
    * **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
@@ -87,7 +91,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Add a Docker Stats Source
 
-1. In Sumo select **Manage Data > Collection > Collection**.
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
 4. Configure the source fields:
@@ -108,9 +112,9 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
       * Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`.
    * **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: /Users/sumo/.docker/machine/machines/default
    * **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [more about defining container filters](#More_about_defining_container_filters-851) below.
-      * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) for details on modifying this configuration file.
+      * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) for details on modifying this configuration file.
    * **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
-   * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **`web_apps`** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
+   * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **`web_apps`** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
    * **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
    * **Scan Interval**. This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 second.
    * **Metrics** (Available if content type selected is Metrics). Select the Docker metrics you want to be ingested, see Docker metrics definitions for details.
@@ -745,7 +749,7 @@ If a user-defined variable doesn’t exist, that portion of the metadata field w
 
 Now that you have set up collection of Docker logs and metrics, install the Sumo Logic App for Docker ULM to use the pre-configured searches and dashboards.
 
-**To install the app**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -795,17 +799,6 @@ See an overview of Docker activity, including the number of Docker hosts; the nu
 
 **Top 5 Containers by Memory Usage**. A line chart that shows the memory usage by the top five containers that used the most memory over the last 24 hours.
 
-### Block IO
-
-See the number of block I/O requests serviced by each container, and the number of bytes transferred to and from disk by each container over the last three hours.
-
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker-block-io.png')} alt="Docker ULM dashboards" />
-
-**Total Number of Block I/O Requests Serviced**. A line chart that shows the number of block I/O requests serviced by each container over the last three hours.
-
-**Number of Bytes Transferred to/from the Disk**. A line chart that shows the number of bytes written to and read by each container over the last three hours.
-
-
 ### CPU Usage
 
 See information about CPU usage and container throttling over the last three hours.
@@ -827,7 +820,7 @@ See information about CPU usage and container throttling over the last three hou
 
 ### Memory Usage
 
-See information about container memory limits, memory usage, and page faults over the last three hours.
+See information about container memory usage and page faults over the last three hours.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker-memory-usage.png')} alt="Docker ULM dashboards" />
 

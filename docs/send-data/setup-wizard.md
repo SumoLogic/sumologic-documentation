@@ -7,11 +7,15 @@ description: Use the Setup Wizard to quickly get started sending data to Sumo Lo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Setup Wizard lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
+:::note
+The Setup Wizard is outdated. We recommend using the [App Catalog](/docs/integrations/) to onboard your data.
+:::
 
-Before you begin, [sign up](docs/get-started/sign-up.md) for a Sumo Logic account and activate it.
+The Setup Wizard (deprecated) lets you get data in your Sumo Logic account quickly. It guides you step-by-step based on the type of data you want to send. After data collection is running, the Setup Wizard installs a Sumo Logic App with pre-configured Dashboards that allow you to analyze your data. The Setup Wizard provides detailed instructions to help you with each step of the configuration.
 
-To open the Setup Wizard, select **Manage Data > Collection > Collection** and click the **Setup Wizard** link on the top right of the Collection page.
+Before you begin, [sign up](/docs/get-started/sign-up.md) for a Sumo Logic account and activate it.
+
+To open the Setup Wizard, select **Manage Data** > **Collection** > **Collection** and click the **Setup Wizard** link on the top right of the Collection page.
 
 <img src={useBaseUrl('img/get-started/setup-wizard.png')} alt="setup-wizard" />
 
@@ -58,9 +62,9 @@ If you see the message "Waiting for the Collector Installation", the spinner nev
 
 You will need to uninstall the old Collector manually, then try to install a new Collector again. Steps on installing and uninstalling based on the operating system the Collector is run on can be found in the following links,
 
-* [Linux](/docs/send-data/Installed-Collectors/linux)
+* [Linux](/docs/send-data/installed-collectors/linux)
 * [macOS](/docs/send-data/installed-collectors/macos)
-* [Windows](/docs/send-data/Installed-Collectors/windows)
+* [Windows](/docs/send-data/installed-collectors/windows)
 
 
 ### "It looks like you haven't activated your account..."

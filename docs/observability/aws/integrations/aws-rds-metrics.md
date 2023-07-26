@@ -5,8 +5,7 @@ sidebar_label: AWS RDS Metrics
 description: The Sumo Logic App for AWS Observability RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) metrics collected with a CloudWatch metrics source.
 ---
 
-[Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is optimized to run in the cloud. The
-RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure. 
+[Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure. 
 
 The Sumo Logic App for AWS Observability RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) metrics collected with a CloudWatch metrics source. Preconfigured app dashboards allow you to monitor your RDS system's overview, CPU, memory, storage, network transmit and receive throughput, read and write operations, database connection count, disk queue depth, and more.
 
@@ -153,6 +152,3 @@ Use this dashboard to:
 * Monitor the number of write I/O operations replicated from the primary AWS region to the cluster volume in a secondary AWS region in an Aurora Global Database. The billing calculations for the primary AWS region in a global database use AuroraGlobalDBReplicatedWriteIO to account for cross-region replication within the global database.
 
 ![5. Amazon RDS Aurora MySQL Global Database and Backtrack Activity.png](/img/observability/rds-activity.png)
-
-
- 

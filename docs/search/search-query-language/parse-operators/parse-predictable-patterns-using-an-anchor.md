@@ -45,7 +45,7 @@ You can use the parse anchor UI tool to highlight the message text to parse, id
 
     ![parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/parse-text-window.png)  
      
-1. Select the text for the first parsing field, and click **Click to extract this value**.   The text you highlighted is replaced by an asterisk (\*).  
+1. Select the text for the first parsing field, and click **Click to extract this value**. The text you highlighted is replaced by an asterisk (\*).  
 
     ![highlighted term in parse text window.png](/img/search/searchquerylanguage/parse-operators/anchor/highlighted-term-in-parse-text-window.png)  
      
@@ -73,7 +73,7 @@ Sample log message:
 Aug 2 04:06:08: host=10.1.1.124: local/ssl2 notice mcpd[3772]: User=jsmith@demo.com: severity=warning: 01070638:5: Pool member 172.31.51.22:0 monitor status down.
 ```
 
-In the following examples, the start_anchor is **"user="** and the stop_anchor is **":"**, which ends the email address. The asterisk (**\***) is the glob representing the parsed term. The examples create a new field for each message named **"user"** and that field will contain the value of the email address, in this case **jsmith@demo.com**.
+In the following examples, the start_anchor is **"user="** and the stop_anchor is **":"**, which ends the email address. The asterisk (`*`) is the glob representing the parsed term. The examples create a new field for each message named **"user"** and that field will contain the value of the email address, in this case `jsmith@demo.com`.
 
 ```sql
 ... | parse "user=*:" as user 
@@ -92,7 +92,7 @@ This example creates two fields from the sample log message: `user=jsmith@demo.
 You can create field names that contain special characters, for example, spaces, dashes, and backslashes or forward slashes, using the following syntax:
 
 ```sql
-... | parse \<strin\>" as %\<field name with special character\>"
+... | parse \<string\>" as %\<field name with special character\>"
 ```
 
 For example, this query will allow you to parse the phrase "Class ID", including the space:

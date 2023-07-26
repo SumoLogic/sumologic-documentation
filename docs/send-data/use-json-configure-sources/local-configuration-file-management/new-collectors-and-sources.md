@@ -1,12 +1,12 @@
 ---
 id: new-collectors-and-sources
 title: Local Configuration File Management for New Collectors and Sources
+sidebar_label: For New Collectors and Sources
 description: Local Configuration File Management is a straightforward way to get started in your deployment.
 ---
 
 
-
-With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data \> Collection \> Collection** page.
+With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data** > **Collection** > **Collection** page.
 
 ## Step 1. Determine the Sources you need
 
@@ -21,14 +21,14 @@ If you have an existing Collector with Sources of the same types that you are ab
 There are two ways to implement local configuration file management:
 
  * Specify all Sources in a single UTF-8 encoded JSON file following [RFC 8259](https://tools.ietf.org/html/rfc8259). For more information, see [Define one Source in a JSON file](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
- * Use multiple UTF-8 encoded JSON files to specify your Sources, and put all of those files in a single folder. You can put each Source definition in its own file, or define multiple Sources per file, if you like. For more information see [Define Multiple Sources in a JSON File](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+ * Use multiple UTF-8 encoded JSON files to specify your Sources, and put all of those files in a single folder. You can put each Source definition in its own file, or define multiple Sources per file, if you like. For more information, see [Define Multiple Sources in a JSON File](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 ## Step 3. Install Collector with syncSources parameter
 
 When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on specifying parameters during installation.
 
 | Parameter | Type | Description |
-|--|--|--|
+|:--|:--|:--|
 | syncSources   | String   | Sets the JSON file describing sources to configure on registration, which will be continuously monitored and synchronized with the Collector's configuration. |
 
 For example, for command-line installation, supplying the Access ID and
@@ -36,7 +36,7 @@ Access Key, `syncSources`, and the Collector name:
 
 `sudo ./SumoCollector.sh -q -Vsumo.accessid\<accessI\> -Vsumo.accesskey\<accessKe\> -VsyncSources\<filepat\> -Vcollector.name\<name\>`
 
-For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
+For Collector versions prior to 19.137 add the `syncSources` parameter to the [**sumo.conf**](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) file before starting the Collector for the first time.
 
 ## Making changes to the configuration files
 

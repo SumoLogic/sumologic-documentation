@@ -5,9 +5,7 @@ sidebar_label: Log Operators
 description: The Search Operators cheat sheet provides a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.
 ---
 
-
-
-The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.  For a step-by-step video and tutorial about creating queries, see the [Quick Start Tutorial](https://learn.sumologic.com).  For a complete list of Sumo Logic Search operators, you can download the [PDF version](https://drive.google.com/file/d/1UAMMawIW1st1LTDw9UjdEtivRKvgk-j7). 
+The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a step-by-step video and tutorial about creating queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI). For a complete list of Sumo Logic Search operators, download the <a href="https://help.sumologic.com/files/search-operators-cheat-sheet.pdf" target="_blank">PDF version</a>.
 
 For a collection of customer-created search queries and their use cases, see the [Sumo Logic Community Query Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library).
 
@@ -18,7 +16,7 @@ The following tables provide a list of available Sumo Logic parsers, aggregator
 Sumo provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
 
 | Operator | Description | Example |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | [parse (anchor)](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) | The parse operator, also called parse anchor, parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions. | &#124; parse "User=*:" as user |
 | [parse regex](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex) | The parse regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields. | &#124; parse regex field=url "[0-9A-Za-z-]+\. (?\<domain\>[A-Za-z-]+\.(?:co\.uk\|com\|com\.au))/.*"|
 | [keyvalue](/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs) | Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value. |&#124; keyvalue infer "module", "thread"  |
@@ -47,7 +45,7 @@ Instead use separate steps:
 :::
 
 | Operator | Description | Default Alias | Restrictions | Example |
-| -- | -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- | :-- |
 | [avg](/docs/search/search-query-language/group-aggregate-operators/avg) | The averaging function (avg) calculates the average value of the numerical field being evaluated within the time range analyzed. | `_avg` |  | &#124; avg(request_received) by _timeslice` |
 | [count, count_distinct, and count_frequent](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) | Aggregating (group-by) functions are used in conjunction with the group operator and a field name. Only the word by is required to represent the group operator. The count function is also an operator in its own right and therefore can be used with or without the word by. | `_count`<br/>`_count_distinct`<br/>_approxcount | count_frequent can return up to 100 results when used in dashboard panels. | Example 1:<br/>&#124; count by url<br/><br/>Example 2:<br/>&#124; count_distinct(referrer) by status_code |
 | fillmissing | When you run a standard group-by query, Sumo Logic only returns non-empty groups in the results. For example, if you are grouping by timeslice, then only the timeslices that have data are returned. This operator allows you to specify groups to present in the output, even if those groups have no data. | | Not supported in Live Dashboards or any continuous query. | error &#124; count by _sourceCategory &#124; fillmissing values("backend", "database", "webapp") in _sourceCategory` |
@@ -56,7 +54,7 @@ Instead use separate steps:
 | [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent) | The most_recent and least_recent operators, used with the withtime operator, allow you to order data from newest to oldest. | \*ip\* OR \*address\* &#124; parse regex "(?\<IP\>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" &#124; lookup latitude, longitude, country_code from geo://location on ip=IP &#124; where !isNull(country_code)
 |
 | [pct](/docs/search/search-query-language/group-aggregate-operators/pct-percentile) | The percentile function (pct) finds the percentile of a given field. Multiple pct functions can be included in one query. | `_<fieldname>_pct_<percentile> `|  | &#124; parse "value=*" as value &#124; pct(value, 95) as value_95pct |
-| [stddev](docs/search/search-query-language/group-aggregate-operators/stddev) | The standard deviation function (stddev) finds the standard deviation value for a distribution of numerical values within the time range analyzed and associated with a group designated by the "group by" field. | `_stddev` | | ... &#124; stddev(request_received) group by hour &#124; sort by _stddev |
+| [stddev](/docs/search/search-query-language/group-aggregate-operators/stddev) | The standard deviation function (stddev) finds the standard deviation value for a distribution of numerical values within the time range analyzed and associated with a group designated by the "group by" field. | `_stddev` | | ... &#124; stddev(request_received) group by hour &#124; sort by _stddev |
 | [sum](/docs/search/search-query-language/group-aggregate-operators/sum) | Sum adds the values of the numerical field being evaluated within the time range analyzed. | `_sum` |  | ... &#124; sum(bytes_received) group by hostname |
 | [values](/docs/search/search-query-language/group-aggregate-operators/values) | The values operator provides all the distinct values of a field. | The first 100 distinct values are returned for a field. | | &#124; values(ip_address) by region |
 
@@ -65,7 +63,7 @@ Instead use separate steps:
 This section provides detailed syntax, rules, and examples for Sumo Logic Operators, Expressions, and Search Language.
 
 | Operator | Description | Default Alias| Restrictions | Example |
-| -- | -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- | :-- |
 | accum | The accum operator calculates the cumulative sum of a field. It can be used to find a count by a specific time interval, and can be used to find a total running count across all intervals. | `_accum` | Can be used in Dashboard Panels, but in the search they must be included after the first group-by phrase. | _sourceCategory=IIS (Wyatt OR Luke) &#124; parse "[user=*]" as cs_username &#124; timeslice by 1m &#124; count as requests by _timeslice,cs_username &#124; sort by _timeslice asc,cs_username &#124; accum requests as running_total |
 | asn lookup | Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that don't have an ASN will return null values. |  |  | sourceCategory=stream "remote_ip=" &#124; parse regex "(?\<ip\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" &#124; lookup organization, asn from asn://default on ip = ip
  |
@@ -148,7 +146,7 @@ You can use general mathematical expressions on numerical data extracted from lo
 ### Basic
 
 | Operator | Description | Example |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | abs | The absolute function calculates the absolute value of x. | &#124; abs(-1.5) as v <br/><br/>// v = 1.5 |
 | cbrt | The cube root function returns the cube root value of x. | &#124; cbrt(8) as v <br/><br/>// v = 2 |
 | ceil | The ceiling function rounds up to the smallest integer value. Returns the smallest integral value that is not less than x. | &#124;ceil(1.5) as v <br/><br/>// v = 2 |
@@ -163,7 +161,7 @@ You can use general mathematical expressions on numerical data extracted from lo
 ### Exponents and Logs
 
 | Operator | Description | Example |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | exp | The exponent function returns Euler's number e raised to the power of x. | &#124; exp(1) as v <br/><br/>// v = 2.7182818284590455` |
 | expm1 | The expm1 function returns value of x in exp(x)-1, compensating for the roundoff in exp(x). | &#124; expm1(0.1) as v <br/><br/>// v = 0.10517091807564763 |
 | log | The logarithm function returns the natural logarithm of x. | &#124; log(2) as v <br/><br/>// v = 0.6931471805599453 |
@@ -173,7 +171,7 @@ You can use general mathematical expressions on numerical data extracted from lo
 ### Trigonometric
 
 | Operator | Description | Example |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | sin | Sine of argument in radians. | &#124; sin(1) as v <br/><br/>// v = 0.8414709848078965 |
 | cos | Cosine of argument in radians. | &#124; cos(1) as v <br/><br/>// v = 0.5403023058681398 |
 | tan | Tangent of argument in radians. | &#124; an(1) as v <br/><br/>// v = 1.5574077246549023 |
@@ -188,7 +186,7 @@ You can use general mathematical expressions on numerical data extracted from lo
 ### Advanced
 
 | Operator | Description | Example |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | hypot | Returns the square root of the sum of an array of squares. | &#124; hypot(1, 0) as v <br/><br/>// v = 1` |
 | toDegrees | Converts angles from radians to degrees. | &#124; toDegrees(asin(1)) as v <br/><br/>// v = 90` |
 | toRadians | Converts angles from degrees to radians. | &#124; toRadians(180) as v <br/><br/>// v = pi` |

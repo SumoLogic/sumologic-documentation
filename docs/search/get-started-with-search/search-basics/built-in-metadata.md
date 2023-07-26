@@ -26,7 +26,7 @@ import Iframe from 'react-iframe';
 You can run queries using any of the following built-in metadata fields:
 
 | Name | Description |
-|--|--|
+|:--|:--|
 | `_collector` | The name of the Collector (set when the Collector was installed) that received the log message. |
 | `_messageCount` | A sequence number (per Source) added by the Collector when the message was received. |
 | `_messageTime` | The parsed timestamp by the Collector from the log message in milliseconds. If the message does not have a timestamp, messageTime uses the receiptTime. |
@@ -37,7 +37,8 @@ You can run queries using any of the following built-in metadata fields:
 | `_sourceCategory` | The category of the Source that collected the log message. This can be a maximum of 1,024 characters. |
 | `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source](/docs/send-data/choose-collector-source). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name can't be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
 | `_sourceName` | The name of the log file, determined by the path you entered when you [configured the Source](/docs/send-data/choose-collector-source). |
-| `_format` | The pattern used for parsing the timestamp. See [here](docs/send-data/reference-information/time-reference.md) for more details. |
+| `_format` | The pattern used for parsing the timestamp. See [here](/docs/send-data/reference-information/time-reference.md) for more details. |
+| `_view` | The name of the index, view, or partition. |
 
 ## Searching metadata
 
@@ -57,7 +58,7 @@ To run a search using metadata fields:
 This table shows some examples and a description of each metadata type.
 
 | Example | Description |
-|--|--|
+|:--|:--|
 | `_collector=Mac_server`<br/>`_collector=AWS_1*` | Returns results from the named Collector only. Entered when a Collector is installed and activated. |
 | `_source=main_web_app`<br/>`_source=*syslog*` | Returns results from the named Source only. Entered when a Source is configured. |
 | `_sourceCategory=*apache*`<br/>`_sourceCategory="Security Logs"` | Returns results from one or more Sources depending on whether the tag was applied to a single Source or a series of Sources. Entered when a Source is configured.  |

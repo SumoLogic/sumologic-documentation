@@ -4,8 +4,7 @@ title: sum Grouping Operator
 sidebar_label: sum
 ---
 
-
-Sum adds the values of the numerical field being evaluated within the time range analyzed.
+`sum` adds the values of the numerical field being evaluated within the time range analyzed.
 
 ## Syntax
 
@@ -13,11 +12,11 @@ Sum adds the values of the numerical field being evaluated within the time range
 sum(<numerical_field>) [as <field>] [by <field>]
 ```
 
-### Rules
+## Rules
 
 * Creates field named **`_sum`**
 
-### Example
+## Example
 
 ```sql
 ... | sum(bytes_received) group by hostname
@@ -37,11 +36,11 @@ file*| parse "filesize=*" as filesize
 ```
 
 Finds all messages that contain term **file\*** and parses out all that
-have a **filesize=value**. It will then extract the value of filesize
+have a `filesize=value`. It will then extract the value of filesize
 and will add all those values per host where those log messages are
 generated.
 
-When you calculate the sum of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the sum fields. See this example:
+When you calculate the sum of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `sum` fields. See this example:
 
 ```sql
 _sourceCategory="OS/Windows"

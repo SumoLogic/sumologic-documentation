@@ -15,7 +15,7 @@ authors:
 
 ### Support for Custom Inventory Sources
 
-Cloud SIEM Enterprise now supports custom sources of inventory data. Now, if you want to ingest inventory data from a source that Sumo Logic does not provide a pre-built connnector for, you can use this new feature. See the new document [Configure a Custom Inventory Source](https://help.sumologic.com/docs/cse/administration/custom-inventory-sources/) for details.
+Cloud SIEM Enterprise now supports custom sources of inventory data. Now, if you want to ingest inventory data from a source that Sumo Logic does not provide a pre-built connnector for, you can use this new feature. See the new document [Configure a Custom Inventory Source](/docs/cse/administration/custom-inventory-sources/) for details.
 
 ### Standard Match Lists
 
@@ -29,4 +29,4 @@ As a reminder, the migration for our out-of-the-box rules content from standard 
 ### Resolved Issues
 
 * The CSV file upload method for updating Entity attributes did not support sensor zones or normalized entity names properly.
-* CSE has switched providers of lists of public dynamic DNS domains, which has resolved an issue with rules utilizing these lists. 
+* CSE has switched providers of lists of public dynamic DNS domains, which has resolved an issue with rules utilizing these lists.

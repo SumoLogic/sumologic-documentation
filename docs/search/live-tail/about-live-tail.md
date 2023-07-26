@@ -49,7 +49,7 @@ There is also a [Live Tail Command Line Interface](live-tail-cli.md) (CLI). Thi
 * Search operators are not supported in filters.
 * If too much data is coming in, messages may be skipped or not displayed on the screen, or there may be a lag before messages are displayed.
 * If the query you are using produces too many log message results, we may end the session, and present an error that prompts you to make your query more specific. This is to provide the best performance possible. If a Live Tail session has ended, you can restart it at any time.
-* Metadata [fields](docs/manage/fields.md) are not available in Live Tail.
+* Metadata [fields](/docs/manage/fields.md) are not available in Live Tail.
 * Windows Event Source logs and Windows Performance Source logs may not handle filters properly. Applying a filter may cause no data to appear in a Live Tail.
 * If `_sourceCategory`, `_sourceHost`, or any of the built-in meta fields are changed in an FER, Live Tail will not support those changes. For example, if `_sourceCategory` is *ABC* in the raw data but is renamed to *XYZ* in an FER, Live Tail will not see it as *XYZ*. It will only see the data as its raw form, *ABC*.
 
@@ -59,7 +59,7 @@ You can start a Live Tail session in several ways.
 
 ### New Live Tail page
 
-1. Go to **+ New \> Live Tail**.  
+1. Go to **+ New > Live Tail**.  
 
     ![start live tail page.png](/img/search/livetail/About-Live-Tail/start-live-tail-page.png)
 
@@ -79,7 +79,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 
 ### On the Home page
 
-1. Go to **Home \> Live Tail**.  
+1. Go to **Home > Live Tail**.  
 
     ![Live tail on home page.png](/img/search/livetail/About-Live-Tail/live-tail-on-home-page.png)
 

@@ -2,7 +2,7 @@
 id: aws-classic-load-balancer
 title: AWS Classic Load Balancer
 sidebar_label: AWS Classic Load Balancer
-description: The Sumo Logic App for AWS Observability Classic Load Balancer is a unified logs and metrics (ULM) App that gives you visibility into the health of your Classic Load Balancer. 
+description: The Sumo Logic App for AWS Observability Classic Load Balancer is a unified logs and metrics (ULM) App that gives you visibility into the health of your Classic Load Balancer.
 ---
 
 The [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/) (ELB) distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones and operates at both the request level and connection level.
@@ -70,9 +70,7 @@ HTTP backend codes.
 Use this dashboard to:
 
 * Monitor requests to each load balancer to ensure load is being distributed as desired
-
 * Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts
-
 * Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections 
 
 ![AWS-Classic-Load-Balancer-Overview.png](/img/observability/AWS-Classic-Load-Balancer-Overview.png)
@@ -85,7 +83,6 @@ insights into how your load balancers are responding to clients. 
 Use this dashboard to:
 
 * Monitor incoming client locations for all 5XX, 4XX and 3XX error responses.
-
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
 ![AWS-Classic-Load-Balancer-Response-Analysis.png](/img/observability/AWS-Classic-Load-Balancer-Response-Analysis.png)
@@ -94,12 +91,11 @@ Use this dashboard to:
 
 The **AWS Classic Load Balancer - Backend Response Analysis** dashboard
 provides insights into how various backend servers are responding to
-client requests .
+client requests.
 
 Use this dashboard to:
 
 * Monitor trends of all response codes for your backend servers by LoadBalancer and availability zones.
-
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures
 
 ![AWS-Classic-Load-Balancer-Backend-Response-Analysis.png](/img/observability/AWS-Classic-Load-Balancer-Backend-Response-Analysis.png)
@@ -113,7 +109,6 @@ including backend log response times.
 Use this dashboard to:
 
 * Monitor response times by load balancer, and availability zone.
-
 * Monitor client latency and processing times for backend servers.
 
 ![AWS-Classic-Load-Balancer-Latency-Overview.png](/img/observability/AWS-Classic-Load-Balancer-Latency-Overview.png)
@@ -139,7 +134,6 @@ connection errors, and healthy and unhealthy hosts. 
 Use this dashboard to:
 
 * Monitor active connections, new connections, rejected connections, and connection errors for load balancers
-
 * Monitor healthy and unhealthy host counts by load balancer, and availability zone across your infrastructure
 
 ![AWS-Classic-Load-Balancer-Connection-and-Host-Status.png](/img/observability/AWS-Classic-Load-Balancer-Connection-and-Host-Status.png)
@@ -153,7 +147,6 @@ data.
 Use this dashboard to:
 
 * Monitor client request load, network traffic and processed bytes to determine how to best configure load balancers for optimal performance
-
 * Determine how to best allocate backend resources based on load
 
 ![AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png](/img/observability/AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png)
@@ -168,7 +161,6 @@ malicious IPs and the malicious confidence of each threat 
 Use this dashboard to:
 
 * Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward 
-
 * Monitor malicious confidence level  for all incoming malicious IP addresses posing the threats.
 
 ![AWS-Classic-Load-Balancer-Threat-Intel.png](/img/observability/AWS-Classic-Load-Balancer-Threat-Intel.png)

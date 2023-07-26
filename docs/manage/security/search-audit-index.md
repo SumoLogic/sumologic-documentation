@@ -1,6 +1,7 @@
 ---
 id: search-audit-index
 title: Search Audit Index
+description: Learn how to enable the Search Audit Index.
 ---
 
 ## Availability
@@ -8,11 +9,11 @@ title: Search Audit Index
 This feature is available in the following account plans.
 
 | Account Type | Account Level |
-|--------------------|---------------------------------------------------------------------|
+|:--------------------|:---------------------------------------------------------------------|
 | Cloud Flex | Trial, Enterprise |
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. The [Enterprise Search Audit App](/docs/integrations/sumo-apps/Enterprise-Search-Audit) provides pre-built dashboards and reports of the data from the Search Audit Index to help you analyze your current search use and identify areas for improvement. 
+The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. The [Enterprise Search Audit App](/docs/integrations/sumo-apps/enterprise-search-audit) provides pre-built dashboards and reports of the data from the Search Audit Index to help you analyze your current search use and identify areas for improvement. 
 
 ## Enable the Search Audit Index
 
@@ -20,10 +21,10 @@ The Search Audit Index must be enabled by an administrator.
 
 To enable the Search Audit Index:
 
-1. Go to the **Administration** \> **Security** \> **Policies** page.
+1. Go to the **Administration** > **Security** > **Policies** page.
 1. Under **Sumo Logic Auditing**, select the second **Enable** option.
 
-    ![Search-Audit-Index_Enabled.png](/img/security/Search_Audit_Index_Enabled.png) 
+    ![Search-Audit-Index_Enabled.png](/img/security/Search_Audit_Index_Enabled.png)
 
 :::note
 * Users with a role that grants the Manage audit data feed capability are allowed to enable the Search Audit Index.

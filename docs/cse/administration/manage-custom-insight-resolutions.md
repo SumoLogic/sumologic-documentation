@@ -34,13 +34,10 @@ You can define custom *sub-resolutions* for any of the built-in resolutions. Thi
 
 ## Close an Insight using a custom resolution
 
-1. After navigating to an Insight, you can close it by either clicking the **Close Insight** button or by selecting **Closed** from the **Status** pulldown.  
-    ![close-options.png](/img/cse/close-options.png)
-1. The **Close Insight** popup presents a list of resolutions, including any custom sub-resolutions that have been defined. Note that a custom resolution is indented below its parent built-in resolution.  
-    ![resolution-options-2.png](/img/cse/resolution-options-2.png)
+1. After navigating to an Insight, you can close it by either clicking the **Close Insight** button or by selecting **Closed** from the **Status** pulldown.  <br/>  ![close-options.png](/img/cse/close-options.png)
+1. The **Close Insight** popup presents a list of resolutions, including any custom sub-resolutions that have been defined. Note that a custom resolution is indented below its parent built-in resolution. <br/>  ![resolution-options-2.png](/img/cse/resolution-options-2.png)
 1. Click the appropriate resolution for the Insight.
-1. A popup appears where you can add a comment if desired. Click **Close Insight** to apply the selected resolution and close the Insight.  
-    ![confirm-close.png](/img/cse/confirm-close.png)
+1. A popup appears where you can add a comment if desired. Click **Close Insight** to apply the selected resolution and close the Insight.  <br/>  ![confirm-close.png](/img/cse/confirm-close.png)
 
 ## Filter Insights by custom resolution
 

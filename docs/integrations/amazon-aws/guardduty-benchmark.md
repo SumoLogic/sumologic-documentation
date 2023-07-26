@@ -1,7 +1,6 @@
 ---
 id: guardduty-benchmark
-title: Sumo Logic App for Amazon GuardDuty Benchmark
-sidebar_label: Amazon GuardDuty Benchmark
+title: Amazon GuardDuty Benchmark
 description: The Sumo Logic Amazon GuardDuty Benchmark App integrates Global Intelligence Service (GIS) with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators).
 ---
 
@@ -17,7 +16,7 @@ For Trial and Enterprise account plans.
 
 The Sumo Logic **Amazon GuardDuty Benchmark App** integrates **Global Intelligence Service (GIS)** with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts.  
 
-Global Intelligence baselines are computed by aggregating data for a given customer across all source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with AWS GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/apps-integrations#custom-data-filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.
+Global Intelligence baselines are computed by aggregating data for a given customer across all source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with Amazon GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/apps-integrations#custom-data-filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 

@@ -7,7 +7,7 @@ sidebar_label: Optimize Search with Partitions
 
 ## What are Partitions?
 
-A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](docs/manage/data-forwarding/amazon-s3-bucket.md).
+A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](/docs/manage/data-forwarding/amazon-s3-bucket.md).
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
@@ -18,20 +18,20 @@ This example shows a customer that created three additional Partitions to separa
 Consider the following queries:
 
 | Query |  Partition Status | Path |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Query 1   |   | `_sourceCategory=prod/security/snort`|
 | Query 2   | Partitions in place  | `_index=prod AND _sourceCategory=prod/security/snort` |
 | Query 3   | Partitions in place  | `_sourceCategory=prod/security/snort` |
 | Query 4   | Partitions in place  | `_sourceCategory=stage/aws/cloudtrail` OR `_sourceCategory=prod/security/snort` |
 
-* **Query 1**: There are no custom Partitions created and you only have the Default Index, 100% of your data is scanned in order to find all production log messages for the Snort security app.
+* **Query 1**: There are no custom Partitions created and you only have the Default Index, 100% of your data across all partitions is scanned in order to find all production log messages for the Snort security app.
 * **Query 2**: Partitions do exist, `_index=prod` limits the scope of the query and only about 40% of the data is scanned to get the same results as Query 1. But it is redundant.
-* **Query 3**: You can take advantage of Partitions without having to rewrite your existing queries. Sumo Logic's behind-the-scenes Query Rewriting, performed for queries run against data in the [Continuous Tier](docs/manage/partitions-data-tiers/data-tiers.md), is smart enough to understand that the scope of what you are looking for is included within `_index=prod`; therefore at runtime, it will rewrite the query as Query 2.
+* **Query 3**: You can take advantage of Partitions without having to rewrite your existing queries. Sumo Logic's behind-the-scenes Query Rewriting, performed for queries run against data, is smart enough to understand that the scope of what you are looking for is included within `_index=prod`; therefore at runtime, it will rewrite the query as Query 2. 
 * **Query 4**: We want to search for data that is in a custom Partition, as well as data that exists in the Default Index. However, query rewriting does not have the ability to OR indexes together. Instead, another behind-the-scenes feature, Inverse View Rewriting kicks in, we know that the data is NOT contained in the DEV and QA index, so those will be skipped.  This query will only scan the Prod index and the Default Index.
 
 ## What is Query Rewriting?
 
-Whenever possible, we rewrite a user's queries to perform better. In the following example it will take advantage of existing Partitions to rewrite queries.
+Whenever possible, we rewrite a user's queries to perform better. We'll illustrate this using a simple example below:.
 
 This means that:
 
@@ -47,7 +47,7 @@ _index=prod AND _sourceCategory=prod/security/snort
 
 This is possible because:
 
-1. The example environment is using a robust [`_sourceCategory` naming convention.](docs/send-data/best-practices.md)
+1. The example environment is using a robust [`_sourceCategory` naming convention.](/docs/send-data/best-practices.md)
 
 1. The Partition was scoped using `_sourceCategory`
 
@@ -56,8 +56,10 @@ This is possible because:
 1. The scope of this search (`_sourceCategory=prod/security/snort`) falls within the scope of the Partition (`_sourceCategory=prod/*`).
 
 Therefore, defining a broad scope for your Partitions (for example, `_sourceCategory=prod/*`), and searching with `_sourceCategory` allows you to take advantage of query rewriting, and it allows you to potentially not have to manually rewrite your existing queries.
+:::note 
+We have used a simple example of non-overlapping partitions all defined on `_sourceCategory`. Your data organization needs may be more complex, and in those cases we try to do a best effort query re-writing.
+:::
 
-Query rewriting does not affect the volume of data scanned when you run a query in the Infrequent Data Tier, so it has no impact on the [cost of Infrequent queries](docs/manage/partitions-data-tiers/data-tiers-faqs.md).  
 
 ## Create a Partition
 
@@ -85,7 +87,7 @@ Here's an example of a search using the Prod Partition to narrow the search scop
 
 ### Avoid creating too many partitions to avoid fragmentation.
 
-We recommend 20 as the maximum number of partitions. This is both to avoid index fragmentation and data management issues. This includes communicating to users which partition to use and duplication across partitions.
+We recommend 20 as the maximum number of partitions. This is to avoid both index fragmentation and data management issues. 
 
 ### Optimal partitions are sized between 1% and 30% of total ingest.
 

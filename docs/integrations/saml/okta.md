@@ -1,6 +1,6 @@
 ---
 id: okta
-title: Sumo Logic App for Okta
+title: Okta
 sidebar_label: Okta
 description: The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
 ---
@@ -183,192 +183,20 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 ```
 
 
-
-## Configuring Okta Log Collection for Non-FedRamp Deployments
+## Configuring Okta Log Collection
 
 Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
 
-The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you're using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
-
-
-## Configuring Okta Log Collection for FedRamp Deployments
-
-This section walks you through the process of setting up log collection from Okta for analysis in Sumo Logic. The steps must be performed in the order in which they are presented.
-
-#### Prerequisites
-
-Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
-
-* The integration between Sumo and Okta relies upon SumoJanus, a proprietary library used for script-based collection from applications such as Okta, Box, and Salesforce.
-* The system where you deploy SumoJanus and configure your installed collector and script source must have Java.
-
-To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable.
-
-
-### Step 1: Generate Okta API Authentication Token
-
-Create an Okta API token, following instructions in [Okta help](https://support.okta.com/help/s/article/How-do-I-create-an-API-token). You will add the token to the SumoJanus properties file, later in this procedure.
-
-
-### Step 2: Download SumoJanus package
-
-The following SumoJanus file is required for authentication and to collect logs from Okta. Download the appropriate file for your system.
-
-<table>
-  <tr>
-   <td>
-   </td>
-   <td>Linux</td>
-   <td>Windows</td>
-  </tr>
-  <tr>
-   <td>SumoJanus v3.0.1 package file</td>
-   <td><a href="https://script-collection.s3.amazonaws.com/okta/r1.0.2/sumojanus-okta-dist.1.0.2.tar.gz">sumojanus-okta-dist.1.0.2.tar.gz</a></td>
-   <td><a href="https://script-collection.s3.amazonaws.com/okta/r1.0.2/sumojanus-okta-dist.1.0.2.zip">sumojanus-okta-dist.1.0.2.zip</a></td>
-  </tr>
-</table>
-
-
-### Step 3: Deploy SumoJanus package on a Local Server Running the Sumo Logic Collector
-
-If you have not previously set up SumoJanus, follow the steps in [New SumoJanus installation](/docs/integrations/saml/Okta#New_SumoJanus_installation). If you have previously set up SumoJanus, follow the instructions in [SumoJanus installation update](/docs/integrations/saml/Okta#SumoJanus_installation_update).
-
-**New SumoJanus installation**
-
-Copy the package file you downloaded in [Step 2](/docs/integrations/saml/Okta#Step_2:_Download_the_SumoJanus_package) to the appropriate sumojanus folder, then unzip them there.
-
-* On Linux, run the following command:
-```bash
-tar xzvf sumojanus-okta-dist.1.0.2.tar.gz
-```
-
-* On Windows, you can use Windows Explorer to open the zip package and copy it to the appropriate target folder.
-```bash
-sumojanus-okta-dist.1.0.2.zip
-```
-
-**Update your SumoJanus installation**
-1. Backup conf/sumologic.properties and the data folder.
-2. Setup a [New SumoJanus installation](/docs/integrations/saml/Okta#New_SumoJanus_installation)
-3. Migrate the backed up conf/sumologic.properties and data folder to the new Janus folder
-4. Modify the paths in [Step 6](/docs/integrations/saml/Okta#Step_6:_Configure_a_Source) below to point to the new folder.
-
-
-### Step 4: Edit the Properties File
-
-In this step, you'll edit the local properties file with the Okta token created in step 1. The Properties file was generated in step 2 when you downloaded and deployed the SumoJanus package.
-
-1. Open the file `<sumojanus_foldername>/conf/sumologic.properties` in a text editor and add the following lines to the end of the file. You will replace the `<variables>` with information (including the brackets) you enter in the following steps.
-
-```bash
-# provide the parameters for a bundle via a unique section after this
-[oktacollector]
-# required, your Okta API token
-api_token = <generated_Okta_api_token>
-# required, your okta account URL, e.g: https://acme.okta.com
-okta_org_url = https://<company.okta.com>
-# required, file to keep track of the okta event stream
-stream_pos_path = <${path}/data/okta_checkpoint.dat>
-#  maximum pagination limit is 1000
-pagination_limit = 1000
-# optional, start time window to query, in epoch milliseconds. Default is 7 days ago.
-start_time = 1435709058000
-# optional, end time window to query, in epoch milliseconds. Default is 1 minute ago
-end_time = 1436377600000
-```
-
-1. **api_token**. Enter the Okta API token that you created in the [Generate the Okta API token](/docs/integrations/saml/Okta#Step_1:_Generate_the_Okta_API_token) step.
-2. **okta_org_url**. Enter your Okta URL. Note that the URL starts with https, and not http.
-3. **stream_pos_path**. Replace the `${path}`variable with the actual path on the server where SumoJanus is installed. For example: "/home/sumojanus"
-4. **Save** your changes. Your `sumojanus/conf/sumologic.properties` file should look similar to this example:
-
-
-### Step 5: Configure an Installed Collector
-
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
-
-Configure an [Installed Collector](/docs/send-data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
-
-* On Windows, update `SumoJanus_Okta.bat`
-
-Navigate to the folder where you installed SumoJanus, and open `SumoJanus_Okta.bat`  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
-```bash
-set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin"
-```
-
-If your collector JRE is in a different location, update Line 3 accordingly.  
-On Linux, update `SumoJanus_Okta.bash`
-
-Navigate to the folder where you installed SumoJanus, and open `SumoJanus_Okta.bash`  in a text editor. Update the script as follows:
-
-1. Add a line that sets `JAVA_HOME `to point to the location of your JRE, just before the last line of the script. For example, if your collector's JRE is in `/opt/SumoCollector/jre/bin`, insert this line:
-```bash
-JAVA_HOME=/opt/SumoCollector/jre/bin
-```
-
-2. The last line of the script is:
-```bash
-java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800
-```
-
-Prefix the line with `$JAVA_HOME/`, like this:
-```bash
-$JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800
-```
-
-### Step 6: Configure a Script Source
-
-In this step, you'll configure a Script Source in Sumo Logic to send the data from Okta to Sumo Logic.
-
-For guidance creating your Source Category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).
-
-To configure a Script Source, do the following:
-
-1. Configure a [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
-
-To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
-Linux
-
-Windows
-
-
-2. Configure the Source fields:
-    1. **Name**. OktaCollector.
-    2. (Optional) **Description**.
-    3. **Source Category**. okta
-    4. **Frequency.** Every 5 Minutes
-    5. **Specify a timeout for your command.** Activate the checkbox and select 60 Minutes
-    6. **Command**. For Linux, use`/bin/bash.`. For windows, use Windows Script. (Specify the correct path on your system).
-    7. **Script**. Use the absolute path to **sumojanus** that you created in the [Deploy the Packages](/docs/integrations/saml/Okta#Deploy_the_Packages) step, such as `/home/ubuntu/sumojanus/bin/SumoJanus_Okta.bash.`(Do not select "Type the script to execute.")
-    8. **Working Directory**. `$path/sumojanus,`where $path is the absolute path of SumoJanus that you created in the [Deploy the Packages](/docs/integrations/saml/Okta#Deploy_the_Packages) step.
-3. Click **Save**.
+:::note
+The Okta Log Collection configuration via SumoJanus is no longer applicable and deprecated. We recommend switching to [Cloud-to-Cloud integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to configure the Okta Log collection. The steps must be completed in the order they are presented.
+:::
 
 
 ## Installing the Okta App
 
-Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Okta Dashboards
 

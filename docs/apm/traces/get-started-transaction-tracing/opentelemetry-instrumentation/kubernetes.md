@@ -159,7 +159,7 @@ Environment variables:
       - name: OTEL_SERVICE_NAME
         value: FinanceServiceCall
  ```
-* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. If you'd like to manually set the application name, add  `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma separated key=value pairs (i.e., `application=my-app,key=value`):
+* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). If you'd like to manually set the application name, add `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma-separated key=value pairs (i.e., `application=my-app,key=value`):
  ```yaml
  spec:
   containers:
@@ -168,19 +168,18 @@ Environment variables:
       - name: OTEL_RESOURCE_ATTRIBUTES
         value: application=my-app,key=value
  ```
-
 * Other parameters:
-    * **OTEL_PROPAGATORS.** If not set then additional supported by OpenTelemetry context propagators are enabled (b3 - common for service meshes, xray - used by AWS services). Default value is `tracecontext,baggage,b3,xray`, except .Net instrumentation, which currently supports only `tracecontext,baggage`.
+    * **OTEL_PROPAGATORS.** If not provided, the operator sets the default value `tracecontext,baggage`. Some additional context propagators can be enabled (b3 - common for service meshes, xray - used by AWS services).
     * **OTEL_TRACES_SAMPLER.** Default value: `always_on`. For details, see other sampling possibilities [here](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/sdk.md#Sampling).
 
 
 ## Custom OpenTelemetry Operator Instrumentation resource
 
-You might want to create a custom `Instrumentation` resource. For more info, see the [`Instrumentation` object schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.61.0/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.61.0#opentelemetry-auto-instrumentation-injection).
+You might want to create a custom `Instrumentation` resource. For more info, see the [`Instrumentation` object schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.63.1/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.63.1#opentelemetry-auto-instrumentation-injection).
 In the case of defining an endpoint to export telemetry data from instrumented application, follow the pattern `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` (e.g., `collection-sumologic-otelagent.sumologic`).
 
 Make sure supported auto-instrumentation images are used:
-* `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.3.1-beta.1
+* `dotnet` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.4.0-beta.1
 * `java` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.16.0
 * `nodejs` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.27.0
 * `python` - ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.28b1

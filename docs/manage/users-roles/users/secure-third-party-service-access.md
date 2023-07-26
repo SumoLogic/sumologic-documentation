@@ -1,11 +1,11 @@
 ---
 id: secure-third-party-service-access
 title: Verification for Secure Third-Party Service Access
-description: Within Sumo Logic, several links in the Help menu connect to third-party services, such as Documentation, Support, Feature Request, and Community and you need to verify your account before using them.
+description: Within Sumo Logic, several links in the Help menu connect to third-party services, such as Documentation, Support, and Community and you need to verify your account before using them.
 ---
 
 
-Within Sumo Logic, several links in the **Help** menu connect to third-party services, such as **Documentation**, **Support**, **Feature Request**, and **Community**.
+Within Sumo Logic, several links in the **Help** menu connect to third-party services, such as **Documentation**, **Support**, and **Community**.
 
 For security reasons, Sumo logic users may only access these third-party services once you verify your email address. If you have a Sumo Logic username and password, then your email address is verified.
 
@@ -13,7 +13,7 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 
 To verify your email:
 
-1. Go to **Help** \> **Community** (**Support** or **Feature Request**).
+1. Go to **Help** > **Community** (or **Support**).
 1. You will be prompted to verify your email. Click **Send Verification Email**.
 
     ![multi-account](/img/users-roles/multi_account_third_party_verify.png)
@@ -33,7 +33,7 @@ If you have not yet activated your account, if you try to access a link in the H
 
 To activate your account:
 
-1. Go to **Help** \> **Community** (**Support** or **Feature Request**).
+1. Go to **Help** > **Community** (or **Support**).
 1. You will be prompted to activate your account. Click **Send Activation Email**.
 
     ![activate user ui prompt.png](/img/users-roles/activate-user-ui-prompt.png)

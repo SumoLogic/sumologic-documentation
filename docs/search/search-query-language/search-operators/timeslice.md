@@ -4,7 +4,6 @@ title: timeslice Search Operator
 sidebar_label: timeslice
 ---
 
-
 The `timeslice` operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.
 
 There are two primary use cases for this operator:
@@ -34,7 +33,7 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 | <aggregating_operator> by _timeslice
 ```
 
-**Rules**
+## Rules
 
 * An alias for the timeslice field is optional. If an alias is not provided, a default `_timeslice` field is created that marks the start of the timeslice in milliseconds.
 * Creates a field named `__timeslice_end` that marks the end of the timeslice in milliseconds.
@@ -44,7 +43,7 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 * If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect _timeslice.
 * If no time period or bucket is specified it defaults to the time range of the Search.
 
-**Example**
+## Examples
 
 Successful logins per hour.
 
@@ -58,7 +57,7 @@ Successful logins per hour.
 
 ![Aggregates.png](/img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png)
 
-#### Known Issue
+### Known Issue
 
 There is a known issue with the timeslice operator and Daylight Savings Time (DST). When the clock moves forward, any timeslice operation that crosses the DST boundary is affected. For this reason, results may show more than one entry for that day.
 
@@ -66,8 +65,10 @@ For example, in Australia, DST goes into effect on October 2nd for Spring. For t
 
 In another example, if you had a 4h timeslice, you would usually see results at 12 a.m., 4 a.m., 8 a.m., 12 p.m., etc. But when the DST happens, the result after 12 a.m. could be either 3 a.m. or 5 a.m., depending on Fall or Spring.
 
+{@import ../../../reuse/alerts-timeslice.md}
 
-#### Basic examples
+
+### Basic examples
 
 **Timeslice 5m**   
 
@@ -85,7 +86,7 @@ Bucketing to 150 buckets over the search results.
 
 Fixed-size buckets of 1 minute each. The output field name is aliased to **`my_time_bucket_field_name`**.
 
-**Example** in queries
+### Example in queries
 
 This outputs a table in the Aggregates tab with columns `_count` and **`_timeslice`** with the timeslices spaced in 5 minute intervals:
 
@@ -105,7 +106,7 @@ This outputs a table in the Aggregates tab with columns `_count`, `_sourceCate
 * | timeslice 10 buckets | count by _sourceCategory, _timeslice
 ```
 
-#### Additional Examples
+### Additional Examples
 
 **Example 1:** Checking the server distribution over time to make sure the load balancer is working properly.
 
@@ -150,35 +151,3 @@ _sourceCategory=Apache/Access
 This query produces these results in the Aggregates tab, which you can display as an area chart:
 
 ![Timeslice example](/img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png)
-
-
-
-
-
-
-
-
-
-
-
-
-## Timeslice Join Results
-
-The `timeslice operator` uses the metadata field _messagetime to organize the logs by slices. In your query, you need to specify the timeslice operation before the join, because the _messagetime field will no longer exist after the join operation is performed. When you add the timeslice before the join, each of the tables created by the join will now include a _timeslice field. 
-
-You can reference the table's `_timeslice` field to use in your `group by` operation. The name of the table is appended to the table's fields.
-
-For example, if your table is named **errors**, your field would be **errors__timeslice**. (Notice that the name uses *two* underscores.)
-
-Here's an example query:
-
-```sql
-*
-| timeslice 1h
-| join
-(parse "starting stream from * " AS streamId) AS table1,
-(parse "starting search from parent stream * " AS streamId) AS table2
-on table1.streamId = table2.streamId
-| count table1_streamId, table1__timeslice
-| formatDate(fromMillis(table1__timeslice ), "MM/dd/yyyy HH:mm:ss z") as timeslice
-```

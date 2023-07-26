@@ -20,7 +20,7 @@ When one or more collectors in your Sumo Logic account are eligible for an u
 ![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
 
 :::important
-The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collectors#Upgrade-or-Downgrade-Collectors-Using-the-API).
+The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](/docs/api/collector-management/upgrade-downgrade-collectors).
 :::
 
 ### Upgrade collectors to the latest build
@@ -33,7 +33,7 @@ The upgrade may automatically be done in increments. In this case, you may exper
 
 To install an upgrade on one or more collectors:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. Click the **Upgrade Collectors** link.
 1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
     * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you can't deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
@@ -53,7 +53,7 @@ Collectors that are offline or that have already been upgraded aren't eligible 
 You can choose to downgrade a Collector or Collectors to an earlier version for testing or other purpose. 
 
 To downgrade one or more collectors to an earlier build:
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Click the **Edit** link on the right of an installed collector.
 1. Click the **Change Version** beside the current version.
 1. Select the version to install. 
@@ -87,19 +87,19 @@ The steps to upgrade an Installed Collector using the command line are similar t
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
+* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
 
 | Operating System | Command |
-| -- | -- |
+| :-- | :-- |
 | Linux | When upgrading on Ubuntu 16 and above using a shell executable file (.sh), Debian, or the Web UI you will need to manually restart the collector service after upgrading using the following command. See [Start or Stop a Collector](start-stop-collector-using-scripts.md) for details. <br/><br/> Command: `sudo ./collector start` |
 | Linux RPM | Upgrade command: `sudo rpm -U <pathToCollectorRPMFile>`<br/><br/>Downgrade command: `sudo rpm -U --oldpackage <pathToCollectorRPMFile>`<br/><br/>There may be a warning message regarding the deletion of the `safeRestart.cmd` file, this is safe to ignore. |
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i <pathToCollectorDebianFile>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo <pathToCollectorShFile> -q` |
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
-| MacOS | Use the same steps to [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md) without the authentication credentials. |
+| MacOS | Use the same steps to [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md) without the authentication credentials. |
 
 ## Collector Upgrade Best Practices
 
@@ -151,7 +151,7 @@ Follow this checklist whenever you make any changes to the collector:
   * Collector service CPU usage patterns
   * Collector service Memory usage patterns
   * Disk I/O and space utilization
-* [Validate Collector service operation](docs/manage/ingestion-volume/monitor-ingestion-receive-alerts.md):
+* [Validate Collector service operation](/docs/manage/ingestion-volume/monitor-ingestion-receive-alerts.md):
   * Upgrade was successful and the Collector is online with the new version.
   * The Collector continues to run over a period of time without errors or failures.
   * Existing Sources continue to read and send data.

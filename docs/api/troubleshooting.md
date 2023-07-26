@@ -3,12 +3,22 @@ id: troubleshooting
 title: Troubleshooting Sumo Logic APIs
 sidebar_label: Troubleshooting
 description: This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.
+hide_table_of_contents: true
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/>
 
 This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.
 
 ## Deployments and Sumo Logic Endpoints
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. You need to specify your deployment in the endpoint. For example, `api.YOUR_DEPLOYMENT.sumologic.com` you would specify `YOUR_DEPLOYMENT` as either `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+
+<details><summary>Which API endpoint should I use?</summary>
+
+{@import ../reuse/api-endpoints.md}
+
+</details>
 
 ## API - 301 Error - Moved
 
@@ -27,10 +37,9 @@ The initial request to the Sumo Logic APIs returns the following error message. 
 
 #### Answer
 
-The likely answer is that the API endpoint in the request did not include the correct deployment. The endpoints in us1 begin api.sumologic.com... but the endpoints in other deployments—us2, eu, au—begin api.YOUR_DEPLOYMENT.sumologic.com.
+The likely answer is that the API endpoint in the request did not include the correct deployment. The endpoints in `us1` begin `api.sumologic.com`... but the endpoints in other deployments — `us2`, `eu`, `au` — begin api.YOUR_DEPLOYMENT.sumologic.com.
 
-
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.YOUR_DEPLOYMENT.sumologic.com` you would specify `YOUR_DEPLOYMENT` as either `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+{@import ../reuse/api-endpoints.md}
 
 
 ## API - 401 Error - Credential could not be verified

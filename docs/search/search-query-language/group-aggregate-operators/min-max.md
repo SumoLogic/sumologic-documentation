@@ -5,7 +5,7 @@ sidebar_label: min, max
 ---
 
 
-Use the min and max functions to find the smallest or largest value in a set of values.
+Use the `min` and `max` functions to find the smallest or largest value in a set of values.
 
 ## max
 
@@ -31,7 +31,7 @@ max(<numerical_field>) [as <field>] [by <field>]
 ... | max(request_received) as max_request_received, max(request_sent) as max_request_sent
 ```
 
-When you calculate the maximum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the max fields.
+When you calculate the maximum value of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `max` fields.
 
 See this example:
 
@@ -65,7 +65,7 @@ min(numerical_field) [as <field>] [by <field>]
 ​... | min(request_received) as min_request_received, max(request_sent) as max_request_sent
 ```
 
-When you calculate the minimum value of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the min fields.
+When you calculate the minimum value of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the min fields.
 
 See this example:
 

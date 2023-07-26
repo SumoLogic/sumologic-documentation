@@ -1,10 +1,11 @@
 ---
 id: fields
-title: Sumo Logic Fields
+title: Fields
 sidebar_label: Fields
 description: Learn how to define and manage the assignment of metadata to your logs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
 
@@ -15,8 +16,9 @@ The order of precedence for field assignment from highest to lowest is:
 1. Field Extraction Rule (FER)
 1. Amazon EC2 resource tags
 1. Amazon EC2 instance information
-1. Collector _or_ HTTP Header
+1. HTTP Header
 1. Source
+1. Collector
 
 So, if you have a field defined at the Collector or Source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 
@@ -37,7 +39,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 ## Limitations
 
-* Fields created as log metadata and from Field Extraction Rules share the same quota of 400 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
+* Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
 
     ![fields capacity.png](/img/send-data/fields-capacity.png)
 
@@ -53,7 +55,7 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 Fields can be assigned to a Collector and Source using the **Fields** input table in the Sumo user interface when creating or editing a Collector or Source.
 
-1. Navigate to **Manage Data** \> **Collection** \> **Collection**.
+1. Navigate to **Manage Data** > **Collection** > **Collection**.
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
@@ -86,10 +88,10 @@ With this association, you can search for `cluster=k8s.dev` to return your logs
 
 ### Using Collector API
 
-Use the `fields` parameter with the [Collector API](/docs/api/collectors) to define fields on a Collector or Source.
+Use the `fields` parameter with the [Collector API](/docs/api/collector-management) to define fields on a Collector or Source.
 
 | Parameter | Type | Required? | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. | Modifiable |
 
 The following JSON is an example configuration of a Hosted Collector with the fields parameter:
@@ -113,7 +115,7 @@ The following JSON is an example configuration of a Hosted Collector with the fi
 Installed Collectors can use JSON files to configure their Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). Use the `fields` parameter in your JSON configuration to define fields on a Source.
 
 | Parameter | Type | Required? | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | fields | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. | Modifiable |
 
 The following JSON is an example configuration of a Local File Source with the fields parameter:
@@ -185,7 +187,7 @@ The following headers are reserved and can not be used: X-Sumo-Category, X-Sum
 
 ### Tags from EC2
 
-Create a Sumo Logic [AWS Metadata Source](docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
+Create a Sumo Logic [AWS Metadata Source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
 
 Logs ingested by Installed Collectors on EC2 instances will be tagged as long as the tag, including instance information tags, exists in the organization's Fields schema. See how to define fields in the [manage fields](#manage-fields) section. EC2 resource tags take precedence over EC2 instance information. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
@@ -205,15 +207,15 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 
 ### Manage fields
 
-Fields in your account are manageable at **Manage Data** \> **Logs** \> **Fields**.
+Fields in your account are manageable at **Manage Data** > **Logs** > **Fields**.
 
 :::important
 You need the **Manage Fields** [role capability](users-roles/roles/role-capabilities.md) to manage fields. 
 :::
 
-![manage fields page.png](/img/fields/manage-fields-page.png)
+<img src={useBaseUrl('img/fields/manage-fields-page.png')} alt="Manage Fields" width="850"/>
 
-The **Manage Data** \> **Logs** \> **Fields** page displays the following information: 
+The **Manage Data** > **Logs** > **Fields** page displays the following information: 
 
 * **Status** shows a checkmark in a green circle ![green check circle.png](/img/reuse/green-check-circle.png) to indicate if the field is actively being applied or an exclamation mark in a red circle ![red-exclamation-circle.png](/img/fields/red-exclamation-circle.png) to indicate if the field is disabled and being dropped.
 * **Field Name** is the name of the field, known as the key in the key-value pair.
@@ -225,7 +227,7 @@ The **Manage Data** \> **Logs** \> **Fields** page displays the following info
 * **Sources** shows the number of Sources that reference the field. (Available when viewing custom fields.)
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
-On the **Manage Data \> Logs \> Fields** page you can:
+On the **Manage Data > Logs > Fields** page you can:
 
 * Click **+ Add** to add fields.
 * Search fields * The dropdown next to the add button lets you toggle between the following:

@@ -1,6 +1,6 @@
 ---
 id: bottomk
-title: bottomk Operator
+title: bottomk Metrics Operator
 sidebar_label: bottomk
 ---
 
@@ -20,7 +20,7 @@ Where: 
 `SCALAR_EXPRESSION` is one these functions:
 
 | Function | Description |
-|--|--|
+|:--|:--|
 | min | Rank matching time series by which had the minimum value of the metric across the time range, and return the bottom n time series.  |
 | max | Rank matching time series by which had the maximum value of the metric across the time range, and return the bottom n time series. |
 | avg | Rank matching time series by the average value of the metric across the time range, and return the bottom n time series.  |

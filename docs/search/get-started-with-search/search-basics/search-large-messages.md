@@ -10,7 +10,7 @@ When collecting log messages or event logs that are larger than 64KB in size, S
 
 Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log.
 
-See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for information on caveats and your configuration options.
+See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs.md) for information on caveats and your configuration options.
 
 For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/choose-collector-source).
 

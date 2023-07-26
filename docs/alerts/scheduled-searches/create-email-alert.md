@@ -39,4 +39,4 @@ Before creating an email alert, you'll first need to [create a scheduled search]
 
 ## Alert Variables
 
-See [Alert Variables](../alert-variables.md) for more information and examples of variables to use in your email alerts.
+See [Alert Variables](/docs/alerts/monitors/alert-variables) for more information and examples of variables to use in your email alerts.

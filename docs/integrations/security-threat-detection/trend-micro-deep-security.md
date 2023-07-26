@@ -1,13 +1,13 @@
 ---
 id: trend-micro-deep-security
-title: Sumo Logic App for Trend Micro Deep Security
+title: Trend Micro Deep Security
 sidebar_label: Trend Micro Deep Security
 description: The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/trend.png')} alt="thumbnail icon" width="75"/>
+<img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg' alt="thumbnail icon" width="100"/>
 
 The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The App analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
@@ -31,8 +31,8 @@ This section provides instructions for configuring on-prem log collection for th
 
 To collect logs for Deep Security, do the following:
 
-1. Configure a [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source).
+1. Configure a [Installed Collector](/docs/send-data/installed-collectors).
+2. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source).
 
 When you configure the Syslog Sources, for Protocol, select UDP.
 
@@ -45,7 +45,6 @@ For complete details on configuring your Deep Security system for use with Sumo 
 To forward Deep Security system events to Sumo Logic, do the following:
 
 1. In Deep Security, go to **Administration > System Settings > SIEM**.
-
 2. Configure **SIEM**:
     1. **Forward System Events to a remote computer (via Syslog). **Activate this check box.
     2. **Hostname or IP address to which events should be sent.** This is the hostname or IP address of the Sumo Logic Installed Collector.
@@ -60,8 +59,6 @@ To forward Deep Security system events to Sumo Logic, do the following:
 Now you must add the Syslog Source to your Policy configuration. Set the integration details at the Top (root/base) policy as follows:
 
 1. Go to **Settings > SIEM**.
-
-
 2. For **Anti-Malware Event Forwarding**, select **Forward Events To:** and **Relay via the Manager**.
     1. **Hostname or IP address to which events should be sent. **This is the hostname or IP address of the Sumo Logic Installed Collector.
     2. **UPD port to which events should be sent. ** Enter **514**.
@@ -101,17 +98,14 @@ This section has instructions for collecting logs for the Trend Micro Deep Secur
 
 #### Step 1: Create a Cloud Syslog source on a hosted collector
 
-1. Select an existing [hosted collector](/docs/send-data/Hosted-Collectors), or create a new one.
-2. Add a [Cloud Syslog source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) to the hosted collector.
-
+1. Select an existing [hosted collector](/docs/send-data/hosted-collectors), or create a new one.
+2. Add a [Cloud Syslog source](/docs/send-data/hosted-collectors/cloud-syslog-source) to the hosted collector.
     1. Give the source a name
     2. Enter a Source Category.
     3. Deselect the **Enable Timestamp Parsing**.
     4. Click **Save**.
 3. The Cloud Syslog Source Token will be generated. You'll supply this information as input to the Log Source Identifier, Server Name, and Server Port within Deep Security.
 
-
-14
 Supply this information as input to the Log Source Identifier: Server Name, and Server Port within Deep Security.
 
 For Log Source Identifier field, use this format: `Deep Security Manager [token from Cloud Syslog source]`
@@ -122,41 +116,31 @@ Note the spaces with `Deep Security Manager`.
 
 #### Step 2: Configure Sumo as a syslog server in Trend Micro Deep Security.
 
-
-
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.
 3. Select **Syslog Configurations**.
 4. Select the **New **button to create a new configuration.
-
-
-    1. **Log Source Identifier**. Enter a three word label, for example “Deep Security Manager” or “My Log Source”, followed by value that was shown in the  **Token** field on the **Cloud Syslog Source Token** page (when you configured the Cloud Syslog Source above), surrounded by square brackets like this: `Deep Security Manager [token from Cloud Syslog source]`>
-
-
-It's important that you use this format. `Deep Security Manager` followed by the `token` (for the Cloud Syslog Source) in square brackets like this:
-
-```
-Deep Security Manager [token from Cloud Syslog source]
-```
-
+    1. **Log Source Identifier**. Enter a three word label, for example “Deep Security Manager” or “My Log Source”, followed by value that was shown in the **Token** field on the **Cloud Syslog Source Token** page (when you configured the Cloud Syslog Source above), surrounded by square brackets like this: `Deep Security Manager [token from Cloud Syslog source]`. It's important that you use this format. `Deep Security Manager` followed by the `token` (for the Cloud Syslog Source) in square brackets like this:
+     ```
+     Deep Security Manager [token from Cloud Syslog source]
+     ```
 1. **Server Name**. Enter the value that was shown in the **Host** field on the **Cloud Syslog Source Token** page when you configured the Cloud Syslog Source above.
 2. **Server Port**.  Enter the value that was shown in the **Port** field on the **Cloud Syslog Source Token** page when you configured the Cloud Syslog Source above.
-3. **Transport**. Leave "TLS" selected.
+3. **Transport**. Leave "TLS" selected. To check your connection for TLS, see [Troubleshooting](/docs/send-data/hosted-collectors/cloud-syslog-source#troubleshooting) in our Cloud Syslog Source article.
 4. Click **OK**.
 
 
 #### Step 3: Forward system and security events to Sumo Logic
-
 
 1. In the Deep Security Manager console, select **Policies**.
 2. Double-click the policy you want to use for forwarding events.
 3. Go to **Settings > Event Forwarding**.
 4. Under **Event Forwarding Frequency (from the Agent/Appliance)**, specify how often events are to be sent to Sumo Logic.
 5. Under **Event Forwarding Configuration (from the Agent/Appliance)**, specify the syslog configuration to use for each protection module, choosing from the following options:
-* **Inherited (configuration name):** The behavior is inherited from a parent policy or computer.
-* **None:** Events are not forwarded.
-* **_Syslog (configuration name):** Events are forwarded to the specified syslog configuration. To see details about the configuration or edit it, click **Edit**. The configuration must have **Agents should forward logs** set to "Via the Deep Security Manager".
-* **New:** Enables you to define a new configuration (for details, see [Define a syslog configuration](https://help.deepsecurity.trendmicro.com/siem-syslog-forwarding-secure.html#Define).) The configuration must have **Agents should forward logs** set to "Via the Deep Security Manager".
+   * **Inherited (configuration name):** The behavior is inherited from a parent policy or computer.
+   * **None:** Events are not forwarded.
+   * **_Syslog (configuration name):** Events are forwarded to the specified syslog configuration. To see details about the configuration or edit it, click **Edit**. The configuration must have **Agents should forward logs** set to "Via the Deep Security Manager".
+   * **New:** Enables you to define a new configuration (for details, see [Define a syslog configuration](https://help.deepsecurity.trendmicro.com/siem-syslog-forwarding-secure.html#Define).) The configuration must have **Agents should forward logs** set to "Via the Deep Security Manager".
 1. Click **Save**.
 
 
@@ -167,30 +151,9 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Installing the Trend Micro Deep Security App
 
-This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [dashboards](#viewing-dashboards) that provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and dashboards that provide easy-to-access visual insights into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Trend Micro Dashboards
 

@@ -17,7 +17,7 @@ MSDN.
 
 To configure a Local Windows Performance Monitor Log Source:
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the installed Collector to which you’d like to add a Source. Click **Add **and then choose **Add** **Source** from the menu. 
 1. Click **Windows Performance**. 
 1. Choose **Local** for the Type of **Windows Performance Source**. 
@@ -25,7 +25,7 @@ To configure a Local Windows Performance Monitor Log Source:
 
    * **Name.** Type the name to display for the new Source. **Description** is optional.
    * **Frequency.** Depending on your Windows system and its needs, select a frequency to run the selected queries. If your Windows system is relatively stable, a frequency of 15m should be appropriate. (Selecting a frequency of 1m could flood your system with logs and create an undesirable outcome.)
-   * **Source Category.** Enter a string used to tag the logs collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good Source Category, Bad Source     Category](/docs/send-data/best-practices). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](local-windows-performance-monitor-log-source.md) below.
+   * **Source Category.** Enter a string used to tag the logs collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good Source Category, Bad Source     Category](/docs/send-data/best-practices). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](local-windows-performance-monitor-log-source.md) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.

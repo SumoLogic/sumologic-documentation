@@ -25,7 +25,7 @@ When not using a root or administrator user you need to provide the necessary pe
 
 ## Host Metrics Source on EC2 instances
 
-A host metric source running on an Installed Collector on an AWS EC2 instances will automatically apply the following EC2 tags to the metric it collects:
+A host metric source running on an Installed Collector on an Amazon EC2 instance will automatically apply the following EC2 tags to the metric it collects:
 
 * InstanceID
 * Instance type
@@ -35,7 +35,7 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
 
 ## Manually Configure a Host Metrics Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source**.
 
     ![add-source2.png](/img/send-data/add-source2.png)
@@ -47,7 +47,7 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
 
    * **Name**. Enter the name you'd like to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
    * **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-   * **Source Category**. Enter any string to tag the output collected from this Source with searchable metadata. For example, enter **firewall** to tag all entries from this Source in a field called `_sourceCategory`. Type `_sourceCategory=firewall` in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md).
+   * **Source Category**. Enter any string to tag the output collected from this Source with searchable metadata. For example, enter **firewall** to tag all entries from this Source in a field called `_sourceCategory`. Type `_sourceCategory=firewall` in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md).
    * **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
    * **Scan Interval**. Select the frequency for the Source to scan for host metrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
    * **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected.
@@ -66,7 +66,7 @@ The following tables list the available host metrics.
 ### CPU Metrics
 
 |  Metric | Units |  Description |
-|---------------------|-----------|--------------------------------------------|
+|:---------------------|:-----------|:--------------------------------------------|
 | CPU_User            | %         | Total system cpu user time                 |
 | CPU_Sys             | %         | Total system cpu kernel time               |
 | CPU_Nice            | %         | Total system cpu nice time                 |
@@ -87,7 +87,7 @@ Load averages are not available on Windows platform
 ### Memory Metrics
 
 |  Metric | Units |  Description |
-|---------------------|-----------|--------------------------------------------|
+|:---------------------|:-----------|:--------------------------------------------|
 | Mem_Total | Bytes | Total amount of physical RAM |
 | Mem_Free | Bytes | The amount of physical RAM left unused by the system |
 | Mem_Used | Bytes | Total used system memory, calculated as<br/>`MemTotal - MemFree`<br/>This metric includes the space allocated in buffers and in the Page Cache, which can make it appear that a larger portion of physical RAM is being consumed than is actually in use. |
@@ -101,7 +101,7 @@ Load averages are not available on Windows platform
 ### TCP Metrics
 
 | Metric | Units | Description |
-|-------------------|-----------|----------------------------------|
+|:-------------------|:-----------|:----------------------------------|
 | TCP_InboundTotal  | Count     | TCP inbound connection count     |
 | TCP_OutboundTotal | Count     | TCP outbound connection count    |
 | TCP_Established   | Count     | TCP established connection count |
@@ -125,7 +125,7 @@ display these metrics as a rate per second
 Example: `metric=Net_InBytes Interface=eth0 | rate`
 
 |  Metric | Units | Description |
-|----------------|-----------|----------------------------|
+|:----------------|:-----------|:----------------------------|
 | Net_InPackets  | Packets   | Number of received packets |
 | Net_OutPackets | Packets   | Number of sent packets     |
 | Net_InBytes    | Bytes     | Number of received bytes   |
@@ -143,7 +143,7 @@ Disk metrics have two additional dimensions:
 Example: `metric=Disk_WriteBytes | rate`
 
 |  Metric |  Units |  Description |
-|------------------------|------------|---------------------------------------|
+|:------------------------|:------------|:---------------------------------------|
 | Disk_Reads             | Operations | Number of physical disk reads         |
 | Disk_ReadBytes         | Bytes      | Number of physical disk bytes read    |
 | Disk_Writes            | Operations | Number of physical disk writes        |
@@ -170,6 +170,6 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md).
+Collectors running on Amazon EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.

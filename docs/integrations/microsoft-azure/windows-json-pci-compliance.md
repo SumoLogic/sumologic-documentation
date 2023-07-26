@@ -1,13 +1,13 @@
 ---
 id: windows-json-pci-compliance
-title: Sumo Logic App for Windows JSON PCI Compliance
-sidebar_label: Windows JSON PCI Compliance
+title: PCI Compliance for Windows JSON
+sidebar_label: PCI Compliance For Windows (JSON)
 description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows JSON application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
@@ -52,7 +52,7 @@ To configure a collector and source, do the following:
     * **Event Format.** Select **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
     * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
 Make sure to set the Source Category when configuring the Windows Event Log source. For example: OS/Windows/Events.
 
@@ -61,34 +61,14 @@ Make sure to set the Source Category when configuring the Windows Event Log sour
 
 This section provides instructions for installing the PCI Compliance for Windows JSON App, along with examples of each of the App dashboards. The PCI Compliance for Windows JSON App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.  
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and dashboards that provide insight into your data.  
 
-**To install the app**:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing PCI Compliance for Windows JSON Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 
@@ -96,9 +76,9 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 Track your user accounts and recent system changes.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-02-08-10-Account-User-System-Monitoring.png')} alt="Windows JSON PCI Compliance dashboards" />
 
-* **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
+* **User Account Created.** Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
 * **User Account Enabled.** Aggregation table of the number of user accounts enabled in the last 24 hours.
 * **User Account Disabled.** Aggregation table of the number of user accounts disabled in the last 24 hours.
@@ -116,7 +96,7 @@ Track your user accounts and recent system changes.
 
 Track login successes and failures.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-02-10-Login-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
 * **Failed Logins.** Count of failed logins over the last 24 hours.
 * **Failed Logins.** Aggregation table of the date,
@@ -130,10 +110,10 @@ Track login successes and failures.
 
 Track user activities such as password changes, password resets, excessive failed access attempts, unlocked accounts, and disabled accounts.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-08-Other-User-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
-* **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
-* **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Changes.** Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Reset.** Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Unlocked.** Displays an aggregation table of the times a user account was unlocked  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Disabled but not deleted.** Displays an aggregation table of the times a user account was unlocked,  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
@@ -143,7 +123,7 @@ Track user activities such as password changes, password resets, excessive faile
 
 Track your Windows Update activities.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-06-Windows-Updates-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.

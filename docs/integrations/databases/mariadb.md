@@ -1,8 +1,8 @@
 ---
 id: mariadb
-title: Sumo Logic App for MariaDB
+title: MariaDB - Classic Collector
 sidebar_label: MariaDB
-description: The Sumo Logic App for MariaDB is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MariaDB database clusters.
+description: The Sumo Logic app for MariaDB is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MariaDB database clusters.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,14 +13,13 @@ import TabItem from '@theme/TabItem';
 
 The MariaDB app is a unified logs and metrics app that helps you monitor MariaDB database cluster availability, performance, and resource utilization. Pre-configured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.
 
-This App is tested with the following MariaDB versions:
+This app is tested with the following MariaDB versions:
 * Kubernetes: MariaDB - Version 10.5.11
 * Non-Kubernetes: MariaDB  - Version 10.7.1
 
+## Collecting Logs and Metrics for the MariaDB app
 
-## Collecting Logs and Metrics for the MariaDB App
-
-Configuring log and metric collection for the MariaDB App includes the following tasks.
+Configuring log and metric collection for the MariaDB app includes the following tasks.
 
 ### Step 1: Configure Fields in Sumo Logic
 
@@ -75,17 +74,17 @@ Sumo Logic supports the collection of logs and metrics data from MariaDB in both
 <TabItem value="k8s">
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from MariaDB in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
-* Telegraf
-* Prometheus
-* Fluentd
-* FluentBit
+Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
 <img src={useBaseUrl('img/integrations/databases/mariadbk8s.png')} alt="mariadb" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from MariaDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from MariaDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
 :::
 
 #### Configure Metrics Collection
@@ -117,13 +116,13 @@ annotations:
   gather_file_events_stats = true
   gather_perf_events_statements = true
   interval_slow = "30m"
-[inputs.mysql.tags]
-   environment="ENV_TO_BE_CHANGED"
-   component="database"
-   db_system="mariadb"
-   db_cluster="ENV_TO_BE_CHANGED"
-   db_cluster_address = "ENV_TO_BE_CHANGED"
-   db_cluster_port = "ENV_TO_BE_CHANGED" --Enter `default` if you haven’t defined a cluster in MariaDB
+  [inputs.mysql.tags]
+    environment ="ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="mariadb"
+    db_cluster ="ENV_TO_BE_CHANGED"
+    db_cluster_address = "ENV_TO_BE_CHANGED"
+    db_cluster_port = "ENV_TO_BE_CHANGED" --Enter `default` if you haven’t defined a cluster in MariaDB
 ```
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
@@ -178,7 +177,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
        * `db_system: “mariadb”` - This value identifies the database system.
      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
    4. Verify logs in Sumo Logic.
 2. **(Optional) Collecting MariaDB Logs from a Log File**. Follow the steps below to capture MariaDB logs from a log file on Kubernetes.
    1. Determine the location of the MariaDB log file on Kubernetes. This can be determined from the server.conf for your MariaDB cluster along with the mounts on the MariaDB pods.
@@ -240,9 +239,9 @@ The process to set up collection for MariaDB data is done through the following 
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for MariaDB running on a non-Kubernetes environment for the Sumo Logic App for MariaDB. By default, MariaDB logs are stored in a log file. MariaDB also supports forwarding logs via Syslog Audit Logs.
+This section provides instructions for configuring log collection for MariaDB running on a non-Kubernetes environment for the Sumo Logic app for MariaDB. By default, MariaDB logs are stored in a log file. MariaDB also supports forwarding logs via Syslog Audit Logs.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
@@ -263,7 +262,7 @@ long_query_time=2
 ```
    * [Error Logs](https://mariadb.com/kb/en/error-log/): MariaDB always writes its error log, but the destination is configurable.
    * [Slow Query Logs](https://mariadb.com/kb/en/slow-query-log-overview/): The slow query log is disabled by default.
-   * [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
+   * [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB app.
 4. Save the server.cnf file.
 5. Restart the MariaDB server:
   ```bash
@@ -274,7 +273,7 @@ long_query_time=2
 
 <details><summary>Method B: Configure a Sumo Logic Collector</summary>
 
-To collect logs directly from the MariaDB machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+To collect logs directly from the MariaDB machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 </details>
 
@@ -284,7 +283,7 @@ This section demonstrates how to configure sources for Error Logs and Slow Query
 
 #### Configure Source for MariaDB Error Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
+This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10/#configure-collection-for-iis). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File** as the source type.
 3. Configure the Local File Source fields as follows:
@@ -304,7 +303,7 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
      :::note
      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-     For example if your application uses “mariadb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
+     For example, if your application uses “mariadb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
 
      If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`.
 
@@ -323,7 +322,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 #### Configure Source for MariaDB Slow Query Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
+This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10).
 
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File** as the source type.
@@ -371,29 +370,29 @@ After a few minutes, your new Source should be propagated down to the Collector 
    2. Configure and start Telegraf to begin collecting metrics data from Telegraf. We will use the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:  
    ```sql
    [[inputs.mysql]]
-     servers = ["user_TO_BE_CHANGED:password_TO_BE_CHANGED@tcp(IP_ADDRESS_MARIADB_TO_BE_CHANGED:PORT_MARIADB_TO_BE_CHANGED)/?tls=false"]
-     metric_version = 2
-     table_schema_databases = []
-     perf_summary_events = []
-     gather_table_schema = true
-     gather_process_list = true
-     gather_info_schema_auto_inc = true
-     gather_user_statistics = true
-     gather_slave_status = true
-     gather_table_io_waits = true
-     gather_table_lock_waits = true
-     gather_index_io_waits = true
-     gather_event_waits = true
-     gather_file_events_stats = true
-     gather_perf_events_statements = true
-     interval_slow = "30m"
-   [inputs.mysql.tags]
-     environment="dev_ENV_TO_BE_CHANGED"
-     component="database"
-     db_system="mariadb"
-     db_cluster="mariadb_on_premise_ENV_TO_BE_CHANGED"
-     db_cluster_address = "ENV_TO_BE_CHANGED"
-     db_cluster_port = "ENV_TO_BE_CHANGED"
+    servers = ["user_TO_BE_CHANGED:password_TO_BE_CHANGED@tcp(IP_ADDRESS_MARIADB_TO_BE_CHANGED:PORT_MARIADB_TO_BE_CHANGED)/?tls=false"]
+    metric_version = 2
+    table_schema_databases = []
+    perf_summary_events = []
+    gather_table_schema = true
+    gather_process_list = true
+    gather_info_schema_auto_inc = true
+    gather_user_statistics = true
+    gather_slave_status = true
+    gather_table_io_waits = true
+    gather_table_lock_waits = true
+    gather_index_io_waits = true
+    gather_event_waits = true
+    gather_file_events_stats = true
+    gather_perf_events_statements = true
+    interval_slow = "30m"
+    [inputs.mysql.tags]
+      environment ="dev_ENV_TO_BE_CHANGED"
+      component ="database"
+      db_system ="mariadb"
+      db_cluster ="mariadb_on_premise_ENV_TO_BE_CHANGED"
+      db_cluster_address = "ENV_TO_BE_CHANGED"
+      db_cluster_port = "ENV_TO_BE_CHANGED"
    [[outputs.sumologic]]
      url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
      data_format = "prometheus"
@@ -432,7 +431,7 @@ At this point, Telegraf should start collecting the MariaDB metrics and forward 
 
 ## Installing the MariaDB Monitors
 
-The next few sections provide instructions for installing the MariaDB Monitors, App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the Collect Logs and Metrics for the MariaDB App page.
+The next few sections provide instructions for installing the MariaDB Monitors app, as well as examples of each of the app dashboards. These instructions assume you have already set up the collection as described in the Collect Logs and Metrics for the MariaDB app page.
 
 #### Pre-Packaged Alerts
 
@@ -440,7 +439,6 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 * There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
-
 
 ### Method A: Importing a JSON file
 
@@ -453,7 +451,6 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
 6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).
-
 
 ### Method B: Using a Terraform script
 
@@ -497,7 +494,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections).
+For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications = [
@@ -517,14 +514,13 @@ email_notifications = [
     2. Run `terraform apply`.
 7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
+## Installing the MariaDB app
 
-## Installing the MariaDB App
-
-This section demonstrates how to install the MariaDB App. To install the app:
+This section demonstrates how to install the MariaDB app. To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -540,11 +536,10 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
 ## Viewing MariaDB Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
 :::
 
 ### Overview
@@ -556,16 +551,15 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-Overview.png')} alt="mariadb dashboards" />
 
-
 ### Error Logs
 
 The **MariaDB - Error Logs** dashboard provides insight into database error logs by specifically monitoring database shutdown/start events, errors over time, errors, warnings, and crash recovery attempts.
 
 Use this dashboard to:
-* Quickly identify errors and patterns in logs for troubleshooting
-* Monitor trends in the error log and identify outliers
-* Ensure that server start, server stop, and crash recovery events are in line with expectations
-* Dashboard filters allow you to narrow a search for the database clusters.
+* Quickly identify errors and patterns in logs for troubleshooting.
+* Monitor trends in the error log and identify outliers.
+* Ensure that server start, server stop, and crash recovery events are in line with expectations.
+* Dashboard filters allow you to narrow a search for the database clusters..
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-Error-Logs.png')} alt="mariadb dashboards" />
 
@@ -574,21 +568,19 @@ Use this dashboard to:
 The **MariaDB - Failed Logins** dashboard provides insights into all failed login attempts by location, users and hosts.
 
 Use this dashboard to:
-* Monitor all failed login attempts and identify any unusual or suspicious activity
+* Monitor all failed login attempts and identify any unusual or suspicious activity.
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-Failed-Logins.png')} alt="mariadb dashboards" />
-
 
 ### Replication
 
 The **MariaDB - Replication** dashboard provides insights into the state of database replication.
 
 Use this dashboard to:
-* Quickly determine reasons for replication failures
-* Monitor replication status trends
+* Quickly determine reasons for replication failures.
+* Monitor replication status trends.
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-Replication.png')} alt="mariadb dashboards" />
-
 
 ### Slow Queries
 
@@ -599,35 +591,32 @@ The **MariaDB - Slow Queries** dashboard provides insights into all slow queries
 Slow queries are queries that take 10 seconds or more to execute (default value is 10 seconds as per MariaDB configuration which can be altered) and excessive slow queries are those that take 15 seconds or more to execute.
 
 Use this dashboard to:
-* Identify all slow queries
-* Quickly determine which queries have been identified as slow or excessive slow queries
-* Monitor users and hosts running slow queries
-* Determine which SQL commands are slower than others
-* Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
-
-
+* Identify all slow queries.
+* Quickly determine which queries have been identified as slow or excessive slow queries.
+* Monitor users and hosts running slow queries.
+* Determine which SQL commands are slower than others.
+* Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 ### Performance and Resource Metrics
 
 The **MariaDB - Performance and Resource Metrics** dashboard allows you to monitor the performance and resource usage of your database clusters.
 
 Use this dashboard to:
-* Understand the behavior and performance of your database clusters
-* Monitor key operational metrics around connections, network traffic, threads running, innodb waits and locks.
-* Monitor query execution trends to ensure they match up with expectations
-* Dashboard filters allow you to narrow a search for a specific database cluster
+* Understand the behavior and performance of your database clusters.
+* Monitor key operational metrics around connections, network traffic, threads running, innodb waits, and locks.
+* Monitor query execution trends to ensure they match up with expectations.
+* Dashboard filters allow you to narrow a search for a specific database cluster.
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-Performance-and-Resource-Metrics.png')} alt="mariadb dashboards" />
-
 
 ### Performance Schema Metrics
 
 The **MariaDB - Performance Schema Metrics** Dashboard provides insights into the metrics provided by the MariaDB Performance Schema, which is a feature for monitoring MariaDB Server execution at a low level.
 
 Use this dashboard to:
-* Monitor errors and warning for SQL statements
-* Monitor statements running without use of index columns
-* Monitor statistics such as Table and Index waits and read and write lock waits to optimize the performance of your database
+* Monitor errors and warning for SQL statements.
+* Monitor statements running without use of index columns.
+* Monitor statistics such as Table and Index waits and read and write lock waits to optimize the performance of your database.
 
 <img src={useBaseUrl('img/integrations/databases/MariaDB-Performance-Schema-Metrics.png')} alt="mariadb dashboards" />
 
@@ -661,7 +650,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 Sumo Logic provides the following out-of-the-box alerts:
 
 | Alert Type (Metrics/Logs) | Alert Name                                           | Alert Description                                                                                                                                        | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
-|---------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-----------------|-------------------|
+|:---------------------------|:------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------|:-----------------|:-------------------|
 | Logs                      | MariaDB - Excessive Slow Query Detected              | This alert fires when the average time to execute a query is more than 15 seconds for a 5 minute time interval.                                          | Critical                          | >=1             | <1                |
 | Logs                      | MariaDB - Instance down                              | This alert fires when we detect that a MariaDB instance is down                                                                                          | Critical                          | >=1             | <1                |
 | Metrics                   | MariaDB - Connection refused                         | This alert fires when connections are refused when the limit of maximum connections is reached.                                                          | Critical                          | >=1             | <1                |

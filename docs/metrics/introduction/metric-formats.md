@@ -34,7 +34,7 @@ In the metric above: 
 * The timestamp for the instant that the metric was measured is 1460061337.
 
 :::tip
-Graphite does not support meta tags. However, you can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s metric_path. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](docs/metrics/metric-rules-editor#about-metric-rules).
+You can use Sumo's metric rules editor to tag metrics with key-value pairs derived from a Graphite metric’s `metric_path`. Then, you can use those key-value pairs in metric queries. For more information, see [About Metric Rules](/docs/metrics/metric-rules-editor#about-metric-rules).
 :::
 
 ### Inferred metric name
@@ -73,6 +73,10 @@ Where:
 * `value` is any numeric value.
 * `timestamp` is a UNIX timestamp.
 
+:::important
+Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, we suggest to place all your metric metadata in the `intrinsic_tags` section.
+:::
+
 In the Graphite-formatted metric described above, the bit that identifies the thing being measured—the `metric_path`—is:
 
 ```
@@ -85,31 +89,15 @@ In the Carbon 2.0 format, that metric_path translates to a set of intrinsic tags
 cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle
 ```
 
-Carbon 2.0 is a richer metric format than Graphite, because it supports meta tags. So, a Carbon 2.0-formatted version of our example metric could include additional key-value pairs that will make our metrics easy to query. For example, below we include a meta tag that identifies the agent that collected the metric.
+The following is an example of `intrinsic_tags` with an empty set of `meta_tags`, a value, and a timestamp:
 
 ```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie <value> <timestamp>
+cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 1460061337
 ```
-
-The following is an example of `intrinsic_tags` with an agent
-`meta_tags`, a value, and a timestamp:
-
-```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  agent=biggie 97.29 1460061337
-```
-
-And an example of empty set of meta tags and two spaces between the
-intrinsic tags and value with timestamp :
-
-```
-cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  97.29 146006133
-```
-
-This [blog post](https://www.sumologic.com/blog/intrinsic-vs-meta-tags/) provides additional examples and discussion.
 
 ### Mandatory metric name
 
-Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](docs/manage/health-events#health-events)).
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic requires a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo Logic and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](docs/manage/health-events#health-events)).
 
 For example, the following metric will be correctly ingested to Sumo Logic:
 ```
@@ -143,7 +131,7 @@ http_requests_total{method="post",code="400"}    3 1395066363000
 See the table below for descriptions of the components of a Prometheus metric exposition.
 
 | Component | Description |
-|--|--|
+|:--|:--|
 | `metric_name` | Specifies the general feature of a system that is measured. For example: `http_requests_total` |
 | `metric_description` | An arbitrary description or category for the metric. For example: `requests` |
 | `metric_type` | the type of the metric, one of `counter`, `gauge`, `histogram`, `summary`, or `untyped`.
@@ -152,4 +140,4 @@ See the table below for descriptions of the components of a Prometheus metric 
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](docs/send-data/hosted-collectors/http-source/upload-metrics.md).
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics.md).

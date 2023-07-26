@@ -13,9 +13,11 @@ Follow the steps in this topic to install or uninstall a collector on Windows.�
 * Windows 8, 32 or 64 bit
 * Windows 8.1, 32 or 64 bit
 * Windows 10, 32 or 64 bit
+* Windows 11, 32 or 64 bit
 * Windows Server 2012
 * Windows Server 2016
 * Windows Server 2019
+* Windows Server 2022
 * Single core, 512MB RAM
 * 8GB disk space
 * Package installers require TLS 1.2 or higher.
@@ -24,7 +26,7 @@ Follow the steps in this topic to install or uninstall a collector on Windows.�
 
 Download the Collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the Collector to begin the download.
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the Collector to begin the download.
 * Open a browser and enter the static URL for your Sumo deployment. See how to determine which endpoint to use if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install a Collector on Windows
@@ -54,7 +56,7 @@ Run the installer on your server with root or Administrator privileges. If you a
    * Access Key: If you have a Sumo Logic access ID and key, click **Next** enter the access ID and key, and click **Next**.
    * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
 1. Click **Finish** to complete the setup.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
 ### Install using the command line installer
 
@@ -78,13 +80,13 @@ Start-Process C:\<path to collector executable>\SumoCollector.exe -Wait -Argumen
 
 **Examples**
 
-Using an [Installation Token](docs/manage/security/installation-tokens.md):
+Using an [Installation Token](/docs/manage/security/installation-tokens.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.token_and_url=<installationToken>" "-Vsources=<filepath>"
 ```
 
-Using [access ID and access key](docs/manage/security/access-keys.md):
+Using [access ID and access key](/docs/manage/security/access-keys.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<accessKey>" "-Vsources=<filepath>"
@@ -103,11 +105,9 @@ If you uninstall a Collector, no more data is sent to Sumo Logic from that machi
 Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 1. Uninstall the Collector from the host machine using either of these methods.
-
-* [Uninstall using the installer](#uninstall-using-the-installer)
-* [Uninstall from the command line](#uninstall-from-the-command-line)
-
-1. [Remove the Collector from Sumo Logic](#remove-the-collector-from-the-web-application)
+   * [Uninstall using the installer](#uninstall-using-the-installer)
+   * [Uninstall from the command line](#uninstall-from-the-command-line)
+1. [Remove the Collector from Sumo Logic](#remove-the-collector-from-sumo-logic).
 
 ### Uninstall using the installer
 
@@ -132,7 +132,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 ### Remove the Collector from Sumo Logic
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the Collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 

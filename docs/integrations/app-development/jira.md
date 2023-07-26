@@ -1,6 +1,6 @@
 ---
 id: jira
-title: Sumo Logic App for Jira
+title: Jira
 sidebar_label: Jira
 description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 
 ## Log Types
@@ -381,14 +381,14 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 
 This section has instructions for collecting logs from Jira for the Sumo App for Jira.
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 You will configure an installed collector on your Jira host with three local file sources, for collecting Jira access, security, and catalina logs. You also configure a hosted collector with an HTTP source for receiving webhook events from Jira.
 
 
 ### Set up local file sources on an installed collector
 
-1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/Installed-Collectors).
+1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/installed-collectors).
 2. Add a local file source to the collector for Jira access logs. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
     * **Filepath**. On Linux, access logs are typically found in `/var/log/apache2/*.log`.
     * **Source Category**. Set to:` Atlassian/Jira/Server/Access`
@@ -438,16 +438,15 @@ When you configure the webhook, enter the URL for the HTTP source you created in
 
 Now that you have set up collection for Jira, install the Jira app to use the pre-configured dashboards for insights into your data.
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 To install the app, do the following:
-
 
 1. From the App Catalog, search for and select the app.
 2. To install the app, click **Add to Library**.
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   * **Jira Server Log data source. **Set **Source Category** to `Atlassian/Jira/Server*`.
-   * **Jira Webhook source. **Set **Source Category** to `Atlassian/Jira/Events`.
+   * **Jira Server Log data source.** Set **Source Category** to `Atlassian/Jira/Server*`.
+   * **Jira Webhook source.** Set **Source Category** to `Atlassian/Jira/Events`.
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
@@ -455,7 +454,7 @@ To install the app, do the following:
 ## Viewing Jira Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 You can use template variables to drill down and examine the data on a granular level.

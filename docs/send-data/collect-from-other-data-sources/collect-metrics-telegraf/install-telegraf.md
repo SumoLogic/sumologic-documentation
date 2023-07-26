@@ -1,6 +1,7 @@
 ---
 id: install-telegraf
 title: Installing Telegraf for Sumo Logic
+sidebar_label: Installing Telegraf
 description: Learn how to install Telegraf.
 ---
 
@@ -47,43 +48,23 @@ This section has instructions for installing the latest stable version of Telegr
 If you want to install Telegraf using a .deb file, or on Windows see [Manually install Telegraf from a .deb file](#manually-install-telegraf-on-debian-from-a-deb-file) or [Install Telegraf on Windows](#install-telegraf-on-windows). Telegraf releases are available for all Operating Systems through the portal [downloads page](https://portal.influxdata.com/downloads/).
 :::
 
-1. Add the InfluxData repository.
+1. Add the InfluxData repository on Ubuntu or Debian, then run the following command in a terminal window:
 
-   * To add the repository on Ubuntu, run the following command in a terminal window.
-
-        ```bash
-        wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
-        source /etc/lsb-release
-        echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-        ```
-
-    * To add the repository on Debian, run the following commands in a terminal window, skipping the comment lines, which begin with #.
-
-        ```bash
-        # Before adding Influx repository, run this \
-        # so that apt will be able to read the repository.
-        sudo apt-get update && sudo apt-get install apt-transport-https
-
-        # Add the InfluxData key
-        wget -qO-https://repos.influxdata.com/influxdb.key | sudo apt-key add -
-        source /etc/os-release
-        test $VERSION_ID = "7" && echo "deb https://repos.influxdata.com/debian wheezy stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-        test $VERSION_ID = "8" && echo "deb https://repos.influxdata.com/debian jessie stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-        test $VERSION_ID = "9" && echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-        test $VERSION_ID = "10" && echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-        ```
+    ```bash
+    # influxdata-archive_compat.key GPG fingerprint:
+    # 9D53 9D90 D332 8DC7 D6C8 D3B9 D8FF 8E1F 7DF8 B07E
+    wget -q https://repos.influxdata.com/influxdata-archive_compat.key
+    echo '393e8779c89ac8d958f81f942f9ad7fb82a25e133faddaf92e15b16e6ac9ce4c influxdata-archive_compat.key' | sha256sum -c && cat influxdata-archive_compat.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg > /dev/null
+    echo 'deb [signed-by=/etc/apt/trusted.gpg.d/influxdata-archive_compat.gpg] https://repos.influxdata.com/debian stable main' | sudo tee /etc/apt/sources.list.d/influxdata.list
+    sudo apt-get update && sudo apt-get install telegraf
+    ```
 
 1. To install and start the Telegraf service, run the following commands in a terminal window:
 
     ```bash
     sudo apt-get update && sudo apt-get install telegraf
-    sudo service telegraf start
-    ```
-
-    Or, if your operating system uses systemd (Ubuntu 15.04+, Debian 8+):
-
-    ```bash
-    sudo apt-get update && sudo apt-get install telegraf
+    # update /etc/telegraf/telegraf.conf with your
+    # specific config settings, then start the service
     sudo systemctl start telegraf
     ```
 
@@ -138,12 +119,12 @@ You must have administrative permissions to install a Windows service. Be sure t
 
 ## Windows service logging and troubleshooting
 
-When Telegraf runs as a Windows service, Telegraf logs messages to Windows event logs. If the Telegraf service fails to start, view error logs by selecting **Event Viewer \> Windows Logs \> Application**.
+When Telegraf runs as a Windows service, Telegraf logs messages to Windows event logs. If the Telegraf service fails to start, view error logs by selecting **Event Viewer > Windows Logs > Application**.
 
 ### Windows service commands
 
 | Command | Description |
-|------------------------------------|-------------------------------|
+|:------------------------------------|:-------------------------------|
 | `telegraf.exe --service install  ` | Install telegraf as a service |
 | `telegraf.exe --service uninstall` | Remove the telegraf service   |
 | `telegraf.exe --service start    ` | Start the telegraf service    |
@@ -158,9 +139,7 @@ If you're seeing the following error in Microsoft’s Services Control Panel App
 
 This section documents the steps for setting up Telegraf in a Kubernetes environment. Due to the dynamic nature of Kubernetes, we use the Telegraf Operator. 
 
-1. First you need to set up Sumo Logic’s Kubernetes collection.
-
-   * If you have not set up Sumo Logic’s Kubernetes collection, perform [these steps to set up Kubernetes collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v1.2/deploy/docs/Installation_with_Helm.md#installation-with-helm).
+1. First you need to set up Sumo Logic’s Kubernetes collection. If you haven't, go to [Installation with Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md) and perform those setup steps.
 
     :::note
     When installing, make sure you enable the Telegraf Operator by adding this to the installation command: 

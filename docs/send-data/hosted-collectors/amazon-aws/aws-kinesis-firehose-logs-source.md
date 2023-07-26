@@ -2,12 +2,14 @@
 id: aws-kinesis-firehose-logs-source
 title: AWS Kinesis Firehose for Logs Source
 sidebar_label: AWS Kinesis Firehose Logs
-description: Learn how to use the AWS Kinesis Firehose for Logs source to ingest logs from AWS Kinesis Data Firehose.
+description: Learn how to use the AWS Kinesis Firehose for Logs source to ingest logs from Amazon Kinesis Data Firehose.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-logs.png')} alt="icon" width="50"/>
 
-An AWS Kinesis Firehose for Logs Source allows you to ingest CloudWatch logs or any other logs streamed and delivered via AWS Kinesis Data Firehose.
+An AWS Kinesis Firehose for Logs Source allows you to ingest CloudWatch logs or any other logs streamed and delivered via Amazon Kinesis Data Firehose.
 
 Amazon Kinesis Data Firehose is an AWS service that can reliably load streaming data into any analytics platform, such as Sumo Logic. It is a fully managed service that automatically scales to match the throughput of data and requires no ongoing administration. With Kinesis Data Firehose, you don't need to write applications or manage resources. You configure your AWS service logs like VPC flow logs to send logs to AWS CloudWatch that can then stream logs to Kinesis Data Firehose which automatically delivers the logs to your Sumo Logic account. This eliminates the need for creating separate log processors or forwarders such as AWS Lambda functions, that are limited by time out, concurrency, and memory limits.
 
@@ -15,7 +17,7 @@ The following diagram shows the flow of data with an AWS Kinesis Firehose for Lo
 
 ![architecture](/img/send-data/kinesis-architecture.png)
 
-::: note
+:::note
 For failed logs messages, AWS will send them into the backup S3 bucket. Sumo Logic will ingest those failed logs through S3, and not the firehose.
 :::
 
@@ -25,8 +27,8 @@ When you create an AWS Kinesis Firehose for Logs Source, you add it to a Hosted
 
 To create an AWS Kinesis Firehose for Logs Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
-1. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS Kinesis Firehose for Logs Source**.   
 
     ![AWS Kinesis Firehost for Logs Icon.png](/img/send-data/AWS-Kinesis-Firehost-for-Logs-Icon.png)
@@ -72,7 +74,7 @@ To create an AWS Kinesis Firehose for Logs Source:
    * **Enable One Message Per Request.** Select this option if you'll be sending a single message with each HTTP request. For more information, see [Multiline options in HTTP sources](/docs/send-data/hosted-collectors/http-source/logs-metrics). 
 
 1. **Processing Rules for Logs.** Configure desired filters—such as include, exclude, hash, or mask—as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data. Note that while the Sumo service will receive your data, data ingestion will be performed in accordance with the regular expressions you specify in processing rules.    
-1. When you are finished configuring the Source click **Save**.    
+1. When you are finished configuring the Source, click **Save**.    
 1. Copy the provided URL for the Source. You'll provide this to AWS in the next section.
 
     ![img](/img/send-data/http-source-address.png)

@@ -57,5 +57,5 @@ To create a Scheduled Search:
    * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
 
-1. For all configuration options, see [Schedule a Search](docs/alerts/scheduled-searches/schedule-search.md). 
+1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search.md). 
 1. Click **Save**.

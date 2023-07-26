@@ -15,7 +15,7 @@ In CSE Records can be classified at two levels. First, all Records are classifie
 
 Every CSE Record has a Record Type. A Record Type classifies the nature of the event that the Record describes. CSE Record Types include **Authentication,** **Endpoint**, **NetworkHTTP** and so on.
 
-A Record’s type is set by the [log mapping](create-structured-log-mapping.md) that processes it. For more information, see [CSE Record Types](cse-record-types.md).
+A Record’s type is set by the [log mapping](/docs/cse/schema/create-structured-log-mapping) that processes it. For more information, see [CSE Record Types](/docs/cse/schema/cse-record-types).
 
 ## Normalized Classification Fields
 
@@ -30,11 +30,11 @@ Normalized Classification Fields are completely optional when creating a log map
 
 ## normalizedAction
 
-Complementary to the [action](schema-attributes.md) field, the `normalizedAction` field describes the initiation of an activity in a
-standard way across Records. `normalizedAction` is meant to describe an attempt to perform an action, using the success boolean as a modifier to indicate whether or not the action was successful. Note that `normalizedAction` should be used with [normalizedResource](cse-normalized-classification.md) to indicate where an action was attempted, or the resource or entity upon which the action was attempted.
+Complementary to the [action](/docs/cse/schema/schema-attributes) field, the `normalizedAction` field describes the initiation of an activity in a
+standard way across Records. `normalizedAction` is meant to describe an attempt to perform an action, using the success boolean as a modifier to indicate whether or not the action was successful. Note that `normalizedAction` should be used with [normalizedResource](/docs/cse/schema/cse-normalized-classification) to indicate where an action was attempted, or the resource or entity upon which the action was attempted.
 
 | Enforced Output Value | Description |
-|--|--|
+|:--|:--|
 | abort | Use for actions synonymous with "abort". For instance, in an event describing the attempt, successful or not, to interrupt an ongoing task. |
 | allow | Use for actions synonymous with "allow”. For instance, in an event describing the attempt, successful or not, to permit an object or the occurrence of an activity. This is common in actions pertaining to network traffic.                                            |
 | change | Use for actions synonymous with "change". For instance, in an event describing the attempt, successful or not, to modify a resource. |
@@ -65,35 +65,35 @@ standard way across Records. `normalizedAction` is meant to describe an attempt
 
 ## normalizedResource
 
-Complementary to the [resource](schema-attributes.md) field, this field describes the resource being acted upon or otherwise referenced within a Record in a standard way across Records. Intended to be used to provide further normalized context to a Record, particularly in tandem with [normalizedAction](cse-normalized-classification.md).
+Complementary to the [resource](/docs/cse/schema/schema-attributes) field, this field describes the resource being acted upon or otherwise referenced within a Record in a standard way across Records. Intended to be used to provide further normalized context to a Record, particularly in tandem with [normalizedAction](/docs/cse/schema/cse-normalized-classification).
 
 | Enforced Output Value | Description |
-|--|--|
-| network | Use where the resource being acted upon or referenced in a Record is or pertains to network traffic. |
-| email | Use where the resource being acted upon or referenced in a Record pertains to email or email delivery. |
-| malware | Use where the resource being acted upon or referenced in a Record pertains to malware itself or the prevention, detection, or removal of malware. |
-| service | Use where the resource being acted upon or referenced in a Record pertains to a service. |
-| application | Use where the resource being acted upon or referenced in a Record pertains to an application. |
-| process | Use where the resource being acted upon or referenced in a Record pertains to a process |
-| operating system | Use where the resource being acted upon or referenced in a Record pertains to an operating system component. |
+|:--|:--|
 | account | Use where the resource being acted upon or referenced in a Record pertains to an account. |
-| group | Use where the resource being acted upon or referenced in a Record pertains to a group, for example, an organizational unit, security group, user group, computer group, access control list, and so on. |
-| role | Use where the resource being acted upon or referenced in a Record pertains to a role. Common in cloud computing. |
-| file | Use where the resource being acted upon or referenced in a Record pertains to a file. |
-| directory | Use where the resource being acted upon or referenced in a Record pertains to a directory or similar hierarchical organizational unit. |
-| instance | Use where the resource being acted upon or referenced in a Record pertains to a specific machine instance, typically virtual. Common in cloud computing. |
+| application | Use where the resource being acted upon or referenced in a Record pertains to an application. |
+| backup | Use where the resource being acted upon or referenced in a Record pertains to a backup. |
 | bucket | Use where the resource being acted upon or referenced in a Record pertains to a specific bucket. Common in cloud computing. |
 | database | Use where the resource being acted upon or referenced in a Record pertains to a database. |
-| backup | Use where the resource being acted upon or referenced in a Record pertains to a backup. |
-| scheduled task | Use where the resource being acted upon or referenced in a Record pertains to a scheduled task or analogous functionality. |
+| directory | Use where the resource being acted upon or referenced in a Record pertains to a directory or similar hierarchical organizational unit. |
+| email | Use where the resource being acted upon or referenced in a Record pertains to email or email delivery. |
+| file | Use where the resource being acted upon or referenced in a Record pertains to a file. |
+| group | Use where the resource being acted upon or referenced in a Record pertains to a group, for example, an organizational unit, security group, user group, computer group, access control list, and so on. |
+| instance | Use where the resource being acted upon or referenced in a Record pertains to a specific machine instance, typically virtual. Common in cloud computing. |
 | key | Use where the resource being acted upon or referenced in a Record pertains to a cryptographic key. |
+| malware | Use where the resource being acted upon or referenced in a Record pertains to malware itself or the prevention, detection, or removal of malware. |
+| network | Use where the resource being acted upon or referenced in a Record is or pertains to network traffic. |
+| operating system | Use where the resource being acted upon or referenced in a Record pertains to an operating system component. |
+| process | Use where the resource being acted upon or referenced in a Record pertains to a process |
+| role | Use where the resource being acted upon or referenced in a Record pertains to a role. Common in cloud computing. |
+| scheduled task | Use where the resource being acted upon or referenced in a Record pertains to a scheduled task or analogous functionality. |
+| service | Use where the resource being acted upon or referenced in a Record pertains to a service. |
 
 ## normalizedCause
 
-Complementary to the [cause](schema-attributes.md) \field, this field describes the reason for any particular outcome in a Record in a standard way.
+Complementary to the [cause](/docs/cse/schema/schema-attributes) field, this field describes the reason for any particular outcome in a Record in a standard way.
 
 |  Enforced Output Value |  Description |
-|--|--|
+|:--|:--|
 | incorrect password | For a Record describing an authentication failure where the cause of the failure was an incorrect password. |
 | incorrect username | For a Record describing an authentication failure where the cause of the failure was an incorrect username. |
 | failed challenge | For a Record describing an authentication failure where the cause of the failure was a failed multi-factor authentication challenge or other secondary authentication challenge, such as a security question. |
@@ -114,7 +114,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Failed User Logon
 
 |                        |                    |
-|------------------------|--------------------|
+|:------------------------|:--------------------|
 | **Record Type**        | Authentication     |
 | **normalizedAction**   | logon              |
 | **normalizedResource** | account            |
@@ -124,7 +124,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Firewall Denied Traffic
 
 |                        |           |
-|------------------------|-----------|
+|:------------------------|:-----------|
 | **Record Type**        | Network   |
 | **normalizedResource** | network   |
 | **normalizedAction**   | deny      |
@@ -135,7 +135,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Successful Process Execution
 
 |                        |                 |
-|------------------------|-----------------|
+|:------------------------|:-----------------|
 | **Record Type**        | EndpointProcess |
 | **normalizedResource** | process         |
 | **normalizedAction**   | execute         |
@@ -144,7 +144,7 @@ Severity score on a scale of 0 to 10 with 0 being informational and 10 being cri
 #### Successful Account Management
 
 |                        |         |
-|------------------------|---------|
+|:------------------------|:---------|
 | **Record Type**        | Audit   |
 | **normalizedAction**   | change  |
 | **normalizedResource** | account |

@@ -1,9 +1,13 @@
 ---
 id: configure-your-aws-source-cloudformation
-title: Configuring your AWS Source with CloudFormation
+title: Configuring Your AWS Source with CloudFormation
 sidebar_label: AWS CloudFormation Configuration
 description: Use CloudFormation to set up AWS products.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="icon" width="40"/>
 
 You can use AWS CloudFormation to leverage AWS products without creating or configuring any AWS infrastructure. With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.
 
@@ -19,7 +23,7 @@ Both methods require a YAML file with the template. You can create a file with t
 
 ## Create a Stack on the AWS CloudFormation console
 
-1. Visit **Services \> [Cloudformation](https://console.aws.amazon.com/cloudformation/home) \> Create Stack \> Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.
+1. Visit **Services > [Cloudformation](https://console.aws.amazon.com/cloudformation/home) > Create Stack > Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.
 
     ![upload template when creating cloudformation stack.png](/img/send-data/upload-template-when-creating-cloudformation-stack.png)
 
@@ -37,7 +41,7 @@ Both methods require a YAML file with the template. You can create a file with t
 
 1. Options can remain the default, click **Next** again. Review for mistakes then click **Create**.
 
-1. Go to **Services \> [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties \> Events \> Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic\<AWS::StackNam\>`. Click **Save**.
+1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic\<AWS::StackNam\>`. Click **Save**.
 
 ## Use AWS Command Line Interface (CLI)
 
@@ -134,7 +138,7 @@ You can grant Sumo Logic access to your AWS Product with an IAM Role using Clo
 
 ## Create a Stack on the AWS CloudFormation console
 
-1. Visit **Services \> [Cloudformation](https://console.aws.amazon.com/cloudformation/home ) \> Create Stack \> Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.
+1. Visit **Services > [Cloudformation](https://console.aws.amazon.com/cloudformation/home ) > Create Stack > Upload a template to Amazon S3** and upload the file with the CloudFormation template and click **Next**. See [Selecting a Stack Template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for details.
 
     ![upload template when creating cloudformation stack.png](/img/send-data/upload-template-when-creating-cloudformation-stack.png)
 

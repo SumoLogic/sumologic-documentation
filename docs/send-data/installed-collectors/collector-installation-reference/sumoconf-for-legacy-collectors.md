@@ -8,7 +8,7 @@ description: This file passes Collector configuration parameters during installa
 
 For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo during installation.
 
-To authenticate Collectors, you must include an access ID and access key. See [Access Keys](docs/manage/security/access-keys.md for information on generating and managing access keys.
+To authenticate Collectors, you must include an access ID and access key. See [Access Keys](/docs/manage/security/access-keys.md for information on generating and managing access keys.
 
 ## Creating sumo.conf
 
@@ -35,10 +35,10 @@ The following parameters can be passed to Sumo Logic using `sumo.conf`.
 You cannot have blank values, like `name=` .
 
 | Parameter | Description | Example | Required/Optional |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | `name` | Name used to register the Collector. If no name is specified, the hostname is used. The hostname can be a maximum of 128 characters. | `name=FirewallLogs` | Optional |
-| `accessid` | Access ID generated in the Security page. See [Access Keys](docs/manage/security/access-keys.md) | `accessid=MboxeezMzN8S` | Required |
-| `accesskey` | Access ID generated in the Security page. See [Access Keys](docs/manage/security/access-keys.md) | `accesskey=dBorwTn8TxF8ofounEXnsQ4hPpuqCzw` | Required |
+| `accessid` | Access ID generated in the Security page. See [Access Keys](/docs/manage/security/access-keys.md) | `accessid=MboxeezMzN8S` | Required |
+| `accesskey` | Access ID generated in the Security page. See [Access Keys](/docs/manage/security/access-keys.md) | `accesskey=dBorwTn8TxF8ofounEXnsQ4hPpuqCzw` | Required |
 | `sources` | Path to JSON file that contains Source configuration. See [JSON Source Configuration](/docs/send-data/use-json-configure-sources).<br/>**Important:** On Windows the path value for "sources=" must be specified with double slashes, \\, as shown in the example. | `sources=c:\\sumo sources.json (Windows)` | Optional |
 | override | Overrides a Collector's existing Sources to delete all Sources except for the one specified by the sources parameter (above).<br/>**Important:** Don't include this parameter in sumo.conf unless necessary. Override results in Source deletion and re-creation with collector restart, and causes significant re-ingestion of already ingested data.  | `override=true` | Optional |
 | `ephemeral` | When set to true, the Collector will be deleted after 12 hours of inactivity. See [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md) for more information. | `ephemeral=true` | Optional |

@@ -1,6 +1,7 @@
 ---
 id: log-search-audit-index
 title: Log Search Audit Index
+description: The Search Audit Index is populated with log messages and the message contains search usage and activities for your account.
 ---
 
 The Search Audit Index is populated with log messages and the message contains search usage and activities for your account. You can query the search audit index just like any other message using the Sumo Logic search page.
@@ -20,11 +21,11 @@ Querying the index returns results only if the index is enabled.
 The following table provides details on the fields returned by the index:
 
 | Field  | Description |
-|--|--|
+|:--|:--|
 | `time` | The time when the audit log was generated. |
-| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](../partitions-data-tiers/data-tiers.md).* |
+| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](../partitions-data-tiers/data-tiers.md). |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
-| `data_scanned_bytes` | Amount of data scanned by the search query. This is an approximation as scanned message bytes are captured at intermittent time intervals and averaged over a query time range. *(May be less than retrieved bytes in some cases due to this approximation)* |
+| `data_scanned_bytes` | Amount of data scanned by the search query. This value is an approximation, as the scanned message bytes are captured at intermittent time intervals and then averaged over the query time range. It is important to note that this value may be less than the retrieved bytes in some cases due to the approximation. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
 | `execution_duration_ms` | Time taken to complete the search. |
 | `is_aggregate` | The boolean variable that indicates if the corresponding search query was an aggregate query. The aggregate operator’s list can be found [*here*](/docs/search/search-query-language/group-aggregate-operators). |
 | `query` | The query text string run by the user. |
@@ -44,7 +45,7 @@ The following table provides details on the fields returned by the index:
 The table below shows the possible values for the field, query_type.
 
 | query_type value | Description |
-|--|--|
+|:--|:--|
 | Search API | Search queries run by users using the Sumo Search Job API only. |
 | Interactive Search | Search queries run from the Search tab in the UI only. |
 | Interactive Dashboard | Search queries run from dashboards in the UI only. |
@@ -52,9 +53,8 @@ The table below shows the possible values for the field, query_type.
 | View Maintenance | Scheduled View queries run on behalf of the users in the org. |
 | Sumo Internal | The Internal searches Sumo runs in the background that are critical in providing other services (For example, autocomplete, scheduled view optimization, etc.)                                    |
 | Live Dashboard | Search queries used to power live dashboard panels. |
-| Compare | Search queries that are run as part of the logreduce operator or compare timeshift operators in the search query. The corresponding parent search query can be identified by the same session_id. |
-| Subquery | Subqueries are run as a separate search and corresponding attributes are captured in the Search Audit Index. The corresponding parent search query can be identified by the same session_id.      |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
+| Span Analytics | Queries are run for filtering and aggregating trace data based on span attributes to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |
 
 ## Index retention period
 

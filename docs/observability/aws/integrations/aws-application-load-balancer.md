@@ -15,12 +15,10 @@ The AWS Application Load Balancer ULM App uses the following log and metric type
 
 * Metrics included in the AWS/ApplicationELB namespace. For more details, see this [*AWS Services help*](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html#load-balancer-metrics-alb) page. 
 * The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in Classic ELB Access log:
-
   * **Type.** This is the type of request or connection (HTTP, HTTPS, H2, ws, wss)
   * **Target_group_arn**. This is the Amazon Resource Name (ARN) of the target group
 
-The logs are stored in a .gzip format in the specified S3 bucket and contain these fields in this order:  
-timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id. For more details on the ALB Access log, see the [AWS documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
+The logs are stored in a .gzip format in the specified S3 bucket and contain these fields in this order: timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id. For more details on the ALB Access log, see the [AWS documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
 
 ### Sample Log Message
 
@@ -36,7 +34,7 @@ DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:10403021
 
 The following query sample was taken from the **HTTP Target 5xx per Target Group** panel on the **AWS Application Load Balancer - HTTP Target Group Codes** dashboard.
 
-```sql
+```
 _sourceCategory=Labs/AWS/ALB/Metrics Namespace=aws/applicationelb metric=HTTPCode_Target_5XX_Count
 Statistic=Sum _sourcehost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
 | parse field= TargetGroup */* as Unused, TargetGroup | sum by TargetGroup
@@ -135,8 +133,7 @@ Use this dashboard to:
 ### 6. AWS Application Load Balancer - Requests and Processed Bytes
 
 The **AWS Application Load Balancer - Requests and Processed Bytes**
-dashboard provides insights into client requests, network traffic, and
-processed data.
+dashboard provides insights into client requests, network traffic, and processed data.
 
 Use this dashboard to:
 

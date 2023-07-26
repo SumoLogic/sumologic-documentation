@@ -49,7 +49,7 @@ A Script Action is a Source type that receives data uploads triggered by a sched
 After setting up a Script Action, create a scheduled search. Each time the search query executes, the Collector runs the script configured in the Script Action.
 
 :::note
-You need the [View Collectors role capability](docs/manage/users-roles/roles/role-capabilities.md) to alert with a Script Action.
+You need the [View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities.md) to alert with a Script Action.
 :::
 
 For instructions, see [Script Action](/docs/send-data/installed-collectors/sources/script-action).
@@ -60,13 +60,13 @@ Existing customers of both ServiceNow and Sumo Logic can now take advantage of t
 
 The main way data is uploaded to ServiceNow is through the use of scheduled searches. After saving a search, results are available in ServiceNow. Additionally, you can launch ad-hoc ServiceNow investigations using search results in Sumo Logic.
 
-For instructions, see [ServiceNow](/docs/manage/connections-integrations/servicenow).
+For instructions, see [ServiceNow](/docs/alerts/webhook-connections/servicenow/).
 
 ### Webhook
 
 Webhooks connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a scheduled search, then you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems.
 
-For instructions, see [Scheduled Searches for Webhook Connections](docs/manage/connections-integrations/webhook-connections/schedule-searches-webhook-connections.md).
+For instructions, see [Scheduled Searches for Webhook Connections](/docs/alerts/webhook-connections/schedule-searches-webhook-connections).
 
 ### Save to Index
 
@@ -90,7 +90,7 @@ For instructions, see [Create a Alert](create-real-time-alert.md).
 
 ### CSE Signal
 
-You can trigger the creation of a CSE Signal with a scheduled search. Signals are otherwise generated when the conditions of a CSE rule are satisfied by a Record. Signals are correlated with other Signals to create a [CSE Insight](../../cse/records-signals-entities-insights/insight-generation-process.md).
+You can trigger the creation of a CSE Signal with a scheduled search. Signals are otherwise generated when the conditions of a CSE rule are satisfied by a Record. Signals are correlated with other Signals to create a [CSE Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).
  
 
 For instructions, see [Generate CSE Signals With a Scheduled Search](generate-cse-signals.md).

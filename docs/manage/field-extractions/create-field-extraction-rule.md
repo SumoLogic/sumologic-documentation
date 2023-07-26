@@ -4,19 +4,38 @@ title: Create a Field Extraction Rule
 description: Field Extraction Rules (FER) tell Sumo Logic which fields to parse out automatically.
 ---
 
-You can create a field extraction rule of your own from scratch by following the instructions below. We also provide [data-source-specific templates](docs/manage/field-extractions/fer-templates/index.md) for AWS, Apache, and more.
+import Iframe from 'react-iframe';
+
+You can create a field extraction rule of your own from scratch by following the instructions below. We also provide [data-source-specific templates](/docs/manage/field-extractions/fer-templates/index.md) for AWS, Apache, and more.
 
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule.
 
 :::note
-Fields specified in field extraction rules are automatically added and enabled in your [Fields](docs/manage/fields.md) table schema.
+Fields specified in field extraction rules are automatically added and enabled in your [Fields](/docs/manage/fields.md) table schema.
+:::
+
+:::sumo Micro Lesson
+
+Learn how to create a FER through our video, "Creating a Field Extraction Rule".
+
+<Iframe url="https://www.youtube.com/embed/QWm8hR7SmxE"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
 :::
 
 ## Creating a new Field Extraction Rule
 
 To create a Field Extraction Rule:
 
-1. Go to **Manage Data** \> **Logs** \> **Field Extraction Rules**.
+1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
 1. Click the **+ Add** button on the top right of the table.
 1. The **Add Field Extraction Rule** form will appear:<br/> ![Create Field extraction rule with dynamic parsing.png](/img/field-extraction-rules/create-fer.png)
 1. Enter the following options:
@@ -41,16 +60,16 @@ To create a Field Extraction Rule:
     :::sumo Best Practices
     If you are not using Partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
 
-    We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS Cloudtrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
+    We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
     :::
 
    * **Parsed template** (Optional for Ingest Time rules).
-     * Click the drop down under **Parsed template** to see the available templates.
+     * Click the dropdown under **Parsed template** to see the available templates.
      * Choose a template and click **Use Template**. The template is applied to the Parse Expression.
    * **Parse Expression**. (Applicable to Ingest Time rules)
-     * Type a valid parse expression with supported parse and search operators. Because fields are associated with the Rule Name, you can parse one particular field into as many rules as you'd like. For example, to parse a single field, you could use a definition similar to this: `parse "message count = *," as msg_count ` To parse multiple fields, you could use a definition similar to this: `parse "[hostId=*] [module=*] [localUserName=*] [logger=*] [thread=*]" as hostId, module, localUserName, logger, thread`
+     * Type a valid parse expression with supported parse and search operators. Because fields are associated with the Rule Name, you can parse one particular field into as many rules as you'd like. For example, to parse a single field, you could use a definition similar to this: `parse "message count = *," as msg_count`. To parse multiple fields, you could use a definition similar to this: `parse "[hostId=*] [module=*] [localUserName=*] [logger=*] [thread=*]" as hostId, module, localUserName, logger, thread`.
 
-1. **Extracted Fields** (applicable to Ingest Time rules) shows the field names the rule will parse. Any fields that do not exist in the Field table schema are shown with the text **New** highlighted in green. New fields are automatically created in the table schema when you save the rule. You can view and manage the field table schema on the [Fields](docs/manage/fields.md) page.
+1. **Extracted Fields** (applicable to Ingest Time rules) shows the field names the rule will parse. Any fields that do not exist in the Field table schema are shown with the text **New** highlighted in green. New fields are automatically created in the table schema when you save the rule. You can view and manage the field table schema on the [Fields](/docs/manage/fields.md) page.
 1. Click **Save** to create the rule.
 
 ## Example Template
@@ -76,7 +95,7 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 **Resulting Fields:**
 
 | Field Name | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | user | User Email Address | `test@email.com` |
 | action | Action performed by the user | Delete |
 | sessionId | Session ID for user action | 145623 |
@@ -123,7 +142,7 @@ The `parse multi` operator is not supported in FERs.
 
 Ingest Time FERs have the following limitations:
 
-* There is a limit of 50 Ingest Time rules and 200 fields. [Fields](docs/manage/fields.md) created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields](docs/manage/fields.md) page.
+* There is a limit of 50 Ingest Time rules and 200 fields. [Fields](/docs/manage/fields.md) created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields](/docs/manage/fields.md) page.
 * Ingest Time rule expressions are limited to a maximum of 16k (16,384) characters.
 * Ingest Time rules can extract up to a maximum of 16k (16,384) characters for each field.
 * The cumulative size of all fields extracted by a rule for a message/event is limited to 64kb.

@@ -4,14 +4,13 @@ title: Entity Tags and Standard Match Lists
 description: Learn about Entity Tags and standard Match Lists in CSE.
 ---
 
-
 This topic has information about how you can identify specific Entities or indicators that should be treated differently during CSE rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a Signal if a user Entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
-* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
+* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
 :::tip
-The most efficient way to assign tags to Entities is to configure [Entity Groups](docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
+The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
 :::
-* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below.
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
 
 
 ## Schema tag keys for Entities
@@ -87,7 +86,7 @@ Assign the _userGroup tag to users accounts  known to be involved with specific 
 
 ### admin_ips
 
-**Target column:** Source IP Address
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
@@ -96,19 +95,50 @@ The following CSE rules refer to this Match List:
 * PSEXEC Admin Tool Detection
 * PowerShell Remote Administration
 * SMB write to admin hidden share
-* AWS CloudTrail Aggressive Reconnaissance (IP)
-* AWS CloudTrail Aggressive Reconnaissance (Username)
-* AWS CloudTrail Database Snapshot Created (IP)
-* AWS CloudTrail Database Snapshot Created (Username)
-* AWS CloudTrail GetSecretValue from non Amazon IP
-* AWS CloudTrail Reconnaissance related event (IP)
-* AWS CloudTrail Reconnaissance related event (Username)
-* AWS CloudTrail sensitive activity in KMS (IP)
-* AWS CloudTrail sensitive activity in KMS (Username)
+
+### admin_accounts
+
+**Target column:** Username (`Username`)
+
+**Description:** Accounts that are known to be involved with specific administrative or privileged activity.
+
+The following CSE rules refer to this Match List:
+
+* Windows - Excessive User Interactive Logons Across Multiple Hosts
+
+### admin_username
+
+**Target column:** Username (`Username`)
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity.
+
+The following CSE rules refer to this Match List:
+
+* Lateral Movement Using the Windows Hidden Admin Share
+
+### Alibaba_admin_users
+
+**Target column:** Username (`Username`)
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
+
+The following CSE rules refer to this Match List:
+
+* Alibaba ActionTrail KMS Activity
+
+### Alibaba_admin_ips
+
+**Target column:** IP Address (`Ip`)
+
+**Description:** IPs that are known to be involved with specific administrative or privileged activity on the network.
+
+The following CSE rules refer to this Match List:
+
+* Alibaba ActionTrail KMS Activity
 
 ### auth_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Network authentication servers, including Active Directory, LDAP, Kerberos, RADIUS/TACACS, and NIS servers. May be used in analytics designed to detect [DCSync](https://attack.mitre.org/techniques/T1003/006/) attacks.
 
@@ -116,91 +146,121 @@ The following CSE rules refer to this Match List:
 
 * DNS Lookup of High Entropy Domain
 
-The following CSE rules refer to this Match List:
+### authorized_third_party_domains
 
-none
+**Target column:** Domain (`Domain`)
 
-### auth_servers_dst
-
-**Target column:** Destination IP Address
-
-**Description:** Copy of the [auth_servers](#auth_servers) Match List for directional matches.
+**Description:** Authorized third party domains.
 
 The following CSE rules refer to this Match List:
 
-none
-
-### auth_servers_src
-
-**Target column:** Source IP Address
-
-**Description:** Copy of the [auth_servers](#auth_servers) Match List for directional matches.
-
-The following CSE rules refer to this Match List:
-
-none
+* Salesforce LoginAs Event
 
 ### AWS_admin_ips
 
-**Target column:** Source IP Address
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
 The following CSE rules refer to this Match List:
 
-* AWS_CloudTrail_Aggressive_Reconnaissance.json
-* AWS_CloudTrail_Database_Snapshot_Created.json
-* AWS_CloudTrail_GetSecretValue_from_non_Amazon_IP.json
-* AWS_CloudTrail_Reconnaissance_related_event.json
-* AWS_CloudTrail_sensitive_activity_in_KMS.json
-* AWS_ECS_Cluster_Deleted.json
-* AWS_Route_53_Domain_Registered.json
-* AWS_Route_53_Reconnaissance.json
-* AWS_Route_53_Service_Tampering.json
-* AWS_Route_53_TestDNSAnswer.json
-* AWS_Route_53_Traffic_Policy_Creation.json
-* AWS_WAF_Rule_Group_Updated.json
-* AWS_WAF_Rule_Updated.json
-* Anomalous_AWS_User_Executed_a_Command_on_ECS_Container.json
+* AWS Cloud Storage Deletion
+* AWS CloudTrail - Aggressive Reconnaissance
+* AWS CloudTrail - Database Snapshot Created
+* AWS CloudTrail - GetSecretValue from non Amazon IP
+* AWS CloudTrail - Reconnaissance related event
+* AWS CloudTrail - sensitive activity in KMS
+* AWS CloudWatch Alarm Actions Disabled
+* AWS CloudWatch Alarm Deletion
+* AWS CloudWatch Anomaly Detector Deletion
+* AWS CloudWatch Log Group Deletion
+* AWS CloudWatch Log Stream Deletion
+* AWS Config Recorder Deletion
+* AWS Config Recorder Stopped
+* AWS Config Service Tampering
+* AWS ECS Cluster Deleted
+* AWS Image Creation
+* AWS Image Deletion
+* AWS Image Discovery
+* AWS Image Modification
+* AWS Instance Creation
+* AWS Instance Deletion
+* AWS Instance Discovery
+* AWS Instance Modification
+* AWS Route 53 Domain Registered
+* AWS Route 53 Reconnaissance
+* AWS Route 53 Service Tampering
+* AWS Route 53 TestDNSAnswer
+* AWS Route 53 Traffic Policy Creation
+* AWS WAF Access Control List Updated
+* AWS WAF Reconnaissance
+* AWS WAF Rule Group Updated
+* AWS WAF Rule Updated
+* AWS WAF Service Tampering
+* Anomalous AWS User Executed a Command on ECS Container
 
 ### AWS_admin_users
 
-**Target column:** Username
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
 The following CSE rules refer to this Match List:
 
-* AWS_CloudTrail_Aggressive_Reconnaissance.json
-* AWS_CloudTrail_Database_Snapshot_Created.json
-* AWS_CloudTrail_Reconnaissance_related_event.json
-* AWS_CloudTrail_sensitive_activity_in_KMS.json
-* AWS_ECS_Cluster_Deleted.json
-* AWS_Route_53_Domain_Registered.json
-* AWS_Route_53_Reconnaissance.json
-* AWS_Route_53_Service_Tampering.json
-* AWS_Route_53_TestDNSAnswer.json
-* AWS_Route_53_Traffic_Policy_Creation.json
-* AWS_WAF_Rule_Group_Updated.json
-* AWS_WAF_Rule_Updated.json
-* Anomalous_AWS_User_Executed_a_Command_on_ECS_Container.json
+* AWS Cloud Storage Deletion
+* AWS CloudTrail - Aggressive Reconnaissance
+* AWS CloudTrail - Database Snapshot Created
+* AWS CloudTrail - Reconnaissance related event
+* AWS CloudTrail - sensitive activity in KMS
+* AWS CloudWatch Alarm Actions Disabled
+* AWS CloudWatch Alarm Deletion
+* AWS CloudWatch Anomaly Detector Deletion
+* AWS CloudWatch Log Group Deletion
+* AWS CloudWatch Log Stream Deletion
+* AWS Config Recorder Deletion
+* AWS Config Recorder Stopped
+* AWS Config Service Tampering
+* AWS ECS Cluster Deleted
+* AWS Image Creation
+* AWS Image Deletion
+* AWS Image Discovery
+* AWS Image Modification
+* AWS Instance Creation
+* AWS Instance Deletion
+* AWS Instance Discovery
+* AWS Instance Modification
+* AWS Route 53 Domain Registered
+* AWS Route 53 Reconnaissance
+* AWS Route 53 Service Tampering
+* AWS Route 53 TestDNSAnswer
+* AWS Route 53 Traffic Policy Creation
+* AWS WAF Access Control List Updated
+* AWS WAF Reconnaissance
+* AWS WAF Rule Group Updated
+* AWS WAF Rule Updated
+* AWS WAF Service Tampering
+* Anomalous AWS User Executed a Command on ECS Container
+* Spike in AWS API Call from User
 
 ### business_asns
 
-**Target column:** ASN
+**Target column:** ASN (`Asn`)
 
 **Description:** Remote ASNs supporting business processes.
 
 The following CSE rules refer to this Match List:
 
-* Domain Resolution in Non Standard TLD
-* Executable Downloaded Content Type Mismatch
-* HTTP Request to Domain in Non Standard TLD
-* Threat
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
+* HTTP Request to Domain in Non-Standard TLD
+* Threat Intel Match - IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### business_domains
 
-**Target column:** Domain
+**Target column:** Domain (`Domain`)
 
 **Description:** DNS domain names that are known business-related domains. This is intended to capture domains related to validated, expected, or critical business functions and may be used for allowlisting or filtering related uninteresting results from query result sets.
 
@@ -208,125 +268,127 @@ The following CSE rules refer to this Match List:
 
 The following CSE rules refer to this Match List:
 
-* Anomalous Web Server Software
 * Bitsadmin to Uncommon TLD
-* Connection to High Entropy Domain,
-* DNS DGA Lookup Behavior NXDOMAIN Responses
+* Connection to High Entropy Domain
+* DNS DGA Lookup Behavior - NXDOMAIN Responses
 * DNS Lookup of High Entropy Domain
-* DNS over TLS (DoT) Activity
 * DNS query for dynamic DNS provider
-* DNS Query Hex in Domain
-* Domain Resolution in Non Standard TLD
-* Executable Downloaded Content Type Mismatch
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
 * HTTP External Request to PowerShell Extension
-* HTTP Request for Possible DGA Domain
+* HTTP Request to Domain in Non-Standard TLD
 * HTTP request for single character file name
-* HTTP Request to Domain in Non Standard TLD
-* Possible DGA Domain
+* Hexadecimal in DNS Query Domain
 * Possible DNS Data Exfiltration
-* Script CLI UserAgent string
-* SSH Interesting Hostname Login   Threat
+* Request to Anomalous Web Server Software
+* SSH Interesting Hostname Login
+* Script/CLI UserAgent string
+* Threat Intel Match - IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### business_hostnames
 
-**Target column:** Hostname
+**Target column:** Hostname (`Hostname`)
 
 **Description:** DNS hostnames that are known to be business-related FQDNs.
 
 The following CSE rules refer to this Match List:
 
-* Anomalous Web Server Software
 * Bitsadmin to Uncommon TLD
-* Connection to High Entropy Domain,
-* DNS DGA Lookup Behavior NXDOMAIN Responses
+* Connection to High Entropy Domain
+* DNS DGA Lookup Behavior - NXDOMAIN Responses
 * DNS Lookup of High Entropy Domain
-* DNS Query Hex in Domain
 * DNS query for dynamic DNS provider
-* Domain Resolution in Non Standard TLD
-* Executable Downloaded Content Type Mismatch
-* HTTP request for single character file name
-* HTTP Request to Domain in Non Standard TLD
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
 * HTTP External Request to PowerShell Extension
-* HTTP Request  for Possible DGA Domain
+* HTTP Request to Domain in Non-Standard TLD
 * HTTP request for single character file name
-* Possible DGA Domain
+* Hexadecimal in DNS Query Domain
 * Possible DNS Data Exfiltration
-* Script CLI UserAgent string
+* Request to Anomalous Web Server Software
 * SSH Interesting Hostname Login
-* Threat
-* VBS file downloaded
+* Script/CLI UserAgent string
+* Threat Intel Match - IP Address
+* VBS file downloaded from Internet
+* Web Request to Punycode Domain
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### business_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Remote IP addresses supporting business processes. Can be used for things like SSH servers for SFTP file exchanges (similarly, FTP servers).
 
 The following CSE rules refer to this Match List:
 
-* Anomalous Web Server Software, Bitsadmin to Uncommon TLD, Connection to High Entropy Domain
+* Bitsadmin to Uncommon TLD
+* Connection to High Entropy Domain
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
 * HTTP External Request to PowerShell Extension
-* HTTP Request for Possible DGA Domain,
+* HTTP Request to Domain in Non-Standard TLD
 * Noncompliant Protocol Tunnel Over Common Service Port
-* Palo Alto Correlation Event (IP)
-* Palo Alto Correlation Event (User)
-* Palo Alto Failed Authentication Multiple Attempts from the Same IP
-* Palo Alto Failed Authentication Multiple Attempts from the User
-* Palo Alto Failed Authentication Multiple Usernames Attempted
-* Palo Alto Firewall Threat (IP)
-* Palo Alto Firewall Threat (User)
-* Possible DGA Domain
+* Outbound Data Transfer Protocol Over Non-standard Port
 * Potential malicious JVM download
-* SMB Internal to External
+* Request to Anomalous Web Server Software
+* SMB Internal to External traffic
 * SSH Interesting Hostname Login
-* SSH Password Brute Force
-* Script CLI UserAgent string
+* Script/CLI UserAgent string
+* Threat Intel Match - IP Address
+* Web Request to IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### dns_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** DNS caching resolvers/authoritative content servers in customer environments.
 
 The following CSE rules refer to this Match List:
 
-* Too many empty refused dns queries
-* DNS over TLS (DoT) Activity
+* Direct Outbound DNS Traffic
+* Possible DNS over TLS (DoT) Activity
+* Too many empty/refused DNS queries
 
-### dns_servers_dst
+### domain_controllers
 
-**Target column:** Destination IP Address
+**Target column:** IP Address (`Ip`)
 
-**Description:** Copy of the [dns_servers](#dns_servers) Match List for directional matches.
-
-The following CSE rules refer to this Match List:
-
-none
-
-### dns_servers_src
-
-**Target column:** Source IP Address
-
-**Description:** Copy of the [dns_servers](#dns_servers) Match List for directional matches.
+**Description:** Domain controllers.
 
 The following CSE rules refer to this Match List:
 
-none
+* Brute Force Attempt
+* Domain Brute Force Attempt
+* Domain Password Attack
+* First Seen Anonymous Logon Change Activity to Domain Controller
+* Interactive Logon to Domain Controller
+* Password Attack
+* Successful Brute Force
+* Suspicious DC Logon
 
 ### downgrade_krb5_etype_authorized_users
 
-**Target column:** Username
+**Target column:** Username (`Username`)
 
 **Description:** Known account names that utilize downgraded encryption types with multiple SPNs. This is an exception Match List that should be populated with a list of Kerberos principal names (for example,  jdoe@EXAMPLE.COM) matched in endpoint username that are known to trigger content around legacy downgraded encryption types. This is directly related to the detection of [*Kerberoasting*](https://attack.mitre.org/techniques/T1208/) attacks.
 
 The following CSE rules refer to this Match List:
 
-* Too Many Kerberos Encryption Downgrade SPNs (IP)
-* Too Many Kerberos Encryption Downgrade SPNs (User)
+* First Seen Kerberoasting Attempt from User - Global
+* First Seen Kerberoasting Attempt from User - Host
+* Too Many Kerberos Encryption Downgrade SPNs (Kerberoasting)
 
 ### ds_replication_authorized_users
 
-**Target column:** Username
+**Target column:** Username (`Username`)
 
 **Description:** Authorized account names to initiate Directory Service Replication requests to Active Directory.
 
@@ -336,9 +398,35 @@ The following CSE rules refer to this Match List:
 
 none
 
+### dyndns_exception_domains
+
+**Target column:** Domain (`Domain`)
+
+**Description:** Authorized domains.
+
+The following CSE rules refer to this Match List:
+
+* Connection to High Entropy Domain
+* DNS query for dynamic DNS provider
+* HTTP request for single character file name
+* Possible DNS Data Exfiltration
+
+### dyndns_exception_hostnames
+
+**Target column:** Hostname (`Hostname`)
+
+**Description:** Authorized hostnames.
+
+The following CSE rules refer to this Match List:
+
+* Connection to High Entropy Domain
+* DNS query for dynamic DNS provider
+* HTTP request for single character file name
+* Possible DNS Data Exfiltration
+
 ### ftp_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Known FTP servers.
 
@@ -348,39 +436,85 @@ none
 
 ### GCP_admin_ips
 
-**Target column:** Source IP Address
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
+The following CSE rules refer to this Match List:
+
+* GCP Image Creation
+* GCP Image Deletion
+* GCP Image Discovery
+* GCP Image Modification
+* GCP Instance Creation
+* GCP Instance Deletion
+* GCP Instance Discovery
+* GCP Instance Modification
+
 ### GCP_admin_users
 
-**Target column:** Username
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
+The following CSE rules refer to this Match List:
+
+* GCP Image Creation
+* GCP Image Deletion
+* GCP Image Discovery
+* GCP Image Modification
+* GCP Instance Creation
+* GCP Instance Deletion
+* GCP Instance Discovery
+* GCP Instance Modification
+
+### gcp_admin
+
+**Target column:** Username (`Username`) or Source IP Address (`SrcIp`)
+
+**Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
+
+The following CSE rules refer to this Match List:
+
+* GCP Audit Cloud SQL Database Modified
+* GCP Audit GCE Firewall Rule Modified
+* GCP Audit GCE Network Route Created or Modified
+* GCP Audit GCE VPC Network Modified
+* GCP Audit IAM CreateServiceAccount Observed
+* GCP Audit IAM Custom Role Created or Modified
+* GCP Audit IAM Custom Role Deletion
+* GCP Audit IAM DeleteServiceAccount Observed
+* GCP Audit IAM DisableServiceAccount Observed
+* GCP Audit KMS Activity
+* GCP Audit Logging Sink Modified
+* GCP Audit Pub/Sub Subscriber Modified
+* GCP Audit Pub/Sub Topic Deleted
+* GCP Audit Secrets Manager Activity
+* GCP Bucket Modified
+
 ### Google_Workspace_admin_ips
 
-**Target column:** Source IP Address
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
 The following CSE rule refers to this Match List:
 
-G Suite - Admin Activity
+* G Suite - Admin Activity
 
 ### Google_Workspace_admin_users
 
-**Target column:** Username
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
 The following CSE rule refers to this Match List:
 
-G Suite - Admin Activity
+* G Suite - Admin Activity
 
 ### guest_networks
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Known guest WLAN and other guests/BYOD network addresses.
 
@@ -389,45 +523,50 @@ The following CSE rules refer to this Match List:
 * Base32 in DNS Query
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
-* DNS DGA Lookup Behavior NXDOMAIN Responses
+* DNS DGA Lookup Behavior - NXDOMAIN Responses
 * DNS Lookup of High Entropy Domain
-* DNS over TLS (DoT) Activity
 * DNS query for dynamic DNS provider
-* DNS Query Hex in Domain
-* Domain Resolution in Non Standard TLD
-* Executable Downloaded Content Type Mismatch
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
+* HTTP Request to Domain in Non-Standard TLD
 * HTTP request for single character file name
-* HTTP Request to Domain in Non Standard TLD
+* Hexadecimal in DNS Query Domain
 * Noncompliant Protocol Tunnel Over Common Service Port
-* Palo Alto Correlation Event (IP)
-* Palo Alto Correlation Event (User)
-* Palo Alto Failed Authentication Multiple Attempts from the Same IP
-* Palo Alto Failed Authentication Multiple Attempts from the User
-* Palo Alto Failed Authentication Multiple Usernames Attempted
-* Palo Alto Firewall Threat (IP)
-* Palo Alto Firewall Threat (User)
 * Possible DNS Data Exfiltration
+* Possible DNS over TLS (DoT) Activity
 * RDP Error Messages
-* Script CLI UserAgent string
-*  SMB write to admin hidden share
+* SMB write to hidden admin share
 * SQL Injection Attacker
 * SQL Injection Victim
-* SQL Select From
+* SQL-Select-From
 * SSH Interesting Hostname Login
+* Script/CLI UserAgent string
+* Web Request to IP Address
+* Web Request to Punycode Domain
+
+### honeypot_ip_addresses
+
+**Target column:** IP Address (`Ip`)
+
+**Description:** List of IPs for Honeypots.
+
+The following CSE rules refer to this Match List:
+
+* Traffic to Honeypot IP
 
 ### http_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Web servers in your environment.
 
 The following CSE rules refer to this Match List:
 
-none
+* Spike in URL Length from IP Address
 
 ### lan_scanner_exception_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** IP addresses excepted from analytics identifying LAN protocol scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports, etc. Not an across-the-board allowlist. This Match List is not intended for vulnerability scanners, which should be listed instead in vuln scanners.
 
@@ -439,27 +578,34 @@ Examples of hosts that are suited for this Match List:
 
 The following CSE rules refer to this Match List:
 
+* Amazon VPC - Network Scan
+* Amazon VPC - Port Scan
+* Excessive Outbound Firewall Blocks
+* GCP Port Scan
+* GCP Port Sweep
+* IP Address Scan - Internal
 * Internal Port Scan
 * Internal Port Sweep
-* IP Address Scan Internal
-* Port Scan Internal
+* Port Scan - Internal
 * SMB Scanning Detected
 * SSH Authentication Failures
 * SSL Certificate Expired
+* Suspicious HTTP User-Agent
+* Traffic to Honeypot IP
 
 ### nat_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Source NAT addresses. Can be used as an exception Match List to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts. Note that this can also be applied using [proxy_servers](#proxy_servers) as an example of a specific case.
 
 The following CSE rules refer to this Match List:
 
-* DNS DGA Lookup Behavior NXDOMAIN Responses
+* DNS DGA Lookup Behavior - NXDOMAIN Responses
 
 ### nms_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:**
 
@@ -469,14 +615,29 @@ Can be used as an exception Match List for systems that connect to other hosts i
 
 The following CSE rules refer to this Match List:
 
+* Amazon VPC - Network Scan
+* Amazon VPC - Port Scan
+* GCP Port Scan
+* GCP Port Sweep
+* IP Address Scan - Internal
 * Internal Port Scan
 * Internal Port Sweep
-* IP Address Scan Internal
-* Port Scan Internal
+* Port Scan - Internal
+* Traffic to Honeypot IP
+
+### Okta_Admins
+
+**Target column:** Username (`Username`)
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity.
+
+The following CSE rules refer to this Match List:
+
+* Okta Admin App Accessed
 
 ### palo_alto_sinkhole_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** IP addresses for the sinkhole IP or IPs configured for [Palo Alto DNS sinkhole](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClGECA0).
 
@@ -488,34 +649,60 @@ None
 
 ### proxy_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Forward proxy servers, including HTTP and SOCKS proxies.
 
 The following CSE rules refer to this Match List:
 
-* DNS DGA Lookup Behavior NXDOMAIN Responses
-* Executable Downloaded Content Type Mismatch
-* HTTP Response Error Spike Internal
+* Amazon VPC - Network Scan
+* Amazon VPC - Port Scan
+* DNS DGA Lookup Behavior - NXDOMAIN Responses
+* GCP Port Scan
+* GCP Port Sweep
+* HTTP Response Error Spike - Internal
+* IP Address Scan - Internal
 * Internal Port Scan
 * Internal Port Sweep
-* IP Address Scan Internal
-* Port Scan Internal
+* Port Scan - Internal
 * Possible DNS Data Exfiltration
 
 ### proxy_servers_dst
 
-**Target column:** Destination IP Address
+**Target column:** Destination IP Address (`DstIp`)
 
 **Description:** Copy of the [proxy_servers](#proxy_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 
-* Executable Downloaded Content Type Mismatch
+* Bitsadmin to Uncommon TLD
+* Excessive Outbound Firewall Blocks
+* Executable Downloaded - Content-Type Mismatch
+* GitHub Raw URL Resource Request
+* HTTP External Request to PowerShell Extension
+* HTTP Request with Single Header
+* HTTP Shell Script Download Disguised as a Common Web File
+* HTTP request for single character file name
+* High risk file extension download without hostname and referrer
+* Large File Upload
+* Large Outbound ICMP Packets
+* Noncompliant Protocol Tunnel Over Common Service Port
+* Outbound Data Transfer Protocol Over Non-standard Port
+* Outbound IRC Traffic
+* Outbound TFTP Traffic
+* Pastebin Raw URL Resource Request
+* Possible DNS over TLS (DoT) Activity
+* Request to Anomalous Web Server Software
+* SMB Internal to External traffic
+* Self-signed Certificates
+* Suspicious Typical Malware Back Connect Ports
+* VBS file downloaded from Internet
+* Web Request to IP Address
+* Web Request to Punycode Domain
 
 ### proxy_servers_src
 
-**Target column:** Source IP Address
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Copy of the [proxy_server](#proxy_servers) Match List for directional matches.
 
@@ -523,31 +710,77 @@ The following CSE rules refer to this Match List:
 
 none
 
+### public_ips
+
+**Target column:** IP Address (`Ip`)
+
+**Description:** Public Ip Addresses.
+
+The following CSE rules refer to this Match List:
+
+* Doublepulsar scan - likely not infected
+* Likely doublepulsar Infected
+
 ### salesforce_admin_ips
 
-**Target column:** Source IP Address
+**Target column:** Source IP Address (`SrcIp`)
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
+The following CSE rules refer to this Match List:
+
+* Salesforce Custom Permission Creation
+* Salesforce Excessive Documents Downloaded
+* Salesforce LoginAs Event
+* Salesforce Permission Set Addition
+* Salesforce Permission Set Assigned
+* Salesforce Permission Set Creation
+* Salesforce Permission Set Deletion
+* Salesforce Permission Set Modification
+* Salesforce Report Exported
+* Salesforce Role Creation
+* Salesforce User Creation
+* Salesforce User Role Changed
+* Salesforce WaveDownload Event
+
 ### salesforce_admin_users
 
-**Target column:** Username
+**Target column:** Username (`Username`)
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
+The following CSE rules refer to this Match List:
+
+* Salesforce Custom Permission Creation
+* Salesforce Excessive Documents Downloaded
+* Salesforce LoginAs Event
+* Salesforce Permission Set Addition
+* Salesforce Permission Set Assigned
+* Salesforce Permission Set Creation
+* Salesforce Permission Set Deletion
+* Salesforce Permission Set Modification
+* Salesforce Report Exported
+* Salesforce Role Creation
+* Salesforce User Creation
+* Salesforce User Role Changed
+* Salesforce WaveDownload Event
+
 ### sandbox_ips
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Malware sandboxes or security devices interacting with malicious infrastructure.
 
 The following CSE rules refer to this Match List:
 
-* Threat
+* Threat Intel Match - IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### scanner_targets
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Destination networks that are authorized/standard targets of vulnerability scans in customer environment.
 
@@ -557,7 +790,7 @@ none
 
 ### smtp_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** SMTP sending/receiving hosts in customer environment.
 
@@ -567,7 +800,7 @@ none
 
 ### sql_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Database servers in customer environment.
 
@@ -577,7 +810,7 @@ none
 
 ### ssh_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Known SSH servers.
 
@@ -585,9 +818,22 @@ The following CSE rules refer to this Match List:
 
 none
 
+### ssl_exception_ips
+
+**Target column:** IP Address (`Ip`)
+
+**Description:** SSL exception IPs.
+
+The following CSE rules refer to this Match List:
+
+* SSL Certificate Expired
+* SSL Certificate Expires Soon
+* SSL Certificate Not Valid Yet
+* SSL Invalid Server Cert
+
 ### telnet_servers
 
-**Target column:**     IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Telnet servers in your environment.
 
@@ -597,13 +843,121 @@ none
 
 ### threat
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** A record flagged an IP address from a threat intelligence Match List.
 
 The following CSE rules refer to this Match List:
 
-* Threat
+* Threat Intel - Successful Authentication from Threat IP
+* Threat Intel Match - IP Address
+* Threat Intel - Inbound Traffic Context
+* Threat Intel - Matched File Hash
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
+
+### unauthorized_external_media
+
+**Target column:** Hostname (`Hostname`)
+
+**Description:** A list of devices that should not have external media installed on them.
+
+The following CSE rules refer to this Match List:
+
+* Unauthorized External Device Installation
+
+### verified_applications
+
+**Target column:** Application (Custom)
+
+**Description:** Reviewed and validated legitimate or non-threat applications.
+
+The following CSE rules refer to this Match List:
+
+* Lateral Movement Using the Windows Hidden Admin Share
+
+### verified_domains
+
+**Target column:** Domain (`Domain`)
+
+**Description:** Reviewed and validated legitimate or non-threat domains.
+
+The following CSE rules refer to this Match List:
+
+* Base32 in DNS Query
+* Bitsadmin to Uncommon TLD
+* Connection to High Entropy Domain
+* DNS Lookup of High Entropy Domain
+* DNS query for dynamic DNS provider
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
+* HTTP External Request to PowerShell Extension
+* HTTP Request to Domain in Non-Standard TLD
+* HTTP request for single character file name
+* Hexadecimal in DNS Query Domain
+* Possible DNS Data Exfiltration
+* Request to Anomalous Web Server Software
+* SSH Interesting Hostname Login
+* Script/CLI UserAgent string
+* Threat Intel Match - IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
+
+### verified_hostnames
+
+**Target column:** Hostname (`Hostname`)
+
+**Description:** Reviewed and validated legitimate or non-threat hostnames.
+
+The following CSE rules refer to this Match List:
+
+* Bitsadmin to Uncommon TLD
+* Connection to High Entropy Domain
+* DNS Lookup of High Entropy Domain
+* DNS query for dynamic DNS provider
+* Domain Resolution in Non-Standard TLD
+* Executable Downloaded - Content-Type Mismatch
+* HTTP External Request to PowerShell Extension
+* HTTP Request to Domain in Non-Standard TLD
+* HTTP request for single character file name
+* Hexadecimal in DNS Query Domain
+* Possible DNS Data Exfiltration
+* Request to Anomalous Web Server Software
+* SSH Interesting Hostname Login
+* Script/CLI UserAgent string
+* Threat Intel Match - IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
+* Web Request to Punycode Domain
+
+### verified_ips
+
+**Target column:** IP Address (`Ip`)
+
+**Description:** Reviewed and validated legitimate or non-threat ips.
+
+The following CSE rules refer to this Match List:
+
+* Domain Resolution in Non-Standard TLD
+* HTTP Request to Domain in Non-Standard TLD
+* Threat Intel Match - IP Address
+* Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
+* Web Request to IP Address
+
+### verified_uri_ips
+
+**Target column:** IP Address (`Ip`)
+
+**Description:** Reviewed and validated legitimate or non-threat IP addresses.
+
+The following CSE rules refer to this Match List:
+
+* Executable Downloaded - Content-Type Mismatch
 
 ### verified_uri_paths
 
@@ -617,11 +971,12 @@ Match list items have a TTL specified that will result in the items having an ex
 
 The following CSE rules refer to this Match List:
 
-* HTTP Request to Domain in Non Standard TLD
+* Executable Downloaded - Content-Type Mismatch
+* HTTP Request to Domain in Non-Standard TLD
 
 ### vpn_networks
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** VPN/remote access user address pools and DHCP scopes.
 
@@ -631,84 +986,99 @@ none
 
 ### vpn_servers
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** VPN/remote access servers, including IKE/IPsec/SSL VPN concentrators, OpenVPN endpoints, and so on.
 
 The following CSE rules refer to this Match List:
 
-* Successful VPN Login From 2+ Countries Within 1 Hour.
+none
 
 ### vuln_scanners
 
-**Target column:** IP Address
+**Target column:** IP Address (`Ip`)
 
 **Description:** Vulnerability scanner and network mapping hosts.
 
 The following CSE rules refer to this Match List:
 
+* Amazon VPC - Network Scan
+* Amazon VPC - Port Scan
 * Base32 in DNS Query
 * Bitsadmin to Uncommon TLD
+* Brute Force Attempt
 * Connection to High Entropy Domain
 * Critical Severity Intrusion Signature
-* Directory Traversal Successful
-* Directory Traversal Unsuccessful
-* DNS DGA Lookup Behavior NXDOMAIN Responses
-* DNS Lookup of High Entropy Domain
+* DNS DGA Lookup Behavior - NXDOMAIN Responses
 * DNS Lookup of High Entropy Domain
 * DNS query for dynamic DNS provider
-* DNS Query Hex in Domain
-* Domain Resolution in Non Standard TLD
-* Doublepulsar scan likely not infected
-* Executable Downloaded Content Type Mismatch.
-* HTTP request for single character file name
-* HTTP Request to Domain in Non Standard TLD
+* Directory Traversal - Successful
+* Directory Traversal - Unsuccessful
+* Domain Brute Force Attempt
+* Domain Password Attack
+* Domain Resolution in Non-Standard TLD
+* Doublepulsar scan - likely not infected
+* Excessive Outbound Firewall Blocks
+* Executable Downloaded - Content-Type Mismatch
+* GCP Port Scan
+* GCP Port Sweep
+* HTTP Request to Domain in Non-Standard TLD
 * HTTP Request with Single Header
-* Internal Communication on Unassigned Low Ports Destination Match
+* HTTP request for single character file name
+* Hexadecimal in DNS Query Domain
+* High Severity Intrusion Signature
+* IP Address Scan - Internal
+* Informational Severity Intrusion Signature
+* Internal Communication on Unassigned Low Ports - Destination Match
 * Internal Port Scan
 * Internal Port Sweep
-* Intrusion Scan Targeted
+* Intrusion Scan - Targeted
 * Intrusion Sweep
-* IP Address Scan Internal
 * Likely doublepulsar Infected
-* Multiple High Severity Intrusion Events
+* Low Severity Intrusion Signature
+* Medium Severity Intrusion Signature
 * Noncompliant Protocol Tunnel Over Common Service Port
-* Palo Alto Correlation Event (IP)
-* Palo Alto Correlation Event (User)
-* Palo Alto Failed Authentication Multiple Attempts from the Same IP
-* Palo Alto Failed Authentication Multiple Attempts from the User
-* Palo Alto Failed Authentication Multiple Usernames Attempted
-* Palo Alto Firewall Threat (IP)
-* Palo Alto Firewall Threat (User)
-* Port Scan Internal
+* Password Attack
+* Port Scan - Internal
 * Possible DNS Data Exfiltration
-* RDP Brute Force Attempt
 * RDP Error Messages
-* Script CLI UserAgent string
-* Shellshock
 * SMB Scanning Detected
-* SMB write to admin hidden share
+* SMB write to hidden admin share
 * SQL Injection Attacker
 * SQL Injection Victim
-* SQL Select From
+* SQL-Select-From
 * SSH Authentication Failures
 * SSH Interesting Hostname Login
 * SSL Certificate Expired
 * SSL Heartbleed Attack
-* Windows Discovery of a System Time
-* Windows Domain Trust Discovery (Hostname)
-* Windows Domain Trust Discovery (User)
-* Windows Local System executing whoami.exe (Hostname)
-* Windows Network Sniffing (hostname)
-* Windows Network Sniffing (user username)
-* Windows Network trace capture using netsh.exe (Hostname)
-* Windows Network trace capture using netsh.exe (User)
-* Windows Permissions Group Discovery (Hostname)
-* Windows Permissions Group Discovery (User)
-* Windows Query Registry (hostname)
-* Windows Query Registry (username).json
-* Windows Remote System Discovery (Hostname)
-* Windows System Network Configuration Discovery (User)
-* Windows System Recon
-* Windows Wifi Credential Harvesting with netsh (Hostname).json
-* Windows Wifi Credential Harvesting with netsh (User)
+* Script/CLI UserAgent string
+* Shellshock
+* Spring4Shell Exploitation - URL
+* Successful Brute Force
+* Suspicious HTTP User-Agent
+* Traffic to Honeypot IP
+
+### web_servers
+
+**Target column:** Hostname (`Hostname`) or IP Address (`Ip`)
+
+**Description:** List of webserver hostnames or IPs.
+
+The following CSE rules refer to this Match List:
+
+* Web Servers Executing Suspicious Processes
+
+### zoom_admins
+
+**Target column:** Username (`Username`)
+
+**Description:** Known admin users of Zoom.
+
+The following CSE rules refer to this Match List:
+
+* Zoom - Account Created
+* Zoom - Account Deleted
+* Zoom - Group Admin Added
+* Zoom - Group Admin Deleted
+* Zoom - Group Changes
+* Zoom - Information Barrier Policy Changes

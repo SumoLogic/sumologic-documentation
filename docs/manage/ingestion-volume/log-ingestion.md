@@ -4,7 +4,7 @@ title: Log Ingestion
 description: When designing your deployment, consider how logs will be ingested across Collectors in your account. 
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on.
 
@@ -33,11 +33,26 @@ Compressed files are decompressed before they are ingested, so they are ingested
 
 ## Log Throttling
 
-Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. This section pertains to logs, for metrics see [Metrics Throttling](../../metrics/manage-metric-volume/metric-throttling.md).
+Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. (This section pertains to logs. For metrics, see [Metrics Throttling](../../metrics/manage-metric-volume/metric-throttling.md)).
 
 :::note
 All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions-data-tiers).
 :::
+
+Watch this micro lesson to learn more about throttling.
+
+<Iframe url="https://www.youtube.com/embed/dlKy9DyS0W8?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
+import Iframe from 'react-iframe';
 
 Throttling is enabled across all Collectors in an account. Sumo Logic measures the amount of data already committed to uploading against the number of previous requests and available resources (quota) in an account. In other words, Sumo Logic compares the current ingestion with the rate of ingest using a per minute rate that can be derived from the contracted Daily GB/day rate.
 
@@ -50,7 +65,7 @@ Throttling is in place to protect both our customers and Sumo Logic from sudden 
 The multiplier for the per day average ingestion total varies based on the account size. 
 
 | Account Size - Daily Average | Multiplier |
-|--|--|
+|:--|:--|
 | Less than or equal to 100GB per day. | 10x |
 | Greater than 100GB per day and less than or equal to 256GB per day.  | 8x |
 | Greater than 256GB per day and less than or equal to 512 GB per day. | 6x |
@@ -70,7 +85,7 @@ When a collector is experiencing throttling, the throttling slows the rate at w
 
 ## How do I know which Collector is contributing to excess ingestion?
 
-You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) and the [Data Volume App](/docs/integrations/sumo-apps/Data-Volume) to help determine the ingestion per Collector, Source, Source Category, View, or Partition.
+You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) and the [Data Volume App](/docs/integrations/sumo-apps/data-volume) to help determine the ingestion per Collector, Source, Source Category, View, or Partition.
 
 ## How can I be alerted when throttling takes place?
 

@@ -4,8 +4,6 @@ title: Create a Match List
 description: Learn about Match Lists and how to create a Match List.
 ---
 
-
-
 This topic has information about Match Lists, their purpose and usage, and how to create them. 
 
 ## About Match Lists
@@ -18,11 +16,11 @@ Here’s a use case for using a Match List to define an allow list:  Vulnerabil
 There’s no reason you can’t use a Match List to define “deny lists” of items. However, CSE’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
 :::
 
-Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. It is a list of trusted domains.  
+Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. It is a list of trusted domains.  
 
 ![example-match-list.png](/img/cse/example-match-list.png)
 
-Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
+Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
 
 ## Built-in rules refer to standard Match List names
 
@@ -42,7 +40,7 @@ When a Record contains a value that exactly matches one or more Match Lists (par
 
 * `listMatches`. CSE adds the names of the Match Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the `SourceIP` address in the “vuln_scanners” Match List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`
 
-* `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, and assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.   
 
@@ -66,11 +64,11 @@ Another difference between Match Lists and Threat Intel lists is the **Target Co
 
 A Match List can contain up to 100,000 items.
 
-## Matching behavior 
+## Matching behavior
 When comparing a field value to items on a Match List, CSE generally requires an exact match. There are two exceptions to that rule.
 
 *  Match Lists that contain IP addresses can list either explicit IP addresses, CIDR blocks of IP addresses, (for example `1.2.3.4/24`), or both.
-* Match Lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a Record. Note that the converse is not the case: `mail.google.com` in a list won’t `match google.com` and won’t match `test.mail.google.com`.
+* Match Lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a Record. Note that the converse is not the case: `mail.google.com` in a list won’t match `google.com`.
 
 ## Create a Match List
 
@@ -80,8 +78,7 @@ Perform the steps below to create a Match List in CSE.
 You can also create and manage Match Lists with CSE's REST [API](../administration/cse-apis.md).
 :::
 
-1. Go to **Content \> Match List** and click **Create**.
-    ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
+1. Go to **Content > Match List** and click **Create**. <br/>  ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
 1. On the **New Match List** popup, enter the following:
     * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
     * **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md).
@@ -92,20 +89,20 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
      :::
     * Click **Create**.    
     ![new-match-list.png](/img/cse/new-match-list.png)
-2. The Match List now appears on the **Match Lists** page. 
+1. The Match List now appears on the **Match Lists** page. 
     ![match-list-added.png](/img/cse/match-list-added.png)
-3. Click the name of the Match List to open it.
-4. On the **Match List \> Details** page, click **ADD LIST ITEM**.
+1. Click the name of the Match List to open it.
+1. On the **Match List > Details** page, click **ADD LIST ITEM**.
     ![match-list-add-item-icon.png](/img/cse/match-list-add-item-icon.png)
-5. On the **New Match List Item** popup, enter:
+1. On the **New Match List Item** popup, enter:
    * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain.
    * **Description**. (Optional) Enter a description of the entity instance you entered.
    * **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
    * Click **Add** to add the item to the list.    
     ![new-match-list-item.png](/img/cse/new-match-list-item.png)
-6. The item now appears in the Match List.
+1. The item now appears in the Match List.
     ![item-added.png](/img/cse/item-added.png)
-7. Repeat steps 3 and 4 to add additional items to the list.
+1. Repeat steps 3 and 4 to add additional items to the list.
 
 ## Import a Match List
 
@@ -140,13 +137,15 @@ value
 10.99.19.9
 ```
 
-## Best Practices for using Match Lists
+## Best practices for using Match Lists
 
 Sumo Logic recommends the following conventions and best practices for using Match Lists.
 
 ### Use Match Lists
 
-Use the Match List feature early on to get the most value from CSE. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue.
+Use the Match List feature early on to get the most value from CSE. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue. 
+
+Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists). 
 
 ### Choose appropriate Target Column
 
@@ -161,4 +160,3 @@ Select a default TTL for Match Lists that make sense. For example, a Match List 
 When creating custom Match Lists, we recommend a general purpose approach to naming and populating them so that they’re broadly applicable across your infrastructure.
 
 It’s better to have one generic Match List for similar resource types than multiple vendor-specific lists. For example, creating the “vuln_scanners” list is better than having one for each type you have, like “Qualys Scanners”, “Tenable Vulnerability Scanners”, and so on.   
- 

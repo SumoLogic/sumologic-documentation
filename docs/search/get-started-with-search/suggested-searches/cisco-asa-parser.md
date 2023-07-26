@@ -12,7 +12,7 @@ Be sure to [save your search](../search-basics/save-search.md) queries if you 
 
 These are a few valuable search queries you can enter in the Search field when you want to discover details about your Cisco ASA traffic.
 
-The **`_sourceCategory`** fields shown in these sample queries are based on Sumo Logic's recommendations for [adding metadata to Sources](docs/send-data/collection/edit-source.md). To re-use these queries, type the Category you entered for the relevant Source after `"_sourceCategory="` or use an asterisk wildcard (`*`) instead.
+The **`_sourceCategory`** fields shown in these sample queries are based on Sumo Logic's recommendations for [adding metadata to Sources](/docs/send-data/collection/edit-source.md). To re-use these queries, type the Category you entered for the relevant Source after `"_sourceCategory="` or use an asterisk wildcard (`*`) instead.
 
 ## Top Denied Sources
 
@@ -75,7 +75,7 @@ _sourceCategory=*cisco*asa* AND "built inbound"
 
 Returns all attacks detected by the IPS.
 
-* Suggested Time Range: -15m; run as a scheduled search to return results only if number of messages is \> 0
+* Suggested Time Range: -15m; run as a scheduled search to return results only if number of messages is > 0
 
 ```sql
 _sourceCategory=*cisco*asa* ": ``ips``:" AND ("attack" OR "Proxied RPC Request" OR "buffer overflow" OR "IP Impossible Packet" OR "IP Fragments Overlap" OR "Fragmented ICMP Traffic" OR "Large ICMP Traffic" OR "TCP NULL flags" OR "TCP SYN+FIN flags" OR "TCP FIN only flags") | parse using public/cisco/``asa

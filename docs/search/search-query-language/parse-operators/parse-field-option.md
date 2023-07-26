@@ -3,8 +3,6 @@ id: parse-field-option
 title: Parse field option
 ---
 
-
-
 Sumo Logic allows you to parse on previously extracted fields, or initial parsing on a metadata field value (`_collector`, `_source`, etc..) using the additional parse syntax of `field<field_name>`.
 
 This additional syntax is available with the standard [Parse Anchor](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor) as well as the [Parse Regex](parse-variable-patterns-using-regex.md) operations.

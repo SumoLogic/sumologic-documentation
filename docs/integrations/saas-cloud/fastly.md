@@ -1,13 +1,13 @@
 ---
 id: fastly
-title: Sumo Logic App for Fastly
+title: Fastly
 sidebar_label: Fastly
 description: Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="50"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
@@ -16,7 +16,7 @@ Fastly is a content delivery network (CDN) that provides you control over how an
 
 The Fastly app uses the following log types:
 * Fastly CDN logs
-* Fastly WAF Request and Debug logs.  For information about WAF logging see[ Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
+* Fastly WAF Request and Debug logs. For information about WAF, logging see [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
 
 
 ### Sample Queries
@@ -360,13 +360,13 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 ## Installing the Fastly App
 
-Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and dashboards to analyze your data.
+
+If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 To install the app:
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
 3. Supply the following information.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.

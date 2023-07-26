@@ -1,7 +1,7 @@
 ---
 id: office-365
-title: Sumo Logic App for Microsoft Office 365
-sidebar_label: Microsoft Office 365
+title: Microsoft Office 365
+sidebar_label: Microsoft Office Audit 365
 description: The Sumo Logic App for Microsoft Office 365 ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint.
 ---
 
@@ -121,13 +121,13 @@ We recommend the following Source Category naming convention:
 
 ## Installing the Microsoft Office 365 App
 
-Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
@@ -340,7 +340,7 @@ Shows the details of users, operations, IPs, client, logon types, and external a
 
 Shows the clients by locations and over time.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-MailboxAudit-ClientLocations.png')} alt="Microsoft Office 365 dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftOffice365/Office365-Exchange-MailboxAudit-ClientLocations.png')} alt="Exchange - Mailbox Audit - Client Locations" />
 
 **Worldwide Clients**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
 

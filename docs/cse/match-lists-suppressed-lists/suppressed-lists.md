@@ -17,7 +17,7 @@ Here is an example of a Suppressed List.
 
 ![suppressed-list.png](/img/cse/suppressed-list.png)
 
-Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used)?
+Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example, hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used).
 
 When you create a Suppressed List, you can choose one of the following as its Target Column.
 
@@ -38,6 +38,14 @@ When you create a Suppressed List, you can choose one of the following as its Ta
 * Destination IP ASN
 * Destination IP ISP
 * Destination IP Organization
+
+## Suppressed List or Match List?
+
+When deciding whether to put an indicator on a Suppressed List or a Match List, consider the following.
+
+Suppressed Lists are intended for situations in which you want to suppress *any* Signal with a Record that contains a suppressed indicator. You don’t need to reference a suppressed list in a rule expression for suppression to occur. 
+
+Match Lists are for when you want to use the existence or absence of an indicator to determine whether a specific rule or set of rules should fire a Signal. So, a Match List only has an effect when referenced by a rule expression.
 
 ## How are Suppressed Lists used? 
 
@@ -60,13 +68,6 @@ If any of the IP addresses within the Record match one of the “vuln_scanner”
 
 For more information about referring to Suppressed List data in rules, see [Match Lists](/docs/cse/match-lists-suppressed-lists) in the *About CSE Rules* topic.
 
-## Suppressed List or Match List?
-
-When deciding whether to put an indicator on a Suppressed List or a Match List, consider the following.
-
-Suppressed Lists are intended for situations in which you want to suppress *any* Signal with a Record that contains a suppressed indicator. You don’t need to reference a suppressed list in a rule expression for suppression to occur. 
-
-Match Lists are for when you want to use the existence or absence of an indicator to determine whether a specific rule or set of rules should fire a Signal. So, a Match list only has an effect when referenced by a rule expression.
 
 ## Suppressed List limitations 
 
@@ -76,40 +77,24 @@ A Suppressed List can contain up to 50,000 items.
 
 Perform the steps below to create a Suppressed List and add an indicator to it using the CSE UI.
 
-1. Choose **Suppressed Lists** from the Content menu and click **Create**.
-
-    ![suppressed-lists.png](/img/cse/suppressed-lists.png)
+1. Choose **Suppressed Lists** from the Content menu and click **Create**. <br/> ![suppressed-lists.png](/img/cse/suppressed-lists.png)
 1. On the **New Suppressed List** popup, enter the following:
-
    1. **Name**. Name of the Suppressed List.
    1. **Description**. Enter a description for the list. 
    1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
    1. **Target Column**. The type of Record field to which items on the list should be compared.
-
     :::note
-    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information see [Custom Match List Columns](custom-match-list-columns.md).
+    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information, see [Custom Match List Columns](custom-match-list-columns.md).
     :::
-
    1. Click **Create**.
-
-1. The Suppressed List now appears on the **Suppressed Lists** page. 
-
-    ![suppressed-list-page-2.png](/img/cse/suppressed-list-page-2.png)
-
+1. The Suppressed List now appears on the **Suppressed Lists** page.  <br/>  ![suppressed-list-page-2.png](/img/cse/suppressed-list-page-2.png)
 1. Click the name of the Suppressed List to open it.
-1. On the **Suppressed List \> Details** page, click **ADD LIST ITEM**.
-
-    ![add-list-item.png](/img/cse/add-list-item.png)
-
+1. On the **Suppressed List > Details** page, click **ADD LIST ITEM**. <br/> ![add-list-item.png](/img/cse/add-list-item.png)
 1. On the **New Suppressed List Item** popup, enter:
-
    1. **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is Domain, enter a domain.
    1. **Description**. (Optional) Enter a description of the list item.
    1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
-   1. Click **Add** to add the item to the list.    
-
-    ![new-item.png](/img/cse/new-item.png)
-
+   1. Click **Add** to add the item to the list. <br/>  ![new-item.png](/img/cse/new-item.png)
 1. The item now appears on the list.
 
 ## Import a list of indicators 
@@ -146,9 +131,8 @@ specified:
 1. On the **Suppressed Lists** page, click the name of the list.
 1. Click **Import Indicators**.
 1. On the import popup:
-
    1. Drag your file onto the import popup, or click to navigate to the file, and then click Import.
-   1. Optionally, you can enter an expiration for the indicators on the list. If you do, it will override any expirations that are defined in the file. Enter the expiration in any ISO date format. For example: *2022-12-31*
+   1. Optionally, you can enter an expiration for the indicators on the list. If you do, it will override any expirations that are defined in the file. Enter the expiration in any ISO date format. For example: `2022-12-31`
 
 ## Manage Suppressed Lists with the CSE API
 

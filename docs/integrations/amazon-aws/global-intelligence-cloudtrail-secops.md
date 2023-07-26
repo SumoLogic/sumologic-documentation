@@ -1,7 +1,6 @@
 ---
 id: global-intelligence-cloudtrail-secops
 title: Global Intelligence for AWS CloudTrail SecOps
-sidebar_label: AWS CloudTrail SecOps Global Intelligence
 description: The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing AWS CloudTrail events in your account against a cohort of AWS customers.
 ---
 
@@ -38,8 +37,6 @@ This feature is available in the following account plans.
 |  Cloud Flex  |  Trial, Enterprise
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 ## Log Types  
 

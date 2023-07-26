@@ -1,13 +1,13 @@
 ---
 id: aws-security-hub
-title: Sumo Logic App for AWS Security Hub Cloud Security Monitoring and Analytics
+title: AWS Security Hub Cloud Security Monitoring and Analytics
 sidebar_label: AWS Security Hub
 description: The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/security-hub.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/security-qs.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks. The additional level of analysis within these dashboards surfaces the most relevant findings and takes a focused approach to improve overall security posture. Finding types and severity levels act as leading indicators for security engineers to go into security incidents with the most relevant technical details to address active threats.
 
@@ -19,24 +19,7 @@ To set up Collection, follow the instructions provided at [Collect findings for 
 
 Now that you've set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](#viewing-aws-security-hub-dashboards) that provide insight into your data.
 
-To install the Sumo Logic App for AWS Security Hub, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing AWS Security Hub Dashboards
 

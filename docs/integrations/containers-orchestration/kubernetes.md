@@ -1,13 +1,13 @@
 ---
 id: kubernetes
-title: Sumo Logic App for Kubernetes
+title: Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="75"/>  
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
 The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
@@ -21,16 +21,7 @@ For an end-to-end solution for deploying, managing, monitoring, and administerin
 
 ## Supported versions
 
-The following are the minimum supported requirements for this application:
-* Kubernetes
-   * 1.10 and later
-* Kops
-   * 1.13.10-k8s
-   * 1.13.10-kops
-   * 1.12.8-k8s
-   * 1.12.2-kops
-   * 1.10.13-k8s
-   * 1.10.0-kops
+The Sumo Logic Kubernetes App is compatible with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). A list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log and Metric Types
 
@@ -45,8 +36,7 @@ The Sumo Logic App for Kubernetes uses logs and metrics.
 * [Node-exporter Metrics](https://prometheus.io/docs/guides/node-exporter/) - System-level statistics about bare-metal nodes or virtual machine and generates metrics.
 * [Kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) - Metrics about the state of Kubernetes logical objects, including node status, node capacity (CPU and memory), number of desired/available/unavailable/updated replicas per deployment, pod status (e.g., waiting, running, ready), and containers.
 
-For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd).
-
+For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus](https://prometheus.io/) with [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) used for metadata enrichment.
 
 ### Sample Log Message
 
@@ -68,7 +58,7 @@ getsockopt: connection refused"}
 
 ## Collecting Metrics and Logs for the Kubernetes App
 
-This section has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
+This section contains instructions for collecting logs and metrics for the Sumo App for Kubernetes.
 
 :::note Prerequisites  
 Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
@@ -99,8 +89,10 @@ To install the app, do the following:
 2. From the App Catalog, search for **Kubernetes** and select the app.
 3. Click **Add to Library**.
 4. Complete the following fields:
-   * App Name. You can retain the existing name, or enter a name of your choice for the app. 
-   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  **Source Category** selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
+   * App Name. You can retain the existing name, or enter a name of your choice for the app.
+   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows:
+     * For Falco Log Source, leave  **Source Category** selected, and enter the source category according to configuration for `sumologic.logs.container.sourceCategory` in values.yaml.
+     * For Events Log Source, leave **Source Category** selected, and for the source category, enter *events* or one that matches the source categories in your environment.
    * Advanced. Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
 5. Click **Add to Library**.
 
@@ -159,9 +151,9 @@ connection_notifications_critical = [
   ]
 ```
 
-  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors).
+  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management).
 
-  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+  For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications_critiical = [
@@ -190,7 +182,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 ## Viewing Kubernetes Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Cluster Explorer
@@ -206,7 +198,7 @@ Use this dashboard to:
 
 ### Cluster  
 
-The**Kubernetes - Cluster** dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
+The **Kubernetes - Cluster** dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
 
 Use this dashboard to:  
 * Monitor overall cluster health.
@@ -249,7 +241,7 @@ Use this dashboard to:
 
 ### Namespace
 
-The **Kubernetes - Namespace**dashboard provides insights into the health and resource utilization of a namespace.
+The **Kubernetes - Namespace** dashboard provides insights into the health and resource utilization of a namespace.
 
 Use this dashboard to:  
 * Monitor namespace health.  
@@ -286,7 +278,7 @@ Use this dashboard to:
 
 ### Daemonsets Overview
 
-The **Kubernetes - Daemonsets Overview**dashboard provides insights into the health of and resource utilization of Kubernetes Daemonsets.
+The **Kubernetes - Daemonsets Overview** dashboard provides insights into the health of and resource utilization of Kubernetes Daemonsets.
 
 Use this dashboard to:  
 * Monitor the health of Daemonsets.   
@@ -320,12 +312,15 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="K8s dashboards" />
 
 
-### Health Check
+### Collection Health Check
 
-The **Kubernetes - Health Check**dashboard displays the collection status from all the components in the Kubernetes cluster.
+The **Kubernetes - Collection Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
 
 Use this dashboard to:  
-* Monitor the health of FluentD and FluentBit pods in your Kubernetes environment.
+* Monitor the health of OpenTelemetry based collection in your Kubernetes environment.
+  :::note 
+  Currently, in default configurations, [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) is used instead of FluentD and Fluent Bit.
+  :::
 * Gain insights into Prometheus metric collection endpoint status.
 * Get insight into resource utilization and fine-tune configurations accordingly.
 * View logs and errors and investigate potential issues.
@@ -335,7 +330,7 @@ Use this dashboard to:
 
 ### Deployment  
 
-The **Kubernetes - Deployment**dashboard provides insights into the health and performance of your Kubernetes deployments.
+The **Kubernetes - Deployment** dashboard provides insights into the health and performance of your Kubernetes deployments.
 
 Use this dashboard to:  
 
@@ -349,7 +344,7 @@ Use this dashboard to:
 ### Security Overview
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
 :::
 
 This dashboard provides high level details around anomalous container, application, host, and network activity detected by Falco.
@@ -362,10 +357,11 @@ Use this dashboard to:
 
 ### Security Rules Triggered
 
-:::note This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md">on this page.
+:::note
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco.enabled` as `"true"` in values.yaml. For details, please see the Sumo Logic Kubernetes Collection Helm Chart [documentation](https://github.com/SumoLogic/sumologic-kubernetes-collection#documentation).
 :::
 
-The**Kubernetes - Security Rules Triggered**dashboard provides detailed information around anomalous activity detected by Falco. It also shows information around the OOB Falco rules triggered by anomalous activity in your Kubernetes environments.
+The **Kubernetes - Security Rules Triggered** dashboard provides detailed information around anomalous activity detected by Falco. It also shows information around the OOB Falco rules triggered by anomalous activity in your Kubernetes environments.
 
 Use this dashboard to:
 * Reviewed detailed information of anomalous activity.
@@ -379,7 +375,7 @@ Use this dashboard to:
 The **Kubernetes - Service** dashboard provides a high-level view of the health of the cluster services, along with details on utilized resources by service.
 
 Use this dashboard to:  
-* Reviewed detailed information of services.  
+* Reviewed detailed information of services.
 * Identify components by Services.  
 * Determine any errors and warnings by Services.
 
@@ -391,7 +387,7 @@ Use this dashboard to:
 The **Kubernetes - Hygiene Check** dashboard provides visibility into the configuration hygiene of your Kubernetes cluster. This dashboard displays color-coded performance checks for nodes, along with resource utilization, pod capacity, pod errors, and pod states.
 
  Use this dashboard to:  
-* Assess bad configurations and determine the trouble areas for proactive adjustment.   
+* Assess bad configurations and determine the trouble areas for proactive adjustment.
 * Monitor resource allocation across your cluster to maintain optimum performance.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Hygiene_Check.png')} alt="K8s dashboards" />
@@ -404,7 +400,7 @@ CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) and 
 The **Kubernetes - CoreDNS** dashboard provides visibility into the health and performance of CoreDNS.  
 
 Use this dashboard to:  
-* Track the total number of requests.  
+* Track the total number of requests.
 * Review Cache statistics.  
 * Monitor CoreDNSs resource usage and spikes.
 
@@ -418,7 +414,7 @@ The Horizontal Pod Autoscaler automatically scales the number of Pods in a repli
 The **Kubernetes - HPA**dashboard provides visibility into the health and performance of HPA.  
 
 Use this dashboard to:  
-* Identify whether the required replica level has been achieved or not.  
+* Identify whether the required replica level has been achieved or not.
 * View logs and errors and investigate potential issues.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="K8s dashboards" />

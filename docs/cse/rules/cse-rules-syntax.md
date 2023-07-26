@@ -5,7 +5,7 @@ sidebar_label: Rules Syntax
 description: Learn about the functions you can use when writing CSE Rules.
 ---
 
-This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](about-cse-rules.md).
+This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](/docs/cse/rules/about-cse-rules).
 
 ## &&
 
@@ -44,6 +44,20 @@ The forward slash (/) operator performs floating-point division between two expr
 The following expression divides `error_count` by `user_count`.
 
 `error_count / user_count`
+
+## /*  */
+
+The forward slash and asterisk characters (/*  */) comment out lines. 
+
+For CSE rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
+
+**Syntax**
+
+`/*  */`
+
+**Example**
+
+`/* This is a comment. */`
 
 ## <
 
@@ -258,7 +272,7 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](about-cse-rules.md) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
+CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
@@ -402,7 +416,7 @@ Compares string values of two fields and returns a boolean result based on wheth
 `contains(<field1>, <field2>)`
 
 :::note
-CIP supports additional two forms of `contains` syntax. CSE supports only the form shown here. 
+Sumo Logic core platform supports additional two forms of `contains` syntax. CSE supports only the form shown here. 
 :::
 
 ## cos
@@ -552,6 +566,20 @@ You can nest the `if` operator.
 Here is an example of nesting the `if` operator.
 
 `| if(severity >= 10, "Critical", if(severity >= 5, "Moderate", "Low"))`
+
+## in
+
+Returns “true” if the value of an expression exists within the specified list of values.
+
+**Syntax**
+
+`expr IN ("value1", [, <value2>, ...])`
+
+**Example**
+
+`srcDevice_ip IN ("1.2.3.4", "2.3.4.5", "3.4.5.6") // true if the value of srcDevice_ip is "1.2.3.4" or any of the other specified values
+http_response_statusCode in (400, 500)   // true if the value of http_response_code equals 400 or 500
+null IN ("value1", "value2", "value3") // false`
 
 ## ipv4ToNumber
 
@@ -714,28 +742,28 @@ attribute.
 **Supported JSONPath syntax elements**
 
 | JSONPath  | Description                                                  |
-|-----------|--------------------------------------------------------------|
+|:-----------|:--------------------------------------------------------------|
 | $         | The root object or element.                                  |
 | . or \[\] | Child operator.                                              |
 | \*        | Wildcard. All objects or elements regardless of their names. |
 
 **Syntax notes**
 
-* In CIP, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
+* In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
+ 
+:::note
+Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
+:::
 
-    :::note
-    Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
-    :::
-
-* As part of the ingestion process, the `fields` field in CSE is mapped to the `_raw` field in CIP.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
+* As part of the ingestion process, the `fields` field in CSE is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
-* CSE doesn’t support all of the `json` operator syntax options that CIP does, but you can do things like:
+* CSE doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
 
   * `| json field=fields "foo.bar['baz']" as nestedKey`
   * `| json field=fields "foo[0]" as indexKey`
-  * `json field=fields "foo[*]" as asteriskKey`
+  * `| json field=fields "foo[*]" as asteriskKey`
 
         Works for arrays, not maps.
 
@@ -1068,7 +1096,7 @@ in the CSE rules syntax.
 
 ## toInt 
 
-Casts a string to an integer This is equivalent to `int` in the CSE
+Casts a string to an integer. This is equivalent to `int` in the CSE
 rules syntax.
 
 **Syntax**
@@ -1161,11 +1189,10 @@ Filters results based on the value of a boolean expression.  
 **Example**
 
 `| where jsonArrayContains(field, “vuln_scanner”)`  
- 
 
-## CIP literals supported in CSE
+## Sumo Logic core platform literals supported in CSE
 
-The following CIP literals are supported in CSE:
+The following Sumo Logic core platform literals are supported in CSE:
 
 * Time-based suffixed literals (millisecond-based. i.e., 1s == 1000)
 

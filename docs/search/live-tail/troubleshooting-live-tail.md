@@ -1,11 +1,14 @@
 ---
 id: troubleshooting-live-tail
 title: Troubleshooting Live Tail
+sidebar_label: Troubleshooting
 description: Troubleshooting tips for Sumo Logic Live Tail.
 ---
 
 
+:::note
 Data ingested from Amazon S3 can't be tailed.
+:::
 
 ## No messages appear in a Live Tail session
 
@@ -26,7 +29,7 @@ If you start a Live Tail session, and no messages appear in 30 seconds, check to
 * Search operators are not supported in filters.
 * If too much data is coming in, messages may be skipped or not displayed on the screen, or there may be a lag before messages are displayed.
 * If the query you are using produces too many log message results, we may end the session, and present an error that prompts you to make your query more specific. This is to provide the best performance possible. If a Live Tail session has ended, you can restart it at any time.
-* Metadata [fields](docs/manage/fields.md) are not available in Live Tail.
+* Metadata [fields](/docs/manage/fields.md) are not available in Live Tail.
 * Windows Event Source logs and Windows Performance Source logs may not handle filters properly. Applying a filter may cause no data to appear in a Live Tail.
 * If `_sourceCategory`, `_sourceHost`, or any of the built-in meta fields are changed in an FER, Live Tail will not support those changes. For example, if `_sourceCategory` is *ABC* in the raw data but is renamed to *XYZ* in an FER, Live Tail will not see it as *XYZ*. It will only see the data as its raw form, *ABC*.
 

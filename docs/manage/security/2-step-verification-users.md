@@ -1,9 +1,9 @@
 ---
-id: two-step-for-users
+id: 2-step-verification-users
 title: 2-Step Verification for Users
+description: Learn how to set up and use Multi-factor authentication for your user account.
 ---
 
-#
 
 These sections describe how to set up and use 2-Step Verification for your Sumo Logic account:
 

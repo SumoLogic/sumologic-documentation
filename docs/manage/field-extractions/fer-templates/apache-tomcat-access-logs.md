@@ -31,7 +31,7 @@ parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}? )"
 **Resulting Fields:**
 
 | Field | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | ip         | The Client IP                                        | 250.67.103.48   |
 | method     | Request method                                       | POST            |
 | url        | Resource requested by the client                     | /blog/index.php |

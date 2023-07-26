@@ -5,7 +5,9 @@ sidebar_label: AWS Metadata (Tag)
 description: A Sumo Logic AWS Metadata Source allows you to collect Tags from EC2 instances running on AWS.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/aws-metadata-tag.png')} alt="icon" width="40"/>
 
 A Sumo Logic AWS Metadata Source allows you to collect tags from EC2 instances running on AWS. Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
@@ -17,10 +19,10 @@ Collecting AWS Metadata requires [Collector](/docs/send-data/installed-collecto
 
 Tags are automatically applied to:
 
-* Metrics ingested by [host metric sources](docs/send-data/installed-collectors/sources/host-metrics-source.md) on Installed Collectors.
-* Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](docs/send-data/installed-collectors/sources/streaming-metrics-source.md) on Installed Collectors.
+* Metrics ingested by [host metric sources](/docs/send-data/installed-collectors/sources/host-metrics-source.md) on Installed Collectors.
+* Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md) on Installed Collectors.
 
-You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](../http-source/upload-metrics.md).
+You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
 
 ## Logs
 
@@ -34,7 +36,7 @@ Tags are returned in your search results and can be referenced in queries. For i
 ## Set up an AWS Metadata Source
 
 1. Grant permission for Sumo Logic to describe EC2 instances. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Next to a Hosted Collector, click **Add Source**.
 1. Select **AWS Metadata**.
 1. Configure the following:
@@ -78,7 +80,7 @@ For example, assume that the tags configured for your EC2 instances are:
 The table below shows the results of several example tag filters 
 
 | This tag filter value | Results in collection of these tags |
-|--|--|
+|:--|:--|
 | `!DeployStatus` | Cluster<br/>Deployment<br/>Name |
 | `!Dep*` | Cluster<br/>Name |
 | `Deploy*`<br/>`!DeployStatus`<br/>`Cluster` | Cluster<br/>Deployment |

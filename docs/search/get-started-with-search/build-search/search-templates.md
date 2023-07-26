@@ -10,7 +10,7 @@ Search templates can help you simplify searches for your users by giving them a 
 
 Behind the scenes, selecting the parts of your query to use in the template is also pretty easy.  You can select which parts of your search should be available and click **Create Parameter**.
 
-Search templates work with [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
+Search templates work with [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
 
 ## Create a general Search Template
 
@@ -30,7 +30,7 @@ From any query you create, or an existing one you manage, you can create a searc
 There are four data types to choose, based on how you want to define a valid parameter:
 
 | Data Type | Description |
-| -- | -- |
+| :-- | :-- |
 | Number | Numbers only. |
 | String | Considers as a single phrase and will wrap in double-quotes. For example “system errors”. |
 | Any | All characters. Best for substituting texts in paths. |
@@ -42,13 +42,13 @@ Select a format:
 
 1. Optional. Select the available values.
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it can't validate.  
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it can't validate.  
 
         ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
 
         1. Select the appropriate values for the field, such as user ID. 
         1. Select values for the corresponding label, such as name. Both **Text** entries and **Label-value** pairs allow amaximum of 10,000 entries. A lookup file can have a maximum of 40,000 entries.
-    1. For a lookup file, you must enter a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](docs/search/search-query-language/search-operators/save-classic). 
+    1. For a lookup file, you must enter a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic). 
         1. Under **Select a format**, select **Lookup**.
         1. Enter in a valid lookup file or select a shared lookup file
             from the dropdown. 
@@ -75,7 +75,7 @@ _sourceCategory=service "Successful login from UI"
 | count by latitude, longitude, user
 ```
 
-For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users don't want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the drop-downs they need quickly.
+For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users don't want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the dropdowns they need quickly.
 
 First create parameters for `user_name` and `state` to eliminate the manual entries joeX and CA:
 
@@ -91,7 +91,7 @@ _sourceCategory=service "Successful login from UI"
 Next, specify the `user_name` parameter as a lookup that already has the association between our user names and our user IDs, in this case
 `/shared/angad/user_info_lookup`:
 
-1. Enter in a valid [lookup (classic)](docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](docs/search/search-query-language/search-operators/save-classic) with the save operator.  
+1. Enter in a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic) with the save operator.  
 
     ![lookup.png](/img/search/get-started-search/build-search/search-templates/lookup.png)
 

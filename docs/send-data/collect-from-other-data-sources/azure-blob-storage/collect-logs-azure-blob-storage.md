@@ -1,12 +1,13 @@
 ---
 id: collect-logs-azure-blob-storage
 title: Collect Logs from Azure Blob Storage
-description: Instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
+sidebar_label: Collecting Logs
+description: Configure a pipeline to ship logs from the Azure Blob Storage to an HTTP source on a hosted collector in Sumo Logic.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
-:::sumo
-This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic. 
+:::info
+This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. 
 :::
 
 ## Requirements 
@@ -26,11 +27,9 @@ This section has instructions for configuring a pipeline for shipping logs avail
 
 ## Step 1. Configure Azure storage account 
 
-In this step you configure a storage account to which you will export monitoring data for your Azure service.   
+In this step, you configure a storage account to which you will export monitoring data for your Azure service. The storage account must be a General-purpose v2 (GPv2) storage account.
 
-The storage account must be a General-purpose v2 (GPv2) storage account
-
-If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name and container name and proceed to [Step 2](#step-2-configure-an-http-source).
+If you have a storage account with a container you want to use for this purpose, make a note of its resource group, storage account name and container name, and proceed to [Step 2](#step-2-configure-an-http-source).
 
 To configure an Azure storage account, do the following:
 
@@ -67,10 +66,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
 1. On the Custom deployment blade, click **Build your own template in the editor**.
-1. Copy the contents of the template and paste it into the editor window.
-
-    ![edit-template.png](/img/send-data/edit-template.png)
-
+1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/edit-template.png')} alt="edit-template" width="800"/>
 1. Click **Save**.
 1. On the Custom deployment blade, do the following:
 
@@ -79,55 +75,43 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
    1. Set the values of the following parameters:
 
       * SumoEndpointURL: URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
-      * StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
+      * StorageAccountName: Name of the storage account where you are storing logs from Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
       * StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
-      * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
+      * StorageAccountRegion: Name of the region of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
+      * Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following by replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
 
     :::note
     Resource group names should not consist of an underscore.
     :::
-
-1. Select the check box to **agree to the terms and conditions**, and then click **Purchase**.
-
-    ![Azure_Blob_Storage_Custom_Deployment.png](/img/send-data/Azure_Blob_Storage_Custom_Deployment.png)
-
-1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
+1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
+1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.
 
     ![notification-success.png](/img/send-data/notification-success.png)
 
-1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
+1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
+1. In the **Data Storage** menu, do the following:
+    1. Click **Tables**.
+    1. Click **+ Table**.
+    1. Enter **FileOffsetMap** as table name and click **OK**.
 
-    ![Azure_Blob_all-resources.png](/img/send-data/Azure_Blob_all-resources.png)
+<img src={useBaseUrl('/img/send-data/Azure_Blob_create-table.png')} alt="Azure_Blob_create-table" width="900"/>
 
-1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**.
-
-    ![storage-accounts.png](/img/send-data/storage-accounts.png)
-
-1. Under **Table Service** do the following:
-
-   1. Click **Tables**.
-   1. Click **+ Table**.
-   1. For Name, enter **FileOffsetMap**.
-
-1. Click **OK**.
-
-    ![Azure_Blob_create-table.png](/img/send-data/Azure_Blob_create-table.png)
-
-## Step 4. Push logs from Azure Service to Azure Blob Storage
-
-This section describes how to push logs from an Azure service to Azure Blob Storage by configuring Diagnostic Logs. The instructions use the Azure Web Apps Service as an example. 
-
-1. Login to the Azure Portal.
-1. Click **AppServices \> Your Function App \> Diagnostic Logs** under **Monitoring**.
-1. You will see the Diagnostic Logs blade. Enable Application Logging, Web Server Logging, or both, and click **Storage Settings**.
-1. Select the Storage Account whose connection string you configured in [Step 1](#step-1-configure-azure-storage-account). 
-1. In the Containers blade, select the container you created in [Step 1](#step-1-configure-azure-storage-account).
-1. In the Diagnostic Logs blade, specify the **Retention Period (Days)**, and click **Save** to exit Diagnostic Logs configuration.
-
-    ![export-webapp-logs.png](/img/send-data/export-webapp-logs.png)
+<details><summary>Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage</summary>
+This section describes how to push logs from a network security group into Azure Blob Storage by configuring nsg flow Logs. The instructions use a network security group as an example.
+<ol>
+    <li>Login to the Azure Portal.</li>
+    <li>Click <strong>Network security groups > Select a network security group</strong>.</li>
+    <li>Click on <strong>NSG flow logs</strong> when you see it under <strong>Monitoring</strong>, and click <strong>Create</strong>.</li>
+    <li>Click on <strong>Select resource</strong> and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-1-configure-azure-storage-account">Step 1</a>.</li>
+    <li>Under <strong>Subscription > Storage Accounts</strong>, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-1-configure-azure-storage-account">Step 1</a>.</li>
+    <li>Specify the <strong>Retention (days)</strong> and click <strong>Review + create</strong>. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/></li>
+    <li> Review the configuration of the flow log and click <strong>Create</strong>. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/></li>
+</ol>
+</details>
 
 :::tip
-If logs from Azure Blob Storage do not start to flow into Sumo, see [Troubleshoot Azure Blob Storage Log Collection](troubleshoot-azure-blob-storage-log-collection.md).
+If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](troubleshoot-azure-blob-storage-log-collection.md).
 :::
 
 ## Ingesting from Multiple Storage Accounts (Optional)
@@ -138,11 +122,11 @@ If you want to ingest data into Sumo from multiple storage accounts, perform fo
 The following steps assume you have noted down the resource group name, storage account name, and container name where the blobs will be ingested from.
 :::
 
-* [Step 1: Authorize App Service to list storage Account key](#step-1-authorize-app-service-to-list-storage-account-key) - Enables the Azure functions to read from the storage account.
+* [Step 1: Authorize App Service read from storage account](#step-1-authorize-app-service-to-list-storage-account-key) - Enables the Azure functions to read from the storage account.
 * [Step 2: Create an Event Grid Subscription](#step-2-create-an-event-grid-subscription) - Subscribes all blob creation events to the Event Hub created by ARM template in [Step 3](#step-3-enabling-vnet-integration-optional) above.
 * [Step 3. Enabling Vnet Integration(Optional)](#step-3-enabling-vnet-integration-optional)
 
-### Step 1: Authorize App Service to list Storage Account key
+### Step 1: Authorize App Service to read from storage account
 
 This section provides instructions on authorizing the App Service to list the Storage Account key. This enables the Azure function to read from the storage account.
 
@@ -156,19 +140,14 @@ To authorize the App Service to list the Storage Account key, do the following:
 
     ![AzureBlob_IAM_Add.png](/img/send-data/AzureBlob_IAM_Add.png)
 
-1. Select Add role assignment from dropdown.
-1. In the Add role Assignment window, go to Roles tab and Choose “Storage Account Key Operator Service Role”. Click **Next**.
+1. Select **Add role assignment** from dropdown.
+1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
+1. In **Members** tab, select **Managed Identity**.
+1. In the **Select Managed identities** window,
 
-    ![storage-key-operator.png](/img/send-data/storage-key-operator.png)
-
-1. In Members tab, select Managed Identity.
-1. In the Select Managed identities window.
-
-   * **Subscription**: Choose Pay as you Go  
-   * Managed Identity: Choose Function App
-   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app     services which are created by the ARM template. Click **Select**.
-
-    ![storage-key-operator.png](/img/send-data/storage-key-operator.png)
+   * **Subscription**: Choose Pay as you Go.
+   * **Managed Identity**: Choose Function App.
+   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app services which are created by the ARM template. Click **Select**.
 1. Click **Review + assign**
 1. Click **Save**.
 
@@ -244,7 +223,7 @@ Assuming you have used the modified template which uses standard/premium plan fo
 1. Create a subnet in a virtual network using the instructions in the [doc](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
 1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
 
-   1. Go to **Function App \> Networking**. 
+   1. Go to **Function App > Networking**. 
    1. Under Outbound traffic, click on Vnet Integration. 
 
     ![azureblob-outbound](/img/send-data/azureblob-outbound.png)
@@ -265,3 +244,10 @@ Assuming you have used the modified template which uses standard/premium plan fo
 1. Verify by going to the subnet. You should see Subnet delegation and service endpoints as shown in the screenshot below.
 
     ![azureblob-subnet](/img/send-data/azureblob-subnet.png)
+
+
+## Collection testing performance numbers
+
+| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time take for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| ~3 minutes | 100 | 100MB X 80 + 104MB X 20 | Avg 40MB/sec <br/> MAX 190MB/sec | MAX 411811/sec | 3.77 minutes | 9.31 | 20,643,840 |

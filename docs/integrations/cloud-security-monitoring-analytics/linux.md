@@ -1,6 +1,6 @@
 ---
 id: linux
-title: Sumo Logic App for Linux Cloud Security Monitoring and Analytics
+title: Linux Cloud Security Monitoring and Analytics
 sidebar_label: Linux
 description: Introduction to Linux Cloud Security Monitoring and Analytics.
 ---
@@ -28,7 +28,7 @@ Follow the steps in this topic to install or uninstall a collector on Linux. See
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data > Collection > Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
 -or-
 * Open a browser and enter the static URL for your pod. See Download a Collector from a Static URL for a list of URLs for your deployment pod. The download begins immediately.
 
@@ -115,7 +115,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
 
 :::note
 * Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group.
-* Modifying user.properties may require sudo privileges. For more information see Enhanced File System Security for Installed Collectors.
+* Modifying user.properties may require sudo privileges. For more information, see Enhanced File System Security for Installed Collectors.
 :::
 
 3. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. Alternatively, you can configure Sources at any time by using the Sumo web app. See Sources.
@@ -193,7 +193,7 @@ Use the following command to start the collector service.
  ```bash
  sudo ./collector start
  ```
-13. To verify that the collector is installed, go to **Manage Data > Collection > Collection** in the Sumo web app and verify that you can see the collector.
+13. To verify that the collector is installed, go to **Manage Data** > **Collection** > **Collection** in the Sumo web app and verify that you can see the collector.
 
 </details>
 
@@ -264,7 +264,7 @@ sudo systemctl daemon-reload
 
 
 2. **Remove the collector from Sumo Logic**:
-   1. In Sumo Logic select **Manage Data > Collection > Collection**.
+   1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
    2. Find the collector you want to remove, and click **Delete**.
    3. When the Confirm dialog displays, click **OK**.
 
@@ -275,24 +275,7 @@ A success message is displayed and the collector is removed from the list.
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and Dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Linux Security Monitoring Dashboards
 

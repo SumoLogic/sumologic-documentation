@@ -37,7 +37,7 @@ You can create a scheduled search at the time you create a search, or edit a s
     :::
 
     * For users in timezones that are +/- 30 minutes, the minute is based on UTC. So for customers in the IST timezone, there will be a 30-minute offset. So instead of starting at :00, it will be :30.
-    * **Custom Cron**. Enter a custom CRON expression. The run frequency for a CRON expression must not be less than every 15 minutes. For details, see [Cron Examples and Reference](docs/send-data/installed-collectors/sources/script-source/cron-examples-reference.md). 
+    * **Custom Cron**. Enter a custom CRON expression. The run frequency for a CRON expression must not be less than every 15 minutes. For details, see [Cron Examples and Reference](/docs/send-data/installed-collectors/sources/script-source/cron-examples-reference.md). 
     * **Weekly**. The search will run every week. You may also select the day of the week that it runs and the time. 
     * **Daily.** You may also select that your search runs every **Day**, every **Weekday (Mon-Fri)** or **Weekend (Sat-Sun)** and the time. A Daily search will cover exactly 24 hours of activity. You can change the schedule whenever you'd like. Be aware that a scheduled search will run according to the time zone set on your computer at the time you configure the search. For example, if you are in San Francisco and set a search to run at 7:00 AM, it will run at 7:00 AM PST. If you then fly to New York, and your computer resets to EST, when you schedule a new search at 7:00 AM, it will run at 7:00 AM EST. These two searches will run at different times.
     * **Every 2, 4, 6, 8, or 12 Hours.** The search will run for the first time at the top of the hour you choose. * **Hourly.** The search will run every hour. We guarantee that hourly searches run every hour but not exactly at :00.
@@ -58,7 +58,7 @@ You can create a scheduled search at the time you create a search, or edit a s
     The maximum allowed time range for different scheduled search frequencies is as below:
 
     | Frequency          | Max Allowed Time Range |
-    |--------------------|------------------------|
+    |:--------------------|:------------------------|
     | Real Time          | 15 minutes             |
     | 15 min             | 1 Day                  |
     | 15 min -1 hour     | 7 Days                 |

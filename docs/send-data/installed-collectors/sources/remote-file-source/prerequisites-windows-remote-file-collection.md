@@ -10,24 +10,24 @@ Sumo Logic requires a few extra steps when you set up collection in Windows en
 * Set up a UNC Share Path to collect Windows logs using CIFS/SMB
 * Set up a third-party tool on the target system to handle SSH
 
-# Collect Windows Logs from a UNC Share Path
+## Collect Windows Logs from a UNC Share Path
 
 As an alternative to using SSH for remote Windows collections, Sumo Logic Collectors can collect files remotely using CIFS/SMB by configuring a Local File Source (not a Remote File Source) with a UNC share path.
 
 Here is an overview of the required steps:
 
-* [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
+* [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
 * On the machine where the files reside (the target or remote machine), use Windows Advanced Sharing options to create a UNC share for the log directory.
 * [Set up a Local File Source](../local-file-source.md).
 
 The Collector must reside within the same Active Directory domain as the target host, and the target host must allow access without requiring a password.
 
-## Step 1. Install a Sumo Logic Collector.
+### Step 1. Install a Sumo Logic Collector.
 
-[Install a Collector on Windows](docs/send-data/installed-collectors/windows.md) on a machine within the same Active Directory domain as the target system
+[Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md) on a machine within the same Active Directory domain as the target system
 where files reside.
 
-## Step 2. Set UNC share permissions.
+### Step 2. Set UNC share permissions.
 
 1. Set up the UNC share permissions (Share with "Everyone" and "Read-Only") for the folder on the target machine.
 
@@ -56,7 +56,7 @@ where files reside.
 1. The ***server*** portion of a UNC path references the server name set by a system administrator, or an IP address. The ***share*** portion of a UNC name references a labeled share point created by an administrator, as in Step 2. The ***file path*** portion of a UNC name references the local sub-directories beneath the share point.
 1. Save your Local File Source configuration. Wait a few seconds, and then click the **Status** tab to check the message volume for the Collector.
 
-# Use a third-party client to handle SSH in Windows
+## Use a third-party client to handle SSH in Windows
 
 This topic has instructions for setting up a remote file source to collect log data via SSH.  Because Windows does not handle SSH natively, you must install a third-party product (OpenSSH) to enable data collection using SSH.
 

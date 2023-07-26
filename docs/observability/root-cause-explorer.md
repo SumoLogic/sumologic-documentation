@@ -5,18 +5,13 @@ sidebar_label: Root Cause Explorer
 description: Use Root Cause Explorer for AWS to troubleshoot incidents with apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 ---
 
-## Availability
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-| Account Type | Account Level                                  |
-|--------------|------------------------------------------------|
-| Cloud Flex   | Trial, Enterprise                              |
-| Credits      | Trial, Enterprise Operations, Enterprise Suite |
-
-## Overview
+<img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
-Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, Open Telemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
+Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, OpenTelemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
 
 Given an alert, for instance, a microservice in AWS us-west-2 experiencing unusual user response times, an on-call user can use Root Cause Explorer to correlate EOIs on over 500 AWS CloudWatch metrics over 15 AWS service namespaces (such as EC2, RDS, and so on), Kubernetes metrics, and trace data, to isolate the probable cause to a specific set of EC2 instances, serving the given microservice in AWS us-west-2 that may be overloaded. 
 
@@ -32,7 +27,7 @@ Root Cause Explorer supports the following AWS namespaces by processing CloudWa
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache 
+* AWS/ElastiCache 
 * AWS/SQS
 * AWS/SNS 
 * AWS X-ray (for service metrics and service topology)
@@ -43,11 +38,18 @@ Root Cause Explorer can also work with EC2 and EBS metrics collected by Host M
 Root Cause Explorer also supports:
 
 * Kubernetes metrics (from customer-managed Kubernetes, EKS, GKE, or Azure Kubernetes Engine) and associated Events of Interest. Given the ephemeral nature of container resources, Root Cause Explorer uses proprietary algorithms to aggregate Events of Interest to stable entities in a Kubernetes cluster.
-* Metrics derived from Open Telemetry data from Sumo Logic Tracing for applications and services
+* Metrics derived from OpenTelemetry data from Sumo Logic Tracing for applications and services
 
 The screenshot below shows the Root Cause Explorer UI.
 
 ![rce-top-entities.png](/img/rce/rce-top-entities.png)
+
+## Availability
+
+| Account Type | Account Level                                  |
+|:--------------|:------------------------------------------------|
+| Cloud Flex   | Trial, Enterprise                              |
+| Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
 ## Troubleshooting concepts
 
@@ -59,7 +61,7 @@ A spike in a metric on a resource is a sign of an underlying problem. Larger sp
 
 An abnormal spike in a metric is a statistical anomaly. Root Cause Explorer leverages spikes and adds additional context to them to compute Events of Interest (EOIs).
 
-EOIs are constructed based on modeling the periodicity of the underlying AWS Cloudwatch, Kubernetes, or Tracing metrics on each resource in your account to create resource-specific baselines. The periodicity of a metric can be daily, weekly, or none. 
+EOIs are constructed based on modeling the periodicity of the underlying AWS CloudWatch, Kubernetes, or Tracing metrics on each resource in your account to create resource-specific baselines. The periodicity of a metric can be daily, weekly, or none. 
 
 EOIs also leverage proprietary noise reduction rules curated by subject matter experts. One example of a rule is how long the system watches an anomalous metric before detecting an EOI. Similarly, EOIs on metrics that have an upper bound (for example, CPU utilization cannot exceed 100%) are subject to additional curation rules.
 
@@ -156,7 +158,7 @@ You set up Root Cause Explorer using an [AWS CloudFormation template](https://su
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache
+* AWS/ElastiCache
 * AWS/Autoscaling. Auto Scaling data is used only for topology inference. CloudWatch metrics related to Auto Scaling groups are not supported at this time.
 
 If you don’t already have the Sumo Logic CloudWatch Source for Metrics configured, the template will install the source to collect AWS CloudWatch metrics from the account permissioned by the credential provided in the template. The CloudFormation template gives you the option to configure an AWS X-Ray source, if required. 
@@ -346,10 +348,10 @@ The logs created from EOIs reside in a view called `sumologic_signals_anomalies`
 The attributes in the view are defined in the table below.
 
 | Attribute | Description |
-|--|--|
+|:--|:--|
 | `anomalyValues` | Statistics about the time series in the EOI window - min, max, avg.
 | `autoCorrelation` | A measure of the periodicity of the underlying time series.
-| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
+| `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](/docs/send-data/installed-collectors/sources/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
 | `drift` | The percentage deviation of the time series from the expected value. |
 | `endTime` | The end time of the EOI, in epoch milliseconds. |
 | `eventType` | The golden signal class for the EOI: Latency, Load, Bottleneck, Error, Throughput, Success, or Availability. For more information about golden signals, see the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/preface/). |
@@ -506,7 +508,7 @@ event in groups to be returned.
 
 ### Amazon CloudWatch Source Metrics Source
 
-For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md).
+For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md).
 
 ### AWS Inventory Source
 

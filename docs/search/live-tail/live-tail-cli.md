@@ -14,19 +14,14 @@ The Live Tail CLI supports the following operating systems:
 
 ## Limitations
 
-The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in Sumo Logic, but for these exceptions:
+The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in Sumo Logic, with some exceptions:
 
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
-
   :::note
   Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
   :::
-
 * The Live Tail CLI session will expire after 30 minutes of inactivity. This is to provide the best performance possible. If a Live Tail session has expired, you can restart it at any time.
-
 * `_view` and `_index` are not supported in Live Tail queries.
-
-For complete details, see [Live Tail](about-live-tail.md).
 
 ## Install and use the Live Tail CLI
 
@@ -38,18 +33,12 @@ The metadata field and filter must be enclosed in quotes.
 1. Download your platform-specific binaries from [Releases](https://github.com/SumoLogic/livetail-cli/release) to a location where you have read, write, and execute permissions.
 1. In the command prompt, navigate to the directory where the files are saved.
 1. Enter `./livetail -h`
-1. When you run livetail the first time you need to provide the [deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](docs/manage/security/access-keys.md) to authenticate.
-
-    ![session start](/img/search/livetail/cli-live-tail-sessions-start.png)
-
-    A **config.json** file is created in the same directory as the livetail binary that stores this authentication information so you only need to enter your deployment, access ID, and access key once. But if you prefer to clear your access ID and access key and log in again each time, you can use the `-c` argument to clear them.
-
+1. When you run livetail the first time you need to provide the [deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](/docs/manage/security/access-keys.md) to authenticate.<br/>  ![session start](/img/search/livetail/cli-live-tail-sessions-start.png)
+   * A **config.json** file is created in the same directory as the livetail binary that stores this authentication information so you only need to enter your deployment, access ID, and access key once. But if you prefer to clear your access ID and access key and log in again each time, you can use the `-c` argument to clear them.
 1. To start a Live Tail session with a filter, enter for example:
-
-    ```bash
-    ./livetail "_sourceCategory=Apache/Access error"
-    ```
-
+  ```bash
+  .livetail "_sourceCategory=Apache/Access error"
+  ```
 1. To stop the Live Tail session, enter **Ctrl-C** or **Ctrl-D**.
 
 ### Search
@@ -111,16 +100,12 @@ When you start a Live Tail CLI session, it first checks the version of the Live 
 
 ### Major update
 
-If a major version update exists, you will see the error:
-
-> Incompatible version of Live Tail CLI. Please download the latest version from \<link\>.
+If a major version update exists, you will see the error: `Incompatible version of Live Tail CLI. Please download the latest version from <link>.`
 
 You must download the latest version before you can start a new Live Tail CLI session.
 
 ### Minor update
 
-If a minor version update exists, you will see the error:
+If a minor version update exists, you will see the error: `A newer version of Live Tail CLI is available, but your current version will still function. If you'd like to download the latest version, go to <link>.`
 
-> A newer version of Live Tail CLI is available, but your current version will still function. If you'd like to download the latest version, go to \<link\>
-
-You are not required to download the latest version to start a new Live Tail, but if you’d like to take advantage of the latest bug fixes and features, you'd.
+Although not required, downloading the latest version to start a new Live Tail will allow you to take advantage of the latest bug fixes and features.

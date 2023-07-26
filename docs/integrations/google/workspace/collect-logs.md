@@ -7,7 +7,7 @@ description: Instructions for configuring log collection from Google Workspace A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
 This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic. You can configure two types of log collection: Google Workspace Alert Center and Google Workspace Audit Source.
 
@@ -32,7 +32,7 @@ This section provides instructions for configuring log collection for Google Wor
 
 Currently, the source name for Google Workspace is still **Google Workspace Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -75,20 +75,20 @@ Authentication must be with a new Google Workspace Apps Audit Source. We do not 
 
 ### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for the Googleworkspace sources you will set up below.
+Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for the Google workspace sources you will set up below.
 
 
 ### Configure Google Workspace Apps Audit Sources  
 
 When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#About_Source_Configuration), above.
 
-::note
+:::note
 We recommend that you use the same single Source Category for each Google Workspace Apps Audit Source. For example, **google_apps**.
 :::
 
 To configure a Google Workspace Apps Audit Source, do the following:
 
-1. Configure a **G Suite Apps Audit** Source.
+1. Configure a **Google Workspace Apps Audit** Source.
 2. Configure the Source fields:
     1. **Name**. (Required) A name is required.
     2. **Description**. Optional.
@@ -104,7 +104,7 @@ The Google API has a few known issues that cannot be changed by Sumo Logic.
 
 **Google Workspace license requirement**. Google Workspace Drive Audit events are only logged for files owned by users with Google Workspace Business, Enterprise, or Drive Enterprise licenses.
 
-**Authentication token limit**. Google limits an application (such as Sumo Logic) to 25 active authentication tokens per Google Workspace Apps account. According to Google’s documentation, the oldest token is invalidated if a 26th token is created. However, during testing, we found that once the 26th token is issued, all previous 25 tokens become invalid. In this situation, the only workaround is to delete and recreate all G Suite Apps Audit Sources in Sumo Logic.
+**Authentication token limit**. Google limits an application (such as Sumo Logic) to 25 active authentication tokens per Google Workspace Apps account. According to Google’s documentation, the oldest token is invalidated if a 26th token is created. However, during testing, we found that once the 26th token is issued, all previous 25 tokens become invalid. In this situation, the only workaround is to delete and recreate all Google Workspace Apps Audit Sources in Sumo Logic.
 
 **Duplicate records**. The following situations might result in the collection of duplicate log messages:
 * **Complex events**. When a complex an event is logged that contains multiple sub-events, such as a new calendar entry, a JSON object is created to log the event. That object will have an array of event details for each included action (such as inviting guests). When this happens, duplicate event logs might be created for each sub-action. So, if there is one event with three sub actions, the exact same message event data might be duplicated three times, most likely due to a bug in the Google API.
@@ -204,4 +204,3 @@ _sourceCategory=google*
 ## Collect Logs for Google Workspace AlertCenter
 
 To collect logs for Google Workspace AlertCenter, follow the instructions in [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
-

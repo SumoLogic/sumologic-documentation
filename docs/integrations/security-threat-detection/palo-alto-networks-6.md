@@ -1,6 +1,6 @@
 ---
 id: palo-alto-networks-6
-title: Sumo Logic App for Palo Alto Networks 6
+title: Palo Alto Networks 6
 sidebar_label: Palo Alto Networks 6
 description: The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 ---
@@ -81,29 +81,9 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 
 ## Installing the Palo Alto Networks 6 App
 
-Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing PAN 6 Dashboards
 
@@ -111,7 +91,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The Overview Dashboard keeps you up-to-speed on the higher level operations of your PAN deployment.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_Overview_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Overview.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Source Host Locations.** Using a geolocation query, this Panel maps the location of source hosts using their IP addresses.
 
@@ -124,7 +104,7 @@ The Overview Dashboard keeps you up-to-speed on the higher level operations of y
 
 ### Threat Analysis
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_ThreatAnalysis_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Threat-Analysis.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Threat Type.** Get an idea of the number of threats as well as the type of threats detected by Palo Alto Networks. Top Destination IPs. Shows the top 10 destination IPs (the IPs that have made the most attempts).
 
@@ -143,7 +123,7 @@ Top Destination IPs. Ranks the top 10 destination IPs as a bar chart.
 
 The Traffic Monitoring Dashboard includes several Panels that display information about incoming and outgoing traffic, including bytes sent and received.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_TrafficMonitoring_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Events by Protocol.** Displays the breakdown of events, sorted by protocol (ICMP, TCP, UDP, HOPOPT).
 
@@ -166,7 +146,7 @@ The Traffic Monitoring Dashboard includes several Panels that display informatio
 
 This advanced Dashboard includes specialized, targeted Panels that are typically used by IT Admins.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_Generic_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Generic.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Top 10 Source IPs by Byte.** Watch for unexpected spikes in traffic from the top 10 Source IP addresses.
 

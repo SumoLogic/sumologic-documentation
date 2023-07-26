@@ -2,7 +2,10 @@
 id: cloud-to-cloud-source-versions
 title: Cloud-to-Cloud Source Versions
 sidebar_label: Cloud-to-Cloud Versions
+description: Learn how to continuously update your Sources in the Cloud-to-Cloud Integration Framework to maintain data collection.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you.
 

@@ -1,6 +1,6 @@
 ---
 id: sql-server
-title: Sumo Logic App for Microsoft SQL Server
+title: Microsoft SQL Server - Classic Collector
 sidebar_label: Microsoft SQL Server
 description: The Microsoft SQL Server App provides insight into your SQL server performance metrics and errors.
 ---
@@ -35,19 +35,6 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you're using SQL Server in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `db_system`
-* `db_cluster`
-* `db_cluster_address`
-* `db_cluster_port`
-
-
-
-</TabItem>
-<TabItem value="non-k8s">
-
 If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -55,8 +42,17 @@ If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 * `pod_labels_db_cluster_address`
 * `pod_labels_db_cluster_port`
-  
 
+</TabItem>
+<TabItem value="non-k8s">
+
+If you're using SQL Server in a non-Kubernetes environment, create the fields:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `db_cluster_address`
+* `db_cluster_port`
 
 </TabItem>
 </Tabs>
@@ -74,9 +70,13 @@ Sumo Logic supports collection of logs and metrics data from SQL Server in both 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with the Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="sqlk8s.png" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with the Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="sqlk8s.png" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we are running Telegraf as a sidecar deployment in each pod from which we want to collect metrics. This means that Telegraf is running in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
+The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 
 Follow the below instructions to set up the metric collection:
@@ -91,7 +91,7 @@ Follow the below instructions to set up the metric collection:
 
 **Prerequisites**
 
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
 
 
 #### Step 1: Configure Metrics Collection
@@ -100,7 +100,7 @@ This section explains the steps to collect SQL Server metrics from a Kubernetes 
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. [Learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. **[Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**
+1. **[Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**.
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
   ```sql
   USE master;
@@ -127,7 +127,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       environment="ENV_TO_BE_CHANGED"
       component="database"
       db_system = "sqlserver"
-      db_cluster: "ENV_TO_BE_CHANGED"
+      db_cluster = "ENV_TO_BE_CHANGED"
       db_cluster_address = "ENV_TO_BE_CHANGED"
       db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
@@ -169,7 +169,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 This section explains the steps to collect SQL Server logs from a Kubernetes environment.
 
-1. **(Recommended Method) Add labels on your SQL server pods to capture logs from standard output.**. Make sure that the logs from SQL Server are sent to stdout. Follow the instructions below to capture SQL Server logs from stdout on Kubernetes.
+1. **(Recommended Method) Add labels on your SQL server pods to capture logs from standard output**. Make sure that the logs from SQL Server are sent to stdout. Follow the instructions below to capture SQL Server logs from stdout on Kubernetes.
 
 1. Apply following labels to the SQL server pods:
    ```sql
@@ -201,7 +201,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 
    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-   * The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   * The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    * Verify logs in Sumo Logic.
 2. (Optional) Collecting SQL server Logs from a Log File. Follow the steps below to capture SQL server logs from a log file on Kubernetes.
 1. Determine the location of the SQL server log file on Kubernetes. This can be determined from the SQLserver.conf for your SQL server cluster along with the mounts on the SQL server pods.
@@ -226,30 +226,27 @@ kubectl describe pod <SQLserver_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
-1. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. Go to Manage Data > Logs > Field Extraction Rules.
-2. Click the + Add button on the top right of the table.
-3. The **Add Field Extraction Rule** form will appear:
-
-
-4. Enter the following options:
-* **Rule Name**. Enter the name as **App Observability - Proxy**.
-* **Applied At.** Choose **Ingest Time**
-* **Scope**. Select **Specific Data**
-    * **Scope**: Enter the following keyword search expression:
-```sql
-pod_labels_environment=* pod_labels_component=database
-pod_labels_db_system=*
-pod_labels_db_cluster=*
-```
-* **Parse Expression**. Enter the following parse expression:
-```sql
-if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_db_system as db_system
-| if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
-```
-
+4. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+  1. Go to Manage Data > Logs > Field Extraction Rules.
+  2. Click the + Add button on the top right of the table.
+  3. The **Add Field Extraction Rule** form will appear.
+  4. Enter the following options:
+   * **Rule Name**. Enter the name as **App Observability - Proxy**.
+   * **Applied At**. Choose **Ingest Time**
+   * **Scope**. Select **Specific Data**
+   * **Scope**. Enter the following keyword search expression:
+  ```sql
+   pod_labels_environment=* pod_labels_component=database
+   pod_labels_db_system=*
+   pod_labels_db_cluster=*
+  ```
+  * **Parse Expression**. Enter the following parse expression:
+ ```sql
+ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+ | pod_labels_component as component
+ | pod_labels_db_system as db_system
+ | if (!isEmpty(pod_labels_db_cluster), pod_labels_db_cluster, null) as db_cluster
+ ```
 5. Click **Save** to create the rule.
 
 </TabItem>
@@ -513,7 +510,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```sql title="Email Notifications Example"
 email_notifications = [
@@ -550,7 +547,7 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the service version you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields:
    * App Name. You can retain the existing name or enter the app's name of your choice. 
@@ -565,7 +562,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Microsoft SQL Server Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
@@ -576,7 +573,8 @@ Use this dashboard to:
 * Analyze CPU, Memory and disk utilization.
 * Examine Login activities, failures, and failure reasons.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQL-Server/SQL-Server-Overview.png')} alt="Overview" />
+
 
 ### General Health
 
@@ -587,7 +585,8 @@ Use this dashboard to:
 * Monitor server events trends including SQL Server wait time.
 * Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-General-Health.png')} alt="General Health" />
+
 
 ### I/O
 
@@ -596,7 +595,8 @@ The **SQL Server - I/O** dashboard provides read and write bytes throughput by S
 Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write bytes throughput of your SQL server instance.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-I-O.png')} alt="I/O" />
+
 
 ### Latency
 
@@ -605,7 +605,7 @@ The **SQL Server - Latency** dashboard provides read and write latency trend by 
 Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write latency of your SQL server instance.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Latency.png')} alt="Latency" />
 
 
 ### Operations
@@ -616,11 +616,10 @@ Use this dashboard to:
 * Get insights into configuration changes and updates to SQL server instance.
 * Monitor any errors and warnings.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Operations.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Operations.png')} alt="Operations" />
 
 
 ### Performance Counters
-
 
 The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
 
@@ -628,7 +627,8 @@ Use this dashboard to:
 * Get insights into database activities such as errors/sec, lock timeouts/sec, and wait/sec, deadlocks/sec, and write transactions/sec.
 * Monitor important SQL statistics such as login/sec, logout/sec, sql compilations/sec, processes blocked and batch requests/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Performance-Counters.png')} alt="Performance Counters" />
+
 
 ### Replication
 
@@ -638,7 +638,7 @@ Use this dashboard to:
 * Get insights into bytes sent to and received from replica instance.
 * Analyze transaction delays, and mirrored white transaction/sec.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Replication.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Replication.png')} alt="Replication" />
 
 
 ### Backup Restore Mirroring
@@ -651,7 +651,7 @@ The **SQL Server - Backup Restore Mirroring** provides information about:
 * Backup failures and reasons
 * Mirroring errors
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Microsoft_SQL_Server dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/SQL-Server-Backup-Restore-Mirroring.png')} alt="Backup Restore Mirroring" />
 
 
 ## Microsoft SQL Server Alerts

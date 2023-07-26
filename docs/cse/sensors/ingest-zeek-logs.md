@@ -4,6 +4,8 @@ title: Ingest Zeek Logs
 description: Learn how to collect Zeek (Bro) logs and ingest them to CSE.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has instructions for ingesting Zeek logs into CSE. 
 
 ## What is Zeek?
@@ -79,21 +81,14 @@ With this method, you use Corelight’s [json-streaming-logs](https://github.com
 
 After installing the `json-streaming-logs` package, follow these instructions to set up the Sumo Logic mapping.
 
-1. In CSE, click the gear icon and select **Sumo Logic** under **Integrations**.
-
-    ![gear-integrations-sumo.png](/img/cse/gear-integrations-sumo.png)
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
-
-    ![ingest-mappings.png](/img/cse/ingest-mappings.png)
+1. In CSE, click the gear icon and select **Sumo Logic** under **Integrations**.<br/><img src={useBaseUrl('img/cse/gear-integrations-sumo.png')} alt="Gear integrations" width="800"/>
+1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" width="800"/>
 1. On the **Create Sumo Logic Mapping** page:
-
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
    1. **Format**. Choose Bro/Zeek JSON.
    1. **Event ID**. Enter *_path*.
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
-   1. Click **Create**.    
-
-    ![create-mapping.png](/img/cse/create-mapping.png)
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/create-mapping.png')} alt="Create mapping" width="600"/>
 
 ### Use FERs
 
@@ -111,7 +106,7 @@ To enable CSE to successfully process the log, we need to create the
 following fields listed in the table below.
 
 | Field          | Parse Expression                                                                                       |
-|----------------|--------------------------------------------------------------------------------------------------------|
+|:----------------|:--------------------------------------------------------------------------------------------------------|
 | `_siemMessage` | `json field=_raw "MESSAGE" as _siemMessage`                                                            |
 | `_siemEventId` | `json field=_raw "PROGRAM" as _siemEventId | parse regex field=_siemEventId "bro_(\<_siemEventI\>.*)"` |
 | `_siemFormat`  | `“bro” as _siemFormat`                                                                                 |
@@ -121,15 +116,11 @@ following fields listed in the table below.
 
 Perform these steps for each of the FERs.
 
-1. In the Sumo Logic UI, go to **Manage Data \> Logs \> Field Extraction Rules**.
+1. In the Sumo Logic UI, go to **Manage Data > Logs > Field Extraction Rules**.
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
-
    1. **Rule Name**. Enter a meaningful name for the rule.
    1. **Applied At**. Click Ingest Time. 
    1. **Scope**. Click **Specific Data**.
    1. **Parse Expression**. Enter the parse expression shown in the table above for the field the rule will extract.
-
-1. Click **Save**.     
-
-    ![example-fer.png](/img/cse/example-fer.png)
+1. Click **Save**.<br/><img src={useBaseUrl('img/cse/example-fer.png')} alt="Example FER" width="400"/>

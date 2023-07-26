@@ -3,8 +3,6 @@ id: support-terms
 title: Sumo Logic Support Terms and Conditions
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-Sumo Logic's defined Support Terms and Conditions are available on the main site: https://www.sumologic.com/support-terms.
+:::info
+Our defined support terms and conditions are available at [Support and Maintenance Services Addendum](https://www.sumologic.com/support-terms).
+:::

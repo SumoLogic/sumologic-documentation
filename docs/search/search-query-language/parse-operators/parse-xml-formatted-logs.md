@@ -107,7 +107,7 @@ To parse the last element in an array you'd use the following:
 
 To parse an element based on an attribute, in this example where id="456", you'd use the following:
 
-```sql
+```
 * | parse xml "/users/user[@id=456]/first_name/text()" as first_name"
 ```
 

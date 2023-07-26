@@ -9,7 +9,7 @@ Installed Collectors store log events in its installation directory under the '*
 
 ## QuotaEnforcer
 
-Collectors use a "QuotaEnforcer" mechanism to determine if an account should be [throttled](docs/manage/ingestion-volume/log-ingestion.md) based on the contract terms of the account and the overall amount of data that is being sent across your Collectors. These log messages will be written in the Collector logs on a regular basis, every 10 seconds, and show how much volume (quota) the Collector is currently able to send to the service for a period of time. The following is an example QuotaEnforcer log message:
+Collectors use a "QuotaEnforcer" mechanism to determine if an account should be [throttled](/docs/manage/ingestion-volume/log-ingestion.md) based on the contract terms of the account and the overall amount of data that is being sent across your Collectors. These log messages will be written in the Collector logs on a regular basis, every 10 seconds, and show how much volume (quota) the Collector is currently able to send to the service for a period of time. The following is an example QuotaEnforcer log message:
 
 ```
 018-01-29 09:57:49,637 -0500 [QuotaEnforcer] INFO  com.sumologic.scala.collector.quota.BlockingQuotaEnforcer - BlockingQuotaEnforcer(Inputs) - Requested: 3 MB (368 KB/s). Remaining capacity: 81 MB (until Mon Jan 29 09:56:49 EST 2018)

@@ -2,10 +2,12 @@
 id: slack-source
 title: Slack Source
 sidebar_label: Slack
-description: Install the Slack Source
+description: Install the Slack Source for Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
 
 This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
@@ -20,7 +22,7 @@ The Slack Source uses the following Slack APIs to ingest web and audit events.
 The source collects the following API endpoints and routes.
 
 | API       | Req Scope        | Route                                                                        | Free      | Standard  | Plus      | Enterprise |
-|-----------|------------------|------------------------------------------------------------------------------|-----------|-----------|-----------|------------|
+|:-----------|:------------------|:------------------------------------------------------------------------------|:-----------|:-----------|:-----------|:------------|
 | Web API   | admin            | [team.accessLogs](https://api.slack.com/methods/team.accessLogs)             | Collected | Collected | Collected | Collected  |
 | Web API   | team:read        | [team.info](https://api.slack.com/methods/team.info)                         | Collected | Collected | Collected | Collected  |
 | Web API   |                  | [team.billableInfo](https://api.slack.com/methods/team.billableInfo)         | Collected | Collected | Collected | Collected  |
@@ -62,7 +64,7 @@ instructions later for migrating it. <br/><img src={useBaseUrl('img/send-data/sl
 Use the table below to reference the required scope permissions you need to add depending on the Slack API you want to collect along with your Slack account type:
 
 | Slack API | Slack Account Type   | Required Scopes                                                                                 |
-|:----------|----------------------|-------------------------------------------------------------------------------------------------|
+|:----------|:----------------------|:-------------------------------------------------------------------------------------------------|
 | Web API   | Free Plan            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Pro                  | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Business+            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
@@ -89,7 +91,7 @@ section. A Slack Enterprise Grid account is required.
 **I’ve reviewed and removed any hard-coded information** checkbox. Click the **Activate Public Distribution** button. <br/><img src={useBaseUrl('img/send-data/slack-activate-public-distro.png')} alt="Activate Public Distribution" width="550"/>
 5. Copy the shareable link and ensure the permissions are correct from the prior table.
 6. Open a new tab in your browser, paste the URL and press Enter.
-7. Select the drop-down menu in the upper right corner and choose the correct organization. <br/><img src={useBaseUrl('img/send-data/slack-select-org-menu.png')} alt="Select Org Menu" width="<insert-pixel-number>"/>
+7. Select the dropdown menu in the upper right corner and choose the correct organization. <br/><img src={useBaseUrl('img/send-data/slack-select-org-menu.png')} alt="Select Org Menu" width="<insert-pixel-number>"/>
 8. Click **Allow**.
 9. Ignore the error message and copy the **Code in the URL** field, as shown in the following example. <br/><img src={useBaseUrl('img/send-data/slack-copy-url-code.png')} alt="Copy URL code" width="<insert-pixel-number>"/>
 10. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`

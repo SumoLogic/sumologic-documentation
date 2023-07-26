@@ -3,7 +3,7 @@ id: sumo-logic-ui
 title: Tour the Sumo Logic UI
 ---
 
-[**Get Started**](/docs/get-started) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
+The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the Left Navigation Bar
 
@@ -13,10 +13,10 @@ When you first log in, you'll land on the Sumo Logic Home page. The **Left Na
 
 The **Left Nav Bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
 
-* **Recent** dashboards and searches,
-* a list of your **Favorites** (dashboards and searches),
-* your **Personal** library of dashboards and searches, and
-* a **Library** of shared dashboards and searches (within your organization) respectively.
+* **Recent** dashboards and searches
+* A list of your **Favorites** (dashboards and searches)
+* Your **Personal** library of dashboards and searches,
+* A **Library** of shared dashboards and searches (within your organization) respectively.
 
 ![TUI_Left_Nav.png](/img/get-started/ui/TUI_Left_Nav.png)
 
@@ -26,7 +26,7 @@ The top of the **left nav bar** is where you can search for content and
 users and easily switch browsing modes. 
 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the **Details** icon and make a selection from the drop-down menu.
+* Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.
 
 ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
 
@@ -87,7 +87,7 @@ To access additional Log Search, Metrics, and Live Tail options, do the followin
 
     ![WTS_Tab-options-details.png](/img/get-started/ui/WTS_Tab-options-details.png)
 
-1. Select the tab and choose an option from the drop-down menu.
+1. Select the tab and choose an option from the dropdown menu.
 
     ![tab options.png](/img/get-started/ui/tab-options.png)
 
@@ -96,7 +96,7 @@ To access additional Log Search, Metrics, and Live Tail options, do the followin
 The following table lists the options available for the Search, Metrics, and Live Tail tabs.
 
 | Option | Search tab  | Metrics tab  | Live Tail tab |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | Pin | ![check](/img/reuse/check.png) | — | — |
 | Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
 | Rename | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
@@ -134,7 +134,7 @@ To launch a search, metrics visualization, or live tail session, do the followin
 1. Go to the Sumo **Home** page.
 1. Do one of the following:
 
-   * Click **+New** in the Tabs menu and choose an option from the drop-down menu. 
+   * Click **+New** in the Tabs menu and choose an option from the dropdown menu. 
    * Click one of the following Home page icons:
 
      * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
@@ -166,7 +166,7 @@ To view Favorites and add to the list, do the following:
 
     ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
 
-1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the drop-down list. 
+1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the dropdown list. 
 
     ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
 
@@ -206,7 +206,7 @@ To see content that has been shared with you, do the following:
 
 After you start a search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
-There is a limit of ten pinned searches per user. Also, queries that use the [save operator](docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
+There is a limit of ten pinned searches per user. Also, queries that use the [save operator](/docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
 
 You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 
@@ -244,7 +244,7 @@ To manage your personal Sumo account preferences, do the following:
     * **My Access Keys**: add, edit, and remove access keys
     * **My Preferences**: your account session settings
 
-For more information, see the [Preferences Page](account-setup.md).
+For more information, see the [Preferences Page](account-settings-preferences.md).
 
 ### Get help: docs, community, and more
 
@@ -277,10 +277,10 @@ To manage data in Sumo Logic, do the following:
 
 1. Choose from the following, as needed:
 
-    * **Collection.** [Manage collectors and sources](/docs/manage/collection).
-    * **Logs.** Manage [fields](docs/manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding).
+    * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
+    * **Logs.** Manage [fields](/docs/manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding).
     * **Metrics.** Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
-    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/manage/connections-integrations), and [health events](docs/manage/health-events.md).
+    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/manage/connections-integrations), and [health events](/docs/manage/health-events.md).
 
 ### Admin: Manage accounts, users, and security
 
@@ -296,7 +296,7 @@ To administer Sumo Logic accounts, users, and security, do the following:
 
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security.** [Set password policy for your org](docs/manage/security/set-password-policy.md), [set up security whitelist](docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](docs/manage/security/access-keys.md), manage security polices ([audit index](docs/manage/security/audit-index.md), [support account access,](docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards-new/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy.md), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](/docs/manage/security/access-keys.md), manage security polices ([audit index](/docs/manage/security/audit-index.md), [support account access,](/docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Become a Sumo Pro user
 

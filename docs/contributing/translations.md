@@ -29,7 +29,7 @@ Current languages supported:
 Each supported language will have all user interface and documentation in a language specific folder under i18n:
 
 | Language | Interface translations | Documentation content |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | English | `/src` in theme and pages | `/docs` |
 | Japanese | `/i18n/ja/docusaurus-theme-classic`<br/><br/>code.json is landing page | `/i18n/ja/docusaurus-plugin-content-docs/current`<br/><br/>current.json is sidebar categories |
 

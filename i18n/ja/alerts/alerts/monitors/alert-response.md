@@ -17,7 +17,7 @@ Email alerts automatically get a button labeled **View Alert** that opens the
 
 ![view alert from email.png](/img/monitors/view-alert-from-email.png)
 
-If you use [Webhook connections](/docs/manage/connections-integrations/webhook-connections) offered by Sumo Logic for receiving notifications you need to provide the `alertResponseUrl` [variable](../alert-variables.md) in your notification payload of a
+If you use [Webhook connections](/docs/alerts/webhook-connections) offered by Sumo Logic for receiving notifications you need to provide the `alertResponseUrl` [variable](/docs/alerts/monitors/alert-variables) in your notification payload of a
 Monitorto receive a link that opens Alert Response. When your Monitor is triggered it will generate a URL and provide it in the notification payload where you can use it to open Alert Response. The following is an example Slack payload with the
 variable:
 

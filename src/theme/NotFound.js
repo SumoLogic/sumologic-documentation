@@ -44,11 +44,7 @@ export default function NotFound(): JSX.Element {
               </button>
               <button className="homepage"
                   description="Open GitHub Issue">
-                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Report Bug</a>
-              </button>
-              <button className="homepage"
-                  description="Contact Us">
-                  <a href="https://sumodojo.slack.com">Get in touch</a>
+                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Report this bug</a>
               </button>
               </p>
               <p align="center">

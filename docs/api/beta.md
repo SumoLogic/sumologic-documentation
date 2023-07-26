@@ -7,7 +7,7 @@ title: APIs (Beta)
 
 See the latest advancements in Sumo Logic APIs.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api/getting-started) for Authentication and Endpoint information.
 
 ## In Open Beta
 

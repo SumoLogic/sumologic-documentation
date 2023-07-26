@@ -5,6 +5,9 @@ sidebar_label: AWS CloudTrail
 description: Add an AWS CloudTrail Source to upload messages to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/cloudtrail-source.png')} alt="Thumbnail icon" width="50"/>
 
 AWS CloudTrail records API calls made to AWS. This includes calls made using the AWS Management Console, AWS SDKs, command line tools, and higher-level AWS services. Add an AWS CloudTrail Source to upload these messages to Sumo Logic. The AWS CloudTrail Source automatically parses the logs prior to upload.
 
@@ -12,15 +15,47 @@ AWS CloudTrail records API calls made to AWS. This includes calls made using the
 You need to know where your CloudTrail log files are stored so you can provide the path to the AWS CloudTrail Source. Refer to AWS Documentation for [finding your CloudTrail log files](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html).
 :::
 
-To configure an AWS CloudTrail Source:
+
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Tutorial: Set up an AWS CloudTrail Source.
+
+<Iframe url="https://www.youtube.com/embed/SQMzez_9PiU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
+
+### Configure an AWS CloudTrail Source
 
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket for you if you so choose.
 1. [Grant Sumo Logic access](grant-access-aws-product.md) to an Amazon S3 bucket created or used above.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Select the hosted Collector for which you want to add the Source, and click **Add Source**. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-1. Click **AWS CloudTrail**.
-1. Configure the settings as described in [AWS Sources.](aws-sources.md)
+1. Select **AWS CloudTrail**.
+1. The page refreshes.
+    ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
+1. **Name**. Enter a name for the source. 
+1. **Description**. (Optional) 
+1. **S3 Region**. Choose the AWS Region the S3 bucket resides in.
+1. **Bucket Name**. The name of your organizations S3 bucket as it appears in AWS.
+1. **Path Expression**. The path expression of the log file(s) in S3, can contain wildcards to include multiple log files.
+1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
+1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-cloudtrail-logs))  is a prerequisite for role-based access
+    * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.   
+        ![role-arn.png](/img/cse/role-arn.png)
+    * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+1. Click **SAVE**.
 1. **Optional:** Install the Sumo Logic App for AWS CloudTrail.
 
 ## CloudTrail log objects

@@ -4,9 +4,7 @@ title: total Search Operator
 sidebar_label: total
 ---
 
-
-
-The total operator inserts the sum of a set of fields into every row of the set. Unlike the sum operator, which produces an aggregate value, the total operator inserts the total value as a new column, enabling expressions that compare an individual value to the total.
+The `total` operator inserts the sum of a set of fields into every row of the set. Unlike the sum operator, which produces an aggregate value, the total operator inserts the total value as a new column, enabling expressions that compare an individual value to the total.
 
 ## Syntax
 
@@ -22,13 +20,13 @@ Create a new field containing the sum of the specified field for groups of the s
 total <field> [as <field>] [by <field1>, <field2>, ...]
 ```
 
-**Rules**
+## Rules
 
 * An alias for total is optional. If no alias is given, **`_total`** is used by default.
 * Rows in which the specified field contains non-numeric values will be skipped.
 * There is a limit of 100k messages that can be totaled. 
 
-**Examples**
+## Examples
 
 #### Calculate the total
 

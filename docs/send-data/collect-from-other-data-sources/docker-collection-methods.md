@@ -1,6 +1,7 @@
 ---
 id: docker-collection-methods
 title: Docker Collection Methods
+sidebar_label: Docker
 description: Learn about methods for collecting logs and metrics from Docker.
 ---
 
@@ -16,7 +17,7 @@ While Kubernetes can run Docker, it supports multiple container runtime systems 
 The following table summarizes what you can collect with each collection method. 
 
 | Collection Methods | Logs | Metrics |
-|--|--|--|
+|:--|:--|:--|
 | Docker Logging Driver	 | ![check](/img/reuse/check.png) |  |
 | Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -52,7 +53,7 @@ You can bake the Collector into an image, install it manually, or use automat
         * Container Logs
         * Container Metrics
         * Host Logs
-        * Host Metrics (Sumo's [Host Metrics source](docs/send-data/installed-collectors/sources/host-metrics-source.md) is required.)
+        * Host Metrics (Sumo's [Host Metrics source](/docs/send-data/installed-collectors/sources/host-metrics-source.md) is required.)
     * Logs are cached locally, so if a source is throttled by Sumo, you won’t drop data.  
     * You can bake Installed Collectors into AMIs to allow for consistent deployments across all your hosts.
     * Configurable metadata. You can use variables available from Docker and the Docker host to configure the sourceCategory and sourceHost for a Docker log source or a Docker stats. For more information, see Configure sourceCategory and sourceHost using variables.
@@ -83,16 +84,15 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 :::
 
 | Platform | Installed Collector On Docker | Host | Collector As Container | Docker Logging Driver |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | Docker<br/>(not managed service) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 | ECS | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 | Docker Swarm | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 | Rancher<br/>(non-Kubernetes) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 
-### Sumo Apps for Docker
+### Sumo Logic apps for Docker
 
-Sumo provides the following apps for Docker:  
+Sumo Logic provides the following apps for Docker:  
 
-* [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition.md): Supports FluentD plugin to collect Docker platform logs and works in conjunction with Docker ULM.
 * [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
 * [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.

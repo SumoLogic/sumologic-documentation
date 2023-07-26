@@ -1,6 +1,7 @@
 ---
 id: alert-grouping
 title: Alert Grouping
+description: Alert Grouping gives you the flexibility to customize how your alerts and notifications are generated from monitors, allowing you to specify a grouping condition based on specific fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,7 +24,7 @@ Alert Grouping works for both Logs and Metrics Monitors.
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of Monitor.
 4. Enter your metrics query, then select your desired Alert Grouping option.
-   * **One** **alert per monitor:** If you only want to receive a single alert for the entire monitor.
+   * **One alert per monitor**: If you only want to receive a single alert for the entire monitor.
    * **One alert per time series**: To receive a single alert for each time-series that is present in the metric query
    * **One alert per [group]**: allows you to receive one notification per each unique value of the grouping field(s). You can pick more than one field for the grouping condition. In the example below, user will receive one notification when CPU utilization is higher than the threshold for each unique AWS namespace within an account.<br/><img src={useBaseUrl('img/monitors/setup-metrics.png')} alt="alert-grouping" />
 5. Configure the rest of your Alert Condition per standard procedure. Refer to [Monitors ](/docs/alerts/monitors)for more details.
@@ -134,7 +135,7 @@ You can select up to a maximum of 10 fields. This applies to both Logs and Metri
 
 #### My field is not appearing under "One alert per [group]" fields dropdown. Why is that?
 
-This scenario, which is only applicable for Logs Monitors (not for Metrics), can happen if you have [dynamically parsed fields](/docs/search/Get-Started-with-Search/build-search/Dynamic-Parsing) in your query. The auto-complete system uses a 15-minute time range to parse out all the dynamically parsed fields. If those fields are not present in the last 15-minute query, they will not show up in the dropdown. To resolve this, you could manually type in the name of the field, and it should work fine at runtime.<br/><img src={useBaseUrl('img/monitors/alertsdropdown.png')} alt="alert-grouping" width="350" />
+This scenario, which is only applicable for Logs Monitors (not for Metrics), can happen if you have [dynamically parsed fields](/docs/search/get-started-with-search/build-search/dynamic-parsing) in your query. The auto-complete system uses a 15-minute time range to parse out all the dynamically parsed fields. If those fields are not present in the last 15-minute query, they will not show up in the dropdown. To resolve this, you could manually type in the name of the field, and it should work fine at runtime.<br/><img src={useBaseUrl('img/monitors/alertsdropdown.png')} alt="alert-grouping" width="350" />
 
 #### How does "One alert per [group]" impact Alert Audit Logs?  
 
@@ -152,3 +153,7 @@ For example: if over a period of time the structure of log messages changes and 
 We do support high cardinality for Alert Grouping, but there is a limit. If you have more than 1000 unique values of field(s) in a given monitor execution run, then only top 1000 unique values will generate an alert.
 
 For example, let's say that you configured a monitor to generate one alert per customer when the count of Error messages (in Logs) is more than 5. Now let's assume that when the monitor ran at t0, it found that 5000 customers had an Error count more than 5. In this case, it would only generate 1000 alerts for the first 1000 customers that it found with an Error count more than 5.
+
+#### What fields are not allowed for Alert Grouping?
+
+Fields with very high cardinality such as `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for Alert Grouping.

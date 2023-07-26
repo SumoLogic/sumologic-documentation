@@ -1,436 +1,310 @@
-import React from 'react';
-import clsx from 'clsx';
+import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Translate, {translate} from '@docusaurus/Translate';
-export default Home;
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { TabContext, TabPanel } from '@mui/lab';
+import bgImage from '../../static/img/hero-secondary-background.png';
+import heroImage from '../../static/img/hero-secondary-graphic.png';
+import SumoLogicDocsLogo from '../../static/img/sumo-logic-docs.svg'
+import { Feature } from '../components/Feature';
+import { features } from '../helper/features';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <img class="svg" src="img/sumo-logic-docs.svg" width="400"/>
-      </div>
-    </header>
-  );
-}
+export const Home = () => {
+  const [tab, setTab] = useState('0');
 
-function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
   return (
     <Layout
-     title="Home"
-     description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
-     <HomepageHeader />
-      <main>
-      <div className='hero--secondary'>
-      <div className='container-landpage'>
-        <div className='column-left'>
-          <h2>New to Sumo?</h2>
-          <p>Get started quickly with our search, visualization, and analytics capabilities.</p>
-          <button className="homepage" description="Set up account">
-            <a href="/docs/get-started">1. Set up account</a>
-          </button>
-          <button className="homepage" description="Send data">
-            <a href="/docs/send-data">2. Install data collector</a>
-          </button>
-          <button className="homepage" description="Data insights icon">
-          <a href="/docs/get-started/sumo-logic-ui">3. Explore your insights</a>
-          </button>
-        </div>
-        <div className='column-right'>
-        <img class="hero--secondary2" src="img/hero-secondary-graphic.png" />
-        </div>
-      </div>
-      </div>
-      <div className="container-landpage">
-      <div className="container">
-         <div className="land-flex">
-         <h1 align="center">Explore our product guides</h1>
-         <p align="center">Ensure app reliability and security with modern cloud-native monitoring and observability.</p>
-      </div></div></div>
-     <div className="container-landpage">
-     <div className="container">
-        <div className="land-flex">
-       <Tabs>
-        <TabItem value="observe" label="Data Types" default>
-        {features1 && features1.length > 0 && (
-          <section className="spacer">
-            <div className="container">
-            <div className="land-flex">
-                {features1.map((props, idx) => (
-                  <Feature key={idx} {...props} />
+      description='Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.'
+      title='Home'
+    >
+
+      {/* Header */}
+      <Typography
+        bgcolor='#0045BE'
+        color='#e3e3e3'
+        fontFamily='Lab Grotesque'
+        fontSize={28}
+        fontWeight={700}
+        pt={3}
+        px={2}
+        pb={1}
+        sx={{
+          backgroundImage: 'linear-gradient(to right, rgb(0,0,153), rgb(0,70,190) 30%)',
+        }}
+        textAlign='center'
+      >
+        <Box
+          component={SumoLogicDocsLogo}
+          alt="Sumo Logic Docs logo"
+          role="<img>"
+          aria-hidden="true"
+          height={{
+            md: 36,
+            xs: 28,
+          }}
+          width='100%'
+        />
+      </Typography>
+
+      {/* Hero */}
+      <Stack
+        sx={{
+          bgcolor: 'white',
+          backgroundImage: `url(${bgImage})`,
+          alt: 'hero image',
+          backgroundPosition: {
+            md: 'top',
+            xs: 'left center',
+          },
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: {
+            md: '100% 200%',
+            xs: '100% 100%',
+          },
+        }}
+        height={{
+          md: 'auto',
+          xs: '100%',
+        }}
+        py={4}
+        textAlign='center'
+      >
+        <Container maxWidth='lg'>
+          <Grid
+            alignItems='center'
+            container
+            direction={{
+              md: 'row',
+              xs: 'column-reverse',
+            }}
+            justifyContent={{
+              md: 'center',
+              xs: 'flex-end',
+            }}
+            height='100%'
+          >
+            <Grid
+              item
+              md={6}
+            >
+              <Stack
+                alignItems={{
+                  md: 'flex-start',
+                  xs: 'center',
+                }}
+                justifyContent='center'
+                spacing={2}
+              >
+                <Typography
+                  color='white'
+                  fontFamily='Lab Grotesque'
+                  fontSize={32}
+                  fontWeight={700}
+                  variant='h2'
+                >
+                  New to Sumo?
+                </Typography>
+                <Typography
+                  color='#e3e3e3'
+                  fontFamily='Lab Grotesque'
+                  pb={2}
+                  textAlign='left'
+                  variant='p'
+                >
+                  Get started quickly with our search, visualization, analytics, and security capabilities.
+                </Typography>
+                {[
+                  {
+                    children: '1. Set up collector and source',
+                    description: 'Set up a Sumo Logic collector and source',
+                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
+                  },
+                  {
+                    children: '2. Explore your data insights',
+                    description: 'Explore your insights',
+                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
+                  },
+                  {
+                    children: '3. Monitor and secure your environment',
+                    description: 'Monitor, troubleshoot, and secure your environment',
+                    href: 'https://help.sumologic.com/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
+                  },
+                ].map(({ children, ...rest }) => (
+                  <Button
+                    key={rest.href}
+                    sx={{
+                      bgcolor: 'transparent',
+                      border: '.5px solid',
+                      borderColor: '#e3e3e3',
+                      borderRadius: 2,
+                      fontFamily: 'Lab Grotesque',
+                      textTransform: 'none',
+                      width: {
+                        md: 'auto',
+                        xs: '100%',
+                      },
+                      '&:hover': {
+                        bgcolor: '#0045BE',
+                        borderColor: '#0045BE',
+                        color: '#e3e3e3',
+                      },
+                    }}
+                    variant='contained'
+                    {...rest}
+                  >
+                    {children}
+                  </Button>
                 ))}
-            </div></div>
-          </section>
-        )}
-        </TabItem>
-        <TabItem value="observability" label="Infrastructure Monitoring">
-        {features2 && features2.length > 0 && (
-          <section className="spacer">
-            <div className="container">
-            <div className="land-flex">
-                {features2.map((props, idx) => (
-                  <Feature key={idx} {...props} />
+              </Stack>
+            </Grid>
+            <Grid
+              item
+              md={6}
+              pl={{
+                md: 13,
+              }}
+            >
+              <Box
+                component='img'
+                alt='hero background image'
+                aria-hidden='true'
+                src={heroImage}
+                width={{
+                  lg: 450,
+                  md: 300,
+                  xs: '85%',
+                }}
+              />
+            </Grid>
+          </Grid>
+        </Container>
+      </Stack>
+
+      {/* Main */}
+      <Container maxWidth='xl'>
+
+        {/* Product Guides */}
+        <Stack
+          alignItems='center'
+          pb={5}
+          pt={10}
+          px={2}
+        >
+          <Typography
+            component='h2'
+            fontFamily='Lab Grotesque'
+            fontWeight={900}
+            mb={{
+              md: 'inherit',
+              sm: 4,
+              xs: 4,
+            }}
+            textAlign='center'
+            variant='h4'
+          >
+            Explore our product guides
+          </Typography>
+          <Typography
+            component='p'
+            fontFamily='Lab Grotesque'
+            mb={4}
+            textAlign='center'
+            variant='subtitle1'
+          >
+            Ensure app reliability and security with modern cloud-native monitoring and observability.
+          </Typography>
+
+          <TabContext value={tab}>
+            <Tabs
+              centered
+              onChange={(_, newTab) => setTab(newTab)}
+              sx={{
+                '& .MuiTabs-flexContainer': {
+                  flexWrap: {
+                    sm: 'wrap',
+                    xs: 'wrap',
+                  },
+                  justifyContent: {
+                    sm: 'center',
+                    xs: 'center',
+                  }
+                },
+              }}
+              TabIndicatorProps={{
+                sx: {
+                  display: {
+                    sm: 'none',
+                    xs: 'none',
+                  },
+                },
+              }}
+              value={tab}
+            >
+              {[
+                {
+                  label: 'Data Types',
+                },
+                {
+                  label: 'Infrastructure Monitoring',
+                },
+                {
+                  label: 'Multi-Cloud',
+                },
+                {
+                  label: 'Security and Incidents',
+                },
+                {
+                  label: 'Tools',
+                },
+                {
+                  label: 'Other Solutions',
+                },
+              ].map(({ label, ...rest }, index) => (
+                <Tab
+                  key={label}
+                  label={label}
+                  sx={{
+                    color: 'grey.700',
+                    fontFamily: 'Lab Grotesque',
+                    fontWeight: 'bold',
+                  }}
+                  value={String(index)}
+                  {...rest}
+                />
+              ))}
+            </Tabs>
+            {features.map((feature, index) => tab === String(index) && (
+              <Grid
+                component={TabPanel}
+                container
+                direction='row'
+                justifyContent='center'
+                key={index}
+                py={6}
+                spacing={4}
+                value={String(index)}
+              >
+                {feature.map((config) => (
+                  <Grid
+                    item
+                    key={config.link}
+                    lg={4}
+                    md={6}
+                    xs={12}
+                  >
+                    <Feature
+                      length={feature.length}
+                      {...config}
+                    />
+                  </Grid>
                 ))}
-            </div></div>
-          </section>
-        )}
-        </TabItem>
-        <TabItem value="multicloud" label="Multi-Cloud">
-        {features3 && features3.length > 0 && (
-          <section className="spacer">
-            <div className="container">
-            <div className="land-flex">
-                {features3.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-            </div></div>
-          </section>
-        )}
-        </TabItem>
-        <TabItem value="security" label="Security and Incidents">
-        {features4 && features4.length > 0 && (
-          <section className="spacer">
-            <div className="container">
-            <div className="land-flex">
-                {features4.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-            </div></div>
-          </section>
-         )}
-         </TabItem>
-        <TabItem value="tools" label="Tools">
-         {features5 && features5.length > 0 && (
-           <section className="spacer">
-             <div className="container">
-             <div className="land-flex">
-                 {features5.map((props, idx) => (
-                   <Feature key={idx} {...props} />
-                 ))}
-             </div></div>
-           </section>
-          )}
-          </TabItem>
-          <TabItem value="other" label="Other Solutions">
-          {features6 && features6.length > 0 && (
-            <section className="spacer">
-              <div className="container">
-              <div className="land-flex">
-                  {features6.map((props, idx) => (
-                    <Feature key={idx} {...props} />
-                  ))}
-              </div></div>
-            </section>
-          )}
-          </TabItem>
-          </Tabs>
-          </div>
-        </div>
-       </div>
-     </main>
-    </Layout>
+              </Grid>
+            ))}
+          </TabContext>
+        </Stack>
+
+      </Container>
+    </Layout >
   );
-}
+};
 
-
-
-const features1 = [
-  {
-    title: translate({
-      id: 'landing.feature.searches-logs.title',
-      message: 'Searches and Logs',
-      description: 'Title for searches & logs',
-    }),
-    imageUrl: 'img/icons/search.png',
-    description: (<Translate
-      id="landing.feature.searches-logs.desc"
-      description="Searches and logs description">
-        Search, query and analyze your log data sent to Sumo Logic.
-      </Translate>),
-    link: 'docs/search',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.metrics.title',
-      message: 'Metrics',
-      description: 'Title for metrics',
-    }),
-    imageUrl: 'img/icons/metrics.png',
-    description: (<Translate
-      id="landing.feature.metrics.desc"
-      description="Metrics description">
-        Review performance and activity data collected to monitor and troubleshoot.
-      </Translate>),
-    link: 'docs/metrics',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.traces.title',
-      message: 'Traces',
-      description: 'Title for Traces',
-    }),
-    imageUrl: 'img/icons/apm.png',
-    description: (<Translate
-      id="landing.feature.traces.desc"
-      description="Traces description">
-        Observe apps and microservices at the level of individual requests to pinpoint issues.
-      </Translate>),
-    link: 'docs/apm/traces',
-  },
-];
-
-
-const features2 = [
-  {
-    title: translate({
-      id: 'landing.feature.observability.title',
-      message: 'Observability',
-      description: 'Title for Observability',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id="landing.feature.observability.desc"
-      description="Observability description">
-        Deploy and configure solutions to monitor apps and analyze root causes.
-      </Translate>),
-    link: 'docs/observability',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.aws.title',
-      message: 'AWS Observability',
-      description: 'Title for AWS Observability',
-    }),
-    imageUrl: 'img/icons/operations/app-stack.png',
-    description: (<Translate
-      id="landing.feature.aws.desc"
-      description="AWS Observability description">
-        Monitor and troubleshoot AWS cloud infrastructure.
-      </Translate>),
-    link: 'docs/observability/aws',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.k8s.title',
-      message: 'Kubernetes Observability',
-      description: 'Title for Kubernetes Observability',
-    }),
-    imageUrl: 'img/icons/operations/kubernetes.png',
-    description: (<Translate
-      id="landing.feature.k8s.desc"
-      description="AWS Observability description">
-        Deploy and monitor Kubernetes.
-      </Translate>),
-    link: 'docs/observability/kubernetes',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.rce.title',
-      message: 'Root Cause Explorer',
-      description: 'Title for Root Cause Explorer',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id="landing.feature.rce.desc"
-      description="Root Cause Explorer description">
-        Accelerate app troubleshooting and root cause isolation.
-      </Translate>),
-    link: 'docs/observability/root-cause-explorer',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.sensu.title',
-      message: 'Sensu',
-      description: 'Title for Sensu',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id="landing.feature.sensu.desc"
-      description="Root Cause Explorer description">
-        Visibility into apps, containers, traditional servers, and more.
-      </Translate>),
-    link: 'https://docs.sensu.io/sensu-go/latest',
-  },
-];
-
-
-const features3 = [
-  {
-    title: translate({
-      id: 'landing.feature.integrations.title',
-      message: 'Apps and Integrations',
-      description: 'Title for Apps',
-    }),
-    imageUrl: 'img/icons/integrations.png',
-    description: (<Translate
-      id="landing.feature.integrations.desc"
-      description="Apps description">
-        Gain visibility into your data sources using our third-party app integrations and services.
-      </Translate>),
-    link: 'docs/integrations',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.apm.title',
-      message: 'App performance monitoring',
-      description: 'Title for APM',
-    }),
-    imageUrl: 'img/icons/apm.png',
-    description: (<Translate
-      id="landing.feature.apm.desc"
-      description="APM description">
-        Monitor and analyze infrastructure health and app performance metrics.
-      </Translate>),
-    link: 'docs/apm',
-  },
-];
-
-const features4 = [
-  {
-    title: translate({
-      id: 'landing.feature.cse.title',
-      message: 'Cloud SIEM',
-      description: 'Title for CSE',
-    }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
-    description: (<Translate
-      id="landing.feature.cse.desc"
-      description="CSE description">
-        Security event management and insight into key issues.
-      </Translate>),
-    link: 'docs/cse',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.soar.title',
-      message: 'Cloud SOAR',
-      description: 'Title for SOAR',
-    }),
-    imageUrl: 'img/icons/security/SOC.png',
-    description: (<Translate
-      id="landing.feature.soar.desc"
-      description="SOAR description">
-        Modernize and automate your SOC for faster response times.
-      </Translate>),
-    link: 'https://www.sumologic.com/solutions/cloud-soar',
-  },
-];
-
-
-const features5 = [
-  {
-    title: translate({
-      id: 'landing.feature.alerts.title',
-      message: 'Alerts',
-      description: 'Title for alerts',
-    }),
-    imageUrl: 'img/icons/alerts.png',
-    description: (<Translate
-      id="landing.feature.alerts.desc"
-      description="alerts description">
-        Visualize your data and set alerts to monitor activity.
-      </Translate>),
-    link: 'docs/alerts',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.dashboards.title',
-      message: 'Dashboards and Visuals',
-      description: 'Title for dashboards',
-    }),
-    imageUrl: 'img/icons/dashboards.png',
-    description: (<Translate
-        id="landing.feature.dashboards.desc"
-        description="Dashboards description">
-          Create visualizations, monitors, and alerts for your apps.
-        </Translate>),
-    link: 'docs/dashboards-new',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.manage.title',
-      message: 'Manage Sumo',
-      description: 'Title for manage',
-    }),
-    imageUrl: 'img/icons/manage.png',
-    description: (<Translate
-        id="landing.feature.manage.desc"
-        description="Manage description">
-          Manage Sumo admin settings and advanced features.
-        </Translate>),
-    link: 'docs/manage',
-  },
-];
-
-
-const features6 = [
-  {
-    title: translate({
-      id: 'landing.feature.sdo.title',
-      message: 'Software Dev Optimization',
-      description: 'Title for SDO',
-    }),
-    imageUrl: 'img/icons/sdo.png',
-    description: (<Translate
-      id="landing.feature.sdo.desc"
-      description="SDO description">
-        Monitor your CI/CD pipelines and accelerate release velocity.
-      </Translate>),
-    link: 'docs/sdo',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.rum.title',
-      message: 'Real User Monitoring',
-      description: 'Title for rum',
-    }),
-    imageUrl: 'img/icons/business/customer-retention.png',
-    description: (<Translate
-        id="landing.feature.rum.desc"
-        description="rum description">
-          Gain visibility into how users interact with your web apps.
-        </Translate>),
-    link: 'docs/apm/real-user-monitoring',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.gi.title',
-      message: 'Global Intelligence',
-      description: 'Title for Global Intelligence',
-    }),
-    imageUrl: 'img/icons/cloud/global-intelligence.png',
-    description: (<Translate
-      id="landing.feature.gi.desc"
-      description="Global Intelligence description">
-        Leverage machine learning to uncover global key performance and risk indicators.
-      </Translate>),
-    link: 'docs/global-intelligence',
-  },
-];
-
-
-
-function Feature({imageUrl, title, description, link}) {
-  const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className="land-box">
-      {imgUrl && (
-        <div className="land-image">
-          <img className="featureImage" src={imgUrl} alt={title} />
-        </div>
-      )}
-      <div className="land-body">
-      <a href={link} className="land-link"><h3 className="land-title">{title}</h3></a>
-      <div className="land-desc"><p>{description}</p></div>
-      </div>
-    </div>
-  );
-}
+export default Home;

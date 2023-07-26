@@ -27,4 +27,4 @@ To set Messages tab preferences, do the following:
 
 ## Export message fields
 
-* **Export (Display Fields)/Export (All Fields).** To learn how to use the Export Results option, see [Export Search Results](docs/search/get-started-with-search/search-basics/export-search-results.md).
+* **Export (Display Fields)/Export (All Fields).** To learn how to use the Export Results option, see [Export Search Results](/docs/search/get-started-with-search/search-basics/export-search-results.md).

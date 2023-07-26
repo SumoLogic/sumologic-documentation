@@ -18,7 +18,7 @@ If you specify a window length of 5, but only 4 data points are available, the r
 rollingstd <field> [, window_length] [as <field>]
 ```
 
-**Rules**
+## Rules
 
 * An alias for rollingstd is optional. When an alias is not provided, **`_rollingstd`** is the default alias.
 * Specified fields must contain numeric values.
@@ -26,7 +26,7 @@ rollingstd <field> [, window_length] [as <field>]
 * The default window length is 10.
 * The maximum window length is 1000.
 
-**Examples**
+## Examples
 
 **Use rollingstd to see the difference of fields between time points, grouped by source host**
 
@@ -44,7 +44,7 @@ produces results like:
 
 ![rollingstd](/img/reuse/query-search/rollingstd_new.png)
 
-#### Find the rolling standard deviation of a field between time points
+### Find the rolling standard deviation of a field between time points
 
 Using rollingstd with timeslice, you can run a query similar to:
 
@@ -64,7 +64,7 @@ The aggregation table can be made into an area chart, like this:
 
 ![example 2](/img/reuse/query-search/rollingstd_example2.png)
 
-#### Specify a window length of 5, but only 4 data points are available
+### Specify a window length of 5, but only 4 data points are available
 
 Before 5 values are available, the rollingstd operator takes an average
 of whatever is available. For example:
@@ -82,4 +82,4 @@ which produces results like:
 
 ![data points](/img/reuse/query-search/rollingstd_new_data_points.png)
 
-Rollingstd is also used with the [Backshift](#backshift) operator.
+Rollingstd is also used with the [Backshift](backshift.md) operator.

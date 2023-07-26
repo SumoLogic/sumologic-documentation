@@ -1,7 +1,7 @@
 ---
 id: amazon-sns
 title: Amazon SNS
-description: The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics that provides insight into the operations and utilization of your SNS service. 
+description: The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics that provides insight into the operations and utilization of your SNS service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -85,7 +85,7 @@ The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metric
 
 ### Amazon SNS - Overview
 
-The **Amazon SNS - Overview** dashboard provides insights across Cloudtrail events and metrics .
+The **Amazon SNS - Overview** dashboard provides insights across CloudTrail events and metrics.
 
 Use this dashboard to:
 * Monitor events by status, type, topic names and  users.** **
@@ -96,7 +96,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Audit Events  
 
-The **Amazon SNS - Audit Events** dashboard provides insights across Cloudtrail events across location, status, and topic names.
+The **Amazon SNS - Audit Events** dashboard provides insights across CloudTrail events across location, status, and topic names.
 
 Use this dashboard to:
 
@@ -126,7 +126,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Threat Intel  
 
-The **Amazon SNS - Threat Intel** **dashboard provides insights across threat locations, count, malicious confidence and details.
+The **Amazon SNS - Threat Intel** dashboard provides insights across threat locations, count, malicious confidence and details.
 
 Use this dashboard to:
 
@@ -139,7 +139,7 @@ Use this dashboard to:
 
 ### Amazon SNS - Audit Events Details
 
-The **Amazon SNS - **Audit Events Details** **dashboard provides insights across topics, subscriptions, read only and non read only events.
+The **Amazon SNS - Audit Events Details** dashboard provides insights across topics, subscriptions, read only and non read only events.
 
 Use this dashboard to:
 

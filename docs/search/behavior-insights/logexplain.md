@@ -20,7 +20,7 @@ set. The results indicate what entities correlate with the event you are inter
 The following table shows the fields that are returned in results.
 
 | _explanation | _relevance | _test_coverage | _control_coverage |
-| -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- |
 | The fields and respective values from the comparison. | The probability that the explanation occurs in the event-of-interest data set.<br/><br/>Values are 0 to 1. | The percentage of data in the event-of-interest set that has the explanation.<br/><br/>The link opens a new search that drills down to these logs based on the related explanation. | The percentage of control data in the event-of-interest set that has the explanation.<br/><br/>The link opens a new search that drills down to these logs based on the related explanation. |
 
 :::note
@@ -45,7 +45,7 @@ With the provided results you can:
 ```
 
 | Parameter | Description |
-| -- | -- |
+| :-- | :-- |
 | `event_condition` | A boolean expression that defines the event of interest. |
 | `against_condition` | A boolean expression that defines the ideal comparison data set. If not provided the complement of `event_condition` is used. |
 | `fieldname` | A comma-separated list of fields to process against the conditions. |
@@ -55,8 +55,8 @@ With the provided results you can:
 * Field values must be categorical.
 * [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
 * Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
-* [Time Compare](../time-compare.md) and the [compare operator](docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
-* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
+* [Time Compare](../time-compare.md) and the [compare operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
+* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards-classic/edit-dashboards/use-filters-dashboards.md).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
 ### Response links

@@ -2,8 +2,12 @@
 id: crowdstrike-source
 title: CrowdStrike Source
 sidebar_label: CrowdStrike
+description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
 The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike [Streams API](https://falcon.crowdstrike.com/support/documentation/89/event-streams-apis). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -14,7 +18,7 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 The types of events are defined in the [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
 :::note
-This Source is available in the Fed deployment. Use the legacy collection method for CrowdStrike.
+This Source is available in the Fed deployment.
 :::
 
 ## Prerequisite
@@ -27,15 +31,15 @@ A CrowdStrike Source tracks errors, reports its health, and start-up progress.
 
 A CrowdStrike Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with CrowdStrike.
-1. **Collecting**: The Source is actively collecting data from CrowdStrike.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with CrowdStrike.
+1. **Collecting**. The Source is actively collecting data from CrowdStrike.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -62,7 +66,7 @@ When you create a CrowdStrike Source, you add it to a Hosted Collector. Before 
 
 To configure a CrowdStrike Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **CrowdStrike**.<br/>  ![crowdstrike icon.png](/img/send-data/crowdstrike-icon.png)
 1. Enter a **Name** for the Source. The description is optional. <br/>  ![crowdstrike src 10.png](/img/send-data/crowdstrike-src.png)
@@ -82,24 +86,28 @@ To configure a CrowdStrike Source:
     :::note
     If no Application ID is provided, a random ID is generated. Any time this ID is changed, the Source will re-read the data stream starting at the beginning.
     :::
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration 
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 |  Parameter | Type | Required | Description |  Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object | Yes | Contains the configuration parameters for the Source. |   |
 | schemaRef | JSON Object | Yes | Use `{"type":"CrowdStrike"}` for a CrowdStrike Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a CrowdStrike Source. | not modifiable |
@@ -107,7 +115,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a CrowdStrike Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

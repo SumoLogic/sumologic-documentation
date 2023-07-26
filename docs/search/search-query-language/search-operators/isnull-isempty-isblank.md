@@ -4,26 +4,22 @@ title: isNull, isEmpty, isBlank Search Operators
 sidebar_label: isNull, isEmpty, isBlank
 ---
 
+* The `isNull` operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.
+* The `isEmpty` operator checks if a string contains no characters and is only whitespace.
+* The `isBlank` operator checks if a string contains no characters, is only whitespace, and is null.
 
-
-
-<ul>
-<li>The isNull operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.</li>
-<li>The isEmpty operator checks if a string contains no characters and is only whitespace.</li><li> The isBlank operator checks if a string contains no characters, is only whitespace, and is null.</li>
-</ul>
-
-#### When is a field null?
+## When is a field null?
 
 Fields can hold a null value for the following reasons:
 
 * A [parsing operation](/docs/search/search-query-language/parse-operators) failed to parse a value.
 * There is a mismatch from a <a href="#lookup-classic">lookup</a> operator query.
-* There is a missing field from a [geo lookup](#geo-lookup-map) operator query.
-* There is a missing field from a [transpose](#transpose) operator query.
+* There is a missing field from a [geo lookup](geo-lookup-map.md) operator query.
+* There is a missing field from a [transpose](transpose.md) operator query.
 
-#### When to use isNull, isEmpty, isBlank
+## When to use isNull, isEmpty, isBlank
 
-##### isNull(<`string`>)
+### isNull(<`string`>)
 
 Checks if the `<string>` value is "null".
 
@@ -35,7 +31,7 @@ Checks if the `<string>` value is "null".
 
 Returns `true` if the string is null.
 
-##### isEmpty(<`string`>)
+### isEmpty(<`string`>)
 
 Checks if the `<string>` value is an empty string containing no characters or whitespace.
 
@@ -47,7 +43,7 @@ Checks if the `<string>` value is an empty string containing no characters or wh
 
 Returns `true` if the string is null or empty.
 
-##### isBlank(<`string`>)
+### isBlank(<`string`>)
 
 Checks if the value is null, empty, or contains only whitespace characters.
 
@@ -59,9 +55,9 @@ Checks if the value is null, empty, or contains only whitespace characters.
 
 Returns `true` if the string is null, empty, or only whitespace.
 
-**Examples**
+## Examples
 
-**Run a geo lookup query where we can find remote IP addresses that are not in the geo database.**
+### Run a geo lookup query where we can find remote IP addresses that are not in the geo database
 
 In this situation, no `country_code` will be associated with the IP address and the field value will be null.
 
@@ -77,9 +73,9 @@ uses the `isNull` operator to check the field value of `country_code` and if i
 
 ![isNull](/img/search/searchquerylanguage/search-operators/isNull.png)
 
-**Use [where](#where) to check for null values.**
+### Use where to check for null values
 
-To check for null values from a lookup operation, use a query like:
+To check for null values from a lookup operation, use a query with [`where`](where.md), like:
 
 ```sql
 | parse "example_ip=*]" as ip

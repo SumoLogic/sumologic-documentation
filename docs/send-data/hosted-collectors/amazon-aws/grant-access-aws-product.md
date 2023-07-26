@@ -9,9 +9,9 @@ Sumo Logic requires access to the services in your AWS account(s) in order to co
 
 You can follow the instructions on this page to grant Sumo Logic access to the following AWS services:
 
-* AWS S3
+* Amazon S3
 * Amazon S3 Audit 
-* AWS Cloudwatch Metrics 
+* AWS CloudWatch Metrics 
 * AWS Kinesis Firehose for Metrics
 * AWS Metadata (Tag) 
 * AWS Elastic Load Balancing
@@ -118,7 +118,7 @@ Before generating the template, the source’s configuration must have the AWS-s
    1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId* where:
 
       * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us1. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
-      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration \> Account \> Account Overview**.
+      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration > Account > Account Overview**.
 
    1. **Require MFA**. Don’t select this option; it is not supported.
    1. Click **Next: Permissions**.
@@ -145,7 +145,7 @@ Before generating the template, the source’s configuration must have the AWS-s
 15. Enter tags, as desired, and click **Next: Review**.
 16. On the **Create role - Review** page, enter a Role name.
 17. Review the configuration of the role, and click Create role.
-18. After creating the role, you will be returned to the **IAM \> Roles** console. 
+18. After creating the role, you will be returned to the **IAM > Roles** console. 
 19. Enter the name of the newly created role, and then select the role.
 20. Copy the Role ARN. When you create your Sumo Logic source, enter it in the Role ARN field. The ARN will look something like   `arn:aws:iam::123456789:role/...`
 
@@ -211,9 +211,9 @@ This section also provides a policy that enables collection of data from encrypt
 
 You can add any of these policies to an existing IAM Role or User. For more information and instructions, see [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) and [Adding and removing IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) in AWS help.
 
-#### AWS S3 Policy 
+#### Amazon S3 Policy 
 
-This policy supports the following Sumo Logic source types: [AWS S3 Source](aws-s3-source.md), [AWS S3 Audit Source](amazon-s3-audit-source.md), [AWS CloudFront Source](amazon-cloudfront-source.md), and [AWS ELB Source](aws-elastic-load-balancing-source.md).
+This policy supports the following Sumo Logic source types: [Amazon S3 Source](aws-s3-source.md), [Amazon S3 Audit Source](amazon-s3-audit-source.md), [AWS CloudFront Source](amazon-cloudfront-source.md), and [AWS ELB Source](aws-elastic-load-balancing-source.md).
 
 :::note
 Sumo Logic will verify the existence of the bucket using the `GetBucketAcl` API request, which will appear in CloudTrail with an AccessDenied response. Sumo Logic does not need the `GetBucketAcl` API request to collect data from S3 buckets.

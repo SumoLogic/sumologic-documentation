@@ -4,8 +4,6 @@ title: Local File Source
 description: Create a Local File Source to collect log messages from the same machine where a Collector is installed.
 ---
 
-
-
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
 * The Source will run a scan to the target path every two seconds.
@@ -40,7 +38,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
 ## Configure a Local File Source
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose** Add **Source from the pop-up menu.
 
     ![img](/img/send-data/add-source.png)    
@@ -53,17 +51,17 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 
-   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\].
+   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. File paths in both Linux and Windows are case sensitive.
 
     :::note
-    You can have up to 32 nested symbolic links within a path expression.
+    You can have up to 32 nested symbolic links within a path expression. 
     :::
 
    * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp.
 
-     :::note
-     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
-     :::
+    :::note
+    Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
+    :::
 
     Review [timestamp considerations](/docs/send-data/reference-information/time-reference) to understand how Sumo interprets and processes timestamps.
 
@@ -94,13 +92,13 @@ When the Sumo collector accesses a log file to read its content, the collector o
      * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
    * **Encoding.** UTF-8 is the default, but you can choose another encoding format from the menu.
-   * **Enable Multiline Processing.** See [Collecting Multiline Logs](docs/send-data/reference-information/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
+   * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
 
      * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
 1. Create any processing rules you'd like for the new Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 You can return to this dialog and edit the settings for the Source at any time.
 

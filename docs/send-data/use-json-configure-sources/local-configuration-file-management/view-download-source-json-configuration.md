@@ -4,8 +4,6 @@ title: View or Download Source JSON Configuration
 description: View and copy the Source JSON configuration for a Collector or Source from from Sumo Logic.
 ---
 
-
-
 You can view and copy the Source JSON configuration for a Collector or Source from Sumo Logic:
 
  * **Collectors** - the JSON file defines the set of Sources on the selected Collector.
@@ -15,7 +13,7 @@ Source JSON configurations allow you to configure Sources or to store Source
 
 **To view and download a JSON configuration file:**
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 
 1. Click the  icon to the right of the Collector. A dialog box opens to display the JSON configuration.   
 

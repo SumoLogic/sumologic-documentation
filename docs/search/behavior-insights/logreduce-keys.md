@@ -12,7 +12,7 @@ The operator accepts JSON and key-value data separated by `"=", ":", "\>", "\>
 The following table shows the fields that are returned in results.
 
 | _signature_id | _schema | _count |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | The unique hash value assigned to the schema.<br/><br/>Unstructured logs will have a value of 0000000000000000. | The schema of the log message.<br/><br/>Unstructured logs will have a value of unknown.	| The number of logs that have the related schema.<br/><br/>The field is a clickable link that opens a new window with a query that drills down to the logs from the related schema. |
 
 With the provided results you can:
@@ -28,7 +28,7 @@ With the provided results you can:
 ```
 
 | Parameter | Description | Default |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | parser | The parsing library to use, either `json` or `keyvalue`. | json |
 | maxdepth | The maximum depth of the JSON parser. | 5 |
 | field | The field to automatically parse. | Raw message ([`_raw`](/docs/search/get-started-with-search/search-basics/built-in-metadata)) |
@@ -44,8 +44,8 @@ Results can be returned in two ways:
 * When not specifying a field with the `field=` option don't parse any fields. If you parse any fields they are excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
-* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](docs/search/search-query-language/search-operators/compare) instead.
-* Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
+* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](/docs/search/search-query-language/search-operators/compare) instead.
+* Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards-classic/edit-dashboards/use-filters-dashboards.md).
 
 ## _count link
 

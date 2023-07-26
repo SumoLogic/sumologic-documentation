@@ -2,9 +2,12 @@
 id: box-source
 title: Box Source
 sidebar_label: Box
+description: The Box API integration ingests events from the Get Events API.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="60" />
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -16,9 +19,8 @@ The Box API integration ingests events from the [Get Events API](https://develop
 
 ## Authentication
 
-You'll need a Box App Key, App Secret, and Access Code to provide to Sumo Logic.
+**To obtain credentials for accessing Box:**
 
-The following steps must be followed to get the credentials:
 1. Login into the [Box Account](https://app.box.com/login).
 2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
 3. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
@@ -28,39 +30,39 @@ The following steps must be followed to get the credentials:
 
 ## States
 
-A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/Health-Events).
+A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
 A Box Source goes through the following states when created:
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-2. **Started**: A collection task is created on the Hosted Collector.
-3. **Initialized**: The task configuration is complete in Sumo Logic.
-4. **Authenticated**: The Source successfully authenticated with Box.
-5. **Collecting**: The Source is actively collecting data from Box.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+2. **Started**. A collection task is created on the Hosted Collector.
+3. **Initialized**. The task configuration is complete in Sumo Logic.
+4. **Authenticated**. The Source successfully authenticated with Box.
+5. **Collecting**. The Source is actively collecting data from Box.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/docs/manage/Health-Events#Collection_page) and Status for Sources is displayed. Use [Health Events](/docs/manage/Health-Events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
 
 You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/><img src={useBaseUrl('img/send-data/hover-c2c-error.png')} alt="Box" />
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/><img src={useBaseUrl('img/send-data/health-error-generic.png')} alt="Box" />
 
 
-## Create a BOX Source
+## Create a Box Source
 
-When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
 To configure a Box Source:
 1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab.
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
-3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" />
-4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" />
-5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) is stored in a searchable field called `_sourceCategory`.
+3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" width="100"/>
+4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" width="400" />
+5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 
-When configured with the **Forward to SIEM** option the following metadata fields are set:
+When configured with the **Forward to SIEM** option, the following metadata fields are set:
 
 <table>
   <tr>
@@ -102,13 +104,13 @@ Field Name
         * A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
         * An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 2. Upload the JSON file.
-3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/Processing-Rules/Create-Processing-Rule).
-4. When you are finished configuring the Source click **Submit**.
+3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+4. When you are finished configuring the Source, click **Submit**.
 
 
 ## Error types
 
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/Health-Events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 <table>
   <tr>
@@ -161,11 +163,13 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/H
   </tr>
 </table>
 
+### Restarting your Source
 
+{@import ../../../reuse/restart-c2c-source.md}
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collectors). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 <table>
   <tr>
@@ -187,7 +191,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
    </td>
    <td>Yes
    </td>
-   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/Duo-Source#configParameters"> configuration parameters</a> for the Source.
+   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source#configParameters"> configuration parameters</a> for the Source.
    </td>
    <td>
    </td>
@@ -245,7 +249,7 @@ The following table shows the **config** parameters for a Box Source.
    </td>
    <td>
    </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_source</code>.
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_source</code>.
    </td>
    <td>modifiable
    </td>
@@ -273,7 +277,7 @@ The following table shows the **config** parameters for a Box Source.
    </td>
    <td>null
    </td>
-   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
+   <td>Type a category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
    </td>
    <td>modifiable
    </td>
@@ -301,7 +305,7 @@ The following table shows the **config** parameters for a Box Source.
    </td>
    <td>
    </td>
-   <td>Its the authentication credentials to access Box platform.
+   <td>Authentication credentials to access Box platform.
    </td>
    <td>modifiable
    </td>

@@ -1,6 +1,7 @@
 ---
 id: collect-logs-oracle-cloud-infrastructure
 title: Collect Logs from Oracle Cloud Infrastructure
+sidebar_label: Oracle Cloud Infrastructure
 description: How to collect logs from Oracle Cloud Infrastructure.
 ---
 

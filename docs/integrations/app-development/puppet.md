@@ -1,6 +1,6 @@
 ---
 id: puppet
-title: Sumo Logic App for Puppet
+title: Puppet - Classic Collector
 sidebar_label: Puppet
 description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
 ---
@@ -210,19 +210,19 @@ This section has instructions for setting up a Script source that runs a shell s
 The following requirements apply to the script source:
 
 * The user running the collector process must have read and write access to the Puppet Reports directory.
-* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/installed-collectors/sources/Script-Source).
+* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information, see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
 * The machine where you run the script must have Ruby installed.
 * The script generates a log in the configured working directory that you can review in case of issues.
 
-For more information see [Script Source](/docs/send-data/installed-collectors/sources/Script-Source).
+For more information, see [Script Source](/docs/send-data/installed-collectors/sources/script-source).
 
 #### To set up a script source
 
 The script requires Ruby on the host machine.
 
-1. In the Sumo web app, select **Manage Data > Collection > Collection**.
+1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
-3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
 5. **Description**. (Optional).
 6. **Source Host**. Enter the hostname or IP address of the source host. The hostname can be a maximum of 128 characters.
@@ -342,12 +342,12 @@ Locate and install the app you need from the App Catalog. If you want to see a p
 
 1. From the App Catalog, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
-3. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-4. **Puppet Server Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-5. **Puppet Server Access Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-6. **Puppet Reports Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-7. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-8. Click **Add to Library**.
+   * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   * **Puppet Server Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
+   * **Puppet Server Access Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
+   * **Puppet Reports Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
+3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See Welcome to the New Library for information on working with the library in the new UI.
 

@@ -1,11 +1,11 @@
 ---
 id: installation-tokens
-sidebar_title: Installation Tokens
-hide_table_of_contents: true
+title: Installation Tokens
 description: Use Installation Tokens to register Installed Collectors.
 ---
 
-# Installation Tokens
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Installation Tokens register [Installed Collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
 
@@ -19,19 +19,19 @@ Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens
 
 ## Manage Installation Tokens
 
-Installation Tokens in your account are manageable at **Administration \> Security \> Installation Tokens**.
+Installation Tokens in your account are manageable at **Administration** > **Security** > **Installation Tokens**.
 
 Managing Installation Tokens requires the **Manage Tokens** role capability.
 
 ![Installation Tokens UI table.png](/img/security/installation-tokens/installation-tokens-table.png)
 
-The **Administration \> Security \> Installation Tokens** page displays the following information: 
+The **Administration > Security > Installation Tokens** page displays the following information: 
 
 * **Status** shows a green checkmark ![green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![red circle white exclamation.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
 * **Token Name** is the name of the Installation Token, these must be unique.
 * **Description** shows the optional description of the Installation Token.
 
-On the **Administration \> Security \> Installation Tokens** page you can:
+On the **Administration** > **Security** > **Installation Tokens** page, you can:
 
 * Click **+ Add Token** to add Installation Tokens.
 * Search Installation Tokens
@@ -46,9 +46,7 @@ For the Installation Tokens listed, select a row to view its details. A details 
 ### Add Token
 
 1. Click the **+ Add Token** button on the top right of the table. A panel named **Create Installation Token** appears to the right of the table.
-1. Input a unique name and optionally provide a description thenclick **Save**.
-
-![create token.png](/img/security/installation-tokens/create-token.png)
+1. Input a unique name and optionally provide a description, then click **Save**.<br/> ![create token.png](/img/security/installation-tokens/create-token.png)
 
 ### Deactivate Token
 
@@ -68,24 +66,11 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors](docs/send-data/installed-collectors). For details on Collector installation, see [Install a Collector on Linux](docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](docs/send-data/installed-collectors/windows.md).
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="command"
-  values={[
-    {label: 'Command line', value: 'command'},
-    {label: 'Setup Wizard', value: 'wizard'},
-    {label: 'user.properties', value: 'user'},
-  ]}>
-
-<TabItem value="command">
+This section provides information on using Installation Tokens to register [Installed Collectors](/docs/send-data/installed-collectors). For details on Collector installation, see [Install a Collector on Linux](/docs/send-data/installed-collectors/linux.md), [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos.md), and [Install a Collector on Windows](/docs/send-data/installed-collectors/windows.md).
 
 ### Command line installer
 
-To register an Installed Collector with the [command line installer](docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter:
-
-`-Vsumo.token_and_url`
+To register an Installed Collector with the [command line installer](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter: `-Vsumo.token_and_url`.
 
 For example:
 
@@ -95,23 +80,20 @@ sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken>
 
 Where `<installationToken>` is the **Token String** you want to use to register the Collector.
 
-</TabItem>
-<TabItem value="wizard">
 
 ### Setup Wizard UI installer
 
-To register an Installed Collector with the [Setup Wizard](/docs/send-data/setup-wizard) select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.
+To register an Installed Collector with the [Setup Wizard](/docs/send-data/setup-wizard):
 
-![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
+1. Select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.<br/> ![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
+1. Click next.
+1. In the input box, enter the **Token String** you want to use to register the Collector for a one-time token.
+1. Continue with the installation steps.
 
-Click next and enter the **Token String** you want to use to register the Collector in the input box for a one-time token. Continue with the installation steps.
-
-</TabItem>
-<TabItem value="user">
 
 ### user.properties
 
-To register an Installed Collector with [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
+To register an Installed Collector with [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md), you need to use the authentication parameters `token` and `url`. To use these two parameters, you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
 
 <Tabs
   defaultValue="mac"
@@ -121,8 +103,6 @@ To register an Installed Collector with [user.properties](docs/send-data/install
   ]}>
   <TabItem value="mac">
 
-**macOS/Linux**
-
 ```
 echo <TOKEN > | base64 -d
 ```
@@ -130,28 +110,19 @@ echo <TOKEN > | base64 -d
 </TabItem>
 <TabItem value="windows">
 
-**Windows**
-
 ```
 [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('<TOKEN>'))
 ```
 
-Once decoded you'll have a string with a token and a URL.
+</TabItem>
+</Tabs>
 
-For example, the following decoded **Token String**:
+Once decoded, you'll have a string with a token and a URL.
 
-```SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXXhttps://collectors.sumologic.com```
+For example, the following decoded **Token String**: `SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXXhttps://collectors.sumologic.com`
 
 would be used as:
-
-```
-url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-</TabItem>
-</Tabs>
-</TabItem>
-</Tabs>
+`url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX`.
 
 ## Audit Tokens
 
@@ -159,9 +130,9 @@ You can use the Audit Event Index to review the management of installation token
 
 ### Token management events
 
-When an installation token is created, deleted, or updated and event log is created. These include the before (from) and after (to) configurations as well as the ID and name of the token and who made the request. To search for management operations like, creating, deleting, and updating tokens use the following query:
+When an installation token is created, deleted, or updated and event log is created. These include the before (from) and after (to) configurations as well as the ID and name of the token and who made the request. To search for management operations like, creating, deleting, and updating tokens, use the following query:
 
-```
+```sql
 _index=sumologic_audit_events _sourceCategory=tokens
 ```
 
@@ -209,7 +180,7 @@ An example event log when a token is changed from inactive to active is:
 
 Collectors registered with installation tokens are recorded in the Audit Event Index with the ID and name of the token that registered the Collector. The following query returns Collector registrations done with installation tokens.
 
-```
+```sql
 _index=sumologic_audit_events _sourceCategory=collection CollectorRegistrationTokenContext
 ```
 
@@ -243,9 +214,4 @@ An example event log is:
     "eventFormatVersion": "1.0",
     "subsystem": "collection"
 }
-
-
 ```
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';

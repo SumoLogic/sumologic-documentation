@@ -1,6 +1,7 @@
 ---
 id: existing-collectors-and-sources
 title: Local Configuration File Management for Existing Collectors and Sources
+sidebar_label: For Existing Collectors and Sources
 description: Managing existing deployments means making changes only to a JSON file.
 ---
 
@@ -15,7 +16,7 @@ The Sumo web application can generate ready-to-use JSON for the Sources that 
 
 **To get the JSON configuration and create a configuration file**
 
-1. In the Sumo web app select **Manage Data \> Collection \> Collection**. 
+1. In the Sumo web app select **Manage Data** > **Collection** > **Collection**. 
 1. Select the information icon to the right of the Collector.
 1. Copy and paste the displayed JSON into a new text file. Name the text file `sources.json`, or any other name that makes sense. The file must have a `.json` extension
 1. Save the file to a location accessible by the Collector and make a note of the file path.
@@ -30,10 +31,10 @@ JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.o
 
 When a Collector starts it reads the `syncSources` parameter from the `user.properties` configuration file to determine the path of the JSON file or folder with the Source configurations. The `user.properties` file is located in the Collector's `config` folder.  
 
-Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
+Prior to version 19.137, the Collector used the `sumo.conf` file for Source configuration. If you are installing a legacy Collector, see [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) for information.
 
 |  Parameter |  Type |  Description |
-|--|--|--|
+|:--|:--|:--|
 | syncSources   | String   | Sets the path to the JSON describing Sources to configure on registration, which will be continuously monitored and synchronized with the Collector configuration. |
 
 **To add the syncSources parameter**

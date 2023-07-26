@@ -17,7 +17,7 @@ The examples use this sample Access log message where applicable:
 ## Keyword Expressions
 
 | Use Case | Sumo Logic Query Example |
-| -- | -- |
+| :-- | :-- |
 | Look for failures or errors with a specific message. | `"ID = 123456" AND (fail* OR error)` |
 | Look for errors in sshd logs. AND is assumed. Case insensitive, unless double-quoted. | `sshd (fail* OR error OR allowed OR identity)` |
 | Look for general authorization failures excluding router messages. | `(fail* OR error?) NOT _source=routers` |
@@ -29,7 +29,7 @@ For more information, see [Keyword Search Expression](../get-started-with-searc
 ## Parse, Count, and Top Operators
 
 | Use Case | Sumo Logic Query Example |
-| -- | -- |
+| :-- | :-- |
 | Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.  `* | parse "From: * To: *" as from, to` |
 | Extract IP address using a regex pattern.	 | `* | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" ` |
 | Identify pages visited, extracted as the "cs_uri_stem" field.	 | `_source=IIS | parse "GET * " as cs_uri_stem ` |
@@ -38,7 +38,7 @@ For more information, see [Keyword Search Expression](../get-started-with-searc
 The following examples assume you used the parsing from above:
 
 | Use Case | Sumo Logic Query Example |
-| -- | -- |
+| :-- | :-- |
 | Calculate the total number of bytes transferred to each client IP address. | &#124; count, sum(sc_bytes) by c_ip |  
 |Calculate the average size of successful HTTP responses. | &#124; avg(sc_bytes) |
 | If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| &#124; parse " 200 \* " as sc_substatusnodrop |
@@ -56,7 +56,7 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 ## Timeslice and Transpose
 
 | Use Case | Sumo Logic Query Example |
-| -- | -- |
+| :-- | :-- |
 | For the host / domain "abcd.com", count by sc_status with a timeslice of 15m | source=IIS  &#124; parse "abcd.com \* " as sc_status &#124; timeslice 15m &#124; count by _timeslice, sc_status |
 | Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | &#124; transpose row _timeslice column sc_status |
 
@@ -67,7 +67,7 @@ For more information, see [Timeslice](/docs/search/search-query-language/search
 ## Conditional Operators
 
 | Use Case | Sumo Logic Query Example |
-| -- | -- |
+| :-- | :-- |
 | For the source "IIS", find all messages with a client error status code (40\*) | `_source=IIS 40*`  `| parse "abcd.com * " as sc_status`  `| where sc_status matches "40*"` |
 | For the source "IIS/Access", count hits by browser | `source=IIS/Access  | parse “* * * * * * * * “ as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_UserAgent  | if (cs_UserAgent matches "*MSIE*",1,0) as ie  | if (cs_UserAgent matches "*Firefox*",1,0) as firefox  | if (cs_UserAgent matches "*Safari*",1,0) as safari | if (cs_UserAgent matches "*Chrome*",1,0) as chrome  | sum(ie) as ie, sum(firefox) as firefox, sum(safari) as safari, sum(chrome) as chrome` |
 | Use the where operator to match only weekend days. | `* | parse "day=*:" as day_of_week  | where day_of_week in ("Saturday","Sunday")` |

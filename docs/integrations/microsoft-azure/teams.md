@@ -1,6 +1,6 @@
 ---
 id: teams
-title: Sumo Logic App for Microsoft Teams
+title: Microsoft Teams
 sidebar_label: Microsoft Teams
 description: The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 ---
@@ -60,54 +60,34 @@ To collect logs for Microsoft Teams, please configure an Office 365 Audit Source
 
 ## Installing the Microsoft Teams App   
 
-This section has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
-
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft Teams Dashboards  
+
+### Overview
 
 The Teams - Overview dashboard provides an at-a-glance view of the state of your Teams environment in terms of user sessions, teams and channel activity, and user role changes
 
 Use this dashboard to:
-* Identify user sessions relative to their locations
-* Report the top users creating teams and channels
-* Identify the top team bots and channels connectors being used
-* Report on the top users and objects relative to role changes
+* Identify user sessions relative to their locations.
+* Report the top users creating teams and channels.
+* Identify the top team bots and channels connectors being used.
+* Report on the top users and objects relative to role changes.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Overview.png')} alt="Overview" />
 
 ### User Sessions
 
 The Teams - User Sessions dashboard provides an in depth view of the user logins and related statistics in your Teams environment
 
 Use this dashboard to:
-* Identify user sessions relative to their locations and compare login statistics over time
-* Understand the client platforms and versions that are being used
-* Report on login IP addresses correlated to potential threats via Crowdstrike
+* Identify user sessions relative to their locations and compare login statistics over time.
+* Understand the client platforms and versions that are being used.
+* Report on login IP addresses correlated to potential threats via Crowdstrike.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+User+Sessions.png')} alt="User Sessions" />
 
 ### Team Statistics
 
@@ -118,7 +98,7 @@ Use this dashboard to:
 * Understand the team setting changes.
 * Keep track of the team Bots being installed.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Team+Statistics.png')} alt="Team Statistics" />
 
 
 ### Channel Statistics
@@ -126,12 +106,12 @@ Use this dashboard to:
 The Teams - Channel  Statistics dashboard offers complete visibility into the Channel activity occurring in your Teams.
 
 Use this dashboard to:
-* Gain insight into the channels being added and removed
-* Understand the channel settings being modified
-* Monitor channel tab activity
-* Monitor and report on channel connectors being added and removed
+* Gain insight into the channels being added and removed.
+* Understand the channel settings being modified.
+* Monitor channel tab activity.
+* Monitor and report on channel connectors being added and removed.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+Channel+Statistics.png')} alt="Channel Statistics" />
 
 
 ### User and Role Changes
@@ -139,7 +119,7 @@ Use this dashboard to:
 The Teams - User and Role Changes dashboard provides insight on the user and role changes being applied in your environment.
 
 Use this dashboard to:
-* Report on the users making role changes and the top object types being affected
-* Understand how members are being added, removed, and changed by object name
+* Report on the users making role changes and the top object types being affected.
+* Understand how members are being added, removed, and changed by object name.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftTeams/Teams+-+User+and+Role+Changes.png')} alt="User and Role Changes" />

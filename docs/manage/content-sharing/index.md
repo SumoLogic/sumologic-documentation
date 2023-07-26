@@ -4,8 +4,7 @@ title: Content Sharing in Sumo Logic
 description: Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles.
 ---
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Content Sharing allows you to selectively share and collaborate on apps, dashboards, and searches with specific users or roles. As an Admin, you can use content sharing to transfer ownership of searches and dashboards, or to highlight key content to specific users and groups. As a user, you can now choose how widely shared your content is within your Org.
 
@@ -40,7 +39,7 @@ To find content in the Library that has been shared with you:
 To share content from the Left-nav or the Library:
 
 1. Click the Details icon ![details](/img/content-sharing/details.png) for the content you want to share.
-1. Select **Share** from the drop-down menu.
+1. Select **Share** from the dropdown menu.
 
     ![Share Search](/img/content-sharing/share-search.png)
 
@@ -65,12 +64,7 @@ To share content from the Left-nav or the Library:
 
 Sumo provides a few ways to navigate your content based on what you want to view.
 
-| Icon | Tab Name | Definition |
-| -- | -- | -- |
-| ![](/img/content-sharing/icon-recents.png) | Recents | Access recent content:<ul><li>Content you’ve recently accessed.</li><li>Content recently shared with you.</li></ul> |
-| ![](/img/content-sharing/icon-favorites.png) | Favorites | Content you’ve marked as favorite. |
-| ![](/img/content-sharing/icon-personal.png) | Personal | Content you manage. |
-| ![](/img/content-sharing/icon-library.png) | Library | List of all accessible content, including your creations and the content shared with you. |
+{@import ../../reuse/ui-elements.md}
 
 ## Available Permission Levels
 
@@ -82,7 +76,7 @@ Consider carefully what level of permissions users and roles need with
 your content:
 
 | Permission Level | Default Permissions | Available Advanced Options/Restrictions |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | View | Users can see the content and grant access to others to view. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/><br/>**Grant View Access.** User can grant view access to others. |
 | Edit | Users can make changes to the content and grant View or Edit access to others. | **Cannot Grant Access.** Prevents the user from sharing any access.<br/><br/>**Grant View Access.** User can grant View access to others.<br/><br/>**Grant Edit and View Access.** User can grant Edit and View access to users. |
 | Manage<br/>(Recommended for individual users only) | Designated users are considered co-managers of the content and can modify the content as well grant the right to other users to View, Edit, Manage, or Move the content. | **Cannot Grant Access.** Prevents the user from sharing view access.<br/><br/>**Grant View Access.** User can grant view access to others.<br/><br/>**Grant Edit and View Access.** User can grant View and Edit access to users.<br/><br/>**Grant Manage, Edit, and View Access.** User can grant Manage, Edit, and View access to users. |
@@ -90,4 +84,23 @@ your content:
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/manage/content-sharing/admin-mode"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Admin Mode</h4></a>
+  <p>Learn how to control your content and add important items to the Admin Recommended folder.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/manage/content-sharing/changing-alerts"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>Changing Other Alerts</h4></a>
+  <p>Learn how to modify or turn off alerts created by another user.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/manage/content-sharing/content-sharing-faq"><img src={useBaseUrl('img/icons/business/networking.png')} alt="icon" width="40"/><h4>FAQ</h4></a>
+  <p>Get to know the answers to basic questions around Content Sharing.</p>
+  </div>
+</div>
+</div>

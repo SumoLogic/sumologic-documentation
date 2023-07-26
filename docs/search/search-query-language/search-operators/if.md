@@ -4,7 +4,6 @@ title: if and ? Search Operator
 sidebar_label: if, ?
 ---
 
-
 There are two forms of ternary expression you can use in Sumo Logic queries: one is constructed using the `if` operator, and the other uses the question mark (`?`) operator. The syntax varies slightly, but the results are equivalent. You can use the syntax you are most comfortable with.
 
 These expressions are used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition. On the basis of the test, the entire expression returns `value_if_true` if the condition is `true`, else `value_if_false` if the condition is `false`. The two sub-expressions (`value_if_true` and `value_if_false`) must have the same type.
@@ -15,7 +14,7 @@ These expressions are used to evaluate a condition as either true or false, with
 if(<condition>, <value_if_true>, <value_if_false>) as <field>
 ```
 
-**Examples**
+## Examples
 
 ```sql
 | if(status_code matches "5*", 1, 0) as serverError
@@ -68,4 +67,4 @@ if(message matches "*/cancel?*","Alert Canceled","N/A"))) as problem
 | a < b ? a : b as this_or_that     // This is the same as min(a, b)
 ```
 
-For information on handling null values, see [isNull](#isNull) operator.
+For information on handling null values, see [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.

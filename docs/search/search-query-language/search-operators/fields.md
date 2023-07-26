@@ -4,8 +4,6 @@ title: fields Search Operator
 sidebar_label: fields
 ---
 
-
-
 The `fields` operator allows you to specify which fields to display and their order in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.
 
 There are two fields operator modes:
@@ -19,7 +17,7 @@ To specify the [order of returned fields](#ordering-fields) you must use the fie
 Fields are not returned in the specified order in Search Job API and Webhook results.
 :::
 
-#### Allowlist
+## Allowlist
 
 For allowlist mode, only fields you specify for inclusion are kept in the search output. For example, to strip out every field except for method and status_code, your query would be:
 
@@ -36,7 +34,7 @@ The search results would look like this:
 
 Allowlist queries allow all system internal fields (fields prefixed with an underscore "_") to pass.
 
-#### Denylist
+## Denylist
 
 For denylist mode, all fields except for those you explicitly *remove* remain in the search output. Denylist mode is indicated with a minus sign "-" in a query. For example, to only remove the log_level, module, and process_id fields, your query would be:
 
@@ -55,7 +53,7 @@ _sourceCategory=*apache*
 
 Make sure that your query does not repeat or duplicate individual fields, or your search query will fail. 
 
-#### Non-aggregate vs. Aggregate Query Results
+## Non-aggregate vs. Aggregate Query Results
 
 The fields displayed in query results are different for non-aggregate and aggregate queries.
 
@@ -90,7 +88,7 @@ This would provide the following results:
 
 ![](/img/reuse/query-search/fields_operator_aggregate.png)
 
-#### Use a Field Name that Contains Spaces or Special Characters
+## Use a Field Name that Contains Spaces or Special Characters
 
 The Sumo Logic search language allows `a-zA-Z\` as valid characters for identifiers for fields. In cases where a field name contains other characters you need to escape the field name by using the `%` character and wrapping the field name in double quotes. 
 
@@ -104,7 +102,7 @@ Here's an example:
 
 This creates a field named "learning robot .33." with the value "Robot".
 
-#### Ordering fields
+## Ordering fields
 
 By default, the fields in non-aggregated results are ordered alphabetically. You can specify a different order by using the fields operator.
 

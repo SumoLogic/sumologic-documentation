@@ -11,7 +11,7 @@ For a collection of customer created search queries and their use cases, see the
 :::
 
 :::note
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](https://learn.sumologic.com).  
+For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI).  
 :::
 
 The examples use this sample Apache log message where applicable:

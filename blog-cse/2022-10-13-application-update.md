@@ -70,9 +70,9 @@ Note that you cannot extend the standard tag schemas (for example, you cannot ad
 
 You can refer to Entity tags in Rule expressions. For example, if you've attached the tag `_deviceService:sql` to an Entity, this statement will return "true" if that Entity is listed in a Record's `srcDevice_ip` field:
 ```
-array_contains(fieldsTags["srcDevice_ip"], "_deviceService:sql")
+array_contains(fieldTags["srcDevice_ip"], "_deviceService:sql")
 ```
-Additional information about the standard tag schema, match lists, Entity groups, and using these features with Rules is available in the [Cloud SIEM Documentation](https://help.sumologic.com/docs/cse).
+Additional information about the standard tag schema, match lists, Entity groups, and using these features with Rules is available in the [Cloud SIEM Documentation](/docs/cse).
 
 ### Minor Changes and Enhancements
 

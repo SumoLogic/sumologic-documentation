@@ -22,7 +22,7 @@ The Collector executes the script as the user running the Collector process.
 
 ## Step 1. Enable Script Actions on the Collector
 
-Collectors using version 19.245-4 and later do not allow Script Actions to run by default. To allow Script Actions you need to set the Collector parameter `enableActionSource` in [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to true and restart the Collector.
+Collectors using version 19.245-4 and later do not allow Script Actions to run by default. To allow Script Actions you need to set the Collector parameter `enableActionSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) to true and restart the Collector.
 
 ## Step 2. Create script
 
@@ -36,8 +36,8 @@ You can set up a Script Action using the Sumo web app, described in [Option A](#
 
 ### Option A. Set up Script Action using UI
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
-1. Find the name of the Installed Collector to which want to add the script action and select **Add \> Add Script Action**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. Find the name of the Installed Collector to which want to add the script action and select **Add > Add Script Action**.
 1. **Name.** Enter a name to display for the Script Action.
 1. **Description**. Optional.
 1. **Specify a timeout for your command**. You can optionally set a timeout for script execution. Setting a timeout ensures that a script is killed, making sure that resources aren't fully consumed. If you set a timeout, make sure to select a generous amount of time to make sure that the script has enough time to finish running.
@@ -115,8 +115,8 @@ This example shows how to set up a script and configure a Script Action.
     chmod +x countNumberOfWarnings.sh
     ```
 
-1. Select **Manage Data \> Collection \> Collection**.
-1. Find the name of the Installed Collector to which you want to add the script action and select **Add \> Add Script Action**.  
+1. Select **Manage Data** > **Collection** > **Collection**.
+1. Find the name of the Installed Collector to which you want to add the script action and select **Add > Add Script Action**.  
 1. Configure the Script Action as described in [Step 3](#step-3-set-up-script-action) above.
 1. Define a search and click **Save As**. 
 1. Click **Schedule this search**, and complete the search configuration. Select "Script Action" as the **Alert Type** and select the script that you created. Click **Save**.

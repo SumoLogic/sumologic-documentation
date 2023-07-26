@@ -31,7 +31,7 @@ To use the Application Components Solution, you'll need to install a Terraform a
 
 The Terraform script performs the following actions:
 * Creates Application Components View hierarchy in Explore.
-* Sets up Sumo Logic Field Extraction Rules ([FERs](/docs/manage/Field-Extractions)) to enrich the data.
+* Sets up Sumo Logic Field Extraction Rules ([FERs](/docs/manage/field-extractions)) to enrich the data.
 * Installs Sumo Logic Apps(Database apps and App Components app) in the Admin recommended folder.
 * Creates [Fields](/docs/manage/fields).
 * Installs Monitors for each of the selected databases.
@@ -48,7 +48,7 @@ The Terraform script performs the following actions:
    * Manage connections
    * Manage Content
 If you want to deploy in the Admin Recommended folder, you may need [Content Admin](/docs/manage/content-sharing/admin-mode) role.
-1. Using these [instructions](/docs/manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
@@ -67,7 +67,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
  ```bash
  git clone https://github.com/SumoLogic/sumologic-solution-templates
  ```
-1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and then running:
+1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/application-components) and then running:
   ```bash
   terraform init
   ```
@@ -83,12 +83,12 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
 ---
 **Parameter**: `sumologic_access_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/Security/Access-Keys#Create_an_access_key">Create an access key</a> for more information.
+**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#Create_an_access_key">Create an access key</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_key`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access Key, which is used for Sumo Logic API calls. See <a href="/docs/manage/Security/Access-Keys">Sumo Logic Access Key</a> for more information.
+**Description**: Your Sumo Logic Access Key, which is used for Sumo Logic API calls. See <a href="/docs/manage/security/access-keys">Sumo Logic Access Key</a> for more information.
 
 ---  
 **Parameter**: `sumologic_organization_id`<br/>
@@ -149,7 +149,7 @@ email_notifications_critical = [
 ---
 **Parameters**: `connection_notifications_critical`, `connection_notifications_warning`, `connection_notifications_missingdata` <br/>
 **Required**: No <br/>
-**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections">document</a> for creating payloads with other connection types.
+**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="/docs/alerts/webhook-connections/set-up-webhook-connections">document</a> for creating payloads with other connection types.
 ```json
 connection_notifications_critical = [
     {
@@ -232,7 +232,7 @@ Create the following Fields in collection sources both for logs and metrics. Thi
 
 ### Configuring or updating email notifications
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services by [adding a monitor](/docs/alerts/monitors/add-monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services by [adding a monitor](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
@@ -260,8 +260,8 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 
 To open Explore and Application Components View:
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the drop-down menu, choose **Explore**. The Explore navigation panel appears on the left.
-1. Click the **Explore By** arrow and select **Application Components View** from the drop-down menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
+1. From the dropdown menu, choose **Explore**. The Explore navigation panel appears on the left.
+1. Click the **Explore By** arrow and select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
 1. With the Application Components view selected in Explore, select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
 1. Similarly from the expanded environment select a component.

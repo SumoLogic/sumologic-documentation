@@ -43,7 +43,7 @@ Select from the following user controls. The visualization updates automatically
 
 The following examples show how the user controls affect what outliers are displayed.
 
-##### Example: Threshold
+### Example: Threshold
 
 The following figure shows the top 10 outliers for a query when the threshold is set to 1. The top 10 data points that are more than 1 standard deviation from the expected value are marked.
 
@@ -53,7 +53,7 @@ The following figure shows the same data when the threshold is set to 5. Only 1 
 
 ![outlier-ex2](/img/metrics/outlier-ex2.png)
 
-##### Example: 1 top outlier per series, query, and chart
+### Example: 1 top outlier per series, query, and chart
 
 This example shows how the calculation of the top outlier varies according to scope (series, query, or chart). The visualization is based on these queries:
 
@@ -73,7 +73,7 @@ that is marked is the top one for the entire chart.
 
 ![outlier-ex](/img/metrics/outlier-ex5.png)
 
-##### Example: Multiple top outliers
+### Example: Multiple top outliers
 
 The following figure shows the visualization with 10 outliers per series selected. Each time series has multiple outliers identified (up to 10 for each series).
 

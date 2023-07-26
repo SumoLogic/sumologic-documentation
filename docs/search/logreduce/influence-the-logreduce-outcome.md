@@ -12,7 +12,7 @@ In some cases, this data sampling produces results that don't meet the needs of
 The following icons allow you to change the results of a LogReduce report:
 
 | Icon | Action |
-| -- | -- |
+| :-- | :-- |
 | ![Promote .png](/img/search/logreduce/Promote.png) | Promote a signature to the top position of the **Signatures** tab. |
 | ![Demote.png](/img/search/logreduce/Demote.png) | Demote a signature to move it to the bottom of the last page of the **Signatures** tab. |
 | ![Split.png](/img/search/logreduce/Split.png) | Split a signature into multiple signature. |

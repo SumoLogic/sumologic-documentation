@@ -1,12 +1,12 @@
 ---
 id: search-autocomplete
 title: Search Autocomplete
-description: On the Search page, as you begin typing to enter a query in the search text box, the search autocomplete drop-down dialog opens to offer suggestions to make query writing easier.
+description: On the Search page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier.
 ---
 
 
 
-On the **Search** page, as you begin typing to enter a query in the search text box, the search autocomplete drop-down dialog opens to offer suggestions to make query writing easier.
+On the **Search** page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier.
 
 RBAC limitations prevent you from seeing options that you are not permitted to see. 
 
@@ -27,6 +27,6 @@ More search autocomplete tips and limitations:
 
 * Press **Alt + space** or **Esc** to open and close search autocomplete.
 * Press **Shift + Enter** to add a new line to your query in the text box.
-* Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page](../../../get-started/account-setup.md#my-preferences) page.
-* Search autocomplete is also supported on the **Manage \> Users** page in the **New Role** dialog in the **Query String** section.
+* Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page](../../../get-started/account-settings-preferences.md) page.
+* Search autocomplete is also supported on the **Manage > Users** page in the **New Role** dialog in the **Query String** section.
 * Search autocomplete does not show Field Extraction Rules or values from HTTP headers. 

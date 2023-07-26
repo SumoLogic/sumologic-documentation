@@ -6,6 +6,24 @@ description: Learn how to search specific Data Tiers.
 
 This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+Searching Data Tiers.
+
+<Iframe url="https://www.youtube.com/embed/w0H8upLpCwU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 ## About the _dataTier search modifier
 
 In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
@@ -23,7 +41,7 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 ## Examples
 
 | Example query	| Description |
-| -- | -- |
+| :-- | :-- |
 | `error` | Searches all partitions in the Continuous tier  for messages that contain the string “error”. |
 | `_dataTier=Frequent error` | Searches all partitions in the Frequent tier  for messages that contain the string “error”. |
 | `_dataTier=All error` | Searches all partitions in all tiers for messages that contain the string “error”. |
@@ -45,13 +63,14 @@ The `_dataTier` search modifier is not supported in:
 * Partition routing expressions
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
+* Searches against Cloud SIEM Enterprise data in Sumo Logic. Don't use `_dataTier` when searching CSE data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for CSE Records in Sumo Logic](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 
-* To query a single tier, use `_dataTier\<TierNam\>` in the scope of your query.
-* To query all tiers, use `_dataTier=All`
+* To query a single tier, use `_dataTier=<TierName>` (i.e. `_dataTier=Infrequent`) in the scope of your query.
+* To query all tiers, use `_dataTier=All`.
 * When you run a query that will return data from the Infrequent tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
 
 ### Estimated and actual scan data for Infrequent queries
@@ -85,7 +104,7 @@ Given these partitions:
 * `dashboardInfreq` in the Infrequent Tier
 
 | Role search filter  | Search query | Results | Notes |
-|--|--|--|--|
+|:--|:--|:--|:--|
 | `*` | `_index=dashboard*` | Results will include data from all three of the partitions  | Because the role search filter grants access to all partitions, regardless of tier, results are returned for each of the partitions. |
 | `_index=dashboard*` | `*` | Results will only include data from the `dashboardContinuous` partition. | Although the filter gives the user access to `dashboardCont`, `dashboardFreq` and `dashboardInfreq`. The search query "\*" means only continuous views, so of the three views the user has access to, the one in the Continuous tier will be the one selected. |
 
@@ -97,7 +116,7 @@ If you use `_dataTier` to specify a tier other than Continuous in a query of sch
 
 ### API Support with Rate Limiting
 
-The rate limits described in the [Rate limit throttling](/docs/api/Search-Job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
+The rate limits described in the [Rate limit throttling](/docs/api/search-job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
 
 * A limit of 200 active concurrent search jobs applies to your organization for the Continuous Tier (`_dataTier=Continuous`), the Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`).
 * When searching only the Frequent Tier (`_dataTier=Frequent`), a rate limit of 20 concurrent search jobs applies to your organization.

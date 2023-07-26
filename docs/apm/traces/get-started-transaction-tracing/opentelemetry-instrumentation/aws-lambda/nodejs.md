@@ -7,24 +7,24 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on NodeJS and send the data to Sumo Logic.
 
-To obtain tracing data from AWS Lambda functions developed in Node.js you can use [OpenTelemetry NodeJS instrumentation](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/nodejs). It provides auto instrumentation.  
+To obtain tracing data from AWS Lambda functions developed in Node.js you can use [Sumo Logic Distribution for OpenTelemetry NodeJS Lambda](https://github.com/SumoLogic/sumologic-otel-lambda/tree/main/nodejs). It provides auto instrumentation.  
 
-**Sumo Logic AWS Distro Lambda Layer supports:**
+**Sumo Logic OTel NodeJS Lambda layer supports:**
 
- * nodejs12.x and nodejs14.x runtimes
- * x86_64 and arm64 architectures
+* nodejs14.x, nodejs16.x and nodejs18.x runtimes
+* x86_64 and arm64 architectures
 
-## Sumo Logic AWS Distro Lambda layer
+## Sumo Logic Distribution for OpenTelemetry Lambda Layer
 
-Sumo Logic AWS OTel Lambda Layer provides packed [OpenTelemetry NodeJS](https://github.com/open-telemetry/opentelemetry-js) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel AWS as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.12.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-nodejs-v1.12.0/nodejs) provides packed [OpenTelemetry NodeJS](https://github.com/open-telemetry/opentelemetry-js) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
-### Distro Lambda Requirements
+### Lambda function requirements
 
-It is very simple to instrument your AWS NodeJS Lambda function using the Sumo Logic AWS Distro Lambda layer. You'll need the following:
+It is very simple to instrument your AWS NodeJS Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
 
-* NodeJS v12.x or newer
+* NodeJS v14.x or newer
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
@@ -38,93 +38,94 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
     ![lambda-nodejs2.png](/img/traces/lambda-nodejs2.png)
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following three **required** environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables (the first are three **required**):
 
-   * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` enables auto-instrumentation.
-   * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
-   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
+   * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` - Enables auto-instrumentation.
+   * `OTEL_TRACES_SAMPLER = always_on` - Enables traces sampling.
+   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
+   * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
 
-   * Tracing **application** and **cloud.account.id** are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable.
+     * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
+     * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
 
-         * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
+        All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-         * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
-
-            All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
-
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.
+   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one, if needed.
 
     ![lambda-nodejs3.png](/img/traces/lambda-nodejs3.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 
-### amd64 architecture
+### Sumo Logic Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
 
-The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (x86_64) architecture.
+The following are the Sumo Logic OTel Lambda layers for AWS Region for amd64 (x86_64) architecture.
 
 | AWS Region | ARN |
-|--|--|
-| US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| US West (N.Carolina) us-west-1          | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| Africa (Cape Town) af-south-1           | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1     |
-| Asia Pacific (Hong Kong) ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| Asia Pacific (Mumbai) ap-south-1        | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1     |
-| Asia Pacific (Osaka) ap-northeast-3     | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1 |
-| Asia Pacific (Seoul) ap-northeast-2     | arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1 |
-| Asia Pacific (Singapore) ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1 |
-| Asia Pacific (Sydney) ap-southeast-2    | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1 |
-| Asia Pacific (Tokyo) ap-northeast-1     | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1 |
-| Canada (Central) ca-central-1           | arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1   |
-| Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1   |
-| Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| Europe (Milan) eu-south-1               | arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1     |
-| Europe (Paris) eu-west-3                | arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
-| Europe (Stockholm) eu-north-1           | arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1     |
-| Middle East (Bahrain) me-south-1        | arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1     |
-| South America (Sao Paulo) sa-east-1     | arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-nodejs-x86_64-ver-1-0-1:1      |
+|:--|:--|
+|   af-south-1       |   arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1       |
+|   ap-east-1        |   arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1   |
+|   ap-northeast-2   |   arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1   |
+|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1   |
+|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1       |
+|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1   |
+|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1   |
+|   ca-central-1     |   arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1     |
+|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1     |
+|   eu-north-1       |   arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1       |
+|   eu-south-1       |   arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1       |
+|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   eu-west-3        |   arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   me-south-1       |   arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1       |
+|   sa-east-1        |   arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   us-west-1        |   arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
+|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-nodejs-x86_64-v1-12-0:1        |
 
-### arm64 architecture
+### Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
-The following are the Sumo Logic AWS Distro Lambda layers for AWS Region for arm64.
+The following are the Sumo Logic OTel Lambda layers for AWS Region for arm64.
 
-| AWS Region                              | ARN                                                                                      |
-|-----------------------------------------|------------------------------------------------------------------------------------------|
-| US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
-| US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
-| US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
-| Asia Pacific (Mumbai) ap-south-1        | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1     |
-| Asia Pacific (Osaka) ap-northeast-3     | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1 |
-| Asia Pacific (Singapore) ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1 |
-| Asia Pacific (Sydney) ap-southeast-2    | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1 |
-| Asia Pacific (Tokyo) ap-northeast-1     | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1 |
-| Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1   |
-| Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
-| Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-nodejs-arm64-ver-1-0-1:1      |
+| AWS Region                              | ARN                                                                          |
+|:----------------------------------------|:-----------------------------------------------------------------------------|
+|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1   |
+|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1   |
+|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1       |
+|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1   |
+|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1   |
+|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1     |
+|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1        |
+|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1        |
+|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1        |
+|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1        |
+|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-nodejs-arm64-v1-12-0:1        |
 
+## Sumo Logic OTel Lambda container instrumentation
 
-## Sumo Logic AWS OTel Lambda container instrumentation
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.12.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-nodejs-v1.12.0/nodejs) also provides packed [OpenTelemetry NodeJS](https://github.com/open-telemetry/opentelemetry-js) libraries for container based Lambda functions.
 
-Sumo Logic AWS OTel Lambda also provides packed [OpenTelemetry NodeJS](https://github.com/open-telemetry/opentelemetry-js) libraries for container based Lambda functions. 
+:::note
+The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
+:::
 
-### Otel Lambda Requirements
+### Container based lambda requirements
 
 Instrumentation of container based AWS Lambda function requires some
 changes in the Dockerfile and image rebuild. You'll need the following:
 
- * Docker
- * NodeJS v12.x or newer
- * HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* Docker
+* NodeJS v14.x or newer
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
 
 ### Lambda function image changes
 
-1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/opentelemetry-lambda/releases/download/nodejs-v1.0.1/opentelemetry-nodejs-amd64.zip) or [arm64](https://github.com/SumoLogic/opentelemetry-lambda/releases/download/nodejs-v1.0.1/opentelemetry-nodejs-arm64.zip).
+1. Download and extract Sumo Logic OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/nodejs-v1.12.0/opentelemetry-nodejs-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/nodejs-v1.12.0/opentelemetry-nodejs-arm64.zip).
 
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. Please see Dockerfile example:
 
-    ```
+    ```dockerfile
     FROM public.ecr.aws/lambda/nodejs:14-arm64
 
     # Lambda Function Code  
@@ -147,26 +148,26 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
 1. Rebuild docker image.
 
-## Deployment
+### Deployment
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
 1. Deploy new function image.
 
-1. Navigate to the **Configuration \> Environment variables** section and set up the following environment variables:
+1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables:
 
-   * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` enables auto-instrumentation.
-   * `OTEL_TRACES_SAMPLER = always_on` - enables traces sampling.
-   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - ensure you define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". This will appear as the tracing service name in Sumo Logic.
-   * Tracing `application` and `cloud.account.id` are set with the **OTEL_RESOURCE_ATTRIBUTES** environment variable.
+   * `AWS_LAMBDA_EXEC_WRAPPER = /opt/otel-handler` - Enables auto-instrumentation.
+   * `OTEL_TRACES_SAMPLER = always_on` - Enables traces sampling.
+   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Sets the tracing service name in Sumo Logic. Make sure to define it as a string value that represents the function name and its business logic, such as "Check SQS Lambda".
+   * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
 
      * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
 
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one if needed.
+   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one, if needed.
 
     ![lambda-nodejs4.png](/img/traces/lambda-nodejs4.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/working-with-tracing-data/view-and-investigate-traces).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).

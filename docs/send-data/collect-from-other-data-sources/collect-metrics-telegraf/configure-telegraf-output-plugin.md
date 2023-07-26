@@ -1,6 +1,7 @@
 ---
 id: configure-telegraf-output-plugin
 title: Configure Telegraf Output Plugin for Sumo Logic
+sidebar_label: Configure Telegraf Output Plugin
 description: Learn how to configure the Telegraf output plugin for Sumo Logic to send metrics to Sumo Logic.
 ---
 
@@ -108,12 +109,12 @@ url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 
 ### data_format
 
-The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors/http-source/upload-metrics.md) section of the *Upload Metrics to an HTTP Source* topic.
+The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors/http-source/logs-metrics/upload-metrics.md) section of the *Upload Metrics to an HTTP Source* topic.
 
 Supported values for `data_format` are: 
 
 | Value        | Content-Type                         |
-|--------------|--------------------------------------|
+|:--------------|:--------------------------------------|
 | “graphite”   | application/vnd.sumologic.graphite   |
 | “carbon2”    | application/vnd.sumologic.carbon2    |
 | “prometheus” | application/vnd.sumologic.prometheus |

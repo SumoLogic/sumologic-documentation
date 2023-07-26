@@ -1,6 +1,6 @@
 ---
 id: zscaler-internet-access
-title: Sumo Logic App for Zscaler Internet Access
+title: Zscaler Internet Access
 sidebar_label: Zscaler Internet Access
 description: This page introduces the Sumo Logic App for Zscaler Internet Access (ZIA) App.
 ---
@@ -27,7 +27,7 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Hosted Collector](/docs/send-data/Hosted-Collectors).
+1. Configure an [Hosted Collector](/docs/send-data/hosted-collectors).
 2. Configure an [Http Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
     1. For Source Category, enter any string to tag the output collected from this Source, such as **ZIA**.
     2. Click **Save** and make note of the HTTP address for the Source. You will need it when you configure the Zscaler Cloud NSS in the next section.
@@ -174,65 +174,39 @@ _sourceCategory=ZIA
 | top 10 baseurl by _count
 ```
 
+## Install the Zscaler Internet Access app
 
+This section provides instructions on how to install the Zscaler Internet Access app, and provides examples of each of the dashboards. The preconfigured searches and dashboards provides you an easy-to-access visual insights into your data.
 
-## Install the Zscaler Internet Access App
+{@import ../../reuse/apps/app-install.md}
 
-This section provides instructions on how to install the Zscaler Internet Access App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](/docs/integrations/security-threat-detection/Zscaler-Web-Security#Dashboards) provide easy-to-access visual insights into your data.
+## Viewing ZIA dashboards
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing ZIA Dashboards
-
-
-### Zscaler - Overview  
+### Overview  
 
 The **Zscaler - Overview** Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Overview.png')} alt="zscaler internet access Dashboard" />
 
-
-### Zscaler- Behavior  
+### Behavior  
 
 The **Zscaler - Behavior** Dashboard focuses on allowed traffic behaviors, showing trends and deviations by users, content types accessed, content categories, super categories, and bandwidth trends.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Behavior.png')} alt="zscaler internet access Dashboard" />
 
-### Zscaler - Blocked Traffic  
+### Blocked Traffic  
 
 The **Zscaler - Blocked** Traffic Dashboard illustrates outliers in both blocked traffic peaks and multi-dimensional outliers for blocked activity specific to user.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Blocked-Traffic.png')} alt="zscaler internet access Dashboard" />
 
-
-### Zscaler - File Classification Activity
+### File Classification Activity
 
 The **Zscaler - File Classification Activity** Dashboard focuses on file-based threats by users, threat name, file types, and subtypes for a overarching view of blocked files across the Zscaler environment.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-File-Classification-Activity.png')} alt="zscaler internet access Dashboard" />
 
-
-### ZIA - DNS
+### DNS
 
 The **ZIA - DNS** Dashboard focuses on DNS activity specifically around denied requests and responses, server locations across the Zscaler environment.
 
@@ -242,8 +216,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-DNS.png')} alt="zscaler internet access Dashboard" />
 
-
-### ZIA - Logs
+### Logs
 
 The **ZIA - Logs** Dashboard gives insights into different logs being produced in the Zscaler environment.
 
@@ -253,7 +226,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Logs.png')} alt="zscaler internet access Dashboard" />
 
-### ZIA - Threats
+### Threats
 
 The **ZIA - Threats** Dashboard focuses on threats in your Zscaler environment.
 

@@ -29,7 +29,7 @@ To integrate the AWS Observability solution with Control Tower, you collect Clou
 
 We recommend you familiarize yourself with the AWS Observability Solution. For more information, see:
 
-* [About AWS Observability](docs/observability/aws/about.md)
+* [About AWS Observability](/docs/observability/aws/about.md)
 * [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability)
 * [View the AWS Observability Dashboards](../deploy-use-aws-observability/view-dashboards.md)
 

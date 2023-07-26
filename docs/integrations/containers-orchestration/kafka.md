@@ -1,6 +1,6 @@
 ---
 id: kafka
-title: Sumo Logic App for Kafka
+title: Kafka - Classic Collector
 sidebar_label: Kafka
 description: This guide provides an overview of Kafka related features and technologies.
 ---
@@ -65,7 +65,7 @@ messaging_cluster=* messaging_system="kafka" \
 
 ## Collecting Logs and Metrics for Kafka
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kakfa.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kafka.
 
 ### Configure Fields in Sumo Logic
 
@@ -116,11 +116,13 @@ Click on the appropriate link below based on the environment where your Kafka cl
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Kafka in Kubernetes environments. In the following architecture, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Kafka in Kubernetes environments. In the following architecture, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="non k8s-diagram" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="kafka-k8s" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Kafka. We’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment. In other words, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Jolokia input plugin ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Kafka. We’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment. In other words, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 #### Configure Metrics Collection
 
@@ -149,7 +151,7 @@ Here’s an explanation for additional values set by this configuration that we 
 
 For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-For more information on configuring the Joloka input plugin for Telegraf see[ this doc] (https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
+For more information on configuring the Joloka input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2).
 
 3. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin. Jolokia agent needs to be available to the Kafka Pods. Starting Kubernetes 1.10.0, you can store a binary file in a [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap). This makes it very easy to load the Jolokia jar file, and make it available to your pods.
 4. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
@@ -316,7 +318,7 @@ At this point, Kafka metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Kafka running on a non-Kubernetes environment for the Sumo Logic App for Kafka. By default, Kafka logs are stored in a log file. Perform the steps outlined below for each Kafka Broker node.
 1. Configure logging in Kafka. By default Kafka logs (server.log and controller.log) are stored in the directory: `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of the above logs directory.
-2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/installed-collectors)
 3. Configuring a Source. To add a Local File Source source for Kafka do the following:
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
@@ -325,7 +327,7 @@ This section provides instructions for configuring log collection for Kafka runn
      * **File Path (Required).** Enter the path to your server.log and controller.log. The files are typically located in `/opt/Kafka/kafka_<VERSION>/logs/*.log`.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices/#good-and-bad-source-categories).
-     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/Manage/Fields):
+     * **Fields.**Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
        ```    
        component = messaging
        messaging_system = kafka
@@ -344,13 +346,16 @@ This section provides instructions for configuring log collection for Kafka runn
 At this point, Kafka logs should start flowing into Sumo Logic.
 
 
-#### Using Open Telemetry  
+#### Using OpenTelemetry  
 
-We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Kafka metric collection and the Filelog receiver for collecting Kafka logs. Sumo Logic OT distro runs on the same system as Kafka, and uses the Kafka Jolokia input plugin for Telegraf to obtain Kafka metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic via the Filelog receiver.
+We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Kafka metric collection and the Filelog receiver for collecting Kafka logs. Sumo Logic OT distro runs on the same system as Kafka, and uses the Kafka Jolokia input plugin for Telegraf to obtain Kafka metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic using the Filelog receiver.
 
 ##### Configure Collection of Kafka Metrics and Logs  
 
-* Install sumologic-otel-collector by following the instructions mentioned [here](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md).
+* Install sumologic-otel-collector by following the instructions for your operating system:
+  * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux)
+  * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos)
+  * [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows)
 * Configure and start `sumologic-otel-collector`.
 
 As part of collecting metrics data from Kafka, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for Telegraf to get data from otel and then send data to Sumo Logic.
@@ -432,7 +437,7 @@ All monitors are disabled by default on installation, if you would like to enabl
 
 By default, the monitors are configured in a monitor folder called “Kafka”, if you would like to change the name of the folder, update the monitor folder name in this file.
 
-5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
+5. To send email or connection notifications, modify the file `notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -659,7 +664,7 @@ Use this dashboard to:
 The **Kafka Broker - Garbage Collection** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
 
 Use this dashboard to:
-* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kakfa brokers may have more CPU usage.
+* Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kafka brokers may have more CPU usage.
 * Understand the amount of memory cleared by garbage collectors across memory pools and their impact on the Heap memory.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />
@@ -720,7 +725,7 @@ Use this dashboard to:
 ## Kafka Alerts
 
 | Alert Name                                  | Alert Description and conditions                                                                                                                        | Alert Condition | Recover Condition |
-|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+|:---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
 | Kafka - High CPU on Broker node             | This alert fires when we detect that the average CPU utilization for a broker node is high (>=85%) for an interval of 5 minutes.                        |                 |                   |
 | Kafka - High Broker Disk Utilization        | This alert fires when we detect that a disk on a broker node is more than 85% full.                                                                     | >=85            | < 85              |
 | Kafka - Garbage collection                  | This alert fires when we detect that the average Garbage Collection time on a given Kafka broker node over a 5 minute interval is more than one second. | > = 1           | < 1               |

@@ -13,7 +13,7 @@ If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service P
 ## Availability
 
 | Account Type | Account Level |
-|--------------|--------------------------------------------------------------|
+|:--------------|:--------------------------------------------------------------|
 | Credits | Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 :::note
@@ -26,13 +26,13 @@ Sumo Orgs allows you to logically group, provision, and centrally manage and m
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
 
-We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
+We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. For example, if you estimate 1GB usage for logs and specify that as the baseline when you create the org, Sumo Logic will start [throttling](/docs/manage/ingestion-volume/log-ingestion.md) when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.
 
-Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration** \> **Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
+Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration** > **Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## About CSE provisioning
 
-You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information, see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
 
 ## Requirements for creating and managing orgs
 
@@ -52,7 +52,7 @@ This section has instructions for creating a child org. 
 After you create a child org, you can’t delete it.
 :::
 
-1. Go to **Administration \> Organizations**.
+1. Go to **Administration > Organizations**.
 1. Click **+ Add Organization**.
     ![orgs-page-6.png](/img/subscriptions/add-org.png)
 1. The **Create New Organization** pane appears.<br/>
@@ -91,7 +91,7 @@ After you create a child org, you can’t delete it.
 ## Update an org's credits allocation
 
 To change an org's credits allocation:
-1. Go to **Administration \> Organizations**.
+1. Go to **Administration > Organizations**.
 1. Click the row for the org you want to edit.
 1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
 2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
@@ -99,7 +99,7 @@ To change an org's credits allocation:
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
 
 ## Monitor CSE provisioning
-Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration \> Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" />
 
@@ -125,14 +125,14 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 
 ### View cross-org credits allocation and consumption
 
-You can see what portion of your subscription credits have been allocated and consumed on the **Administration** \> **Organizations** page.
+You can see what portion of your subscription credits have been allocated and consumed on the **Administration** > **Organizations** page.
 * The **Usage %** column indicates what percentage of overall subscription credits that was allocated to a child org has been consumed.
 * The **Credits Capacity** line at the bottom of the page shows the count and percentage of credits, out of your total subscription credits, that have been allocated to child orgs, and the number of allocated credits that have been consumed. 
     ![cross-org-allocations.png](/img/subscriptions/orgs-page-5.png)
 
 ### View child org credits allocation and usage
 
-1. Go to **Administration** \> **Organizations**.
+1. Go to **Administration** > **Organizations**.
 1. Click an org in the list of orgs.
 1. A pane with details about the org appears on the right side of the page.
    <img src={useBaseUrl('img/subscriptions/view-details.png')} alt="details" width="450"/>
@@ -152,7 +152,7 @@ You can see what portion of your subscription credits have been allocated and co
 
 If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has been configured for a child org, and you have an account in the org, you can access it from the **Organizations** UI.
 
-1. Go to **Administration** \> **Organizations**.
+1. Go to **Administration** > **Organizations**.
 1. Click the row for the org you want to access.
 1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
 

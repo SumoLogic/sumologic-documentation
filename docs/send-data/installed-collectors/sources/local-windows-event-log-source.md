@@ -16,7 +16,7 @@ Local Windows Event Log Sources are only for collecting Windows Event Logs. All
 
 To configure a Local Windows Event Log Source:
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 
 1. Find the name of the installed collector to which you'd like to add a Source. Click **Add** and then choose** Add Source** from the pop-up menu.
 
@@ -33,12 +33,12 @@ To configure a Local Windows Event Log Source:
 1. Set the following:
 
     :::note
-    Hostname values are parsed and applied to your event logs as _sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
+    Hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
     :::
 
    * **Name.** Type the name you'd like to display for the new Source. 
    * **Description** is optional.
-   * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
+   * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -78,9 +78,9 @@ To configure a Local Windows Event Log Source:
 
    * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
-        :::note
+        
         When updating the **Collection should begin** setting you will need to restart the Collector.
-        :::
+       
 
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).

@@ -1,14 +1,18 @@
 ---
 id: cisco-amp-source
 title: Cisco AMP Source
-sidebar_label: Cisco AMP 
+sidebar_label: Cisco AMP
+description: The Cisco AMP Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Amp System Log API.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="90"/>
 
 The Cisco AMP Source provides a secure endpoint to receive data from the Cisco Amp [System Log API](https://api-docs.amp.cisco.com/api_resources?api_host=api.amp.cisco.com&api_version=v1). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is not available in the Fed deployment.
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## States
@@ -17,15 +21,15 @@ A Cisco AMP Source tracks errors, reports its health, and start-up progress. 
 
 A Cisco AMP Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Cisco.
-1. **Collecting**: The Source is actively collecting data from Cisco.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Cisco.
+1. **Collecting**. The Source is actively collecting data from Cisco.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector. On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector. On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
 ![blank hosted source health state example.png](/img/send-data/blank-hosted-source-health-state-example.png)
 
@@ -43,7 +47,7 @@ When you create a Cisco AMP Source, you add it to a Hosted Collector. Before cr
 
 To configure a Cisco AMP Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Cisco AMP**.
 
@@ -70,24 +74,28 @@ To configure a Cisco AMP Source:
 1. **API Region** (Optional). Select the appropriate region of your API Key. The default is `api.amp.cisco.com`.
 1. **API Key**. Provide the API Key you want to use to authenticate collection requests. 
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object  | Yes | Contains the [configuration parameters](#json-configuration) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Cisco AMP"}` for a Cisco AMP Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Cisco AMP Source. | not modifiable |
@@ -96,7 +104,7 @@ The following table shows the **config** parameters for a Cisco
 AMP Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |

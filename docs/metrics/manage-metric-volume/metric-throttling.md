@@ -16,7 +16,7 @@ All accounts are subject to throttling, regardless of plan type (Cloud Flex or C
 The multiplier depends on your daily DPM account limit.   
 
 | DPM Limit | DPM Burst Limit |
-|--|--|
+|:--|:--|
 | Less than or equal to 10K | 5 x DPM Limit |
 | Greater than 10K and less than or equal to 50K  | 4 x DPM Limit |
 | Greater than 50K and less than or equal to 100K | 3 x DPM Limit |

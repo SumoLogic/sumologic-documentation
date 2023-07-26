@@ -1,7 +1,6 @@
 ---
 id: elastic-load-balancing
-title: Sumo Logic App for AWS Elastic Load Balancing
-sidebar_label: AWS Elastic Load Balancing
+title: AWS Elastic Load Balancing
 description: Distributes incoming application traffic across multiple Amazon EC2 instances in the AWS Cloud.
 ---
 
@@ -24,7 +23,7 @@ ELB logs are stored as .log files in the buckets you specify when you enable log
 datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
 ```
 
-For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
+For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/application-load-balancer).
 
 
 ### Sample Log Message
@@ -57,7 +56,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 ### Prerequisites
 
 * Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
-* Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+* Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 * Confirm that logs are being delivered to the Amazon S3 bucket.
 
 To enable logging in AWS:
@@ -99,29 +98,11 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 ```
 
 
-
 ## Installing the AWS ELB App
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ### What if data isn't displaying in all Panels?
 

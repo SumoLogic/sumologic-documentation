@@ -1,6 +1,7 @@
 ---
 id: autosubscribe-arn-destination
 title: Auto-Subscribe ARN (Amazon Resource Name) Destination
+sidebar_label: Amazon Resource Names (ARNs)
 description: You can use an Amazon CloudWatch Log Group subscription to access log events from CloudWatch Logs in real time, and send them to Sumo Logic.
 ---
 
@@ -27,7 +28,7 @@ To deploy LogGroup Lambda Connector, do the following:
 1. In the Serverless Application Repository, search for **sumologic**.
 1. Select **Show apps that create custom IAM roles or resource policies** check box.
 1. Click the **sumologic-loggroup-connector**,link, and then click **Deploy**.
-1. In the **AWS Lambda \> Functions \> Application Settings** panel, configure the parameters as described in [configuring parameters](#configuring-parameters).
+1. In the **AWS Lambda > Functions > Application Settings** panel, configure the parameters as described in [configuring parameters](#configuringparameters) section below.
 
   ![Deploy_LogGroup_Connector.png](/img/send-data/Auto-Subscribe_AWS_ARN_Destination-ApplicationSettings.png)
 
@@ -54,7 +55,8 @@ This section describes the parameters you can configure for the Lambda function.
 * **LogGroupPattern**—A Javascript regex to filter Log Groups. Log Groups that match the regular expression will be subscribed to the connector. Matching is case-insensitive. The placeholder regex Test matches testlogroup, logtestgroup, and LogGroupTest. Replace Test with a  Javascript regular expression that filters your Log Groups as desired.
 
   :::note
-  Don't use forward slashes (/) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
+  * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
+  * For auto-subscribing all log groups, please use regex `.*`.
   :::
 
 * **UseExistingLogs**—Controls whether this function will be used to create subscription filters for existing log groups. Select "True" if you want to use the function for subscribing to existing log groups.

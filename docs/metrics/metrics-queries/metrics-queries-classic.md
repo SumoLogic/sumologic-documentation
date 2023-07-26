@@ -27,7 +27,7 @@ To [create a metrics visualization](../metric-charts/create-metrics-visualizati
 Metrics queries are color-coded to help you identify key elements.
 
 | Color | Purpose |
-|-----------|---------------------------------|
+|:-----------|:---------------------------------|
 | Green     | Tag or Keyword (cluster, 404)   |
 | Blue      | Value (apache/access)           |
 | Purple    | Operators (avg, sum)            |
@@ -184,7 +184,7 @@ Where:
 If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.
 :::
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators#topk), [bottomk](/docs/metrics/metrics-operators#bottomk), and [filter](/docs/metrics/metrics-operators#filter) operators. 
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example, by adding additional `tag=value` pairs to the query. You can also filter the time series returned using the [topk](/docs/metrics/metrics-operators#topk), [bottomk](/docs/metrics/metrics-operators#bottomk), and [filter](/docs/metrics/metrics-operators#filter) operators. 
 
 ### Long-running metric query
 For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.

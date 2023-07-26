@@ -1,12 +1,13 @@
 ---
 id: integrate-google-iam-service
 title: Integrate Sumo Logic with Google Apps (G Suite) IAM
+description: Using SAML, you can use your Google Apps credentials to log into Sumo Logic via SSO.
 ---
 
 ## Availability
 
 | Account Type | Account Level                                                                   |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -21,7 +22,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 ### Configure SSO for a Custom App
 
 1. Log into the Google Admin Console.  
-1. Select **Apps \> SAML Apps**.
+1. Select **Apps > SAML Apps**.
 1. Select a new SAML app to be configured, or click the **+** at the bottom of the page.
 1. On the **Enable SSO for SAML Application** page, select **Setup my own Custom App** at the bottom of the page**.
 
@@ -48,7 +49,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ### Configure Sumo Logic SAML
 
-1. In the Sumo web app, go to **Administration \> Security \> SAML**.
+1. In the Sumo web app, go to **Administration > Security > SAML**.
 1. Click **+ Add Configuration** to create a new configuration.
 
     ![add-config-icon.png](/img/security/add-config-icon.png)
@@ -60,7 +61,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 1. **Issuer.** Enter the **Entity ID** from the **Google IdP Information** dialog.
 1. **X.509 Certificate.** Open the certificate file that you downloaded from the **Google IdP Information** dialog in a text editor. Copy and paste the contents into this field.
 1. **Attribute Mapping**. Select **Use SAML attribute** and type the email attribute name in the text box. 
-1. **SP Initiated Login Configuration**. (Optional) This step has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+1. **SP Initiated Login Configuration**. (Optional) This step has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 
    1. **Authn Request URL.** Enter the **SSO URL** from the **Google IdP Information** dialog.
    1. **Disable Requested Authn Context**. (Optional) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
@@ -84,7 +85,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
     ![img](/img/security/ga_saml_service_provider.png)
 
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
-    * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security"), for example us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com`
+    * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security"), for example, us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com`
     * **Name ID.** Basic Information – Primary Email
     * **Name ID Format.** EMAIL
 
@@ -112,57 +113,4 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ## Create multiple SAML configurations
 
-You can create multiple SAML configurations in Sumo. To create an additional SAML configuration, click the plus (+) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
-
-![saml-config-list.png](/img/security/saml-config-list.png) 
-
-## Require SAML for sign-in
-After you create a SAML configuration, you can require users to sign in using SAML and prevent users from bypassing SAML with a username and password for login. Before you do so, follow the instructions in Check SAML Usage.
-
-### Check SAML Usage
-If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
-
-```sql
-_index=sumologic_audit action=login | count by class, sourceuser
-```
-
-:::important
-This query depends upon data in the Sumo audit index. If the audit index is not enabled, the query will not return results. To enable the index, follow the instructions in Enable and Manage the Audit Index.
-:::
-
-The query results show, for each user that has accessed Sumo over the time range, the number of times they have logged in using SAML or by entering a Sumo username and password. In the class column:
-
-* "SAML" indicates the user signed in using SAML.  
-* "SESSION" indicates the user authenticated by entering a username and password.  
-
-If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
-
-![saml-use-query.png](/img/security/saml-use-query.png) 
-
-### Require SAML for sign-in
-Click Require SAML Sign In to require users to sign in using SAML.
-
-:::tip
-After you lock down SAML, any new users you allowlist will have to select Forgot Password from the login screen to recover their credentials. This is because a SAML-locked down user does NOT have a password.
-:::
-
-![require-saml](/img/security/require-saml.png)
-
-Sumo automatically adds your account under **Allow these users to sign in using passwords in addition to SAML** as an allowlisted user as a preventative measure to ensure you’re still able to access Sumo if you run into issues.
-
-Having only one user able to bypass SAML may not be convenient or practical if you have a global company or a large team. You can add additional allowlisted users by clicking the (+) icon by **Allow these users to sign in using passwords in addition to SAML**:
-
-![allow-users](/img/security/allow-users.png)
-
-We do not recommend denying all users password access to Sumo even if you want to enforce log in by SAML. If you attempt to delete your last remaining allowlisted user, you will receive a warning that this is not a recommended practice:
-
-![prevent-password-based-login](/img/security/prevent-password-based-login.png)
-
-## SAML lockdown limitations
-There are user account changes an admin cannot perform when the **Require SAML Sign In** option is selected:
-
-* You cannot change a user's login email address when SAML is locked down.
-* You cannot reset a user's password when SAML is locked down.
-* If a user's account has been locked as a result of too many failed login attempts, you cannot unlock the account while SAML is locked down.
-
-To make these changes, you must toggle off the **Require SAML Sign In** option, make the updates, and then turn **Require SAML Sign In** back on.
+{@import ../../../reuse/saml.md}

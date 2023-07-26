@@ -13,14 +13,13 @@ A Context Action is an option that a CSE analyst can use to query an external sy
 
 An authorized user can configure Context Actions and assign them to particular Entity types, Record fields, or common IOC types.
 
-* **Context Actions on Entity types**. You can assign a Context Action to one or more Entity types, including custom Entity types. An action assigned to an Entity type will be available on any instance of that type in the **Entities** page, or in Insights or Signals that contain Entities of the selected type. For an example, see the screenshot in [How a user accesses Context Actions](create-cse-context-actions.md).  
+* **Context Actions on Entity types**. You can assign a Context Action to one or more Entity types, including custom Entity types. An action assigned to an Entity type will be available on any instance of that type in the **Entities** page, or in Insights or Signals that contain Entities of the selected type. For an example, see the screenshot in [How a user accesses Context Actions](#how-a-user-accesses-contextactions).  
 
     An action you assign to an Entity type will also be available for Record fields that contain the Entity type. For example, an action assigned to the Hostname Entity type will be available for the `srcDevice_hostname`, `dstDevice_hostname`, and `device_hostname` Record fields.  
      
 * **Context Actions on Record fields**. You can assign a Context Action to selected Record fields, or all Record fields. In the CSE UI, the action will be available on the Context Action menu for selected fields.  
      
-* **Context Actions on IOC Types**. You can assign a Context Action
-    can be assigned to one or more of the following IOC data types:
+* **Context Actions on IOC Types**. You can assign a Context Action to one or more of the following IOC data types:
     * Domain
     * IP Address
     * URL
@@ -39,9 +38,24 @@ In the screenshot below, Context Actions are listed below the built-in **Add to 
 
 If an action name is shown in red font, that indicates that the action depends on a Record field that doesn’t exist.
 
+Watch this micro lesson to learn more about how to use context actions.
+
+<Iframe url="https://www.youtube.com/embed/PrMr3sjaJxA?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Configure a Context Action
 
-1. Click the gear icon and the top of the CSE UI and choose **Context Actions** under **Integrations**.
+1. Click the gear icon at the top of the CSE UI and choose **Context Actions** under **Integrations**.
 1. On the **Context Actions** page click **Create**.
 1. This annotated screenshot shows a previously configured Context Action in edit mode.  
 
@@ -54,7 +68,7 @@ If an action name is shown in red font, that indicates that the action depends 
         For instructions, see:
         * [Create a Sumo Logic search URL](create-cse-context-actions.md#create-a-sumo-logic-search-url)
         * [Create a URL to external service](create-cse-context-actions.md#create-an-url-to-an-external-service)
-    1. If you chose Sumo Logic Query above, the **Timestamp offset** option appears, which set the query time range. The offset can be either -30m or +30m, and it will be applied to the timestamp in the target Record’s [timestamp](../schema/schema-attributes.md) field.
+    1. If you chose Sumo Logic Query above, the **Timestamp offset** option appears, which set the query time range. The offset can be either -30m or +30m, and it will be applied to the timestamp in the target Record’s [timestamp](/docs/cse/schema/schema-attributes) field.
     1. Choose the Entity types to which the Context Action will apply. Use the pulldown to display a list of built-in Entity types, and any custom Entity types defined in your environment. Your Context Action will be available for any Entities of the type or types you select. 
         * Hostname
         * IP address 
@@ -117,15 +131,15 @@ Assuming your CSE instance is configured to communicate with the Sumo Logic plat
 
 ### Timestamp
 
-When you run an action on a CSE Record, if that Record has a [timestamp](../schema/schema-attributes.md) field value, you can insert the timestamp in UTC format into the URL using the `{{timestamp}}` parameter.
+When you run an action on a CSE Record, if that Record has a [timestamp](/docs/cse/schema/schema-attributes) field value, you can insert the timestamp in UTC format into the URL using the `{{timestamp}}` parameter.
 
 ### Formatted timestamp
 
-To insert a Record’s [timestamp](../schema/schema-attributes.md) field value into the action URL as a Unix timestamp, use `{{timestamp [ms]}}`.
+To insert a Record’s [timestamp](/docs/cse/schema/schema-attributes) field value into the action URL as a Unix timestamp, use `{{timestamp [ms]}}`.
 
 ### Timestamp with delta
 
-If desired, you can insert a timestamp value that is some offset of the Record’s [timestamp](../schema/schema-attributes.md) field in the action URL, for example: 
+If desired, you can insert a timestamp value that is some offset of the Record’s [timestamp](/docs/cse/schema/schema-attributes) field in the action URL, for example: 
 
 `{{timestamp-5h}}`
 

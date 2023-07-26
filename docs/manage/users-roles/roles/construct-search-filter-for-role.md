@@ -4,9 +4,10 @@ title: Construct a Search Filter for a Role
 description: Construct a role search filter to control what log data users with that role can access.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles/) page.
 
-This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](create-manage-roles.md) page.
 
 ## Understanding search filters
 
@@ -40,21 +41,21 @@ The role filter above denies access to log data whose  `_sourceCategory` begins
 
 The examples above are simple: they involve a single role, and hence a single role filter. 
 
-Typically however, a Sumo user will have multiple roles. If a user has multiple roles, Sumo ORs the several role filters and prepends that expression to the user’s queries with an AND, as discussed in [Multiple role filters and filter precedence](construct-search-filter-for-role.md).
+Typically however, a Sumo user will have multiple roles. If a user has multiple roles, Sumo `OR`s the several role filters and prepends that expression to the user’s queries with an `AND`, as discussed in [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
   
 ### Search filter basics
 
 The sections below list search filter limitations, and describe how you can use keywords, wildcards, metadata, and logical operators in filters. 
 
-The explanations of the behavior of each example filter assume that no other role filters apply. In practice, you will likely assign multiple roles to users. After you understand the basics of how role filters work, see [Multiple role filters and filter precedence](construct-search-filter-for-role.md).
+The explanations of the behavior of each example filter assume that no other role filters apply. In practice, you will likely assign multiple roles to users. After you understand the basics of how role filters work, see [Multiple role filters and filter precedence](#multiple-role-filters-and-filter-precedence).
 
 #### Search filter limitations
 
 * Role filters cannot include vertical pipes (\|).
 * Role filters apply to log searches, not metric searches.
 * If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role,  LiveTail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* The [_dataTier](../../partitions-data-tiers/searching-data-tiers.md) search modifier is not supported in role filters.
-* For limitations related to the use of Scheduled Views or Partitions in a search filter, see [Using Partitions and Scheduled Views in a search filter](construct-search-filter-for-role.md), below.
+* The [_dataTier](/docs/manage/partitions-data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
+* For limitations related to the use of Scheduled Views or Partitions in a search filter, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
 
 #### Using metadata in a search filter
 
@@ -73,7 +74,7 @@ _collector=HR_Tools AND <user-query>
 #### Using AND and OR in a search filter
 
 :::note
-For information about using logical operators with Partitions and Scheduled Views in role filters, see [Using Partitions and Scheduled Views in a search filter](construct-search-filter-for-role.md), below.
+For information about using logical operators with Partitions and Scheduled Views in role filters, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
 :::
 
 You can use AND and OR in a search filter. For example, this role filter uses OR to grant access to log data from two source categories:
@@ -99,44 +100,6 @@ When a user with that role filter runs a query, Sumo prepends the filter to the 
 ```sql
 (_collector=HR_Tools AND _sourceCategory=insurance) AND <user-query>
 ```
-
-#### Using Partitions and Scheduled Views in a search filter
-
-You can use Scheduled Views or Partitions in a search filter. For example, this role filter uses OR to grant access to log data from two partitions belonging to same tier:
-
-```sql
-(_index=indexA OR _index=indexB) 
-```
-
-When a user with that role filter runs a query, Sumo prepends the filter to the query with an AND:
-
-```sql
-(_index=indexA OR _index=indexB) AND <user-query>
-```
-
-This role filter below uses AND to grant access to log data with the partition “indexA” from the collector named “HR_Tools”:
-
-`_collector=HR_Tools AND _index=indexA`
-
-When a user with that role filter runs a query, Sumo  prepends the role filter to the  query with an AND:
-
-```sql
-(_collector=HR_Tools AND _index=indexA) AND <user-query>
-```
-
-When you use Scheduled Views or Partitions in a search filter,
-keep limitations and considerations in mind:
-
-* The use of a logical NOT to restrict access by Scheduled View or
-    Partition is not supported. For example, you cannot use expressions
-    like the following in a search filter:
-    * `!index = ipso`
-    * `!view = facto`
-* If you refer to multiple Scheduled Views or Partitions in a search
-    filter, you must separate them with an OR. For example, these are
-    not valid search filters:
-    * `_index=A _index = B`
-    * `_index=A AND _index=B `
 
 #### Using keywords in a search filter 
 
@@ -178,22 +141,6 @@ When a user with that role filter runs a query, Sumo runs it like this:
 (_collector=HR* AND violation) AND <user-query>
 ```
 
-This role filter grants access to logs that contain the string “violation” from partitions whose name starts with “app”:
-
-```sql
-_index=app* AND violation
-```
-
-When a user with that role filter runs a query, Sumo runs it like this:
-
-```sql
-(_index=app* AND violation) AND <user-query>
-```
-
-:::note
-You can grant access to multiple Partitions using a wildcard only if the multiple Partitions reside in the same data tier. For example if the filter `app*` matches partitions in two data tiers, it is not a valid search filter.
-:::
-
 #### Using ! as a NOT in a search filter
 
 You can use an exclamation point character (!) in a role search filter to restrict, rather than allow, access. For example, this filter:
@@ -225,7 +172,7 @@ When multiple roles filters are applied to a query, the least restrictive filter
 Assume the following role filters.
 
 | Role | Filter |
-|----------|--------------------------------------------|
+|:----------|:--------------------------------------------|
 | Role A   | `_source="GCP Audit" AND _collector="GCP"` |
 | Role B   | `_sourceCategory="Vx*"`                    |
 
@@ -247,7 +194,7 @@ The combined filters enable access to log data whose `_source` tag is “GCP Aud
 Assume the following role filters.
 
 | Role | Filter |
-|----------|-------------------|
+|:----------|:-------------------|
 | Role A   | `_collector=fee*` |
 | Role B   | `!_collector=fi*` |
 
@@ -268,7 +215,7 @@ When a user with Roles A and B runs a query, Sumo combines the two filters with 
 Assume the following role filters.
 
 | Role | Filter |
-|----------|----------------------------------|
+|:----------|:----------------------------------|
 | Role A   | `_sourceCategory=analytics-lab*` |
 | Role B   | `_sourceCategory=analytics*`     |
 
@@ -290,7 +237,7 @@ When a user with Roles A and B runs a query, Sumo combines the two filters with 
 Assume the following role filters.
 
 | Role | Filter |
-|----------|------------------------------|
+|:----------|:------------------------------|
 | Role A   | `_collector=prod*`           |
 | Role B   | `!_sourceCategory=*shoguns*` |
 
@@ -311,7 +258,7 @@ Role B is the least restrictive. Users with the combined role filter will be abl
 Assume the following role filters.
 
 | Role | Filter |
-|----------|----------------------|
+|:----------|:----------------------|
 | Role A   | `_index=sumologic*`  |
 | Role B   | Blank search filter  |
 

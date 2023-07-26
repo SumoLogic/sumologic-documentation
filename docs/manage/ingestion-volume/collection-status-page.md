@@ -15,7 +15,7 @@ When you first install a Collector it is common to configure Sources to collect 
 * **B.** Select how many columns of Collectors are displayed.  
 * **C.** Select the time range of data volume to view.
 
-To view the Status page, go to **Manage Data** \> **Collection** \> **Status**.
+To view the Status page, go to **Manage Data** > **Collection** > **Status**.
 
 ## Change the scale or timeframe for a Collector
 

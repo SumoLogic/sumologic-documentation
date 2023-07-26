@@ -4,10 +4,7 @@ title: concat Search Operator
 sidebar_label: concat
 ---
 
-
-
-
-The concat operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.
+The `concat` operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.
 
 In another example, a log message has a table with the elements of a mailing address, but separated into different fields such as `Street_Number`, `City`, `State`, and `Zip_Code`. You can use the concatenate operate to assemble the fields into a new field called `Mailing_Address` for a customer.
 
@@ -20,7 +17,7 @@ In another example, if you had a log message of an incident with four fields, su
 concat(<field1>, <field2>[, <field3>, ...]) as <field>
 ```
 
-**Rules**
+## Rules
 
 * You must define a name for the new field to concatenate the named fields. There is no default.
 * You can use punctuation and spaces in quotes to concatenate strings in a readable way.
@@ -28,9 +25,9 @@ concat(<field1>, <field2>[, <field3>, ...]) as <field>
 * The operator allows 2 to 16 input fields. To use more than 16 inputs, you can combine operators. See example.
 * AND and OR are not supported.
 
-**Examples**
+## Examples
 
-#### Concatenate fields with and without punctuation
+### Concatenate fields with and without punctuation
 
 If you had the following fields: field1 = time, field2 = 4, field3 = logs.
 
@@ -50,7 +47,7 @@ If you add punctuation and spaces in quotes, like this:
 
 you'd get: `new_string = time 4 logs`
 
-#### Concatenate fields to create an IP Address
+### Concatenate fields to create an IP Address
 
 In this example, to create an IP address out of separate message log
 fields, concatenate four number fields with punctuation to complete a
@@ -60,7 +57,7 @@ new field named `ip_address`.
 ... | concat(octet1, ".", octet2, ".", octet3, ".", octet4) as ip_address
 ```
 
-#### Concatenate first and last names
+### Concatenate first and last names
 
 In this example, you'd concatenate fields for a first and last name
 to create a new field called **fullName**.
@@ -69,7 +66,7 @@ to create a new field called **fullName**.
 ... | concat(firstName, " ", lastName) as fullName
 ```
 
-#### Formatting dates
+### Formatting dates
 
 You can use the Concat operator to format dates, as shown:
 
@@ -77,7 +74,7 @@ You can use the Concat operator to format dates, as shown:
 ... | concat(month, "/", day, "/", year) as date
 ```
 
-#### Concatenate more than 16 inputs
+### Concatenate more than 16 inputs
 
 To use more than 16 inputs with the concat operator, you can combine operators, using one of the following formats:
 
@@ -91,6 +88,6 @@ To use more than 16 inputs with the concat operator, you can combine operators, 
 ... | concat(concat(field1, field2, ...), field17, field18,...) as concatenated_fields
 ```
 
-#### See Also
+## Formatting strings
 
-For information on formatting strings, see [Format](#format) operator.
+For information on formatting strings, see the [`format`](format.md) operator.

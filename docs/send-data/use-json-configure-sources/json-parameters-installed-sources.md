@@ -18,7 +18,7 @@ Each Source can have its own unique fields in addition to the generic fields lis
 ## Log source parameters for installed collectors
 
 |Field Type | Type Value |
-|--|--|
+|:--|:--|
 | [Local File Source](#local-filesource) | LocalFile |
 | [Remote File Source](#remote-filesource) | RemoteFileV2 |
 | [Local Windows Event Log Source](#local-windows-event-logsource) | LocalWindowsEventLog |
@@ -34,14 +34,14 @@ Each Source can have its own unique fields in addition to the generic fields lis
 
 ### Local file source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources),
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types),
 the following parameters are for local file source. 
 
 | Parameter | Type | Required? | Default | Description |  Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |  | LocalFile	not | modifiable |
 | `pathExpression` | String | Yes |  | A valid path expression (full path) of the file to collect. For files on Windows systems (not including Windows Events), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (\). If you are collecting from Windows using CIFS/SMB, see Prerequisites for Windows Log Collection. Use a single asterisk wildcard [*] for file or folder names. Example:[var/foo/*.log]. Use two asterisks [**]to recurse within directories and subdirectories. Example:  [var/**/*.log]. | modifiable |
-| `denylist` | String | Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
+| `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
 | `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
 
 Local File Source JSON example with `cutoffTimestamp`:
@@ -69,10 +69,10 @@ Local File Source JSON example with `cutoffTimestamp`:
 
 ### Remote file source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for remote file source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for remote file source.
 
 | Parameter | Type | Required? | Default | Description |  Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |   | RemoteFileV2 | not modifiable |
 | `remoteHosts` | List   | Yes |   | Host name of remote machine. Make sure to enclose IP addresses in brackets. Example: `["192.168.0.1","10.0.1.16", "192.168.1.234"]`. | modifiable     |
 | `remotePort` | Int | Yes |   | Port of remote machine (SSH) | modifiable     |
@@ -116,10 +116,10 @@ Remote file source JSON example:
 
 ### Local Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for local Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for local Windows event log source. The Source Host (`_sourceHost`) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType`     | String       | Yes |   | LocalWindowsEventLog | not modifiable |
 | `logNames`       | List         | Yes |   | List of Windows log types to collect. For example, `"Security"` or  `"Application"`.  To obtain the list of available logs on a given machine, use the PowerShell command `Get-WinEvent -ListLog *` or the legacy command `wevtutil el`. We do not support `"Analytic"` or `"Debug"` ETW logs. | modifiable |
 | `renderMessages` | Boolean      | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) (`false`). | modifiable |
@@ -148,10 +148,10 @@ Local Windows event log source JSON example:
 
 ### Remote Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), except hostName, the following parameters are for remote Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for remote Windows event log source. The Source Host (`_sourceHost`) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |  | RemoteWindowsEventLog | not modifiable |
 | `domain` | String | Yes |  | Windows domain from which logs will be created. | modifiable |
 | `username` | String | Yes |  | Username needed to connect to the remote machine. | modifiable |
@@ -191,10 +191,10 @@ Remote Windows event log source JSON example:
 
 ### Local Windows performance source 
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for local Windows performance source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for local Windows performance source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |   | LocalWindowsPerfMon | not modifiable |
 | `wmiQueries`    | List | Yes |   | List of queries to be executed. Each query is an object with two fields: name and query | modifiable |
 
@@ -224,10 +224,10 @@ Example response:
 
 ### Remote Windows performance source 
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for remote Windows performance source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for remote Windows performance source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String   | Yes | RemoteWindowsPerformance | not modifiable |
 | `domain` | String   | Yes | Windows domain from which logs will be created. | modifiable |
 | `remoteUser` | String   | Yes | User name needed to connect to the remote machine. |   |
@@ -314,10 +314,10 @@ This example shows how to use WMI queries to collect performance metrics from W
 
 ### Windows Active Directory Source 
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Windows Active Directory Inventory Source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for a Windows Active Directory Inventory Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType`     | String   | Yes | ActiveDirectory | not modifiable |
 | `nameSuffixes`   | String   | No | Semi-colon separated list of Distinguished Name suffixes. When set, the source won't ingest any records that contain the Distinguished Name suffixes specified. | modifiable     |
 | `filter` | String   | No | Specifies a filter to use when searching for Domain Objects in Active Directory. | modifiable     |
@@ -355,14 +355,14 @@ Windows Active Directory Inventory Source JSON example:
 
 ### Syslog source
 
-Syslog Sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources)` multilineProcessingEnabled`,` useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
+Syslog Sources do not support Multiline Detection, which means the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types)` multilineProcessingEnabled`,` useAutolineMatching` and `manualPrefixRegexp` are not applicable. If you provide these in the Syslog Source configuration they are ignored.
 
 :::note
 Syslog sources break a syslog message on each newline character and send each line as individual messages to the service.
 :::
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String   | Yes |   | Syslog | not modifiable |
 | `protocol` | String   | Yes |   | Protocol that syslog should use.  Both UDP and `TCP` are supported. | modifiable     |
 | `port` | Integer  | Yes |   | Port that syslog should use to connect to the machine.  Recommended ports: `514` or `1514` | modifiable |
@@ -385,10 +385,10 @@ Syslog source JSON example: 
 
 ### Script source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for script source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for script source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String   | Yes |   | Script | not modifiable |
 | `commands` | List | Yes | `[ ]` | List of command line arguments. | modifiable     |
 | `file` | String   | No | null | Path to script file to run | modifiable     |
@@ -421,13 +421,13 @@ Script Source JSON Example: 
 
 ### Docker log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for Docker log source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for Docker log source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String   | Yes |   | DockerLog |   |
 | `uri` | String   | Yes |   | URI of the Docker daemon. | modifiable |
-| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](docs/send-data/installed-collectors/sources/docker-sources.md). | modifiable |
+| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources.md). | modifiable |
 | `allContainers` | Boolean  | Yes |   | Flag indicating whether the Source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`). | modifiable |
 | `certPath` | String   | `*` |   | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
 | `collectEvents` | Boolean  | Yes |   | Must be set to `true` to collect the Docker logs. |   |
@@ -476,10 +476,10 @@ Example source JSON with specified containers:
 
 ### Docker stats source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for Docker stats source.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for Docker stats source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |  | DockerStats | not modifiable |
 | `contentType` | String | No |  | If value is empty or does not exist, it’s a json-based source, if value is “DockerMetrics”, it’s a metrics source. | modifiable |
 | `metrics` | String | Array | No | All metrics	List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see Docker metrics definitions. When omitted, all available host metrics will be collected. | modifiable |
@@ -537,7 +537,7 @@ Example source JSON to collect metrics:
 ## Metric source parameters for installed collectors
 
 |  Field Type |  Type Value |
-|--|--|
+|:--|:--|
 | [Host metrics Source](#host-metrics-source) | SystemStats |
 | [Streaming Metrics Source](#streaming-metrics-source) | StreamingMetrics |
 
@@ -546,7 +546,7 @@ Example source JSON to collect metrics:
 The following parameters are for a host metrics source. 
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field _source. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
@@ -600,4 +600,4 @@ Graphite contentType JSON example: 
 See the following topics for additional information:
 * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
 * [JSON Source parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources).
-* [View or download Collector or Source JSON configuration](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.
+* [View or download Collector or Source JSON configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) from Sumo Logic.

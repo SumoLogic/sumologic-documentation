@@ -1,7 +1,6 @@
 ---
 id: lambda
-title: Sumo Logic App for AWS Lambda
-sidebar_label: AWS Lambda
+title: AWS Lambda
 description: The AWS Lambda App helps you monitor the operational and performance trends in all the Lambda functions in your account. The App uses two data sources - AWS CloudWatch logs for Lambda, and CloudTrail Lambda Data Events.
 ---
 
@@ -134,7 +133,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | top 10 caller by Invocations
 ```
 
-```sql title="Error (Count)(Cloudwatch metric Based)"
+```sql title="Error (Count)(CloudWatch metric Based)"
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
@@ -144,47 +143,60 @@ This section provides instructions for setting up log and metric collection.
 
 ### Collect Amazon CloudWatch Logs
 
-Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
+Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch. You can choose any of them to collect logs.
+- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended).
+- **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
-* You can configure collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo-provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
-* To configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function.md).
-* While configuring the cloud Watch log source, following Field can be added in the source:
-    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-    * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
-    * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
+* While configuring the cloudwatch log source, following Fields can be added in the source:
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
+    * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
+    * Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
 
 ### Collect CloudTrail Lambda Data Events
 
 To configure a CloudTrail Source, perform these steps:
 
-1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
-5. While configuring the cloud trail log source, following Field can be added in the source:
-    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+5. While configuring the cloud trail log source, the following field can be added to the source:
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
 
 
 ### Collect Amazon CloudWatch Metrics
 
-To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+Sumo Logic supports collecting metrics using two source types:
 
-AWS Namespace tag to filter in source for Lambda will be - **AWS/Lambda**
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended)
+	or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-* **Metadata: **Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+:::note
+Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
+:::
+
+* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 
 Continue with the process of [enabling Provisioned Concurrency configurations](#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
 
 
 ### Enable Provisioned Concurrency configurations for Lambda functions
 
-AWS Lambda provides Provisoned Concurrency for greater control over the start up time for Lambda functions. When enabled, Provisioned Concurrency keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
+AWS Lambda provides Provisoned Concurrency for greater control over the start up time for Lambda functions. When enabled, [Provisioned Concurrency](https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html) keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
 
-To collect these metrics in Sumo Logic, do the following:
+To collect the metrics in Sumo Logic, follow the steps below:
 
-1. Complete [Step](#Collect-Logs-for-the-AWS-Lambda-App#collect-amazon-cloudwatch-metrics).
-2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management console, as shown in the following example:
+1. Jump to the [Collect Amazon CloudWatch Metrics](#collect-amazon-cloudwatch-metrics) section and complete the steps as described.
+2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management Console, as shown in the following example.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Configure-Provisioned-Concurrency.png')} alt="Configure Provisioned Concurrency" />
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
 
@@ -224,6 +236,7 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 
 These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metrics-queries), as shown in the following example:
 
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Search-Provisioned-Concurrency-Metrics.png')} alt="Search Provisioned Concurrency Metrics" />
 
 ### Field in Field Schema
 
@@ -257,7 +270,7 @@ Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
 ```yml
 Rule Name: AWS Accounts
@@ -295,13 +308,13 @@ Parse Expression:
 
 ## Installing the AWS Lambda App
 
-Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app:
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-aws-lambda-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app, follow the steps below:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     * Click **Add to Library**.
 

@@ -4,9 +4,7 @@ title: cat Search Operator
 sidebar_label: cat
 ---
 
-
-
-You can use the cat operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.
+You can use the `cat` operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.
 
 ## Syntax
 
@@ -17,6 +15,9 @@ cat path://”<path-to-table>”
 Where:
 
 * `path-to-table` is the path to the lookup table in the Sumo Logic Library.
+
+
+## Example
 
 For example: 
 

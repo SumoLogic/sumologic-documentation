@@ -19,7 +19,7 @@ The AWS Network Load Balancer app uses the following logs and metrics:
 
 Active Flows (Connections) by Load Balancer:
 
-```
+```sql
 Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum account=dev region=us-east-1 LoadBalancer=* | sum by account, region, namespace, LoadBalancer
 ```
 

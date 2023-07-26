@@ -1,21 +1,24 @@
 ---
 id: library
 title: Managing Your Sumo Logic Library
-sidebar_label: Manage Your Library
+sidebar_label: Managing your Library
+description: Managing your Library in Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can save, share, and manage Searches, Dashboards, Apps, and other Sumo Logic content in the Library. The Library also allows you to launch searches and Dashboards with a single click—speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
 Open the **Library** page to expose additional search options and to organize and manage Library contents.
 
 To open the **Library** page, click the **Library** (folder) icon at the top of the UI.
+
 ![search select](/img/get-started/library/library-select.png)
 
 You'll see two **View as** options:
 
-* **Me**: See your own saved searches and dashboards.
-* **Content Administrator**: Available if you have a Sumo role that grants you "Manage Content" capability, this option turn off your personal content in the Library and allow you to see the entire Sumo file tree.  In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode.
+* **Me**. See your own saved searches and dashboards.
+* **Content Administrator**. Available if you have a Sumo role that grants you "Manage Content" capability, this option turns off your personal content in the Library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode.
 
 Once you've made your choice of what you want to see, you can enter a string in the **Search** bar to display matching search results.
 
@@ -23,30 +26,14 @@ Once you've made your choice of what you want to see, you can enter a string in 
 
 ## Explore the Library
 
-Open the **Library** page to expose additional search options and to organize and manage Library contents.
-
 To open the **Library** page, click the **Library** icon at the top of the UI.
 
-![library icon](/img/get-started/library/library-icon.png)
-
-Select **Personal** to select your own saved searches and dashboards, or **Org** to select those shared by others in your organization.
-
-Do the following from the **Library** page:
+![library icon](/img/reuse/library-icon.png)
 
 * Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
-* Enter a search string to display matching search results.
-
-    ![search-string.png](/img/get-started/library/search-string.png)  
-     
-* Narrow your search by selecting an option for **Created by** or **Shared with**. As you make your selections, the constructed query is entered into the search field and additional options are presented.  
-
-    ![create-by](/img/get-started/library/create-by.png)  
-     
-* Select a **Quick Search** option to perform a quick search for log searches, folders, or Dashboards.  As you make your selections, the query you have constructed is entered into the search field.  
-
-    ![quick-search](/img/get-started/library/quick-search.png)
-
-
+* Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
+* Narrow your search by selecting an option for **Created by** or **Shared with**. As you make your selections, the constructed query is entered into the search field and additional options are presented. <br/>![create-by](/img/get-started/library/create-by.png)  
+* Select a **Quick Search** option to perform a quick search for log searches, folders, or Dashboards.  As you make your selections, the query you have constructed is entered into the search field. <br/> ![quick-search](/img/get-started/library/quick-search.png)
 
 ## Organize the Library
 
@@ -62,7 +49,7 @@ To get information on items in the library, click an item in the Library to open
 
 ![get-info](/img/get-started/library/get-info.png)
 
-Do any of the following from the Information panel in the Library:
+Do any of the following from the information panel in the Library:
 
 * Click **Edit** to modify the name or description of the item.
 * Click the **Trash** icon to delete the item from the Library. Deleting an item from the library means that the search, Dashboard, or folder is no longer available.
@@ -84,7 +71,7 @@ The left nav gives quick access to all the items in the library. Click an item t
 
 Select **Personal** to show your own saved searches and dashboards.
 
-![personal-tab](/img/get-started/library/personal-tab.png)
+<img src={useBaseUrl('img/get-started/library/personal-tab.png')} alt="personal-tab.png" width="250"/>
 
 Select **Shared With** to show the searches and dashboards shared with others in your organization.
 
@@ -104,46 +91,28 @@ The left nav also includes shortcut tabs.
 To add a folder to the Library:
 
 1. Click the **Library** icon ![library icon.png](/img/reuse/library-icon.png) at the top of the UI.
-1. Click **New Folder**.
-
-    ![folder](/img/get-started/library/AddFolder2.png)
-
-1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. 
-
-    ![folder](/img/get-started/library/AddFolder.png)
-
+1. Click **New Folder**. <br/>![folder](/img/get-started/library/AddFolder2.png)
+1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
 
 ## Move Content in Personal Folders
 
-In your Personal Folder, you can move your saved content, for example, to organize searches and Dashboards into subfolders.
+You can organize your saved content into subfolders in your Personal Folder.
 
-To move content:
-1. Select the item you want to move, click the details icon to the right of the name, and from the menu, select **Move**.
-1. In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.<br/>![moveDashboard.gif](/img/get-started/library/moveDashboard.gif)
+1. Mouse over the icon next to a Library item you want to move to display the checkbox. <br/><img src={useBaseUrl('img/get-started/library/checkbox.png')} alt="checkbox.png" width="<insert-pixel-number>"/>
+1. Click the checkbox to select the item.
+1. Select other items as desired.
+1. After selecting the content you want to move, click the three-dot more options menu and select the **Move** option.<br/><img src={useBaseUrl('img/get-started/library/move-option.png')} alt="move-option.png" width="<insert-pixel-number>"/>
+1. In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.<br/><img src={useBaseUrl('img/get-started/library/select-folder.png')} alt="select-folder.png" width="<insert-pixel-number>"/>
+1. The item(s) will be moved and appear in the new location.
 
-The item(s) will be moved and appear in the new location.
-
-When your content is moved, you’ll need to click the folder where it is now located to view its contents in the list on the right.
+When your content is moved, you’ll need to click the new folder location to view its contents in the list on the right.
 
 
 ## Add Subfolders
 
 1. Create a subfolder by clicking **New Folder** in your Personal folder.<br/>  ![sub folder](/img/get-started/library/AddNewSubFolder.png)
 1. In the **Add Folder** dialog, enter **My Apps**, and click **Add**. The new subfolder is added to the folder list.
-
-
-## Move Content into Subfolders
-
-Now you can organize your saved content in the new subfolders.
-
-1. From your Personal folder, select the item you want to move. Click the details icon and select **Move**.
-1. In the **Move Item** dialog, select your desired folder and click **Move**.<br/>  ![move](/img/get-started/library/MoveFile.png)
-1. Do the same for any other Apps you have installed. They will be moved and then appear under the **My Apps** folder.
-1. Now move any searches or Dashboards that deal with errors into the new **Errors** subfolder. You can tell what the list items are from their icons: a search uses a magnifying glass icon, a Dashboard uses a picture icon, and an App uses a folder icon.    
-
-When your saved content is organized, you’ll need to click the subfolder to view its contents in the list on the right.
-
 
 ## Share Subfolders
 
@@ -170,13 +139,8 @@ There is a limit of 20 favorite items per user.
 ### Mark content as favorite
 
 1. Go to the **Library.**
-1. Click the star icon to the left of your search, Dashboard, app, or folder.
-
-    ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
-
-1. The star darkens, and the item now appears on the **Favorites (star)** tab. 
-
-    ![favoritestab.png](/img/get-started/library/favoritestab.png)
+1. Click the star icon to the left of your search, Dashboard, app, or folder. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
+1. The star darkens, and the item now appears on the **Favorites (star)** tab. <br/>![favoritestab.png](/img/get-started/library/favoritestab.png)
 
 ### Perform actions on favorites
 
@@ -190,10 +154,9 @@ If the content was created by another user and published, you can perform the fo
 
 ### Unfavorite content
 
-1. Go to **Library \> Favorites**.
+1. Go to **Library > Favorites**.
 1. De-select the star icon to the left of your search, dashboard, app, or folder.
 1. A dialog displays showing that you unfavorited the item, and the item is removed from the **Favorites** folder.
-
 
 
 ## Search the Library
@@ -205,7 +168,7 @@ You can search on the:
 * Content name
 * Content description
 
-In the Library search field, you can use keywords and wildcards (\*), though leading wildcard searches (\*ab) are not supported. You can add one or more keywords. With multiple keywords, the default assumed operator is AND, not OR.
+In the Library search field, you can use keywords and wildcards (\*), though leading wildcard searches (*ab) are not supported. You can add one or more keywords. With multiple keywords, the default assumed operator is AND, not OR.
 
 You can also search for Content types in the **Personal** folder using
 the following prefixes:
@@ -262,21 +225,11 @@ There is a known issue that may cause Pinned Searches to be lost when Sumo Logic
 #### Pin and unpin a search
 
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and click **Pin** from the provided options.  
-
-    ![pin search .png](/img/get-started/library/pin-search-option.png)
-
-    A message displays that tells you where you can find it later in the Library.  
-
-    ![pinmessage.png](/img/get-started/library/pinmessage.png)
-
-    The Pinned Search is named by default with the name of the search tab. 
-
+1. Click the three-dot icon and click **Pin** from the provided options. <br/> <img src={useBaseUrl('img/get-started/library/pin-search-option.png')} alt="pin-search-option.png" width="325"/>
+1. A message displays that tells you where you can find it later in the Library. The Pinned Search is named by default with the name of the search tab. <br/>![pinmessage.png](/img/get-started/library/pinmessage.png)
 1. To change the name of the pinned search, double-click the **Search** tab to activate the name field and enter a new name.
 1. To preserve the pinned search, follow the steps in Save a pinned search.
-1. To unpin the search, click **Unpin** in the menu bar.
-
-    ![unpin search .png](/img/get-started/library/unpin-search-option.png)
+1. To unpin the search, click **Unpin** in the menu bar. <br/><img src={useBaseUrl('img/get-started/library/unpin-search-option.png')} alt="pin-search-option.png" width="300"/>
 
 #### Save a pinned search
 
@@ -286,9 +239,7 @@ When you save a pinned search, it appears in your personal folder in the left na
 1. In the **Search** tab, click the three-vertical dot icon and click **Save As** from the provided options. The Save Item dialog appears.
 1. Enter a unique **Name** in the text field. In our example below, we entered Invoke Frequency.
 1. Optionally, enter a **Description**.
-1. Click **Save**.
-
-![Save_As_Search_dialog.png](/img/get-started/library/Save_As_Search_dialog.png)
+1. Click **Save**. <br/>![Save_As_Search_dialog.png](/img/get-started/library/Save_As_Search_dialog.png)
 
 The search is saved to your **Personal** folder.
 
@@ -312,10 +263,7 @@ To rename a pinned search:
 To remove a search from the pinned search List:
 
 1. Hover over the search, then click the three-dots to the right of the name.
-1. Click **Unpin**.   
-
-    ![unpin.png](/img/get-started/library/unpin.png)
-
+1. Click **Unpin**.  <br/> ![unpin.png](/img/get-started/library/unpin.png)
 1. In the **Confirm** dialog, click **OK**.
 
 The search is removed from the list of Pinned Searches.
@@ -324,7 +272,7 @@ Removing an instance of a Saved Search from the list in the Pinned Searches tab 
 
 ### Share a saved search from the Library
 
-Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the Library in the **Org \> \[Your Name\] **folder.
+Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the Library in the **Org > [Your Name]** folder.
 
 To share a search and its results, see [Share a Link to a Search](/docs/search/get-started-with-search/search-basics/share-link-to-search). 
 
@@ -339,39 +287,18 @@ Searches and Dashboards can be shared and unshared at any time. Additionally, o
 
 #### Share
 
-1. In your **Personal** folder, highlight a search and click the share icon.
-
-    ![Share](/img/get-started/library/share-icon.png)
-
-1. On the sharing popup, click in the **Share this content...** field.
-
-    ![share-with-users-roles.png](/img/get-started/library/share-with-users-roles.png)
-
-1. You can share the search with **Your Entire Organization**, or any combination of roles and users
-
-    ![roles-users-list.png](/img/get-started/library/roles-users-list.png)
-
-1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels).
-
-    ![permission-levels.png](/img/get-started/library/permission-levels.png)
-
+1. In your **Personal** folder, highlight a search and click the share icon. <br/>![Share](/img/get-started/library/share-icon.png)
+1. On the sharing popup, click in the **Share this content...** field. <br/> ![share-with-users-roles.png](/img/get-started/library/share-with-users-roles.png)
+1. You can share the search with **Your Entire Organization**, or any combination of roles and users. <br/>![roles-users-list.png](/img/get-started/library/roles-users-list.png)
+1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels). <br/> ![permission-levels.png](/img/get-started/library/permission-levels.png)
 1. You can share the search with a different set of users and roles, and different permission level. To do so, click **Add users with another access level**, and repeat steps 3 and 4.
 1. Click **Share**. 
 
 #### Unshare
 
-1. In the Library, highlight a search and click the share icon.
-
-    ![Unshare.png](/img/get-started/library/share-icon.png)
-
-1. Click **See who has access**.
-
-    ![Only Me.png](/img/get-started/library/who-has-access.png)
-
-1. Click the trash can icon to unshare the search with a user or role.
-
-    ![unshare.png](/img/get-started/library/unshare.png)
-
+1. In the Library, highlight a search and click the share icon. <br/>![Unshare.png](/img/get-started/library/share-icon.png)
+1. Click **See who has access**.<br/>![Only Me.png](/img/get-started/library/who-has-access.png)
+1. Click the trash can icon to unshare the search with a user or role.<br/>![unshare.png](/img/get-started/library/unshare.png)
 1. Click **Save**.
 
 

@@ -20,7 +20,7 @@ Other use cases require much less frequent data analysis. Here, we’re talking 
 Sumo Logic’s *Data Tiers* provide a comprehensive solution for all types of data that an organization has, low touch, high touch and everything in between, at an economical price. Data Tiers provide tier-based pricing based on your planned usage of the data you ingest. 
 
 :::note
-Data Tiers must be enabled on your [Cloud Flex](docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits](docs/manage/manage-subscription/cloud-flex-credits-accounts.md) plan to be able to access this functionality. Infrequent Tier, described below, is only available on Cloud Flex Credits. For more information, contact your Sumo Logic Account Representative.
+Data Tiers must be enabled on your [Cloud Flex](/docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits](/docs/manage/manage-subscription/cloud-flex-credits-accounts.md) plan to be able to access this functionality. Infrequent Tier, described below, is only available on Cloud Flex Credits. For more information, contact your Sumo Logic Account Representative.
 :::
 
 ## Types of Data Tiers 
@@ -51,7 +51,7 @@ After a partition is created in a given tier, you can't change its tier. If you 
 How you can search and use your ingested data varies by the Data Tier it resides in, as described in the following table. 
 
 | Feature support | Continuous Tier | Frequent Tier | Infrequent Tier |
-| -- | -- | -- | -- |
+| :-- | :-- | :-- | :-- |
 | Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Interactive queries (UI) | ![check](/img/reuse/check.png)<br/>Partitions can be specified, but are optional. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |
@@ -75,11 +75,11 @@ Choosing between Frequent and Infrequent for a data set depends on how frequentl
 
 For example, for a large development team with hundreds of developers, it is better to send development and test logs to the Frequent Tier if your developers are going to access it often during development. 
 
-In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur  infrequently, for example only a couple of times a week, are better off in the Infrequent tier to keep the cost of ownership low.  
+In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur infrequently, for example, only a couple of times a week, are better off in the Infrequent tier to keep the cost of ownership low.  
 
 ## Assigning data to a Data Tier
 
-You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](docs/manage/partitions-data-tiers/create-edit-partition.md).
+You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md).
 
 ## Searching Data Tiers 
 

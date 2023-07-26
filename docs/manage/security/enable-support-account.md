@@ -1,9 +1,8 @@
 ---
 id: enable-support-account
 title: Enable a Support Account
+description: Support accounts help you address support issues when they arise.
 ---
-
-#
 
 Administrators can decide to enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, helping those agents to review and resolve complex issues. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 
@@ -29,12 +28,9 @@ just disable, then re-enable the support account and the Sumo Logic support user
 
 To enable a support account:
 
-1. Go to **Administration** \> **Security** \> **Policies**.
-
+1. Go to **Administration** > **Security** > **Policies**.
 1. Next to **Support Account Access**, select the **Enable** check box.
-
 1. Select a duration for the Support Account Access. This determines how long the account will be enabled. You can choose from the following options depending on your needs and comfort level with our access:
-
     * 1 day (default)
     * 1 week (recommended for most issues)
     * 1 month
@@ -42,7 +38,3 @@ To enable a support account:
     * Indefinite (please check with your own Security or Compliance team before selecting)
 
 To disable the support account, deactivate the **Enable** check box.
-
-## Internal Only: Support Accounts and Third-Party Services
-
-Support Accounts are not allowed to log into third-party services, such as the Sumo Logic Support site, Community, or DocHub. Instead, Support Accounts are redirected to third-party services without authentication. This is to prevent a situation where, for example, Support tickets are created, but the user cannot be identified.

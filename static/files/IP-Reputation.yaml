@@ -1,0 +1,151 @@
+integration: IP Quality Score
+name: IP Reputation
+type: Enrichment
+script:
+  code: |
+    import os
+    import sys
+    import json
+    import urllib3
+    import argparse
+    import requests
+
+    # disabling all urllib3 warnings.
+    urllib3.disable_warnings()
+
+
+    # For security reason all action params are passed to docker container as Environment variable with variable name equal
+    # to the id specified into yaml. we need to have a class to manage Environment variable
+    class EnvDefault(argparse.Action):
+        def __init__(self, required=True, default=None, **kwargs):
+            env_var = kwargs.get("dest")
+            default = os.environ.get(env_var, default) if env_var in os.environ else default
+            required = False if required and default else required
+            super(EnvDefault, self).__init__(default=default, required=required, **kwargs)
+
+        def __call__(self, parser, namespace, values, option_string=None):
+            setattr(namespace, self.dest, values)
+
+
+    try:
+        
+        # Object for parsing command line strings into Python objects.
+        parsers = argparse.ArgumentParser()
+        parsers.add_argument('--api_url', help='API URL, REQUIRED', required=True, action=EnvDefault)
+        parsers.add_argument('--api_key', help='API Key, REQUIRED', required=True, action=EnvDefault)
+        parsers.add_argument('--timeout', help='timeout', required=False, action=EnvDefault)
+        parsers.add_argument('--verify', help='verify', required=False, action=EnvDefault)
+        parsers.add_argument('--proxy_url', help='proxy_url', required=False, action=EnvDefault)
+
+        parsers.add_argument('--ip', help='ip, REQUIRED', required=True, action=EnvDefault)
+        args, unknown = parsers.parse_known_args()
+        # protocol and hostname to the URL of the proxy.
+        proxies = {'http': args.proxy_url, 'https': args.proxy_url} if args.proxy_url is not None else None
+        try:
+            # How long to wait for the server to send data before giving up, as a float.
+            timeout = float(args.timeout)
+        except (ValueError, TypeError):
+            timeout = 180.0
+        # this controls whether we verify the server's TLS certificate or not
+        verify = args.verify == 'true'
+        # Dictionary of HTTP Headers to send with the Request.
+        headers = {
+            # IPQS-KEY (Additional parameters passed as either GET or POST
+            'IPQS-KEY': args.api_key
+        }
+        # Dictionary object to send in the body of the Request.
+        payload = {
+            'ip': args.ip
+        }
+        # API endpoint details at https://www.ipqualityscore.com/documentation/proxy-detection/overview
+        endpoint = "{host}/api/json/ip".format(host=args.api_url.rstrip('/'))
+        session = requests.Session()
+        # Sends a post request
+        response = session.post(endpoint, headers=headers, data=payload, timeout=timeout, verify=verify, proxies=proxies)
+        # HTTPError if one occurred
+        response.raise_for_status()
+        # Returns the json-encoded content of a response
+        response = response.json()
+        # check if the 'success' is True or False, was the request successful?
+        success = response.get("success")
+        if not success:
+            # When response 'success' is False, we need to get correct error message
+            err_msg = response.get("message")
+            # A generic status message, either success or some form of an error notice.
+            if err_msg is not None:
+                # raise an in case we proved wrong API key
+                raise Exception(str(err_msg))
+        print(json.dumps(response))
+        exit(0)
+    except Exception as e:
+        # write an Exception
+        sys.stderr.write(str(e))
+        exit(-1)
+fields:
+  - id: ip
+    label: IP
+    type: text
+    required: true
+    incident_artifacts: true
+    observables:
+      - ipaddress
+output:
+  - path: success
+    type: text
+  - path: message
+    type: text
+  - path: fraud_score
+    type: text
+  - path: country_code
+    type: text
+  - path: region
+    type: text
+  - path: city
+    type: text
+  - path: ISP
+    type: text
+  - path: ASN
+    type: text
+  - path: organization
+    type: text
+  - path: latitude
+    type: text
+  - path: longitude
+    type: text
+  - path: is_crawler
+    type: text
+  - path: timezone
+    type: text
+  - path: mobile
+    type: text
+  - path: host
+    type: text
+  - path: proxy
+    type: text
+  - path: vpn
+    type: text
+  - path: tor
+    type: text
+  - path: active_vpn
+    type: text
+  - path: active_tor
+    type: text
+  - path: recent_abuse
+    type: text
+  - path: bot_status
+    type: text
+  - path: connection_type
+    type: text
+  - path: abuse_velocity
+    type: text
+  - path: request_id
+    type: text
+table_view:
+  - display_name: host
+    value: host
+  - display_name: fraud score
+    value: fraud_score
+  - display_name: ISP
+    value: ISP
+  - display_name: city
+    value: city

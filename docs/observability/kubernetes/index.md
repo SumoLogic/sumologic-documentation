@@ -1,82 +1,62 @@
 ---
 slug: /observability/kubernetes
-title: Kubernetes Solution
+title: Kubernetes Observability
 description: This guide provides and end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="75"/>
-
-This guide provides an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment. You can view topics from the following list in the order of your choice, or navigate the structured path at the top of the [About the Sumo Logic Kubernetes Solution](docs/observability/kubernetes/about.md) page for a complete end-to-end experience. 
-
-## Guides
-
-In this section, we'll introduce the following concepts:
+In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (data collection and app/dashboard installation) to monitoring, managing, and troubleshooting your Kubernetes environment. Our solution provides an easy way to visualize your Kubernetes logs, metrics, traces, and more.
 
 <div className="box-wrapper" markdown="1">
-<div className="box box1 card">
+<div className="box smallbox1 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes/about">Overview</a></h3>
-  <p>Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get the Kubernetes Solution, and the Sumo Logic apps that are available for Kubernetes platforms.</p>
+  <a href="/docs/observability/kubernetes/about"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Overview</h4></a>
+  <p>Learn how Sumo Logic brings ease-of-use to Kubernetes.</p>
   </div>
 </div>
-<div className="box box2 card">
+<div className="box smallbox2 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes/quickstart">Quickstart</a></h3>
+  <a href="/docs/observability/kubernetes/quickstart"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Quickstart</h4></a>
   <p>Get up and running with our Kubernetes solution in minutes.</p>
   </div>
 </div>
-<div className="box box3 card">
+<div className="box smallbox3 card">
     <div className="container">
-      <h3><a href="/docs/observability/kubernetes/collection-setup">Setting up Data Collection</a></h3>
+      <a href="/docs/observability/kubernetes/collection-setup"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Data Collection</h4></a>
       <p>Overview of Kubernetes collection process for Kubernetes environments, and configuring logs and metrics collection.</p>
       </div>
     </div>
-    <div className="box box4 card">
+    <div className="box smallbox4 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes/apps">Apps</a></h3>
+      <a href="/docs/observability/kubernetes/apps"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes Apps</h4></a>
       <p>Sumo Logic provides Kubernetes apps across a variety of platforms, each
       with a set of predefined dashboards.</p>
       </div>
     </div>
-    <div className="box box5 card">
+    <div className="box smallbox5 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes/alerts">Setting Alerts</a></h3>
-      <p>To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out-of-box alerts.</p>
+      <a href="/docs/observability/kubernetes/alerts"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Setting Alerts</h4></a>
+      <p>Sumo Logic monitors provide you with out-of-box alerts ensure that your Kubernetes cluster is available and performing well.</p>
       </div>
     </div>
-    <div className="box box6 card">
+    <div className="box smallbox6 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes/monitoring">Monitor effectively</a></h3>
+      <a href="/docs/observability/kubernetes/monitoring"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Monitoring K8s</h4></a>
       <p>Learn more about effectively monitoring your Kubernetes environment architecture with Sumo Logic.</p>
       </div>
     </div>
+    <div className="box smallbox7 card">
+      <div className="container">
+      <a href="/docs/metrics/kubernetes-metrics"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes Metrics</h4></a>
+      <p>Learn which Kubernetes metrics are collected when you deploy our [sumologic-kubernetes-collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).</p>
+      </div>
+    </div>
+    <div className="box smallbox8 card">
+      <div className="container">
+      <a href="/docs/observability/kubernetes/troubleshoot-with-explore"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Troubleshooting with Explore</h4></a>
+      <p>Explore navigation allows you to quickly locate an object in your physical K8s stack that needs to be debugged.</p>
+      </div>
+    </div>
   </div>
-
-
-
-## Next Steps
-
-Once you've set up collection, installed Kubernetes apps, and familiarized yourself with the dashboards. Now you want to become more adept at monitoring and troubleshooting your applications in your Kubernetes environment. Here are a few options for you to explore.
-
-Once you have completed the above steps, you'll have installed the collection as well as the core Kubernetes Dashboards and alerts. To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
-
-If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
-
-#### Kubernetes Partner Apps
-
-We provide an array of Partner Apps designed specifically for Kubernetes. The following CI/CD Partner Apps are initially available.
-![K8s_PartnerApps_CI-CD.png](/img/kubernetes/K8s_PartnerApps_CI-CD.png)
-
-
-#### Sumo Logic Security Partner Apps
-
-We also provide a selection of security-focused Partner Apps with specialized detection and investigation features. The following a few of the Security Partner Apps that are initially available.
-![K8s_PartnerApps_Security.png](/img/kubernetes/K8s_PartnerApps_Security.png)
-
-
-#### Get Certified
-
-The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
-![K8s_Kubernetes_Analyst_Cert.png](/img/kubernetes/K8s_Kubernetes_Analyst_Cert.png)

@@ -1,6 +1,6 @@
 ---
 id: quickstart
-title: Ingest Budgets Quick Start Tutorial
+title: Ingest Budgets Quickstart Tutorial
 description: Learn how to create and use Ingest Budgets.
 ---
 
@@ -8,27 +8,31 @@ description: Learn how to create and use Ingest Budgets.
 ## Availability
 
 | Account Type | Account Level|
-|--|--|
+|:--|:--|
 | CloudFlex| Enterprise|
 | Credits| Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 This tutorial provides the steps to create and use ingest budgets. Details about this feature can be found in [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
+
+:::note
+This tutorial is only relevant for V1 Ingest Budgets. V2 Ingest Budgets assign budgets to your log data by **Fields** or built-in metadata fields, and do not use the reserved **`_budget`** field.
+:::
 
 ## Requirements
 
 API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/getting-started#authentication) for details.
 
 In addition, you need to specify the correct endpoint to send your API requests. The following steps have the
-argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ## Ingest Budgets API Documentation
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started.md#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
 
 Select the documentation link for your deployment:
 
 | Deployment | Documentation URL |
-|------------|------------------------------------------------------------------|
+|:------------|:------------------------------------------------------------------|
 | AU | https://api.au.sumologic.com/docs/#tag/ingestBudgetManagement  |
 | DE | https://api.de.sumologic.com/docs/#tag/ingestBudgetManagement |
 | EU | https://api.eu.sumologic.com/docs/#tag/ingestBudgetManagement  |
@@ -47,7 +51,7 @@ These parameters are from the Ingest Budget's API documentation, linked in the
 :::
 
 | Parameter | Description | Data Type |
-|--|--|--|
+|:--|:--|:--|
 | name (required) | Display name of the ingest budget. | string `[ 1 .. 128 ] characters` |
 | fieldValue (required) | Custom field value that is used to assign Collectors to the ingest budget. | string `[ 1 .. 1024 ] characters` |
 | capacityBytes (required) | Capacity of the ingest budget, in bytes.<br/>It takes a few minutes for Collectors to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit. | integer `<int64> >= 0` |
@@ -149,12 +153,12 @@ The following steps can be referenced in [Assign Collector to Ingest Budget](ass
 
 ### Use Collection page
 
-On the **Manage Data** \> **Collection** \> **[Collection](/docs/manage/collection)** page when editing an
+On the **Manage Data** > **Collection** > **[Collection](/docs/send-data/collection)** page when editing an
 existing Collector or creating a new Hosted Collector there is a new option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
 
-The drop-down displays your ingest budgets in the following format:
+The dropdown displays your ingest budgets in the following format:
 
 ```
 <budget name> (<field value>) (<allocated capacity>)
@@ -166,12 +170,12 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Use Collector API
 
-To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](docs/api/collectors#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
+To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
 
 First make a GET request to get the Collector's JSON configuration:
 
 :::note
-Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
+Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
 :::
 
 ```bash
@@ -213,7 +217,7 @@ which returns
 Save the response JSON to a file. To assign the Collector to the budget specify the ingest budget's `fieldValue` with the field `_budget` using the `fields` parameter.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | fields | JSON Object  | No |   | JSON map of key-value fields (metadata) to apply to the Collector. To assign an ingest budget use the field `_budget` with its Field Value. | Modifiable |
 
 Modify your file to include the `_budget` field with the Field Value of the ingest budget to assign. In the following example, the Field Value of the ingest budget is `dev_30_gb` and the JSON file is named `updated_collector.json`.
@@ -250,7 +254,7 @@ Our updated file's content is:
 
 ## Step 1. Obtain the ETag value to identify Collector
 
-To assign a Collector to a budget you'll need to make a PUT request with the [Collector Management API](/docs/api/collectors). This request requires an "ETag" header value for verification. To get this value use a GET request for the Collector you want to assign and the response will have the value, like `< ETag: "a2c82c407ea4ae70ac4f6425b50942a1"`. You did this in step 2.
+To assign a Collector to a budget you'll need to make a PUT request with the [Collector Management API](/docs/api/collector-management). This request requires an "ETag" header value for verification. To get this value use a GET request for the Collector you want to assign and the response will have the value, like `< ETag: "a2c82c407ea4ae70ac4f6425b50942a1"`. You did this in step 2.
 
 :::note
 Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`.
@@ -262,7 +266,7 @@ curl -v -u '<accessid:accesskey>' https://api.<your deployment>.sumologic.com/ap
 
 ## Step 5. Assign Collector to the Budget
 
-Use a PUT request with the [Collector Management API](/docs/api/collectors) to update the Collector with the ingest budget assignment. Your PUT request needs to provide the "ETag" value from step 4 and the updated JSON file you created in step 3.
+Use a PUT request with the [Collector Management API](/docs/api/collector-management) to update the Collector with the ingest budget assignment. Your PUT request needs to provide the "ETag" value from step 4 and the updated JSON file you created in step 3.
 
 :::note
 Customize `<accessid:accesskey>`, `a2c82c407ea4ae70ac4f6425b50942a1`, `updated_collector.json`, `<your deployment>`, and id like `150905330`.

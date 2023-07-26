@@ -20,7 +20,7 @@ The procedure below assumes you will use an installed collector on each host fro
 Perform these steps on each host from which you want to collect metrics:
 
 1. Set up an [installed collector](/docs/send-data/installed-collectors). (Skip this step if you have already set up the collector.) 
-1. In Sumo select **Manage Data \> Collection \> Collection**.  
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.  
 1. Click **Add**, and then **Add Source**.
 1. On the **Select Source for Collector** page, select **Streaming Metrics**. 
 1. On the source configuration page, supply the following fields:
@@ -37,6 +37,11 @@ Perform these steps on each host from which you want to collect metrics:
    1. **Fields.**  Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
 
 1. Click **Save**.
+
+:::note
+* Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to the Streaming Metrics source have appropriate timestamps.
+* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
+:::
 
     ![streaming-metrics-source.png](/img/send-data/streaming-metrics-source.png)
 
@@ -96,13 +101,26 @@ where:
 * `value` is any numeric value.
 * `timestamp` is a UNIX timestamp.
 
+:::important
+Currently Sumo Logic interprets meta tags as non-identifying dimensions. This is subject to a change and meta tags and intrinsic tags will both be treated as identifying dimensions in the future. To conform to the target behavior from the beginning, we suggest to place all your metric metadata in the `intrinsic_tags` section.
+:::
+
 For example:
 
 ```
-metric=request_rate site=mydomain mtype=rate unit=Req/s host=web12 agent=statsdaemon1 234 1234567890
+metric=request_rate site=mydomain mtype=rate unit=Req/s host=web12 agent=statsdaemon1  234 1234567890
 ```
 
-While `metric` is not a required intrinsic tag, for the best experience we recommend including it in all Carbon2-formatted metrics.
+Unlike Prometheus, Carbon 2.0 format doesn't enforce the presence of a metric name. It also cannot be reliably inferred automatically. Therefore, Sumo Logic require a `metric` key to be present among `intrinsic_tags`. All metrics without a `metric` key specified will not be ingested to Sumo and a `MetricsMetricNameMissing` Health Event for the associated Metric Source will be triggered (for more information on Halth Events, see [About Health Events](/docs/manage/health-events#health-events)).
+
+For example, the following metric will be correctly ingested to Sumo Logic:
+```
+cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu_idle  73.12 1112470620
+```
+while the one below will be dropped:
+```
+cluster=cluster-2 node=node-2 cpu=cpu-2  73.12 1112470620
+```
 
 ### Prometheus metric format
 
@@ -129,7 +147,7 @@ See the table below for descriptions of the components of a Prometheus metric ex
 The streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.
 
 | Component | Description |
-|--|--|
+|:--|:--|
 | `metric_name` | Specifies the general feature of a system that is measured. For example:<br/>`http_requests_total`  |
 | `metric_description` | An arbitrary description or category for the metric. For example:<br/>`requests`  |
 | `metric_type` | the type of the metric, one of `counter`, `gauge`, `histogram`, `summary`, or `untyped`.
@@ -137,8 +155,8 @@ The streaming metrics source can receive Prometheus data as long as that data is
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](docs/send-data/hosted-collectors/http-source/upload-metrics.md) .
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics).
 
 :::important
-ImportantThe streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.
+The streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.
 :::

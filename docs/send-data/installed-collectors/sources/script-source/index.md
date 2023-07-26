@@ -36,8 +36,8 @@ Data from `stdout` and `stderror` streams are collected.
 
 To configure a Script Source:
 
-1. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](docs/send-data/installed-collectors/collector-installation-reference/user-properties.md)  and restart the Collector.
-1. In Sumo select **Manage Data \> Collection \> Collection**.
+1. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md)  and restart the Collector.
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 1. Select **Script** for the source type.
 1. Enter a **Name** to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called `_sourceCategory`.
@@ -77,7 +77,7 @@ To configure a Script Source:
    * **Time Zone.** Select an option under **Use time zone from log file, but if none present use**. Or, if you'd like to override all time zones from data you collect, choose an option under **Ignore time zone and instead use**.
 
 1. **Enable** **Multiline Processing**, see [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options.
-1. If you'd like to filter data being collected, set **Processing Rule** options. [Hash and Mask filters](/docs/send-data/collection/processing-rules/create-processing-rule.md) can be used to obfuscate proprietary information included in data collected from a script source.
+1. If you'd like to filter data being collected, set **Processing Rule** options. [Hash and Mask filters](/docs/send-data/collection/processing-rules/create-processing-rule) can be used to obfuscate proprietary information included in data collected from a script source.
 1. Click **Save** to complete the Source setup.
 
 ## Configuring sourceCategory and sourceHost using variables

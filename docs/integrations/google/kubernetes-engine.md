@@ -1,8 +1,8 @@
 ---
 id: kubernetes-engine
-title: Sumo Logic App for Google Kubernetes Engine
+title: Google Kubernetes Engine
 sidebar_label: Google Kubernetes Engine (GKE)
-description: The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operat
+description: The Sumo Logic app for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operat
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,8 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 
-The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
-
+The Sumo Logic app for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This app works in conjunction with [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/kubernetes), that provides visibility into worker node metrics and application logs.
 
 ## Supported versions
 
@@ -37,12 +36,11 @@ The following are the minimum supported requirements for this application:
    * 1.17.12-gke.2502
    * 1.18.20-gke.6000
 
-## Log Types
+## Log types
 
-By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging.
+By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic app uses Google Cloud Logging.
 
-
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Google Cloud Logging - Container StdErr"
 {
@@ -85,8 +83,6 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 "subscription":"projects/product-sandbox-1/subscriptions/sumo_gke"
 }   
 ```
-
-
 
 ```json title="Google Cloud Logging - Container StdOut"
 {
@@ -186,8 +182,6 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 }
 ```
 
-
-
 ### Sample Query
 
 ```sql title="Error Stream - Google Cloud Logging"
@@ -212,11 +206,11 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 | fillmissing timeslice(1h)
 ```
 
-## Collecting Logs and Metrics for GKE - Control Plane App
+## Collecting Logs and Metrics for GKE - Control Plane app
 
-This section has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
+This section has instructions for configuring log and metric collection for the Sumo Logic app for GKE - Control Plane.
 
-After you install the Sumo Logic Kubernetes App, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
+After you install the Sumo Logic Kubernetes app, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
 
 For GCP integration, Google Logging collects logs from GCP services. Once you’ve configured the pipeline, the logs are published to a Google Pub/Sub topic. A Sumo Logic GCP source on a hosted collector subscribed to that topic ingests the logs into Sumo Logic.<br/><img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="GKE" />
 
@@ -226,35 +220,29 @@ The configuration process includes the following tasks:
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
 3. Create an export of GCP logs from Google Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
+### Set up and install the Kubernetes app
 
-### Set up and install the Kubernetes App
-
-The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the GKE App. You will configure log and metric collection during this process.
-
+The Sumo Logic Kubernetes app provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes app before configuring collection for the GKE app. You will configure log and metric collection during this process.
 
 #### Google Cloud Logging for GKE  
 
-By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging.
+By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic app uses Google Cloud Logging.
 
+### Install the Kubernetes app
 
-### Install the App
-
-**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
-
+**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/kubernetes).
 
 ### Configure a Google Cloud Platform Source  
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-To configure a Google Platform Source**, follow the instructions in [this document](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
-
+To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 ### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
-To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
-
+To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 ### Create an export of Google Kubernetes Engine logs from Logging
 
@@ -266,7 +254,7 @@ To create an export of GKE logs, do the following:
 3. As part of “**Create logs routing sink**”  add the following information:
     1. Enter a **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
-    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](docs/send-data/hosted-collectors/google-source/google-cloud-platform-source) procedure. For example, "pub-sub-logs".
+    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source) procedure. For example, "pub-sub-logs".
     4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as:
 ```sql
 (resource.type="gke_cluster" OR resource.type="k8s_cluster" OR resource.type="k8s_node" OR resource.type="k8s_pod" )  \
@@ -274,7 +262,6 @@ AND (logName="projects/<project_name></em>/logs/events" OR \
 logName="projects/<project_name></em>/logs/kube-proxy" OR \
 logName="projects/<project_name></em>/logs/kubelet" OR \
 logName="projects/<project_name></em>/logs/cloudaudit.googleapis.com%2Factivity" OR \
-logName="projects/<project_name></em>/logs/cloudaudit.googleapis.com%2Fdata_access" OR \
 logName="projects/<project_name></em>/logs/node-problem-detector" OR \
 logName="projects/<project_name></em>/logs/container-runtime" OR \
 logName="projects/<project_name></em>/logs/docker" OR \
@@ -282,37 +269,33 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 ```
 4. Click Create Sync.
 
+## Installing the GKE - Control Plane app
 
+This section provides instructions for installing the GKE - Control Plane app, as well as descriptions and examples for each of the dashboards.
 
-## Installing the GKE - Control Plane App
-
-This section provides instructions for installing the GKE - Control Plane App, as well as descriptions and examples for each of the dashboards.
-
-Now that you have set up collection for GKE, install the Sumo Logic App for GKE - Control Plane and access the pre-configured Kubernetes dashboards that provide visibility into your GKE environment.
+Now that you have set up collection for GKE, install the Sumo Logic app for GKE - Control Plane and access the pre-configured Kubernetes dashboards that provide visibility into your GKE environment.
 
 To install the app, do the following:
 
-1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the App Catalog, search for “GKE” and select the app.
+1. Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+2. From the **App Catalog**, search for app and select it.
 3. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source.**  For **GKE Log Source**, leave Source Category selected, and enter the value of source category which you used while configuring the Google Cloud Platform (GCP) Source.
     3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 4. Click **Add to Library**.
 
-
 All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
-
 
 ## Viewing GKE Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
-### API Server Dashboard
+### API Server
 
-The GKE - API Server dashboard displays information on the API server logs, which is the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
+The **GKE - API Server** dashboard displays information on the API server logs, which is the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
 Use this dashboard to:
 * Monitor the health and performance of the API server.
@@ -322,40 +305,34 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/google/GKE-API-Server.png')} alt="Google GKE dashboards" />
 
+### Cluster Logs
 
-### Cluster Logs - Dashboards
+The **GKE - Cluster Logs** dashboard provides a high-level view of the overall health of the clusters, along with details on all the components and resources.
 
-The GKE - Cluster Logs - dashboards provide a high-level view of the overall health of the clusters, along with details on all the components and resources.
-
-**Use the dashboard to:
+Use the dashboard to:
 * Review Cluster Health.
 * Verify Error Messages and Events by Severity.
 * Get an overview of Scaling on the cluster.
 
 <img src={useBaseUrl('img/integrations/google/GKE-Cluster-Logs.png')} alt="Google GKE dashboards" />
 
+### Node Logs
 
-### Node Logs - Dashboard
+The **GKE - Node Logs** dashboard displays information on the overall health of the nodes, along with highlights on errors, warnings, and unusual conditions.
 
-The GKE - Node Logs - dashboards display information on the overall health of the nodes, along with highlights on errors, warnings, and unusual conditions.
-
-**Use the dashboard to:
+Use the dashboard to:
 * Review Node Health.
 * Verify Error Messages and Events.
 * Resources created/killed on the nodes.
 * Review Scheduling details by nodes.
 
-
 <img src={useBaseUrl('img/integrations/google/GKE-Node-Logs.png')} alt="Google GKE dashboards" />
 
+### Pod Logs
 
+The **GKE - Pod Logs** dashboard displays information on the overall health of the pods, along with details on the resources being utilized, errors, warnings, and unusual conditions.
 
-### Pod Logs Dashboards
-
-The GKE - Pod Logs dashboards display  information on the overall health of the pods, along with details on the resources being utilized, errors, warnings, and unusual conditions.
-
-**Use the dashboard to:
-
+Use the dashboard to:
 * Review Health of Pods.
 * Verify Error Messages and Events.
 * Review Pod failures and Pod Activity.
@@ -364,30 +341,22 @@ The GKE - Pod Logs dashboards display  information on the overall health of the 
 
 <img src={useBaseUrl('img/integrations/google/GKE-Pod-Logs.png')} alt="Google GKE dashboards" />
 
+### Controller Manager
 
-### Controller Manager Dashboard
-
-The GKE - Controller Manager Overview dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
+The **GKE - Controller Manager** dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
 
 Use this dashboard to:
-
-
-
 * Review resource modifications for pods and jobs.
 * Review scaling operations and logs.
 * Assess severity trends and error messages.
 
 <img src={useBaseUrl('img/integrations/google/GKE-Controller-Manager.png')} alt="Google GKE dashboards" />
 
-### K8s Audit Logs Dashboard
+### K8s Audit Logs
 
-The GKE - K8s Audit Logs dashboard provides security-relevant logs documenting the sequence of activities that have affected system by individual users, administrators or other components of the system.
-
-Use this dashboard to:
-
-
+The **GKE - K8s Audit Logs** dashboard provides security-relevant logs documenting the sequence of activities that have affected system by individual users, administrators or other components of the system.
 
 Use this dashboard to:
 * Identify what happened on the Kubernetes cluster, when it happened, and who initiated the action.
 * Analyze user activities on the cluster.
-* Verify component creations, updates and deletions.
+* Verify component creations, updates, and deletions.

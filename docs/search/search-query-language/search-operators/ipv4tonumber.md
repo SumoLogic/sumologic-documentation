@@ -4,12 +4,10 @@ title: ipv4ToNumber Search Operator
 sidebar_label: ipv4ToNumber
 ---
 
-
-
 The `ipv4ToNumber` operator allows you to convert an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format. This decimal format makes it easier to compare one IP address to another, rather than relying on IP masking.
 
 :::tip
-The [CIDR operator](#CIDR) allows you to leverage CIDR (Classless Inter-Domain Routing) notation to narrow the analysis of IPv4 networks to specific subnets.
+The [CIDR operator](cidr.md) allows you to leverage CIDR (Classless Inter-Domain Routing) notation to narrow the analysis of IPv4 networks to specific subnets.
 :::
 
 ## Syntax
@@ -18,13 +16,13 @@ The [CIDR operator](#CIDR) allows you to leverage CIDR (Classless Inter-Domain R
 ipv4ToNumber(<ip_addr>) [as <field>]
 ```
 
-**Rules**
+## Rules
 
 * The input to the function must be a valid IPv4 address string.
 
-**Examples**
+## Examples
 
-##### Parse IP addresses and convert to number
+### Parse IP addresses and convert to number
 
 The following query parses IP addresses, and converts them to numbers, then uses the fields operator to remove all fields except "ip" and "num".
 
@@ -39,7 +37,7 @@ would produce results like:
 
 ![ipv4](/img/reuse/query-search/ipv4ToNumber.png)
 
-##### Detect the IP range for a single user
+### Detect the IP range for a single user
 
 The following query looks at the number of IP addresses, and the IP range, by user. This could be used to determine if someone has hacked a user account.
 

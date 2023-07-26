@@ -8,15 +8,15 @@ description: Frequently asked questions about Sumo Logic Monitors.
 
 Yes, however, it's a manual process. You have to create a new Monitor with the appropriate query and alerting condition based on your existing Scheduled Search. See the [differences between Monitors and Scheduled Searches](/docs/alerts/difference-from-scheduled-searches) before you consider converting.
 
-## I am getting an error message about cardinality when creating metrics monitor; what does it mean?
+## I am getting an error message about cardinality when creating a metrics monitor - what does it mean?
 
-Metrics monitors can evaluate up to 15K time series. If your Monitor query returns more than 15K time-series you'll get this error. If you are facing this, we recommend breaking up the monitor into several smaller ones with more restrictive queries. See [OpenTSDB documentation](http://opentsdb.net/docs/build/html/user_guide/definitions.html) for details on cardinality
+Metrics monitors can evaluate up to 15K time series. If your Monitor query returns more than 15K time-series, you'll get this error. To resolve, we recommend breaking up the monitor into several smaller ones with more restrictive queries. See [OpenTSDB documentation](http://opentsdb.net/docs/build/html/user_guide/definitions.html) for details on cardinality.
 
-For example, instead of creating one monitor to alert on CPU utilization, break it up into one monitor per deployment or service. This will also give you more flexibility in setting more customized thresholds & help reduce alert noise.
+For example, instead of creating one monitor to alert on CPU utilization, you could break it up into one monitor per deployment or service. This will also give you more flexibility in setting more customized thresholds and help reduce alert noise.
 
 ## Why does my monitor get automatically disabled? 
 
-Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](docs/manage/security/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
+Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](/docs/manage/security/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
 
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
@@ -32,9 +32,7 @@ deployment=acme metric=container_cpu_usage_seconds_total | rate | sum by pod
 
 **How to fix it**
 
-Break your Monitor into several monitors. 
-
-Based on the above Kubernetes example, if you are collecting Kubernetes data from different AWS regions, instead of creating a single alert on all pods across all AWS regions, create one alert per AWS region, as shown below.
+Break your Monitor into several monitors. Based on the above Kubernetes example, if you are collecting Kubernetes data from different AWS regions, instead of creating a single alert on all pods across all AWS regions, create one alert per AWS region, as shown below.
 
 Monitor 1 query:
 
@@ -52,23 +50,23 @@ And so on.
 
 ## Can I reference my monitor configuration in the notification?
 
-Yes, you can use [Alert Variables](../alert-variables.md) to reference various monitor configurations in your custom payload.
+Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to reference various monitor configurations in your custom payload.
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [Test Connection feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications. It uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections) does not use the same static IP addresses that send notifications. It uses different temporary IP addresses.
 :::
 
-## One of our monitors suddenly stopped sending notifications, even though I see it on the Monitors page?
+## One of our monitors suddenly stopped sending notifications, even though I see it on the Monitors page
 
-One of the reasons could be that the user who created the monitor was deleted. You can check the **Created By** value on the Monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
+One reason could be that the user who created the monitor was deleted. You can check the **Created By** value on the Monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
 
-You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon,  <br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
+You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
 
-then selecting **Duplicate**. If your monitor still doesn't work, then it might be a different problem and we recommend that you contact [customer support](https://support.sumologic.com/). 
+then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
 
 ## Can I disable a Monitor during scheduled maintenance or upgrade window?
 

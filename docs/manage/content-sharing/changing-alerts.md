@@ -20,7 +20,7 @@ To edit an alert:
 
 1. Go to the Sumo Logic library by clicking the folder icon in the Sumo Logic UI.
 
-    ![library-icon.png](/img/content-sharing/library-icon.png)
+    ![library-icon.png](/img/reuse/library-icon.png)
 
 1. Click in the search area to display a list of library object types, and choose **Scheduled Searches**. 
 

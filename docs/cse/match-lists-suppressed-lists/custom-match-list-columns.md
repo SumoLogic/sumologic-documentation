@@ -19,24 +19,16 @@ If you create a Match List for which none of the existing Target Column options 
 
 To see the custom columns that have been defined in your environment:
 
-1. Select **Match Lists** from the **Content** menu.
-
-    ![select-match-lists-page.png](/img/cse/select-match-lists-page.png)
-1. On the **Match Lists** page, click **Custom Columns**.
-
-    ![match-lists.png](/img/cse/match-lists.png)
-1. The **Custom Columns** page lists the custom columns that have been defined in your environment.
-
-    ![custom-columns.png](/img/cse/custom-columns.png)
+1. Select **Match Lists** from the **Content** menu. <br/>  ![select-match-lists-page.png](/img/cse/select-match-lists-page.png)
+1. On the **Match Lists** page, click **Custom Columns**. <br/>  ![match-lists.png](/img/cse/match-lists.png)
+1. The **Custom Columns** page lists the custom columns that have been defined in your environment. <br/>  ![custom-columns.png](/img/cse/custom-columns.png)
 
 ## Create a Custom Column
 
 1. On the **Custom Columns** page, click **Create**.
-1. The **Create Match List Column** popup appears.
-
-    ![create-column.png](/img/cse/create-column.png)
+1. The **Create Match List Column** popup appears. <br/>  ![create-column.png](/img/cse/create-column.png)
 1. **Name**. Enter a name for the custom column.
-1. **Fields**. Click the chevron icon to display a selector list of CSE attributes. You can select multiple attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
+1. **Fields**. Click the chevron icon to display a selector list of CSE attributes. You can select multiple attributes. If multiple attributes are selected, the match list will match if the list item value matches a Record value for any of the custom column attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
 1. Click **Create** to add the new column.
 
 ## Edit a custom column

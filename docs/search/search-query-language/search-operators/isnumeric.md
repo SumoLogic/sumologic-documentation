@@ -1,27 +1,23 @@
 ---
 id: isnumeric
-title: isnumeric Search Operator
-sidebar_label: isnumeric
+title: isNumeric Search Operator
+sidebar_label: isNumeric
 ---
 
-
-
-
-
-The isNumeric operator checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like 123L.
+The `isNumeric` operator checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like 123L.
 
 ## Syntax
 
-* `isNumeric(\<strin\>") as\<fiel\>`
-* `isNumeric\<string_fiel\>) [as\<fiel\>]`
+* `isNumeric(\<string\>") as\<field\>`
+* `isNumeric\<string_field\>) [as\<field\>]`
 
-**Rules**
+## Rules
 
 * Returns `true` if the string is a valid Java number.
 * Null and empty/blank strings will return `false`.
 * Non-hexadecimal strings beginning with a leading zero are treated as octal values. Thus the string `09` will return false, since `9` is not a valid octal value. However, numbers beginning with `0` are treated as a decimal.
 
-**Examples**
+## Examples
 
 ```sql
 | isNumeric(num)

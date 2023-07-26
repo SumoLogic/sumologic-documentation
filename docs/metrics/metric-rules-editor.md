@@ -1,22 +1,22 @@
 ---
 id: metric-rules-editor
-title: Metric Rules Editor
-description: The Sumo Logic metric rules editor allows you to tag metrics with data derived from the metric identifier.
+title: Metrics Rules Editor
+description: The Sumo Logic metrics rules editor allows you to tag metrics with data derived from the metric identifier.
 ---
 
-The purpose of metric rules is to make it easier to query metrics. This guide describes Sumo Logic metric rules and metric rules editor, our interface where you can create them. Here, you can also tag metrics with data derived from the metric identifier and then use those tags in metric queries.
+The purpose of metrics rules is to make it easier to query metrics. This guide describes Sumo Logic metrics rules and metrics rules editor, our interface where you can create them. Here, you can also tag metrics with data derived from the metric identifier and then use those tags in metric queries.
 
-## About Metric Rules
+## About metrics rules
 
-Metric rules can create tags derived from segments of a Graphite metric path, or from the key-value pairs for a Carbon 2.0 metric.  
+metrics rules can create tags derived from segments of a Graphite metric path, or from the key-value pairs for a Carbon 2.0 metric.  
 
-Metric rules are especially useful for Graphite metrics, although they can also be used with the Carbon 2.0 format. Attaching tags to Graphite metrics significantly eases the metric query process, enabling users to interactively build a query as a set of key-value pairs. 
+metrics rules are especially useful for Graphite metrics, although they can also be used with the Carbon 2.0 format. Attaching tags to Graphite metrics significantly eases the metric query process, enabling users to interactively build a query as a set of key-value pairs. 
 
 Consider a Graphite metric with the following structure: `cluster.node.cpu.metric-name`. Here are some metrics with that structure: `cluster-1.node-1.cpu-1.cpu-idle Cluster-2.node-1.cpu-6.cpu-user cluster-6.node-1.cpu-2.cpu-sys`.
 
-Without applying a metric rule, you can’t search these metrics using key-value pairs. You can type the graphite string into a metric query tab and use an asterisk for one or more segments, like this: `cluster-1.node-1.*.cpu-idle`.
+Without applying a metrics rule, you can’t search these metrics using key-value pairs. You can type the graphite string into a metric query tab and use an asterisk for one or more segments, like this: `cluster-1.node-1.*.cpu-idle`.
 
-In contrast, after we applying a metric rule to our metrics, a user can interactively construct an analogous query formed of key-value pairs: `cluster=cluster-1 node=node-1 cpu=* metric-name=cpu-idle`.
+In contrast, after we applying a rule to our metrics, a user can interactively construct an analogous query formed of key-value pairs: `cluster=cluster-1 node=node-1 cpu=* metric-name=cpu-idle`.
 
 Building a query made up of key-value pairs is easier, because Sumo prompts you with keys and values. You don’t need to know the exact name of the key, and as you build up the query, you can see matching time series in the metric query tab.  
 
@@ -32,15 +32,15 @@ Here is an example of the Graphite metric path, the Carbon 2.0 key-value pairs, 
 * Carbon 2.0 example: `cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu-idle`
 * Prometheus example: `cpu-idle {cluster="cluster-1",node="node-1",cpu="cpu-1"}`
 
-## Anatomy of a metric rule
+## Anatomy of a metrics rule
 
-A metric rule is made up of two parts: a *metric match expression* that defines the scope of the rule, and one or more variables that define the tags that will be applied to metrics that match the match expression.
+A metrics rule is made up of two parts: a *metric match expression* that defines the scope of the rule, and one or more variables that define the tags that will be applied to metrics that match the match expression.
 
-You use the metric rules editor to build a metric rule. On the **Metric Rules** page (**Manage Data > Metrics > Metric Rules),** metric rules are listed like this: <br/> ![named-rule.png](/img/metrics/named-rule.png)
+You use the metrics rules editor to build a metrics rule. On the **Metrics Rules** page (**Manage Data > Metrics > Metrics Rules),** metrics rules are listed like this: <br/> ![named-rule.png](/img/metrics/named-rule.png)
 
-The subsections that follow describe the information shown in the columns on the **Metric Rules** page.
+The subsections that follow describe the information shown in the columns on the **Metrics Rules** page.
 
-### Metric match expression
+### Metrics match expression
 
 A metric match expression defines the scope of the rule. Put another way, the match expression specifies the metrics to which the tags (defined by variable extraction) will be applied. 
 
@@ -76,14 +76,14 @@ You can use greedy matching in a metric match expression. This is useful when yo
 
 Different classes have dot-delimited names of various lengths, so a match expression for this metric should use greedy matching for the class name segment. For example: `prod.*.*.**.*.*.*`.
 
-## Create a Metric Rule
+## Create a Metrics Rule
 
-Here's how to create a metric rule using the metric rules editor in the Sumo UI:
+Here's how to create a metrics rule using the metrics rules editor in the Sumo UI:
 
-1. In the Sumo web app, go to **Manage Data \> Metrics \> Metric Rules**. The **Metric Rules** page lists the metric rules that have already been defined.<br/> ![named-rule.png](/img/metrics/named-rule.png)
-1. To add a new rule, click the plus sign (+) in the upper left of the **Metric Rules** page. The **Add Metric Rule** popup appears.<br/>  ![add-metric-rule-empty.png](/img/metrics/add-metric-rule-empty.png)
+1. In the Sumo web app, go to **Manage Data > Metrics > Metrics Rules**. The **Metrics Rules** page lists the metrics rules that have already been defined.<br/> ![named-rule.png](/img/metrics/named-rule.png)
+1. To add a new rule, click the plus sign (+) in the upper left of the **Metrics Rules** page. The **Add Metrics Rule** popup appears.<br/>  ![add-metric-rule-empty.png](/img/metrics/add-metric-rule-empty.png)
 1. In the **Rule name** field, enter a name for the new rule.
-1. In the **Metric match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression: `collectd.*.*.*.*` matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments.
+1. In the **Metrics match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression: `collectd.*.*.*.*` matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments.
    * For example: `collectd.cqsplitter.stag-cqsplitter-2.GenericJMX-health_jmx-memory.memory-heapmax` and this match expression: `_sourceCategory=training/shipping/metrics type=payment` matches all metrics whose`_sourceCategory` field is "training/shipping/metrics" and type field is “payment”.
     :::tip
     For greedy matching, use two asterisks. For more information, see the [Greedy match expressions](#greedy-match-expressions). You can use more than one match expression. For more information, see the [Multiple match expressions](#multiple-match-expressions).
@@ -99,7 +99,7 @@ Here's how to create a metric rule using the metric rules editor in the Sumo UI:
 
 ## Variable extractions
 
-Variable extractions define the tags you want to attach to metrics that match a match expression. You define extraction assignments using the fields in the **Define variables** section of the **Add Metric Rule** popup.
+Variable extractions define the tags you want to attach to metrics that match a match expression. You define extraction assignments using the fields in the **Define variables** section of the **Add Metrics Rule** popup.
 
 ![add-metric-rule-with-expression.png](/img/metrics/add-metric-rule-with-expression.png)
 
@@ -138,12 +138,12 @@ To check out how your variable assignments work, select a metric in the **Time S
 In the screenshot above, the following metric is selected: `collectd.kafka-forge-aa.nite-kafka-forge-aa-1.irq.irq-cal`. The values Sumo assigns to the variables are shown to the right of the variable definition. For our example metric, Sumo would attach the following name-value pairs to the metric: `cluster=kafka-forge-aa node=nite-kafka-forge-aa-1 id=irq metric=irq-cal`.
 
 
-## Metric Rules editor error messages
+## Metrics Rules editor error messages
 
-This section describes error messages that can be issued by the Metric Rules Editor.
+This section describes error messages that can be issued by the Metrics Rules Editor.
 
 | Error Message | Description |
-| -- | -- |
+| :-- | :-- |
 | Rule name already exists. | This message appears if you try to assign a name that is already assigned to a an existing rule to a different rule. To resolve this error, enter a different rule name. |
 | Rule already exists. | This message appears if you try to create a rule that has the same match expression and variable assignment(s) as an existing rule. |
 | $field was needed but not extracted.<br/>(Where $field is a variable that has not been extracted.) | This message appears if you refer to a variable that you have not extracted. |

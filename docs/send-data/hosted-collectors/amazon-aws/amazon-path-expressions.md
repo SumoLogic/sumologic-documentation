@@ -1,13 +1,14 @@
 ---
 id: amazon-path-expressions
 title: Amazon Path Expressions
+sidebar_label: Path Expressions
 description: See examples of path expressions you can use to collect data from Amazon Sources.
 ---
 
 ## Rules
 
 * **The S3 bucket name is not part of the path**, so don’t include the bucket name when you are setting the Path Expression. They are separate entities.
-* **Amazon path expressions DO NOT use a leading forward slash.** To collect all logs at a hierarchical level, use some portion of the source path and a single asterisk as a wildcard. You can use only one wildcard in the path expression.
+* **Amazon path expressions DO NOT use a leading forward slash.** To collect all logs at a hierarchical level, use some portion of the source path and asterisk as a wildcard. You can use more than one wildcard in the path expression.
 
 For example, the path expression below would result in no file objects being found, due to the leading forward slash.
 

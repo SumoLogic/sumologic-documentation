@@ -17,7 +17,7 @@ For example, instead of creating one monitor to alert on CPU utilization, break 
 
 ## Why does my monitor get automatically disabled? 
 
-Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](docs/manage/security/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
+Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](/docs/manage/security/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
 
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
@@ -53,14 +53,14 @@ And so on.
 
 ## Can I reference my monitor configuration in the notification?
 
-Yes, you can use [Alert Variables](../alert-variables.md) to reference various monitor configurations in your custom payload.
+Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to reference various monitor configurations in your custom payload.
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [**Test Connection** feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [**Test Connection** feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 :::
 
 ## One of our monitors suddenly stopped sending notifications, even though I see it on the Monitors page?

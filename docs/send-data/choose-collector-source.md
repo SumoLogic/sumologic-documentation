@@ -14,22 +14,23 @@ To send your data to Sumo Logic, you have a few options. We have two types of in
 
 ### OpenTelemetry Distribution (Installed Agent)
 
-**Distribution of OpenTelemetry** is the next-generation agent for data collection. It is built entirely on [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector).
+**Distribution of OpenTelemetry** is the next-generation agent for data collection.
 
-The Sumo Logic Distro of [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector) is built with the [opentelemetry-collector-builder](https://github.com/open-telemetry/opentelemetry-collector-builder) and provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
+The Sumo Logic Distribution for [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector) is built with the [opentelemetry-collector-builder](https://github.com/open-telemetry/opentelemetry-collector-builder) and provides a single unified agent to send Logs, Metrics, Traces, and Metadata to Sumo Logic.
 
-See the [Deployment Guide](https://github.com/SumoLogic/sumologic-otel-collector#readme) in our sumologic-otel-collector GitHub repository for detailed instructions on how to configure and migrate your existing collection.
+Refer to [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) documentation for more information.
 
-It's supported on *Linux*, *MacOS*, and *Kubernetes* environments and can use any of the following Sources:
+It's supported on Linux, macOS, Windows, and Kubernetes environments and can use any of the following Sources:
 
 * Local File
 * Host/Process Metrics
+* Windows Log Event
 * HTTP Traces
-* Streaming Metrics
 * Syslog
-* Telegraf Input Plugins
+* HTTP with OTLP formats
+* And more than 60 ways to collector logs, metrics and traces.
 
-For full details on limitations, what's supported, and what's different see our [comparison documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/comparison.md).
+For full details on limitations, what's supported, and what's different see our [comparison documentation](https://help.sumologic.com/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector).
 
 ### Installed Collectors (Installed Agent)
 
@@ -47,15 +48,92 @@ Consider having more than one Installed Collector if:
 
 * You expect the Collector to ingest from at least 500 separate files.
 * Your hardware has memory or CPU limitations.
-* You expect combined logging traffic for one Collector to be higher
-    than 15,000 events per second.
+* You expect combined logging traffic for one Collector to be higher than 15,000 events per second.
 * Your network clusters or regions are geographically separated.
-* You prefer to install many Collectors, for example, one per machine
-    to collect local files.
+* You prefer to install many Collectors, for example, one per machine to collect local files.
 
 To help design your deployment see [how Installed Collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
 
-For details on system requirements, see Installed Collector requirements.
+For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
+
+### Compare Installed Collectors and OpenTelemetry Collectors​
+
+The Installed Collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
+
+**Installed Collector**. The Installed Collector is a standalone agent that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports a wide range of sources, including Local File, Syslog, Host/Process Metrics, Streaming Metrics, Transaction Tracing, and many more. It also provides support for remote management and configuration, Ingest Budgets, Collector Management API, and CPU targets.
+
+**OpenTelemetry Collector**. The OpenTelemetry Collector is a single-agent management solution that runs on Linux, MacOS, Kubernetes, and Windows platforms. It supports sources such as Local File, Syslog, Host/Process Metrics, Streaming Metrics, and Transaction Tracing. However, it does not provide support for remote management or configuration, Ingest Budgets, Collector Management API, or CPU targets.
+
+#### When to Choose Installed Collector vs. OpenTelemetry Collector
+
+The following table shows the comparison between the Installed Collector and OpenTelemetry Collector based on their supported platforms and sources, and their ideal use cases.
+
+<table>
+  <thead>
+    <tr>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Collector Type</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Supported Platforms</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Supported Sources</th>
+      <th style={{verticalAlign: 'top', textAlign: 'left'}}>Ideal Use Cases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style={{verticalAlign: 'top', textAlign: 'left'}}>Installed Collector</td>
+      <td style={{verticalAlign: 'top'}}>Linux, MacOS, Kubernetes, Windows</td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Local/Remote File</li>
+          <li>Syslog</li>
+          <li>Host/Process Metrics</li>
+          <li>Transaction Tracing</li>
+          <li>Windows Log Event</li>
+          <li>Windows Active Directory Source</li>
+          <li>Windows Performance Counters Receiver</li>
+          <li>Script Sources/Actions</li>
+          <li>Docker Stats / Logs</li>   
+        </ul>
+      </td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Remote management for collection configuration</li>
+          <li>Ingest Budgets</li>
+          <li>Collector Management API (CRUD operations)</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style={{verticalAlign: 'top', textAlign: 'left'}}>OpenTelemetry Collector</td>
+      <td style={{verticalAlign: 'top'}}>Linux, MacOS, Kubernetes, Windows</td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Local File</li>
+          <li>Syslog</li>
+          <li>Host/Process Metrics</li>
+          <li>OTLP(OpenTelemtry Protocol) Receiver</li> 
+          <li>Transaction Tracing</li>
+          <li>Windows Log Event Receiver</li>
+          <li>Windows Performance Counters Receiver</li>
+          <li>Docker Stats / Logs</li> 
+          <li>Kafka</li>
+          <li>MongoDB</li> 
+          <li>Journald</li> 
+          <li>Kubernetes</li>
+          <li>And more than 60 additional way to collect logs, metrics and traces</li>
+        </ul>
+      </td>
+      <td style={{verticalAlign: 'top'}}>
+        <ul>
+          <li>Unify collection to Single software for logs, metrics and traces </li>
+          <li>Scale issues with FluentD on Kubernetes Collection</li>
+          <li>Custom data filtering and transform capabilities</li>
+          <li>Using Chef, Puppet, Ansible to manage collectors</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Hosted Collectors
 
@@ -76,7 +154,7 @@ If you have additional questions, a [Sumo Logic sales representative](https://w
 
 ### Compare Installed and Hosted Collectors
 
-Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from.
+Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from. Learn how to choose your collector that's right for your environment through our video, "Choosing Your Collector Type".
 
 <Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
         width="854px"
@@ -92,8 +170,9 @@ Depending on the method you'd like to collect logs, and the types of logs you'd
 The following table shows the major differences between them.
 
 | Installed Collector | Hosted Collector |
-|--|--|
+|:--|:--|
 | <ul><li>Installed on a system within your deployment locally or remotely.</li><li>Sources collect data available in your deployment.</li><li>Easy to troubleshoot based on Collector logs.</li><li>Supports using Local Configuration File Management so you can use JSON files to configure Sources.</li></ul> | <ul><li>Hosted by Sumo Logic. Agentless: no software to install or activate on a system in your deployment.</li><li>Hosts Sources to collect seamlessly from AWS, Google, and Microsoft products.</li><li>Can receive logs and metrics uploaded via a URL.</li></ul> |
+
 
 
 ## Sumo Logic Sources
@@ -128,4 +207,4 @@ If you're configuring a Source that collects from Amazon Web Services (AWS), yo
 
 In particular, you'll need to allowlist the IP address associated with your Sumo Logic endpoint.  For example, if your deployment is in the U.S., you'll need to allowlist the us-east region IP addresses.  See Sumo Logic Endpoints and Firewall Security for information on determining your endpoint.
 
-For details on how the file is updated, its use, its syntax, and to download the JSON file, go to [http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html](http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
+For details on how the file is updated, its use, its syntax, and to download the JSON file, refer to the [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html)

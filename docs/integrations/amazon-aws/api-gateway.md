@@ -1,7 +1,6 @@
 ---
 id: api-gateway
 title: AWS API Gateway
-sidebar_label: AWS API Gateway
 description: Amazon API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
@@ -105,11 +104,11 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md):
 1. **Name**. Enter a name to display the new Source.
 2. **Description**. Enter an optional description.
-3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
+3. **S3 Region**. Select the Amazon Region for your **API Gateway** S3 bucket.
 4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
 5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string.
   :::note NOTES
-  DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions). The S3 bucket name is not part of the path. Don’t include the S3 bucket name when you are setting the Path Expression.
+  DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions). The S3 bucket name is not part of the path. Don’t include the S3 bucket name when you are setting the Path Expression.
   :::
 6. **Source Category**. Enter `aws/observability/cloud trail/logs`.
 7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
@@ -146,7 +145,7 @@ Parse Expression:
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
@@ -176,7 +175,7 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.

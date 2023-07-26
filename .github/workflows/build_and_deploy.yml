@@ -41,9 +41,11 @@ jobs:
       AWS_DEFAULT_REGION: us-east-1
       AWS_EC2_METADATA_DISABLED: "true"
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           cache: 'yarn'

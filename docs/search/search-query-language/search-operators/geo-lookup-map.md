@@ -4,13 +4,12 @@ title: Geo Lookup (Map) Search Operator
 sidebar_label: Geo Lookup (Map)
 ---
 
-
 Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a map. To create the map the lookup operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
 :::note
-The Geo Lookup (Map) operator is the first step in creating [Map Charts](/docs/dashboards-new/panels/map-charts).
+The Geo Lookup (Map) operator is the first step in creating [Map Charts](/docs/dashboards/panels/map-charts).
 :::
 
 Required fields:
@@ -40,7 +39,7 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 The Geo Lookup operator uses <a href="#lookup-classic">lookup</a> with a specific path, `geo://location`, to produce a map. 
 
-To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](#as-operator "as operator") it to `_count` so the map uses the field.
+To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as.md) it to `_count` so the map uses the field.
 
 Your query should use the following syntax:
 
@@ -54,12 +53,12 @@ Your query should use the following syntax:
 
 This syntax produces aggregate results, so you can add a map to a Dashboard.
 
-#### Limitations
+## Limitations
 
 * Map charts have a display limit of 10,000 results.
 * Colors of map markers can't be changed.
 
-**Examples**
+## Examples
 
 Sample log message:
 
@@ -80,7 +79,7 @@ would produce the following results:
 
 ![geo lookup world map.png](/img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png)
 
-##### View map of Geo Lookup results
+### View map of Geo Lookup results
 
 Enter a query that parses the IP field from your logs, a **lookup** operator to match IP addresses to a lookup table, and then the geolocation fields you’d like to use to chart each IP address.
 
@@ -101,9 +100,9 @@ Enter a query that parses the IP field from your logs, a **lookup** operator t
 
 1. (Optional) Click **Add to Dashboard** to create a new Dashboard or add the map to an existing Dashboard. After adding a map to a Dashboard you will still be able to zoom in and drill down on the data.
 
-#### Handle null values
+### Handle null values
 
-To find a mismatch from a geo lookup operator query, use the [isNull](#isNull) operator.
+To find a mismatch from a geo lookup operator query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
 For example, running a query like:
 

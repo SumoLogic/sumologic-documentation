@@ -2,6 +2,7 @@
 id: linux
 title: Install a Collector on Linux
 description: Install or uninstall a Collector on a Linux system.
+tags: [installed collectors]
 ---
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
@@ -17,13 +18,12 @@ Follow the steps in this topic to install or uninstall a collector on Linux. S
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
 * Open a browser and enter the static URL for your pod. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod. The download begins immediately.
 
 ## Install a collector on Linux
 
 Choose one of these methods to install the Collector:
-
 * [UI installer](#install-using-the-ui-installer) - This method does not support all advanced settings.
 * [Command line installer](#install-using-the-command-line-installer)
 * [RPM/Debian package](#install-using-the-rpm-or-debian-package)
@@ -44,32 +44,28 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. Browse to select a location for the collector or accept the default and click **Next** to install the Collector files on your machine.
 1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](collector-installation-reference/advanced-ui-installer-settings.md) and follow the instructions. Click **Next**.
 1. Choose an authentication method.
-
    * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
    * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the ****Token String**** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-
 1. Click **Finish** to complete the setup.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
 ### Install using the command line installer
 
 1. Add execution permissions to the downloaded Collector file (.sh):
-
    ```bash
    chmod +x SumoCollector.sh
    ```
-
 1. Run the script with the parameters that you want to configure. See [Parameters for the Command Line Installer](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.  By default the Collector will be installed in either `/opt/SumoCollector` or `/usr/local/SumoCollector`.
 
 **Examples** 
 
-Using an [Installation Token](docs/manage/security/installation-tokens.md):
+Using an [Installation Token](/docs/manage/security/installation-tokens.md):
 
 ```bash
 sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
 ```
 
-Using [access ID and access key](docs/manage/security/access-keys.md):
+Using [access ID and access key](/docs/manage/security/access-keys.md):
 
 ```bash
 sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -Vsources=<absolute_filepath>
@@ -93,14 +89,11 @@ You can use the RPM or Debian package to install a Collector on a Linux
 64-bit system.
 
 1. Install the Collector using the downloaded installation package.   For the RPM package, use the command:
-
    ```bash
    sudo rpm -i SumoCollector-19.XXX-XX.x86_64.rpm
    #Replace XXX-XX with the version number of the package you downloaded.
    ```
-
    For the Debian package, use the command:
-
    ```bash
    sudo dpkg -i SumoCollector-19.XXX-XX.x86_64.deb
    #Replace XXX-XX with the version number of the package you downloaded.
@@ -108,12 +101,10 @@ You can use the RPM or Debian package to install a Collector on a Linux
 :::note
 Replace _XXX-XX_ in the command above with the version number of the package you downloaded.
 :::
-
    The RPM and Debian packages install the collector in the `/opt/SumoCollector` directory. By default, the Collector is installed as a system service, but not yet started.
-
 1. Configure the Collector `user.properties` file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in `user.properties` to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
 
-   To use an [access key](docs/manage/security/access-keys.md), provide the `accessid` and `accesskey` parameters. For example:
+   To use an [access key](/docs/manage/security/access-keys.md), provide the `accessid` and `accesskey` parameters. For example:
 
    ```
    name = <collectorName>
@@ -237,20 +228,18 @@ Replace _XXX-XX_ in the command above with the version number of the package you
    sudo ./collector start
    ```
 
-1. To verify that the collector is installed, go to **Manage Data \> Collection \> Collection** in the Sumo web app and verify that you can see the collector.
+1. To verify that the collector is installed, go to **Manage Data** > **Collection** > **Collection** in the Sumo web app and verify that you can see the collector.
 
 ## Uninstall the collector
 
 Uninstalling a collector requires the following two steps:
 
 1. Uninstall the collector from the Linux system using any of these methods:
-
-* [UI installer](#uninstall-using-the-ui-installer)
-* [Command line installer](#uninstall-using-the-command-line-installer)
-* [RPM/Debian package](#uninstall-using-the-rpm-or-debian-package)
-* [Binary package](#uninstall-using-the-binary-package)
-
-1. [Remove the collector from Sumo Logic](#remove-the-collector-from-the-web-app)
+   * [UI installer](#uninstall-using-the-ui-installer)
+   * [Command line installer](#uninstall-using-the-command-line)
+   * [RPM/Debian package](#uninstall-using-the-rpmdebian-packages)
+   * [Binary package](#uninstall-using-the-binary-package)
+1. [Remove the collector from Sumo Logic](#remove-the-collector-from-the-web-app).
 
 ### Uninstall using the UI Installer
 
@@ -311,7 +300,7 @@ sudo dpkg -r SumoCollector
 
 ### Remove the collector from the web app 
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 

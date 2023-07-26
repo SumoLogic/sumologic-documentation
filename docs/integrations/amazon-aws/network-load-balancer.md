@@ -1,7 +1,6 @@
 ---
 id: network-load-balancer
-title: Sumo Logic App for AWS Network Load Balancer
-sidebar_label: AWS Network Load Balancer
+title: AWS Network Load Balancer
 description: The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 ---
 
@@ -40,7 +39,7 @@ Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**netw
 
 ### Metric Rules
 
-Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
 
 ```sql title="Rule 1*"
 Rule name: AwsObservabilityNLBMetricsAddonEntityRule

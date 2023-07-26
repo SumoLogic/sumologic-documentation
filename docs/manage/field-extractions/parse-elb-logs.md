@@ -28,7 +28,7 @@ There can be slight differences between your ELB log and the example here if you
 **Resulting Fields:**
 
 |  Field |  Description |  Example |
-|--|--|--|
+|:--|:--|:--|
 | datetime | Time (UTC) that the response was sent back to client. Uses ISO 8601 format. | 2014-10-08T00:20:223Z |
 | clientip | IP address of the requesting client. | 192.168.154.128 |
 | port | Port of the requesting client. | 24986 |

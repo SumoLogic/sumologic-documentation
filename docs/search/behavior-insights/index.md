@@ -10,18 +10,30 @@ Behavior Insights encompasses three log search operators to accelerate insights,
 * Which groups of users, apps, services, or resources are responsible for activity in logs?
 * Which groups of users, apps, services, or resources are responsible for unusual activity in logs?
 
-Modeled after our LogReduce log summarization feature, the two Behavior Insights operators below cluster logs based on their structure or pattern and activity content respectively.
+Modeled after our LogReduce log summarization feature, the LogReduce Values and LogReduce Keys operators cluster logs based on their structure or pattern and activity content respectively.
 
-* [LogReduce Keys](logreduce-keys.md) clusters JSON logs based on keys providing an at-a-glance summary of patterns in logs based on their schema while ignoring specific values.
-* [LogReduce Values](logreduce-values.md) clusters JSON logs using the values of keys.
-
-The third Behavior Insights operator, [LogExplain](logexplain.md), finds the root cause of outliers in logs based on conditions you specify.
-
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/search/behavior-insights/logexplain"><h4>LogExplain</h4></a>
+  <p>This operator finds the root cause of outliers in logs based on conditions you specify.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/search/behavior-insights/logexplain"><h4>LogReduce Keys</h4></a>
+  <p>Clusters JSON logs based on keys providing an at-a-glance summary of patterns in logs based on their schema while ignoring specific values.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/search/behavior-insights/logreduce-values"><h4>LogReduce Values</h4></a>
+  <p>Clusters JSON logs using the values of keys.</p>
+  </div>
+</div>
+</div>

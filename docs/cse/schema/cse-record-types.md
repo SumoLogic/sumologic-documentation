@@ -7,7 +7,7 @@ description: Learn about the Record types to which you can map schema attributes
 
 
 
-This topic defines the Record Types that CSE supports. For related information, see [Attributes You Can Map to Records](attributes-map-to-records.md).
+This topic defines the Record Types that CSE supports. For related information, see [Attributes You Can Map to Records](/docs/cse/schema/attributes-map-to-records).
 
 Each message that CSE maps must be assigned one, and only one, Record Type.
 
@@ -16,7 +16,7 @@ Note that it is possible for multiple mappers to match a particular log message
 ## Record Types
 
 | Record Type | When to Use |
-|--|--|
+|:--|:--|
 | Audit | Use this Record Type for log sources that leave a basic audit trail. Whenever possible, it is preferable to use one of these more specific audit Record Types: AuditChange, AuditFile, or AuditResourceAccess. |
 | AuditChange | Use this Record Type for log sources that leave an audit record indicating a change has occurred on a system. |
 | AuditFile | Use this Record Type for log sources that record information about file changes such as file integrity monitoring. |

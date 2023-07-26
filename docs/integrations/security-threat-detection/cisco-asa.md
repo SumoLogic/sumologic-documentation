@@ -34,8 +34,8 @@ This section provides instructions for configuring log collection for the Cisco 
 
 To configure log collection, do the following:
 1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
-2. Configure an [Installed Collector](/docs/send-data/Installed-Collectors) appropriate for right for your host environment.
-3. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/Syslog-Source) to the same port and protocol used by your ASA.
+2. Configure an [Installed Collector](/docs/send-data/installed-collectors) appropriate for right for your host environment.
+3. Configure a [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) to the same port and protocol used by your ASA.
 
 ### Field Extraction Rule
 
@@ -101,22 +101,9 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 ## Installing the Cisco ASA App  
 
-This section provides instructions on how to install the Cisco ASA App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+This section provides instructions on how to install the Cisco ASA App.
 
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Cisco ASA Dashboards
 
@@ -138,7 +125,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Bandwidth Served.** Shows the amount of bandwidth served as a single value chart for the last hour.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Overview.png')} alt="Cisco_ASA dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Overview.png')} alt="Cisco_ASA dashboards" />
 
 ### Firewall Detail
 
@@ -162,8 +149,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Top Denying ACLs.** Displays the top ten denying ACL connections over the last hour in a bar chart.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Firewall_Detail.png')} alt="Cisco_ASA dashboards" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Firewall-Detail.png')} alt="Cisco_ASA dashboards" />
 
 ### Logs Analytics
 
@@ -173,4 +159,4 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Parameterized Search.** Log Details with counts.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Logs_Analytics.png')} alt="Cisco_ASA dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Logs-Analytics.png')} alt="Cisco_ASA dashboards" />

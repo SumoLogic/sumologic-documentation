@@ -1,12 +1,13 @@
 ---
 id: integrate-sumo-logic-with-okta
 title: Integrate Sumo Logic with Okta
+description: You can integrate Sumo Logic's SAML 2.0 API with Okta to allow users to log into Sumo Logic using their Single Sign-On (SSO) credentials.
 ---
 
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -25,7 +26,7 @@ Sumo Logic using their Single Sign-On (SSO) credentials.
 ## Install the Sumo Logic SAML App in Okta
 
 1. Open the Okta Administration pages.
-1. In the left-nav, select **Applications \> Applications**.
+1. In the left-nav, select **Applications > Applications**.
 1. Click the **Browse App Catalog** button.
 
     ![browse-app-catalog.png](/img/security/browse-app-catalog.png)
@@ -70,7 +71,7 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
     1. **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
     1. **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
 1. Click **Save **at the bottom of the **Create SAML Integration** page.
-1. Go to **Administration \> Security \> SAML** in Sumo Logic.
+1. Go to **Administration > Security > SAML** in Sumo Logic.
 1. Click your Okta configuration in the **Configuration List** and then click the edit icon (![pencil](/img/security/pencil.png)) in the details pane.
 1. Select the **Roles Attribute** checkbox and enter the name of the attribute name you created on the the **Group Attribute Statements** section above. 
 

@@ -22,7 +22,7 @@ LogReduce uses the similarity of signature content (the words in a signature) to
 Relevance ranks signatures on a scale of 0 to 10. Values of 0, 5, and 10 have specific meanings; values falling between these numbers suggest that a signature itself has not been explicitly promoted or demoted, but that it contains terms that have received previous feedback (either positive or negative).
 
 | Scale | Description |
-| -- | --|
+| :-- | :--|
 | **10** | Assigned to signatures explicitly given a **Thumbs Up**. |
 | **5** | The default value for signatures that have no content in common with logs that have received feedback (neither positive or negative). Think of 5 as a neutral relevance value for signatures that contain words that LogReduce hasn’t learned how to rank. |
 | **0** | Assigned to signatures that were explicitly given a **Thumbs Down**. |

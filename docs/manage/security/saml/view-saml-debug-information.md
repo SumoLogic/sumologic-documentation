@@ -1,10 +1,11 @@
 ---
 id: view-saml-debug-information
 title: View SAML Debug Information
+description: Learn how to use Debug Mode to troubleshoot SAML issues.
 ---
 
 
-When you select the Debug Mode option for SAML  (**Administration \> Security \> SAML**), whenever an error occurs a debug page displays.
+When you select the Debug Mode option for SAML  (**Administration > Security > SAML**), whenever an error occurs a debug page displays.
 
 ![img](/img/security/saml-config-debug.png)  
 

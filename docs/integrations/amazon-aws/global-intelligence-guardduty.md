@@ -1,7 +1,6 @@
 ---
 id: global-intelligence-guardduty
 title: Global Intelligence for Amazon GuardDuty
-sidebar_label: Amazon GuardDuty Global Intelligence
 description: Global Intelligence for Amazon GuardDuty
 ---
 
@@ -16,7 +15,7 @@ This application name is abbreviated to **GI GuardDuty** in our documentation an
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
 :::caution
-* Global Intelligence baselines are computed by aggregating data for a given customer across all their source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with AWS GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/apps-integrations#custom-data-filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.  
+* Global Intelligence baselines are computed by aggregating data for a given customer across all their source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with Amazon GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/apps-integrations#custom-data-filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.  
 * Threat score trends are not meaningful beyond the most recent 24 hours. This is because Global Intelligence baselines are the daily average over the most recent 7 days. As a result, the time range in the panels should not be changed beyond the most recent 24 hours.  
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
 :::

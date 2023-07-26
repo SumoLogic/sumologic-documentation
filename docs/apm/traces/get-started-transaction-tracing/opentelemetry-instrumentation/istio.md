@@ -17,17 +17,14 @@ To send data to Sumo Logic collector either in a Kubernetes or standalone setup,
 
 ### OpenCensus Agent exporter
 
-Set`meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.zipkin.address=` to the endpoint of the receiving collector:
+Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.address=` to the endpoint of the receiving collector:
 
-* For [*Kubernetes collectors*](../set-up-traces-collection-for-kubernetes-environments.md):  
-
+* For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):  
     ```
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:55678
     ```
-
-* For [standalone collectors](../set-up-traces-collection-for-other-environments.md):  
-
+* For [standalone collectors](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):  
     ```
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.openCensusAgent.address=HOSTNAME:55678
@@ -42,15 +39,12 @@ OpenCensus agent by default uses **W3C** context propagation same as OpenTelemet
 Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.zipkin.address=` to the URL of Sumo
 receiving collector:
 
-* For [*Kubernetes collectors*](../set-up-traces-collection-for-kubernetes-environments.md):  
-
+* For [*Kubernetes collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):  
     ```
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:9411
     ```
-
-* For [*standalone collectors*](../set-up-traces-collection-for-other-environments.md):  
-
+* For [*standalone collectors*](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):  
     ```
     --set meshConfig.enableTracing=true
     --set meshConfig.defaultConfig.tracing.zipkin.address=HOSTNAME:9411

@@ -4,9 +4,7 @@ title: hexToDec Search Operator
 sidebar_label: hexToDec
 ---
 
-
-
-The hexToDec operator converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.
+The `hexToDec` operator converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.
 
 ## Syntax
 
@@ -18,7 +16,7 @@ hexToDec("<hexadecimal string>") as <field>
 hexToDec(<hexadecimal_field>) as <field>
 ```
 
-**Examples**
+## Examples
 
 The following returns `V` with a value of `4919`
 

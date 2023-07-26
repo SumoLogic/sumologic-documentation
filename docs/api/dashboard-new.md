@@ -1,17 +1,18 @@
 ---
 id: dashboard-new
-title: Sumo Logic Dashboard (New) Management APIs
-sidebar_label: Dashboard (New)
-tags: [library]
+title: Dashboard Management APIs
+sidebar_label: Dashboard
 description: Use HTTP endpoints to manage content permissions.
-
+hide_table_of_contents: true
 ---
 
-The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](/docs/dashboards-new/) platform from HTTP endpoints to organize your content.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
+<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+The Dashboard Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard](/docs/dashboards/) platform from HTTP endpoints to organize your content.
+
+{@import ../reuse/api-intro.md}
 
 <table>
   <tr>

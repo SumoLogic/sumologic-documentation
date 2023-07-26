@@ -2,13 +2,18 @@
 id: duo-source
 title: Duo Source
 sidebar_label: Duo
+description: The Duo Source provides a secure endpoint to receive authentication logs from the Duo Authentication Logs API.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
 
 The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is available in the Fed deployment.
-::: 
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
 
 ## Authentication
 
@@ -23,16 +28,16 @@ healthy and collecting by utilizing Health Events.
 
 A Duo Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted it is validated, stored, and placed in a **Pending** state.
-1. **Started**: A collection task is created on the Hosted Collector.
-1. **Initialized**: The task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source successfully authenticated with Duo.
-1. **Collecting**: The Source is actively collecting data from Duo.
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+1. **Started**. A collection task is created on the Hosted Collector.
+1. **Initialized**. The task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source successfully authenticated with Duo.
+1. **Collecting**. The Source is actively collecting data from Duo.
 
-If the Source has any issues during any one of these states it is placed
+If the Source has any issues during any one of these states, it is placed
 in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
@@ -49,7 +54,7 @@ When you create a Duo Source, you add it to a Hosted Collector. Before creating
 
 To configure a Duo Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Duo**.
 
@@ -72,6 +77,12 @@ To configure a Duo Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
+
+:::note
+If you are using the Duo Federal edition service when connecting APIs, it's recommended to use `duofederal.com` instead of the default `duosecurity.com` domain. Our Duo C2C lets you allow to configure the API domain as it contains the specific customer ID information. For example, you can use `api-xxxx-duosecurity.com` or `api-xxxx-duofederal.com` if the Duo Federal edition service has been opted in. For more information, refer to the [Duo Federal Edition Guide](https://duo.com/docs/duo-federal-guide#duo-service-connectivity).
+:::
+
+
 1. **Duo Domain**. Provide your **API hostname**, such as `api-********.duosecurity.com`.
 
    ![Duo admin API reference.png](/img/send-data/Duo-admin-API-reference.png)
@@ -82,7 +93,7 @@ To configure a Duo Source:
 
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 
-1. When you are finished configuring the Source click **Submit**.
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -92,17 +103,20 @@ error would occur, if the Source attempts to retry, and the name of the
 event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
 
 ### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Duo"}` for a Duo Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Duo Source. | not modifiable |
@@ -110,14 +124,14 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 The following table shows the **config** parameters for a Duo Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `domain` | String | Yes |  | Provide your API hostname, such as api-********.duosecurity.com.	modifiable
 | `integration_key` | String | Yes |  | Provide the Duo Integration Key you want to use to authenticate collection requests. | modifiable |
-| `secret_key`	String | Yes |  | Provide the Duo Secret Key you want to use to authenticate collection requests. | modifiable |
+| `secret_key` | String | Yes |  | Provide the Duo Secret Key you want to use to authenticate collection requests. | modifiable |
 | `polling_interval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable |
 
 Duo Source JSON example:

@@ -1,6 +1,7 @@
 ---
 id: collect-ruby-on-rails-logs
 title: Collect Ruby on Rails Logs
+sidebar_label: Ruby on Rails
 description: Learn how to collect logs produced by Ruby on Rails applications.
 ---
 
@@ -23,15 +24,15 @@ and the multiline setup.
 
     ![img](/img/send-data/ruby_on_rails.png)
 
-1. Enable timestamp parsing. If your logs do not contain a time zone as part of the timestamp, you will need to specify the time zone of the messages. Make sure to set the [time zone](docs/send-data/reference-information/time-reference.md) correctly. Misconfigured time zones can cause problems. For example, in searches, data will appear to be in the future. And in Dashboards, no data will be displayed.
+1. Enable timestamp parsing. If your logs do not contain a time zone as part of the timestamp, you will need to specify the time zone of the messages. Make sure to set the [time zone](/docs/send-data/reference-information/time-reference.md) correctly. Misconfigured time zones can cause problems. For example, in searches, data will appear to be in the future. And in Dashboards, no data will be displayed.
 
-1. Enable [multiline processing](docs/send-data/reference-information/collect-multiline-logs.md). To do this, under Boundary Regex, enter what the first line of your RoR log looks like. Typically (depending on your configuration and platform) it will begin with with the words "Starting" or "Processing". Check your logs to confirm. Enter the string `^Processing.*` or `^Starting.*`.
+1. Enable [multiline processing](/docs/send-data/reference-information/collect-multiline-logs.md). To do this, under Boundary Regex, enter what the first line of your RoR log looks like. Typically (depending on your configuration and platform) it will begin with with the words "Starting" or "Processing". Check your logs to confirm. Enter the string `^Processing.*` or `^Starting.*`.
 
 1. If you have configured your RoR logs to output something like the date before "Starting" or "Processing", you will need to match that as well. For example, `^\[[0-9/:\s]+\]\s+Processing.*`.
 
 1. Click **Save**. 
 
-1. In Sumo Logic, go to **Manage Data \> Collection \> Status** to verify that the logs are being ingested. If you don't see any data coming in after 2-3 minutes, check that your file path is correct, that the Sumo Logic Collector has read access to the logs, and that your time zone is configured correctly.
+1. In Sumo Logic, go to **Manage Data > Collection > Status** to verify that the logs are being ingested. If you don't see any data coming in after 2-3 minutes, check that your file path is correct, that the Sumo Logic Collector has read access to the logs, and that your time zone is configured correctly.
 
 ## Parsing RoR Logs
 

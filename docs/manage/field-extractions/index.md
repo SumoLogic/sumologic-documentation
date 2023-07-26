@@ -4,8 +4,9 @@ title: Field Extractions
 description: Field Extraction speeds the search process by parsing fields as log messages are ingested.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Field extractions allow you to parse [fields](docs/manage/fields.md) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
+Field extractions allow you to parse [fields](/docs/manage/fields.md) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
 
 Fields are extracted from the time you create your FER moving forward. Therefore, set your FERs early on to take advantage of this automatic parsing mechanism.
 
@@ -17,7 +18,7 @@ You need the **Manage field extraction rules** [role capability](../users-roles
 
 ![FER page.png](/img/field-extraction-rules/fer-page.png)
 
-The **Manage Data** \> **Logs** \> **Field Extraction Rules** page displays the following information: 
+The **Manage Data** > **Logs** > **Field Extraction Rules** page displays the following information: 
 
 When hovering over a row in the table there are icons that appear on the far right for editing, disabling and deleting the rule.
 
@@ -29,9 +30,9 @@ When hovering over a row in the table there are icons that appear on the far ri
 * **Last Modified** date and time by user
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
-You can view the fields created in your account and what features are referencing them on the [Fields](docs/manage/fields.md) page.
+You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields.md) page.
 
-On the **Manage Data** \> **Logs** \> **Field Extraction Rules** page you can:
+On the **Manage Data** > **Logs** > **Field Extraction Rules** page you can:
 
 * Click **+ Add** to [create a Field Extraction Rule](create-field-extraction-rule.md).
 * Search Field Extraction Rules by name and scope.
@@ -62,22 +63,56 @@ import Iframe from 'react-iframe';
 
 Changes to Field Extraction Rules are implemented immediately.
 
-1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
+1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
 1. Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
 1. Make changes as needed and click **Save** when done.
 
 ## Delete a Field Extraction Rule
 
-Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](docs/manage/fields.md) page.
+Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields.md) page.
 
-1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
+1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
 1. Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.
-
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/manage/field-extractions/field-naming-convention"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Field Naming Convention</h4></a>
+  <p>Learn about the recommended naming conventions for standard fields in Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/manage/field-extractions/create-field-extraction-rule"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Create a Field Extraction Rule</h4></a>
+  <p>Learn how to instruct Sumo Logic to parse out fields automatically.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/manage/field-extractions/edit-field-extraction-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Edit Field Extraction Rules</h4></a>
+  <p>Learn how to change Field Extraction Rules.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/manage/field-extractions/fer-templates"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>FER Templates</h4></a>
+  <p>Learn how to use FER Templates to parse common fields for various applications.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/manage/field-extractions/parse-elb-logs"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Parse AWS ELB Logs</h4></a>
+  <p>Learn how to parse the common fields in AWS ELB logs.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/manage/field-extractions/safend-field-extraction"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Sample Safend Field Extraction</h4></a>
+  <p>Learn how to create Field Extraction Rules for Safend.</p>
+  </div>
+</div>
+</div>

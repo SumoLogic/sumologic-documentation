@@ -7,7 +7,7 @@ description: Instructions for installing the Google Workspace app and informatio
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
 This page demonstrates how to install the Google Workspace App and enable documents shared outside your organization. This page also provides descriptions, use cases, and examples for each of the Google Workspace App dashboards.
 

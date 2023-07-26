@@ -13,10 +13,8 @@ searches and provide troubleshooting tips. 
 Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
 
 :::note
-The [Test Connection feature for webhooks](docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
+The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 :::
-
-
 
 ## Create an Email Alert to Notify you when Data Usage Reaches 90 Percent of your Account Limit
 
@@ -43,7 +41,6 @@ This query will return values only when the configured threshold is met. To do t
 To create a Scheduled Search:
 
 1. On the **Search** page, enter the sample query provided below as a template for your Scheduled Search. Adjust the **plan_size** and **thresholds** accordingly, as mentioned the comments in the sample query.
-
     ```
     _index=sumologic_volume
     | where _sourceCategory="collector_volume"
@@ -58,24 +55,17 @@ To create a Scheduled Search:
     | sort gbytes
     | fields collector, gbytes, collector_pct_of_todaysvolume, todays_volume, plan_size, todaysvolume_against_plan
     ```
-
 1. For the search **Time Range**, select **Today**.
-1. Click **Save As**.
-
-    ![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
-
+1. Click **Save As**. <br/>![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
 1. In the **Save Search As** dialog, enter a name for this Scheduled Search, such as **90% Data Usage Limit Reached**.
 1. **Run frequency.** Select **Every 4 hours**.
 1. Click **Schedule this search**. 
-
    * **Time range for the scheduled search.** Select **Today**.
-   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than \> 0**.
+   * **Alert condition.** Select **Send notification only if the condition below is satisfied:** and enter **Number of results Greater than > 0**.
    * **Alert Type.** Select **Email**.
    * Enter the **email address** where you would like to be alerted.
-
-1. For all configuration options, see [Schedule a Search](docs/alerts/scheduled-searches/schedule-search.md). 
+1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search.md). 
 1. Click **Save**.
-
 
 ## Why Would a Scheduled Search Fail?
 
@@ -96,16 +86,15 @@ Failures could be related to the Scheduled Search query. Check the following pos
 Failures can be seen across many Scheduled Searches due to backend infrastructure issues at Sumo Logic, and nothing specific to that particular query. In this case, just wait until Sumo Logic service is restored and be ready to test your query for normal performance.
 
 * Check http://status.sumologic.com for outages impacting multiple customers and specific functionality such as searches, real time alerts, etc.
-* Sumo Logic reports Scheduled Search failures in the [Audit Index](docs/manage/security/audit-index.md). You can determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to any infrastructure issues and will take action to address them as soon as possible. 
+* Sumo Logic reports Scheduled Search failures in the [Audit Index](/docs/manage/security/audit-index.md). You can determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to any infrastructure issues and will take action to address them as soon as possible. 
 
 ### Other Issues
 
 Scheduled Search failures could be the result of other factors, such as a spike in data being processed by the Scheduled Search. 
 
 * If you have a query that normally runs, but is close to reaching the [timeout period limit](#how-to-prevent-your-scheduled-search-from-timing-out), it could finally fail due to changes in your account, such as the content and size of log messages, or the volume or number of messages sent during a specific time range. Choosing a narrower time range can help.
-* You have a lot of scheduled searches running today. 6,000 per person is the maximum.
-* Even if the query normally runs well within the timeout period limit, there a data surge could cause the need for more processing time
-* There could be normal growth factors within an account such as increased Collector deployment that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
+* Even if the query normally runs within the timeout period limit, there could be a data surge that causes more processing time to be needed.
+* There could be normal growth factors within an account, such as increased Collector deployment, that would cause some Source Categories to have a data surge. You should test your Scheduled Searches for performance periodically to address this possibility.
 
 See also, [What Happens When a Scheduled Search is Suspended?](#what-happens-when-a-scheduled-search-is-suspended).
 
@@ -141,7 +130,7 @@ Reach out to the Sumo Logic Support team to get guidance on optimizing your quer
 Here are also a few additional things to consider when conducting your performance tests:
 
 * Use a time range outside of the last 24-hour period. For example, if you plan on saving a search with the relative timeframe of the **Last 24 hours**, run a test using the following time range instead: **-48h -24h** (48 hours ago to 24 hours ago). Doing this will trigger the same backend nodes that would be called to run your scheduled search.
-* [Optimize your searches](docs/search/optimize-search-performance.md) as much as possible.
+* [Optimize your searches](/docs/search/optimize-search-performance.md) as much as possible.
 * If the data you are testing against is not reflective of the actual volume you’ll be scanning on a recurring basis, then the test itself should be considered invalid. Similarly, avoid scheduling searches preemptively. Wait until you get a good sample size and make sure your live streaming is completely set up.
 * If there are plans to add more data to your account in the near future, please keep that in mind in your testing and include a buffer to make sure that your increased data volume won’t cause your scheduled search to time out.
 
@@ -150,7 +139,7 @@ Here are also a few additional things to consider when conducting your performan
 
 Scheduled Search alert condition thresholds are based on the number of rows returned in your search results. It does not consider any values that may be present within a column of those rows. If your query does not perform any aggregations the Scheduled Search threshold will apply to the number of raw messages returned with a query, as seen under the Messages tab of the search. If a query contains an aggregate operation, for example, count, sum, min, max, etc... the Scheduled Search threshold will be applied to the number of aggregate rows returned by the query, as seen within the Aggregate tab of the results.   
 
-When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](docs/search/search-query-language/search-operators/where) condition after the aggregation within the query. For example:
+When performing an aggregation as part of a query, and wanting to alert when a specific aggregate value meets a threshold, the threshold for that field value will need to be included as part of the query itself. This can typically be done by providing a [where](/docs/search/search-query-language/search-operators/where) condition after the aggregation within the query. For example:
 
 ```sql
 _sourceCategory=aws/prod
@@ -184,7 +173,7 @@ Regards,
 The Sumo Logic Team
 ```
 
-Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](docs/alerts/scheduled-searches/receive-email-alerts.md). 
+Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](/docs/alerts/scheduled-searches/receive-email-alerts.md). 
 
 The above quota assumes that no more than 5 Alert emails will be triggered per hour or an alert every 12 minutes on average. Sumo Logic expects that Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 
@@ -201,8 +190,11 @@ Scheduled Searches must run within the limits of a [timeout period](#how-to-prev
 
 When a Scheduled Search query fails Sumo Logic attempts to run the query again a few more times. If all attempts fail the scheduled search is temporarily or permanently suspended depending on the issue detected. The owner of the scheduled search will receive an email alert with details of the suspension including the reason.
 
-The [Audit Index](docs/manage/security/audit-index.md) stores events on your scheduled search events.
+The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events.
 
+### Is there a limit on number of scheduled searches?
+
+A maximum of 6000 scheduled searches are allowed per account.
 
 ### Examples of Scheduled Search suspensions
 
@@ -212,7 +204,7 @@ The following is an example of a temporary suspension email:
 
 ![suspension email.png](/img/alerts/suspension-email.png)
 
-The [Audit Index](docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
+The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
 
 ![temp sus.png](/img/alerts/temp-sus.png)
 
@@ -222,7 +214,7 @@ The following is an example of a permanent suspension email:
 
 ![permanent sus.png](/img/alerts/permanentsus.png)
 
-The [Audit Index](docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a permanent suspension log:
+The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a permanent suspension log:
 
 ![perm sus.png](/img/alerts/perm-sus.png)
 

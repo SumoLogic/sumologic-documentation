@@ -38,7 +38,7 @@ _index=sumologic_volume _sourceCategory=<index_source_category>
 Where `index_source_category` is one of the categories listed in the table below.
 
 | Index Log Type | Index Source Category | Description |
-|--|--|--|
+|:--|:--|:--|
 | Collector | `collector_metrics_volume` | Use this source category to query metric volume by collector. |
 | Source | `source_metrics_volume` | Use this source category to query metric volume by source. |
 | SourceName | `sourcename_metrics_volume` | Use this source category to query metric volume by source name.  |

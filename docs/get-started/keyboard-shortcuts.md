@@ -1,14 +1,19 @@
 ---
 id: keyboard-shortcuts
-title: Sumo Logic Keyboard Shortcuts
+title: Keyboard Shortcuts
 sidebar_label: Keyboard Shortcuts
+description: Sumo Logic keyboard shortcuts.
 ---
 
-Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, press **?** or choose **Help \> Shortcuts** from the left nav.
+Sumo Logic keyboard shortcuts are enabled by default. To display the list of shortcuts from the UI, select **Help** > **Shortcuts** from the left nav.
+
+:::tip
+You can also press the **?** key to display the list of keyboard shortcuts.
+:::
 
 For security, shortcuts for some pages are visible only for users with an Admin account.
 
-To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **[Preferences](account-setup.md#my-preferences)**, and deselect **Enable keyboard shortcuts**.
+To disable keyboard shortcuts, for example, if they conflict with an international keyboard, click your name in the left nav, select **Preferences**, then deselect **Enable keyboard shortcuts**.
 
 ## Limitations
 
@@ -18,38 +23,42 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Keyboard Shortcuts on macOS
 
 | Shortcut  | Description |
-|-------------|---------------------------------------------------------------|
-| alt+s       | Open a new Search tab                                         |
-| alt+shift+n | Duplicate current query in a new tab (search only)            |
-| alt+shift+d | Duplicate both the original query and time range in a new tab |
-| alt+shift+q | Duplicate both the current query and time range in a new tab  |
-| alt+shift+t | Duplicate current time range in a new tab (search only)       |
-| alt+shift+p | Pause a running search (current tab only)                     |
-| alt+m       | Open a new Metrics tab                                        |
-| alt+f       | Open a new Dashboard (New) tab                                |
-| alt+a       | Open a new Traces tab                                         |
-| alt+l       | Open a new LiveTail tab                                       |
-| alt+d       | Popout to new browser tab (dashboard only)                    |
-| alt+h       | Switch to Home                                                |
-| alt+b       | Switch to Library                                             |
-| alt+\<1-9\>  | Switch to tab 1, 2, ... 9                                     |
-| alt+0       | Switch to the last tab                                        |
-| alt+\[      | Switch to the tab to the left of the current tab              |
-| alt+\]      | Switch to the tab to the right of the current tab             |
-| alt+w       | Close the current tab                                         |
-| alt+t       | Open the Collection page                                      |
-| alt+c       | Open the Settings page                                        |
-| alt+e       | Open the Alerts page                                          |
-| alt+u       | Open the Users tab                                            |
-| alt+x       | Open the Security page                                        |
-| alt+o       | Open the Account page                                         |
-| alt+p       | Open the Preferences tab                                      |
-| alt+z       | Open the Setup Wizard                                         |
+|:----------|:--------------------|
+| option+s       | Open a new Search tab                                         |
+| option+shift+n | Duplicate current query in a new tab (search only)            |
+| option+shift+d | Duplicate both the original query and time range in a new tab |
+| option+shift+q | Duplicate both the current query and time range in a new tab  |
+| option+shift+t | Duplicate current time range in a new tab (search only)       |
+| option+shift+p | Pause a running search (current tab only)                     |
+| option+m       | Open a new Metrics tab                                        |
+| option+f       | Open a new Dashboard tab                                      |
+| option+a       | Open a new Traces tab                                         |
+| option+l       | Open a new LiveTail tab                                       |
+| option+d       | Popout to new browser tab (dashboard only)                    |
+| option+h       | Switch to Home                                                |
+| option+b       | Switch to Library                                             |
+| option+<1-9>  | Switch to tab 1, 2, ... 9                                     |
+| option+0       | Switch to the last tab                                        |
+| option+[      | Switch to the tab to the left of the current tab              |
+| option+]      | Switch to the tab to the right of the current tab             |
+| option+w       | Close the current tab                                         |
+| option+t       | Open the Collection page                                      |
+| option+c       | Open the Settings page                                        |
+| option+e       | Open the Alerts page                                          |
+| option+u       | Open the Users tab                                            |
+| option+x       | Open the Security page                                        |
+| option+o       | Open the Account page                                         |
+| option+p       | Open the Preferences tab                                      |
+| option+z       | Open the Setup Wizard                                         |
+| command+j      | Share the current log search                                  |
+| command+s      | Open the Save as dialog                                       |
+| command+e      | Open the Edit dialog                                          |
+| shift+option+l | Open and start the Live Tail                                  |
 
 ## Keyboard Shortcuts on Windows
 
 | Shortcut  | Description |
-|-------------|-----------------------------------------------------------------|
+|:-------------|:-----------------------|
 | g s         | Open a new Search tab                                           |
 | alt+shift+n | Duplicate current query in a new tab (search only)              |
 | alt+shift+d | Duplicate both the original query and time range in the new tab |
@@ -74,3 +83,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | g p         | Open the Preferences tab                                        |
 | g z         | Open the Setup Wizard                                           |
 | ?           | Show this screen                                                |
+| ctrl+j      | Share the current log page                                      |
+| ctrl+s      | Open the Save as dialog                                         |
+| ctrl+e      | Open the Edit dialog                                            |
+| shift+alt+l | Open and start the Live Tail                                    |

@@ -15,7 +15,7 @@ If a partition is no longer needed, you can decommission it. Once a partition i
 
 **To decommission a partition**
 
-1. Go to  **Manage Data \> Logs \> Partitions**.  
+1. Go to  **Manage Data > Logs > Partitions**.  
 
     ![partitions-page.png](/img/partitions-data-tiers/partitions-page.png)
 

@@ -37,31 +37,21 @@ To create the Lookup Table schema:
 
 1. Go to the Sumo Logic Library.
 1. Navigate to the folder where you want to create the Lookup Table.
-1. Click **Add New** and then select **New Lookup**.
-
-    ![new-lookup.png](/img/cse/new-lookup.png)
-1. The **Create Lookup Table** page appears.
-
-    ![create-in-cip.png](/img/cse/create-in-cip.png)
+1. Click **Add New** and then select **New Lookup**. <br/>  ![new-lookup.png](/img/cse/new-lookup.png)
+1. The **Create Lookup Table** page appears. <br/>  ![create-in-cip.png](/img/cse/create-in-cip.png)
 1. **Name**. Enter a name for the Lookup Table.
 1. **Description**. (Optional)
-1. **Do you want a TTL for table entries**? Click **No**.
-1. **Size Limit Handling**. This option controls how additions to the Lookup table will be handled when it reaches its size limit (100 MB). Click **Delete Old Data.**
-1. **How do you want to create lookup?** Click **Create Schema only**.
-1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.)
-
-    ![schema.png](/img/cse/schema.png)
+1. **Set a TTL (Time to Live) for table entries**? Click **No**.
+1. **Choose a size limit handling option**. This option controls how additions to the Lookup table will be handled when it reaches its size limit (100 MB). Click **Delete Old Data.**
+1. **Create Lookup Table** Click **Create Schema only**.
+1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.) <br/>  ![schema.png](/img/cse/schema.png)
 1. For the first column, enter:
-
-   * **Field**. Enter *mail*.
+   * **Fields**. Enter *mail*.
    * **Value Type**. Leave the default, *string*, selected.
-   * **Primary Key.** Click the **Yes** checkbox.
-
+   * **Primary Key Field(s)**. Click the **Yes** checkbox.
 1. For the second column, enter:
-
-   * **Field**. Enter *samaccountname*.
+   * **Fields**. Enter *samaccountname*.
    * **Value Type**. Leave the default, *string,* selected.
-
 1. Click **Create**. 
 
 ## Step 2: Create a search to populate the table
@@ -85,7 +75,7 @@ Where:
 
     ![tree-dot.png](/img/cse/tree-dot.png)
 
-### Step 3: Save and schedule the search
+## Step 3: Save and schedule the search
 
 In this step you save and schedule the search created in [Step 2](#step-2-create-a-search-to-populate-the-table) to run on a regular basis. Daily is a good choice. 
 
@@ -93,31 +83,23 @@ Be sure to choose “Email” as the **Alert type**. (*Don’t* select **Save to
 
 To save and schedule the search:
 
-1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot menu in the query area.
-
-    ![save-as.png](/img/cse/save-as.png)
+1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot menu in the query area. <br/>  ![save-as.png](/img/cse/save-as.png)
 1. On the **Save Item** popup:
-
    * **Name**. Enter a name for the query.
    * **Time range**. Select a time range for the query.
    * **Search By**. Select *Receipt Time*.  
    * **Location to save to**. Choose a folder location.
-   * Click **Schedule this search**.    
-
-    ![save-item.png](/img/cse/save-item.png)
+   * Click **Schedule this search**.     <br/>![save-item.png](/img/cse/save-item.png)
 1. On the **Save Item** popup:
-
    * **Run frequency**. Select *Daily*, unless you have another preference.
    * **Send Notification**. Choose *If the following condition is met*.
    * **Alert condition**. Select *Less than \<*.
    * **Alert type**. Select *Email*.
    * **Number of results**. Enter *5*, or another value if you prefer.
    * **Recipients.** Enter the email addresses of one or more users to receive email alerts.
-   * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.    
-
-    ![save-item-2.png](/img/cse/save-item-2.png)
+   * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.  <br/>![save-item-2.png](/img/cse/save-item-2.png)
 1. Click **Save.**
 
 ## Step 4: Configure the Lookup Table in CSE
 
-If you’re going to use the Lookup Table to normalize Entities in CSE, follow the instructions in [Configure an Entity Lookup Table](docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md).
+If you’re going to use the Lookup Table to normalize Entities in CSE, follow the instructions in [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table.md).

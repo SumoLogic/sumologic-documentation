@@ -1,77 +1,27 @@
 ---
 id: access-keys
-title: Sumo Logic Access Keys Management APIs
+title: Access Keys Management APIs
 sidebar_label: Access Keys
-tags: [security]
 description: Use HTTP endpoints to manage access keys.
-
+hide_table_of_contents: true
 ---
 
-The [Access Keys](/docs/manage/Security/Access-Keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
 
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+The [Access Keys](/docs/manage/security/access-keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
 
-<table>
-  <tr>
-   <td>Deployment
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>AU
-   </td>
-   <td><a href="https://api.au.sumologic.com/docs/#tag/accessKeyManagement">https://api.au.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>CA
-   </td>
-   <td><a href="https://api.ca.sumologic.com/docs/#tag/accessKeyManagement">https://api.ca.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>DE
-   </td>
-   <td><a href="https://api.de.sumologic.com/docs/#tag/accessKeyManagement">https://api.de.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>EU
-   </td>
-   <td><a href="https://api.eu.sumologic.com/docs/#tag/accessKeyManagement">https://api.eu.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>FED
-   </td>
-   <td><a href="https://api.fed.sumologic.com/docs/#tag/accessKeyManagement">https://api.fed.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>IN
-   </td>
-   <td><a href="https://api.in.sumologic.com/docs/#tag/accessKeyManagement">https://api.in.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>JP
-   </td>
-   <td><a href="https://api.jp.sumologic.com/docs/#tag/accessKeyManagement">https://api.jp.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>US1
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/accessKeyManagement">https://api.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>US2
-   </td>
-   <td><a href="https://api.us2.sumologic.com/docs/#tag/accessKeyManagement">https://api.us2.sumologic.com/docs/#tag/accessKeyManagement</a>
-   </td>
-  </tr>
-</table>
+{@import ../reuse/api-intro.md}
+
+| Deployment | Documentation URL                                           |
+|:------------|:------------------------------------------------------------|
+| AU         | https://api.au.sumologic.com/docs/#tag/accessKeyManagement  |
+| CA         | https://api.ca.sumologic.com/docs/#tag/accessKeyManagement  |
+| DE         | https://api.de.sumologic.com/docs/#tag/accessKeyManagement  |
+| EU         | https://api.eu.sumologic.com/docs/#tag/accessKeyManagement  |
+| FED        | https://api.fed.sumologic.com/docs/#tag/accessKeyManagement |
+| IN         | https://api.in.sumologic.com/docs/#tag/accessKeyManagement  |
+| JP         | https://api.jp.sumologic.com/docs/#tag/accessKeyManagement  |
+| US1        | https://api.sumologic.com/docs/#tag/accessKeyManagement     |
+| US2        | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement |

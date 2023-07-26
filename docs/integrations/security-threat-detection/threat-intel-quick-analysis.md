@@ -21,26 +21,9 @@ The Threat Intel Quick Analysis App can be used for any type of logs, regardless
 
 This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel Optimization](#threat-intel-optimization). Alternatively, you can run this app on smaller and more specific data streams.
 
-This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and [Dashboards](#viewing-threat-intel-quick-analysis-dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Threat Intel Optimization
 
@@ -311,7 +294,7 @@ The following IOC types are available from CrowdStrike:
 
 #### Do IOCs and Threats expire?
 
-IOCs and Threats will often remain in the system because an IOC, such as an IP address, could go dormant and they reappear as part of another threat The last valid one can be found under **labels > Last_valid_on**. Be aware that over the period, their Malicious Confidence can be downgraded or upgraded depending upon recent activity.
+IOCs and Threats will often remain in the system because an IOC, such as an IP address, could go dormant and they reappear as part of another threat. The last valid one can be found under **labels** > **Last_valid_on**. Be aware that over the period, their Malicious Confidence can be downgraded or upgraded depending upon recent activity.
 
 
 #### I found an IOC in VirusTotal (or any other third-party threat feed), but I can’t find that IOC in CrowdStrike using the Sumo Logic Lookup?

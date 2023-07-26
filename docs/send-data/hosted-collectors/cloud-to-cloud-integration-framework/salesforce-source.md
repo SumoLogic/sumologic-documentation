@@ -4,7 +4,15 @@ title: Salesforce Source
 sidebar_label: Salesforce
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
+
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
+
+:::note
+This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
 
 ## Prerequisites: Generate the Salesforce API token
 
@@ -22,7 +30,7 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
 1. Create a Connected App in Salesforce to generate the “Consumer Key” (client_id) and “Consumer Secret” (client_secret) API tokens if these are not already available. To do so:
 
    * Login to Salesforce.  
-   * Go to **Setup \> Platform Tools \> Apps \> App Manager**.
+   * Go to **Setup > Platform Tools > Apps > App Manager**.
    * Select **New Connected App**. Enter the following [Basic Information](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm&type=5).
 
      * **App Name**. Enter a name for your connected app name. For Example, Sumo Logic.
@@ -47,7 +55,7 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. In Sumo Logic, select **Manage Data \> Collection \> Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 
@@ -75,7 +83,7 @@ To configure a Salesforce Source:
 1. **User Token**: Enter the user token.  
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
-15. When you are finished configuring the Source click **Submit**.
+15. When you are finished configuring the Source, click **Submit**.
 
 ### Polling Interval and Salesforce API Rate Limits
 
@@ -88,13 +96,13 @@ The Salesforce Source reports errors, its health, and initialization status. Oth
 
 A Salesforce Source goes through the following states when created:
 
-1. **Pending**: Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
-1. **Started**: A collection task is created on the hosted collector.
-1. **Initialized**: Task configuration is complete in Sumo Logic.
-1. **Authenticated**: The Source has successfully authenticated with Salesforce
-1. **Collecting**: The Source is actively collecting data from Salesforce.
+1. **Pending**. Once the Source is submitted, details are stored and the source is placed in a **Pending** state.
+1. **Started**. A collection task is created on the hosted collector.
+1. **Initialized**. Task configuration is complete in Sumo Logic.
+1. **Authenticated**. The Source has successfully authenticated with Salesforce
+1. **Collecting**. The Source is actively collecting data from Salesforce.
 
-If the Source has any issues during any one of these states it is placed in an **Error** state.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
 ![Error_State.png](/img/send-data/Error_State.png)
 
@@ -102,7 +110,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 ![Error_Status.png](/img/send-data/salesforce-error-status.png)
 
-When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the Collection page, the Health and Status for Sources is displayed. Use Health Events to investigate issues with collection.
 
@@ -111,17 +119,22 @@ On the Collection page, the Health and Status for Sources is displayed. Use Heal
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                                                      | ThirdPartyConfigError  |
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
+
+### Restarting your Source
+
+{@import ../../../reuse/restart-c2c-source.md}
+
 
 ### JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Required | Description | Access |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | config            | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
 | schemaRef         | JSON Object  | Yes | Use `{"type":"Salesforce"}` for a Salesforce. | not modifiable |
 | sourceType        | String       | Yes | Use `Universal` for a Salesforce Source. | not modifiable |
@@ -130,7 +143,7 @@ The following table shows the **config** parameters for a Salesforce
 Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
-|--|--|--|--|--|--|
+|:--|:--|:--|:--|:--|:--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
@@ -211,6 +224,10 @@ To resolve this:
 1. Check **View Event Log Files**
 1. Save it
 
+:::note 
+If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
+:::
+
 **Error**: Object type ‘SetupAuditTrail’ is not supported
 
 To resolve this:
@@ -218,6 +235,10 @@ To resolve this:
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
 1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail
+
+:::note 
+If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
+:::
 
 **Error** : Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 

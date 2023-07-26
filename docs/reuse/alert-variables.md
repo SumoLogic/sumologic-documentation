@@ -12,7 +12,7 @@ All variables are case-insensitive.
 :::
 
 | Variable | Description | Monitors | Scheduled Searches |
-| -- | -- | -- | --|
+| :-- | :-- | :-- | :--|
 | `{{Name}}` | The name of the alert. In the delivered payload, this variable is replaced with the Name you assigned to the alert when you created it. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{Description}}` | The description of the alert. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{MonitorType}}` | The type of alert, either `Logs` or `Metrics`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -91,11 +91,11 @@ Monitor Alert: {{TriggerTimeRange}} on {{Name}}
 This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
 
 :::tip
-We recommend you use the new [common variables](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections) instead of these legacy variables. In the future, legacy variables will be deprecated.
+We recommend you use the new [common variables](/docs/alerts/webhook-connections/set-up-webhook-connections) instead of these legacy variables. In the future, legacy variables will be deprecated.
 :::
 
 | Variable | Description | Metrics Monitors | Scheduled Searches |
-| -- | -- | -- | --|
+| :-- | :-- | :-- | :--|
 | ` {{SearchName}}` |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{SearchDescription}}` | Description of the saved search or Monitor. In the delivered payload, this variable is replaced with the Name you assigned to the search or Monitor when you created it. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{SearchQuery}}` | The query used to run the saved search. In the delivered payload, this variable is replaced by your saved search query or metric query. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |

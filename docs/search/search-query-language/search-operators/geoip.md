@@ -4,9 +4,7 @@ title: geoip Search Operator
 sidebar_label: geoip
 ---
 
-
-
-Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="/docs/dashboards-new/panels/map-charts">map chart</a>. To create the map, the geoip operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
+Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="/docs/dashboards/panels/map-charts">map chart</a>. To create the map, the `geoip` operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
@@ -16,7 +14,7 @@ Any IP addresses that don't have a location, such as internal addresses, will re
 geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
 ```
 
-##### Default result fields
+### Default result fields
 
 * latitude
 * longitude
@@ -25,7 +23,7 @@ geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
 * city
 * state
 
-##### Optional fields
+### Optional fields
 
 Depending on how specific you’d like the output to be you can include
 all the optional fields or choose a subset:
@@ -42,7 +40,7 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 ## Syntax to Map
 
-To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](#as-operator) it to `_count` so the map uses the field.
+To map the IP addresses properly you must [count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as.md) it to `_count` so the map uses the field.
 
 Your query should use the following syntax:
 
@@ -54,12 +52,12 @@ Your query should use the following syntax:
 
 This syntax produces aggregate results, so you can add a map to a Dashboard.
 
-#### Limitations
+## Limitations
 
 * Map charts have a display limit of 10,000 results.
 * Colors of map markers can't be changed.
 
-**Examples**
+## Examples
 
 Sample log message:
 
@@ -80,7 +78,7 @@ would produce the following results:
 
 ![geo lookup world map.png](/img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png)
 
-##### View map of geoip results
+### View map of geoip results
 
 Enter a query that parses the IP field from your logs, a **geoip** operator to match IP addresses and return geolocation fields you’d like to use to chart each IP address.
 
@@ -101,7 +99,7 @@ Enter a query that parses the IP field from your logs, a **geoip** operator to
 
 1. (Optional) Click **Add to Dashboard** to create a new Dashboard or add the map to an existing Dashboard. After adding a map to a Dashboard you will still be able to zoom in and drill down on the data.
 
-##### Optional fields
+### Optional fields
 
 This example returns the optional fields region, continent, and postal_code.
 
@@ -111,9 +109,9 @@ This example returns the optional fields region, continent, and postal_code.
 | count by latitude, longitude, region, continent, postal_code
 ```
 
-##### Handle null values
+### Handle null values
 
-To find a mismatch from a geo lookup operator query, use the [isNull](#isNull) operator.
+To find a mismatch from a geo lookup operator query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
 For example, running a query like:
 

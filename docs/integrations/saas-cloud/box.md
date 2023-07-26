@@ -1,6 +1,6 @@
 ---
 id: box
-title: Sumo Logic App for Box
+title: Box
 sidebar_label: Box
 description: Provides insight into user behavior patterns, monitors resources, and even tracks administrative activities.
 ---
@@ -41,7 +41,9 @@ The Sumo Logic App for Box collects Box events, which are described in detail [h
    "session_id": null,
    "additional_details": null
 }
+```
 
+```json
 {
    "source": {
       "type": "user",
@@ -80,176 +82,333 @@ _sourceCategory=box  type "event_type" login
 
 This section provides instructions for setting up event collection from Box for analysis in Sumo Logic. Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
 
-### Prerequisites
-
-* You must have Admin or Co-Admin Box user permissions. See [Step 5: Authenticate Box Prerequisites](#prerequisites-1) for more information.
-* The integration between Sumo and Box requires the SumoJanus configuration. The system where you deploy SumoJanus and configure your installed collector and script source must have Java.
-  * To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable.
-
-Setting up event collection from Box for analysis in Sumo Logic includes the following tasks, which must be performed in the order in which they are presented.
+The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
 
-### Step 1: Configure a Collector
+### Authentication
 
-If you don't already have an [installed collector, set one up](/docs/send-data/Installed-Collectors) now. Linux and Windows are supported.
+You'll need a Box App Key, App Secret, and Access Code to provide to Sumo Logic.
 
-### Step 2: Download the SumoJanus
-
-The following SumoJanus for Box package is required to collect logs from Box. SumoJanus is a proprietary library used for script-based collection from applications such as Okta, Box, and Salesforce.
-
-SumoJanus for Box v3.0.0 package file:
-* **For Linux**, download `sumojanus-box-dist.3.0.1.tar.gz` from [https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.tar.gz](https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.tar.gz).
-* **For Windows**, download `sumojanus-box-dist.3.0.1.zip` from [https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.zip](https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.zip).
-
-### Step 3: Deploy the SumoJanus for Box package
-
-In this task, you copy the package file to the folder where it will be deployed and then unpack the contents.
-
-1. Copy the downloaded package file to the location where it will be deployed.
-2. Unpack the contents of the file in that location, in one of the following ways:
-   * **On Linux**, run the following command:
-   ```sh
-   tar xzvf sumojanus-box-dist.3.0.0.tar.gz
-   ```
-   * **On Windows**, you can use Windows Explorer to open the package and copy it to the target folder. After you unpack the file, there should be a folder called **sumojanus-box** that contains files like this:<br/><img src={useBaseUrl('img/integrations/saas-cloud/Box_sumojanux-box_folder.png')} alt="Box_sumojanux-box_folder" />
-
-### Step 4: Edit the properties file
-
-In this task, you modify the properties file.
-
-1. Open the `sumojanus-box/conf/sumologic.properties` file in an ASCII text editor.
-2. Add the following lines:
-  ```
-  [boxcollector]
-  token_path = ${path}/data/box_enc.token
-  stream_pos_path = ${path}/data/box_stream_position.dat
-  # optional, default is admin event
-  #event_type = admin
-  # optional, encrypt token file or not. Default is false
-  encrypt_token_file = true
-  # Optional, Overwrite default encryption key
-  # encryption_key =
-  # optional, startTime to query for Event Log files, in epoch milliseconds, optional, default is 2 days back.
-  #startTime = 1435709058000
-  # optional, endTime to query for Event Log files, in epoch milliseconds
-  #endTime = 1436377600000
-  ```
-3. Save your changes.
+Complete the following steps to get the credentials:
+1. Login into the [Box Account](https://app.box.com/login).
+2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
+3. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
+4. Go to the `Configuration` and change `App Access Level` to `App + Enterprise Access` and enable `Manage Enterprise properties` in `Application Scopes` and save changes as shown below.<br/><img src={useBaseUrl('img/send-data/box-source4.png')} alt="Box" /> <br/><br/><img src={useBaseUrl('img/send-data/box-source5.png')} alt="Box" /> <br/><img src={useBaseUrl('img/send-data/box-source6.png')} alt="Box" />
+5. Authorize your app by following these steps [Authorize](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-authorization).
 
 
-### Step 5: Authenticate Box
+### States
 
-This section shows you how to set up authentication.
+A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
 
-#### Prerequisites
+A Box Source goes through the following states when created:
+1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
+2. **Started**. A collection task is created on the Hosted Collector.
+3. **Initialized**. The task configuration is complete in Sumo Logic.
+4. **Authenticated**. The Source successfully authenticated with Box.
+5. **Collecting**. The Source is actively collecting data from Box.
 
-* **You must have Admin or Co-Admin role permissions** to perform this procedure. A Co-Admin user only needs “Runs new report and access existing reports” privilege (under **Reports and Settings** section, as shown in the following image).<br/><img src={useBaseUrl('img/integrations/saas-cloud/box-privileges.png')} alt="box-privileges" width="450" />
-* You need an internet-connected computer with a web browser. We recommended that you use a Chrome or Firefox browser for the authentication procedure, _not_ Internet Explorer (IE).
-* As part of authentication, the script opens and listens to port 8080. It also creates a token file under the **sumojanus-box/data** folder. Make sure the local firewall settings and file permissions allow these operations. On Windows machines, you may need to create a firewall exception rule to allow port 8080 to be opened.
-* Verify the current JRE folder the collector is using by going to the **collector** folder under **config/wrapper.conf**, and looking for the **wrapper.java.command** variable.
+If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
-:::note
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder can change with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the `JAVAPATH` to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
-:::
+When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-To authenticate Box, do the following:
+On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
 
-1. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
-   * On Windows, update SumoJanus_Box.bat file. Navigate to the folder where you installed SumoJanus, and open SumoJanus_Box.bat file in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below. If your collector JRE is in a different location, update Line 3 accordingly.
-    ```bash
-    set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin"
-    ```
-   * On Linux, update SumoJanus_Box.bash file. Navigate to the folder where you installed SumoJanus, and open SumoJanus_Box.bash file in a text editor. Then, modify the line `"export JAVAPATH="${JAVA_HOME}""` to `"export JAVAPATH=/opt/SumoCollector/jre/"` (or the path to the JRE folder) and save the file.
-2. If you are logged in to your Box account, log out.
-3. From the **sumojanus-box** folder, open a terminal window and run one of the following commands:
-   * For Linux: `bin/SumoJanus_Box.bash -s`
-   * For Windows: `bin\SumoJanus_Box.bat -s`
-4. If Box presents a **Disabled by Administrator** message, follow these steps to grant access to the Sumo app, then re-run the script.
-    1. Go to **Enterprise Settings** or **Business Settings** and click **Apps**.
-    2. Scroll to the **Individual Application Controls** section, search for **SumoLogic**, and select **Available** for the app **SumoLogic_BoxCollector**.
-    3. Repeat Step 3 (re-run the script). The script opens a browser window.
-5. When the script opens the browser, provide your Box email password and click **Authorize.** Once Authorized, the app is enabled within your Developer enterprise. NOTE: If the SumoJanus script does not open a browser, it prints a URL in the terminal window that you can copy and paste into a browser to open the window.
-6. To grant access to all requested permissions, click **Grant access to Box.**
-  :::note
-  After after granting access in this step, you must perform the next step within 30 seconds or you’ll receive a "The authorization code has expired" error. If you get this error message, simply rerun the SumoJanus script as described in step 3.
-  :::
+You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/><img src={useBaseUrl('img/send-data/hover-c2c-error.png')} alt="Box" />
 
-  Your browser will display the message: `"This site can't be reached."` This is expected.
-
-7. Copy the URL from the browser, change the protocol from "https" to "http" then use one of the following options ON THE SAME MACHINE where the script is running (in case your browser is actually on a different machine). The use of single quotes surrounding the URL is **required.**
-    * **For Linux**, open a terminal window and run:
-     ```
-     curl -X GET 'the above url'
-     ```
-    * **For Windows**, open a Powershell window and run:
-    ```
-    Invoke-WebRequest 'the above url' -Method Get
-    ```
-
-  If everything was successful, you should see the message “`Thank you for granting access for SumoLogic BoxCollector”` somewhere in the return value. If you see an error regarding an expired authorization code instead, make sure you finish this step within 30 seconds of the previous step as noted above.
-
-8. Once permissions are granted, the script saves the access token to a local file—the default location is `${path}/data` or `./data`. Verify that the file was created. If not, repeat the authentication steps.
-
-  **On some Windows machines, the SumoJanus folder has “Read only” permission by default. Make sure you allow Write permission.**
-
-  The path to the token file is configured in the `conf/sumologic.properties` file, under the property `token_path`.
-
-9. (Optional) Test the script manually by going to the **sumojanus-box **folder and running one of the following commands.
-   * For Linux systems, run this command:
-    ```bash
-    bin/SumoJanus_Box.bash
-    ```
-   * **For Windows** systems, run this command:
-    ```bash
-    bin\SumoJanus_Box.bat
-    ```
-
-  You should now see a list of results of collected Box events.
-
-10. Close the CLI (Windows) or shell (Linux) window to kill the running script. By default it runs for 30 minutes.
+Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/><img src={useBaseUrl('img/send-data/health-error-generic.png')} alt="Box" />
 
 
-### Step 6: Configure a Source
+### Create a Box Source
 
-For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).
+When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
-To configure a source, do the following:
+To configure a Box Source:
+1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab.
+2. On the Collectors page, click **Add Source** next to a Hosted Collector.
+3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" />
+4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" />
+5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 
-1. Configure a [Script Source](/docs/send-data/installed-collectors/sources/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
-To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
-2. Configure the source fields:
-    1. **Name**. (Required) BoxCollector. (Description is optional.)
-    2. **Source Category**. (Required) box
-    3. **Frequency** (Required) **Every 5 Minutes**
-    4. **Specify a timeout for your command**: Active the checkbox and select **60 Minutes**
-    5. **Command** (Required)`/bin/bash` (specify the correct path on your system)
-    6. **Script** (Required) Use the path to `sumojanus`, such as: `/home/ubuntu/sumojanus-box/bin/SumoJanus_Box.bash`. Do not select “Type the script to execute.”
-    7. **Working Directory.** `/home/ubuntu/sumojanus-box`.
-3. Click **Save**.
+When configured with the **Forward to SIEM** option, the following metadata fields are set:
 
+<table>
+  <tr>
+   <td>
+Field Name
+   </td>
+   <td>Value
+   </td>
+  </tr>
+  <tr>
+   <td><code>_siemVendor</code>
+   </td>
+   <td>Box
+   </td>
+  </tr>
+  <tr>
+   <td><code>_siemProduct</code>
+   </td>
+   <td>Enterprise Events
+   </td>
+  </tr>
+  <tr>
+   <td><code>_siemFormat</code>
+   </td>
+   <td>JSON
+   </td>
+  </tr>
+  <tr>
+   <td><code>_siemEventID</code>
+   </td>
+   <td>&#123;event_type&#125;
+   </td>
+  </tr>
+</table>
+
+
+1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
+    * Define the fields you want to associate, each field needs a name (key) and value.
+        * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
+        * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+2. Upload the JSON file.
+3. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+4. When you are finished configuring the Source, click **Submit**.
+
+
+## Error types
+
+When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+
+<table>
+  <tr>
+   <td>Type
+   </td>
+   <td>Reason
+   </td>
+   <td>Retries
+   </td>
+   <td>Retry Behavior
+   </td>
+   <td>Health Event Name
+   </td>
+  </tr>
+  <tr>
+   <td>ThirdPartyConfig
+   </td>
+   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.
+   </td>
+   <td>No retries are attempted until the Source is updated.
+   </td>
+   <td>Not applicable
+   </td>
+   <td>ThirdPartyConfigError
+   </td>
+  </tr>
+  <tr>
+   <td>ThirdPartyGeneric
+   </td>
+   <td>Normally due to an error communicating with the third party service APIs.
+   </td>
+   <td>Yes
+   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.
+   </td>
+   <td>ThirdPartyGenericError
+   </td>
+  </tr>
+  <tr>
+   <td>FirstPartyGeneric
+   </td>
+   <td>Normally due to an error communicating with the internal Sumo Logic APIs.
+   </td>
+   <td>Yes
+   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.
+   </td>
+   <td>FirstPartyGenericError
+   </td>
+  </tr>
+</table>
+
+
+
+#### JSON configuration
+
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
+
+<table>
+  <tr>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required?</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Access</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>config
+   </td>
+   <td>JSON Object
+   </td>
+   <td>Yes
+   </td>
+   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source#configParameters"> configuration parameters</a> for the Source.
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>schemaRef
+   </td>
+   <td>JSON Object
+   </td>
+   <td>Yes
+   </td>
+   <td>Use <code>&#123;"type":"Box"&#125;</code> for a Box Source.
+   </td>
+   <td>not modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>sourceType
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>Use <code>Universal</code> for a Box Source.
+   </td>
+   <td>not modifiable
+   </td>
+  </tr>
+</table>
+
+
+The following table shows the **config** parameters for a Box Source.
+
+<table>
+  <tr>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Default</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Access</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>name
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>
+   </td>
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_source</code>.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>description
+   </td>
+   <td>String
+   </td>
+   <td>No
+   </td>
+   <td>null
+   </td>
+   <td>Type a description of the Source.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>category
+   </td>
+   <td>String
+   </td>
+   <td>No
+   </td>
+   <td>null
+   </td>
+   <td>Type the category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>fields
+   </td>
+   <td>JSON Object
+   </td>
+   <td>No
+   </td>
+   <td>
+   </td>
+   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+  <tr>
+   <td>credentialsJson
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>
+   </td>
+   <td>Its the authentication credentials to access Box platform.
+   </td>
+   <td>modifiable
+   </td>
+  </tr>
+</table>
+
+### Box Source JSON example
+
+```json
+{
+  "api.version":"v1",
+  "source":{
+    "schemaRef":{
+      "type":"Box"
+    },
+    "config":{
+      "name":"box-test-1",
+      "fields":{
+        "_siemForward":false
+      },
+      "credentialsJson":"********"
+    },
+    "state":{
+      "state":"Collecting"
+    },
+    "sourceType":"Universal"
+  }
+}
+```
 
 
 ## Installing the Box App
 
 Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#viewing-box-dashboards) to analyze your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 The Script Source is available for Linux or Windows environments with Java Runtime Environments.
 
@@ -292,7 +451,7 @@ The Script Source is available for Linux or Windows environments with Java Runti
 
 **Top 10 Logins by User.** Displays details about the top 10 users with the most logins, such as source user, source login, and event count in an aggregation table for the last 24 hours.
 
-**Top 10 Logins by IP.** Shows the top 10 IP address that logged into the account in a pie chart for the last 24 hours.
+**Top 10 Logins by IP.** Shows the top 10 IP addresses that logged into the account in a pie chart for the last 24 hours.
 
 **Top 10 Failed Logins.** Provides details on failed logins by user and event count in a column chart for the last 24 hours.
 

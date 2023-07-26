@@ -18,7 +18,7 @@ For information about cancelling a Sumo Logic subscription, see [Close or Cancel
 You must be an admin to upgrade your CloudFlex Credits free or trial account.
 :::
 
-1. To initiate your account upgrade, click the **Upgrade** link at the top of the Sumo Logic UI in your account, or go to **Administration** \> **Account** \> **Manage Plan**.
+1. To initiate your account upgrade, click the **Upgrade** link at the top of the Sumo Logic UI in your account, or go to **Administration** > **Account** > **Manage Plan**.
 2. The **Manage Plan** page appears.
     ![step-1.png](/img/subscriptions/manage-plan-upgrade-to-essentials.png)
 3. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
@@ -51,12 +51,12 @@ When you update the product variables for a monthly plan (without changing to an
 
 **To update your Essentials plan**
 
-1. Go to **Administration** \> **Account** \> **Manage Plan**. The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
+1. Go to **Administration** > **Account** > **Manage Plan**. The page displays information about your current plan: whether it’s monthly or annual, the billing cycle, the total credits for the plan, and the cost per period.
     ![current-plan.png](/img/subscriptions/current-plan.png)
 2. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
     ![current-levels.png](/img/subscriptions/current-levels.png)
 4. Choose **Subscription Type**. Click a radio button to change your subscription type from monthly to annual, or from annual to monthly, as desired.
-5. **Calculate Sumo Credits to Purchase**. Use the drop-down lists to select new values for the each product variable you want to change. As you make your changes, the plan cost and credits values are updated
+5. **Calculate Sumo Credits to Purchase**. Use the dropdown lists to select new values for the each product variable you want to change. As you make your changes, the plan cost and credits values are updated
     * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB.
     * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier.
     * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)

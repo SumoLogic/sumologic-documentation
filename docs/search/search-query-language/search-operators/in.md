@@ -4,7 +4,6 @@ title: in Search Operator
 sidebar_label: in
 ---
 
-
 The `in` operator returns a Boolean value: true if the specified property is in the specified object, or false if it is not.
 
 ## Syntax
@@ -17,9 +16,9 @@ In the syntax, we are checking the value of the field provided for the \<field\>
 
 If the value of `<field>` matches any of value arguments (`<value_1>, <value_2>, ...`) the function will return true. Otherwise, it will return false.
 
-**Examples**
+## Examples
 
-#### Find 5xx or 4xx errors, otherwise OK message
+### Find 5xx or 4xx errors, otherwise OK message
 
 The following query:
 

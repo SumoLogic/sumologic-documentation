@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
 
-
 The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
 
 From Sumo Logic, you may also set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when it detects that a Collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
@@ -46,9 +45,9 @@ From your Observable Networks portal, click **Settings** (gear icon) > **Integra
 
 Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). Name the collector "observable" (case-sensitive).
 
-**Create an access key**
+Create an access key:
 
-1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
+1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
 2. Click **Access Keys**.
 3. Add a new access key called Observable Networks, then save the new **Access ID** and **Access Key** values.
 
@@ -78,35 +77,29 @@ If you have Sumo Logic API access, you can integrate Observable Networks and Sum
 
 You can configure the Observable Networks portal to expect certain roles in the network to have corresponding log files. For example, you might expect a Terminal Server to capture an auth.log. When you configure this expectation, Observable will alert when a role is missing an expected log file, notifying you that there is a gap in your log coverage.
 
-To configure an expectation in Observable Networks**
+To configure an expectation in Observable Networks:
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Logs**.
 2. Enter the name for the expected log, such as **Auth Log**.
 3. Enter the **Log Query Prefix**, which is the search prefix given to Sumo Logic to filter for this log. For example, `_source=auth.log`.
-4. Select the roles that are expected to have this log. For example, **Terminal Server**.
-
-Only roles present on your network are available.
+4. Select the roles that are expected to have this log. For example, **Terminal Server**. Only roles present on your network are available.
 5. Click **Save**.
 
 You can also add a log without associating any roles. In this case, simply leave all roles deselected in Step 4.
 
-
 #### Parse Authentication Logs
-
 
 If you are collecting auth.log data in Sumo Logic from a compatible Linux distribution, you can configure Observable Networks to parse this data and monitor session activity.
 
 Before you begin, make sure that you are collecting from an auth.log source, and make sure that it is configured on the **Sumo Logic Logs** page.
 
-**To parse authentication logs**
+To parse authentication logs:
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Settings**.
-2. From the **Auth.log** drop-down, select the log configuration that represents the auth.log source.
+2. From the **Auth.log** dropdown, select the log configuration that represents the auth.log source.
 3. Click **Save**.
 
-
 ### Sample Log Messages
-
 
 ```json
 {
@@ -150,10 +143,7 @@ Before you begin, make sure that you are collecting from an auth.log source, and
 }
 ```
 
-
-
-### Query Samples
-
+### Sample Queries
 
 ```sql title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count
@@ -172,33 +162,11 @@ _sourceCategory=observable
 | order by _count desc
 ```
 
-
-
 ## Install the Observable Networks App
 
-This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#viewing-dashboards) allow you to visually analyze your Observable Networks data at a glance.
+This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Observable Networks Dashboards
 

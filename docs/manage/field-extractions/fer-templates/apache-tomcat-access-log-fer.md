@@ -26,7 +26,7 @@ description: Create a field extraction rule for Apache Tomcat 7 Access Logs.
 **Resulting Fields:**
 
 | Field Name | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | ip |   | 192.100.20.135 |
 | method |   | GET |
 | url |   | /ServiceAPI/mappings/123456/load |

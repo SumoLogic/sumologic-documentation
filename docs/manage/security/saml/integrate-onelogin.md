@@ -1,12 +1,13 @@
 ---
 id: integrate-onelogin
 title: Integrate Sumo Logic with OneLogin
+description: Learn how to configure OneLogin and Sumo Logic to allow Sumo Logic users to sign on to Sumo Logic using OneLogin SSO.
 ---
 
 ## Availability
 
 | Account Type | Account Level |
-|--------------|---------------------------------------------------------------------------------|
+|:--------------|:---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
@@ -70,7 +71,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
 
 This section has instructions for configuring SAML in Sumo Logic.
 
-1. Go to **Administration \> Security \> SAML**.
+1. Go to **Administration > Security > SAML**.
 1. Click **+ Add Configuration** to create a new configuration.    
 
     ![config-list.png](/img/security/config-list.png)
@@ -112,7 +113,7 @@ features.
 ### Configure SP-initiated login
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 :::
 
 This configuration enables a Sumo user to initiate login from Sumo Logic. Sumo redirects the user to OneLogin with a SAML AuthnRequest with the  information that OneLogin needs to authenticate the user. OneLogin replies to Sumo with a SAML Assertion (SAMLResponse). 

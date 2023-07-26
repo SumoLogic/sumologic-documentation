@@ -5,7 +5,7 @@ sidebar_label: values
 ---
 
 
-The **`values`** operator provides all the distinct values of a field. This allows you to quickly identify and understand all the values a field has in your data. Additionally, you have the option to group by other fields of interest.
+The `values` operator provides all the distinct values of a field. This allows you to quickly identify and understand all the values a field has in your data. Additionally, you have the option to group by other fields of interest.
 
 ## Syntax
 
@@ -34,7 +34,7 @@ This is an example of a response field with IP addresses:
 
 ### Operational Analytics
 
-To identify all IP addresses by region.
+To identify all IP addresses by region:
 
 ```
 _sourceCategory=Labs/*
@@ -42,7 +42,7 @@ _sourceCategory=Labs/*
 | values(ip_address) by region
 ```
 
-To identify all IP addresses and namespaces by region.
+To identify all IP addresses and namespaces by region:
 
 ```
 _sourceCategory=Labs/*
@@ -50,7 +50,7 @@ _sourceCategory=Labs/*
 | values(ip_address) as val_ip, values(namespace) as val_namespace by region
 ```
 
-To identify all sources by error type in my stack that logged an error in the last 24 hours.
+To identify all sources by error type in my stack that logged an error in the last 24 hours:
 
 ```sql
 _sourceCategory=prod01*
@@ -60,7 +60,7 @@ _sourceCategory=prod01*
 | count as errors, values(sc) by log_level
 ```
 
-To identify users that logged in from more than one country in the last 24 hours with a list of countries logged in from.
+To identify users that logged in from more than one country in the last 24 hours with a list of countries logged in from:
 
 ```sql
 _sc=org-service “login”
@@ -79,7 +79,7 @@ To know if my services have interacted with any known IOC threats.
 ```
 
 To understand what ports were scanned or communicated over by one
-src_ip.
+`src_ip`.
 
 ```sql
 _source="PatchingInfo" and _collector="AWS SecurityHub Non Prod"

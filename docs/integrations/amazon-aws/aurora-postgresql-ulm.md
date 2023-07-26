@@ -1,15 +1,14 @@
 ---
 id: aurora-postgresql-ulm
-title: Amazon Aurora PostgreSQL ULM
-sidebar_label: Amazon Aurora PostgreSQL ULM
-description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+title: Aurora PostgreSQL ULM
+description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With Cloudtrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
+The Sumo Logic App for Amazon Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With CloudTrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
 
 The Sumo Logic App for Aurora PostgreSQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
@@ -179,8 +178,8 @@ To collect AWS CloudTrail events, do the following:
    * **Description** - Enter an optional description.
    * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
-   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/Amazon-Path-Expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category** - Enter a source category, for example, AWS/Cloudtrail.
+   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Source Category** - Enter a source category, for example, AWS/CloudTrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
    * **Enable Timestamp Parsing** - Select the checkbox to enable.
@@ -208,26 +207,9 @@ To collect Aurora CloudWatch metrics, do the following:
 
 ## Installing the Aurora PostgreSQL ULM App
 
-Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic App for Aurora PostgreSQL ULM, and use its pre-configured searches and [dashboards](#viewing-dashboards).
+Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic App for Aurora PostgreSQL ULM, and use its pre-configured searches and dashboards.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Aurora PostgreSQL ULM Dashboards
 
@@ -247,7 +229,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 To drill down for details, click the Event Status panel. Details are shown for the of events in the linked dashboard: Aurora PostgreSQL ULM - CloudTrail Event - Details.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_CloudTrailEvent_Overview.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-CloudTrail-Event-Overview.png')} alt="Aurora PostgreSQL ULM" />
 
 
 ### CloudTrail Event - Details
@@ -258,7 +240,7 @@ Use this dashboard to:
 * Keep track of your Aurora PostgreSQL Clusters and Instances. This dashboard provides details about various cluster and instance related activities, such as creation, modification, deletion and reboot of instances. The improper configuration of clusters and instances may have adverse impact on performance.
 * Help identify problems with details about the Aurora PostgreSQL specific events that provide insights into how to solve a particular problem.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_CloudTrailEvent_Details.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-CloudTrail-Event-Details.png')} alt="Aurora PostgreSQL ULM" />
 
 
 ### Metric - Overview
@@ -273,7 +255,7 @@ Use this dashboard to:
 * Monitor Volume Read and Write IOPS to ensure the database is optimally interacting with disk.
 * Monitor replica lags and available free memory to ensure support of heavy read loads with good performance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_Overview.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Overview.png')} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Generic
 
@@ -287,7 +269,7 @@ Use this dashboard to:
 * Monitor cache hit ratio to identify free memory from query performance perspective.
 * Identify deadlocks, if any, and identify free local storage.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_Generic.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Generic.png')} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Latency, Throughput, and IOPS Monitoring
 
@@ -301,7 +283,7 @@ Use this dashboard to:
 * Monitor Read and Write IOPS to ensure your database is interacting with disk optimally.
 * Monitor database wait times for disk access with the Disk Queue Depth panel.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_LTIOPSMonitoring.png')} alt="Aurora PostgreSQL ULM" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Aurora-PostgreSQL-ULM-Metric-Latency,-Throughput-and-IOPS-Monitoring.png')} alt="Aurora PostgreSQL ULM" />
 
 ### Metric - Resource Utilization Monitoring
 

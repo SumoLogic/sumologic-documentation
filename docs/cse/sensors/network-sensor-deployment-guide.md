@@ -5,6 +5,8 @@ sidebar_label: Network Sensor Deployment
 description: Learn about Network Sensor deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This section has instructions for deploying the CSE Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
 ## Network Sensor overview
@@ -21,7 +23,6 @@ The sensor uses [PF_RING](https://www.ntop.org/products/packet-capture/pf_ring/)
 
 1. Determine the appropriate location for each sensor, based on anticipated traffic.
 1. For each location you designate:
-
    1. Determine the amount of throughput you will get with this placement.
    1. Use the scaling guide to determine the CPU and memory requirements for the VM or hardware. Confirm that their firewall rules are in place.
    1. Confirm that there is traffic flowing on the interface.
@@ -40,7 +41,7 @@ Forward proxies, such as HTTP web proxies, broker client connections to the inte
 
 The following diagram Illustrates optimal sensor positioning prior to a web proxy.
 
-![Network Sensor Deployment Guide_SS_1.png](/img/cse/Network_Sensor_Deployment_Guide_SS_1.png)
+<img src={useBaseUrl('img/cse/Network_Sensor_Deployment_Guide_SS_1.png')} alt="Network sensor deployment" width="800"/>
 
 Sumo Logic advises positioning network sensors for visibility at a monitoring point immediately in front of the proxy server(s). This allows the sensor to record client source addresses and to see all web requests prior to content filtering. This is an important factor for a number of CSE’s rules and analytics, which rely on knowing the “true” source of requests. Because a number of threats beacon to remote internet servers, seeing even those requests that are filtered by a proxy server is important for monitoring and response.
 
@@ -88,7 +89,7 @@ The system upon which you install the Network Sensor must have the following res
 below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|------------------------------------|-------------|--------------|----------------|
+|:------------------------------------|:-------------|:--------------|:----------------|
 | CentOS 6, 7, 8 or Ubuntu 16, 18,20 | 4           | 4GB          | 250GB          |
 
 :::note
@@ -111,7 +112,7 @@ reboot
 ### Throughput-dependent resource requirements
 
 | Throughput | Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|--|--|--|--|--|
+|:--|:--|:--|:--|:--|
 | 250mbps | 4 | 4GB | 250GB |
 | 500mbps | 5 | 8GB | 250GB |
 | 750mbps | 6 | 12GB | 250GB |
@@ -227,7 +228,7 @@ Link settings
 
 ## Install the Network Sensor
 
-Download the installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md). Start the installer using the command provided on that page, and then respond to the prompts as described below.
+Download the installer using the download link for your deployment shown on [Sensor Download Locations](/docs/cse/sensors/sensor-download-locations/). Start the installer using the command provided on that page, and then respond to the prompts as described below.
 
 ## Uninstall the Network Sensor
 
@@ -572,7 +573,7 @@ cluster_config_file         = /opt/trident/sensor/bro/etc/node.cfg
 
 The `/opt/trident/sensor/bro/etc/node.cfg` file is automatically generated, based on the choices you make when running the configuration wizard at installation time. 
 
-Typically you should not edit `node.cfg` without consulting CSE support. Under some circumstances, edits may be necessary, for example if you want to monitor more than one capture interface.
+Typically you should not edit `node.cfg` without consulting CSE support. Under some circumstances, edits may be necessary, for example, if you want to monitor more than one capture interface.
 
 If you do make manual updates to `node.cfg`, you must restart the Network Sensor for the changes to take effect with this command:
 `sudo service trident_sensor restart`

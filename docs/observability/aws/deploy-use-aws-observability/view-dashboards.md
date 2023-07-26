@@ -10,11 +10,11 @@ description: Learn how to use Explore to navigate your AWS Observability infrast
 This feature is available in the following account plans.
 
 | Solution Component | CloudFlex | Credits |
-|--|--|--|
+|:--|:--|:--|
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
-This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards-new/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 ## Working with Explore View
 
@@ -27,14 +27,14 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 To open Explore and AWS Observability View, do the following:
 
 1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the drop-down menu, choose **Explore**. 
+1. From the dropdown menu, choose **Explore**. 
 
     ![Explorer.png](/img/observability/Explorer.png)
 
     The Explore navigation panel appears on the left.
 
 1. Click the **Explore By** arrow and select **AWS Observability** from
-    the drop-down menu.
+    the dropdown menu.
 
     ![OS_Explore_By_menu.png](/img/observability/OS_Explore_By_menu.png)
 
@@ -61,9 +61,9 @@ To investigate services in your AWS environment, do the following:
 
     ![AWS-Region-Overview.png](/img/observability/AWS-Region-Overview.png)
 
-1. From the expanded account and region combination, select a namespace/AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
+1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
 
-![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
+    ![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
 
 ## Drill down for root cause analysis
 
@@ -73,31 +73,30 @@ Select the graph data point you are interested in. In the following screenshot, 
 
 ![Drill_RCA.png](/img/observability/Drill_RCA.png)
 
-For details, see [Drill down to discover root causes](../../../dashboards-new/drill-down-to-discover-root-causes.md).
+For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
 
 ## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
 
-To troubleshoot production incidents using Root Cause Explorer, please follow the instructions in [the Root Cause Explorer documentation.](docs/observability/root-cause-explorer.md). 
+To troubleshoot production incidents using Root Cause Explorer, please follow the instructions in [the Root Cause Explorer documentation.](/docs/observability/root-cause-explorer.md). 
 
 ## Viewing AWS Observability Solution Dashboards
 
 All of the apps are installed in a folder named **Sumo Logic AWS Observability Apps** that is located in your personal folder and can be viewed outside of Explore.
 
-To add a new dashboard to your explore hierarchy, refer to the instructions in the [Add new Service documentation](docs/observability/aws/other-configurations-tools/add-new-aws-service.md).
+To add a new dashboard to your explore hierarchy, refer to the instructions in the [Add new Service documentation](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md).
 
 To view the app dashboards outside of Explorer, do the following:
 
 1. Navigate to your Sumo Logic personal folder. 
 1. Click an app folder to list the dashboard pages.
-1. Click a page link to view the dashboard in the window on the right.   
-
-    ![App_folder.png](/img/observability/add-new-service.jpeg)
+1. Click a page link to view the dashboard in the window on the right.   <br/>  ![App_folder.png](/img/observability/add-new-service.jpeg)
 
 Click a link for information on the individual app dashboards:
 
 * [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
 * [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
 * [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
+* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md/)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
 * [Amazon RDS Dashboards](../integrations/aws-rds-metrics.md)
@@ -106,9 +105,9 @@ Click a link for information on the individual app dashboards:
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
 * [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
-* [Amazon RDS Dashboards](docs/observability/aws/integrations/aws-rds-metrics.md)
-* [Amazon SNS Dashboards](docs/observability/aws/integrations/amazon-sns.md)
+* [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
+* [Amazon SQS Dashboards](../integrations/amazon-sqs.md)
 
 ## More Information
 
-* [Explore View](docs/dashboards-new/explore-view.md)
+* [Explore View](/docs/dashboards/explore-view.md)

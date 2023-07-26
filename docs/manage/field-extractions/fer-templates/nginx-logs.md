@@ -26,7 +26,7 @@ parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 **Resulting Fields:**
 
 | Field | Description | Example |
-|--|--|--|
+|:--|:--|:--|
 | src_ip | IP from which request was made | 205.197.2.175 |
 | method | HTTP request type | GET |
 | url | Resource requested by the client | /wp-content/uploads/Screen-Shot-2017-04-13-at-7.12.35-PM-231x300.png |

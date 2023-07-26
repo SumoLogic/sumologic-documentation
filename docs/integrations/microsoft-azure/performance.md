@@ -1,6 +1,6 @@
 ---
 id: performance
-title: Sumo Logic App for Windows Performance
+title: Windows Performance
 sidebar_label: Windows Performance
 description: The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems.
 ---
@@ -136,17 +136,17 @@ This section provides instructions for configuring log collection for the Window
 To collect logs for the Windows Performance App, you will need to configure an Installed Collector, and either a Local or Remote Windows Performance  Monitor Log Source.
 
 To collect logs for the Windows Performance App, do the following:
-1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
+1. Install a collector as described in [Installed Collector](/docs/send-data/installed-collectors).
 2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
-    * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Local-Windows-Performance-Monitor-Log-Source).
-    * [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/Remote-Windows-Performance-Monitor-Log-Source).
+    * [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source).
+    * [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source).
 
 
 ### Add a Custom Query to the Windows Performance Source
 
 To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
 
-1. Go to **Manage Data > Collection > Collection**.
+1. Go to **Manage Data** > **Collection** > **Collection**.
 2. Find the Collector and the Windows Performance Source.
 3. For the **Source**, click **Edit**.
 4. Under **Perfmon Queries** select the check boxes for these queries:
@@ -163,26 +163,9 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 
 ## Installing the Windows Performance App
 
-Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Windows Performance Dashboards
 
@@ -191,7 +174,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Windows Performance Overview
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Windows-Performance-Overview.png')} alt="Windows Performance Overview" />
 
 **Top 10 Processes by Average Processor Time (%) per Host.** Displays the top 10 processes per host by average processor time in a stacked column chart for the last 15 minutes. The legend lists the processes.
 
@@ -206,7 +189,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### CPU Performance
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/CPU-Performance.png')} alt="CPU Performance" />
 
 **Average CPU Usage (%) by Host.** Displays the average CPU usage of the systems in your environment as a line graph on a timeline using timeslices of one minute for the last 15 minutes.
 
@@ -221,7 +204,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Disk Performance
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Disk-Performance.png')} alt="Disk Performance" />
 
 **Average Disk Time Percentage by Host.** Displays the average disk time percentage for each host as a stacked column chart for the last 15 minutes. The legend lists the disk time status.
 
@@ -238,7 +221,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Memory Performance
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Memory-Performance.png')} alt="Memory Performance" />
 
 **Available Memory (MB) by Host.** Displays the available memory in MBs for each host as a line chart on a timeline using timeslices for one minute for the last 15 minutes.
 
@@ -253,7 +236,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Network Performance
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Performance/Memory-Performance.png')} alt="Network Performance" />
 
 **Average Bytes Received per Second by Host.** Displays the average number of bytes received per second for each host as an area chart on a timeline using timeslices of one minute for the last 15 minutes.
 

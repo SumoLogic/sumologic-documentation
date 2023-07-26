@@ -7,7 +7,7 @@ description: The Data Volume Index is populated with a set of log messages that 
 The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the `_receiptTime` [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
 
 | Index Log Type | Index Source Category |
-|--------------------|--------------------------------|
+|:--------------------|:--------------------------------|
 | Collector          | `collector_and_tier_volume`      |
 | Source             | `source_and_tier_volume`         |
 | SourceName         | `sourcename_and_tier_volume`     |
@@ -25,7 +25,7 @@ You can query the data volume index just like any other message using the Sumo 
 
 ## Sumo Logic App for Data Volume
 
-Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app](/docs/integrations/sumo-apps/Data-Volume).
+Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app](/docs/integrations/sumo-apps/data-volume).
 
 ## Known Issue
 
@@ -194,7 +194,7 @@ _index=sumologic_volume _sourceCategory=<index_source_category>
 Where `index_source_category` is one of the categories listed in the table below.
 
 | Index Log Type | Index Source Category | Description |
-|--|--|--|
+|:--|:--|:--|
 | Collector | `collector_tracing_volume` | Use this source category to query tracing volume by collector. |
 | Source | `source_tracing_volume` | Use this source category to query tracing volume by source. |
 | SourceName | `sourcename_tracing_volume` | Use this source category to query tracing volume by source name. |

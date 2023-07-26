@@ -6,7 +6,7 @@ description: Learn how to view details about a Sumo Logic partition.
 
 To view details about a Partition:
 
-1. Go to **Manage Data** \> **Logs** \> **Partitions**.
+1. Go to **Manage Data** > **Logs** > **Partitions**.
 
     ![partitions-page.png](/img/partitions-data-tiers/partitions-page.png)
 

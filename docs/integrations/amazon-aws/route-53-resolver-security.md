@@ -1,7 +1,6 @@
 ---
 id: route-53-resolver-security
-title: Sumo Logic App for Amazon Route53 Resolver Security
-sidebar_label: Amazon Route53 Resolver Security
+title: Amazon Route53 Resolver Security
 description: AUse the Amazon Route 53 app to monitor and visualize DNS activity in your AWS infrastructure.
 ---
 

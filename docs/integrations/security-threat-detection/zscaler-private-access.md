@@ -41,8 +41,8 @@ To collect logs for Zscaler Private Access, perform these steps, detailed in the
 
 To collect logs for ZPA, do the following in Sumo Logic:
 
-1. Configure a [Hosted Collector](/docs/send-data/Hosted-Collectors).
-2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors).
+2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     * **Name**. (Required) A name is required. Description is optional.
     * **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 For details see[ Best Practices](/docs/send-data/best-practices).
@@ -97,13 +97,13 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 
 1. **Name**: Enter a name for the log receiver. The name cannot contain special characters, with the exception of periods (.), hyphens (-), and underscores ( _ ).
 2. **Description**: (Optional) Enter a description.
-3. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source).
-4. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). Default: 6514
+3. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
+4. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). Default: 6514
 5. **TLS Encryption**: Select Enabled.
 6. **Connector Groups**: Choose the App Connector groups that can forward logs to the receiver, and click **Done**. You can search for a specific group, click **Select All** to apply all groups, or click **Clear Selection** to remove all selections.
 7. Click **Next**.
 1. [Log Stream](https://help.zscaler.com/zpa/configuring-log-receiver#Step2)
-    1. In the **Log Stream** tab, select a **Log Type** from the drop-down menu:
+    1. In the **Log Stream** tab, select a **Log Type** from the dropdown menu:
         1. **User Activity**: Information on end user requests to applications. To learn more, see[ User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
         2. **User Status**: Information related to an end user's availability and connection to ZPA. To learn more, see[ User Status Log Fields](https://help.zscaler.com/zpa/user-status-log-fields).
         3. **Connector Status**: Information related to an App Connector's availability and connection to ZPA. To learn more, see[ App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).
@@ -115,11 +115,11 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
  \
 Edit the the log stream content, paste the following text in the beginning of the template:
-    
-    <165>1 - - - - - - <Syslog Token>
-    
 
-For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+    <165>1 - - - - - - <Syslog Token>
+
+
+For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 
 
 
@@ -146,34 +146,12 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 Now that you have set up collection for HAProxy, you can install the HAProxy App to use the pre-configured searches and dashboard that provide insight into your data.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/apps-integrations#install-apps-from-the-library)
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing ZPA Dashboards  
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview

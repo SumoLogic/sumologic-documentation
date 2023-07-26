@@ -16,7 +16,7 @@ To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisite
 To configure a Remote File Source:
 
 1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose** Add **Source from the pop-up menu.
 1. Select **Remote File** for the Source type.   
 
@@ -62,7 +62,7 @@ To configure a Remote File Source:
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
 1. Create any processing rules you'd like for the new Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 ## Configuring sourceCategory and sourceHost using variables
 

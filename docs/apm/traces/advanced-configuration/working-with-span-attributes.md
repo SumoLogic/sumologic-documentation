@@ -1,7 +1,6 @@
 ---
 id: working-with-span-attributes
-title: Working with Span attributes
-sidebar_label: Working with Span attributes
+title: Working with Span Attributes
 description: Learn how to modify the attributes of your spans.
 ---
 
@@ -9,7 +8,7 @@ You can add, delete, hash, or modify span attributes (metadata tags) on Collecto
 
 ## Attach logs to spans
 
-You can collect logs with traces attached to them by [inserting spanid/traceid from span context when writing to logs](../get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
+You can collect logs with traces attached to them by [inserting `spanid` and `traceid` from span context when writing to logs](../get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
 
  * error
  * error.kind
@@ -18,13 +17,13 @@ You can collect logs with traces attached to them by [inserting spanid/traceid 
  * message
  * stack
 
-and they are displayed in the **Span logs** tab in [Details Pane](../working-with-tracing-data/view-and-investigate-traces.md) after clicking on the span.
+and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/traces/view-and-investigate-traces) after clicking on the span.
 
 ![span logs in details pane.png](/img/traces/span-logs-in-details-pane.png)
 
 ## Working with attributes on OpenTelemetry collector
 
-Regardless If you're using the Sumo Logic distribution of OpenTelemetry collector, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
+Whether you're using the Sumo Logic OpenTelemetry collector distribution, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
 
 Refer to the [OpenTelemetry collector attributes processor documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/attributesprocessor) for examples.
 
@@ -32,4 +31,4 @@ Refer to the [OpenTelemetry collector attributes processor documentation](https:
 
 You can insert dynamically-created custom tags in your code by calling the appropriate functions of OpenTelemetry auto-instrumentation.
 
-See how to pass [custom tags](../get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration.md) for Java auto-instrumentation.
+See how to pass [custom tags](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration) for Java auto-instrumentation.

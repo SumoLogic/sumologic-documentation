@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="75"/>
 
-As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the  requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices.  Even if you don't handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor.
+As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices. Even if you don't handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor.
 
 Maintaining compliance with any regulation or law is something each entity must manage. Self-policing is always tricky, but when your organization is handling thousands upon thousands of log messages with potentially sensitive data, the task becomes monumental.
 

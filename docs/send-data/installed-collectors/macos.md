@@ -1,16 +1,14 @@
 ---
 id: macos
-title: Install a Collector on MacOS
-description: Install or uninstall a Collector on a MacOS system.
+title: Install a Collector on macOS
+description: Install or uninstall a Collector on a macOS system.
 ---
 
-
-
-Follow the steps in this topic to install or uninstall a Collector on MacOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
+Follow the steps in this topic to install or uninstall a Collector on  macOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
 
 ## System Requirements
 
-* MacOS 10.X
+* macOS 10.X
 * Single core, 512MB RAM
 * 8GB disk space
 
@@ -22,7 +20,7 @@ If your machine has already had an Installed Collector installed in the past and
 
 Download the Collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the Collector to begin the download.
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the Collector to begin the download.
 * Open a browser and enter the static URL for your Sumo deployment. See how to determine which endpoint to use if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install
@@ -34,7 +32,7 @@ Install the Collector using either of the following methods:
 
 After installing Collectors, you can configure Sources from Sumo Logic or by providing the [Source settings in a JSON file](/docs/send-data/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the Collector.
 
-If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](collector-installation-reference/binary-package-install-a-collector.md) topic for details.
+If necessary, you can use the binary package to install a Collector on macOS. See this [Collector FAQ](collector-installation-reference/binary-package-install-a-collector.md) topic for details.
 
 ### Install using the UI installer 
 
@@ -47,12 +45,10 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. Browse to select a location for the Collector or accept the default and click **Next** to install the Collector files on your machine.
 1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](collector-installation-reference/advanced-ui-installer-settings.md)  and follow the instructions. Click **Next**.
 1. Choose an authentication method.
-
-* Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-* Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
-
+   * Access Key: If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
+   * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
 1. Click **Finish** to complete the setup.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
 ### Install using the command line installer 
 
@@ -97,11 +93,9 @@ If you uninstall a Collector, no more data is sent to Sumo Logic from that machi
 Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 1. Uninstall the Collector from the host machine using either of these methods.
-
-* [Uninstall using the installer](#uninstall-using-the-installer)
-* [Uninstall from the command line](#uninstall-from-the-command-line)
-
-1. [Remove the Collector from Sumo Logic](#delete-the-collector-from-the-web-application).
+   * [Uninstall using the installer](#uninstall-using-the-installer)
+   * [Uninstall from the command line](#uninstall-from-the-command-line)
+1. [Remove the Collector from Sumo Logic](#delete-the-collector-from-sumo-logic).
 
 ### Uninstall using the installer
 
@@ -115,20 +109,18 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 ### Uninstall from the command line
 
 1. In a terminal prompt, change the directory to the Collector installation directory.   Example:
-
-```bash
-cd /Applications/Sumo\ Logic\ Collector
-```
-
+1. In a terminal prompt, change the directory to the Collector installation directory. Example:
+   ```bash
+   cd /Applications/Sumo\ Logic\ Collector
+   ```
 1. Run the JavaApplicationStub binary with the **-q** option. The **-q** option executes the command without presenting additional prompts.   Example:
-
-```bash
-sudo Sumo\ Logic\ Collector\ Uninstaller.app/Contents/MacOS/JavaApplicationStub -q
-```
+   ```bash
+   sudo Sumo\ Logic\ Collector\ Uninstaller.app/Contents/MacOS/JavaApplicationStub -q
+   ```
 
 ### Delete the Collector from Sumo Logic
 
-1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the Collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 

@@ -12,7 +12,7 @@ This section has instructions for creating and editing users in Sumo Logic. For 
 
 To create a user:
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.
+1. Go to **Administration** > **Users and Roles** > **Users**.
 1. Click the **+ Add User** on the upper right side of the page.
 1. The **Create New User** pane appears on the right side of the page.
 
@@ -31,7 +31,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## View a user
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.
+1. Go to **Administration** > **Users and Roles** > **Users**.
 1. Click the row for the user you want to view.
 1. A pane appears on the right side of the page with the user's details.
 
@@ -48,7 +48,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## Edit a user
 
-1. Go to **Administration** \> **Users and Roles** \> **Users**.
+1. Go to **Administration** > **Users and Roles** > **Users**.
 
     ![user-options-menu.png](/img/users-roles/user-options-menu.png)
 

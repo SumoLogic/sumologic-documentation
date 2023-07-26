@@ -1,9 +1,8 @@
 ---
 id: parse-json-formatted-logs
 title: Parse JSON Formatted Logs
+description: The JSON operator allows you to extract values from JSON logs with most JSONPath expressions.
 ---
-
-
 
 The JSON operator allows you to extract values from JSON logs with most [JSONPath](http://goessner.net/articles/JsonPath/) expressions. See the [supported JSONPath syntax elements](#supported-jsonpath-syntax-elements) below.
 
@@ -62,24 +61,24 @@ The following examples use this sample log message:
 The JSON operator supports the following JSONPath expressions:
 
 | JSONPath  | Description |
-| -- | -- |
-| $ | The root object or element. |
-| @ | The current object or element. |
-| . or \[\] | Child operator. |
-| .. | Recursive descent. JSONPath borrows this syntax from E4X. |
-| \* | Wildcard. All objects or elements regardless of their names. |
-| \[\] | Subscript operator. XPath uses it to iterate over element collections and for predicates. In JavaScript and JSON, it is the native array operator. |
-| \[,\] | Union operator in XPath results in a combination of node sets. JSONPath allows alternate names or array indices as a set. |
-| \[start:end\] | Array slice operator. |
-| () | Script expression, using the underlying script engine. |
+| :-- | :-- |
+| `$` | The root object or element. |
+| `@` | The current object or element. |
+| `. or []` | Child operator. |
+| `..` | Recursive descent. JSONPath borrows this syntax from E4X. |
+| `*` | Wildcard. All objects or elements regardless of their names. |
+| `[]` | Subscript operator. XPath uses it to iterate over element collections and for predicates. In JavaScript and JSON, it is the native array operator. |
+| `[,]` | Union operator in XPath results in a combination of node sets. JSONPath allows alternate names or array indices as a set. |
+| `[start:end]` | Array slice operator. |
+| `()` | Script expression, using the underlying script engine. |
 
 ## Special characters
 
-If you have spaces or other special characters like `@` in your property names you must use bracket notation, `['foo bar']`.
+If you have spaces or other special characters like `@` in your property names you must use bracket notation, `['foo bar']`. Below are some examples:
 
-For example, if your name is `@something` you need to use `['@something']`.
-
-Another example, if your name is `fie@ld` you need to use `[‘fie@ld’]`.
+* If your property name was `@something`, you need to use `['@something']`.
+* If your property name was `fie@ld`, you need to use `['fie@ld']`.
+* If your property name was `abc.pqr`, you need to use `['abc.pqr']`.
 
 ## Case sensitivity
 
@@ -117,7 +116,9 @@ produces these results:
 
 In addition, you can assign names to fields that differ from their original key names. To use `aID` instead of `accountId` and `eName` instead of `eventName`, you'd use the `as` option like this:
 
-`_index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fields aID, eName`
+```
+_index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fields aID, eName
+```
 
 which gives you these results:
 
@@ -193,7 +194,7 @@ Next, if required, you can use the array elements to perform additional operati
 _sourceCategory=O365*
 | json field=_raw "CreationTime", "Id"
 | json "Actor[*].Type" as ActorType
-| extract field=ActorType"(?<Type>\d+)" multi
+| extract field=ActorType "(?<Type>\d+)" multi
 | max(Type) by CreationTime, Id
 ```
 
@@ -229,7 +230,7 @@ The operator automatically detects the JSON object:
 
 #### Additional options
 
-**\* \| json auto field=fieldname**
+**`* | json auto field=fieldname`**
 
 Operates on a specified field. By default, **json auto** will attempt to extract JSON fields from the entire raw log message. To have it operate on a different field, use the **field** option.
 
@@ -239,7 +240,7 @@ Example:
 * | json auto field=<myfield>
 ```
 
-**\* \| json auto keys**
+**`* | json auto keys`**
 
 References specific keys in json. The keys are not case sensitive with the **auto** option. The keys can be renamed (aliased) using **as**.
 
@@ -257,7 +258,7 @@ Example:
 * | json auto keys "<key1>", "<key2>" refonly
 ```
 
-**\* \| json auto maxdepth**
+**`* | json auto maxdepth`**
 
 JSON is a hierarchical data structure that can have many levels of objects and arrays. For example, the following has a depth of four levels:
 
@@ -283,13 +284,13 @@ Use the **maxdepth** to specify the level at which to flatten the JSON.
 
 The following examples show how the previous sample changes when maxdepth values are applied:
 
-**json auto maxdepth 1:**
+**`json auto maxdepth 1:`**
 
 ```sql
 field: foo value: {"bar": [{"k1": "v1"}, {"k2", "v2"}], "baz": "qux"}
 ```
 
-**json auto maxdepth 2:**
+**`json auto maxdepth 2:`**
 
 ```sql
 field: foo.bar value: [{"k1": "v1"}, {"k2", "v2"}]
@@ -353,11 +354,11 @@ With the **extractarrays** option, **json auto** yields these field-value pa
     separator between different levels. Array indices are specified in
     between brackets. An example extracted field name can be:
 
-        users[2].address.street
+        `users[2].address.street`
 
     Using this field name later in the query fails since dots and
     brackets are not normally allowed in the field name. To use these
-    fields, you may escape the field using the percent sign (%).
+    fields, you may escape the field using the percent sign (`%`).
 
     For example, this will not work:
 

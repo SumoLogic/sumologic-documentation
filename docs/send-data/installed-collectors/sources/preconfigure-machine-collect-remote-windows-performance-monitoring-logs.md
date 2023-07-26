@@ -34,7 +34,7 @@ Create a domain user, who belongs to the local administrator group on the target
 
 ## Configure to allow RPC traffic
 
-1. Go to **Firewall \> Advanced settings \> Inbound Rules \> New Rule**, on the popup window.  
+1. Go to **Firewall > Advanced settings > Inbound Rules > New Rule**, on the popup window.  
 1. Choose **Custom**.  
 
     ![img](/img/send-data/rule_custom.png)

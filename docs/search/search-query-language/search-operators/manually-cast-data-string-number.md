@@ -6,6 +6,8 @@ sidebar_label: Manually cast data to string or number
 
 Most data in Sumo Logic is stored as a string data type. Metadata fields are stored as string data and parsed fields are by default parsed as string type data. Sumo Logic will implicitly cast string data to a number type assuming it is clear that you need a number to perform an action, such as a math calculation or when using a function like sum or avg. However, if there is any ambiguity about whether a number is required, the data remains string data.
 
+## Syntax
+
 This detail can be important when you are building queries. There are at least two cases where you will need to manually cast string data to a number so that you get the results that you expect:
 
 * When using the **where** operator to match integers like this:
@@ -26,6 +28,8 @@ Sumo Logic accepts these functions for casting string data to a number:
 * `toLong()`
 
 You can use the function `toString()` to cast data to a string.
+
+## Example
 
 When casting a field, remember to separate the casting statement with a pipe, like this:
 

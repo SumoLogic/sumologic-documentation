@@ -4,7 +4,7 @@ title: pct (percentile) Grouping Operator
 sidebar_label: pct
 ---
 
-The `pct` operator finds the specified percentiles of a given field. 
+The `pct` (percentile) operator finds the specified percentiles of a given field. 
 
 The operator works in two ways:
 
@@ -14,7 +14,7 @@ The operator works in two ways:
 The input to the operator is a percentile. For example:
 
 * **pct(x, 50)** gives the median (50th percentile and 0.5th quantile).
-* **pct(x, 0.50)** gives the 0.5th percentile, or 0.005th quantile (for example not the median).
+* **pct(x, 0.50)** gives the 0.5th percentile, or 0.005th quantile (for example, not the median).
 
 ## Syntax
 

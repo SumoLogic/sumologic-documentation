@@ -1,17 +1,18 @@
 ---
 id: gcp-metrics-source
 title: GCP Metrics Source
-sidebar_label: GCP Metrics
+sidebar_label: Google Cloud Platform Metrics
 description: Create a Sumo Logic GCP Metrics Source to view and monitor Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="icon" width="40"/>
 
 The Sumo Logic GCP Metrics Source gives you complete visibility into all Google Cloud Platform (GCP) infrastructure and managed services using an integrated Google Service account.
 
 :::note
-For information on API calls and collected metrics, see the [Collected metrics](#Collected_metrics) section.
+For information on API calls and collected metrics, see the [Collected metrics](#collected-metrics) section.
 :::
 
 ## Google Service account
@@ -36,13 +37,13 @@ To create and configure a Service Account and download the JSON authentication f
 1. Visit your Google Cloud project’s [credentials page](https://console.cloud.google.com/apis/credentials) for the project you want to monitor.
 2. Click **Create Credentials** and select **Service account**.
 <img src={useBaseUrl('img/send-data/service-acct.png')} alt="send-data/service-account.png" />
-1. Enter a unique name and click **Create**.
+3. Enter a unique name and click **Create**.
 <img src={useBaseUrl('img/send-data/service-acct-create.png')} alt="send-data/service-account-create.png" />
-2. Click the Service account on the page to modify roles and download the JSON key.
-3. Click the **Permissions** tab and add the following roles: Compute Viewer, Monitoring Viewer, and Cloud Asset Viewer.
-4. Click the **Keys** tab then **Add Key**.
+4. Click the Service account on the page to modify roles and download the JSON key.
+5. Click the **Permissions** tab and add the following roles: Compute Viewer, Monitoring Viewer, and Cloud Asset Viewer.
+6. Click the **Keys** tab then **Add Key**.
 <img src={useBaseUrl('img/send-data/service-acct-keys.png')} alt="send-data/service-account-keys.png" />
-5. Select JSON and click **Create**. You will use the downloaded JSON file when creating the source.
+7. Select JSON and click **Create**. You will use the downloaded JSON file when creating the source.
 
 For more information, see [Service account credentials](https://developers.google.com/workspace/guides/create-credentials#service-account).
 
@@ -53,7 +54,7 @@ If you create and manage all service accounts in one project which is different 
 1. In the project, select **IAM** in the left navigation.
 2. Click **+Add**.
 <img src={useBaseUrl('img/send-data/add-principal.png')} alt="add-principal.png" />
-1. Enter the email for the Service Account to add as a principal, for example: server@example.gsserviceaccount.com.
+1. Enter the email for the Service Account to add as a principal, for example: `server@example.gsserviceaccount.com`.
 2. **Select a role **from the list, or click +Add Another Role as needed.
 3. Click **Save**.
 4. You will need to make one change in the service account JSON if you have added a Principal. Change the project ID in the downloaded service account key to the projectId value where Sumo Logic will collect the metrics, not the project where the service account was created.
@@ -65,243 +66,71 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
 1. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you would like to use, create one, using the instructions on [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector).
 2. In Sumo Logic select** Manage Data > Collection > Collection**.
 3. Click **Add Source** next to a Hosted Collector.
-4. Select **GCP Metrics**. <br/>
-<img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="gcp-icon.png" />
-1. **Name**. Enter a name to display for the new source.
+4. Search for and select **GCP Metrics**. <br/><img src={useBaseUrl('img/send-data/gcp-icon.png')} alt="gcp-icon.png" width="80"/>
+5. **Name**. Enter a name to display for the new source.
 <img src={useBaseUrl('img/send-data/gcp-metrics-basic.png')} alt="gcp-metrics-basic.png" />
-1. **Description.** Optional description.
-2. **Regions**. Optional limit to selected Google Cloud regions.
-:::note
-Some metrics do not include or support a region.
-:::
-8. **Services**. Select one or more Services including the following: <br/>
+6. **Description.** Optional description.
+7. **Regions**. Optional limit to selected Google Cloud regions.
+  :::note
+  Some metrics do not include or support a region.
+  :::
+8. **Services**. Select one or more of the following Services.
 
-<table>
-  <tr>
-   <td>App Engine
-   </td>
-   <td>appengine.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Big Query
-   </td>
-   <td>bigquery.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Bigtable
-   </td>
-   <td>bigtable.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>CloudSQL
-   </td>
-   <td>cloudsql.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud APIs
-   </td>
-   <td>serviceruntime.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Composer
-   </td>
-   <td>composer.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Dataproc
-   </td>
-   <td>dataproc.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Filestore
-   </td>
-   <td>file.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Firestore
-   </td>
-   <td>firestore.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Interconnect
-   </td>
-   <td>interconnect.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud IoT
-   </td>
-   <td>cloudiot.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Load Balancing
-   </td>
-   <td>loadbalancing.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Memorystore for Redis
-   </td>
-   <td>redis.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Router
-   </td>
-   <td>router.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Run
-   </td>
-   <td>run.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Tasks
-   </td>
-   <td>cloudtasks.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud TPU
-   </td>
-   <td>tpu.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Compute Engine
-   </td>
-   <td>compute.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Container Engine
-   </td>
-   <td>container.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Datastore
-   </td>
-   <td>datastore.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Firebase
-   </td>
-   <td>firebasedatabase.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Functions
-   </td>
-   <td>cloudfunctions.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Machine Learning
-   </td>
-   <td>ml.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Pub/Sub
-   </td>
-   <td>pubsub.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Spanner
-   </td>
-   <td>spanner.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Logging
-   </td>
-   <td>logging.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Storage
-   </td>
-   <td>storage.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>VPN
-   </td>
-   <td>vpn.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Networking
-   </td>
-   <td>networking.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Auto Scaler
-   </td>
-   <td>autoscaler.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Network Security
-   </td>
-   <td>networksecurity.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Net App
-   </td>
-   <td>netapp.com.googleapis.com
-   </td>
-  </tr>
-  <tr>
-   <td>Cloudvolumes Net App
-   </td>
-   <td>cloudvolumesgcp-api.netapp.com
-   </td>
-  </tr>
-  <tr>
-   <td>Vpn Access
-   </td>
-   <td>vpcaccess.googleapis.com
-   </td>
-  </tr>
-</table>
+  <details><summary><strong>Click to expand.</strong></summary>
 
-9. **Custom Services** (Optional). A Custom Service for collecting custom metrics. Click the **+Add **link to add a custom service using a name (key) and value. For example, enter `service1` and `custom.googleapis.com/my_cumulative_metric1;custom.googleapis.com/my_cumulative_metric2;`
+  | App name |
+  |:---|:---|
+  | App Engine | appengine.googleapis.com |
+  | Big Query | bigquery.googleapis.com |
+  | Bigtable | bigtable.googleapis.com |
+  | CloudSQL | cloudsql.googleapis.com |
+  | Cloud APIs | serviceruntime.googleapis.com |
+  | Cloud Composer | composer.googleapis.com |
+  | Cloud Dataproc | dataproc.googleapis.com |
+  | Cloud Filestore | file.googleapis.com |
+  | Cloud Firestore | firestore.googleapis.com |
+  | Cloud Interconnect | interconnect.googleapis.com |
+  | Cloud IoT | cloudiot.googleapis.com |
+  | Cloud Load Balancing | loadbalancing.googleapis.com |
+  | Cloud Memorystore for Redis | redis.googleapis.com |
+  | Cloud Router | router.googleapis.com |
+  | Cloud Run | run.googleapis.com |
+  | Cloud Tasks | cloudtasks.googleapis.com |
+  | Cloud TPU | tpu.googleapis.com |
+  | Compute Engine | compute.googleapis.com |
+  | Container Engine | container.googleapis.com |
+  | Datastore | datastore.googleapis.com |
+  | Firebase | firebasedatabase.googleapis.com |
+  | Functions | cloudfunctions.googleapis.com |
+  | Machine Learning | ml.googleapis.com |
+  | Pub/Sub | pubsub.googleapis.com |
+  | Spanner | spanner.googleapis.com |
+  | Cloud Logging | logging.googleapis.com |
+  | Storage | storage.googleapis.com |
+  | VPN | vpn.googleapis.com |
+  | Networking | networking.googleapis.com |
+  | Auto Scaler | autoscaler.googleapis.com |
+  | Network Security | networksecurity.googleapis.com |
+  | Net App | netapp.com.googleapis.com |
+  | Cloudvolumes Net App | cloudvolumesgcp-api.netapp.com |
+  | VPN Access | vpcaccess.googleapis.com |
 
-<img src={useBaseUrl('img/send-data/gcp-custom-services.png')} alt="gcp-custom-services.png" />
+  </details>
 
-:::note
-Do not use quotes when entering a custom service.
-:::
-10.  **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/Get-Started-with-Search/build-search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
-11.  **Fields**. Click the **+Add **link to add custom log metadata [Fields](docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
- * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
- * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+9. **Custom Services** (Optional). A Custom Service for collecting custom metrics. Click the **+Add **link to add a custom service using a name (key) and value. For example, enter `service1` and `custom.googleapis.com/my_cumulative_metric1;custom.googleapis.com/my_cumulative_metric2;`.<br/><img src={useBaseUrl('img/send-data/gcp-custom-services.png')} alt="gcp-custom-services.png" />
+  :::note
+  Do not use quotes when entering a custom service.
+  :::
+10. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
+11. **Fields**. Click the **+Add link** to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
+    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 
-Proceed to the next step.
+12. **GCP Access**. Upload the JSON Google service account credentials file. This allows Sumo Logic to make API calls to Google Cloud.
 
-12.  **GCP Access**. Upload the JSON Google service account credentials file. This allows Sumo Logic to make API calls to Google Cloud.
+13. **Scan Interval**. Use the default of 1 minute, or change this value to indicate how frequently Sumo Logic should poll the GCP API. To learn more about polling interval considerations, see GCP Scan Interval below.
 
-13.  **Scan Interval**. Use the default of 1 minute, or change this value to indicate how frequently Sumo Logic should poll the GCP API. To learn more about polling interval considerations, see GCP Scan Interval below.
-
-14.  **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules.md).
+14. **Processing Rules**. Configure any desired filters, such as allowlist and denylist, as described in [Metrics Include and Exclude Rules](/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules).
 
 15. Click **Save**.
 
@@ -317,7 +146,7 @@ The scan interval defines how long Sumo Logic waits between calls to the GCP API
 
 Google reports GCP metrics at different granularities (1-minute and 5-minute intervals), so setting a scan interval that is too short could lead to excessive querying. Setting an interval that is too long can delay the update frequency of new metrics appearing in Sumo Logic.
 
-Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by Google Cloud Platform. See [Enable and Manage the Audit Index](docs/manage/security/audit-index.md) for details.
+Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by Google Cloud Platform. See [Enable and Manage the Audit Index](/docs/manage/security/audit-index.md) for details.
 
 ### Costs for using GCP Metric Sources  
 
@@ -330,65 +159,19 @@ Metric ingestion costs include the following:
 
 ## Collected metrics  
 
-For details on GCP collected metrics, refer to: [https://cloud.google.com/monitoring/api/metrics_gcp](https://cloud.google.com/monitoring/api/metrics_gcp)
+For details on GCP collected metrics, refer to the [Google Cloud metrics documentation](https://cloud.google.com/monitoring/api/metrics_gcp).
 
 ## API Call Optimization for GCP Metrics
 
 The minimum sample period for GCP metrics is 60 seconds, in which only 1 data point is returned with the same value for min, max, sum, avg, and count. To reduce the number of API calls and chance of throttling, Sumo fetches one statistic which reduces five API calls to one with a sample period of 60 seconds. Which statistics will be queries depends on Metric Kind and Value type. For more information, see [Google Value types and metric kinds](https://cloud.google.com/monitoring/api/v3/kinds-and-types#:~:text=A%20gauge%20metric%2C%20in%20which,at%20the%20time%20of%20measurement).
 
+| Value Type | DELTA Metric Kind | CUMULATIVE Metric Kind | GAUGE Metric Kind |
+|:---|:---|:---|:---|
+| INT64 | Mean | Delta | Mean |
+| DOUBLE | Mean | Delta | Mean |
+| DISTRIBUTION | Sum | Delta | Sum |
+| BOOL | N/A | N/A | Count |
 
-<table>
-  <tr>
-   <td>Value Type
-   </td>
-   <td>DELTA Metric Kind
-   </td>
-   <td>CUMULATIVE Metric Kind
-   </td>
-   <td>GAUGE Metric Kind
-   </td>
-  </tr>
-  <tr>
-   <td>INT64
-   </td>
-   <td>Mean
-   </td>
-   <td>Delta
-   </td>
-   <td>Mean
-   </td>
-  </tr>
-  <tr>
-   <td>DOUBLE
-   </td>
-   <td>Mean
-   </td>
-   <td>Delta
-   </td>
-   <td>Mean
-   </td>
-  </tr>
-  <tr>
-   <td>DISTRIBUTION
-   </td>
-   <td>Sum
-   </td>
-   <td>Delta
-   </td>
-   <td>Sum
-   </td>
-  </tr>
-  <tr>
-   <td>BOOL
-   </td>
-   <td>N/A
-   </td>
-   <td>N/A
-   </td>
-   <td>Count
-   </td>
-  </tr>
-</table>
 
 ## Health Events
 

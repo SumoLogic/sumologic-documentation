@@ -5,6 +5,9 @@ sidebar_label: AWS GovCloud
 description: AWS GovCloud regions are specific regions authorized to a FedRAMP-High baseline.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/AWSGovCloudUS-Logo.jpeg')} alt="icon" width="50"/>
 
 AWS GovCloud regions are specific regions authorized to a FedRAMP-High baseline. This region is where users with strict compliance requirements may operate in adherence with ITAR, FedRAMP, and DoD requirements. See [AWS GovCloud](https://aws.amazon.com/govcloud-us/?whats-new-ess.sort-by=item.additionalFields.postDateTime&whats-new-ess.sort-order=desc) for more information.
 

@@ -17,13 +17,13 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 ## Configure a Syslog Source
 
-1. In the Sumo web app select **Manage Data \> Collection \> Collection**.
+1. In the Sumo web app select **Manage Data** > **Collection** > **Collection**.
 1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Syslog** for the Source type. <br/>![syslog source.png](/img/send-data/syslog-source.png)
 1. **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
 1. **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
-1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 51. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
-1. **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Enter *`_sourceCategory=firewall`* in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
+1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
+1. **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Enter *`_sourceCategory=firewall`* in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate; each field needs a name (key) and value. <br/>
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -32,7 +32,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 1. Create any processing rules you'd like for the new Source.
-1. When you are finished configuring the Source click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 You can return to this dialog and edit the settings for the Source at any time.
 
@@ -91,7 +91,7 @@ The collector supports single-line TCP messages up to 65,535 bytes.
 
 UDP is a streaming protocol that makes no guarantees of delivery, and as such, log messages may be dropped or arrive out of order. However, in return for this lack of guarantee, UDP does not create the same kind of network and CPU overhead that is created by the TCP protocol. In reality, in most networks, UDP is reliable enough for mission-critical use, however, there may be situations where network traffic storms might cause messages to be dropped or arrive out of order. If this is an unacceptable risk for you, then choose TCP.
 
-Per RFC 5426, the collector by default supports UDP messages up to 2048 bytes. To increase the UDP message length limit to the maximum datagram size (65k) you can modify the [collector.properties](docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) file.
+Per RFC 5426, the collector by default supports UDP messages up to 2048 bytes. To increase the UDP message length limit to the maximum datagram size (65k) you can modify the [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) file.
 
 First, stop the Collector service, then add the following configuration to `collector/config/collector.properties` and start the collector:
 
@@ -109,7 +109,7 @@ To specify the network interface:
 1. Navigate to `collector/config/collector.properties`. Open the file in a text editor.
 1. Add `syslog.hostname=your_host_name` where `your_host_name` identifies the network interface you'd like to use.
 1. Save and close the file.
-1. [Restart](docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+1. [Restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
 ## TLS Syslog Data
 

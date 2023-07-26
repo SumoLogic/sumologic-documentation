@@ -24,11 +24,16 @@ Data Events log messages.
 
 Amazon CloudWatch Log:
 
-```
-{"id":"32563142671071560797760688825700039436306340248688066573","timestamp":1511808906799,"message":
-"REPORT RequestId: cf75cfa3-fe16-11e5-9b16-e3e4c70845f2    Duration: 50.23 ms    Billed Duration:
-100 ms     Memory Size: 128 MB    Max Memory Used: 24 MB ","requestID":null,"logStream"
-:"2017/11/27/[Prod]1108153ced144f8cbb161aef096218d1","logGroup":"/aws/lambda/AWSlambda1"}
+```json
+{
+	"id":"32563142671071560797760688825700039436306340248688066573",
+	"timestamp":1511808906799,
+	"message":"REPORT RequestId: cf75cfa3-fe16-11e5-9b16-e3e4c70845f2    Duration: 50.23 ms    Billed Duration:
+100 ms     Memory Size: 128 MB    Max Memory Used: 24 MB ",
+	"requestID":null,
+	"logStream":"2017/11/27/[Prod]1108153ced144f8cbb161aef096218d1",
+	"logGroup":"/aws/lambda/AWSlambda1"
+}
 ```
 
 CloudTrail Lambda Data Events:

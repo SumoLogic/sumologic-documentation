@@ -9,6 +9,25 @@ Observability is the ability of the internal states of a system to be determined
 
 For our purposes, Observability is the ability to observe an application from the outside and understand what is happening inside the application and its services. Observability helps ensure that the application is running reliably: the system is up and running (available), performant, and secure.  
 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+About Observability and how it's different from monitoring. The video also explains how Sumo Logic's Observability Solution helps in all the stages of the incident remediation process to ensure the production apps are functioning reliably.
+
+<Iframe url="https://www.youtube.com/embed/FJG1zesNJs0?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
+
 ## Why Observability?
 
 Modern applications are increasingly complex, as they leverage distributed technologies, cloud infrastructure, and container and orchestration tools. In addition, the connections between microservices, orchestrators, and underlying cloud resources is also growing in complexity. This complexity leads to situations where unforeseen events, unknown unknowns in terms of risk, are more prevalent and come with mysterious behaviors and failure modes.  This can cause major issues in your overall incident remediation workflow, which can be broken down into three steps. 

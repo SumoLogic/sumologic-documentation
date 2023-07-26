@@ -1,8 +1,8 @@
 ---
 id: postgresql
-title: Sumo Logic App for PostgreSQL
+title: PostgreSQL - Classic Collector
 sidebar_label: PostgreSQL
-description: The Sumo Logic App for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app consists of predefined dashboards that allow you to track performance, logins, connections, errors, and overall system health.
+description: The Sumo Logic app for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app consists of predefined dashboards that allow you to track performance, logins, connections, errors, and overall system health.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,11 +11,11 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic App for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app provides operational insights into the PostgreSQL database—installed on your local hardware—for real time analysis.
+The Sumo Logic app for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app provides operational insights into the PostgreSQL database—installed on your local hardware—for real time analysis.
 
-The Sumo Logic App for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+The Sumo Logic app for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-This guide provides an overview of the Sumo App for PostgreSQL features and Dashboards, as well as instructions for collecting logs and metrics from PostgreSQL and installing the App.
+This guide provides an overview of the Sumo app for PostgreSQL features and Dashboards, as well as instructions for collecting logs and metrics from PostgreSQL and installing the app.
 
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 
@@ -41,10 +41,9 @@ _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
 | count by date, time, severity, db, user, msg
 ```
 
-
 ## Collecting Logs and Metrics from PostgreSQL
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for PostgreSQL. This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for PostgreSQL. This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
 
 ### Step 1: Configure Access
 
@@ -110,9 +109,14 @@ Sumo Logic supports collection of logs and metrics data from PostgreSQL in both 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from PostgreSQL in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<img src={useBaseUrl('img/integrations/databases/postgresql1.png')} alt="postgresql" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from PostgreSQL in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from PostgreSQL. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [PostgreSQL Extensible input plugin ](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins). The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus scrapes the metrics from each of the Telegraf containers and sends it to FluentD.We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+<img src={useBaseUrl('img/integrations/databases/postgresql1.png')} alt="postgresql" />
+
+The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from PostgreSQL. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [PostgreSQL Extensible input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/) to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins). The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
 Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
@@ -159,7 +163,6 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
 If you want to monitor multiple databases, copy and paste the text from [this file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes_multiple_db.txt), create another `[[inputs.postgresql_extensible]]` section, and add it in your annotations. This section contains only those queries which are meant to be run for each database. [Click here for an example](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_annotations_kubernetes_multiple_db.txt).
 
 
-
 #### Configure Logs Collection
 
 This section explains the steps to collect PostgreSQL logs from a Kubernetes environment.
@@ -185,7 +188,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
   component: "database"
   db_system: "postgresql"
   db_cluster: "<clustername-CHANGEME>"
-    --For example analytics-dbcluster, webapp-dbcluster
+    --for example, analytics-dbcluster, webapp-dbcluster
   ```
    1. Enter in values for the following parameters (marked `CHANGEME` above):
       * `environment` - This is the deployment environment where the PostgreSQL cluster identified by the value of `servers` resides. While this value is optional we highly recommend setting it.
@@ -195,7 +198,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
 :::note
 `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-For example if your application uses `“postgresql-prod.sumologic.com:3306`” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
+For example, if your application uses `“postgresql-prod.sumologic.com:3306`” as the connection string, the field values should be set as follows: `db_cluster_address=postgresql-prod.sumologic.com db_cluster_port=3306`
 
 If your application connects directly to a given postgresql node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=postgresql-prod.sumologic.com`.
 
@@ -204,7 +207,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
    2. **Do not modify these values**, as it will cause the Sumo Logic apps to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “postgresql”` - This value identifies the database system.
-3. Collecting Logs written to Standard output (recommended). The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+3. Collecting Logs written to Standard output (recommended). The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 4. Collect PostgreSQL logs written to log files (optional). If your PostgreSQL service is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to stdout. To do this:
    1. Determine the location of the PostgreSQL log file on Kubernetes.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -257,7 +260,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
 
 We use the Telegraf Operator for PostgreSQL metric collection and the Sumo Logic Installed Collector for collecting PostgreSQL logs. The diagram below illustrates the components of the PostgreSQL collection in a non-Kubernetes environment for each database server. Telegraf runs on the same system as PostgreSQL, and uses the [PostgreSQL Extensible input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/postgresql_extensible) to obtain PostgreSQL metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. PostgreSQL logs are sent to Sumo Logic Local File Source on Installed Collector.<img src={useBaseUrl('img/integrations/databases/postgresql2.png')} alt="postgresql" />
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for PostgreSQL. Follow the below instructions to set up the metric collection for a given node in a PostgreSQL cluster.
+This section provides instructions for configuring metrics collection for the Sumo Logic app for PostgreSQL. Follow the below instructions to set up the metric collection for a given node in a PostgreSQL cluster.
 
 #### Configure Metrics Collection  
 
@@ -268,7 +271,7 @@ This section provides instructions for configuring metrics collection for the Su
    1. Create or modify telegraf.conf in `/etc/telegraf/telegraf.d/` and copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem.txt).
    2. Enter values for the following parameters (marked with `CHANGE_ME`) in the [downloaded file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem.txt).
      * In the input plugins section, `[[inputs.postgresql_extensible]]`:
-       * `address` - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PosgreSQL database in [Step 1](#step-1-configure-metrics-collection). For example: `host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable`.
+       * `address` - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PostgreSQL database in [Step 1](#step-1-configure-metrics-collection). For example: `host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable`.
        * In the tags section, `[inputs.postgresql_extensible.tags]`:
          * `environment` - This is the deployment environment where the Postgresql cluster resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
          * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example: analytics-dbcluster, webapp-dbcluster.
@@ -324,7 +327,7 @@ Perform the steps outlined below for each PostgreSQL database server.
      ```bash
      sudo service postgresql restart
      ```
-2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/Installed-Collectors).
+2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/installed-collectors).
 3. Configuring a Local File Source. To add a Local File Source source for PostgreSQL do the following:
    1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
@@ -336,7 +339,7 @@ Perform the steps outlined below for each PostgreSQL database server.
    * **Fields.** Set the following fields:
       * `component` = database
       * `db_system` = postgresql
-      * `db_cluster` = <Your_Postgresql_Cluster_Name> (For example analytics-dbcluster, webapp-dbcluster)
+      * `db_cluster` = <Your_Postgresql_Cluster_Name> (for example, analytics-dbcluster, webapp-dbcluster)
       * `environment` = <Environment_Name> (For example dev, prod or qa)
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
@@ -393,19 +396,15 @@ At this point, PostgreSQL logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-
-
-
 ## Installing PostgreSQL Alerts
 
-This section provides instructions for installing the Sumo App and Alerts for PostgreSQL, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the Collect Logs and Metrics from PostgreSQL App section.
+This section provides instructions for installing the Sumo app and Alerts for PostgreSQL. These instructions assume you have already set up collection as described in the Collect Logs and Metrics from PostgreSQL app section.
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts, please see [the alerts section](#Alerts).
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts, please see the [alerts section](#postgresql-alerts).
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
-
 
 ### Method A: Importing a JSON file
 
@@ -419,7 +418,6 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 4. Click Import to import monitors from the JSON above.
 
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
-
 
 ### Method B: Using a Terraform script
 
@@ -449,7 +447,7 @@ By default, the monitors are configured in a monitor folder called “PostgreSQL
 If you would like the alerts to send email or connection notifications, configure these in the file **postgresql_notifications.auto.tfvars**. For configuration examples, refer to the next section.
 
 
-5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+5. Email and Connection Notification Configuration Examples. To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -489,10 +487,9 @@ email_notifications = [
    3. Run **`terraform apply`**.
 7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [this document](/docs/alerts/monitors#Add-a-monitor).
 
+## Installing the PostgreSQL app
 
-## Installing the PostgreSQL App
-
-Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic App for PostgreSQL to use the pre-configured Searches and [dashboards](#viewing-dashboards). To install the app, do the following:
+Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic app for PostgreSQL to use the pre-configured Searches and dashboards. To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -511,13 +508,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-
-## Viewing PostgreSQL Dashboards
+## Viewing PostgreSQL dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
-
 
 ### Overview
 
@@ -531,17 +526,15 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Overview.png')} alt="PostgreSQL dashboards" />
 
-
 ### Query Execution
 
-The** PostgreSQL Query Execution **dashboard gives you insights into the number and time taken to execute queries:
+The **PostgreSQL Query Execution** dashboard gives you insights into the number and time taken to execute queries:
 
 Use this dashboard to:
 * Monitor query performance and identify slow queries.
 * Examine query execution trends.
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Query-Execution.png')} alt="PostgreSQL dashboards" />
-
 
 ### Database Metrics
 
@@ -554,11 +547,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-DatabaseMetrics.png')} alt="PostgreSQL dashboards" />
 
-
-
 ### Relation and Schema Metrics
 
-The** PostgreSQL - Relation and Schema Metrics **dashboard allows you to view and analyze the metrics for monitoring the relations and schema in a cluster.
+The **PostgreSQL - Relation and Schema Metrics** dashboard allows you to view and analyze the metrics for monitoring the relations and schema in a cluster.
 
 Use this dashboard to:
 * Monitor PostgreSQL relation and schema metrics trends over time.
@@ -567,7 +558,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Relational.png')} alt="PostgreSQL dashboards" />
 
-
 Query performance can degrade with growth in size of table, database and/or indexes. This means that you either need to scale up the database instance, [partition your data](https://www.postgresql.org/docs/current/static/ddl-partitioning.html), or redesign your indexes. Unusual growth in disk space can also mean there are problems with [VACUUMs](https://www.postgresql.org/docs/9.1/static/sql-vacuum.html) .
 
 If your database regularly performs more sequential scans over time, you can improve its performance by creating an [index](https://www.postgresql.org/docs/current/static/sql-createindex.html) on frequently accessed data.
@@ -575,7 +565,7 @@ If your database regularly performs more sequential scans over time, you can imp
 
 ### Security
 
-The** PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications and top database errors and warnings.
+The **PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications and top database errors and warnings.
 
 Use this dashboard to:
 * Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
@@ -583,41 +573,37 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Security.png')} alt="PostgreSQL dashboards" />
 
-
 ### Error Logs
 
-The **PostgreSQL - Error Logs **dashboard** **provides insight into database error  logs by specifically monitoring errors, user activity, database activity and database shutdown/start events.
+The **PostgreSQL - Error Logs** dashboard provides insight into database error  logs by specifically monitoring errors, user activity, database activity and database shutdown/start events.
 
 Use this dashboard to:
-* Quickly identify errors and patterns in logs for troubleshooting
-* Monitor error trends and quickly identify outliers
-* Identify unexpected database or user activity
+* Quickly identify errors and patterns in logs for troubleshooting.
+* Monitor error trends and quickly identify outliers.
+* Identify unexpected database or user activity.
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Error-Logs.png')} alt="PostgreSQL dashboards" />
 
-
-
 ### Slow Queries
 
-The** PostgreSQL - Slow Queries **dashboard** **provides insights into all slow queries executed on the database.
+The **PostgreSQL - Slow Queries** dashboard provides insights into all slow queries executed on the database.
 
 Use this dashboard to:
 * Identify all slow queries
-* Monitor users and databases running slow queries
-* Determine which SQL commands are slower than others
-* Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
+* Monitor users and databases running slow queries.
+* Determine which SQL commands are slower than others.
+* Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 <img src={useBaseUrl('img/integrations/databases/PostgreSQL-Slow-Queries.png')} alt="PostgreSQL dashboards" />
 
-
 ### Relation Metrics
-The PostgreSQL - Relation Metrics dashboard allows you to view and analyze the metrics for monitoring the relations in a schema.
+
+The **PostgreSQL - Relation Metrics** dashboard allows you to view and analyze the metrics for monitoring the relations in a schema.
 
 Use this dashboard to:
 * Monitor PostgreSQL relation metrics (disk blocks, buffer hits, hot updates etc) trends over time.
 * Monitor sequential scans and index scans and determine if executed queries are accessing them for a relation.
-* Track index utilization of existing indexes in a relation
-
+* Track index utilization of existing indexes in a relation.
 
 ## PostgreSQL Metrics
 
@@ -811,7 +797,6 @@ Here are the metrics available for PostgreSQL.
 </table>
 
 
-
 ## PostgreSQL Alerts
 
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
@@ -821,7 +806,7 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 The  metrics queries are derived as per[ Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
 
 | Alert Name                                        | Alert Description and conditions                                                                                                                                                                                                | Alert Condition                                                                                            | Recover Condition                 |
-|---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------|
+|:---------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------|:-----------------------------------|
 | PostgreSQL - Instance Down                        | This alert fires when the Postgres instance is down                                                                                                                                                                             | >=1                                                                                                        | < 1                               |
 | PostgreSQL - TooManyConnections                   | This alert fires when we detect that a PostgreSQL instance has too many (90% of allowed) connections)                                                                                                                           | >= 90                                                                                                      | < 90                              |
 | PostgreSQL - SlowQueries                          | This alert fires when we detect that the PostgreSQL instance is executing slow queries                                                                                                                                          | >= 1                                                                                                       | < 1                               |

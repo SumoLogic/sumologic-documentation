@@ -4,9 +4,7 @@ title: contains Search Operator
 sidebar_label: contains
 ---
 
-
-
-The contains operator compares string values of two <a href="/docs/search/search-query-language/parse-operators">parsed</a> fields and returns a boolean result based on whether the second field's value exists in the first.
+The `contains` operator compares string values of two <a href="/docs/search/search-query-language/parse-operators">parsed</a> fields and returns a boolean result based on whether the second field's value exists in the first.
 
 
 ## Syntax
@@ -27,15 +25,15 @@ contains(<field1>, <field2>) as <field>
 | where contains(<field1>, <field2>)
 ```
 
-**Rules**
+## Rules
 
-* Requires field values to be strings. You may [cast values](#casting-data-to-a-number-or-string) if needed.
+* Requires field values to be strings. You may [cast values](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) if needed.
 * The full string of field2 must exist within field1.
 * Comparison is case sensitive.
 * Returns `true` when the value from field2 was found and `false` when the value was not found in field1.
 * Returns `true` if field1 and field2 are empty, and `false` when only one is empty.
 
-**Example**
+## Example
 
 Given the following example log:
 

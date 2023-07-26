@@ -7,7 +7,7 @@ description: During the installation process, use the clobber flag in situations
 
 Each collector name must be unique. If you are installing a collector that would have the same name as an existing collector, the system automatically appends a 13-digit unix timestamp to the collector name. If you don't want to use the timestamp in a collector name, you can do either of the following:
 
- * Specify a unique name for the collector. You can do so during installation, or by editing the collector configuration following installation. In Sumo, select **Manage Data \> Collection \> Collection**. Click **Edit** for the Collector.
+ * Specify a unique name for the collector. You can do so during installation, or by editing the collector configuration following installation. In Sumo, select **Manage Data** > **Collection** > **Collection**. Click **Edit** for the Collector.
  * During installation, use the clobber option described in this topic to replace the existing collector with the one that you are installing. 
 
 :::important
