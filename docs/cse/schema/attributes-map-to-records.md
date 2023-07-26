@@ -6,7 +6,7 @@ description: Learn what CSE schema attributes you can map to Records.
 ---
 
 
-This topic lists the schema attributes that you can map to Records. Note that you can map any of the attributes defined below to any [record type](cse-record-types.md). For information about all schema attributes, including those that cannot be mapped to Records, for example enrichment fields, see [Schema Attributes](schema-attributes.md).  
+This topic lists the schema attributes that you can map to Records. Note that you can map any of the attributes defined below to any [record type](/docs/cse/schema/cse-record-types). For information about all schema attributes, including those that cannot be mapped to Records, for example enrichment fields, see [Schema Attributes](/docs/cse/schema/schema-attributes).  
 
 | Field | Type | Description |
 |:--|:--|:--|

@@ -8,7 +8,7 @@ The **Data Access Level for Shared Dashboards** security policy allows you to 
 
 Setting this policy only affects dashboards that are created after the policy is enabled, not dashboards created before the policy is enabled.  
 
-For more information about data access levels for dashboards, see [Set the Data Access Level for a Dashboard](../../dashboards/get-started/set-data-access-level-dashboard.md).
+For more information about data access levels for dashboards, see [Set the Data Access Level for a Dashboard](/docs/dashboards-classic/get-started/set-data-access-level-dashboard.md).
 
 :::note
 You must have a role that grants you the Manage Org Settings [capability](../users-roles/roles/role-capabilities.md) to enable the **Data Access Level for Shared Dashboards** security policy.

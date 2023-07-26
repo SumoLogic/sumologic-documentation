@@ -67,7 +67,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
  ```bash
  git clone https://github.com/SumoLogic/sumologic-solution-templates
  ```
-1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and then running:
+1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/application-components) and then running:
   ```bash
   terraform init
   ```
