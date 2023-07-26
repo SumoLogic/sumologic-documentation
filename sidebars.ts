@@ -2513,6 +2513,7 @@ integrations: [
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
         'cloud-soar/cloud-soar-apis',
+        'cloud-soar/cloud-soar-delivery-2',
       ],
     },
   ],

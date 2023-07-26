@@ -7,28 +7,11 @@ description: Learn about the features in the Cloud SOAR Delivery 2 release.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
+This topic describes the features in Cloud SOAR Delivery 2. Delivery 2 has new features, including [dashboards](#create-a-dashboard), [reports](#create-a-report), and an [Integration Builder](#integration-builder). 
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This topic describes the features in the Cloud SOAR Delivery 2. 
-
-Delivery 2 of Cloud SOAR offers the following enhancements over our initial Cloud SOAR product:
-
-* New and improved features:
-   * [Dashboards](#create-a-dashboard)
-   * [Reports](#create-a-report)
- * Open Integration Framework updates:
-    * [Integration Builder](#integration-builder) allows you to build integrations without needing to provide code
-    * Certified integrations allow you to customize JSON and table output schema
-    * Actions configuration during playbook design is rearranged for easier use
-    * Integrations, and related action execution, can be done [in the cloud or through the Bridge](#cloud-or-bridge-execution). Only certified integrations can be executed in the cloud.
-* Architectural improvements:
-     * Fully-functional in the Cloud (the Bridge is only required for custom integrations)
-     * User and profile management is in Sumo Logic core platform instead of Cloud SOAR
-     * Automatic scalability based on server load
+:::note
+Delivery 2 is available only to organizations as a new installation, or to organizations that have migrated to Delivery 2 from the original version of Cloud SOAR (Delivery 1). For help getting Cloud SOAR Delivery 2, reach out to your Sumo Logic account team.
+:::
 
 ## Create a dashboard
 

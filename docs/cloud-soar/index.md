@@ -71,4 +71,10 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
   <p>Learn how to access Cloud SOAR APIs and API documentation.</p>
   </div>
 </div>
+<div className="box smallbox11 card">
+  <div className="container">
+  <a href="/docs/cloud-soar/cloud-soar-delivery-2"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR Delivery 2</h4></a>
+  <p>Learn about features in the Cloud SOAR Delivery 2 release.</p>
+  </div>
+</div>
 </div>
