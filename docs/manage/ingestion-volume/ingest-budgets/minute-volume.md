@@ -6,13 +6,17 @@ description: Use Ingest Budgets Minute Volume to control data ingestion to minut
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<!-- IMPORTANT: When this doc goes from Beta to GA, integrate this content with /docs/manage/ingestion-volume/ingest-budgets/index.md, where there's significant overlapping content. -->
+
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+:::note
 This feature is in Beta. To participate, contact your Sumo Logic account executive.
+:::
 
 Ingest Budgets Minute Volume, as the name suggests, lets you control data ingestion to minute granularity. This granular control in data ingestion protects against Ingestion surges and spikes thus safeguarding your account against throttling.
 
@@ -32,11 +36,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 ## Budget assignment​
 
-The scope supports the option to assign ingest budgets to your log data by either:
-
-* A Field that is enabled in the Fields table. Fields are created in many ways, see Fields for details.
-* One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
-The value supports a single wildcard, such as `_sourceCategory=prod*payment`. For example, a scope expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching `_sourceCategory` will fall under the scope of the given budget.
+{@import ../../../reuse/budget-assignment.md}
 
 ## Source-type behavior​
 
@@ -50,7 +50,7 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 ## Create ingest budgets
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Ingest Budgets**.
-1. Click the **+ Add Budget** button on the top right of the table. A panel named Create Ingest Budget will appear to the right of the Ingest Budgets table.
+1. Click the **+ Add Budget** button on the top right of the table. A panel named Create Ingest Budget will appear to the right of the Ingest Budgets table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" />
 1. Provide the following information.
    * **Display Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all Data Tiers to find the right Ingestion trend.
@@ -76,7 +76,7 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. In the table find the ingest budget you want to delete.
 Click on the Ingest budget, and then under **More Actions**, click the delete icon.
-1. You will get a confirmation prompt, ensure that you are deleting the desired ingest budget and then click **Delete**.
+1. You will get a confirmation prompt. Ensure that you are deleting the desired ingest budget, and then click **Delete**.
 
 
 ## Audit Index queries
@@ -95,9 +95,9 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 
 ## Beta Playbook
 
-1. Identify sources which are not critical data sources where stricter data controls can be added to prevent  organization from being throttled.
+1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
-1. Run the following query. Goal of this query is to understand previous data ingestion trends and suggest to you the peak volume we have seen per minute.
+1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume we have seen per minute.
    ```sql
    {Your scope for data, example: _sourceCategory= alpha }
    | timeslice 1d
