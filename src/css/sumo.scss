@@ -247,7 +247,7 @@ html[data-theme='light'] {
     no-repeat;
 }
 
-
+//Free Trial nav button
 
 .header-trial:hover {
   opacity: 0.85;
@@ -270,6 +270,36 @@ html[data-theme='light'] {
 }
 
 [data-theme='dark'] .header-trial::before {
+  background: transparent;
+  border: 1px solid #2aa1e6;
+  color: #FFF;
+  display: inline-flex;
+  background: #2aa1e6;
+}
+
+//Contact Support nav button
+
+.header-support:hover {
+  opacity: 0.85;
+}
+
+.header-support::before {
+  content: 'Contact Support';
+  border: 1px solid #2aa1e6;
+  color: #FFF;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-size: 14px;
+  display: inline-flex;
+  background: #2aa1e6;
+}
+
+.header-support::after {
+    display: none !important;
+    content: none !important;
+}
+
+[data-theme='dark'] .header-support::before {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;

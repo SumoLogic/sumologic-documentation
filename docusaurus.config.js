@@ -284,6 +284,11 @@ module.exports = {
             className: 'header-trial',
           },
           {
+            to: 'https://support.sumologic.com/hc/en-us',
+            position: 'left',
+            className: 'header-support',
+          },
+          {
             label: 'Guides',
             position: 'left',
             to: '#',
