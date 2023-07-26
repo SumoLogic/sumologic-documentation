@@ -15,6 +15,10 @@ You can use Cloud Security Analytics for:
 * [Application security](/docs/csa/application-security/). Monitor your software offerings to ensure they are not vulnerable or infiltrated by malicious code at any point in the continuous integration/continuous deployment (CI/CD) process and production cycle.
 * [Data lakes](/docs/csa/data-lakes/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics. 
 
+:::tip
+To learn more about Cloud Security Analytics, take the Cloud Security Analytics course in our [Sumo Logic Training Portal](/docs/get-started/training-certification-faq). 
+:::
+
 ## The Sumo Logic data pipeline
 
 The Sumo Logic data pipeline makes collected data available for use in Cloud Security Analytics. At a high level, it follows four steps:

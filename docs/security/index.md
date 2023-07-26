@@ -34,7 +34,13 @@ import Iframe from 'react-iframe';
 
 ## Security feature comparison
 
-The following table illustrates which features are available with our security solutions. If you have any questions on availability or a trial, you can reach out to your Sumo Logic account team.
+<img src={useBaseUrl('img/security/practitioner_messaging_feature_overlaps_venn diagram_opt_01A.png')} alt="Feature comparison Venn diagram" width="600"/>
+
+Following are features available with our security solutions. If you have any questions on availability or a trial, you can reach out to your Sumo Logic account team.
+
+<img src={useBaseUrl('img/security/practitioner_messaging_feature_matrix_chart_v01.png')} alt="Feature comparison table" width="800"/>
+
+<!-- The following table is hidden. We're using the image instead. We'll keep the table hidden in case we want to use it in the future instead of the image.
 
    | Feature | Cloud Security Analytics | Cloud SIEM Enterprise | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
@@ -71,4 +77,4 @@ The following table illustrates which features are available with our security s
 | Progressive automation | | | x |
 | Highly customizable dashboards and KPIs | | | x |
 | Automatic incident reports | | | x |
-
+-->

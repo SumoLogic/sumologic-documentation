@@ -6,8 +6,6 @@ tags: [csa, cloud security analytics, security]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="60"/>
-
 Cloud Security Analytics is a cloud-based security system that provides the following functionality: 
 
 * Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
