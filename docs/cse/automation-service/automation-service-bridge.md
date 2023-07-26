@@ -87,6 +87,9 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
    1. Under **Integrations**, select **Automation**.
    1. At the top of the screen, click **Manage Playbooks**.
+      :::note
+      {@import ../../reuse/cse-launch-csoar-automation.md} 
+      :::
 1. Click **?** in the upper-right.
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
@@ -102,6 +105,9 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
    1. Under **Integrations**, select **Automation**.
    1. At the top of the screen, click **Manage Playbooks**.
+      :::note
+      {@import ../../reuse/cse-launch-csoar-automation.md}
+      :::
 1. Click **?** in the upper-right.
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.

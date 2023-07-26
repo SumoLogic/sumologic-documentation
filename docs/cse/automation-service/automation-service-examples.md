@@ -19,7 +19,10 @@ The following example shows how to add an enrichment to an Insight using the “
 1. Edit the VirusTotal OIF resource:
    1. Click the **Configuration** button (gear icon) at the top of the UI.
    1. Under **Integrations**, select **Automation**.
-   1. From the Automation screen, click **Manage Playbooks**.
+   1. From the Automation screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+    :::note
+    {@import ../../reuse/cse-launch-csoar-automation.md}    
+    :::
    1. Click **Integrations** in the navigation menu.
    1. Select **VirusTotal OIF**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-resource-edit-button.png')} alt="Resource edit button" width="500"/>
@@ -87,7 +90,9 @@ The following example shows how to configure a notification that sends an email 
 1. Edit the Sumo Logic CIP resource:
    1. Click the **Configuration** button (gear icon) at the top of the UI.
    1. Under **Integrations**, select **Automation**.
-   1. From the Automation screen, click **Manage Playbooks**.
+   1. From the Automation screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+    :::note
+    {@import ../../reuse/cse-launch-csoar-automation.md}   
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic CIP**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" width="600"/>
@@ -165,7 +170,10 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
 1. Create a new IP Quality Score integration:
     1. Click the **Configuration** button (gear icon) at the top of the UI.
     1. Under **Integrations**, select **Automation**.
-    1. From the Automation screen, click **Manage Playbooks**.
+    1. From the Automation screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+      :::note
+      {@import ../../reuse/cse-launch-csoar-automation.md} 
+      :::
     1. Click **Integrations** in the navigation menu.
     1. Click the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-integration-button.png')} alt="Add integration button" width="400"/> 
     1. Download this file: <a href="https://help.sumologic.com/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
@@ -275,7 +283,10 @@ The following example pulls together elements of the [Simple example](#simple-ex
 1. Edit the VirusTotal OIF resource:
    1. Click the **Configuration** button (gear icon) at the top of the UI.
    2. Under **Integrations**, select **Automation**.
-   3. From the Automation screen, click **Manage Playbooks**.
+   3. From the Automation screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+      :::note
+      {@import ../../reuse/cse-launch-csoar-automation.md}
+      :::
    4. Click **Integrations** in the navigation menu.
    5. Select **VirusTotal OIF**.
    6. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-resource-edit-button.png')} alt="Resource edit button" width="500"/>
