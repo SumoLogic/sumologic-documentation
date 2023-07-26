@@ -7,8 +7,6 @@ description: Learn how integrations are connectors to applications from industry
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-{@import ../../reuse/automation-service-la-note.md}
-
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
 Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service. 

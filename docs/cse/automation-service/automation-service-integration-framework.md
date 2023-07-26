@@ -7,8 +7,6 @@ description: Learn about the framework used for integrations.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-{@import ../../reuse/automation-service-la-note.md}
-
 The Integration Framework allows you to develop and extend integrations using a common, open, and easy-to-use framework. 
 
 Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code, and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.

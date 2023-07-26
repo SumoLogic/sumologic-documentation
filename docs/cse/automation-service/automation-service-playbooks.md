@@ -7,8 +7,6 @@ description: Learn about playbooks. A playbook is a predefined set of actions an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-{@import ../../reuse/automation-service-la-note.md}
-
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
