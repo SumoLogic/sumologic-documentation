@@ -300,7 +300,7 @@ For more information about above metrics please see [this](https://github.com/Su
 
 These metrics are used to monitor the health of the collectors used to send telemetry data to Sumo Logic.
 
-These metrics can be found under the **default-metrics** source in Sumo Logic, in addition to the [Metrics created by Prometheus rules](https://help-opensource.sumologic.com/docs/metrics/kubernetes-metrics/#metrics-created-by-prometheus-rules).
+These metrics can be found under the **default-metrics** source in Sumo Logic, in addition to the [Metrics created by Prometheus rules](/docs/metrics/kubernetes-metrics/#metrics-created-by-prometheus-rules).
 
 ### Metrics to collect
 
