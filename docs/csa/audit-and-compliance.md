@@ -84,9 +84,9 @@ Use Sumo Logic's countless data integrations and out-of-the box applications ens
 ## Pre-built apps for audit and compliance
 
 [Install](/docs/get-started/apps-integrations) the following apps for audit and compliance:
-* [PCI Compliance](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
-* [Google Cloud Audit](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
-* [AWS Security Hub](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
+* [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
+* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
+* [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
 
 ### Use case: PCI compliance
 
