@@ -5,6 +5,10 @@ sidebar_label: Doc Template
 description: Example template for creating a document in the Sumo Logic guides.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 Copy this markdown file and replace it with your own documentation. To view the full list of markdown components, see our [Style Guide](/docs/contributing/style-guide).
 
 Replace the title above in the [Frontmatter section](/docs/contributing/style-guide#frontmatter) with yours. This will render as an H1 header. All other header sections should be H2, H3, H4, or H5.
