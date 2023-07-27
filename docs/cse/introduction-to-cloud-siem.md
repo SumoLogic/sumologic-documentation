@@ -7,7 +7,7 @@ description: Learn basic concepts about Cloud SIEM.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM, also known as Cloud SIEM Enterpirse (CSE), is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. 
+Cloud SIEM, also known as Cloud SIEM Enterprise (CSE), is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. Cloud SIEM is a purchased add-on with an ever-expanding library of content designed for security operations. 
 
 Watch the following micro lesson to learn how to get started using Cloud SIEM for threat investigation.
 
