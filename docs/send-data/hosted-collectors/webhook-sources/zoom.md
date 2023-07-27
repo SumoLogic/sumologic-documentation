@@ -82,3 +82,51 @@ To configure a Zoom Source:
   You may face ingestion issues if you use more than one subscription per webhook.
   :::
 1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="app-activated-message" width="400"/>
+
+### JSON configuration
+
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+
+| Parameter | Type | Required | Description | Access |
+|:--|:--|:--|:--|:--|
+| `sourceType` | String  | Yes | HTTP Source. | not modifiable |
+| `contentType` | String  | No | Defined based on the AWS Source you are creating. Use `{"type":"Zoom"}` for Zoom Source. | not modifiable |
+| `URL` | String | No | Assigned by Sumo Logic for Zoom Source. | Used to set up Event Based Notifications with Zoom. This value is created and assigned by Sumo Logic when the Source is created. |
+| `thirdPartyRef` | JSON  | Yes | Provides required information for third-party integration, including the Zoom secret token. | n/a |
+
+
+### JSON example
+
+```json
+{
+  "api.version": "v1",
+  "source": {
+    "name": "Zoom source",
+    "description": "description",
+    "category": "sourcecategory",
+    "hostName": "sourcehost",
+    "automaticDateParsing": true,
+    "multilineProcessingEnabled": true,
+    "useAutolineMatching": true,
+    "contentType": "Zoom",
+    "forceTimeZone": false,
+    "filters": [],
+    "cutoffTimestamp": 0,
+    "encoding": "UTF-8",
+    "fields": {},
+    "thirdPartyRef": {
+      "resources": [
+        {
+          "serviceType": "Zoom",
+          "authentication": {
+            "type": "ZoomAuthentication",
+            "secretToken": "xxxxxxxx"
+          }
+        }
+      ]
+    },
+    "messagePerRequest": false,
+    "sourceType": "HTTP"
+  }
+}
+```
