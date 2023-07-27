@@ -1,15 +1,16 @@
 ---
 id: data-lakes
-title: Data Lakes
-sidebar_label: Data Lakes
-description: Learn about using data lakes with Cloud Security Analytics. 
+title: Security Data Lake
+sidebar_label: Security Data Lake
+description: Learn about using Cloud Security Analytics as your security data lake. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use a data lake with Cloud Security Analytics, you must first [install a data lake](#install-a-data-lake-for-use-with-cloud-security-analytics). Although Cloud Security Analytics is optimized to work with Amazon Data Lake, you can use the data lake of your choice.
+You can use Cloud Security Analytics as your security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis. 
 
-Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up a data lake for use with Cloud Security Analytics.
+Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up Cloud Security Analytics for use as a security data lake.
+
 
 ## About data lakes
 
@@ -89,11 +90,10 @@ Once you connect your data lake to Sumo Logic, you can start analyzing security 
 
 With security data flowing in from your data lake, you can continuously monitor and analyze your data to identify potential threats and respond proactively. Our platform is also updated with the latest security content from our Sumo Logic Threat Labs team. This team moves quickly to support customers in crisis, like when the Log4j vulnerability surfaced. They continuously monitor and analyze data to identify threats, both known and unknown.
 
-## Install a data lake for use with Cloud Security Analytics
+## Collect logs from external data lakes​
 
-You can use a number of data lakes to supply data for Cloud Security Analytics. Following are just a couple. 
+You can collect logs from external data lakes and use that data in Cloud Security Analytics. See the following articles for more information:
+* [Amazon Security Lake Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-security-lake-source)
+* [Collect Logs from Palo Alto Networks Cortex Data Lake](/docs/send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex)
 
-* **[Amazon Security Lake](https://aws.amazon.com/security-lake/)**. Cloud Security Analytics is optimized to work with Amazon Data Lake. For directions to configure it for Sumo Logic, see [Amazon Security Lake Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-security-lake-source/).
-* **[Palo Alto Networks Cortex Data Lake](https://docs.paloaltonetworks.com/cortex/cortex-data-lake)**. For directions to configure it for Sumo Logic, see [Collect Logs from Palo Alto Networks Cortex Data Lake](/docs/send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex/). 
-
-If you want to use another data lake, ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up a data lake for use with Cloud Security Analytics.
+If you want to collect logs from other data lakes, ask your Sumo Logic account representative to engage the Professional Services team to guide you through the process.

@@ -17,26 +17,26 @@ Threat detection and investigation refers to identifying and exploring threats o
 
 *Threat investigation* analyzes a threat or potential threat to glean more information about it. When a threat is detected, SecOps teams use behavioral, forensic, and log data to investigate and uncover as much information as possible. From there, teams can respond appropriately to the threat and plan for system improvements to reduce risk in the future.
 
-Advanced security analytics platforms like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevOps teams to observe and investigate security threats within your cloud infrastructure.
+Advanced security analytics solutions like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevSecOps teams to observe and investigate security threats within your cloud infrastructure.
 
 
 ### Best practices guide for implementing threat detection and investigation
 
 Following are the basic steps involved in implementing a threat detection and investigation process.
 
-#### Step 1. Collect and aggregate all security data into a single, unified location
+#### Step 1: Collect and aggregate all security data into a single, unified location
 
-Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [Data lakes](/docs/csa/data-lakes/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
+Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [**Data lakes**](/docs/csa/data-lakes/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
 
-#### Step 2. Use integrations to discover trends or potential threats
+#### Step 2: Use integrations to discover trends or potential threats
 
 Increase the velocity and accuracy of threat detection with integrations to applications that provide insight to threats. Cloud Security Analytics offers numerous [out-of-the-box integrations](#pre-built-apps-for-threat-detection-and-investigation) with queries for custom searching and monitoring.
 
-#### Step 3. Configure robust alerting policies to notify SecOps teams when changes or outliers occur
+#### Step 3: Configure robust alerting policies to notify SecOps teams when changes or outliers occur
 
 The quicker your team can get to work, the quicker investigation and mitigation can happen. With [Sumo Logic Monitors](/docs/alerts/monitors/create-monitor/), teams can track and build alerts that fit their unique requirements, instead of getting hit with alerts that are too vague or numerous. You can create fine-grained conditions under which alerts trigger, letting you customize them to reduce noise.
 
-#### Step 4. Perform root cause analysis to investigate the threat fully
+#### Step 4: Perform root cause analysis to investigate the threat fully
 
 Attacks may persist without further investigation and patches, so it’s critical to find and patch any vulnerabilities as soon as possible. Sumo Logic provides broad-reaching [search capabilities](/docs/search/search-query-language/) so teams can perform extensive threat investigations quickly.
 

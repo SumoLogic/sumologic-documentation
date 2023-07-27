@@ -10,16 +10,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic's security solutions support the entire spectrum of security use cases, from analytics to SIEM and SOAR:
 
-| Security Monitoring and Analytics | Threat Investigation | Threat Response |
+| Security log management and analytics | Threat investigation | Threat response |
 | :-- | :-- | :-- |
 | [Cloud Security Analytics](/docs/csa/) | [Cloud SIEM Enterprise](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
-| Provides cloud security monitoring **for analysts** to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and resolution of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
+| Provides cloud-native security log management **for analysts** to collect and store security logs, and use built-in analytics to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and resolution of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
 
 ## Choose your solution
 
 Getting started with security at Sumo is easy at any level. Watch the following micro lesson to learn about Sumo Logic's security solutions.
 
-<Iframe url="https://www.youtube.com/embed/1-f1X3Y9Wug?rel=0"
+<Iframe url="https://www.youtube.com/embed/EJWfYe4k9V4?rel=0"
      width="854px"
      height="480px"
      id="myId"
@@ -36,7 +36,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/security/practitioner_messaging_feature_overlaps_venn diagram_opt_01A.png')} alt="Feature comparison Venn diagram" width="600"/>
 
-Following are features available with our security solutions. If you have any questions on availability or a trial, you can reach out to your Sumo Logic account team.
+Following are features available with our security solutions. If you have any questions on availability or a free trial, you can reach out to your Sumo Logic account team.
 
 <img src={useBaseUrl('img/security/practitioner_messaging_feature_matrix_chart_v01.png')} alt="Feature comparison table" width="800"/>
 

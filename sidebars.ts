@@ -2287,10 +2287,10 @@ integrations: [
       link: {type: 'doc', id: 'csa/index'},
       items: [
         'csa/introduction-to-csa',
-        'csa/threat-detection-and-investigation',
-        'csa/audit-and-compliance',
-        'csa/application-security',
         'csa/data-lakes',
+        'csa/audit-and-compliance',
+        'csa/threat-detection-and-investigation',
+        'csa/application-security',
       ],
     },
     {
