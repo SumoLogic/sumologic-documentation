@@ -7,16 +7,16 @@ description: Learn about using Cloud Security Analytics as your security data la
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use Cloud Security Analytics as your security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis. 
+You can use your Sumo Logic environment as a security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis using Cloud Security Analytics. 
 
-Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up Cloud Security Analytics for use as a security data lake.
+Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up your Sumo Logic environment as a security data lake.
 
 
 ## About data lakes
 
 A data lake is a centralized repository to store data. Data in the lake can then be used for analytics. A data lake can store both structured and unstructured data, unlike a data warehouse, which typically only stores structured data. Data lakes are more flexible than data warehouses in that you can retrieve data in any format used by your consuming services.
 
-Data lakes are ideal to use with Sumo Logic's Cloud Security Analytics - our parsing and mapping capabilities can transform your data quickly and at scale.
+Sumo Logic is ideal to use for a security data lake. Our parsing and mapping capabilities can transform your data quickly and at scale.
 
 ### Why use a data lake?
 
@@ -56,19 +56,13 @@ Following are the basic steps involved in building a security data lake.
 
 Determine what data you need to analyze by considering your use case. Data may come from your security detection tools, network devices, applications, servers, and endpoints, but what data addresses your biggest concerns? For example, if you’re concerned about insider threats, collecting data on user activity and access logs is a great place to start.
 
-#### Step 2: Choose a data lake solution
+#### Step 2: Choose Sumo Logic as your data lake solution
 
-Choose a storage solution that manages vast amounts of data efficiently and adheres to compliance requirements. Certain platforms may require saving data in cold storage, which hinders your investigation capabilities. Sumo Logic offers data tiering, allowing you to store data without compromising accessibility.
-
-If you’re not sure where to start, consider asking these questions:
-* What kind of data sources can you ingest from?
-* How is the data searchable?
-* How much storage capacity do you need?
-* What is the event-per-second throughput? 
+Sumo Logic manages vast amounts of data efficiently and adheres to compliance requirements. Certain platforms may require saving data in cold storage, which hinders your investigation capabilities. Sumo Logic offers data tiering, allowing you to store data without compromising accessibility.
 
 #### Step 3: Implement data ingestion
 
-Set up a process for collecting data into your data lake. With Sumo Logic, you can begin data ingestion in a secure and compliant manner out-of-the-box. Our high event-per-second throughput ensures you can handle the most demanding workloads and data ingestion without issue.
+Set up a process for collecting data into Sumo Logic. With Sumo Logic as your security data lake, you can begin data ingestion in a secure and compliant manner out-of-the-box. Our high event-per-second throughput ensures you can handle the most demanding workloads and data ingestion without issue.
 
 #### Step 4: Enforce data security
 
@@ -84,11 +78,11 @@ Sumo Logic uses role-based access control (RBAC), data classification, retention
 
 #### Step 7: Analyze security data
 
-Once you connect your data lake to Sumo Logic, you can start analyzing security data. Cloud Security Analytics is built on a security-first principle. It is designed to analyze security data with real-time threat detection, compliance reporting, and dashboards. Our cloud-native architecture unifies security events and investigations across multiple cloud platforms, including AWS, Azure, and Google Cloud Platform.
+Once you connect your data sources in Sumo Logic, you can start analyzing security data. Cloud Security Analytics is built on a security-first principle. It is designed to analyze security data with real-time threat detection, compliance reporting, and dashboards. Our cloud-native architecture unifies security events and investigations across multiple cloud platforms, including AWS, Azure, and Google Cloud Platform.
 
 #### Step 8: Monitor your data
 
-With security data flowing in from your data lake, you can continuously monitor and analyze your data to identify potential threats and respond proactively. Our platform is also updated with the latest security content from our Sumo Logic Threat Labs team. This team moves quickly to support customers in crisis, like when the Log4j vulnerability surfaced. They continuously monitor and analyze data to identify threats, both known and unknown.
+With security data flowing in, you can continuously monitor and analyze your data to identify potential threats and respond proactively. Our platform is also updated with the latest security content from our Sumo Logic Threat Labs team. This team moves quickly to support customers in crisis, like when the Log4j vulnerability surfaced. They continuously monitor and analyze data to identify threats, both known and unknown.
 
 ## Collect logs from external data lakes​
 

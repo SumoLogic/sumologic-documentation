@@ -114,7 +114,7 @@ In [Perform a PCI compliance audit](#perform-a-pci-compliance-audit) below, weâ€
 
 This example shows how to use the PCI app for Palo Alto Networks to perform a PCI audit for requirement 4: "Encrypt transmission of cardholder data across open, public networks".
 
-Before you can perform the audit, collect logs, and install the app for the version of Palo Alto Networks, you'll use:
+Before you can perform the audit, collect logs, and install the app for the version of Palo Alto Networks you'll use:
 * [PCI Compliance for Palo Alto Networks 9](/docs/integrations/pci-compliance/palo-alto-networks-9/)
 * [PCI Compliance for Palo Alto Networks 10](/docs/integrations/pci-compliance/palo-alto-networks-10/)
 
