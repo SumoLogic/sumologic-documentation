@@ -25,7 +25,7 @@ The Sumo Logic data pipeline makes collected data available for use in Cloud Sec
 
 <img src={useBaseUrl('img/csa/data-pipeline.png')} alt="Sumo Logic data pipeline" width="700"/>
 
-1. **Data collection**. First you must set up either an [installed collector](/docs/send-data/installed-collectors/) or a [hosted collector](/docs/send-data/hosted-collectors/) and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
+1. **Data collection**. First, you must set up either an [installed collector](/docs/send-data/installed-collectors/) or a [hosted collector](/docs/send-data/hosted-collectors/) and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
 2. **Search and analyze**. Once data is in Sumo Logic, you can [write queries](/docs/search/get-started-with-search/) to search and correlate events in real-time from the analytics platform UI. 
 3. **Visualize and monitor**. Once you’ve found and analyzed data that’s interesting, you can create dashboards to visualize it and set up alerts to monitor your data in real-time. Certain pre-built apps come pre-configured with dashboards designed for security.
 4. **Share the findings**. [Export your dashboards](/docs/dashboards-new/export-dashboard-new/) or [share with others on your team](/docs/dashboards-new/share-dashboard-new/). You can control who can view and edit your dashboards to keep your data secure.
