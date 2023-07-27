@@ -143,7 +143,7 @@ In this use case, we'll show you how to query AWS CloudTrail data for any messag
 
 #### What is a root account?
 
-Most operating systems have a small handful of super user accounts. These accounts may be known as su (super user), root, or admin. These accounts have special access beyond what normal accounts have. They can often add and delete data, create and delete users, and perform other privileged actions. 
+Most operating systems have a small number of super user accounts. These accounts may be known as su (super user), root, or admin. These accounts have special access beyond what normal accounts have. They can often add and delete data, create and delete users, and perform other privileged actions. 
 
 While it's important to have a few administrators in any organization, not every action needs to be performed by super user account. If everyone has access to administrator privileges, there is a risk of accidental or malicious data deletion, manipulation, or exfiltration.
 
