@@ -229,7 +229,7 @@ If there have been brute force attacks during the queried time frame, your the n
 
 ### Step 6: Detect landspeed violations
 
-A "landspeed violation" occurs when a user logs in from an IP address and then logs in a short time later from a different IP address where the location is a significant distance from the first location. An example would be if someone logged in from New York City USA, and then 4 hours later logged in using the same IP address from Amsterdam in the Netherlands.  It’s impossible to get from New York City to Amsterdam in 4 hours, thus it is an example of a landspeed violation that could indicate stolen or compromised credentials. 
+A "landspeed violation" occurs when a user logs in from an IP address and then logs in a short time later from a different IP address where the location is a significant distance from the first location. An example would be if someone logged in from New York City USA, and then 4 hours later logged in using the same IP address from Amsterdam in the Netherlands. It’s impossible to get from New York City to Amsterdam in 4 hours, thus it is an example of a landspeed violation that could indicate stolen or compromised credentials. 
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
