@@ -13,7 +13,7 @@ To use Cloud Security Analytics for audit and compliance, you can use [pre-built
 
 Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/csa/threat-detection-and-investigation/), are also recommended.
 
-A compliance audit is an inspection of an organization to check whether compliance standards are being met. There are two types of audits Sumo Logic Security Analytics can support:
+A compliance audit is an inspection of an organization to check whether compliance standards are being met. Cloud Security Analytics supports two types of audits:
 * **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
 * **External audit**. Where a government or other independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
 
