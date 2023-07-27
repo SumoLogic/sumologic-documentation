@@ -11,7 +11,7 @@ To use Cloud Security Analytics for audit and compliance, you can use [pre-built
 
 ## About audit and compliance
 
-Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/csa/threat-detection-and-investigation/), are also recommended.
+Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/cloud-security-analytics/threat-detection-and-investigation/), are also recommended.
 
 A compliance audit is an inspection of an organization to check whether compliance standards are being met. Cloud Security Analytics supports two types of audits:
 * **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
@@ -54,7 +54,7 @@ Following are the basic steps involved in implementing an audit and compliance p
 
 #### Step 1: Centralize data collection
 
-Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/csa/data-lakes/) for speed and effectiveness of analysis.
+Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/cloud-security-analytics/data-lakes/) for speed and effectiveness of analysis.
 
 #### Step 2: Increase visibility
 

@@ -1,5 +1,5 @@
 ---
-id: introduction-to-csa
+id: introduction-to-cloud-security-analytics
 title: Introduction to Cloud Security Analytics
 sidebar_label: Introduction to Cloud Security Analytics
 description: Learn basic concepts about Cloud Security Analytics. 
@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Cloud Security Analytics is a cloud-native, enterprise-grade solution composed of apps, customizable dashboards, and tools to analyze your security data. It leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence, to produce findings that help you protect vulnerable attack surfaces from threats.
 
 You can use Cloud Security Analytics for:
-* [Security data lake](/docs/csa/data-lakes/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics. 
-* [Audit and compliance](/docs/csa/audit-and-compliance/). Audit your systems to ensure they are in compliance with the rules set by governments and organizations to protect end users and keep information private and secure. 
-* [Threat detection and investigation](/docs/csa/threat-detection-and-investigation/). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
-* [Application security](/docs/csa/application-security/). Monitor your software offerings to ensure they are secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
+* [Security data lake](/docs/cloud-security-analytics/data-lakes/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics. 
+* [Audit and compliance](/docs/cloud-security-analytics/audit-and-compliance/). Audit your systems to ensure they are in compliance with the rules set by governments and organizations to protect end users and keep information private and secure. 
+* [Threat detection and investigation](/docs/cloud-security-analytics/threat-detection-and-investigation/). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
+* [Application security](/docs/cloud-security-analytics/application-security/). Monitor your software offerings to ensure they are secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
 
 :::tip
 To learn more about Cloud Security Analytics, take the Cloud Security Analytics course in our [Sumo Logic Training Portal](/docs/get-started/training-certification-faq). 

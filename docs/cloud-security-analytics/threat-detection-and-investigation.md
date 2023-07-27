@@ -26,7 +26,7 @@ Following are the basic steps involved in implementing a threat detection and in
 
 #### Step 1: Collect and aggregate all security data into a single, unified location
 
-Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [**Data lakes**](/docs/csa/data-lakes/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
+Aggregate your structured and unstructured data into a single repository to save time, money, and resources. [**Data lakes**](/docs/cloud-security-analytics/data-lakes/) combine secure storage with domain-agnostic analytics for more effective threat detection and investigation.
 
 #### Step 2: Use integrations to discover trends or potential threats
 

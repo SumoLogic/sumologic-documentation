@@ -1,7 +1,7 @@
 ---
-slug: /csa
+slug: /cloud-security-analytics
 title: Cloud Security Analytics
-tags: [csa, cloud security analytics, security]
+tags: [cloud security analytics, security]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,31 +16,31 @@ In this guide, we'll present the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/csa/introduction-to-csa"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Introduction to Cloud Security Analytics</h4></a>
+  <a href="/docs/cloud-security-analytics/introduction-to-cloud-security-analytics"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Introduction to Cloud Security Analytics</h4></a>
   <p>Get an introduction to basic concepts of Cloud Security Analytics.</p>
   </div>
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/csa/threat-detection-and-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Detection and Investigation</h4></a>
+  <a href="/docs/cloud-security-analytics/threat-detection-and-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Detection and Investigation</h4></a>
   <p>Learn how to monitor security data and investigate incidents.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/csa/audit-and-compliance"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit and Compliance</h4></a>
+  <a href="/docs/cloud-security-analytics/audit-and-compliance"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit and Compliance</h4></a>
   <p>Learn how to use Cloud Security Analytics to assist with audit and compliance.</p>
   </div>
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/csa/application-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Application Security</h4></a>
+  <a href="/docs/cloud-security-analytics/application-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Application Security</h4></a>
   <p> Learn about using Cloud Security Analytics for application security.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/csa/data-lakes"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Data Lakes</h4></a>
+  <a href="/docs/cloud-security-analytics/data-lakes"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Data Lakes</h4></a>
   <p>Learn about using data lakes with Cloud Security Analytics.</p>
   </div>
 </div>
