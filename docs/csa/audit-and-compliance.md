@@ -67,7 +67,7 @@ Create filters and search parameters with Sumo Logic to find any data at any tim
 
 #### Step 4: Use out-of-the-box content
 
-Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance/setup#pci-dashboards), mean you can monitor many security tools you already use.
+Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance/setup#pci-dashboards), allow you to monitor many security tools you already use.
 
 #### Step 5 Retain data
 
