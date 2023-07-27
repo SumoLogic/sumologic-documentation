@@ -199,7 +199,7 @@ Your dashboard should now look something like this:<br/><img src={useBaseUrl('im
 
 In the previous steps, we showed you how to build a dashboard to detect and monitor security data. In the following steps, we'll enhance the dashboard to perform threat investigation. 
 
-In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to login a number of times, and then logging in successfully.  Let's write a query to look for this and display the results. 
+In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to login a number of times, and then logging in successfully. Let's write a query to look for this and display the results. 
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
