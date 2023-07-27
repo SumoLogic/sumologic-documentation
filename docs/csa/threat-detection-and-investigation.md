@@ -142,7 +142,7 @@ For example, if you expect all your users to be located in Europe, but you are g
 
 As another example, let's say one of your employees logged in from both Canada and Australia, on the same day only two hours apart. You know this employee lives in Toronto and travels frequently. So, the Canadian login is expected. Normally, the Australian login would be expected too, since this employee travels so often. However, since it occurred only two hours after a Toronto login, you conclude it's malicious activity. This type of suspicious activity is called a landspeed violation. We'll show you how to query for them.
 
-We want to see where our users are logging in from around the globe.  So in this step we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located. 
+We want to see where our users are logging in from around the globe. So, in this step, we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located. 
 
 1. Click **Add Panel** and then **Map**.<br/><img src={useBaseUrl('img/csa/add-map-panel.png')} alt="Add a map panel" style={{border: '1px solid black'}} width="300"/>
 1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
