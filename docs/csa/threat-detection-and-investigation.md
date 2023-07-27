@@ -20,7 +20,7 @@ Threat detection and investigation refers to identifying and exploring threats o
 Advanced security analytics platforms like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevOps teams to observe and investigate security threats within your cloud infrastructure.
 
 
-###  Best practices guide for implementing threat detection and investigation
+### Best practices guide for implementing threat detection and investigation
 
 Following are the basic steps involved in implementing a threat detection and investigation process.
 
