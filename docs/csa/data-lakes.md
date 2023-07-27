@@ -13,7 +13,9 @@ Ask your Sumo Logic account representative to engage the Professional Services t
 
 ## About data lakes
 
-A data lake is a centralized repository to store data. Data in the lake can then be used for analytics. A data lake can store both structured and unstructured data, unlike a data warehouse, which typically only stores structured data. You have much more flexibility with a data lake than a data warehouse, because you can retrieve the data in any format used by your consuming services. Data lakes are ideal to use with  Cloud Security Analytics, since Sumo Logic's parsing and mapping capabilities can transform data quickly and at scale. 
+A data lake is a centralized repository to store data. Data in the lake can then be used for analytics. A data lake can store both structured and unstructured data, unlike a data warehouse, which typically only stores structured data. Data lakes are more flexible than data warehouses in that you can retrieve data in any format used by your consuming services.
+
+Data lakes are ideal to use with Sumo Logic's Cloud Security Analytics - our parsing and mapping capabilities can transform your data quickly and at scale.
 
 ### Why use a data lake?
 
