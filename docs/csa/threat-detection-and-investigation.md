@@ -11,8 +11,7 @@ To use Cloud Security Analytics for threat detection and investigation, you can 
 
 ## About threat detection and investigation
 
-Threat detection and investigation refers to identifying and exploring threats or security-related events within an asset, application, or network as quickly and
-effectively as possible.
+Threat detection and investigation refers to identifying and exploring threats or security-related events within an asset, application, or network as quickly and effectively as possible.
 
 *Threat detection* identifies threats within cloud-based, hybrid, and on-premises infrastructure and applications before they cause major issues for a business. The sooner security teams uncover a security-related event, the quicker they can investigate and mitigate it.
 
