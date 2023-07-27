@@ -168,7 +168,7 @@ We want to see where our users are logging in from around the globe. So, in this
 
 ### Step 4: Monitor failed login attempts
 
-Now we want to see if users are failing to login, which either might be an indication of users forgetting their passwords, or someone else trying to log in using stolen user credentials.
+Now we want to see if users are failing to log in, which either might be an indication of users forgetting their passwords, or someone else trying to log in using stolen user credentials.
 
 1. Click **Add Panel** and then **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
