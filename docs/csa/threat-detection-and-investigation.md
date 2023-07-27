@@ -15,8 +15,7 @@ Threat detection and investigation refers to identifying and exploring threats o
 
 *Threat detection* identifies threats within cloud-based, hybrid, and on-premises infrastructure and applications before they cause major issues for a business. The sooner security teams uncover a security-related event, the quicker they can investigate and mitigate it.
 
-*Threat investigation* analyzes a threat or potential threat to glean more information about it. When a threat is detected, SecOps teams use behavioral, forensic, and log data to investigate and uncover as much information as possible. From there, teams can respond appropriately to
-the threat and plan for system improvements to reduce risk in the future.
+*Threat investigation* analyzes a threat or potential threat to glean more information about it. When a threat is detected, SecOps teams use behavioral, forensic, and log data to investigate and uncover as much information as possible. From there, teams can respond appropriately to the threat and plan for system improvements to reduce risk in the future.
 
 Advanced security analytics platforms like Cloud Security Analytics provide organizations with a one-stop shop to monitor and secure applications and infrastructure. Our cloud-native SaaS platform makes it easy for your security and DevOps teams to observe and investigate security threats within your cloud infrastructure.
 
