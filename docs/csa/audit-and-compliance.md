@@ -25,9 +25,8 @@ Because Sumo Logic itself meets many security compliance standards, including HI
 
 There are two important categories of compliance: regulatory compliance and security controls.
 
-* Regulatory compliance may be required depending on factors such as the industry a company operates within. 
-
-* Security controls define how certain data types will be collected, organized, processed, or used to aid the business without creating security vulnerabilities or risking compliance penalties.
+* **Regulatory compliance** may be required depending on factors such as the industry a company operates within. 
+* **Security controls** define how certain data types will be collected, organized, processed, or used to aid the business without creating security vulnerabilities or risking compliance penalties.
 
 The biggest difference between regulatory compliance and security controls is that regulatory compliance mainly relates to standards set by third-party organizations and enforcement bodies. In contrast, security controls are developed, implemented, and enforced internally.
 
