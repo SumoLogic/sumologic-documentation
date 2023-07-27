@@ -69,7 +69,7 @@ Create filters and search parameters with Sumo Logic to find any data at any tim
 
 Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance/setup#pci-dashboards), allow you to monitor many security tools you already use.
 
-#### Step 5 Retain data
+#### Step 5: Retain data
 
 Retain data for as long as you need it to perform your audit and compliance process.  
 
