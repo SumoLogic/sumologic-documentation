@@ -280,7 +280,7 @@ A "landspeed violation" occurs when a user logs in from an IP address and then l
 
 ### Step 7: Look up user information with CrowdStrike
 
-We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity.  Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com/) which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike. 
+We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com), which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike. 
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
