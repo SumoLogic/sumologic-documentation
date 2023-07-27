@@ -96,7 +96,7 @@ In this use case, we'll show you how to use our PCI app for Palo Alto Networks t
 
 [Payment Card Industry Data Security Standards](https://www.pcisecuritystandards.org/merchants/) (PCI DSS) affects any company that accepts or processes payment cards. There are 12 requirements that meet 6 security goals. Your company needs to meet all 12 requirements to be compliant. 
 
-You can read the goals and requirements in the following table. In [Perform a PCI compliance audit](#perform-a-pci-compliance-audit) below, we’ll show how to perform an audit for requirement 4:
+You can read the goals and requirements in the following table.
 
 | Goal | PCI DSS requirements |
 | :-- | :-- |
@@ -108,6 +108,8 @@ You can read the goals and requirements in the following table. In [Perform a PC
 | Maintain an information security policy | 12. Maintain a policy that addresses information security for employees and contractors. |
 
 Many of these requirements are basic security best practices. For example, encrypting data and restricting access to it on a need-to-know basis can be a good idea regardless of what kind of data you’re working with. Likewise, installing and maintaining a firewall is probably something your security operations team has already done.
+
+In [Perform a PCI compliance audit](#perform-a-pci-compliance-audit) below, we’ll show how to perform an audit for requirement 4.
 
 #### Perform a PCI compliance audit
 
