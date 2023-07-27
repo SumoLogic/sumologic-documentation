@@ -7,7 +7,9 @@ description: Learn about using data lakes with Cloud Security Analytics.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use a data lake with Cloud Security Analytics, you must first [install a data lake](#install-a-data-lake-for-use-with-cloud-security-analytics). Cloud Security Analytics is optimized to work with Amazon Data Lake, but you can use the data lake of your choice. Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up a data lake for use with Cloud Security Analytics.
+To use a data lake with Cloud Security Analytics, you must first [install a data lake](#install-a-data-lake-for-use-with-cloud-security-analytics). Although Cloud Security Analytics is optimized to work with Amazon Data Lake, you can use the data lake of your choice.
+
+Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up a data lake for use with Cloud Security Analytics.
 
 ## About data lakes
 
