@@ -15,7 +15,7 @@ Meeting compliance standards, enforced by various governments and organizations,
 
 A compliance audit is an inspection of an organization to check whether compliance standards are being met. Cloud Security Analytics supports two types of audits:
 * **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
-* **External audit**. Where a government or other independent authority checks your data to make sure you’re meeting compliance standards. Both internal and external audits can be scheduled or they can be random.
+* **External audit**. Where a government or other independent authority checks your data to make sure you’re meeting compliance standards.
 
 Both internal and external audits can be scheduled or they can be random. For example, you can use Sumo Logic's queries, alerts, and dashboards to monitor your data, and make sure only authorized users have access to sensitive information.
 
