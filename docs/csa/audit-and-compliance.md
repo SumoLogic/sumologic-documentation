@@ -45,7 +45,7 @@ Following are regulatory framework examples:
 Security controls refer to internally-defined protective measures taken to prevent, detect, or mitigate security risks as they apply to physical assets, information, computer networks, or other assets, and can include: 
 * **Physical**. Controls that relate to physical facilities and assets, for example, restricting access to server rooms or other sensitive areas, or using surveillance cameras for real-time monitoring.
 * **Digital**. Controls that relate to basic network and application security protocols, like required formats for usernames and passwords, two-factor authentication, and up-to-date antivirus software.
-* **Cybersecurity**. Controls to prevent cyber attacks, or quickly mitigate them if they do occur or are suspected. Examples include data encryption and firewalls.
+* **Cybersecurity**. Controls to prevent or quickly mitigate cyber attacks if they do occur or are suspected. Examples include data encryption and firewalls.
 * **Cloud security**. Controls that generally apply to the protection of cloud based data and infrastructure across key assets and workflows. Cloud security controls can be more complex because they often involve CI/CD software development pipelines that can change and be updated frequently.
 
 ### Best practices guide for implementing audit and compliance
