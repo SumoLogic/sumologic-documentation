@@ -17,7 +17,7 @@ Sumo Logic's security solutions support the entire spectrum of security use case
 
 ## Choose your solution
 
-Getting started with security at Sumo is easy at any level. You can watch the following micro lesson to learn about Sumo Logic's security solutions.
+Getting started with security at Sumo is easy at any level. Watch the following micro lesson to learn about Sumo Logic's security solutions.
 
 <Iframe url="https://www.youtube.com/embed/1-f1X3Y9Wug?rel=0"
      width="854px"
