@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud Security Analytics is a cloud-based security system that provides the following functionality: 
 
-* Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
-* Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.
-* Apps, dashboards, and tools to analyze security data.
+* Collects log and event data from your infrastructure and applications, on-premise and in-cloud.
+* Correlates collected data to reduce the volume of info you need to sift through to investigate issues.
+* Produces apps, dashboards, and tools that analyze your security data.
 
 In this guide, we'll present the following concepts:
 
