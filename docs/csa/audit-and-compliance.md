@@ -19,7 +19,7 @@ A compliance audit is an inspection of an organization to check whether complian
 
 Both internal and external audits can be scheduled or they can be random. For example, you can use Sumo Logic's queries, alerts, and dashboards to monitor your data, and make sure only authorized users have access to sensitive information.
 
-Because Sumo Logic itself meets many security compliance standards, including HIPAA, FedRAMP-Moderate Authorized, ISO 27001, and many others, you can feel safe ingesting your data into the Sumo Logic platform.
+Because Sumo Logic itself meets many security compliance standards, including HIPAA, FedRAMP-Moderate Authorized, ISO 27001, and many others, you can feel safe ingesting your data into our platform.
 
 ### Regulatory compliance and security controls
 
