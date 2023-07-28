@@ -62,7 +62,7 @@ To create service account credentials, follow the steps below:
 1. To create JSON for the service account, you must create a key. Select the service account email to navigate to the **Keys** tab.<br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="google_workspace_service_account_create_key.png" width="600" />.
 1. Click **Keys** tab on the same service account page. <br/><img src={useBaseUrl('img/send-data/add-key.png')} alt="add-key.png" width="500" />
 1. From **Add Key** dropdown, select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key <br/><img src={useBaseUrl('img/send-data/generate-key.png')} alt="generate-key.png" width="600" />
-1. JSON for the service account is automatically downloaded. Use this JSON file while cofiguring the Google Workspace User Inventory source.
+1. JSON for the service account is automatically downloaded. Use this JSON file while configuring the Google Workspace User Inventory source.
 
 ### Domain-wide Delegation
 
