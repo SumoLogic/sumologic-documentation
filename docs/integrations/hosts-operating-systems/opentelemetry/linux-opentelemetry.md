@@ -151,17 +151,13 @@ Metrics query from the **CPU Utilization Over Time** panel.
 sumo.datasource=linux host.name=* metric=system.cpu.utilization state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | sum by host.name | outlier
 ```
 
-## Linux Metrics Dashboards
+## Linux App Dashboards
 
-### Host Metrics - Overview
+### Linux - Overview
 
-The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts. Along with this dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
-Use this dashboard to:
-
-- Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Host Metrics - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Linux - Overview" />
 
 ### Host Metrics - CPU
 
@@ -220,6 +216,16 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
 
+### The Process Metrics - Overview
+
+The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
+
+User this dashboard to :
+- Process wise distribution of CPU and memory usage
+- Process wise read/write operations
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
+
 ### Process Metrics - Details
 
 The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
@@ -233,27 +239,12 @@ Use this dashboard to:
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
 
 
-## Linux Log-Based Dashboards
-
-### Linux - Overview
-
-See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Linux - Overview" />
-
-#### Filtering the Overview dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of command, dest_group, host.name, and dest_user.
-
 ### Linux - Event Sources
 
 See information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Event-Sources.png' alt="Linux - Event Sources" />
 
-#### Filtering the Event Sources dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of host.name and process.executable.name.
 
 ### Linux - Login Status
 
@@ -261,16 +252,9 @@ See information about logins to Linux hosts; including logins by hour; failed lo
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Login-Status.png' alt="Linux - Login Status" />
 
-#### Filtering the Login Status dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `host.name`, `dest_user`, and `outcome`.
-
 ### Linux - Security Status
 
 See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
 
-#### Filtering the Security Status dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `host.name`, `dest_user`, and `outcome`.

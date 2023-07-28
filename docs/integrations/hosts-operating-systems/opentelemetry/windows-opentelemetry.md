@@ -279,6 +279,16 @@ Use this dashboard to:
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
 
+### The Process Metrics - Overview
+
+The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
+
+User this dashboard to :
+- Process wise distribution of CPU and memory usage
+- Process wise read/write operations 
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
+
 ### Process Metrics - Details
 
 The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
