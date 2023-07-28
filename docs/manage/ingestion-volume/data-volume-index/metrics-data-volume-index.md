@@ -11,6 +11,10 @@ You can query the index to:
 
 * Get the total metric data volume (data points) ingested by collector, source, source name, source category, or source host. 
 
+:::note
+You cannot query the index to get storage credits. For information about storage credits, see [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts).
+:::
+
 ## Message format
 
 Each JSON message contains the parent object for each source data point, and child objects that detail the data points for each parent.
