@@ -61,6 +61,7 @@ module.exports = {
           items: [
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
+            'contributing/templates/c2c-source',
           ]
         }
       ],
