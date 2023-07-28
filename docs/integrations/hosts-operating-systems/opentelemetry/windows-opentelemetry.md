@@ -281,7 +281,7 @@ Use this dashboard to:
 
 ### The Process Metrics - Overview
 
-The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
+The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations, and thread count.
 
 User this dashboard to :
 - Process wise distribution of CPU and memory usage
