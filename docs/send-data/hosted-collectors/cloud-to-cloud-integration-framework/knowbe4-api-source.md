@@ -56,7 +56,7 @@ The KnowBe4 integration fetches two types of data sources for the KnowBe4 accoun
 :::note
 C2C will skip the record if `started_at` data is not in the format of `yyyy-MM-ddTHH:mm:ss.SSSZ`.
 :::
-- **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default.
+- **External Events**. Our integration retrieves all user events for the KnowBe4 account. This data type is disabled by default. KnowBe4’s Event API allows you to pull your external data from the KnowBe4 console. Please refer to [KnowBe4 documentation](https://developer.knowbe4.com/rest/userEvents#tag/Introduction) for more details.
 
 ## States
 
