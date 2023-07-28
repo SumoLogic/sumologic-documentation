@@ -8,16 +8,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="60"/>
 
-Sumo Logic's security solutions support the entire spectrum of security use cases, from analytics to SIEM and SOAR:
+Sumo Logic's security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR:
 
-| Security log management and analytics | Threat investigation | Threat response |
+| Security log management and analytics | Threat hunting | Threat response |
 | :-- | :-- | :-- |
 | [Cloud Security Analytics](/docs/cloud-security-analytics/) | [Cloud SIEM Enterprise](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
-| Provides cloud-native security log management **for analysts** to collect and store security logs, and use built-in analytics to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and resolution of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
+| Provides cloud-native security log management **for security analysts** to collect and store security logs, and use built-in analytics to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and remediation of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
 
 ## Choose your solution
 
-Getting started with security at Sumo is easy at any level. Watch the following micro lesson to learn about Sumo Logic's security solutions.
+Getting started with security at Sumo Logic is easy at any level. Watch the following micro lesson to learn about Sumo Logic's security solutions.
 
 <Iframe url="https://www.youtube.com/embed/EJWfYe4k9V4?rel=0"
      width="854px"

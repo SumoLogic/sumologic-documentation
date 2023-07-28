@@ -54,7 +54,7 @@ Following are the basic steps involved in implementing an audit and compliance p
 
 #### Step 1: Centralize data collection
 
-Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/cloud-security-analytics/data-lakes/) for speed and effectiveness of analysis.
+Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/cloud-security-analytics/data-lake/) for speed and effectiveness of analysis.
 
 #### Step 2: Increase visibility
 

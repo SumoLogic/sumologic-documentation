@@ -2288,7 +2288,7 @@ integrations: [
       link: {type: 'doc', id: 'cloud-security-analytics/index'},
       items: [
         'cloud-security-analytics/introduction-to-cloud-security-analytics',
-        'cloud-security-analytics/data-lakes',
+        'cloud-security-analytics/data-lake',
         'cloud-security-analytics/audit-and-compliance',
         'cloud-security-analytics/threat-detection-and-investigation',
         'cloud-security-analytics/application-security',

@@ -7,16 +7,16 @@ description: Learn basic concepts about Cloud Security Analytics.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud Security Analytics is a cloud-native, enterprise-grade solution composed of apps, customizable dashboards, and tools to analyze your security data. It leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence, to produce findings that help you protect vulnerable attack surfaces from threats.
+Cloud Security Analytics is a cloud-native, enterprise-grade solution composed of security apps, customizable dashboards, and tools to analyze your security data. It leverages Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
 
 You can use Cloud Security Analytics for:
-* [Security data lake](/docs/cloud-security-analytics/data-lakes/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics. 
-* [Audit and compliance](/docs/cloud-security-analytics/audit-and-compliance/). Audit your systems to ensure they are in compliance with the rules set by governments and organizations to protect end users and keep information private and secure. 
+* [Security data lake](/docs/cloud-security-analytics/data-lake/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics. 
+* [Audit and compliance](/docs/cloud-security-analytics/audit-and-compliance/). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.
 * [Threat detection and investigation](/docs/cloud-security-analytics/threat-detection-and-investigation/). Identify and explore threats or security-related events within your assets, applications, or networks as quickly and effectively as possible.
-* [Application security](/docs/cloud-security-analytics/application-security/). Monitor your software offerings to ensure they are secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
+* [Application security](/docs/cloud-security-analytics/application-security/). Monitor your software development pipeline to ensure it is secure during the continuous integration/continuous deployment (CI/CD) process and production cycle.
 
 :::tip
-To learn more about Cloud Security Analytics, take the Cloud Security Analytics course in our [Sumo Logic Training Portal](/docs/get-started/training-certification-faq). 
+To learn more about Cloud Security Analytics and receive training certification, take the Cloud Security Analytics course in our [Sumo Logic Training Portal](/docs/get-started/training-certification-faq). 
 :::
 
 ## The Sumo Logic data pipeline
@@ -33,27 +33,26 @@ The Sumo Logic data pipeline makes collected data available for use in Cloud Sec
 ## Build security analytics assets
 
 Using the following skills with Sumo Logic's core platform, build the infrastructure you need to be successful in Cloud Security Analytics: 
-* write queries
-* build dashboards
-* create alerts
+* Write queries
+* Build dashboards
+* Create alerts
 
 Once your data is ingested, you’ll need to search and filter it to find log messages of interest for your security analytics. With field extraction rules (FERs) and scheduled searches, data processing and querying can be automated. Finally, once you've written these queries, you can visualize them with dashboards and create alerts based on certain thresholds.
 
 In addition to queries, dashboards, and alerts, Cloud Security Analytics offers many other features, including:
-* Integrations for common apps and services like AWS, Office365, SalesForce, and others
+* Integrations for common applications and services like AWS, Office365, SalesForce, and others
 * Threat intelligence and security from CrowdStrike, AWS GuardDuty, Cylance, Cisco, and others
-* Major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP
-* Built-in machine learning to help detect anomalies
+* Maintains major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP
 * Multi-cloud, hybrid cloud, and full stack security visibility
 
-These tools can help you detect threats. 
+These tools can help you detect previously hidden threats.
 
 ## Explore Sumo Logic security features
 
 Queries are the core of Sumo Logic's data processing platform. With queries, you can display information in tables, visualize data in dashboards, and create automated alerts. Explore the following features to learn how to leverage queries for Cloud Security Analytics:
 * **Lookup tables**. Create lookup tables to enrich the log data received by Sumo Logic. See [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table/).
-* **Dashboards**. Dashboards to display a number of useful metrics in easy-to-read form to allow administrators to see system status at a glance. You can set up dashboards from scratch quickly. See [Create a Dashboard](/docs/dashboards-new/create-dashboard-new/).
-* **Alerts**. Automated alerts notify important personnel when something is amiss. Again, Sumo Logic's analytics platform makes it simple. You can learn how to set up an alert in just a few minutes. See [Create a Monitor](/docs/alerts/monitors/create-monitor/).
+* **Dashboards**. Dashboards to display a number of useful metrics in easy-to-read form to allow administrators to see system status at a glance. You can quickly set up custom dashboards from scratch. See [Create a Dashboard](/docs/dashboards-new/create-dashboard-new/).
+* **Alerts**. Automated alerts notify important personnel when there may be a potential threat. Again, Sumo Logic's analytics platform makes it simple. You can learn how to set up an alert in just a few minutes. See [Create a Monitor](/docs/alerts/monitors/create-monitor/).
 
 
 

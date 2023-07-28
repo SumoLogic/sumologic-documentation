@@ -27,7 +27,7 @@ Cloud Security Analytics offers full-stack visibility throughout the following p
 
 #### Coding
 
-Code environment and repository access should be monitored from a central location, such as a [data lake](/docs/cloud-security-analytics/data-lakes/), enabling DevSecOps teams to see data from all applications in one place for complete visibility. This enhances a team’s capabilities to glean extra information from logs by adding contextual relationships to data and distinguishing static code.
+Code environment and repository access should be monitored from a central location, such as a [data lake](/docs/cloud-security-analytics/data-lake/), enabling DevSecOps teams to see data from all applications in one place for complete visibility. This enhances a team’s capabilities to glean extra information from logs by adding contextual relationships to data and distinguishing static code.
 
 Build tools and code repositories can become entry points for malicious code. With poisoned pipeline execution (PPE), attackers insert unauthorized code into these environments, which runs as part of the CI/CD lifecycle to infect the larger application. Visualizing who is in
 these environments, when and where they are accessing them, and what changes they are making helps identify problematic user behavior. Sumo Logic’s consolidated log data uses additional context to enrich access information, helping identify unauthorized access and code insertion. 

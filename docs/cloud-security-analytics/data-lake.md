@@ -1,5 +1,5 @@
 ---
-id: data-lakes
+id: data-lake
 title: Security Data Lake
 sidebar_label: Security Data Lake
 description: Learn about using Cloud Security Analytics as your security data lake. 
@@ -9,24 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can use your Sumo Logic environment as a security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis using Cloud Security Analytics. 
 
-Ask your Sumo Logic account representative to engage the Professional Services team to guide you through setting up your Sumo Logic environment as a security data lake.
-
-
 ## About data lakes
 
 A data lake is a centralized repository to store data. Data in the lake can then be used for analytics. A data lake can store both structured and unstructured data, unlike a data warehouse, which typically only stores structured data. Data lakes are more flexible than data warehouses in that you can retrieve data in any format used by your consuming services.
-
-Sumo Logic is ideal to use for a security data lake. Our parsing and mapping capabilities can transform your data quickly and at scale.
-
-### Why use a data lake?
-
-Scattered data is a security risk. When it comes to quickly addressing security threats, it’s common for data to be spread throughout different tools, clouds, and functions, making it hard to access, see, and use effectively. Under these circumstances, identifying potential threats is an arduous task. To get ahead of potential threats, most organizations need detailed security data they can act on in an easy-to-access location. A security data lake is one solution.
-
-A security data lake is a centralized repository that collects and analyzes large amounts of security data from various sources, offering a complete view of an organization’s security posture. A data lake allows security teams to identify potential threats, investigate security incidents, and respond proactively to potential risks.
-
-Security data lakes provide a historical overview of security events. You can proactively use this information to identify patterns and anomalies, ensuring that your data serves a valuable purpose in protecting your organization’s assets.
-
-Retaining data in its original, raw format is also a benefit of security data lakes. This feature provides valuable information for investigation and forensic purposes, resulting in easier threat hunting and investigation through standardized querying and visualization of all data.
 
 ### Database versus data lake
 
@@ -36,6 +21,18 @@ Data lakes can:
 * Store structured, semi-structured, and unstructured data.
 * Ingest data without having to define schema.
 * Optimize performance and efficiency due to separated storage and compute functions.
+
+### What is a security data lake?
+
+When a data lake is used to store security data, it is known as a *security data lake*. Sumo Logic is ideal to use for a security data lake. Our platform can search your data and deliver actionable results quickly and at scale.
+
+Scattered data is a security risk. When it comes to quickly addressing security threats, it’s common for data to be spread throughout different tools, clouds, and functions, making it hard to access, see, and use effectively. Under these circumstances, identifying potential threats is an arduous task. To get ahead of potential threats, most organizations need detailed security data they can act on in an easy-to-access location. A security data lake is one solution.
+
+A security data lake is a centralized repository that collects and analyzes large amounts of security data from various sources, offering a complete view of an organization’s security posture. A security data lake allows security teams to identify potential threats, investigate security incidents, and respond proactively to potential risks.
+
+Security data lakes provide a historical overview of security events. You can proactively use this information to identify patterns and anomalies, ensuring that your data serves a valuable purpose in protecting your organization’s assets.
+
+Retaining data in its original, raw format is also a benefit of security data lakes. This feature provides valuable information for investigation and forensic purposes, resulting in easier threat hunting and investigation through standardized querying and visualization of all data.
 
 A security data lake allows you to store and access various data types and formats, making it easier to process and analyze data from multiple tools and technologies. Traditional solutions cannot handle such significant volumes of data, leaving valuable security logs and event data scattered across systems and tools. 
 
@@ -58,7 +55,7 @@ Determine what data you need to analyze by considering your use case. Data may c
 
 #### Step 2: Choose Sumo Logic as your data lake solution
 
-Sumo Logic manages vast amounts of data efficiently and adheres to compliance requirements. Certain platforms may require saving data in cold storage, which hinders your investigation capabilities. Sumo Logic offers data tiering, allowing you to store data without compromising accessibility.
+Sumo Logic manages vast amounts of data efficiently and adheres to compliance requirements. Certain platforms may require saving data in cold storage, which hinders your investigation capabilities. Sumo Logic offers data tiering, allowing you to store data cost-effectively without compromising accessibility.
 
 #### Step 3: Implement data ingestion
 
@@ -66,11 +63,11 @@ Set up a process for collecting data into Sumo Logic. With Sumo Logic as your se
 
 #### Step 4: Enforce data security
 
-Security controls are necessary to protect your data lake from unauthorized access and breaches. At Sumo Logic, we use state-of-the-art encryption techniques to safeguard your data in transit and at rest. But it’s not just about protection. You must also prioritize compliance and monitoring to ensure your data lake meets all regulatory requirements. Sumo Logic holds numerous certifications and attestations. 
+Security controls are necessary to protect your security data lake from unauthorized access and breaches. At Sumo Logic, we employ state-of-the-art encryption techniques to safeguard your data, using AES 256 encryption at rest and TLS encryption in transit. But it’s not just about protection. You must also prioritize compliance and monitoring to ensure your security data lake meets all regulatory requirements. Sumo Logic holds numerous certifications, such as FedRAMP, HIPAA, ISO 27001, FISMA, and CSA Star, to name a few. 
 
 #### Step 5: Search your security data
 
-With the vast amounts of data generated by security tools, it can be overwhelming to sift through it all. Sumo Logic's [Search Query Language](/docs/search/search-query-language/) helps identify anomalous behavior and flags potential security threats in real-time. Query your data lake to uncover patterns, investigate alerts, and identify potential security risks. 
+With the vast amounts of data generated by security tools, it can be overwhelming to sift through it all. Sumo Logic's [Search Query Language](/docs/search/search-query-language/) helps identify anomalous behavior and flags potential security threats in real-time. Query your security data lake to uncover patterns, investigate alerts, and identify potential security risks. 
 
 #### Step 6: Establish data governance
 

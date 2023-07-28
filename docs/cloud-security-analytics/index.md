@@ -6,10 +6,10 @@ tags: [cloud security analytics, security]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud Security Analytics is a cloud-native security system that provides the following functionality: 
+Cloud Security Analytics is a cloud-native security platform that provides the following functionality: 
 
-* Collects log and event data from your infrastructure and applications, on-premises and in-cloud.
-* Produces apps, dashboards, and tools that analyze your security data.
+* Collects security log and event data from your infrastructure and applications, on-premises and in-cloud.
+* Analyzes your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 
 In this guide, we'll present the following concepts:
 
@@ -40,7 +40,7 @@ In this guide, we'll present the following concepts:
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/cloud-security-analytics/data-lakes"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Data Lakes</h4></a>
+  <a href="/docs/cloud-security-analytics/data-lake"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Data Lakes</h4></a>
   <p>Learn about using data lakes with Cloud Security Analytics.</p>
   </div>
 </div>
