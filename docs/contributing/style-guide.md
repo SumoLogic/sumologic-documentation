@@ -1193,9 +1193,12 @@ To add release notes without images:
         image_url: /img/release-notes/rss-orange.png
     ---
     ```
-    * `title`: Title for release note. For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
-    * `tags`: Add a comma-separated list of existing tags.
-    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+    * `title`. Title for release note.
+    :::note
+    For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
+    :::
+    * `tags`. Add a comma-separated list of existing tags.
+    * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Document the release notes. Add links, bullets, and images as needed.
 
 #### Long Release Notes
@@ -1215,9 +1218,9 @@ To add release notes with images:
     hide_table_of_contents: true
     ---
     ```
-    * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags.
-    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+    * `title`. Name of the release notes including Product or Feature
+    * `tags`. Add a comma-separated list of existing tags.
+    * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
 
 
