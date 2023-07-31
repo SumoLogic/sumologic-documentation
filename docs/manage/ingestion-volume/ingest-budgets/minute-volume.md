@@ -73,7 +73,7 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 ## Delete ingest budget​
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Ingest Budgets**.
+1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. In the table find the ingest budget you want to delete.
 Click on the Ingest budget, and then under **More Actions**, click the delete icon.
 1. You will get a confirmation prompt. Ensure that you are deleting the desired ingest budget, and then click **Delete**.
