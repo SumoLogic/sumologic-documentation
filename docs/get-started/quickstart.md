@@ -91,7 +91,7 @@ You can **view your data with predefined searches and dashboards** that facilita
 
 ## Step 4: Share your findings with your team
 
-You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/edit-dashboards/manage-dashboards), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
+You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards-classic/edit-dashboards/manage-dashboards), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 

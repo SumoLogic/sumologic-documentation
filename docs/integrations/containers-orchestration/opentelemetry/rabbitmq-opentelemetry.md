@@ -38,7 +38,7 @@ Follow the instructions to set up log collection:
 
 Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo.
 
-## Collection configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
