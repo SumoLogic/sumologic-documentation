@@ -32,7 +32,7 @@ Metadata fields will be set, if the integration is configured with the SIEM forw
 
 A Google Workspace User Inventory source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
 
-A Google Workspace Source goes through the following states when created:
+A Google Workspace User Inventory source goes through the following states when created:
 
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
