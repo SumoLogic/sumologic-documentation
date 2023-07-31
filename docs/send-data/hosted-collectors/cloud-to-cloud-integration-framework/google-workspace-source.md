@@ -155,7 +155,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | schemaRef         | JSON Object  | Yes               | Set to `{"type":"Google Workspace User Inventory"}`.                                                                           | not modifiable |
 | sourceType        | String       | Yes               | Set to `Universal`.                                                                                             | not modifiable |
 
-The following table shows the **config** parameters for a Google Workspace Source.
+The following table shows the **config** parameters for a Google Workspace User Inventory source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
