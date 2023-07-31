@@ -181,16 +181,38 @@ This dashboard provides times-based metrics for CSE Signals, and Signal disappea
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signal-monitoring.png')} alt="CSE dashboard" />
 
-
 ### Signals Overview
 
 This dashboard provides an overview of Signal activity, including Signal count over time, and a table of summary information for generated Signals.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signals-overview.png')} alt="CSE dashboard" />
-static/img/integrations/sumo-apps/signals-by-product.png
 
 ### Signals by Product
 
 This dashboard shows breakdowns of Signal by product and vendor.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signals-by-product.png')} alt="CSE dashboard" />
+
+### Cloud SIEM Parsing and Mapping Troubleshooting
+
+This dashboard shows breakdowns of cloud SIEM parsing and mapping troubleshooting.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-parsing-and-mapping-troubleshooting.png')} style={{border: '1px solid black'}} alt="Cloud SIEM Parsing and Mapping Troubleshooting"/>
+
+### Cloud SIEM SOC Standup Overview
+
+This dashboard provides an overview of total alerts, infrequent alerts breakdown, trending alerts breakdown, and detailed daily alerts breakdow.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-standup-overview.png')} style={{border: '1px solid black'}} alt="Cloud SIEM SOC Standup Overview"/>
+
+### Cloud SIEM User Telemetry
+
+This dashboard shows breakdowns of Signal by product and vendor.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid black'}} alt="Cloud SIEM User Telemetry"/>
+
+### Cloud SIEM SOC Insights
+
+This dashboard shows breakdowns of the SOC insights.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-insights.png')} style={{border: '1px solid black'}} alt="Cloud SIEM SOC Insights"/>
