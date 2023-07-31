@@ -22,8 +22,8 @@ In this guide, we'll present the following concepts:
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/cloud-security-analytics/threat-detection-and-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Detection and Investigation</h4></a>
-  <p>Learn how to monitor security data and investigate incidents.</p>
+  <a href="/docs/cloud-security-analytics/data-lake"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Security Data Lake</h4></a>
+  <p>Learn about using your Sumo Logic environment as a security data lake for Cloud Security Analytics.</p>
   </div>
 </div>
 <div className="box smallbox3 card">
@@ -34,14 +34,14 @@ In this guide, we'll present the following concepts:
 </div>
 <div className="box smallbox4 card">
   <div className="container">
-  <a href="/docs/cloud-security-analytics/application-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Application Security</h4></a>
-  <p> Learn about using Cloud Security Analytics for application security.</p>
+  <a href="/docs/cloud-security-analytics/threat-detection-and-investigation"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Threat Detection and Investigation</h4></a>
+  <p>Learn how to monitor security data and investigate incidents.</p>
   </div>
 </div>
 <div className="box smallbox5 card">
   <div className="container">
-  <a href="/docs/cloud-security-analytics/data-lake"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Data Lakes</h4></a>
-  <p>Learn about using data lakes with Cloud Security Analytics.</p>
+  <a href="/docs/cloud-security-analytics/application-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Application Security</h4></a>
+  <p>Learn about using Cloud Security Analytics for application security.</p>
   </div>
 </div>
 </div>
