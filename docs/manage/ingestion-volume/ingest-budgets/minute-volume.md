@@ -50,7 +50,7 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 ## Create ingest budgets
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Ingest Budgets**.
-1. Click the **+ Add Budget** button on the top right of the table. A panel named Create Ingest Budget will appear to the right of the Ingest Budgets table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" />
+1. Click the **+ Add Budget** button on the top right of the table. A panel named Create Ingest Budget will appear to the right of the Ingest Budgets table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid black'}} width="600" />
 1. Provide the following information.
    * **Display Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all Data Tiers to find the right Ingestion trend.
