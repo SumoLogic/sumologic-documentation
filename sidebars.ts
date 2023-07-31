@@ -795,8 +795,8 @@ module.exports = {
    ],
   },
 ],
-// *** DASHBOARDS and VISUALS:
-  dashboards: [
+// **ALERTS:
+  alerts: [
     {
       type: 'category',
       label: 'Alerts',
@@ -883,6 +883,9 @@ module.exports = {
         },
       ],
     },
+  ],
+  // ** DASHBOARDS:
+  dashboards: [
     {
       type: 'category',
       label: 'Dashboards',
