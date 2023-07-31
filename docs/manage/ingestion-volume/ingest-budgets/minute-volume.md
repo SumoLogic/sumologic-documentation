@@ -66,8 +66,8 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 ## Edit ingest budget​
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Ingest Budgets**.
-1. In the table, find the ingest budget you want to edit and click the edit icon on the right of the row or click the row and then click the edit icon in the details panel.
+1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
+1. In the table, find the ingest budget you want to edit and click the edit icon on the right of the row, or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
 
