@@ -1,6 +1,6 @@
 The **scope** supports the option to assign ingest budgets to your log data by either:
 
-* A Field that is enabled in the [Fields table](/docs/manage/fields). Fields are created in many ways; see [Fields](/docs/manage/fields) for details.
+* A Field that is enabled in the Fields table. Fields are created in many ways; see [Fields](/docs/manage/fields) for details.
 * One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
 
 The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
