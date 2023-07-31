@@ -41,7 +41,7 @@ In this guide, we'll present the following concepts:
 <div className="box smallbox5 card">
   <div className="container">
   <a href="/docs/cloud-security-analytics/application-security"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Application Security</h4></a>
-  <p> Learn about using Cloud Security Analytics for application security.</p>
+  <p>Learn about using Cloud Security Analytics for application security.</p>
   </div>
 </div>
 </div>
