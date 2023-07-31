@@ -42,9 +42,9 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 A few Sources on Hosted Collectors will behave differently when instructed to stop collecting data.
 
-* HTTP Sources will drop data requests, yet still return a `200 OK` response.
-* AWS S3-based Sources will skip objects.
-* Cloud Syslog Sources will keep the connection open yet drop incoming syslog messages.
+* HTTP sources will drop data requests, yet still return a `200 OK` response.
+* AWS S3-based sources will skip objects.
+* Cloud syslog sources will keep the connection open yet drop incoming syslog messages.
 * Installed collector will stop collecting data.
 
 ## Create ingest budgets
