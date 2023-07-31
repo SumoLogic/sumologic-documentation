@@ -322,7 +322,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'alerts',
-                label: 'Alerts and Dashboards',
+                label: 'Alerts',
                 icon: 'notifications',
               },
               {
@@ -348,6 +348,12 @@ module.exports = {
                 sidebarId: 'security',
                 label: 'Security',
                 icon: 'security',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'dashboards',
+                label: 'Dashboards',
+                icon: 'dashboard',
               },
             ]
           },
