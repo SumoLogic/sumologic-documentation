@@ -207,12 +207,12 @@ This dashboard provides an overview of total alerts, infrequent alerts breakdown
 
 ### Cloud SIEM User Telemetry
 
-This dashboard shows breakdowns of Signal by product and vendor.
+This dashboard shows breakdowns of Cloud SIEM user telemetry.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid black'}} alt="Cloud SIEM User Telemetry"/>
 
 ### Cloud SIEM SOC Insights
 
-This dashboard shows breakdowns of the SOC insights.
+This dashboard shows breakdowns of SOC insights.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-insights.png')} style={{border: '1px solid black'}} alt="Cloud SIEM SOC Insights"/>
