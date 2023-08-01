@@ -5,6 +5,10 @@ sidebar_label: SaaS App (OTEL) Template
 description: Using the Sumo Logic SaaS App (OTEL) Template.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 :::tip
 Copy this file and edit it for your App integration.
 :::
