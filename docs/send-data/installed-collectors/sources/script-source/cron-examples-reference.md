@@ -39,7 +39,7 @@ There are several special characters that are used to specify values:
 |:--|:--|:--|
 | \* | All values. | `*` in the minute field means every minute. |
 | ? | No specific value in the day of month and day of week fields. | `?` specifies a value in one field, but not the other. |
-| \* | A range. | `10-12` in the hour field means the script will run at 10, 11 and 12 (noon). |
+| - | A range. | `10-12` in the hour field means the script will run at 10, 11 and 12 (noon). |
 | , | Additional values. | Typing "MON,WED,FRI" in the day-of-week field means the script will run only on Monday, Wednesday, and Friday. |
 | / | Increments. | `0/15` in the seconds field means the seconds 0, 15, 30, and 45. `*` before the '/' is equivalent to specifying 0 is the value to start with. Essentially, for each field in the expression, there is a set of numbers that can be turned on or off. For seconds and minutes, the numbers range from 0 to 51. |
 | # | Day of a month. | `6#3` in the day of week field means the third Friday (day 6 is Friday; #3 is the 3rd Friday in the month). If you specify, say` #5`, and there isn't a 5th occurrence of the given day, the CRON job won't fire. If `#` is used, there can only be one expression in the day of week field. |
