@@ -31,7 +31,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | option+shift+t | Duplicate current time range in a new tab (search only)       |
 | option+shift+p | Pause a running search (current tab only)                     |
 | option+m       | Open a new Metrics tab                                        |
-| option+f       | Open a new Dashboard (New) tab                                |
+| option+f       | Open a new Dashboard tab                                      |
 | option+a       | Open a new Traces tab                                         |
 | option+l       | Open a new LiveTail tab                                       |
 | option+d       | Popout to new browser tab (dashboard only)                    |

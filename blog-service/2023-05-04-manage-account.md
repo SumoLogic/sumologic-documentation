@@ -1,5 +1,5 @@
 ---
-title: May 04, 2023 (Manage Account)
+title: Audit Logs for Connections (Manage Account)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - security

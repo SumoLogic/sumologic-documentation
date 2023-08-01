@@ -5,6 +5,7 @@ sidebar_label: About CSE Rules
 description: Learn about CSE rules, rules syntax, and how to write rules.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A CSE rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
@@ -32,10 +33,10 @@ The following rule expression, which looks for any event that stops AWS CloudTra
 
 `metadata_vendor = 'AWS' and metadata_product = 'CloudTrail' and fields.eventName = "DeleteTrail" or fields.eventName = "StopLogging" or fields.eventName = "UpdateTrail"`
 
-Rule expressions can also use regular expressions and CSE rules language functions, which include SQL-like and domain-specific functions. For more information, see [CSE Rules Syntax](cse-rules-syntax.md).
+Rule expressions can also use regular expressions and CSE rules language functions, which include SQL-like and domain-specific functions. For more information, see [CSE Rules Syntax](/docs/cse/rules/cse-rules-syntax).
 
 :::note
-The [Before You Write a Custom Rule](before-writing-custom-rule.md) topic has useful information about how to prototype a rule expression in Sumo Logic core platform.
+The [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) topic has useful information about how to prototype a rule expression in Sumo Logic core platform.
 :::
 
 ## About tuning expressions
@@ -56,7 +57,7 @@ The tuning expression is AND’d with the rule expression—the rule will only g
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
-You create tuning expressions on the **Rule Tuning** page, which is available from the **Content** menu. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](rule-tuning-expressions.md).
+You create tuning expressions on the **Rule Tuning** page, which is available from the **Content** menu. When you create a tuning expression, you have the option of applying to all of your rules, or to selected rules. Or, you can apply tuning expressions when you create a rule. You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules. For more information, see [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions).
 
 ## "On Entity" configuration
 
@@ -64,7 +65,7 @@ In CSE, the term *Entity* refers to an IP address, hostname, username, or MAC ad
 
 The screenshot below shows a rule whose "On Entity" attributes are `srcDevice_ip` and `dstDevice_ip`.
 
-![on-entity.png](/img/cse/on-entity.png)
+<img src={useBaseUrl('img/cse/on-entity.png')} alt="On Entity configuration" width="300"/>
 
 When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
 
@@ -72,10 +73,10 @@ When an incoming Record meets a rule's conditions, a Signal is generated for ea
 
 There are several kinds of rules. Each supports a different sort of firing behavior.
 
-* **Match rule**. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a Record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](write-match-rule.md).
-* **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule applies multiple expressions to a Record. For more information about Chain rules, see [Write a Chain Rule](write-chain-rule.md).
-* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about Aggregation rules, see [Write an Aggregation Rule](write-aggregation-rule.md).
-* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A Threshold rule is stateful, a condition must be satisfied by multiple Records over a period of time. For more information about Threshold rules, see [Write a Threshold Rule](write-threshold-rule.md).
+* **Match rule**. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. The expression in the previous section is an example of a Match rule expression. If a Record matches the expression, the rule fires. For more information about Match rules, see [Write a Match Rule](/docs/cse/rules/write-match-rule).
+* **Chain rule**. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule applies multiple expressions to a Record. For more information about Chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
+* **Aggregation rule**. Fires when up to three aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about Aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
+* **Threshold rule**. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour. A Threshold rule is stateful, a condition must be satisfied by multiple Records over a period of time. For more information about Threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
 * **First Seen rule**. Fires when behavior by an Entity is encountered that hasn't been seen before. For example, the first time when a user logs in from a new location, or when a new admin account is created. For more information about First Seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
 * **Outlier rule**. Fires when behavior by an Entity is encountered that deviates from its baseline activity. For each Outlier rule, CSE automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal. For more information about Outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
 
@@ -111,9 +112,9 @@ Match Lists are lists of important indicators and identifiers, typically configu
 
 Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. 
 
-![example-match-list.png](/img/cse/example-match-list.png)
+<img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
 
-You can take advantage of Match Lists in rules, but Match Lists actually come into play when Records are ingested. Here’s how it works:  When a Record is ingested, CSE compares the entries in all Match Lists to fields in the Record. Of course, CSE doesn’t compare the entries in a given Match List to all fields in a Record; it wouldn’t make sense to compare a domain name to an IP address. You could say that CSE understands the difference between apples and oranges: CSE distinguishes which Record fields contain IP addresses, which contain domain name and so on. So, CSE compares a Match List of IP addresses to Record fields that contain IP addresses. Similarly, CSEs compares a Match List of usernames to Record fields that contain usernames. For more information about how that works, see [Match Fields Reference](../match-lists-suppressed-lists/match-fields-reference.md). 
+You can take advantage of Match Lists in rules, but Match Lists actually come into play when Records are ingested. Here’s how it works:  When a Record is ingested, CSE compares the entries in all Match Lists to fields in the Record. Of course, CSE doesn’t compare the entries in a given Match List to all fields in a Record; it wouldn’t make sense to compare a domain name to an IP address. You could say that CSE understands the difference between apples and oranges: CSE distinguishes which Record fields contain IP addresses, which contain domain name and so on. So, CSE compares a Match List of IP addresses to Record fields that contain IP addresses. Similarly, CSEs compares a Match List of usernames to Record fields that contain usernames. For more information about how that works, see [Match Fields Reference](/docs/cse/match-lists-suppressed-lists/match-fields-reference). 
 
 When a Record contains a value that *exactly* matches one or more Match Lists (partial matches are not supported), two fields in the Record get populated:
 
@@ -160,7 +161,7 @@ CSE’s Threat Intelligence lists are very similar to Match Lists, and you lever
 
 Here’s an example of a Threat Intelligence list in the CSE UI, at **Content > Threat Intelligence**. 
 
-![example-threat-intl.png](/img/cse/example-threat-intl.png)
+<img src={useBaseUrl('img/cse/example-threat-intl.png')} alt="Example threat intelligence list" width="800"/>
 
 Like Match Lists, Threat Intelligence lists are used at the time of Record ingestion. When a Record is ingested, CSE determines whether any of the fields in the Record exist in any of your configured Threat Intelligence lists.
 

@@ -31,7 +31,7 @@ The SDO solution comprises multiple apps listed below.
 
 ## Dashboard Filter with Template Variables
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](../../dashboards-new/filter-template-variables.md) help page.
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](../../dashboards/filter-template-variables.md) help page.
 
 :::tip
 You can use template variables to drill down and examine the data on a granular level.

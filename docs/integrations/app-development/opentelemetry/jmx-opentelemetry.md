@@ -71,9 +71,9 @@ Below are docs for popular Java applications:
 * [Zookeeper](https://zookeeper.apache.org/doc/r3.4.2/zookeeperJMX.html#ch_starting)
 :::
 
-## Collecting Metrics and Installing the JMX App
+## Collection configuration and app installation
 
-The process to set up collection for JMX Metrics is done through the following steps.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 
@@ -152,7 +152,7 @@ If you have multiple Java processes running on the same host, then you need to s
 ## Viewing JMX Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
