@@ -5,4 +5,4 @@ The **Scope** supports the option to assign ingest budgets to your log data by 
 
 The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
 
-For example, a **scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching `_sourceCategory` will fall under the scope of the given budget.
+For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching `_sourceCategory` will fall under the scope of the given budget.
