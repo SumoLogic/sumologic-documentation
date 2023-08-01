@@ -5,6 +5,10 @@ sidebar_label: Partner App (OTEL) Template
 description: Using the Sumo Logic Partner App (OTEL) Template.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 :::tip
 Copy this file and edit it for your App integration.
 :::
