@@ -1,5 +1,5 @@
 ---
-title: Automatic Log Level Detection (Search)
+title: Automatic Log Level Detection (Search) 
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - log_level
