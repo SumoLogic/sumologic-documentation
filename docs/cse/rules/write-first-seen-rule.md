@@ -54,8 +54,8 @@ The screenshot below shows a First Seen rule in the CSE rules editor. For an exp
 ## Configure a First Seen rule
 This section has instructions for configuring a First Seen rule.
 
-### If triggered
-The settings in the **If triggered** section determine what Records the rule will be applied to and baseline-related options.
+### If Triggered
+The settings in the **If Triggered** section determine what Records the rule will be applied to and baseline-related options.
 
 1.  **When a Record matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
 1. **Has a new value for the field(s)**. Select the Record field that will be used to build the baseline.
@@ -76,7 +76,7 @@ The settings in the **If triggered** section determine what Records the rule wil
    The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods can potentially generate false positive Signals.
    :::
 
-### Then create a Signal
+### Then Create a Signal
 
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
@@ -86,9 +86,18 @@ Sumo Logic ensures that Rule processing does not impact the reliability of produ
 On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
 
+## When the baseline is reset for a First Seen rule
+
+The baseline learning period begins again when the following fields on the rule are updated or overridden:
+* **If Triggered**:
+   * **When a Record matching the expression**
+   * **Has a new value for the field(s)**
+* **Then Create a Signal**:
+   * **On Entity**
+
 ## Use case: Monitor login from first seen geolocation
 
-This section shows how the same first seen rule would function with each of the two baselining strategies.
+This section shows how the same First Seen rule would function with each of the two baselining strategies.
 
 Our example rule expression is:
 
