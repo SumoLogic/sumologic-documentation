@@ -1,6 +1,7 @@
 ---
 id: muting-schedules
 title: Muting Schedules
+description: Use Muting Schedule to pause alert notifications from monitors according to the schedule that you define.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
