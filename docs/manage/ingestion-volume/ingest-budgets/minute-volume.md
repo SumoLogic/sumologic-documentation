@@ -81,7 +81,7 @@ Click on the Ingest budget, and then under **More Actions**, click the delete ic
 
 ## Audit Index queries
 
-To search for only Ingest budgets with Minute control where threshold was breached:
+To search for only ingest budgets with minute control where threshold was breached:
 
 ```sql
 _index=sumologic_audit exceeded drop_data "bytes/minute"
