@@ -87,7 +87,7 @@ To search for only ingest budgets with minute control where threshold was breach
 _index=sumologic_audit exceeded drop_data "bytes/minute"
 ```
 
-To search for Ingest budgets which are currently enforced to Stop collecting data:
+To search for ingest budgets that are currently enforced to stop collecting data:
 
 ```sql
 _index=sumologic_audit_events minuteVolume stopCollecting
