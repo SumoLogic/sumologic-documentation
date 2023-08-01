@@ -1,5 +1,5 @@
 ---
-title: May 12, 2023 (Apps)
+title: Google BigQuery - C2C (Apps)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps
