@@ -91,7 +91,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 |:--|:--|:--|:--|:--|
 | `sourceType` | String  | Yes | HTTP Source. | not modifiable |
 | `contentType` | String  | No | Defined based on the AWS Source you are creating. Use `{"type":"Zoom"}` for Zoom Source. | not modifiable |
-| `URL` | String | No | Assigned by Sumo Logic for Zoom Source. | Used to set up Event Based Notifications with Zoom. This value is created and assigned by Sumo Logic when the Source is created. |
+| `URL` | String | No | Assigned by Sumo Logic for Zoom Source. | Used to set up event-based notifications with Zoom. This value is created and assigned by Sumo Logic when the Source is created. |
 | `thirdPartyRef` | JSON  | Yes | Provides required information for third-party integration, including the Zoom secret token. | n/a |
 
 
