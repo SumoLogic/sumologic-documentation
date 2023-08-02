@@ -17,15 +17,15 @@ To view our main docs, click the link below corresponding to your deployment. If
 
 | Deployment | API Docs URL                       |
 |:------------|:----------------------------------|
-| AU         | https://api.au.sumologic.com/docs  |
-| CA         | https://api.ca.sumologic.com/docs  |
-| DE         | https://api.de.sumologic.com/docs  |
-| EU         | https://api.eu.sumologic.com/docs  |
-| FED        | https://api.fed.sumologic.com/docs |
-| IN         | https://api.in.sumologic.com/docs  |
-| JP         | https://api.jp.sumologic.com/docs  |
-| US1        | https://api.sumologic.com/docs     |
-| US2        | https://api.us2.sumologic.com/docs |
+| AU         | https://api.au.sumologic.com/docs/  |
+| CA         | https://api.ca.sumologic.com/docs/  |
+| DE         | https://api.de.sumologic.com/docs/  |
+| EU         | https://api.eu.sumologic.com/docs/  |
+| FED        | https://api.fed.sumologic.com/docs/ |
+| IN         | https://api.in.sumologic.com/docs/  |
+| JP         | https://api.jp.sumologic.com/docs/  |
+| US1        | https://api.sumologic.com/docs/     |
+| US2        | https://api.us2.sumologic.com/docs/ |
 
 
 <!--
