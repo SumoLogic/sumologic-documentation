@@ -59,7 +59,7 @@ NOTE: This section doesn't apply to all sources; only where needed. When it is n
 
 Insert steps to configure on source's website
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#set-up-a-service-application
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/#set-up-a-service-application
 -->
 
 
@@ -68,7 +68,7 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 <!--
 Insert steps to configure the Source in the Sumo Logic UI
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/#create-amicrosoft-graph-identity-protection-source
 -->
 
 ### Error Types

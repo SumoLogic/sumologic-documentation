@@ -4,6 +4,7 @@ title: Network Sensor Troubleshooting
 description: Learn how to troubleshoot problems with the CSE Network Sensor.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CSE Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all network sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the CSE network sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
 
@@ -55,7 +56,7 @@ $(ldd /opt/trident/sensor/bro/bin/zeek | awk '{print $3}' | grep libpcap) >/dev/
 
 ### Network Sensor stops capturing traffic
 
-Zeek can get into a state where it runs out of memory and stops processing traffic but does not crash. This has been observed on RHEL 7.9. To automatically restart the sensor when consecutive status reports with low Records per second is observed use [no_data_restart_threshold](network-sensor-deployment-guide.md#nodatarestartthreshold) (recommended value 3), and [no_data_cutoff](network-sensor-deployment-guide.md#nodatacutoff) to tune the record threshold if needed.
+Zeek can get into a state where it runs out of memory and stops processing traffic but does not crash. This has been observed on RHEL 7.9. To automatically restart the sensor when consecutive status reports with low Records per second is observed use [no_data_restart_threshold](/docs/cse/sensors/network-sensor-deployment-guide#no_data_restart_threshold) (recommended value 3), and [no_data_cutoff](/docs/cse/sensors/network-sensor-deployment-guide#no_data_cutoff) to tune the record threshold if needed.
 
 ## Monitoring Capture Performance
 
@@ -104,7 +105,7 @@ An important metric Zeek log that is collected from the CSE network sensor is th
 
 `_sourcecategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
 
-![captureloss-query.png](/img/cse/captureloss-query.png)
+<img src={useBaseUrl('img/cse/captureloss-query.png')} alt="CaptureLoss query" width="800"/>
 
 ### Capstats
 
