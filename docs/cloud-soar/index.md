@@ -6,8 +6,6 @@ tags: [security]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="60"/>
-
 Navigate the evolving threat landscape with our best-in-class security orchestration, automation and response (SOAR) solution to streamline incident response workflows.
 
 <div className="box-wrapper" markdown="1">

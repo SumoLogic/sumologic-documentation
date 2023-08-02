@@ -1,5 +1,5 @@
 ---
-title: January 30, 2023 (Reliability Management)
+title: Service-Level Objective (SLO) Monitoring (Reliability Management)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - monitors
