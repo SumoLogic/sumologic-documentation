@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Setting a **Muting Schedule** allows you to pause alert notifications from monitors according to a schedule that you define. You can apply this setting to individual monitors and/or folders. For folders, this will mute all nested monitors and subfolders. Here are some scenarios where you might want to mute your alerts:
 
-* **Scheduled System Maintenance**. When you're doing system maintenance, notifications can get triggered because the application and infrastructure are being brought up or turned off. These notifications can be very distracting, and might hamper the maintenance activities.
-* **Off-Business Hours**. If you're configuring alerts with specific thresholds that are only applicable during business hours, that might generate false alerts in off-business hours.
+* **Scheduled System Maintenance**. During system maintenance, notifications can get triggered because your application and infrastructure are being brought up or turned off. Such notifications are known false alarms and should be ignored.
+* **Off-Business Hours**. If your monitors reflect performance thresholds that are only applicable during business hours, such monitors might generate false alarms during off-business hours.
 
 ## Prerequisites
 Make sure you've enabled the [**View Muting Schedules** and **Manage Muting Schedules**](/docs/manage/users-roles/roles/role-capabilities/#alerts) user permissions, which allow you to define and edit a muting schedule.
