@@ -258,8 +258,8 @@ html[data-theme='light'] {
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 4px 10px;
-  font-size: 14px;
+  padding: 3px 8px;
+  font-size: 12px;
   display: inline-flex;
   background: #2aa1e6;
 }
@@ -278,20 +278,19 @@ html[data-theme='light'] {
 }
 
 //Contact Support nav button
-
 .header-support:hover {
-  opacity: 0.85;
+  opacity: 0.65;
 }
 
 .header-support::before {
   content: 'Contact Support';
-  border: 1px solid #2aa1e6;
-  color: #FFF;
+  background: transparent;
+  border: 1px solid #000;
+  color: var(--ifm-navbar-link-color);
   border-radius: 3px;
-  padding: 4px 10px;
-  font-size: 14px;
+  padding: 3px 8px;
+  font-size: 12px;
   display: inline-flex;
-  background: #2aa1e6;
 }
 
 .header-support::after {
@@ -301,10 +300,10 @@ html[data-theme='light'] {
 
 [data-theme='dark'] .header-support::before {
   background: transparent;
-  border: 1px solid #2aa1e6;
-  color: #FFF;
+  border: 1px solid #E5F4FA;
+  color: var(--ifm-navbar-link-color);
+  border-radius: 3px;
   display: inline-flex;
-  background: #2aa1e6;
 }
 
 
