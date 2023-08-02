@@ -93,13 +93,17 @@ This dashboard presents metrics about Insight creation in your environment. You 
 
 <img src={useBaseUrl('img/integrations/sumo-apps/insight-created.png')} alt="CSE dashboard" />
 
-
 ### Insights Overview
 
 This dashboard displays a high level view of Insight activity in your environment. You can see counts of Insights created and  closed over time, and the top Insights by Confidence Level.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/insight-overview.png')} alt="CSE dashboard" />
 
+### Parsing and Mapping Troubleshooting
+
+This dashboard shows breakdowns of cloud SIEM parsing and mapping troubleshooting.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-parsing-and-mapping-troubleshooting.png')} style={{border: '1px solid black'}} alt="Cloud SIEM Parsing and Mapping Troubleshooting"/>
 
 ### Rules and Mapping Changes
 
@@ -107,20 +111,17 @@ This dashboard is useful for monitoring rule management activities. It has infor
 
 <img src={useBaseUrl('img/integrations/sumo-apps/rules-and-mapping-chanages.png')} alt="CSE dashboard" />
 
-
 ### Record Analysis Failed Records
 
 This dashboard is useful for understanding if you have messages or data sources for which  CSE is unable to create normalized Records.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Failed-Records.png')} alt="CSE dashboard" />
 
-
 ### Record Analysis Audit Records
 
 This dashboard displays metrics about Records created by CSE of the type Audit. Typically, this Record type is used for log sources that leave a basic audit trail.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Audit-Records.png')} alt="CSE dashboard" />
-
 
 ### Record Analysis Authentication Records
 
@@ -134,21 +135,17 @@ This dashboard displays metrics about Records created by CSE of the type Email. 
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Email-Records.png')} alt="CSE dashboard" />
 
-
 ### Record Analysis Endpoint Records
 
 This dashboard displays metrics about Records created by CSE of the type Endpoint. Typically, this Record type is used for messages from endpoint security services.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Endpoint-Records.png')} alt="CSE dashboard" />
 
-
-
 ### Record Analysis Network Records
 
 This dashboard displays metrics about Records created by CSE of the type Network. Typically, this Record type is used for messages from log sources that describe network events.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Record-Analysis-Network-Records.png')} alt="CSE dashboard" />
-
 
 ### Record Analysis Notification Records
 
@@ -174,7 +171,6 @@ This dashboard provides trend analysis of triggered rules, rules by match expres
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signal-analysis-rules.png')} alt="CSE dashboard" />
 
-
 ### Signal Monitoring
 
 This dashboard provides times-based metrics for CSE Signals, and Signal disappearance metrics.
@@ -192,12 +188,6 @@ This dashboard provides an overview of Signal activity, including Signal count o
 This dashboard shows breakdowns of Signal by product and vendor.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/signals-by-product.png')} alt="CSE dashboard" />
-
-### Parsing and Mapping Troubleshooting
-
-This dashboard shows breakdowns of cloud SIEM parsing and mapping troubleshooting.
-
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-parsing-and-mapping-troubleshooting.png')} style={{border: '1px solid black'}} alt="Cloud SIEM Parsing and Mapping Troubleshooting"/>
 
 ### SIEM SOC Insights
 
