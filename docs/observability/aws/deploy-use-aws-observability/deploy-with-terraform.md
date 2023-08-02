@@ -1126,7 +1126,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 * Provide your `email_id` to receive alerts. You will receive a confirmation email after the deployment is complete. Follow the instructions in this email to validate the address.
 * `IncludeLogGroupInfo`. Set to `true` to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to `true`.
 * `logformat`. For Lambda, the value should be set to "Others".
-* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function.
+* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s). LogGroup(s) still need to be subscribed to the created Lambda function.
 * `workers`. Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
 
 **Default value:**
