@@ -18,7 +18,7 @@ The PCI Compliance for Windows JSON app covers PCI requirements 02, 06, 08, and 
 
 ## Fields created in Sumo Logic for PCI Compliance Windows JSON App
 
-Following tag will be created as part of Linux app installation, if not already present.
+Following tags will be created as part of PCI Compliance Windows JSON app installation, if not already present.
 
 - `sumo.datasource`: has the fixed value of **windows**.
 - `host.group`: user configured tag which signifies a group of hosts for the operating system.

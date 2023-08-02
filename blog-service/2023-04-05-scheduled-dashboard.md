@@ -1,5 +1,5 @@
 ---
-title: April 5, 2023 (Dashboards)
+title: Scheduled Reports (Dashboards)
 hide_table_of_contents: true
 image: https://help.sumologic.com/img/sumo-square.png
 keywords:
