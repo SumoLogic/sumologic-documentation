@@ -28,6 +28,9 @@ This Source is available in the Fed deployment.
 
 ## Prerequisites
 
+The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to a event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+
+
 1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/> ![AzureEventHubstep1.png](/img/send-data/AzureEventHubstep1.png)
 1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
 1. Create an Event Hub Instance.<br/> ![AzureEventHubstep4.png](/img/send-data/AzureEventHubstep4.png)
