@@ -117,7 +117,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
 
 ## Exporting Platform Logs to Event Hub using Diagnostic settings
-To create the Diagnostic settings in Azure portal, please refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose "Stream to an event hub" as destination. Use the Event hub namespace and Event hub name configured in **Prerequisites** section in destination details section. You can use the default policy **RootManageSharedAccessKey** as Policy name.
+To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose **Stream to an event hub** as the destination. Use the event hub namespace and event hub name configured in the **Prerequisites** section in the destination details section. You can use the default policy **RootManageSharedAccessKey** as the policy name.
 
 * [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
   
