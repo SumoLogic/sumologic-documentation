@@ -1,0 +1,1 @@
+(Applies only to organizations running Cloud SOAR in the cloud.)

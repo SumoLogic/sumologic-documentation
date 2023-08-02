@@ -4,6 +4,8 @@ title: Cloud SOAR Main Menu
 sidebar_label: Main Menu
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Cloud SOAR is a pure web-based application which does not require an additional add-on or client to deploy. The main menu consists of all operational sections of Cloud SOAR, including Incidents, Triage (if enabled), Operations, and incoming Data Sources.
 
 ![main menu](/img/cloud-soar/image25.png)
@@ -77,6 +79,21 @@ You can also export Dashboards to an Excel spreadsheet or PDF document to includ
 
 ![Dashboard Menu](/img/cloud-soar/image137.png)
 
+### Create a dashboard
+
+{@import ../reuse/csoar-delivery-2.md}
+
+You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo Logic platform. You can also [create widgets](#create-widgets-for-dashboards-or-reports) to use in the dashboards that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
+
+1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
+1. Click the **+** icon in the upper-right corner of the UI and select **New Dashboard**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard.png')} alt="Add dashboard button" width="200"/><br/>A blank dashboard appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-empty-dashboard.png')} alt="Empty dashboard" width="700"/>
+1. Click on the name of the blank dashboard (such as **Dashboard 1** in the example), and give the dashboard a name. Click **No description available** and type a description.
+1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>The widgets panel displays to the right of the dashboard.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-new-dashboard-example.png')} alt="Widgets panel on the dashboard" width="700"/>
+1. Under **My Widgets** or **Public**, select widgets you'd like to add to the dashboard. These are the same widgets that are available to use in [reports](/docs/cloud-soar/global-functions-menu#report). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](#create-widgets-for-dashboards-or-reports). Click **Show List** to see all available widgets. 
+1. Rearrange the widgets in the dashboard as desired. 
+1. (Optional) Click **Public** at the top of the dashboard panel if you want to make the dashboard available for others to use. 
+1. (Optional) Click **Export** to to the upper-right of the dashboard panel to export the dashboard to PDF.  
+
 
 ### KPI Reports
 
@@ -115,6 +132,28 @@ to create the KPI report template.
 
 KPI Output Sets can also be generated using the Cloud SOAR API. Please see
 the API manual for additional details.
+
+### Create widgets for dashboards or reports
+
+{@import ../reuse/csoar-delivery-2.md}
+
+You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table. You can use the same widgets in both dashboards and reports. 
+
+1. Open the widgets panel.
+   * From [dashboards](#create-a-dashboard):
+      1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
+      1. Select a dashboard.
+      1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>
+   * From [reports](/docs/cloud-soar/global-functions-menu#report):
+      1. Click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/>
+1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="250"/>
+1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" width="600"/>
+1. In **Name**, provide a name that clearly explains the widget's purpose.
+1. In **Group by**, select whether you want incidents listed in the widget to be grouped by **Status**, **Incident ID**, or **Start time**.
+1. On the left, select the type of widget to create (pie chart, bar chart, graph, table, or text).
+1. At the top, query for elements to view in the widget, such as incidents, notes, tasks, and attachments. 
+1. Click **Public** if you want to make the widget available for others to use. 
+1. Click **Save** when done. 
 
 
 ## Incidents

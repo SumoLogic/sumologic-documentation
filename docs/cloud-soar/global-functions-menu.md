@@ -440,6 +440,24 @@ Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** sec
 
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
+## Report
+
+{@import ../reuse/csoar-delivery-2.md}
+
+You can create reports on incidents to share with others. You can also [create widgets](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
+
+1. Click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/><br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/> 
+1. Click the **+** icon in the upper left corner. 
+1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](/docs/cloud-soar/main-menu#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports). Click **Show List** to see all available widgets.  
+1. Rearrange the widgets in the report as needed. You can even add widgets to the header and footer.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
+1. Click **Save**. In the dialog:
+    1. Provide a **Report name** and a **Description**.
+    1. Click **Schedule** to schedule the report to run on a regular basis.
+    1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
+    1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
+1. Click **Export** to export the report to PDF. 
+1. Click **Open** to open the report later. 
+
 ## User Settings
 
 The user icon in the upper right-hand corner allows you to view their profile and settings, as well as log out of the platform.
