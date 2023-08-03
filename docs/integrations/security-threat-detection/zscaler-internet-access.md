@@ -52,8 +52,8 @@ To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the followin
    1. **Log Type**. Select **Web Log**.
    1. **Feed Output Type**. Select **JSON**.
    1. **JSON Array Notation**. Disable so that logs ingest as individual JSON objects instead of a JSON array. 
-   1. **Feed Escape Character**. Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS
-   1. **Feed Output Format**. The JSON format is displayed. (Leave the default setting)
+   1. **Feed Escape Character**. Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS.
+   1. **Feed Output Format**. The JSON format is displayed. (Leave the default setting.)
    1. **Timezone**. Set to GMT by default.
    1. **Web Log Filters**. Choose filters you would like to have.
    1. Click **Save**.
