@@ -7,20 +7,20 @@ description: Learn how to access Cloud SOAR APIs and API documentation.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Running Cloud SOAR in the cloud
+## API documentation
 
 {@import ../reuse/csoar-delivery-2.md}
 
-For organizations using Cloud SOAR in the cloud, API documentation can be found at `https://api.<sumologic-cloud-server>/docs/csoar`.
+API documentation can be found at `https://api.<sumologic-cloud-server>/docs/csoar`.
 
 {@import ../reuse/api-intro.md}
 
 {@import ../reuse/csoar-api-table.md}
 
 
-## Running Cloud SOAR on-premises
+## Legacy API documentation
 
-For organizations using Cloud SOAR only in an on-premises installation, API documentation is available through your Cloud SOAR instance at the following URL:
+For organizations not using the Delivery 2 release of Cloud SOAR, API documentation is available through your Cloud SOAR instance at the following URL:
 
 ```
 http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
