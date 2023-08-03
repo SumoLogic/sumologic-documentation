@@ -28,7 +28,7 @@ https://<endpoint>/ui/#/search/create?query=<urlEncodedQuery>&parameters=<param1
 
 ## Examples
 
-### Standard Query URL
+### Standard query URL
 
 Create a URL for the following log query, using a relative time range expression of `-10w` to `-1w`.:
 
