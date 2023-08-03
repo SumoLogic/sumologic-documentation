@@ -55,7 +55,7 @@ Assuming that user selects `billing` app from the list of apps, the final query 
 billing error | count
 ```
 
-The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
+The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). 
 
 ```
 https://service.sumologic.com/ui/#/search/create?query={{app_name}}%20error%20%7C%20count&parameters=app_name:billing&startTime=-60m&endTime=-30m
