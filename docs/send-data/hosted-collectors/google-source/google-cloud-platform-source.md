@@ -43,11 +43,27 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 ## Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on Collect Logs for Google App Engine.
+You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created.
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
    * Use a **PushDelivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**. 
+
+:::note
+Warning: Pub/subs are subject to Google Cloud [quotas and limits](https://cloud.google.com/pubsub/quotas#quotas). Evaluate the number of logs against these limitations. If they are higher then the limit/quota, Sumo Logic recommends you split your logs over several topics.
+:::
+
+## Exporting Logs from Google Cloud Logging to Pub/Sub
+Once you configure the Pub/Sub, you can export data from Google Cloud Logging to Pub/Sub (created in previous step) using Log Router Sinks. 
+
+1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
+2. Click **Create Sink**. <br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
+3. As part of **Create logs routing sink**, add the following information.
+   1. Enter a Sink Name. For example, "gce-vm-instance".
+   2. Select "Cloud Pub/Sub" as the **Sink Service**.
+   3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
+   4. In **Choose logs to include in sink** section for resource_type, replace "`<resource_variable>`" with the [resource type of the service](https://cloud.google.com/logging/docs/api/v2/resource-list#resource-types) for which you need to export the logs.<br/><img src={useBaseUrl('img/integrations/google/resourcevar.png')} alt="Google integrations" />
+   5. Click **Create Sync**.
 
 ### Limitations
 
