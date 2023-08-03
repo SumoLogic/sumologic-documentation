@@ -41,7 +41,7 @@ The custom URL that launches this log query in the Sumo Logic Search page woul
 ```
 https://service.sumologic.com/ui/#/search/create?query=test%20query%20%7C%20count%20by%20_source&startTime=-10w&endTime=-1w
 ```
-### Templatized Query URL
+### Templatized query URL
 
 Create a URL for the following log query, using a relative time range expression of `-60m` to `-30m`.:
 
