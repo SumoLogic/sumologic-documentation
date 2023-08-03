@@ -83,7 +83,7 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA A
     1. **NSS Type.** NSS for Web is the default.
     1. **Status.** Select Enabled.
     1. **SIEM TCP Port.** Enter the Sumo Logic Syslog Source TCP port number.
-    1. **Feed Escape Character.** Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS
+    1. **Feed Escape Character.** Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS.
     1. **Feed Output Format.** Select Custom and paste the following:
       1.  Web Logs
       ```
