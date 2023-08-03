@@ -5,9 +5,7 @@ sidebar_label: Log Operators
 description: The Search Operators cheat sheet provides a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.
 ---
 
-
-
-The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a step-by-step video and tutorial about creating queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI). For a complete list of Sumo Logic Search operators, you can download the [PDF version](https://drive.google.com/file/d/1UAMMawIW1st1LTDw9UjdEtivRKvgk-j7). 
+The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a step-by-step video and tutorial about creating queries, see the [Quickstart Tutorial](https://www.youtube.com/watch?v=ajuNTQeOYaI). For a complete list of Sumo Logic Search operators, download the <a href="https://help.sumologic.com/files/search-operators-cheat-sheet.pdf" target="_blank">PDF version</a>.
 
 For a collection of customer-created search queries and their use cases, see the [Sumo Logic Community Query Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library).
 

@@ -17,10 +17,6 @@ The Mimecast Source leverages the following:
  * [Download Audit Events](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-audit-events/)
  * [Download Hold Message List](https://integrations.mimecast.com/documentation/endpoint-reference/message-queues/get-hold-message-list/)
 
-:::note
-This Source is not available in the Fed deployment.
-:::
-
 ## States
 
 A Mimecast Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).

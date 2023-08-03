@@ -8,8 +8,8 @@ The `isNumeric` operator checks whether a string is a valid Java number. Valid 
 
 ## Syntax
 
-* `isNumeric(\<strin\>") as\<fiel\>`
-* `isNumeric\<string_fiel\>) [as\<fiel\>]`
+* `isNumeric(\<string\>") as\<field\>`
+* `isNumeric\<string_field\>) [as\<field\>]`
 
 ## Rules
 

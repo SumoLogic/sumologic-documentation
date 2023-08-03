@@ -9,6 +9,20 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.6.1, 18-July-2023
+
+AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+Security Fixes and Updates: 
+ * Security fixes ([CVE-2022-23491](https://nvd.nist.gov/vuln/detail/CVE-2022-23491) and [CVE-2021-33503](https://nvd.nist.gov/vuln/detail/CVE-2021-33503)) for following.
+   * SAM: sumologic-s3-logging-auto-enable - Semantic v1.0.5
+   * SAM: sumologic-loggroup-connector - Semantic v1.0.7
+   * SumoLogicAWSObservabilityHelperv2.0.16.zip
+ * Removed unused permissions (AddTags, RemoveTags) from SAM: sumologic-s3-logging-auto-enable.
+ * Fine tuned IAM role permission to invoke lambda function in SAM: sumologic-loggroup-connector.
+
 ## v2.6.0, 25-April-2023
 
 AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml`

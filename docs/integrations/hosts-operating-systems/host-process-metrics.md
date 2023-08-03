@@ -232,7 +232,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 ## Installing the Alerts
 
-The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
+The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
@@ -363,7 +363,7 @@ Now that you have set up a log and metric collection for the Host and Process Me
 ## Viewing Host and Process Metrics Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 

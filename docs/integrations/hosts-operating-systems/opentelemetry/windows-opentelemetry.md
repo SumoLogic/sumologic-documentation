@@ -1,6 +1,6 @@
 ---
 id: windows-opentelemetry
-title: windows - OpenTelemetry Collector
+title: Windows - OpenTelemetry Collector
 sidebar_label: Windows - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry App for Windows.
 ---
@@ -36,7 +36,7 @@ Standard Windows event channels include:
 - System
 - Application
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
@@ -151,13 +151,15 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 
 ### Windows - Overview
 
-The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, and system restarts.
+The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
 Use this dashboard to:
 
 - Monitor systems experiencing fatal errors, warnings, and system restarts.
 - View system login attempts. 
 - Monitor policy changes performed on the system.
+- Monitor services installed on the systems.
+- Monitor the number of changes performed on the Administrative groups.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Overview.png' alt="Windows - Overview" />
 
@@ -173,6 +175,17 @@ Use this dashboard to:
 - Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Default.png' alt="Windows - Default" />
+
+### Windows - Login Status
+
+The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
+
+Use this dashboard to:
+* Monitor successful and failed logins by the user and track their locations with successful and failed login attempts.
+* Monitor RDP reconnect events.
+* Track failed login outliers to identify mischievous login activities.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Login-Status.png')} alt="Windows - Login Status" />
 
 ### Windows - Event Errors
 
@@ -265,6 +278,16 @@ Use this dashboard to:
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+
+### The Process Metrics - Overview
+
+The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations, and thread count.
+
+User this dashboard to :
+- Process wise distribution of CPU and memory usage
+- Process wise read/write operations 
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
 
 ### Process Metrics - Details
 

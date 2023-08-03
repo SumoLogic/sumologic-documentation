@@ -42,9 +42,13 @@ The Sumo Global Intelligence for Kubernetes DevOps app provides insights into yo
 
 Follow the steps on the [Sumo Logic Kubernetes Deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#metrics) to configure the collection for Kubernetes Benchmark metrics.
 
-## Installing the Global Intelligence for Kubernetes DevOps App and Viewing Dashboards
+## Installing the GI for Kubernetes DevOps App
 
-Below are the instructions for installing the Sumo App for Kubernetes DevOps as well as descriptions of each of the app dashboards. 
+Below are the instructions for installing the Sumo App for Kubernetes DevOps.
+
+{@import ../../reuse/apps/app-install.md}
+
+## Viewing GI Kubernetes DevOps Dashboards
 
 ### Dashboard Filters  
 
@@ -63,7 +67,7 @@ The dashboard time range is used to fetch deployment-container combinations that
 
 The `infer` operator is the interface to a machine learning model. It is intended for use only in this application.
 
-The infrastructure tab of the [Entity Inspector](../../dashboards-new/drill-down-to-discover-root-causes.md) is not compatible with Global Intelligence for Kubernetes DevOps and renders a blank page on Dashboards Summary for Kubernetes Deployment and Detail for Kubernetes Deployment. This is because Global Intelligence apps analyze anonymized customer data and do not have a way to identify customer entities required for Entity Inspector. 
+The infrastructure tab of the [Entity Inspector](../../dashboards/drill-down-to-discover-root-causes.md) is not compatible with Global Intelligence for Kubernetes DevOps and renders a blank page on Dashboards Summary for Kubernetes Deployment and Detail for Kubernetes Deployment. This is because Global Intelligence apps analyze anonymized customer data and do not have a way to identify customer entities required for Entity Inspector. 
 
 Deployment-container combinations that have no requests or limits set are not candidates for optimization. No recommendations are computed in these cases. 
 :::

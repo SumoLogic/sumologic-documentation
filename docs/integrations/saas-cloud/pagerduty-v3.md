@@ -93,7 +93,7 @@ In the next section, install the Sumo Logic App for PagerDuty V3.
 
 ## Installing the PagerDuty V3 App
 
-This section provides instructions for installing the Sumo App for PagerDuty V3, as well as the descriptions of each of the app dashboards.
+This section provides instructions for installing the Sumo App for PagerDuty V3.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
 
@@ -102,7 +102,7 @@ Now that you have set up a log and metric collection, you can install the Sumo L
 ## Viewing PagerDuty V3 Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview

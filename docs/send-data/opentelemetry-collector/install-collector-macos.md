@@ -28,9 +28,19 @@ Versions Supported
 
 You can install our OpenTelemetry Collector using one of the following methods:
 
+* [UI Installation](#ui-installation)
 * [Install script](#install-script)
-* [UI Installation via App Catalog](#ui-installation-via-app-catalog)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+
+### UI Installation
+
+1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. On the OpenTelemetry Collection page, click **Add Collector**.
+1. On the left panel, select **macOS** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/macOs.png')} alt="macOs-terminal" style={{border: '1px solid black'}} width="900"/>
+1. Select/create installation token and customize your tags.
+1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
+1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
+1. Wait for the installation process to complete, then click **Next** to proceed.
 
 ### Install Script
 
@@ -48,7 +58,7 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   sudo curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+   sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
    ```
 * Or by first downloading the script, inspecting its contents for security, and then running it:
    ```bash
@@ -90,17 +100,6 @@ The following env variables can be used along with script:
 | name                           | description        |
 |:-------------------------------|:-------------------|
 | `SUMOLOGIC_INSTALLATION_TOKEN` | Installation token |
-
-### UI Installation via App Catalog
-
-1. From the **App Catalog** and select **macOS - OpenTelemetry application**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-mac-os.png')} alt="macOS in app catalog" width="350" />
-1. Click **Install App** for your first installation, or **View Details**, then **More Actions** and finally **Add another Host** for next installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-overview.png')} alt="macOS app overview" width="550" />
-1. Select **Add New Collector** and click **Next**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-set-up-collector.png')} alt="set up collector" />
-1. Select installation token and customize your tags.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-add-new-collector.png')} alt="add new collector" />
-1. Copy command and execute it in your system terminal.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/macos-terminal.png')} alt="execute command in terminal" />
-1. Wait for installation to be completed.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-registration.png')} alt="collector successfully registered" />
-1. Customize source configuration, download it, place it in `/etc/otelcol-sumo/conf.d` and then restart collector manually.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-source-creation.png')} alt="source customization" />
-1. Wait for finishing the installation.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/app-catalog-macos-success-installation.png')} alt="application installed successfully" />
 
 ### Manual step-by-step Installation
 
@@ -241,7 +240,7 @@ First, you have to upgrade the Collector's version. The way you should do it, de
 Running install script will simply upgrade collector to the latest version:
 
 ```bash
-sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
+sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo bash
 ```
 
 :::note

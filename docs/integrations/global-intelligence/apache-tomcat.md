@@ -17,7 +17,7 @@ Global Intelligence for Apache Tomcat App uses logs data from Apache Tomcat clus
 
 ## Sample Query 
 
-The following sample query is from the Average **Requests Per Second: My** **Server** **v Benchmark** panel of **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
+The following sample query is from the **Average Requests Per Second: My Server v Benchmark** panel of the **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
 
 ```
 | json auto maxdepth 1 nodrop
@@ -48,11 +48,11 @@ The Sumo Global Intelligence for Tomcat app provides insights into your key Tomc
 Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-Tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
 
 
-
 ## Installing the Global Intelligence for Apache Tomcat App
 
-This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat and descriptions of each of the app dashboards. 
+This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat.
 
+{@import ../../reuse/apps/app-install.md}
 
 ## Concepts
 

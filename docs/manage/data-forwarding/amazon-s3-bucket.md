@@ -1,7 +1,7 @@
 ---
 id: amazon-s3-bucket
-title: Forwarding Data from Sumo Logic to S3
-description: After granting access to an Amazon S3 bucket, you can use Sumo Logic to set up Data Forwarding.
+title: Forward Data from Sumo Logic to S3
+description: Learn about how to forward data from Sumo Logic to S3.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,21 +24,21 @@ After data forwarding is configured, you should start to see file objects poste
 
 ## Forwarding interval 
 
-Messages are buffered during data ingest for either **approximately** 5 minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded after compression. 
+Messages are buffered during data ingest for either **approximately** five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded after compression. 
 
 The limits mentioned here are upper limits, actual file size may vary depending on the ingestion volume in Scheduled Views or Partitions of an account. 
 
 :::note
-It takes approximately 5 minutes to propagate a new or changed S3 data forwarding rule or bucket across the Sumo service. So, it is possible after you create or modify a rule, the first 5 minutes of data forwarded might not be written to S3.
+It takes approximately five minutes to propagate a new or changed S3 data forwarding rule or bucket across the Sumo service. So, it is possible after you create or modify a rule, the first five minutes of data forwarded might not be written to S3.
 :::
 
 ## File Format of forwarded data
 
-After you start forwarding data to S3, you should start to see file objects posted in your configured bucket. The log messages are accumulated and returned after being ingested by Sumo.
+After you start forwarding data to S3, you should start to see file objects posted in your configured bucket. The log messages are accumulated and returned after being ingested by Sumo Logic.
 
 The log messages are saved in CSV files in compressed gzip files and named according to the convention you specified when you configured Sumo to start data forwarding, as described in step 5 of [Start data forwarding to S3](amazon-s3-bucket.md). The file naming convention for legacy data forwarding is described below in [Legacy File Naming Format](#legacy-file-naming-format). 
 
-Messages are buffered during data ingest for either approximately 5 minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded. 
+Messages are buffered during data ingest for either approximately five minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded. 
 
 These file objects will contain the messages received as well as the system metadata for the messages, including:
 
@@ -54,13 +54,20 @@ These file objects will contain the messages received as well as the system met
 * **format**: The timestamp format used to parse the message time from the log message
 * **encoding**: The encoding of the original file contents.
 * **message**: The raw log message as read from the original Source.
-* **\<field\>**: Aggregate fields are added based on your query.
+* **field**: Aggregate fields are added based on your query.
+ 
+### Ordering of fields in forwarded file
+
+* The order of the system fields is fixed, and the order is `messageId, sourceName, sourceHost, sourceCategory, messageTime, receiptTime, sourceId, collectorId, count, format, view, encoding, message`.
+* Aggregate fields are represented in lowercase only.
+* Aggregate fields are ordered based on ascending ASCII value.
+* Aggregate fields are always present after the system or built-in fields.
 
 ### Example
 
 **Metadata fields**
 
-`messageId,sourceName,sourceHost,sourceCategory,messageTime,receiptTime,sourceId,collectorId,count,format,view,encoding,message,field1,field2`
+`messageId,sourceName,sourceHost,sourceCategory,messageTime,receiptTime,sourceId,collectorId,count,format,view,encoding,message,aggregatefield1,aggregatefield2`
 
 
 **Sample object**
@@ -69,7 +76,7 @@ These file objects will contain the messages received as well as the system met
 `"-9223371513354977010","","","","1472590091453","1472590094034","101688020","100607825","979","plain:atp:o:0:l:29:p:yyyy-MM-dd HH:mm:ss,SSSZZZZ","JchenTest2","UTF8","2016-08-30 13:48:11,453 -0700 WARN  [hostId=nite-cqsplitter-1] [module=cqsplitter] [localUserName=cqsplitter] [logger=cqsplitter.engine.CQsMultiMatchersManager] [thread=DTP-cqsplitter.receiver.consumer.v2.threadpool-6] MultiMatcher queue for customer 0000000000000131 is at capacity, adding element will block.","25","0000000000000131"`
 
 
-### Legacy File Naming Format
+### Legacy file naming format
 
 The file naming convention for legacy data forwarding (prior to January 2017) is: `<start_epoch>-<end_epoch>--<objectid>.csv.gz`
 

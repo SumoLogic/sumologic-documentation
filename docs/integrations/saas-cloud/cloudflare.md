@@ -54,30 +54,46 @@ client_request_uri, origin_response_status, edge_response_status, origin_ip, cli
 
 This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
 
+To send Cloudflare logs to Sumo Logic directly, you can follow the steps outlined below, or follow the guide in the Cloudflare documentation ([Enable Logpush to Sumo Logic](https://developers.cloudflare.com/logs/get-started/enable-destinations/sumo-logic/)).
 
-### Set up a Hosted Collector and Specify a Sumo Logic Source
+Cloudflare Logpush supports pushing logs directly to Sumo Logic via the Cloudflare dashboard or via API. Cloudflare can send logs to a Hosted Collector with HTTP Logs and Metrics as the source. Once you have set up a collector, you simply provide the HTTP Source Address (a unique URL) to which logs can be posted.
 
-#### Prerequisites
+Ensure Log Share permissions are enabled in Cloudflare before attempting to read or configure a Logpush job. For more information, refer to the [Roles](https://developers.cloudflare.com/fundamentals/account-and-billing/members/roles/#roles) section in  Cloudflare documentation.
 
-To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs to send logs to Amazon S3 using [Logpush](https://developers.cloudflare.com/logs/logpush) or [Logpull](https://developers.cloudflare.com/logs/logpull-api/).
+### Configure a Hosted Collector
 
-To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
-
-1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
-3. To forward logs to Cloud SIEM Enterprise, click **+Add Field** with the key `_parser` and value `/Parsers/System/Cloudflare/Cloudflare Logpush`
-5. Click **Advanced**, if the settings are not already shown.
-6. For Timestamp Format, select **Specify a format** and enter the following:
+1. Follow the instructions to [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector) in Sumo Logic to start collecting logs.
+2. Follow the instructions to [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics#configure-an-httplogs-and-metrics-source).
+3. Optional: To forward logs to Cloud SIEM Enterprise, click **+Add Field** with the key `_parser` and value `/Parsers/System/Cloudflare/Cloudflare Logpush`
+4. Click **Advanced**, if the settings are not already shown.
+5. For Timestamp Format, select **Specify a format** and enter the following:
    * **Format:** `yyyy-MM-dd'T'HH:mm:ss'Z'`
    * **Timestamp Locator:** `\"EdgeStartTimestamp\"\s*:\s*\"(.*)\"`
-7. Click **Test**. A Test Timestamp Parsing dialog appears.
-8. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: **"EdgeStartTimestamp":"2018-12-19T23:38:10Z"**. A dialog confirming that your timestamp format matched should appear.
-9. Click **Done** and then click **Save** to save the timestamp parsing to the source.
+6. Click **Test**. A Test Timestamp Parsing dialog appears.
+7. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: **"EdgeStartTimestamp":"2022-12-19T23:38:10Z"**. A dialog confirming that your timestamp format matched should appear.
+8. Click **Done** and then click **Save** to save the timestamp parsing to the source.
+
+### Configure Logpush to Sumo Logic via the Cloudflare Dashboard
+
+To enable the Cloudflare Logpush service:
+1. Log in to the Cloudflare dashboard.
+2. Select the Enterprise account or domain you want to use with Logpush.
+3. Go to **Analytics & Logs > Logs**.
+4. Click **Add Logpush job**. A modal window opens where you will need to complete several steps.
+5. Select the dataset you want to push to a storage service.
+6. Select the data fields to include in your logs. Add or remove fields later by modifying your settings in **Logs > Logpush**.
+7. Select **Sumo Logic**.
+8. Enter or select the HTTP Source Address. Note that the same collector can be used for multiple Logpush jobs, but each job must have a dedicated source.
+9. Click **Validate access**.
+10. Enter the Ownership token (included in a file or log Cloudflare sends to your provider) and click **Prove ownership**. To find the ownership token, click the **Open** button in the Overview tab of the ownership challenge file.
+11. Click **Save** and **Start Pushing** to finish enabling Logpush.
+
+Once connected, Cloudflare lists Sumo Logic as a connected service under Logs > Logpush. Edit or remove connected services from here.
 
 
 ## Installing the Cloudflare App
 
-This section has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
+This section has instructions for installing the Cloudflare App for Sumo Logic.
 
 Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and dashboards.
 

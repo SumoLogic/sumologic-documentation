@@ -12,12 +12,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 This topic has information about Outlier rules and how to create them in the CSE UI.
 
 :::tip
@@ -36,6 +30,21 @@ An Outlier rule is different from other CSE rule types in that the threshold for
 
 For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, CSE builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, CSE creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
 
+Watch this micro lesson to learn about Outlier rules.
+
+<Iframe url="https://www.youtube.com/embed/1HEUPWpDA_o?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
+
 ## Example rule
 The screenshot below shows an Outlier rule in the CSE rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
 
@@ -45,8 +54,8 @@ The screenshot below shows an Outlier rule in the CSE rules editor. For an expla
 ## Configure an Outlier rule
 This section has instructions for configuring an Outlier rule.
 
-### If triggered
-The settings in the **If triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
+### If Triggered
+The settings in the **If Triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
@@ -66,7 +75,7 @@ The settings in the **If triggered** section are divided into two subsections, o
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
 1. **Minimum Count Value** (default value 1). Enter the absolute minimum value below which an Outlier Signal will not be generated.
 
-### Then create a Signal
+### Then Create a Signal
 
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule/#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
@@ -75,6 +84,17 @@ Sumo Logic ensures that Rule processing does not impact the reliability of produ
 
 On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
+
+## When the baseline is reset for an Outlier rule
+
+The baseline learning period begins again when the following fields on the rule are updated or overridden:
+* **Baseline Configuration**:
+   * **For the records matching the expression**
+   * **build a daily/hourly baseline**
+   * **for the entity(ies)**
+* **Outlier Model Configuration**:
+   * **Detect an outlier for**
+   * **of the Record field**
 
 ## Use case for a spike in failed logins from a user
 

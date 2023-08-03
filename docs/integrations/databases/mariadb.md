@@ -283,7 +283,7 @@ This section demonstrates how to configure sources for Error Logs and Slow Query
 
 #### Configure Source for MariaDB Error Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
+This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10/#configure-collection-for-iis). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File** as the source type.
 3. Configure the Local File Source fields as follows:
@@ -322,7 +322,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 #### Configure Source for MariaDB Slow Query Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
+This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10).
 
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File** as the source type.
@@ -539,7 +539,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing MariaDB Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
 :::
 
 ### Overview

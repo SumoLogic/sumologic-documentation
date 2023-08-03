@@ -349,7 +349,7 @@ You can use filters to drill down and examine the data on a granular level.
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 
@@ -489,7 +489,7 @@ Use this dashboard to:
 
 The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 * Quickly review your infrastructure security status.
