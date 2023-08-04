@@ -54,11 +54,11 @@ Pub/subs are subject to Google Cloud [quotas and limits](https://cloud.google.co
 :::
 
 ## Exporting Logs from Google Cloud Logging to Pub/Sub
-Once you configure the Pub/Sub, you can export data from Google Cloud Logging to Pub/Sub (created in previous step) using Log Router Sinks. 
+Once you configure the Pub/Sub, you can export data from Google Cloud Logging to Pub/Sub (created in the previous step) using Log Router Sinks. 
 
-Refer [this](https://cloud.google.com/logging/docs/export/configure_export_v2#before-you-begin)  for the permission required for creating Sinks.
+Refer to [Google Cloud documentation](https://cloud.google.com/logging/docs/export/configure_export_v2#before-you-begin) for the permission required for creating Sinks.
 
-Follow [these](https://cloud.google.com/logging/docs/export/configure_export_v2#creating_sink) steps to create log sink to start sending logs to Sumo Logic via Pub/Sub. Note that for **Sink destination** select Pub/Sub topic which you created in the previous step and for **Choose logs to include in sink** you can give the query to include the logs which are needed.
+Follow the [steps to create a log sink](https://cloud.google.com/logging/docs/export/configure_export_v2#creating_sink) to start sending logs to Sumo Logic via Pub/Sub. Note that for **Sink destination**, select the Pub/Sub topic which you created in the previous step. For **Choose logs to include in sink**, you can give the query to include the logs which are needed.
 
 ### Limitations
 
