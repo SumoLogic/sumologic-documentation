@@ -248,6 +248,6 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
 ## Collection testing performance numbers
 
-| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time take for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
+| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | ~3 minutes | 100 | 100MB X 80 + 104MB X 20 | Avg 40MB/sec <br/> MAX 190MB/sec | MAX 411811/sec | 3.77 minutes | 9.31 | 20,643,840 |
