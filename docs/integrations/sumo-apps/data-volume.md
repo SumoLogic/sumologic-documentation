@@ -29,7 +29,7 @@ To install the app:
 
 ## Set up Burndown Rates for Consumables
 
-Burndown rate is the ratio for logs is the number of Credits consumed per 1 GB of ingested data. This ratio is different for each tier. Similarly, CSE ingest, Metrics and Tracing have their own burndown rates.
+Burndown rate is the ratio for the number of Credits consumed per 1 GB of ingested data. This ratio is different for each tier. Similarly, CSE ingest, Metrics and Tracing have their own burndown rates.
 
 
 <table>
