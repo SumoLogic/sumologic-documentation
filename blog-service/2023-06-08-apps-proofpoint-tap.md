@@ -1,5 +1,5 @@
 ---
-title: Proofpoint TAP (Apps)
+title: Proofpoint TAP App (Apps)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps
