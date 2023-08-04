@@ -1,7 +1,8 @@
 ---
 id: linux-opentelemetry
 title: Linux - Cloud Security Monitoring and Analytics - OpenTelemetry
-dashboard: The Sumo Logic app for Linux Cloud Security Monitoring and Analytics - OpenTelemetry provides better understanding of your production environments, and surface relevant insights by tuning out-of-the-box content to align with your security team’s focus
+sidebar_label: Linux - OpenTelemetry
+description: The Sumo Logic app for Linux Cloud Security Monitoring and Analytics - OpenTelemetry provides better understanding of your production environments, and surfaces relevant insights by tuning out-of-the-box content to align with your security team’s focus.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,6 +24,8 @@ The following tag will be created as part of Linux app installation, if not alre
 :::note
 You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

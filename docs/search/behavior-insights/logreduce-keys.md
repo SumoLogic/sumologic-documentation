@@ -45,7 +45,7 @@ Results can be returned in two ways:
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
 * The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](/docs/search/search-query-language/search-operators/compare) instead.
-* Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
+* Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards-classic/edit-dashboards/use-filters-dashboards.md).
 
 ## _count link
 

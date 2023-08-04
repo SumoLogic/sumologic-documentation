@@ -9,6 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
 
+:::note
+The Docker App will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
+:::
+
 The Sumo Logic App for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network. This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
 
 ## Log and Metric Types
@@ -117,6 +121,10 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 
 ## Docker Metrics definitions
+
+:::info
+There will be no **Network** metrics if you use the `host` network mode for the container.
+:::
 
 <table><small>
   <tr>
@@ -795,17 +803,6 @@ See an overview of Docker activity, including the number of Docker hosts; the nu
 
 **Top 5 Containers by Memory Usage**. A line chart that shows the memory usage by the top five containers that used the most memory over the last 24 hours.
 
-### Block IO
-
-See the number of block I/O requests serviced by each container, and the number of bytes transferred to and from disk by each container over the last three hours.
-
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker-block-io.png')} alt="Docker ULM dashboards" />
-
-**Total Number of Block I/O Requests Serviced**. A line chart that shows the number of block I/O requests serviced by each container over the last three hours.
-
-**Number of Bytes Transferred to/from the Disk**. A line chart that shows the number of bytes written to and read by each container over the last three hours.
-
-
 ### CPU Usage
 
 See information about CPU usage and container throttling over the last three hours.
@@ -827,7 +824,7 @@ See information about CPU usage and container throttling over the last three hou
 
 ### Memory Usage
 
-See information about container memory limits, memory usage, and page faults over the last three hours.
+See information about container memory usage and page faults over the last three hours.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker-memory-usage.png')} alt="Docker ULM dashboards" />
 

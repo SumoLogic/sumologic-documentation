@@ -7,7 +7,7 @@ description: The Microsoft Graph Security API Source provides a secure endpoint 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each
 affected device.
@@ -177,7 +177,7 @@ The following table shows the **config** parameters for a Microsoft Graph Se
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable | 
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `tenant_id` | String | Yes |  | The Directory (tenant) ID of the Azure AD application. | modifiable |
 | `secret_key` | Boolean | Yes |  | The Application Client Secret Key created with access to the Azure AD application. | modifiable |
 | `application_id` | String | Yes |  | The Application (client) ID of the Azure AD application.	modifiable |

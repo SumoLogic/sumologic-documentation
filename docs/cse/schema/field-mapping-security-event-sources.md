@@ -6,7 +6,7 @@ description: Learn how to set up field mappings for messages that you want to be
 ---
 
 
-This topic has information about creating field mappings for messages that you want to be processed by [normalized threat rules](../rules/normalized-threat-rules.md). 
+This topic has information about creating field mappings for messages that you want to be processed by [normalized threat rules](/docs/cse/rules/normalized-threat-rules). 
 
 CSE provides built-in normalized threat rules for processing messages that describe security events that have already occurred. These rules address a range of threat types, such as intrusion, malware, and so on. The rules are normalized so that the same rule can evaluate messages from multiple data log sources. For example, a single rule could handle messages from multiple products that detect malware, for example, Antivirus Appliances, Trend Micro Antivirus, and Symantec Endpoint Protection Scanning/Antivirus.
 

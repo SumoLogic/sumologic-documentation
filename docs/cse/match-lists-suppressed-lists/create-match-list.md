@@ -40,7 +40,7 @@ When a Record contains a value that exactly matches one or more Match Lists (par
 
 * `listMatches`. CSE adds the names of the Match Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the `SourceIP` address in the “vuln_scanners” Match List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`
 
-* `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, and assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.   
 

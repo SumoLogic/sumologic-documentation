@@ -27,7 +27,7 @@ Remember to provide configuration using environment variables:
    * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
    * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 * `OTEL_SERVICE_NAME` - a logical service name that represents its business logic
-* `OTEL_RESOURCE_ATTRIBUTES` - set "application" name attribute which should represent its business logic and extra attributes attached to all spans
+* `OTEL_RESOURCE_ATTRIBUTES` - set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
 
 **Example:**
 
