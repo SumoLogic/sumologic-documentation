@@ -73,7 +73,7 @@ The monitor is the object that you configure within Sumo Logic that:
 The underlying data stream, either logs or metrics, on which the monitor is created.
 
 ### Mute  
-When a monitor is in a mute state it continues to process your data stream as expected where Incidents are still generated. However, notifications are snoozed based on your mute condition.
+When a monitor is in a mute state, it continues to process your data stream as expected where alerts are still generated. However, notifications are suppressed based on your mute condition. See also: [*Muting Schedules*](/docs/alerts/monitors/muting-schedules).
 
 ### Resolve  
 The process of closing an incident.
