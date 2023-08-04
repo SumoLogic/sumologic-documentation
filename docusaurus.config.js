@@ -58,6 +58,12 @@ module.exports = {
         },
         module: {
           type: isServer ? 'commonjs' : 'es6',
+          rules: [
+              {
+                test: /\.(txt|json)/,
+                type: 'raw-loader',
+              }
+          ]
         }
       },
     }),
