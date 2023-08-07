@@ -115,16 +115,16 @@ Sumo Logic recommends using [Sumo Logic OpenTelemetry Collector](/docs/send-data
 
 The list of hosts is populated first by extracting all of the available hosts from the data ingested into the Sumo platform. A host will appear on the list if any of the following data is present:
 
-**Logs**
-- _sourceHost field
-- host.name field
+* **Logs**
+    * `_sourceHost` field
+    * `host.name` field
 
-**Metrics**
-- _sourceHost dimension
-- host.name dimension
+* **Metrics**
+    * `_sourceHost` dimension
+    * `host.name` dimension
 
-**Tracing**
-- host.name field
+* **Tracing**
+    * `host.name` field
 
 #### Environment
 
