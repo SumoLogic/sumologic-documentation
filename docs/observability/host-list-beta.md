@@ -229,7 +229,7 @@ The **Load** Indicator returns the CPU load utilization. Currently, the CPU load
 
 Load is expressed using the **Average** aggregation method.
 
-The value of the Load Indicator is extracted using the following queries (depending on the collection method used):
+The value of the Load indicator is extracted using the following queries (depending on the collection method used):
 
 ```sql
 metric=system.cpu.load_average.15m host.name=* | sum by deployment.environment, host.group, host.name
