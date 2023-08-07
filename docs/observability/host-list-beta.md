@@ -225,7 +225,7 @@ metric=Mem_UsedPercent _sourceHost=* | avg by _sourceHost
 
 #### Load
 
-The **Load** Indicator returns the CPU load utilization. Currently, the CPU load can be calculated for the last 15 minutes.
+The **Load** indicator returns the CPU load utilization. Currently, the CPU load can be calculated for the last 15 minutes.
 
 Load is expressed using the **Average** aggregation method.
 
