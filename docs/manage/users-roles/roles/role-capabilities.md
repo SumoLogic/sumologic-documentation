@@ -381,3 +381,64 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
    </td>
   </tr>
 </table>
+
+## Cloud SIEM Enterprise
+
+For more information about Cloud SIEM role capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
+
+:::note
+Cloud SIEM Enterprise capabilities only appear in the Roles UI if [Cloud SIEM has been enabled for your account](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem).
+:::
+
+| Capability | Description |
+| :-- | :-- | 
+| View Cloud SIEM Enterprise | Users with a role that grants this capability will see a **Cloud SIEM Enterprise** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
+| Insights > Comment on Insights | Add comments to [Insights](docs/cse/get-started-with-cloud-siem/about-cse-insight-ui). |
+| Insights > Create Insights	| Create Insights.| 
+| Insights > Delete Insights	| Delete Insights.| 
+| Insights > Invoke Insights Actions	| Choose and run an [Action](/docs/cse/administration/create-cse-actions) from the Actions menu for an Insight.| 
+| Insights > Manage Insight Assignee	| Change the user that is assigned to an Insight.| 
+| Insights > Manage Insight Signals	| Add Signals to Insights; remove Signals from Insights.| 
+| Insights > Manage Insight Status	| Change the status of an Insight.| 
+| Insights > Manage Insight Tags	| Add and delete [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) assigned to Insights.| 
+| Content > View Rules	| View Cloud SIEM [rules](/docs/cse/rules/about-cse-rules).| 
+| Content > Manage Rules	| Create, edit, and delete Cloud SIEM rules.| 
+| Content > View Threat Intelligence	| View [threat intel sources](/docs/cse/administration/create-custom-threat-intel-source) in Cloud SIEM.| 
+| Content > Manage Threat Intelligence	| Create, edit, and delete threat intel sources.| 
+| Content > View Match Lists	| View [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list).| 
+| Content > Manage Match Lists	| Create, edit, and delete Match Lists.| 
+| Content > View File Analysis	| View [file analysis (YARA) rules](/docs/cse/rules/import-yara-rules).| 
+| Content > Manage File Analysis	| Create, edit, and delete file analysis (YARA) rules.| 
+| Content > View Custom Insights	| View [custom Insight](/docs/cse/records-signals-entities-insights/configure-custom-insight) configurations.| 
+| Content > Manage Custom Insights	| Create, edit, and delete custom Insight configurations.| 
+| Content > View Network Blocks	| View [network blocks](/docs/cse/administration/create-use-network-blocks).| 
+| Content > Manage Network Blocks	| Create, edit, and delete network blocks.| 
+| Content > View Suppressed Entities	| View [suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression) Entities.| 
+| Content > Manage Suppressed Entities	| Suppress and unsuppress Entities.| 
+| Configuration > View Mappings	| View [log mappings](/docs/cse/schema/create-structured-log-mapping) and [ingest mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping).| 
+| Configuration > Manage Mappings	| Create, edit, and delete log mappings and ingest mappings.| 
+| Configuration > View Workflow	| View Insight [detection settings](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), [custom Insight statuses](/docs/cse/administration/manage-custom-insight-statuses), [custom Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions), and [tag schemas](/docs/cse/administration/create-a-custom-tag-schema).| 
+| Configuration > Manage Workflow	| Create, edit, and delete Insight detection settings, custom Insight statuses and resolutions, and tag schemas.| 
+| Configuration > View Context Actions	| View [Context Actions](/docs/cse/administration/create-cse-context-actions).| 
+| Configuration > Manage Context Actions	| Create, edit, and delete Context Actions.| 
+| Configuration > View Actions	| View [Actions](/docs/cse/administration/create-cse-actions).| 
+| Configuration > Manage Actions	| Create, edit, and delete Actions.| 
+| Configuration > View Enrichments	| View [Enrichments](/docs/cse/integrations/enrichments-and-indicators).| 
+| Configuration > Manage Enrichments	| Upload Insight, Signal, and Entity enrichments using the Cloud SIEM API.| 
+| Configuration > View Custom Entity Types	| View [custom Entity types](/docs/cse/records-signals-entities-insights/create-custom-entity-type).| 
+| Configuration > Manage Custom Entity Types	| Create, edit, and delete custom Entity types.| 
+| Configuration > View Entity	| View [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).| 
+| Configuration > Manage Entity	| Create, edit, and delete Entities. |
+| Configuration > View Entity Normalization	| View the configurations on Cloud SIEM’s [Domain Normalization](/docs/cse/schema/username-and-hostname-normalization) page.| 
+| Configuration > Manage Entity Normalization	| Update the configurations on Cloud SIEM’s Domain Normalization page.| 
+| Configuration > View Entity Criticality	| View [Entity Criticalities](/docs/cse/records-signals-entities-insights/entity-criticality).| 
+| Configuration > Manage Entity Criticality	| Create, edit, and delete Entity Criticalities.| 
+| Configuration > View Tag Schemas	| View [tag schemas](/docs/cse/administration/create-a-custom-tag-schema).| 
+| Configuration > Manage Tag Schemas	| Create, edit, and delete schema key tags, which can be attached to Insights, Signals, Entities, and Rules.| 
+| Configuration > Manage Favorite Fields	| Add and remove favorite fields by clicking the star icon next to the fields in Cloud SIEM Records.| 
+| Configuration > View Entity Groups	| View [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).| 
+| Configuration > Manage Entity Groups	| Create, edit, and delete Entity Groups.| 
+| View Automations | View [automations](/docs/cse/automation-service/automation-service-automations/). |
+| Manage Automations | Create, edit, and delete automations. |
+| Execute Automations | Run automations. |
+
