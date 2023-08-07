@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-Hosts List page allows you to view all Hosts and their most important metrics on a single page, regardless of the host type, the collection method or the format of the collected data.
+Hosts List page allows you to view all hosts and their most important metrics on a single page, regardless of the host type, the collection method, or the format of the collected data.
 
 Hosts List makes it easier to compare different types of hosts without the need for building custom dashboards or switching between multiple existing visualizations and queries. Host List is available without additional configuration and displays all the hosts detected based on the signals ingested into the Sumo platform. Following sources are used to extract the Hosts:
 
