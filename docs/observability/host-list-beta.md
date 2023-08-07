@@ -196,7 +196,7 @@ CPU utilization is expressed using one of the following aggregation methods:
 - 95th percentile
 - 99th percentile
 
-The value of the CPU Indicator is extracted using the following queries (depending on the collection method used):
+The value of the CPU indicator is extracted using the following queries (depending on the collection method used):
 
 ```sql
 metric=system.cpu.utilization host.name=* state=(user OR system OR wait OR steal OR softirq OR interrupt OR nice) | eval(_value*100) | sum by deployment.environment, host.group, host.name, cpu | avg by deployment.environment, host.group, host.name
