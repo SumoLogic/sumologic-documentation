@@ -107,7 +107,7 @@ Both attributes and indicators will work properly using one of the following col
 
 ### Attributes
 
-**Attributes** are generally extracted from metric dimensions or log fields. Attributes provide insight into the characteristics of a host, such as the operating system running on the host, the cloud provider and more. 
+**Attributes** are generally extracted from metric dimensions or log fields. Attributes provide insight into the characteristics of a host, such as the operating system running on the host, the cloud provider, and more. 
 
 Sumo Logic recommends using [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) to collect logs, metrics, and traces, as this method provides all of the required fields and dimensions without any additional configuration. However, if you like to keep using your current collection method, we recommend populating the relevant fields as described below. 
 
