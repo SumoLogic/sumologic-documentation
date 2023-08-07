@@ -46,7 +46,7 @@ You can use the **Environment** dropdown to display hosts with a certain value o
 
 ### Group
 
-You can use the **Group** dropdown to display only Hosts with a certain value of **Group** property. This dropdown is populated with all currently available values of the **Group** attribute.
+You can use the **Group** dropdown to display only hosts with a certain value of **Group** property. This dropdown is populated with all currently available values of the **Group** attribute.
 
 <img src={useBaseUrl('/img/observability/navigation_group.png')} alt="navigation_group" style={{border: '1px solid black'}} width="400"/>
 
