@@ -254,7 +254,7 @@ metric=Mem_Total _sourceHost=* | eval _value / (1024*1024*1024) | avg by _source
 
 #### Memory Used
 
-The **Memory Used** Indicator returns the total memory usage expressed in GiB. Currently, the memory used can be displayed for the last 15 minutes.
+The **Memory Used** indicator returns the total memory usage expressed in GiB. Currently, the memory used can be displayed for the last 15 minutes.
 
 Used memory can be expressed using the **Average** aggregation method.
 
