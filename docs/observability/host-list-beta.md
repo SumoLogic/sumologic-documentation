@@ -303,8 +303,8 @@ If the data collection is already enabled, verify that your host has any of the 
 - host.name dimension
 
 If the tags are missing, do any one of the following:
-- Set up a new OpenTelemetry Collector
-- Try manually adding a Field to a Metrics Source
+- Set up a new OpenTelemetry Collector.
+- Try manually adding a Field to a Metrics Source.
 - Add a custom tag using your current collection method.
 
 ### Indicator values are missing for some hosts
