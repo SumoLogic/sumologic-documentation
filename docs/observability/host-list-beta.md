@@ -258,7 +258,7 @@ The **Memory Used** indicator returns the total memory usage expressed in GiB. C
 
 Used memory can be expressed using the **Average** aggregation method.
 
-The value of the Mem Used Indicator is extracted using the following queries (depending on the collection method used):
+The value of the Memory Used indicator is extracted using the following queries (depending on the collection method used):
 
 ```sql
 metric=system.memory.usage state=used host.name=* | eval _value / (1024*1024*1024) | sum by deployment.environment, host.group, host.name
