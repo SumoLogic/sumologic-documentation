@@ -96,7 +96,7 @@ For each of your hosts, Sumo Logic will extract several types of data based on t
 - Indicators
 - Alerts
 
-Both Attributes and Indicators will work properly using one of the following collection methods:
+Both attributes and indicators will work properly using one of the following collection methods:
 
 - OpenTelemetry collection (recommended)
     - [Linux - OpenTelemetry Collector](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/)
