@@ -5,32 +5,32 @@ description: Assign any of these capabilities when you create user roles.
 ---
 
 
-Following are just some of the capabilities you can assign when you [create roles](create-manage-roles.md).
+Following are the capabilities you can assign when you [create roles](create-manage-roles.md).
 
 ## Data Management
 
 | Capability | Description |
 | :-- | :-- |
-| View Collectors	| View Collectors and Sources that have already been installed or added.| 
-| Manage Collectors	| [Install and manage](/docs/send-data) Installed/Hosted Collectors and Sources. Manage permission automatically includes view permission.| 
-| Manage Ingest Budgets	| Manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.| 
+| View Collectors	| View collectors and sources that have already been installed or added.| 
+| Manage Collectors	| [View and manage](/docs/send-data) installed and hosted collectors, as well a sources. | 
+| Manage Ingest Budgets	| Manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different collectors, but not creating or deleting them.| 
 | Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid using [On-Demand Capacity](/docs/manage/manage-subscription/cloud-flex-accounts#account-limitations-and-guidelines), and to determine when you need to upgrade your account.| 
 | View Field Extraction Rules	| View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which speed the search process by automatically parsing fields as log messages are ingested.| 
 | View Fields	| View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs.| 
-| Manage Fields	| Manage fields, which are custom metadata fields you can assign to logs.Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View field extraction rules capabilities.| 
-| Manage Field Extraction Rules	| Manage [field extractions](/docs/manage/field-extractions), which speed the search process by automatically parsing fields as log messages are ingested. Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.| 
+| Manage Fields	| Manage fields. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View Field Extraction Rules capabilities.| 
+| Manage Field Extraction Rules	| Manage [field extractions](/docs/manage/field-extractions), which speed the search process by automatically parsing fields as log messages are ingested. Note that if you grant a role the Manage Field Extraction Rules capability, users with that role will also have the Manage Fields, View Fields, and View Field Extraction Rules capabilities.| 
 | Manage S3 Data Forwarding	| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket.| 
 | Manage Content	| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library.| 
-| Manage Apps | Install apps. |
+| Manage Apps | Install and manage [apps](/docs/integrations). |
 | Manage Connections | Manage the [connections](/docs/manage/connections-integrations) that allow you to send alerts to other tools. |
-| View Scheduled Views	| View Scheduled Views.| 
-| Manage Scheduled Views	| View, create, edit, and delete [Scheduled Views](/docs/manage/scheduled-views). Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.| 
-| View Partitions	| View [Partitions](/docs/manage/partitions-data-tiers).| 
-| Manage Partitions	| View, create, edit, and delete Partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities.| 
-| View Account Overview | Overview	View the Account Overview page.| 
+| View Scheduled Views	| [View Scheduled Views](/docs/manage/scheduled-views).| 
+| Manage Scheduled Views	| View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Schedule Views capability, users with that role will also have View Scheduled Views capability.| 
+| View Partitions	| View [partitions](/docs/manage/partitions-data-tiers).| 
+| Manage Partitions	| View, create, edit, and delete partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 Data Forwarding capabilities.| 
+| View Account Overview |	View the Account Overview page.| 
 | Manage Tokens	| Manage [Installation Tokens](/docs/manage/security/installation-tokens).| 
-| View Parsers	| View [Parsers](/docs/cse/schema/parser-editor).| 
-| Download Search Results	| [Export](/docs/search/get-started-with-search/search-basics/export-search-results) log query results to a .csv file.| 
+| View Parsers	| View [parsers](/docs/cse/schema/parser-editor).| 
+| Download Search Results	| [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file.| 
 
 ## Entity Management
 
@@ -48,217 +48,62 @@ Following are just some of the capabilities you can assign when you [create rol
 
 ## Security
 
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Manage password policy
-   </td>
-   <td>Set the password policy for your Sumo Logic account.
-   </td>
-  </tr>
-  <tr>
-   <td>Allowlist IP addresses
-   </td>
-   <td><a href="/docs/manage/security/create-allowlist-ip-cidr-addresses">Explicitly grant access</a> to specific IP addresses or address ranges.
-   </td>
-  </tr>
-  <tr>
-   <td>Create access keys
-   </td>
-   <td>Allows users to create their own access keys on the <a href="/docs/get-started/sumo-logic-ui">Preferences page</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage access keys
-   </td>
-   <td><a href="/docs/manage/security/access-keys">Set up, activate, deactivate, or delete access keys</a> for your organization.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage support account access
-   </td>
-   <td>Enable <a href="/docs/manage/security/enable-support-account">management of the Sumo Logic support account</a> for your organization.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage audit data feed.
-   </td>
-   <td><a href="/docs/manage/security/audit-index">Enable and manage the Audit Index</a>, which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage SAML
-   </td>
-   <td><a href="/docs/manage/security/saml">Provision and manage SAML</a> for single sign-on to your Sumo Logic accounts.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Share dashboards outside of the organization
-   </td>
-   <td><a href="/docs/dashboards-classic/share-dashboard-inside-org">Share a dashboard</a> with users who don't have access to Sumo Logic.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage organization settings
-   </td>
-   <td>Users with this capability can configure a <a href="/docs/manage/security/set-limit-user-concurrent-sessions">concurrent user sessions limit</a> and enable the <a href="/docs/manage/security/data-access-level-shared-dashboards">Data Access Level for Shared Dashboards</a> security policy.
-   </td>
-  </tr>
-  <tr>
-   <td>Change Data Access Level
-   </td>
-   <td>Users with this capability can change the <a href="/docs/dashboards-classic/get-started/set-data-access-level-dashboard">data access level</a> of dashboards or scheduled searches to which they have edit or manage permission.
-   </td>
-  </tr>
-</table>
-
-
+| Capability | Description |
+| :-- | :-- |
+| Manage Password Policy	| Set the password policy for your Sumo Logic account.| 
+| Allowlist IP Addresses	| [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges.| 
+| Create Access Keys	| Create your own [access keys](/docs/manage/security/access-keys/) on the [Account Preferences](/docs/get-started/account-settings-preferences) page.| 
+| Manage Access Keys	| Set up, activate, deactivate, or delete access keys for your organization.| 
+| Manage Support Account Access	| Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization.| 
+| Manage Audit Data Feed	| Enable and manage the [Audit Index](/docs/manage/security/audit-index), which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.| 
+| Manage SAML	| Provision and manage [SAML](/docs/manage/security/saml) for single sign-on to your Sumo Logic accounts.| 
+| Manage Share Dashboards Outside of Organization	| [Share a dashboard](/docs/dashboards-classic/share-dashboard-outside-org) with users who don't have access to Sumo Logic.| 
+| Manage Organization Settings	| Configure a [concurrent user sessions limit](/docs/manage/security/set-limit-user-concurrent-sessions) and enable the [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards/) security policy.| 
+| Change Data Access Level	| Change the [data access level of dashboards](/docs/dashboards-classic/get-started/set-data-access-level-dashboard) or scheduled searches to which they have edit or manage permission.| 
 
 ## Dashboards
 
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Share dashboards with the allowlist
-   </td>
-   <td><a href="/docs/dashboards-classic/share-dashboard-inside-org">Share dashboards</a> in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your <a href="/docs/manage/security/create-allowlist-ip-cidr-addresses/#enable-dashboard-allowlist">service allowlist</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>Share dashboards with the world
-   </td>
-   <td><a href="/docs/dashboards-classic/share-dashboard-outside-org">Share dashboards</a> in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.
-   </td>
-  </tr>
-</table>
-
-
+| Capability | Description |
+| :-- | :-- |
+| Share dashboards with the allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](docs/manage/security/create-allowlist-ip-cidr-addresses).| 
+| Share dashboards with the world	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.| 
 
 ## User Management
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Manage users and roles
-   </td>
-   <td>Access the web app pages to manage <a href="/docs/manage/users-roles/users">users</a> and <a href="/docs/manage/users-roles/roles/role-capabilities">roles</a>.
-   </td>
-  </tr>
-</table>
 
+| Capability | Description |
+| :-- | :-- |
+| Manage users and roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).| 
 
-
-## Alerts
+## Alerting
 
 Folder-level permissions are available if your org has fine-grained Monitor permissions enabled. If you'd like to use this feature, contact Sumo Logic Support to have it enabled.
 
+| Capability | Description |
+| :-- | :-- |
+| View Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/edit-settings#monitors-folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.| 
+| Manage Monitors	| A user with this capability can create new folders and [Monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [Monitors folder permissions](/docs/alerts/monitors/edit-settings#monitors-folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.| 
+| Admin Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/edit-settings#monitors-folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.| 
+| View Alerts	| View alerts on the [Alert page](/docs/alerts/monitors/alert-response#alert-page).| 
+| View Muting Schedules	| Required for viewing the [Muting Schedules](/docs/alerts/monitors/muting-schedules) page and schedule definitions.| 
+| Manage Muting Schedules	| Required for creating, editing, and deleting Muting Schedules.| 
 
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>View Monitors
-   </td>
-   <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability can view folders on the <a href="/docs/alerts/monitors">Monitors</a> page to which they've been granted View access, and the Monitors contained in those folders.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Monitors
-   </td>
-   <td>A user with this capability can create new folders and <a href="/docs/alerts/monitors">Monitors</a>, and grant other roles permissions to the folders they create.
-<p>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>View Alerts
-   </td>
-   <td>View <a href="/docs/alerts/monitors/alert-response#alert-list">Alerts</a> on the Alerts page.
-   </td>
-  </tr>
-  <tr>
-   <td>Admin Monitors
-   </td>
-   <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
-   </td>
-  </tr>
-<tr>
- <td>View Muting Schedules</td>
- <td>Required for viewing the <a href="/docs/alerts/monitors/muting-schedules">Muting Schedules</a> page and schedule definitions.
- </td>
-</tr>
-<tr>
- <td>Manage Muting Schedules</td>
- <td>Required for creating, editing, and deleting Muting Schedules.
- </td>
-</tr>
-</table>
+## Reliability Management
 
-
+| Capability | Description |
+| :-- | :-- |
+| View SLOs | View [Service Level Objectives (SLOs)](/docs/observability/reliability-management-slo/create-slo/). |
+| Manage SLOs | Create, edit, and delete SLOs.|
 
 ## Organizations
 
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>View Organizations
-   </td>
-   <td>View the <a href="/docs/manage/manage-subscription/create-manage-orgs">Organizations</a> UI.
-   </td>
-  </tr>
-  <tr>
-   <td>Create Organizations
-   </td>
-   <td>Create and provision child organizations.
-   </td>
-  </tr>
-  <tr>
-   <td>Change Credits Allocation
-   </td>
-   <td>Change the credits allocation for a child organization.
-   </td>
-  </tr>
-  <tr>
-   <td>Create Trial Organizations
-   </td>
-   <td>Create trial organizations. (For Sumo Logic Service Providers only.)
-   </td>
-  </tr>
-  <tr>
-   <td>Upgrade Trial Organizations
-   </td>
-   <td>Upgrade trial organizations. (For Sumo Logic Service Providers only.)
-   </td>
-  </tr>
-  <tr>
-   <td>Deactivate Organizations
-   </td>
-   <td>Deactivate trial organizations. (For Sumo Logic Service Providers only.)
-   </td>
-  </tr>
-</table>
+| Capability | Description |
+| :-- | :-- |
+| View Organizations	| View the [Organizations](/docs/manage/manage-subscription/create-manage-orgs) UI.| 
+| Create Organizations	| Create and provision child organizations.| 
+| Change Credits Allocation	| Change the credits allocation for a child organization.| 
+| Create Trial Organizations	| Create trial organizations. (For Sumo Logic Service Providers only.)| 
+| Upgrade Trial Organizations	| Upgrade trial organizations. (For Sumo Logic Service Providers only.)| 
+| Deactivate Organizations	| Deactivate trial organizations. (For Sumo Logic Service Providers only.)| 
 
 ## Cloud SOAR
 
@@ -280,9 +125,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 ## Cloud SIEM Enterprise
 
-[Cloud SIEM Enterprise](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account.
-
-For information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
+[Cloud SIEM Enterprise](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
