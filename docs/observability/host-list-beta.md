@@ -34,7 +34,7 @@ Clicking on any of the rows brings up the **Entity Inspector** panel that provid
 
 The time range selector in the top-right corner of the page allows you to choose the time range for which the host's data is displayed. This setting impacts the number of hosts visible in the list as only active hosts during the selected time are displayed, and influences the values of some [Indicators](#indicators). 
 
-By default, indicators perform the aggregation across the selected time, but it is possible to choose indicators that aggregate values using a time aggregation that overrides the time range selector (For example, CPU (-15min) will aggregate CPU usage for the past 15 minutes, regardless of the value selected using the time range selector). Hosts List can display the data for the last 24 hours and, by default, displays the data for last 60 minutes.
+By default, indicators perform the aggregation across the selected time, but it is possible to choose indicators that aggregate values using a time aggregation that overrides the time range selector. For example, CPU (-15min) will aggregate CPU usage for the past 15 minutes, regardless of the value selected using the time range selector. Hosts List can display the data for the last 24 hours and, by default, displays the data for last 60 minutes.
 
 <img src={useBaseUrl('/img/observability/navigation_time_range.png')} alt="navigation_time_range" style={{border: '1px solid black'}} width="400"/>
 
