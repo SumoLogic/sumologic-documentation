@@ -128,7 +128,7 @@ The list of hosts is populated first by extracting all of the available hosts fr
 
 #### Environment
 
-The **Environment** attribute is one of the built-in tags that allows you to categorize your hosts into arbitrary environments. You cann use this tag to identify which of your hosts are part of your production environment and which work as part of your development or test environments.
+The **Environment** attribute is one of the built-in tags that allows you to categorize your hosts into arbitrary environments. You can use this tag to identify which of your hosts are part of your production environment and which work as part of your development or test environments.
 
 You can use any value for this attribute. If no value is assigned or if the tag is missing, the value of the tag will be set to **default**. 
 
@@ -225,7 +225,7 @@ metric=Mem_UsedPercent _sourceHost=* | avg by _sourceHost
 
 #### Load
 
-The **Load** Indicator returns the CPU load utilization. Currentl, the CPU load can be calculated for the last 15 minutes.
+The **Load** Indicator returns the CPU load utilization. Currently, the CPU load can be calculated for the last 15 minutes.
 
 Load is expressed using the **Average** aggregation method.
 
