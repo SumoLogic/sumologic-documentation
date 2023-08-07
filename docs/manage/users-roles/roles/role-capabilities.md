@@ -321,6 +321,16 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
    <td>If <a href="/docs/alerts/monitors/edit-settings/#monitors-folder-permissions">Monitor folder permissions</a> are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the <a href="/docs/alerts/monitors">Monitors</a> page. This is similar to the Content Administrator capability of the Content Library.
    </td>
   </tr>
+<tr>
+ <td>View Muting Schedules</td>
+ <td>Required for viewing the <a href="/docs/alerts/monitors/muting-schedules">Muting Schedules</a> page and schedule definitions.
+ </td>
+</tr>
+<tr>
+ <td>Manage Muting Schedules</td>
+ <td>Required for creating, editing, and deleting Muting Schedules.
+ </td>
+</tr>
 </table>
 
 
@@ -371,6 +381,3 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
    </td>
   </tr>
 </table>
-
-
-
