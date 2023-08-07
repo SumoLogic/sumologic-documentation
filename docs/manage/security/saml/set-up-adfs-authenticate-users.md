@@ -32,7 +32,7 @@ The relying party trust configuration is required for the connection between Sum
 1. In the **Configure Certificate** window, keep the default certificate settings and click **Next**.
 
     ![Default settings](/img/security/adfs05.png)
-1. In the **Configure URL** window, select **Enable Support for the SAML 2.0 WebSSO protocol**. In the **Relying Party SAML 2.0 SSO service URL** field, enter the value of the ****Assertion Consumer**** URL from the Sumo SAML configuration, and click **Next**.
+1. In the **Configure URL** window, select **Enable Support for the SAML 2.0 WebSSO protocol**. In the **Relying Party SAML 2.0 SSO service URL** field, enter the value of the **Assertion Consumer** URL from the Sumo SAML configuration, and click **Next**.
 
     ![Enable support](/img/security/adfs06.png)
 1. In the **Configure Identifiers** window, add the **Entity ID** URL from the Sumo SAML configuration as a relying party trust identifier.    
