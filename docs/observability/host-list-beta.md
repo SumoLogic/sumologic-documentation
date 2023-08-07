@@ -272,7 +272,7 @@ metric=Mem_ActualUsed _sourceHost=* | eval _value / (1024*1024*1024) | avg by _s
 
 <img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
 
-The Alert column will display the most severe Alert status, even if there are active alerts of a different state.
+The Alert column will display the most severe alert status, even if there are active alerts of a different state.
 
 The Alert count will display the sum of all active Alerts. 
 
