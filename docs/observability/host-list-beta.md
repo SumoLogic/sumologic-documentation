@@ -294,13 +294,13 @@ However, other collection methods are also supported, as described in the Indica
 
 If the data collection is already enabled, verify that your host has any of the required tags:
 
-**For logs**
-- _sourceHost field
-- host.name field
+* **For logs**
+    * `_sourceHost` field
+    * `host.name` field
 
-**For metrics**
-- _sourceHost dimension
-- host.name dimension
+* **For metrics**
+    * `_sourceHost` dimension
+    *  `host.name` dimension
 
 If the tags are missing, do any one of the following:
 - Set up a new OpenTelemetry Collector.
