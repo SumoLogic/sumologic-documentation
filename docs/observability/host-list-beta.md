@@ -24,7 +24,7 @@ All the information in the Hosts List is extracted from the data that you have a
 
 <img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid black'}} width="700"/>
 
-Clicking on any of the rows brings up the **Entity Inspector** panel that provides more detailed information about each of the Hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this Host in the Explore view.
+Clicking on any of the rows brings up the **Entity Inspector** panel that provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the Explore view.
 
 <img src={useBaseUrl('/img/observability/host_list2.png')} alt="host_list2" style={{border: '1px solid black'}} width="500"/>
 
