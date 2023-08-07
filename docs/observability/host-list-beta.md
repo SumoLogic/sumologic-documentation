@@ -187,7 +187,7 @@ Sumo Logic recommends using [Sumo Logic OpenTelemetry Collector](/docs/send-data
 
 #### CPU
 
-The **CPU** Indicator returns the total CPU utilization expressed in percentages. Currently, the CPU utilization can be calculated for the last 15 minutes or inherit the aggregation time period from the time range selector. 
+The **CPU** indicator returns the total CPU utilization expressed in percentages. Currently, the CPU utilization can be calculated for the last 15 minutes or inherit the aggregation time period from the time range selector. 
 
 CPU utilization is expressed using one of the following aggregation methods:
 - Average
