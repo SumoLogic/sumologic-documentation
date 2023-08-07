@@ -46,7 +46,7 @@ The AWS Observability solution script is organized into the following groups of 
    * **source-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo logic sources as required for the solution.
 
 :::note
-Using main.tf, only apps can be installed with the “sumo-module” module by keeping the “collection-module” module commented.
+Using main.tf, only apps can be installed with the "sumo-module" module by keeping the "collection-module" module commented.
 :::
 
 System Files:
@@ -136,7 +136,7 @@ To deploy the AWS Observability Solution for one AWS account and region combinat
 
 In the **providers.tf** file, create a provider for the AWS region you want to monitor AWS services for. This provider will be associated with a profile from the AWS CLI that is associated with an AWS account.
 
-The Terraform script uses “us-east-1” and the active AWS CLI profile by default. If you want to use a different region or another AWS CLI profile, change the **providers.tf** file as shown in the below. Provide an alias that tells Terraform how to identify this account-region
+The Terraform script uses "us-east-1" and the active AWS CLI profile by default. If you want to use a different region or another AWS CLI profile, change the **providers.tf** file as shown in the below. Provide an alias that tells Terraform how to identify this account-region
 combination.
 
 **Task:** Example collection setup for the us-east-2 region and for the production AWS account profile.
@@ -146,7 +146,7 @@ combination.
 provider "aws" {
   profile = "production"
   region  = "us-east-2"
-  alias   = “production-us-east-2”
+  alias   = "production-us-east-2"
 }
 ```
 
@@ -177,7 +177,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
     ```
 
     :::note
-    Do not change or remove the provider **“sumologic”** section:
+    Do not change or remove the provider **"sumologic"** section:
 
     ```bash
     provider "sumologic" {
@@ -191,7 +191,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 
     `admin_mode` with true value will install the app under **Admin Recommended** folder, and admin_mode with false value will install app in **Personal** folder
 
-    `admin_mode` value is automatically set based on the variable “`sumologic_folder_installation_location`” which can be overridden at main.tf
+    `admin_mode` value is automatically set based on the variable "`sumologic_folder_installation_location`" which can be overridden at main.tf
 
 2. Add a provider for each region, replacing the placeholder content that matches your AWS CLI account profile, AWS region of choice and an alias that tells Terraform how to identify this account-region combination.
 
@@ -230,7 +230,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 To see the output messages showing you the deployment process, add output code in the **output.tf** file for each module you added in the later step ([Step 4](#step-4-configure-providers-in-the-maintf-file)) in the **main.tf**.
 
 :::note
-Do not change the **output “Apps”** section.
+Do not change the **output "Apps"** section.
 
 ```bash title="Output Apps"
 output "Apps" {
@@ -292,7 +292,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
     ```
 
     :::note
-    Do not change the **output “sumologic”** section.
+    Do not change the **output "sumologic"** section.
 
     ```bash title="Output sumologic"
     provider "sumologic" {
@@ -305,7 +305,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 
     `admin_mode` with true value will install the app under **Admin Recommended** folder, and admin_mode with false value will install app in **Personal** folder
 
-    `admin_mode` value is automatically set based on the variable “`sumologic_folder_installation_location`” which can be overridden at **main.tf**.
+    `admin_mode` value is automatically set based on the variable "`sumologic_folder_installation_location`" which can be overridden at **main.tf**.
 
 2. Add a provider code sample for each account-region combination, replacing the placeholder content for your AWS CLI account profile, AWS region of choice, and an alias that tells Terraform how to identify this account-region combination:
 
@@ -349,7 +349,7 @@ Given that we have multiple providers, we need to provide an alias that tells Te
 To see the output messages showing you the provisioning process, add a collection of output code in the output.tf file for each module you added in the later step ([Step 4](#step-4-configure-providers-in-the-maintf-file)) in the main.tf.
 
 :::note
-Do not change the output “Apps” section.
+Do not change the output "Apps" section.
 
 ```bash title="Output Apps"
 output "Apps" {
@@ -408,7 +408,7 @@ Configure providers for collection using the Terraform source-module.
     ```
 
     :::note
-    Do not change the module “**sumo-module**” section unless you want to override.
+    Do not change the module "**sumo-module**" section unless you want to override.
 
     ```bash
     module "sumo-module" {
@@ -433,7 +433,7 @@ Configure providers for collection using the Terraform source-module.
     source = "./source-module"
     providers = { aws = aws.<ALIAS> }
 
-    aws_account_alias = <var.aws_account_alias OR “account alias”>
+    aws_account_alias = <var.aws_account_alias OR "account alias">
     sumologic_organization_id = var.sumologic_organization_id
     access_id    = var.sumologic_access_id
     access_key   = var.sumologic_access_key
@@ -570,7 +570,7 @@ Source Parameters define how collectors and their sources are set up in Sumo Log
 The following examples override the following:
 
 * Example 1 overrides the `cloudtrail_source_details` parameter to collect CloudTrail logs from a user-provided s3 bucket. CloudTrail logs are already stored in the user-provided s3 bucket. The default parameter will always create new S3 buckets, forward CloudTrail logs to it and collect CloudTrail logs from the newly created s3 bucket.
-* Example 2 overrides the `auto_enable_access_logs` variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to “Both”, which automatically enables access logging for new and existing ALB resources.
+* Example 2 overrides the `auto_enable_access_logs` variable to skip automatic access log enablement for an Application Load Balancer resource. By default, it is set to "Both", which automatically enables access logging for new and existing ALB resources.
 
 **Default example:**
 
@@ -589,7 +589,7 @@ module "collection-module" {
 
 Override the `cloudtrail_source_details` parameter to collect CloudTrail logs from a user-provided s3 bucket. CloudTrail logs in this case are already stored in the user-provided s3 bucket.
 
-```
+```bash
 module "collection-module" {
  source = "./source-module"
  aws_account_alias         = var.aws_account_alias
@@ -642,9 +642,9 @@ Select the kind of CloudWatch Metrics Source to create.
 
 Options available are:
 
-* "CloudWatch Metrics Source" - Creates Sumo Logic AWS CloudWatch Metrics Sources.
-* "Kinesis Firehose Metrics Source" (Recommended) -  Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source.  This new source has cost and performance benefits over the CloudWatch Metrics Source and is therefore recommended.
-* "None" - Skips the Installation of both the Sumo Logic Metric Sources.
+* "CloudWatch Metrics Source". Creates Sumo Logic AWS CloudWatch Metrics Sources.
+* "Kinesis Firehose Metrics Source" (Recommended). Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source. This new source has cost and performance benefits over the CloudWatch Metrics Source and is therefore recommended.
+* "None". Skips the Installation of both the Sumo Logic Metric Sources.
 
 **Default Value: **
 
@@ -662,9 +662,9 @@ collect_cloudwatch_metric = "Kinesis Firehose Metrics Source"
 
 Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
-* `limit_to_namespaces` - Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source.
+* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source.
 
-Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source.md) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support.
+Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) and the [CloudWatch Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for details on which namespaces they support.
 
 **Default value:**
 
@@ -697,7 +697,7 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
 
 **Override Example JSON:**
 
-The following override example collects only DynamoDB and Lambda namespaces with source_category set to “aws/observability/cloudwatch/metrics/us-east-1”:
+The following override example collects only DynamoDB and Lambda namespaces with source_category set to `"aws/observability/cloudwatch/metrics/us-east-1"`:
 
 ```json
 Cloudwatch_metrics_source_details = {
@@ -719,7 +719,7 @@ Cloudwatch_metrics_source_details = {
 
 #### cloudwatch_metrics_source_url
 
-Use this parameter if you are already collecting CloudWatch Metrics and want to use an existing Sumo Logic Collector Source. You need to provide the URL of the existing Sumo Logic CloudWatch Metrics Source. If the URL is for a AWS CloudWatch Metrics source, the "account" and "accountid" metadata fields will be added to the Source. If the URL is for the Kinesis Firehose for Metrics source, the “account” field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Use this parameter if you are already collecting CloudWatch Metrics and want to use an existing Sumo Logic Collector Source. You need to provide the URL of the existing Sumo Logic CloudWatch Metrics Source. If the URL is for a AWS CloudWatch Metrics source, the "account" and "accountid" metadata fields will be added to the Source. If the URL is for the Kinesis Firehose for Metrics source, the "account" field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
 **Default value:**
 
@@ -732,7 +732,7 @@ Use this parameter if you are already collecting CloudWatch Metrics and want to 
 The following is a default example:
 
 ```json
-cloudwatch_metrics_source_url=””
+cloudwatch_metrics_source_url=""
 ```
 
 
@@ -751,10 +751,10 @@ Amazon Elastic load balancers have various [load balancers](https://aws.amazon.c
 
 You have the following options:
 
-* `true` - Ingest Load Balancer logs into Sumo Logic. Creates a Sumo Logic Log Source that collects application load balancer  logs from an existing bucket or a new bucket. If true, configure "elb_source_details" to ingest load balancer logs.
-* `false` - You are already ingesting load balancer logs into Sumo Logic.
+* `true`. Ingest Load Balancer logs into Sumo Logic. Creates a Sumo Logic Log Source that collects application load balancer logs from an existing bucket or a new bucket. If true, configure `"elb_source_details"` to ingest load balancer logs.
+* `false`. You are already ingesting load balancer logs into Sumo Logic.
 
-When enabling ALB logs (setting to true), you need to provide [elb_source_details](https://docs.google.com/document/d/1-x4T7hg0IrliEC_smOoUyYLMQ4_C_uxgrtK4F18F84A/edit#heading=h.6nu95io13typ) with configuration information including the bucket name and path expression.
+When enabling ALB logs (setting to `true`), you need to provide [elb_source_details](#elb_source_details) with configuration information including the bucket name and path expression.
 
 **Default value:**
 
@@ -772,11 +772,11 @@ collect_elb_logs = true
 
 Provide details for the Sumo Logic ELB source. If not provided, then defaults will be used.
 
-To enable collection of application load balancer logs, set [collect_elb_logs](https://docs.google.com/document/d/1-x4T7hg0IrliEC_smOoUyYLMQ4_C_uxgrtK4F18F84A/edit#heading=h.7f7v3pmyzugo) to true and provide configuration information for the bucket. Use the default value code and replace default values.
+To enable collection of application load balancer logs, set [collect_elb_logs](#collect_elb_logs) to `true` and provide configuration information for the bucket. Use the default value code and replace default values.
 
-* If create_bucket is false, provide a name of an existing S3 bucket where you would like to store loadbalancer logs If this is empty, a new bucket will be created in the region.
-* If create_bucket is true, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the “aws-observability-” string.
-* `path_expression` - This is required in case the above existing bucket is already configured to receive ALB access logs. If this is blank, Sumo Logic will store logs in the path expression: `*AWSLogs/*/elasticloadbalancing/*/*`
+* If `create_bucket` is `false`, provide a name of an existing S3 bucket where you would like to store loadbalancer logs If this is empty, a new bucket will be created in the region.
+* If `create_bucket` is `true`, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the "aws-observability-" string.
+* `path_expression`. This is required in case the above existing bucket is already configured to receive ALB access logs. If this is blank, Sumo Logic will store logs in the path expression: `*AWSLogs/*/elasticloadbalancing/*/*`
 
 **Default value:**
 
@@ -797,9 +797,9 @@ To enable collection of application load balancer logs, set [collect_elb_logs](h
 
 **Override Example JSON:**
 
-The following override example uses the bucket “`example-loadbalancer-logs`” with path expression "`*AWSLogs/*/elasticloadbalancing/*/*`":
+The following override example uses the bucket `"example-loadbalancer-logs"` with path expression `"*AWSLogs/*/elasticloadbalancing/*/*"`:
 
-```sql
+```bash
 # Enable Collection of ALB Access logs source
 collect_elb_logs   = true
 # Collect ALB Access logs, from user provided s3 bucket
@@ -824,15 +824,15 @@ Enable Application Load Balancer (ALB)  Access logging.
 
 You have the following options:
 
-* `New` - Automatically enables access logging for newly created ALB resources to collect logs for ALB resources. This does not affect ALB resources already collecting logs.
-* `Existing` - Automatically enables access logging for existing ALB resources to collect logs for ALB resources.
-* `Both` - Automatically enables access logging for new and existing ALB resources.
-* `None` - Skips Automatic access Logging enable for ALB resources.
+* `New`. Automatically enables access logging for newly created ALB resources to collect logs for ALB resources. This does not affect ALB resources already collecting logs.
+* `Existing`. Automatically enables access logging for existing ALB resources to collect logs for ALB resources.
+* `Both`. Automatically enables access logging for new and existing ALB resources.
+* `None`. Skips Automatic access Logging enable for ALB resources.
 
 **Default value:**
 
 ```
-”Both”
+"Both"
 ```
 
 **Override Example JSON:**
@@ -840,17 +840,17 @@ You have the following options:
 Example JSON for newly created ALB resources only.
 
 ```json
-auto_enable_access_logs = ”New”
+auto_enable_access_logs = "New"
 ```
 
 #### elb_log_source_url
 
-Required if you are already collecting ALB logs. Provide the existing Sumo Logic ALB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting ALB logs. Provide the existing Sumo Logic ALB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
 **Default value:**
 
 ```
-“”
+""
 ```
 
 **Override Example JSON:**
@@ -858,7 +858,7 @@ Required if you are already collecting ALB logs. Provide the existing Sumo Logic
 The following is a default example:
 
 ```
-elb_log_source_url=””
+elb_log_source_url=""
 ```
 
 The following is a specific Source URL example:
@@ -876,13 +876,13 @@ Amazon Elastic load balancers have various [load balancers](https://aws.amazon.c
 
 You have the following options:
 
-true  - Ingest Load Balancer logs into Sumo Logic. Creates a Sumo Logic Log Source that collects application load balancer  logs from an existing bucket or a new bucket.
+`true`. Ingest Load Balancer logs into Sumo Logic. Creates a Sumo Logic Log Source that collects application load balancer  logs from an existing bucket or a new bucket.
 
 If true, configure "classic_lb_source_details" to ingest load balancer logs.
 
-false - You are already ingesting load balancer logs into Sumo Logic.
+`false`. You are already ingesting load balancer logs into Sumo Logic.
 
-When enabling CLB logs (setting to true), you need to provide classic_lb_source_details with configuration information including the bucket name and path expression.
+When enabling CLB logs (setting to `true`), you need to provide `classic_lb_source_details` with configuration information, including the bucket name and path expression.
 
 **Default value:**
 
@@ -900,15 +900,15 @@ collect_classic_lb_logs = true
 
 Provide details for the Sumo Logic CLB source. If not provided, then defaults will be used.
 
-To enable collection of classic load balancer logs, set collect_classic_lb_logs to true and provide configuration information for the bucket. Use the default value code and replace default values.
+To enable collection of classic load balancer logs, set `collect_classic_lb_logs` to `true` and provide configuration information for the bucket. Use the default value code and replace default values.
 
 * If create_bucket is `false`, provide a name of an existing S3 bucket where you would like to store load balancer logs. If this is empty, a new bucket will be created in the region.
-* If create_bucket is `true`, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the “aws-observability-” string.
-* `path_expression` - This is required in case the above existing bucket is already configured to receive CLB access logs. If this is blank, Sumo Logic will store logs in the path expression: `*classicloadbalancing/AWSLogs/*/elasticloadbalancing/*/*`.
+* If create_bucket is `true`, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the "aws-observability-" string.
+* `path_expression`. This is required in case the above existing bucket is already configured to receive CLB access logs. If this is blank, Sumo Logic will store logs in the path expression: `*classicloadbalancing/AWSLogs/*/elasticloadbalancing/*/*`.
 
 **Default value:**
 
-```
+```json
 {
  "source_name": "Classic lb Logs (Region)",
  "source_category": "aws/observability/clb/logs",
@@ -925,9 +925,9 @@ To enable collection of classic load balancer logs, set collect_classic_lb_logs 
 
 **Override Example JSON:**
 
-The following override example uses the bucket “`example-loadbalancer-logs`” with path expression "`*AWSLogs/*/elasticloadbalancing/*/*`":
+The following override example uses the bucket `"example-loadbalancer-logs"` with path expression `"*AWSLogs/*/elasticloadbalancing/*/*"`:
 
-```
+```bash
 # Enable Collection of CLB Access logs source
 collect_classic_lb_logs   = true
 # Collect CLB Access logs, from user provided s3 bucket
@@ -952,15 +952,15 @@ Enable Classic Load Balancer (CLB) Access logging.
 
 You have the following options:
 
-* `New` - Automatically enables access logging for newly created CLB resources to collect logs for CLB resources. This does not affect CLB resources already collecting logs.
-* `Existing` - Automatically enables access logging for existing CLB resources to collect logs for CLB resources.
-* `Both` - Automatically enables access logging for new and existing CLB resources.
-* `None` - Skips Automatic access Logging enable for CLB resources.
+* `New`. Automatically enables access logging for newly created CLB resources to collect logs for CLB resources. This does not affect CLB resources already collecting logs.
+* `Existing`. Automatically enables access logging for existing CLB resources to collect logs for CLB resources.
+* `Both`. Automatically enables access logging for new and existing CLB resources.
+* `None`. Skips Automatic access Logging enable for CLB resources.
 
 **Default value:**
 
 ```
-”Both”
+"Both"
 ```
 
 **Override Example JSON:**
@@ -968,17 +968,17 @@ You have the following options:
 Example JSON for newly created ALB resources only.
 
 ```
-auto_enable_classic_lb_access_logs = ”New”
+auto_enable_classic_lb_access_logs = "New"
 ```
 
 #### classic_lb_log_source_url
 
-Required if you are already collecting Classic LB logs. Provide the existing Sumo Logic Classic LB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting Classic LB logs. Provide the existing Sumo Logic Classic LB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
 **Default value:**
 
 ```
-“”
+""
 ```
 
 **Examples:**
@@ -986,7 +986,7 @@ Required if you are already collecting Classic LB logs. Provide the existing Sum
 The following is a [default example](https://github.com/SumoLogic/sumologic-solution-templates/tree/npande_qtr_4/aws-observability-terraform/source-module#input_classic_lb_log_source_url):
 
 ```
-classic_lb_log_source_url=””
+classic_lb_log_source_url=""
 ```
 
 The following is a specific Source URL example:
@@ -1002,10 +1002,10 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 
 Create a Sumo Logic CloudTrail Logs Source. You have the following options:
 
-* `true` - Ingest CloudTrail logs into Sumo Logic - Creates a Sumo Logic CloudTrail Log Source that collects CloudTrail logs from an existing bucket or new bucket. If true, configure "cloudtrail_source_details" to ingest CloudTrail logs.
-* `false` - You are already ingesting CloudTrail logs into Sumo Logic.
+* `true`. Ingest CloudTrail logs into Sumo Logic. Creates a Sumo Logic CloudTrail Log Source that collects CloudTrail logs from an existing bucket or new bucket. If true, configure "cloudtrail_source_details" to ingest CloudTrail logs.
+* `false`. You are already ingesting CloudTrail logs into Sumo Logic.
 
-When enabling CloudTrail logs setting to true, you need to provide [cloudtrail_source_details](https://docs.google.com/document/d/1-x4T7hg0IrliEC_smOoUyYLMQ4_C_uxgrtK4F18F84A/edit#heading=h.i6xrjtjugpny) with configuration information.
+When enabling CloudTrail logs setting to `true`, you need to provide [cloudtrail_source_details](#cloudtrail_source_details) with configuration information.
 
 **Default value:**
 
@@ -1023,15 +1023,15 @@ collect_cloudtrail_logs = true
 
 Provide details for the Sumo Logic CloudTrail source. If not provided, then defaults will be used.
 
-To enable, set [collect_cloudtrail_logs](#collect_cloudtrail_logs) to true and provide configuration information for the bucket. Use the default value code and replace default values.
+To enable, set [collect_cloudtrail_logs](#collect_cloudtrail_logs) to `true` and provide configuration information for the bucket. Use the default value code and replace default values.
 
 * If `create_bucket` is false, provide a name of an existing S3 bucket where you would like to store CloudTrail logs. If this is empty, a new bucket will be created in the region.
-* If `create_bucket` is true, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the “`aws-observability-`” string.
-* `path_expression` - This is required in case the above existing bucket is already configured to receive CloudTrail logs. If this is blank, Sumo Logic will store logs in the path expression `AWSLogs/*/CloudTrail/*/*`.
+* If `create_bucket` is true, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the `"aws-observability-"` string.
+* `path_expression`. This is required in case the above existing bucket is already configured to receive CloudTrail logs. If this is blank, Sumo Logic will store logs in the path expression `AWSLogs/*/CloudTrail/*/*`.
 
 **Default value:**
 
-```
+```json
 {
  "bucket_details": {
    "bucket_name": "aws-observability-<random-id>",
@@ -1039,13 +1039,14 @@ To enable, set [collect_cloudtrail_logs](#collect_cloudtrail_logs) to true and p
    "force_destroy_bucket": true,
    "path_expression": "AWSLogs/<ACCOUNT-ID>/CloudTrail/<REGION-NAME>/*"
  },
+}
 ```
 
 **Default JSON:**
 
-The following override example uses the bucket “`aws-observability-logs`” with path expression "`*AWSLogs/*/CloudTrail/*/*`" path expression:
+The following override example uses the bucket `"aws-observability-logs"` with path expression `"*AWSLogs/*/CloudTrail/*/*"` path expression:
 
-```
+```bash
 # Enable Collection of CloudTrail logs
 collect_cloudtrail_logs   = true
 # Collect CloudTrail logs, from user provided s3 bucket
@@ -1066,7 +1067,7 @@ cloudtrail_source_details = {
 
 #### cloudtrail_source_url
 
-Required if you are already collecting CloudTrail logs. Provide the existing Sumo Logic CloudTrail Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting CloudTrail logs. Provide the existing Sumo Logic CloudTrail Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
 **Default value:**
 
@@ -1079,7 +1080,7 @@ Required if you are already collecting CloudTrail logs. Provide the existing Sum
 The following is a default example:
 
 ```
-cloudtrail_source_url=””
+cloudtrail_source_url=""
 ```
 
 The following is a specific Source URL example:
@@ -1095,9 +1096,9 @@ cloudtrail_source_url="https://api.sumologic.com/api/v1/collectors/1234/sources/
 
 Select the type of Sumo Logic CloudWatch Logs Sources to create. You have the following options:
 
-* "Lambda Log Forwarder" - Creates a Sumo Logic CloudWatch Log Source that collects CloudWatch logs via a Lambda function.
-* "Kinesis Firehose Log Source" - Creates a Sumo Logic Kinesis Firehose Log Source to collect CloudWatch logs.
-* "None" - Skips installation of both sources.
+* "Lambda Log Forwarder". Creates a Sumo Logic CloudWatch Log Source that collects CloudWatch logs via a Lambda function.
+* "Kinesis Firehose Log Source". Creates a Sumo Logic Kinesis Firehose Log Source to collect CloudWatch logs.
+* "None". Skips installation of both sources.
 
 **Default value:**
 
@@ -1117,20 +1118,20 @@ Provide details for the Sumo Logic CloudWatch Logs source. If not provided, then
 
 For bucket_details (used with Kinesis Firehose Logs Source):
 
-* If create_bucket is false, provide a name of an existing S3 bucket where you would like to store cw logs. If this is empty, a new bucket will be created.
-* If create_bucket is true, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the “aws-observability-” string.
+* If `create_bucket` is `false`, provide a name of an existing S3 bucket where you would like to store cw logs. If this is empty, a new bucket will be created.
+* If `create_bucket` is `true`, the script creates a bucket, the name of the bucket has to be unique; this is achieved internally by generating a random-id and then post-fixing it to the "aws-observability-" string.
 
 For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 
 * Provide your `email_id` to receive alerts. You will receive a confirmation email after the deployment is complete. Follow the instructions in this email to validate the address.
-* `IncludeLogGroupInfo`:  Set to true to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to True.
-* `logformat`: For Lambda, the value should be set to “Others”.
-* `log_stream_prefix`: Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function.
-* `workers`: Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
+* `IncludeLogGroupInfo`. Set to `true` to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to `true`.
+* `logformat`. For Lambda, the value should be set to "Others".
+* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s). LogGroup(s) still need to be subscribed to the created Lambda function.
+* `workers`. Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
 
 **Default value:**
 
-```
+```json
 {
  "bucket_details": {
    "bucket_name": "aws-observability-random-id",
@@ -1153,7 +1154,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 
 **Override Example JSON:**
 
-The following override example sets the aws-observability-cw-logs bucket name and the email-id to `bob@company.com`:
+The following override example sets the `aws-observability-cw-logs` bucket name and the email-id to `bob@company.com`:
 
 ```
 cloudwatch_logs_source_details = {
@@ -1178,7 +1179,7 @@ cloudwatch_logs_source_details = {
 
 #### cloudwatch_logs_source_url
 
-Required if you are already collecting AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
 **Default value:**
 
@@ -1191,7 +1192,7 @@ Required if you are already collecting AWS Lambda CloudWatch logs. Provide the e
 The following is a default example:
 
 ```
-cloudwatch_logs_source_url=””
+cloudwatch_logs_source_url=""
 ```
 
 The following is a specific Source URL example:
@@ -1205,10 +1206,10 @@ cloudwatch_logs_source_url="https://api.sumologic.com/api/v1/collectors/1234/sou
 
 Subscribe log groups to Sumo Logic Lambda Forwarder. You have the following options:
 
-* `New` - Automatically subscribes new log groups to send logs to Sumo Logic.
-* `Existing` - Automatically subscribes existing log groups to send logs to Sumo Logic.
-* `Both` - Automatically subscribes new and existing log groups.
-* `None` - Skips Automatic subscription.
+* `New`. Automatically subscribes new log groups to send logs to Sumo Logic.
+* `Existing`. Automatically subscribes existing log groups to send logs to Sumo Logic.
+* `Both`. Automatically subscribes new and existing log groups.
+* `None`. Skips Automatic subscription.
 
 **Default value:**
 
@@ -1224,11 +1225,11 @@ auto_enable_logs_subscription="New"
 
 ### auto_enable_logs_subscription_options
 
-filter - Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination.md).
+`filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring Parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination).
 
 **Default value:**
 
-```
+```json
 {
  "filter": "lambda"
 }
@@ -1236,7 +1237,7 @@ filter - Enter regex for matching logGroups for AWS Lambda only. The regex will 
 
 **Default JSON:**
 
-The following example includes all log groups that match “lambda-cloudwatch-logs”:
+The following example includes all log groups that match `"lambda-cloudwatch-logs"`:
 
 ```
 auto_enable_logs_subscription_options = {
@@ -1245,25 +1246,26 @@ auto_enable_logs_subscription_options = {
 ```
 
 ### collect_root_cause_data
+
 Select the Sumo Logic Root Cause Explorer Source.
 
 You have the following options:
 
-* `Inventory Source` - Creates a Sumo Logic Inventory Source used by Root Cause Explorer.
-* `Xray Source` - Creates a Sumo Logic AWS X-Ray Source that collects X-Ray Trace Metrics from your AWS account.
-* `Both` - Install both Inventory and Xray sources.
-* `None` - Skips installation of both sources.
+* `Inventory Source`. Creates a Sumo Logic Inventory Source used by Root Cause Explorer.
+* `Xray Source`. Creates a Sumo Logic AWS X-Ray Source that collects X-Ray Trace Metrics from your AWS account.
+* `Both`. Install both Inventory and Xray sources.
+* `None`. Skips installation of both sources.
 
 **Default value:**
 
 ```
-“both”
+"both"
 ```
 
 **Override Example JSON:**
 
 ```
-collect_root_cause_data = “Inventory Source”
+collect_root_cause_data = "Inventory Source"
 ```
 
 ### inventory_source_details
@@ -1271,7 +1273,7 @@ Provide details for the Sumo Logic AWS Inventory source. If not provided, then d
 
 **Default value:**
 
-```
+```json
 {
  "description": "This source is created using Sumo Logic terraform AWS Observability module to collect AWS inventory metadata.",
  "fields": {},
@@ -1317,7 +1319,7 @@ Provide details for the Sumo Logic AWS XRAY source. If not provided, then defaul
 
 **Default value:**
 
-```
+```json
 {
  "description": "This source is created using Sumo Logic terraform AWS Observability module to collect AWS Xray metrics.",
  "fields": {},
@@ -1341,13 +1343,13 @@ xray_source_details = {
 
 ### sumologic_existing_collector_details
 
-Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
 If provided, all the provided sources will be created within the collector. If kept empty, a new Collector will be created and all provided sources will be created within that collector.
 
 **Default value:**
 
-```
+```json
 {
  "collector_id": "",
  "create_collector": true
@@ -1381,7 +1383,7 @@ The Collector will be created if any new source is created and sumologic_existin
 
 **Default value:**
 
-```
+```json
 {
  "collector_name": "AWS Observability (AWS Account Alias) (Account ID)",
  "description": "This collector is created using Sumo Logic terraform AWS Observability module.",
@@ -1391,7 +1393,7 @@ The Collector will be created if any new source is created and sumologic_existin
 
 **Override Example JSON:**
 
-The following override example creates a collector with the name “AWS Observability Prod”.
+The following override example creates a collector with the name "AWS Observability Prod".
 
 ```
 # Following example is to create a collector with name and description as provided with collector_name and description parameters.
@@ -1419,7 +1421,7 @@ For more details on permissions, check the IAM policy tmpl files at /source-modu
 
 **Override Example JSON:**
 
-```json
+```
 existing_iam_details = {
  "create_iam_role": true,
  "iam_role_arn": ""
@@ -1458,9 +1460,9 @@ Parameters will take default values as defined under the default column.
 This installs the following:
 
 * Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, Amazon SNS, and Amazon SQS.
-  * Default location: “AWS Observability Apps” Personal folder in Sumo Logic
+  * Default location: "AWS Observability Apps" Personal folder in Sumo Logic
 * Alerts for the AWS Observability Solution
-  * Default location: “AWS Observability Monitors” folder of the Monitors folder
+  * Default location: "AWS Observability Monitors" folder of the Monitors folder
 
 ```
 module "sumo-module" {
@@ -1509,7 +1511,7 @@ module "sumo-module" {
 
 **Override Example:**
 
-For this example, overriding the default folder installation location to “Admin Recommended Folder” and disabling folder sharing.
+For this example, overriding the default folder installation location to `"Admin Recommended Folder"` and disabling folder sharing.
 
 ```
 module "sumo-module" {
@@ -1518,7 +1520,7 @@ module "sumo-module" {
  access_key               = var.sumologic_access_key
  environment              = var.sumologic_environment
  JSON_file_directory_path = dirname(path.cwd)
- folder_installation_location = “Admin Recommended Folder”
+ folder_installation_location = "Admin Recommended Folder"
  folder_share_with_org    = false
  sumologic_organization_id = var.sumologic_organization_id
 }
@@ -1534,22 +1536,20 @@ The following table provides a list of all source parameters and their default v
 | `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page. | Ignore if already configured in main.auto.tfvars file. |
 | `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps". | `"AWS Observability Apps"`  |
 | `monitors_folder_name` | Provide a folder name where all the monitors will be installed under the Personal folder of the user whose access keys you have entered. Default value will be "AWS Observability Monitors". | `"AWS Observability Monitors"` |
-| `folder_installation_location` | Indicates where to install the app folder. Enter "Personal Folder” for installing in the "Personal" folder and "Admin Recommended Folder" for installing in "Admin Recommended" folder. |
-`“Personal Folder”` |
-| `folder_share_with_org` | Indicates if “AWS Observability App” folder should be shared with the entire organization. true to enable sharing; false to disable sharing. | `true` |
+| `folder_installation_location` | Indicates where to install the app folder. Enter "Personal Folder" for installing in the "Personal" folder and "Admin Recommended Folder" for installing in "Admin Recommended" folder. | `"Personal Folder"` |
+| `folder_share_with_org` | Indicates if "AWS Observability App" folder should be shared with the entire organization. true to enable sharing; false to disable sharing. | `true` |
 | `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled. | `true` |
 | `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled. | `true` |
 | `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled | `true` |
 | `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled | `true` |
 | `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled. | `true` |
-| `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.
-`true` |
+| `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled. | `true` |
 | `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled. | `true` |
 | `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled. | `true` |
 | `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled. | `true` |
 | `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled. | `true` |
 | `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled. | `true` |
-| `group_notifications` | Indicates if individual items that meet trigger conditions should be grouped. Defaults to true.	 | `true` |
+| `group_notifications` | Indicates if individual items that meet trigger conditions should be grouped. Defaults to `true`.	 | `true` |
 | `email_notifications`	Email Notifications to be sent by the alert. | `[ ]` |
 | `connection_notifications` | Connection Notifications to be sent by the alert. | `[ ]` |
 | `parent_folder_id` | The folder ID is automatically generated. Do not enter a value for this parameter. This is the folder ID to install the apps into. A folder using the provided name will be added in "apps_folder_name". If the folder ID is empty, apps will be installed in the Personal folder. | Ignore this parameter. |
