@@ -78,7 +78,7 @@ You can narrow down the list of visible Hosts by the type of detected cloud prov
 
 ### Alert Status
 
-You can narrow down the list of visible Hosts by the type of active Alerts for a given host. Hosts List can filter based on the following alert statuses:
+You can narrow down the list of visible hosts by the type of active alerts for a given host. Hosts List can filter based on the following alert statuses:
 
 - Critical
 - Warning
