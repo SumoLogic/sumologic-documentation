@@ -58,7 +58,7 @@ You can search for any hosts using the free-text input field, and you can narrow
 
 ### OS type
 
-You can narrow down the list of visible Hosts by the type of detected Operating System (OS) running on a host. Hosts List can identify the following Operating Systems:
+You can narrow down the list of visible hosts by the type of detected Operating System (OS) running on a host. Hosts List can identify the following operating systems:
 
 - Darwin (macOS)
 - Linux
