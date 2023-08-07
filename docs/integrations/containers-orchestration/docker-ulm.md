@@ -122,6 +122,10 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ## Docker Metrics definitions
 
+:::info
+There will be no **Network** metrics if you use the `host` network mode for the container.
+:::
+
 <table><small>
   <tr>
    <td><strong>Metrics Name</strong>

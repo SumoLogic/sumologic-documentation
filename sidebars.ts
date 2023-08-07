@@ -821,6 +821,7 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
           ],
         },
@@ -1999,6 +2000,7 @@ integrations: [
             collapsed: true,
             items: [
               'integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry',
+              'integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry',
             ],
           },
           'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
