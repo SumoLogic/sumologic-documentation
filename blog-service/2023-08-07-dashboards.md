@@ -9,7 +9,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We are excited to announce a new set of changes that enhance the time range management capabilities within dashboards and dashboard panels. With these updates, you'll have more control over time ranges, making it easier to investigate specific periods of interest. Here's what's included in this update:
+We are excited to announce a new set of changes that enhance the time range management capabilities within dashboards and dashboard panels. With these updates, you'll have more control over time ranges, making it easier to investigate specific periods of interest and analyze data effectively. Here's what's included in this update:
 
 - **Dashboard-Level Time Range Override**. When setting a dashboard-level time range, the new time range will now be temporarily applied to all panels displayed on the dashboard. The updated dashboard time range is applied only for the current viewer of the dashboard unless saved as the new dashboard default.  
 - **Panel-Level Time Range Override**. We've introduced the ability for users to temporarily override panel-level time ranges, allowing you to customize the time range for individual panels without changing the time range for other viewers of the dashboard. The updated panel time range is applied only for the current viewer of the dashboard unless saved as the new panel default. 
