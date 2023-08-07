@@ -2,7 +2,7 @@
 id: mitre-coverage
 title: MITRE Coverage
 sidebar_label: MITRE Coverage
-description: MITRE Coverage shows the adversary tactics and techniques covered by rules based on your data sources.  
+description: MITRE Coverage shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
 keywords:
   - MITRE ATT&CK
   - tactics
@@ -11,7 +11,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The MITRE Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary techniques, tactics, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system, based on your data sources. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide data sources so you can see the coverage they provide. This will allow you to evaluate the value of your data sources by adding or removing products from the list and seeing the impact those changes will have on coverage of attackers’ TTP.
+The MITRE Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
 
 To determine your coverage, MITRE Coverage collects data from rules that have fired in the last 180 days. 
 
@@ -22,10 +22,10 @@ To open the MITRE Coverage page, select **Content > MITRE Coverage**.
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" width="900"/>
 
 1. **Theoretical Coverage**. Shows coverage for your organization if all Sumo Logic content were enabled and all possible data sources were connected. If this is selected, the **Vendor/Product** filter is disabled.
-1. **Recent Signals**. Shows activity for your organization based on your Signals over the last 180 days. 
-1. **All Detected Activity**. Shows activity for all organizations that use Cloud SIEM over the last 180 days. Comparing this coverage to **Recent Signals** can help you determine what coverage you're missing compared to other organizations using Cloud SIEM.
-1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE coverage data. The file includes a score from 0 to 3 for each tactic/technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
-1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and procedures. 
+1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. 
+1. **All Community Activity**. Shows coverage for all customers that use Cloud SIEM based on Signals received over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activty** can help you determine what coverage you're missing compared to other customers using Cloud SIEM.
+1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE coverage data. The file includes a score from 0 to 3 for each technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
+1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and sub-techniques. 
 1. [**Vendor/Product**](#vendorproduct-filter). Click to filter on vendors and products that provide data sources. Select particular vendors to help you evaluate their coverage. 
 1. **Coverage**. Click to filter on coverage provided:
    * High (17 or more rules) 
@@ -37,8 +37,8 @@ To open the MITRE Coverage page, select **Content > MITRE Coverage**.
    * **Show Rule Count**. Shows the number of rules covering the technique.
    * **Show Technique ID**. Shows the technique ID. 
    * **Show Technique Name**. Shows the name of the technique.
-   * **Show Filtered**. Show only techniques that are filtered.
-1. **Total Coverage**. Estimated coverage for all tactics/techniques in the MITRE Enterprise Matrix. Note that it is impossible to get 100% coverage, because some techniques are undetectable by their very nature. The 
+   * **Show Filtered**. Shows only techniques that are filtered.
+1. **Total Coverage**. Estimated coverage for all techniques in the MITRE Enterprise Matrix. Note that it is impossible to get 100% coverage, because some techniques are undetectable by their very nature.  
 1. **Technique Coverage**. The number of techniques covered.
 1. **Sub-Technique Coverage**. The number of sub-techniques covered.
 1. **Coverage Type**. Key to the colors indicating coverage:
@@ -48,7 +48,7 @@ To open the MITRE Coverage page, select **Content > MITRE Coverage**.
    * None (10 or fewer rules)
    * Not detectable (no rules found)
    * Filter not applied
-1. **Matrix**. The tactics and techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). Click a square to see the coverage you have for that technique. A panel appears showing [technique details](#technique-details).
+1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
 
 ## Technique details
 
@@ -60,14 +60,14 @@ Click **Rules** at the bottom of the panel to see a list of all the rules that c
 
 ## MITRE TTP filter
 
-Use the **MITRE TTP** filter to search for specific MITRE tactics, techniques, and procedures. Used in combination with the **Product/Vendor** filter, you can see exactly which data sources provide coverage for specific TTPs. 
+Use the **MITRE TTP** filter to search for specific MITRE tactics, techniques, and sub-techniques. Used in combination with the **Product/Vendor** filter, you can see exactly which data sources provide coverage for specific TTPs. 
 
 <img src={useBaseUrl('img/cse/mitre-ttp-filter.png')} alt="MITRE TTP filter" width="300"/>
 
 ## Vendor/Product filter
 
-Use the **Vendor/Product** filter to search for data sources in your environment to see how well they provide coverage. Filtering on specific products and vendors helps you determine which provide the best coverage. Add or remove items from the list to see how different combinations provide coverage for the specific tactics and techniques you are most concerned about.
+Use the **Vendor/Product** filter to search for data sources in your environment to see how well they provide coverage. Filtering on specific products and vendors helps you determine which provide the best coverage. Add or remove items from the list to see how different combinations provide coverage for the specific techniques you are most concerned about.
 
-This filter is only enabled if you first select **Recent Signals** or **All Detected Activity**.  
+This filter is only enabled if you first select **Recent Activity** or **All Community Activity**.  
 
 <img src={useBaseUrl('img/cse/mitre-vendor-product-filter.png')} alt="MITRE vendor/product filter" width="300"/>
