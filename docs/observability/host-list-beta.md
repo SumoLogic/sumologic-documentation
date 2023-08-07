@@ -135,11 +135,11 @@ You can use any value for this attribute. If no value is assigned or if the tag 
 Environment attribute is populated:
 
 * **In metrics**
-- Using the value of the **deployment.environment** dimension.
-- Using the value of the **environment** dimension. 
+    - Using the value of the **deployment.environment** dimension.
+    - Using the value of the **environment** dimension. 
 
 * **In logs**
-- Using the value of the **deployment.environment** field.
+    - Using the value of the **deployment.environment** field.
 
 #### Group
 
