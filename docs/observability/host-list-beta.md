@@ -274,7 +274,7 @@ metric=Mem_ActualUsed _sourceHost=* | eval _value / (1024*1024*1024) | avg by _s
 
 The Alert column will display the most severe alert status, even if there are active alerts of a different state.
 
-The Alert count will display the sum of all active Alerts. 
+The Alert count will display the sum of all active alerts. 
 
 To view alert details, click on a row and view it in the right-hand-side panel.
 
