@@ -244,7 +244,7 @@ The **Memory Total** Indicator returns the total memory available expressed in G
 Total memory can be expressed using the **Average** aggregation method (although the value of this metric should remain the same, unless you modify your host’s specification).
 
 
-The value of the Memory Total Indicator is extracted using the following queries (depending on the collection method used):
+The value of the Memory Total indicator is extracted using the following queries (depending on the collection method used):
 
 ```sql
 metric=system.memory.usage state=* host.name=* | eval _value / (1024*1024*1024) | sum by deployment.environment, host.group, host.name
