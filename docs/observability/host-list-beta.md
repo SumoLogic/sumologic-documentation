@@ -309,7 +309,7 @@ If the tags are missing, do any one of the following:
 
 ### Indicator values are missing for some hosts
 
-Ensure that you have the metrics collection enabled for a given host. Sumo Logic recommends using Sumo Logic OpenTelemetry Collector to collect logs, metrics, and traces, as this method provides all of the functionality without any additional configuration. 
+Ensure that you have the metrics collection enabled for a given host. Sumo Logic recommends using [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) to collect logs, metrics, and traces, as this method provides all of the functionality without any additional configuration. 
 
 However, other collection methods are also supported, as described in the Indicators section of this document. 
 
