@@ -40,7 +40,7 @@ By default, indicators perform the aggregation across the selected time, but it 
 
 ### Environment
 
-You can use the **Environment** dropdown to display Hosts with a certain value of the **Environment** property. This dropdown is populated with all currently available values of the **Environment** attribute.
+You can use the **Environment** dropdown to display hosts with a certain value of the **Environment** property. This dropdown is populated with all currently available values of the **Environment** attribute.
 
 <img src={useBaseUrl('/img/observability/navigation_environment.png')} alt="navigation_environment" style={{border: '1px solid black'}} width="400"/>
 
