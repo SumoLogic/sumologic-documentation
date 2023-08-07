@@ -206,7 +206,7 @@ metric=CPU_Total _sourceHost=* | avg by _sourceHost
 
 #### Memory
 
-The **Memory** Indicator returns the total memory utilization expressed in percentages. Currently, the Memory can be calculated for the last 15 minutes or inherit the aggregation time period from the time range selector. 
+The **Memory** Indicator returns the total memory utilization expressed in percentages. Currently, the memory can be calculated for the last 15 minutes or inherit the aggregation time period from the time range selector. 
 
 Memory is expressed using one of the following aggregation methods:
 - Average
