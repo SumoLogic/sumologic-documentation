@@ -1800,6 +1800,7 @@
   "/cid/210729": "/docs/integrations/databases/elasticsearch",
   "/cid/210804": "/docs/integrations/databases/memcached",
   "/cid/10217": "/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry",
+  "/cid/10235": "/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry",
   "/cid/210817": "/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty",
   "/cid/210818": "/docs/integrations/amazon-aws/security-hub",
   "/cid/210819": "/docs/integrations/cloud-security-monitoring-analytics/aws-waf",
@@ -3571,6 +3572,6 @@
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source",
   "/docs/integrations/saas-cloud/ms-graph-azure-ad-reporting": "/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting",
   "/docs/integrations/saas-cloud/microsoft-graph-security": "/docs/integrations/saas-cloud/microsoft-graph-security-v1",
-  "/docs/cloud-soar/cloud-soar-delivery-2": "/docs/cloud-soar/overview",
+  "/docs/dashboards/edit-dashboards/manage-axis": "/docs/dashboards-classic/edit-dashboards/manage-axis",
   "/cid/-1": "/"
 }
