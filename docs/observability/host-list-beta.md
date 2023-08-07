@@ -20,7 +20,7 @@ Hosts List makes it easier to compare different types of hosts without the need 
 - Metrics
 - Spans
 
-All the information in the Hosts List is extracted from the data that you have already sent to Sumo Logic. If you wish to add more hosts, follow the instructions on [sending data to Sumo Logic](/docs/send-data/). By default, all Hosts are displayed as long as the related data available.
+All the information in the Hosts List is extracted from the data that you have already sent to Sumo Logic. If you wish to add more hosts, follow the instructions on [sending data to Sumo Logic](/docs/send-data/). By default, all hosts are displayed as long as the related data available.
 
 <img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid black'}} width="700"/>
 
