@@ -148,11 +148,11 @@ You can use any value for this attribute. If no value is assigned or if the tag 
 
 Group attribute is populated using:
 
-**In metrics**
-Using the value of the **host.group** dimension.
+* **In metrics**
+    Using the value of the **host.group** dimension.
 
-**In logs**
-Using the value of the **host.group** field. 
+* **In logs**
+    Using the value of the **host.group** field. 
 
 #### OS Type
 
