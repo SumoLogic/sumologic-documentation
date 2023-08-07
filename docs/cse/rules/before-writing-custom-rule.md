@@ -30,12 +30,7 @@ The first step is determining your use case. In part, this involves deciding wha
 
 In addition to what you're looking for, and where you can find it, you’ll decide on what sort of logic to apply when the rule encounters the target behavior. For example, is detecting one Record that matches your rule expression sufficient to fire a Signal, or should multiple matching Records be a condition for firing? Perhaps you need to look for multiple different types of events related by a common entity. The answers to these questions will determine what type of rule is appropriate for your use case. 
 
-CSE has four types of rules:
-
-* Match rule. Fires when an incoming Record matches the rule expression. A Match rule is stateless: it looks at a single Record, and it either fires or it doesn’t. For example, if you want to detect when a new Windows Firewall Rule is created, a Match rule will do the trick, because a single Record that contains the relevant security event should fire the rule.
-* Threshold rule. Fires when the rule expression is matched at least a certain number times during a specified length of time. For example, if there are five or more failed login attempts for the same IP address within one hour.
-* Chain rule. You can use a Chain rule to look for two or more types of events, and to fire, based on the frequency of each over a time window. For example, when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a Threshold rule, a Chain rule is stateful and counts multiple Records—the difference is that a Chain rule  apples multiple expressions to a Record. 
-* Aggregation rule. Fires when up to six aggregation conditions are met within a specified period of time. For example, when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period.
+Review the standard [rule types](/docs/cse/rules/about-cse-rules#rule-types) to determine if any of them can address your use case. 
 
 ## Review the log mapping for your source
 
