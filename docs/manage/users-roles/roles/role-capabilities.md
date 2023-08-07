@@ -9,164 +9,42 @@ Following are just some of the capabilities you can assign when you [create rol
 
 ## Data Management
 
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Manage connections
-   </td>
-   <td>Manage the <a href="/docs/manage/connections-integrations">connections</a> that allow you to send alerts to other tools.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Collectors
-   </td>
-   <td><a href="/docs/send-data">Install and manage</a> and Installed/Hosted Collectors and Sources. Manage permission automatically includes view permission.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Ingest Budgets
-   </td>
-   <td>Manage <a href="/docs/manage/ingestion-volume/ingest-budgets">ingest budgets</a>. Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage data volume feed
-   </td>
-   <td><a href="/docs/manage/ingestion-volume/data-volume-index">Enable and manage the data volume index</a> for your account to avoid using <a href="/docs/manage/manage-subscription/cloud-flex-accounts#Account-Capacity-Limitations">On-Demand Capacity</a>, and to determine when you need to upgrade your account.
-   </td>
-  </tr>
-  <tr>
-   <td>View Collectors
-   </td>
-   <td>View Collectors and Sources that have already been installed or added.
-   </td>
-  </tr>
-  <tr>
-   <td>View fields
-   </td>
-   <td>View <a href="/docs/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage fields
-   </td>
-   <td>Manage <a href="/docs/manage/fields">fields</a>, which are custom metadata fields you can assign to logs.
-<p>Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View field extraction rules capabilities.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>View field extraction rules
-   </td>
-   <td>View <a href="/docs/manage/field-extractions">field extraction rules</a>, which speed the search process by automatically parsing fields as log messages are ingested.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage field extraction rules
-   </td>
-   <td><a href="/docs/manage/field-extractions">Manage field extractions</a>, which speed the search process by automatically parsing fields as log messages are ingested.
-<p>Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>View Partitions
-   </td>
-   <td>View <a href="/docs/manage/partitions-data-tiers">Partitions</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Partitions
-   </td>
-   <td>View, create, edit, and delete <a href="/docs/manage/partitions-data-tiers">Partitions</a>.
-<p>Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>View Scheduled Views
-   </td>
-   <td>View <a href="/docs/manage/scheduled-views">Scheduled Views</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Scheduled Views
-   </td>
-   <td>View, create, edit, and delete <a href="/docs/manage/scheduled-views">Scheduled Views</a>. Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage S3 data forwarding
-   </td>
-   <td><a href="/docs/manage/data-forwarding/amazon-s3-bucket">Manage S3 data forwarding</a> from Sumo Logic to an S3 bucket.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Content
-   </td>
-   <td>Manage the content for your organization. This provides access to <a href="/docs/manage/content-sharing/admin-mode">Admin Mode</a> in the Library.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Tokens
-   </td>
-   <td>Manage <a href="/docs/manage/security/installation-tokens">Installation Tokens</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>View Account Overview
-   </td>
-   <td>View the Account Overview page.
-   </td>
-  </tr>
-  <tr>
-   <td>View Parsers
-   </td>
-   <td>View <a href="/docs/cse/schema/parser-editor">Parsers</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>Download Search Results
-   </td>
-   <td><a href="/docs/search/get-started-with-search/search-basics/export-search-results">Export</a> log query results to a .csv file.
-   </td>
-  </tr>
-</table>
+| Capability | Description |
+| :-- | :-- |
+| View Collectors	| View Collectors and Sources that have already been installed or added.| 
+| Manage Collectors	| [Install and manage](/docs/send-data) Installed/Hosted Collectors and Sources. Manage permission automatically includes view permission.| 
+| Manage Ingest Budgets	| Manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them.| 
+| Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid using [On-Demand Capacity](/docs/manage/manage-subscription/cloud-flex-accounts#account-limitations-and-guidelines), and to determine when you need to upgrade your account.| 
+| View Field Extraction Rules	| View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which speed the search process by automatically parsing fields as log messages are ingested.| 
+| View Fields	| View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs.| 
+| Manage Fields	| Manage fields, which are custom metadata fields you can assign to logs.Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View field extraction rules capabilities.| 
+| Manage Field Extraction Rules	| Manage [field extractions](/docs/manage/field-extractions), which speed the search process by automatically parsing fields as log messages are ingested. Note that if you grant a role the Manage field extraction rules capability, users with that role will also have the Manage Fields, View Fields, and View field extraction rules capabilities.| 
+| Manage S3 Data Forwarding	| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket.| 
+| Manage Content	| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library.| 
+| Manage Apps | Install apps. |
+| Manage Connections | Manage the [connections](/docs/manage/connections-integrations) that allow you to send alerts to other tools. |
+| View Scheduled Views	| View Scheduled Views.| 
+| Manage Scheduled Views	| View, create, edit, and delete [Scheduled Views](/docs/manage/scheduled-views). Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities.| 
+| View Partitions	| View [Partitions](/docs/manage/partitions-data-tiers).| 
+| Manage Partitions	| View, create, edit, and delete Partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities.| 
+| View Account Overview | Overview	View the Account Overview page.| 
+| Manage Tokens	| Manage [Installation Tokens](/docs/manage/security/installation-tokens).| 
+| View Parsers	| View [Parsers](/docs/cse/schema/parser-editor).| 
+| Download Search Results	| [Export](/docs/search/get-started-with-search/search-basics/export-search-results) log query results to a .csv file.| 
 
+## Entity Management
 
+| Capability | Description |
+| :-- | :-- |
+| Manage Entity Type Configs | Reserved for internal use. |
 
 ## Metrics
 
-<table>
-  <tr>
-   <td><strong>Capability</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Logs-to-Metrics
-   </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/logs-to-metrics">Logs-to-Metrics</a> rules.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Metrics Transformation Rules
-   </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/metrics-transformation-rules">Metrics Transformation rules</a>.
-   </td>
-  </tr>
-  <tr>
-   <td>Manage Metric Rules
-   </td>
-   <td>Create, edit, or delete <a href="/docs/metrics/metric-rules-editor">Metric Rules</a>.
-   </td>
-  </tr>
-</table>
-
-
+| Capability | Description |
+| :-- | :-- |
+| Manage Metrics Transformation Rules	| Create, edit, or delete [metrics transformation rules](/docs/metrics/metrics-transformation-rules).| 
+| Manage Logs-to-Metrics	| Create, edit, or delete [Logs-to-Metrics](/docs/metrics/logs-to-metrics) rules.| 
+| Manage Metrics Rules	| Create, edit, or delete [metrics rules](/metrics/metric-rules-editor/).| 
 
 ## Security
 
