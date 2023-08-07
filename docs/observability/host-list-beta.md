@@ -68,7 +68,7 @@ You can narrow down the list of visible hosts by the type of detected Operating 
 
 ### Cloud Provider
 
-You can narrow down the list of visible Hosts by the type of detected Cloud Provider (CP) running on a host. Hosts List can identify the following Cloud Providers:
+You can narrow down the list of visible Hosts by the type of detected cloud provider (CP) running on a host. Hosts List can identify the following cloud providers:
 
 - AWS
 - Azure
