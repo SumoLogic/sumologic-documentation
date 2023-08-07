@@ -239,7 +239,7 @@ metric=CPU_LoadAvg_15min _sourceHost=* | avg by _sourceHost
 
 #### Memory Total
 
-The **Memory Total** Indicator returns the total memory available expressed in GiB. Currently, the total memory can be displayed for the last 15 minutes.
+The **Memory Total** indicator returns the total memory available expressed in GiB. Currently, the total memory can be displayed for the last 15 minutes.
 
 Total memory can be expressed using the **Average** aggregation method (although the value of this metric should remain the same, unless you modify your host’s specification).
 
