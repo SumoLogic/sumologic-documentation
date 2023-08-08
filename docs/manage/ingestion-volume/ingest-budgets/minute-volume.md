@@ -27,7 +27,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 ## Rules
 
 * Metrics and Traces data is not supported.
-* Fields assigned with Field Extraction Rules are not supported in the scope of an Ingest Budget.
+* Fields assigned with Field Extraction Rules are not supported in the scope of an ingest budget.
 * `_budget` is a reserved keyword used by legacy ingest budgets. Do not use this reserved field when creating a new ingest budget.
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * Avoid creating multiple Ingest Budgets with the same scope. In such a scenario, Ingest budgets whose capacity is reached first is executed.
