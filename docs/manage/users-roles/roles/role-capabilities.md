@@ -44,7 +44,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | :-- | :-- |
 | Manage Metrics Transformation Rules	| Create, edit, or delete [metrics transformation rules](/docs/metrics/metrics-transformation-rules).| 
 | Manage Logs-to-Metrics	| Create, edit, or delete [Logs-to-Metrics](/docs/metrics/logs-to-metrics) rules.| 
-| Manage Metrics Rules	| Create, edit, or delete [metrics rules](/metrics/metric-rules-editor/).| 
+| Manage Metrics Rules	| Create, edit, or delete [metrics rules](/docs/metrics/metric-rules-editor/).| 
 
 ## Security
 
