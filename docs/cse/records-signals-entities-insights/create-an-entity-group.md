@@ -113,4 +113,4 @@ array_contains(fieldTags["srcDevice_ip"], "DB Server")
 
 ## API support
 
-You can use the the `/entity-group-configuration` API to create, read, update and delete Entity Groups. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
+You can use the `/entity-group-configuration` API to create, read, update, and delete Entity Groups. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
