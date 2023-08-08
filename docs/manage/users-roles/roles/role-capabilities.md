@@ -12,7 +12,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Capability | Description |
 | :-- | :-- |
 | View Collectors	| View collectors and sources that have already been installed or added.| 
-| Manage Collectors	| [View and manage](/docs/send-data) installed and hosted collectors, as well a sources. | 
+| Manage Collectors	| [View and manage](/docs/send-data) installed and hosted collectors as well as sources. | 
 | Manage Ingest Budgets	| Manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different collectors, but not creating or deleting them.| 
 | Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid using [On-Demand Capacity](/docs/manage/manage-subscription/cloud-flex-accounts#account-limitations-and-guidelines), and to determine when you need to upgrade your account.| 
 | View Field Extraction Rules	| View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which speed the search process by automatically parsing fields as log messages are ingested.| 
