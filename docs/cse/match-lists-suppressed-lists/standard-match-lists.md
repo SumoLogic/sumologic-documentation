@@ -4,13 +4,15 @@ title: Entity Tags and Standard Match Lists
 description: Learn about Entity Tags and standard Match Lists in CSE.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has information about how you can identify specific Entities or indicators that should be treated differently during CSE rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a Signal if a user Entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
-* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
+* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
 :::tip
-The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
+The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), and allow CSE to automatically apply tags based on group membership.
 :::
-* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
 
 
 ## Schema tag keys for Entities
