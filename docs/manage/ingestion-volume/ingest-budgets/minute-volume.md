@@ -105,6 +105,6 @@ _index=sumologic_audit_events minuteVolume stopCollecting
    | sort by datasize desc
    | limit 1
    ```
-1. Keep this value and add a 10% to 15% buffer while setting up Minute Volume Ingest Budgets.
-1. Complete Ingest Budget Setup.
+1. Keep this value and add a 10% to 15% buffer while setting up **Minute Volume** ingest budgets.
+1. Complete ingest budget setup.
 1. Set up saved searches on events when ingest budget threshold is breached.
