@@ -24,7 +24,7 @@ The Insight Enrichment Server periodically polls CSE for new Insights. If an Ins
 
 The enrichment shown below returned the IP address associated with the hostname that is the Entity for the Insight.
 
-<img src={useBaseUrl('img/cse//enrichment-1a.png')} alt="Example enrichment" width="800"/>
+<img src={useBaseUrl('img/cse/enrichment-1a.png')} alt="Example enrichment" width="800"/>
 
 ## Create configuration file
 
