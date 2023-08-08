@@ -22,7 +22,7 @@ Ingest Budgets Minute Volume lets you control data ingestion to minute granulari
 
 Log data can be assigned to an ingest budget that defines a minute log capacity limit. The capacity is tracked based on the combined volume from all sources of log data. When an ingest budget's capacity is reached, you can have Sumo Logic stop collecting the log data assigned to it to safeguard against data volume spikes.
 
-An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset.
+An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached, and continues to be logged until the budget is reset.
 
 ## Rules
 
