@@ -52,15 +52,15 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. Click the **+ Add Budget** button on the top right of the table. A panel named Create Ingest Budget will appear to the right of the Ingest Budgets table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid black'}} width="600" />
 1. Provide the following information.
-   * **Display Name**. Enter the name you'd like to assign to the new ingest budget.
-   * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all Data Tiers to find the right Ingestion trend.
+   * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.
+   * **Scope**. Define the log data to apply to the ingest budget. See budget assignment for details and review the rules above. Once scope is defined, you can click on the hyperlink to view the ingest rate of your defined scope. Sumo Logic populates a query to run across all Data Tiers to find the right Ingestion trend.
    * **Capacity**. There are two types of capacity definition.
-      * Select Minute Volume
-      * Amount. Enter a value up to 1023.999.
-      * Unit. Select a unit of volume - KB/min, MB/min, GB/min
-      * Action when capacity reached. Select the action to take when the ingest budget's capacity is reached. All actions are audited.
-         * **Stop Collecting**. Collection stops immediately. There are important differences depending on the Source type and version
+      * Select **Minute Volume**.
+      * **Amount.** Enter a value up to 1023.999.
+      * **Unit**. Select a unit of volume - KB/min, MB/min, GB/min
+      * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are audited.
+         * **Stop Collecting**. Collection stops immediately. There are important differences depending on the source type and version
          * **Audit and Keep Collecting**. Collection remains the same.
 1. When you're finished configuring the ingest budget, click **Add**.
 
