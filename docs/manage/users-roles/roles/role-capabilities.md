@@ -107,7 +107,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 ## Cloud SOAR
 
-[Cloud SOAR](/docs/cloud-soar/) capabilities only appear in the Roles UI if Cloud SOAR has been enabled for your account.
+[Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
