@@ -86,18 +86,6 @@ Assign the _userGroup tag to users accounts  known to be involved with specific 
 
 ## Standard match lists
 
-### admin_ips
-
-**Target column:** Source IP Address (`SrcIp`)
-
-**Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
-
-The following CSE rules refer to this Match List:
-
-* PSEXEC Admin Tool Detection
-* PowerShell Remote Administration
-* SMB write to admin hidden share
-
 ### admin_accounts
 
 **Target column:** Username (`Username`)
@@ -107,6 +95,18 @@ The following CSE rules refer to this Match List:
 The following CSE rules refer to this Match List:
 
 * Windows - Excessive User Interactive Logons Across Multiple Hosts
+
+### admin_ips
+
+**Target column:** Source IP Address (`SrcIp`)
+
+**Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
+
+The following CSE rules refer to this Match List:
+
+* PowerShell Remote Administration
+* PSEXEC Admin Tool Detection
+* SMB write to admin hidden share
 
 ### admin_username
 
@@ -118,21 +118,21 @@ The following CSE rules refer to this Match List:
 
 * Lateral Movement Using the Windows Hidden Admin Share
 
-### Alibaba_admin_users
-
-**Target column:** Username (`Username`)
-
-**Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
-
-The following CSE rules refer to this Match List:
-
-* Alibaba ActionTrail KMS Activity
-
 ### Alibaba_admin_ips
 
 **Target column:** IP Address (`Ip`)
 
 **Description:** IPs that are known to be involved with specific administrative or privileged activity on the network.
+
+The following CSE rules refer to this Match List:
+
+* Alibaba ActionTrail KMS Activity
+
+### Alibaba_admin_users
+
+**Target column:** Username (`Username`)
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
 
 The following CSE rules refer to this Match List:
 
@@ -436,6 +436,30 @@ The following CSE rules refer to this Match List:
 
 none
 
+### gcp_admin
+
+**Target column:** Username (`Username`) or Source IP Address (`SrcIp`)
+
+**Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
+
+The following CSE rules refer to this Match List:
+
+* GCP Audit Cloud SQL Database Modified
+* GCP Audit GCE Firewall Rule Modified
+* GCP Audit GCE Network Route Created or Modified
+* GCP Audit GCE VPC Network Modified
+* GCP Audit IAM CreateServiceAccount Observed
+* GCP Audit IAM Custom Role Created or Modified
+* GCP Audit IAM Custom Role Deletion
+* GCP Audit IAM DeleteServiceAccount Observed
+* GCP Audit IAM DisableServiceAccount Observed
+* GCP Audit KMS Activity
+* GCP Audit Logging Sink Modified
+* GCP Audit Pub/Sub Subscriber Modified
+* GCP Audit Pub/Sub Topic Deleted
+* GCP Audit Secrets Manager Activity
+* GCP Bucket Modified
+
 ### GCP_admin_ips
 
 **Target column:** Source IP Address (`SrcIp`)
@@ -469,30 +493,6 @@ The following CSE rules refer to this Match List:
 * GCP Instance Deletion
 * GCP Instance Discovery
 * GCP Instance Modification
-
-### gcp_admin
-
-**Target column:** Username (`Username`) or Source IP Address (`SrcIp`)
-
-**Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
-
-The following CSE rules refer to this Match List:
-
-* GCP Audit Cloud SQL Database Modified
-* GCP Audit GCE Firewall Rule Modified
-* GCP Audit GCE Network Route Created or Modified
-* GCP Audit GCE VPC Network Modified
-* GCP Audit IAM CreateServiceAccount Observed
-* GCP Audit IAM Custom Role Created or Modified
-* GCP Audit IAM Custom Role Deletion
-* GCP Audit IAM DeleteServiceAccount Observed
-* GCP Audit IAM DisableServiceAccount Observed
-* GCP Audit KMS Activity
-* GCP Audit Logging Sink Modified
-* GCP Audit Pub/Sub Subscriber Modified
-* GCP Audit Pub/Sub Topic Deleted
-* GCP Audit Secrets Manager Activity
-* GCP Bucket Modified
 
 ### Google_Workspace_admin_ips
 
@@ -566,6 +566,26 @@ The following CSE rules refer to this Match List:
 
 * Spike in URL Length from IP Address
 
+### known_docker_images
+
+**Target column:** 
+
+**Description:** 
+
+The following CSE rules refer to this Match List:
+
+* Unrecognized Container Image
+
+### known_windows_processes
+
+**Target column:** Hostname (`Hostname`)
+
+**Description:** 
+
+The following CSE rules refer to this Match List:
+
+* Fake Windows Processes
+
 ### lan_scanner_exception_ips
 
 **Target column:** IP Address (`Ip`)
@@ -636,6 +656,16 @@ The following CSE rules refer to this Match List:
 The following CSE rules refer to this Match List:
 
 * Okta Admin App Accessed
+
+### OneLogin_Untrusted_Location
+
+**Target column:** 
+
+**Description:** 
+
+The following CSE rules refer to this Match List:
+
+* OneLogin - API Credentials - Key Used from Untrusted Location
 
 ### palo_alto_sinkhole_ips
 
@@ -778,7 +808,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 
 ### scanner_targets
 
@@ -856,8 +885,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel - Inbound Traffic Context
 * Threat Intel - Matched File Hash
 * Threat Intel - Matched Domain Name
-* Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 
 ### unauthorized_external_media
 
@@ -905,7 +932,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 
 ### verified_hostnames
 
@@ -932,7 +958,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to Punycode Domain
 
 ### verified_ips
@@ -948,7 +973,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to IP Address
 
 ### verified_uri_ips
@@ -1055,6 +1079,7 @@ The following CSE rules refer to this Match List:
 * SSL Heartbleed Attack
 * Script/CLI UserAgent string
 * Shellshock
+* Spike in Login Failures from a User
 * Spring4Shell Exploitation - URL
 * Successful Brute Force
 * Suspicious HTTP User-Agent
