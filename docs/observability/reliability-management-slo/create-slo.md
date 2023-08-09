@@ -296,7 +296,7 @@ You can see the list of all saved filter views by clicking on the funnel icon.
 
 <img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
 
-You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon. 
+You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon.
 
 <img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
 
@@ -314,10 +314,6 @@ To create an SLO from the **Metrics** page:
 You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should be a pure selector query. You can specify one or more operators in the query for SLO.
 
 As an example, a pure selector query with no operators is `_sourceHost=stag-monitor-manager metric=CPU_Total`. That same query using the `sum` operator would be `_sourceHost=stag-monitor-manager metric=CPU_Total | sum`.
-
-:::note limitations
-We will initially start with some confined operators and slowly open up the operator list for our users. <!-- Does this mean not available to all customers yet? Or not all metrics operators available yet? -->
-:::
 
 ## Create an SLO from Monitors list page
 
