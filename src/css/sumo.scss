@@ -247,7 +247,7 @@ html[data-theme='light'] {
     no-repeat;
 }
 
-
+//Free Trial nav button
 
 .header-trial:hover {
   opacity: 0.85;
@@ -258,8 +258,8 @@ html[data-theme='light'] {
   border: 1px solid #2aa1e6;
   color: #FFF;
   border-radius: 3px;
-  padding: 4px 10px;
-  font-size: 14px;
+  padding: 3px 8px;
+  font-size: 12px;
   display: inline-flex;
   background: #2aa1e6;
 }
@@ -275,6 +275,35 @@ html[data-theme='light'] {
   color: #FFF;
   display: inline-flex;
   background: #2aa1e6;
+}
+
+//Contact Support nav button
+.header-support:hover {
+  opacity: 0.65;
+}
+
+.header-support::before {
+  content: 'Contact Support';
+  background: transparent;
+  border: 1px solid #000;
+  color: var(--ifm-navbar-link-color);
+  border-radius: 3px;
+  padding: 3px 8px;
+  font-size: 12px;
+  display: inline-flex;
+}
+
+.header-support::after {
+    display: none !important;
+    content: none !important;
+}
+
+[data-theme='dark'] .header-support::before {
+  background: transparent;
+  border: 1px solid #E5F4FA;
+  color: var(--ifm-navbar-link-color);
+  border-radius: 3px;
+  display: inline-flex;
 }
 
 
