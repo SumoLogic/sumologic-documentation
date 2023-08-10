@@ -309,7 +309,10 @@ You can make further modifications to a saved filter view later using kebab menu
 
 To create an SLO from the **Metrics** page:
 
-1. Click xyz...
+1. Go to **Manage Data** > **Metrics**.
+1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.
+1. Click the three-dot kebab icon, then select **Create SLO**.
+1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
 
 You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should be a pure selector query. You can specify one or more operators in the query for SLO.
 
