@@ -21,7 +21,7 @@ This page has information about the options available to your Sumo Logic account
 
 For Cloud Flex Credits:
 
-![manage-org-links-cfc.png](/img/subscriptions/manage-org-links-cfc.png)
+![manage-org-links-cfc2.png](/img/subscriptions/manage-org-links-cfc2.png)
 
 For Cloud Flex:
 
