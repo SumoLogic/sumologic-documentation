@@ -41,7 +41,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logexplain\<event_condition\> [against\<against_condition\>] on\<fieldname\> [,\<fieldname\>, ...]
+| logexplain <event_condition> [against <against_condition>] on <fieldname>[,<fieldname>, ...]
 ```
 
 | Parameter | Description |
