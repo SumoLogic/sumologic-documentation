@@ -561,6 +561,10 @@ $ terraform destroy
 
 This will destroy all [resources](resources.md) and configuration previously set up.
 
+## Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
+
+To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
+
 ## Appendix
 
 ### Override Source Parameters
@@ -635,6 +639,10 @@ module "collection-module" {
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/source-module/variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/source-module/variables.tf) file for complete code.
 
 ### Configure collection of CloudWatch metrics
+
+:::note
+To migrate CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
+:::
 
 #### collect_cloudwatch_metrics
 
@@ -997,6 +1005,10 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 ```
 
 ### Configure collection of CloudTrail logs
+
+:::note
+To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
+:::
 
 #### collect_cloudtrail_logs
 
@@ -1640,3 +1652,14 @@ on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologi
 ```
 #### Solution
 Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom terraform script accordingly.
+
+### Error creating Serverless Application Repository CloudFormation Stack
+#### Error Message
+
+While upgrading AWS Observability Solution (Terraform) from v2.3.0 to v2.4.0 and onwards, upgrade failed with the following reason.
+
+`Error: error creating Serverless Application Repository CloudFormation Stack (arn:aws:cloudformation:us-east-1:XXXXXXXXX:stack/serverlessrepo-serverless-hello-world-test/7a6ef230-35a6-11zb-98ff-0ab512dce13f) change set: unexpected state 'FAILED', wanted target 'CREATE_COMPLETE'. last error: %!s()`
+
+### Cause
+
+Update fails due to a bug that `aws_serverlessapplicationrepository_cloudformation_stack` resource is not able to store values of `var.auto_enable_access_logs` (as specified in our code),  on each subsequent terraform apply(s) , it detects it as change and creates a new stack-set. When the AWS API is called with a new stack-set it fails abruptly which causes the whole solution to fail while upgrading. 
