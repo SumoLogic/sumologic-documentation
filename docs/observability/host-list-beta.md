@@ -22,7 +22,7 @@ Hosts List makes it easier to compare different types of hosts without the need 
 
 All the information in the Hosts List is extracted from the data that you have already sent to Sumo Logic. If you wish to add more hosts, follow the instructions on [sending data to Sumo Logic](/docs/send-data/). By default, all hosts are displayed as long as the related data available.
 
-<img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid black'}} width="700"/>
+<img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid black'}} width="800"/>
 
 Clicking on any of the rows brings up the **Entity Inspector** panel that provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the Explore view.
 
