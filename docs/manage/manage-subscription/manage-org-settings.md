@@ -29,7 +29,7 @@ For Cloud Flex:
 
 ## Change organization name
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**.
+1. In the left navigation bar of the UI, select **Administration** > **Account**. 
 1. Select the details icon at the top and select **Manage Organization** > **Change Organization Name.**
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" width="450"/>
