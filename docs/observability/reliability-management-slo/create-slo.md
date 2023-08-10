@@ -296,7 +296,7 @@ You can see the list of all saved filter views by clicking on the funnel icon.
 
 <img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
 
-You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon.
+You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon. 
 
 <img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
 
