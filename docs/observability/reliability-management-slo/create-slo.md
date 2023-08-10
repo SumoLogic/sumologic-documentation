@@ -314,7 +314,7 @@ To create an SLO from the **Metrics** page:
 1. Click the three-dot kebab icon, then select **Create SLO**.
 1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
 
-You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should be a pure selector query. You can specify one or more operators in the query for SLO.
+You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should have a quantization after the selector. You can specify one or more operators in the query for SLO.
 
 As an example, a pure selector query with no operators is `_sourceHost=stag-monitor-manager metric=CPU_Total`. That same query using the `sum` operator would be `_sourceHost=stag-monitor-manager metric=CPU_Total | sum`.
 
