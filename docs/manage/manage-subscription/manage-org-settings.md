@@ -4,7 +4,7 @@ title: Manage Organizational Settings
 description: An account owner can update org names, define customized subdomain names, delete orgs, and change the account owner.
 keywords:
     - subdomain
-    - orgs 
+    - orgs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,7 +21,7 @@ This page has information about the options available to your Sumo Logic account
 
 For Cloud Flex Credits:
 
-![manage-org-links-cfc2.png](/img/subscriptions/manage-org-links-cfc2.png)
+![manage-org-links-cfc.png](/img/subscriptions/manage-org-links-cfc.png)
 
 For Cloud Flex:
 
@@ -29,7 +29,7 @@ For Cloud Flex:
 
 ## Change organization name
 
-1. In the left navigation bar of the UI, select **Administration** > **Account**. 
+1. In the left navigation bar of the UI, select **Administration** > **Account**.
 1. Select the details icon at the top and select **Manage Organization** > **Change Organization Name.**
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" width="450"/>
