@@ -99,7 +99,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Config Object
 
 <!--
-Add information about the configuration parameteres. Update the below table accordingly.
+Add information about the configuration parameters. Update the below table accordingly.
 -->
 
 | Parameter | Type | Required | Default | Description | Example |
