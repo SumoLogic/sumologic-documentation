@@ -296,7 +296,7 @@ You can see the list of all saved filter views by clicking on the funnel icon.
 
 <img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
 
-You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon. 
+You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon.
 
 <img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
 
@@ -310,7 +310,7 @@ You can make further modifications to a saved filter view later using kebab menu
 To create an SLO from the **Metrics** page:
 
 1. Go to **Manage Data** > **Metrics**.
-1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.
+1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
 1. Click the three-dot kebab icon, then select **Create SLO**.
 1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
 
