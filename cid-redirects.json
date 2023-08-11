@@ -2353,6 +2353,7 @@
   "/cid/09002": "/docs/manage/data-forwarding/manage",
   "/cid/09051": "/docs/integrations/databases/oracle",
   "/cid/9002": "/docs/integrations/web-servers/nginx-ingress",
+  "/cid/12345": "/docs/integrations/webhooks/postman",
   "/cid/9003": "/docs/integrations/microsoft-azure/windows-json",
   "/cid/9004": "/docs/integrations/microsoft-azure/active-directory-json",
   "/cid/9006": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/aws-network-firewall",
