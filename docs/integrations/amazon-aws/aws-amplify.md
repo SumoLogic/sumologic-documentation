@@ -22,7 +22,7 @@ This section has instructions for collecting logs and metrics for the Sumo Logic
 
 ### Configure metrics collection
 
-* Collect CloudWatch Metrics with namespace AWS/AmplifyHosting using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/AmplifyHosting metrics and dimensions refer [AWS Amplify CloudWatch metrics](https://docs.aws.amazon.com/amplify/latest/userguide/access-logs.html#monitoring-with-cloudwatch).
+* Collect CloudWatch Metrics with namespace AWS/AmplifyHosting using [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/AmplifyHosting metrics and dimensions refer to [AWS Amplify CloudWatch metrics](https://docs.aws.amazon.com/amplify/latest/userguide/access-logs.html#monitoring-with-cloudwatch).
 
 ### Configure logs collection
 
