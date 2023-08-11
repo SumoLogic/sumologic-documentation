@@ -83,7 +83,7 @@ Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly
 -->
 
 | Field | Value | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | {{`field`}} | {{value}} | {{Description}} |
 
 ## JSON schema
