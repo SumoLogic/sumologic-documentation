@@ -113,7 +113,7 @@ Add information about the configuration parameters. Update the below table accor
 ### JSON example
 
 <!--
-Create and Add the JSON config in the dropbox and import it here.
+Create and add the JSON config in the dropbox and import it here.
 -->
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
