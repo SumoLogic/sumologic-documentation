@@ -45,7 +45,7 @@ Follow the below steps to configure the Buddy webhook:
 3. Search for **Webhook** and select it. the webhook form appears.
 4. Enter webhook form data as follows:
     - **NAME**. Provide a name for your webhook.
-    - **PAYLOAD URL**. Enter the Sumo Logic HTTP endpoint URL(source address) created above.
+    - **PAYLOAD URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
     - **TRIGGER ON EVENTS**. Select the type of events that will cause this webhook to execute.
     - **ENABLE IN PROJECTS**. Select the projects for which you want the events to be sent to Sumo Logic. 
 5. Click **Save Changes**.
