@@ -130,5 +130,5 @@ Click an Entity name to drill down to see rules and [MITRE ATT&CK](https://attac
 
 Sometimes you may want to exclude certain Entities from being reported in alerts because you know they are safe and do not pose a threat. You can suppress Entities for a given rule by entering a comma-separated value which includes the rule ID and the Entity that you want to suppress. Suppression is a one-time action and cannot be reversed.
 
-1. Open the **Security Analytics App Suppression Lookup Update** search. 
+1. Open the **Security Foundations App Suppression Lookup Update** search. 
 1. In the supplied field, replace `rule_id,entity` with the rule ID and Entity you want to suppress. If you need to suppress multiple Entities, create a CSV file with the comma-separated values and [append](/docs/search/search-query-language/search-operators/save#using-save-with-append) the CSV file to the existing lookup table.
