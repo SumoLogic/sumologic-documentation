@@ -50,6 +50,6 @@ Follow the below steps to configure the Postman webhook:
     `_sourcecategory=webhook/postman`
 
 :::note
-- For detailed information about webhook creation, refer [Postman Documentation](https://learning.postman.com/docs/integrations/webhooks/).
+- For detailed information about webhook creation, refer to [Postman documentation](https://learning.postman.com/docs/integrations/webhooks/).
 - For support, contact the [Postman support center](https://support.postman.com/hc/en-us). 
 :::
