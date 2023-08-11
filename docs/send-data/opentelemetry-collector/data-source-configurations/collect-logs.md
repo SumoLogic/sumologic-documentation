@@ -378,6 +378,10 @@ For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_
 
 The [SQL Query receiver][sqlquery_receiver_docs] retrieves logs from SQL databases, including MySQL, Oracle and PostgreSQL. See below for configuration for a specific database engine.
 
+:::note
+This section describes the configuration to collect logs stored in DB tables using queries. If you intend to monitor database applications availability, performance, and resource utilization of MySQL database clusters, visit [Database Monitoring](/docs/integrations/databases) and find the database of your choice.
+:::
+
 ### Collecting logs from a MySQL database
 
 Here's an example configuration for MySQL that you can place in the `conf.d` directory:
