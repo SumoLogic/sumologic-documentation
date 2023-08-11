@@ -11,7 +11,7 @@ Postman is an API development tool that streamlines API building, testing, and m
 
 ## Event types
 
-The Sumo Logic integration for Postman ingests Postman events into Sumo Logic through an outgoing webhook available in Postman. For more information on supported events that are ingested through the Postman webhook, refer [Postman documentation](https://learning.postman.com/docs/integrations/webhooks/).
+The Sumo Logic integration for Postman ingests Postman events into Sumo Logic through an outgoing webhook available in Postman. For more information on supported events that are ingested through the Postman webhook, refer to [Postman documentation](https://learning.postman.com/docs/integrations/webhooks/).
 
 ## Setup
 
