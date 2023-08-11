@@ -42,7 +42,7 @@ Follow the below steps to configure the Buddy webhook:
 
 1. Sign in to the [Buddy account](https://buddy.works/sign-in).
 2. Go to **Integrations** section, select **New Integration**.
-3. Search for **Webhook** and select it, the webhook form appears.
+3. Search for **Webhook** and select it. the webhook form appears.
 4. Enter webhook form data as follows:
     - **NAME**. Provide a name for your webhook.
     - **PAYLOAD URL**. Enter the Sumo Logic HTTP endpoint URL(source address) created above.
