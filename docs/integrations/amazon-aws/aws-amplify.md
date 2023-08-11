@@ -1,7 +1,7 @@
 ---
 id: aws-amplify
 title: AWS Amplify
-description: Learn about the collection process for the AWS Amplify app.
+description: Learn about the collection process for the AWS Amplify service.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -18,7 +18,7 @@ AWS Amplify is a set of purpose-built tools and features that enables frontend w
 
 ## Setup
 
-This section has instructions for collecting logs and metrics for the Sumo Logic AWS Amplify app.
+This section has instructions for collecting logs and metrics for the Sumo Logic AWS Amplify integration.
 
 ### Configure metrics collection
 
