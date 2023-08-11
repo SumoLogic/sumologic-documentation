@@ -26,7 +26,7 @@ Follow the steps to setup and configure the Buddy collection.
 
 Follow the below steps to configure the Hosted Collector to receive Buddy events:
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source. For example, configure as `webhook/buddy` for the Buddy integration.
 3. Copy and save the endpoint URL of the source.
 
