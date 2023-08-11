@@ -51,5 +51,5 @@ Follow the below steps to configure the Postman webhook:
 
 :::note
 - For detailed information about webhook creation, refer [Postman Documentation](https://learning.postman.com/docs/integrations/webhooks/).
-- For support, contact [Postman support center](https://support.postman.com/hc/en-us). 
+- For support, contact the [Postman support center](https://support.postman.com/hc/en-us). 
 :::
