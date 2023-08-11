@@ -47,7 +47,7 @@ Example:
 -->
 
 | Polling Interval | Data |
-| --- | --- |
+| :--- | :--- |
 | {{Polling time in minutes}} | {{Data sources}} | 
 
 
