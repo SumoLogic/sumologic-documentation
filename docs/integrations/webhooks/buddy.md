@@ -53,5 +53,5 @@ Follow the below steps to configure the Buddy webhook:
 
 :::info
 - For detailed information about webhook creation, refer to [Buddy documentation](https://buddy.works/docs/integrations/webhooks).
-- For support, email to `support@buddy.works`. 
+- For support, email to [support@buddy.works](mailto:support@buddy.works). 
 :::
