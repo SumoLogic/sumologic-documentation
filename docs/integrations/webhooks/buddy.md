@@ -52,6 +52,6 @@ Follow the below steps to configure the Buddy webhook:
 6. Verify Buddy events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel: `_sourcecategory=webhook/buddy`
 
 :::info
-- For detailed information about webhook creation, refer [Buddy Documentation](https://buddy.works/docs/integrations/webhooks).
+- For detailed information about webhook creation, refer to [Buddy documentation](https://buddy.works/docs/integrations/webhooks).
 - For support, email to `support@buddy.works`. 
 :::
