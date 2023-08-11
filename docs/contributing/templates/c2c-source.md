@@ -123,7 +123,7 @@ Create and Add the JSON config in the dropbox and import it here.
 ### Terraform example
 
 <!--
-Create and Add the Terraform config in the dropbox and import it here.
+Create and add the Terraform config in the dropbox and import it here.
 -->
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
