@@ -2236,6 +2236,7 @@ integrations: [
         collapsible: true,
         collapsed: true,
         items: [
+          'integrations/webhooks/buddy',
           'integrations/webhooks/postman',
         ],
       },
