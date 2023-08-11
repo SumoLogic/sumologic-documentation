@@ -29,7 +29,7 @@ Follow the below steps to configure the Hosted Collector and receive Postman eve
 
 Configure the webhook integration in Postman to connect to your Sumo Logic HTTP Source. Once configured, it will be triggered each time the events occur within your Postman account.
 
-Follow the below steps to configure the Postman Webhook:
+Follow the below steps to configure the Postman webhook:
 
 1. Sign in to your [Postman account](https://identity.getpostman.com/login?continue=https%3A%2F%2Fgo.postman.co%2Fbuild).
 1. On the home page, click on the **Integrations** tab from the left sidebar.
