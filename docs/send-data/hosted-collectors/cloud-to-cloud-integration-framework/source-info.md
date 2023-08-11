@@ -18,6 +18,7 @@ When you create a C2C Source, it goes through the following states:
 If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
+
 On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.
