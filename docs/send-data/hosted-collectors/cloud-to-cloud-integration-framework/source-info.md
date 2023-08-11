@@ -5,6 +5,7 @@ slug: /c2c/info
 tags:
   - cloud-to-cloud
 ---
+
 ## States
 
 When you create a C2C Source, it goes through the following states:
