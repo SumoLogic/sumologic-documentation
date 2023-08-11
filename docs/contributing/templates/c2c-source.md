@@ -11,9 +11,11 @@ description:  Description goes here. #example: Learn how to configure the Druva 
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-<!--import ExampleJSON from '/img/c2c/c2c-name/example.json'; #example: /img/c2c/dropbox/example.json
+<!--
+import ExampleJSON from '/img/c2c/c2c-name/example.json'; #example: /img/c2c/dropbox/example.json
 import MyComponentSource from '!!raw-loader!/img/c2c/c2c-name/example.json'; #example: !!raw-loader!/img/c2c/dropbox/example.json
-import TerraformExample from '!!raw-loader!/img/c2c/c2c-name/example.tf'; #example: !!raw-loader!/img/c2c/dropbox/example.tf -->
+import TerraformExample from '!!raw-loader!/img/c2c/c2c-name/example.tf'; #example: !!raw-loader!/img/c2c/dropbox/example.tf 
+-->
 import useBaseUrl from '@docusaurus/useBaseUrl';
 export const icon = 'https://app_icons.s3.amazonaws.com/dropbox.svg';
 
