@@ -22,7 +22,7 @@ Where: 
     * `count`. Rank matching time series by the count of the metric values across the time range, and return the top n time series. 
     * `sum`. Rank matching time series by the sum of the metric values across the time range, and return the top n time series.
     * `pct(n)`. Return the n time series for which the calculated percentile of the metric values across the time range was lowest, and return the top n. 
-    * `latest`. Rank matching time series by when the most recent data point was received, and return the top n time series. 
+    * `latest`. Rank matching time series by the value of the most recently ingested datapoint, and return the top n time series. 
 
 ## Examples
 
