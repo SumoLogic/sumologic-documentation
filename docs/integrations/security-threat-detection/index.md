@@ -21,7 +21,7 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 <div className="box smallbox2 card">
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/alert-logic">
-  <img src={useBaseUrl('img/integrations/security-threat-detection/alert-logic-logo.png')} alt="icon" width="120"/><h4>Alert Logic</h4></a>
+  <img src={useBaseUrl('img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="icon" width="150"/><h4>Alert Logic</h4></a>
   <p>A guide to the Sumo Logic app for Alert Logic.</p>
   </div>
 </div>
@@ -60,13 +60,13 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 </div>
 <div className="box smallbox8 card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="75"/><h4>CrowdStrike Falcon Endpoint Protection</h4></a>
+  <a href="/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="50"/><h4>CrowdStrike Falcon Endpoint Protection</h4></a>
   <p>A guide to the Sumo Logic app for CrowdStrike.</p>
   </div>
 </div>
 <div className="box smallbox9 card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/cylance"><img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="75"/><h4>Cylance</h4></a>
+  <a href="/docs/integrations/security-threat-detection/cylance"><img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="50"/><h4>Cylance</h4></a>
   <p>A guide to the Sumo Logic app for Cylance.</p>
   </div>
 </div>
