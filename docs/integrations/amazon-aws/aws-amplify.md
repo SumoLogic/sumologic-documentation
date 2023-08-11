@@ -26,7 +26,7 @@ This section has instructions for collecting logs and metrics for the Sumo Logic
 
 ### Configure logs collection
 
-* Collect **Amazon CloudWatch Logs** for SSR apps using [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) source.
+* Collect **Amazon CloudWatch Logs** for SSR apps using [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) source.
 
 * AWS Amplify stores access logs for all the apps you host in Amplify. Collect **Access Logs** using [Amazon S3](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) source.
 
