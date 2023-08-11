@@ -1,7 +1,7 @@
 ---
 id: aws-amplify
 title: AWS Amplify
-description: Learn about the collectio process for the AWS Amplify app.
+description: Learn about the collection process for the AWS Amplify app.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
