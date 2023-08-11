@@ -33,7 +33,7 @@ Follow the below steps to configure the Hosted Collector to receive Buddy events
 ### Vendor configuration
 
 :::note
-- You must be a workspace admin or an owner to access the Buddy webhooks.
+You must be a workspace admin or an owner to access the Buddy webhooks.
 :::
 
 Configure the webhook integration in Buddy to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Buddy account.
