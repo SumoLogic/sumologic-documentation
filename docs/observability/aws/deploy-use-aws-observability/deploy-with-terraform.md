@@ -563,7 +563,7 @@ This will destroy all [resources](resources.md) and configuration previously set
 
 ## Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
 
-To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
+To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
 
 ## Appendix
 
