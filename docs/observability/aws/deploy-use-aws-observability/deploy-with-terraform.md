@@ -1007,7 +1007,7 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 ### Configure collection of CloudTrail logs
 
 :::note
-To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
+To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
 :::
 
 #### collect_cloudtrail_logs
