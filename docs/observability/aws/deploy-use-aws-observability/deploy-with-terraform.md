@@ -1654,12 +1654,68 @@ on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologi
 Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom terraform script accordingly.
 
 ### Error creating Serverless Application Repository CloudFormation Stack
+
 #### Error Message
 
-While upgrading AWS Observability Solution (Terraform) from v2.3.0 to v2.4.0 and onwards, upgrade failed with the following reason.
+While upgrading AWS Observability Solution (Terraform) from v2.3.0 to v2.4.0 and onwards, upgrade failed with the following error.
 
 `Error: error creating Serverless Application Repository CloudFormation Stack (arn:aws:cloudformation:us-east-1:XXXXXXXXX:stack/serverlessrepo-serverless-hello-world-test/7a6ef230-35a6-11zb-98ff-0ab512dce13f) change set: unexpected state 'FAILED', wanted target 'CREATE_COMPLETE'. last error: %!s()`
 
-### Cause
+Resource `aws_serverlessapplicationrepository_cloudformation_stack` is not able to store values of `var.auto_enable_access_logs` (as specified in our code). On each subsequent terraform apply resource detects it as change and creates a new stack-set. When the AWS API is called with a new stack-set it fails abruptly which causes the whole solution to fail while upgrading.
 
-Update fails due to a bug that `aws_serverlessapplicationrepository_cloudformation_stack` resource is not able to store values of `var.auto_enable_access_logs` (as specified in our code),  on each subsequent terraform apply(s) , it detects it as change and creates a new stack-set. When the AWS API is called with a new stack-set it fails abruptly which causes the whole solution to fail while upgrading. 
+#### Solution
+
+Navigate to the location where you have installed the AWSO Tf solution and replace the exisitig code with the new code given below.
+
+1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
+2. Replace the code with the code give below.
+  ```sql
+  resource "aws_serverlessapplicationrepository_cloudformation_stack" 
+    "auto_enable_access_logs" {
+    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
+
+    name             = "Auto-Enable-Access-Logs-${var.auto_enable_access_logs_options.auto_enable_logging}-${random_string.aws_random.id}"
+    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
+    semantic_version = var.app_semantic_version
+    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
+    parameters = {
+      BucketName                = local.bucket_name
+      BucketPrefix              = var.auto_enable_access_logs_options.bucket_prefix
+      AutoEnableLogging         = var.auto_enable_access_logs_options.auto_enable_logging
+      AutoEnableResourceOptions = var.auto_enable_access_logs
+      FilterExpression          = var.auto_enable_access_logs_options.filter
+      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
+    }
+    lifecycle {
+      ignore_changes = [
+        parameters,tags
+      ]
+    }
+  }
+  ```
+3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
+4. Replace the code with the code give below.
+  ```sql
+  resource "aws_serverlessapplicationrepository_cloudformation_stack" 
+  "auto_enable_access_logs" {
+    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
+
+    name             = "Auto-Enable-Access-Logs-Elb-${random_string.aws_random.id}"
+    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
+    semantic_version = "1.0.2"
+    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
+    parameters = {
+      BucketName                = local.bucket_name
+      BucketPrefix              = "elasticloadbalancing"
+      AutoEnableLogging         = "ALB"
+      AutoEnableResourceOptions = var.auto_enable_access_logs
+      FilterExpression          = var.auto_enable_access_logs_options.filter
+      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
+    }
+    lifecycle {
+      ignore_changes = [
+        parameters,tags
+      ]
+    }
+  }
+```
