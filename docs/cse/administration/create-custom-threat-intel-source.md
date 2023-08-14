@@ -24,6 +24,10 @@ Watch this micro lesson to learn more about Cloud SIEM threat intelligence.
 
 import Iframe from 'react-iframe'; 
 
+:::note
+You can also add threat intelligence sources in the core Sumo Logic platform. See [Threat Intelligence Indicators](/docs/manage/threat-intelligence-indicators).
+:::
+
 ### How CSE uses indicators
 
 When CSE encounters an indicator from your threat source in an incoming
