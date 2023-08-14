@@ -1,5 +1,5 @@
 ---
-id: migration-stratergy-using-terraform
+id: migration-strategy-using-terraform
 title: Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
 sidebar_label: Migration Strategy using Terraform
 description: Learn how to migrate CloudWatch Source to Kinesis Firehose Source using Terraform.
