@@ -641,7 +641,7 @@ The following table provides a list of all source parameters and their default v
 ### Configure collection of CloudWatch metrics
 
 :::note
-To migrate CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
+To migrate CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-stratergy-using-terraform).
 :::
 
 #### collect_cloudwatch_metrics
