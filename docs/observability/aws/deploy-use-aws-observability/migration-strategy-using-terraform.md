@@ -5,7 +5,7 @@ sidebar_label: Migration Strategy using Terraform
 description: Learn how to migrate CloudWatch Source to Kinesis Firehose Source using Terraform.
 ---
 
-This document will help you to migrate CloudWatch Source to Kinesis Firehose Source using Terraform. There are two approaches which you can follow for the migration. Refer [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) and [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source) to know about the migration beifits.
+This document will help you to migrate CloudWatch Source to Kinesis Firehose Source using Terraform. There are two approaches which you can follow for the migration. Refer to [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) and [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source) to know about the migration benefits.
 
 ## Approach 1: Enable forwarding of data to Sumo Logic using Kinesis Firehose for the Log and Metrics source
 
