@@ -103,7 +103,7 @@ When you [Specify a stack name and parameters](https://docs.aws.amazon.com/AWS
 
 ### Subscribe AWS Kinesis Firehose to CloudWatch Log Groups
 
-Follow the instructions in the sections below to subscripe the AWS Kinesis Firehose stream that was created in the above steps to CloudWatch Log Groups.
+Follow the instructions in the sections below to subscribe the AWS Kinesis Firehose stream that was created in the above steps to CloudWatch Log Groups.
 
 #### Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group
 
