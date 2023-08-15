@@ -49,8 +49,7 @@ Follow these instructions to create an Entity Group based on Entity name or whet
 1. Click the gear icon in the Cloud SIEM UI and choose **Groups** under **Entities**.
     <img src={useBaseUrl('/img/cse/gear-menu-2.png')} alt="gear-menu.png" width="500" />
 2. On the **Entity Groups** page, click **Create**.
-3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)
-    <img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="create-entity-group-values" width="500" />
+3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.)<br/><img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="create-entity-group-values" width="500" />
 4. **Name**. Enter a name for the Entity Group.
 5. **Description**. (Optional.)
 6. **Group Entities matching the following**. Select **Values**.
@@ -87,7 +86,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
     <img src={useBaseUrl('/img/cse/gear-menu-2.png')} alt="gear-menu.png" width="500" />
 2. On the **Entity Groups** page, click **Create**.
 3. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="create-entity-group-inventory.png" width="500"/>
-4. **Name**. Enter a name for the Entity Group
+4. **Name**. Enter a name for the Entity Group.
 5. **Description**. (Optional.)
 6. **Group Entities matching the following**. Select **Inventory**.
 7. **Inventory Type**. Select one of:
