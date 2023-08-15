@@ -119,8 +119,8 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Automation Playbooks | Access | Access [playbooks](/docs/cloud-soar/automation#playbook).  |  
 | Automation Playbooks | Configure | Configure playbooks. |  
 | Bridge Monitoring | Access | Access [Bridge monitoring](/docs/cloud-soar/global-functions-menu/#audit-and-information). | 
-| Observability | Access | Access [Incidents](/docs/cloud-soar/incidents-triage/).  |   
-| Observability | Configure | Configure Incidents. |   
+| Observability | Access | Access playbook execution information.  |   
+| Observability | Configure | Configure playbook execution information. |   
 
 
 ## Cloud SIEM Enterprise
