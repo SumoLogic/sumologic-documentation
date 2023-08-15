@@ -112,7 +112,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 2. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
 3. To select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Kinesis Firehose subscription filter**.
-4. In the Create Kinesis Firehose subscription filter page, go to **Choose Destination** section and select the Current account and then select the Kinesis Firehose delivery stream that was created in the above steps.
+4. In the Create Kinesis Firehose subscription filter page, go to the **Choose Destination** section and select the Current account. Then select the Kinesis Firehose delivery stream that was created in the above steps.
 5. Under **Grant permissions** select the existing role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
 6. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
     :::info
