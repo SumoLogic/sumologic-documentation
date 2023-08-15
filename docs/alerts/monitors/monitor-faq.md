@@ -48,7 +48,7 @@ deployment=acme region=us-east1 metric=container_cpu_usage_seconds_total | rate 
 
 And so on.
 
-## Is there a limit to the number of monitors?
+## Is there a limit to the number of monitors I can have?
 
 You can have up to 5,000 monitors (active and inactive) simultaneously.
 
