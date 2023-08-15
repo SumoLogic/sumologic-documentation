@@ -48,6 +48,12 @@ deployment=acme region=us-east1 metric=container_cpu_usage_seconds_total | rate 
 
 And so on.
 
+## Is there a limit to the number of monitors?
+
+You can have up to 5,000 monitors (active and inactive) simultaneously.
+
+For the best experience, we recommend being mindful of the number of monitors you create. Having a manageable volume of alerts will allow your team to better respond to critical issues.
+
 ## Can I reference my monitor configuration in the notification?
 
 Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to reference various monitor configurations in your custom payload.
