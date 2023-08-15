@@ -24,7 +24,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logreduce keys [parser\<parse\>] [maxdepth\<maxdept\>] [field\<fieldnam\>] [noaggregate]
+| logreduce keys [parser <parser>] [maxdepth <maxdepth>] [field <fieldname>] [noaggregate]
 ```
 
 | Parameter | Description | Default |
