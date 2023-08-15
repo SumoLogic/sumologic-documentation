@@ -15,7 +15,7 @@ You can add threat intelligence indicators from a number of sources, including C
 
 ## Threat Intelligence tab
 
-Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. To access the tab, in Sumo Logic go to **Manage Data > Logs > Threat Intelligence**.
+Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. To access the tab, go to **Manage Data > Logs > Threat Intelligence**.
 
 <img src={useBaseUrl('img/manage/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid black'}} width="800" />
 
