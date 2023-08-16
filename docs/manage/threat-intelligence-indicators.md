@@ -33,17 +33,17 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/manage/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select the format of the file to be uploaded:
-    * **Sumo normalized JSON**. A JSON file [normalized](/docs/cse/schema/parsing-language-reference-guide#normalizing) for use in Sumo Logic. Your file must include the following attributes:
+    * **Sumo normalized JSON**. A normalized JSON file. See the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use.<br/>Your file must include the following attributes:
        * `indicator`
        * `type`
        * `validFrom`
        * `validUntil`
        * `confidence`
        * `threatType`
-    * **STIX 2.1 JSON**. A JSON file in [STIX 2.1](https://oasis-open.github.io/cti-documentation/stix/gettingstarted.html) format. Your file must include the following attributes:
+    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. See the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use.<br/>See the Your file must include the following attributes:
        * `source`
        * `indicators`
-    * **BLOB CSV or JSON**. A [BLOB](https://en.wikipedia.org/wiki/Binary_large_object) CSV file or JSON file. Your file must include the following attributes:
+    * **BLOB CSV or JSON**. A BLOB CSV file or JSON file. See the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use.<br/>Your file must include the following attributes:
        * `source`
        * `format`
        * `blob`
