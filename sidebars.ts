@@ -2188,6 +2188,7 @@ integrations: [
         link: {type: 'doc', id: 'integrations/security-threat-detection/index'},
         items: [
           'integrations/security-threat-detection/akamai-security-events',
+          'integrations/security-threat-detection/alert-logic',
           'integrations/security-threat-detection/barracuda-waf',
           'integrations/security-threat-detection/carbon-black-cloud',
           'integrations/security-threat-detection/cisco-asa',
