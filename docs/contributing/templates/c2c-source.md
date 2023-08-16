@@ -110,20 +110,26 @@ Add information about the configuration parameters. Update the below table accor
 <!--
 Create and add the JSON config in the dropbox and import it here.
 -->
+<!--
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/c2c-name/example.json) <!--#example(/img/c2c/dropbox/example.json)-->
+[Download example](/img/c2c/c2c-name/example.json) #example(/img/c2c/dropbox/example.json)
+
+-->
 
 ### Terraform example
 
 <!--
 Create and add the Terraform config in the dropbox and import it here.
 -->
+<!--
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/c2c-name/example.tf) <!--#example(/img/c2c/dropbox/example.tf)-->
+[Download example](/img/c2c/c2c-name/example.tf) #example(/img/c2c/dropbox/example.tf)
+
+-->
 
 ## Troubleshooting
 
