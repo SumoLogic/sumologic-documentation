@@ -11,7 +11,6 @@ description: Description goes here. #example: Learn how to configure the Druva C
 
 import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-export const icon = 'https://app_icons.s3.amazonaws.com/dropbox.svg';
 
 <head>
   <meta name="robots" content="noindex" />
