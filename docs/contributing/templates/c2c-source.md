@@ -3,11 +3,11 @@ id: c2c-source  #example: druva-source
 title: XYZ Source #example: Druva Source
 image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
 sidebar_label: XYZ #example: Druva
-slug: /c2c/c2c-name #/c2c/druva
+slug: /c2c/c2c-source #/c2c/druva
 tags:
   - cloud-to-cloud
   - c2c-source  #example: Druva
-description:  Description goes here. #example: Learn how to configure the Druva Cloud-to-Cloud Source in your Sumo Logic environment.
+description: Description goes here. #example: Learn how to configure the Druva Cloud-to-Cloud Source in your Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
