@@ -1805,6 +1805,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'integrations/amazon-aws/index'},
       items: [
+        'integrations/amazon-aws/aws-amplify',
         'integrations/amazon-aws/aurora-mysql-ulm',
         'integrations/amazon-aws/aurora-postgresql-ulm',
         'integrations/amazon-aws/cloudfront',
