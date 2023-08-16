@@ -316,7 +316,7 @@ To create an SLO from the **Metrics** page:
 
 You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should have a quantization after the selector. You can specify one or more operators in the query for SLO.
 
-As an example, a pure selector query with no operators is `_sourceHost=stag-monitor-manager metric=CPU_Total`. That same query using the `sum` operator with appropriate quantization would be `_sourceHost=stag-monitor-manager metric=CPU_Total | quantize to 1m using avg | sum`.
+As an example, a pure selector query with no operators could be `_sourceCategory=my-web-server metric=is_healthy`, which returns a time series per instance your web server indicating if it is healthy or not (`1` or `0`). To count the number of instances that were healthy in a given minute, you can use the `sum` operator with an appropriate quantization method and interval, as follows: `_sourceCategory=my-web-server metric=is_healthy | quantize to 1m using max | sum`.
 
 ## Create an SLO from Monitors list page
 
