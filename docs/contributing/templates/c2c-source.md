@@ -3,7 +3,6 @@ id: c2c-source  #example: druva-source
 title: XYZ Source #example: Druva Source
 image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
 sidebar_label: XYZ #example: Druva
-slug: /c2c/c2c-source #/c2c/druva
 tags:
   - cloud-to-cloud
   - c2c-source  #example: Druva
