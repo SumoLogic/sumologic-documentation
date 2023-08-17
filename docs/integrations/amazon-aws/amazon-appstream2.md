@@ -13,7 +13,6 @@ Amazon AppStream 2.0 is a fully managed application streaming service that provi
 * [CloudWatch Metrics](https://docs.aws.amazon.com/appstream2/latest/developerguide/monitoring.html#monitoring-with-cloudwatch)
 * [CloudTrail Logs](https://docs.aws.amazon.com/appstream2/latest/developerguide/logging-using-cloudtrail.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's Amazon AppStream 2.0 integration.
 
