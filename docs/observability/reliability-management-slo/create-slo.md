@@ -309,7 +309,7 @@ You can make further modifications to a saved filter view later using kebab menu
 
 To create an SLO from the **Metrics** page:
 
-1. Go to **Manage Data** > **Metrics**.
+1. Click **+ New** > **Metrics** or go to an existing **Metrics** tab.
 1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
 1. Click the three-dot kebab icon, then select **Create an SLO**.
 1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
