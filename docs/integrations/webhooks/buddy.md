@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/buddy-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Buddy is a web-based and self-hosted continuous integration and delivery platform for software developers. A webhook available in the Buddy can forward pipeline execution logs from Buddy platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the push events along with pipeline execution start, success, failed, and finished events in Sumo Logic. For further details, refer to [Buddy documentation](https://buddy.works/docs).
+Buddy is a web-based and self-hosted continuous integration and delivery platform for software developers. A webhook available in the Buddy can forward pipeline execution logs from Buddy platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the push events along with pipeline execution start, success, failed, and finished events in Sumo Logic. For further details, refer to the [Buddy documentation](https://buddy.works/docs).
 
 ## Event types
 
@@ -42,7 +42,7 @@ Follow the below steps to configure the Buddy webhook:
 
 1. Sign in to the [Buddy account](https://buddy.works/sign-in).
 2. Go to **Integrations** section, select **New Integration**.
-3. Search for **Webhook** and select it. the webhook form appears.
+3. Search for **Webhook** and select it, the webhook form appears.
 4. Enter webhook form data as follows:
     - **NAME**. Provide a name for your webhook.
     - **PAYLOAD URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
