@@ -2142,6 +2142,7 @@ integrations: [
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
