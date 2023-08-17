@@ -19,7 +19,7 @@ AWS AppSync enables developers to connect their applications and services to dat
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS AppSync integration.
 
 ### Configure metrics collection
-* Collect CloudWatch Metrics with namespace AWS/AppSync using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/AppSync metrics and dimensions refer [AWS AppSync CloudWatch metrics](https://docs.aws.amazon.com/appsync/latest/devguide/monitoring.html#cw-metrics)
+* Collect CloudWatch Metrics with namespace AWS/AppSync using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/AppSync metrics and dimensions refer to [AWS AppSync CloudWatch metrics](https://docs.aws.amazon.com/appsync/latest/devguide/monitoring.html#cw-metrics).
 
 ### Configure logs collection
 * You can configure two types of logging on any new or existing GraphQL API: request-level and field-level. For more information, see [AWS AppSync CloudWatch Logs](https://docs.aws.amazon.com/appsync/latest/devguide/monitoring.html#cwl). Collect Amazon CloudWatch Logs using [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) source.
