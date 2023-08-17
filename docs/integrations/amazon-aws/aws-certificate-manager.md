@@ -13,7 +13,6 @@ AWS Certificate Manager (ACM) handles the complexity of creating, storing, and r
 * [CloudWatch Metrics](https://docs.aws.amazon.com/acm/latest/userguide/cloudwatch-metrics.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/acm/latest/userguide/cloudtrail.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS Certificate Manager integration.
 
