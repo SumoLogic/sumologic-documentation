@@ -1804,6 +1804,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'integrations/amazon-aws/index'},
       items: [
+        'integrations/amazon-aws/aws-amplify',
         'integrations/amazon-aws/aurora-mysql-ulm',
         'integrations/amazon-aws/aurora-postgresql-ulm',
         'integrations/amazon-aws/cloudfront',
@@ -2141,6 +2142,7 @@ integrations: [
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
@@ -2229,6 +2231,15 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/security-analytics',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Webhooks',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          'integrations/webhooks/buddy',
         ],
       },
       {
