@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aws-private-certificate-authority-logo.png')} alt="Thumbnail icon" width="50"/>
 
-AWS Private CA enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA. Your private CAs can issue end-entity X.509 certificates useful in scenarios including:
+AWS Private CA enables the creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA. Your private CAs can issue end-entity X.509 certificates useful in scenarios including:
 * Creating encrypted TLS communication channels
 * Authenticating users, computers, API endpoints, and IoT devices
 * Cryptographically signing code
