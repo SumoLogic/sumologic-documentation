@@ -17,7 +17,6 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
   * [Edge Function Logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-logs.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/logging_using_cloudtrail.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's Amazon CloudFront integration.
 
