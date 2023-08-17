@@ -17,12 +17,11 @@ Amazon CloudFront is a web service that speeds up distribution of your static an
   * [Edge Function Logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-logs.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/logging_using_cloudtrail.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's Amazon CloudFront integration.
 
 ### Configure metrics collection
-* Collect CloudWatch Metrics with namespace [AWS/CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/monitoring-using-cloudwatch.html) using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/CloudFront metrics and dimensions refer [Amazon CloudFront CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/programming-cloudwatch-metrics.html)
+* Collect CloudWatch Metrics with namespace [AWS/CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/monitoring-using-cloudwatch.html) using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/CloudFront metrics and dimensions refer to [Amazon CloudFront CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/programming-cloudwatch-metrics.html).
 
 ### Configure logs collection
 * You can configure CloudFront to create log files that contain detailed information about every user request that CloudFront receives. These are called standard logs, also known as [access logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html). If you enable standard logs, you can also specify the Amazon S3 bucket that you want CloudFront to save files in. Collect Access Logs using [Amazon S3](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) source.

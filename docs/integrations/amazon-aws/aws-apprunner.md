@@ -14,12 +14,11 @@ AWS App Runner is a fully managed container application service that lets you bu
 * [CloudWatch Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cwl.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-ct.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS App Runner integration.
 
 ### Configure metrics collection
-* Collect CloudWatch Metrics with namespace AWS/AppRunner using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/AppRunner metrics and dimensions refer [AWS App Runner CloudWatch metrics](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cw.html)
+* Collect CloudWatch Metrics with namespace AWS/AppRunner using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/AppRunner metrics and dimensions refer to [AWS App Runner CloudWatch metrics](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cw.html).
 
 ### Configure logs collection
 * App Runner collects the output of your application code and streams it to Amazon CloudWatch Logs. These log records might prove useful in security and access audits. For more information, see [App Runner CloudWatch Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cwl.html). Collect Amazon CloudWatch Logs using [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) source.
