@@ -50,7 +50,7 @@ And so on.
 
 ## Is there a limit to the number of monitors I can have?
 
-You can have up to 5,000 monitors (active and inactive) simultaneously.
+See [Sumo Logic Pricing](https://www.sumologic.com/pricing) to learn the number of monitors (active and inactive) you can run simultaneously. You can increase the monitor limit up to 5000 by reaching out to our support team.
 
 For the best experience, we recommend being mindful of the number of monitors you create. Having a manageable volume of alerts will allow your team to better respond to critical issues.
 
