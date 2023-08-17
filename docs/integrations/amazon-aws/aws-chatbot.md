@@ -22,7 +22,7 @@ For more details, refer to the [AWS documentation](https://docs.aws.amazon.com//
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS Chatbot integration.
 
 ### Configure metrics collection
-* Collect CloudWatch Metrics with namespace AWS/Chatbot using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/Chatbot metrics and dimensions refer [AWS Chatbot CloudWatch metrics](https://docs.aws.amazon.com//chatbot/latest/adminguide/monitoring-cloudwatch.html#available-cloudwatch-metrics)
+* Collect CloudWatch Metrics with namespace AWS/Chatbot using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/Chatbot metrics and dimensions refer to [AWS Chatbot CloudWatch metrics](https://docs.aws.amazon.com//chatbot/latest/adminguide/monitoring-cloudwatch.html#available-cloudwatch-metrics).
 
 ### Configure logs collection
 * With CloudWatch Logs for AWS Chatbot, you can see all the events handled by AWS Chatbot. Collect [Amazon CloudWatch Logs](https://docs.aws.amazon.com//chatbot/latest/adminguide/cloudwatch-logs.html) using [AWS Kinesis Firehose for Logs](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) source.
