@@ -21,7 +21,6 @@ For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/p
 * [CloudWatch Metrics](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCtIntro.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS Private Certificate Authority integration.
 
