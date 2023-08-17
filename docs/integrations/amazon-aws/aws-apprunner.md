@@ -14,7 +14,6 @@ AWS App Runner is a fully managed container application service that lets you bu
 * [CloudWatch Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-cwl.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/apprunner/latest/dg/monitor-ct.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS App Runner integration.
 
