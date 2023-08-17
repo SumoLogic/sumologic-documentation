@@ -1804,6 +1804,7 @@ integrations: [
       collapsed: true,
       link: {type: 'doc', id: 'integrations/amazon-aws/index'},
       items: [
+        'integrations/amazon-aws/aws-amplify',
         'integrations/amazon-aws/aurora-mysql-ulm',
         'integrations/amazon-aws/aurora-postgresql-ulm',
         'integrations/amazon-aws/cloudfront',
@@ -2141,6 +2142,7 @@ integrations: [
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
@@ -2187,6 +2189,7 @@ integrations: [
         link: {type: 'doc', id: 'integrations/security-threat-detection/index'},
         items: [
           'integrations/security-threat-detection/akamai-security-events',
+          'integrations/security-threat-detection/alert-logic',
           'integrations/security-threat-detection/barracuda-waf',
           'integrations/security-threat-detection/carbon-black-cloud',
           'integrations/security-threat-detection/cisco-asa',

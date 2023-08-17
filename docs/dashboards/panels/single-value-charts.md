@@ -49,7 +49,7 @@ A boolean single value chart displays a value as true or false. For
 example, the following query checks if more than 100 errors are found.
 
 ```sql
-error | count as MyCount | if (MyCount\> 100, true, false) as MyCount
+error | count as MyCount | if (MyCount> 100, true, false) as MyCount
 ```
 
 The boolean single value chart would look like the following.
