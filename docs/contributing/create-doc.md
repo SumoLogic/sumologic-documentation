@@ -44,14 +44,12 @@ In your IDE, write the body of your doc.
 
 <details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
 
-<!-- Removed Atom because it is no longer available:
-* [Atom](https://atom.io): Create new branches, stage and commit, push and pull, resolve merge conflicts, view PRs and more - all from within your editor. The GitHub package comes bundled with Atom.-->
-* [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
    * Markdown All in One
    * Markdown Preview GitHub Styling
    * Markdown Preview Enhanced
    * Markdown Preview Mermaid Support and Mermaid Markdown Syntax Highlighting for charts and graphs
+* [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
 * [iTerm2](https://iterm2.com/) - Terminal application for macOS. You can also install [Oh My Zsh](https://ohmyz.sh/) for theming.
 
 </details>
@@ -73,7 +71,18 @@ As an example, let's say you needed to add a Best Practices doc to the [**Send D
 
 Once you decide on placement, use the card HTML code in that doc to create a new entry.
 
-## Step 7: Preview your changes
+## Step 7: Create CID
+
+Every doc must be associated with a Content ID (CID) number, which is appended to a permalink URL that's placed in the UI in the appropriate place. This way, any future changes to the canonical URL won't impact the UI links.
+
+For example, [https://help.sumologic.com/?cid=0071](https://help.sumologic.com/?cid=0071) links to a metrics page, which appears in the **Metrics** UI section.
+
+To create a CID:
+
+1. Open the [cid-redirects.json](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json) file.
+1. 
+
+## Step 8: Preview your changes
 
 Next, you'll build and deploy a local instance of the Sumo Logic Docusaurus site.
 
@@ -81,7 +90,7 @@ Our site is built using Docusaurus, a static site generator, which builds your s
 
 We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.
 
-## Step 8: Submit your request
+## Step 9: Submit your request
 
 1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png) Use descriptive commit messages (and issue or ticket numbers, if applicable) detailing the content updates you are entering for content. One-line messages are fine for small changes, but bigger changes should look like this:
   ```bash
