@@ -13,7 +13,6 @@ Amazon AppFlow is a fully-managed integration service that enables you to secure
 * [CloudWatch Metrics](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/appflow/latest/userguide/appflow-cloudtrail-logs.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's Amazon AppFlow integration.
 
