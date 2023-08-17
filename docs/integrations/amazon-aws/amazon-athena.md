@@ -13,7 +13,6 @@ Amazon Athena is an interactive query service that makes it easy to analyze data
 * [CloudWatch Metrics](https://docs.aws.amazon.com/athena/latest/ug/query-metrics-viewing.html#athena-cloudwatch-metrics-table)
 * [CloudTrail Logs](https://docs.aws.amazon.com/athena/latest/ug/monitor-with-cloudtrail.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's Amazon Athena integration.
 
