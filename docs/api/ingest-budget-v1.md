@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Ingest Budget Management API allows you to manage **V1** [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets) that have a **Field Value** from HTTP endpoints.
 
-See [V2 API](/docs/api/ingest-budget-V2) for management of ingest budgets with a scope.
+See [V2 API](/docs/api/ingest-budget-v2) for management of ingest budgets with a scope.
 
 To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information, see [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
 
