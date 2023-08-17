@@ -1808,6 +1808,7 @@ integrations: [
         'integrations/amazon-aws/amazon-appstream2',
         'integrations/amazon-aws/amazon-athena',
         'integrations/amazon-aws/amazon-cloudfront',
+        'integrations/amazon-aws/aws-amplify',
         'integrations/amazon-aws/aws-apprunner',
         'integrations/amazon-aws/aws-appsync',
         'integrations/amazon-aws/aws-backup',
@@ -2151,6 +2152,7 @@ integrations: [
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
@@ -2197,6 +2199,7 @@ integrations: [
         link: {type: 'doc', id: 'integrations/security-threat-detection/index'},
         items: [
           'integrations/security-threat-detection/akamai-security-events',
+          'integrations/security-threat-detection/alert-logic',
           'integrations/security-threat-detection/barracuda-waf',
           'integrations/security-threat-detection/carbon-black-cloud',
           'integrations/security-threat-detection/cisco-asa',
@@ -2238,6 +2241,15 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/security-analytics',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Webhooks',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          'integrations/webhooks/buddy',
         ],
       },
       {
