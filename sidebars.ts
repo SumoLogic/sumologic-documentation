@@ -2235,6 +2235,15 @@ integrations: [
       },
       {
         type: 'category',
+        label: 'Webhooks',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          'integrations/webhooks/buddy',
+        ],
+      },
+      {
+        type: 'category',
         label: 'Web Servers',
         collapsible: true,
         collapsed: true,
