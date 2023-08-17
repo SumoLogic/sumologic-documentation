@@ -14,7 +14,6 @@ AWS AppSync enables developers to connect their applications and services to dat
 * [CloudWatch Logs](https://docs.aws.amazon.com/appsync/latest/devguide/monitoring.html#cwl)
 * [CloudTrail Logs](https://docs.aws.amazon.com/appsync/latest/devguide/cloudtrail-logging.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS AppSync integration.
 
