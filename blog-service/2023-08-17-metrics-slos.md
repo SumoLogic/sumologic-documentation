@@ -1,5 +1,5 @@
 ---
-title: Metrics-Based SLOs (Reliability Management)
+title: Operator Support for Metrics-Based SLOs (Reliability Management)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - slo
