@@ -13,7 +13,6 @@ AWS Backup is a fully-managed service that makes it easy to centralize and autom
 * [CloudWatch Metrics](https://docs.aws.amazon.com/aws-backup/latest/devguide/cloudwatch.html#monitoring-metrics-with-cloudwatch)
 * [CloudTrail Logs](https://docs.aws.amazon.com/aws-backup/latest/devguide/logging-using-cloudtrail.html)
 
-
 ## Setup
 This section has instructions for collecting logs and metrics for the Sumo Logic's AWS Backup integration.
 
