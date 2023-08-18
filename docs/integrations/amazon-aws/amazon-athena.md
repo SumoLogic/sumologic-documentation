@@ -19,9 +19,9 @@ You can collect the logs and metrics for Sumo Logic's Amazon Athena integration 
 
 ### Configure metrics collection
 
-* Collect **CloudWatch Metrics** with namespace `AWS/Athena` using the [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/Athena` metrics and dimensions, refer to [Amazon Athena CloudWatch metrics](https://docs.aws.amazon.com/athena/latest/ug/query-metrics-viewing.html#athena-cloudwatch-metrics-table).
+* Collect **CloudWatch Metrics** with namespace `AWS/Athena` using the [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/Athena` metrics and dimensions, refer to [Amazon Athena CloudWatch metrics](https://docs.aws.amazon.com/athena/latest/ug/query-metrics-viewing.html#athena-cloudwatch-metrics-table).
 
 ### Configure logs collection
 
-* Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/athena/latest/ug/monitor-with-cloudtrail.html) using the [AWS CloudTrail](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. Amazon Athena is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service in Athena. CloudTrail captures all API calls for Athena as events, which includes calls from the Athena console and code calls to the Athena API operations. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Athena. 
+* Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/athena/latest/ug/monitor-with-cloudtrail.html) using the [AWS CloudTrail](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. Amazon Athena is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service in Athena. CloudTrail captures all API calls for Athena as events, which includes calls from the Athena console and code calls to the Athena API operations. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Athena. 
 

@@ -27,9 +27,9 @@ You can collect the logs and metrics for Sumo Logic's AWS Private Certificate Au
 
 ### Configure metrics collection
 
-* Collect **CloudWatch Metrics** with namespace `AWS/ACMPrivateCA` using the [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/ACMPrivateCA` metrics and dimensions, refer to [AWS Private Certificate Authority CloudWatch metrics](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html).
+* Collect **CloudWatch Metrics** with namespace `AWS/ACMPrivateCA` using the [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/ACMPrivateCA` metrics and dimensions, refer to [AWS Private Certificate Authority CloudWatch metrics](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html).
 
 ### Configure logs collection
 
-* Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCtIntro.html) using the [AWS CloudTrail](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. AWS Private CA is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service. CloudTrail is enabled by default on your AWS account. You can use AWS CloudTrail to record API calls that are made by AWS Private Certificate Authority. If you configure a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS Private CA. 
+* Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCtIntro.html) using the [AWS CloudTrail](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. AWS Private CA is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service. CloudTrail is enabled by default on your AWS account. You can use AWS CloudTrail to record API calls that are made by AWS Private Certificate Authority. If you configure a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS Private CA. 
 
