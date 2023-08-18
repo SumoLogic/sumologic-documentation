@@ -14,10 +14,13 @@ AWS Certificate Manager (ACM) handles the complexity of creating, storing, and r
 * [CloudTrail Logs](https://docs.aws.amazon.com/acm/latest/userguide/cloudtrail.html)
 
 ## Setup
-This section has instructions for collecting logs and metrics for the Sumo Logic's AWS Certificate Manager integration.
+
+You can collect the logs and metrics for Sumo Logic's AWS Certificate Manager integration by following the below steps.
 
 ### Configure metrics collection
-* Collect CloudWatch Metrics with namespace AWS/CertificateManager using [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For AWS/CertificateManager metrics and dimensions refer to [AWS Certificate Manager CloudWatch metrics](https://docs.aws.amazon.com/acm/latest/userguide/cloudwatch-metrics.html).
+
+* Collect **CloudWatch Metrics** with namespace `AWS/CertificateManager` using the [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/CertificateManager` metrics and dimensions, refer to [AWS Certificate Manager CloudWatch metrics](https://docs.aws.amazon.com/acm/latest/userguide/cloudwatch-metrics.html).
 
 ### Configure logs collection
-* AWS Certificate Manager is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in ACM. CloudTrail is enabled by default on your AWS account. CloudTrail captures API calls for ACM as events, including calls from the ACM console and code calls to the ACM API operations. If you configure a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for ACM. Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/acm/latest/userguide/cloudtrail.html) using [AWS CloudTrail](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source.
+
+* Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/acm/latest/userguide/cloudtrail.html) using the [AWS CloudTrail](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. AWS Certificate Manager is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service in ACM. CloudTrail is enabled by default on your AWS account. CloudTrail captures API calls for ACM as events, which includes calls from the ACM console and code calls to the ACM API operations. If you configure a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for ACM. 
