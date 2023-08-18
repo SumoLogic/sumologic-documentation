@@ -142,7 +142,13 @@ Sumo Logic continuously computes data for your SLO behind the scenes. This data,
 * `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
 * `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
 * `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
-* `sloVersion`: version of SLO definition
+* `sloVersion`: version of SLO definition. The `sloVersion` is only changed whenever there is a change in semantics of underlying SLI definition. Therefore, the `sloVersion` is incremented by 1 in case of following modifications only: 
+  1. Changing <strong>Source</strong> of the SLO. Example: changing <strong>Query Based</strong> to <strong>Monitor Based</strong>.
+  2. Changing <strong>Evaluation Type</strong>. Example: changing <strong>Request-based</strong> to <strong>Window-based</strong> or changing <strong>Window size</strong> of SLO.
+  3. Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
+  4. Changing <strong>Timezone</strong> of SLO. 
+  
+  Likewise `sloVersion` does <strong>NOT</strong> change on modifications to fields like <strong>Name</strong>, <strong>Description</strong>, <strong>Target</strong>, <strong>Compliance Type</strong>, <strong>Compliance Period</strong>, <strong>Tags</strong>, <strong>Signal Type</strong>.
 
 View the schema by executing the following query:
 
