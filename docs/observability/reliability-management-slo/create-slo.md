@@ -307,9 +307,16 @@ You can make further modifications to a saved filter view later using kebab menu
 
 ## Create an SLO from Metrics page
 
-:::note Coming soon
-You'll be able to create SLOs from Metrics Explorer.
-:::
+To create an SLO from the **Metrics** page:
+
+1. Click **+ New** > **Metrics** or go to an existing **Metrics** tab.
+1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
+1. Click the three-dot kebab icon, then select **Create an SLO**.
+1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
+
+You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should have a quantization after the selector. You can specify one or more operators in the query for SLO.
+
+As an example, a pure selector query with no operators could be `_sourceCategory=my-web-server metric=is_healthy`, which returns a time series per instance your web server indicating if it is healthy or not (`1` or `0`). To count the number of instances that were healthy in a given minute, you can use the `sum` operator with an appropriate quantization method and interval, as follows: `_sourceCategory=my-web-server metric=is_healthy | quantize to 1m using max | sum`.
 
 ## Create an SLO from Monitors list page
 
