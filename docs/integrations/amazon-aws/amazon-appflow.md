@@ -18,7 +18,7 @@ Amazon AppFlow is a fully-managed integration service that enables you to secure
 You can collect the logs and metrics for Sumo Logic's Amazon AppFlow integration by following the below steps.
 
 ### Configure metrics collection
-* Collect **CloudWatch Metrics** with namespace `AWS/AppFlow` using the [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/AppFlow` metrics and dimensions, refer to [Amazom AppFlow CloudWatch metrics](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html).
+* Collect **CloudWatch Metrics** with namespace `AWS/AppFlow` using the [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/AppFlow` metrics and dimensions, refer to [Amazom AppFlow CloudWatch metrics](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html).
 
 ### Configure logs collection
 * Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/appflow/latest/userguide/appflow-cloudtrail-logs.html) using the [AWS CloudTrail](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. Amazon AppFlow is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service in Amazon AppFlow. CloudTrail captures all API calls for Amazon AppFlow as events, which includes calls from the Amazon AppFlow console and code calls to the Amazon AppFlow API operations. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Amazon AppFlow. 
