@@ -12,10 +12,10 @@ The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List
 
 The Mimecast Source leverages the following:
 
- * [Download SIEM Logs](https://www.mimecast.com/tech-connect/documentation/tutorials/understanding-siem-logs/)
- * [Download DLP Logs](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-dlp-logs/)
- * [Download Audit Events](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-audit-events/)
- * [Download Hold Message List](https://integrations.mimecast.com/documentation/endpoint-reference/message-queues/get-hold-message-list/)
+ * [Download SIEM Logs](https://developer.services.mimecast.com/docs/threatssecurityeventsanddataforcg/1/routes/v1/siem/events/cg/get)
+ * [Download DLP Logs](https://developer.services.mimecast.com/docs/securityevents/1/routes/api/dlp/get-logs/post)
+ * [Download Audit Events](https://developer.services.mimecast.com/docs/auditevents/1/routes/api/audit/get-audit-events/post)
+ * [Download Hold Message List](https://developer.services.mimecast.com/docs/cloudgateway/1/routes/api/gateway/get-hold-message-list/post)
 
 ## States
 
@@ -62,7 +62,7 @@ To configure a Mimecast Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Mimecast**.<br/><img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="70"/>
-1. Enter a **Name** for the Source. The description is optional.<br/> ![mimecast add apis input.png](/img/send-data/mimecast-add-apis-input.png)
+1. Enter a **Name** for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/mimecast-add-apis-input.png')} alt="Mimecast-config-page" style={{border: '1px solid black'}} width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Mimecast
@@ -78,10 +78,11 @@ To configure a Mimecast Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-1. **Base URL**. The base URL parameter depends on your global region. See this Mimecast [document](https://www.mimecast.com/tech-connect/documentation/api-overview/global-base-urls/) for guidance on which base URL to use.
-1. Provide the **Application ID**, **Access Key**, and **Secret Key** to authenticate requests. See these [guidelines](https://community.mimecast.com/docs/DOC-3181) to create the necessary authentication requirements.
-1. **Supported APIs to collect**. Select one or more of the available APIs: **SIEM**, **DLP**, **Audit Events**, and **Hold Message List**.<br/> ![mimecast additional apis option.png](/img/send-data/mimecast-additional-apis-option.png)
-1. When you are finished configuring the Source, click **Submit**.
+1. **Client ID**. Enter the Client ID of the app. Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID.
+1. **Client Secret**. Enter the Client Secret key of the app. Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client Secret.
+1. **Supported API to collect**. Select the type of Mimecast data source that you want to collect.
+1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+1. When you are finished configuring the Source, click **Save**.
 
 ### Error types
 
@@ -120,34 +121,33 @@ Source.
 | `domain` | String | Yes |  | The base URL parameter depends on your global region.	modifiable
 `application_key` | String | Yes |  | The Mimecast key you want to use to authenticate collection requests.	modifiable
 `application_id` | Boolean | Yes |  | he Mimecast application ID you want to use to authenticate collection requests. | modifiable |
-| `access_key` | String | Yes |  | The Mimecast access key you want to use to authenticate collection requests. | modifiable |
-| `secret_key` | String | Yes |  | The Mimecast secret key you want to use to authenticate collection requests. | modifiable |
-| `supported_apis` | Array of strings | Yes |  | efine one or more of the available APIs to collect: `SIEM`, `DLP`, `Audit Events`, and `Hold Message List`. For example, for all you'd use: `["SIEM","DLP","Audit Events","Hold Message List"]` | modifiable |
+| `clientID` | String | Yes |  | Client Id for your Mimecast app. | modifiable |
+| `clientSecret` | String | Yes |  | Secret Key for your Mimecast app. | modifiable |
+| `dataCollection` | String | Yes |  | Supported API. | modifiable |
 
 Mimecast Source JSON example:
 
 ```json
 {
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Mimecast"
-    },
-    "config":{
-      "name":"Mimecast",
-      "description":"East field",
-      "domain":"us-api.mimecast.com",
-      "application_key":"********",
-      "application_id":"********,
-      "access_key":"********",
-      "secret_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "supported_apis":["SIEM","DLP","Audit Events","Hold Message List"]
-    },
-    "sourceType":"Universal"
-  }
+    "api.version": "v1",
+    "source": {
+        "config": {
+  "name": "Mimecast",
+  "description": "Mimecast",
+  "category": "Mimecast",
+  "clientID": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+  "clientSecret": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+  "dataCollection": [
+    "siem",
+    "dlp",
+    "auditEvent",
+    "holdMessageList"
+  ]
+},
+        "schemaRef": {
+            "type": "Mimecast"
+        },
+        "sourceType": "Universal"
+    }
 }
 ```
