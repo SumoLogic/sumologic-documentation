@@ -328,7 +328,7 @@ service:
    ```bash title="Linux"
    sudo lsof -i:<port>
    ```
-   Where port is the port specifed in your config above. 
+   Where `port` is the port specified in your config above. 
 
 For more details, see the [Syslog receiver][syslog_receiver_docs].
 
