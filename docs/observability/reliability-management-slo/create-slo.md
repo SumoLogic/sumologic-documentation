@@ -148,7 +148,7 @@ Sumo Logic continuously computes data for your SLO behind the scenes. This data,
    3. Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
    4. Changing <strong>Timezone</strong> of SLO. 
   
-  Likewise `sloVersion` does <strong>NOT</strong> change on modifications to fields like <strong>Name</strong>, <strong>Description</strong>, <strong>Target</strong>, <strong>Compliance Type</strong>, <strong>Compliance Period</strong>, <strong>Tags</strong>, <strong>Signal Type</strong>.
+  Likewise, `sloVersion` does NOT change on modifications to fields like **Name**, **Description**, **Target**, **Compliance Type**, **Compliance Period**, **Tags**, **Signal Type**.
 
 View the schema by executing the following query:
 
