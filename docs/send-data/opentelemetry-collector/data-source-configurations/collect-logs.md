@@ -381,7 +381,7 @@ service:
    ```bash title="Linux"
    sudo lsof -i:<port>
    ```
-   Where port is the port specifed in your config above.
+   Where `port` is the port specified in your config above.
 
 For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 
