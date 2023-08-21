@@ -291,6 +291,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/source-info',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
@@ -2142,6 +2143,7 @@ integrations: [
           'integrations/saas-cloud/druva',
           'integrations/saas-cloud/docusign',
           'integrations/saas-cloud/dropbox',
+          'integrations/saas-cloud/druva-cyber-resilience',
           'integrations/saas-cloud/fastly',
           'integrations/saas-cloud/gmail-tracelogs',
           'integrations/saas-cloud/istio',
@@ -2230,6 +2232,15 @@ integrations: [
           'integrations/sumo-apps/enterprise-search-audit',
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/security-analytics',
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Webhooks',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          'integrations/webhooks/buddy',
         ],
       },
       {
