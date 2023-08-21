@@ -1,5 +1,5 @@
 ---
-title: February 13, 2023 (Reliability Management)
+title: SLO and SLI Metrics Query Enhancements (Reliability Management)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - slo

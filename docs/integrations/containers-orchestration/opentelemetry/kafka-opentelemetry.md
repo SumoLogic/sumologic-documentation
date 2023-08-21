@@ -156,7 +156,7 @@ sumo.datasource=kafka  metric=kafka.topic.partitions messaging.cluster.name={{m
 
 ## Viewing Kafka Dashboards
 
-**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables/).
+**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables/).
 
 ### Kafka - Overview
 
