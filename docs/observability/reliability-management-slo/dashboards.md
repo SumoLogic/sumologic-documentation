@@ -91,9 +91,9 @@ Once opened in log search, you can click on **Add to Dashboard** button to add S
 
 ## Custom SLO Dashboards
 
-### SLO Ouptut Data as Log Messages
+### SLO Output Data as Log Messages
 
-Sumo Logic continuously computes data for your SLO behind the scenes. This data, which powers your SLO dashboard, is also made available as log messages, and can be used to build custom dashboards. You can execute the following query to access your SLO data in logs:
+Sumo Logic continuously computes data for your SLOs behind the scenes. This data, which powers your SLO dashboards, is also made available as log messages, and can be used to build custom dashboards. You can execute the following query to access your SLO data in logs:
 
 ```sql
 _view=sumologic_slo_output
@@ -119,7 +119,7 @@ These log messages may be delayed by up to an hour, as the system ensures consis
 
 ### SLO Lookup Table
 
-The SLO lookup table is a fully managed [lookup table](/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables), that contains the latest definitons of all your SLOs. It can be use to enrich the data in your `sumologic_slo_output` view to build custom dashboards.
+The SLO lookup table is a fully managed [lookup table](/docs/search/lookup-tables/create-lookup-table/#introduction-to-lookup-tables), that contains the latest definitions of all your SLOs. It can be use to enrich the data in your `sumologic_slo_output` view to build custom dashboards.
 
 The SLO lookup table resides under a fixed path, `sumo://content/slos`. You can list all your SLOs using the log query `cat sumo://content/slos`.
 
