@@ -7,7 +7,7 @@ description: Learn how to add indicators from threat intelligence sources.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, ip addresses, and other known targets for compromise. You can import files containing threat intelligence indicators directly into Sumo Logic to aid in security analysis.
+Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known targets for compromise. You can import files containing threat intelligence indicators directly into Sumo Logic to aid in security analysis.
 
 Threat intelligence indicators can help a security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
 
@@ -33,17 +33,17 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/manage/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select the format of the file to be uploaded:
-    * **Sumo normalized JSON**. A normalized JSON file. See the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use.<br/>Your file must include the following attributes:
+    * **Sumo normalized JSON**. A normalized JSON file. <br/>See the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `indicator`
        * `type`
        * `validFrom`
        * `validUntil`
        * `confidence`
        * `threatType`
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. See the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use.<br/>See the Your file must include the following attributes:
+    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. (Note that you cannot use STIX to upload indicators from multiple sources, but instead should use **Sumo normalized JSON**.) <br/>See the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `source`
        * `indicators`
-    * **BLOB CSV or JSON**. A BLOB CSV file or JSON file. See the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use.<br/>Your file must include the following attributes:
+    * **BLOB CSV or JSON**. A BLOB CSV file or JSON file. <br/>See the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `source`
        * `format`
        * `blob`
@@ -52,9 +52,9 @@ To add threat intelligence indicators, you must upload files containing the indi
 
 ## Delete indicators
 
-1. Select an indicator. Details of the indicator appear in a sidebar.
+1. Select a source. Details of the source appear in a sidebar.
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/manage/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid black'}} width="300" />
-1. Select indicators to delete:
-   * **Delete all indicators**
+1. Select indicators to delete from the source:
+   * **Delete all indicators**. Remove all indicators from the source. 
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add threat intelligence indicators](#add-threat-intelligence-indicators) above.
 1. Click **Delete**. 
