@@ -15,7 +15,7 @@ The Sumo Logic integration for Postman ingests Postman events into Sumo Logic th
 
 ## Setup
 
-This section has instructions for collecting logs for the Sumo Logic's Postman webhook collection.
+This section has instructions for collecting logs for the Sumo Logic Postman webhook collection.
 
 ### Source configuration
 Follow the below steps to configure the Hosted Collector to receive Postman events.
