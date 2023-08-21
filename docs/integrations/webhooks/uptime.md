@@ -1,8 +1,9 @@
 ---
 id: uptime
 title: Uptime.com
-description: Learn about the collection process for the Uptime.com integration.
+description: Learn about the collection process for the Sumo Logic Uptime.com integration.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Thumbnail icon" width="50"/>
@@ -28,32 +29,37 @@ The Sumo Logic integration for Uptime.com ingests Uptime.com events into Sumo Lo
 
 ## Setup
 
-This section has instructions for collecting logs for the Sumo Logic's Uptime.com webhook collection.
+This section has instructions for collecting logs for the Sumo Logic Uptime.com webhook collection.
 
 ### Source configuration
-Follow the below steps to configure the Hosted Collector to receive Uptime.com events:
+
+Follow the below steps to configure the Hosted Collector to receive Uptime.com events.
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP Source. For example, configure as `webhook/uptime` for the Uptime.com integration.
+2. Configure **Source Category** in the HTTP Source - for example, configure as `webhook/uptime` - for the Uptime.com integration.
 3. Copy and save the endpoint URL of the source.
+
 ### Vendor configuration
+
 Configure the webhook integration in Uptime.com to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events related to alert occur within your Uptime.com account.
 
-Follow the below steps to configure the Uptime.com webhook:
+Follow the below steps to configure the Uptime.com webhook.
 
 1. Sign in to the [Uptime.com account](https://uptime.com/accounts/login).
 2. In the left navigation panel, Go to **Notifications** section, select **Integrations**.
-3. Click on **New Profile**.
+3. Click **New Profile**.
 4. Select **Custom Postback URL(Webhook)**. The webhook form will appear.
 5. Enter webhook form data as follows:
     - **Name**. Provide a name for your webhook.
     - **Assign To Contacts**. Assign your integration to a contact to receive alerts & metrics from checks.
-    - **URL**. Enter the Sumo Logic HTTP endpoint URL(source address) created above.
+    - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **Save**.
 6. Verify Uptime.com events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
-`_sourcecategory=webhook/uptime`
+  ```sql
+  _sourcecategory=webhook/uptime
+  ```
 
 :::info
-- For detailed information about webhook creation, refer [Uptime.com Documentation](https://support.uptime.com/hc/en-us/articles/115002560845-Configuring-Custom-Postback-URL-Webhooks).
-- For support, contact [Uptime.com](https://uptime.com/contact). 
+- For detailed information about webhook creation, refer to the [Uptime.com Documentation](https://support.uptime.com/hc/en-us/articles/115002560845-Configuring-Custom-Postback-URL-Webhooks).
+- For support, [contact Uptime.com](https://uptime.com/contact).
 :::

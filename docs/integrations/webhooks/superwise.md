@@ -1,8 +1,9 @@
 ---
 id: superwise
 title: Superwise
-description: Learn about the collection process for the Superwise integration.
+description: Learn about the collection process for the Sumo Logic Superwise integration.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/superwise-logo.png')} alt="Thumbnail icon" width="50"/>
@@ -19,21 +20,24 @@ The Sumo Logic integration for Superwise ingests events related to incident acti
 
 ## Setup
 
-This section has instructions for collecting logs for the Sumo Logic's Superwise webhook collection.
+This section has instructions for collecting logs for the Sumo Logic Superwise webhook collection.
 
 ### Source configuration
-Follow the below steps to configure the Hosted Collector to receive Superwise events:
+
+Follow the below steps to configure the Hosted Collector to receive Superwise events.
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP Source. For example, configure as `webhook/superwise` for the Superwise integration.
+2. Configure **Source Category** in the HTTP Source - for example, `webhook/superwise` - for the Superwise integration.
 3. Copy and save the endpoint URL of the source.
+
 ### Vendor configuration
+
 Configure the webhook integration in Superwise to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Superwise account.
 
-Follow the below steps to configure the Superwise webhook:
+Follow the below steps to configure the Superwise webhook.
 
 1. Sign in to the [Superwise account](https://portal.superwise.ai/account/login).
-2. Go to **Integrations**, and click on **New integration**.
+2. Go to **Integrations**, and click **New integration**.
 3. Under **Add integration**, select **Webhook**. The webhook form will appear.
 4. Enter webhook form data as follows:
     - **Channel name**. Provide a name for your outgoing webhook.
@@ -41,9 +45,11 @@ Follow the below steps to configure the Superwise webhook:
 5. Click **Test**.
 6. Click **Create integration**.
 7. Verify Superwise events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
-`_sourcecategory=webhook/superwise`
+  ```sql
+  _sourcecategory=webhook/superwise
+  ```
 
 :::info
-- For detailed information about webhook creation, refer [Superwise Documentation](https://docs.superwise.ai/docs/webhook).
-- For support, contact [Superwise](https://superwise.ai/contact-us/). 
+- For detailed information about webhook creation, refer to the [Superwise Documentation](https://docs.superwise.ai/docs/webhook).
+- For support, [contact Superwise](https://superwise.ai/contact-us/).
 :::
