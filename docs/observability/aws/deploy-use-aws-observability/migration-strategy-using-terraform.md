@@ -59,11 +59,11 @@ This approach will create an additional collector with Kinesis logs and metrics 
 
 ### Advantages
 
-- There is no loss of logs and metrics during migration.
+- No loss of logs and metrics during migration.
 
 ### Disadvantages
 
-- There will be ingestion of duplicate logs and metrics.
+- Duplicate logs and metrics will be ingested.
 
 ## Approach 2: Update existing collection module
 
