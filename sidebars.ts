@@ -815,7 +815,7 @@ module.exports = {
           items: [
             'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
-            'alerts/monitors/edit-settings',
+            'alerts/monitors/settings',
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
             'alerts/monitors/alert-response',

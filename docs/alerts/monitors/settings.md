@@ -1,6 +1,6 @@
 ---
-id: edit-settings
-title: Edit Monitor Settings and View Activity
+id: settings
+title: Monitor Settings and Activity
 sidebar_label: Edit Monitor Settings
 description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
@@ -18,14 +18,13 @@ The Monitors page (**Manage Data** > **Monitoring** > **Monitors**) allows you t
 
 ![monitors page](/img/monitors/monitors-page.png)
 
-To quickly open the [Alert List](alert-response.md) to view all of the triggered alerts from a Monitor, hover your cursor over its **Status** and click the icon.<br/> ![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
+Open the [Alert List](alert-response.md) to view all of the triggered alerts from a Monitor by hovering your cursor over its **Status** and clicking the icon.<br/> ![monitor shortcut.png](/img/monitors/monitors-shortcut.png)
 
 At the top of the page, you can:
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
 * **Add** > **New Folder**: create a folder to organize your Monitors.
 * **Add** > **New Monitor**: create a [new Monitor](#add-a-monitor).
 * **Add** > **Import**: import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
-
 
 :::important
 The **Import** function is provided for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
@@ -81,7 +80,38 @@ Note that the same threshold translating functionality supports to [Creating Mon
   * **Subscribe**
   * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
 
-## Monitors folder permissions
+## Monitor tags
+
+Adding a **Tag** to a Monitor can help you categorize, search, filter, and correlate them with other data. These tags are key/value pairs that allow you to apply additional metadata to your Monitors beyond their name and description. [Learn more here](#slo-tags-and-filters).
+
+will work the same way as SLOs except for one difference: during tags creation, you will be able to see tag suggestions (both keys and values) from other domains as well. This means that during tag create/edit in SLOs suggestions from monitor tags will be visible as well and vice versa.
+
+For example, you might find it useful to add `team=alerting` in monitor this tag key (`team`) and value (`alerting`) will be visible to the user in the suggestions while creating/editing tags for an SLO. During filtering by tags only, tags for that domain will be visible in the suggestions i.e., only tags attached to monitors will be visible in the monitor.
+
+:::note Limitations
+- Tag keys cannot start with the prefixes `sumo.` or `_`
+- Tag keys must only contain letters, numbers, and/or the symbols `_`, `.`, `/`, `+`, `-`, `@`
+- Tag values can only contain letters, white spaces, numbers, and/or the symbols `_`, `.`, `/`, `=`, `+`, `-`, `@`
+- You can associate a maximum of 50 tags per monitor.
+:::
+
+### Add a Tag
+
+To add a tag(s) to an existing monitor:
+
+1. Click on any monitor line item in your list, then click **Edit**.
+1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+To add a tag while creating a new monitor:
+
+1. Click **Add** > **New SLO**.
+1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click **Save**.
+
+To apply an existing tag, select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.
+
+## Monitor folder permissions
 
 This section describes permissions for folders that contain Monitors. This feature is not enabled by default in all accounts. If you would like access to this feature please contact Sumo Logic Support for assistance.
 
