@@ -79,11 +79,11 @@ This approach will create an additional collector with Kinesis logs and metrics 
 
 ### Advantages
 
-- There is no ingestion of duplicate logs and metrics.
+- No ingestion of duplicate logs and metrics.
 
 ### Disadvantages
 
-- There will be a loss of logs and metrics during migration.
+-  Logs and metrics will be lost during migration.
 
 ## Troubleshooting
 
