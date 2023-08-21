@@ -18,7 +18,7 @@ The Sumo Logic integration for Postman ingests Postman events into Sumo Logic th
 This section has instructions for collecting logs for the Sumo Logic's Postman webhook collection.
 
 ### Source configuration
-Follow the below steps to configure the Hosted Collector to receive Postman events:
+Follow the below steps to configure the Hosted Collector to receive Postman events.
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source. For example, configure as `webhook/postman` for the Postman integration.
