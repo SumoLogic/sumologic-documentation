@@ -1694,7 +1694,7 @@ Navigate to the location where you have installed the AWSO Tf solution and repla
   }
   ```
 3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
-4. Replace the code with the code give below.
+4. Replace the code with the code provided below.
   ```sql
   resource "aws_serverlessapplicationrepository_cloudformation_stack" 
   "auto_enable_access_logs" {
