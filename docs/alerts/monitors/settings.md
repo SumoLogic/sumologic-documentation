@@ -1,7 +1,7 @@
 ---
 id: settings
 title: Monitor Settings and Activity
-sidebar_label: Edit Monitor Settings
+sidebar_label: Monitor Settings
 description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
 
@@ -80,13 +80,9 @@ Note that the same threshold translating functionality supports to [Creating Mon
   * **Subscribe**
   * **Copy Link**.<br/><img src={useBaseUrl('img/monitors/monitor-actions.png')} alt="monitor more actions" width="400"/>
 
-## Monitor tags
+## Tags
 
-Adding a **Tag** to a Monitor can help you categorize, search, filter, and correlate them with other data. These tags are key/value pairs that allow you to apply additional metadata to your Monitors beyond their name and description. [Learn more here](#slo-tags-and-filters).
-
-will work the same way as SLOs except for one difference: during tags creation, you will be able to see tag suggestions (both keys and values) from other domains as well. This means that during tag create/edit in SLOs suggestions from monitor tags will be visible as well and vice versa.
-
-For example, you might find it useful to add `team=alerting` in monitor this tag key (`team`) and value (`alerting`) will be visible to the user in the suggestions while creating/editing tags for an SLO. During filtering by tags only, tags for that domain will be visible in the suggestions i.e., only tags attached to monitors will be visible in the monitor.
+Adding a **Tag** to a Monitor can help you categorize, search, filter, and correlate them with other data. These tags are key/value pairs that allow you to apply additional metadata to your Monitors beyond their name and description. Example tag: `team=alerting`, where key is `team` and value is `alerting`.
 
 :::note Limitations
 - Tag keys cannot start with the prefixes `sumo.` or `_`
@@ -95,23 +91,24 @@ For example, you might find it useful to add `team=alerting` in monitor this tag
 - You can associate a maximum of 50 tags per monitor.
 :::
 
-### Add a Tag
+To add a tag to an existing monitor:
 
-To add a tag(s) to an existing monitor:
-
-1. Click on any monitor line item in your list, then click **Edit**.
-1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. Double-click on any monitor in your list.
+1. In the side panel, click **Edit**.
+1. Under step 4 (**Monitor Details**), create a tag using the `key=value` format.
 1. Click **Save**.
 
 To add a tag while creating a new monitor:
 
-1. Click **Add** > **New SLO**.
-1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Go to **Manage Data** > **Monitoring** > **Monitors**.
+1. Click **Add** > **New Monitor**.
+1. Follow the steps to create a new monitor. When you get to step 4 (**Monitor Details**), you can:
+   * Create a new tag using the `key=value` format.
+   * Apply an existing tag by selecting the key and its possible values from the dropdown.
 1. Click **Save**.
 
-To apply an existing tag, select the key and its possible values from the tags dropdown, or create your own key/value pair for the tag.
-
-## Monitor folder permissions
+## Folder permissions
 
 This section describes permissions for folders that contain Monitors. This feature is not enabled by default in all accounts. If you would like access to this feature please contact Sumo Logic Support for assistance.
 
