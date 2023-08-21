@@ -720,46 +720,14 @@ This is the formatted result document:
 
 Notice that the state of the sample search job is DONE GATHERING RESULTS. The following table includes possible states.
 
-<table>
-  <tr>
-   <td><strong>State</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>NOT STARTED
-   </td>
-   <td>Search job has not been started yet.
-   </td>
-  </tr>
-  <tr>
-   <td>GATHERING RESULTS
-   </td>
-   <td>Search job is still gathering more results, however results might already be available.
-   </td>
-  </tr>
-  <tr>
-   <td>FORCE PAUSED
-   </td>
-   <td>Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.
-   </td>
-  </tr>
-  <tr>
-   <td>DONE GATHERING RESULTS
-   </td>
-   <td>Search job is done gathering results; the entire specified time range has been covered.
-   </td>
-  </tr>
-  <tr>
-   <td>CANCELLED
-   </td>
-   <td>The search job has been canceled. Note the spelling has two L letters.
-   </td>
-  </tr>
-</table>
-
-
+| State | Description |
+| :-- | :-- | 
+| NOT STARTED	| Search job has not been started yet.| 
+| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.| 
+| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.| 
+| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.| 
+| DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
+| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.| 
 
 #### More about results
 
