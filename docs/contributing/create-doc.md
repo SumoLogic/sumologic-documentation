@@ -73,7 +73,7 @@ Once you decide on placement, use the card HTML code in that doc to create a new
 
 ## Step 7: Create CID URL
 
-Because docs links appear throughout our UI, and canonical links often change, we assign each doc a permalink URL containing a content ID (CID) number. The permalink URL does a 301 redirect to the canonical URL. This way, future changes to the canonical URL won't impact these UI links.
+Because docs links appear throughout our product, and canonical links often change, we assign each doc a permalink URL containing a content ID (CID) number. The permalink URL does a 301 redirect to the canonical URL. This way, future changes to the canonical URL (such as a product name change) won't impact the Learn More links for the user. And it will save us code changes to the UI, providing great flexibility when we need to make quick changes.
 
 This URL is then placed in the UI in the appropriate place. For example, [https://help.sumologic.com/?cid=0071](https://help.sumologic.com/?cid=0071) links to a metrics page, which appears in the **Metrics** UI section.
 
