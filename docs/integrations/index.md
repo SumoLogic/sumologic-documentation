@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/integrations.png')} alt="icon" width="50"/>
 
-This category has documentation for Sumo Logic apps and integrations, located in our **App Catalog**,
+This category has documentation for Sumo Logic apps, webhooks, and other integrations, located in our **App Catalog**,
 
 During installation, apps are customized with your source configurations and populated in the folder of your choice. You'll then start getting insights from your data sources via [Dashboards](/docs/dashboards) and example searches for common use cases.
 
