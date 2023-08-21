@@ -1,5 +1,5 @@
 ---
-id: sendGrid
+id: sendgrid
 title: SendGrid
 description: Learn about the collection process for the SendGrid integration.
 ---
