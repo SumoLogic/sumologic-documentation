@@ -297,7 +297,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
-                label: 'Apps, Integrations',
+                label: 'Apps and Integrations',
                 icon: 'apps',
               },
               {
