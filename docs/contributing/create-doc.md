@@ -71,16 +71,24 @@ As an example, let's say you needed to add a Best Practices doc to the [**Send D
 
 Once you decide on placement, use the card HTML code in that doc to create a new entry.
 
-## Step 7: Create CID
+## Step 7: Create CID URL
 
-Every doc must be associated with a Content ID (CID) number, which is appended to a permalink URL that's placed in the UI in the appropriate place. This way, any future changes to the canonical URL won't impact the UI links.
+Because docs links appear throughout our UI, and canonical links often change, we assign each doc a permalink URL containing a content ID (CID) number. The permalink URL does a 301 redirect to the canonical URL. This way, future changes to the canonical URL won't impact these UI links.
 
-For example, [https://help.sumologic.com/?cid=0071](https://help.sumologic.com/?cid=0071) links to a metrics page, which appears in the **Metrics** UI section.
+This URL is then placed in the UI in the appropriate place. For example, [https://help.sumologic.com/?cid=0071](https://help.sumologic.com/?cid=0071) links to a metrics page, which appears in the **Metrics** UI section.
 
 To create a CID:
+1. In your GitHub authoring tool (like Atom or VS Code), open our [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
+1. Scroll down to the CIDs section, where the line items start with `"/cid/5201"`.
+1. Find an unused CID redirect and add that value along with the canonical URL. For example:
+  ```json title="Example" {2}
+  "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
+  "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
+  "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
+  ```
 
-1. Open the [cid-redirects.json](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json) file.
-1. 
+Ideally, although not required, this should be placed near URLs similar to the one you're adding.
+
 
 ## Step 8: Preview your changes
 
