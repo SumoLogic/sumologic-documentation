@@ -107,4 +107,4 @@ When you try to migrate CloudWatch Source to Kinesis Firehose Source using [Appr
 
 ### Solution
 
-To resolve this issue, refer to [creating Serverless Application Repository CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#troubleshooting).
+To resolve this issue, refer to [Creating Serverless Application Repository CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/#troubleshooting).
