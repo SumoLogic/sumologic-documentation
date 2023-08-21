@@ -192,7 +192,7 @@ If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo
 
 Yes, our OpenTelemetry Collector supports HTTP checks, allowing you to ping public HTTPs URLs and monitor up/down status.
 
-How it works - the OpenTelemetry [HTTP Check receiver][httpcheck_receiver_docs] produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors.
+Here's how it works: the OpenTelemetry [HTTP Check receiver][httpcheck_receiver_docs] produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors.
 
 ```yaml
 receivers:
