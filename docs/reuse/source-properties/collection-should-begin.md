@@ -1,1 +1,0 @@
-If you set this property to a time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.

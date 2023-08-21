@@ -136,7 +136,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>0 (collects all data)
    </td>
-   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. 
+   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)  
    </td>
    <td>Modifiable
    </td>
@@ -284,7 +284,6 @@ The following table lists the API response fields for installed and hosted Colle
   </tr>
 </table>
 
-
 The following table lists additional response fields for Installed Collectors only.
 
 <table>
@@ -412,7 +411,6 @@ Get a list of Collectors with an optional limit and offset.
    </td>
   </tr>
 </table>
-
 
 
 #### Example  
