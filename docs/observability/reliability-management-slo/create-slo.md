@@ -142,7 +142,13 @@ Sumo Logic continuously computes data for your SLO behind the scenes. This data,
 * `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
 * `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
 * `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
-* `sloVersion`: version of SLO definition
+* `sloVersion`: version of SLO definition. The `sloVersion` is only changed whenever there is a change in semantics of the underlying SLI definition. Therefore, the `sloVersion` is incremented by 1 in case of following modifications only:
+   1. Changing <strong>Source</strong> of the SLO. Example: changing <strong>Query Based</strong> to <strong>Monitor Based</strong>.
+   2. Changing <strong>Evaluation Type</strong>. Example: changing <strong>Request-based</strong> to <strong>Window-based</strong> or changing <strong>Window size</strong> of SLO.
+   3. Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
+   4. Changing <strong>Timezone</strong> of SLO. 
+  
+  Likewise, `sloVersion` does NOT change on modifications to fields like **Name**, **Description**, **Target**, **Compliance Type**, **Compliance Period**, **Tags**, and **Signal Type**.
 
 View the schema by executing the following query:
 
@@ -307,9 +313,16 @@ You can make further modifications to a saved filter view later using kebab menu
 
 ## Create an SLO from Metrics page
 
-:::note Coming soon
-You'll be able to create SLOs from Metrics Explorer.
-:::
+To create an SLO from the **Metrics** page:
+
+1. Click **+ New** > **Metrics** or go to an existing **Metrics** tab.
+1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
+1. Click the three-dot kebab icon, then select **Create an SLO**.
+1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
+
+You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should have a quantization after the selector. You can specify one or more operators in the query for SLO.
+
+As an example, a pure selector query with no operators could be `_sourceCategory=my-web-server metric=is_healthy`, which returns a time series per instance your web server indicating if it is healthy or not (`1` or `0`). To count the number of instances that were healthy in a given minute, you can use the `sum` operator with an appropriate quantization method and interval, as follows: `_sourceCategory=my-web-server metric=is_healthy | quantize to 1m using max | sum`.
 
 ## Create an SLO from Monitors list page
 
