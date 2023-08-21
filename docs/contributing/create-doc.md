@@ -79,12 +79,12 @@ This URL is then placed in the UI in the appropriate place. For example, [https:
 
 To create a CID:
 1. In your GitHub authoring tool (like Atom or VS Code), open our [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
-1. Scroll down to the CIDs section, where the line items start with `"/cid/5201"`.
-1. Find an unused CID redirect and add that value along with the canonical URL. For example:
+1. Scroll down to the CIDs section, where the line items start with `"/cid/"`.
+1. Find an unused CID number, then add that value along with the canonical URL. For example:
   ```json title="Example" {2}
-  "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
-  "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
-  "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
+  "/cid/5120": "/docs/manage/users-roles/roles/create-manage-roles",
+  "/cid/5121": "/docs/example",
+  "/cid/5122": "/docs/get-started/library",
   ```
 
 Ideally, although not required, this should be placed near URLs similar to the one you're adding.
