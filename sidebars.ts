@@ -2244,7 +2244,7 @@ integrations: [
           'integrations/webhooks/postman',
           'integrations/webhooks/pusher',
           'integrations/webhooks/rollbar',
-          'integrations/webhooks/sendGrid',
+          'integrations/webhooks/sendgrid',
           'integrations/webhooks/sentry',
           'integrations/webhooks/split',
           'integrations/webhooks/squadcast',
