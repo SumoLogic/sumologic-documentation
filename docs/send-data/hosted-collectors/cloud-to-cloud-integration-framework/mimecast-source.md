@@ -8,14 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="50"/>
 
-The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://www.mimecast.com/tech-connect/documentation/). It securely stores the required authentication, scheduling, and state tracking information.
+The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://developer.services.mimecast.com/apis). It securely stores the required authentication, scheduling, and state tracking information.
 
 The Mimecast Source leverages the following:
 
- * [Download SIEM Logs](https://developer.services.mimecast.com/docs/threatssecurityeventsanddataforcg/1/routes/v1/siem/events/cg/get)
- * [Download DLP Logs](https://developer.services.mimecast.com/docs/securityevents/1/routes/api/dlp/get-logs/post)
- * [Download Audit Events](https://developer.services.mimecast.com/docs/auditevents/1/routes/api/audit/get-audit-events/post)
- * [Download Hold Message List](https://developer.services.mimecast.com/docs/cloudgateway/1/routes/api/gateway/get-hold-message-list/post)
+ * [SIEM Logs](https://developer.services.mimecast.com/docs/threatssecurityeventsanddataforcg/1/routes/v1/siem/events/cg/get)
+ * [DLP Logs](https://developer.services.mimecast.com/docs/securityevents/1/routes/api/dlp/get-logs/post)
+ * [Audit Events](https://developer.services.mimecast.com/docs/auditevents/1/routes/api/audit/get-audit-events/post)
+ * [Hold Message List](https://developer.services.mimecast.com/docs/cloudgateway/1/routes/api/gateway/get-hold-message-list/post)
 
 ## States
 
@@ -45,13 +45,7 @@ the detected issue.
 
 ## Prerequisite
 
-The user account associated with your Mimecast credentials needs to have `basic administrator` access. In the Enhanced Logging section of the **Administration > Account > Account Settings** menu in the **Administration Console**, at least one of the fields should be enabled for email logging for at least one inbound, outbound, and internal emails.
-
-See these [guidelines](https://community.mimecast.com/docs/DOC-3181) to create the necessary credentials you'll need to authenticate the Mimecast Source, which includes an Application Key, Secret Key, and Access Key.
-
-:::note
-Consider the Authentication Profile TTL when configuring access. If your credentials expire you'll receive a 418 Error message from the Health Events of your Source, in which case you'll need to provide new credentials. Details on the recommended configuration, including setting a non-expiring key is found in the [guidelines](https://community.mimecast.com/docs/DOC-3181).
-:::
+The integration must be configured with the Client ID, Secret Key, and Data Source(s). Also, the user account associated with your Mimecast credentials needs to have `basic administrator` access.
 
 ### Create a Mimecast Source
 
@@ -118,9 +112,6 @@ Source.
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `domain` | String | Yes |  | The base URL parameter depends on your global region.	modifiable
-`application_key` | String | Yes |  | The Mimecast key you want to use to authenticate collection requests.	modifiable
-`application_id` | Boolean | Yes |  | he Mimecast application ID you want to use to authenticate collection requests. | modifiable |
 | `clientID` | String | Yes |  | Client Id for your Mimecast app. | modifiable |
 | `clientSecret` | String | Yes |  | Secret Key for your Mimecast app. | modifiable |
 | `dataCollection` | String | Yes |  | Supported API. | modifiable |
@@ -151,3 +142,18 @@ Mimecast Source JSON example:
     }
 }
 ```
+
+## Troubleshooting
+
+After configuring your source, you should check the status of the source in the **Collectors** page > **Status** column. If the source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
+
+**Error Code**: `401` <br />
+**Error Details**:
+```
+{
+    "error": "Client credentials are invalid"
+}
+```
+
+To resolve these errors:
+- Make sure correct **Client ID or Secret Key** is used to configure the source.
