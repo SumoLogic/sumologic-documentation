@@ -3,6 +3,8 @@ id: collector-api-methods-examples
 title: Collector API Methods and Examples
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 
 :::caution
@@ -134,7 +136,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>0 (collects all data)
    </td>
-   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch
+   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. 
    </td>
    <td>Modifiable
    </td>
