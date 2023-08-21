@@ -1757,7 +1757,6 @@ module.exports = {
             'observability/reliability-management-slo/create-slo',
             'observability/reliability-management-slo/alerts',
             'observability/reliability-management-slo/dashboards',
-            'observability/reliability-management-slo/use-cases',
           ],
         },
         'observability/work-from-home-vpn',

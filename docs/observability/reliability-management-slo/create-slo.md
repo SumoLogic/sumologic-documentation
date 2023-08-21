@@ -134,96 +134,62 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 1. Click **Create an SLO**.<br/><img src={useBaseUrl('img/observability/slo-create.png')} alt="Create an SLO" width="150"/>
 
 
-### SLO as Log Messages
+## Create an SLO from Metrics page
 
-Sumo Logic continuously computes data for your SLO behind the scenes. This data, which powers your SLO dashboard, is also made available as log messages that conform to the following schema:
+To create an SLO from the **Metrics** page:
 
-* `Time`: timestamp
-* `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
-* `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
-* `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
-* `sloVersion`: version of SLO definition. The `sloVersion` is only changed whenever there is a change in semantics of the underlying SLI definition. Therefore, the `sloVersion` is incremented by 1 in case of following modifications only:
-   1. Changing <strong>Source</strong> of the SLO. Example: changing <strong>Query Based</strong> to <strong>Monitor Based</strong>.
-   2. Changing <strong>Evaluation Type</strong>. Example: changing <strong>Request-based</strong> to <strong>Window-based</strong> or changing <strong>Window size</strong> of SLO.
-   3. Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
-   4. Changing <strong>Timezone</strong> of SLO. 
-  
-  Likewise, `sloVersion` does NOT change on modifications to fields like **Name**, **Description**, **Target**, **Compliance Type**, **Compliance Period**, **Tags**, and **Signal Type**.
+1. Click **+ New** > **Metrics** or go to an existing **Metrics** tab.
+1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
+1. Click the three-dot kebab icon, then select **Create an SLO**.
+1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
 
-View the schema by executing the following query:
+You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should have a quantization after the selector. You can specify one or more operators in the query for SLO.
 
-```sql
-_view=sumologic_slo_output sloId="<your-SLO-ID>"
-| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
-| max(sloVersion) as sloVersion | compose sloVersion]
--- (replace with a valid SLO Id)
-```
+As an example, a pure selector query with no operators could be `_sourceCategory=my-web-server metric=is_healthy`, which returns a time series per instance your web server indicating if it is healthy or not (`1` or `0`). To count the number of instances that were healthy in a given minute, you can use the `sum` operator with an appropriate quantization method and interval, as follows: `_sourceCategory=my-web-server metric=is_healthy | quantize to 1m using max | sum`.
 
-These log messages will be delayed by one hour, as the system ensures consistency to account for ingest delay of source telemetry.
+## Create an SLO from Monitors list page
 
+Critical Monitors are great candidates to convert to SLOs. From the **Monitors** section, you can create a Monitor- and window-based SLO for a given trigger condition.
 
-### SLO Lookup Tables
+As an example, say you have an existing Monitor that fires a **Critical** alert if the latency of a customer-critical service exceeds 500ms. By creating an SLO directly through this specific Monitor, those thresholds will automatically carry over into the new SLO, saving you time and effort.
 
-You can query a SLO Lookup Table to view all SLO metadata in your environment. These tables reside under a fixed path, `sumo://content/slos`. Data is managed and refreshed automatically on our end.
+:::caution Prerequisite
+Your Monitor must be in an **active** state.
+:::
 
-There are two ways to use it:
+1. Go to **Manage Data** > **Monitoring** > **Monitors** tab.
+1. Click on any active Monitor to open its panel.
+1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/>   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" width="500"/><br/>
+This will open the **New SLO** window.
+1. **Define your SLI**. Your Monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
+1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
+1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
-* To join the results of your SLO precomputed data from `_view=sumologic_slo_output` with your metadata contained in the internal lookup table based on the joining key (`sloId`, `sloVersion`):
-  ```sql
-  _view=sumologic_slo_output
-  | lookup * from sumo://content/slos on sloId, sloVersion
-  ```
-* To enlist the contents of the lookup table:
-  ```sql
-  cat sumo://content/slos
-  ```
+To edit SLO parameters:
+1. Go to the **SLO** tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
+1. Edit definition and other parameters.
 
-#### Dashboard example
+To edit SLO parameters from a Monitor:
+1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
+1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
 
-As an example, say you had a SLO [dashboard](/docs/dashboards) and wanted to see error budget burndown from several of your apps and services combined.<br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
+:::important
+Any Monitor update that changes the Monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.
+:::
 
-You would need to create a custom graphic that combines multiple SLOs from multiple services:
+### SLI calculation for Monitor-based SLOs
 
-1. Go to **Manage Data** > **Monitoring** > **SLO**.
-1. Click on any SLO line item.
-1. Hover over the **Percentage budget remaining** panel, then click the three-dot icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
-1. In the search field, enter the following snippet. This will join data from multiple sources for your lookup table.
-  ```sql
-  _view=sumologic_slo_output
-  | lookup * from sumo://content/slos on sloId, sloVersion
-  | where !isBlank (sloname) and slofolderpath matches "*"
-  | concat (sloname, " (", sloId, ")") as sloUniqueName
-  | sum (goodCount) as goodEvents, sum(totalCount) as totalEvents, last (compliancetarget) as target, last(slofolderpath) as sloPath, last(sliwindowsize) as sliwindowsize, last(slievaluationtype) as evaluationType by sloUniqueName
-  | totalEvents - goodEvents as badEvents
-  | if (evaluationType = "Window", queryTimeRange() / 1000 / sliwindowsize, totalEvents) as denominator
-  | 100 * (1 - badEvents / denominator) as sli
-  | 100 * (sli - target) / (100 - target) as budgetRemaining
-  | fields sloUniqueName, budgetRemaining
-  ```
-1. Click **Add to Dashboard**.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. A minute is treated as unsuccessful if the Monitor threshold is violated at any point of time within that minute.
 
+## Create an SLO via Terraform
 
-#### Tags in SLO Lookup tables
+You can use the Sumo Logic Terraform provider to automate the creation of [SLOs (`sumologic_slo`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [SLO folders (`sumologic_slo_folder`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder). This can be useful for organizations that want to:
+* Templatize SLOs
+* Standardize the configuration of SLOs, monitors, and dashboards
+* Automate SLO-related workflows
 
-You can leverage your existing SLO tags in **Log Search** queries and SLO lookup tables.
+You can use the [Monitor Terraform provider (`sumologic_monitor`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.
 
-To display all of your SLOs that have one or more tags:
-
-```sql
-CAT sumo://content/slos
-| where !(tags = "{}")
-```
-
-<img src={useBaseUrl('img/observability/slo-tags-query-log.png')} alt="slo-tags-query.png" />
-
-You can also use tags in your lookup table to correlate SLOs with your other Sumo Logic data. In this example, the query will find SLO output data for all SLOs that belong to service `ingestion`:
-
-```sql
-_view=sumologic_slo_output
-| lookup tags from sumo://content/slos on sloId=sloId
-| json field=tags "service"
-| where service="ingestion"
-```
 
 ## Managing your SLOs
 
@@ -310,59 +276,3 @@ You can make further modifications to a saved filter view later using kebab menu
 * A maximum of 10 saved views are allowed per user.
 * Saved filter views are only visible to you and cannot be shared with other users in your org.
 :::
-
-## Create an SLO from Metrics page
-
-To create an SLO from the **Metrics** page:
-
-1. Click **+ New** > **Metrics** or go to an existing **Metrics** tab.
-1. Under **Metrics Explorer**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="metrics-slo.png" />
-1. Click the three-dot kebab icon, then select **Create an SLO**.
-1. Follow the instructions under [Create an SLO (General)](#create-an-slo-general).
-
-You can use [metrics operators](/docs/metrics/metrics-operators) for metrics-based SLOs. The metrics query specified in your SLO should have a quantization after the selector. You can specify one or more operators in the query for SLO.
-
-As an example, a pure selector query with no operators could be `_sourceCategory=my-web-server metric=is_healthy`, which returns a time series per instance your web server indicating if it is healthy or not (`1` or `0`). To count the number of instances that were healthy in a given minute, you can use the `sum` operator with an appropriate quantization method and interval, as follows: `_sourceCategory=my-web-server metric=is_healthy | quantize to 1m using max | sum`.
-
-## Create an SLO from Monitors list page
-
-Critical Monitors are great candidates to convert to SLOs. From the **Monitors** section, you can create a Monitor- and window-based SLO for a given trigger condition.
-
-As an example, say you have an existing Monitor that fires a **Critical** alert if the latency of a customer-critical service exceeds 500ms. By creating an SLO directly through this specific Monitor, those thresholds will automatically carry over into the new SLO, saving you time and effort.
-
-:::caution Prerequisite
-Your Monitor must be in an **active** state.
-:::
-
-1. Go to **Manage Data** > **Monitoring** > **Monitors** tab.
-1. Click on any active Monitor to open its panel.
-1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" width="500"/>   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" width="500"/><br/>
-This will open the **New SLO** window.
-1. **Define your SLI**. Your Monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
-1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
-1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
-
-To edit SLO parameters:
-1. Go to the **SLO** tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
-1. Edit definition and other parameters.
-
-To edit SLO parameters from a Monitor:
-1. Go to the **Monitors** tab and click on any Monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
-1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular Monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
-
-:::important
-Any Monitor update that changes the Monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.
-:::
-
-### SLI calculation for Monitor-based SLOs
-
-SLIs for Monitor-based SLOs are calculated at a granularity of 1 minute. A minute is treated as unsuccessful if the Monitor threshold is violated at any point of time within that minute.
-
-## Create an SLO via Terraform
-
-You can use the Sumo Logic Terraform provider to automate the creation of [SLOs (`sumologic_slo`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo) and [SLO folders (`sumologic_slo_folder`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/slo_folder). This can be useful for organizations that want to:
-* Templatize SLOs
-* Standardize the configuration of SLOs, monitors, and dashboards
-* Automate SLO-related workflows
-
-You can use the [Monitor Terraform provider (`sumologic_monitor`)](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) to create monitors associated with SLOs.
