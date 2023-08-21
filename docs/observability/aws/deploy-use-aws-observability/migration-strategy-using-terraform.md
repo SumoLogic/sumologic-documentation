@@ -93,7 +93,7 @@ This approach will create an additional collector with Kinesis logs and metrics 
 
 ### Cause
 
-When you try to migrate CloudWatch Source to Kinesis Firehose Source using [Approach 2](#approach-2-update-existing-collection-module), migration will fail because Terraform tries to create a Kinesis source with the same name before deleting the existing Cloudwatch Source. 
+When you try to migrate CloudWatch Source to Kinesis Firehose Source using [Approach 2](#approach-2-update-existing-collection-module), migration will fail. This is because Terraform tries to create a Kinesis source with the same name before deleting the existing CloudWatch Source. 
 
 ### Solution
 
