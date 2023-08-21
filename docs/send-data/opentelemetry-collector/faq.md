@@ -190,16 +190,32 @@ If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo
 
 #### Does Sumo OpenTelemetry support HTTP checks?
 
-Yes, our OpenTelemetry collector supports HTTP checks, allowing you to ping public HTTPs URLs and monitor up/down status.
+Yes, our OpenTelemetry Collector supports HTTP checks, allowing you to ping public HTTPs URLs and monitor up/down status.
 
-How it works - the OpenTelemetry receiver produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors.
-<!--
-1. To come...
-1. ...
--->
-You can get alerted in 3 minutes or less when a OpenTelemetry collector disappears and is not marked ephemeral (that is, server or VM crashes).
+How it works - the OpenTelemetry [HTTP Check receiver][httpcheck_receiver_docs] produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors.
+
+```yaml
+receivers:
+  httpcheck/my-public-sites:
+    collection_interval: 10s
+    targets:
+      - endpoint: https://www.sumologic.com
+      - endpoint: https://opentelemetry.io/blog
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - httpcheck/my-public-sites
+      processors:
+        - memory_limiter
+        - batch
+      exporters:
+        - sumologic
+```
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="otel-ping.png" width="450" />
+
+[httpcheck_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/httpcheckreceiver/README.md
 
 ## Filtering metrics and logs
 
