@@ -2241,6 +2241,18 @@ integrations: [
         collapsed: true,
         items: [
           'integrations/webhooks/buddy',
+          'integrations/webhooks/postman',
+          'integrations/webhooks/pusher',
+          'integrations/webhooks/rollbar',
+          'integrations/webhooks/sendGrid',
+          'integrations/webhooks/sentry',
+          'integrations/webhooks/split',
+          'integrations/webhooks/squadcast',
+          'integrations/webhooks/stripe',
+          'integrations/webhooks/superwise',
+          'integrations/webhooks/uptime',
+          'integrations/webhooks/zebrium-rcaas',
+          'integrations/webhooks/zenduty',
         ],
       },
       {
