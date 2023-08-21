@@ -20,7 +20,7 @@ The Sumo Logic integration for Buddy ingests pipeline execution events into Sumo
 
 ## Setup
 
-Follow the steps to setup and configure the Buddy collection.
+To set up the Buddy integration, follow the instructions provided. These instructions will guide you through the process of creating endpoint URL of the source, which you will need to use when configuring the webhook integration in the Buddy platform. 
 
 ### Source configuration
 
