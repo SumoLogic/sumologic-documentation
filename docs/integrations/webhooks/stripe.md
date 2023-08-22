@@ -22,8 +22,8 @@ This section has instructions for collecting logs for the Sumo Logic Stripe webh
 
 Follow the below steps to configure the Hosted Collector to receive Stripe events.
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one.
-2. Then add a [HTTP Logs and Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one.
+2. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 3. Configure **Source Category** in the HTTP Source - for example, `webhook/stripe` - for the Stripe integration.
 4. Expand **Advanced Options for Logs (Optional)** section in the HTTP Source, then uncheck **Multiline Processing** option and check **One Message Per Request**.
 5. Copy and save the endpoint URL of the source.
