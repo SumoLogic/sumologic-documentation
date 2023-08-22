@@ -98,6 +98,14 @@ Each Sumo Logic App has unique requirements, so make sure to follow the specific
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=perf`.
    * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Perf**.
 
+## Certified by Sumo Logic
+
+Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
+
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" width="500" />
+
+These apps have gone through code and functional review with the Sumo Logic app development team as part of the [technology partner program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
+
 ## Troubleshooting
 
 If you've installed a Sumo Logic App and no data appears in its Dashboards, you may have chosen the wrong Source Category.
