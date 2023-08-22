@@ -36,7 +36,7 @@ The new `sec_signal` index has some differences compared to the older Signal For
      * The `threat_indicators` object is no longer included (this has been deprecated for some time)
 * Users may see a different number of signals for the same time period when comparing the `sec_signal` index with the old Signal Forwarding data. This is due to a number of factors related to how the Sumo platform and Cloud SIEM calculate start and end times and which timestamps are used in the different indices. But over the long term, both methods include the same signals.  
 
-The following table lists an example of the same Signal in the old format from Signal Forwarding and the new format in the `sec_signal` index:
+The following code examples show the same Signal in the old format from Signal Forwarding and the new format in the `sec_signal` index:
 
 ### Old format
 
