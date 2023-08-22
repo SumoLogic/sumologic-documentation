@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Split is a feature delivery platform that combines the quick and dependable nature of feature flags with data-driven insights to assess the effects of each feature. A webhook available in the Split can forward events related to activities that occurred in your Split platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor user activities, admin changes in the tools used by the whole team, and impressions in Sumo Logic. For more details, refer to the [Split Documentation](https://docs.split.io/docs).
+Split is a feature delivery platform that combines the quick and dependable nature of feature flags with data-driven insights to assess the effects of each feature. You can use a webhook in the Split platform to forward activities related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor user activities, admin changes in the tools used by the whole team, and impressions in Sumo Logic. For more details, refer to the [Split Documentation](https://docs.split.io/docs).
 
 ## Event types
 
@@ -25,7 +25,7 @@ This section has instructions for collecting logs for the Sumo Logic Split webho
 
 Follow the below steps to configure the Hosted Collector to receive Split events.
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source - for example, `webhook/split` - for the Split integration.
 3. Copy and save the endpoint URL of the source.
 
@@ -44,7 +44,7 @@ Follow the below steps to configure the Split webhook.
     - For **Outgoing Webhook** of type **impressions** and **audit logs**,
         - **Environments**. Select the environment in Split from which data should be sent.
 6. Click **Save**.
-7. Verify Split events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+7. Verify Split events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/split
   ```

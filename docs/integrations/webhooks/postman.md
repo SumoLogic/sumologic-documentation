@@ -46,7 +46,7 @@ Follow the below steps to configure the Postman webhook.
         - **Choose workspace**. Select the workspace to which your collection belongs.
         - **Choose Monitor**. Select the monitor you wish to send results for.
 6. Click **Add Integration**.
-7. Verify Postman events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+7. Verify Postman events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/postman
   ```

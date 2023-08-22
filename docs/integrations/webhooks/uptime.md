@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Uptime.com is a website monitoring service that tracks website availability and performance, providing real-time alerts to ensure a smooth online experience. A webhook available in the Uptime.com can forward events related to alerts from Uptime.com platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor website or service uptime, downtime incidents, response times, and performance metrics in Sumo Logic. For more details, refer to the [Uptime.com Documentation](https://support.uptime.com/hc/en-us).
+Uptime.com is a website monitoring service that tracks website availability and performance, providing real-time alerts to ensure a smooth online experience. You can use a webhook in the Uptime.com platform to forward alerts related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor website or service uptime, downtime incidents, response times, and performance metrics in Sumo Logic. For more details, refer to the [Uptime.com Documentation](https://support.uptime.com/hc/en-us).
 
 ## Event types
 
@@ -35,7 +35,7 @@ This section has instructions for collecting logs for the Sumo Logic Uptime.com 
 
 Follow the below steps to configure the Hosted Collector to receive Uptime.com events.
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source - for example, configure as `webhook/uptime` - for the Uptime.com integration.
 3. Copy and save the endpoint URL of the source.
 
@@ -54,7 +54,7 @@ Follow the below steps to configure the Uptime.com webhook.
     - **Assign To Contacts**. Assign your integration to a contact to receive alerts & metrics from checks.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **Save**.
-6. Verify Uptime.com events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+6. Verify Uptime.com events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/uptime
   ```

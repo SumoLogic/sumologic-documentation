@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/sendGrid-logo.png')} alt="Thumbnail icon" width="50"/>
 
-SendGrid is a cloud-based email delivery and management platform that helps businesses send transactional and marketing emails reliably and efficiently. A webhook available in the SendGrid can forward events related to email actions from SendGrid platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor recipient engagement, track email delivery status, and respond to events like opens, clicks, bounces, unsubscribes, and spam reports in Sumo Logic. For more details, refer to the [SendGrid Documentation](https://docs.sendgrid.com/).
+SendGrid is a cloud-based email delivery and management platform that helps businesses send transactional and marketing emails reliably and efficiently. You can use a webhook in the SendGrid platform to forward email actions related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor recipient engagement, track email delivery status, and respond to events like opens, clicks, bounces, unsubscribes, and spam reports in Sumo Logic. For more details, refer to the [SendGrid Documentation](https://docs.sendgrid.com/).
 
 ## Event types
 
@@ -33,7 +33,7 @@ This section has instructions for collecting logs for the Sumo Logic SendGrid we
 
 Follow the below steps to configure the Hosted Collector to receive SendGrid events:
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source - for example, `webhook/sendgrid` - for the SendGrid integration.
 3. Copy and save the endpoint URL of the source.
 
@@ -55,7 +55,7 @@ Follow the below steps to configure the SendGrid Webhook:
     - **Security features**. See [Event Webhook Security Features](https://docs.sendgrid.com/for-developers/tracking-events/getting-started-event-webhook-security-features) for details about configuring the settings under this heading.
     - **Test Your Integration**. select to receive an HTTP POST request with example events as a JSON array at your provided Post URL.
 6. Click **Save**.
-7. Verify SendGrid events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+7. Verify SendGrid events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/sendgrid
   ```

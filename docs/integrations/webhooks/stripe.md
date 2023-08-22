@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/stripe-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Stripe is a popular online payment processing platform that enables businesses to accept and manage payments securely through customizable APIs and tools, simplifying e-commerce transactions and subscription services. A webhook available in Stripe can forward payment-related events from the Stripe platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor payment activities, subscription changes, successful charges, and refunds in Sumo Logic. For more details, refer to the [Stripe Documentation](https://stripe.com/docs).
+Stripe is a popular online payment processing platform that enables businesses to accept and manage payments securely through customizable APIs and tools, simplifying e-commerce transactions and subscription services. You can use a webhook in the Stripe platform to forward payment-related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor payment activities, subscription changes, successful charges, and refunds in Sumo Logic. For more details, refer to the [Stripe Documentation](https://stripe.com/docs).
 
 ## Event types
 
@@ -23,7 +23,7 @@ This section has instructions for collecting logs for the Sumo Logic Stripe webh
 Follow the below steps to configure the Hosted Collector to receive Stripe events.
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one.
-2. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+2. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 3. Configure **Source Category** in the HTTP Source - for example, `webhook/stripe` - for the Stripe integration.
 4. Expand **Advanced Options for Logs (Optional)** section in the HTTP Source, then uncheck **Multiline Processing** option and check **One Message Per Request**.
 5. Copy and save the endpoint URL of the source.
@@ -43,7 +43,7 @@ Follow the below steps to configure the Stripe webhook.
     - **Listen to**. Select an option for account from **Events on your account** and **Events on Connected accounts**.
     - **Select events**. Select events to listen for webhook.
 5. Click **Add endpoint**.
-6. Verify Stripe events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+6. Verify Stripe events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/stripe
   ```

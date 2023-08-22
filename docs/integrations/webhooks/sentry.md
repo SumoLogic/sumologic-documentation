@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/sentry-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Sentry is an open-source error monitoring platform that helps developers identify, track, and resolve software issues in real-time, enhancing the stability and reliability of applications and websites. A webhook available in the Sentry can forward events from Sentry platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor installations, received issues, metric alerts, tracked issues, and identified errors in Sumo Logic. For more details, refer to the [Sentry Documentation](https://docs.sentry.io/).
+Sentry is an open-source error monitoring platform that helps developers identify, track, and resolve software issues in real-time, enhancing the stability and reliability of applications and websites. You can use a webhook in the Sentry platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor installations, received issues, metric alerts, tracked issues, and identified errors in Sumo Logic. For more details, refer to the [Sentry Documentation](https://docs.sentry.io/).
 
 ## Event types
 
@@ -28,7 +28,7 @@ This section has instructions for collecting logs for the Sumo Logic Sentry webh
 
 Follow the below steps to configure the Hosted Collector to receive Sentry events.
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source - for example, `webhook/sentry` - for the Sentry integration.
 3. Copy and save the endpoint URL of the source.
 
@@ -47,7 +47,7 @@ Follow the below steps to configure the Sentry Webhook.
     - **Callback URLs**. Enter the Sumo Logic HTTP Source Address created above.
 7. Click **Save Changes**.
 8. Click **Enable Plugin**.
-9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/sentry
   ```

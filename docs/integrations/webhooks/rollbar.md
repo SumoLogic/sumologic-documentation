@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/rollbar-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Rollbar is an error tracking and monitoring platform that assists developers in identifying and resolving software issues quickly, enhancing application reliability. A webhook available in the Rollbar can forward events related to errors, occurrences, and activities from Rollbar platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor details such as error messages, stack traces, affected endpoints, user information, and environment variables in Sumo Logic. For more details, refer to the [Rollbar Documentation](https://docs.rollbar.com/docs).
+Rollbar is an error tracking and monitoring platform that assists developers in identifying and resolving software issues quickly, enhancing application reliability. You can use a webhook in the Rollbar platform to forward errors, occurrences, and activities related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor details such as error messages, stack traces, affected endpoints, user information, and environment variables in Sumo Logic. For more details, refer to the [Rollbar Documentation](https://docs.rollbar.com/docs).
 
 ## Event types
 
@@ -30,7 +30,7 @@ This section has instructions for collecting logs for the Sumo Logic Rollbar web
 
 Follow the below steps to configure the Hosted Collector to receive Rollbar events:
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source - for example, `webhook/rollbar` - for the Rollbar integration.
 3. Copy and save the endpoint URL of the source.
 
@@ -51,7 +51,7 @@ Follow the below steps to configure the Rollbar webhook.
 8. Click **Configure Rule**. **Create Rule** table will appear.
 9. Update the filters if required. Click **Create Rule**.
 10. Click **Save Settings** to update the webhook configuration.
-11. Verify Rollbar events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel.
+11. Verify Rollbar events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
   _sourcecategory=webhook/rollbar
   ```
