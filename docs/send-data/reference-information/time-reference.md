@@ -104,13 +104,13 @@ Unix epoch timestamps are supported in the following formats:
 * We also recognize the time format for the Akamai log delivery service. The format is 13 digits with a period before the last three (ms) digits. For example, `1234567890.123`.
 * Comma-separated values where the 5th value from the start of the message is a 10 digit epoch time. For example, `field1, field2, field3, field4, 1234567890`
 * JSON formatted property called "timestamp" followed by a 13-digit epoch time. For example: `"timestamp":"123456789013"`.
-* Format of Cisco Fortigate/Meraki log message:
+* Format of Cisco Fortigate/Meraki log message:
     ```json
     ​<134>1 1439277406.903768018 Store_020026
     flows src=<redact> dst=72.245.34.184 protocol=udp
     sport=62118 dport=53 pattern: 1 all
     ```
- * Format of Linux audit message:
+ * Format of Linux audit message:
     ```json
     type=PATH msg=audit(1439992022.365:83931889): item=0
     name="/usr/sbin/ss" inode=91193416 dev=08:02
