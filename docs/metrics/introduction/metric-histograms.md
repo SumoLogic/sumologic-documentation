@@ -167,7 +167,7 @@ Histograms support a variety of quantizations such as `avg`, `min`, `max`, `sum`
 * `count`
 * `pct`
 
-**Example**. To calculate the average of all raw measurements used to create the histogram for each histogram and bucket using the avg quantization and a 10-minute long [quantization bucket](https://help.sumologic.com/docs/metrics/introduction/metric-quantization/#buckets), you can use the following query.
+**Example**. To calculate the average of all raw measurements used to create the histogram for each histogram and bucket using the avg quantization and a 10-minute long [quantization bucket](/docs/metrics/introduction/metric-quantization/#buckets), you can use the following query.
 
 `metric.type=exponential_histogram metric=browser_cls_histogram | quantize to 10m using avg`
 

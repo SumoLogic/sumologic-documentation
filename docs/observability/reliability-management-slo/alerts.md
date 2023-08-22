@@ -16,7 +16,7 @@ Monitor notifications may auto-resolve. See [Auto-Resolving Notifications](/docs
 
 You can create one condition type for your SLO Monitor, either an SLI trigger or Error Budget trigger. You can create one condition type for your SLO Monitor, either a SLI condition or Error Budget condition. We support configuring a threshold value per critical and warning trigger for that condition type.
 
-## Create an SLO alert monitor
+## Create an SLO monitor
 
 You have two options to create an SLO Monitor:
 * Select **Save and Create Monitor** when creating an SLO. <br/><img src={useBaseUrl('img/observability/button-save-create-monitor.png')} alt="Reliability Management SLO SLI" />
@@ -144,7 +144,7 @@ When a notification is sent, it includes information from the alert and a link t
 
 <img src={useBaseUrl('img/observability/resolution-email.png')} alt="Reliability Management SLO SLI" width="350"/>
 
-## Installing AWS SLO Alerts via Terraform
+## Installing AWS SLO Monitors via Terraform
 
 AWS ELB users can now install Sumo Logic out-of-the-box SLOs and associated Monitors using [this Sumo Logic Terraform script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/slo_packages/aws).
 
