@@ -78,12 +78,16 @@ To configure a Local Windows Event Log Source:
 
    * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
-        
-        When updating the **Collection should begin** setting you will need to restart the Collector.
-       
-
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
+
+       :::note   
+       When updating the **Collection should begin** setting you will need to restart the Collector.
+       :::
+    
+       :::note
+       {@import ../../../reuse/collection-should-begin-note.md}
+       :::
 
    * **Security Identifier**. Collectors on version 19.182-17 or later can map [security identifiers](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows) (SIDs) to usernames. During collection, the `Security ``ID` field in your log `message` (if you selected **Complete Message**) is translated into the format of your choice. Choose:
 
