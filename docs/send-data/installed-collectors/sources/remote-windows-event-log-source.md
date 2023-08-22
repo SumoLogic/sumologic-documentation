@@ -61,9 +61,17 @@ To configure a remote Windows Event Log Source:
      * **Event IDs.** (Available in Collector version 19.351-4 and later.) You can set allow and deny Windows Event ID filters to only collect important events. Select the checkbox next to the type of filter you want to set, we recommend only using one at a time. Your list needs to be a comma-separated list of event IDs.
      * **Metadata.** When the legacy format is selected choose whether you would like the collector to minimize the amount of data collected by omitting the full message text of each event. Core metadata fields such as event ID, timestamp, user name, as well as the unformatted event data will still be present. This can reduce data usage and increase event throughput, but will prevent many dashboards and apps from correctly extracting data. To omit full event text and only collect event metadata, the collector must have version 19.155 or later installed.
 
-   * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either: When updating the **Collection should begin** setting you will need to restart the Collector.
+   * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either: 
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time".
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
+
+       :::note   
+       When updating the **Collection should begin** setting you will need to restart the Collector.
+       :::
+    
+       :::note
+       {@import ../../../reuse/collection-should-begin-note.md}
+       :::
 
    * **Security Identifier**. Collectors on version 19.182 or later can map [security identifiers](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows) (SIDs) to usernames. During collection, the `Security ``ID` field in your log `message` (if you selected **Complete Message**) is translated into the format of your choice. Choose:
 
