@@ -169,7 +169,3 @@ A preview runs the query in real-time to help test and refine results, with a ti
 #### Aggregation Queries
 
 You cannot use aggregate log queries to define your SLO because such queries summarize data and lose the concept of time. Aggregation occurs through the SLO backend and is not required in the query, for example, `avg(latency) < 500 ms` or `"successful event must have latency below 50ms"`.
-
-#### Quantize Queries
-
-Do not use quantize in queries, as it is handled by the SLO backend based on the window duration.
