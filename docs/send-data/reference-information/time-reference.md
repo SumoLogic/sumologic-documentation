@@ -126,9 +126,10 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
    * To edit the timestamp settings for an existing Source, navigate to **Manage Data** > **Collection** > **Collection**. Then click **Edit** to the right of the Source name and go to step 2.
 1. Navigate to the **Advanced Options for Logs** section.
 1. For **Timestamp Format**, select **Specify a format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="specify-timestamp-format" width="350"/>
-1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. 
-
-**NOTE:** If the timestamp format is in epoch time, enter **epoch** in the **Format** field.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" /><br/>
+1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" /><br/>
+   :::note
+   If the timestamp format is in epoch time, enter **epoch** in the **Format** field.
+   :::
    :::caution requirements
    * Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).
    * When you specify a custom format, provide us with the timestamp format (and optionally a regex) to help locate the desired timestamp in your log line format. If you don't provide a locator, we’ll scan the entire log message for a timestamp matching the given format by default. You can also test some sample log lines and see if we can parse the new format.
