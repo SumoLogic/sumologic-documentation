@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Pre-built SLO Dashboards
 
-Each SLO comes with a pre-built dashboard that provides an active view into the health and status of the SLO including the current SLI, the remaining error budget, an error budget burndown chart as well as historical performance of your SLO.
+Each SLO comes with a pre-built dashboard that provides an active view into the health and status of your SLO, including the current SLI, the remaining error budget, an error budget burndown chart as well as historical performance of your SLO.
 
 <br/><img src={useBaseUrl('img/observability/slo-dashboard-alert.png')} alt="Reliability Management SLO SLI" />
 
@@ -85,7 +85,7 @@ You can launch a Log Search session directly from an SLO dashboard panel, giving
 1. Hover over the panel > Click the kebab icon > **Open in Log Search**.<br/><img src={useBaseUrl('img/observability/open-in-logsearch.png')} alt="open-in-logsearch" width="150"/>
 
 :::tip
-Once opened in log search, you can click on **Add to Dashboard** button to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
+Once opened in **Log Search**, you can click on **Add to Dashboard** button to add SLO dashboard panels to your own custom dashboards.<br/><img src={useBaseUrl('img/observability/add-to-dashboard.png')} alt="add-to-dashboard" width="200"/>
 :::
 
 
@@ -106,10 +106,10 @@ It has the following schema:
 * `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
 * `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
 * `sloVersion`: version of SLO definition. The `sloVersion` is only changed whenever there is a change in semantics of the underlying SLI definition. Therefore, the `sloVersion` is incremented by 1 in case of following modifications only:
-   1. Changing <strong>Source</strong> of the SLO. Example: changing <strong>Query Based</strong> to <strong>Monitor Based</strong>.
-   2. Changing <strong>Evaluation Type</strong>. Example: changing <strong>Request-based</strong> to <strong>Window-based</strong> or changing <strong>Window size</strong> of SLO.
-   3. Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
-   4. Changing <strong>Timezone</strong> of SLO. 
+   * Changing <strong>Source</strong> of the SLO. Example: changing <strong>Query Based</strong> to <strong>Monitor Based</strong>.
+   * Changing <strong>Evaluation Type</strong>. Example: changing <strong>Request-based</strong> to <strong>Window-based</strong> or changing <strong>Window size</strong> of SLO.
+   * Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
+   * Changing <strong>Timezone</strong> of SLO. 
   
   Likewise, `sloVersion` does NOT change on modifications to fields like **Name**, **Description**, **Target**, **Compliance Type**, **Compliance Period**, **Tags**, and **Signal Type**.
 
@@ -134,7 +134,7 @@ To join the results of your SLO precomputed data from `_view=sumologic_slo_outpu
 
 #### Error Budget Remaining for all SLOs
 
-Say you want a bird's eye view into the health of your SLOs. A honeycomb visualization on the error budget remaining percentage is a nice way to achieve that.
+Say you want a high-level overview into the health of your SLOs. A honeycomb visualization on the error budget remaining percentage is a nice way to achieve that.
 
 <br/><img src={useBaseUrl('img/observability/percent-error-remain.png')} alt="percent-error-remain" width="450"/>
 
