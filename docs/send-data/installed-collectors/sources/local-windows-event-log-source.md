@@ -31,12 +31,10 @@ To configure a Local Windows Event Log Source:
     ![type of windows event log source.png](/img/send-data/type-windows-event-log-source.png)
 
 1. Set the following:
-
-    :::note
-    Hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
-    :::
-
    * **Name.** Type the name you'd like to display for the new Source. 
+     :::note
+     Hostname values are parsed and applied to your event logs as `\_sourceHost` metadata automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metatdata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search but not LiveTail. 
+     :::
    * **Description** is optional.
    * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
