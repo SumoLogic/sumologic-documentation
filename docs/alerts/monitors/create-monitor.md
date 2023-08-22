@@ -48,14 +48,14 @@ To create a monitor from the Metrics Explorer, follow the steps below:
 Note that the same threshold translating functionality supports to [Opening Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
 :::
 
-## Step 2: Select Monitor type and Detection Method
+### Monitor type and Detection Method
 
 1. Select a **Monitor Type** (Logs, Metrics, or SLO). <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="300"/>
 1. Select a **Detection Method** (Static or Outlier). <br/><img src={useBaseUrl('img/monitors/outlier-detection-method.png')} alt="icon" width="200"/>
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
    * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
 
-## Step 3: Provide a Query
+### Provide a Query
 
 1. Provide a Log or Metrics query.
    * Logs Monitors can have one query up to 4,000 characters long.
@@ -67,13 +67,13 @@ Note that the same threshold translating functionality supports to [Opening Aler
 
     If you chose the **Static** detection method, you won't see this option.
 
-## Step 4: Specify the Trigger Type
+### Trigger Type
 
 1. Specify the **Trigger Type**. A Monitor can have one critical, warning, and missing data trigger condition, each with one or more notification destinations. Triggers have different options depending on the query and alert type. Click the **Expand** button next to the query type you're using for configuration details.
 
 <details><summary><strong>Logs Trigger Types</strong> (expand to view)</summary>
 
-### Logs Trigger Types
+#### Logs Trigger Types
 
 ![Logs monitors.png](/img/monitors/logs-monitors.png)
 
@@ -87,7 +87,7 @@ You can set the trigger based on the following:
 | num(duration)
 ```
 
-#### Static detection method
+##### Static detection method
 
 **Log Trigger Type: Critical and Warning**  
 
@@ -109,7 +109,7 @@ Recovery condition is set by default to the opposite of the alert condition. If 
 
 For example, when the alert is set to `> 10` the recovery would be set to `<= 10` when inferred. Sumo Logic automatically resolves the incident when the resolution condition is satisfied. `Recover automatically when result is <threshold type> <threshold> for the selected time period`.
 
-#### Configurable Resolution Window
+##### Configurable Resolution Window
 
 When configuring monitor trigger conditions, you can set a resolution window to quickly resolve alerts when the underlying issues are fixed. This controls how long a monitor will wait prior to resolving the alert, when the underlying issues was corrected. For example, if your monitor is evaluating the last 60 minutes, you can specify a resolution window of 15 minutes. Once 15 minutes has elapsed with your monitor resolution window continuously satisfied, the alert will resolve. <br/>![config-resolution-window-2](/img/monitors/config-resolution-window-2.png)  
 
@@ -124,7 +124,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 ![monitors.png](/img/monitors/metricsmonitor.png)
 
 
-#### Outlier detection method
+##### Outlier detection method
 
 **Logs Trigger Type: Critical and Warning**
 
@@ -162,12 +162,12 @@ Recover
 
 <details><summary><strong>Metrics Trigger Types</strong> (expand to view)</summary>
 
-### Metrics Trigger Types
+#### Metrics Trigger Types
 
 ![metrics query.png](/img/monitors/metrics-query.png)
 
 
-#### Static detection method
+##### Static detection method
 
 **Metrics Trigger Type: Critical and Warning**
 
@@ -199,7 +199,7 @@ Sumo Logic automatically resolves the incident when the resolution condition is 
 | Threshold type | How you want the value compared. Select either greater than, greater than or equal, less than or equal, or less than. |
 | Threshold | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-#### Alert and recovery window
+##### Alert and recovery window
 
 This setting affects both the alert generation logic and the alert recovery logic.
 
@@ -216,7 +216,7 @@ For example, you want to be alerted when the CPU usage is over 60% `at all times
 This setting only works when you choose `at all times within` as the type of occurrence for the alert.  
 :::
 
-#### Outlier detection method
+##### Outlier detection method
 
 **Metrics Trigger Type: Critical and Warning**
 
@@ -253,7 +253,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 </details>
 
-## Step 5: Additional Settings (optional)
+## Step 2: Advanced Settings (optional)
 
 ### Alert Name
 Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `Playbook`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
@@ -262,8 +262,8 @@ Alert Name allows you to customize the name that appears on the Alert Page. By d
 ### Evaluation Delay
 Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)<br/>If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
-### Set Notifications
-When a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.<br/>  ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
+## Step 3: Notifications
+When a trigger condition is met you can send notifications to other people and services. To add notifications, click on the **Add Notification** button. You can add more than one notification channel for a Monitor.<br/>  ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
 
 Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
 
@@ -278,15 +278,12 @@ The **Connection Type** specifies the notification channel where you want to g
    If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
-### Add Playbook
+## Step 4: Monitor Details
 
-**Playbooks** allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert. You have the option to provide a playbook when creating a Monitor, as shown in the below image. Markdown is supported.<br/> ![Monitor playbook input.png](/img/monitors/Montor-playbook-input.png)
-
-
-## Step 6: Name and save your monitor
-1. Enter a **Name** for the Monitor and the **Location** you want it saved to. A **Description** is optional.<br/> ![monitor details during creation.png](/img/monitors/monitor-details-during-creation.png)
-1. Click the **Save** button at the top right of the panel when you're finished configuring the Monitor.
-
+1. Enter a **Monitor Name** and the **Location** where you want to save it.
+1. (Optional) Add one or more **Tags**. [Learn more here](/docs/alerts/monitors/settings#tags).
+1. (Optional) Add a **Description**.
+1. (Optional) Create or select an existing **Playbook**, which allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported.
 
 
 ## Other Configurations
