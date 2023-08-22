@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/postman-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Postman is an API development tool that streamlines API building, testing, and modification. It simplifies the process of working with APIs for developers. A webhook available in the Postman can forward events related to changes occurred in your Postman platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor API test results, collection changes, monitor alerts, environment modifications, and custom automation workflow triggers in Sumo logic. For more details, refer to the [Postman Documentation](https://learning.postman.com/docs/introduction/overview/).
+Postman is an API development tool that streamlines API building, testing, modification, and simplifies the process of working with APIs for developers. You can use a webhook in the Postman platform to forward change events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor API test results, collection changes, monitor alerts, environment modifications, and custom automation workflow triggers in Sumo logic. For more details, refer to the [Postman Documentation](https://learning.postman.com/docs/introduction/overview/).
 
 ## Event types
 
