@@ -102,14 +102,6 @@ The Alert Anomaly panel of the dashboard shows rules that fired for rare alerts 
 
 **Spike in Alerts**. Lists rules that triggered alert spikes and the number of events for each rule. Click the rule name for a query about the rule’s alerting.
 
-### Coverage Overview
-
-The Coverage Overview dashboard lists [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques covered by the Security Foundations app.
-
-**MITRE ATTA&K Coverage**. Lists the tactics, techniques, and procedures (TTPs) covered by the app, with their rules and assigned risk scores. 
-
-<img src={useBaseUrl('img/integrations/sumo-apps/security-foundations-app-coverage-overview.png')} alt="Coverage Overview dashboard" width="800"/>
-
 ### Entity Risk Score
 
 The Entity Risk Score dashboard lists high risk Entities in your system for the selected time period. Entities with higher risk scores indicate they were involved in more events. 
