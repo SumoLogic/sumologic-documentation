@@ -104,7 +104,7 @@ Many of our apps are labeled with the **Certified by Sumo Logic** designation. J
 
 <img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" width="500" />
 
-These apps have gone through code and functional review with the Sumo Logic app development team as part of the [technology partner program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
+These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
 ## Troubleshooting
 
