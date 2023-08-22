@@ -61,8 +61,8 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
    ```
    [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:8080\" 
-   Environment="HTTPS_PROXY=http://proxy.example.com:8080\"
+   Environment="HTTP_PROXY=http://proxy.example.com:8080" 
+   Environment="HTTPS_PROXY=http://proxy.example.com:8080"
    ```
 1. Reload the systemd daemon with:
    ```
@@ -173,3 +173,10 @@ ps faux |grep automation-bridge
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
 On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cse/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+
+### Configuring the automation bridge for CyberArk
+
+If you are using CyberArk, you must add the following certificates provided by CyberArk to the `/opt/automation-bridge/` directory:
+* `RootCA_new.crt`
+* `client_new.crt`
+* `client_new.pem`
