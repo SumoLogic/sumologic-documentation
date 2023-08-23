@@ -1,7 +1,7 @@
 ---
 id: buddy
 title: Buddy
-description: Learn about the collection process for the Buddy integration.
+description: Learn about the collection process for the Sumo Logic Buddy integration.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -15,19 +15,19 @@ The Sumo Logic integration for Buddy ingests pipeline execution events into Sumo
 - Push
 - Pipeline execution started
 - Pipeline execution successful
-- Pipeline execution failed 
+- Pipeline execution failed
 - Pipeline execution finished
 
 ## Setup
 
-To set up the Buddy integration, follow the instructions provided. These instructions will guide you through the process of creating endpoint URL of the source, which you will need to use when configuring the webhook integration in the Buddy platform. 
+To set up the Buddy integration, follow the instructions provided. These instructions will guide you through the process of creating endpoint URL of the source, which you will need to use when configuring the webhook integration in the Buddy platform.
 
 ### Source configuration
 
 Follow the below steps to configure the Hosted Collector to receive Buddy events:
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP Source. For example, configure as `webhook/buddy` for the Buddy integration.
+2. Configure **Source Category** in the HTTP Source - for example, `webhook/buddy` - for the Buddy integration.
 3. Copy and save the endpoint URL of the source.
 
 ### Vendor configuration
@@ -47,11 +47,11 @@ Follow the below steps to configure the Buddy webhook:
     - **NAME**. Provide a name for your webhook.
     - **PAYLOAD URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
     - **TRIGGER ON EVENTS**. Select the type of events that will cause this webhook to execute.
-    - **ENABLE IN PROJECTS**. Select the projects for which you want the events to be sent to Sumo Logic. 
+    - **ENABLE IN PROJECTS**. Select the projects for which you want the events to be sent to Sumo Logic.
 5. Click **Save Changes**.
 6. Verify Buddy events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel: `_sourcecategory=webhook/buddy`
 
 :::info
 - For detailed information about webhook creation, refer to [Buddy documentation](https://buddy.works/docs/integrations/webhooks).
-- For support, email to [support@buddy.works](mailto:support@buddy.works). 
+- For support, email to [support@buddy.works](mailto:support@buddy.works).
 :::
