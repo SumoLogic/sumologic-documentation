@@ -167,8 +167,8 @@ If you are not using the SIEM:
    ```
 1. If you need to allow automation-bridge communication through a proxy, edit the file `/etc/opt/automation-bridge/automation-bridge.conf` and set the correct value. Below is an example:
    ```
-   HTTP_PROXY="http://proxy.example.com:8080\"
-   HTTPS_PROXY="http://proxy.example.com:8080\"
+   HTTP_PROXY="http://proxy.example.com:8080"
+   HTTPS_PROXY="http://proxy.example.com:8080"
    ```
 1. Restart the service with:
    ```

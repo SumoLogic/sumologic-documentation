@@ -2,7 +2,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 
 #### Rules
 
-* If you're editing the `Collection should begin` date on a Source, the new date must be after the current `Collection should begin` date.
+* If you're editing the `Collection should begin` date on a Source, the new date must be after the current `Collection should begin` date. (Note that if you set this property to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)
 * Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object, or a new version of the file, and that file object gets its own unique version ID.
 * Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
 * When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S3.
@@ -46,6 +46,9 @@ These configuration instructions apply to log collection from all AWS Source typ
 8. **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
+   :::note
+   If you set **Collection should begin** to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.
+   :::
 9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`. Some examples: `_sourceCategory: aws/observability/alb/logs` or `_sourceCategory: aws/observability/clb/logs`.
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.

@@ -1,7 +1,7 @@
 ---
 id: aws-amplify
 title: AWS Amplify
-description: Learn about the collection process for the AWS Amplify service.
+description: Learn about the collection process for the Sumo Logic AWS Amplify service.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
