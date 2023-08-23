@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Netlify is a web development platform for building fast and dynamic websites, e-commerce stores and web applications. You can use a webhook in the Netlify platform to forward site deployment events from the Netlify platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor deploy processes including events such as deploy started, succeeded, failed, deleted, locked, unlocked, request status changes, and transitions between previously successful and failed deploys in Sumo Logic. For more details, refer to the [Netlify Documentation](https://docs.netlify.com/).
+Netlify is a web development platform for building fast and dynamic websites, e-commerce stores, and web applications. You can use a webhook in the Netlify platform to forward site deployment events from the Netlify platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor deploy processes including events such as deploy started, succeeded, failed, deleted, locked, unlocked, request status changes, and transitions between previously successful and failed deploys in Sumo Logic. For more details, refer to the [Netlify Documentation](https://docs.netlify.com/).
 
 ## Event types
 
