@@ -36,7 +36,7 @@ Follow the below steps to configure the Mailgun webhook.
 3. Click **Add Webhook**. The webhook form appears.
 4. Enter webhook form data as follows:
     - **Event Types**. Select the event types for which you want to send notifications to Sumo Logic.
-    - **URL**. Enter the Sumo Logic HTTP endpoint URL(source address) created above.
+    - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 5. Click **Create Webhook**.
 6. Verify Mailgun events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
