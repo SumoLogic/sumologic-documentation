@@ -1,8 +1,8 @@
 ---
 id: mitre-coverage
-title: MITRE Coverage
-sidebar_label: MITRE Coverage
-description: MITRE Coverage shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
+title: MITRE ATT&CK Coverage
+sidebar_label: MITRE ATT&CK Coverage
+description: MITRE ATT&CK Coverage shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
 keywords:
   - MITRE ATT&CK
   - tactics
@@ -11,20 +11,20 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The MITRE Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
+The MITRE ATT&CK Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
 
-To determine your coverage, MITRE Coverage collects data from rules that have fired in the last 180 days. 
+To determine your coverage, MITRE ATT&CK Coverage collects data from rules that have fired in the last 180 days. 
 
-## MITRE Coverage page
+## MITRE ATT&CK Coverage page
 
-To open the MITRE Coverage page, select **Content > MITRE Coverage**.
+To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage**.
 
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" width="900"/>
 
 1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. 
 1. **All Community Activity**. Shows coverage for all customers that use Cloud SIEM based on Signals received over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activity** can help you determine what coverage you're missing compared to other customers using Cloud SIEM.
 1. **Theoretical Coverage**. Shows coverage for your organization if all Sumo Logic content were enabled and all possible data sources were connected. If this is selected, the **Vendor/Product** filter is disabled.
-1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE coverage data. The file includes a score from 0 to 3 for each technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
+1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE ATT&CK coverage data. The file includes a score from 0 to 3 for each technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
 1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and sub-techniques. 
 1. [**Vendor/Product**](#vendorproduct-filter). Click to filter on vendors and products that provide data sources. Select particular vendors to help you evaluate their coverage. 
 1. **Coverage**. Click to filter on coverage provided:
