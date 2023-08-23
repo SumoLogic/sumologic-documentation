@@ -30,7 +30,7 @@ Follow the below steps to configure the Hosted Collector to receive NeoLoad even
 ### Vendor configuration
 
 :::note
-- Users must be workspace administrators to access the webhooks.
+Users must be workspace administrators to access the webhooks.
 :::
 
 Configure the webhook integration in NeoLoad to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your NeoLoad account.
