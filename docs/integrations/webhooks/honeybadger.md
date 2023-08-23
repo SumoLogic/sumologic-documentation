@@ -51,5 +51,5 @@ Follow the below steps to configure the Honeybadger webhook.
 
 :::info
 - For detailed information about webhook creation, refer to the [Honeybadger Documentation](https://docs.honeybadger.io/integrations/webhook/).
-- For support, [contact Honeybadger](support@honeybadger.io). 
+- For support, [contact Honeybadger](mailto:support@honeybadger.io). 
 :::
