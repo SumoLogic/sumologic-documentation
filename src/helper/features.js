@@ -275,6 +275,23 @@ export const features6 = [
   },
 ];
 
+export const features7 = [
+  {
+    title: translate({
+      id: 'landing.feature.logreduce.title',
+      message: 'LogReduce',
+      description: 'Title for logreduce',
+    }),
+    imageUrl: 'img/icons/search.png',
+    description: (<Translate
+      id='landing.feature.logreduce.desc'
+      description='SDO description'>
+      Cluster messages together based on string and pattern similarity.
+    </Translate>),
+    link: 'docs/search/logreduce',
+  },
+];
+
 export const features = [
   features1,
   features2,
@@ -282,4 +299,5 @@ export const features = [
   features4,
   features5,
   features6,
+  features7,
 ];

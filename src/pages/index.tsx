@@ -258,6 +258,9 @@ export const Home = () => {
                 {
                   label: 'Other Solutions',
                 },
+                {
+                  label: 'SumoAI',
+                },
               ].map(({ label, ...rest }, index) => (
                 <Tab
                   key={label}
