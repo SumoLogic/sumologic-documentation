@@ -117,7 +117,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    * `1SOAR_TOKEN1`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
-And you can set this optional parameter (do not include spaces): `ALIAS`
+And you can set this optional parameter (do not include spaces & less than 20 characters): `ALIAS`
 
 An example of a configuration file would be:
 ```
@@ -125,7 +125,7 @@ An example of a configuration file would be:
    "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
    "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
    "SIEM_URL":"https://YOUR_CSE_URL/sec",
-   "ALIAS":"YOUR_ALIAS_NO_SPACES"
+   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
 
