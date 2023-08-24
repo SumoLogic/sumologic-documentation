@@ -133,7 +133,7 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    * `SOAR_TOKEN`
 1. Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
 
-And you can set this optional parameter (do not include spaces): `ALIAS`
+And you can set this optional parameter (do not include spaces & less than 20 characters): `ALIAS`
 
 An example of a configuration file would be:
 <!-- This example differs from that for the Automation Service bridge -->
@@ -142,7 +142,7 @@ An example of a configuration file would be:
         "SOAR_URL":"https://YOUR_DOMAIN/incmansuite_ng/api", 
         "SOAR_TOKEN":"YOUR_JWT_TOKEN",
         "SIEM_URL":"https://YOUR_CSE_URL/sec",
-        "ALIAS": "YOUR_ALIAS_NO_SPACES"
+        "ALIAS": "YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
 
