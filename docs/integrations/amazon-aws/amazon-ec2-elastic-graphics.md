@@ -20,4 +20,4 @@ Elastic Graphics is suited for applications that require a small or intermittent
 You can collect the metrics for Sumo Logic's Amazon EC2 Elastic Graphics integration by following the below steps.
 
 ### Configure metrics collection
-* Collect **CloudWatch Metrics** with namespace `AWS/ElasticGPUs` using the [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/ElasticGPUs` metrics and dimensions, refer to [Amazon EC2 Elastic Graphics CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics-cloudwatch.html).
+* Collect **CloudWatch Metrics** with namespace `AWS/ElasticGPUs` using the [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/ElasticGPUs` metrics and dimensions, refer to [Amazon EC2 Elastic Graphics CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics-cloudwatch.html).

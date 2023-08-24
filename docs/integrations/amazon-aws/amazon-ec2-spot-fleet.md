@@ -18,4 +18,4 @@ A Spot Fleet is a set of Spot Instances and optionally On-Demand Instances that 
 You can collect the metrics for Sumo Logic's Amazon EC2 Spot Fleet integration by following the below steps.
 
 ### Configure metrics collection
-* Collect **CloudWatch Metrics** with namespace `AWS/EC2Spot` using the [AWS Kinesis Firehose for Metrics](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/EC2Spot` metrics and dimensions, refer to [Amazon EC2 Spot Fleet CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-cloudwatch-metrics.html).
+* Collect **CloudWatch Metrics** with namespace `AWS/EC2Spot` using the [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. For `AWS/EC2Spot` metrics and dimensions, refer to [Amazon EC2 Spot Fleet CloudWatch metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-cloudwatch-metrics.html).
