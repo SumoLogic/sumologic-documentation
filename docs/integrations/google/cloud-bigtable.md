@@ -1,6 +1,7 @@
 ---
 id: cloud-bigtable
 title: Google Cloud Bigtable
+sidebar_label: Google Cloud Bigtable
 description: Learn about the collection process for the Google Cloud Bigtable service.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
