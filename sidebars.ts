@@ -1908,10 +1908,10 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/google/index'},
         items: [
-          'integrations/google/cloud-bigtable',
           'integrations/google/app-engine',
           'integrations/google/bigquery',
           'integrations/google/cloud-audit',
+          'integrations/google/cloud-bigtable',
           'integrations/google/cloud-firewall',
           'integrations/google/cloud-functions',
           'integrations/google/cloud-iam',
