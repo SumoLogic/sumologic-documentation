@@ -1,6 +1,7 @@
 ---
 id: cloud-bigtable
 title: Google Cloud Bigtable
+sidebar_label: Google Cloud Bigtable
 description: Learn about the collection process for the Google Cloud Bigtable service.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,16 +19,16 @@ Bigtable is a fully managed wide-column and key-value NoSQL database service for
 You can collect the logs and metrics for Sumo Logic's Google Cloud Bigtable integration by following the below steps.
 
 ### Configure logs collection
-* Collect **Audit Logs** using [Google Cloud Platform source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Refer to the [permissions and roles](https://cloud.google.com/bigtable/docs/audit-logging#audit_log_permissions) required for accessing audit logs. To enable logging for Google BigTable refer to [Google documentation](https://cloud.google.com/bigtable/docs/audit-logging#enabling_audit_logging). For more detail, on Bigtable operations being audited refer to [audited operations](https://cloud.google.com/bigtable/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Audit Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Refer to the [permissions and roles](https://cloud.google.com/bigtable/docs/audit-logging#audit_log_permissions) required for accessing audit logs. To enable logging for Google BigTable refer to [Google documentation](https://cloud.google.com/bigtable/docs/audit-logging#enabling_audit_logging). For more detail, on Bigtable operations being audited refer to [audited operations](https://cloud.google.com/bigtable/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
 ```(resource.type=audited_resource and (resource.labels.service=bigtableadmin.googleapis.com or resource.labels.service=bigtable.googleapis.com))```. 
 
 :::note
 Bigtable audit logs use the service name **bigtableadmin.googleapis.com** for admin operations and **bigtable.googleapis.com** for data operations.
 :::
 
-* Collect **Platform Logs** using [Google Cloud Platform source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Bigtable platform logs include logs related to bigtable instance, cluster, tables and backup. While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Platform Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Bigtable platform logs include logs related to bigtable instance, cluster, tables and backup. While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
 ```(resource.type=bigtable_instance or bigtable_cluster or bigtable_table or bigtable_backup)```
 
 
 ### Configure metrics collection
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) source. Note that in the Services dropdown you need to select **Bigtable**. For Google Bigtable metrics and dimensions, refer to [Google Bigtable metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-bigtable).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Note that in the Services dropdown you need to select **Bigtable**. For Google Bigtable metrics and dimensions, refer to [Google Bigtable metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-bigtable).
