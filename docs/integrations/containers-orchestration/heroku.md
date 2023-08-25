@@ -79,11 +79,11 @@ There are two ways to send Heroku logs to Sumo:
 
 The Sumo Logic add-on for Heroku helps you monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
-* Provisioning the Sumo Logic add-on via the **CLI** allows us to mointor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trail account for analyzing the Heroku logs. We would first need to install the Heroku CLI. Follow these [https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli](instructions) to install the CLI. The following sections show how to configure the add-on for heroku apps.
+* Provisioning the Sumo Logic add-on via the **CLI** allows us to mointor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trail account for analyzing the Heroku logs. You would first need to install the Heroku CLI. Follow these [https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli](instructions) to install the CLI. The following sections show how to configure the add-on for heroku apps.
 
    #### Single App
 
-   For a single app, run the following command:
+   For a single app, run the following command in your app directory:
    ```
    $ heroku addons:create sumologic
    -----> Adding sumologic to sharp-mountain-4005... done, v18 (free)
@@ -92,28 +92,29 @@ The Sumo Logic add-on for Heroku helps you monitor Heroku apps and harness the p
    #### Multiple Apps
 
    To monitor multiple applications, you can share the same Sumo Logic add-on with multiple applications.
-   First, provision the add-on for your first application:
+   First, provision the add-on for your first application by run the following command in your app directory:
    ```
    $ heroku addons:create sumologic
    -----> Creating sumologic-test-horizontal-9854... done, (free)
    -----> Adding sumologic-test-horizontal-9854... done
    ```
-   Next, attach the add-on to your additional applications using the name of the add-on returned by the create command:
+
+   Next, attach the add-on to your additional applications using the name of the add-on returned by the create command run the following command in your app directory:
    ```
    $ heroku addons:attach sumologic-test-horizontal-9854
    -----> Attaching sumologic-test-horizontal-9854... done
    ```
 
-   You can also run ```heroku drains``` or ```heroku drains --json``` command to find the name of an existing Sumo Logic add-on for an app which can be attached to a new app.
+   You can also run ```heroku drains``` or ```heroku drains --json``` command to find the name of an existing Sumo Logic add-on of an app which can be attached to a new app.
 
-   Now you can access Sumo Logic via the CLI:
+   Now you can access Sumo Logic run the following command in your app directory:
    ```
    $ heroku addons:open sumologic
    Opening sumologic for sharp-mountain-4005
    ```
 
-   This opens up a Sumo Logic trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of _sourceCategory for your Heroku log data to “heroku”. You can now start a [log search](https://help.sumologic.com/docs/search/) with _sourceCategory=“heroku” to see the logs flowing in from Heroku.
-
+   This opens up a Sumo Logic trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of _sourceCategory for your Heroku log data to “heroku”.
+   It is recommended to use a single add-on for multiple applications.
 
 * Provisioning the Sumo Logic add-on via the **UI** allows us to monitor a single app. The steps to do so are as follows:
    1. Log into the [Heroku Dashboard](https://dashboard.heroku.com/) to view information about your apps.
@@ -122,9 +123,39 @@ The Sumo Logic add-on for Heroku helps you monitor Heroku apps and harness the p
    4. Click on the **Sumo Logic** add-on to open up a add-on order form.
    5. Choose the **Plan name** and click on the **Submit Order Form** button.
 
-   You will now be able to see the **Sumo Logic** add-on in the **Installed add-ons** section of you app's **Overview** tab. Clicking on that add-on redirects to open up a Sumo Logic free trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of _sourceCategory for your Heroku log data to “heroku”. You can now start a [log search](https://help.sumologic.com/docs/search/) with _sourceCategory=“heroku” to see the logs flowing in from Heroku.
+   You will now be able to see the **Sumo Logic** add-on in the **Installed add-ons** section of you app's **Overview** tab. Clicking on that add-on redirects to open up a Sumo Logic free trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of _sourceCategory for your Heroku log data to “heroku”.
+
+It is recommended to attach a heroku add-on just after creating an app or running the ```heroku create``` command to help observe heroku logs for all events that may follow for the app.
 
 ### Collecting Logs via HTTPS Log Drain
 
-A HTTPS Log Drain can be attached to a Heroku application via the CLI. We would first need the URL of a [https logs source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) in any type of Sumo Logic account.
-Then, you add an HTTPS drain like so
+A HTTPS Log Drain can be attached to a Heroku application via the CLI. You would first need the **URL** of a [https logs source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) in any type of a [Sumo Logic account](https://help.sumologic.com/docs/manage/manage-subscription/). You would also need to install the Heroku CLI. Follow these [https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli](instructions) to install the CLI.
+
+Then, you add an HTTPS drain for an app named myapp:
+```
+$ heroku drains:add <URL> -a myapp
+```
+
+You will now be able to see Heroku logs flowing into that http source in Sumo Logic. You can also attach the same url to multiple apps with a single log drain.
+
+### Collecting Mertic Logs
+
+This Heroku Labs log-runtime-metrics feature adds experimental support for enabling visibility into load and memory usage for running dynos. Per-dyno stats on memory use, swap use, and load average are inserted into the app’s log stream where they can be seen via heroku logs --tail, used for graphs or alerting via an add-on which consumes app logs, or sent to a log drain. There is no cost incurred by enabling this feature.
+
+To collect metric logs for an app, follow these steps:
+1. Attach a log drain to the app. You can either attach a Sumo Logic add-on or a HTTPS log drain as explained in the [Collecting Logs for Heroku](#Collecting-Logs-for-Heroku) section.
+2. Enable the log-runtime-metrics:
+   ```
+   $ heroku labs:enable log-runtime-metrics --app example-app
+   Enabling log-runtime-metrics for example-app... done
+   $ heroku restart
+   ```
+
+The metric logs will start flowing into the Sumo Logic endpoint attached to your app. You can also disable this feature by:
+```
+   $ heroku labs:disable log-runtime-metrics --app example-app
+   Disabling log-runtime-metrics for example-app... done
+   $ heroku restart
+```
+
+The load and memory usage metrics are surfaced as system logs in the Logplex log stream. Metrics are emitted for each running dyno, at an approximate frequency of once every 20 seconds.
