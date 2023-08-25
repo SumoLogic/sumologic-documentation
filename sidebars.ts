@@ -1899,6 +1899,7 @@ integrations: [
          'integrations/microsoft-azure/windows-json',
          'integrations/microsoft-azure/windows-legacy',
          'integrations/microsoft-azure/performance',
+         'integrations/microsoft-azure/azure-batch'
         ],
       },
       {
