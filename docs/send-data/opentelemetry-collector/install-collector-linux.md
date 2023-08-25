@@ -46,7 +46,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 
 #### 1. Get the Installation token
 
-Get your [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens) if you don't have it already and assign it to an environment variable:
+Get your [installation token](/docs/manage/security/installation-tokens) if you don't have it already and assign it to an environment variable:
 
 ```bash
 export SUMOLOGIC_INSTALLATION_TOKEN=<TOKEN>

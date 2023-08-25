@@ -80,6 +80,7 @@ service:
    Restart-Service -Name OtelcolSumo
    ```
 
+
 Configuration details:
 
 * **receivers**:
@@ -323,6 +324,11 @@ service:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above. 
 
 For more details, see the [Syslog receiver][syslog_receiver_docs].
 
@@ -371,12 +377,21 @@ service:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above.
 
 For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 
 ## Collecting logs from SQL databases
 
 The [SQL Query receiver][sqlquery_receiver_docs] retrieves logs from SQL databases, including MySQL, Oracle and PostgreSQL. See below for configuration for a specific database engine.
+
+:::note
+This section describes the configuration to collect logs stored in DB tables using queries. If you intend to monitor database applications availability, performance, and resource utilization of MySQL database clusters, visit [Database Monitoring](/docs/integrations/databases) and find the database of your choice.
+:::
 
 ### Collecting logs from a MySQL database
 
