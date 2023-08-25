@@ -1908,6 +1908,7 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/google/index'},
         items: [
+          'integrations/google/cloud-bigtable',
           'integrations/google/app-engine',
           'integrations/google/bigquery',
           'integrations/google/cloud-audit',
