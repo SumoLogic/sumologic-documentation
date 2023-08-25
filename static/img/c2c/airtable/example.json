@@ -1,0 +1,17 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "airtable",
+            "accountId": "accountid",
+            "personalAccessToken": "*********",
+            "fields": {
+                "_siemForward": true
+            }
+        },
+        "schemaRef": {
+            "type": "Airtable"
+        },
+        "sourceType": "Universal"
+    }
+}

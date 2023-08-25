@@ -2434,7 +2434,7 @@
   "/cid/96734": "/docs/send-data/hosted-collectors/http-source/troubleshooting",
   "/cid/97652": "/docs/integrations/saas-cloud/qualys-vmdr",
   "/cid/19877": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source",
-  "/cid/19878": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source",
+  "/cid/19878": "/docs/c2c/airtable",
   "/cid/19879": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source",
   "/cid/16323": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source",
   "/cid/19880": "/docs/metrics/metrics-operators/predict",

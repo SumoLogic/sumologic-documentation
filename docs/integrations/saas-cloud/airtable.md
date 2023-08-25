@@ -72,7 +72,7 @@ _sourceCategory="Labs/airtable"
 
 ## Installing the Airtable App
 
-Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) to create the source and use the same source category while installing the app.
+Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/c2c/airtable/) to create the source and use the same source category while installing the app.
 
 {@import ../../reuse/apps/app-install.md}
 

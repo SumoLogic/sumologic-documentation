@@ -62,7 +62,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox2 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source"><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="icon" width="50"/><h4>Airtable Source</h4></a>
+  <a href="/docs/c2c/airtable"><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="icon" width="50"/><h4>Airtable Source</h4></a>
   <p>Airtable Source helps to retrieve Airtable audit logs into the Sumo Logic environment.</p>
   </div>
 </div>
