@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Heroku is a logs only app that allows you to monitor your Heroku environment. The preconfigured dashboards present information to monitor heroku infrastructure, applications, metrics and error scenarios to ensure observability into heroku and its components.
 
-## Log and Metric Types
+## Log Types
 
 Heroku’s [Logplex logging service](https://devcenter.heroku.com/articles/logging) makes it easy to collect logs from its applications and forward them to Sumo. We use a [HTTPS log drain](https://devcenter.heroku.com/articles/log-drains#https-drains) to send [Syslog-formatted](https://datatracker.ietf.org/doc/html/rfc5424#section-6) messages to an HTTPS endpoint via a POST request.
 
