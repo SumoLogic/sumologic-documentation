@@ -18,7 +18,7 @@ For Azure Batch, you can collect the following logs and metrics:
 
 * **Service Logs**: Events emitted by the Batch service during the lifetime of an individual resource such as a pool or task. Logs events collected are listed [here](https://learn.microsoft.com/en-us/azure/batch/batch-diagnostics#service-log-events).
 
-* **Batch account metrics**: metrics at the Batch account level. Metrics collected are listed [here](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-batch-batchaccounts-metrics).
+* **Batch account metrics**: Metrics at the Batch account level. Metrics collected are listed [here](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-batch-batchaccounts-metrics).
 
 
 ## Setup
