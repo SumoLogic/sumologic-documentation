@@ -8,8 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-batch.png')} alt="Thumbnail icon" width="50"/>
 
-**Azure Batch** runs large-scale parallel and high-performance computing (HPC) batch jobs efficiently in Azure.
-This integrations helps in monitoring health of the nodes, creation/updation/deletion events of individual Batch resource, such as a pool or task, tracking the state (start/fail/complete) of jobs and tasks.
+**Azure Batch** runs large-scale parallel and high-performance computing (HPC) batch jobs efficiently in Azure. This integration helps in monitoring health of the nodes; creation, update, and deletion events of individual Batch resources, such as a pool or task; and tracking the state (start/fail/complete) of jobs and tasks.
 
 For more details on Azure Batch, refer to the Azure Batch [documentation](https://learn.microsoft.com/en-us/azure/batch/).
 
