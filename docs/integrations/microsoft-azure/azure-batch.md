@@ -39,7 +39,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 [Step 2: Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
 
 [Step 3: Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). 
-Choose `Stream to an event hub` as destination and select `allMetrics`. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new eventhub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as Policy name.
+Choose `Stream to an event hub` as destination and select `allMetrics`. Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as Policy name.
 
 
 ### Configure logs collection
