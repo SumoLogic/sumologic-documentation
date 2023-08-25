@@ -27,7 +27,7 @@ Azure service sends monitoring data to Azure Monitor which can then [stream data
 
 You must explicitly enable diagnostic settings for each Batch account you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: Azure/Batch/Logs, Azure/Batch/Metrics.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/Batch/Logs`, `Azure/Batch/Metrics`.
 
 
 ### Configure metrics collection
