@@ -1885,6 +1885,7 @@ integrations: [
          'integrations/microsoft-azure/active-directory-azure',
          'integrations/microsoft-azure/audit',
          'integrations/microsoft-azure/arm-integration-faq',
+         'integrations/microsoft-azure/azure-batch',
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
@@ -1898,8 +1899,7 @@ integrations: [
          'integrations/microsoft-azure/windows-json-pci-compliance',
          'integrations/microsoft-azure/windows-json',
          'integrations/microsoft-azure/windows-legacy',
-         'integrations/microsoft-azure/performance',
-         'integrations/microsoft-azure/azure-batch'
+         'integrations/microsoft-azure/performance'
         ],
       },
       {
