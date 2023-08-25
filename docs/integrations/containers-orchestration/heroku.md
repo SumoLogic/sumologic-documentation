@@ -104,7 +104,9 @@ The Sumo Logic add-on for Heroku helps you monitor Heroku apps and harness the p
    -----> Attaching sumologic-test-horizontal-9854... done
    ```
 
-   Now you can ccess Sumo Logic via the CLI:
+   You can also run ```heroku drains``` or ```heroku drains --json``` command to find the name of an existing Sumo Logic add-on for an app which can be attached to a new app.
+
+   Now you can access Sumo Logic via the CLI:
    ```
    $ heroku addons:open sumologic
    Opening sumologic for sharp-mountain-4005
@@ -120,6 +122,9 @@ The Sumo Logic add-on for Heroku helps you monitor Heroku apps and harness the p
    4. Click on the **Sumo Logic** add-on to open up a add-on order form.
    5. Choose the **Plan name** and click on the **Submit Order Form** button.
 
-   You will now be able to see the **Sumo Logic** add-on in the **Installed add-ons** section of you app's **Overview** tab. Clicking on that add-on redirects to open up a Sumo Logic trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of _sourceCategory for your Heroku log data to “heroku”. You can now start a [log search](https://help.sumologic.com/docs/search/) with _sourceCategory=“heroku” to see the logs flowing in from Heroku.
+   You will now be able to see the **Sumo Logic** add-on in the **Installed add-ons** section of you app's **Overview** tab. Clicking on that add-on redirects to open up a Sumo Logic free trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of _sourceCategory for your Heroku log data to “heroku”. You can now start a [log search](https://help.sumologic.com/docs/search/) with _sourceCategory=“heroku” to see the logs flowing in from Heroku.
 
+### Collecting Logs via HTTPS Log Drain
 
+A HTTPS Log Drain can be attached to a Heroku application via the CLI. We would first need the URL of a [https logs source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) in any type of Sumo Logic account.
+Then, you add an HTTPS drain like so
