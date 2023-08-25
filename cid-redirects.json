@@ -3578,6 +3578,7 @@
   "/Traces/Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments",
   "/Traces/Getting_Started_with_Transaction_Tracing/Working_with_spans_attributes": "/docs/apm/traces/advanced-configuration/working-with-span-attributes",
   "/Traces/Getting_Started_with_Transaction_Tracing/Instrument_your_application_with_OpenTelemetry": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation",
+  "/Traces/Getting_Started_with_Transaction_Tracing/Instrument_your_application_with_OpenTelemetry/.NET_OpenTelemetry_auto-instrumentation": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/net",
   "/Traces/Getting_Started_with_Transaction_Tracing/Instrument_your_application_with_OpenTelemetry/Java_OpenTelemetry_auto-instrumentation/TraceId_and_SpanId_injection_into_logs_configuration": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration",
   "/Traces/Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments": "/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments",
   "/Traces/01Getting_Started_with_Transaction_Tracing/Instrument_your_application_with_OpenTelemetry/Java_OpenTelemetry_auto-instrumentation": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/java",
@@ -3656,5 +3657,7 @@
   "/docs/dashboards/edit-dashboards/manage-axis": "/docs/dashboards-classic/edit-dashboards/manage-axis",
   "/docs/dashboards/chart-panel-types/table-charts": "/docs/dashboards/panels/table-charts",
   "/docs/dashboards/chart-panel-types/string-single-value-charts": "/docs/dashboards-classic/chart-panel-types/string-single-value-charts",
+  "/docs/integrations/app-development/opentelemetry/jira": "/docs/integrations/app-development/opentelemetry/jira-opentelemetry",
+  "/docs/logs": "/docs/search",
   "/cid/-1": "/"
 }
