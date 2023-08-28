@@ -1665,6 +1665,10 @@ Resource `aws_serverlessapplicationrepository_cloudformation_stack` is not able 
 
 #### Solution
 
+:::info
+For time being, consider the procedure listed below to rectify the error. This error has already [reported](https://github.com/hashicorp/terraform-provider-aws/issues/23874) to AWS.
+:::
+
 Navigate to the location where you have installed the AWSO Tf solution and replace the exisitig code with the new code given below.
 
 1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
