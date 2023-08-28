@@ -125,14 +125,19 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 ## Migrate from legacy actions and enrichments to the Automation Service 
 
-[Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/) are deprecated because comparable behavior is now available in the Automation Service. To continue getting the same behavior found in the legacy actions and enrichments, either use installed playbooks in the Automation Service, or replace the legacy actions and enrichments by adding the corresponding actions to playbooks you create in the Automation Service. 
+[Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/) are deprecated because comparable behavior is now available in the Automation Service. To continue getting the same behavior found in the legacy actions and enrichments, either [use installed playbooks](#use-installed-playbooks) in the Automation Service, or [replace the legacy actions and enrichments](#replace-legacy-actions-and-enrichments) by adding the corresponding actions to playbooks you create in the Automation Service. 
 
-But migrating from legacy actions is not the only reason to migrate to the Automation Service. With the Automation Service you can run actions in playbooks rather than singly, there is a library of direct cloud integrations, the ability to run on platforms other than Windows if you’re running custom actions, customizable output, support for threat indicators, and much more. 
+Migrating to the Automation Service has many benefits over using legacy actions and enrichments. With the Automation Service you can:
+* Run actions in playbooks rather than singly.
+* Use a library of direct cloud integrations.
+* Run on platforms other than Windows if you’re running custom actions.
+* Customize output.
+* Have support for threat indicators. 
 
 ### Use installed playbooks 
 
-Though you can create your own playbooks, we provide the following playbooks that contain functionality that replaces legacy actions and enrichments:
-* **Insight Full Enrichment**. Enriches the whole Insight with Recorded Future. It enriches both the primary and all the involved Entities by sorting them based on their Entity type. The playbook alerts the user if a risky Entity is detected, and also adds tags to the Insight for easier identification. 
+Though you can create your own playbooks, the Automation Service provides the following playbooks with functionality that replaces legacy actions and enrichments:
+* **Insight Full Enrichment**. Enriches the whole Insight with Recorded Future. It enriches both the primary and all the involved Entities by sorting them based on their Entity type. The playbook alerts you if a risky Entity is detected, and also adds tags to the Insight for easier identification. 
 * **Entity Full Enrichment**. Determines the Entity type and uses the appropriate Recorded Future technology to enrich.
 * **Enrich Entity with PowerShell Carbon Black**. Executes the PowerShell script to enrich with Carbon Black, adds the enrichment to the Entity, and sends an email if a risky score is detected.
 * **Enrich Entity with PowerShell CrowdStrike**. Executes the PowerShell script to enrich with CrowdStrike, and adds the enrichment to the Entity.
