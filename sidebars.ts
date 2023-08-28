@@ -2277,6 +2277,7 @@ integrations: [
           'integrations/webhooks/flagsmith',
           'integrations/webhooks/grafana-oncall',
           'integrations/webhooks/gremlin',
+          'integrations/webhooks/hasura',
           'integrations/webhooks/honeybadger',
           'integrations/webhooks/ilert',
           'integrations/webhooks/mailgun',
