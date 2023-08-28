@@ -38,8 +38,7 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
    * **Show Technique ID**. Shows the technique ID. 
    * **Show Technique Name**. Shows the name of the technique.
    * **Show Filtered**. Shows only techniques that are filtered.
-<!-- 1. **Total Coverage**. Estimated coverage for all techniques in the MITRE Enterprise Matrix. Note that it is impossible to get 100% coverage, because some techniques are undetectable by their very nature.  -->
-1. **Technique Coverage**. The number of techniques covered.
+1. **Technique Coverage**. The number of techniques covered. Note that it is impossible to get 100% coverage, because some techniques are undetectable by their very nature.
 1. **Sub-Technique Coverage**. The number of sub-techniques covered.
 1. **Coverage Type**. Key to the colors indicating coverage:
    * High (17 or more rules) 
