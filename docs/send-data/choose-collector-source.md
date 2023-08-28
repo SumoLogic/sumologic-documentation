@@ -30,7 +30,7 @@ It's supported on Linux, macOS, Windows, and Kubernetes environments and can use
 * HTTP with OTLP formats
 * And more than 60 ways to collector logs, metrics and traces.
 
-For full details on limitations, what's supported, and what's different see our [comparison documentation](https://help.sumologic.com/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector).
+For full details on limitations, what's supported, and what's different see our [comparison documentation](/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector).
 
 ### Installed Collectors (Installed Agent)
 
@@ -110,14 +110,14 @@ The following table shows the comparison between the Installed Collector and Ope
           <li>Local File</li>
           <li>Syslog</li>
           <li>Host/Process Metrics</li>
-          <li>OTLP(OpenTelemtry Protocol) Receiver</li> 
+          <li>OTLP(OpenTelemtry Protocol) Receiver</li>
           <li>Transaction Tracing</li>
           <li>Windows Log Event Receiver</li>
           <li>Windows Performance Counters Receiver</li>
-          <li>Docker Stats / Logs</li> 
+          <li>Docker Stats / Logs</li>
           <li>Kafka</li>
-          <li>MongoDB</li> 
-          <li>Journald</li> 
+          <li>MongoDB</li>
+          <li>Journald</li>
           <li>Kubernetes</li>
           <li>And more than 60 additional way to collect logs, metrics and traces</li>
         </ul>

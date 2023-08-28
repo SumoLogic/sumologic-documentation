@@ -117,7 +117,9 @@
     "banant",
     "michaljmatusiak92",
     "pgupta-sumo",
-    "apoorv-garg"
+    "apoorv-garg",
+    "gchairuangsang",
+    "damiangarbacz"
   ],
   "message": "Thank you for your contribution! As this is an open source project, we require contributors to sign our Contributor License Agreement and do not have yours on file. To proceed with your PR, please [sign your name here](https://forms.gle/YgLddrckeJaCdZYA6) and we'll add you to our approved list of contributors.",
   "label": "cla-signed",
