@@ -787,7 +787,6 @@ module.exports = {
           ]
         },
         'manage/security/search-audit-index',
-        'manage/security/log-search-audit-index',
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
