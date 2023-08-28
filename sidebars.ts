@@ -1682,6 +1682,7 @@ module.exports = {
                   ],
                 },
                 'observability/aws/deploy-use-aws-observability/deploy-with-terraform',
+                'observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform',
                 'observability/aws/deploy-use-aws-observability/view-dashboards',
                 'observability/aws/deploy-use-aws-observability/configure-alerts',
                 'observability/aws/deploy-use-aws-observability/update-aws-observability-stack',
@@ -1904,6 +1905,7 @@ integrations: [
          'integrations/microsoft-azure/active-directory-azure',
          'integrations/microsoft-azure/audit',
          'integrations/microsoft-azure/arm-integration-faq',
+         'integrations/microsoft-azure/azure-batch',
          'integrations/microsoft-azure/kubernetes',
          'integrations/microsoft-azure/network-watcher',
          'integrations/microsoft-azure/sql',
@@ -1917,7 +1919,7 @@ integrations: [
          'integrations/microsoft-azure/windows-json-pci-compliance',
          'integrations/microsoft-azure/windows-json',
          'integrations/microsoft-azure/windows-legacy',
-         'integrations/microsoft-azure/performance',
+         'integrations/microsoft-azure/performance'
         ],
       },
       {
