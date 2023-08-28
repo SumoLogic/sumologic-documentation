@@ -1657,7 +1657,7 @@ Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templ
 
 #### Error Message
 
-While upgrading AWS Observability Solution (Terraform) from v2.3.0 to v2.4.0 and onwards, upgrade failed with the following error.
+While upgrading AWS Observability Solution (Terraform), upgrade failed with the following error.
 
 `Error: error creating Serverless Application Repository CloudFormation Stack (arn:aws:cloudformation:us-east-1:XXXXXXXXX:stack/serverlessrepo-serverless-hello-world-test/7a6ef230-35a6-11zb-98ff-0ab512dce13f) change set: unexpected state 'FAILED', wanted target 'CREATE_COMPLETE'. last error: %!s()`
 
