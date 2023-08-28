@@ -61,8 +61,8 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
    ```
    [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:8080\" 
-   Environment="HTTPS_PROXY=http://proxy.example.com:8080\"
+   Environment="HTTP_PROXY=http://proxy.example.com:8080" 
+   Environment="HTTPS_PROXY=http://proxy.example.com:8080"
    ```
 1. Reload the systemd daemon with:
    ```
@@ -123,7 +123,7 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    * `1SOAR_TOKEN1`
 1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
-And you can set this optional parameter (do not include spaces): `ALIAS`
+And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
 
 An example of a configuration file would be:
 ```
@@ -131,7 +131,7 @@ An example of a configuration file would be:
    "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
    "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
    "SIEM_URL":"https://YOUR_CSE_URL/sec",
-   "ALIAS":"YOUR_ALIAS_NO_SPACES"
+   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
 
@@ -179,3 +179,10 @@ ps faux |grep automation-bridge
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
 On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cse/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+
+### Configuring the automation bridge for CyberArk
+
+If you are using CyberArk, you must add the following certificates provided by CyberArk to the `/opt/automation-bridge/` directory:
+* `RootCA_new.crt`
+* `client_new.crt`
+* `client_new.pem`
