@@ -394,10 +394,6 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 1. Enter a **Name** for the Monitor and the **Location** you want it saved to. A **Description** is optional.
 
-    ![monitor details during creation.png](/img/monitors/monitor-details-during-creation.png)
-
 1. **Playbooks** allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert. You have the option to provide a playbook when creating a Monitor, as shown in the below image. Markdown is supported.
-
-    ![Montor playbook input.png](/img/monitors/Montor-playbook-input.png)
 
 1. Click the **Save** button at the top right of the panel when you're finished configuring the Monitor.
