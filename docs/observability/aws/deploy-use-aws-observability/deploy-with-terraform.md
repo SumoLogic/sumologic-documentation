@@ -561,6 +561,10 @@ $ terraform destroy
 
 This will destroy all [resources](resources.md) and configuration previously set up.
 
+## Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
+
+To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
+
 ## Appendix
 
 ### Override Source Parameters
@@ -635,6 +639,10 @@ module "collection-module" {
 The following table provides a list of all source parameters and their default values. See the [sumologic-solution-templates/aws-observability-terraform/source-module/variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/source-module/variables.tf) file for complete code.
 
 ### Configure collection of CloudWatch metrics
+
+:::note
+To migrate CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
+:::
 
 #### collect_cloudwatch_metrics
 
@@ -997,6 +1005,10 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 ```
 
 ### Configure collection of CloudTrail logs
+
+:::note
+To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform).
+:::
 
 #### collect_cloudtrail_logs
 
@@ -1587,7 +1599,7 @@ Delete existing hierarchy and a create new one:<br/>
   ```sql
   curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
   ```
-1. Delete the existing Hierarchy. Learn [more](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
+1. Delete the existing Hierarchy. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
   ```sql
   curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
   ```
@@ -1640,3 +1652,74 @@ on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologi
 ```
 #### Solution
 Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom terraform script accordingly.
+
+### Error creating Serverless Application Repository CloudFormation Stack
+
+#### Error Message
+
+While upgrading AWS Observability Solution (Terraform), upgrade failed with the following error.
+
+`Error: error creating Serverless Application Repository CloudFormation Stack (arn:aws:cloudformation:us-east-1:XXXXXXXXX:stack/serverlessrepo-serverless-hello-world-test/7a6ef230-35a6-11zb-98ff-0ab512dce13f) change set: unexpected state 'FAILED', wanted target 'CREATE_COMPLETE'. last error: %!s()`
+
+Resource `aws_serverlessapplicationrepository_cloudformation_stack` is not able to store values of `var.auto_enable_access_logs` (as specified in our code). On each subsequent terraform apply resource detects it as change and creates a new stack-set. When the AWS API is called with a new stack-set it fails abruptly which causes the whole solution to fail while upgrading.
+
+#### Solution
+
+:::info
+For time being, consider the procedure listed below to rectify the error. This error has already [reported](https://github.com/hashicorp/terraform-provider-aws/issues/23874) to AWS.
+:::
+
+Navigate to the location where you have installed the AWS Observability Terraform solution and replace the existing code with the new code given below.
+
+1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
+2. Replace the code with the code give below.
+  ```sql
+  resource "aws_serverlessapplicationrepository_cloudformation_stack" 
+    "auto_enable_access_logs" {
+    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
+
+    name             = "Auto-Enable-Access-Logs-${var.auto_enable_access_logs_options.auto_enable_logging}-${random_string.aws_random.id}"
+    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
+    semantic_version = var.app_semantic_version
+    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
+    parameters = {
+      BucketName                = local.bucket_name
+      BucketPrefix              = var.auto_enable_access_logs_options.bucket_prefix
+      AutoEnableLogging         = var.auto_enable_access_logs_options.auto_enable_logging
+      AutoEnableResourceOptions = var.auto_enable_access_logs
+      FilterExpression          = var.auto_enable_access_logs_options.filter
+      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
+    }
+    lifecycle {
+      ignore_changes = [
+        parameters,tags
+      ]
+    }
+  }
+  ```
+3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
+4. Replace the code with the code provided below.
+  ```sql
+  resource "aws_serverlessapplicationrepository_cloudformation_stack" 
+  "auto_enable_access_logs" {
+    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
+
+    name             = "Auto-Enable-Access-Logs-Elb-${random_string.aws_random.id}"
+    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
+    semantic_version = "1.0.2"
+    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
+    parameters = {
+      BucketName                = local.bucket_name
+      BucketPrefix              = "elasticloadbalancing"
+      AutoEnableLogging         = "ALB"
+      AutoEnableResourceOptions = var.auto_enable_access_logs
+      FilterExpression          = var.auto_enable_access_logs_options.filter
+      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
+    }
+    lifecycle {
+      ignore_changes = [
+        parameters,tags
+      ]
+    }
+  }
+```

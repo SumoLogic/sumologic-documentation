@@ -92,7 +92,10 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 6. **Use AWS versioned APIs**? Select **No**
 7. **Bucket Name.** Enter the exact name of the S3 bucket you created above.
 8. **Path Expression.** Enter: `events/*`
-9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs.
+9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. 
+:::note
+{@import ../../reuse/collection-should-begin-note.md}
+:::
 10. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.) Make a note of the Source Category you assign; you will need it when you install the  the Carbon Black Cloud App.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.  
