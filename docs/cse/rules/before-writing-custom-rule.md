@@ -24,7 +24,7 @@ The following topics provide information that’s relevant to the process of wri
 * [CSE Rules Syntax](/docs/cse/rules/cse-rules-syntax). This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
 * [Searching for CSE Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo). This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
 
-### Use case analysis and rule type selection
+## Step 1: Perform use case analysis and select rule type
 
 The first step is determining your use case. In part, this involves deciding what behavior you want the rule to detect, and which of your data sources will provide evidence of that behavior. 
 
@@ -32,7 +32,7 @@ In addition to what you're looking for, and where you can find it, you’ll deci
 
 Review the standard [rule types](/docs/cse/rules/about-cse-rules#rule-types) to determine if any of them can address your use case. 
 
-## Review the log mapping for your source
+## Step 2: Review the log mapping for your source
 
 Before you write a rule, you’ll want to verify what attributes are available in the Records created from the target data source. You can do this by reviewing the log mapping for the data source.  
 
@@ -49,7 +49,7 @@ To find and review a log mapping:
 
 Now that we understand the mapping in CSE, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
 
-### Create query in Sumo Logic
+## Step 3: Create the query in Sumo Logic
 
 In this step, we’ll create the query that will serve as the rule expression when we create the rule.
 
@@ -107,3 +107,14 @@ You can use an expression like this example in any rule type. Here is an examp
 
 <img src={useBaseUrl('img/cse/example-in-editor.png')} alt="Example in editor" width="500"/>
 
+## Degraded rules
+
+A degraded rule is one that has had a portion of the rule shut off because it causes the rule to exceed a processing limit. 
+
+For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, the particular value will be ignored, but the rest of the rule is still be used. In this case, Cloud SIEM might display a message like this:
+
+```
+The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.
+```
+
+To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.
