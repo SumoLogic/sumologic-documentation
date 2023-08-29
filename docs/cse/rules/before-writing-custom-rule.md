@@ -109,7 +109,7 @@ You can use an expression like this example in any rule type. Here is an examp
 
 ## Degraded rules
 
-A degraded rule is one that has had a portion of the rule shut off because it causes the rule to exceed a processing limit. If you write a custom rule that results in its becoming degraded, you must tune the rule to correct the problem.
+A degraded rule is one that has had a portion of the rule shut off because it causes the rule to exceed a processing limit. If you write a custom rule that becomes degraded, you must tune the rule to correct the problem.
 
 For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, the particular value will be ignored, but the rest of the rule is still be used. In this case, Cloud SIEM might display a message like this:
 
