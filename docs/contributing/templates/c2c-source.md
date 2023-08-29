@@ -1,8 +1,8 @@
 ---
 id: c2c-source  #example: druva-source
-title: XYZ Source #example: Druva Source
+title: C2C Source #example: Druva Source
 image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
-sidebar_label: XYZ #example: Druva
+sidebar_label: C2C Template #example: Druva
 tags:
   - cloud-to-cloud
   - c2c-source  #example: Druva
