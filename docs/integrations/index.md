@@ -117,13 +117,13 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
 </div>
 <div className="box smallbox16 card">
   <div className="container">
-  <a href="/docs/integrations/sumo-apps/"><img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="70"/><h4>Partner Ecosystem Apps</h4></a>
+  <a href="/docs/integrations/partner-ecosystem-apps"><img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="70"/><h4>Partner Ecosystem Apps</h4></a>
   <p>Third-party Sumo Logic apps for partners including Auth0, CircleCI, and more.</p>
   </div>
 </div>
 <div className="box smallbox17 card">
   <div className="container">
-  <a href="/docs/integrations/sumo-apps/"><img src={useBaseUrl('img/integrations/partner-integrations.png')} alt="Thumbnail icon" width="70"/><h4>Partner Integrations</h4></a>
+  <a href="/docs/integrations/partner-integrations"><img src={useBaseUrl('img/integrations/partner-integrations.png')} alt="Thumbnail icon" width="70"/><h4>Partner Integrations</h4></a>
   <p>Sumo Logic Partner Integrations are provided and supported by our partner network. </p>
   </div>
 </div>
