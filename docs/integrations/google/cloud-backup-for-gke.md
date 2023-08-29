@@ -10,7 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/GoogleCloudBackupforGKE.png')} alt="Thumbnail icon" width="50"/>
 
-
 Backup for GKE is a service for backing up and restoring workloads in GKE clusters. For more details, refer to the [GCP documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke).
 
 ## Log types
@@ -24,12 +23,12 @@ You can collect the logs for Sumo Logic's Google Cloud Backup for GKE integratio
 
 ### Configure logs collection
 
-* Collect **Audit Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Refer to the [permissions and roles](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/audit-logging#audit_log_permissions) required for accessing audit logs. To enable logging for Google Backup for GKE refer to [Google documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/audit-logging). For more detail, on Backup for GKE operations being audited refer to [audited operations](https://cloud.google.com/kubernetes-engine/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/audit-logging#audit_log_permissions). To enable logging for Google Backup for GKE, refer to [Google documentation](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/audit-logging). For more detail on Backup for GKE operations being audited, refer to [audited operations](https://cloud.google.com/kubernetes-engine/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
    ```sql
    (resource.type=audited_resource AND resource.labels.service=gkebackup.googleapis.com)
    ```
 
-* Collect **Platform Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Here are the details of [platforms logs for Backup for GKE](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/platform-logging-backup-for-gke). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Here are the details of [platforms logs for Backup for GKE](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/platform-logging-backup-for-gke). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    (resource.type=(gkebackup.googleapis.com/BackupPlan or gkebackup.googleapis.com/RestorePlan))
    ```

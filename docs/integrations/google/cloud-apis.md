@@ -18,10 +18,11 @@ Google Cloud APIs are programmatic interfaces to Google Cloud Platform services.
 
 
 ## Setup
+
 You can collect the metrics for Sumo Logic's Google Cloud API's integration by following the below steps.
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Note that in the Services dropdown, you'll need to select **Cloud APIs**. For Google Cloud API metrics and dimensions, refer to [Google API metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-serviceruntim).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Cloud APIs** from the **Services** dropdown. For Google Cloud API metrics and dimensions, refer to [Google API metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-serviceruntim).
 
 

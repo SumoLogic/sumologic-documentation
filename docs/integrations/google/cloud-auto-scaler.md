@@ -18,15 +18,16 @@ Managed instance groups (MIGs) offer autoscaling capabilities that let you autom
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)
 
 ## Setup
+
 You can collect the logs and metrics for Sumo Logic's Google Cloud Auto Scaler integration by following the below steps.
 
 ### Configure logs collection
 
-* Collect **Platform Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).When you enable autoscaling, the autoscaler makes scaling decisions based on the options that you specify. Each scaling decision is logged by Cloud Logging which can be collected, [here](https://cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs) are the details. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). When you enable autoscaling, the [autoscaler](https://cloud.google.com/compute/docs/autoscaler/viewing-autoscaler-logs) makes scaling decisions based on the options that you specify. Each scaling decision is logged by Cloud Logging which can be collected. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    (resource.type=autoscaler)
    ```
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Note that in the Services dropdown, you'll need to select **Auto Scaler**. For Google Auto Scaler metrics and dimensions, refer to [Google Auto Scaler metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-autoscaler).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Auto Scaler** from the **Services** dropdown. For Google Auto Scaler metrics and dimensions, refer to [Google Auto Scaler metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-autoscaler).

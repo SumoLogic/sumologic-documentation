@@ -23,11 +23,11 @@ You can collect the logs for Sumo Logic's Google Cloud Datastream integration by
 
 ### Configure logs collection
 
-* Collect **Audit Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Refer to the [permissions and roles](https://cloud.google.com/datastream/docs/audit-logging#audit_log_permissions) required for accessing audit logs. To enable logging for Google Datastream refer to [Google documentation](https://cloud.google.com/datastream/docs/audit-logging#enabling_audit_logging). For more detail, on Datastream operations being audited refer to [audited operations](https://cloud.google.com/datastream/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/datastream/docs/audit-logging#audit_log_permissions). To enable logging for Google Datastream, refer to [Google documentation](https://cloud.google.com/datastream/docs/audit-logging#enabling_audit_logging). For more detail on Datastream operations being audited, refer to [audited operations](https://cloud.google.com/datastream/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
    ```sql
    (resource.type=audited_resource or resource.labels.service=datastream.googleapis.com)
    ```
-* Collect **Platform Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Datastream platform logs include logs service related logs of stream . While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Datastream platform logs include logs service related logs of stream. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    (resource.type=datastream.googleapis.com/Stream)
    ```

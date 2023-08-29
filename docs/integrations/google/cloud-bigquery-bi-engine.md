@@ -17,11 +17,12 @@ BigQuery BI Engine is a fast, in-memory analysis service that accelerates many S
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)
 
 ## Setup
+
 You can collect the logs for Sumo Logic's Google Cloud Bigquery BI engine integration by following the below steps.
 
 ### Configure logs collection
 
-* Collect **Platform Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    (resource.type="bigquery_biengine_model")
    ```
