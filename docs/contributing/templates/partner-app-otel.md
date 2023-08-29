@@ -33,7 +33,7 @@ This section provides instructions for configuring metrics and log collection fo
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+{@import ../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 
@@ -81,7 +81,7 @@ Click on the Download YAML File button to get the yaml file.
 
 ## Viewing \<App Name\> dashboards
 
-{@import ../../../reuse/filter-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
 
 ## \<Dashboard name\>
 
@@ -96,4 +96,4 @@ Use this dashboard to:
 * Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
 
 \<Add your dashboard screenshot.\>
-<img src='https:///Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
+<img src='https://Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
