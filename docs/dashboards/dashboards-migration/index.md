@@ -9,10 +9,12 @@ The **Migrate to Dashboards** functionality allows you to transform **Dashboards
 
 ## Advantages
 
-**Dashboards**
-
-- Persistent release and update with new feature additions.
-- Provides the unique ability to analyze metrics metadata and log data on the same dashboard in an integrated seamless view. This is what you need to monitor and manage a Kubernetes environment effectively.
-- You can control the visual display of metric and log data.
-- Streamline dashboard configuration and on-the-fly analytic visualizations with its new templating features.
+- Visulize queries with new dashboard panels, including honeycombs, bubble charts, heat maps, and funnel charts.
+- Provides the unique ability to analyze metrics metadata and log data on the same dashboard in an integrated seamless view.
+- Visualize multiple queries in a single panel.
+- Provides streamlined dashboard configuration with inline editing.
+- Includes powerful [template variables](/docs/dashboards/filter-template-variables/) that allows you to alter your queries in multiple ways.
+- Supports [scheduled reports](/docs/dashboards/scheduled-report/), that delivers the report right to your inbox.
+- Modern user interface with enhanced user experience and performance.
+- Persistent support for new features, updates, and security enhancements.
 
