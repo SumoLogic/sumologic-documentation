@@ -20,6 +20,7 @@ Firebase is Google's mobile development platform. For more details, refer to the
 
 ## Setup
 
+
 You can collect the logs and metrics for Sumo Logic's Google Cloud Firebase integration by following the below steps.
 
 ### Configure logs collection
