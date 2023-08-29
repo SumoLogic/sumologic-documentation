@@ -9,7 +9,7 @@ The **Migrate to Dashboards** functionality allows you to transform **Dashboards
 
 ## Advantages
 
-- Visulize queries with new dashboard panels, including honeycombs, bubble charts, heat maps, and funnel charts.
+- Visualize queries with new [dashboard panels](/docs/dashboards/panels/), including honeycombs, bubble charts, heat maps, and funnel charts.
 - Provides the unique ability to analyze metrics metadata and log data on the same dashboard in an integrated seamless view.
 - Visualize multiple queries in a single panel.
 - Provides streamlined dashboard configuration with inline editing.
