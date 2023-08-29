@@ -1,6 +1,7 @@
 ---
 id: aurora-mysql-ulm
-title: Aurora MySQL ULM
+title: Amazon Aurora MySQL ULM
+sidebar_label: Amazon Aurora MySQL
 description: The Sumo Logic App for Amazon Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 ---
 
