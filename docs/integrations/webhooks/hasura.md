@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/hasura-logo.png')} alt="Thumbnail icon" width="50"/>
 
-Hasura Cloud is a fully-managed version of GraphQL Engine that gives you a scalable, globally-distributed, secure GraphQL API over your data sources. You can use a webhook in the Hasura platform to forward logs to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the insert, update and deletion events in Sumo Logic. For more details, refer to the [Hasura Documentation](https://hasura.io/docs/latest/hasura-cloud/overview/).
+Hasura Cloud is a fully-managed version of GraphQL Engine that provides you a scalable, globally-distributed, and secure GraphQL API over your data sources. You can use a webhook in the Hasura platform to forward logs to the Sumo Logic HTTP endpoint. Using these logs, you can monitor the insert, update, and deletion events in Sumo Logic. For more details, refer to the [Hasura Documentation](https://hasura.io/docs/latest/hasura-cloud/overview/).
 
 ## Event types
 
