@@ -1987,6 +1987,7 @@ integrations: [
           'integrations/containers-orchestration/activemq',
           'integrations/containers-orchestration/docker-community-edition',
           'integrations/containers-orchestration/docker-ulm',
+          'integrations/containers-orchestration/heroku',
           'integrations/containers-orchestration/kafka',
           'integrations/containers-orchestration/strimzi-kafka',
           'integrations/containers-orchestration/kubernetes',
