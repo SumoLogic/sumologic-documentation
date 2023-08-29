@@ -109,7 +109,7 @@ If you're using CircleCI for Build and Deploy, do the following:
    * `_sourcecategory=circleci/job-collector`
    * `_sourcecategory="circleci/workflow-collector"`
 
-   Sumo Logic sources by default have [multiline processing](https://help.sumologic.com/docs/send-data/reference-information/collect-multiline-logs/) enabled. You need to disable it here for structured log collection of CircleCI.
+   Sumo Logic sources, by default, have [multiline processing](https://help.sumologic.com/docs/send-data/reference-information/collect-multiline-logs/) enabled. You'll need to disable it here in order to collect structured logs for CircleCI.
 1. Copy and save displayed URLs associated with the sources. You will use this information to upload data.
 1. We navigate to the CircleCI project environment. We need to create three [environment variables](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project) in project settings of the environment:
    * `CIRCLE_TOKEN = <API personal token created in CircleCi>`
