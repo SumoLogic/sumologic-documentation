@@ -127,7 +127,7 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/) are deprecated because comparable behavior is now available in the Automation Service. To continue using the same functionality found in the legacy actions and enrichments, [use installed playbooks](#use-installed-playbooks) in the Automation Service, or [replace the legacy actions and enrichments](#replace-legacy-actions-and-enrichments) by adding the corresponding actions to playbooks you create in the Automation Service. 
 
-Migrating to the Automation Service has many benefits over using legacy actions and enrichments. With the Automation Service you can:
+Migrating to the Automation Service has many benefits over using legacy actions and enrichments. With the Automation Service, you can:
 * Run actions in playbooks rather than singly.
 * Use a library of direct cloud integrations.
 * Run on platforms other than Windows if you’re running custom actions.
