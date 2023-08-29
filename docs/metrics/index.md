@@ -10,7 +10,11 @@ algolia: {
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/metrics/metrics.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/metrics/metrics.png')} alt="icon" width="30"/>
+
+:::caution Classic Metrics UI Deprecation
+In late 2023, we're deprecating our [Classic Metrics and Classic Dashboards](/docs/metrics/metrics-queries/metrics-explorer/#switch-to-the-classic-metrics-ui) interface. To prepare for the deprecation of these legacy features, you'll need to migrate any classic metrics to our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. [how?]
+:::
 
 Metrics are numeric samples of data collected over time. They can measure infrastructure, such as operating system performance, disk activity, application performance, or custom business and operational data that is coded into your organization’s applications.
 
