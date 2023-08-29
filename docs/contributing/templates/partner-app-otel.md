@@ -89,6 +89,7 @@ Click on the Download YAML File button to get the yaml file.
 
 * Enter a list of features. Example below.
 
+<!--
 Use this dashboard to:
 
 * Monitor high severity threats and scan attacks.
@@ -97,3 +98,4 @@ Use this dashboard to:
 
 \<Add your dashboard screenshot.\>
 <img src='https://Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
+-->
