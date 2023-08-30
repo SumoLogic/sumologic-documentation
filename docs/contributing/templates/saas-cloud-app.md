@@ -47,11 +47,13 @@ This section describes how to install the \<App Name\> app for Sumo Logic and de
 
 * Enter a list of features. Example below.
 
+<!--
 Use this dashboard to:
 
 * Monitor high severity threats and scan attacks.
 * Review \<fill in\> for troubleshooting configuration issues.
 * Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
 
-\<Add your dashboard screenshot.\>
-<img src='https://Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
+<img src='https:///Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
+-->
+
