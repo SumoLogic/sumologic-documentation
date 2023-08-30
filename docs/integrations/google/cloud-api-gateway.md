@@ -1,4 +1,3 @@
-
 ---
 id: cloud-api-gateway
 title: Google Cloud API Gateway

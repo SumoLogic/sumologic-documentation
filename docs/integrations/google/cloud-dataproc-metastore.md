@@ -1,4 +1,3 @@
-
 ---
 id: cloud-dataproc-metastore
 title: Google Cloud Dataproc Metastore

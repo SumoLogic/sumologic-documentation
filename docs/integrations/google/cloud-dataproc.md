@@ -1,4 +1,3 @@
-
 ---
 id: cloud-dataproc
 title: Google Cloud Dataproc
