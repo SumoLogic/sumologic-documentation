@@ -29,4 +29,4 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Auto Scaler i
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Auto Scaler** from the **Services** dropdown. For Google Auto Scaler metrics and dimensions, refer to [Google Auto Scaler metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-autoscaler).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Auto Scaler**. For Google Auto Scaler metrics and dimensions, refer to [Google Auto Scaler metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-autoscaler).

@@ -21,4 +21,4 @@ You can collect the metrics for Sumo Logic's Google Cloud Network Topology integ
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Networking** from the **Services** dropdown. For Google Network Topology metrics and dimensions, refer to [Google Network Topology metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-networking).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Networking**. For Google Network Topology metrics and dimensions, refer to [Google Network Topology metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-networking).

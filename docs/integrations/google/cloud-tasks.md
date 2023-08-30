@@ -29,4 +29,4 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Tasks integra
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Cloud Tasks** from the **Services** dropdown. For Google Tasks metrics and dimensions, refer to [Google Tasks metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudtasks).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Cloud Tasks**. For Google Tasks metrics and dimensions, refer to [Google Tasks metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudtasks).
