@@ -2903,7 +2903,7 @@
   "/Manage/Security/SAML/Set-Up-Optional-SAML-Features": "/docs/manage/security/saml/set-up-saml",
   "/Manage/Security/SAML/View-SAML-Debug-Information": "/docs/manage/security/saml/view-saml-debug-information",
   "/Manage/Security/Search_Audit_Index": "/docs/manage/security/search-audit-index",
-  "/Manage/Security/Search_Audit_Index/Log_Search_Audit_Index": "/docs/manage/security/log-search-audit-index",
+  "/Manage/Security/Search_Audit_Index/Log_Search_Audit_Index": "/docs/manage/security/search-audit-index",
   "/Manage/Security/Set_a_Limit_for_User_Concurrent_Sessions": "/docs/manage/security/set-limit-user-concurrent-sessions",
   "/Manage/Security/Set_a_Maximum_Web_Session_Timeout": "/docs/manage/security/set-max-web-session-timeout",
   "/Manage/Security/Set-the-Password-Policy": "/docs/manage/security/set-password-policy",
@@ -3681,5 +3681,6 @@
   "/docs/dashboards/chart-panel-types/string-single-value-charts": "/docs/dashboards-classic/chart-panel-types/string-single-value-charts",
   "/docs/integrations/app-development/opentelemetry/jira": "/docs/integrations/app-development/opentelemetry/jira-opentelemetry",
   "/docs/logs": "/docs/search",
+  "/docs/manage/security/log-search-audit-index": "/docs/manage/security/search-audit-index",
   "/cid/-1": "/"
 }
