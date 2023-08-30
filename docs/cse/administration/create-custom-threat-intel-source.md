@@ -44,8 +44,7 @@ Rule authors can also write rules that look for threat intelligence information 
 1. Click the Content menu and select **Threat Intelligence**.
 1. Click **Add Source** on the **Threat Intelligence** page. <br/><img src={useBaseUrl('img/cse/threat-intel-page2.png')} alt="Threat Intelligence page" width="800"/>
 1. Click **Custom** on the **Add Source** popup. <br/><img src={useBaseUrl('img/cse/custom-button.png')} alt="Custom button" width="600"/>
-1. On the **Add New Source** popup, enter a name, and if desired, a
-    description for the source. <br/><img src={useBaseUrl('img/cse/add-custom-source.png')} alt="Add new source" width="600"/>
+1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. <br/><img src={useBaseUrl('img/cse/add-custom-source.png')} alt="Add new source" width="600"/>
 1. Click **Add Custom Source**.
 
 Your new source should now appear on the **Threat Intelligence** page.
