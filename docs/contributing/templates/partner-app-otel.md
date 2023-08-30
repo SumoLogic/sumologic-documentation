@@ -97,5 +97,5 @@ Use this dashboard to:
 * Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
 
 \<Add your dashboard screenshot.\>
-<img src='https://Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
+<img src='https:///Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name"/>
 -->
