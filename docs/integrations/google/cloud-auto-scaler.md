@@ -1,4 +1,3 @@
-
 ---
 id: cloud-auto-scaler
 title: Google Cloud Auto Scaler

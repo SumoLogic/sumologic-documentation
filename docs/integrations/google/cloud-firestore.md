@@ -1,4 +1,3 @@
-
 ---
 id: cloud-firestore
 title: Google Cloud Firestore

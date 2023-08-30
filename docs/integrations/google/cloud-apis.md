@@ -1,4 +1,3 @@
-
 ---
 id: cloud-apis
 title: Google Cloud APIs

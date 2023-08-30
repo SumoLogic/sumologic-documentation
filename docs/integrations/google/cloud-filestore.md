@@ -1,4 +1,3 @@
-
 ---
 id: cloud-filestore
 title: Google Cloud Filestore

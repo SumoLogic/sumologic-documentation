@@ -1,4 +1,3 @@
-
 ---
 id: cloud-firebase
 title: Google Cloud Firebase
