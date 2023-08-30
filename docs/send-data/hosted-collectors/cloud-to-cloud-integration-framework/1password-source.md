@@ -1,12 +1,11 @@
 ---
-id: 1password-source  #example: druva-source
+id: 1password-source
 slug: /c2c/1password
-title: 1Password Source #example: Druva Source
-image: 'https://app_icons.s3.amazonaws.com/1Password.png' #replace with your app logo
-sidebar_label: 1Password #example: Druva
+title: 1Password Source
+image: 'https://app_icons.s3.amazonaws.com/1Password.png'
 tags:
   - cloud-to-cloud
-  - 1password  #example: Druva
+  - 1password
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
 import CodeBlock from '@theme/CodeBlock';
@@ -49,17 +48,17 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ### Source configuration
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
-1. On the Collectors page, click **Add Source** next to a Hosted** **Collector.
+1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **1Password**.<br/><img src="https://app_icons.s3.amazonaws.com/1Password.png" alt="1password-source-icon.png" width="150" />
 1. Enter a **Name** for the Source. The **description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse)
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. **Base URL**. Provide your 1Password customer-specific domain, for example `events.1password.com`.
-1. **API Token**. Enter the [1Password API token](#APIToken)
+1. **API Token**. Enter the [1Password API token](#APIToken).
 1. **Supported APIs to collect**. Select one or more of the available APIs, **Item Usage** and **Sign-in Attempts**.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
@@ -72,11 +71,11 @@ Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemForward` | <code>(true \| false)</code> | Set to `true` when Forward To SIEM is checked |
-| `_siemVendor` | `1Password` | Set when Forward To SIEM is checked |
-| `_siemProduct` | `1Password` | Set when Forward To SIEM is checked |
-| `_siemFormat` | `JSON` | Set when Forward To SIEM is checked |
-| `_siemEventID` | `SignIn API -> signin-{{category}}` or `Item Usage API -> item_usage-{{action}}` | Set when Forward To SIEM is checked and specific to the API collected |
+| `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
+| `_siemVendor` | `1Password` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `1Password` | Set when **Forward To SIEM** is checked. |
+| `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
+| `_siemEventID` | `SignIn API -> signin-{{category}}` or `Item Usage API -> item_usage-{{action}}` | Set when **Forward To SIEM** is checked and specific to the API collected. |
 
 ## JSON schema
 
