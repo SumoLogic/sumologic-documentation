@@ -1,4 +1,3 @@
-
 ---
 id: cloud-datastore
 title: Google Cloud Datastore

@@ -1,4 +1,3 @@
-
 ---
 id: cloud-backup-for-gke
 title: Google Cloud Backup for GKE

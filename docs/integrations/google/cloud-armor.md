@@ -1,4 +1,3 @@
-
 ---
 id: cloud-armor
 title: Google Cloud Armor

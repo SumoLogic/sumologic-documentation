@@ -1,4 +1,3 @@
-
 ---
 id: cloud-composer
 title: Google Cloud Composer
