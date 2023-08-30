@@ -8,8 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Here's a high-level overview of how to create a new Sumo Logic doc.
 
-{@import ../reuse/doc-prerequisites.md}
+## Prerequisites
 
+{@import ../reuse/doc-prerequisites.md}
 
 ## Step 1: Fork the Sumo Docs repository
 

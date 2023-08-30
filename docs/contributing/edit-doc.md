@@ -4,9 +4,13 @@ title: Submit a Doc Fix
 description: Learn how to edit a doc, write content in markdown, and submit your changes to our repo.
 ---
 
+import Iframe from 'react-iframe';
+
 Found an error in a doc? Here's how to submit a fix.
 
-import Iframe from 'react-iframe';
+## Prerequisites
+
+{@import ../reuse/doc-prerequisites.md}
 
 ## Minor edits
 

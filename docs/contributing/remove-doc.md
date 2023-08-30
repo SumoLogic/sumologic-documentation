@@ -14,6 +14,10 @@ When you delete a doc, you're also deleting a URL. The old URL, when visited, wi
 
 To keep our docs site healthy, follow these steps.
 
+## Prerequisites
+
+{@import ../reuse/doc-prerequisites.md}
+
 ## Step 1: Create a 301 redirect
 
 As an example, let's say we have two existing docs called **Nginx app** and **Nginx (Legacy) app**, and we need to deprecate the legacy version.
