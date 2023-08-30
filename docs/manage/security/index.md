@@ -90,23 +90,17 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox13 card">
     <div className="container">
-    <a href="/docs/manage/security/log-search-audit-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Log Search Audit Index</h4></a>
-    <p>Learn how to query the Search Audit Index for search usage and activities for your account.</p>
-  </div>
-</div>
-    <div className="box smallbox14 card">
-    <div className="container">
     <a href="/docs/manage/security/set-password-policy"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Set the Password Policy</h4></a>
     <p>Learn how to set the account password policy for any user in your organization.</p>
   </div>
 </div>
-    <div className="box smallbox15 card">
+    <div className="box smallbox14 card">
     <div className="container">
     <a href="/docs/manage/security/set-limit-user-concurrent-sessions"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Set a Limit for User Concurrent Sessions</h4></a>
     <p>Learn how to limit the number of open concurrent sessions by a user.</p>
   </div>
 </div>
-    <div className="box smallbox16 card">
+    <div className="box smallbox15 card">
     <div className="container">
     <a href="/docs/manage/security/set-max-web-session-timeout"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Set a Maximum Web Session Timeout</h4></a>
     <p>Learn how to specify the maximum web session timeout period that users in your org can select.</p>
