@@ -49,9 +49,9 @@ module.exports = {
         'contributing/create-doc',
         'contributing/remove-doc',
         'contributing/style-guide',
-        'contributing/code-of-conduct',
         'contributing/glossary',
         'contributing/word-list',
+        'contributing/code-of-conduct',
     //  'contributing/translations',
         {
           type: 'category',

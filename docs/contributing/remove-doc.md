@@ -1,13 +1,14 @@
 ---
 id: remove-doc
-title: How to Remove a Sumo Doc
-sidebar_label: Remove a Doc
+title: Delete a Doc
 description: Learn how to properly remove a Sumo Logic doc.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Never delete a doc without a plan in place!
+:::warning
+Deleting a doc results a 404 error. Follow the below instructions to learn how to create a 301 redirect.
+:::
 
 When you delete a doc, you're also deleting a URL. The old URL, when visited, will return a `404 - Page Not Found` error, which is not the customer experience we want. Additionally, this damages our SEO.
 
