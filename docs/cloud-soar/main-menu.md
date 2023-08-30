@@ -144,24 +144,21 @@ For more information, refer to [Incidents and Triage](/docs/cloud-soar/incidents
 
 ## Entities
 
-The **Entities** tab provides access to data from across all incidents, as well as other information which can be stored within Cloud SOAR.<br/>![Entities Section](/img/cloud-soar/entities.png)
+The **Entities** tab provides access to data from across all incidents, as well as other information which can be stored within Cloud SOAR.<br/><img src={useBaseUrl('img/cloud-soar/entities.png')} alt="Entity Section" width="600"/>
 
 Observables from every incident can be found in this section, along with any enrichment data associated with these data types and the incidents they were reported in. You'll find all variables including artifacts related to an incident. Clicking on an entity in the entity list will display the results of any previous actions taken on the entity, or where in the incident the entity was extracted.
 
-![Entity Details](/img/cloud-soar/image163.png)   
-
+<img src={useBaseUrl('img/cloud-soar/image163.png')} alt="Entity Details" width="800"/>
 
 A timeline of actions taken on the entity can be displayed on the far right-hand corner of the screen by clicking on the stopwatch symbol. Hover over the date tabs to expand the timeline and see additional information about the actions taken on each date.
-
-![latest actions](/img/cloud-soar/image164.png)       
-
+     
+<img src={useBaseUrl('img/cloud-soar/image164.png')} alt="Latest actions" width="300"/>
 
 While any observable is selected, a menu bar will be available in the
 top right-hand corner of the screen which allows users to perform
 certain actions on the observable.
 
-![Observables Menu Bar](/img/cloud-soar/image165.png)
-
+<img src={useBaseUrl('img/cloud-soar/image165.png')} alt="Observables Menu Bar" width="400"/>
 
 - **Lock**: Lock the observable to prevent any actions from being taken on it. This may be useful if you want to ensure that no enrichment actions are taken on attacker-controlled infrastructure or that an observable is not accidentally blocked.
 - **Delete**: Delete the observable.
@@ -176,7 +173,7 @@ This configuration box allows the user to input information about the
 entity, such as adding a file or its file hash. Once the entity is
 created, click **Create** to continue.
 
-![Adding a New entity](/img/cloud-soar/image166.png)         
+<img src={useBaseUrl('img/cloud-soar/image166.png')} alt="Adding a new Entity" width="400"/>
 
 
 ### Documentation
@@ -192,16 +189,15 @@ Cloud SOAR records a detailed audit log of all activity that is performed during
 
 To manually create a new timeline event, click **+Add New Event** from the top of the timeline screen.
 
-![Add New Event](/img/cloud-soar/image170.png)
+<img src={useBaseUrl('img/cloud-soar/image170.png')} alt="Add New Event" width="800"/>
 
 A new configuration box will be displayed. Title the event and choose
 what category the event falls into. (Please note, these categories can
 be edited under the Custom Fields section). Add any additional
 information necessary and associate an existing knowledge base article
-where applicable.
+where applicable.  
 
-![Add New Event Screen](/img/cloud-soar/image171.png)       
-
+<img src={useBaseUrl('img/cloud-soar/image171.png')} alt="Add New Event Screen" width="600"/>
 
 Once the event is created, users will see an additional list of options to the right of the event, they are as follows:
 
@@ -224,20 +220,18 @@ supporting documents. For each record, users can define:
 - **Parent folder**: employed if arranging various records in a tree structure for logical classification.
 
 As with our other documentation tools, attachments can also be added as
-a timeline event and associated with a knowledge base article.
+a timeline event and associated with a knowledge base article.    
 
-![New Attachment Screen](/img/cloud-soar/image172.png)         
-
+<img src={useBaseUrl('img/cloud-soar/image172.png')} alt="New Attachment Screen" width="600"/>
 
 ### Final Incident Reports
 
 The Final Incident Report section allows users to upload a
 pre-configured basedoc to be used for final incident reports. Users can
 choose to use an existing basedoc or upload a new one by selecting from
-the basedoc selections at the bottom of the screen.
+the basedoc selections at the bottom of the screen.    
 
-![Final Report Screen](/img/cloud-soar/image173.png)         
-
+<img src={useBaseUrl('img/cloud-soar/image173.png')} alt="Final Report Screen" width="600"/>
 
 To add a new basedoc, click **Upload Basedoc** and select the template to
 use and click **Save**. Once the document has been uploaded users can
@@ -245,8 +239,7 @@ choose which sections or tags to use in the report. These tags act as
 placeholders which will be filled in with the incident's details each
 time an incident report is executed.
 
-![Basedoc Tag List](/img/cloud-soar/image174.png)
-
+<img src={useBaseUrl('img/cloud-soar/image174.png')} alt="Basedoc Tag List" width="800"/>
 
 To add tags to the incident report, double click the tag from the
 right-side of the screen and it will be added to the tagging section for
@@ -266,9 +259,9 @@ and drop sections of the incident in to the report template. All
 incident sections are listed in the left-hand pane. Dragging incident
 sections to the right-hand pane will add the section to the report
 template. Sections will be printed in the report in the order they
-appear in the right-hand pane.
+appear in the right-hand pane. 
 
-![Report Templates](/img/cloud-soar/image45.png)            
+<img src={useBaseUrl('img/cloud-soar/image45.png')} alt="Report Templates" width="400"/>
 
 
 Once a report template has been defined, it can be generated by
@@ -280,7 +273,6 @@ PDF or Word Document format.
 
 Closing incident will result in asking a note for incident closing as below:
 
-![Close Incident](/img/cloud-soar/image57b.png)       
+<img src={useBaseUrl('img/cloud-soar/image57b.png')} alt="Close Incident" width="400"/>
 
-
-![Closing Note](/img/cloud-soar/image57c.png)
+<img src={useBaseUrl('img/cloud-soar/image57c.png')} alt="Closing Note" width="800"/>
