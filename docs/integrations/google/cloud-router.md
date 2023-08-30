@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/GoogleCloudRouter.png')} alt="Thumbnail icon" width="50"/>
 
-Cloud Router is a fully distributed and managed Google Cloud service that uses the Border Gateway Protocol (BGP) to advertise IP prefixes. For more details, refer to the [GCP documentation](https://cloud.google.com/network-connectivity/docs/router/concepts/overview)
+Cloud Router is a fully distributed and managed Google Cloud service that uses the Border Gateway Protocol (BGP) to advertise IP prefixes. For more details, refer to the [GCP documentation](https://cloud.google.com/network-connectivity/docs/router/concepts/overview).
 
 ## Log and Metric types
 
@@ -22,7 +22,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Router integr
 
 ### Configure logs collection
 
-* Collect **Platform Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Cloud Router sends logging information to Cloud Logging. These logs include information around : 
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Cloud Router sends logging information to Cloud Logging. These logs include information around: 
     - Router events related to your Cloud Router
     - BGP events related to a BGP configuration and session
     - Route events related to route announcements between the two BGP peers.
@@ -34,4 +34,4 @@ While creating the sync in GCP, as part of the **Choose logs to include in sink*
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Note that in the Services dropdown, you'll need to select **Cloud Router**. For Google Router metrics and dimensions, refer to [Google Router metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-router).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Cloud Router** from the **Services** dropdown. For Google Router metrics and dimensions, refer to the [Google Router metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-router).
