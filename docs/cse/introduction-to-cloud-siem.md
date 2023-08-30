@@ -206,7 +206,7 @@ If you do decide to write a custom rule, Insight, or rule tuning expression, the
 
 ### Rule tuning
 
-With [rule tuning](/docs/cse/rules/rule-tuning-expressions), you can modify existing rules without rewriting them from scratch. This lets you customize them without a lot of work. When you use rule tuning instead of [custom rules](/docs/cse/rules/before-writing-custom-rule/), your tuning expressions are retained when Sumo updates that rule. So you still get to take advantage of the rules Sumo pushes out to all users.
+With [rule tuning](/docs/cse/rules/rule-tuning-expressions/), you can modify existing rules without rewriting them from scratch. This lets you customize them without a lot of work. When you use rule tuning instead of [custom rules](/docs/cse/rules/before-writing-custom-rule/), your tuning expressions are retained when Sumo updates that rule. So you still get to take advantage of the rules Sumo pushes out to all users.
 
 Once you’ve written a tuning expression, you can apply that tuning expression to multiple rules. You can also apply multiple tuning expressions to each rule, so they’re very flexible. We’ll learn how to apply one tuning expression to multiple rules, and we’ll also learn how to apply multiple tuning expressions to one rule today.
 
