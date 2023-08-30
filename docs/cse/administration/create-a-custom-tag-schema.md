@@ -36,4 +36,4 @@ For more information about tags in CSE, see [Using Tags with Insights, Signals, 
     1. **Value Options**. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
         * **Value**. Enter an allowable value for the tag.
         * **Label**. Enter a label for the value.
-        * **Link**. If desired, enter a URL. If you supply a URL, that link will appear in the Actions menu of the tag in any content items to which it’s been applied.  CSE’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site. <br/><img src={useBaseUrl('img/cse/mitre-link.png')} alt="MITRE link" width="800"/>
+        * **Link** (optional). Enter a URL for it to appear in the Actions menu of the tag in any content items to which it’s been applied. CSE’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site. <br/><img src={useBaseUrl('img/cse/mitre-link.png')} alt="MITRE link" width="800"/>
