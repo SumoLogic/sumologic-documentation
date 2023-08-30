@@ -1,4 +1,3 @@
-
 ---
 id: cloud-deploy
 title: Google Cloud Deploy

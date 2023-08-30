@@ -1,4 +1,3 @@
-
 ---
 id: cloud-alloydb-for-postgresql
 title: Google Cloud AlloyDB for PostgreSQL

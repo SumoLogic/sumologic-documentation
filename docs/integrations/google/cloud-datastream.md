@@ -1,4 +1,3 @@
-
 ---
 id: cloud-datastream
 title: Google Cloud Datastream
