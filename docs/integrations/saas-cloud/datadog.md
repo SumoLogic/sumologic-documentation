@@ -1,15 +1,14 @@
 ---
 id: datadog
-title: Sumo Logic Integration with Data Dog
-sidebar_label: Datadog
-description: Start sending data from Datadog to your Sumo Logic account.
+title: Datadog
+description: Use the Sumo Logic Integration for Datadog to start sending data from Datadog to your Sumo Logic account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
 
-You can send events and alerts from Datadog to Sumo Logic using HTTP Collectors. Here are the steps which are needed to be followed:
+The Sumo Logic Integration for Datadog allows you to send events and alerts from Datadog to Sumo Logic using HTTP Collectors. To get started:
 
 1. In Sumo Logic, [add a **Hosted Collector**](/docs/send-data/hosted-collectors/configure-hosted-collector/#step-1-configure-hosted-collector).
 2. Under this collector, [add an **HTTP Source**](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
