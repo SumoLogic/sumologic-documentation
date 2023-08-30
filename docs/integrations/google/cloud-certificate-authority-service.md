@@ -1,4 +1,3 @@
-
 ---
 id: cloud-certificate-authority-service
 title: Google Cloud Certificate Authority Service

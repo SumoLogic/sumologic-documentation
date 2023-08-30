@@ -1,4 +1,3 @@
-
 ---
 id: cloud-certificate-manager
 title: Google Cloud Certificate Manager

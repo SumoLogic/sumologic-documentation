@@ -1,4 +1,3 @@
-
 ---
 id: cloud-dataflow
 title: Google Cloud Dataflow
