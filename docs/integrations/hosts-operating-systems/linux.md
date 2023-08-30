@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
 :::note
-You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/linux.md).
+You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/linux.md).
 :::
 
 
