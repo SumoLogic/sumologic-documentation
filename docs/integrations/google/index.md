@@ -152,6 +152,118 @@ This guide has documentation for all of the apps that Sumo provides for Google.
   <p>A guide to the Sumo Logic app for Google Cloud Firestore.</p>
   </div>
 </div>
+<div className="box smallbox21 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudFleetEngine.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-fleet-engine">Google Cloud Fleet Engine</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Fleet Engine.</p>
+  </div>
+</div>
+<div className="box smallbox22 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudInterconnect.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-interconnect">Google Cloud Interconnect</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Interconnect.</p>
+  </div>
+</div>
+<div className="box smallbox23 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudLogging.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-logging">Google Cloud Logging</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Logging.</p>
+  </div>
+</div>
+<div className="box smallbox24 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudMemorystoreforRedis.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-memorystore-for-redis">Google Cloud Memorystore for Redis</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Memorystore for Redis.</p>
+  </div>
+</div>
+<div className="box smallbox25 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/gcp_netapp.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-net-app-cloud-volumes-service">Google Cloud Net App Cloud Volumes Service</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Net App Cloud Volumes Service.</p>
+  </div>
+</div>
+<div className="box smallbox26 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudNetworkTopology.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-network-topology">Google Cloud Network Topology</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Network Topology.</p>
+  </div>
+</div>
+<div className="box smallbox27 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GooglePubSub.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-pub-sub">Google Cloud Pub Sub</a></h4>
+  <p>A guide to the Sumo Logic app forGoogle Cloud Pub Sub.</p>
+  </div>
+</div>
+<div className="box smallbox28 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudRouter.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-router">Google Cloud Router</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Router.</p>
+  </div>
+</div>
+<div className="box smallbox29 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudRun.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-run">Google Cloud Run</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Run.</p>
+  </div>
+</div>
+<div className="box smallbox30 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudSpanner.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-spanner">Google Cloud Spanner</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Spanner.</p>
+  </div>
+</div>
+<div className="box smallbox31 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudTasks.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-tasks">Google Cloud Tasks</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Tasks.</p>
+  </div>
+</div>
+<div className="box smallbox32 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudTPU.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-tpu">Google Cloud TPU</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud TPU.</p>
+  </div>
+</div>
+<div className="box smallbox33 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudTrace.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-trace">Google Cloud Trace</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Trace.</p>
+  </div>
+</div>
+<div className="box smallbox34 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudTrafficDirector.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-traffic-director">Google Cloud Traffic Director</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Traffic Director.</p>
+  </div>
+</div>
+<div className="box smallbox35 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudVertexAI.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-vertex-ai">Google Cloud Vertex AI</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud Vertex AI.</p>
+  </div>
+</div>
+<div className="box smallbox36 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/google/GoogleCloudVPN.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/google/cloud-vpn">Google Cloud VPN</a></h4>
+  <p>A guide to the Sumo Logic app for Google Cloud VPN.</p>
+  </div>
+</div>
 <div className="box smallbox37 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/google/appengine.png')} alt="Thumbnail icon" width="55"/>
