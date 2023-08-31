@@ -2303,6 +2303,7 @@
   "/cid/6023": "/docs/integrations/microsoft-azure/network-watcher",
   "/cid/6065": "/docs/integrations/security-threat-detection/threat-intel-quick-analysis",
   "/cid/6066": "/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops",
+  "/cid/6067": "/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops",
   "/cid/6068": "/docs/integrations/global-intelligence/apache-tomcat",
   "/cid/6100": "/docs/integrations/security-threat-detection/threat-intel-quick-analysis",
   "/cid/6111": "/docs/integrations/amazon-aws/threat-intel",
