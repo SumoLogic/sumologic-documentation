@@ -90,15 +90,15 @@ below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
 |:------------------------------------|:-------------|:--------------|:----------------|
-| CentOS 6, 7, 8 or Ubuntu 16, 18,20 | 4           | 4GB          | 250GB          |
+| CentOS 7 or Ubuntu 16, 18, 20 | 4           | 4GB          | 250GB          |
 
 :::note
 Before you deploy the network sensor, make sure you know the TAP or SPAN interface upon which captured data is available.
 :::
 
-### Prerequisites for CentOS 8
+### Prerequisites for CentOS
 
-For CentOS 8, before running the install command run these commands as root (or prefix with sudo):
+For CentOS, before running the install command, run these commands as root (or prefix with `sudo`):
 
 ```
 yum update -y
@@ -111,8 +111,8 @@ reboot
 
 ### Throughput-dependent resource requirements
 
-| Throughput | Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|:--|:--|:--|:--|:--|
+| Throughput Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
+|:--|:--|:--|:--|
 | 250mbps | 4 | 4GB | 250GB |
 | 500mbps | 5 | 8GB | 250GB |
 | 750mbps | 6 | 12GB | 250GB |
@@ -258,7 +258,7 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 **Default Value.** None
 
-**Configured by wizard?** The wizard prompts you to supply this option value only if you did not supply the URL of a Sumo HTTP Source in response to the earlier prompt. (This is the situation where you are going to send captured data to a legacy CSE server.   
+**Configured by wizard?** The wizard prompts you to supply this option value only if you did not supply the URL of a Sumo HTTP Source in response to the earlier prompt. (This is the situation where you are going to send captured data to a legacy CSE server.)   
 
 ### cluster_base_url
 
