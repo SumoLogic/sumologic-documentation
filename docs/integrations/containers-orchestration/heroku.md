@@ -189,6 +189,7 @@ The FER below changes the value of ``_sourceName`` for two applications. The fir
 ``| if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName``
 
 Click Add to save the rule.
+These custom app **_sourceNames** will appear as values in the dashboard filter variable ``log_drain`` for the Heroku app dashboards.
 
 ## Installing the Heroku App
 
