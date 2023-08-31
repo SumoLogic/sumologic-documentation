@@ -22,7 +22,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Router integr
 
 ### Configure logs collection
 
-* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Cloud Router sends logging information to Cloud Logging. These logs include information around: 
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Cloud Router sends logging information to Cloud Logging. These logs include information around:
     - Router events related to your Cloud Router
     - BGP events related to a BGP configuration and session
     - Route events related to route announcements between the two BGP peers.
@@ -34,4 +34,4 @@ While creating the sync in GCP, as part of the **Choose logs to include in sink*
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Cloud Router** from the **Services** dropdown. For Google Router metrics and dimensions, refer to the [Google Router metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-router).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Cloud Router**. For Google Router metrics and dimensions, refer to the [Google Router metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-router).
