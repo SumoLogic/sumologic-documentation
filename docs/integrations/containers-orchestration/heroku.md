@@ -59,39 +59,6 @@ _sourceCategory"Heroku"
 | avg(memory_total) as memory_total, avg(memory_rss) as resident_memory, avg(memory_cache) as disk_cache_memory, avg(memory_swap) as swap_memory by _timeslice
 ```
 
-## (Optional) Set up field extraction rules for for applications
-
-This step is optional, but recommended, as it makes it easier for you to query your Heroku application logs in Sumo. When Sumo ingests Heroku application logs, it attaches the **_sourceName** metadata field to the the data. The **_sourceName** Sumo assigns varies by application—its value is the unique identifier for the Logplex drain assigned to the application.
-
-For ease of understanding the log data, you can use a **field extraction rule (FER)** to rename **_sourceName** from the drain UUID to the application name. For general information about FERs see [Create a Field Extraction Rule](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/) in Sumo help.
-
-You can determine the drain identifier by running the ```heroku drains``` command for your app.
-The identifier will look something like:
-
-```
-d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
-```
-
-Then, define an FER in Sumo.
-* In the Sumo web app, go to **Manage Data > Settings > Field Extraction Rules**.
-* Click the plus sign (+) in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
-* **Rule Name** : Enter a name for the FER.
-* **Scope** : Enter: _sourceCategory=heroku
-* **Parse Expression** : For each Heroku application reporting data to Sumo, enter a statement that renames the ``_sourceName`` from the drain ID to the application name. For example:
-
-``if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName``
-
-The FER below changes the value of ``_sourceName`` for two applications. The first line changes ``_sourceName`` from “d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a” to “CustApp”. The second line changes ``_sourceName`` from “d.00870f28-53f9-4680-b2ab-2287ec9d8637” to “VendorApp”:
-
-``if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName``
-
-``| if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName``
-
-Click Add to save the rule.
-
-
-
-
 ## Collecting Logs for Heroku
 
 Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps in 8 programming languages namely Node.js, Ruby, Python, Java, PHP, Go, Scala and Clojure.
@@ -138,7 +105,7 @@ It is recommended to attach a heroku add-on just after creating an app or runnin
     ```
 
     :::tip NOTE
-    You can also run ```heroku drains``` or ```heroku drains --json``` command to find the name of an existing Sumo Logic add-on of an app which can be attached to a new app.
+    You can also run ```heroku drains``` or ```heroku drains --json``` command in your app directory to find the name of an existing Sumo Logic add-on of an app which can be attached to a new app.
     :::
 
     You can now access Sumo Logic. Run the following command in your app directory:
@@ -192,6 +159,36 @@ $ heroku labs:disable log-runtime-metrics --app example-app
 Disabling log-runtime-metrics for example-app... done
 $ heroku restart
 ```
+
+## (Optional) Set up field extraction rules for for applications
+
+This step is optional, but recommended, as it makes it easier for you to query your Heroku application logs in Sumo. When Sumo ingests Heroku application logs, it attaches the **_sourceName** metadata field to the the data. The **_sourceName** Sumo assigns varies by application—its value is the unique identifier for the Logplex drain assigned to the application.
+
+For ease of understanding the log data, you can use a **field extraction rule (FER)** to rename **_sourceName** from the drain UUID to the application name. For general information about FERs see [Create a Field Extraction Rule](https://help.sumologic.com/docs/manage/field-extractions/create-field-extraction-rule/) in Sumo help.
+
+You can determine the drain identifier by running the ```heroku drains``` command for your app.
+The identifier will look something like:
+
+```
+d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
+```
+
+Then, define an FER in Sumo.
+* In the Sumo web app, go to **Manage Data > Settings > Field Extraction Rules**.
+* Click the plus sign (+) in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
+* **Rule Name** : Enter a name for the FER.
+* **Scope** : Enter **_sourceCategory=heroku** when the collection is setup via the Sumo Add-on.
+* **Parse Expression** : For each Heroku application reporting data to Sumo, enter a statement that renames the ``_sourceName`` from the drain ID to the application name. For example:
+
+``if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName``
+
+The FER below changes the value of ``_sourceName`` for two applications. The first line changes ``_sourceName`` from “d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a” to “CustApp”. The second line changes ``_sourceName`` from “d.00870f28-53f9-4680-b2ab-2287ec9d8637” to “VendorApp”:
+
+``if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName``
+
+``| if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName``
+
+Click Add to save the rule.
 
 ## Installing the Heroku App
 
