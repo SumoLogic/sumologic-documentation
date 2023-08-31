@@ -1,7 +1,6 @@
 ---
 id: create-doc
-title: Create and Publish a Sumo Doc
-sidebar_label: Create a New Doc
+title: Create a New Doc
 description: Learn how to create a doc, write content in markdown, and submit your changes to our repo.
 ---
 
@@ -9,8 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Here's a high-level overview of how to create a new Sumo Logic doc.
 
-{@import ../reuse/doc-prerequisites.md}
+## Prerequisites
 
+{@import ../reuse/doc-prerequisites.md}
 
 ## Step 1: Fork the Sumo Docs repository
 

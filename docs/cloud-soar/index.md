@@ -23,7 +23,7 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/cloud-soar/global-functions-menu"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Global Functions Men</h4></a>
+  <a href="/docs/cloud-soar/global-functions-menu"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Global Functions Menu</h4></a>
   <p>Cloud SOAR configuration and administrative options.</p>
   </div>
 </div>

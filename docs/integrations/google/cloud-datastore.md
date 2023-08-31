@@ -23,7 +23,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Datastore int
 
 ### Configure logs collection
 
-* Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/datastore/docs/audit-logging#audit_log_permissions) required for accessing audit logs. To enable logging for Google Datastore, refer to [Google documentation](https://cloud.google.com/datastore/docs/audit-logging#enabling_audit_logging). For more detail on Datastore operations being audited, refer to [audited operations](https://cloud.google.com/datastore/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/datastore/docs/audit-logging#audit_log_permissions) required for accessing audit logs. To enable logging for Google Datastore, refer to [Google documentation](https://cloud.google.com/datastore/docs/audit-logging#enabling_audit_logging). For more detail on Datastore operations being audited, refer to [audited operations](https://cloud.google.com/datastore/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    resource.type=(datastore_database or datastore_index)
    ```
@@ -32,4 +32,4 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Datastore int
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Datastore** from the **Services** dropdown. For Google Datastore metrics and dimensions, refer to [Google Datastore metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-datastore).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Datastore**. For Google Datastore metrics and dimensions, refer to [Google Datastore metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-datastore).
