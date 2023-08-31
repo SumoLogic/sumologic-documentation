@@ -28,8 +28,7 @@ Cloud SOAR design and architecture follows Cybersecurity Industry standards and 
 
 Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module which applies machine learning to historical responses and threats. It recommends relevant Playbooks, paths of action to expedite the process, and responses to manage and mitigate similar incidents with better response time.
 
-<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="architecture" width="800"/>
-
+<img src={useBaseUrl('img/cloud-soar/image3.png')} alt="architecture" style={{border: '1px solid black'}} width="800"/>
 
 
 ## Multi-Tenancy
@@ -45,8 +44,7 @@ All multi-tenant installations offer:
 - Individual administrators otherwise segregated to each tenant
 - Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
 
-![Multi-Tenancy with Physical Segregation](/img/cloud-soar/image5.png)
-
+<img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multi-tenancy" width="600"/>
 
 ## Automated Responder Knowledge (DF-ARK)
 
