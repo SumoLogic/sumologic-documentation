@@ -2176,7 +2176,6 @@ integrations: [
               'integrations/pci-compliance/opentelemetry/windows-json-opentelemetry',
             ],
           },
-          'integrations/pci-compliance/setup',
           'integrations/amazon-aws/cloudtrail-pci-compliance',
           'integrations/amazon-aws/vpc-flow-logs-pci-compliance',
           'integrations/pci-compliance/linux',
