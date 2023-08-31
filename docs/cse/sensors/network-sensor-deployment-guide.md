@@ -98,7 +98,7 @@ Before you deploy the network sensor, make sure you know the TAP or SPAN interfa
 
 ### Prerequisites for CentOS
 
-For CentOS, before running the install command, run these commands as root (or prefix with sudo):
+For CentOS, before running the install command, run these commands as root (or prefix with `sudo`):
 
 ```
 yum update -y
