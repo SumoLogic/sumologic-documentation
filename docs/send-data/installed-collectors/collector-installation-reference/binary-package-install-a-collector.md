@@ -13,7 +13,7 @@ This procedure is for Collector version 19.137 and later. If you have Collecto
 
 Before you begin:
 
-* Install the version of JRE you want to use. The binary installation process does not include JRE installation. Download the JRE here: \<https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.htm\> 
+* Install the version of JRE you want to use. The binary installation process does not include JRE installation. Download the JRE here: https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.htm
 * Download the binary file from either of these locations:  
 
   * **Manage Collection > Collection > Collection > Add Collector > Installed Collector > Install a Binary Package**

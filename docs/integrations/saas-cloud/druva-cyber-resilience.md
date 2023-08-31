@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Druva Cyber Resilience app for Sumo Logic is a comprehensive and powerful solution designed to enhance your cybersecurity posture by providing real-time insights and actionable information through intuitive and informative dashboards. This app equips security teams with the tools to effectively safeguard the digital assets, respond to security incidents, and ensure business continuity in the face of evolving cyber threats. Each dashboard within this app focuses on a specific aspect of cybersecurity and resilience, offering valuable insights into potential threats and strategies to mitigate them effectively.
 
-Key features of the Druva Cyber Resilience app include: 
+Key features of the Druva Cyber Resilience app include:
 
 - Provides a high-level overview of login events and curated snapshots, which refers to specific instances of administrative activities or events within an IT environment.
 - Helps to monitor and analyze data access events across the organization's digital assets.
@@ -62,7 +62,7 @@ _source="Milan_Druva_Cyber_Resilience_v0.0.1"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
+To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
 
 ## Installing the Druva Cyber Resilience app​
 

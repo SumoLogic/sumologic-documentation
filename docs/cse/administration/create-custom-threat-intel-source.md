@@ -5,6 +5,9 @@ sidebar_label: Create a Custom Threat Intelligence Source
 description: Learn how to create and manage custom threat sources.
 ---
 
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has information about setting up a *custom threat intelligence source* in CSE, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
 
 You can set up and populate custom threat intelligence sources interactively from the CSE UI, by uploading a .csv file, or using CSE APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
@@ -39,23 +42,17 @@ Rule authors can also write rules that look for threat intelligence information 
 ### Create a threat intelligence source from CSE UI
 
 1. Click the Content menu and select **Threat Intelligence**.
-1. Click **Add Source** on the **Threat Intelligence** page.  
-    ![threat-intel-page2.png](/img/cse/threat-intel-page2.png)
-1. Click **Custom** on the **Add Source** popup.  
-    ![custom-button.png](/img/cse/custom-button.png)
-1. On the **Add New Source** popup, enter a name, and if desired, a
-    description for the source.  
-    ![add-custom-source.png](/img/cse/add-custom-source.png)
+1. Click **Add Source** on the **Threat Intelligence** page. <br/><img src={useBaseUrl('img/cse/threat-intel-page2.png')} alt="Threat Intelligence page" width="800"/>
+1. Click **Custom** on the **Add Source** popup. <br/><img src={useBaseUrl('img/cse/custom-button.png')} alt="Custom button" width="600"/>
+1. On the **Add New Source** popup, enter a name, and if desired, a description for the source. <br/><img src={useBaseUrl('img/cse/add-custom-source.png')} alt="Add new source" width="600"/>
 1. Click **Add Custom Source**.
 
 Your new source should now appear on the **Threat Intelligence** page.
 
 ### Enter indicators manually
 
-1. On the **Threat Intelligence** page, click the name of the source you want to update.  
-    ![click-name.png](/img/cse/click-name.png)
-1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**.  
-    ![threat-details.png](/img/cse/threat-details.png)
+1. On the **Threat Intelligence** page, click the name of the source you want to update.  <br/><img src={useBaseUrl('img/cse/click-name.png')} alt="Click name" width="800"/>
+1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**. <br/><img src={useBaseUrl('img/cse/threat-details.png')} alt="Threat details" width="800"/>
 1. On the **New Threat Intelligence Indicator** popup.
     1. **Value**. Enter an IP address, hostname, URL, or file hash.
         Your entry must be one of:
@@ -75,7 +72,7 @@ Your new source should now appear on the **Threat Intelligence** page.
 ### Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
-save time by creating a .csv file and uploading it to CSE.<br/>![import-indicators.png](/img/cse/import-indicators.png)
+save time by creating a .csv file and uploading it to CSE. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="Import indicators" width="400"/>
 
 #### Create a CSV file
 
@@ -105,5 +102,5 @@ value,description,expires,active
 
 ### Manage sources and indicators using APIs
 
-You can use CSE threat intelligence APIs to create and manage indicators and custom threat sources. For information about CSE APIs and how to access the API documentation, see [CSE APIs](cse-apis.md).  
+You can use CSE threat intelligence APIs to create and manage indicators and custom threat sources. For information about CSE APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).  
  
