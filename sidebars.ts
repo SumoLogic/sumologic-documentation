@@ -2329,6 +2329,7 @@ integrations: [
           'integrations/webhooks/rollbar',
           'integrations/webhooks/sendgrid',
           'integrations/webhooks/sentry',
+          'integrations/webhooks/signl4',
           'integrations/webhooks/split',
           'integrations/webhooks/squadcast',
           'integrations/webhooks/stripe',
