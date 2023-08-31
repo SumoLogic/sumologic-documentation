@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 :::note
-The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise.
+The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise. If you want to collect audit logs for [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise), follow the instructions on how to [Stream GitHub Enterprise Audit Logs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) to an Amazon S3 bucket, and then use an [Amazon S3 source](https://help-opensource.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) to send those logs to Sumo Logic. This App does not work with the Enterprise Audit logs.
 :::
 
 This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
