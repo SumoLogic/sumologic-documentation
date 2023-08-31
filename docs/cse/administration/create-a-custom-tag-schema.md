@@ -17,22 +17,14 @@ Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags
 
 Schema tags can enforce specific tag values and prevent confusion from variations in tag values. For example, you might want to ensure the use of standard server identifiers, such as “FinanceServer”, rather than “Server-Finance” or “Finance_Server”. 
 
-For more information about tags in CSE, see [Using Tags with Insights, Signals, Entities, and Rules](../records-signals-entities-insights/tags-insights-signals-entities-rules.md).
+For more information about tags in CSE, see [Using Tags with Insights, Signals, Entities, and Rules](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).
 
 ## Define a custom tag schema
 
-1. Click the gear icon at the top of the CSE UI and select **Tag Schemas** under **Workflow**.  
+1. Click the gear icon at the top of the CSE UI and select **Tag Schemas** under **Workflow**.  <br/><img src={useBaseUrl('img/cse/gear-tag-schema.png')} alt="Access tag schemas" width="800"/>
+1. On the **Tag Schemas** page, click **Create**. <br/><img src={useBaseUrl('img/cse/tag-schemas-page.png')} alt="Tag schemas page" width="800"/>
 
-    <img src={useBaseUrl('img/cse/gear-tag-schema.png')} alt="Access tag schemas" width="800"/>
-
-1. On the **Tag Schemas** page, click **Create**.  
-
-    ![tag-schemas-page.png](/img/cse/tag-schemas-page.png)
-
-1. The **Tag Schema** popup appears. The screenshot below shows a previously configured tag schema.  
-
-    ![tag-schema-filled-in.png](/img/cse/tag-schema-filled-in.png)
-
+1. The **Tag Schema** popup appears. The screenshot below shows a previously configured tag schema.  <br/><img src={useBaseUrl('img/cse/tag-schema-filled-in.png')} alt="Tag schema" width="800"/>
     1. **Key**. Enter an identifier for the tag you’re defining. It won’t appear in the UI for assigning tags to a content item, unless you leave the **Label** field blank.
     1. **Label**. Enter a label for the tag. If you supply a label, that’s what will appear in the UI for assigning tags to a content item.
     1. **Content Types**. Select the types that you want the tag to be
@@ -44,6 +36,4 @@ For more information about tags in CSE, see [Using Tags with Insights, Signals, 
     1. **Value Options**. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
         * **Value**. Enter an allowable value for the tag.
         * **Label**. Enter a label for the value.
-        * **Link**. If desired, enter a URL. If you supply a URL, that link will appear in the Actions menu of the tag in any content items to which it’s been applied.  CSE’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site.
-
-            ![mitre-link.png](/img/cse/mitre-link.png)
+        * **Link** (optional). Enter a URL for it to appear in the Actions menu of the tag in any content items to which it’s been applied. CSE’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site. <br/><img src={useBaseUrl('img/cse/mitre-link.png')} alt="MITRE link" width="800"/>

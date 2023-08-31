@@ -1,4 +1,3 @@
-
 ---
 id: cloud-firebase
 title: Google Cloud Firebase
@@ -36,7 +35,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Firebase inte
 | [Firebase Security Rules](https://firebase.google.com/support/guides/cloud-audit-logging/firebase-rules) | audited_resource | firebaserules.googleapis.com       |
 | [Firebase Realtime Database](https://firebase.google.com/support/guides/cloud-audit-logging/firebase-realtime-database) | audited_resource | firebasedatabase.googleapis.com       |
 
-* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). There are various platform logs which could be collected for Google Cloud Firebase. Here is a table listing these services with there respective resource type 
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). There are various platform logs which could be collected for Google Cloud Firebase. Here is a table listing these services with their respective resource type:
 
 | Firebase Service | Resource Type |
 | ----------- | ----------- |
@@ -46,12 +45,14 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Firebase inte
 | Releases for Firebase Rules   | firebaserules_release        |
 | Ruleset for Firebase Rules | firebaserules_ruleset       |
 
-Note that while creating the sync as part of the **Choose logs to include in sink** section you can use the following query : 
+Note that while creating the sync as part of the **Choose logs to include in sink** section, you can use the following query:
 
-```resource.type=<resource_type> resource.labels.service=<service_name>```
+```sql
+resource.type=<resource_type> resource.labels.service=<service_name>
+```
 
-Where `resource_type` can be replaced with resource type of respective firebase product to fetch platform logs. And to filter audit logs, resource_type can be replaced with "audited_resource" and service_name can be replaced with service name of respective firebase product. These queries can then be separated by an "or" condition.
+Where `resource_type` can be replaced with resource type of respective firebase product to fetch platform logs. And to filter audit logs, `resource_type` can be replaced with "audited_resource" and `service_name` can be replaced with service name of respective firebase product. These queries can then be separated by an "or" condition.
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Firebase** from the **Services** dropdown. For Google Firebase metrics and dimensions, refer to [Google Firebase metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-firebasedatabase).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Firebase**. For Google Firebase metrics and dimensions, refer to [Google Firebase metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-firebasedatabase).

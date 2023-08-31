@@ -1,4 +1,3 @@
-
 ---
 id: cloud-alloydb-for-postgresql
 title: Google Cloud AlloyDB for PostgreSQL
@@ -23,7 +22,7 @@ You can collect the logs for Sumo Logic's Google Cloud AlloyDB for PostgreSQL in
 
 ### Configure logs collection
 
-* Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/alloydb/docs/audit-logging#audit_log_permissions). To enable logging for Google AlloyDB, refer to [Google documentation](https://cloud.google.com/alloydb/docs/audit-logging#enabling_audit_logging). For more detail on AlloyDB operations being audited, refer to [audited operations](https://cloud.google.com/alloydb/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/alloydb/docs/audit-logging#audit_log_permissions). To enable logging for Google AlloyDB, refer to [Google documentation](https://cloud.google.com/alloydb/docs/audit-logging#enabling_audit_logging). For more detail on AlloyDB operations being audited, refer to [audited operations](https://cloud.google.com/alloydb/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    (resource.type=audited_resource resource.labels.service=alloydb.googleapis.com)
    ```
