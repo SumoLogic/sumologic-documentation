@@ -35,7 +35,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Firebase inte
 | [Firebase Security Rules](https://firebase.google.com/support/guides/cloud-audit-logging/firebase-rules) | audited_resource | firebaserules.googleapis.com       |
 | [Firebase Realtime Database](https://firebase.google.com/support/guides/cloud-audit-logging/firebase-realtime-database) | audited_resource | firebasedatabase.googleapis.com       |
 
-* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). There are various platform logs which could be collected for Google Cloud Firebase. Here is a table listing these services with there respective resource type
+* Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). There are various platform logs which could be collected for Google Cloud Firebase. Here is a table listing these services with their respective resource type:
 
 | Firebase Service | Resource Type |
 | ----------- | ----------- |
