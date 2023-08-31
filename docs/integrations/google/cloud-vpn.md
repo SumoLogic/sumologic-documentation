@@ -33,4 +33,4 @@ While creating the sync in GCP, as part of the **Choose logs to include in sink*
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **VPN** from the **Services** dropdown. For Google VPN metrics and dimensions, refer to [Google VPN metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-vpn).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **VPN**. For Google VPN metrics and dimensions, refer to [Google VPN metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-vpn).

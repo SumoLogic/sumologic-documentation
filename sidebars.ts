@@ -49,9 +49,9 @@ module.exports = {
         'contributing/create-doc',
         'contributing/remove-doc',
         'contributing/style-guide',
-        'contributing/code-of-conduct',
         'contributing/glossary',
         'contributing/word-list',
+        'contributing/code-of-conduct',
     //  'contributing/translations',
         {
           type: 'category',
@@ -2329,6 +2329,7 @@ integrations: [
           'integrations/webhooks/rollbar',
           'integrations/webhooks/sendgrid',
           'integrations/webhooks/sentry',
+          'integrations/webhooks/signl4',
           'integrations/webhooks/split',
           'integrations/webhooks/squadcast',
           'integrations/webhooks/stripe',
