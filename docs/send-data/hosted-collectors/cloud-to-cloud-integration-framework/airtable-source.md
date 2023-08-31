@@ -53,10 +53,10 @@ Complete the following steps to create service account credentials:
 ### Source configuration
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collection page, click **Add Source** next to a **Hosted Collector**.
-1. Search for and select **Airtable**.<br/><img src="https://app_icons.s3.amazonaws.com/airtable.png" alt="airtable-icon.png" width="150" />
+1. Search for and select **Airtable**.
 1. Enter a **Name** for the Source. The **description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse)
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
@@ -73,9 +73,9 @@ Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemForward` | <code>(true \| false)</code> | Set to `true` when Forward To SIEM is checked |
-| `_siemFormat` | `JSON` | Set when Forward To SIEM is checked |
-| `_parser` | `"/Parsers/System/Airtable/Airtable Audit C2C"` | Set when Forward To SIEM is checked |
+| `_siemForward` | <code>(true \| false)</code> | Set to `true` when Forward To SIEM is checked. |
+| `_siemFormat` | `JSON` | Set when Forward To SIEM is checked. |
+| `_parser` | `"/Parsers/System/Airtable/Airtable Audit C2C"` | Set when Forward To SIEM is checked. |
 
 ## JSON schema
 
