@@ -12,7 +12,7 @@ SIGNL4 is a mobile alert platform for instant critical notifications via push, t
 
 ## Event types
 
-The Sumo Logic Integration for SIGNL4 ingests SIGNL4 events into Sumo Logic through an outgoing webhook available in SIGNL4. Following event types are ingested through the SIGNL4 webhook:
+The Sumo Logic integration for SIGNL4 ingests SIGNL4 events into Sumo Logic through an outgoing webhook available in SIGNL4. Following event types are ingested through the SIGNL4 webhook:
 - New Signl Created
 - Signl Confirmed
 - Signl Resolved
