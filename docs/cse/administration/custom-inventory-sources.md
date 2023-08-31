@@ -11,12 +11,12 @@ This topic explains how you can extract inventory data from logs in Sumo Logic a
 
 CSE uses _inventory data_—information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
 
-Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
+Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
 
 ## How it works
 
-In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches/index.md) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
+In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches/index) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start
@@ -34,7 +34,7 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
 1. Go to **Manage Data** > **Collection** > **Collection** in the Sumo Logic UI.
-2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" />
 5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" />
@@ -275,7 +275,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 
 
-* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields to scope your search.
+* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
 
 
 
