@@ -90,7 +90,7 @@ below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
 |:------------------------------------|:-------------|:--------------|:----------------|
-| CentOS 7, or Ubuntu 16, 18, 20 | 4           | 4GB          | 250GB          |
+| CentOS 7 or Ubuntu 16, 18, 20 | 4           | 4GB          | 250GB          |
 
 :::note
 Before you deploy the network sensor, make sure you know the TAP or SPAN interface upon which captured data is available.
