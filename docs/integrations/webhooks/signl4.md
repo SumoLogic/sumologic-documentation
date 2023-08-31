@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/signl4-logo.png')} alt="Thumbnail icon" width="50"/>
 
-SIGNL4 is a Mobile alert platform for instant critical notifications via push, text, and calls, optimizing incident management and response. You can use a webhook in the SIGNL4 platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor real-time critical alerts and track incident details in Sumo Logic. For more details, refer to the [SIGNL4 Documentation](https://www.signl4.com/webhook-rest-smtp-api-integration/).
+SIGNL4 is a mobile alert platform for instant critical notifications via push, text, and calls, optimizing incident management and response. You can use a webhook in the SIGNL4 platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor real-time critical alerts and track incident details in Sumo Logic. For more details, refer to the [SIGNL4 Documentation](https://www.signl4.com/webhook-rest-smtp-api-integration/).
 
 ## Event types
 
