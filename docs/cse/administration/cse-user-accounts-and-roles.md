@@ -12,10 +12,10 @@ This topic has information about creating and managing user accounts and roles 
 ## Create users and roles
 
 Roles and capabilities are managed on the Sumo Logic platform. For instructions, see the following topics:
-* [Create and Edit Users](/docs/manage/users-roles/users/create-edit-users.md). Follow the instructions in this topic to create user accounts. When you create a user account, you'll assign roles to it.
-* [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles.md). You can assign multiple roles to a user. So, you might consider creating Cloud SIEM-specific roles for different Cloud SIEM user types, separate from roles you may define for Sumo Logic platform functionality.  
+* [Create and Edit Users](/docs/manage/users-roles/users/create-edit-users). Follow the instructions in this topic to create user accounts. When you create a user account, you'll assign roles to it.
+* [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles). You can assign multiple roles to a user. So, you might consider creating Cloud SIEM-specific roles for different Cloud SIEM user types, separate from roles you may define for Sumo Logic platform functionality.  
   :::note
-  When you create roles, you have the option to set up a role search filter that specifies what log data users with the role may access. If you take advantage of that feature, be sure not to restrict Cloud SIEM users’ access to [indexes that contain Cloud SIEM Records](../records-signals-entities-insights/search-cse-records-in-sumo.md).
+  When you create roles, you have the option to set up a role search filter that specifies what log data users with the role may access. If you take advantage of that feature, be sure not to restrict Cloud SIEM users’ access to [indexes that contain Cloud SIEM Records](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo).
   :::
 
 ## Assign Cloud SIEM capabilities to a role
