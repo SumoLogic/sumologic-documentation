@@ -41,11 +41,9 @@ The Sumo Logic App for Heroku is a logs only app that allows you to monitor your
 _sourceCategory"Heroku" "Build Succeeded"
 | where _sourceName matches "{{log_drain}}"
 | _sourceName as log_drain
-| parse regex "(?<dateStamp>\d{4}-\d{2}-\d{2}T\d{2}\:\d{2}\:\d{2}.*\+\d{2}:\d{2})"
-| parseDate(dateStamp,"yyyy-MM-dd'T'HH:mm:ss","etc/utc") as date
-| formatDate(date, "MMM-dd") as day
-| count by log_drain, day
-| transpose row day column log_drain
+| timeslice 5m
+| count by log_drain, _timeslice
+| transpose row _timeslice column log_drain
 ```
 
 #### Metric Log Query
