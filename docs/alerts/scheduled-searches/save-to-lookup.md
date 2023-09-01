@@ -13,7 +13,7 @@ When you create a scheduled search, you can choose **Save to Lookup** as the ale
 
 * The lookup table must already exist before you can use the **Save to Lookup** option. For instructions, see [Create a Lookup Table](/docs/search/lookup-tables/create-lookup-table).
 * Make sure your search returns all of the fields defined in the lookup table schema and no additional fields. Additional fields will be dropped and not saved to the lookup table. If your search returns fewer fields than that defined for the lookup table, any missing fields whose data type is string will be marked as NULL during the save operation. Missing fields of other data types will be dropped. If your search results are missing the primary key, the save operation will fail. 
-* The `save` operator is not supported. You can only use the `save` operator to save your search results to a lookup table when not doing a scheduled search. See [save Search Operator](/docs/search/search-query-language/search-operators/save).
+* The `save` operator is not supported. You can only use the `save` operator to save your search results to a lookup table when not doing a scheduled search. See [`save` Search Operator](/docs/search/search-query-language/search-operators/save).
 * Updates to a lookup table from a scheduled search will appear in the [Lookup Actions History pane](/docs/search/lookup-tables/manage-update-lookup-tables/#view-lookup-table-update-status) that is displayed for lookup table when you open it from the Sumo Logic Library.
 * No more than 512 messages returned by a scheduled search can be saved to a lookup table.
 
