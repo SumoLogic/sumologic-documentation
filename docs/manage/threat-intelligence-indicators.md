@@ -33,7 +33,7 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/manage/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select the format of the file to be uploaded:
-    * **Sumo normalized JSON**. A normalized JSON file. <br/>See the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
+    * **Sumo normalized JSON**. A normalized JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `confidence`
        * `id`
        * `imported`
@@ -42,7 +42,7 @@ To add threat intelligence indicators, you must upload files containing the indi
        * `threatType`
        * `type`
        * `validFrom`
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. (Note that if you want to upload indicators from multiple sources, you cannot use STIX but instead should use **Sumo normalized JSON**.) <br/>See the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use. Your file must include the following attributes:
+    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. (Note that if you want to upload indicators from multiple sources, you cannot use STIX but instead should use **Sumo normalized JSON**.) <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `id`
        * `modified`
        * `pattern`
@@ -50,7 +50,7 @@ To add threat intelligence indicators, you must upload files containing the indi
        * `spec_version` 
        * `type`
        * `valid_from`
-    * **BLOB CSV or JSON**. A BLOB CSV file or JSON file. <br/>See the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
+    * **BLOB CSV or JSON**. A BLOB CSV file or JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `source`
        * `indicators`
 1. Click **Upload** to upload the file.
