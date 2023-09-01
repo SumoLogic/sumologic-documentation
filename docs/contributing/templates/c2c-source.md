@@ -43,7 +43,6 @@ Example:
 | --- | --- |
 | 5 min |  [Team Events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
 
-
 ## Setup
 
 ### Vendor configuration
@@ -100,16 +99,11 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">component-name</CodeBlock>
 
-[Download example](file-path)
-
-
 ### Terraform example
 
 \Create and add the Terraform config in the dropbox and import it here.\
 
 <CodeBlock language="json">component-name}</CodeBlock>
-
-[Download example](file-path)
 
 ## Troubleshooting
 
