@@ -100,7 +100,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">component-name</CodeBlock>
 
-[Download example](/img/c2c/c2c-name/example.json) #example(/img/c2c/dropbox/example.json)
+[Download example](file-path)
 
 
 ### Terraform example
@@ -109,7 +109,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">component-name}</CodeBlock>
 
-[Download example](/img/c2c/c2c-name/example.tf) #example(/img/c2c/dropbox/example.tf)
+[Download example](file-path)
 
 ## Troubleshooting
 
