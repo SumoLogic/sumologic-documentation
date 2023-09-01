@@ -35,11 +35,11 @@ The following examples use the `sort` operator to sort the time prior to calcu
 Running a query such as:
 
 ```sql
-_sourcecategory=katta
+_sourceCategory=katta
 | timeslice by 1m
-| count by _timeslice,_sourcehost
+| count by _timeslice,_sourceHost
 | sort + _timeslice
-| smooth _count, 50 by _sourcehost
+| smooth _count, 50 by _sourceHost
 ```
 
 produces results like:
@@ -68,7 +68,7 @@ Running a query like:
 
 ```sql
 ...| timeslice by 1m
-| avg(oneMinuteRate) as avgRateByHost by _sourcehost,_timeslice
+| avg(oneMinuteRate) as avgRateByHost by _sourceHost,_timeslice
 | sum(avgratebyhost) as totalIncomingRate by _timeslice
 | sort + _timeslice
 | backshift totalIncomingRate, 1 as lagRate
@@ -87,10 +87,10 @@ produces results similar to:
 Before 5 values are available, the smooth operator takes an average of whatever is available. For example:
 
 ```sql
-_sourcecategory=katta
+_sourceCategory=katta
 | timeslice by 1m
-| count by _timeslice,_sourcehost
-| where _sourcehost="nite-katta-cold-4"
+| count by _timeslice,_sourceHost
+| where _sourceHost="nite-katta-cold-4"
 | sort + _timeslice
 | smooth _count,5
 ```

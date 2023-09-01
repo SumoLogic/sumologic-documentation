@@ -40,7 +40,7 @@ Follow the below steps to configure the Mailgun webhook.
 5. Click **Create Webhook**.
 6. Verify Mailgun events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/mailgun`
+`_sourceCategory=webhook/mailgun`
 ```
 
 :::info

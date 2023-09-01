@@ -217,7 +217,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
     * Go to the Sumo search box and execute the following:
      ```
-     _sourcecategory=AWS/SES/Events/Notifications SubscribeURL
+     _sourceCategory=AWS/SES/Events/Notifications SubscribeURL
      ```
     * Look in Sumo for the source category, and get the SubscribeURL field value. You need to confirm the subscription by entering the SubscribeURL field value in the **Subscription confirmation URL** field.
     * Go to **AWS Account > SNS service**, and select the subscription you just created. Then, choose **Confirm Subscription**, paste the SubscribeURL, and click **Confirm Subscription**.

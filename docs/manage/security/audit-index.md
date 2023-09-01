@@ -73,7 +73,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
 | `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
-| `_sourcehost` | IP address of the source's host, or "no_sourcehost". |
+| `_sourceHost` | IP address of the source's host, or "no_sourceHost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
 | Status | The status of the action, which can be success or failure |
@@ -115,7 +115,7 @@ Sumo logs audit messages for Microsoft Office 365 Audit Source when the follo
 To search for these events use this query:
 
 ```sql
-_index=sumologic_audit _sourcecategory=account_management _sourceName=collector
+_index=sumologic_audit _sourceCategory=account_management _sourceName=collector
 ```
 
 The events have these formats:
@@ -188,7 +188,7 @@ The following is an example query to locate refresh failure notification in the 
 
 ```sql
 _index = sumologic_audit  
-_sourcecategory = "account_management" _sourceName=COLLECTOR
+_sourceCategory = "account_management" _sourceName=COLLECTOR
 ```
 
 The query yields the following refresh failure notification.

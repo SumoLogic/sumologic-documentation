@@ -49,7 +49,7 @@ Follow the below steps to configure the New Relic Alerts webhook.
 11. Click **Activate workflow**.
 12. Verify New Relic Alert events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/newrelicalerts`
+`_sourceCategory=webhook/newrelicalerts`
 ```
 
 :::info

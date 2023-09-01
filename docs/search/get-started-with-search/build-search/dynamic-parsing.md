@@ -107,10 +107,10 @@ Search results table:
 
 1. Run Time FERs are only applied to logs that match the scope of the query. When a search query is run, it is first determined if any of the Run Time FERs match the scope of the query. Those Run Time FERs with a matching scope are applied. Run Time FERs are applied per log line only if the log contains a JSON element.  
 
-    For example, a Run Time FER with the scope: `_sourcecategory = A`
+    For example, a Run Time FER with the scope: `_sourceCategory = A`
 
-    * The query `_sourcecategory = B` is not applied since the scope does not overlap with the Run Time FER scope.
-    * The query `_sourcecategory = A or _sourcecategory = B` is applied, only within the log lines that fall within `_sourcecategory = A`, while the remaining log lines are not parsed by this Run Time FER.
+    * The query `_sourceCategory = B` is not applied since the scope does not overlap with the Run Time FER scope.
+    * The query `_sourceCategory = A or _sourceCategory = B` is applied, only within the log lines that fall within `_sourceCategory = A`, while the remaining log lines are not parsed by this Run Time FER.
 
 1. If a field does not exist in the schema of the log message, null results are displayed for the field (instead of erroring out).
 

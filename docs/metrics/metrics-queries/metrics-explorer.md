@@ -31,8 +31,8 @@ If you use the Advanced Mode to build complex metrics, you can convert it to Bas
 
 Example of queries that *will not* convert:
 
-* `metric=CPU_Sys _sourcecategory=autocomplete | bottomk (5, avg + 3 * stddev)` This query is not supported because `bottomk` in basic mode only supports simple aggregators such as `avg` or `count`. It does not support arbitrary formulas.
-* `(metric=CPU_Sys OR metric=CPU_Idle) _sourcecategory=autocomplete` This query is not supported because basic mode does not support logical `OR` for the selector part of the query.
+* `metric=CPU_Sys _sourceCategory=autocomplete | bottomk (5, avg + 3 * stddev)` This query is not supported because `bottomk` in basic mode only supports simple aggregators such as `avg` or `count`. It does not support arbitrary formulas.
+* `(metric=CPU_Sys OR metric=CPU_Idle) _sourceCategory=autocomplete` This query is not supported because basic mode does not support logical `OR` for the selector part of the query.
 
 When converted, the filters convert allowing you to select and modify, make different selections, remove filters, and add operators as you would normally in Basic Mode.
 
@@ -147,7 +147,7 @@ If the query editor mode can't be adjusted, it is changed to advanced mode so th
 
     ![click-in-metric-area.png](/img/metrics/click-in-metrici-area.png)
 
-1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourcecategory` metadata field. A dropdown list of values for the selected item appears.
+1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourceCategory` metadata field. A dropdown list of values for the selected item appears.
 
     ![filter-values.png](/img/metrics/filter-values.png)
 

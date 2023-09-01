@@ -28,7 +28,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 ### Sample Query  
 
 ```sql title="Average CPU Utilization"
-_sourcecategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
+_sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
 ```
 
 

@@ -46,7 +46,7 @@ Follow the below steps to configure the Hasura webhook.
 6. Click **Create Event Trigger**.
 7. Verify Hasura events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-_sourcecategory=webhook/hasura
+_sourceCategory=webhook/hasura
 ```
 
 :::info

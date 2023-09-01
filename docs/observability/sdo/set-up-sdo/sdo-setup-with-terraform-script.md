@@ -46,7 +46,7 @@ Review the following considerations before proceeding with the Terraform templat
   * [Configure Jenkins Plugin](/docs/integrations/app-development/jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
   * [Optional - Advanced Configuration](/docs/integrations/app-development/jenkins#Collecting-Logs-and-Metrics-for-Jenkins)
   * In [Configure Jenkins Plugin](/docs/integrations/app-development/jenkins#Collecting-Logs-and-Metrics-for-Jenkins), a source category is configured which is utilized by the plugin.  Use this source category in the file **sumologic.auto.tfvars file**. The Jenkins source, app, and FERs are installed by Terraform.
-* This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App). Configure the log collection and update the variable *jira_server_access_logs_sourcecategory* in **atlassian.auto.tfvars** with the selected source category.
+* This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App). Configure the log collection and update the variable *jira_server_access_logs_sourceCategory* in **atlassian.auto.tfvars** with the selected source category.
 * If you plan to integrate CircleCI with the SDO solution, you need to complete additional configuration. The Terraform script does not configure CircleCI. Use the following steps configure the CircleCI Sumo Logic plugin. Once configured, this plugin will send CircleCI Workflow and Job related data to Sumo Logic: * Since the SDO dashboards require ‘environment’, ‘team’, and ‘service’ fields for lighting up panels, you need to send them as [*custom-data*](https://circleci.com/developer/orbs/orb/circleci/sumologic#usage-examples) in the configuration file of the pipeline.
   * Add the [*sumo orb*](https://circleci.com/developer/orbs/orb/circleci/sumologic) in the configuration file of the project to send custom-data elements to Sumo:<br/>![circleci-custom-data.png](/img/sdo/circleci-custom-data.png)
     See [*this sample*](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip) CircleCI Configuration file which sends CircleCI data, including custom-data, to Sumo Logic.
@@ -385,12 +385,12 @@ Configure these parameters in **webhooks.auto.tfvars**.
 Configure these parameters in **atlassian.auto.tfvars**.
 
 :::note
-This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App). Configure the log collection and update the variable `jira_server_access_logs_sourcecategory` in **atlassian.auto.tfvars** with the selected source category.
+This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App). Configure the log collection and update the variable `jira_server_access_logs_sourceCategory` in **atlassian.auto.tfvars** with the selected source category.
 :::
 
 | Parameter | Description |
 |:--|:--|
-| jira_server_access_logs_sourcecategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App) link. |
+| jira_server_access_logs_sourceCategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this](/docs/integrations/app-development/jira#Collecting-Logs-for-the-Jira-App) link. |
 | jira_server_url | Jira Server URL |
 | jira_server_user | Jira Server Username |
 | jira_server_password | Needs to be the password. API Key is not supported on Jira Server yet. |

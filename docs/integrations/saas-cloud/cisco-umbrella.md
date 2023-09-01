@@ -26,19 +26,19 @@ To know about the Sample Logs and Schema for Cisco Umbrella logs, [click here](h
 
 ```sql title="DNS Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*dnslogs*"
+| where _sourceName matches "*dnslogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,identity,identites_all,internal_ip,external_ip,action,query_type,response_code,domain_name,categories,first_identity_type_matched,all_identity_types,blocked_categories
 ```
 
 ```sql title="Proxy Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*proxylogs*"
+| where _sourceName matches "*proxylogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,policy_identity_label,internal_client_ip,external_client_ip,destination_ip,content_type,action,url,referer,user_agent,status_code,request_size,response_size,response_body_size,sha256,categories,av_detections,PUAs,AMP_disposition,AMP_malware_name,AMP_score,policy_identity_type,blocked_categories,identities,identity_types,request_method,DLP_status,certificate_errors,file_name,ruleset_ID,rule_ID,destination_list_IDs,isolate_action,file_action,warn_status
 ```
 
 ```sql title=Admin Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*auditlogs*"
+| where _sourceName matches "*auditlogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as  id, timestamp, email, user, type, action, ip, before, after
 ```
 

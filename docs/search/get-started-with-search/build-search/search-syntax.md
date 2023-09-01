@@ -53,7 +53,7 @@ You can parse or extract values and assign them to an alias, known as a field,
 
 * Multiple fields can be extracted and named within a single query. For example, the query below creates fields "type" and "user":
 
-    * `_sourcehost=vpn3000 | parse "Group  [*] User [*]" as type, user`
+    * `_sourceHost=vpn3000 | parse "Group  [*] User [*]" as type, user`
 
 * Aggregate operators automatically generate a field name when there isn't one specified. For example, the count operator creates a field called `_count`. The sum operator creates a field called `_sum`. The max operator creates a field called `_max`, and so forth.
 * User-parsed fields should not be named with existing words such as the names of Sumo Logic operators like group or sum.

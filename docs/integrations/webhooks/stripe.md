@@ -45,7 +45,7 @@ Follow the below steps to configure the Stripe webhook.
 5. Click **Add endpoint**.
 6. Verify Stripe events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/stripe
+  _sourceCategory=webhook/stripe
   ```
 
 :::info

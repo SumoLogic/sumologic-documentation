@@ -47,7 +47,7 @@ All queries begin with a keyword or string search. Wildcards are allowed includi
 
 Here's an example:
 
-`_sourcecategory=apache | parse "* --" as src_ip | count by src_ip | sort _count`
+`_sourceCategory=apache | parse "* --" as src_ip | count by src_ip | sort _count`
 
 This query means:
 
@@ -56,7 +56,7 @@ This query means:
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 
 ```sql
-_sourcecategory=apache
+_sourceCategory=apache
 | parse "* --" as src_ip
 | count by src_ip | sort _count
 ```

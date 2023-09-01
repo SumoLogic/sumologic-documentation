@@ -40,7 +40,7 @@ When you create a Lookup Table schema, note the following requirements:
 
 * The following strings are reserved (case-insensitive) and should not be used as field names:
 
-    "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorid`", "`_view`", "`_index`"
+    "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorId`", "`_view`", "`_index`"
 
 * Field names can't contain two tilde characters in a row (`~~`). 
 * Field names are not case-sensitive. For example, you can't have both "Name" and "name" fields.

@@ -36,7 +36,7 @@ The following query sample was taken from the **HTTP Target 5xx per Target Grou
 
 ```
 _sourceCategory=Labs/AWS/ALB/Metrics Namespace=aws/applicationelb metric=HTTPCode_Target_5XX_Count
-Statistic=Sum _sourcehost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
+Statistic=Sum _sourceHost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
 | parse field= TargetGroup */* as Unused, TargetGroup | sum by TargetGroup
 ```
 

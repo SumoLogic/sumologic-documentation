@@ -67,7 +67,7 @@ _sourceCategory=*artifactory*
 ```
 
 ```sql title="Requests by Status Code (Every 10 Minutes)"
-_sourcecategory=*artifactory*
+_sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/request"
 | parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
 | timeslice 10m

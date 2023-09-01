@@ -79,7 +79,7 @@ work with a subquery.
 
 For example, if the subquery generated the following results:
 
-| `_sourceHost`  | `_sourcecatagory` | `clientip`    |
+| `_sourceHost`  | `_sourceCategory` | `clientip`    |
 |:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
@@ -87,8 +87,8 @@ For example, if the subquery generated the following results:
 This would be converted to a single output as follows:
 
 ```sql
-(( _sourcehost="prod-search-1" AND _sourcecatagory=”stream” AND clientip=”1.1.1.1”) OR
-(_sourcehost=”prod-remix-1” AND _sourcecatagory=”remix” AND clientip=”10.10.10.10”))
+(( _sourceHost="prod-search-1" AND _sourceCategory=”stream” AND clientip=”1.1.1.1”) OR
+(_sourceHost=”prod-remix-1” AND _sourceCategory=”remix” AND clientip=”10.10.10.10”))
 ```
 
 * Results have `AND` between columns and `OR` between rows.
@@ -115,7 +115,7 @@ The keywords clause is not supported with `where` and `if` operations.
 
 Specifying `keywords` will only return the values from the key-value pairs, where the key is the field name. For example, if the subquery generated the following results:
 
-| `_sourceHost`  | `_sourcecatagory` | `clientip` |
+| `_sourceHost`  | `_sourceCategory` | `clientip` |
 |:---------------|:------------------|:-------------|
 | prod-search-1 | stream           | 1.1.1.1     |
 | prod-remix-1  | remix            | 10.10.10.10 |
@@ -310,7 +310,7 @@ To specify a relative time range, only provide the `from` argument. See the fo
 
 ```sql
 [subquery from=(-15m):error
-| count by _sourcehost
+| count by _sourceHost
 | topk(1, _count)
 | compose _sourceHost]
 | count by _sourceHost
@@ -320,7 +320,7 @@ To specify a relative time range, only provide the `from` argument. See the fo
 
 ```sql
 [subquery from=(2018/07/08 23:13:36) to=(2018/07/09 23:13:36):error
-| count by _sourcehost
+| count by _sourceHost
 | topk(1, _count)
 | compose _sourceHost]
 | count by _sourceHost

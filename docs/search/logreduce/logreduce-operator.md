@@ -100,7 +100,7 @@ _sourceCategory=kubernetes-audit
 1. First optimization:
 
     ```sql
-    _sourcecategory = "Labs/AWS/GuardDuty_V8"
+    _sourceCategory = "Labs/AWS/GuardDuty_V8"
     | json keys "resource", "partition", "region"
     | logreduce
     ```
@@ -108,15 +108,15 @@ _sourceCategory=kubernetes-audit
 1. Next LogReduce by region:
 
     ```sql
-    _sourcecategory = "Labs/AWS/GuardDuty_V8"
+    _sourceCategory = "Labs/AWS/GuardDuty_V8"
     | json keys "resource", "partition", "region"
     | logreduce(partition) by region limit=5,criteria=mostcommon
     ```
      
-1. The LogReduce operator can act as an aggregate operator, supporting grouping by `_timeslice` as well as by other dimensions, such as `_sourcehost`.  
+1. The LogReduce operator can act as an aggregate operator, supporting grouping by `_timeslice` as well as by other dimensions, such as `_sourceHost`.  
 
     ```sql
-    ...     | logreduce by _sourcehost
+    ...     | logreduce by _sourceHost
     ```
 
     By grouping by `timeslice`, you can determine how signature counts
@@ -141,5 +141,5 @@ _sourceCategory=kubernetes-audit
     ```sql
     _sourceCategory=MyApp`  
     | logreduce by _sourceHost limit=5,criteria=mostcommon
-    | transpose row _sourcehost column signature
+    | transpose row _sourceHost column signature
     ```

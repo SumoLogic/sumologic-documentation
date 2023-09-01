@@ -72,7 +72,7 @@ Follow the steps to configure the NeoLoad webhook.
 5. Click **Save**.
 6. Verify NeoLoad events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/neoload`
+`_sourceCategory=webhook/neoload`
 ```
 
 :::info
