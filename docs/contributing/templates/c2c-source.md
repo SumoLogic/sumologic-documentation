@@ -98,7 +98,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 \Create and add the JSON config in the dropbox and import it here.\
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+<CodeBlock language="json">component-name</CodeBlock>
 
 [Download example](/img/c2c/c2c-name/example.json) #example(/img/c2c/dropbox/example.json)
 
@@ -107,10 +107,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 \Create and add the Terraform config in the dropbox and import it here.\
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+<CodeBlock language="json">component-name}</CodeBlock>
 
 [Download example](/img/c2c/c2c-name/example.tf) #example(/img/c2c/dropbox/example.tf)
-
 
 ## Troubleshooting
 
