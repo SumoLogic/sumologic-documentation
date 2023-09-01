@@ -7,7 +7,7 @@ description: Learn how to save the results of a scheduled search to a Lookup Tab
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you create a scheduled search, you can choose **Save to Lookup** as the alert type. This way, you can view the search results later in the lookup table. You can use the lookup operator to enrich other log data with information from the lookup table.
+When you create a scheduled search, you can choose **Save to Lookup** as the alert type. This way, you can view the search results later in the lookup table. You can use the [`lookup` operator](/docs/search/search-query-language/search-operators/lookup) to enrich other log data with information from the lookup table.
 
 ## Rules
 
