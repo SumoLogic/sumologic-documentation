@@ -20,9 +20,13 @@ The Abnormal Security source fetches the list of threat IDs using the [Threats A
 ## Set up and configuration
 
 The Abnormal Security source requires you to provide an authentication token. To obtain the token, follow the steps below.
-1. Sign in to the [Abnormal Security](https://portal.abnormalsecurity.com/) platform.<br/><img src={useBaseUrl('img/send-data/abnormal-login.png')} alt="abnormal-login" style={{border: '1px solid black'}} width="400" />
-1. In the **Enhance** section, click on the **Settings** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid black'}} width="800" />
-1. From the **Settings** page, copy and save the authentication token.
+1. Sign in to the [Abnormal Security](https://portal.abnormalsecurity.com/) platform.
+1. In the **Manage** section, click on the **Settings** option.
+1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid black'}} width="300" />
+1. From the **Settings** page, copy and save the authentication token. 
+1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="additional-integrations" style={{border: '1px solid black'}} width="200" />
+1. In the **IP Safelis**t field, enter a specific [IPv4 / IPv6 address](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses) as per your deployment.<br/><img src={useBaseUrl('img/send-data/integrations.png')} alt="integrations" style={{border: '1px solid black'}} width="800" />
+1. Copy and save the **Access token**.
 
 ## States
 
