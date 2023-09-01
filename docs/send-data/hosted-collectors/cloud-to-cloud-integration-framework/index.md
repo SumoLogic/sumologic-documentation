@@ -35,7 +35,7 @@ For the Federal environments, a different set of Static IPs is available for eac
 | Deployment | Static IP addresses      |
 |:------------|:---------------------|
 | Fed C2C 1A | 50.19.6.130       |
-| Fed C2C 1B | 171.129.156.86    |
+| Fed C2C 1B | 174.129.156.86    |
 | Fed C2C 1C | 52.202.74.197      |
 | Fed C2C 1D | 100.25.65.170         |
 | Fed C2C 1E | 3.226.78.211   |
@@ -290,7 +290,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox39 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Identity Protection</h4></a>
   <p>Collects Risk Detection and Risky User data from the Microsoft Graph Identity Protection API.</p>
   </div>
 </div>

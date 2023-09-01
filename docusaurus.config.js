@@ -28,14 +28,6 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
-      async: true,
-    },
-    {
-      src: './src/helper/google-translate.js',
-      async: true,
-    },
-    {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
       async: true,
     },
@@ -279,11 +271,6 @@ module.exports = {
         // activeregex controls the top nav content
         // icon uses Google Material name code https://fonts.google.com/icons?query=material
           {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'left',
-            className: 'header-trial',
-          },
-          {
             label: 'Guides',
             position: 'left',
             to: '#',
@@ -310,7 +297,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
-                label: 'App Catalog',
+                label: 'Apps and Integrations',
                 icon: 'apps',
               },
               {
@@ -321,7 +308,7 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'dashboards',
+                sidebarId: 'alerts',
                 label: 'Alerts',
                 icon: 'notifications',
               },
@@ -417,6 +404,16 @@ module.exports = {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
+          },
+          {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
+          },
+          {
+            to: 'https://support.sumologic.com/support/s/contactsupport',
+            position: 'right',
+            className: 'header-support',
           },
           {
             position: 'right',

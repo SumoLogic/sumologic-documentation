@@ -5,6 +5,8 @@ sidebar_label: Network Sensor Deployment
 description: Learn about Network Sensor deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This section has instructions for deploying the CSE Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
 ## Network Sensor overview
@@ -39,7 +41,7 @@ Forward proxies, such as HTTP web proxies, broker client connections to the inte
 
 The following diagram Illustrates optimal sensor positioning prior to a web proxy.
 
-![Network Sensor Deployment Guide_SS_1.png](/img/cse/Network_Sensor_Deployment_Guide_SS_1.png)
+<img src={useBaseUrl('img/cse/Network_Sensor_Deployment_Guide_SS_1.png')} alt="Network sensor deployment" width="800"/>
 
 Sumo Logic advises positioning network sensors for visibility at a monitoring point immediately in front of the proxy server(s). This allows the sensor to record client source addresses and to see all web requests prior to content filtering. This is an important factor for a number of CSE’s rules and analytics, which rely on knowing the “true” source of requests. Because a number of threats beacon to remote internet servers, seeing even those requests that are filtered by a proxy server is important for monitoring and response.
 
@@ -88,15 +90,15 @@ below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
 |:------------------------------------|:-------------|:--------------|:----------------|
-| CentOS 6, 7, 8 or Ubuntu 16, 18,20 | 4           | 4GB          | 250GB          |
+| CentOS 7 or Ubuntu 16, 18, 20 | 4           | 4GB          | 250GB          |
 
 :::note
 Before you deploy the network sensor, make sure you know the TAP or SPAN interface upon which captured data is available.
 :::
 
-### Prerequisites for CentOS 8
+### Prerequisites for CentOS
 
-For CentOS 8, before running the install command run these commands as root (or prefix with sudo):
+For CentOS, before running the install command, run these commands as root (or prefix with `sudo`):
 
 ```
 yum update -y
@@ -109,8 +111,8 @@ reboot
 
 ### Throughput-dependent resource requirements
 
-| Throughput | Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
-|:--|:--|:--|:--|:--|
+| Throughput Specs | Cores (CPU) | Memory (RAM) | Storage (Disk) |
+|:--|:--|:--|:--|
 | 250mbps | 4 | 4GB | 250GB |
 | 500mbps | 5 | 8GB | 250GB |
 | 750mbps | 6 | 12GB | 250GB |
@@ -226,7 +228,7 @@ Link settings
 
 ## Install the Network Sensor
 
-Download the installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md). Start the installer using the command provided on that page, and then respond to the prompts as described below.
+Download the installer using the download link for your deployment shown on [Sensor Download Locations](/docs/cse/sensors/sensor-download-locations/). Start the installer using the command provided on that page, and then respond to the prompts as described below.
 
 ## Uninstall the Network Sensor
 
@@ -256,7 +258,7 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 **Default Value.** None
 
-**Configured by wizard?** The wizard prompts you to supply this option value only if you did not supply the URL of a Sumo HTTP Source in response to the earlier prompt. (This is the situation where you are going to send captured data to a legacy CSE server.   
+**Configured by wizard?** The wizard prompts you to supply this option value only if you did not supply the URL of a Sumo HTTP Source in response to the earlier prompt. (This is the situation where you are going to send captured data to a legacy CSE server.)   
 
 ### cluster_base_url
 

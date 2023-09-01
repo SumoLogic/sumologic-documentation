@@ -1,22 +1,40 @@
 ---
 id: edit-doc
-title: Edit an Existing Sumo Doc
-sidebar_label: Edit a Doc
+title: Submit a Doc Fix
 description: Learn how to edit a doc, write content in markdown, and submit your changes to our repo.
 ---
 
-Here's a high-level overview of how to edit an existing Sumo Logic doc.
+import Iframe from 'react-iframe';
+
+Found an error in a doc? Here's how to submit a fix.
+
+## Prerequisites
 
 {@import ../reuse/doc-prerequisites.md}
 
-
 ## Minor edits
 
-To submit a bug fix or another minor edit:
+To submit a minor fix, watch the following video or review the instructions below.
+
+:::sumo Micro Lesson
+
+<Iframe url="https://www.youtube.com/embed/2ONgNj8pNLY?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+:::
 
 1. Scroll to the bottom of that doc and click the **Edit this page** link. This will open your selected doc in **Edit file** mode on our GitHub repo website.
+1. Click **Fork this repository** to continue.
 1. Apply your edits to the file.
-1. Click **Commit changes**.
+1. Scroll down beneath the doc, enter a brief summary of your changes in the description field, then click **Commit changes**.
 1. In the **Propose changes** dialog, enter a description of your change, enter a new name for your branch if desired, and click **Propose Change**.
 
 This will fork and submit changes to the Docs Team for review.
@@ -24,7 +42,7 @@ This will fork and submit changes to the Docs Team for review.
 
 ## Major edits
 
-If you'd like to submit more extensive edits, we recommend forking our repo, making changes in a new branch, and submitting a PR for review.
+To submit more extensive edits, we recommend forking our repo, making changes in a new branch, and submitting a PR for review.
 
 Feel free to reach out to the Docs Team to discuss. We're happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
 
@@ -42,8 +60,6 @@ In your new branch, edit the doc markdown file. See our [Style Guide](/docs/cont
 
 <details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
 
-<!-- Removed Atom because it is no longer available:
-* [Atom](https://atom.io): Create new branches, stage and commit, push and pull, resolve merge conflicts, view PRs and more - all from within your editor. The GitHub package comes bundled with Atom.-->
 * [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
    * Markdown All in One
@@ -106,3 +122,9 @@ As PRs are merged to the main branch by the Sumo Logic Docs Team, the content bu
 
 When all content is tested and ready for live, a Sumo Logic Docs Team member can tag a release to build and deploy to Production. This site is live to the world to search, use, and read to learn Sumo Logic.
 -->
+
+## Submit a GitHub Issue
+
+Short on time? You can report a bug or request more information by [submitting a GitHub Issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) to our repository. Enter as much information as you can, including content corrections, steps to reproduce, command/code updates, clarifying questions, and recommended fixes.
+
+Before submitting an issue, you can browse our [existing GitHub issues](https://github.com/SumoLogic/sumologic-documentation/issues) to see if someone has already reported it, and join the discussion via comments.

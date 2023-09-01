@@ -8,7 +8,7 @@ description: Learn how to troubleshoot problems with parsers.
 
 Sumo Logic parsers are a powerful tool for extracting log data to support security and observability use cases. This topic provides tips to help you identify and resolve some common issues you might encounter when using parsers.
 
-For general information on the parsing engine and syntax, see the [Parser Editor](parser-editor.md) and [Parsing Language Reference Guide](parsing-language-reference-guide.md) topics.
+For general information on the parsing engine and syntax, see the [Parser Editor](/docs/cse/schema/parser-editor) and [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide) topics.
 
 1. Our [Ingestion Guides](/docs/cse/ingestion/) provide instructions for how to ingest data from a variety of data sources. Check to see if there is a guide for the data source you’re working with. The ingest guides generally describe the most straightforward, least error-prone method. Make sure that you’ve followed the instructions exactly and that the data to be ingested is supported.      
 
@@ -20,7 +20,7 @@ For general information on the parsing engine and syntax, see the [Parser Editor
     `/Parsers/System/Microsoft/Windows-XML`
 
     The ingest guide for a data source will include the path to the correct parser. You can also determine the path to a parser on the **Logs > Parsers** page in the Sumo Logic UI: navigate to the parser, and then choose **Copy Path** from the three-dot more options menu.    
-3. Check for Field Extraction Rules, [Sumo Logic Ingest Mappings](../ingestion/sumo-logic-ingest-mapping.md), or [Local Configurations](parser-editor.md) related to the parser that is presenting issues.
+3. Check for Field Extraction Rules, [Sumo Logic Ingest Mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping), or [Local Configurations](/docs/cse/schema/parser-editor#create-a-local-configuration-for-a-system-parser) related to the parser that is presenting issues.
 
     * Field Extraction Rules can alter message contents in such a way that the parser works when you're testing it in the Parser Editor against messages returned by a Sumo Logic log search, but not when it receives logs from the Sumo Logic source that collected the logs. Replicating the logic of the FER in a Local Configuration in the parser usually solves this problem. 
     * Sumo Logic Ingest Mappings for a data source should always be disabled when you’ve configured a Sumo Logic parser for that same data source. Otherwise, a single message might result in multiple CSE Records. 

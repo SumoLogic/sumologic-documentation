@@ -12,7 +12,7 @@ Sumo Logic provides a number of apps you can use to monitor your Sumo org, for i
 
 **Requesting Sumo Logic Enterprise Apps**
 
-Enterprise apps, such as the [Sumo Logic App for PCI Compliance](/docs/integrations/pci-compliance/setup) and the [Sumo Logic App for Security Analytics](/docs/integrations/sumo-apps/security-analytics), are for Sumo Logic Enterprise accounts only and cannot be self-installed. A paid Professional Services contract is required for installment and configuration.
+Enterprise apps, such as the [Sumo Logic App for Security Analytics](/docs/integrations/sumo-apps/security-analytics), are for Sumo Logic Enterprise accounts only and cannot be self-installed. A paid Professional Services contract is required for installment and configuration.
 
 You may upgrade your account at any time. In these instances, an admin can request an estimate.
 
@@ -27,7 +27,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="docs/integrations/sumo-apps/audit"><img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="icon" width="40"/><h4>Audit</h4></a>
+  <a href="/docs/integrations/sumo-apps/audit"><img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="icon" width="40"/><h4>Audit</h4></a>
   <p>Use this guide to work with the Sumo Logic Audit App.</p>
   </div>
 </div>

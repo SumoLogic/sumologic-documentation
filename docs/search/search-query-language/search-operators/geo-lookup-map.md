@@ -9,7 +9,7 @@ Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operat
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
 :::note
-The Geo Lookup (Map) operator is the first step in creating [Map Charts](/docs/dashboards-new/panels/map-charts).
+The Geo Lookup (Map) operator is the first step in creating [Map Charts](/docs/dashboards/panels/map-charts).
 :::
 
 Required fields:

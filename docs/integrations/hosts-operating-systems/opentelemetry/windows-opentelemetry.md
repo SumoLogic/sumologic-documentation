@@ -1,6 +1,6 @@
 ---
 id: windows-opentelemetry
-title: windows - OpenTelemetry Collector
+title: Windows - OpenTelemetry Collector
 sidebar_label: Windows - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry App for Windows.
 ---
@@ -36,7 +36,7 @@ Standard Windows event channels include:
 - System
 - Application
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
@@ -278,6 +278,16 @@ Use this dashboard to:
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+
+### The Process Metrics - Overview
+
+The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations, and thread count.
+
+User this dashboard to :
+- Process wise distribution of CPU and memory usage
+- Process wise read/write operations 
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
 
 ### Process Metrics - Details
 

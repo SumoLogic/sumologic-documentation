@@ -75,9 +75,9 @@ All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/
   sudo service haproxy reload
   ```
 
-## Collecting Logs, Metrics and installing HAProxy app
+## Collection configuration and app installation
 
-Here are the steps for Collecting Logs and installing the app.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
@@ -201,7 +201,7 @@ The **HAProxy - Threat Analysis** dashboard provides an at-a-glance view of thre
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Threat-Analysis.png' alt="Threat Analysis" />
 

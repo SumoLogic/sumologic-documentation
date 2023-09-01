@@ -41,7 +41,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logexplain\<event_condition\> [against\<against_condition\>] on\<fieldname\> [,\<fieldname\>, ...]
+| logexplain <event_condition> [against <against_condition>] on <fieldname>[,<fieldname>, ...]
 ```
 
 | Parameter | Description |
@@ -56,7 +56,7 @@ With the provided results you can:
 * [Built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata) are not supported.
 * Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
 * [Time Compare](../time-compare.md) and the [compare operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogExplain results.
-* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
+* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards-classic/edit-dashboards/use-filters-dashboards.md).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
 ### Response links

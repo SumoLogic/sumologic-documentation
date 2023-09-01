@@ -9,10 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the Metrics Explorer UI and how to use it.
 
-:::tip
-If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](/docs/metrics/metrics-queries/metrics-explorer/#switch-to-the-classic-metrics-ui).
-:::
-
 ## About the UI
 
 The Metrics Explorer appears when you open a new metrics tab. The page
@@ -40,6 +36,10 @@ When converted, the filters convert allowing you to select and modify, make diff
 
 ## Switch to the Classic metrics UI
 
+:::info Classic Metrics Deprecation
+In late 2023, we're deprecating Classic Metrics and Classic Dashboards in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
+:::
+
 If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
 
 Not all of the features available in the Metrics Explorer are found in the Classic UI.
@@ -62,7 +62,7 @@ The key components of the UI are:
 | B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
 | D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
-| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards-new/panels/modify-chart).  |
+| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards/panels/modify-chart).  |
 | F | The icons on the right of the **Panel Type** area allow you to add a query, hide a query, clear a query, enter advanced mode, and duplicate a query. |
 | G | The icons in this area allow you to add another query row, hide a query, and open the more options menu.
 | H | The icons in this area allow you to save and share metric queries. |
