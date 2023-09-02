@@ -1,13 +1,15 @@
 ---
-id: install-collector-linux
-title: Installing Collector on Linux
+id: linux
+title: InstallOpenTelemetry Collector on Linux
 sidebar_label: Linux
-description: Learn how to install the Sumo Logic OpenTelemetry Collector.
+description: Learn how to install the Sumo Logic OpenTelemetry Collector on Linux.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="35"/>
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Linux. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 

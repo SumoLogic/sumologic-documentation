@@ -93,12 +93,12 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/install-collector/index'},
               items:[
-                'send-data/opentelemetry-collector/install-collector/install-collector-linux',
-                'send-data/opentelemetry-collector/install-collector/install-collector-macos',
-                'send-data/opentelemetry-collector/install-collector/install-collector-windows',
+                'send-data/opentelemetry-collector/install-collector/linux',
+                'send-data/opentelemetry-collector/install-collector/macos',
+                'send-data/opentelemetry-collector/install-collector/windows',
                 'send-data/opentelemetry-collector/install-collector/ansible',
-                'send-data/opentelemetry-collector/install-collector/chef',
                 'send-data/opentelemetry-collector/install-collector/puppet',
+                'send-data/opentelemetry-collector/install-collector/chef',
               ]
             },
             {

@@ -1,11 +1,13 @@
 ---
-id: install-collector-windows
-title: Installing Collector on Windows
+id: windows
+title: Install OpenTelemetry Collector on Windows
 sidebar_label: Windows
-description: Learn how to install Collector
+description: Learn how to install the Sumo Logic OpenTelemetry Collector on Windows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="35"/>
 
 Follow the steps in this topic to install or uninstall an OpenTelemetry Collector on Windows. See [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for information on other operating systems.
 
