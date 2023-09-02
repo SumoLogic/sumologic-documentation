@@ -2,7 +2,7 @@
 id: introduction-to-cloud-security-analytics
 title: Introduction to Cloud Security Analytics
 sidebar_label: Introduction to Cloud Security Analytics
-description: Learn basic concepts about Cloud Security Analytics.
+description: Learn basic concepts about Cloud Security Analytics. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
