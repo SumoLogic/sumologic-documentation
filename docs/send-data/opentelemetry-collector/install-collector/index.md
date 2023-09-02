@@ -8,19 +8,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <div className="box-wrapper" markdown="1">
   <div className="box smallbox1 card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/install-collector/install-collector-linux"><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/><h4>Install Collector on Linux</h4></a>
+      <a href="/docs/send-data/opentelemetry-collector/install-collector/linux"><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/><h4>Install Collector on Linux</h4></a>
       <p>Step-by-step instructions for installing the OpenTelemetry collector on Linux.</p>
     </div>
   </div>
   <div className="box smallbox2 card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/install-collector/install-collector-macos"><img src={useBaseUrl('img/send-data/mac-logo.png')} alt="macOS" width="45"/><h4>Install Collector on macOS</h4></a>
+    <a href="/docs/send-data/opentelemetry-collector/install-collector/macos"><img src={useBaseUrl('img/send-data/mac-logo.png')} alt="macOS" width="45"/><h4>Install Collector on macOS</h4></a>
     <p>Step-by-step instructions for installing the OpenTelemetry collector on macOS.</p>
     </div>
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/install-collector/install-collector-windows"><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/><h4>Install Collector on Windows</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/install-collector/windows"><img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/><h4>Install Collector on Windows</h4></a>
     <p>Step-by-step instructions for installing the OpenTelemetry collector on Windows.</p>
     </div>
   </div>
