@@ -3708,6 +3708,9 @@
   "/docs/integrations/app-development/opentelemetry/jira": "/docs/integrations/app-development/opentelemetry/jira-opentelemetry",
   "/docs/integrations/pci-compliance/setup": "/docs/integrations/pci-compliance",
   "/docs/logs": "/docs/search",
+  "/docs/send-data/opentelemetry-collector/install-collector-linux": "/docs/send-data/opentelemetry-collector/install-collector/linux",
+  "/docs/send-data/opentelemetry-collector/install-collector-macos": "/docs/send-data/opentelemetry-collector/install-collector/macos",
+  "/docs/send-data/opentelemetry-collector/install-collector-windows": "/docs/send-data/opentelemetry-collector/install-collector/windows",
   "/docs/manage/security/log-search-audit-index": "/docs/manage/security/search-audit-index",
   "/cid/-1": "/"
 }
