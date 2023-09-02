@@ -12,7 +12,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/google-source/g-suite-apps-audit-source"><img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="30"/><h4>Google Workspace Apps Audit</h4></a>
+  <a href="/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source"><img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="30"/><h4>Google Workspace Apps Audit</h4></a>
   <p>Add a Google Workspace Apps Audit Source to ingest audit logs from Google apps.</p>
   </div>
 </div>

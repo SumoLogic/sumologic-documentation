@@ -3639,7 +3639,7 @@
   "/Visualizations-and-Alerts/Alerts/01-Scheduled-Searches": "/docs/alerts/scheduled-searches",
   "/Visualizations-and-Alerts/Explore/Troubleshoot_with_Explore": "/docs/dashboards/explore-view",
   "/docs/alerts/alert-variables": "/docs/alerts/monitors/alert-variables",
-  "/docs/alerts/monitors/edit-settings": "/docs/alerts/monitors/settings",
+  "/docs/alerts/monitors/settings": "/docs/alerts/monitors/settings",
   "/docs/global-intelligence": "/docs/integrations/global-intelligence",
   "/docs/global-intelligence/apache": "/docs/integrations/global-intelligence/apache",
   "/docs/global-intelligence/apache/install-for-apache-view-dashboards": "/docs/integrations/global-intelligence/apache",
