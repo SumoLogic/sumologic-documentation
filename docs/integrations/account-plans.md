@@ -65,7 +65,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/sumo-apps/Infrequent-Data-Tier">Infrequent Data Tier</a></td>
+   <td><a href="/docs/integrations/sumo-apps/infrequent-data-tier">Infrequent Data Tier</a></td>
    <td> </td>
    <td> </td>
    <td> </td>

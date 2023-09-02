@@ -113,7 +113,7 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox9 card">
       <div className="container">
-      <a href="/docs/send-data/collection//upgrade-collectors"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Upgrade a Collector</h4></a>
+      <a href="/docs/send-data/collection/upgrade-collectors"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Upgrade a Collector</h4></a>
       <p>Deploy an upgrade to one or more collectors.</p>
       </div>
     </div>

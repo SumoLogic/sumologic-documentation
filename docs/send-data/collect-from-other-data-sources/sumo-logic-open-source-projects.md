@@ -56,7 +56,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 |:-- |:--|
 | [CollectD](https://github.com/SumoLogic/sumologic-collectd-plugin) | This plugin sends metrics to Sumo Logic via an HTTP endpoint.  |
 | [Prometheus](https://github.com/SumoLogic/sumologic-prometheus-scraper) | The Prometheus Scraper provides a configurable mechanism to send Prometheus formatted metrics to Sumo Logic.  |
-| [StatsD](/docs/send-data/collect-from-other-data-sources/Collect-StatsD-Metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
+| [StatsD](/docs/send-data/collect-from-other-data-sources/collect-statsd-metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
 
 ## Tracing Integration Libraries
 

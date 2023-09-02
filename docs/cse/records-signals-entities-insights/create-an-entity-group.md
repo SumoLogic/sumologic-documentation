@@ -72,7 +72,7 @@ Follow these instructions to create an Entity Group based on Entity name or whet
     * **IP Address Range.** After you select this option, an **IP Address Range **field appears. Enter a CIDR block of IP addresses.
     * **Sensor Zone**. This field is present if you selected _IP Address _as the **Entity Type **above. Optionally, select a **Sensor Zone** from the pulldown.
     :::note
-    If you select a [Sensor Zone](/docs/cse/administration/Using-Sensor-Zones), the IP addresses assigned to the Entity Group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
+    If you select a [Sensor Zone](/docs/cse/administration/using-sensor-zones), the IP addresses assigned to the Entity Group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
     :::
 1. **Tags**. Select any tags you’d like to apply to Entities in the group.
 1. **Criticality**. If desired, select a Criticality.
@@ -94,13 +94,13 @@ Follow these instructions to create an Entity Group that corresponds to a group 
     * User
 1. **Inventory Key**. Select an attribute to use from the **Inventory Type** selected above. Select **groups** if you want to use an existing Entity Group attribute. (If you select the **Dynamic Schema Tags** checkbox below, you must enter "**fields.**" followed by the name of a custom tag schema that allows custom values, for example, **fields.Office**.)
 1. **Source**. Select an inventory source from the pull-down list.
-1. **Value**. Enter a value for the attribute selected in the **Inventory Key** field above. If **groups** was selected in the **Inventory Key** field, enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group. (If you select the **Dynamic Schema Tags** checkbox below, you must enter *****.) 
+1. **Value**. Enter a value for the attribute selected in the **Inventory Key** field above. If **groups** was selected in the **Inventory Key** field, enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group. (If you select the **Dynamic Schema Tags** checkbox below, you must enter *****.)
    :::note
    **Value** refers to a normalized attribute. The name of the raw attribute varies depending on the inventory source. And if you are entering a value for a group, keep in mind that just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
    :::
-1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the Entities in the group. To use this checkbox, you must do the following: 
+1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the Entities in the group. To use this checkbox, you must do the following:
     * In the **Inventory Key** field enter  "**fields.**" followed by the name of a custom tag schema, for example, **fields.Office**. The custom tag schema must allow custom values (that is, under **Values** it says **Custom Allowed** in the custom tag schema UI).
-    * In the **Values** field enter *****. 
+    * In the **Values** field enter *****.
     * Select **Confirm tag schema creation**.<br/><br/><img src={useBaseUrl('/img/cse/entity-groups-dynamic-schema-tags.png')} alt="Dynamic Schema Tags checkbox" width="500"/>
 1. **Tags**. Select any tags you’d like to apply to Entities in the group.
 1. **Criticality**. If desired, select a Criticality.
