@@ -100,7 +100,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
    :::
 1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the Entities in the group. To use this checkbox, you must do the following:
     * In the **Inventory Key** field enter  "**fields.**" followed by the name of a custom tag schema, for example, **fields.Office**. The custom tag schema must allow custom values (that is, under **Values** it says **Custom Allowed** in the custom tag schema UI).
-    * In the **Values** field enter *****.
+    * In the **Values** field enter *****. 
     * Select **Confirm tag schema creation**.<br/><br/><img src={useBaseUrl('/img/cse/entity-groups-dynamic-schema-tags.png')} alt="Dynamic Schema Tags checkbox" width="500"/>
 1. **Tags**. Select any tags you’d like to apply to Entities in the group.
 1. **Criticality**. If desired, select a Criticality.
