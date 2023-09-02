@@ -33,8 +33,8 @@ To set up the SDO solution manually, configure collection and install apps for 
 * [GitHub](/docs/integrations/app-development/github)
 * [Bitbucket App](/docs/integrations/app-development/bitbucket)
 * [Jenkins](/docs/integrations/app-development/jenkins)
-* [PagerDuty](/docs/integrations/saas-cloud/PagerDuty-V2)
-* [Opsgenie](/docs/integrations/saas-cloud/Opsgenie)
+* [PagerDuty](/docs/integrations/saas-cloud/pagerduty-v2)
+* [Opsgenie](/docs/integrations/saas-cloud/opsgenie)
 * [GitLab](/docs/integrations/app-development/gitlab)
 * [CircleCI](https://circleci.com/docs/sumo-logic-integration/)
 

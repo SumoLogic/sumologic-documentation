@@ -2,7 +2,7 @@
 id: threat-detection-and-investigation
 title: Threat Detection and Investigation
 sidebar_label: Threat Detection and Investigation
-description: Learn how to use Cloud Security Analytics to monitor security data and investigate incidents. 
+description: Learn how to use Cloud Security Analytics to monitor security data and investigate incidents.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -42,15 +42,15 @@ Attacks may persist without further investigation and patches, so it’s critica
 
 ## Pre-built apps for threat detection and investigation
 
-[Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation. 
-* [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment. 
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database. 
-* [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls. 
+[Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
+* [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
+* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
+* [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 * [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
 ## Build a dashboard for threat detection and investigation
 
-While the pre-built apps can meet many of your needs, you can also build your own dashboards. In this section, we show you how to build an example dashboard for threat detection and investigation. 
+While the pre-built apps can meet many of your needs, you can also build your own dashboards. In this section, we show you how to build an example dashboard for threat detection and investigation.
 
 The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).) AWS CloudTrail logs contain information about requests for resources in your account, such as:
 
@@ -59,9 +59,9 @@ The steps in this section describe how to query [AWS CloudTrail](/docs/integrati
 * the actions performed
 * parameters for the action
 
-After you build the dashboard to find and monitor security events, we'll show you how to enhance the dashboard to do the following threat investigations: 
+After you build the dashboard to find and monitor security events, we'll show you how to enhance the dashboard to do the following threat investigations:
 
-* Detect brute force attempts by monitoring AWS CloudTrail data for a high number of failed login attempts within a period of time. Brute force attacks are when a hacker tries many different passwords to attempt to gain access. These attacks are a common cause of security breaches on governments, businesses, organizations, and private individuals. 
+* Detect brute force attempts by monitoring AWS CloudTrail data for a high number of failed login attempts within a period of time. Brute force attacks are when a hacker tries many different passwords to attempt to gain access. These attacks are a common cause of security breaches on governments, businesses, organizations, and private individuals.
 * Detect land speed violations by using geo lookup location data and combining it with timestamps and the Haversine formula. Land speed violations, also known as impossible travel, are a type of suspicious activity where a user logs in to an account in two different locations within a short period of time. If there are two logins to the same account on opposite sides of the globe in the same hour, at least one of those logins was probably illegitimate.
 * Look up user information with CrowdStrike to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
 
@@ -93,7 +93,7 @@ We are going to create a dashboard to look at our security activity in several d
 ### Step 2: Create dashboard template variables
 
 You can add more flexibility to your queries and dashboard outputs by using template variables.
-1. In the upper right corner of the dashboard, change the time range to 24 hours. 
+1. In the upper right corner of the dashboard, change the time range to 24 hours.
 1. Click on the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid black'}} width="200"/>
 1. In the template variable bar, select **Create a Template Variable**.<br/><img src={useBaseUrl('img/csa/create-template-variable.png')} alt="Create a template variable" style={{border: '1px solid black'}} width="800"/>
 1. In this panel for the **Variable Name** enter **event_type** and for the **Variable Type**, select **Logs Search**.<br/><img src={useBaseUrl('img/csa/create-template-variable-dialog.png')} alt="Create a template variable dialog" style={{border: '1px solid black'}} width="800"/>
@@ -102,15 +102,15 @@ You can add more flexibility to your queries and dashboard outputs by using temp
    _sourceCategory=Labs/AWS/CloudTrail
    | json field=_raw "eventType" as event_type
    | count by event_type
-   | fields - _count 
+   | fields - _count
    ```
-1. Under the **Key** field, select **event_type**. Notice that the right side of the panel populates with the values created by the query. 
+1. Under the **Key** field, select **event_type**. Notice that the right side of the panel populates with the values created by the query.
 1. Make sure the **Include the option to select all values (*)** selector is active.<br/><img src={useBaseUrl('img/csa/create-variable-1.png')} alt="Query in the create template variable dialog" style={{border: '1px solid black'}} width="800"/>
 1. Click the **Create Template Variable** on the lower right.  A variable selector called **event_type** is now visible on the dashboard bar.
-1. Create another variable called **actor**. Use the following to create the elements that are needed for this template variable. 
+1. Create another variable called **actor**. Use the following to create the elements that are needed for this template variable.
    * Variable Name: actor
    * Variable Type: Logs Search
-   * Query (replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment): 
+   * Query (replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment):
       ```
       _sourceCategory=Labs/AWS/CloudTrail
       | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as actor
@@ -121,16 +121,16 @@ You can add more flexibility to your queries and dashboard outputs by using temp
    * Include the option to select all values (*): Yes
 1. Your results look like something like this. <br/><img src={useBaseUrl('img/csa/create-variable-2.png')} alt="Create another template variable" style={{border: '1px solid black'}} width="800"/>
 1. Click the **Create Template Variable** button.
-1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/><img src={useBaseUrl('img/csa/rename-to-cloud-security-dashboard.png')} alt="Rename to Cloud Security Dashboard" style={{border: '1px solid black'}} width="400"/><br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name. 
+1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/><img src={useBaseUrl('img/csa/rename-to-cloud-security-dashboard.png')} alt="Rename to Cloud Security Dashboard" style={{border: '1px solid black'}} width="400"/><br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
 1. Click on the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
-1. Select the **Edit** option so you can modify your query. 
+1. Select the **Edit** option so you can modify your query.
 1. We want to filter by event_type in our panel, but allow the dashboard viewer options to pick the event type. Add a new line to the query by pressing Shift + Enter and type or copy the following code:
    ```
    | where event_type matches "{{event_type}}"
    | where actor matches "{{actor}}"
    ```
  Your query should now look something like this:<br/><img src={useBaseUrl('img/csa/new-query.png')} alt="Revised query" style={{border: '1px solid black'}} width="400"/>
- 1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the ** * ** option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing. 
+ 1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the ** * ** option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing.
 
 ### Step 3: Monitor geolocation of console logins
 
@@ -142,7 +142,7 @@ For example, if you expect all your users to be located in Europe, but you are g
 
 As another example, let's say one of your employees logged in from both Canada and Australia, on the same day only two hours apart. You know this employee lives in Toronto and travels frequently. So, the Canadian login is expected. Normally, the Australian login would be expected too, since this employee travels so often. However, since it occurred only two hours after a Toronto login, you conclude it's malicious activity. This type of suspicious activity is called a landspeed violation. We'll show you how to query for them.
 
-We want to see where our users are logging in from around the globe. So, in this step, we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located. 
+We want to see where our users are logging in from around the globe. So, in this step, we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located.
 
 1. Click **Add Panel** and then **Map**.<br/><img src={useBaseUrl('img/csa/add-map-panel.png')} alt="Add a map panel" style={{border: '1px solid black'}} width="300"/>
 1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -156,14 +156,14 @@ We want to see where our users are logging in from around the globe. So, in this
     | where !isEmpty(event_type)
     | where event_type matches "{{event_type}}"
     | where actor matches "{{actor}}"
-    | lookup latitude, longitude, country_name, city, region from geo://location on ip=src_ip 
+    | lookup latitude, longitude, country_name, city, region from geo://location on ip=src_ip
     | count by actor,src_ip,latitude,longitude,country_name,event_type
    ```
 1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame.
 1. Name the panel **Geo Location of Console Logins**.<br/><img src={useBaseUrl('img/csa/geo-location-panel.png')} alt="Geo location panel" style={{border: '1px solid black'}} width="800"/>
 1. Click the **Add to Dashboard** button.
     :::note
-    You can change the values of the dashboard template variables you created in the earlier step, and see the effect on your dashboard panels. 
+    You can change the values of the dashboard template variables you created in the earlier step, and see the effect on your dashboard panels.
     :::
 
 ### Step 4: Monitor failed login attempts
@@ -187,7 +187,7 @@ Now we want to see if users are failing to log in, which either might be an indi
     | timeslice 1h
     | count by _timeslice,actor,event_type,event_name,result
     | top 10 actor by _timeslice,event_type,result,_count
-    ``` 
+    ```
 1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame.
 1. Under **Chart Type**, select **Table**.
 1. Rename this panel **Top 10 Number of Failed Login Attempts**.
@@ -197,9 +197,9 @@ Your dashboard should now look something like this:<br/><img src={useBaseUrl('im
 
 ### Step 5: Detect brute force attacks
 
-In the previous steps, we showed you how to build a dashboard to detect and monitor security data. In the following steps, we'll enhance the dashboard to perform threat investigation. 
+In the previous steps, we showed you how to build a dashboard to detect and monitor security data. In the following steps, we'll enhance the dashboard to perform threat investigation.
 
-In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to login a number of times, and then logging in successfully. Let's write a query to look for this and display the results. 
+In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to login a number of times, and then logging in successfully. Let's write a query to look for this and display the results.
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -220,7 +220,7 @@ In this step, we'll show you how to detect brute force attacks. Brute force atta
      | order by Failure_percent desc
      | format("%.2f", Failure_percent) as Failure_percent
      ```
-1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no brute force attacks in the selected time frame, in which case no results will display.) 
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no brute force attacks in the selected time frame, in which case no results will display.)
 1. Under **Chart Type**, select **Table**.
 1. Rename this panel **Account Compromise Detection From Brute Force Attack**.
 1. Click the **Add to Dashboard** button.  
@@ -229,7 +229,7 @@ If there have been brute force attacks during the queried time frame, your the n
 
 ### Step 6: Detect landspeed violations
 
-A "landspeed violation" occurs when a user logs in from an IP address and then logs in a short time later from a different IP address where the location is a significant distance from the first location. An example would be if someone logged in from New York City USA, and then 4 hours later logged in using the same IP address from Amsterdam in the Netherlands. It’s impossible to get from New York City to Amsterdam in 4 hours, thus it is an example of a landspeed violation that could indicate stolen or compromised credentials. 
+A "landspeed violation" occurs when a user logs in from an IP address and then logs in a short time later from a different IP address where the location is a significant distance from the first location. An example would be if someone logged in from New York City USA, and then 4 hours later logged in using the same IP address from Amsterdam in the Netherlands. It’s impossible to get from New York City to Amsterdam in 4 hours, thus it is an example of a landspeed violation that could indicate stolen or compromised credentials.
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -273,14 +273,14 @@ A "landspeed violation" occurs when a user logs in from an IP address and then l
      * Calculates the time difference between the latest and previous logins, and then calculates, based on the distance, how fast that user must have been traveling in order to have personally logged in at both locations and times.
      * Adds the speed threshold above which the calculated speed would be considered "suspicious" or "unrealistic" (we use 500 km/hr in this case).  
      * Clean up the results and format for better presentation on the dashboard.
-1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.) 
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.)
 1. Under **Chart Type**, select **Table**.
 1. Rename this panel **Landspeed Violation**.
 1. Click the **Add to Dashboard** button.
 
 ### Step 7: Look up user information with CrowdStrike
 
-We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com), which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike. 
+We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com), which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike.
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -298,11 +298,11 @@ We need a way to see if any of the IP addresses we have logged are known threats
      | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourcecategory,_source | count by _timeslice
      | outlier _count window=5,threshold=3,consecutive=1,direction=+-
      ```
-1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.) 
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. (It's possible there have been no landspeed violations in the selected time frame, in which case no results will display.)
 1. Under **Chart Type**, select **Line Chart**.
 1. Rename this panel **CrowdStrike Data**.
-1. Click the **Add to Dashboard** button. 
+1. Click the **Add to Dashboard** button.
 
 :::tip
-Now that you've created a dashboard, you can [share it](/docs/dashboards-new/share-dashboard-new/) or [export it](/docs/dashboards-new/export-dashboard-new/). [Exporting and importing](/docs/get-started/library/#import-and-export-content-in-the-library) dashboards lets you use dashboards created in one org or account on another org or account. 
+Now that you've created a dashboard, you can [share it](/docs/dashboards/share-dashboard-new) or [export it](/docs/dashboards/export-dashboard-new). [Exporting and importing](/docs/get-started/library/#import-and-export-content-in-the-library) dashboards lets you use dashboards created in one org or account on another org or account. 
 :::

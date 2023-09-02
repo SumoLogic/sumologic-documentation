@@ -72,7 +72,7 @@ Follow these instructions to create an Entity Group based on Entity name or whet
     * **IP Address Range.** After you select this option, an **IP Address Range **field appears. Enter a CIDR block of IP addresses.
     * **Sensor Zone**. This field is present if you selected _IP Address _as the **Entity Type **above. Optionally, select a **Sensor Zone** from the pulldown.
     :::note
-    If you select a [Sensor Zone](/docs/cse/administration/Using-Sensor-Zones), the IP addresses assigned to the Entity Group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
+    If you select a [Sensor Zone](/docs/cse/administration/using-sensor-zones), the IP addresses assigned to the Entity Group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
     :::
 1. **Tags**. Select any tags you’d like to apply to Entities in the group.
 1. **Criticality**. If desired, select a Criticality.

@@ -206,17 +206,19 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
 
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
-    1. **Name. **Enter Evident.io SNS Integration.  
-    2. **Source Category. **Enter security_evident.
+    1. **Name.** Enter Evident.io SNS Integration.  
+    2. **Source Category.** Enter security_evident.
 3. In the **Advanced** section, configure:
-    3. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
-    4. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
-4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/Mask-Rules): \
-
-    5. **Name.** Enable proper timestamp parsing
-    6. **Filter. **Enter `\"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"`
-    7. **Type.** Select Mask messages that match.
-    8. **Mask String.** Enter t.
+    1. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
+    1. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
+4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/mask-rules):
+    1. **Name.** Enable proper timestamp parsing.
+    1. **Filter.** Enter the following:
+      ```
+      \"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"
+      ```
+    1. **Type.** Select Mask messages that match.
+    1. **Mask String.** Enter t.
 5. Click **Apply**.
 6. Click **Save**.
 7. Copy the HTTP Source Address URL and use it in the following section.
