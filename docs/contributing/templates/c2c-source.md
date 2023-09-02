@@ -36,7 +36,7 @@ This source is **not** yet available in the [Fed deployment](https://help.sumolo
 
 | Polling Interval | Data |
 | :--- | :--- |
-| {{Polling time in minutes}} | {{Data sources}} | 
+| {{Polling time in minutes}} | {{Data sources}} |
 
 Example:
 | Polling Interval | Data |
@@ -50,18 +50,18 @@ Example:
 #### Prerequisites
 
 \NOTE: This section doesn't apply to all sources; use only where needed\
-  
+
 Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Logic. To generate these credentials, ....
 
 \Insert steps to configure the Source in the Vendor UI\
 
-Example: https://help.sumologic.com/docs/c2c/dropbox/#vendor-configuration
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#vendor-configuration
 
 ### Source configuration
 
 \Insert steps to configure the Source in the Sumo Logic UI\
 
-Example: https://help.sumologic.com/docs/c2c/dropbox/#source-configuration
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration
 
 ## Metadata fields
 

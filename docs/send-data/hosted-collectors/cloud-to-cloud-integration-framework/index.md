@@ -279,7 +279,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox37 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
   <p>Collects Directory Audit, Sign-in, and Provisioning data from MS Graph API Azure AD activity reports.</p>
   </div>
 </div>

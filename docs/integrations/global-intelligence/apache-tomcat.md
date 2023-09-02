@@ -45,7 +45,7 @@ The following sample query is from the **Average Requests Per Second: My Server 
 
 The Sumo Global Intelligence for Tomcat app provides insights into your key Tomcat infrastructure indicators. 
 
-Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-Tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
+Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
 
 
 ## Installing the Global Intelligence for Apache Tomcat App

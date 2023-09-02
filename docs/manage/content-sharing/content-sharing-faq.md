@@ -67,4 +67,4 @@ Dashboards run with the data access level of a particular user. We wanted to pre
 ## I'm an Admin, how do I monitor content sharing activity in my org?
 
 All permission updates, move, copy and delete actions in the content library are audited. All actions performed by the user while in Admin
-mode are also audited. The [Audit App](/docs/integrations/sumo-apps/Audit) has been updated with several new dashboards that visualize this activity for you.
+mode are also audited. The [Audit App](/docs/integrations/sumo-apps/audit) has been updated with several new dashboards that visualize this activity for you.

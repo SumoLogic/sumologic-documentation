@@ -187,13 +187,13 @@ In this section, we'll introduce the following concepts:
     </div>
     <div className="box smallbox24 card">
       <div className="container">
-      <a href="/docs/search/search-query-language/math-expressions/toDegrees"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>toDegrees</h4></a>
+      <a href="/docs/search/search-query-language/math-expressions/todegrees"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>toDegrees</h4></a>
       <p>Converts angles from radians to degrees.</p>
       </div>
     </div>
     <div className="box smallbox25 card">
       <div className="container">
-      <a href="/docs/search/search-query-language/math-expressions/toRadians"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>toRadians</h4></a>
+      <a href="/docs/search/search-query-language/math-expressions/toradians"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>toRadians</h4></a>
       <p>Converts angles from degrees to radians.</p>
       </div>
     </div>

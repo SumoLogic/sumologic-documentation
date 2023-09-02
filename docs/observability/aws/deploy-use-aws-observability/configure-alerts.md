@@ -11,7 +11,7 @@ Once you have installed the AWS Observability solution with the option to “In
 
 ![install](/img/observability/install-dashboards-alerts.png)
 
-To enable the monitors you want to alert on, see [Editing Monitor Settings](/docs/alerts/monitors/edit-settings). To configure alerts to send notifications to other teams or connections, see [Create a Monitor](/docs/alerts/monitors/create-monitor). 
+To enable the monitors you want to alert on, see [Editing Monitor Settings](/docs/alerts/monitors/settings). To configure alerts to send notifications to other teams or connections, see [Create a Monitor](/docs/alerts/monitors/create-monitor). 
 
 Sumo Logic provides the following out-of-the-box alerts:
 

@@ -27,7 +27,7 @@ backend_port, requestProc, ba_Response, cli_Response, \
 ELB_StatusCode, be_StatusCode, rcvd, send, method, \
 protocol, domain, server_port, path
 ```
-The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html). For information on unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/Classic-Load-Balancer).
+The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html). For information on unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer).
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure an ELB Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md} 
+{@import ../../reuse/apps/create-aws-s3-source.md}
 
 ### Field Extraction Rules
 
