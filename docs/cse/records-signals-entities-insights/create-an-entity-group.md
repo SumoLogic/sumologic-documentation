@@ -82,7 +82,7 @@ Follow these instructions to create an Entity Group based on Entity name or whet
 
 Follow these instructions to create an Entity Group that corresponds to a group in an inventory service in your infrastructure.
 
-1. Click the gear icon in the Cloud SIEM UI and choose **Groups** under **Entities**.
+1. Click the gear icon and choose **Groups** under **Entities**.
     <img src={useBaseUrl('/img/cse/gear-menu-2.png')} alt="gear-menu.png" width="500" />
 1. On the **Entity Groups** page, click **Create**.
 1. The **Create Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="Create an Entity Group based on inventory" width="500"/>
