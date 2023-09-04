@@ -46,7 +46,7 @@ Follow the below steps to configure the Split webhook.
 6. Click **Save**.
 7. Verify Split events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/split
+  _sourceCategory=webhook/split
   ```
 
 :::info

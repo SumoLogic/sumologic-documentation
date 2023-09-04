@@ -106,8 +106,8 @@ If you're using CircleCI for Build and Deploy, do the following:
 1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 1. [Configure a hosted collector](/docs/send-data/hosted-collectors) to ingest CircleCI data into Sumo and call it `Software Development Optimization`.
 1. Under this collector, create the following two [http sources](/docs/send-data/hosted-collectors/http-source/logs-metrics):
-   * `_sourcecategory=circleci/job-collector`
-   * `_sourcecategory="circleci/workflow-collector"`
+   * `_sourceCategory=circleci/job-collector`
+   * `_sourceCategory="circleci/workflow-collector"`
 
    Sumo Logic sources, by default, have [multiline processing](https://help.sumologic.com/docs/send-data/reference-information/collect-multiline-logs/) enabled. You'll need to disable it here in order to collect structured logs for CircleCI.
 1. Copy and save displayed URLs associated with the sources. You will use this information to upload data.

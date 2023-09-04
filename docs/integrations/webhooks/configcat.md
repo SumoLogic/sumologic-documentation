@@ -67,7 +67,7 @@ Follow the steps to configure the ConfigCat webhook.
 6. Click **Save Changes**.
 7. Verify ConfigCat events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/configcat`
+`_sourceCategory=webhook/configcat`
 ```
 
 :::info
