@@ -55,7 +55,7 @@ For common deployment errors refer to the following [doc](https://docs.microsoft
 1. Select **Rule Based Scaling**.
 1. Add your rules based scaling configuration as defined in [Create your first autoscale setting](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started#create-your-first-autoscale-setting).
 
-<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid black'}} width="800" /> 
+<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid black'}} width="800" />
 
 ## Verify configurations
 
@@ -97,7 +97,7 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 
 In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
 
-For more information about using Live Tail, see [Live Tail](/docs/search/Live-Tail). 
+For more information about using Live Tail, see [Live Tail](/docs/search/live-tail). 
 
 ### Verify Azure Function is not getting Failed
 

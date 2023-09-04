@@ -301,7 +301,7 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_jira_cloud | Install [Sumo Logic Application and WebHooks for Jira Cloud](/docs/integrations/app-development/jira-cloud). Options: app, collection, fer, all, and none. | all |
 | install_jira_server | Install [Sumo Logic Application and WebHooks for Jira Server](/docs/integrations/app-development/jira). Options: app, collection, fer, all, and none. | all |
 | install_bitbucket_cloud | Install [Sumo Logic Application and WebHooks for BitBucket Cloud](/docs/integrations/app-development/bitbucket). Options: app, collection, fer, all, and none. | all |
-| install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie](/docs/integrations/saas-cloud/Opsgenie). Options: app, collection, fer, all, and none. | all |
+| install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie](/docs/integrations/saas-cloud/opsgenie). Options: app, collection, fer, all, and none. | all |
 | install_github | Install [Sumo Logic Application and WebHooks for GitHub](/docs/integrations/app-development/github). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
 | install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab](/docs/integrations/app-development/gitlab). Options: app, collection, fer, all, and none.  If you do not wish to install the GitLab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
 | install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2). Options: app, collection, fer, all, and none. | all |
@@ -318,8 +318,8 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | jira_cloud_sc | Source Category for [Jira Cloud](/docs/integrations/app-development/jira-cloud) | SDO/Jira/Cloud |
 | jira_server_sc | Source Category for [Jira Server](/docs/integrations/app-development/jira) | SDO/Jira/Server/Events |
 | bitbucket_sc | Source Category for [BitBucket Cloud](/docs/integrations/app-development/bitbucket) | SDO/Bitbucket |
-| opsgenie_sc | Source Category for [Opsgenie](/docs/integrations/saas-cloud/Opsgenie) | SDO/Opsgenie |
-| pagerduty_sc | Source Category for [Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2) | SDO/Pagerduty |
+| opsgenie_sc | Source Category for [Opsgenie](/docs/integrations/saas-cloud/opsgenie) | SDO/Opsgenie |
+| pagerduty_sc | Source Category for [Pagerduty](/docs/integrations/saas-cloud/pagerduty-v2) | SDO/Pagerduty |
 | github_sc | Source Category for [GitHub](/docs/integrations/app-development/github) | SDO/GitHub |
 | gitlab_sc | Source Category for [GitLab](/docs/integrations/app-development/gitlab) | SDO/GitLab |
 | jenkins_sc | Source Category for [Jenkins](/docs/integrations/app-development/jenkins) | SDO/Jenkins |
