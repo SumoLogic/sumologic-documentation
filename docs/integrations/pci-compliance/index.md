@@ -26,7 +26,7 @@ With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requireme
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry">PCI Compliance for Windows JSON - OpenTelemetry</a></h4>
+  <h4><a href="/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry">PCI Compliance for Windows JSON - OpenTelemetry</a></h4>
   <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON using OpenTelemetry.</p>
   </div>
 </div>
