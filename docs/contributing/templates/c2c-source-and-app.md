@@ -1,12 +1,13 @@
 ---
-id: c2c-source  #example: druva-source
-title: C2C Source #example: Druva Source
+id: c2c-source-and-app #example: druva-source
+title: App name #example: Druva
 image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
-sidebar_label: C2C Template #example: Druva
+sidebar_label: App Template #example: Druva
 tags:
   - cloud-to-cloud
-  - c2c-source  #example: Druva
-description: Description goes here. #example: Learn how to configure the Druva Cloud-to-Cloud Source in your Sumo Logic environment.
+  - c2c-source #example: Druva-source
+  - app-doc #example: Druva
+description: Description goes here. #example: Learn how to configure, install, and view the Druva dashboards in your Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -18,11 +19,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>
 
-\Itroduction\
+\Introduction\
 
-The {{source name}} collects {{data/event types}} from {{source of origin}}. {{What the app does}}.
+The {{source name}} collects {{data/event types}} from {{source of origin}}. 
 
 Example: The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
+
+The Sumo Logic app for {{app name}} enables you to track {{What the app does}}.
+
+Example: The Sumo Logic app for Asana enables you to track user sign in activities, detect data access and export, and identify changes to security settings and user roles.
+
+{{Key features of the app}}
 
 \Depending on the availability in the Fed, add the below note.\
 
@@ -39,11 +46,26 @@ This source is **not** yet available in the [Fed deployment](https://help.sumolo
 | {{Polling time in minutes}} | {{Data sources}} |
 
 Example:
+
 | Polling Interval | Data |
 | --- | --- |
 | 5 min |  [Team Events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
 
+### Sample log message
+
+```json title="example"
+Enter the log message in json format with the title.
+```
+
+### Sample Query
+
+```sql title="example"
+Enter the log message in sql format with the title.
+```
+
 ## Setup
+
+To set up Cloud to Cloud Integration /source name/ Source for the /app name/ app, follow the instructions provided. These instructions will guide you through the process of creating a source using the /source name/ Source category, which you will need to use when installing the app. By following these steps, you can ensure that your /app name/ app is properly integrated and configured to collect and analyze your /app name/ data.
 
 ### Vendor configuration
 
@@ -63,7 +85,7 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 
 Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration
 
-## Metadata fields
+#### Metadata fields
 
 \Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly.\
 
@@ -71,7 +93,7 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 | :--- | :--- | :--- |
 | {{`field`}} | {{value}} | {{Description}} |
 
-## JSON schema
+#### JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
 
@@ -81,7 +103,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration parameters](#config-object) | Yes | Source type specific values. |
 
-### Config Object
+#### Config Object
 
 \Add information about the configuration parameters. Update the below table accordingly.\
 
@@ -93,24 +115,56 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | {{`Parameter`}} | {{Type}} | {{Yes/No}} | `null` | {{Description}} |  {{Example}} |
 
-### JSON example
+#### JSON example
 
 \Create and add the JSON config in the dropbox and import it here.\
 
 <CodeBlock language="json">component-name</CodeBlock>
 
-### Terraform example
+#### Terraform example
 
 \Create and add the Terraform config in the dropbox and import it here.\
 
 <CodeBlock language="json">component-name}</CodeBlock>
 
-## Troubleshooting
+### Troubleshooting
 
 \This section doesn't apply to all sources; use only where needed\
 
-## FAQ
+### FAQ
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
 :::
+
+## Installing the /app name/ app
+
+\Reuse the below content\
+
+{@import ../../reuse/filter-dashboards.md}
+
+## Viewing /app name/ dashboards
+
+\Reuse the below content\
+
+{@import ../../reuse/apps/app-install.md}
+
+### /Dashboard name/
+
+\<Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.\> Use this dashboard to:
+
+* Enter a list of features. Example below.
+
+Use this dashboard to:
+
+* Monitor high severity threats and scan attacks.
+* Review \<fill in\> for troubleshooting configuration issues.
+* Understand how to fine-tune \<fill in your product name\> based on \<fill in panel names\>.
+
+<img src='https:///Dashboard-S3-link.png' style={{border: '1px solid black'}} alt="Dashboard-name" />
+
+
+
+
+
+
