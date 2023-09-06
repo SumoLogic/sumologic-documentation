@@ -43,4 +43,3 @@ Following is an example query that lists the metric names that account for metri
 | round(totalDp / 60, 0) as dpm 
 | order by dpm desc 
 | fields -totalDp
-```
