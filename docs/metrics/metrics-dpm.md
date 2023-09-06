@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Data volume for metrics is measured in data points per minute (DPM). You can view your data volume for metrics by navigating to **Manage Data > Metrics > Metrics DPM**. The screen not only shows you which sources are sending metrics data, but how much data, peaks, average, and credits used, as well as more granular information broken down by cluster, host, source, metrics cardinality, and reporting frequency. With this data you can see which sources and metrics contribute most to your credit consumption.  
 
-It is important to understand the volume of metrics that you are ingesting into Sumo Logic, because when the DPM limit is exceeded, data is cached on the host and the source is throttled. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
+Understanding the volume of metrics that you are ingesting is important because when you exceed the DPM limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 
 While you can also see metrics DPM breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics DPM screen to get more detailed information.
  
