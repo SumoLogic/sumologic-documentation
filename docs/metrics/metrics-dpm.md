@@ -13,7 +13,7 @@ It is important to understand the volume of metrics that you are ingesting into 
 
 While you can also see metrics DPM breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics DPM screen to get more detailed information.
  
- ## View Metrics DPM
+## View Metrics DPM
 
 Navigate to **Manage Data > Metrics > Metrics DPM**.
 
