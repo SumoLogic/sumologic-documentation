@@ -124,7 +124,7 @@ The `.bat` file created above can then be triggered periodically using windows T
 </TabItem>
 </Tabs>
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 

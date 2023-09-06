@@ -81,7 +81,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | [Roles](../users-roles/roles/create-manage-roles.md) | `roles` |
 | [SAML](/docs/manage/security/saml) | `saml` |
 | [Scheduled Views](/docs/manage/scheduled-views) | `scheduledView` |
-| Security Policies: [Share Dashboards Outside of the Organization](../../dashboards/share-dashboard-outside-org.md), [Data Access Level for Shared Dashboards](data-access-level-shared-dashboards.md), [Per User Concurrent Sessions Limit](set-limit-user-concurrent-sessions.md), and [User Session Timeout](set-max-web-session-timeout.md) | `orgSettings` |
+| Security Policies: [Share Dashboards Outside of the Organization](../../dashboards-classic/share-dashboard-outside-org.md), [Data Access Level for Shared Dashboards](data-access-level-shared-dashboards.md), [Per User Concurrent Sessions Limit](set-limit-user-concurrent-sessions.md), and [User Session Timeout](set-max-web-session-timeout.md) | `orgSettings` |
 | Security Policy: [Support Account Access](enable-support-account.md) | `supportAccount` |
 | [Service Allowlist](create-allowlist-ip-cidr-addresses.md) | `serviceAllowlist` |
 | [Support Account](enable-support-account.md) | `supportAccount` |

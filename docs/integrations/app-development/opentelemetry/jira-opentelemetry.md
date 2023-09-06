@@ -69,7 +69,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
 
 When you configure the webhook, enter the URL for the [HTTP source you created](/docs/integrations/app-development/jira/#configure-hosted-collector-to-receive-webhooks) as the endpoint for the webhook.
 
-## Logs Collection Configuration and App Installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 

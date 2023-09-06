@@ -19,7 +19,7 @@ multiple group-by functions, a separate bar or point represents each set of grou
 
 ![aggregates](/img/search/get-started-search/search-basics/aggregates.png)
 
-For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/chart-panel-types) for details.
+For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/panels) for details.
 
 ### Why are the chart options not available?
 

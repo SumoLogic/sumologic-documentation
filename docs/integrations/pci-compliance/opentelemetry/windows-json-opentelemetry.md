@@ -18,7 +18,7 @@ The PCI Compliance for Windows JSON app covers PCI requirements 02, 06, 08, and 
 
 ## Fields created in Sumo Logic for PCI Compliance Windows JSON App
 
-Following tag will be created as part of Linux app installation, if not already present.
+Following tags will be created as part of PCI Compliance Windows JSON app installation, if not already present.
 
 - `sumo.datasource`: has the fixed value of **windows**.
 - `host.group`: user configured tag which signifies a group of hosts for the operating system.
@@ -33,13 +33,13 @@ Standard Windows event channels include:
 - Security
 - System
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 :::note
 You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/). Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-As part of data collection setup and app installation, you can select the App from **App Catalog** and click on **Install App**. Follow the steps below.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

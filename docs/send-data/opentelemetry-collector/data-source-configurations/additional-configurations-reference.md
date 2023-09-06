@@ -42,6 +42,25 @@ It is recommended to maintain the configuration of all reusable components in `c
 
 Our [**App Catalog**](/docs/get-started/apps-integrations) provides a mechanism to create these configuration files using a simple UI form input. Learn More.
 
+
+## Default Collector Name
+
+Each collector name must be unique. Collector by default uses hostname of the machine where collector is installed as the Collector's name. By default,if you are installing a collector that would have the same hostname as an existing collector, the system automatically appends a 13-digit unix timestamp to the collector name.
+
+## Forcing a Collector's Name with Clobber
+
+Set the clobber flag to `true` if you want to delete the existing collector where a new collector is installed on a machine with same hostname. This is useful for scenarios where a VM is deleted and initiated again with the same hostname. To enable this property, create a file `sumo-ot-clobber.yaml` in `otelcol-sumo/conf.d`, add below configuration and restart your collector.
+
+```yaml
+extensions:
+  sumologic:
+    clobber: true
+```
+
+:::important
+Setting the clobber flag to `true` deletes (clobbers) any existing collector with the same collector name/hostname, so make sure that is what you want to do. Clobber is effective only before the new collector has been registered (activated) with Sumo Logic.
+:::
+
 ## Custom Configuration
 
 Use Custom configuration to customize the collection of your logs, metrics and traces in Sumo Logic. Learn more about configuration [here](https://opentelemetry.io/docs/collector/configuration).

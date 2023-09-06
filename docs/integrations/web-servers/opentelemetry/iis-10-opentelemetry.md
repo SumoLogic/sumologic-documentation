@@ -70,7 +70,7 @@ For more information about IIS log format and log configuration refer to this [l
 
 Once the logs are configured to be written into a local file follow the below step to configure collection in Sumo.
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 

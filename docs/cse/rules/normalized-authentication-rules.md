@@ -5,6 +5,7 @@ sidebar_label: Normalized Authentication Rules
 description: CSE's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 *Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
 specific product or vendor.  
@@ -33,18 +34,18 @@ The mapping requirements are:
 
 This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requirements described above. (Note that `srcDevice_hostname` is not mapped because the AWS log message for that event doesn’t contain a hostname.)
 
-![auth-rule-mapping-1.png](/img/cse/auth-rule-mapping-1.png)
+<img src={useBaseUrl('img/cse/auth-rule-mapping-1.png')} alt="Authentication rule mapping" width="600"/>
 
 ## Normalized Authentication Rules
 
-* Authentication Without MFA - Detects a successful login where the account did NOT use multi-factor authentication (MFA) to gain access. We strongly recommend that you require MFA to protect accounts in the event that credentials are stolen. If you don’t require MFA for a data source, we recommend you disable this rule, or that you use a [Rule Tuning Expression](rule-tuning-expressions.md) to exclude the data source so that messages from it won’t be processed by this rule. 
+* Authentication Without MFA - Detects a successful login where the account did NOT use multi-factor authentication (MFA) to gain access. We strongly recommend that you require MFA to protect accounts in the event that credentials are stolen. If you don’t require MFA for a data source, we recommend you disable this rule, or that you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to exclude the data source so that messages from it won’t be processed by this rule. 
 * Brute Force Attempt - Detects multiple failed login attempts for the same username over a 24 hour timeframe. This is designed to catch both slow and quick brute force type attacks. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *logon*.
 * Domain Brute Force Attempt - Detects multiple failed login attempts for the same username over a 1 hour timeframe. This is designed to catch attacks that leverage domain resources to attempt credential validation. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *domainLogon*.
 * Password Attack - Detects multiple failed login attempts from a single source with unique usernames over a 24 hour timeframe. This is designed to catch both slow and quick password spray type attacks. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *logon*.
 * Domain Password Attack - Detects multiple failed login attempts from a single source with unique usernames over a 1 hour timeframe. This is designed to catch attacks leveraging domain resources to attempt credential validation. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *domainLogon*.
 * Successful Brute Force - Detects a series of failed logins followed by a successful login. This could indicate that an attacker was successful in guessing a user's password and has compromised the user’s account. This rule only monitors events with a `normalizedAction` of *logon*. There is no “Domain” version of this rule–that means Windows workstation logging is required to achieve full visibility for Windows environments.
 * Impossible Travel - Successful - Detects two successful logins from the same user with different country codes, indicating possible credential theft. We recommend you add filtering criteria to the rule expression to reduce false positives, for example, known VPN addresses.
-* Impossible Travel - Unsuccessful - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](rule-tuning-expressions.md) to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
+* Impossible Travel - Unsuccessful - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
 
 ## About logon and domainLogon
 

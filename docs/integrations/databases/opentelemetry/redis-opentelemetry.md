@@ -46,7 +46,7 @@ Follow the instructions to set up log collection:
 
 Once the logs are configured to write to a local file, follow the steps below to configure the collection in Sumo Logic.
 
-## Configuring Collection and Installing the Redis App
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 

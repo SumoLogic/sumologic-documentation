@@ -19,8 +19,8 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
-    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
+    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
+    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
     :::note
     If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
     :::
@@ -87,7 +87,7 @@ In case you do not provide a CSV file or if we detect that it does not have the 
     in your AWS account.
 1. Click **Create StackSet**.  
     ![CloudFormation_Stackset 1.png](/img/observability/ClodFormation_Stackset_1.png)
-1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option and click **Next**. If you'd like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).<br/>  ![multi-create-stack.png](/img/observability/multi-create-stack.png)
+1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml` in the Amazon S3 URL option and click **Next**. If you'd like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).<br/>  ![multi-create-stack.png](/img/observability/multi-create-stack.png)
 1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy the AWS Observability Solution](/docs/observability/aws/deploy-use-aws-observability) section with the following exception:
     * Leave the field “Alias for AWS Account Identification” blank.  <br/>  ![aws-field.png](/img/observability/aws-field.png)
     * Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  <br/>  ![aws-url.png](/img/observability/aws-url.png)

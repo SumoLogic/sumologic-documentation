@@ -5,7 +5,9 @@ description: Understand the basic components of the Search window and how they c
 ---
 
 
-On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
+On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data. 
+
+You can also save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
 
 You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically](../../../alerts/scheduled-searches/schedule-search.md) and notify you of the results.
 
@@ -25,7 +27,7 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 | J | Search results as messages. |
 | K | [Aggregate](/docs/search/search-query-language/group-aggregate-operators) search results. |
 | L | Download and export search results (up to 100,000 records) as a CSV file. |
-| M | [Chart](/docs/dashboards-new/panels)) options for search results. |
+| M | [Chart](/docs/dashboards/panels) options for search results. |
 | N | Click the gear icon to open a menu with the options to edit Display Message Preferences, Save as Default View, and Edit Settings JSON. |
 | O | Add to Dashboard allows you to create a panel on a Dashboard from your search. If a Dashboard exists for the Search, you will have another option to Update Dashboard to update it based on changes made here. |
 | P | Expands the results table and hides the histogram and search text area. |

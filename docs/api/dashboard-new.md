@@ -1,7 +1,7 @@
 ---
 id: dashboard-new
-title: Dashboard (New) Management APIs
-sidebar_label: Dashboard (New)
+title: Dashboard Management APIs
+sidebar_label: Dashboard
 description: Use HTTP endpoints to manage content permissions.
 hide_table_of_contents: true
 ---
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
-The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](/docs/dashboards-new/) platform from HTTP endpoints to organize your content.
+The Dashboard Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard](/docs/dashboards/) platform from HTTP endpoints to organize your content.
 
 {@import ../reuse/api-intro.md}
 

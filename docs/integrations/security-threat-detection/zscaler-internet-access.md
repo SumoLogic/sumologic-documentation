@@ -21,16 +21,16 @@ The Sumo Logic App for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, Fire
 
 Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to-cloud log streaming for all types of ZIA logs into Sumo Logic.
 
-To collect logs for Zscaler, perform these steps, detailed in the following sections:
+To collect logs for Zscaler, perform these steps, detailed in the following sections.
 
 ### Step 1: Configure Sumo Logic Hosted Collector and an HTTP Source
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Hosted Collector](/docs/send-data/hosted-collectors).
-2. Configure an [Http Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
+1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors).
+1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
     1. For Source Category, enter any string to tag the output collected from this Source, such as **ZIA**.
-    2. Click **Save** and make note of the HTTP address for the Source. You will need it when you configure the Zscaler Cloud NSS in the next section.
+    1. Click **Save** and make note of the HTTP address for the Source. You will need it when you configure the Zscaler Cloud NSS in the next section.
 
 
 ### Step 2: Configure Zscaler Cloud NSS
@@ -38,75 +38,80 @@ To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to-cloud log streaming for all types of ZIA logs into Sumo Logic.
 
 To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the following steps.
-
 1. Log into your Zscaler Internet Access system.
-2. Go to **Administration -> Nanolog Streaming Service -> Cloud NSS Feeds**.
-
-
-Cloud NSS is not enabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
-
-
-
-1. From the **Cloud** **NSS Feeds** tab, click **Add Cloud NSS Feed**.
-2. In the **Add NSS Feed** dialog:
-
-
-
-1. **Feed Name.** Enter a name for your NSS feed.
-2. **NSS Server.** Select NSS for Web.
-3. **Status. Enabled.**
-4. **SIEM Type.**Select **Sumo Logic**.
-5. **API URL. **Paste the HTTP address for the Source generated in the previous section.
-6. **HTTP Headers. No Headers are required for Sumo Logic. If it requires at least one Header, add a dummy Header:**
-
-
-
-1. **Log Type.** Select Web Log.
-2. **Feed Output Type.** Select JSON.
-3. **Feed Escape Character.** Leave this field blank.
-4. **Feed Output Format.** The JSON format is displayed.
-5. **User Obfuscation.** Select Disabled.
-6. **Timezone.** Set to GMT by default.
-7. **Web Log Filters**. Choose filters you would like to have.
-1. Click **Save**.
-2. Repeat above steps for:
+1. Go to **Administration > Nanolog Streaming Service > Cloud NSS Feeds**.
+<br/>Cloud NSS is not enabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
+1. From the **Cloud** **NSS Feeds** tab, click **Add Cloud NSS Feed**. <br/>For more information about adding Cloud NSS Feeds, see [Zscaler documentation](https://help.zscaler.com/zia/adding-cloud-nss-feeds-web-logs).
+1. In the **Add NSS Feed** dialog:
+   1. **Feed Name**. Enter a name for your NSS feed.
+   1. **NSS Type**. Select **NSS for Web**.
+   1. **Status**. Select **Enabled**.
+   1. **SIEM Type**. Select **Sumo Logic**.
+   1. **API URL**. Paste the HTTP address for the Source generated in the previous section.
+   1. **Add HTTP Header**. No headers are required for Sumo Logic. If it requires at least one header, add a dummy header.
+   1. **Log Type**. Select **Web Log**.
+   1. **Feed Output Type**. Select **JSON**.
+   1. **JSON Array Notation**. Disable so that logs ingest as individual JSON objects instead of a JSON array. 
+   1. **Feed Escape Character**. Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS.
+   1. **Feed Output Format**. The JSON format is displayed. (Leave the default setting.)
+   1. **Timezone**. Set to GMT by default.
+   1. **Web Log Filters**. Choose filters you would like to have.
+   1. Click **Save**.
+1. Repeat above steps for:
     1. NSS Type: NSS for Web and Log Type: Tunnel.
-    2. NSS Type: NSS for Web and Log Type: SaaS Security.
-    3. NSS Type: NSS for FireWall and Log Type: Firewall Logs.
-    4. NSS Type: NSS for FireWall and Log Type: DNS Logs.
+    1. NSS Type: NSS for Web and Log Type: SaaS Security.
+    1. NSS Type: NSS for FireWall and Log Type: Firewall Logs.
+    1. NSS Type: NSS for FireWall and Log Type: DNS Logs.
 
-**Note: **Sumo Logic Dashboards utilize Web, Tunnel, DNS Logs.
-
+:::note
+Sumo Logic Dashboards utilize Web, Tunnel, DNS Logs.
+:::
 
 #### (Optional) Configure the Zscaler NSS Feeds
 
 If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA App using NSS Servers. For DNS, Firewall, and Tunnel logs you can select JSON as the output format for the feed in the Add NSS Feeds dialog. For Web logs you will need to configure the feed as follows:
 
 1. Log into your Zscaler NSS system.
-2. Go to **Administration > Settings > Nanolog Streaming Service**.
-3. From the **NSS Feeds** tab, click **Add**.
-4. In the **Add NSS Feed** dialog: \
-
+1. Go to **Administration > Settings > Nanolog Streaming Service**.
+1. From the **NSS Feeds** tab, click **Add**.
+1. In the **Add NSS Feed** dialog: 
     1. **Feed Name.** Enter a name for your NSS feed.
-    2. **NSS Server.** Select the NSS Server.
-    3. **SIEM IP Address.** Enter the Sumo Logic Installed Collector IP address.
-    4. **Log Type.** Select Web Log.
-    5. **Feed Output Type.** Custom.
-    6. **NSS Type.** NSS for Web is the default.
-    7. **Status.** Select Enabled.
-    8. **SIEM TCP Port.** Enter the Sumo Logic Syslog Source TCP port number.
-    9. **Feed Escape Character.** Leave this field blank.
-    10. **Feed Output Format.** Select Custom and paste the following:
-
-```
-\{ "sourcetype" : "zscalernss-web", "event" : \{"datetime":"%d{yy}-%02d{mth}-%02d{dd} %02d{hh}:%02d{mm}:%02d{ss}","reason":"%s{reason}","event_id":"%d{recordid}","protocol":"%s{proto}","action":"%s{action}","transactionsize":"%d{totalsize}","responsesize":"%d{respsize}","requestsize":"%d{reqsize}","urlcategory":"%s{urlcat}","serverip":"%s{sip}","clienttranstime":"%d{ctime}","requestmethod":"%s{reqmethod}","refererURL":"%s{ereferer}","useragent":"%s{ua}","product":"NSS","location":"%s{location}","ClientIP":"%s{cip}","status":"%s{respcode}","user":"%s{login}","url":"%s{eurl}","vendor":"Zscaler","hostname":"%s{ehost}","clientpublicIP":"%s{cintip}","threatcategory":"%s{malwarecat}","threatname":"%s{threatname}","filetype":"%s{filetype}","appname":"%s{appname}","pagerisk":"%d{riskscore}","department":"%s{dept}","urlsupercategory":"%s{urlsupercat}","appclass":"%s{appclass}","dlpengine":"%s{dlpeng}","urlclass":"%s{urlclass}","threatclass":"%s{malwareclass}","dlpdictionaries":"%s{dlpdict}","fileclass":"%s{fileclass}","bwthrottle":"%s{bwthrottle}","servertranstime":"%d{stime}","contenttype":"%s{contenttype}","unscannabletype":"%s{unscannabletype}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}"\}\}
-```
-
-
-1. **Duplicate Logs.** Disabled by default.
-2. **Timezone.** Set to GMT by default.
-1. Click **Save**.
-
+    1. **NSS Server.** Select the NSS Server.
+    1. **SIEM IP Address.** Enter the Sumo Logic Installed Collector IP address.
+    1. **Log Type.** Select Web Log.
+    1. **Feed Output Type.** Custom.
+    1. **NSS Type.** NSS for Web is the default.
+    1. **Status.** Select Enabled.
+    1. **SIEM TCP Port.** Enter the Sumo Logic Syslog Source TCP port number.
+    1. **Feed Escape Character.** Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS.
+    1. **Feed Output Format.** Select Custom and paste the following:
+       *  Web Logs
+       ```
+       \{ "sourcetype" : "zscalernss-web", "event" : \{"datetime":"%d{yy}-%02d{mth}-%02d{dd} %02d{hh}:%02d{mm}:%02d{ss}","reason":"%s{reason}","event_id":"%d{recordid}","protocol":"%s{proto}","action":"%s{action}","transactionsize":"%d{totalsize}","responsesize":"%d{respsize}","requestsize":"%d{reqsize}","urlcategory":"%s{urlcat}","serverip":"%s{sip}","requestmethod":"%s{reqmethod}","refererURL":"%s{ereferer}","useragent":"%s{eua}","product":"NSS","location":"%s{elocation}","ClientIP":"%s{cip}","status":"%s{respcode}","user":"%s{elogin}","url":"%s{eurl}","vendor":"Zscaler","hostname":"%s{ehost}","clientpublicIP":"%s{cintip}","threatcategory":"%s{malwarecat}","threatname":"%s{threatname}","filetype":"%s{filetype}","appname":"%s{appname}","pagerisk":"%d{riskscore}","department":"%s{edepartment}","urlsupercategory":"%s{urlsupercat}","appclass":"%s{appclass}","dlpengine":"%s{dlpeng}","urlclass":"%s{urlclass}","threatclass":"%s{malwareclass}","dlpdictionaries":"%s{dlpdict}","fileclass":"%s{fileclass}","bwthrottle":"%s{bwthrottle}","contenttype":"%s{contenttype}","unscannabletype":"%s{unscannabletype}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}","keyprotectiontype":"%s{keyprotectiontype}"\}\}
+       ```
+       *  Firewall Logs
+       ```
+       \{ "sourcetype" : "zscalernss-fw", "event" :\{"datetime":"%s{time}","user":"%s{elogin}","department":"%s{edepartment}","locationname":"%s{elocation}","cdport":"%d{cdport}","csport":"%d{csport}","sdport":"%d{sdport}","ssport":"%d{ssport}","csip":"%s{csip}","cdip":"%s{cdip}","ssip":"%s{ssip}","sdip":"%s{sdip}","tsip":"%s{tsip}","tunsport":"%d{tsport}","tuntype":"%s{ttype}","action":"%s{action}","dnat":"%s{dnat}","stateful":"%s{stateful}","aggregate":"%s{aggregate}","nwsvc":"%s{nwsvc}","nwapp":"%s{nwapp}","proto":"%s{ipproto}","ipcat":"%s{ipcat}","destcountry":"%s{destcountry}","avgduration":"%d{avgduration}","rulelabel":"%s{erulelabel}","inbytes":"%ld{inbytes}","outbytes":"%ld{outbytes}","duration":"%d{duration}","durationms":"%d{durationms}","numsessions":"%d{numsessions}","ipsrulelabel":"%s{ipsrulelabel}","threatcat":"%s{threatcat}","threatname":"%s{ethreatname}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}"\}\}
+       ```
+       *  DNS Logs
+       ```
+       \{ "sourcetype" : "zscalernss-dns", "event" :\{"datetime":"%s{time}","user":"%s{elogin}","department":"%s{edepartment}","location":"%s{elocation}","reqaction":"%s{reqaction}","resaction":"%s{resaction}","reqrulelabel":"%s{reqrulelabel}","resrulelabel":"%s{resrulelabel}","dns_reqtype":"%s{reqtype}","dns_req":"%s{req}","dns_resp":"%s{res}","srv_dport":"%d{sport}","durationms":"%d{durationms}","clt_sip":"%s{cip}","srv_dip":"%s{sip}","category":"%s{domcat}","respipcategory":"%s{respipcat}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}"\}\}
+       ```
+       *  Tunnel Logs (IKE Phase 1)
+       ```
+       \{ "sourcetype" : "zscalernss-tunnel", "event" : \{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"IPSEC IKEV %d{ikeversion}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","destinationport":"%d{dstport}","lifetime":"%d{lifetime}","ikeversion":"%d{ikeversion}","spi_in":"%lu{spi_in}","spi_out":"%lu{spi_out}","algo":"%s{algo}","authentication":"%s{authentication}","authtype":"%s{authtype}","recordid":"%d{recordid}"\}\}
+       ```
+       *  Tunnel Logs (IKE Phase 2)
+       ```
+       \{ "sourcetype" : "zscalernss-tunnel", "event" : \{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"IPSEC IKEV %d{ikeversion}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","sourceportstart":"%d{srcportstart}","destinationportstart":"%d{destportstart}","srcipstart":"%s{srcipstart}","srcipend":"%s{srcipend}","destinationipstart":"%s{destipstart}","destinationipend":"%s{destipend}","lifetime":"%d{lifetime}","ikeversion":"%d{ikeversion}","lifebytes":"%d{lifebytes}","spi":"%d{spi}","algo":"%s{algo}","authentication":"%s{authentication}","authtype":"%s{authtype}","protocol":"%s{protocol}","tunnelprotocol":"%s{tunnelprotocol}","policydirection":"%s{policydirection}","recordid":"%d{recordid}"\}\}
+       ```
+       *  Tunnel Logs (Tunnel Event)
+       ```
+       \{ "sourcetype" : "zscalernss-tunnel", "event" : \{"datetime":"%s{datetime}","Recordtype":"%s{tunnelactionname}","tunneltype":"%s{tunneltype}","user":"%s{vpncredentialname}","location":"%s{elocationname}","sourceip":"%s{sourceip}","destinationip":"%s{destvip}","sourceport":"%d{srcport}","event":"%s{event}","eventreason":"%s{eventreason}","recordid":"%d{recordid}"\}\}
+       ```       
+   1. **Duplicate Logs.** Disabled by default.
+   1. **Timezone.** Set to GMT by default.
+   1. Click **Save**.
 
 ### Sample Log Message
 

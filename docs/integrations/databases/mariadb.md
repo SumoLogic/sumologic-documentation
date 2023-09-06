@@ -290,7 +290,10 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
    1. **Name** (Required). Enter a name for the source.
    2. **Description** (Optional).
    3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you're using a customized path, check the server.cnf file for this information
-   4. The collection should begin. Set this for how far back historically you want to start collecting.
+   4. **Collection should begin**. Set this for how far back historically you want to start collecting.
+   :::note
+   {@import ../../reuse/collection-should-begin-note.md}
+   :::
    5. **Source Host** (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
    6. **Source Category** (Recommended). DB/MariaDB/ErrorLogs_._
    7. **Fields**. Set the following fields:
@@ -539,7 +542,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing MariaDB Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
 :::
 
 ### Overview

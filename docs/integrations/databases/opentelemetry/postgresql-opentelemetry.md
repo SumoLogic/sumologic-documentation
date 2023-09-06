@@ -61,7 +61,9 @@ Configure logging in PostgreSQL:
   sudo service postgresql restart
   ```
 
-## Collecting logs, metrics, and PostgreSQL app installation
+## Collection configuration and app installation
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

@@ -1,15 +1,17 @@
 ---
 slug: /integrations
-title: App Catalog
+title: Apps and Integrations
 description: Documentation for Sumo Logic apps and integrations.
-tags: [app, app catalog]
+tags: [app, apps, app catalog, integrations]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/integrations.png')} alt="icon" width="50"/>
 
-This category has documentation for Sumo Logic apps, which you can find in our **App Catalog**. Apps help you get started gaining insights from your data sources by providing example searches and dashboards for common use cases. They are customized with your source configurations and populated in a folder selected by you. Feel free to edit them to get the results you want.
+This category has documentation for Sumo Logic apps, webhooks, and other integrations, located in our **App Catalog**,
+
+During installation, apps are customized with your source configurations and populated in the folder of your choice. You'll then start getting insights from your data sources via [Dashboards](/docs/dashboards) and example searches for common use cases.
 
 Several of the guides below are partner-specific: Amazon/AWS, Microsoft/Azure, and Google. The rest of the app content is organized by functionality. We support a wide variety of data sources.
 
@@ -115,13 +117,13 @@ To determine if an app is supported by your pricing plan, see [Apps and Sumo Log
 </div>
 <div className="box smallbox16 card">
   <div className="container">
-  <a href="/docs/integrations/sumo-apps/"><img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="70"/><h4>Partner Ecosystem Apps</h4></a>
+  <a href="/docs/integrations/partner-ecosystem-apps"><img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="70"/><h4>Partner Ecosystem Apps</h4></a>
   <p>Third-party Sumo Logic apps for partners including Auth0, CircleCI, and more.</p>
   </div>
 </div>
 <div className="box smallbox17 card">
   <div className="container">
-  <a href="/docs/integrations/sumo-apps/"><img src={useBaseUrl('img/integrations/partner-integrations.png')} alt="Thumbnail icon" width="70"/><h4>Partner Integrations</h4></a>
+  <a href="/docs/integrations/partner-integrations"><img src={useBaseUrl('img/integrations/partner-integrations.png')} alt="Thumbnail icon" width="70"/><h4>Partner Integrations</h4></a>
   <p>Sumo Logic Partner Integrations are provided and supported by our partner network. </p>
   </div>
 </div>

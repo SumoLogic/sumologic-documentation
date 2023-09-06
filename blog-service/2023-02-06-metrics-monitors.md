@@ -1,5 +1,5 @@
 ---
-title: February 6, 2023 (Metrics)
+title: Metrics Monitors Enhancements (Metrics)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - monitors

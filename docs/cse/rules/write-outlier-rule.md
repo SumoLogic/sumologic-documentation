@@ -54,8 +54,8 @@ The screenshot below shows an Outlier rule in the CSE rules editor. For an expla
 ## Configure an Outlier rule
 This section has instructions for configuring an Outlier rule.
 
-### If triggered
-The settings in the **If triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
+### If Triggered
+The settings in the **If Triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
@@ -75,7 +75,7 @@ The settings in the **If triggered** section are divided into two subsections, o
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
 1. **Minimum Count Value** (default value 1). Enter the absolute minimum value below which an Outlier Signal will not be generated.
 
-### Then create a Signal
+### Then Create a Signal
 
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule/#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
@@ -84,6 +84,17 @@ Sumo Logic ensures that Rule processing does not impact the reliability of produ
 
 On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
+
+## When the baseline is reset for an Outlier rule
+
+The baseline learning period begins again when the following fields on the rule are updated or overridden:
+* **Baseline Configuration**:
+   * **For the records matching the expression**
+   * **build a daily/hourly baseline**
+   * **for the entity(ies)**
+* **Outlier Model Configuration**:
+   * **Detect an outlier for**
+   * **of the Record field**
 
 ## Use case for a spike in failed logins from a user
 

@@ -1,5 +1,5 @@
 ---
-title: Mimecast (Apps)
+title: Mimecast App (Apps)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps

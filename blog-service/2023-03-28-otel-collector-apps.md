@@ -1,5 +1,5 @@
 ---
-title: March 28, 2023 (Collection)
+title: Sumo Logic Distribution for OpenTelemetry (Collection)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - opentelemetry

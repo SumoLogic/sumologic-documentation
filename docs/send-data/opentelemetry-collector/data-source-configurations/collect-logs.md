@@ -10,6 +10,8 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
 * [Collecting logs from local files](#collecting-logs-from-local-files)
   * [Parsing JSON logs](#parsing-json-logs)
 * [Collecting logs from Windows Event Log](#collecting-logs-from-windows-event-log)
+  * [Collecting Application, Security and System channels](#collecting-application-security-and-system-channels)
+  * [Collect from Custom channels (Powershell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
@@ -52,6 +54,9 @@ processors:
       - key: _sourceCategory
         value: application_logs_prod
         action: insert
+      - key: sumo.datasource
+        value: linux
+        action: insert
 
 service:
   pipelines:
@@ -77,6 +82,7 @@ service:
    ```bash title="Windows"
    Restart-Service -Name OtelcolSumo
    ```
+
 
 Configuration details:
 
@@ -133,6 +139,10 @@ processors:
   groupbyattrs/json_files:
     keys:
       - log.file.path_resolved
+    attributes:
+      - key: sumo.datasource
+        value: linux
+        action: insert
 
 service:
   pipelines:
@@ -151,6 +161,8 @@ service:
 ## Collecting logs from Windows Event Log
 
 Windows Log Event Receiver reads and parses logs from windows event log API to collect local events as you see on Windows Event Viewer.
+
+### Collecting Application, Security and System channels
 
 Following configuration demonstrates:
 
@@ -172,6 +184,9 @@ processors:
     attributes:
       - key: _sourceCategory
         value: windows_event_log_prod
+        action: insert
+      - key: sumo.datasource
+        value: windows
         action: insert
 
 service:
@@ -212,6 +227,57 @@ Configuration details:
 * **service**:
   * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
+
+### Collect from Custom channels (Powershell, Sysmon)
+
+Following configuration demonstrates:
+
+* **Collect**: Collect Sysmon logs.
+* **Transform**: Set `_sourceCategory` field to `windows_event_log_prod_sysmon`.
+* **Export**: Send data to authenticated Sumo Logic organization.
+
+```yaml
+receivers:
+  windowseventlog/sysmon/localhost/1690233479:
+    channel: Microsoft-Windows-Sysmon/Operational 
+
+processors:
+  resource/windows_resource_attributes/localhost/1690233479:
+    attributes:
+      - key: _sourceCategory
+        value: windows_event_log_prod_sysmon
+        action: insert
+      - key: sumo.datasource
+        value: windows
+        action: insert
+
+service:
+  pipelines:
+    logs/windows/localhost/1690233479:
+      receivers:
+        -  windowseventlog/sysmon/localhost/1690233479
+      processors:
+        - memory_limiter
+        - resource/windows_resource_attributes/localhost/1690233479
+        - batch
+      exporters:
+        - sumologic
+```
+
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sysmon_windows.yaml`.
+2. Paste the above content into the file.
+3. Restart collector with following command:
+   ```bash title="Windows"
+   Restart-Service -Name OtelcolSumo
+   ```
+
+#### Configuration details
+
+* **receivers**: `windowseventlog/sysmon/localhost/1690233479:` Collect logs from sysmon channel with name “Microsoft-Windows-Sysmon/Operational”.
+* **processors**: `resource/windows_resource_attributes/localhost/1690233479` Adds the resource attribute `_sourceCategory` with value `windows_event_log_prod_sysmon`
+* **exporters**: `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
+* **service**: `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
+
 For more details, see the [Windows Event Log receiver][windows_event_log_receiver_docs].
 
 ## Collecting logs from Syslog
@@ -231,11 +297,12 @@ The following table shows the comparison of these components.
 | Field Parsing         | Collector side                                                     | Not on collector side                                                 |
 | Protocol Verification | Strict parsing; logs sent to the wrong endpoint will not be parsed | No protocol verification; all formats are treated the same            |
 
+
 ### Parsing Syslog logs into structured logs
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog sent using UDP protocol to 127.0.0.1 on port 514
+1. **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
 2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
 3. **Export**: Send data to authenticated Sumo Logic organization
 
@@ -243,13 +310,17 @@ Following configuration demonstrates:
 receivers:
   syslog/local_syslog:
     udp:
-      listen_address: "127.0.0.1:514"
+      listen_address: "172.31.93.11:5140"
+    protocol: rfc5424
 
 processors:
   resource/local_syslog:
     attributes:
       - key: _sourceCategory
         value: syslog_event_log_prod
+        action: insert
+      - key: sumo.datasource
+        value: linux
         action: insert
 
 service:
@@ -264,11 +335,16 @@ service:
 ```
 
 1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, e.g. `local_syslog.yaml`.
-2. Paste the above content.
+2. Paste the above content to `local_syslog.yaml`
 3. Restart collector with following command:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above. 
 
 For more details, see the [Syslog receiver][syslog_receiver_docs].
 
@@ -276,18 +352,28 @@ For more details, see the [Syslog receiver][syslog_receiver_docs].
 
 To collect Syslog logs in format compatible with the Sumo Logic Installed Collector, use the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 
+Following configuration demonstrates:
+
+1. **Collect**: Collect syslog UDP on IP `172.31.93.11` port `5140` and TCP on IP `172.31.93.11` port `1514`.
+2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
+3. **Export**: Send data to authenticated Sumo Logic organization
+
+
 ```yaml
 receivers:
   tcplog/syslog_plain:
-    listen_address: "127.0.0.1:1514"
+    listen_address: "172.31.93.11:1514"
   udplog/syslog_plain:
-    listen_address: "127.0.0.1:5140"
+    listen_address: "172.31.93.11:5140"
 
 processors:
   resource/syslog_plain:
     attributes:
       - key: _sourceCategory
         value: syslog_event_log_prod
+        action: insert
+      - key: sumo.datasource
+        value: linux
         action: insert
   sumologic_syslog/syslog_plain:
 
@@ -304,9 +390,27 @@ service:
         - sumologic
 ```
 
+1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, e.g. `tcp_udp_log.yaml`.
+2. Paste the above content to `tcp_udp_log.yaml`
+3. Restart collector with following command:
+   ```bash title="Linux"
+   systemctl restart otelcol-sumo
+   ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above.
+
+For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
+
 ## Collecting logs from SQL databases
 
 The [SQL Query receiver][sqlquery_receiver_docs] retrieves logs from SQL databases, including MySQL, Oracle and PostgreSQL. See below for configuration for a specific database engine.
+
+:::note
+This section describes the configuration to collect logs stored in DB tables using queries. If you intend to monitor database applications availability, performance, and resource utilization of MySQL database clusters, visit [Database Monitoring](/docs/integrations/databases) and find the database of your choice.
+:::
 
 ### Collecting logs from a MySQL database
 

@@ -96,7 +96,7 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 1. Use this feature to compare the threshold values set in a monitor with the data displayed in the Metrics Explorer graph and gain a better understanding of how your monitors are translating into metrics.
 
 :::note
-Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/edit-settings/#view-in-metrics-explorer).
+Note that the same threshold translating functionality supports to [Creating Monitor from the Metrics Explorer](/docs/alerts/monitors/create-monitor/#from-your-metrics-explorer) and [Opening Monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
 :::
 
 
@@ -229,19 +229,19 @@ For example, the card below shows that `ServiceUnavailable` error is happening 3
 A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
 :::
 
-#### From your Alerts list
+### From your Alerts list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row, click the three-dot kebab menu > select **Subscribe**
 * Single-click on a row item > on the opened Alert page, click the three-dot kebab menu > **Subscribe to Monitor**
 
-#### From your Monitors list
+### From your Monitors list
 * Right-click on a row item > click **Subscribe**
 * Hover your mouse over a row > click the three-dot kebab menu > click **Subscribe**
 * Single-click on a row item > in the side panel (Monitor Details), click **More Actions** > **Subscribe**
 
 #### From a folder
 
-If you subscribe from a monitor folder, then all nested monitors and folders within that folder become automatically subscribed.
+If you subscribe from a monitor folder, all nested monitors and folders within that folder become automatically subscribed.
 
 For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder ("Folder B").
 
@@ -307,10 +307,9 @@ For example, if you create a subscription on “Monitor A”, and then move it t
 
 </details>
 
-To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription. 
+To cancel an inherited subscription, you'll need to remove the subscription from a parent folder or move the monitor or folder into another location outside the folder with direct subscription.
 
-
-### Notification Preferences
+## Notification Preferences
 
 Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 

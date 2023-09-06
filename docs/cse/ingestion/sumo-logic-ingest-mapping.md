@@ -89,8 +89,8 @@ This table in this section is a quick reference to supplying values for each su
 
 | If your messages are... | Select this option for Format | Are Vendor, Product, andEvent ID pattern required? | How CSE picks a mapper |
 | :-- | :-- | :-- | :-- |
-| Unstructured logs lines with a syslog header | Process Syslog with Valid Header | No | CSE will send the messages to the mapper whose name is the same as the name of the grok pattern the message matches.<br/>This option is NOT recommended because legacy parsers (groks) are being phased out and replaced by Sumo Logic system parsers. Check for a system parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. |
-| Unstructured log lines without a syslog header | Do not Process Syslog Header | No | CSE will send the messages to the mapper whose name is the same as the name of the grok pattern the message matches.<br/>This option is NOT recommended because legacy parsers (groks) are being phased out and replaced by Sumo Logic system parsers. Check for a system parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. |
+| Unstructured logs lines with a syslog header | Process Syslog with Valid Header | No | CSE will send the messages to the mapper whose name is the same as the name of the pattern the message matches. |
+| Unstructured log lines without a syslog header | Do not Process Syslog Header | No | CSE will send the messages to the mapper whose name is the same as the name of the pattern the message matches.  |
 | JSON without a syslog header | JSON | Yes | CSE will send the messages to the log mapper with the **Format**, **Vendor**, **Product**, and **Event ID** pattern you enter in the **Sumo Ingest Mapping**. |
 | JSON with a syslog header	Process Syslog with Valid Header | You’ll be prompted to select whether messages are JSON or key-value pairs. Choose “JSON”. | Yes | CSE will send the messages to the log mapper with the **Format**, **Vendor**, **Product**, and **Event ID** pattern you enter in the **Sumo Ingest Mapping**. |
 | CEF / LEEF with a syslog header | Process Syslog with Valid Header | No | CSE will send the messages to the log mapper with the **Format**, **Vendor**, **Product**, and **Event ID** from the CEF/LEEF message. |
@@ -124,13 +124,13 @@ In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source ca
 
 If your messages are unstructured with a syslog header, all you need to do is select “Process Syslog with Valid Header” for **Format**. 
 
-CSE applies GROK patterns to unstructured messages to determine which mapper to use, so you don’t need to supply any other configuration options.<br/><img src={useBaseUrl('img/cse/create-mapping-1.png')} alt="Create mapping" width="400"/>
+<img src={useBaseUrl('img/cse/create-mapping-1.png')} alt="Create mapping" width="400"/>
 
 ### Unstructured messages without a syslog header
 
 If your messages are unstructured without a syslog header, all you need to do is select “Do not Process Syslog Header” for **Format**. 
 
-CSE applies GROK patterns to unstructured messages to determine which mapper to use, so you don’t need to supply any other configuration options.<br/><img src={useBaseUrl('img/cse/create-mapping-3.png')} alt="Create mapping without header" width="400"/>
+<img src={useBaseUrl('img/cse/create-mapping-3.png')} alt="Create mapping without header" width="400"/>
 
 ### JSON messages without a syslog header
 

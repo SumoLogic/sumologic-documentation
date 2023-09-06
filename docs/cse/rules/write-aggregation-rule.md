@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic has information about CSE Aggregation rules and how to write them.
 
 :::tip
-If you are new to writing your own CSE rules, see [Before You Write a Custom Rule](before-writing-custom-rule.md) for tips and techniques that are useful for getting started.
+If you are new to writing your own CSE rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
 :::
 
 ## About Aggregation rules
@@ -34,7 +34,7 @@ The table below summarizes the rule configuration. Each row corresponds to an el
 
 The screenshot below shows the **If Triggered** configuration for the example rule in the Rules Editor. 
 
-<img src={useBaseUrl('img/cse/agg-rule.png')} alt="agg-rule.png" width="400"/>
+<img src={useBaseUrl('img/cse/agg-rule.png')} alt="Aggregate rule" width="400"/>
 
 Watch this micro lesson to learn how to create an Aggregation rule.
 
@@ -85,7 +85,7 @@ After creating a rule expression, you can test it against existing Records in CS
 1. If no matches were returned, try changing the time range.
 
 :::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.
+If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions), you can test it without the tuning expressions, or with selected tuning expressions.
 :::
 
 ### Configure “Then Create a Signal” settings
@@ -131,4 +131,4 @@ Click **Submit** to save the rule.
 ### Duplicate Signals?
 If you determine that a Threshold, Chain, or Aggregation rule is firing identical Signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than Match rules, because they support time duration conditions. For example, a Threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](../records-signals-entities-insights/about-signal-suppression.md).
+To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).

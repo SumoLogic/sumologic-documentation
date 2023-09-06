@@ -21,7 +21,7 @@ SQL Server logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](
 
 ## Fields creation in Sumo Logic for SQL Server
 
-Following are the [Fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of SQL Server app install if not already present.
+Following are the [Fields](/docs/manage/fields/) which will be created as part of SQL Server app install if not already present.
 
 * `db.cluster.name`. User configured. Enter a name to identify this SQL Server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * `db.system`. Has a fixed value of **sqlserver**.
@@ -36,7 +36,9 @@ The Microsoft SQL Server app's queries and dashboards depend on logs from the SQ
 
 The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
 
-## Configure SQL Server Logs Collection
+## Collection configuration and app installation
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
@@ -77,8 +79,8 @@ You can add any custom fields which you want to tag along with the data ingested
 Following is the query from **Error and warning count** panel from the **SQL Server app - Overview** dashboard:
 
 ```sql
- %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop 
-| if (isEmpty(_rawlog), _raw, _rawlog) as _raw 
+ %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
+| if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"
 | count by LogType
 ```
@@ -129,4 +131,3 @@ Use this dashboard to:
 -   Monitor any errors and warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-Operations.png' alt="Operations" />
-

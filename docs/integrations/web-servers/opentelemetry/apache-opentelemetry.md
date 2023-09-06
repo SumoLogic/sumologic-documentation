@@ -44,9 +44,9 @@ The receiver used gets stats from an Apache Web Server instance using the `serve
          - ErrorLog: error log file path
          - LogLevel: to control the number of messages logged to the `error_log`
 
-## Collecting Logs, Metrics, and Installing App for Apache
+## Collection configuration and app installation
 
-Here are the steps for collecting Logs, metrics, and installing the app:
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

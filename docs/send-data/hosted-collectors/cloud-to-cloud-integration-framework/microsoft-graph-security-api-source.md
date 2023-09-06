@@ -88,7 +88,7 @@ The following steps show you how to create a service application:
    - Click the **Create app role** tab.
       - **Display name**. Enter the display name for the role.
       - **Allowed member types**. Select Applications as the allowed member type.
-      - **Value**. Enter `SecurityEvents.Read.All` as the value.
+      - **Value**. Enter `SecurityAlert.Read.All` as the value.
       - **Description**. Enter a brief description.
       - Select the checkbox to enable the app role.
     - Click **Apply**.

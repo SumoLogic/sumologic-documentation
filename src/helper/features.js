@@ -211,7 +211,7 @@ export const features5 = [
       description='Dashboards description'>
       Create visualizations, monitors, and alerts for your apps.
     </Translate>),
-    link: 'docs/dashboards-new',
+    link: 'docs/dashboards',
   },
   {
     title: translate({

@@ -104,13 +104,13 @@ Unix epoch timestamps are supported in the following formats:
 * We also recognize the time format for the Akamai log delivery service. The format is 13 digits with a period before the last three (ms) digits. For example, `1234567890.123`.
 * Comma-separated values where the 5th value from the start of the message is a 10 digit epoch time. For example, `field1, field2, field3, field4, 1234567890`
 * JSON formatted property called "timestamp" followed by a 13-digit epoch time. For example: `"timestamp":"123456789013"`.
-* Format of Cisco Fortigate/Meraki log message:
+* Format of Cisco Fortigate/Meraki log message:
     ```json
     ​<134>1 1439277406.903768018 Store_020026
     flows src=<redact> dst=72.245.34.184 protocol=udp
     sport=62118 dport=53 pattern: 1 all
     ```
- * Format of Linux audit message:
+ * Format of Linux audit message:
     ```json
     type=PATH msg=audit(1439992022.365:83931889): item=0
     name="/usr/sbin/ss" inode=91193416 dev=08:02
@@ -126,7 +126,10 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
    * To edit the timestamp settings for an existing Source, navigate to **Manage Data** > **Collection** > **Collection**. Then click **Edit** to the right of the Source name and go to step 2.
 1. Navigate to the **Advanced Options for Logs** section.
 1. For **Timestamp Format**, select **Specify a format**.<br/><img src={useBaseUrl('img/send-data/specify-timestamp-format.png')} alt="specify-timestamp-format" width="350"/>
-1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log. If the timestamp format is in epoch time, enter "epoch" in the **Format** field.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" /><br/>
+1. In the **Format** field, enter the timestamp format the Collector should use to parse timestamps in your log.<br/><img src={useBaseUrl('img/send-data/timestamp-format-highlighted.png')} alt="timestamp-format-highlighted" /><br/>
+   :::note
+   If the timestamp format is in epoch time, enter **epoch** in the **Format** field.
+   :::
    :::caution requirements
    * Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).
    * When you specify a custom format, provide us with the timestamp format (and optionally a regex) to help locate the desired timestamp in your log line format. If you don't provide a locator, we’ll scan the entire log message for a timestamp matching the given format by default. You can also test some sample log lines and see if we can parse the new format.

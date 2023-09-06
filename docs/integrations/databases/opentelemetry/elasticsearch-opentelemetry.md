@@ -43,9 +43,9 @@ If Elasticsearch security features are enabled, you must have either the monitor
 
 All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
 
-## Collecting Logs, Metrics, and installing Elasticsearch app
+## Collection configuration and app installation
 
-Here are the steps for collecting logs, metrics, and installing the app.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

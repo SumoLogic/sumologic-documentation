@@ -720,46 +720,14 @@ This is the formatted result document:
 
 Notice that the state of the sample search job is DONE GATHERING RESULTS. The following table includes possible states.
 
-<table>
-  <tr>
-   <td><strong>State</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>NOT STARTED
-   </td>
-   <td>Search job has not been started yet.
-   </td>
-  </tr>
-  <tr>
-   <td>GATHERING RESULTS
-   </td>
-   <td>Search job is still gathering more results, however results might already be available.
-   </td>
-  </tr>
-  <tr>
-   <td>FORCE PAUSED
-   </td>
-   <td>Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.
-   </td>
-  </tr>
-  <tr>
-   <td>DONE GATHERING RESULTS
-   </td>
-   <td>Search job is done gathering results; the entire specified time range has been covered.
-   </td>
-  </tr>
-  <tr>
-   <td>CANCELLED
-   </td>
-   <td>The search job has been canceled. Note the spelling has two L letters.
-   </td>
-  </tr>
-</table>
-
-
+| State | Description |
+| :-- | :-- | 
+| NOT STARTED	| Search job has not been started yet.| 
+| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.| 
+| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.| 
+| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.| 
+| DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
+| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.| 
 
 #### More about results
 
@@ -867,17 +835,17 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
          "keyField":false
       },
       {
-         "name":"_sourcename",
+         "name":"_sourceName",
          "fieldType":"string",
          "keyField":false
       },
       {
-         "name":"_sourcehost",
+         "name":"_sourceHost",
          "fieldType":"string",
          "keyField":false
       },
       {
-         "name":"_sourcecategory",
+         "name":"_sourceCategory",
          "fieldType":"string",
          "keyField":false
       },
@@ -917,7 +885,7 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
          "keyField":false
       },
       {
-         "name":"_collectorid",
+         "name":"_collectorId",
          "fieldType":"long",
          "keyField":false
       },
@@ -942,12 +910,12 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
             "_blockid":"-9223372036854775669",
             "_messageid":"-9223372036854773763",
             "_messagetime":"1359407350333",
-            "_collectorid":"1579",
-            "_sourcename":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
-            "_sourcehost":"Chiapet.local",
+            "_collectorId":"1579",
+            "_sourceName":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
+            "_sourceHost":"Chiapet.local",
             "_raw":"2013-01-28 13:09:10,333 -0800 INFO  [module=SERVICE] [logger=util.scala.zk.discovery.AWSServiceRegistry] [thread=pool-1-thread-1] FINISHED findRunningInstances(ListBuffer((Service: name: elasticache-1, defaultProps: Map()), (Service: name: userAndOrgCache, defaultProps: Map()), (Service: name: rds_cloudcollector, defaultProps: Map()))) returning Map((Service: name: elasticache-1, defaultProps: Map()) -> [], (Service: name: userAndOrgCache, defaultProps: Map()) -> [], (Service: name: rds_cloudcollector, defaultProps: Map()) -> []) after 1515 ms",
             "_size":"549",
-            "_sourcecategory":"service",
+            "_sourceCategory":"service",
             "_sourceid":"1640",
             "_messagecount":"2044"
          }
@@ -962,12 +930,12 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
             "_blockid":"-9223372036854775674",
             "_messageid":"-9223372036854773772",
             "_messagetime":"1359407049529",
-            "_collectorid":"1579",
-            "_sourcename":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
-            "_sourcehost":"Chiapet.local",
+            "_collectorId":"1579",
+            "_sourceName":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
+            "_sourceHost":"Chiapet.local",
             "_raw":"2013-01-28 13:04:09,529 -0800 INFO  [module=SERVICE] [logger=com.netflix.config.sources.DynamoDbConfigurationSource] [thread=pollingConfigurationSource] Successfully polled Dynamo for a new configuration based on table:raychaser-chiapetProperties",
             "_size":"246",
-            "_sourcecategory":"service",
+            "_sourceCategory":"service",
             "_sourceid":"1640",
             "_messagecount":"2035"
          }
@@ -991,7 +959,7 @@ For example, the field `_raw` contains the raw collected log message.
 
 `_receipttime` is the number of milliseconds since the epoch of the timestamp of arrival of the message in the Sumo Logic system.
 
-The metadata fields `_sourcehost`, `_sourcename`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
+The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
 
 
 ### Page through the records found by a Search Job
@@ -1070,7 +1038,7 @@ This is the formatted result document:
 {
    "fields":[
       {
-         "name":"_sourcecategory",
+         "name":"_sourceCategory",
          "fieldType":"string",
          "keyField":true
       },
@@ -1084,7 +1052,7 @@ This is the formatted result document:
       {
          "map":{
             "_count":"90",
-            "_sourcecategory":"service"
+            "_sourceCategory":"service"
          }
       }
    ]
