@@ -7,7 +7,7 @@ description: Metrics DPM allows you to view metrics ingest volumes across your t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Data volume for metrics is measured in data points per minute (DPM). You can view your data volume for metrics by navigating to **Manage Data > Metrics > Metrics DPM**. The screen not only shows you which sources are sending metrics data, but how much data, peaks, average, and credits used, as well as more granular information broken down by cluster, host, source, metrics cardinality, and reporting frequency. With this data you can see which sources and metrics contribute most to your credit consumption.  
+Data volume for metrics is measured in data points per minute (DPM). You can view your data volume for metrics by navigating to **Manage Data > Metrics > Metrics DPM**. The screen provides a granular breakdown of your metrics ingestion and credits used. You can track DPM consumption by individual metric names, or by specific dimensions like cluster, host, source, and so on. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary actions. 
 
 Understanding the volume of metrics that you are ingesting is important because when you exceed the DPM limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 
