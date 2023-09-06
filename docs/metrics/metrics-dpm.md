@@ -33,7 +33,7 @@ Navigate to **Manage Data > Metrics > Metrics DPM**.
 
 You can obtain the same information displayed in the Metrics DPM screen by querying the `sumologic_volume` index. Adjust the query as needed to perform custom analysis.
 
-Following is an example query.
+Following is an example query that lists the metric names that account for metrics data ingested arranged in descending order based on their DPM contribution.
 ```
 (_index=sumologic_volume _sourceCategory=byMetricDataPoints) 
 | parse "intervalStart: *\n" as interval 
