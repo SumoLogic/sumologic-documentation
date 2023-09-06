@@ -5,6 +5,7 @@ sidebar_label: Collecting Logs
 description: Configure a pipeline to ship logs from the Azure Blob Storage to an HTTP source on a hosted collector in Sumo Logic.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 :::info
 This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. 
@@ -29,8 +30,6 @@ Watch this tutorial to learn how to collect logs from Azure Blob Storage.
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
-import Iframe from 'react-iframe';
 
 ## Functional overview
 

@@ -4,6 +4,8 @@ title: Azure Blob Storage
 description: This Sumo integration provides a event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.
 ---
 
+import Iframe from 'react-iframe';
+
 Logs and metrics for most Azure services can be exported to Azure Storage Account as block blobs. This page describes a Sumo integration that provides an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic. 
 
 This solution is good for monitoring Azure services that do not support exporting logs to Azure Monitor, for example, Azure Web Apps and Azure Storage Accounts.
@@ -26,8 +28,6 @@ Watch this tutorial for an overview of collecting logs from Azure Blob Storage.
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
-
-import Iframe from 'react-iframe';
 
 ## Azure information resources
 
