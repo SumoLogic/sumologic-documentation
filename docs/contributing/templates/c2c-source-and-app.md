@@ -34,7 +34,7 @@ Example: The Sumo Logic app for Asana enables you to track user sign in activiti
 \Depending on the availability in the Fed, add the below note.\
 
 :::note
-This source is **not** yet available in the [Fed deployment](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This source is **not** yet available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
