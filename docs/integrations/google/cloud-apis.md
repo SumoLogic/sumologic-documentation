@@ -21,6 +21,4 @@ You can collect the metrics for Sumo Logic's Google Cloud API's integration by f
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Cloud APIs** from the **Services** dropdown. For Google Cloud API metrics and dimensions, refer to [Google API metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-serviceruntim).
-
-
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Cloud APIs**. For Google Cloud API metrics and dimensions, refer to [Google API metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-serviceruntim).

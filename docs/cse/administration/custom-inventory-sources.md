@@ -16,7 +16,7 @@ Sumo Logic provides a number of Sources you can use to ingest inventory data fro
 
 ## How it works
 
-In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches/index) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
+In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start

@@ -22,13 +22,13 @@ This filter grants access to logs whose `_sourceCategory` begins with the string
 When a user with this filter enters a query like:
 
 ```sql
-_sourcecategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count
+_sourceCategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count
 ```
 
 Sumo silently (it’s transparent to the user) adds the role filter to the beginning of the query with an AND:
 
 ```sql
-_sourceCategory=labs* AND (_sourcecategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count)
+_sourceCategory=labs* AND (_sourceCategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count)
 ```
 
 The example above positively grants access to log data. You can do the opposite: explicitly deny access to data, with an exclamation point (!). For example:

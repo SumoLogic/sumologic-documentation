@@ -22,7 +22,7 @@ You can collect the logs for Sumo Logic's Google Cloud Deploy integration by fol
 
 ### Configure logs collection
 
-* Collect **Audit Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/deploy/docs/audit-logs#access). To enable logging for Google Deploy, refer to [Google documentation](https://cloud.google.com/deploy/docs/audit-logs#enable). For more detail on Deploy operations being audited, refer to [audited operations](https://cloud.google.com/deploy/docs/audit-logs#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section you can use the following query:
+* Collect **Audit Logs** using [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/deploy/docs/audit-logs#access). To enable logging for Google Deploy, refer to [Google documentation](https://cloud.google.com/deploy/docs/audit-logs#enable). For more detail on Deploy operations being audited, refer to [audited operations](https://cloud.google.com/deploy/docs/audit-logs#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
    resource.type=(clouddeploy.googleapis.com/DeliveryPipeline or 	clouddeploy.googleapis.com/Target)
    ```

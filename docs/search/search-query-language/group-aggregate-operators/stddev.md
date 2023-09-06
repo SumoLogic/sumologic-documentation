@@ -24,7 +24,7 @@ You can use the query below to view the standard deviation of time delay, along 
 _source=CollectD
 | abs(_receipttime - _messagetime) as delt
 | delt/1000/60 as delt
-| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourcename
+| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourceName
 ```
 
 ![avg results](/img/search/searchquerylanguage/group-aggregate-operators/stddev.png)

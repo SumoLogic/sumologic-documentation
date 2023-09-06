@@ -21,4 +21,4 @@ You can collect the metrics for Sumo Logic's Google Cloud NetApp Cloud Volumes i
 
 ### Configure metrics collection
 
-* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Make sure that you select **Cloudvolumes Net App** from the **Services** dropdown. For Google NetApp Cloud Volumes metrics and dimensions, refer to [Google NetApp Cloud Volumes metrics](https://cloud.google.com/monitoring/api/metrics_other#other-cloudvolumesgcp-api.netapp.com).
+* Collect **GCP Metrics** using the [GCP Metric](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/) source. Under the **Services** dropdown, select **Cloudvolumes Net App**. For Google NetApp Cloud Volumes metrics and dimensions, refer to [Google NetApp Cloud Volumes metrics](https://cloud.google.com/monitoring/api/metrics_other#other-cloudvolumesgcp-api.netapp.com).

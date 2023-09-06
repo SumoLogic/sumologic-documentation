@@ -46,7 +46,7 @@ Follow the below steps to configure the Gremlin webhook.
 6. Click **Save**.    
 7. Verify Gremlin events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/gremlin`
+`_sourceCategory=webhook/gremlin`
 ```
 
 :::info

@@ -248,7 +248,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 This query runs against the tracing volume index and uses the [*outlier*](/docs/search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
 ```
-_index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
+_index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
 | timeslice 6h
 |sum(billedBytes) as "billedBytes" by _timeslice
@@ -262,7 +262,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 This query runs against the tracing volume index and uses the [*predict*](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
 ```
-_index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
+_index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
 | timeslice 1h
 |sum(billedBytes) as %"billedBytes" by _timeslice
