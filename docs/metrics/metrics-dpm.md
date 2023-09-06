@@ -23,7 +23,7 @@ Navigate to **Manage Data > Metrics > Metrics DPM**.
  1. **Total Ingest Data Points**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.
  1. **Ingest DPM**. The data points per minute (DPM) ingested during the previous hour.
  1. **Predicted ingestion tomorrow**. The total number of data points predicted to be ingested during the next 24 hours. Sumo Logic uses past data ingestion trends to make predictions.
- 1. **Top 100 DPM by Metric**. The top Metric names that have the highest Data points ingested. Click a specific metric on the diagram to see a breakdown of ingest for that metric.  
+ 1. **Top 100 DPM by Metric**. The top metric names that have the highest data points ingested. Click a specific metric on the diagram to see a breakdown of ingest for that metric.  
  1. **Top 100 DPM by Dimension**. The top data points per minute ingested by dimension. A _dimension_ refers to metadata that uniquely identifies what the metric measures. For example, `_sourceCategory`, `sourceName`, `_collector`, and `container` are examples of dimensions. Click a dimension on the diagram to see a breakdown of ingest. 
  1. **Top 100 DPM by Content Type**. The top data points per minute by content type. Click a content type on the diagram to see a breakdown of ingest.
  1. **Top 100 DPM by Source**. The top data points per minute by source. Click a source on the diagram to see a breakdown of ingest.
