@@ -19,7 +19,7 @@ Navigate to **Manage Data > Metrics > Metrics DPM**.
 
  <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics DPM screen" style={{border: '1px solid black'}} width="800" />
 
- 1. Date and time. Select a time to see the metrics gathered for the previous hour. <!-- What is the UTC time zone shown? -->
+ 1. **Date and time**. Select a time to see the metrics gathered for the previous hour. 
  1. **Total Ingest Data Points**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.
  1. **Ingest DPM**. The data points per minute (DPM) ingested during the previous hour.
  1. **Predicted ingestion tomorrow**. The total number of data points predicted to be ingested during the next 24 hours. 
