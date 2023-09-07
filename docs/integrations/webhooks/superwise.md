@@ -46,7 +46,7 @@ Follow the below steps to configure the Superwise webhook.
 6. Click **Create integration**.
 7. Verify Superwise events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/superwise
+  _sourceCategory=webhook/superwise
   ```
 
 :::info
