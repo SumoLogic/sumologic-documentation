@@ -72,7 +72,7 @@ It is recommended to attach a Heroku add-on just after creating an app or runnin
 
 #### Provisioning the Sumo Logic add-on via CLI
 
-Provisioning the Sumo Logic add-on via the CLI allows us to mointor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trail account for analyzing the Heroku logs. You would first need to [install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI. The following sections show how to configure the add-on for Heroku apps.
+Provisioning the Sumo Logic add-on via the CLI allows us to monitor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trail account for analyzing the Heroku logs. You would first need to [install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI. The following sections show how to configure the add-on for Heroku apps.
 
 ##### Monitor a Single app
 
