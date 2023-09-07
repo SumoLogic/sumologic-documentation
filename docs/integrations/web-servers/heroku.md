@@ -7,8 +7,7 @@ description: The Heroku App is used to monitor heroku infrastructure, applicatio
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Heroku_logo.svg" alt="icon" width="175"/>
-
+<img src={useBaseUrl('img/integrations/web-servers/Heroku.png')} alt="Heroku Icon" height="50" width="50" />
 
 The Sumo Logic App for Heroku is a logs only app that allows you to monitor your Heroku environment. The preconfigured dashboards present information to monitor heroku infrastructure, applications, metrics and error scenarios to ensure observability into heroku and its components.
 
@@ -38,7 +37,7 @@ The Sumo Logic App for Heroku is a logs only app that allows you to monitor your
 
 * **Successfull App Build Trend** panel query:
 ```sql
-_sourceCategory"Heroku" "Build Succeeded"
+_sourceCategory="Heroku" "Build Succeeded"
 | where _sourceName matches "{{log_drain}}"
 | _sourceName as log_drain
 | timeslice 5m
@@ -50,7 +49,7 @@ _sourceCategory"Heroku" "Build Succeeded"
 
 * **Memory Utilization (MB)** panel query:
 ```sql
-_sourceCategory"Heroku"
+_sourceCategory="Heroku"
 | parse regex "dyno=(?<dyno>.*?(?= )).*memory_total=(?<memory_total>.*?(?=MB )).*memory_rss=(?<memory_rss>.*?(?=MB )).*memory_cache=(?<memory_cache>.*?(?=MB )).*memory_swap=(?<memory_swap>.*?(?=MB ))"
 | where dyno matches "{{dyno}}" and _sourceName matches "{{log_drain}}"
 | timeslice 1m
@@ -209,37 +208,63 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 ### Heroku - Overview
 
-This dashboard demonstrates use cases for heroku request timings, response latencies, dyno and error overviews. It also showscases their daily trends.
+This dashboard demonstrates use cases for heroku request timings, response latencies, dyno and error overviews. It also showscases their daily trends. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
 
-**Max/Average/50th PCT Connect Time Trend** : Shows the maximum,average and the 50th percentile average connection time trend for Heroku app requests.
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
 
-**Failed Requests** : Shows the paths of all requests which don't return a 200 successfull response code.
+``application_name`` denotes an application name from the heroku platform. It works on all panels of the dashboard except the ``Errors Overview`` panels, ``the Dyno Load Average(15 min)`` panel and the ``Dyno Memory(MB)`` panel.
 
-**Top 10 Slowest Requests** : Shows the 10 slowest Heroku app requests based on average connection time.
+#### Panels
 
-**Max/Average/50th PCT Latency Trend** : Shows the maximum, average and the 50th percentile average service time latency trend for Heroku app responses.
+**Total Request Count** : Shows the number of unique requests from a client to a heroku app backend.
 
-**Max/Average/50th PCT Path Latency** : Shows the maximum, average and the 50th percentile average service time latency for Heroku app request paths.
+**Average Connection Time** : Shows the average time in milliseconds spent establishing a connection to a backend web process.
 
-**Max/Average/50th PCT Method Latency** : Shows the maximum, average and the 50th percentile average service time latency for Heroku app request methods.
+**Average Latency** : Shows the average time in seconds spent proxying data between a backend web process and a client.
+
+**Average Response Size** : Shows the average number of bytes transferred from a backend web process to a client
+
+**Failed Request Count** : Shows the number of requests to a heroku app backend which returned a non 200 response code.
+
+**Top 10 Failed Requests** : Shows the 10 most request paths which returned a non 200 response code.
+
+**Top 10 Slowest Requests** : Shows the 10 slowest request paths based on their average connection time.
+
+**Request-Response Trend** : Shows the average request and response time disctribution over a period of time.
+
+**Dyno Load Average(15 min)** : Shows the average load returned by each dyno in the last 15 minutes.
 
 **Dyno Memory(MB)** : Shows the average total memory used by each dyno.
 
 **Status code count by dyno** : Shows the list and count of each status code returned by each dyno response.
 
-**Dyno Load Average** : Shows the average load returned by each dyno.
-
 **MBs Transferred by Dyno Over Time** : Shows the total load trend returned by each dyno.
+
+**Response Throughput by Status Code** : Shows the response throughput by various status codes over a period of time.
 
 **Total Errors by Host** : Shows the disctribution of errors returned either by heroku or application infrastructure.
 
+**Overall/App/Heroku Error Rate** : Shows the error generation percentage of all/app/heroku platform components.
+
 **Total Errors by Component** : Shows the disctribution of errors returned by different heroku infrastructure components.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-overview.png')} alt="Heroku dashboards" />
+**Max/Average/50th Percentile Connect Time Trend** : Shows the maximum,average and the 50th percentile average connection time trend for Heroku app requests.
+
+**Max/Average/50th Percentile Latency Trend** : Shows the maximum, average and the 50th percentile average service time latency trend for Heroku app responses.
+
+**Max/Average/50th Percentile Path Latency** : Shows the maximum, average and the 50th percentile average service time latency for Heroku app request paths.
+
+**Max/Average/50th Percentile Method Latency** : Shows the maximum, average and the 50th percentile average service time latency for Heroku app request methods.
+
+<img src={useBaseUrl('img/integrations/web-servers/heroku-overview.png')} alt="Heroku dashboards" />
 
 ### Heroku - Dyno
 
-This dashboard demonstrates use cases for successful, completed and crashed heroku dyno launches, providing information about their daily trends. Also, it has information on dyno stops, restarts and scaling operations.
+This dashboard demonstrates use cases for successful, completed and crashed heroku dyno launches, providing information about their daily trends. Also, it has information on dyno stops, restarts and scaling operationsThis dashboard has a single filter variable namely, ``log_drain``.
+
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+
+#### Panels
 
 **Successfull Dyno Launches** : Shows the count of dynos that have successfully started and are now running in a healthy state.
 
@@ -249,19 +274,25 @@ This dashboard demonstrates use cases for successful, completed and crashed hero
 
 Other panels are self explanatory.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-dyno.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-dyno.png')} alt="Heroku dashboards" />
 
 ### Heroku - Application
 
-This dashboard demonstrates use cases for heroku app builds, providing information about their success and failure trends. Also, it has information on app deployments and releases.
+This dashboard demonstrates use cases for heroku app builds, providing information about their success and failure trends. Also, it has information on app deployments and releases. This dashboard has a single filter variable namely, ``log_drain``.
+
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
 
 Panels here are self explanatory
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-application.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application.png')} alt="Heroku dashboards" />
 
 ### Heroku - Memory Metrics
 
-This dashboard demonstrates use cases for the metrics which are reported for memory consumption and swap.
+This dashboard demonstrates use cases for the metrics which are reported for memory consumption and swap. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
+
+``dyno`` denotes the name of dynos present in the heroku applications. It works on all panels of the dashboard.
+
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
 
 The following fields are reported for memory consumption and swap:
 
@@ -279,11 +310,15 @@ The following fields are reported for memory consumption and swap:
 
 **Pages Read from Disk (memory_pgpgin)**: The cumulative total of the pages read from disk. As with the previous metric, watch out for sudden variations.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-memory-metrics.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-memory-metrics.png')} alt="Heroku dashboards" />
 
 ### Heroku - CPU Load Metrics
 
-This dashboard demonstrates use cases for the metrics which are reported for CPU load average.
+This dashboard demonstrates use cases for the metrics which are reported for CPU load average. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
+
+``dyno`` denotes the name of dynos present in the heroku applications. It works on all panels of the dashboard.
+
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
 
 The following fields are reported for CPU load average:
 
@@ -293,19 +328,27 @@ The following fields are reported for CPU load average:
 
 **Load Average 15m (load_avg_15m)**: The load average for the dyno in the last 15 minutes. Computed in the same manner as 1m load average.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-cpu-load-metrics.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-cpu-load-metrics.png')} alt="Heroku dashboards" />
 
 ### Heroku - Infrastructure Errors
 
-This dashboard demonstrates use cases for heroku infrastructure errors, providing information about different types of errors and other observations. It also shows the trends of these heroku infrastructure errors.
+This dashboard demonstrates use cases for heroku infrastructure errors, providing information about different types of errors and other observations. It also shows the trends of these heroku infrastructure errors. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
+
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+
+``application_name`` denotes an application name from the heroku platform. It works on all panels of the dashboard.
 
 The panels of this dashboard try to cover a few error cases from the list of errors present [here](https://devcenter.heroku.com/articles/error-codes).
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-infrastructure-errors.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-infrastructure-errors.png')} alt="Heroku dashboards" />
 
 ### Heroku - Application Errors
 
-This dashboard demonstrates use cases for heroku app errors, providing information about different types of erros and other observations. It also the trends of these heroku app errors.
+This dashboard demonstrates use cases for heroku app errors, providing information about different types of erros and other observations. It also the trends of these heroku app errors. This dashboard has a single filter variable namely, ``log_drain``.
+
+``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+
+#### Panels
 
 **App Worker Initialization Errors** : Shows the count of heroku application errors resulting due to failed app worker boot up.
 
@@ -313,4 +356,4 @@ This dashboard demonstrates use cases for heroku app errors, providing informati
 
 The other panels are self explanatory.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/heroku-application-errors.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} alt="Heroku dashboards" />
