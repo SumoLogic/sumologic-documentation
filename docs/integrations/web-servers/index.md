@@ -92,7 +92,7 @@ This guide has documentation for Sumo apps for web servers.
     <div className="container">
     <img src={useBaseUrl('img/integrations/web-servers/Heroku.png')} alt="Thumbnail icon" width="50"/>
     <h4><a href="/docs/integrations/web-servers/heroku">Heroku</a></h4>
-    <p>The Sumo Logic App for Heroku is a logs only app that allows you to monitor your Heroku environment.</p>
+    <p>The Sumo Logic app for Heroku is a logs only app that allows you to monitor your Heroku environment.</p>
     </div>
   </div>
 </div>

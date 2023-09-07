@@ -19,13 +19,13 @@ The Sumo Logic app for Heroku is a logs only app that allows you to monitor your
 
 ### Sample log message
 
-* A Logplex POST body resembles the following:
+* A Logplex POST body resembles the following.
 ```
 83 <40>1 2012-11-30T06:45:29+00:00 host app web.3 - State changed from starting to up
 119 <40>1 2012-11-30T06:45:26+00:00 host app web.3 - Starting process with command `bundle exec rackup config.ru -p 24405
 ```
 
-* Runtime metric logs have the following format:
+* Runtime metric logs have the following format.
 ```
 335 <134>1 2023-08-24T10:28:47.153192+00:00 host heroku web.1 - source=web.1 dyno=heroku.322071457.63c5abfd-838b-4e2d-bce1-ce46de280675 sample#memory_total=180.43MB sample#memory_rss=180.05MB sample#memory_cache=0.38MB sample#memory_swap=0.00MB sample#memory_pgpgin=84329pages sample#memory_pgpgout=38140pages sample#memory_quota=512.00MB
 205 <134>1 2023-08-24T12:31:50.112+00:00 host heroku web.1 - source=web.1 dyno=heroku.319324155.67cc34d0-0440-4106-97b6-d9486f7d9009 sample#load_avg_1m=0.00 sample#load_avg_5m=0.00 sample#load_avg_15m=0.01
@@ -58,9 +58,9 @@ _sourceCategory="Heroku"
 
 Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps in eight programming languages namely Node.js, Ruby, Python, Java, PHP, Go, Scala, and Clojure.
 
-There are two ways to send Heroku logs to Sumo Logic:
-* **[Sumo Logic Add-on](https://elements.heroku.com/addons/sumologic)** : The Sumo Logic Add-on can be attached to a Heroku application via the the CLI or the UI. It automatically creates a Sumo Logic free trial account that contains a [https logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
-* **[HTTPS Log Drain](https://devcenter.heroku.com/articles/log-drains#https-drains)** : A HTTPS Log Drain can be attached to a Heroku application via the CLI. It can be used to send logs to a [http logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) for any type of [Sumo Logic account](/docs/manage/manage-subscription/) as per your requirement. The Sumo Logic Add-on internally wraps this method.
+There are two ways to send Heroku logs to Sumo Logic.
+* **[Sumo Logic Add-on](https://elements.heroku.com/addons/sumologic)**. The Sumo Logic Add-on can be attached to a Heroku application via the the CLI or the UI. It automatically creates a Sumo Logic free trial account that contains a [https logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
+* **[HTTPS Log Drain](https://devcenter.heroku.com/articles/log-drains#https-drains)**. A HTTPS Log Drain can be attached to a Heroku application via the CLI. It can be used to send logs to a [http logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) for any type of [Sumo Logic account](/docs/manage/manage-subscription/) as per your requirement. The Sumo Logic Add-on internally wraps this method.
 
 ### Collecting Logs via Sumo Logic Add-on
 
@@ -76,23 +76,23 @@ Provisioning the Sumo Logic add-on via the CLI allows us to monitor a single app
 
 ##### Monitor a Single app
 
-For a single app, run the following command in your app directory:
+For a single app, run the following command in your app directory.
 ```
 $ heroku addons:create sumologic
 -----> Adding sumologic to sharp-mountain-4005... done, v18 (free)
 ```
 
-##### Monitor Multiple Apps
+##### Monitor Multiple apps
 
 To monitor multiple applications, you can share the same Sumo Logic add-on with multiple applications.
-First, provision the add-on for your first application by running the following command in your app directory:
+1. Provision the add-on for your first application by running the following command in your app directory.
 ```
 $ heroku addons:create sumologic
 -----> Creating sumologic-test-horizontal-9854... done, (free)
 -----> Adding sumologic-test-horizontal-9854... done
 ```
 
-Next, attach the add-on to your additional applications using the name of the add-on returned by the create command. Then run the following command in your app directory:
+2. Attach the add-on to your additional applications using the name of the add-on returned by the create command. Then run the following command in your app directory.
 
 ```
 $ heroku addons:attach sumologic-test-horizontal-9854
@@ -103,7 +103,7 @@ $ heroku addons:attach sumologic-test-horizontal-9854
 You can also run ```heroku drains``` or ```heroku drains --json``` command in your app directory to find the name of an existing Sumo Logic add-on of an app which can be attached to a new app.
 :::
 
-You can now access Sumo Logic. Run the following command in your app directory:
+3. Run the following command in your app directory to access Sumo Logic.
 ```
 $ heroku addons:open sumologic
 Opening sumologic for sharp-mountain-4005
@@ -124,9 +124,10 @@ You will now be able to see the **Sumo Logic** add-on in the **Installed add-ons
 
 ### Collecting Logs via HTTPS Log Drain
 
-A HTTPS Log Drain can be attached to a Heroku application via the CLI. You need the **URL** of a [https logs source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) in any [Sumo Logic account](/docs/manage/manage-subscription/) and need to [install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI.
-
-Then, you add an HTTPS drain for an app named **myapp**:
+A HTTPS Log Drain can be attached to a Heroku application via the CLI.
+1. Collect the **URL** of a [HTTPs logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) in any [Sumo Logic account](/docs/manage/manage-subscription/).
+2. [Install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI.
+3. Add an HTTPS drain for an app named **myapp**:
 ```
 $ heroku drains:add <URL> -a myapp
 ```
@@ -137,9 +138,9 @@ You will now be able to see Heroku logs flowing into that HTTP source in Sumo Lo
 
 The Heroku Labs log-runtime-metrics feature adds experimental support for enabling visibility into load and memory usage for running dynos. Per-dyno stats on memory use, swap use, and load average are inserted into the app’s log stream where they can be seen via ```heroku logs --tail```, used for graphs or alerting via an add-on which consumes app logs, or sent to a log drain. There is no cost incurred by enabling this feature.
 
-To collect metric logs for an app, follow these steps:
+Follow these steps to collect metric logs for an app.
 1. Attach a log drain to the app. You can either attach a Sumo Logic add-on or a HTTPS log drain as explained in the [Collecting Logs for Heroku](#collecting-logs-for-heroku) section.
-2. Enable the log-runtime-metrics:
+2. Enable the log-runtime-metrics.
 ```
 $ heroku labs:enable log-runtime-metrics --app example-app
 Enabling log-runtime-metrics for example-app... done
@@ -148,7 +149,7 @@ $ heroku restart
 
 The metric logs will start flowing into the Sumo Logic endpoint attached to your app. The load and memory usage metrics are surfaced as system logs in the Logplex log stream. Metrics are emitted for each running dyno, at an approximate frequency of once every 20 seconds.
 
-You can also disable this feature by:
+You can also disable this feature by.
 ```
 $ heroku labs:disable log-runtime-metrics --app example-app
 Disabling log-runtime-metrics for example-app... done
@@ -159,21 +160,18 @@ $ heroku restart
 
 This step is optional, but recommended, as it makes easier for you to query your Heroku application logs in Sumo Logic. When Sumo Logic ingests Heroku application logs, it attaches the **_sourceName** metadata field to the the data. The **_sourceName** Sumo Logic assigns varies by application—its value is the unique identifier for the Logplex drain assigned to the application.
 
-For ease of understanding the log data, you can use a **field extraction rule (FER)** to rename **_sourceName** from the drain UUID to the application name. For general information about FERs, refer to [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/) in Sumo help.
+For ease of understanding the log data, you can use a **Field Extraction Rule (FER)** to rename **_sourceName** from the drain UUID to the application name. For general information about FERs, refer to the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
-You can determine the drain identifier by running the ```heroku drains``` command for your app.
-The identifier will look something like:
-
+1. Determine the drain identifier by running the ```heroku drains``` command for your app. The identifier will look something like:
 ```
 d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
 ```
-
-Then, define an FER in Sumo Logic.
-1. In the Sumo web app, go to **Manage Data > Settings > Field Extraction Rules**.
-2. Click the plus sign (+) in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
-3. **Rule Name** : Enter a name for the FER.
-4. **Scope** : Enter **_sourceCategory=heroku** when the collection is setup via the Sumo Add-on.
-5. **Parse Expression** : For each Heroku application reporting data to Sumo, enter a statement that renames the ``_sourceName`` from the drain ID to the application name. For example:
+2. Define an FER in Sumo Logic.
+* In the Sumo Logic web app, go to **Manage Data > Settings > Field Extraction Rules**.
+* Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
+* **Rule Name**. Enter a name for the FER.
+* **Scope**. Enter **_sourceCategory=heroku** when the collection is setup via the Sumo Add-on.
+* **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the ``_sourceName`` from the drain ID to the application name. For example:
 
 ``if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName``
 
@@ -183,7 +181,8 @@ The FER below changes the value of ``_sourceName`` for two applications. The fir
 
 ``| if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName``
 
-Click Add to save the rule.
+3. Click **Add** to save the rule.
+
 These custom app **_sourceNames** will appear as values in the dashboard filter variable ``log_drain`` for the Heroku app dashboards.
 
 ## Installing the Heroku App
@@ -200,19 +199,17 @@ While using the **Sumo Add-on**, the value **_sourceCategory=heroku** should be 
 
 ## Viewing Heroku Dashboards
 
-### Filters with Template Variables
+### Filter with Template Variables
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help [page](https://help.sumologic.com/docs/dashboards/filter-template-variables/).
+{@import ../../reuse/filter-dashboards.md}
 
-### Heroku - Overview
+### Overview
 
-This dashboard demonstrates use cases for heroku request timings, response latencies, dyno and error overviews. It also showscases their daily trends. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
+The **Heroku - Overview** dashboard demonstrates the use cases for Heroku request timings, response latencies, dyno, and error overviews. It also showscases their daily trends. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-``application_name`` denotes an application name from the heroku platform. It works on all panels of the dashboard except the ``Errors Overview`` panels, ``the Dyno Load Average(15 min)`` panel and the ``Dyno Memory(MB)`` panel.
-
-#### Panels
+* **application_name**. Denotes an application name from the Heroku platform. It works on all panels of the dashboard except the **Errors Overview** panels, **the Dyno Load Average(15 min)** panel and the **Dyno Memory(MB)** panel.
 
 **Total Request Count**. Shows the number of unique requests from a client to a heroku app backend.
 
@@ -254,15 +251,13 @@ This dashboard demonstrates use cases for heroku request timings, response laten
 
 **Max/Average/50th Percentile Method Latency**. Shows the maximum, average and the 50th percentile average service time latency for Heroku app request methods.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-overview.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-overview.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
-### Heroku - Dyno
+### Dyno
 
-This dashboard demonstrates use cases for successful, completed and crashed heroku dyno launches, providing information about their daily trends. Also, it has information on dyno stops, restarts and scaling operationsThis dashboard has a single filter variable namely, ``log_drain``.
+This **Heroku - Dyno** demonstrates the use cases for successful, completed, and crashed Heroku dyno launches, providing information about their daily trends. Also, it has information on dyno stops, restarts, and scaling operations. This dashboard has a single filter variable namely, ``log_drain``.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
-
-#### Panels
+* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 **Successful Dyno Launches**. Shows the count of dynos that have successfully started and are now running in a healthy state.
 
@@ -272,25 +267,25 @@ This dashboard demonstrates use cases for successful, completed and crashed hero
 
 Other panels are self explanatory.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-dyno.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-dyno.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
-### Heroku - Application
+### Application
 
-This dashboard demonstrates use cases for heroku app builds, providing information about their success and failure trends. Also, it has information on app deployments and releases. This dashboard has a single filter variable namely, ``log_drain``.
+The **Heroku - Application** dashboard demonstrates the use cases for Heroku app builds, providing information about their success and failure trends. Also, it has information on app deployments and releases. This dashboard has a single filter variable namely, ``log_drain``.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 Panels here are self explanatory
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-application.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
-### Heroku - Memory Metrics
+### Memory Metrics
 
-This dashboard demonstrates use cases for the metrics which are reported for memory consumption and swap. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
+The **Heroku - Memory Metrics** dashboard demonstrates the use cases for the metrics which are reported for memory consumption and swap. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
 
-``dyno`` denotes the name of dynos present in the heroku applications. It works on all panels of the dashboard.
+* **dyno**. Denotes the name of dynos present in the Heroku applications. It works on all panels of the dashboard.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+* **log_drain**. Denotes the drain identifier heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 The following fields are reported for memory consumption and swap:
 
@@ -308,15 +303,15 @@ The following fields are reported for memory consumption and swap:
 
 **Pages Read from Disk (memory_pgpgin)**. The cumulative total of the pages read from disk. As with the previous metric, watch out for sudden variations.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-memory-metrics.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-memory-metrics.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
-### Heroku - CPU Load Metrics
+### CPU Load Metrics
 
-This dashboard demonstrates use cases for the metrics which are reported for CPU load average. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
+The **Heroku - CPU Load Metrics** dashboard demonstrates the use cases for the metrics which are reported for CPU load average. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
 
-``dyno`` denotes the name of dynos present in the heroku applications. It works on all panels of the dashboard.
+* **dyno**. Denotes the name of dynos present in the Heroku applications. It works on all panels of the dashboard.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+* **log_drain**. denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 The following fields are reported for CPU load average:
 
@@ -326,27 +321,25 @@ The following fields are reported for CPU load average:
 
 **Load Average 15m (load_avg_15m)**. The load average for the dyno in the last 15 minutes. Computed in the same manner as 1m load average.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-cpu-load-metrics.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-cpu-load-metrics.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
-### Heroku - Infrastructure Errors
+### Infrastructure Errors
 
-This dashboard demonstrates use cases for heroku infrastructure errors, providing information about different types of errors and other observations. It also shows the trends of these heroku infrastructure errors. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
+The **Heroku - Infrastructure Errors** dashboard demonstrates the use cases for Heroku infrastructure errors, providing information about different types of errors and other observations. It also shows the trends of these Heroku infrastructure errors. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
+* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-``application_name`` denotes an application name from the heroku platform. It works on all panels of the dashboard.
+* **application_name**. Denotes an application name from the Heroku platform. It works on all panels of the dashboard.
 
 The panels of this dashboard try to cover a few error cases from the list of errors present [here](https://devcenter.heroku.com/articles/error-codes).
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-infrastructure-errors.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-infrastructure-errors.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
-### Heroku - Application Errors
+### Application Errors
 
-This dashboard demonstrates use cases for heroku app errors, providing information about different types of errors and other observations. It also the trends of these heroku app errors. This dashboard has a single filter variable namely, ``log_drain``.
+The **Heroku - Application Errors** dashboard demonstrates the use cases for Heroku app errors, providing information about different types of errors and other observations. It also the trends of these Heroku app errors. This dashboard has a single filter variable namely, ``log_drain``.
 
-``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
-
-#### Panels
+* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 **App Worker Initialization Errors**. Shows the count of heroku application errors resulting due to failed app worker boot up.
 
@@ -354,4 +347,4 @@ This dashboard demonstrates use cases for heroku app errors, providing informati
 
 The other panels are self explanatory.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
