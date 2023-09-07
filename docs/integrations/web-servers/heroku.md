@@ -35,7 +35,7 @@ The Sumo Logic App for Heroku is a logs only app that allows you to monitor your
 
 #### Log Query
 
-* **Successfull App Build Trend** panel query:
+* **Successful App Build Trend** panel query:
 ```sql
 _sourceCategory="Heroku" "Build Succeeded"
 | where _sourceName matches "{{log_drain}}"
@@ -74,7 +74,7 @@ It is recommended to attach a heroku add-on just after creating an app or runnin
 
 * #### Provisioning the Sumo Logic add-on via the CLI
 
-    Provisioning the Sumo Logic add-on via the CLI allows us to mointor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trail account for analyzing the Heroku logs. You would first need to install the Heroku CLI. Follow these [instructions](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) to install the CLI. The following sections show how to configure the add-on for heroku apps.
+    Provisioning the Sumo Logic add-on via the CLI allows us to monitor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trail account for analyzing the Heroku logs. You would first need to install the Heroku CLI. Follow these [instructions](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) to install the CLI. The following sections show how to configure the add-on for heroku apps.
 
     *  ##### Monitor a Single App
 
@@ -266,7 +266,7 @@ This dashboard demonstrates use cases for successful, completed and crashed hero
 
 #### Panels
 
-**Successfull Dyno Launches** : Shows the count of dynos that have successfully started and are now running in a healthy state.
+**Successful Dyno Launches** : Shows the count of dynos that have successfully started and are now running in a healthy state.
 
 **Completed Dyno Launches** : Shows the count of dynos that have finished executing their designated tasks or commands and have now terminated.
 
@@ -344,7 +344,7 @@ The panels of this dashboard try to cover a few error cases from the list of err
 
 ### Heroku - Application Errors
 
-This dashboard demonstrates use cases for heroku app errors, providing information about different types of erros and other observations. It also the trends of these heroku app errors. This dashboard has a single filter variable namely, ``log_drain``.
+This dashboard demonstrates use cases for heroku app errors, providing information about different types of errors and other observations. It also the trends of these heroku app errors. This dashboard has a single filter variable namely, ``log_drain``.
 
 ``log_drain`` denotes the drain identifier heroku attaches with the _sourceName metadata while ingesting heroku logs. It works on all panels of the dashboard.
 
