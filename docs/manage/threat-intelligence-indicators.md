@@ -33,7 +33,7 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/manage/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select the format of the file to be uploaded:
-    * **Sumo normalized JSON**. A normalized JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
+    * **Normalized JSON**. A normalized JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
        * `confidence`
        * `id`
        * `imported`
@@ -42,24 +42,32 @@ To add threat intelligence indicators, you must upload files containing the indi
        * `threatType`
        * `type`
        * `validFrom`
+    * **CSV**. A comma-separated value (CSV) file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
+       * `confidence`
+       * `id`
+       * `imported`
+       * `source`
+       * `threatType`
+       * `type`
+       * `validFrom`
+       * `validUntil`
+       * `value`
     * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. (Note that if you want to upload indicators from multiple sources, you cannot use STIX but instead should use **Sumo normalized JSON**.) <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use. Your file must include the following attributes:
+       * `created`
        * `id`
        * `modified`
        * `pattern`
        * `pattern_type`
-       * `spec_version` 
+       * `spec_version`
        * `type`
        * `valid_from`
-    * **BLOB CSV or JSON**. A BLOB CSV file or JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
-       * `source`
-       * `indicators`
 1. Click **Upload** to upload the file.
 1. Click **Import**. 
 
 ## Delete indicators
 
 1. Select a source. Details of the source appear in a sidebar.
-1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/manage/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid black'}} width="300" />
+1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/manage/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select indicators to delete from the source:
    * **Delete all indicators**. Remove all indicators from the source. 
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add threat intelligence indicators](#add-threat-intelligence-indicators) above.
