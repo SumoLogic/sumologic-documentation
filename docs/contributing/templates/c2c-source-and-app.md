@@ -77,13 +77,13 @@ Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide t
 
 \Insert steps to configure the Source in the Vendor UI\
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#vendor-configuration
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#authentication
 
 ### Source configuration
 
 \Insert steps to configure the Source in the Sumo Logic UI\
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration
+Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#create-a-dropboxsource
 
 #### Metadata fields
 
