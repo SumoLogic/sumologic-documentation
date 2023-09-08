@@ -11,9 +11,24 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import Iframe from 'react-iframe';
+
 The MITRE ATT&CK Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
 
 To determine your coverage, MITRE ATT&CK Coverage collects data from rules that have fired in the last 180 days. 
+
+Watch this micro lesson to learn about MITRE ATT&CK Coverage.
+
+<Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## MITRE ATT&CK Coverage page
 
@@ -52,6 +67,10 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 ## Technique details
 
 When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The description displayed is pulled directly from the MITRE Enterprise matrix. The panel includes an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
+
+Click **View Generated Signals** to see the current Signals in Cloud SIEM that have been tagged with that MITRE technique. 
+
+Click **Sub-Techniques** to see the sub-techniques for that technique. 
 
 Click **Rules** at the bottom of the panel to see a list of all the rules that contribute to coverage for the technique. Click a rule in the list to open the rule. 
 
