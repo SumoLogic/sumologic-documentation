@@ -1476,8 +1476,8 @@ module.exports = {
     },
     'metrics/metric-rules-editor',
     'metrics/metrics-transformation-rules',
-    'metrics/kubernetes-metrics',
     'metrics/logs-to-metrics',
+    'metrics/kubernetes-metrics',
     {
       type: 'category',
       label: 'Metrics Charts (Classic)',
