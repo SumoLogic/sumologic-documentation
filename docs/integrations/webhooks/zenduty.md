@@ -49,7 +49,7 @@ Follow the below steps to configure the Zenduty webhook.
 9. Click **Save**.
 10. Verify Zenduty events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/zenduty
+  _sourceCategory=webhook/zenduty
   ```
 
 :::info
