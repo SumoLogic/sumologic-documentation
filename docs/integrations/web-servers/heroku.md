@@ -267,7 +267,7 @@ This **Heroku - Dyno** demonstrates the use cases for successful, completed, and
 
 **Crashed Dyno Launches**. Shows the count of dynos that have crashed and their applications are no longer able to handle incoming requests and are temporarily unavailable.
 
-**Scaling Dyno Operations**. Shows the count of scraling dyno opertaions performed by application owners.
+**Scaling Dyno Operations**. Shows the count of scraling dyno operations performed by application owners.
 
 **Dyno Restarts**. Shows the count of dyno restarts.
 
@@ -279,9 +279,9 @@ This **Heroku - Dyno** demonstrates the use cases for successful, completed, and
 
 **Successful/Completed/Crashed Dyno Launches Trend**. Shows the count of successful/completed/crashed dynos over a period of time.
 
-**Scaling Dyno Operations by User**. Shows the distribution of scraling dyno opertaions performed by application owners.
+**Scaling Dyno Operations by User**. Shows the distribution of scraling dyno operations performed by application owners.
 
-**Scaling Dyno Operation Trend by User**. Shows the count of scraling dyno opertaions performed by application owners over a period of time.
+**Scaling Dyno Operation Trend by User**. Shows the count of scraling dyno operations performed by application owners over a period of time.
 
 <img src={useBaseUrl('img/integrations/web-servers/heroku-dyno.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
 
