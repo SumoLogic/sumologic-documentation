@@ -12,7 +12,7 @@ The following steps show you how to query the Audit Index for webhook activity f
 1. Ensure the [Audit Index is enabled](/docs/manage/security/audit-index) in your account.
 1. Run the following query with the desired time range:
     ```sql
-    _index=sumologic_audit _sourcecategory="scheduled_search" action="MODIFY"
+    _index=sumologic_audit _sourceCategory="scheduled_search" action="MODIFY"
     | parse "[AlertType=*]" as alertType
     | where alertType="webhook"
     ```

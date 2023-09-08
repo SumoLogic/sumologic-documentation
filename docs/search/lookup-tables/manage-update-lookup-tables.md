@@ -109,6 +109,8 @@ Follow the steps below to delete all of the contents of a lookup table:
 
 You can use the `save` operator to save the results of a Sumo log query to a lookup table you created using the Lookup UI or API. For more information, see [save Operator](/docs/search/search-query-language/search-operators/save).
 
+To save the results of a query to a lookup table in a scheduled search, see [Save to Lookup](/docs/alerts/scheduled-searches/save-to-lookup/).
+
 ## Export a lookup table schema
 
 If you want to replicate a lookup table schema in a different folder in the Library, the process is to export it, and then import it into the desired folder. When you export a lookup table, the data it contains is not exported.

@@ -49,7 +49,7 @@ Follow the below steps to configure the Sentry Webhook.
 8. Click **Enable Plugin**.
 9. Verify Sentry events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/sentry
+  _sourceCategory=webhook/sentry
   ```
 
 :::info

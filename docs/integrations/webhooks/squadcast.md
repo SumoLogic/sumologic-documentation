@@ -75,7 +75,7 @@ Follow the below steps to configure the Squadcast webhook.
 7. Click **Save**.
 8. Verify Squadcast events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/squadcast
+  _sourceCategory=webhook/squadcast
   ```
 
 :::info

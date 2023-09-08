@@ -1,6 +1,7 @@
 ---
 id: global-intelligence-guardduty
 title: Global Intelligence for Amazon GuardDuty
+sidebar_label: Amazon GuardDuty - Global Intelligence
 description: Global Intelligence for Amazon GuardDuty
 ---
 
