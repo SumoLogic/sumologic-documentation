@@ -88,6 +88,7 @@ $ heroku addons:create sumologic
 To monitor multiple applications, you can share the same Sumo Logic add-on with multiple applications.
 
 1. Provision the add-on for your first application by running the following command in your app directory.
+
     ```
     $ heroku addons:create sumologic
     -----> Creating sumologic-test-horizontal-9854... done, (free)
