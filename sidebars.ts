@@ -2232,6 +2232,7 @@ integrations: [
           'integrations/saas-cloud/sentinelone',
           'integrations/saas-cloud/slack',
           'integrations/saas-cloud/symantec-web-security-service',
+          'integrations/saas-cloud/tenable',
           'integrations/saas-cloud/workday',
           'integrations/saas-cloud/zoom',
         ],
