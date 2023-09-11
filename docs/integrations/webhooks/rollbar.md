@@ -53,7 +53,7 @@ Follow the below steps to configure the Rollbar webhook.
 10. Click **Save Settings** to update the webhook configuration.
 11. Verify Rollbar events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
   ```sql
-  _sourcecategory=webhook/rollbar
+  _sourceCategory=webhook/rollbar
   ```
 
 :::info
