@@ -59,7 +59,7 @@ _sourceCategory="Heroku"
 Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps in eight programming languages namely Node.js, Ruby, Python, Java, PHP, Go, Scala, and Clojure.
 
 There are two ways to send Heroku logs to Sumo Logic.
-* **[Sumo Logic Add-on](https://elements.heroku.com/addons/sumologic)**. The Sumo Logic Add-on can be attached to a Heroku application via the the CLI or the UI. It automatically creates a Sumo Logic free trial account that contains a [https logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
+* **[Sumo Logic Add-on](https://elements.heroku.com/addons/sumologic)**. The Sumo Logic Add-on can be attached to a Heroku application via the CLI or the UI. It automatically creates a Sumo Logic free trial account that contains a [https logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 * **[HTTPS Log Drain](https://devcenter.heroku.com/articles/log-drains#https-drains)**. A HTTPS Log Drain can be attached to a Heroku application via the CLI. It can be used to send logs to a [http logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) for any type of [Sumo Logic account](/docs/manage/manage-subscription/) as per your requirement. The Sumo Logic Add-on internally wraps this method.
 
 ### Collecting Logs via Sumo Logic Add-on
