@@ -1,4 +1,3 @@
-
 ---
 id: cloud-bigquery-bi-engine
 title: Google Cloud BigQuery BI Engine
