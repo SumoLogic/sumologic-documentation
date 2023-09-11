@@ -11,7 +11,7 @@ A playbook is a predefined set of actions and conditional statements that run in
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-To run a playbook, add it to an automation. See [Create an automation](/docs/cse/automation-service/automation-service-automations/#create-an-automation).
+To run a playbook, add it to an automation. See [Create an automation](/docs/cse/automation-service/automation-service-automations/#create-an-automation). 
 
 ## View playbooks
 
