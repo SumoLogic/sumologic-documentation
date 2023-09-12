@@ -245,7 +245,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox38 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
-  <p>Gain comprehensive visibility and actionable insights into your organization's security posture</p>
+  <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
   </div>
 </div>
 <div className="box smallbox39 card">
