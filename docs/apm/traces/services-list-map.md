@@ -118,7 +118,7 @@ Manual anomaly detection allows you to specify different detection settings for 
 
 ### Alerts
 
-**Alerts** allows you to consider all associated alerts, which are curretly active or resolved within the selected time.
+**Alerts** allows you to consider all associated alerts, which are currently active or resolved within the selected time.
 
 ## Services Dashboard Panels
 
