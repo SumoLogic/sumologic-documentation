@@ -154,11 +154,11 @@ Follow these steps to collect metric logs for an app.
 The metric logs will start flowing into the Sumo Logic endpoint attached to your app. The load and memory usage metrics are surfaced as system logs in the Logplex log stream. Metrics are emitted for each running dyno, at an approximate frequency of once every 20 seconds.
 
 Run the following command to disable this feature.
-    ```
-    $ heroku labs:disable log-runtime-metrics --app example-app
-    Disabling log-runtime-metrics for example-app... done
-    $ heroku restart
-    ```
+```
+$ heroku labs:disable log-runtime-metrics --app example-app
+Disabling log-runtime-metrics for example-app... done
+$ heroku restart
+```
 
 ## (Optional) Set up field extraction rules for applications
 
