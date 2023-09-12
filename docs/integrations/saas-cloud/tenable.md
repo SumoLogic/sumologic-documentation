@@ -34,7 +34,19 @@ This app uses [Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integra
 
 ## Sample log message
 
+Refer to the Tenable API documentation for [Vulnerabilities data](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events](https://developer.tenable.com/reference/audit-log-events) log messages.
+
 ## Sample Query
+
+```sql title="Vulnerability Events"
+(_source=Tenable fqdn)
+| json "asset.device_type", "asset.fqdn" ,"asset.hostname", "asset.ipv4", "asset.ipv6", "asset.last_authenticated_results", "asset.operating_system" , "output", "plugin.family" , "plugin.type" , "plugin.name", "plugin.risk_factor", "plugin.synopsis", "plugin.exploit_available" , "plugin.exploited_by_malware", "plugin.solution", "state", "scan.completed_at", "port.port", "port.protocol", "last_found" as device_type, fqdn, hostname, host_ipv4, host_ipv6, last_authenticated_scan_time, host_os, output,plugin_family, plugin_type ,plugin_name, plugin_risk_factor, plugin_synopsis, plugin_exploit_available, plugin_exploited_by_malware, plugin_solution, state, scan_completed_at, port, protocol, last_scan_time nodrop
+```
+
+```sql title="Audit Events"
+_sourceCategory=Tenable
+| json "description", "actor.name", "target.name", "action" as description, actor_name, target_name, action
+```
 
 ## Set up collection
 
