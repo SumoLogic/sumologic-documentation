@@ -38,7 +38,7 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 
 1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. 
 1. **All Community Activity**. Shows coverage for all customers that use Cloud SIEM based on Signals received over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activity** can help you determine what coverage you're missing compared to other customers using Cloud SIEM.
-1. **Theoretical Coverage**. Shows coverage for your organization if all Sumo Logic content were enabled and all possible data sources were connected. If this is selected, the **Vendor/Product** filter is disabled.
+1. **Theoretical Coverage**. Shows coverage for your organization if all data ingest worked perfectly and all enabled rules generated at least one Signal. This view can help you determine what custom rules would be most valuable to implement. If this is selected, the **Vendor/Product** filter is disabled.
 1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE ATT&CK coverage data. The file includes a score from 0 to 3 for each technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
 1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and sub-techniques. 
 1. [**Vendor/Product**](#vendorproduct-filter). Click to filter on vendors and products that provide data sources. Select particular vendors to help you evaluate their coverage. 
@@ -89,3 +89,13 @@ Use the **Vendor/Product** filter to search for data sources in your environment
 This filter is only enabled if you first select **Recent Activity** or **All Community Activity**.  
 
 <img src={useBaseUrl('img/cse/mitre-vendor-product-filter.png')} alt="MITRE vendor/product filter" width="300"/>
+
+## Benefits
+
+* Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions. 
+* Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
+* Use **Theoretical Coverage** to prioritize which custom rules to write, and use **Recent Activity** to support this as well as your rule tuning efforts.
+* Compare **Recent Activity** to **Theoretical Coverage** view to see if rules that provide coverage are actually creating Signals in your environment. If they are not creating Signals, you'll need to investigate why not.
+* Use the data in **Recent Activity** to help justify the value of Cloud SIEM. Anywhere a cell is lit up, Cloud SIEM has detected potential malicious activity that matches that technique. In addition, by deselecting and selecting **Vendor/Product** log sources, you can see the contribution (and therefore the value) of any particular log source to that coverage. 
+* Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage. 
+* Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment. 
