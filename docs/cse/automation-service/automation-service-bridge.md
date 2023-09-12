@@ -7,8 +7,6 @@ description: Learn how to install a bridge for the Automation Service to allow r
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-{@import ../../reuse/automation-service-la-note.md}
-
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
 ## Requirements 
