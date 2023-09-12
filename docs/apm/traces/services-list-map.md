@@ -14,11 +14,34 @@ To open the Services List and Map, click **+ New** > **Services**.
 
 ## Services List view
 
-The **Services List** view provides a compact, high-level overview of your application service health insights and KPIs. You can filter and sort your KPI data using the filters and column headers.
+The **Services List** view provides a compact, high-level overview of your application service health insights, Alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
 
 ![services-list-display](/img/traces/services-list-filters.png)
 
 KPIs listed in the table reflect the previous 15 minutes of data. Clicking on any service will open the Entities panel allowing for further drill-down.
+
+### Alerts
+
+The **Alert status** column will display the most severe alert status along with the total number of alerts associated with a given service. The **Status** column will display the services with alerts, to get detailed information on the alerts, click on the associated service to open the entity inspector.
+
+<img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid black'}} width="400"/>
+
+**Alerts** in the Service List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given host. 
+
+<img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
+
+To view alert details, click on a row and view it in the right-hand-side panel.
+
+In addition, you can narrow down the list of visible services by the type of active alerts for a given service. Service List can filter based on the following alert statuses:
+
+- Critical
+- Warning
+- Missing Data
+- Normal
+
+A Service is displayed in the list if at least one of the alerts is in the selected state.
+
+<img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid black'}} width="400"/>
 
 ### General Settings
 
@@ -95,6 +118,9 @@ Manual anomaly detection allows you to specify different detection settings for 
 
 <img src={useBaseUrl('img/traces/services-list-map-manual-detection-settings.png')} alt="services manual anomaly detection settings" width="400"/>
 
+### Alerts
+
+**Alerts** allows you to consider all associated alerts, which are curretly active or resolved within the selected time.
 
 ## Services Dashboard Panels
 
