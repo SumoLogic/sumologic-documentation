@@ -22,7 +22,7 @@ KPIs listed in the table reflect the previous 15 minutes of data. Clicking on an
 
 ### Alerts
 
-The **Alert status** column will display the most severe alert status along with the total number of alerts associated with a given service. The **Status** column will display the services with alerts, to get detailed information on the alerts, click on the associated service to open the entity inspector.
+The **Alert status** column will display the most severe alert status along with the total number of alerts associated with a given service. The **Status** column will display the services with alerts. To get detailed information on the alerts, click on the associated service to open the entity inspector.
 
 **Alerts** in the Service List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given host. 
 
