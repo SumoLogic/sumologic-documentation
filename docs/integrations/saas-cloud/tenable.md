@@ -64,9 +64,8 @@ This section has instructions for installing the Symantec Web Security Service A
 
 ### Overview
 
-The **Tenable - Overview** dashboard provides in-depth vulnerability assessments across your infrastructure. 
-<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} alt="Tenable-Overview" width="800"/>
+The **Tenable - Overview** dashboard provides in-depth vulnerability assessments across your infrastructure. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid black'}} alt="Tenable-Overview" width="800"/>
 
 ### Audit Activity
 
-The **Tenable - Audit Activity** dashboard provides <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} alt="Tenable-Audit-Activity" width="800"/>
+The **Tenable - Audit Activity** dashboard provides <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid black'}} alt="Tenable-Audit-Activity" width="800"/>
