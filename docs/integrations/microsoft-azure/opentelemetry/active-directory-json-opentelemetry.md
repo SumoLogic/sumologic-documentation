@@ -19,7 +19,7 @@ We recommend using the Active Directory JSON App in combination with the Windows
 
 ## Fields creation in Sumo Logic for Active Directory
 
-Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
+Following are the [fields](/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
 
 **`sumo.datasource`** - Has fixed value of **activeDirectory**
 

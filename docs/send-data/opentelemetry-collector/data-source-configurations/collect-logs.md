@@ -80,6 +80,7 @@ service:
    Restart-Service -Name OtelcolSumo
    ```
 
+
 Configuration details:
 
 * **receivers**:
@@ -323,6 +324,11 @@ service:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above. 
 
 For more details, see the [Syslog receiver][syslog_receiver_docs].
 
@@ -371,6 +377,11 @@ service:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above.
 
 For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 

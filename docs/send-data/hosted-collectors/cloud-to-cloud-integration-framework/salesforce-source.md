@@ -83,7 +83,10 @@ To configure a Salesforce Source:
 1. **User Token**: Enter the user token.  
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
-15. When you are finished configuring the Source, click **Submit**.
+ :::note
+ {@import ../../../reuse/collection-should-begin-note.md}
+ :::
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Polling Interval and Salesforce API Rate Limits
 

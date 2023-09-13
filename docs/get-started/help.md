@@ -62,7 +62,7 @@ See the [Sumo Logic Community](https://community.sumologic.com) for more informa
 
 ## Privacy Policy
 
-Use the **Help** > **Privacy Policy** link to get instant access to the Sumo Logic's privacy statement, which describes how Sumo Logic collects and uses the personal information you provide on our website and our Services. It also describes the choices available to you regarding our use of your personal information and how you can access and update this information.
+Use the **Help** > **Privacy Policy** link to get instant access to the Sumo Logic privacy statement, which describes how Sumo Logic collects and uses the personal information you provide on our website and our Services. It also describes the choices available to you regarding our use of your personal information and how you can access and update this information.
 
 ## Release Notes
 

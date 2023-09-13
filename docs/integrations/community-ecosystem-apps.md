@@ -44,6 +44,7 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [F5 Distributed Cloud Services](https://github.com/SumoLogic/sumologic-content/tree/master/F5) (Rating: 4)
 * [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
 * [JAMF](https://github.com/SumoLogic/sumologic-content/tree/master/JAMF) (Rating: 3.5)
+* [Kandji Data Streamer](https://github.com/SumoLogic/sumologic-content/tree/master/Kandji) (Rating: None)
 * [Microsoft Defender for Endpoint](https://github.com/SumoLogic/sumologic-content/tree/master/Microsoft/Defender_4_EndPoint) (Rating: None)
 * [MISP Threat Intelligence](https://github.com/SumoLogic/sumologic-content/tree/master/MISP) (Rating: None)
 * [Open Source CSPM](https://github.com/SumoLogic/sumologic-content/tree/master/CSPM) (Rating: None)

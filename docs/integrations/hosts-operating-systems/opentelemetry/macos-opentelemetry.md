@@ -23,7 +23,7 @@ The OpenTelemetry collector runs on the macOS machine, and uses the [Host Metric
 
 ## Fields Created in Sumo Logic for macOS
 
-Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
 
 - **`sumo.datasource`** - Has fixed value of **mac**.
 
