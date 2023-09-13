@@ -68,4 +68,5 @@ The **Tenable - Overview** dashboard provides in-depth vulnerability assessments
 
 ### Audit Activity
 
-The **Tenable - Audit Activity** dashboard provides <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid black'}} alt="Tenable-Audit-Activity" width="800"/>
+The **Tenable - Audit Activity** dashboard provides the user events data to monitor and analyze critical audit events within your organization using the Tenable Audit Events API.
+<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tenable/Tenable-Audit-Activity.png')} style={{border: '1px solid black'}} alt="Tenable-Audit-Activity" width="800"/>
