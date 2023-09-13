@@ -44,7 +44,8 @@ To share content from the Left-nav or the Library:
     ![Share Search](/img/content-sharing/share-search.png)
 
     :::note
-    The **View in Library** option is present when you click the Details icon from the Left-nav. 
+    * The **Share** option appears on the dropdown menu only if you have edit or manage permission on the selected item. You cannot share the item if you only have view permissions on the item. See [Available permission levels](#available-permission-levels).
+    * The **View in Library** option is present when you click the Details icon from the Left-nav. 
     :::
 
 1. In the Share dialog, enter the user name or role name to receive access. For example, if you want all users with the **Analyst** role to be able to edit the content, choose **Analyst**:    
