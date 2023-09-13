@@ -204,7 +204,7 @@ SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source).
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source). Set protocol as **TCP** and ContentType as **Carbon2**.
 2. Edit the properties in the bundled sumo.json properties file, as necessary.
 3. Go to the directory for the Sumo Logic scripts and run the **esx_perf_metrics_6_5.py** script, which queries the vCenter Server for metrics from that location (this script queries the vCenter Server for events) with the following command:
   ```bash
