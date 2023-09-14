@@ -200,4 +200,4 @@ Automation Service data is retained in accordance with Sumo Logic's policies. Fo
 
 ### Actions limit
 
-To prevent abuse of system resources or runaway processes, your organization is limited to running 50 [playbook actions](/docs/cse/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) an hour. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/cse/automation-service/automation-service-app-central/#app-central-ui). 
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of [playbook actions](/docs/cse/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) than can be executed per customer per hour to 50 by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/cse/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the [bridge](/docs/cse/automation-service/automation-service-bridge/) are included in this limit.
