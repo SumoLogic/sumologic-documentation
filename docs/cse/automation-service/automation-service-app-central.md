@@ -37,8 +37,6 @@ For more information on role capabilities needed to use the Automation Service, 
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization (limit of 50). The actions limit is set to 50 per hour to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/cse/automation-service/about-automation-service/#actions-limit).
 1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
 
-
-
 ## Integrations in App Central
 
 Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While [Integrations](/docs/cse/automation-service/automation-service-integrations/) in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you additional integrations you can install.
