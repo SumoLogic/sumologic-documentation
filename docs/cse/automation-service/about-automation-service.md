@@ -197,3 +197,7 @@ The Automation Service uses the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-api
 ### Data retention
 
 Automation Service data is retained in accordance with Sumo Logic's policies. For more information, see our [Cloud SIEM data retention](/docs/cse/administration/cse-data-retention/#cse) documentation.
+
+### Actions limit
+
+To prevent abuse of system resources or runaway processes, your organization is limited to running 50 [playbook actions](/docs/cse/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) an hour. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/cse/automation-service/automation-service-app-central/#app-central-ui). 

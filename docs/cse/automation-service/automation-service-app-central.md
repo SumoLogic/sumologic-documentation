@@ -34,7 +34,7 @@ For more information on role capabilities needed to use the Automation Service, 
 1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
 1. **Integrations**. Click to view [integrations in App Central](#integrations-in-app-central) that are available to install.
 1. **Search**. Search for integrations or playbooks to install. 
-1. **Current hour actions count**. Shows how many [playbook actions](/docs/cse/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) have been executed in the current hour in your organization (limit of 50). The action limit is set to 50 per hour to prevent abuse or runaway processes.
+1. **Current hour actions count**. Shows how many [playbook actions](/docs/cse/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) have been executed in the current hour in your organization (limit of 50). The actions limit is set to 50 per hour to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/cse/automation-service/about-automation-service/#actions-limit).
 1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
 
 
