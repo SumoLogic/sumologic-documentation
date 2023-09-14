@@ -13,6 +13,10 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automati
 
 You can interact with the service through [automations](/docs/cse/automation-service/automation-service-automations), which execute playbooks. [Playbooks](/docs/cse/automation-service/automation-service-playbooks)  are composed of one or more [actions](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](/docs/cse/automation-service/automation-service-integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
+:::info
+Before you can access the Automation Service, you must first [configure role capabilities](#configure-role-capabilities).
+:::
+
 Watch this micro lesson to learn more about the Automation Service.
 
 <Iframe url="https://www.youtube.com/embed/kJawCYJhS4M?rel=0"
@@ -59,7 +63,11 @@ The Automation Service differs from Cloud SOAR in the following ways:
 
 ## Access the Automation Service
 
-An automation runs a playbook, which  runs actions that are provided by integrations. This section shows you how to access each of these elements.
+An automation runs a playbook, which  runs actions that are provided by integrations. This section shows you how to access each of these elements. 
+
+:::info
+Before you can access the Automation Service, you must first [configure role capabilities](#configure-role-capabilities).
+:::
 
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
@@ -135,7 +143,7 @@ If you configured the automation to [run manually](/docs/cse/automation-service/
 
 ### Configure role capabilities
 
-After the Automation Service is enabled for your organization, access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. To get access to the Automation Service:
+Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. To get access to the Automation Service:
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
