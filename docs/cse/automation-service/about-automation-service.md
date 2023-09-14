@@ -14,7 +14,7 @@ The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automati
 You can interact with the service through [automations](/docs/cse/automation-service/automation-service-automations), which execute playbooks. [Playbooks](/docs/cse/automation-service/automation-service-playbooks)  are composed of one or more [actions](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](/docs/cse/automation-service/automation-service-integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
 :::info
-To use the Automation Service, you must first [configure role capabilities](#configure-role-capabilities).
+Before you can access the Automation Service, you must first [configure role capabilities](#configure-role-capabilities).
 :::
 
 Watch this micro lesson to learn more about the Automation Service.
