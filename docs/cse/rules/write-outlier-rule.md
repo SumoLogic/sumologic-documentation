@@ -70,8 +70,8 @@ The settings in the **If Triggered** section are divided into two subsections, o
 
 **Outlier Model Configuration**
 1. **Detect an outlier for**. Select the aggregate function that applies to the field in the matched Records to build a normal behavior baseline on.
-1. **of the Record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
-1. **Advanced Expression** (optional). When selected, disables the record field selector and allows defining Record fields within the field window.
+1. **of the record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
+1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining Record fields within the field window. For the expression, you can use the syntax described in [CSE Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
 1. **Minimum Count Value** (default value 1). Enter the absolute minimum value below which an Outlier Signal will not be generated.
 
