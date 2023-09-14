@@ -85,7 +85,7 @@ Use Sumo Logic's countless data integrations and out-of-the box applications ens
 [Install](/docs/get-started/apps-integrations) the following apps for compliance:
 * [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
 
-Following are just some of the apps you can [install](/docs/get-started/apps-integrations) for auditing:
+Following are some of the apps you can [install](/docs/get-started/apps-integrations) for auditing:
 * [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
 * [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
 * [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
