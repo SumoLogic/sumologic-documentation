@@ -37,7 +37,6 @@ import Iframe from 'react-iframe';
 The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service only supports automated enrichment, notification, and custom action types. 
 * Automation Service playbooks can only be triggered from CSE.
-* The Automation Service does not allow you to execute an unlimited number of actions per day.
 * The Automation Service does not include the incident and case management features from Cloud SOAR.
 * Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
 
@@ -203,4 +202,4 @@ Automation Service data is retained in accordance with Sumo Logic's policies. Fo
 
 ### Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 50 per hour. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/cse/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 50 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/cse/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
