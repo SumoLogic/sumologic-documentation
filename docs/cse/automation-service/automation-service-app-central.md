@@ -7,7 +7,22 @@ description: Learn how to use App Central to get new applications and tools.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import Iframe from 'react-iframe';
+
 App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components. 
+
+Watch this micro lesson to learn how to use App Central.
+
+<Iframe url="https://www.youtube.com/embed/cfJtReLrMFg?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## Permissions
 
