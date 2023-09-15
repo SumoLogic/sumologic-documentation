@@ -13,7 +13,6 @@ Following are examples that show you how to create automations with the Automati
 {@import ../../reuse/action-limits.md}
 :::
  
-
 ## Simple example: Configure an enrichment
 
 The following example shows how to add an enrichment to an Insight using the “IP Reputation V3” action from VirusTotal.
