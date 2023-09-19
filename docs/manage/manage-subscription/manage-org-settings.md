@@ -44,8 +44,8 @@ After you make this change, you will not be able to edit the account owner.
 
 1. In the left navigation bar of the UI, select **Administration** > **Account**.
 1. Access the appropriate menu for your [account type](#availability):
-     * Cloud Flex Credits: From the kebob menu at the top select **Change Account Owner**.
-     * Cloud Flex: At the top select **Manage Organization > Change Account Owner**.
+     * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Owner**.
+     * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. In the prompt dialog, enter a new account owner in the text field.
 1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" width="450"/>
 
