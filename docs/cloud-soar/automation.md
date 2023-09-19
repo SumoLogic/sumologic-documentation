@@ -476,7 +476,7 @@ Once the user has created this new action, it can easily be added to the existin
 
 <img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid black'}} width="600"/> 
 
-See the Integration Framework manual for more details on utilizing the integration framework within Cloud SOAR.
+See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
 ### Configure Slack for Cloud SOAR
 
@@ -608,7 +608,7 @@ In the detail section of the rule you can define filters to be used in the rule 
 
 The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
 
-- **Create incident from template**. Specify what incident template to use (See **Incident Templates)**, the incident owner, and incident ID format. This is the most common action.
+- **Create incident from template**. Specify what [incident template](#incident-templates) to use, the incident owner, and incident ID format. This is the most common action.
 - **Close incident**. Allows for the automatic closure of a known false positive incident
 - **Update incident**. Updates a field in an existing incident based on parameters from the parsed message
 - **Change incident status**. Change the incident status based on parameters from the parsed message
