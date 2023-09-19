@@ -32,7 +32,7 @@ For Cloud Flex:
 1. In the left navigation bar of the UI, select **Administration** > **Account**. 
 1. Access the appropriate menu for your [account type](#availability):
      * Cloud Flex Credits: From the kebab menu at the top, select **Change Organization Name**.
-     * Cloud Flex: At the top select **Manage Organization > Change Organization Name**.
+     * Cloud Flex: At the top, select **Manage Organization > Change Organization Name**.
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" width="450"/>
 
