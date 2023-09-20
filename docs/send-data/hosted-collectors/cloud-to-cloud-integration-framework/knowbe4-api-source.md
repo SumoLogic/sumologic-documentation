@@ -56,7 +56,7 @@ The KnowBe4 integration fetches two types of data sources for the KnowBe4 accoun
 :::note
 C2C will skip the record if `started_at` data is not in the format of `yyyy-MM-ddTHH:mm:ss.SSSZ`.
 :::
-- **External Events**. Our integration uses KnowBe4's [User Event API](https://developer.knowbe4.com/rest/userEvents#tag/Introduction) to collect security-related events or training activities from external sources. This data type is disabled by default.
+- **External Events**. Our integration uses KnowBe4's [User Event API](https://developer.knowbe4.com/rest/userEvents#tag/Introduction) to collect security-related events or training activities from external sources.
 
 ## States
 
@@ -164,4 +164,3 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 There are two limitations to access KnowBe4 APIs:
 * Access to the KnowBe4 Event APIs is limited to 10 requests per licensed user account per day, with a maximum of 4 requests per second.
 * Access to the KnowBe4 Phishing APIs is limited to 1,000 requests per day plus the number of licensed users on the account. The API allows a maximum of 4 requests per second, and has a burst limit of 50 requests per minute which starts around 5 minutes and the daily limit starts around 24 hours from the first API request.
-* Access to the **External Events Data type** is disabled by default, and can be enabled on requests. Contact Sumo Logic support to enable this data type.
