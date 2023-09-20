@@ -56,7 +56,7 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>1Password</h4></a>
+  <a href="/docs/c2c/1password"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>1Password</h4></a>
   <p>Provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.</p>
   </div>
 </div>

@@ -92,12 +92,15 @@ Follow these instructions to create an Entity Group that corresponds to a group 
 1. **Inventory Type**. Select one of:
     * Computer
     * User
+1. **Inventory Key**. Select an attribute to use from the **Inventory Type** selected above. Select **groups** if you want to use an existing Entity Group attribute. 
 1. **Source**. Select an inventory source from the pull-down list.
-1. **Group**. Enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group.
+1. **Value**. Enter a value for the attribute selected in the **Inventory Key** field above. If **groups** was selected in the **Inventory Key** field, enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group. 
    :::note
-   **Group** refers to a normalized group attribute. The name of the raw attribute varies depending on the inventory source. Just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
+   **Value** refers to a normalized attribute. The name of the raw attribute varies depending on the inventory source. And if you are entering a value for a group, keep in mind that just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
    :::
-1. **Tags**. Select any tags you’d like to apply to Entities in the group.
+1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the Entities in the group. If you select this option, the **Value** field changes to *****, indicating the value will be automatically generated from the custom tag schema. 
+1. **Tag Schema**. Select the tag schema to use for the Entity group.
+1. **Tags**. Select any tags you’d like to apply to Entities in the group. If you previously selected **Dynamic Schema Tags**, the phrase **(in addition to dynamic)** appears, indicating that the tags you select here will be added to the automatically-generated schema tags.
 1. **Criticality**. If desired, select a Criticality.
 1. **Suppression**. Select **Suppressed** if you want to suppress Signals on Entities in the group.
 

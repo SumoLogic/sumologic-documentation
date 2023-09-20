@@ -7,9 +7,22 @@ description: Learn how to use App Central to get new applications and tools.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components.
+import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" width="800"/>
+App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components. 
+
+Watch this micro lesson to learn how to use App Central.
+
+<Iframe url="https://www.youtube.com/embed/cfJtReLrMFg?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## Permissions
 
@@ -21,6 +34,23 @@ To use App Central, you must have the following role capabilities:
       * Export
 
 For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/cse/automation-service/about-automation-service#configure-role-capabilities).
+
+## View App Central
+
+1. Click the **Configuration** button (gear icon) at the top of the UI.
+1. Under **Integrations**, select **Automation**.
+1. From the **Automation** screen, click **Manage Playbooks**.
+1. Click **App Central** in the left navigation bar. 
+
+## App Central UI 
+
+<img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" width="800"/>
+
+1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
+1. **Integrations**. Click to view [integrations in App Central](#integrations-in-app-central) that are available to install.
+1. **Search**. Search for integrations or playbooks to install. 
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. The actions limit is set to 50 per hour by default to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/cse/automation-service/about-automation-service/#actions-limit).
+1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
 
 ## Integrations in App Central
 
@@ -58,6 +88,7 @@ While [Playbooks](/docs/cse/automation-service/automation-service-playbooks/) in
 1. Click **Close**. After installation is complete, **Installed** replaces the **Download** link in the corner of the playbook box.
 1. **IMPORTANT**: Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
 
+<!-- There used to be an export button, but now it's gone. Saving this text below in case it comes back. 
 
 ## Export from App Central
 
@@ -69,3 +100,4 @@ You can export the contents of integrations and playbooks from App Central.
 1. Extract the .tar file. An archive file is extracted from the .tar file (for example, a .tar.gz file).
 1. Extract the archive file. The exported items are extracted, including any YAML files they contain. 
 
+-->

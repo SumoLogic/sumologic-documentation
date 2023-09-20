@@ -244,11 +244,17 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox38 card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
+  <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
+  </div>
+</div>
+<div className="box smallbox39 card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/workday"><img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="icon" width="50"/><h4>Workday</h4></a>
   <p>Monitor Workday login activity, user activity, and admin activity.</p>
   </div>
 </div>
-<div className="box smallbox39 card">
+<div className="box smallbox40 card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/zoom"><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="icon" width="50"/><h4>Zoom</h4></a>
   <p>Monitor your organization's Zoom performance, security, and user activity.</p>
