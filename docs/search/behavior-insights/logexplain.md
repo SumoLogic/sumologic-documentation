@@ -4,7 +4,6 @@ title: LogExplain
 description: Group by the keys of JSON or keyvalue logs.
 ---
 
-
 The **LogExplain** operator allows you to compare sets of structured logs based on events you are interested in. Structured logs can be in JSON, CSV, key-value, or any structured format. Often logs relevant to troubleshooting and security insights are scattered among other logs that show the expected behavior and performance. These logs normally consist of different content, where it is helpful to see which values occur more often in events of interest versus normal operation logs. For example, events of interest often contain information relevant to persistent errors, excess load, and high latency.
 
 You will need to specify an event of interest as a conditional statement, this is called the Event Condition. You can specify a condition to compare against the event-of-interest condition, this is called the Against Condition. If no Against Condition is provided, LogExplain will generate the comparison data set based on the fields in your Event Condition.
@@ -41,7 +40,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logexplain\<event_condition\> [against\<against_condition\>] on\<fieldname\> [,\<fieldname\>, ...]
+| logexplain <event_condition> [against <against_condition>] on <fieldname>[,<fieldname>, ...]
 ```
 
 | Parameter | Description |
@@ -68,7 +67,7 @@ With the provided results you can:
 
 ### Errors by host
 
-```sql {3}
+```sql
 __sourceCategory=stream 
 | if(_raw matches "error", 1, 0) as hasError
 | logexplain hasError == 1 on _sourceHost
@@ -78,7 +77,7 @@ __sourceCategory=stream 
 
 Having seen that there are a lot of "AccessDenied" errors, in the example below, we want to explain which combinations of eventName, userName, or AWS service ("invokedBy") might be responsible for errorCode having a value of "AccessDenied" by comparing logs with AccessDenied errors against logs with other errorCodes. Values from userNames or invokedBys might be candidates for further investigation. 
 
-```sql {10}
+```sql
 _sourceCategory= *cloudtrail* errorCode
 | json field=_raw "eventSource" as eventSource
 | json field=_raw "eventName" as eventName
@@ -109,7 +108,7 @@ _sourceCategory="nite-primary-eks/events"
 
 After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
 
-```sql {14}
+```sql
 _sourceCategory=*cloudtrail*
 | json field=_raw "userIdentity.userName" as userName nodrop
 | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
@@ -136,8 +135,9 @@ As a SecOps user, I want to detect compromised user credentials for Windows mach
 
 SecOps Insight: A hacked credential will display a remote login pattern (eventdata_logontype = 10) where a given user logs into more machines than they usually do, based on eventid = 4624 (login successful). I want to baseline 14 days of remote access activity and detect outliers in the most recent 24 hours.
 
-**Approach 1: Time** **Compare **The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and
-compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2 day intervals with 7 epochs, to create 14 days of data.
+**Approach 1: Time Compare** 
+
+The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2 day intervals with 7 epochs, to create 14 days of data.
 
 ```sql
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10

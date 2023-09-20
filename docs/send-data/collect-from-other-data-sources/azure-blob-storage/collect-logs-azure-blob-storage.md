@@ -5,6 +5,7 @@ sidebar_label: Collecting Logs
 description: Configure a pipeline to ship logs from the Azure Blob Storage to an HTTP source on a hosted collector in Sumo Logic.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 :::info
 This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. 
@@ -16,6 +17,19 @@ This section has instructions for configuring a pipeline for shipping logs avail
 * Configure your storage account in the same location as your Azure Service.
 * This solution supports only log files from Blob storage that have file extensions of .csv, .json, .blob, or .log. 
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
+
+Watch this tutorial to learn how to collect logs from Azure Blob Storage.
+
+<Iframe url="https://www.youtube.com/embed/186K2d-FFoc?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 
 ## Functional overview
 
@@ -248,6 +262,6 @@ Assuming you have used the modified template which uses standard/premium plan fo
 
 ## Collection testing performance numbers
 
-| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time take for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
+| File creation time in a single storage account | Number of files | Size of each file X Number of files | Sumo Logic Incoming Bytes Rate (MB/sec) | Sumo Logic Incoming Messages Rate (loglines/sec) | Sumo Logic total time taken for full ingestion | Sumo Logic Ingestion (GB) | Sumo Logic log count |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | ~3 minutes | 100 | 100MB X 80 + 104MB X 20 | Avg 40MB/sec <br/> MAX 190MB/sec | MAX 411811/sec | 3.77 minutes | 9.31 | 20,643,840 |

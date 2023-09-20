@@ -10,6 +10,10 @@ This section provides instructions for ingesting SentinelOne logs into Sumo Logi
 
 If you have a SentinelOne account, you can view the contents of this article in the SentinelOne Support knowledge base [here](https://support.sentinelone.com/hc/en-us/articles/360007044894-Syslog-Integration-with-Sumo-Logic).
 
+:::note
+Although you can use this method for ingesting SentinelOne logs into Sumo Logic, the preferred method is to use the [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source).
+:::
+
 ## Step 1. Get a token and certificate from Sumo Logic
 
 You can define a SIEM token to add in the message ID of CEFv2 Syslog messages.

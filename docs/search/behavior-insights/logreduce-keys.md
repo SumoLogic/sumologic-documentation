@@ -24,7 +24,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logreduce keys [parser\<parse\>] [maxdepth\<maxdept\>] [field\<fieldnam\>] [noaggregate]
+| logreduce keys [parser <parser>] [maxdepth <maxdepth>] [field <fieldname>] [noaggregate]
 ```
 
 | Parameter | Description | Default |
@@ -59,7 +59,7 @@ Results can be returned in two ways:
 ## Examples
 
 ```sql
-_sourcecategory = "Labs/AWS/GuardDuty_V8"
+_sourceCategory = "Labs/AWS/GuardDuty_V8"
 | json keys "region", "partition", "resource"
 | logreduce keys field=resource
 ```

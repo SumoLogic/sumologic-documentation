@@ -83,12 +83,12 @@ The following table describes the collection methods that are supported by diffe
 The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher for the following table.
 :::
 
-| Platform | Installed Collector On Docker | Host | Collector As Container | Docker Logging Driver |
-|:--|:--|:--|:--|:--|
-| Docker<br/>(not managed service) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| ECS | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| Docker Swarm | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
-| Rancher<br/>(non-Kubernetes) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
+| Platform | Installed Collector On Docker Host  | Collector As Container | Docker Logging Driver |
+|:--|:--|:--|:--|
+| Docker<br/>(not managed service) | ![check](/img/reuse/check.png) |   ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
+| ECS | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
+| Docker Swarm | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
+| Rancher<br/>(non-Kubernetes) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png)| ![check](/img/reuse/check.png) |
 
 ### Sumo Logic apps for Docker
 

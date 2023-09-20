@@ -4,13 +4,15 @@ title: Entity Tags and Standard Match Lists
 description: Learn about Entity Tags and standard Match Lists in CSE.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has information about how you can identify specific Entities or indicators that should be treated differently during CSE rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a Signal if a user Entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
-* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules.md) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
+* Schema key tags for Entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) to new Entities once they come into CSE. See [Schema tag keys for Entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different Entities.  
 :::tip
-The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group.md), and allow CSE to automatically apply tags based on group membership.
+The most efficient way to assign tags to Entities is to configure [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), and allow CSE to automatically apply tags based on group membership.
 :::
-* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list.md). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
+* Standard match lists. This is the original approach for excluding Entities from rule processing. It involves adding Entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list). Currently, standard match lists are still supported, but we recommend you use schema tag keys going forward. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [CSE REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
 
 
 ## Schema tag keys for Entities
@@ -84,18 +86,6 @@ Assign the _userGroup tag to users accounts  known to be involved with specific 
 
 ## Standard match lists
 
-### admin_ips
-
-**Target column:** Source IP Address (`SrcIp`)
-
-**Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
-
-The following CSE rules refer to this Match List:
-
-* PSEXEC Admin Tool Detection
-* PowerShell Remote Administration
-* SMB write to admin hidden share
-
 ### admin_accounts
 
 **Target column:** Username (`Username`)
@@ -105,6 +95,18 @@ The following CSE rules refer to this Match List:
 The following CSE rules refer to this Match List:
 
 * Windows - Excessive User Interactive Logons Across Multiple Hosts
+
+### admin_ips
+
+**Target column:** Source IP Address (`SrcIp`)
+
+**Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
+
+The following CSE rules refer to this Match List:
+
+* PowerShell Remote Administration
+* PSEXEC Admin Tool Detection
+* SMB write to admin hidden share
 
 ### admin_username
 
@@ -116,21 +118,21 @@ The following CSE rules refer to this Match List:
 
 * Lateral Movement Using the Windows Hidden Admin Share
 
-### Alibaba_admin_users
-
-**Target column:** Username (`Username`)
-
-**Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
-
-The following CSE rules refer to this Match List:
-
-* Alibaba ActionTrail KMS Activity
-
 ### Alibaba_admin_ips
 
 **Target column:** IP Address (`Ip`)
 
 **Description:** IPs that are known to be involved with specific administrative or privileged activity on the network.
+
+The following CSE rules refer to this Match List:
+
+* Alibaba ActionTrail KMS Activity
+
+### Alibaba_admin_users
+
+**Target column:** Username (`Username`)
+
+**Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
 
 The following CSE rules refer to this Match List:
 
@@ -434,6 +436,30 @@ The following CSE rules refer to this Match List:
 
 none
 
+### gcp_admin
+
+**Target column:** Username (`Username`) or Source IP Address (`SrcIp`)
+
+**Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
+
+The following CSE rules refer to this Match List:
+
+* GCP Audit Cloud SQL Database Modified
+* GCP Audit GCE Firewall Rule Modified
+* GCP Audit GCE Network Route Created or Modified
+* GCP Audit GCE VPC Network Modified
+* GCP Audit IAM CreateServiceAccount Observed
+* GCP Audit IAM Custom Role Created or Modified
+* GCP Audit IAM Custom Role Deletion
+* GCP Audit IAM DeleteServiceAccount Observed
+* GCP Audit IAM DisableServiceAccount Observed
+* GCP Audit KMS Activity
+* GCP Audit Logging Sink Modified
+* GCP Audit Pub/Sub Subscriber Modified
+* GCP Audit Pub/Sub Topic Deleted
+* GCP Audit Secrets Manager Activity
+* GCP Bucket Modified
+
 ### GCP_admin_ips
 
 **Target column:** Source IP Address (`SrcIp`)
@@ -467,30 +493,6 @@ The following CSE rules refer to this Match List:
 * GCP Instance Deletion
 * GCP Instance Discovery
 * GCP Instance Modification
-
-### gcp_admin
-
-**Target column:** Username (`Username`) or Source IP Address (`SrcIp`)
-
-**Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
-
-The following CSE rules refer to this Match List:
-
-* GCP Audit Cloud SQL Database Modified
-* GCP Audit GCE Firewall Rule Modified
-* GCP Audit GCE Network Route Created or Modified
-* GCP Audit GCE VPC Network Modified
-* GCP Audit IAM CreateServiceAccount Observed
-* GCP Audit IAM Custom Role Created or Modified
-* GCP Audit IAM Custom Role Deletion
-* GCP Audit IAM DeleteServiceAccount Observed
-* GCP Audit IAM DisableServiceAccount Observed
-* GCP Audit KMS Activity
-* GCP Audit Logging Sink Modified
-* GCP Audit Pub/Sub Subscriber Modified
-* GCP Audit Pub/Sub Topic Deleted
-* GCP Audit Secrets Manager Activity
-* GCP Bucket Modified
 
 ### Google_Workspace_admin_ips
 
@@ -776,7 +778,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 
 ### scanner_targets
 
@@ -854,8 +855,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel - Inbound Traffic Context
 * Threat Intel - Matched File Hash
 * Threat Intel - Matched Domain Name
-* Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 
 ### unauthorized_external_media
 
@@ -903,7 +902,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 
 ### verified_hostnames
 
@@ -930,7 +928,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to Punycode Domain
 
 ### verified_ips
@@ -946,7 +943,6 @@ The following CSE rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
-* Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to IP Address
 
 ### verified_uri_ips
@@ -1053,6 +1049,7 @@ The following CSE rules refer to this Match List:
 * SSL Heartbleed Attack
 * Script/CLI UserAgent string
 * Shellshock
+* Spike in Login Failures from a User
 * Spring4Shell Exploitation - URL
 * Successful Brute Force
 * Suspicious HTTP User-Agent

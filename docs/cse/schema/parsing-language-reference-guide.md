@@ -30,30 +30,7 @@ execution time.
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
 :::
 
-The parser engine also supports Grok, a system that introduces symbolic names for patterns to regular expressions (see also [Patterns](#patterns) section). You reference Grok symbolic names using this pattern:
-
-`%{<pattern_name>:<optional_group_name>}`
-
-The pattern name is replaced with the regular expression associated with that name and the entire result is wrapped with a named group capture.
-
-Grok patterns are used to make the use of complex regular expressions that match particular values, such as IP addresses, clearer and easier
-to read.
-
-The list of patterns supported can be found in the local and default config files, and `patterns.conf`.
-
-For example, given a string:
-
-`TEST 123`
-
-and the regex:
-
-`(?<login>\w+) (?<id>\d+)`
-
-we would get back this dictionary: 
-
-`{“login”: “TEST”,  “Id”: “123”}`
-
-You can find a regex debugger at[https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
+You can find a regex debugger at [https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
 
 :::note
 This debugger uses the GoLang RE2 library, but all RE2 libraries are based on the same codebase and it is a sufficient test mechanism.

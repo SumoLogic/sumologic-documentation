@@ -29,7 +29,7 @@ Azure provides a wide array of configurable security auditing and logging option
 
 #### Which node version is supported?
 
-The Sumo Logic app has been tested on v0.10.40, the oldest supported version. The latest available version in Azure is v8.9.4. For information on how to change a node version, see the Azure [Changing node version](https://blogs.msdn.microsoft.com/azureossds/2016/04/20/nodejs-and-npm-versions-on-azure-app-services/) support article.
+The Sumo Logic app has been tested on v0.10.40, the oldest supported version. The latest available version in Azure for Azure Monitor is v8.9.4 and for Azure Blob Storage is v18.12.1. For information on how to change a node version, see the Azure [Changing node version](https://blogs.msdn.microsoft.com/azureossds/2016/04/20/nodejs-and-npm-versions-on-azure-app-services/) support article.
 
 
 #### What happens if the template is re-deployed? Are the resources recreated? Is there any data loss?

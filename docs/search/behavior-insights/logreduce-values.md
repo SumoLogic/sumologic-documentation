@@ -27,7 +27,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logreduce values on\<key\>[,\<key\>, ...] [output_threshold\<output_threshol\>]
+| logreduce values on <keys>[,<keys>, ...] [output_threshold <output_threshold>]
 ```
 
 | _cluster_id | _signature | _count |
@@ -57,7 +57,7 @@ There are two methods you have to use the details option:
 ### Details Syntax
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...] \<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
+| logreduce values details on <keys>[, <keys>, ...] <shortcodeID> <cluster_id>,<cluster_id>, ...]
 ```
 
 | Parameter   | Description | Default |
@@ -69,13 +69,13 @@ There are two methods you have to use the details option:
 For example, to see details from a particular LogReduce Values search and data clusters, you'd use the following syntax: 
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...] \<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
+| logreduce values details on <keys>[, <keys>, ...] <shortcodeID> <cluster_id>,<cluster_id>, ...]
 ```
 
 To see all the logs by cluster identifiers for further processing, you'd use the following syntax:
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...]\<shortcodeI\>
+| logreduce values details on <keys>[, <keys>, ...] <shortcodeID>
 ```
 
 ## Limitations
@@ -154,7 +154,7 @@ If the user wants to drill down on a particular logreduce values query id and cl
 ```sql
 _sourceCategory="aws/cloudtrail/production" and _collector="AWS"
 | json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly"
-| logreduce values-details\<shortcodeI\> [clusterId\<cluster i\>]
+| logreduce values-details <shortcodeID> [clusterId<cluster id>]
 ```
 
 If the user wants to label the raw logs by their cluster ids for further processing, they can use the following query:
@@ -162,7 +162,7 @@ If the user wants to label the raw logs by their cluster ids for further process
 ```sql
 _sourceCategory="aws/cloudtrail/production" and _collector="AWS"
 | json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly"
-| logreduce values-details\<shortcodeI\>
+| logreduce values-details <shortcodeID>
 | ...
 ```
 
