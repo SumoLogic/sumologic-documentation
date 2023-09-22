@@ -30,7 +30,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Dataproc inte
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Dataproc platform logs include job logs and cluster logs. [Here](https://cloud.google.com/dataproc/docs/guides/logging#permissions) are the permissions required to access job and cluster logs. While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   (resource.type=(cloud_dataproc_cluster or cloud_dataproc_job))
+   (resource.type=(cloud_dataproc_cluster OR cloud_dataproc_job))
    ```
 
 ### Configure metrics collection
