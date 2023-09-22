@@ -35,7 +35,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 Before you install the Amazon CloudFront app, complete the following tasks:
 
 1. Enable [CloudFront logging](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html).
-2. Confirm that logs are being delivered to the Amazon S3 bucket.
+2. Confirm that access logs are being delivered to the Amazon S3 bucket.
 3. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
