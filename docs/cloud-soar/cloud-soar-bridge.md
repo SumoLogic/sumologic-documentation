@@ -73,28 +73,11 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    systemctl restart docker
    ```
 
-## Get JWT token
-<!-- This section is different from the Automation Service, where it is titled "Get installation token". -->
-1. Click the gear icon at the top of the Cloud SOAR screen and select **Settings**.
-1. Add a new profile:
-   1. Select **User Management > Profiles**. 
-   1. Click the **+** button to the left of **Profiles**.
-   1. In the **Add profile** dialog, enter a **Name** for the new profile.
-   1. Click the **Settings** box.
-   1. In the **API** box select **Use**.
-   1. Click **CREATE**.
-1. Add a new user:
-   1. Select **User Management > Users**.
-   1. Click the **+** button to the left of **Users**.
-   1. In the **Add user** dialog, for **Profile** select the profile you created above. Fill out the rest of the fields.
-   1. Click **CREATE**. 
-1. Copy the JWT token for the new user:
-   1. Log in to Cloud SOAR as the new user.
-   1. Click the gear icon at the top of the Cloud SOAR screen and select **Settings**.
-   1. Select **User Management > Users**.
-   1. Select the new user.
-   1. Scroll down to the **JWT Token** section.
-   1. Copy the token. You will use this token later in the installation process.
+## Get installation token
+
+Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
+
+<img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
 
 ## Automation installation
 
@@ -127,22 +110,20 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    ```
 
 ### Installation configuration
-
-1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters: <!-- These parameters differ from those for the Automation Service -->
-   * `SOAR_URL`
-   * `SOAR_TOKEN`
-1. Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
+1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
+   * `1SOAR_URL1`
+   * `1SOAR_TOKEN1`
+1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
 And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
 
 An example of a configuration file would be:
-<!-- This example differs from that for the Automation Service bridge -->
 ```
 {
-        "SOAR_URL":"https://YOUR_DOMAIN/incmansuite_ng/api", 
-        "SOAR_TOKEN":"YOUR_JWT_TOKEN",
-        "SIEM_URL":"https://YOUR_CSE_URL/sec",
-        "ALIAS": "YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
+   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
+   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
+   "SIEM_URL":"https://YOUR_CSE_URL/sec",
+   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
 
@@ -189,7 +170,7 @@ ps faux |grep automation-bridge
 
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+On the SOAR instance, under **Automation > Bridge**, a list of live bridge agents will be displayed along with their status.
 
 ### Configuring the automation bridge for CyberArk
 
