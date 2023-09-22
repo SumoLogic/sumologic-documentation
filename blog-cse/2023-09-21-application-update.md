@@ -18,7 +18,7 @@ We are happy to announce some important enhancements to the [Entity Group](/docs
 
 With this release, Entity Groups can now use *any* attribute available in your inventory data - including non-normalized attributes. (Previously, only the `group` attribute was available.) Non-normalized attributes can be used by adding the `fields.` prefix. 
 
-In addition, the release introduces the ability to auto-set schema tag values on matching Entities based on the value of a given inventory attribute. In this example, any user Entity that has a value for `location` in inventory data will have that value set in a tag (such as `location:Austin`).
+In addition, the release introduces the ability to auto-set schema tag values on matching Entities based on the value of a given inventory attribute. In this example, any user Entity that has a value for `location` in inventory data will have that value set in a tag (such as `Location:Austin`).
 
 <img src={useBaseUrl('img/release-notes/cse/enitty-group-inventory-enhancements.png')} alt="Entity Group Details Panel"/>
 
