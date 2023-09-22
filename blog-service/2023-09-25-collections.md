@@ -12,7 +12,3 @@ authors:
 ---
 
 We're excited to announce the release of our new cloud-to-cloud source for Cisco Vulnerability Management. This source collects assets and vulnerabilities data using the [Asset API](https://apidocs.kennasecurity.com/reference/search-assets) and [Vulnerability API](https://apidocs.kennasecurity.com/reference/search-vulnerabilities). [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source).
-
-
-
-
