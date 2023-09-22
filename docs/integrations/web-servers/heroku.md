@@ -79,7 +79,7 @@ A HTTPS Log Drain can be attached to a Heroku application via the CLI.
 You will now be able to see Heroku logs flowing into that HTTP source in Sumo Logic. You can also attach the same URL to multiple apps for a single log drain.
 
 :::note
-You can also run ```heroku drains``` or ```heroku drains --json``` command in your app directory to find the name of an existing Sumo Logic http source log_drain url of an app which can be attached to a new app.
+You can also run ```heroku drains``` or ```heroku drains --json``` command in your app directory to find the name of an existing Sumo Logic http source log_drain url of an app, which can be attached to a new app.
 :::
 
 ### Collecting Logs via Sumo Logic Add-on
