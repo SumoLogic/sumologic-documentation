@@ -29,5 +29,5 @@ You can collect the logs for Sumo Logic's Google Cloud Backup for GKE integratio
 
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Here are the details of [platforms logs for Backup for GKE](https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/platform-logging-backup-for-gke). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   (resource.type=(gkebackup.googleapis.com/BackupPlan or gkebackup.googleapis.com/RestorePlan))
+   (resource.type=(gkebackup.googleapis.com/BackupPlan OR gkebackup.googleapis.com/RestorePlan))
    ```
