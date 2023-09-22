@@ -1,6 +1,5 @@
 ---
 id: 1password-source
-slug: /c2c/1password
 title: 1Password Source
 sidebar_label: 1Password
 image: 'https://app_icons.s3.amazonaws.com/1Password.png'
@@ -30,7 +29,6 @@ This source is available in the [Fed deployment](https://help.sumologic.com/docs
 | 5 min |  [Sign-in Attempts](https://support.1password.com/events-api-reference/#sign-in-attempts)
 | 5 min |  [Item Usage](https://support.1password.com/events-api-reference/#item-usage)
 | 5 min |  [Audit Events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents)
-
 
 ## Setup
 
