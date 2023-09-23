@@ -1,7 +1,7 @@
 ---
-id: security-foundations
-title: Sumo Logic Security Foundations App
-sidebar_label: Security Foundations
+id: security-foundation
+title: Sumo Logic Security Foundation App
+sidebar_label: Security Foundation
 description: Shows the most important alerts to investigate and the entities that pose the greatest risk.
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic Security Foundations app provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
+The Sumo Logic Security Foundation app provides tools for real-time threat detection. The app’s dashboards focus on adversarial behavior within your environment, and show you the most important alerts to investigate and the entities that pose the greatest risk. You can even drill down on the alerts and entities to view the [MITRE ATT&CK](https://attack.mitre.org/) tactics and techniques associated with them.
 
 The app supports the following security technologies:
 * Audit
@@ -32,13 +32,13 @@ The app supports the following security technologies:
    * Cisco Umbrella
 
 
-## Install the Sumo Logic Foundations​ app
+## Install the Sumo Logic Foundation​ app
 
-The Security Foundations app is available to Sumo Logic Enterprise Security and Enterprise Suite accounts only, and requires a Professional Services contract to install and configure. For more information about this app and to request installation, send an email to [sales@sumologic.com](mailto:sales@sumologic.com), contact your account manager, or see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/#Requesting-Sumo-Logic-Enterprise-Apps).
+The Security Foundation app is available to Sumo Logic Enterprise Security and Enterprise Suite accounts only, and requires a Professional Services contract to install and configure. For more information about this app and to request installation, send an email to [sales@sumologic.com](mailto:sales@sumologic.com), contact your account manager, or see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/#Requesting-Sumo-Logic-Enterprise-Apps).
 
-## Security Foundations app dashboards​
+## Security Foundation app dashboards​
 
-To access the dashboards, in the **Security Foundations App** folder open the **High Risk Entity Dashboard** folder. 
+To access the dashboards, in the **Security Foundation App** folder open the **High Risk Entity Dashboard** folder. 
 
 ### Alerts overview​
 
@@ -122,5 +122,5 @@ Click an Entity name to drill down to see rules and [MITRE ATT&CK](https://attac
 
 Sometimes you may want to exclude certain Entities from being reported in alerts because you know they are safe and do not pose a threat. You can suppress Entities for a given rule by entering a comma-separated value which includes the rule ID and the Entity that you want to suppress. Suppression is a one-time action and cannot be reversed.
 
-1. Open the **Security Foundations App Suppression Lookup Update** search. 
+1. Open the **Security Foundation App Suppression Lookup Update** search. 
 1. In the supplied field, replace `rule_id,entity` with the rule ID and Entity you want to suppress. If you need to suppress multiple Entities, create a CSV file with the comma-separated values and [append](/docs/search/search-query-language/search-operators/save#using-save-with-append) the CSV file to the existing lookup table.
