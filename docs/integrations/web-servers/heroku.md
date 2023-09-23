@@ -59,16 +59,32 @@ _sourceCategory="Heroku"
 Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps in eight programming languages namely Node.js, Ruby, Python, Java, PHP, Go, Scala, and Clojure.
 
 There are two ways to send Heroku logs to Sumo Logic.
-* **[Sumo Logic Add-on](https://elements.heroku.com/addons/sumologic)**. The Sumo Logic Add-on can be attached to a Heroku application via the CLI or the UI. It automatically creates a Sumo Logic free trial account that contains a [https logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 * **[HTTPS Log Drain](https://devcenter.heroku.com/articles/log-drains#https-drains)**. A HTTPS Log Drain can be attached to a Heroku application via the CLI. It can be used to send logs to a [http logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) for any type of [Sumo Logic account](/docs/manage/manage-subscription/) as per your requirement. The Sumo Logic Add-on internally wraps this method.
-
-### Collecting Logs via Sumo Logic Add-on
-
-The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
+* **[Sumo Logic Add-on](https://elements.heroku.com/addons/sumologic)**. The Sumo Logic Add-on can be attached to a Heroku application via the CLI or the UI. It automatically creates a Sumo Logic free trial account that contains a [https logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
 :::note
 It is recommended to attach a Heroku add-on just after creating an app or running the ```heroku create``` command to help observe Heroku logs for all events that may follow for the app.
 :::
+
+### Collecting Logs via HTTPS Log Drain
+
+A HTTPS Log Drain can be attached to a Heroku application via the CLI.
+1. Collect the **URL** of a [HTTPs logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) in any [Sumo Logic account](/docs/manage/manage-subscription/).
+2. [Install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI.
+3. Add an HTTPS drain for an app named **myapp**:
+    ```
+    $ heroku drains:add <URL> -a myapp
+    ```
+
+You will now be able to see Heroku logs flowing into that HTTP source in Sumo Logic. You can also attach the same URL to multiple apps for a single log drain.
+
+:::note
+You can also run ```heroku drains``` or ```heroku drains --json``` command in your app directory to find the name of an existing Sumo Logic http source log_drain url of an app, which can be attached to a new app.
+:::
+
+### Collecting Logs via Sumo Logic Add-on
+
+The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
 #### Provisioning the Sumo Logic add-on via CLI
 
@@ -125,18 +141,6 @@ Provisioning the Sumo Logic add-on via the UI allows us to monitor a single app.
 5. Choose the **Plan name** and click on the **Submit Order Form** button.
 
 You will now be able to see the **Sumo Logic** add-on in the **Installed add-ons** section of you app's **Overview** tab. Clicking on that add-on redirects to open up a Sumo Logic free trail account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of **_sourceCategory** for your Heroku log data to **heroku**.
-
-### Collecting Logs via HTTPS Log Drain
-
-A HTTPS Log Drain can be attached to a Heroku application via the CLI.
-1. Collect the **URL** of a [HTTPs logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) in any [Sumo Logic account](/docs/manage/manage-subscription/).
-2. [Install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI.
-3. Add an HTTPS drain for an app named **myapp**:
-    ```
-    $ heroku drains:add <URL> -a myapp
-    ```
-
-You will now be able to see Heroku logs flowing into that HTTP source in Sumo Logic. You can also attach the same URL to multiple apps for a single log drain.
 
 ## Collecting Mertic Logs for Heroku
 
