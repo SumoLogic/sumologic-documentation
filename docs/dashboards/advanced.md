@@ -9,7 +9,7 @@ This page describes the recommended best practices for high performance Dashboar
 
 ## Best Practices
 
-- Rate limiting may be experienced when there are more than 20 concurrent queries. Limitting the number of panels to below 20 will ensure optimal performance for your dashboards. 
+- Rate limiting may be experienced when there are more than 20 concurrent queries. Limiting the number of panels to below 20 will ensure optimal performance for your dashboards. 
 - [Optimize your queries](/docs/search/optimize-search-performance/) to scan the least amount of data by using [partitions](/docs/search/optimize-search-partitions/) and/or the most narrow source categories. When possible, also consider using [Scheduled View(s)](/docs/manage/scheduled-views/) to ensure optimal performance.
 - For most viewed dashboards, enable [Auto-Refresh](/docs/dashboards/about/#auto-refresh) at a five-minute interval. This places compatible panel queries into our continuous query pipeline, allowing for nearly instant execution.
 
