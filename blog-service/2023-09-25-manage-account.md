@@ -1,5 +1,5 @@
 ---
-title: Sumo Orgs: Export Detailed Child Usages (Manage Account)
+title: Sumo Orgs - Export Detailed Child Usages (Manage Account)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - manage
