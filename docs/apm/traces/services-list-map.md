@@ -14,7 +14,7 @@ To open the Services List and Map, click **+ New** > **Services**.
 
 ## Services List view
 
-The **Services List** view provides a compact, high-level overview of your application service health insights, Alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
+The **Services List** view provides a compact, high-level overview of your application service health insights, alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
 
 ![services-list-display](/img/traces/services-list-filters.png)
 
@@ -22,11 +22,11 @@ KPIs listed in the table reflect the previous 15 minutes of data. Clicking on an
 
 ### Alerts
 
-The **Alert status** column will display the most severe alert status along with the total number of alerts associated with a given service. The **Status** column will display the services with alerts. To get detailed information on the alerts, click on the associated service to open the entity inspector.
-
-**Alerts** in the Service List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given host. 
+**Alerts** in the Service List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given service. 
 
 <img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
+
+The **Alert status** column displays the most severe alert status along with the total number of alerts associated with a given service.
 
 To view alert details, click on a row and view it in the right-hand-side panel.
 
@@ -37,7 +37,7 @@ In addition, you can narrow down the list of visible services by the type of act
 - Missing Data
 - Normal
 
-A Service is displayed in the list if at least one of the alerts is in the selected state.
+A service is displayed in the list if at least one of the alerts is in the selected state.
 
 <img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid black'}} width="400"/>
 
@@ -118,7 +118,7 @@ Manual anomaly detection allows you to specify different detection settings for 
 
 ### Alerts
 
-**Alerts** allows you to consider all associated alerts, which are currently active or resolved within the selected time.
+If **Alerts** option is enabled for a given service, its status will be influenced by the presence of active alerts (or those, which have been resolved within the selected time range) associated with the service.
 
 ## Services Dashboard Panels
 
