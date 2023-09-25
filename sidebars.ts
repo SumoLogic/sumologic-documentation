@@ -1813,7 +1813,6 @@ integrations: [
         'integrations/amazon-aws/aurora-postgresql-ulm',
         'integrations/amazon-aws/amazon-chime',
         'integrations/amazon-aws/amazon-chimesdk',
-        'integrations/amazon-aws/amazon-cloudfront',
         'integrations/amazon-aws/cloudfront',
         'integrations/amazon-aws/amazon-cloudsearch',
         'integrations/amazon-aws/amazon-cognito',
