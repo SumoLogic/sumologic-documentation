@@ -13,7 +13,7 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're excited to introduce a new addition to our accounts page, you can now export/download detailed child org usage data directly from the account overview page.
+We're excited to introduce a new addition to Sumo Logic orgs parent account users in our accounts page, you can now export/download detailed child org usage data directly from the account overview page.
 
 ## How to export detailed child usages
 
