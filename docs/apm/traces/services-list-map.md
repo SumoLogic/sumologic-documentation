@@ -16,15 +16,13 @@ To open the Services List and Map, click **+ New** > **Services**.
 
 The **Services List** view provides a compact, high-level overview of your application service health insights, alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
 
-![services-list-display](/img/traces/services-list-filters.png)
+<img src={useBaseUrl('/img/traces/services-list-filters.png')} alt="services-list-filters" style={{border: '1px solid black'}} width="800"/>
 
 KPIs listed in the table reflect the previous 15 minutes of data. Clicking on any service will open the Entities panel allowing for further drill-down.
 
 ### Alerts
 
 **Alerts** in the Service List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given service. 
-
-<img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
 
 The **Alert status** column displays the most severe alert status along with the total number of alerts associated with a given service.
 
@@ -39,14 +37,11 @@ In addition, you can narrow down the list of visible services by the type of act
 
 A service is displayed in the list if at least one of the alerts is in the selected state.
 
-<img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid black'}} width="400"/>
-
 ### General Settings
 
 Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
 
-<img src={useBaseUrl('img/traces/services-list-settings.png')} alt="services-list-settings" />
-
+<img src={useBaseUrl('img/traces/services-list-settings.png')} style={{border: '1px solid black'}} alt="services-list-settings" />
 
 :::note
 Your Services List and Map settings are specific to you (not your team) and will be preserved in your browser's local storage.
@@ -57,7 +52,6 @@ Your Services List and Map settings are specific to you (not your team) and wil
 Display and hide columns using **Display Settings**.
 
 ![services-list-display](/img/traces/services-list-display.png)
-
 
 ## Services Map view
 
@@ -72,18 +66,18 @@ Services Maps are built automatically from distributed tracing data in real time
 * Filter by environment (up to 10 values), if your tracing data has the deployment environment tag (`deployment.environment=[environment]`)
 * Search for a service by name
 
-![services-map](/img/traces/services-map.png)
+<img src={useBaseUrl('img/traces/services-map.png')} style={{border: '1px solid black'}} alt="services-map" width="800"/>
 
 
 ### General Settings
 
 Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
 
-<img src={useBaseUrl('img/traces/settings-general.png')} alt="service map gear icon for settings" width="300"/>
+<img src={useBaseUrl('img/traces/settings-general.png')} style={{border: '1px solid black'}} alt="service map gear icon for settings" width="300"/>
 
 ### Map legend
 
-<img src={useBaseUrl('img/traces/services-map-legend.png')} alt="services-map-legend" width="500"/>
+<img src={useBaseUrl('img/traces/services-map-legend.png')} style={{border: '1px solid black'}} alt="services-map-legend" width="500"/>
 
 * **Color** of services:
   * Red represents anomalies.
@@ -98,7 +92,6 @@ Configure anomaly detection in **General Settings** ([learn more](#anomaly-detec
   * Circle and arrows with dotted lines represent services or connections that have been inactive an hour or more.
 * **Size** of services: Size is based on service activity, where large circles are more active compared to smaller circles that are less active.  
 
-
 ## Anomaly Detection
 
 An anomaly is a spike in latency and errors or a dip in requests. Here's how to configure your own threshold settings for anomaly detection.
@@ -107,18 +100,20 @@ An anomaly is a spike in latency and errors or a dip in requests. Here's how to
 
 **Automatic anomaly detection** is enabled by default, with the **Worst Case** option selected. This will render services to be displayed as a red circle if at least one of the KPIs (latency, errors, requests) has had an anomaly in the last 15 minutes AND the anomaly was not present 7 days ago at the same time. Optionally, you can explicitly choose one of the other KPIs - **Latency**, **Error**, or **Request**.
 
-<img src={useBaseUrl('img/traces/services-list-map-auto-detection-settings.png')} alt="auto service anomaly settings" width="400" />
+<img src={useBaseUrl('img/traces/services-list-map-auto-detection-settings.png')} style={{border: '1px solid black'}} alt="auto service anomaly settings" width="400" />
 
 The standard [metric outlier operator](/docs/metrics/metric-charts/metrics-outliers) is used to detect this. You can adjust the sensitivity and **Learning window** of the outlier detection in the settings to make the logic more or less dependent on occasional spikes. 
 
 ### Manual
 Manual anomaly detection allows you to specify different detection settings for each KPI. Click the toggle switch to manually enable or disable each KPI highlight as desired.
 
-<img src={useBaseUrl('img/traces/services-list-map-manual-detection-settings.png')} alt="services manual anomaly detection settings" width="400"/>
+<img src={useBaseUrl('img/traces/services-list-map-manual-detection-settings.png')} style={{border: '1px solid black'}} alt="services manual anomaly detection settings" width="400"/>
 
 ### Alerts
 
 If **Alerts** option is enabled, for a given service its status will be influenced by the presence of active alerts (or those, which have been resolved within the selected time range) associated with the service.
+
+<img src={useBaseUrl('/img/traces/enable-alerts.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
 
 ## Services Dashboard Panels
 
@@ -127,14 +122,14 @@ The **Services Map** and **Services List** panels, available out of the box, ena
 To add a Services panel to your Dashboard:
 
 1. Open an existing Dashboard or create a new Dashboard (**+New** > **Dashboard New**).
-1. On an existing Dashboard, click **Add Panel** > **Services**, or, on a new Dashboard, click **Services**.<br/> ![add-servicemap.png](/img/traces/add-servicemap.png)  
-1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> ![create-servicemap.png](/img/traces/create-servicemap.png)
-1. (Optional) Select from the dropdown menus to filter by the following:<br/>  ![filter-servicemap.png](/img/traces/filter-servicemap.png)
+1. On an existing Dashboard, click **Add Panel** > **Services**, or, on a new Dashboard, click **Services**.<br/><img src={useBaseUrl('img/traces/add-servicemap.png')} style={{border: '1px solid black'}} alt="add-servicemap" width="800"/>
+1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> <img src={useBaseUrl('img/traces/create-servicemap.png')} style={{border: '1px solid black'}} alt="create-servicemap" width="500"/>
+1. (Optional) Select from the dropdown menus to filter by the following:<br/> <img src={useBaseUrl('img/traces/filter-servicemap.png')} style={{border: '1px solid black'}} alt="filter-servicemap" width="800"/> 
    * **Application**. Your application name. You can use this if your tracing data has the tag called `application=[app-name]` To pass the variables from dashboard filters, set `application={{application}}`
    * **Environment**. Your production, staging, or development environment name. You can use this if your tracing data has the tag called `deployment.environment=[environment-name]`. To pass the variables from dashboard filters, set `deployment.environment={{deployment.environment}}`
    * **Service(s)**. Your application name, which should be always there. To pass the variables from dashboard filters, set `service={{service}}`.
-1. Go to the **General** tab to configure your panel details (name, **Title Font Size**, and **Description**). <br/> <img src={useBaseUrl('img/traces/tracelist-details.png')} alt="panel details" width="330"/>
-1. For **Table** chart type only: Go to **Display Settings** and set the column data and services you'd like to see displayed.<br/> <img src={useBaseUrl('img/traces/display-settings-setup.png')} alt="display-settings-setup" width="500"/>
+1. Go to the **General** tab to configure your panel details (name, **Title Font Size**, and **Description**). <br/> <img src={useBaseUrl('img/traces/tracelist-details.png')}  alt="panel details" width="330"/>
+1. For **Table** chart type only: Go to **Display Settings** and set the column data and services you'd like to see displayed.<br/> <img src={useBaseUrl('img/traces/display-settings-setup.png')} style={{border: '1px solid black'}} alt="display-settings-setup" width="500"/>
 1. Click **Add to Dashboard**. The panel loads in your Dashboard to review your applications and services according to filtering.
 
 :::tip
