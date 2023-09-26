@@ -30,7 +30,9 @@ For Cloud Flex:
 ## Change organization name
 
 1. In the left navigation bar of the UI, select **Administration** > **Account**. 
-1. Select the details icon at the top and select **Manage Organization** > **Change Organization Name.**
+1. Access the appropriate menu for your [account type](#availability):
+     * Cloud Flex Credits: From the kebab menu at the top, select **Change Organization Name**.
+     * Cloud Flex: At the top, select **Manage Organization > Change Organization Name**.
 1. At the prompt, enter a new organization name in the text field.
 1. Click **Change Organization Name.** <br/><img src={useBaseUrl('img/subscriptions/Change_Organization_Name_prompt.png')} alt="Change_Organization_Name_prompt.png" width="450"/>
 
@@ -41,7 +43,9 @@ After you make this change, you will not be able to edit the account owner.
 :::
 
 1. In the left navigation bar of the UI, select **Administration** > **Account**.
-1. Select the details icon at the top and **Manage Organization** > **Change Account Owner.**
+1. Access the appropriate menu for your [account type](#availability):
+     * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Owner**.
+     * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. In the prompt dialog, enter a new account owner in the text field.
 1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" width="450"/>
 
@@ -97,7 +101,9 @@ You must be the account owner of the Sumo Logic account to change the account su
 :::
 
 1. Go to **Administration** > **Account** and select the details icon at the top.
-1. Click the **Change Account Subdomain**.
+1. Access the appropriate menu for your [account type](#availability):
+     * Cloud Flex Credits: From the kebab menu at the top, select **Change Account Subdomain**.
+     * Cloud Flex: At the top, select **Manage Organization > Change Account Owner**.
 1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only. <br/><img src={useBaseUrl('img/subscriptions/change-subdomain-name.png')} alt="change-subdomain-name.png"/>
 1. Click **Change Subdomain** Name to update the name.
 1. You will be automatically logged out and redirected to the new subdomain login page. 

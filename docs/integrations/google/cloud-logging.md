@@ -24,7 +24,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Logging integ
 
 * Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/logging/docs/audit-logging#audit_log_permissions). To enable logging for Google Logging, refer to the [Google documentation](https://cloud.google.com/logging/docs/audit-logging#enabling_audit_logging). For more details on log operations auditing, refer to [audited operations](https://cloud.google.com/logging/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   (resource.type=(logging_bucket or logging_exclusion or logging_log or logging_sink ))
+   (resource.type=(logging_bucket OR logging_exclusion OR logging_log OR logging_sink ))
    ```
 
 ### Configure metrics collection

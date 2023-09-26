@@ -24,9 +24,9 @@ You can collect the logs for Sumo Logic's Google Cloud Dataproc Metastore integr
 
 * Collect **Audit Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). These Audit Logs can be accessed based on the [permissions and roles](https://cloud.google.com/dataproc-metastore/docs/audit-logging#audit_log_permissions). To enable logging for Google Dataproc Metastore, refer to [Google documentation](https://cloud.google.com/dataproc-metastore/docs/audit-logging#enabling_audit_logging). For more detail on Dataproc Metastore operations being audited, refer to [audited operations](https://cloud.google.com/dataproc-metastore/docs/audit-logging#audited_operations). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   (resource.type=audited_resource and resource.labels.service=metastore.googleapis.com)
+   (resource.type=audited_resource AND resource.labels.service=metastore.googleapis.com)
    ```
 * Collect **Platform Logs** using the [Google Cloud Platform source](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source). Platform logs include service logs and [Metadata federation](https://cloud.google.com/dataproc-metastore/docs/hms-federation). While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   resource.type=metastore.googleapis.com/Service or metastore.googleapis.com/Federation
+   resource.type=metastore.googleapis.com/Service OR metastore.googleapis.com/Federation
    ```

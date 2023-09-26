@@ -10,6 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CSE Insight Enrichment Server is a component that automatically enriches CSE Insights.  
 
+:::caution
+The Insight Enrichment Server is deprecated. Use the Automation Service instead for enrichments. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation-service/automation-service-automations#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+:::
+
 :::note
 This topic describes v1.5.0 of the non-FedRAMP version of the Insight Enrichment Server, and v1.0.3 for the FedRAMP version.
 :::

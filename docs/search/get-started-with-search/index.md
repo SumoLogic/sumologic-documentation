@@ -6,7 +6,22 @@ description: Start here to begin exploring your data in Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import Iframe from 'react-iframe';
+
 Learn how to build and run searches, review logs, and more.
+
+Watch this micro lesson to get an introduction to search.
+
+<Iframe url="https://www.youtube.com/embed/VbFsfpmP6LY?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 
 In this section, we'll introduce the following concepts:
