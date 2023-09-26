@@ -245,7 +245,7 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 ### compression
 
-**Description.** This option controls whether the sensor compresses the bro output files stored in ` /opt/trident/sensor/output/`. By default the sensor does compress the bro files using gzip, when the size of the bro file exceeds the value of the `compression_threshold`. option, described below. To turn compression off, set this option to “no”, or any value other than “gzip”.  Compresses when the parameter is missing or set to gzip and bro output file is above the value set in `compression_threshold`.
+**Description.** This option controls whether the sensor compresses the Bro output files stored in ` /opt/trident/sensor/output/`. By default, the sensor does compress the Bro files using gzip when the size of the Bro file exceeds the value of the `compression_threshold` option, described below. To turn compression off, set this option to “no”, or any value other than “gzip”.  Compression occurs when the parameter is missing or set to gzip and the Bro output file is above the value set in `compression_threshold`.
 
 **Default Value.** gzip
 
