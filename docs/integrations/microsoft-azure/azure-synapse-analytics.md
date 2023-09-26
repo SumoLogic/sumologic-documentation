@@ -1,4 +1,12 @@
-# Overview
+---
+id: azure-synapse-analytics
+title: Azure Synapse Analytics
+description: Learn about the Sumo Logic collection process for the Azure Synapse Analytics service.
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-synapse-analytics.png')} alt="Thumbnail icon" width="50"/>
 
 **Azure Synapse Analytics**  is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. It gives you the freedom to query data on your terms, using either serverless or dedicated resources—at scale. This integration helps in monitoring integrations in your Synapse workspaces, tracking resource utilization(memory, CPU, connections etc) and query load across Spark pools and dedicated SQL pools.
 
@@ -12,7 +20,7 @@ For Azure Synapse Analytics, you can collect the following logs:
 * **Dedicated SQL pool logs**: Logs emitted by dedicated SQL pools. Log categories collected are listed [here](https://learn.microsoft.com/en-gb/azure/synapse-analytics/monitoring/how-to-monitor-using-azure-monitor#dedicated-sql-pool-logs).
 * **Apache Spark pool logs**: Logs emitted by Apache Spark pools. Log categories collected are listed [here](https://learn.microsoft.com/en-gb/azure/synapse-analytics/monitoring/how-to-monitor-using-azure-monitor#apache-spark-pool-log).
 
-# Setup
+## Setup
 
 Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs). Sumo Logic supports:
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
@@ -33,7 +41,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
    You must explicitly enable diagnostic settings for Synapse workspace, dedicated SQL pool, or Apache Spark pool you want to monitor.
 
-# Troubleshooting
+## Troubleshooting
 
 ### Azure Event Hubs Source
 
