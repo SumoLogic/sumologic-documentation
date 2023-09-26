@@ -118,7 +118,7 @@ Manual anomaly detection allows you to specify different detection settings for 
 
 ### Alerts
 
-If **Alerts** option is enabled for a given service, its status will be influenced by the presence of active alerts (or those, which have been resolved within the selected time range) associated with the service.
+If **Alerts** option is enabled, for a given service its status will be influenced by the presence of active alerts (or those, which have been resolved within the selected time range) associated with the service.
 
 ## Services Dashboard Panels
 
