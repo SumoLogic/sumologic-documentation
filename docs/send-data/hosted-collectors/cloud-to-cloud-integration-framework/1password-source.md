@@ -24,7 +24,7 @@ The 1Password Source provides a secure endpoint to receive Sign-in Attempts, Ite
 | :--- | :--- |
 | 5 min |  [Sign-in attempts](https://developer.1password.com/docs/events-api/reference/#post-apiv1signinattempts)
 | 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages)
-| 5 min |  [Audit Events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents)
+| 5 min |  [Audit events](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents)
 
 ## Setup
 
