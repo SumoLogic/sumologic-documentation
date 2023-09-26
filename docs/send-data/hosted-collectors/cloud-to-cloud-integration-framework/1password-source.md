@@ -23,7 +23,6 @@ The 1Password Source ingests:
 * JSON is the only supported log format.
 * Data is collected in five minute intervals.
 
-
 ## Authentication
 
 You'll need a 1Password API token and your customer-specific 1Password domain (for example, `events.1password.com`). To generate a 1Password API token, follow these steps:
