@@ -57,6 +57,7 @@ processors:
       - key: sumo.datasource
         value: linux
         action: insert
+  sumologic_schema/custom_files:
 
 service:
   pipelines:
@@ -68,6 +69,7 @@ service:
         - groupbyattrs/custom_files
         - resource/custom_files
         - resourcedetection/system
+        - sumologic_schema/custom_files
         - batch
       exporters:
         - sumologic
@@ -95,6 +97,7 @@ Configuration details:
 * **processors**:
   * `groupbyattrs/custom_files` Moves the `log.file.path_resolved` attribute from log record level to resource level to reduce data duplication.
   * `resource/custom_files` Adds the `_sourceCategory` resource attribute with value `application_logs_prod`.
+  * `sumologic_schema/custom_files` Translates attributes to names understood by Sumo Logic apps, for example renames the resource attribute `log.file.path_resolved` to `_sourceName`.
 
 * **exporters**:
   * `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
@@ -139,10 +142,12 @@ processors:
   groupbyattrs/json_files:
     keys:
       - log.file.path_resolved
+  resource/json_files:
     attributes:
       - key: sumo.datasource
         value: linux
         action: insert
+  sumologic_schema/json_files:
 
 service:
   pipelines:
@@ -152,7 +157,9 @@ service:
       processors:
       - memory_limiter
       - groupbyattrs/json_files
+      - resource/json_files
       - resourcedetection/system
+      - sumologic_schema/json_files
       - batch
       exporters:
       - sumologic

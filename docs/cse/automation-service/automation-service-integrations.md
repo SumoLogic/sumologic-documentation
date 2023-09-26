@@ -15,6 +15,10 @@ Integrations that are already installed to your environment appear in the **Inte
 Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
 :::
 
+:::note
+{@import ../../reuse/action-limits.md}
+:::
+
 ## View integrations
 
 The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Central](/docs/cse/automation-service/automation-service-app-central/#install-an-integration-from-app-central), or [create a custom integration](/docs/cse/automation-service/automation-service-examples/).

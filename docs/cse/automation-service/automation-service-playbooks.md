@@ -13,6 +13,10 @@ Playbooks can be configured to execute automatically without user intervention, 
 
 To run a playbook, add it to an automation. See [Create an automation](/docs/cse/automation-service/automation-service-automations/#create-an-automation). 
 
+:::note
+{@import ../../reuse/action-limits.md}
+:::
+
 ## View playbooks
 
 The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install playbooks from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).

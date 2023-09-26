@@ -6,6 +6,7 @@ description: You can highlight a time range in the histogram for your search res
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 When performing **Log Search** queries, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
 
@@ -13,6 +14,19 @@ When performing **Log Search** queries, you can visualize and filter log-level d
 * Drill down quickly into high severity logs
 * Navigate through a large volume of logs
 * Filter the relevant logs in their troubleshooting workflows
+
+Watch the following micro lesson to learn about log level detection.
+
+<Iframe url="https://www.youtube.com/embed/cAQYiVs-PXY?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 <details><summary>What are log levels?</summary>
 
