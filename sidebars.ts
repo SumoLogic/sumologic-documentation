@@ -539,7 +539,6 @@ module.exports = {
     items: [
       'manage/fields',
       'manage/health-events',
-      'manage/threat-intelligence-indicators',
     {
       type: 'category',
       label: 'Field Extractions',
