@@ -33,7 +33,7 @@ You can collect the logs and metrics for Sumo Logic's Google Cloud Run integrati
 
  While creating the sync in GCP, as part of the **Choose logs to include in sink** section, you can use the following query:
    ```sql
-   (resource.type=(cloud_run_job or cloud_run_revision))
+   (resource.type=(cloud_run_job OR cloud_run_revision))
    ```
 
 ### Configure metrics collection
