@@ -295,7 +295,7 @@ Description. The directory to which the sensor writes files extracted from netwo
 
 ### filter
 
-**Description.** This option tells bro not to capture network traffic between the sensor and the Sumo Logic. The sensor sends status reports and bro output files to end points on the destination, which we don’t want bro to capture. 
+**Description.** This option tells Bro not to capture network traffic between the sensor and the Sumo Logic. The sensor sends status reports and Bro output files to end points on the destination, which we don’t want Bro to capture. 
 
 This option is populated when first you install the sensor, or when you reconfigure it by running `/opt/trident/sensor/bin/configure.sh.  `
 
