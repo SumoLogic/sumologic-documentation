@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Public IP addresses are used by internet resources to communicate inbound to resources in Azure.A public IP address is a resource with its own properties and can be associated with other azure resources like NAT gateways, Application gateways etc. This integration helps in monitoring DDoS notification events, packet dropped rate, TCP and UDP data throughput.
+Azure Public IP addresses are used by internet resources to communicate inbound to resources in Azure. A public IP address is a resource with its own properties and can be associated with other azure resources like NAT gateways, Application gateways etc. This integration helps in monitoring DDoS notification events, packet dropped rate, TCP and UDP data throughput.
 
 For more details on Azure Public IP addresses, refer to the Azure Public IP addresses [documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses).
 

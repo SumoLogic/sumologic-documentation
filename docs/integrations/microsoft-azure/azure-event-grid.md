@@ -16,7 +16,7 @@ For more details on Azure Event Grid, refer to the Azure Event Grid [documentati
 
 For Azure Event Grid, you can collect the following logs and metrics:
 
-* **Resource Logs**. Publish and delivery failure logs by Event Grid resources.It also includes audit traces for data plane operations including public and private access operations. The schema for resource logs is described [here](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#resource-logs).
+* **Resource Logs**. Publish and delivery failure logs by Event Grid resources. It also includes audit traces for data plane operations including public and private access operations. The schema for resource logs is described [here](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#resource-logs).
 
 * **Metrics**. Metrics for Azure Event Grid are in below namespaces:
   * [Microsoft.EventGrid/domains](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-domains-metrics)

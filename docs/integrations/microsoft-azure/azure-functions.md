@@ -16,7 +16,7 @@ For more details on Azure Functions, refer to the Azure Functions [documentation
 
 For Azure Functions, you can collect the following logs and metrics:
 
-* **Function app logs**. These are custom application logs that your function code writes.For more information on logs schema, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/functionapplogs).
+* **Function app logs**. These are custom application logs that your function code writes. For more information on logs schema, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/functionapplogs).
 
 To learn more about configuring monitoring for azure functions, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring)
 
