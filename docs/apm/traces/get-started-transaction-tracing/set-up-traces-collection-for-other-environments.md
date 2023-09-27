@@ -96,8 +96,8 @@ OpenTelemetry tracing client libraries need to point spans accordingly to the pr
 * Jaeger GRPC: `http://HOSTNAME:14250`
 * Jaeger Thrift HTTP: `http://HOSTNAME:14268`
 * Jaeger Thrift Compact (UDP): HOSTNAME:6831
-* Zipkin: <http://HOSTNAME:9411/api/v2/traces>
-* OpenCensus: <http://HOSTNAME:55678>
+* Zipkin: `http://HOSTNAME:9411/api/v2/traces`
+* OpenCensus: `http://HOSTNAME:55678`
 
 Replace HOSTNAME with the host where the OpenTelemetry Collector/Agent is accessible. For example, this might be localhost or another address on the local node, depending on how the Agent was deployed.
 
