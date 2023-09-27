@@ -91,10 +91,10 @@ During [instrumentation of your application](/docs/apm/traces/get-started-trans
 
 OpenTelemetry tracing client libraries need to point spans accordingly to the protocol used. When a direct connection to OpenTelemetry Collector Gateway is used, the following settings can be used:
 
-* OTLP (HTTP): <http://HOSTNAME:4318>
-* OTLP (gRPC): <http://HOSTNAME:4317>
-* Jaeger GRPC: <http://HOSTNAME:14250>
-* Jaeger Thrift HTTP: <http://HOSTNAME:14268>
+* OTLP (HTTP): `http://HOSTNAME:4318`
+* OTLP (gRPC): `http://HOSTNAME:4317`
+* Jaeger GRPC: `http://HOSTNAME:14250`
+* Jaeger Thrift HTTP: `http://HOSTNAME:14268`
 * Jaeger Thrift Compact (UDP): HOSTNAME:6831
 * Zipkin: <http://HOSTNAME:9411/api/v2/traces>
 * OpenCensus: <http://HOSTNAME:55678>
