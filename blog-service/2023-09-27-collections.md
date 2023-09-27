@@ -2,8 +2,7 @@
 title: Cisco Vulnerability Management (Collection)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
-  - apps
-  - app catalog
+  - source
   - saas cloud
 hide_table_of_contents: true
 authors:
