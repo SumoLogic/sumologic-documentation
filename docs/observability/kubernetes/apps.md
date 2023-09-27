@@ -9,7 +9,7 @@ Sumo Logic provides a selection of Kubernetes apps to monitor various different 
 
 ## Kubernetes app
 
-The [Sumo Logic Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md) provides visibility into the operations and security of the worker nodes in a cluster, as well as the application logs of the worker nodes.
+The [Sumo Logic Kubernetes App](/docs/integrations/containers-orchestration/kubernetes) provides visibility into the operations and security of the worker nodes in a cluster, as well as the application logs of the worker nodes.
 
 The app is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. The App also integrates with Falco, an open source container native runtime security tool, to monitor and detect anomalous container, application, host, and network activity. 
 

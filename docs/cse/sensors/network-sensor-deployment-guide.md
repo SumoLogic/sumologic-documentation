@@ -124,16 +124,7 @@ reboot
 
 ### Outbound Firewall Rules
 
-Ensure that your firewall enables the following outbound traffic, with
-these rules:
-
-```
-TCP/443 <customername>.portal.jask.ai
-TCP/443 <customername>-ingest.portal.jask.ai
-TCP/443 34.223.47.64/27
-TCP/443 3.122.132.160/27
-TCP/443 99.79.83.0/27
-```
+See [Securing access to Sumo Logic infrastructure via DNS name or IP address](/docs/api/getting-started#securing-access-to-sumo-logic-infrastructure-via-dns-name-or-ip-address) for information on how to configure your firewall for outbound access to Sumo Logic.
 
 ### Interface considerations
 
@@ -252,25 +243,9 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 `sudo service trident_sensor restart`
 
-### api_key
-
-**Description.**  The "Sensor Key", shown on the Add Sensor page in CSE UI
-
-**Default Value.** None
-
-**Configured by wizard?** The wizard prompts you to supply this option value only if you did not supply the URL of a Sumo HTTP Source in response to the earlier prompt. (This is the situation where you are going to send captured data to a legacy CSE server.)   
-
-### cluster_base_url
-
-**Description**. The address of a CSE legacy server.
-
-**Default Value.** None
-
-**Configured by wizard?** Yes, it is set based on the cluster name provided in the wizard dialog when it prompts you "Enter the address of your Cloud SIEM cluster". This prompt appears only if you do not supply a value when prompted for a Sumo Logic HTTP Source URL.
-
 ### compression
 
-**Description.** This option controls whether the sensor compresses the bro output files stored in ` /opt/trident/sensor/output/`. By default the sensor does compress the bro files using gzip, when the size of the bro file exceeds the value of the `compression_threshold`. option, described below. To turn compression off, set this option to “no”, or any value other than “gzip”.  Compresses when the parameter is missing or set to gzip and bro output file is above the value set in `compression_threshold`.
+**Description.** This option controls whether the sensor compresses the Bro output files stored in ` /opt/trident/sensor/output/`. By default, the sensor does compress the Bro files using gzip when the size of the Bro file exceeds the value of the `compression_threshold` option, described below. To turn compression off, set this option to “no”, or any value other than “gzip”.  Compression occurs when the parameter is missing or set to gzip and the Bro output file is above the value set in `compression_threshold`.
 
 **Default Value.** gzip
 
@@ -286,7 +261,7 @@ If you do make manual updates to `trident-sensor.cfg`, you must restart the Netw
 
 ### debug
 
-**Description.** The sensor writes messages about the upload process, that is, the process of uploading captured data to Sumo Logic or the CSE server. By default, this log file is `/opt/trident/sensor/logs/trident-shipper.log`. You can use the debug option to tell the sensor to write debug-level to the log file. 
+**Description.** The sensor writes messages about the upload process, that is, the process of uploading captured data to Sumo Logic. By default, this log file is `/opt/trident/sensor/logs/trident-shipper.log`. You can use the debug option to tell the sensor to write debug-level to the log file. 
 
 **Default Value**. false
 
@@ -320,21 +295,13 @@ Description. The directory to which the sensor writes files extracted from netwo
 
 ### filter
 
-**Description.** This option tells bro not to capture network traffic between the sensor and the Sumo Logic (or the CSE server, in legacy environments). The sensor sends status reports and bro output files to end points on the destination, which we don’t want bro to capture. 
+**Description.** This option tells Bro not to capture network traffic between the sensor and the Sumo Logic. The sensor sends status reports and Bro output files to end points on the destination, which we don’t want Bro to capture. 
 
 This option is populated when first you install the sensor, or when you reconfigure it by running `/opt/trident/sensor/bin/configure.sh.  `
 
 **Default Value.** none
 
-**Configured by wizard?** No. The wizard does not prompt for this value, instead it determines the value based on the destination URL you supply to the wizard, either the Sumo Logic HTTP Source URL, or the URL for the legacy CSE server. 
-
-### ingest_base_url
-
-**Description.** Destination endpoint for sensor output when sensor is configured to send directly to CSE, as opposed to Sumo Logic.
-
-**Default Value**. None
-
-**Configured by wizard?** Yes, it is set based on the cluster name provided in the config wizard.
+**Configured by wizard?** No. The wizard does not prompt for this value, instead it determines the value based on the Sumo Logic HTTP Source URL you supply to the wizard. 
 
 ### input_directory
 
@@ -354,11 +321,11 @@ Configured by wizard? No
 
 ### log_file
 
-**Description.** The log file that contains messages written by the process that sends the collected data to Sumo Logic (or the legacy CSE server).
+**Description.** The log file that contains messages written by the process that sends the collected data to Sumo Logic.
 
 **Default Value**.` /opt/trident/sensor/logs/trident-shipper.log`
 
-**Configured by wizard?** The wizard does not prompt for this value, instead it determines the value based on the destination URL you supply to the wizard, either the Sumo Logic HTTP Source URL, or the URL for the legacy CSE server. 
+**Configured by wizard?** The wizard does not prompt for this value, instead it determines the value based on the Sumo Logic HTTP Source URL you supply to the wizard. 
 
 ### maximum_extracted_file_size
 
@@ -466,7 +433,7 @@ Configured by wizard? No
 
 ### shipper_threads
 
-**Description.** The number of threads the process that sends the collected data to Sumo Logic (or the legacy CSE server) will use to send files concurrently; setting this higher than 8 will have no impact. 
+**Description.** The number of threads the process that sends the collected data to Sumo Logic will use to send files concurrently; setting this higher than 8 will have no impact. 
 
 **Default Value.** Varies from 3 to 8; set dynamically based on the number of available CPUs.
 
@@ -522,9 +489,6 @@ input_directory             = /opt/trident/sensor/output
 sensor_name                 = pontoon-ubuntu1804
 sensor_id                   = c4b6e2c7-d696-444a-9803-398cd9407fc4
 sensor_zone                 = default
-api_key                     = __API_KEY__
-cluster_base_url            =
-ingest_base_url             =
 sensor_iface                = enp0s3
 extracted_file_directory    = /opt/trident/sensor/output/extract_files
 maximum_extracted_file_size = 10485760
@@ -552,9 +516,6 @@ log_file                    = /opt/trident/sensor/logs/trident-shipper.log
 input_directory             = /opt/trident/sensor/output
 sensor_name                 = demo-sensor
 sensor_id                   = 99b63729-007v-038u-8t42-51dikn72j7g
-api_key                     = xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
-cluster_base_url            = https://xxx.portal.jask.ai
-ingest_base_url             = https://xxxx-xxxxxx.portal.jask.ai
 sensor_iface                = eth0
 extracted_file_directory    = /opt/trident/sensor/output/extract_files
 maximum_extracted_file_size = 10485760
@@ -563,7 +524,8 @@ proxy_auth_required         = false
 extracted_file_types        = application/x-dosexec,application/x-msdownload,application/zip,application/x-msdos-program
 zip_password_protected_only = true
 status_interval             = 300
-filter                      = not ( host xxxx.portal.jask.ai ) and not ( host xxxx.portal.jask.ai )
+sumo_http_source_url        = https://example.sumologic.com/receive..._and_numbers__
+filter                      = not ( host example.sumologic.com )
 cluster                     = true
 workers                     = 4
 cluster_config_file         = /opt/trident/sensor/bro/etc/node.cfg

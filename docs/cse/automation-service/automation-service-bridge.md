@@ -170,7 +170,7 @@ ps faux |grep automation-bridge
 
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cse/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+On the SOAR instance, under **Automation > Bridge**, a list of live bridge agents will be displayed along with their status.
 
 ### Configuring the automation bridge for CyberArk
 
