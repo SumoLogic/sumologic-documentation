@@ -40,7 +40,7 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
-   You must explicitly enable diagnostic settings for Synapse workspace, dedicated SQL pool, or Apache Spark pool you want to monitor.
+You must explicitly enable diagnostic settings for Synapse workspace, dedicated SQL pool, or Apache Spark pool you want to monitor.
 
 ## Troubleshooting
 

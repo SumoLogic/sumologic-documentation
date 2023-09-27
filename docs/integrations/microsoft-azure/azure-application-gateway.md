@@ -22,7 +22,7 @@ For Azure Application Gateway, you can collect the following logs and metrics:
 
 To know more about the different resource log category types and schemas collected for Azure Application Gateway refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics#diagnostic-logging).
 
-* **Platform Metrics for Azure Application Gateway** These metrics are available in [Microsoft.Network/applicationGateways](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-supported#microsoftnetworkapplicationgateways) namespace.
+* **Platform Metrics for Azure Application Gateway**. These metrics are available in [Microsoft.Network/applicationGateways](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-supported#microsoftnetworkapplicationgateways) namespace.
 For more information on supported metrics in Azure Application Gateway v1 and Azure Application Gateway v2 , refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-metrics).
 
 ## Setup

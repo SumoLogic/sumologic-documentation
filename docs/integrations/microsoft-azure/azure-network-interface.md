@@ -16,7 +16,7 @@ For more details, refer to the Azure Network Interface [documentation](https://l
 
 For Azure Network Interface, you can collect the following metrics:
 
-* **Platform Metrics for Azure Network Interface** These metrics are available in [Microsoft.Network/networkInterfaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-networkinterfaces-metrics) namespace.
+* **Platform Metrics for Azure Network Interface**. These metrics are available in [Microsoft.Network/networkInterfaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-networkinterfaces-metrics) namespace.
 
 ## Setup
 

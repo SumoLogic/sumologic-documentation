@@ -16,9 +16,9 @@ For more details on Azure Data Factory, refer to the Azure Data Factory [documen
 
 For Azure Data Factory, you can collect the following logs and metrics:
 
-* **Data Factory Diagnostic Logs** - Events emitted by the Pipelines, Activities, Integration Runtimes and Integration Services.
+* **Data Factory Diagnostic Logs**. Events emitted by the Pipelines, Activities, Integration Runtimes and Integration Services.
 
-* **Data Factory Metrics** - metrics for Data Factory activity, pipeline, and trigger runs, and for SSIS IR operations and SSIS package executions.
+* **Data Factory Metrics**. Metrics for Data Factory activity, pipeline, trigger runs, for SSIS IR operations, and SSIS package executions.
 
 For more details on logs and metrics collected, refer to the [supported metrics documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-metrics-alerts#data-factory-metrics) and [logs schema documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-schema-logs-events#monitor-schema).
 
