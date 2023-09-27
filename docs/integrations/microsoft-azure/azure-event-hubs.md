@@ -16,14 +16,14 @@ For more details on Azure Event Hubs, refer to the Azure Event Hubs [documentati
 
 For Azure Event Hubs, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Event Hubs refer [documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
+* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Event Hubs refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
 Some of the log types could be available only in premium and dedicated tiers.
 
 * **Platform Metrics for Azure Event Hubs** These metrics are available in below namespaces
   * [Microsoft.EventHub/clusters](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventhub-clusters-metrics)
   * [Microsoft.EventHub/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventhub-namespaces-metrics)
 
-For more information on supported metrics, refer [documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#metrics).
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#metrics).
 
 ## Setup
 

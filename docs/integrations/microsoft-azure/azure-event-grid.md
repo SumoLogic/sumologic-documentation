@@ -26,7 +26,7 @@ For Azure Event Grid, you can collect the following logs and metrics:
   * [Microsoft.EventGrid/extensionTopics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-extensiontopics-metrics)
   * [Microsoft.EventGrid/eventSubscriptions](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-eventsubscriptions-metrics)
 
-    For more information on supported dimensions, refer [documentation](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#metrics).
+    For more information on supported dimensions, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#metrics).
 
 ## Setup
 

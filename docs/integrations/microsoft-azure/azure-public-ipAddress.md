@@ -16,10 +16,10 @@ For more details on Azure Public IP addresses, refer to the Azure Public IP addr
 
 For Azure Public IP addresses, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types collected for Azure Public IP addresses refer [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-publicipaddresses-logs).
+* **Resource logs**. To know more about the different resource log category types collected for Azure Public IP addresses refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-publicipaddresses-logs).
 
 * **Platform Metrics for Azure Public IP addresses** These metrics are available in [Microsoft.Network/publicIPAddresses](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-publicipaddresses-metrics) namespace.
-For more information on supported metrics, refer [documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/monitor-public-ip-reference#metrics).
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/monitor-public-ip-reference#metrics).
 
 ## Setup
 

@@ -16,14 +16,14 @@ For more details on Azure Functions, refer to the Azure Functions [documentation
 
 For Azure Functions, you can collect the following logs and metrics:
 
-* **Function app logs**. These are custom application logs that your function code writes.For more information on logs schema, refer [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/functionapplogs).
+* **Function app logs**. These are custom application logs that your function code writes.For more information on logs schema, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/tables/functionapplogs).
 
-To learn more about configuring monitoring for azure functions refer [documentation](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring)
+To learn more about configuring monitoring for azure functions refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring)
 
 * **Azure Functions specific metrics**. These are metrics specific to Functions like execution count and execution units.
-For more information on supported metrics, refer [documentation](https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions-reference#azure-functions-specific-metrics).
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-functions/monitor-functions-reference#azure-functions-specific-metrics).
 
-* **General App Service metrics** metrics which App Service platform implements. These metrics are available in `Microsoft.Web/sites` namespace. For more information on supported metrics, refer [documentation](https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#understand-metrics).
+* **General App Service metrics** metrics which App Service platform implements. These metrics are available in `Microsoft.Web/sites` namespace. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/web-sites-monitor#understand-metrics).
 
 ## Setup
 

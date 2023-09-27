@@ -20,10 +20,10 @@ For Azure Application Gateway, you can collect the following logs and metrics:
 * **Performance log**. These log captures performance information for each instance, including total requests served, throughput in bytes, total requests served, failed request count, and healthy and unhealthy backend instance count.The Performance log is available only for the v1 SKU. For the v2 SKU, use Metrics for performance data.
 * **Firewall log**. You can use this log to view the requests that are logged through either detection or prevention mode of an application gateway that is configured with the web application firewall.
 
-To know more about the different resource log category types and schemas collected for Azure Application Gateway refer [documentation](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics#diagnostic-logging).
+To know more about the different resource log category types and schemas collected for Azure Application Gateway refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics#diagnostic-logging).
 
 * **Platform Metrics for Azure Application Gateway** These metrics are available in [Microsoft.Network/applicationGateways](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/metrics-supported#microsoftnetworkapplicationgateways) namespace.
-For more information on supported metrics in Azure Application Gateway v1 and Azure Application Gateway v2 , refer [documentation](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-metrics).
+For more information on supported metrics in Azure Application Gateway v1 and Azure Application Gateway v2 , refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-metrics).
 
 ## Setup
 

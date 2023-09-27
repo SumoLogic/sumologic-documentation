@@ -16,13 +16,13 @@ For more details on Azure Key Vault, refer to the Azure Key Vault [documentation
 
 For Azure Key Vault, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Key Vault refer [documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
+* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Key Vault refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
 
 * **Key Vault Metrics**. These metrics are available in [Microsoft.KeyVault/vaults](https://learn.microsoft.com/en-gb/azure/azure-monitor/essentials/metrics-supported#microsoftkeyvaultvaults) namespace.
 
 * **Managed HSM Metrics** These metrics are available in [Microsoft.KeyVault/managedhsms](https://learn.microsoft.com/en-gb/azure/azure-monitor/essentials/resource-logs-categories#microsoftkeyvaultmanagedhsms) namespace.
 
-For more information on supported metrics and their units, refer [documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
+For more information on supported metrics and their units, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
 
 ## Setup
 

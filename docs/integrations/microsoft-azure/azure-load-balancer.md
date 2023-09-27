@@ -18,7 +18,7 @@ For Azure Load Balancer, you can collect the following metrics:
 
 * **Load Balancer Metrics** These metrics are available in [Microsoft.Network/loadBalancers](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-loadbalancers-metrics) namespace.
 
-For more information on supported metrics, refer [documentation](https://learn.microsoft.com/en-us/azure/load-balancer/monitor-load-balancer-reference#metrics).
+For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/load-balancer/monitor-load-balancer-reference#metrics).
 
 ## Setup
 
