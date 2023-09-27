@@ -68,7 +68,6 @@ Services Maps are built automatically from distributed tracing data in real time
 
 <img src={useBaseUrl('img/traces/services-map.png')} style={{border: '1px solid black'}} alt="services-map" width="800"/>
 
-
 ### General Settings
 
 Configure anomaly detection in **General Settings** ([learn more](#anomaly-detection)).
@@ -111,7 +110,7 @@ Manual anomaly detection allows you to specify different detection settings for 
 
 ### Alerts
 
-If **Alerts** option is enabled, for a given service its status will be influenced by the presence of active alerts (or those, which have been resolved within the selected time range) associated with the service.
+If the **Alerts** option is enabled, the status of a service will be influenced by the presence of active alerts (or those, which have been resolved within the selected time range) associated with the service.
 
 <img src={useBaseUrl('/img/traces/enable-alerts.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
 
