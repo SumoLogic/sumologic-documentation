@@ -8,9 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-functions.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. This integration helps in monitoring the health, tracking executions and estimating cost of your function apps.
-
-For more details on Azure Functions, refer to the Azure Functions [documentation](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview).
+[Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview) is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. This integration helps in monitoring the health, tracking executions, and estimating cost of your function apps.
 
 ## Log and Metric types
 
@@ -51,7 +49,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs  source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitor-log-analytics?tabs=csharp#setting-up). Perform below steps for each Azure Functions that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `Function Application Logs`.

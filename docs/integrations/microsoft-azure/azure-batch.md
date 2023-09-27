@@ -8,16 +8,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-batch.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Batch runs large-scale parallel and high-performance computing (HPC) batch jobs efficiently in Azure. This integration helps in monitoring health of the nodes; creation, update, and deletion events of individual Batch resources, such as a pool or task; and tracking the state (start/fail/complete) of jobs and tasks.
-
-For more details on Azure Batch, refer to the Azure Batch [documentation](https://learn.microsoft.com/en-us/azure/batch/).
+[Azure Batch](https://learn.microsoft.com/en-us/azure/batch/) runs large-scale parallel and high-performance computing (HPC) batch jobs efficiently in Azure. This integration helps in monitoring health of the nodes; creation, update, and deletion events of individual Batch resources, such as a pool or task; and tracking the state (start/fail/complete) of jobs and tasks.
 
 ## Log and Metric types
 
 For Azure Batch, you can collect the following logs and metrics:
 
-* **Service Logs**. Events emitted by the Batch service during the lifetime of an individual resource such as a pool or task. Logs events collected are listed [here](https://learn.microsoft.com/en-us/azure/batch/batch-diagnostics#service-log-events).
-* **Batch account metrics**: Metrics at the Batch account level. Metrics collected are listed [here](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-batch-batchaccounts-metrics).
+* **[Service Logs](https://learn.microsoft.com/en-us/azure/batch/batch-diagnostics#service-log-events)**. Events emitted by the Batch service during the lifetime of an individual resource such as a pool or task.
+* **[Batch account metrics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-batch-batchaccounts-metrics)**. Metrics at the Batch account level.
 
 ## Setup
 

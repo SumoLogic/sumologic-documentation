@@ -8,16 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Public IP addresses are used by internet resources to communicate inbound to resources in Azure. A public IP address is a resource with its own properties and can be associated with other azure resources like NAT gateways, Application gateways etc. This integration helps in monitoring DDoS notification events, packet dropped rate, TCP and UDP data throughput.
-
-For more details on Azure Public IP addresses, refer to the Azure Public IP addresses [documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses).
+[Azure Public IP Addresses](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses) are used by internet resources to communicate inbound to resources in Azure. A public IP address is a resource with its own properties and can be associated with other azure resources like NAT gateways, Application gateways etc. This integration helps in monitoring DDoS notification events, packet dropped rate, TCP, and UDP data throughput.
 
 ## Log and Metric types
 
 For Azure Public IP addresses, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types collected for Azure Public IP addresses, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-publicipaddresses-logs).
-
+* **Resource logs**. To know more about the different resource log category types collected for Azure Public IP addresses, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-publicipaddresses-logs).
 * **Platform Metrics for Azure Public IP addresses**. These metrics are available in [Microsoft.Network/publicIPAddresses](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-publicipaddresses-metrics) namespace.
 For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/monitor-public-ip-reference#metrics).
 
@@ -47,7 +44,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/monitor-public-ip#creating-a-diagnostic-setting). Perform below steps for each Public IP resource that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.

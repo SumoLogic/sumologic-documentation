@@ -8,16 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-event-grid.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Event Grid is a highly scalable, fully managed Pub Sub message distribution service that offers flexible message consumption patterns using the MQTT and HTTP protocols. This integration helps in monitoring data plane requests, delivery failures and publish failures of Event Grid resources - custom topics, system topics and domains.
-
-For more details on Azure Event Grid, refer to the Azure Event Grid [documentation](https://learn.microsoft.com/en-us/azure/event-grid/overview).
+[Azure Event Grid](https://learn.microsoft.com/en-us/azure/event-grid/overview) is a highly scalable, fully managed Pub Sub message distribution service that offers flexible message consumption patterns using the MQTT and HTTP protocols. This integration helps in monitoring data plane requests, delivery failures and publish failures of Event Grid resources - custom topics, system topics and domains.
 
 ## Log and Metric types
 
 For Azure Event Grid, you can collect the following logs and metrics:
 
 * **Resource Logs**. Publish and delivery failure logs by Event Grid resources. It also includes audit traces for data plane operations including public and private access operations. The schema for resource logs is described [here](https://learn.microsoft.com/en-us/azure/event-grid/monitor-push-reference#resource-logs).
-
 * **Metrics**. Metrics for Azure Event Grid are in below namespaces:
   * [Microsoft.EventGrid/domains](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-domains-metrics)
   * [Microsoft.EventGrid/systemTopics](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventgrid-systemtopics-metrics)
@@ -54,7 +51,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/event-grid/enable-diagnostic-logs-topic). Perform below steps for each Event Grid resource (domain, namespaces, custom topic, and system topic) that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.

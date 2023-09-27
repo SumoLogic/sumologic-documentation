@@ -8,9 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Virtual Network is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other,using the internet, and on-premises networks. This integration helps in monitoring the round trip time, failed pings, inbound dropped packets and inbound bytes.
-
-For more details on Azure Virtual Network, refer to the Azure Virtual Network [documentation](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview).
+[Azure Virtual Network](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview) is a service that provides the fundamental building block for your private network in Azure enabling many types of Azure resources to securely communicate with each other, using the internet, and on-premises networks. This integration helps in monitoring the round trip time, failed pings, inbound dropped packets, and inbound bytes.
 
 ## Metric types
 

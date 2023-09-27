@@ -8,19 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-front-door.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Front Door is Microsoft’s modern cloud Content Delivery Network (CDN) that provides fast, reliable, and secure access between your users and your applications’ static and dynamic web content across the globe. This integration helps in monitoring your application, track requests and identify performance bottlenecks in your CDN.
-
-For more details on Azure Front Door, refer to the Azure Front Door [documentation](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview).
+[Azure Front Door](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) is Microsoft’s modern cloud Content Delivery Network (CDN) that provides fast, reliable, and secure access between your users and your applications’ static and dynamic web content across the globe. This integration helps in monitoring your application, track requests, and identify performance bottlenecks in your CDN.
 
 ## Log and Metric types
 
 For Azure Front Door, you can collect the following logs and metrics:
 
 * **Access logs**. These can be used to identify slow requests, determine error rates, and understand how Front Door's caching behavior is working for your solution.
-* **Web application firewall (WAF) logs**. These can be used to detect potential attacks, and false positive detections that might indicate legitimate requests that the WAF blocked. For more information on the WAF logs, see Azure Web Application Firewall monitoring and logging.
+* **Web application firewall (WAF) logs**. These can be used to detect potential attacks and false positive detections, which indicates legitimate requests that the WAF blocked. For more information on the WAF logs, see Azure Web Application Firewall monitoring and logging.
 * **Health probe logs**. These can be used to identify origins that are unhealthy or that don't respond to requests from some of Front Door's geographically distributed PoPs.
 
-For more information on logs schema, refer below  documentation:
+For more information on logs schema, refer to the below documentations:
 
 * [Standard/Premimum tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#logs)
 * [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#diagnostic-logging)
@@ -28,7 +26,7 @@ For more information on logs schema, refer below  documentation:
 * **Metrics**. Usage metrics from your CDN endpoint are in below namespaces:
   * [Microsoft.Network/frontdoors](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-frontdoors-metrics)
 
-For more information on supported dimensions, refer below  documentation
+For more information on supported dimensions, refer to the below documentations:
 
 * [Standard/Premimum tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#metrics).
 * [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#metrics).
@@ -59,7 +57,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/frontdoor/standard-premium/how-to-logs#configure-logs). Perform below steps for each Azure Front Door profile that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select the log from `FrontDoorAccessLog, FrontDoorHealthProbeLog, and FrontDoorWebApplicationFirewallLog`.

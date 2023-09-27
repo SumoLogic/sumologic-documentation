@@ -8,21 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vault.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Key Vault is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in comprehensive monitoring of your key vaults requests, performance, failures, and latency.
-
-For more details on Azure Key Vault, refer to the Azure Key Vault [documentation](https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub).
+[Azure Key Vault](https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub) is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in comprehensive monitoring of your key vaults requests, performance, failures, and latency.
 
 ## Log and Metric types
 
 For Azure Key Vault, you can collect the following logs and metrics:
 
 * **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Key Vault, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
-
 * **Key Vault Metrics**. These metrics are available in [Microsoft.KeyVault/vaults](https://learn.microsoft.com/en-gb/azure/azure-monitor/essentials/metrics-supported#microsoftkeyvaultvaults) namespace.
-
 * **Managed HSM Metrics**. These metrics are available in [Microsoft.KeyVault/managedhsms](https://learn.microsoft.com/en-gb/azure/azure-monitor/essentials/resource-logs-categories#microsoftkeyvaultmanagedhsms) namespace.
 
-For more information on supported metrics and their units, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
+For more information on supported metrics and their units, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
 
 ## Setup
 
@@ -50,7 +46,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) for Key Vault resource. Perform below steps for each Key Vault that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.

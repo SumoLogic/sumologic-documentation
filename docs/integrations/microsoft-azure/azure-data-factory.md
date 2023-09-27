@@ -8,16 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-data-factory.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Data Factory is the cloud-based ETL and data integration service that allows you to create data-driven workflows for orchestrating data movement and transforming data at scale. This integration helps in monitoring the scheduled activities and pipelines for success and failure rates.
-
-For more details on Azure Data Factory, refer to the Azure Data Factory [documentation](https://learn.microsoft.com/en-gb/azure/data-factory/data-factory-overview).
+[Azure Data Factory](https://learn.microsoft.com/en-gb/azure/data-factory/data-factory-overview) is the cloud-based ETL and data integration service that allows you to create data-driven workflows for orchestrating data movement and transforming data at scale. This integration helps in monitoring the scheduled activities and pipelines for success and failure rates.
 
 ## Log and Metric types
 
 For Azure Data Factory, you can collect the following logs and metrics:
 
-* **Data Factory Diagnostic Logs**. Events emitted by the Pipelines, Activities, Integration Runtimes and Integration Services.
-
+* **Data Factory Diagnostic Logs**. Events emitted by the Pipelines, Activities, Integration Runtimes, and Integration Services.
 * **Data Factory Metrics**. Metrics for Data Factory activity, pipeline, trigger runs, for SSIS IR operations, and SSIS package executions.
 
 For more details on logs and metrics collected, refer to the [supported metrics documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-metrics-alerts#data-factory-metrics) and [logs schema documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-schema-logs-events#monitor-schema).
@@ -45,7 +42,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/data-factory/monitor-configure-diagnostics).
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.

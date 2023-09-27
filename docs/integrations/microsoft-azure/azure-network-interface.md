@@ -8,9 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-network-interface.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Network Interface (NIC) enables an Azure virtual machine (VM) to communicate with internet, Azure, and on-premises resources. This integration helps in monitoring packet and data throughputs.
-
-For more details, refer to the Azure Network Interface [documentation](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface).
+[Azure Network Interface (NIC)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface) enables an Azure virtual machine (VM) to communicate with internet, Azure, and on-premises resources. This integration helps in monitoring packet and data throughputs.
 
 ## Metric types
 

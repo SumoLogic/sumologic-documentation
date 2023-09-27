@@ -8,18 +8,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-event-hubs.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Event Hubs is a modern big data streaming platform and event ingestion service that can seamlessly integrate with other Azure and Microsoft services, such as Stream Analytics, Power BI, and Event Grid, along with outside services like Apache Spark. This integration helps in monitoring data plane access operations (such as send or receive events), tracking performance metrics like consumer lag, consumer and publisher throughput and active connections in your Event Hub.
-
-For more details on Azure Event Hubs, refer to the Azure Event Hubs [documentation](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about).
+[Azure Event Hubs]((https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) is a modern big data streaming platform and event ingestion service that can seamlessly integrate with other Azure and Microsoft services, such as Stream Analytics, Power BI, and Event Grid, along with outside services like Apache Spark. This integration helps in monitoring data plane access operations (such as send or receive events), tracking performance metrics like consumer lag, consumer and publisher throughput and active connections in your Event Hub.
 
 ## Log and Metric types
 
 For Azure Event Hubs, you can collect the following logs and metrics:
 
 * **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Event Hubs, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
-Some of the log types could be available only in premium and dedicated tiers.
-
-* **Platform Metrics for Azure Event Hubs**. These metrics are available in below namespaces
+:::info
+Some log types are only available in premium and dedicated tiers.
+:::
+* **Platform Metrics for Azure Event Hubs**. These metrics are available in below namespaces:
   * [Microsoft.EventHub/clusters](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventhub-clusters-metrics)
   * [Microsoft.EventHub/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventhub-namespaces-metrics)
 
@@ -51,7 +50,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Event Hub Namespaces that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.

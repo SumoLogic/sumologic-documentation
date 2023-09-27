@@ -8,23 +8,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-logic-app.png')} alt="Thumbnail icon" width="50"/>
 
-Azure Logic App is a cloud platform where you can create and run automated workflows with little to no code. This integration helps in monitoring logic app workflow's run status, trigger history, run history, and performance. It also helps in tracking successful delivery or receipt, errors, and properties for business-to-business (B2B) messages.
-
-For more details on Azure Logic App, refer to the Azure Logic App [documentation](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview).
+[Azure Logic App](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is a cloud platform where you can create and run automated workflows with little to no code. This integration helps in monitoring logic app workflow's run status, trigger history, run history, and performance. It also helps in tracking successful delivery or receipt, errors, and properties for business-to-business (B2B) messages.
 
 ## Log and Metric types
 
 For Azure Logic App, you can collect the following logs and metrics:
 
-* **Workflow runtime diagnostic events**.  To know more about the different resource log category types and schemas collected for Azure Logic App, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
-
-* **Integration Account track events**. To know more about the different tracking schemas for integration accounts, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/tracking-schemas-as2-x12-custom).
-
+* **Workflow runtime diagnostic events**. To know more about the different resource log category types and schemas collected for Azure Logic App, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
+* **Integration Account track events**. To know more about the different tracking schemas for integration accounts, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/tracking-schemas-as2-x12-custom).
 * **Logic App Workflow Metrics**. These metrics are available in [Microsoft.Logic/Workflows](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-workflows-metrics) namespace.
-
 * **Integration Account Metrics**. These metrics are available in [Microsoft.Logic/IntegrationServiceEnvironments](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-integrationserviceenvironments-metrics) namespace.
 
-For more information on supported metrics and their units, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
+For more information on supported metrics and their units, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
 
 ## Setup
 
@@ -52,7 +47,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs cloud-to-cloud source guide documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
+1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/monitor-workflows-collect-diagnostic-data?tabs=consumption#add-a-diagnostic-setting) for Logic App resource and [this documentation](https://learn.microsoft.com/en-us/azure/logic-apps/monitor-b2b-messages-log-analytics#set-up-azure-monitor-logs) for integration accounts. Perform below steps for each Logic App that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs` for Logic App or `IntegrationAccountTrackingEvents` for integration account.
