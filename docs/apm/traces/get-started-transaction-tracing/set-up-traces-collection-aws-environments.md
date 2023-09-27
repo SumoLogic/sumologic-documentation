@@ -101,7 +101,7 @@ You'll need an ECS Cluster where the AWS OpenTelemetry Collector will be deploye
    * `TEMPLATE_PATH`. Path to the template file from the first step
    * `CONFIG_FILE_PATH`. Path to the config file from the second step
    * `SUMO_HTTP_TRACES_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md)
-   * `SECURITY_GROUPS`. it is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as `sg-xyz,sg-xyz`.  
+   * `SECURITY_GROUPS`. It is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as `sg-xyz,sg-xyz`.  
     :::note
     The AWS OpenTelemetry Collector receives data from various receivers - these ports should be configured in the Security Group:
      * AWSXRAY - port: 2000/udp
