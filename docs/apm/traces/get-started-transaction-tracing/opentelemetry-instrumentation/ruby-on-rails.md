@@ -88,7 +88,7 @@ To enable instrumentation in the Ruby on Rails application and export the teleme
 
 The final step is to configure the exporter host, service and application name. This can be done [directly in the code](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.24.0/exporter/otlp#how-do-i-get-started) or by environment variables. In this example, the exporter will be configured by environment variables.
 
-* `OTEL_EXPORTER=otlp` - environment variable sets the exporter to OTLP
+* `OTEL_EXPORTER=otlp` - environment variable sets the exporter to OTLP.
 
 * `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent.  
 
