@@ -16,7 +16,7 @@ For more details on Azure IoT Hub, refer to the Azure IoT Hub [documentation](ht
 
 For Azure IoT Hub, you can collect the following logs and metrics:
 
-* **Resource logs**.  To know more about the different resource log category types and schemas collected for Azure IoT Hub refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference#resource-logs).
+* **Resource logs**.  To know more about the different resource log category types and schemas collected for Azure IoT Hub, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference#resource-logs).
 
 * **Platform Metrics for Azure IoT Hub**. These metrics are available in [Microsoft.Devices/IotHubs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-devices-iothubs-metrics) namespace.
 For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference#metrics).

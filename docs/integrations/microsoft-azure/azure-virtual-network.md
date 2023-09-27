@@ -16,7 +16,7 @@ For more details on Azure Virtual Network, refer to the Azure Virtual Network [d
 
 For Azure Virtual Network, you can collect the following metrics:
 
-* **Platform Metrics for Azure Virtual Network** These metrics are available in [Microsoft.Network/virtualNetworks](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-virtualnetworks-metrics) namespace.
+* **Platform Metrics for Azure Virtual Network**. These metrics are available in [Microsoft.Network/virtualNetworks](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-virtualnetworks-metrics) namespace.
 
 ## Setup
 

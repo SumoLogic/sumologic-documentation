@@ -16,13 +16,13 @@ For more details on Azure Logic App, refer to the Azure Logic App [documentation
 
 For Azure Logic App, you can collect the following logs and metrics:
 
-* **Workflow runtime diagnostic events**  To know more about the different resource log category types and schemas collected for Azure Logic App refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
+* **Workflow runtime diagnostic events**.  To know more about the different resource log category types and schemas collected for Azure Logic App, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
 
-* **Integration Account track events** To know more about the different tracking schemas for integration accounts refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/tracking-schemas-as2-x12-custom).
+* **Integration Account track events**. To know more about the different tracking schemas for integration accounts, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/tracking-schemas-as2-x12-custom).
 
-* **Logic App Workflow Metrics** These metrics are available in [Microsoft.Logic/Workflows](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-workflows-metrics) namespace.
+* **Logic App Workflow Metrics**. These metrics are available in [Microsoft.Logic/Workflows](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-workflows-metrics) namespace.
 
-* **Integration Account Metrics** These metrics are available in [Microsoft.Logic/IntegrationServiceEnvironments](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-integrationserviceenvironments-metrics) namespace.
+* **Integration Account Metrics**. These metrics are available in [Microsoft.Logic/IntegrationServiceEnvironments](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-integrationserviceenvironments-metrics) namespace.
 
 For more information on supported metrics and their units, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#key-vault-metrics).
 

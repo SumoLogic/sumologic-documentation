@@ -25,7 +25,7 @@ For more information on logs schema, refer below  documentation:
 * [Standard/Premimum tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#logs)
 * [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#diagnostic-logging)
 
-* **Metrics** usage metrics from your CDN endpoint are in below namespaces:
+* **Metrics**. Usage metrics from your CDN endpoint are in below namespaces:
   * [Microsoft.Network/frontdoors](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-frontdoors-metrics)
 
 For more information on supported dimensions, refer below  documentation
