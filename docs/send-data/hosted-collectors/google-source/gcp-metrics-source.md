@@ -113,7 +113,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
   | Network Security | networksecurity.googleapis.com |
   | Net App | netapp.com.googleapis.com |
   | Cloudvolumes Net App | cloudvolumesgcp-api.netapp.com |
-  | VPN Access | vpcaccess.googleapis.com |
+  | VPC Access | vpcaccess.googleapis.com |
 
   </details>
 
