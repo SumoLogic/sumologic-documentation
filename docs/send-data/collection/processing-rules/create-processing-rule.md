@@ -81,7 +81,7 @@ You can add a processing rule to an existing Source or create a processing rule 
     * [Include messages that match](include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account, think of it as an "allowlist" filter. This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude, for example, if you only want to include only messages coming from a firewall.
     * [Hash messages that match](hash-rules.md). Replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it is fully hidden.
     * [Mask messages that match](mask-rules.md). Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you'dn't normally track.
-    * Forward messages that match. Send data from an Installed Collector Source to a selected non-Sumo location. This option is only available if you have configured a data forwarding destination. For more information, see [Forward Data from an Installed Collector](/docs/manage/data-forwarding/installed-collectors.md).
+    * Forward messages that match. Send data from an Installed Collector Source to a selected non-Sumo location. This option is only available if you have configured a data forwarding destination. For more information, see [Archive Log Data to other destinations](/docs/manage/data-archiving/installed-collectors.md).
 
 1. Click **Apply** to add the rule. Continue to add rules as needed.
 

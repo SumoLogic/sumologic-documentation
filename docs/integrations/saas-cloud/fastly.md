@@ -362,9 +362,9 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
+If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+To install the app:
 
 1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.

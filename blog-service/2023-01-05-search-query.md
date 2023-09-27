@@ -1,5 +1,5 @@
 ---
-title: January 5, 2023 (Search)
+title: Search Query Editor Enhancements (Search)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - search

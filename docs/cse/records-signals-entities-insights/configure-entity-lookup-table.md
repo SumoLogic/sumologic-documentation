@@ -5,6 +5,7 @@ sidebar_label: Entity Lookup Tables
 description: Entity Lookup Tables allow you to normalize the names of users and hosts (machines) in your environment
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic describes Entity Lookup Tables and how to configure them.
 
@@ -35,7 +36,7 @@ An Entity Lookup Table defines two sets of values: a lookup value to look for in
 
 Entity Lookup Tables are based on Sumo Logic’s Lookup Tables feature. Here is an example of a **Host ID to Normalized Hostname** Lookup Table in the Sumo Logic Library:
 
-![example-table.png](/img/cse/example-table.png)
+<img src={useBaseUrl('img/cse/example-table.png')} alt="Example Entity lookup table" width="800"/>
 
 ## Limitations
 
@@ -49,7 +50,7 @@ Before you configure a Lookup Table in CSE, you must create the Lookup Table in 
 
 You can create Lookup Tables from information about hosts and users–known as inventory data–in your environment. Inventory data is collected by Sumo Logic core platform inventory sources, typically by an Active Directory source running on a Sumo Logic Installed Collector, and also by sources that leverage the Sumo Logic Cloud-to-Cloud Integration Framework.
 
-This method–the typical way to populate a Lookup Table for the purpose of Entity normalization–involves running a log search against data collected by a CSE Inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table.md) topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](#configure-an-entity-lookup-table), below.
+This method–the typical way to populate a Lookup Table for the purpose of Entity normalization–involves running a log search against data collected by a CSE Inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table) topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](#configure-an-entity-lookup-table), below.
 
 ### Existing lookups
 
@@ -64,7 +65,7 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. Click the gear icon in the CSE UI, and choose **Normalization**, under **Entities**.
 1. On the **Entity Normalization** page, click **Lookup Tables**.
 1. Click **Create** on the **Lookup Tables** tab.
-1. The **Existing Lookup Table** popup appears.<br/>  ![existing-lookup-table.png](/img/cse/existing-lookup-table.png)
+1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table" width="800"/>  
 1. **Type**. Choose the type of normalization you want to set up.
    * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
    * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
@@ -72,5 +73,5 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. **Lookup Column Name**. Enter the name of the Lookup Table column that contains the primary key for the table.
 1. **Substitution Column Name**. Enter the name of the Lookup Table column that contains the value you want to substitute for the lookup column.
 1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
-1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.<br/>  ![tree-dot.png](/img/cse/tree-dot.png)
+1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Three dot" width="800"/> 
 1. Click **Create**.     

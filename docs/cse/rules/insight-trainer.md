@@ -38,7 +38,7 @@ When you resolve Insights, you give them [Insight resolutions](/docs/cse/adminis
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
-You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
+You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Once a week, the Insight Trainer provides fresh recommendations based on analysis of the last 60 days of data. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. To see fresh recommendation every week, you must make suggested tuning adjustments at least once every two weeks. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
 
 The dashboard makes two kinds of suggestions, either a “tunability” score to help you write tuning expressions for Entities, or recommendations to change the severity level of rules. We recommend you first look at rules with the highest tunability score and assess the dominant Entities (like users and IPs) to write tuning expressions for. Only after implementing tuning expressions do we recommend you adjust rule severities. This [suggested workflow](#suggested-workflow) will give you the best results over time.
 
@@ -65,7 +65,7 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
-1. **Date Range**. The date range displayed is the model training period and is read-only. Model retraining is weekly based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
+1. **Date Range**. Once a week, the Insight Trainer provides fresh recommendations. The date range displayed is the model training period and is read-only. Model retraining is weekly based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
 1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 
 ### Recommendations Summary
@@ -104,7 +104,7 @@ In general, fewer Insights are generated if you decrease severities on rules, an
 ## Suggested workflow
 
 Following is the suggested workflow to use the Insight Trainer dashboard:
-1. Review severity recommendations once a week.
+1. Review severity recommendations once a week. The Insight Trainer provides fresh recommendations weekly, provided that you regularly implement recommendations. 
 1. Look at the rules with the highest tunability scores and assess the dominant Entities to write [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) for (like users and IP addresses).
 1. Write tuning expressions for Entities, where possible.
 1. Adjust rule severities if needed.

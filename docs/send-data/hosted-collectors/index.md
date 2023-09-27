@@ -43,7 +43,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/apm/real-user-monitoring/configure-data-collection"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector</h4></a>
+  <a href="/docs/send-data/hosted-collectors/configure-hosted-collector"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector</h4></a>
   <p>Set up Hosted Collectors so you can move data to Sumo Logic.</p>
   </div>
 </div>

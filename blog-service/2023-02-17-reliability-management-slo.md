@@ -1,5 +1,5 @@
 ---
-title: February 17, 2023 (Reliability Management)
+title: SLO Lookup Tables (Reliability Management)
 image: https://www.sumologic.com/img/logo.svg
 hide_table_of_contents: true
 authors:

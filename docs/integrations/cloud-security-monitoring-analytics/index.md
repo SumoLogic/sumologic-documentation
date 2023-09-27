@@ -54,20 +54,27 @@ This guide has documentation for all five data source apps that Sumo provides: W
       </div>
     </div>
     <div className="box smallbox7 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry">Linux - OpenTelemetry</a></h4>
+  <p>A guide to the Sumo Logic app for Linux Cloud Security Monitoring and Analytics via OpenTelemetry filelog receiver.</p>
+  </div>
+</div>
+    <div className="box smallbox8 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9">Palo Alto Firewall 9</a></h4>
       <p>A guide to the Sumo Logic app for Palo Alto Firewall 9 - Cloud Security Monitoring and Analytics.</p>
       </div>
     </div>
-    <div className="box smallbox8 card">
+    <div className="box smallbox9 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10">Palo Alto Firewall 10</a></h4>
       <p>A guide to the Sumo Logic app for Palo Alto Firewall 10 - Cloud Security Monitoring and Analytics.</p>
       </div>
     </div>
-    <div className="box smallbox9 card">
+    <div className="box smallbox10 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/cloud-security-monitoring-analytics/windows">Windows</a></h4>

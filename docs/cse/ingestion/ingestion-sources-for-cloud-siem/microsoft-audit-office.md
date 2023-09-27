@@ -5,6 +5,8 @@ sidebar_label: Microsoft 365 Audit (Office 365 Audit)
 description: Configure collection of Microsoft 365 log messages to be parsed by CSE's system parser for Microsoft 365. 
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic has instructions for collecting Microsoft 365 audit logs and sending them to Sumo Logic to be ingested by CSE. 
 
 ## Step 1: Configure Microsoft 365
@@ -39,9 +41,6 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 In this step, you verify that your logs are successfully making it into CSE. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
-1. On the **Log Mappings** page search for Office 365 and check under **Record Volume**.  
-    ![office-365-audit-record-volume.png](/img/cse/office-365-audit-record-volume.png)
-1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Office 365 security records.  
-    ![office-365-audit-search.png](/img/cse/office-365-audit-search.png)
+1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
+1. On the **Log Mappings** page search for Office 365 and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/office-365-audit-record-volume.png')} alt="Office 365 audit record volume" width="600"/> 
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Office 365 security records. <br/><img src={useBaseUrl('img/cse/office-365-audit-search.png')} alt="Office 365 audit search" width="400"/>  

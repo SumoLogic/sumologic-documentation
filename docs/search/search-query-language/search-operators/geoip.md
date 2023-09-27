@@ -4,7 +4,7 @@ title: geoip Search Operator
 sidebar_label: geoip
 ---
 
-Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="/docs/dashboards-new/panels/map-charts">map chart</a>. To create the map, the `geoip` operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
+Sumo Logic can match a <a href="/docs/search/search-query-language/parse-operators">parsed</a> IPv4 or IPv6 address to its geographical location on a <a href="/docs/dashboards/panels/map-charts">map chart</a>. To create the map, the `geoip` operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 

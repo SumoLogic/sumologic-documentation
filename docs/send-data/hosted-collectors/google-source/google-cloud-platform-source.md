@@ -43,11 +43,22 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 ## Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on Collect Logs for Google App Engine.
+You'll need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created.
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
    * Use a **PushDelivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**. 
+
+:::caution
+Pub/subs are subject to Google Cloud [quotas and limits](https://cloud.google.com/pubsub/quotas#quotas). Evaluate the number of logs against these limitations. If they are higher then the limit/quota, Sumo Logic recommends you split your logs over several topics.
+:::
+
+## Exporting Logs from Google Cloud Logging to Pub/Sub
+Once you configure the Pub/Sub, you can export data from Google Cloud Logging to Pub/Sub (created in the previous step) using Log Router Sinks. 
+
+Refer to [Google Cloud documentation](https://cloud.google.com/logging/docs/export/configure_export_v2#before-you-begin) for the permission required for creating Sinks.
+
+Follow the [steps to create a log sink](https://cloud.google.com/logging/docs/export/configure_export_v2#creating_sink) to start sending logs to Sumo Logic via Pub/Sub. Note that for **Sink destination**, select the Pub/Sub topic which you created in the previous step. For **Choose logs to include in sink**, you can give the query to include the logs which are needed.
 
 ### Limitations
 

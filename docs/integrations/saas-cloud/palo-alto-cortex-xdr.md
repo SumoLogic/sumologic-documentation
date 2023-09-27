@@ -146,7 +146,7 @@ _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
 | where is_whitelisted matches "{{is_whitelisted}}"
 | count_distinct(alert_id)
 ```
-   
+
 ```sql title="Incidents Created"
 _sourceCategory="palo_alto_cortex_xdr" "incident_id" "incident_name"
 | json "incident_id","incident_name","creation_time","modification_time","status","severity","assigned_user_mail","alert_count","high_severity_alert_count","critical_severity_alert_count","user_count","xdr_url","wildfire_hits","alerts_grouping_status","mitre_tactics_ids_and_names","mitre_techniques_ids_and_names" as incident_id,incident_name,creation_time,modification_time,status,severity,assigned_user_mail,alert_count,high_severity_alert_count,critical_severity_alert_count,user_count,xdr_url,wildfire_hits,alerts_grouping_status,mitre_tactics_ids_and_names,mitre_techniques_ids_and_names nodrop
@@ -163,22 +163,9 @@ Prior to installing the Palo Alto Cortex XDR app, you'll first need to set up th
 
 ## Installing the Palo Alto Cortex XDR app​
 
-This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR and descriptions of each of the dashboards.
+This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR.
 
-1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. Click **Add Integration**.
-1. Configure **Palo Alto Cortex XDR** app using the steps described in the [Palo Alto Cortex XDR Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/). If you already have set up your data, skip this step and click **Next**.
-1. Complete the following fields.
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and enter a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data that matches the time range query and has been received since the panel was created. Results will not be available right away, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Palo Alto Cortex XDR dashboards​
 
@@ -188,4 +175,4 @@ The **Palo Alto Cortex XDR - Alerts Overview** dashboard provides real-time anal
 
 ### Incidents Overview
 
-The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo-Alto-Cortex-XDR-Incidents-Overview" width="800"/> 
+The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo-Alto-Cortex-XDR-Incidents-Overview" width="800"/>

@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
-This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards-new/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 ## Working with Explore View
 
@@ -73,7 +73,7 @@ Select the graph data point you are interested in. In the following screenshot, 
 
 ![Drill_RCA.png](/img/observability/Drill_RCA.png)
 
-For details, see [Drill down to discover root causes](../../../dashboards-new/drill-down-to-discover-root-causes.md).
+For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
 
 ## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
 
@@ -110,4 +110,4 @@ Click a link for information on the individual app dashboards:
 
 ## More Information
 
-* [Explore View](/docs/dashboards-new/explore-view.md)
+* [Explore View](/docs/dashboards/explore-view.md)

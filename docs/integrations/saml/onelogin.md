@@ -119,7 +119,7 @@ _sourceCategory=onelogin
 ```
 
 
-## Install the Sumo Logic App
+## Installing the OneLogin App
 
 Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and dashboards that provide insight into your data.
 

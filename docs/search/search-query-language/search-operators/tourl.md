@@ -33,7 +33,7 @@ Where:
 
 #### Tabs
 
-When your URL points to another Sumo Logic feature from your account, such as a Dashboard (New), Search, Traces, or Collection page, you will have the option to open the link in another Sumo Logic tab or browser tab.
+When your URL points to another Sumo Logic feature from your account, such as a Dashboard, Search, Traces, or Collection page, you will have the option to open the link in another Sumo Logic tab or browser tab.
 
 Right-click the link to view the tab-options menu:
 

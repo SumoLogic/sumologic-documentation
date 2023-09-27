@@ -27,7 +27,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox3 card">
   <div className="container">
-  <a href="/docs/alerts/monitors/edit-settings"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Edit Monitor Settings</h4></a>
+  <a href="/docs/alerts/monitors/settings"><img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/><h4>Edit Monitor Settings</h4></a>
   <p>Learn how to view, create, manage, and organize Monitors.</p>
   </div>
 </div>

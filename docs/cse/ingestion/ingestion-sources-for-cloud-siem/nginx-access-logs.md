@@ -5,6 +5,8 @@ sidebar_label: Nginx Access Logs
 description: Configure a syslog source to ingest Nginx Access log messages to be parsed by CSE’s system parser for Nginx.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This section has instructions for collecting Nginx Access Log Syslog messages and sending them to Sumo Logic to be ingested by CSE.
 
 ## Step 1: Configure collection
@@ -24,7 +26,7 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 1. Download the appropriate collector for your operating system.
 1. Install the collector. Instructions for your preferred operating system and method of installation are available on the [Installed Collectors](/docs/send-data/installed-collectors) page.
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
-1. The **Edit Collector popup** appears. <br/>![edit-collector.png](/img/cse/edit-collector.png)
+1. The **Edit Collector popup** appears. <br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" width="500"/>
 1. **Name**. Provide a name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -42,11 +44,10 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
-1. The page refreshes.  
-    ![syslog-source.png](/img/cse/syslog-source.png)
+1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
-1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see Choosing TCP or UDP on the *Syslog Source* page.
+1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](/docs/send-data/installed-collectors/sources/syslog-source#choosing-tcp-or-udp) on the *Syslog Source* page.
 1. **Port**. Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in Step 2 below.
 1. **Fields**. 
@@ -62,9 +63,6 @@ Follow the Nginx [instructions](https://docs.nginx.com/nginx/admin-guide/monito
 
 In this step, you verify that your logs are successfully making it into CSE. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
-1. On the **Log Mappings** page search for "Nginx" and check under **Record Volume**, a list of mappers for Nginx will appear and you can see if logs are coming in.   
-    ![nginx-record-volume.png](/img/cse/nginx-record-volume.png)
-1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Nginx security records.  
-    ![checkpoint-search.png](/img/cse/nginx-search.png)
+1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mapping link" width="400"/> 
+1. On the **Log Mappings** page search for "Nginx" and check under **Record Volume**, a list of mappers for Nginx will appear and you can see if logs are coming in.<br/><img src={useBaseUrl('img/cse/nginx-record-volume.png')} alt="Nginix record volume" width="600"/>
+1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Nginx security records. <br/><img src={useBaseUrl('img/cse/nginx-search.png')} alt="Nginix search" width="400"/> 

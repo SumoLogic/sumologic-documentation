@@ -21,8 +21,8 @@ Just as for Entities of built-in types listed above—IP addresses, MAC addresse
 
 To create a custom Entity type:
 
-1. Click the gear menu and choose **Custom Types** from the **Entities** column.<br/>![custom-types-option.png](/img/cse/custom-types-option.png)
-1. Click **Create** on the **Custom Entity Types** page. <br/>![custom-types-page.png](/img/cse/custom-types-page.png)
+1. Click the gear menu and choose **Custom Types** from the **Entities** column.<br/><img src={useBaseUrl('img/cse/custom-types-option.png')} alt="Custom types option" width="800"/>
+1. Click **Create** on the **Custom Entity Types** page. <br/><img src={useBaseUrl('img/cse/custom-types-page.png')} alt="Custom Entity types page" width="800"/>
 2. The **Create Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom Entity type" width="500"/>
 3. **Name**. Enter a meaningful name for the custom Entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom Entity type on the **Custom Entity Type** page. 
 4. **Identifier**. Enter a unique identifier for the custom Entity type. The Identifier can include lowercase alphanumeric characters. The Identifier of the Entity type doesn’t appear in the CSE UI, but is used by the CSE backend.

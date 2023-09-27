@@ -20,7 +20,6 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Code42](https://support.code42.com/Administrator/Cloud/Monitoring_and_managing/Integrate_Code42_with_Sumo_Logic)
 * [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
-* [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
 * [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
@@ -29,7 +28,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Spinnaker](https://docs.armory.io/armory-enterprise/armory-admin/observe/integrations-sumologic/)
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)
-* [ZeroFox](https://drive.google.com/file/d/13svc5FP0WP3WAES6DvXhK1O8WRiPenf3/edit)
+* <a href="https://help.sumologic.com/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
 
 

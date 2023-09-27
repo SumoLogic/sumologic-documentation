@@ -229,7 +229,7 @@ You can also filter the Rejects dashboard by any combination of `DestinationIP`,
 
 ### Traffic
 
-**Amazon VPC Flow Logs - Traffic** dashboard provides traffic details, including the counts of unique traffic sources and destinations, the total accepted and rejected traffic, the top 10 source and destination ports, and analyses of bytes and packets transmitted.
+**Amazon VPC Flow Logs - Traffic** dashboard provides traffic details, including the counts of unique traffic sources and destinations, the total accepted and rejected traffic, the top 10 source and destination ports, and analyzes of bytes and packets transmitted.
 
 **Use case description**: Use this dashboard for comparing the permissive and non permissive traffic based on ports, protocols and network interfaces. Also one can monitor abnormal behavior, current and future trends based on total packets and bytes flowing across the network. One can filter by Action to filter out data for permissive and non permissive traffic. Similarly one can filter by `interfaceid`, `src_ip`, `dest_ip`, `src_port`, `dest_port` to further filter out the traffic for analysis.
 

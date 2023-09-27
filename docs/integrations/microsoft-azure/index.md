@@ -41,53 +41,53 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
   <p>A guide to the Sumo Logic app for Azure Audit.</p>
   </div>
 </div>
-    <div className="box smallbox5 card">
+<div className="box smallbox5 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-batch.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-batch">Azure Batch</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Batch.</p>
+  </div>
+</div>
+    <div className="box smallbox6 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/azure-faq.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/microsoft-azure/arm-integration-faq">Azure Integration with ARM FAQs</a></h4>
       <p>A guide to the Sumo Logic app for Azure Integration with ARM FAQs.</p>
       </div>
     </div>
-    <div className="box smallbox6 card">
+    <div className="box smallbox7 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail icon" width="40"/>
       <h4><a href="/docs/integrations/microsoft-azure/kubernetes">Azure Kubernetes Service Control Plane</a></h4>
       <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
       </div>
     </div>
-    <div className="box smallbox7 card">
+    <div className="box smallbox8 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/network-watcher.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/microsoft-azure/network-watcher">Azure Network Watcher</a></h4>
       <p>A guide to the Sumo Logic app for Azure Network Watcher.</p>
       </div>
     </div>
-    <div className="box smallbox8 card">
+    <div className="box smallbox9 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/integrations/microsoft-azure/sql">Azure SQL</a></h4>
       <p>A guide to the Sumo Logic app for Azure SQL.</p>
       </div>
     </div>
-    <div className="box smallbox9 card">
+    <div className="box smallbox10 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="Thumbnail icon" width="55"/>
       <h4><a href="/docs/integrations/microsoft-azure/web-apps">Azure Web Apps</a></h4>
       <p>A guide to the Sumo Logic app for Azure Web Apps.</p>
       </div>
     </div>
-    <div className="box smallbox10 card">
+    <div className="box smallbox11 card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
       <h4><a href="/docs/integrations/microsoft-azure/iis-7">IIS 7</a></h4>
       <p>A guide to the Sumo Logic app for IIS 7.</p>
-      </div>
-    </div>
-    <div className="box smallbox11 card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="120"/>
-      <h4><a href="/docs/integrations/microsoft-azure/iis-10-legacy">IIS 10 (Legacy)</a></h4>
-      <p>A guide to the Sumo Logic app for IIS 10 Legacy.</p>
       </div>
     </div>
     <div className="box smallbox12 card">

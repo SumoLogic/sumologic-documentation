@@ -11,6 +11,10 @@ You can query the index to:
 
 * Get the total metric data volume (data points) ingested by collector, source, source name, source category, or source host. 
 
+:::note
+You cannot query the index to get storage credits. For information about storage credits, see [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts).
+:::
+
 ## Message format
 
 Each JSON message contains the parent object for each source data point, and child objects that detail the data points for each parent.
@@ -19,7 +23,7 @@ For example, a single message for collector volume data may look similar to the
 period.
 
 ```sql
-_index=sumologic_volume _sourcecategory=sourcecategory_tracing_volume
+_index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"billedBytes\"\:(?<billedBytes>\d+)\,\"spansCount\"\:(?<spansCount>\d+)\}" multi
 | timeslice 1h
 |sum(billedBytes) as %"billedBytes" by _timeslice
@@ -93,7 +97,7 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
 
 ```
-_index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume
+_index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
 | timeslice 6h
 | sum(datapoints) as datapoints by _timeslice
@@ -107,7 +111,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 This query runs against the metrics volume index and uses the [predict](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
 ```
-_index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume datapoints
+_index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume datapoints
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
 | timeslice 1h
 | sum(datapoints) as datapoints by _timeslice

@@ -224,7 +224,7 @@ Use this dashboard to:
 * Analyze summaries of each prevention component, such as script control, memory exploit protection, device control, application control, AI based threat classification, and user actions performed from Cylance Web Console.
 * View of threats in the system, and drill down into specific prevention mechanisms and threat events by clicking in the panel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Overview.png')} alt="Cylance dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Overview.png')} alt="Cylance dashboards" />
 
 ### Threat
 
@@ -234,7 +234,7 @@ Use this dashboard to:
 * Determine hosts (IP Address, device names) and zones affected by various threats identified and handled in the system.
 * Monitor files affected with SHA occurring multiple times, and various paths of the files, to understand the threat footprint.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Threat.png')} alt="Cylance dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Threat.png')} alt="Cylance dashboards" />
 
 
 ### Threat Classification
@@ -242,12 +242,11 @@ Use this dashboard to:
 The **Cylance - Threat Classification Dashboard** provides an insightful view of the types of threats experienced on your network. Dashboard panels are a mixture of graphs and detailed information on events, event names, threat class, subclass trends, safe files, malware files, and an event breakdown.
 
 Use this dashboard to:
-
 * Determine how threats in your organization are analyzed and classified by Cylance Research Team.
 * Assess threats by classification: Malware, PUP - Potentially Unwanted Programs, Dual Use, Trusted Local, and Unknown.
 * Identify Trusted - Local files and add them to your Safe List in Cylance. For more details on classification and subs-classification see the Cylance [documentation](https://home-support.cylance.com/hc/en-us/articles/115009564987-What-are-Threat-Classifications-).
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Threat_Classification.png')} alt="Cylance dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Threat-Classification.png')} alt="Cylance dashboards" />
 
 
 ### Memory Exploit Attempts
@@ -262,12 +261,12 @@ Whenever the agent detects certain hard-coded behaviors considered to be indicat
 * Terminate the process completely
 
 Use this dashboard to:
-
 * Identify the most common policy violations, processes and highly impacted systems in your environment.
 * Monitor when, where, and what actions are taken with the configured policies in  your environment.
 * Devise any necessary policies changes based on findings.  
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Memory_Exploit_Attempts.png')} alt="Cylance dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Memory-Exploit-Attempts.png')} alt="Cylance dashboards" />
+
 
 ### Device
 
@@ -279,7 +278,7 @@ Use this dashboard to:
 * Investigate devices that have been removed from protection.
 * Assess whether to push the latest agent version, if any device is found running on old or outdated version.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Device.png')} alt="Cylance dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Device.png')} alt="Cylance dashboards" />
 
 
 ### Device Control
@@ -287,7 +286,6 @@ Use this dashboard to:
 The **Cylance - Device Control Dashboard** provides insights into external devices involved in threats on your network. Dashboard panels provide graphs and detailed information on events, hosts, unique external devices, event and action trends, and device control event details.
 
 Use this dashboard to:
-
 * Monitor external devices (like USB mass storage device) connected to your environment.
 * Assess which devices to connect to your systems.
 * Grant and revoke access rights to specific devices, or a group of device categories.
@@ -296,8 +294,8 @@ Use this dashboard to:
 
 You can set an exception for a Vendor ID. Use a Product ID and Serial Number for more specific exceptions.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Device-Control.png')} alt="Cylance dashboards" />
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Device_Control.png')} alt="Cylance dashboards" />
 
 ### Script Control
 
@@ -306,7 +304,6 @@ The **Cylance - Script Control Dashboard** provides insights regarding scripts o
 Script control injects into a script interpreter (responsible for the execution of scripts). By injecting into the interpreter, the agent is able to detect the script and script path before the script is executed.
 
 Use this dashboard to:
-
 * Monitor when, where, and how scripts are used in the environment. This ultimately reduces the attack surface on which an evildoer may distribute malware.
 * Monitor and protect against scripts running in the environment.
 * Monitor the interpreter version on your systems and decide to push latest version, when the system is running an out-dated version.
@@ -314,11 +311,10 @@ Use this dashboard to:
 * Monitor which scripts are getting blocked or executed with notification alerts.
 * Change alert settings to block mode and only allow scripts to run out of specified folders, as necessary.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-Script-Control.png')} alt="Cylance dashboards" />
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Script_Control.png')} alt="Cylance dashboards" />
 
 ### AuditLog
-
 
 The **Cylance - AuditLog Dashboard** has easy to access information about audit logs for your network. Dashboard panels provide high-level graphs and detailed information showing the number of events, event names and trends, users and user geographic locations, source IPs, and a list of recent events.
 
@@ -326,4 +322,4 @@ Use this dashboard to:
 * Monitor user activity performed from Cylance Web Console.
 * Monitor users overriding, updating policies manually using Cylance Web Console.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_AuditLog.png')} alt="Cylance dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance-AuditLog.png')} alt="Cylance dashboards" />

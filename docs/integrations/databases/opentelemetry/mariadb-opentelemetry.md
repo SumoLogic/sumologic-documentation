@@ -53,7 +53,9 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
 4. Save the `server.cnf` file.
 5. Restart the MariaDB server: `systemctl restart mariadb`
 
-## Configure MariaDB Logs Collection
+## Collection configuration and app installation
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 

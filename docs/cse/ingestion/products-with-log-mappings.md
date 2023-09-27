@@ -199,10 +199,6 @@ which CSE provides built-in log mapping and parsing support. 
 
 * Fortigate
 
-## Gigamon
-
-* ThreatInsight
-
 ## GitHub
 
 * GitHub

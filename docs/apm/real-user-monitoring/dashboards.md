@@ -28,7 +28,7 @@ The data will populate in your organization's **Sumo Logic RUM - default** das
 
 ## Using Explore View
 
-Once the RUM app has been installed, use our [Explore view](/docs/dashboards-new/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
+Once the RUM app has been installed, use our [Explore view](/docs/dashboards/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
 1. Go to **+New** > **Explore**.
 1. Under **Explore By**, **click Real User Monitoring**.

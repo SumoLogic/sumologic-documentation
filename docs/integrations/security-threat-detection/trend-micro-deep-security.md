@@ -126,7 +126,7 @@ Note the spaces with `Deep Security Manager`.
      ```
 1. **Server Name**. Enter the value that was shown in the **Host** field on the **Cloud Syslog Source Token** page when you configured the Cloud Syslog Source above.
 2. **Server Port**.  Enter the value that was shown in the **Port** field on the **Cloud Syslog Source Token** page when you configured the Cloud Syslog Source above.
-3. **Transport**. Leave "TLS" selected.
+3. **Transport**. Leave "TLS" selected. To check your connection for TLS, see [Troubleshooting](/docs/send-data/hosted-collectors/cloud-syslog-source#troubleshooting) in our Cloud Syslog Source article.
 4. Click **OK**.
 
 

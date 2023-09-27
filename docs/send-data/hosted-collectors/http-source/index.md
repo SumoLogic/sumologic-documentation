@@ -34,7 +34,7 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
   <h4>Upload Metrics to HTTP Source</h4></a>
-  <p>This guide provides instructions on uploading logs to an HTTP Source.</p>
+  <p>This guide provides instructions on uploading metrics to an HTTP Source.</p>
   </div>
 </div>
   <div className="box smallbox5 card">

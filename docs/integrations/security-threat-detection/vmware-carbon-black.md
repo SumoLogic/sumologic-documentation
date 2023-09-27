@@ -23,7 +23,7 @@ Sumo Logic analyzes the following required VMware Carbon Black events for more e
 * VMware Carbon Black EDR Events
 * VMware Carbon Black Endpoint Standard Events
 
-Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](/docs/integrations/security-threat-detection/VMware-Carbon-Black#Collect_logs_for_VMware_Carbon_Black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
+Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black#Collect-logs-for-VMware-Carbon-Black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
 
 
 ## Collect Logs for VMware Carbon Black
@@ -157,7 +157,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findi
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
-For more information, see [Live Tail](/docs/search/Live-Tail).
+For more information, see [Live Tail](/docs/search/live-tail).
 
 
 ### Sample Log Messages
@@ -349,7 +349,7 @@ You can use filters to drill down and examine the data on a granular level.
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 
@@ -489,7 +489,7 @@ Use this dashboard to:
 
 The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 * Quickly review your infrastructure security status.

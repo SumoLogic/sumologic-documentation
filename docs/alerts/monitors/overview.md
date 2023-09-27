@@ -19,7 +19,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Rules
 
-* To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/edit-settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
+* To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
 * Log Monitors use the [role search filter](/docs/manage/users-roles/roles/construct-search-filter-for-role) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
@@ -73,7 +73,7 @@ The monitor is the object that you configure within Sumo Logic that:
 The underlying data stream, either logs or metrics, on which the monitor is created.
 
 ### Mute  
-When a monitor is in a mute state it continues to process your data stream as expected where Incidents are still generated. However, notifications are snoozed based on your mute condition.
+When a monitor is in a mute state, it continues to process your data stream as expected where alerts are still generated. However, notifications are suppressed based on your mute condition. See also: [*Muting Schedules*](/docs/alerts/monitors/muting-schedules).
 
 ### Resolve  
 The process of closing an incident.

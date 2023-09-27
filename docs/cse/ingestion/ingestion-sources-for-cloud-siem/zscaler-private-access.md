@@ -5,6 +5,8 @@ sidebar_label: Zscaler Private Access
 description: Configure an HTTP source to ingest Zscaler Private Access log messages and send them to CSE’s Zscaler Private Access system parser.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This section has instructions for collecting Zscaler Private Access (ZPA) log messages and sending them to Sumo Logic to be ingested by CSE.
 
 Sumo Logic CSE supports ZPA logs sent as JSON.
@@ -19,8 +21,7 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 1. In the Sumo Logic platform, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
-1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
+1. The **Add Hosted Collector** popup appears.  <br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="Add hosted collector" width="500"/>
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -37,14 +38,13 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 1. Navigate to the Hosted Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
-1. The page refreshes.  
-    ![http-source.png](/img/cse/http-source.png)
+1. The page refreshes.<br/><img src={useBaseUrl('img/cse/http-source.png')} alt="HTTP source" width="600"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** If you are not parsing all sources in the hosted collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with value */Parsers/System/Zscaler/Zscaler Private Access/Zscaler Private Access-JSON*.
-1. **Advanced Options for Logs**. For information about the optional advance options you can configure, see HTTP Logs and Metrics Source.
+1. **Advanced Options for Logs**. For information about the optional advance options you can configure, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/).
 1. Click **Save**.
 1. Make a note of the HTTP Source URL that is displayed. You’ll supply it in [Step 2](#step-2-configure-zscaler-private-access) below.
 
@@ -56,9 +56,6 @@ In this step you configure Zscaler Private Access to send log messages to Sumo L
 
 In this step, you verify that your logs are successfully making it into CSE. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
-1. On the **Log Mappings** page search for "ZPA" and check under **Record Volume**.  
-    ![zscaler-record-volume.png](/img/cse/zscaler-record-volume.png)
-1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for "ZPA" security records.  
-    ![zscaler-search.png](/img/cse/zscaler-search.png)
+1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
+1. On the **Log Mappings** page search for "ZPA" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/zscaler-record-volume.png')} alt="Zscaler record volume" width="600"/>
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for "ZPA" security records. <br/><img src={useBaseUrl('img/cse/zscaler-search.png')} alt="Zscaler search" width="400"/>

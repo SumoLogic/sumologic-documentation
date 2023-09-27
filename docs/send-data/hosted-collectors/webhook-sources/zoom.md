@@ -37,7 +37,7 @@ Follow the below steps to get the required fields for user configuration:
     - Short Description
     - Company Name
     - Developer Name
-    - Developer Email Address 
+    - Developer Email Address
   <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
 1. Click **Continue** to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
 1. Keep this window open and configure the Zoom source on Sumo Logic.
@@ -68,7 +68,7 @@ To configure a Zoom Source:
 1. Copy the HTTP source address.
     * If you need to access the Source's URL again, click **Show URL**.<br/><img src={useBaseUrl('/img/send-data/show-url-zoom.png')} alt="Show URL" width="800"/>
 
-## Enable Events Subcriptions
+## Enable Events Subscriptions
 
 1. Go back to the Zoom Marketplace page that you left open in [step 1](#setup-and-configuration).
 1. Enable **Event Subscriptions**. <br/><img src={useBaseUrl('img/send-data/events-subscriptions.png')} alt="events-subscriptions" width="550"/>
@@ -83,4 +83,50 @@ To configure a Zoom Source:
   :::
 1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="app-activated-message" width="400"/>
 
+### JSON configuration
 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+
+| Parameter | Type | Required | Description | Access |
+|:--|:--|:--|:--|:--|
+| `sourceType` | String  | Yes | HTTP Source. | not modifiable |
+| `contentType` | String  | No | Defined based on the AWS Source you are creating. Use `{"type":"Zoom"}` for Zoom Source. | not modifiable |
+| `URL` | String | No | Assigned by Sumo Logic for Zoom Source. | Used to set up event-based notifications with Zoom. This value is created and assigned by Sumo Logic when the Source is created. |
+| `thirdPartyRef` | JSON  | Yes | Provides required information for third-party integration, including the Zoom secret token. | n/a |
+
+
+### JSON example
+
+```json
+{
+  "api.version": "v1",
+  "source": {
+    "name": "Zoom source",
+    "description": "description",
+    "category": "sourcecategory",
+    "hostName": "sourcehost",
+    "automaticDateParsing": true,
+    "multilineProcessingEnabled": true,
+    "useAutolineMatching": true,
+    "contentType": "Zoom",
+    "forceTimeZone": false,
+    "filters": [],
+    "cutoffTimestamp": 0,
+    "encoding": "UTF-8",
+    "fields": {},
+    "thirdPartyRef": {
+      "resources": [
+        {
+          "serviceType": "Zoom",
+          "authentication": {
+            "type": "ZoomAuthentication",
+            "secretToken": "xxxxxxxx"
+          }
+        }
+      ]
+    },
+    "messagePerRequest": false,
+    "sourceType": "HTTP"
+  }
+}
+```

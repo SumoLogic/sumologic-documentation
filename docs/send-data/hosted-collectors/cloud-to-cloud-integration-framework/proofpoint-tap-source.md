@@ -20,6 +20,8 @@ The Proofpoint integration supports the following four event types:
 
 :::note
 This Source is available in the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints).
+
+The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in their [documentation](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). The integration will only be able to fetch a maximum of the last 7 days data. So there is a chance of data loss if the C2C stops functioning for more than a 7-day time interval.
 :::
 
 ## States

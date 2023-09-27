@@ -48,7 +48,7 @@ artifactory.traffic.collectionActive=true
 ```
 A restart is required for traffic collection to take effect.
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
 {@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
