@@ -44,7 +44,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **IP reputation V3**.
    1. To the right of the **IPs** field, click the gear icon.
-   1. Click **Playbook inputs** and select **input.entity.value**.
+   1. Click [**Playbook inputs**](#playbook-inputs) and select **input.entity.value**.
    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-ip-reputation-v3-add-node.png')} alt="Add node for IP Reputation V3" width="500"/> 
 1. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
@@ -53,7 +53,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. For **Type**, select **Notification**.
    1. For **Action**, select **Add Insight Enrichment**.
    1. To the right of the **Insight ID** field, click the gear icon.
-   1. Click **Playbook inputs** and select **input.readableId**.
+   1. Click [**Playbook inputs**](#playbook-inputs) and select **input.readableId**.
    1. In the **Enrichment name** field, enter **VirusTotal IP reputation**.
    1. To the right of the **Raw JSON** field, click the gear icon.
    1. Click **IP reputation V3** and select **output.raw**.
@@ -80,6 +80,12 @@ The following example shows how to add an enrichment to an Insight using the “
    1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**. 
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**. 
    1. Click a node to download results of that node’s run.
+
+### Playbook inputs
+
+Depending on the action, you may need to select a playbook input. The playbook inputs define the kind of input data needed for the action. For descriptions of the playbook inputs, see the responses on the [Get an Insight API](https://api.sumologic.com/docs/sec/#operation/GetInsight).
+
+<img src={useBaseUrl('img/cse/Playbook_inputs.png')} alt="Playbook inputs" width="400"/>
 
 ## Intermediate example: Configure a notification 
 
@@ -204,7 +210,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click the **Add Node** button (**+** icon) on the **START** node.
     1. In the **Add node** dialog, click **Condition**. 
     1. Just below **Condition #1**, click the top **Select a value** in the dialog. 
-    1. Click **Playbook inputs**. 
+    1. Click [**Playbook inputs**](#playbook-inputs). 
     1. Select **input.entity.entityType**. 
     1. Click the bottom **Select a value** in the dialog. 
     1. In **Get value**, type **_ip** and press **Enter**.
@@ -216,7 +222,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. In the **Integration** field, select **IP Quality Score**.
     1. In the **Action** field, select **IP Reputation**.
     1. To the right of the **IP** field, click the gear icon. 
-    1. Click **Playbook inputs**. 
+    1. Click [**Playbook inputs**](#playbook-inputs). 
     1. Select **input.entity.value**. 
     1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-ip-reputation-node.png')} alt="Add the IP Reputation node" width="500"/>
 1. Add the “Add Insight Enrichment” action to the playbook:
@@ -227,7 +233,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. In the **Type** field, select **Notification**.
     1. In the **Action** field, select **Add Insight Enrichment**.
     1. To the right of the **Insight ID** field, click the gear icon.
-    1. Click **Playbook inputs**. 
+    1. Click [**Playbook inputs**](#playbook-inputs). 
     1. Select **input.id**.
     1. In the **Enrichment name** field, enter the name of your playbook, for example, **Custom Enrichment with IP Quality Score**.
     1. To the right of the **Raw JSON** field, click the gear icon. 
@@ -263,8 +269,8 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
 The preceding example shows how to use a custom integration to add enrichment to an Insight. To add enrichment to Entities instead, use the same steps but with the following changes:
 
 1. When you select the input parameters for the playbook, in the **Edit node** dialog, select **Entity** instead of **Insight** in the **Add one or more params as a playbook input** field.
-1. When you add a condition to validate IP addresses, for **Playbook inputs** select **input.entityType** instead of **input.entity.entityType**. 
-1. When you add the “IP Reputation” action to the playbook, for **Playbook inputs** select **input.value** instead of **input.entity.value**.
+1. When you add a condition to validate IP addresses, for [**Playbook inputs**](#playbook-inputs) select **input.entityType** instead of **input.entity.entityType**. 
+1. When you add the “IP Reputation” action to the playbook, for [**Playbook inputs**](#playbook-inputs) select **input.value** instead of **input.entity.value**.
 1. Instead of adding the “Add Insight Enrichment” action to the playbook, add the “Add Entity Enrichment” action. 
 
 The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-entity-enrichment.png')} alt="Custom playbook for Entity enrichment" width="700"/>
@@ -312,7 +318,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    7. Ensure that **Type** is **Enrichment**.
    8. For **Action**, select **IP reputation V3**.
    9. To the right of the **IPs** field, click the gear icon.
-   10. Click **Playbook inputs** and select **input.entity.value**.
+   10. Click [**Playbook inputs**](#playbook-inputs) and select **input.entity.value**.
    11. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-ip-reputation-v3-add-node.png')} alt="Add node for IP Reputation V3" width="500"/> 
 5. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
@@ -321,7 +327,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    4. For **Type**, select **Notification**.
    5. For **Action**, select **Add Insight Enrichment**.
    6. To the right of the **Insight ID** field click the gear icon.
-   7. Click **Playbook inputs** and select **input.readableId**.
+   7. Click [**Playbook inputs**](#playbook-inputs) and select **input.readableId**.
    8. In the **Enrichment name** field enter **VirusTotal IP reputation**.
    9. To the right of the **Raw JSON** field click the gear icon.
    10. Click **IP reputation V3** and select **output.raw**.
