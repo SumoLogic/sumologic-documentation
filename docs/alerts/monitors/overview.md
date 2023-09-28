@@ -17,7 +17,7 @@ Monitors track your metrics and logs data in real time and send notifications wh
 Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from-scheduled-searches).
 :::
 
-## Prequisites
+## Prerequisites
 
 To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
 
@@ -42,7 +42,7 @@ Log monitors in a triggered state can auto-resolve.
 * **Static Fields Log monitors** will trigger/resolve based on the value of a field returned by their search. If no data is returned by the query, then chart data is not ingested. If it has been 24 hours or more since a trigger condition was matched, then no data results in the monitor/group getting resolved.
 * **Missing Data monitors** will auto-resolve if it has not seen any data for 7 consecutive days.
    * Non-grouped monitors will trigger again after auto-resolving if there is still no data.
-   * Grouped monitors will be removed and no longer considered after being auto-resolved, unless data for this group is seen again. 
+   * Grouped monitors will be removed and no longer considered after being auto-resolved, unless data for this group is seen again.
 
 ### Metrics monitors
 
