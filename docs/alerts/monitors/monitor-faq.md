@@ -73,12 +73,3 @@ One reason could be that the user who created the monitor was deleted. You can c
 You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
 
 then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
-
-## Can I disable a Monitor during scheduled maintenance or upgrade window?
-
-The Monitors page allows you to disable a Monitor so you're not alerted during specific times like scheduled maintenance or upgrade windows. Follow the below steps to disable a monitor. 
-
-1. Find and select the Monitor in the Monitors table. A three-dot icon appears on the right of the row.<br/> ![menu-option.png](/img/monitors/menu-option.png)
-1. Click the three-dot icon to view the menu options. You can select to Enable or Disable the monitor.
-
-Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
