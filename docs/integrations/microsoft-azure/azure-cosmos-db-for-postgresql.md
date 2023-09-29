@@ -15,8 +15,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure Cosmos DB for PostgreSQL, you can collect the following logs and metrics:
 
 * **PostgreSQL Server Logs**. These logs are available for every node of a cluster and can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance.
-* **Audit Logs**. Audit logging of database activities is available through [pgAudit](https://www.pgaudit.org/) extension.By default, pgAudit log statements are emitted along with your regular log statements by using Postgres's standard logging facility. To know more about the audit log format, refer to the [pgAudit documentation](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
-* **Metrics**. These metrics are available for every node of a cluster, and in aggregate across the nodes.For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/concepts-monitoring#list-of-metrics).
+* **Audit Logs**. Audit logging of database activities is available through [pgAudit](https://www.pgaudit.org/) extension. By default, pgAudit log statements are emitted along with your regular log statements by using Postgres's standard logging facility. To know more about the audit log format, refer to the [pgAudit documentation](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
+* **Metrics**. These metrics are available for every node of a cluster, and in aggregate across the nodes. For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/concepts-monitoring#list-of-metrics).
 
 ## Setup
 

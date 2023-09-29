@@ -15,7 +15,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure SQL Managed Instance, you can collect the following logs and metrics:
 
 * **Resource Usage Statistics**. To know more about the different [log category types](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#instances-in-azure-sql-managed-instance) and [schemas](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#resource-usage-stats-for-managed-instances) collected for Azure SQL Managed Instances, refer to the Azure documentation.
-
 * **Audit Logs**. These logs include database events and Microsoft Support operations for your instances. To know more about the log schema, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/audit-log-format?view=azuresql#subheading-1).
 
 ## Setup

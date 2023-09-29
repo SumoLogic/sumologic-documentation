@@ -15,7 +15,6 @@ The [Azure Backup](https://learn.microsoft.com/en-us/azure/backup/backup-overvie
 For Azure Backup, you can collect the following logs and metrics:
 
 * **Diagnostic logs**. Azure Backup provides the following diagnostics events:
-
   * CoreAzureBackup
   * AddonAzureBackupProtectedInstance
   * AddonAzureBackupJobs

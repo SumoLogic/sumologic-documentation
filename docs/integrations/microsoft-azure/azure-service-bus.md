@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-service-bus.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) is a fully managed enterprise message broker with message queues and publish-subscribe topics (in a namespace) used for decoupling applications and services from each other. This integration helps in monitoring incoming/outgoing messages, connections, throttled requests, resource usage of your Service Bus namespace.
+[Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) is a fully managed enterprise message broker with message queues and publish-subscribe topics (in a namespace) used for decoupling applications and services from each other. This integration helps in monitoring incoming/outgoing messages, connections, throttled requests, and resource usage of your Service Bus namespace.
 
 ## Log and Metric types
 

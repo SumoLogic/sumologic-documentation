@@ -17,7 +17,7 @@ The below instructions applies to Azure Database for PostgreSQL - Flexible Serve
 For Azure Database for PostgreSQL, you can collect the following logs and metrics:
 
 * **PostgreSQL Logs**. These logs can be used to identify, troubleshoot, and repair configuration errors and suboptimal performance. To know more about the log format, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-logging#log-format).
-* **Audit Logs**. Audit logging of database activities is available through [pgAudit](https://www.pgaudit.org/) extension.By default, pgAudit log statements are emitted along with your regular log statements by using Postgres's standard logging facility. To know more about the audit log format, refer to the [pgAudit documentation](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
+* **Audit Logs**. Audit logging of database activities is available through [pgAudit](https://www.pgaudit.org/) extension. By default, pgAudit log statements are emitted along with your regular log statements by using Postgres's standard logging facility. To know more about the audit log format, refer to the [pgAudit documentation](https://github.com/pgaudit/pgaudit/blob/master/README.md#format).
 * **Metrics**. These metrics are available for a flexible server instance of Azure Database for PostgreSQL.For more information on supported metrics and instructions for enabling them, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-monitoring#metrics).
 
 ## Setup

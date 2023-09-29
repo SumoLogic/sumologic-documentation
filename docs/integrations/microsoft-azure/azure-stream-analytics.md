@@ -15,8 +15,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure Stream Analytics, you can collect the following logs and metrics:
 
 * **Resource logs**. Azure Stream Analytics captures below two categories of resource logs:
-  * Authoring: These log events that are related to job authoring operations, such as job creation, and starting or stopping the job.
-  * Execution: These events are related to job execution such as connectivity and data processing errors.
+  * **Authoring**. These log events that are related to job authoring operations, such as job creation, and starting or stopping the job.
+  * **Execution**. These events are related to job execution such as connectivity and data processing errors.
 
 To know more about the different resource log category types and schemas collected for Azure Stream Analytics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-job-diagnostic-logs#resource-log-categories).
 
