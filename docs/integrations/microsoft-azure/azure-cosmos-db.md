@@ -66,6 +66,6 @@ Common error types are described [here](/docs/send-data/hosted-collectors/cloud-
 
 You can try [restarting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#restarting-your-source) the source for `ThirdPartyConfig` errors.
 
-### HTTP Logs and Metrics Source used by Azure Cosmos DB
+### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
