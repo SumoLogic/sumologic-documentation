@@ -35,7 +35,7 @@ If, for example, the detection window of your alert is one day it will be evalu
 * Essentials and Professional plan customers can have up to 300 Log Monitors.
 * Free Trial customers can have up to 50 Log Monitors.
 
-#### Auto-Resolving Notifications
+#### Auto-resolving notifications
 
 Log monitors in a triggered state can auto-resolve.
 
