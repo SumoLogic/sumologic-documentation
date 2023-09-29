@@ -1,13 +1,11 @@
 ---
 id: advanced
-title: Advanced Features
-sidebar_label: Advanced Features
-description: Learn about some of the advanced feature in Dashboard.
+title: Best Practices
+sidebar_label: Best Practices
+description: Learn about some of the Best Practices feature in Dashboard usage.
 ---
 
 This page describes the recommended best practices for high performance Dashboards.
-
-## Best Practices
 
 - Rate limiting may be experienced when there are more than 20 concurrent queries. Limiting the number of panels to below 20 will ensure optimal performance for your dashboards. 
 - [Optimize your queries](/docs/search/optimize-search-performance/) to scan the least amount of data by using [partitions](/docs/search/optimize-search-partitions/) and/or the most narrow source categories. When possible, also consider using [Scheduled View(s)](/docs/manage/scheduled-views/) to ensure optimal performance.
