@@ -73,3 +73,7 @@ One reason could be that the user who created the monitor was deleted. You can c
 You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
 
 then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
+
+## Can I disable a Monitor during scheduled maintenance or upgrade window?
+
+Yes. See [Muting Schedules](/docs/alerts/monitors/muting-schedules) to learn how to pause alert notifications from monitors according to a schedule defined by you.
