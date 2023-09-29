@@ -32,6 +32,8 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 | soar-cloud-url | TCP | 443 |
 | siem-cloud-url | TCP| 443| 
 | 784093250948.dkr.ecr.eu-central-1.amazonaws.com | 	TCP| 	443| 
+| 784093250948.dkr.ecr.us-east-1.amazonaws.com | 	TCP| 	443| 
+| 784093250948.dkr.ecr.us-west-2.amazonaws.com | 	TCP| 	443| 
 | index.docker.io* | 	TCP| 	443| 
 | registry-1.docker.io* | 	TCP| 	443| 
 | auth.docker.io* | 	TCP| 	443| 
