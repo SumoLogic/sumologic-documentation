@@ -48,7 +48,7 @@ Follow the steps to configure the Bugsnag webhook.
 8. Under **Notify me when** section, enable the event types for which you want to send notifications to Sumo Logic.
 9. Verify Bugsnag events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/bugsnag`
+`_sourceCategory=webhook/bugsnag`
 ```
 
 :::info

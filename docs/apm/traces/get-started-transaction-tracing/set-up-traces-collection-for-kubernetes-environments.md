@@ -9,7 +9,6 @@ After installing or upgrading your Sumo Logic Kubernetes Collection, you will be
 
 Traces will be enhanced with Kubernetes metadata, similarly to the logs and metrics collected by the collector. See below for installation instructions.
 
-
 ## Prerequisites
 
 * Kubernetes 1.20+
@@ -18,7 +17,6 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 | Account Type | Account Level         |
 |:--------------|:--------------------------|
 | Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
-
 
 ## Installing Sumo Logic Tracing on Kubernetes
 
@@ -71,11 +69,9 @@ helm upgrade --install collection sumologic/sumologic \
   -f values.yaml
 ```
 
-
-#### Enabling tracing for existing installations
+### Enabling tracing for existing installations
 
 If you previously installed sumologic-kubernetes-collection `v2.x` without enabling tracing, it can be enabled with **`sumologic.traces.enabled=true`**.
-
 
 #### Using command line
 
@@ -86,11 +82,9 @@ helm upgrade --install collection sumologic/sumologic \
   --set sumologic.traces.enabled=true
 ```
 
-
 #### Using a configuration file
 
 The `values.yaml` file needs to have the relevant section enabled, such as:
-
 
 ```yaml
 sumologic:
@@ -106,7 +100,6 @@ helm upgrade --install collection sumologic/sumologic \
   --namespace sumologic \
   -f values.yaml
 ```
-
 
 ### Pointing tracing clients (instrumentation exporters) to the agent collectors
 
@@ -133,34 +126,32 @@ For example, when the default release name (`collection`) and namespace (`sumolo
 * OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
 * OTLP HTTP/deprecated: `collection-sumologic-otelagent.sumologic:55681`
 
-
 ## Troubleshooting
 
-#### Desired Kubernetes installation state
+### Desired Kubernetes installation state
 
 After enabling and installing tracing, you should have additional Kubernetes resources:
 
 * `otelcol-instrumentation` - collector responsible for data collection and tagging
-    * StatefulSet: `collection-sumologic-otelcol-instrumentation`
-    * Pod: `collection-sumologic-otelcol-instrumentation-<hash>`
-    * Service: `collection-sumologic-otelagent`
-    * Service (**`deprecated`**): `collection-sumologic-otelcol`
-    * Config Map: `collection-sumologic-otelcol-instrumentation`
+  * StatefulSet: `collection-sumologic-otelcol-instrumentation`
+  * Pod: `collection-sumologic-otelcol-instrumentation-<hash>`
+  * Service: `collection-sumologic-otelagent`
+  * Service (**`deprecated`**): `collection-sumologic-otelcol`
+  * Config Map: `collection-sumologic-otelcol-instrumentation`
 * `traces-gateway` - collector responsible for traces load balancing
-    * Deployment: `collection-sumologic-traces-gateway`
-    * Pod: `collection-sumologic-traces-gateway-<hash>-<hash>`
-    * Replica Set: `collection-sumologic-traces-gateway-<hash>`
-    * Service: `collection-sumologic-traces-gateway`
-    * Config Map: `collection-sumologic-traces-gateway`
+  * Deployment: `collection-sumologic-traces-gateway`
+  * Pod: `collection-sumologic-traces-gateway-<hash>-<hash>`
+  * Replica Set: `collection-sumologic-traces-gateway-<hash>`
+  * Service: `collection-sumologic-traces-gateway`
+  * Config Map: `collection-sumologic-traces-gateway`
 * `traces-sampler` - collector responsible for forwarding data to Sumo Receiver
-    * Deployment: `collection-sumologic-traces-sampler`
-    * Pod: `collection-sumologic-traces-sampler-<hash>-<hash>`
-    * Replica Set: `collection-sumologic-traces-sampler-<hash>`
-    * Service: `collection-sumologic-traces-sampler-headless`
-    * Config Map: `collection-sumologic-traces-sampler`
+  * Deployment: `collection-sumologic-traces-sampler`
+  * Pod: `collection-sumologic-traces-sampler-<hash>-<hash>`
+  * Replica Set: `collection-sumologic-traces-sampler-<hash>`
+  * Service: `collection-sumologic-traces-sampler-headless`
+  * Config Map: `collection-sumologic-traces-sampler`
 
-
-#### How to verify traces are installed and working
+### How to verify traces are installed and working
 
 * There are no Kubernetes errors in the namespace sumologic.
 * There are running pods `<CHART_NAME>-sumologic-otelcol-instrumentation-<hash>, <CHART_NAME>-sumologic-traces-gateway-<hash>, <CHART_NAME>-sumologic-traces-sampler-<hash>`

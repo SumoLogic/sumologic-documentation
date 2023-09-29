@@ -103,7 +103,7 @@ Having verified performance of the data delivery path, the next focus area is Br
 
 An important metric Zeek log that is collected from the CSE network sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in CSE using the following query in an Sumo Logic log search tab.
 
-`_sourcecategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
+`_sourceCategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
 
 <img src={useBaseUrl('img/cse/captureloss-query.png')} alt="CaptureLoss query" width="800"/>
 

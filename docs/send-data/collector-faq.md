@@ -531,7 +531,7 @@ _source=<problem_child>
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
 | formatDate(fromMillis(_messagetime),"MM/dd hh:mm") as t
 | abs(_receipttime - _messagetime) as delt| delt/1000/60 as delt
-| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourcename
+| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourceName
 ```
 
 If the average, max, and min delay values are very close in range, then the time difference is most likely the symptom of an incorrect time zone setting. You’ll want to go back and ensure that your Source configurations line up correctly with the log messages. Switch to the raw messages tab and the “format” field shows how the timestamp is parsed from the file.

@@ -476,7 +476,7 @@ Once the user has created this new action, it can easily be added to the existin
 
 <img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid black'}} width="600"/> 
 
-See the Integration Framework manual for more details on utilizing the integration framework within Cloud SOAR.
+See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
 ### Configure Slack for Cloud SOAR
 
@@ -560,6 +560,9 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Repeat the steps to create a "Bot User OAuth Access Token", and paste your previously saved Bot User OAuth Token into the **Bot/User OAuth Token** field.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
    1. Ensure that both new resources are configured properly by using **TEST SAVED SETTINGS**. Following is an example of a successful configuration message.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-edit-resource.png')} alt="Successful configuration message" width="400"/><br/>Here is how the Resources look after configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resource-2.png')} alt="Resources after configuration" width="600"/>
 1. Set up instant messaging:
+:::note
+Only set this up if you want to be able to use the Slack App in User Choice responses or enable Slack Chat Integration. This is outlined below.
+:::
    1. Navigate to the [Slack API page](https://api.slack.com/apps). 
    1. Place your instance URL in the **Event Subscriptions** page.<br/><img src={useBaseUrl('img/cloud-soar/integration-event-subscriptions.png')} alt="Event subscriptions" width="600"/>
    1. Place your instance URL in the **Interactivity & Shortcuts** page.<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity.png')} alt="Event subscriptions" width="600"/>
@@ -608,7 +611,7 @@ In the detail section of the rule you can define filters to be used in the rule 
 
 The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
 
-- **Create incident from template**. Specify what incident template to use (See **Incident Templates)**, the incident owner, and incident ID format. This is the most common action.
+- **Create incident from template**. Specify what [incident template](#incident-templates) to use, the incident owner, and incident ID format. This is the most common action.
 - **Close incident**. Allows for the automatic closure of a known false positive incident
 - **Update incident**. Updates a field in an existing incident based on parameters from the parsed message
 - **Change incident status**. Change the incident status based on parameters from the parsed message

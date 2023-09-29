@@ -7,6 +7,8 @@ tags: [app, apps, app catalog, integrations]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+import Iframe from 'react-iframe';
+
 <img src={useBaseUrl('img/integrations/integrations.png')} alt="icon" width="50"/>
 
 This category has documentation for Sumo Logic apps, webhooks, and other integrations, located in our **App Catalog**,
@@ -18,6 +20,19 @@ Several of the guides below are partner-specific: Amazon/AWS, Microsoft/Azure, a
 Learn the difference between [Next-Gen Apps and Classic Apps](/docs/get-started/apps-integrations/#next-gen-apps).
 
 To determine if an app is supported by your pricing plan, see [Apps and Sumo Logic Account Plans](/docs/integrations/account-plans).
+
+Watch this tutorial to learn how to use the App Catalog.
+
+<Iframe url="https://www.youtube.com/embed/5O16kI5UXpM?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">

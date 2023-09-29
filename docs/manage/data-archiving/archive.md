@@ -106,13 +106,13 @@ Example format of an Archived log message:
 
 ## Batching
 
-By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 1 MB in size. You can configure the buffer size with the following [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
+By default, the Collector will complete writing logs to an archive file once the uncompressed size of the file reaches 5 GB in size. You can configure the buffer size with the following [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties.md) parameter.
 
 ### collector.properties buffer parameter
 
 | Parameter | Description | Data Type | Default |
 |:--|:--|:--|:--|
-| buffer.max.disk.bytes | The maximum size in bytes of the on-disk buffer per archive destination.<br/>When the maximum is reached the oldest modified file(s) are deleted. | Integer | 1073741824 |
+| buffer.max.disk.bytes | The maximum size in bytes of the on-disk buffer per archive destination.<br/>When the maximum is reached the oldest modified file(s) are deleted. | Integer | 5368709120 |
 
 ## Ingest data from Archive
 

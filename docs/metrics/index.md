@@ -3,9 +3,6 @@ slug: /metrics
 title: Metrics
 description: Sumo Logic Metrics can measure infrastructure, application performance or custom business and operational data.
 tags: [metrics, metric]
-algolia: {
-  priority: 1
-}
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
