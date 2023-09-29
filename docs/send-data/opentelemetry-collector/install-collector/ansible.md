@@ -14,7 +14,7 @@ This documentation will guide you through the installation process using the sof
 2. On the OpenTelemetry Collection page, click **Add Collector**.
 3. On the left panel, select **Ansible**.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/ansible.png')} alt="ansible.png" />
 4. Select/create installation token and customize your tags.
-5. Follow auto generated steps to install the collector using Ansible.
+5. Follow the auto-generated steps to install the collector using Ansible.
    :::note
    These steps are only supported on Linux Operating System.
    :::
