@@ -35,7 +35,7 @@ Follow the below steps to provide **Full Control** privileges for the Custom Use
 1. After the collector is installed, open the registry editor from the start menu.
 1. Navigate to the below path and search for **sumo-collector** folder.
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`
-1. Right-click on the **sumo-collector** folder, select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="registry-editor" width="600" style={{border: '1px solid black'}} />
+1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="registry-editor" width="600" style={{border: '1px solid black'}} />
 1. In the **Permissions for sumo-collector** pop-up,
     1. Click **Add**.
     1. Select the **Full Control** **Allow** checkbox.
