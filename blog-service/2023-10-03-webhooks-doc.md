@@ -11,7 +11,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're excited to announce the release of 31 new setup guides to our App Catalog, enabling you to connect with various Webhook-based services to Sumo Logic, which allows you to collect and analyze the data. These setup guides provide easy step-by-step configuration instructions for setting up the data collection and exploring your data in Sumo Logic.
+We're excited to announce the release of 31 new setup guides to our App Catalog, enabling you to connect with various webhook-based services to Sumo Logic, which allows you to collect and analyze the data. These setup guides provide easy step-by-step configuration instructions for setting up the data collection and exploring your data in Sumo Logic.
 
 The new setup guides for Webhook-based services are:
 
