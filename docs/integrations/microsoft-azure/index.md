@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' alt="thumbnail icon" width="100"/>
 
-This guide has documentation for all of the apps that Sumo provides for Microsoft and Microsoft Azure.  
+This guide has documentation for all of the apps that Sumo provides for Microsoft and Microsoft Azure.
 
 
 <div className="box-wrapper" markdown="1">
@@ -50,110 +50,215 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
 </div>
 <div className="box smallbox6 card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-backup.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-backup">Azure Backup</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Backup.</p>
+  </div>
+</div>
+<div className="box smallbox7 card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-batch.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-batch">Azure Batch</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Batch.</p>
   </div>
 </div>
-<div className="box smallbox7 card">
+<div className="box smallbox8 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cache-for-redis.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-cache-for-redis">Azure Cache for Redis</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Cache for Redis.</p>
+  </div>
+</div>
+<div className="box smallbox9 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cognitive-search.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-cognitive-search">Azure Cognitive Search</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Cognitive Search.</p>
+  </div>
+</div>
+<div className="box smallbox10 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-cosmos-db-for-postgresql">Azure Cosmos DB for PostgreSQL</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Cosmos DB for PostgreSQL.</p>
+  </div>
+</div>
+<div className="box smallbox11 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-cosmos-db">Azure Cosmos DB</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Cosmos DB.</p>
+  </div>
+</div>
+<div className="box smallbox12 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-data-explorer.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-data-explorer">Azure Data Explorer</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Data Explorer.</p>
   </div>
 </div>
-<div className="box smallbox8 card">
+<div className="box smallbox13 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-data-factory.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-data-factory">Azure Data Factory</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Data Factory.</p>
   </div>
 </div>
-<div className="box smallbox9 card">
+<div className="box smallbox14 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mariadb.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-database-for-mariadb">Azure Database for MariaDB</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Database for MariaDB.</p>
+  </div>
+</div>
+<div className="box smallbox15 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mysql.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-database-for-mysql">Azure Database for MySQL</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Database for MySQL.</p>
+  </div>
+</div>
+<div className="box smallbox16 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-postgresql.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-database-for-postgresql">Azure Database for PostgreSQL</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Database for PostgreSQL.</p>
+  </div>
+</div>
+<div className="box smallbox17 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-event-grid.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-event-grid">Azure Event Grid</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Event Grid.</p>
   </div>
 </div>
-<div className="box smallbox10 card">
+<div className="box smallbox18 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-event-hubs.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-event-hubs">Azure Event Hubs</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Event Hubs.</p>
   </div>
 </div>
-<div className="box smallbox11 card">
+<div className="box smallbox19 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-front-door.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-front-door">Azure Front Door</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Front Door.</p>
   </div>
 </div>
-<div className="box smallbox12 card">
+<div className="box smallbox20 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-functions.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-functions">Azure Functions</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Functions.</p>
   </div>
 </div>
-<div className="box smallbox13 card">
+<div className="box smallbox21 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-iot-hub.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-iot-hub">Azure IoT Hub</a></h4>
   <p>A guide to the Sumo Logic integration for Azure IoT Hub.</p>
   </div>
 </div>
-<div className="box smallbox14 card">
+<div className="box smallbox22 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vault.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-key-vault">Azure Key Vault</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Key Vault.</p>
   </div>
 </div>
-<div className="box smallbox15 card">
+<div className="box smallbox23 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-load-balancer.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-load-balancer">Azure Load Balancer</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Load Balancer.</p>
   </div>
 </div>
-<div className="box smallbox16 card">
+<div className="box smallbox24 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-logic-app.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-logic-app">Azure Logic App</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Logic App.</p>
   </div>
 </div>
-<div className="box smallbox17 card">
+<div className="box smallbox25 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-machine-learning.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-machine-learning">Azure Machine Learning</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Machine Learning.</p>
+  </div>
+</div>
+<div className="box smallbox26 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-network-interface.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-network-interface">Azure Network Interface</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Network Interface.</p>
   </div>
 </div>
-<div className="box smallbox18 card">
+<div className="box smallbox27 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-notification-hubs.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-notification-hubs">Azure Notification Hubs</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Notification Hubs.</p>
+  </div>
+</div>
+<div className="box smallbox28 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-public-ipAddress.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-public-ipAddress">Azure IP Addresses</a></h4>
   <p>A guide to the Sumo Logic integration for Azure IP Addresses.</p>
   </div>
 </div>
-<div className="box smallbox19 card">
+<div className="box smallbox29 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-relay.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-relay">Azure Relay</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Relay.</p>
+  </div>
+</div>
+<div className="box smallbox30 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-service-bus.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-service-bus">Azure Service Bus</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Service Bus.</p>
+  </div>
+</div>
+<div className="box smallbox31 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-elastic-pool.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-sql-elastic-pool">Azure SQL Elastic Pool</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure SQL Elastic Pool.</p>
+  </div>
+</div>
+<div className="box smallbox32 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-managed-instance.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-sql-managed-instance">Azure SQL Managed Instance</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure SQL Managed Instance.</p>
+  </div>
+</div>
+<div className="box smallbox33 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-storage.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-storage">Azure Storage</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Storage.</p>
   </div>
 </div>
-<div className="box smallbox20 card">
+<div className="box smallbox34 card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-stream-analytics.png')} alt="Thumbnail icon" width="60"/>
+  <h4><a href="/docs/integrations/microsoft-azure/azure-stream-analytics">Azure Stream Analytics</a></h4>
+  <p>A guide to the Sumo Logic integration for Azure Stream Analytics.</p>
+  </div>
+</div>
+<div className="box smallbox35 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-synapse-analytics.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-synapse-analytics">Azure Synapse Analytics</a></h4>
   <p>A guide to the Sumo Logic integration for Azure Synapse Analytics.</p>
   </div>
 </div>
-<div className="box smallbox21 card">
+<div className="box smallbox36 card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure-virtual-network.png')} alt="Thumbnail icon" width="60"/>
   <h4><a href="/docs/integrations/microsoft-azure/azure-virtual-network">Azure Virtual Network</a></h4>
