@@ -46,7 +46,7 @@ Follow the below steps to provide **Full Control** privileges for the Custom Use
     1. ```net start sumo-collector```
 
 :::note
-You can also cofigure the permissions by Microsoft Group Policy.
+You can also configure the permissions by Microsoft Group Policy.
 :::
 
 ## Properties
