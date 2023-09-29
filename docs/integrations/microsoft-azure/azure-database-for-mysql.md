@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Database for MySQL](https://learn.microsoft.com/en-us/azure/mysql/single-server/overview) is a relational database service in the Microsoft cloud based on the MySQL Community Edition database engine. This integration helps in identifying slow queries, tracking database-level activity, including connection, administration, data definition language (DDL), and data manipulation language (DML) events.
 
-The below instructions applies to Azure Database for MySQL - Flexible Server as Azure Database for MySQL - Single Server is on the retirement path.
+The below instructions applies to Azure Database for MySQL with Flexible Server only.
 
 ## Log and Metric types
 

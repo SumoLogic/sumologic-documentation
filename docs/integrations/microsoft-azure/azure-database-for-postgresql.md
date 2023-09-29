@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview) is a fully managed relational database service in the Microsoft cloud based on the PostgreSQL community edition. This integration helps in monitoring resource utilization and identifying slow queries to optimize your workloads and configure your server for the best performance.
 
-The below instructions applies to Azure Database for PostgreSQL - Flexible Server as Azure Database for PostgreSQL - Single Server is on the retirement path.
+The below instructions applies to Azure Database for PostgreSQL with Flexible Server only.
 
 ## Log and Metric types
 
