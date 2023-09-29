@@ -1,28 +1,22 @@
 ---
-id: azure-event-hubs
-title: Azure Event Hubs
-description: Learn about the Sumo Logic collection process for the Azure Event Hubs service.
+id: azure-cognitive-search
+title: Azure Cognitive Search
+description: Learn about the Sumo Logic collection process for the Azure Cognitive Search service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-event-hubs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-cognitive-search.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Event Hubs]((https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) is a modern big data streaming platform and event ingestion service that can seamlessly integrate with other Azure and Microsoft services, such as Stream Analytics, Power BI, and Event Grid, along with outside services like Apache Spark. This integration helps in monitoring data plane access operations (such as send or receive events), tracking performance metrics like consumer lag, consumer and publisher throughput and active connections in your Event Hub.
+[Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) is a cloud search service that gives developers infrastructure, APIs, and tools for building a rich search experience over private, heterogeneous content in web, mobile, and enterprise applications. This integration helps in analyzing the performance and availability of your search service.
 
 ## Log and Metric types
 
-For Azure Event Hubs, you can collect the following logs and metrics:
+For Azure Cognitive Search, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Event Hubs, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
-:::info
-Some log types are only available in premium and dedicated tiers.
-:::
-* **Platform Metrics for Azure Event Hubs**. These metrics are available in below namespaces:
-  * [Microsoft.EventHub/clusters](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventhub-clusters-metrics)
-  * [Microsoft.EventHub/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-eventhub-namespaces-metrics)
-
-For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#metrics).
+* **Resource logs**. These logs contains information about query and indexing operations. To know more about the different resource log category types and schemas collected for Azure Cognitive Search, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/search/monitor-azure-cognitive-search-data-reference#schemas).
+* **Platform Metrics for Azure Cognitive Search**. These metrics are available in [Microsoft.Search/searchServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-search-searchservices-metrics) namespace.
+For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/search/monitor-azure-cognitive-search-data-reference#metrics).
 
 ## Setup
 
@@ -31,9 +25,9 @@ Azure service sends monitoring data to Azure Monitor, which can then [stream dat
 * Logs collection from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) using our [Azure Event Hubs source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 * Metrics collection using our [HTTP Logs and Metrics source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/) via Azure Functions deployed using the ARM template.
 
-You must explicitly enable diagnostic settings for each Event Hub Namespaces you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+You must explicitly enable diagnostic settings for each search service you want to monitor. You can forward logs to the same event hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/EventHub/Logs`, `Azure/EventHub/Metrics`.
+When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/CognitiveSearch/Logs`, `Azure/CognitiveSearch/Metrics`.
 
 ### Configure metrics collection
 
@@ -41,7 +35,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source).
 2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
-3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Event Hub Namespaces that you want to monitor.
+3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each search service that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select `AllMetrics`.
    * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name.
@@ -51,7 +45,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
 1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
-2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings). Perform below steps for each Event Hub Namespaces that you want to monitor.
+2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/search/monitor-azure-cognitive-search#enable-resource-logging). Perform below steps for each search service that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select `allLogs`.
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.

@@ -34,14 +34,9 @@ When records enter Cloud SIEM, rules analyze Entities on the records to produce 
 
 <img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-2.png')} alt="Insights creation" width="725"/>
 
-Following are definitions for some of these terms:
-* [**Messages**](/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab). Logs ingested into Sumo Logic.  
-* [**Records**](/docs/cse/records-signals-entities-insights/view-records-signal/). Collections of normalized data created from messages.
-* [**Rules**](/docs/cse/rules/about-cse-rules/). Sets of logic that create Signals based on information in incoming Records.
-* [**Signals**](/docs/cse/records-signals-entities-insights/view-records-signal/). Indicators of an event of interest that fire when rule conditions are met.
-* [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities). Unique actors encountered in incoming messages, such as users, IP addresses, or hosts.
-* [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). Groups of Signals clustered around a single Entity that are generated when an Entity’s Activity Score exceeds the threshold of 12.
-
+:::tip
+For definitions of many of these terms, see the [Glossary](/docs/contributing/glossary).
+:::
 
 Because Cloud SIEM designed for larger data volumes, most organizations need to ingest a large amount of data each day for Insights to surface in Cloud SIEM.
 
