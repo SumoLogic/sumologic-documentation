@@ -47,8 +47,8 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 3. Create two Azure Event Hubs Sources using the instructions described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubssource). You can add both of them to the same Hosted Collector. Provide `insight-logs-audit` and `insight-logs-operational` as `Event Hubs Instance Name` in the two Azure Event Hubs Sources, respectively.
 
 4. To create the Diagnostic settings in the Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/dynamics365/customer-insights/diagnostics#set-up-diagnostics-with-azure-monitor).
-   * Choose Event Hub as the`Resource type`.
-   * Select the Event Hub's `Subscription` name, `Resource group` name, and `Resource` name for the destination resource.
+   1. Choose Event Hub as the`Resource type`.
+   1. Select the Event Hub's `Subscription` name, `Resource group` name, and `Resource` name for the destination resource.
 
 ### Troubleshooting
 
