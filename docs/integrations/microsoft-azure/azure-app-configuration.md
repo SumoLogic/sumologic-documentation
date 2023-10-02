@@ -45,9 +45,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration?tabs=portal#collectionandrouting). Perform below steps for each Azure App Configuration store that you want to monitor.
-   * Choose `Stream to an event hub` as the destination.
-   * Select `allLogs`.
-   * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
+   1. Choose `Stream to an event hub` as the destination.
+   1. Select `allLogs`.
+   1. Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ## Troubleshooting
 
