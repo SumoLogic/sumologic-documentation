@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-hdinsight.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure HDInsight](https://learn.microsoft.com/en-gb/azure/hdinsight/hdinsight-overview) is a full-spectrum, managed cluster platform which simplifies running big data frameworks in large volume and velocity using Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Hadoop, and more in your Azure environment. This integration helps in monitoring request throughput, message throughput, concurrent connections in your clusters.
+[Azure HDInsight](https://learn.microsoft.com/en-gb/azure/hdinsight/hdinsight-overview) is a full-spectrum, managed cluster platform which simplifies running big data frameworks in large volume and velocity using Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Hadoop, and more in your Azure environment. This integration helps in monitoring request throughput, message throughput, and concurrent connections in your clusters.
 
 ## Log and Metric types
 
