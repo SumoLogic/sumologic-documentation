@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('https://raw.githubusercontent.com/signl4/signl4-logo/main/signl4.png')} alt="Thumbnail icon" width="50"/>
 
 
-[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
+[Webhook connections](/docs/alerts/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Sumo Logic to SIGNL4 Integration
 
-Sumo Logic alerts can send webhook alerts to SIGNL4, a mobile alerting and incident management solution that determines the right people to alert based on your on-call schedule, severity and topic.
+Sumo Logic alerts can send webhook alerts to SIGNL4, a mobile alerting and incident management solution that determines the right people to alert based on your on-call schedule, severity, and topic.
 
 To add a Sumo Logic integration in SIGNL4, do the following:
 
@@ -31,12 +31,12 @@ You can find more information on the [SIGNL4 site](https://www.signl4.com/blog/p
 In Sumo Logic, scheduled searches send alerts to other tools via webhook connections. To send alerts from Sumo Logic to SIGNL4:
 
 1. [Create a Webhook Connection](#create-a-webhook-connection).
-1. Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md)  or [Monitor](/docs/alerts/monitors).
+1. Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](/docs/alerts/webhook-connections/schedule-searches-webhook-connections)  or [Monitor](/docs/alerts/monitors).
 
 ## Create a Webhook Connection
 
 :::note
-You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to SIGNL4.
@@ -91,4 +91,4 @@ To create a webhook:
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 
-To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](schedule-searches-webhook-connections.md) document.
+To set up a scheduled search for a webhook connection follow the steps in [Schedule Searches for Webhook Connections](/docs/alerts/webhook-connections/schedule-searches-webhook-connections).
