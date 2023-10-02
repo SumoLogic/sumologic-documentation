@@ -260,7 +260,7 @@ _sourceCategory="azure_ad_reporting" "activityDisplayName" "operationType"
 | sort by frequency
 ```
 
-```sql title="Sign-In Over Time (Sign-In Acitvity)"
+```sql title="Sign-In Over Time (Sign-In Activity)"
 _sourceCategory="azure_ad_reporting" "appDisplayName" "clientAppUsed" "ipAddress" "resourceId"
 | json "id","ipAddress","clientAppUsed","isInteractive","resourceDisplayName","riskDetail","riskEventTypes","riskLevelAggregated","riskState","status.failureReason","conditionalAccessStatus" as id, ip,client_app_used,is_interactive,resource,risk_reason,risk_event_types,risk_level,risk_state,failure_reason,conditional_activity_status nodrop
 | where risk_reason matches "{{risk_reason}}"
@@ -275,7 +275,7 @@ _sourceCategory="azure_ad_reporting" "appDisplayName" "clientAppUsed" "ipAddress
 | fillmissing timeslice
 ```
 
-```sql title="Average Provisioning Activity Time (Provisioning Acitvity)"
+```sql title="Average Provisioning Activity Time (Provisioning Activity)"
 _sourceCategory="azure_ad_reporting" "provisioningAction" "provisioningSteps" "provisioningStatusInfo"
 | json "id","provisioningStatusInfo.status","provisioningAction","durationInMilliseconds","initiatedBy.initiatingType","servicePrincipal.displayName","sourceIdentity.identityType","sourceSystem.displayName","targetIdentity.identityType","targetSystem.displayName" as id,provisioning_status,provisioning_action,duration_in_ms,initiated_by,service_principal,source_identity_type,source_system,target_identity_type,target_system_name nodrop
 | where initiated_by matches "{{initiated_by}}"
