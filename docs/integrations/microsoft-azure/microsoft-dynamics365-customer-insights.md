@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft-dynamics365-customer-insights.png')} alt="Thumbnail icon" width="50"/>
 
-[Microsoft Dynamics 365 Customer Insights](https://learn.microsoft.com/en-us/dynamics365/customer-insights/overview) is Microsoft's customer data platform (CDP) that helps deliver personalized customer experiences by unifying customer data with operational and IoT data in real-time. This integration helps in tracking changes via the Dynamics 365 Customer Insights UI; creation, update, and deletion events of API calls, and monitoring the execution events of workflow.
+[Microsoft Dynamics 365 Customer Insights](https://learn.microsoft.com/en-us/dynamics365/customer-insights/overview) is Microsoft's customer data platform (CDP) that helps deliver personalized customer experiences by unifying customer data with operational and IoT data in real-time. This integration helps in tracking changes via the Dynamics 365 Customer Insights UI; creation, update, and deletion events of API calls; and monitoring the execution events of workflow.
 
 ## Log types
 
