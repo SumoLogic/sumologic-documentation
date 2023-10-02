@@ -23,8 +23,8 @@ The MITRE Explorer can be used to identify gaps in coverage and understand the i
 
 The tool can be accessed in the Content Menu. It supports three different views:
 * Recent Activity - Your environment's actual coverage (Rules that generated Signals) over the past six months
-* All Community Activity - All CSE customers' anonymized and aggregated coverage over the past six months
-* Theoretical Coverage - Potential coverage if all rules are enabled and all log sources are connected
+* All Community Activity - All CSE customers' anonymized and aggregated coverage over the past six months.
+* Theoretical Coverage - Potential coverage if all rules are enabled and all log sources are connected.
 
 The MITRE Explorer uses the built-in MITRE tactic, technique, and sub-technique tags to track coverage, so if custom Rules are tagged appropriately, they will also be included. 
 
