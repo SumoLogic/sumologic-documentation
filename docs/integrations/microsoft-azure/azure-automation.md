@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-automation.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) delivers a cloud-based automation, operating system updates, and configuration service that supports consistent management across your Azure and non-Azure environments. It includes process automation, configuration management, update management, shared capabilities, and heterogeneous features. This integration helps in monitoring create, update and delete operations for the Automation runbooks, jobs and automation assets like connection, credential, variable & certificate. It also gives insights into the status of your Automation jobs.
+[Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) delivers a cloud-based automation, operating system updates, and configuration service that supports consistent management across your Azure and non-Azure environments. It includes process automation, configuration management, update management, shared capabilities, and heterogeneous features. This integration helps in monitoring create, update and delete operations for the Automation runbooks, jobs and automation assets like connection, credential, variable, and certificate. It also gives insights into the status of your Automation jobs.
 
 ## Log and Metric types
 
