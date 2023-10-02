@@ -2682,6 +2682,7 @@ integrations: [
             'cse/administration/manage-custom-insight-statuses',
             'cse/administration/using-sensor-zones',
             'cse/administration/inventory-sources-and-data',
+            'cse/administration/mitre-coverage',
           ],
         },
       ],
