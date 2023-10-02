@@ -24,7 +24,7 @@ To add a Sumo Logic integration in SIGNL4, do the following:
 
 You need the webhook URL for the configuration in Sumo Logic.
 
-You can find more information on the [SIGNL4](https://www.signl4.com/blog/portfolio_item/sumo_logic_mobile_alerting/) site.
+You can find more information on the [SIGNL4 site](https://www.signl4.com/blog/portfolio_item/sumo_logic_mobile_alerting/).
 
 ## Configuration in Sumo Logic
 
