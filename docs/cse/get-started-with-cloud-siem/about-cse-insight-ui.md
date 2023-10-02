@@ -129,11 +129,11 @@ Below the Signal timeline, you’ll see a list of Signals. By default, only atta
 
 <img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" width="600"/>
 
-1. **Remove**. 
-1. **Checkbox**. 
-1. **Signal name**. 
-1. **Remove**. 
-1. **Entity**. 
+1. **Remove** button. Removes multiple Signals selected with the checkbox. You cannot select all Signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of Signals is disabled as a minimum of 1 Signal must be attached to the Insight. Deselect 1 or more Signals to enable bulk removal.**
+1. **Checkbox**. Click to select multiple Signals for removal. 
+1. **Signal name**. Click to view Signal details.
+1. **Remove** button. Removes an individual Signal.
+1. **Entity**. The Entity associated with the Signal. Click to search for the Entity, or perform an action on the Entity.
 
 
 ### Entities tab
