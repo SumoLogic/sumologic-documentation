@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-service-plan.png')} alt="Thumbnail icon" width="50"/>
 
-An [Azure App Service Plan](https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans) defines a set of compute resources for a app service to run. This integration helps in monitoring memory, CPU, incoming and outgoing bandwidth, number of sockets and their states across all the instances of the plan.
+[Azure App Service Plan](https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans) defines a set of compute resources for a app service to run. This integration helps in monitoring memory, CPU, incoming and outgoing bandwidth, number of sockets and their states across all the instances of the plan.
 
 ## Log and Metric types
 

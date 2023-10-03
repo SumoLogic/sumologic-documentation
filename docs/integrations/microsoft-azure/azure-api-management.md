@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts) is a hybrid, multicloud management platform for APIs across all environments. As a platform-as-a-service, API Management supports the complete API lifecycle. This integration provides near-real-time visibility into the state and health of your APIs, along with rich information about API Management operations that are important for auditing.
+[Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts) is a hybrid multicloud management platform for APIs across all environments. As a platform-as-a-service, API Management supports the complete API lifecycle. This integration provides near real-time visibility into the state and health of your APIs with rich information about API Management operations that are important for auditing.
 
 ## Log and Metric types
 
