@@ -19,7 +19,7 @@ For information on creating customized alerts, see [Monitors](/docs/alerts/monit
 | `Kubernetes - Kubelet Down` | This alert is fired when Kubelet disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | \\>0 |
 | `Kubernetes - Kube Node Not Ready` | This alert is fired when a node is not ready. | Critical/MissingData | \<=0 | \\>0 |
 | `Kubernetes - Kube Scheduler Down` | This alert is fired when Kube Scheduler disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | \\>0 |
-| `Kubernetes -Cluster CPU Utilization High` | This alert is fired when Cluster CPU utlization is high. | Critical/Warning | >0.90 | \<=0.90 |
+| `Kubernetes -Cluster CPU Utilization High` | This alert is fired when Cluster CPU utilization is high. | Critical/Warning | >0.90 | \<=0.90 |
 | `Kubernetes - Prometheus Remote Storage Failures` | This alert is fired when Prometheus fails to send samples to remote storage. | Critical | \\>1 | \<=1 |
 | `Kubernetes -Multiple Terminated Pods (Errored Out)` | This alert is fired when we determine that there are pods that have been terminated because of an error. | Critical | \\>5 | \<=5 |
 | `Kubernetes - Multiple Terminated Pods (Container Cannot Run)` | This alert is fired when we determine that there are pods that have been terminated because the container cannot run. | Critical | \\>5 | \<=5 |
