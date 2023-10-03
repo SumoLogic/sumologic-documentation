@@ -117,6 +117,9 @@ For Linux platform, click **Download Environment Variables File** to get the fil
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -148,6 +151,23 @@ For Linux platform, click **Download Environment Variables File** to get the fil
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
+
+</TabItem>
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-with-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-with-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-with-env.md}
 
 </TabItem>
 </Tabs>

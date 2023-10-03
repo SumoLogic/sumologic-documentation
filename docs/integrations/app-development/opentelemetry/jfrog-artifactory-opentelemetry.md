@@ -86,6 +86,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -115,6 +118,25 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+
 </Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}

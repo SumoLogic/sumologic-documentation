@@ -78,7 +78,11 @@ You can add any custom fields which you want to tag along with the data ingested
   defaultValue="Linux"
   values={[
     {label: 'Linux', value: 'Linux'},
+    {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -97,6 +101,23 @@ You can add any custom fields which you want to tag along with the data ingested
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
+
+</TabItem>
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
 </Tabs>
