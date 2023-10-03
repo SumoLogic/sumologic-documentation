@@ -20,7 +20,7 @@ To add a Sumo Logic integration in SIGNL4, do the following:
 
 1. Go to the [SIGNL4 Integration Hub](https://account.signl4.com/manage/IntegrationHub?tabName=installedApps).
 1. Select an existing webhook integration or create a new one for the Sumo Logic integration.
-1. In the integration tile copy the URL including integration or team secret.
+1. In the integration tile, copy the URL including integration or team secret.
 
 You need the webhook URL for the configuration in Sumo Logic.
 
