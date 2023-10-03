@@ -58,7 +58,7 @@ For more information about Cloud SOAR dashboards, see [Dashboards](/docs/cloud-s
 The **Nodes Management** page shows the status of all paired child tenants and provides the following actions you can perform:
 
 * **Ping**. Active status check (PING).
-* **Connect**. Connec to to tenant.
+* **Connect**. Connect to tenant.
 * **Edit**. Edit the configuration of a tenant.
 * **Unpair**. Unpair a tenant.
 
