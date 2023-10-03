@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We are excited to announce a new feature in Cloud SIEM Enterprise (CSE), the MITRE ATT&amp;CK&reg; Threat Coverage Explorer. This interactive tool gives you the ability to see how Rules, Signals, and log sources map to adversary actions using the [MITRE ATT&amp;CK&reg; Matrix for Enterprise](https://attack.mitre.org/).
 
-<img src={useBaseUrl('img/release-notes/cse/MITRE-Explorer.png')} alt="MITRE ATT&amp;CK&reg; Threat Coverage Explorer"/>
+<img src={useBaseUrl('img/release-notes/cse/Mitre-Explorer.png')} alt="MITRE ATT&amp;CK&reg; Threat Coverage Explorer"/>
 
 The MITRE Explorer can be used to identify gaps in coverage and understand the impact of specific log sources and Rules to the overall threat coverage and value of CSE.
 
