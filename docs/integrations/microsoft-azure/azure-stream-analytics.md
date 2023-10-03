@@ -20,7 +20,7 @@ For Azure Stream Analytics, you can collect the following logs and metrics:
 
 To know more about the different resource log category types and schemas collected for Azure Stream Analytics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-job-diagnostic-logs#resource-log-categories).
 
-* **Platform Metrics for Azure Stream Analytics**. These metrics are available in [Microsoft.StreamAnalytics/streamingjobs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-streamanalytics-streamingjobs-metrics) namespace. For more information on supported metrics and dimesnsions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/monitor-azure-stream-analytics-reference#metrics).
+* **Platform Metrics for Azure Stream Analytics**. These metrics are available in [Microsoft.StreamAnalytics/streamingjobs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-streamanalytics-streamingjobs-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/monitor-azure-stream-analytics-reference#metrics).
 
 ## Setup
 

@@ -14,7 +14,7 @@ The [Azure SQL Elastic Pools](https://learn.microsoft.com/en-us/azure/azure-sql/
 
 For Azure SQL Elastic pools, you can collect the following metrics:
 
-* **Basic Metrics**. These metrics are available in [Microsoft.Sql/servers/elasticpools](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-sql-servers-elasticpools-metrics) namespace. For more information on supported metrics and dimesnsions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#elastic-pools-in-azure-sql-database).
+* **Basic Metrics**. These metrics are available in [Microsoft.Sql/servers/elasticpools](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-sql-servers-elasticpools-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#elastic-pools-in-azure-sql-database).
 
 ## Setup
 

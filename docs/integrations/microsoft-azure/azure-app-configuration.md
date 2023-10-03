@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure App Configuration, you can collect the following logs and metrics:
 
 * **Resource logs**. To know more about the different resource log category types and schemas collected for Azure App Configuration, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration-reference#resourcelogs).
-* **Platform Metrics for Azure App Configuration**. These metrics are available in [Microsoft.AppConfiguration/configurationStores](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-appconfiguration-configurationstores-metrics) namespace. For more information on supported metrics and dimesnsions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration-reference#metrics).
+* **Platform Metrics for Azure App Configuration**. These metrics are available in [Microsoft.AppConfiguration/configurationStores](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-appconfiguration-configurationstores-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration-reference#metrics).
 
 ## Setup
 
