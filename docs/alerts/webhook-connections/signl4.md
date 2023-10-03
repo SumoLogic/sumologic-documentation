@@ -48,7 +48,7 @@ To create a webhook:
 1. For the name, enter **Sumo Logic SIGNL4** and give an optional description to the connection.
 1. Paste the SIGNL4 webhook URL (from the step above) into the **URL** field.
 1. Enter the following content in the **Alert Payload** field:
-    ```json
+    ```
     {
       "AlertName": "{{AlertName}}",
       "Description": "{{Description}}",
