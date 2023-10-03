@@ -4,8 +4,6 @@ title: Share a Link to a Search
 description: Share a link to search query results. Copy and paste the a link to share a search via email or IM.
 ---
 
-
-
 :::important
 Search results might vary depending on each user's permissions.
 :::
@@ -28,11 +26,10 @@ To share a link to a search:
 
 1. Do one of the following:
 
-    **If the search is not saved:** The Share Search dialog appears with options to share with users and roles of an org in the following
-    ways:
+    **If the search is not saved:** The Share Search dialog appears with options to share with users and roles of an org in the following ways:
 
     * These will include the current state of the Aggregates tab, so if you have configured a chart, it will be displayed to the user you share it with, depending on their permissions. When you update your chart, a new link is generated.
-    * **Shareable Search URL**. **Copy the top link to share your search as a URL. Another user with access to your account can paste the link into a browser to run your search. If the user is not currently logged into Sumo Logic, he or she will be prompted to log in.
+    * **Shareable Search URL**. Copy the top link to share your search as a URL. Another user with access to your account can paste the link into a browser to run your search. If the user is not currently logged into Sumo Logic, he or she will be prompted to log in.
     * **Paste code in the search query box**. If you know that the recipient is logged into Sumo Logic, copy and provide them the bottom code. This code can be pasted into the Search query box of a new Search tab. When you update your chart, a new code is generated.  
 
         ![share unsaved search popup.png](/img/search/get-started-search/search-basics/share-unsaved-search-popup.png)

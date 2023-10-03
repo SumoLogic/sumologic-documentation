@@ -7,6 +7,10 @@ description: The Sumo Logic App for Azure Active Directory provides insight into
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 <img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="40"/>
 
 Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection.
