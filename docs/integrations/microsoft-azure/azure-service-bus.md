@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 For Azure Service Bus, you can collect the following logs and metrics:
 
 * **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Service Bus, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/service-bus-messaging/monitor-service-bus-reference#resource-logs).
-* **Platform Metrics for Azure Service Bus**. These metrics are available in [Microsoft.ServiceBus/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-servicebus-namespaces-metrics) namespace. For more information on supported metrics and dimesnsions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/service-bus-messaging/monitor-service-bus-reference#metrics).
+* **Platform Metrics for Azure Service Bus**. These metrics are available in [Microsoft.ServiceBus/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-servicebus-namespaces-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/service-bus-messaging/monitor-service-bus-reference#metrics).
 
 ## Setup
 

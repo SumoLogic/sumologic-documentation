@@ -23,7 +23,7 @@ The below instructions applies to the following [database APIs](https://learn.mi
 For Azure Cosmos DB, you can collect the following logs and metrics:
 
 * **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Cosmos DB, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#resource-logs).
-* **Platform Metrics for Azure Cosmos DB**. All metrics for Azure Cosmos DB are in the namespace `Azure Cosmos DB standard metrics`. For more information on supported metrics and dimesnsions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics).
+* **Platform Metrics for Azure Cosmos DB**. All metrics for Azure Cosmos DB are in the namespace `Azure Cosmos DB standard metrics`. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/cosmos-db/monitor-reference#metrics).
 
 ## Setup
 
