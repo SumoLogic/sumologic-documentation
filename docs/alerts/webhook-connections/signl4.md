@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('https://raw.githubusercontent.com/signl4/signl4-logo/main/signl4.png')} alt="Thumbnail icon" width="50"/>
 
 
-[Webhook connections](/docs/alerts/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
+You can set up [webhook connections](/docs/alerts/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data.
 
 ## Sumo Logic to SIGNL4 Integration
 
