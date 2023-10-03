@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. This combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
-The source will fetch complete vulnerability instance data that has been updated within the duration of polling interval, which by default is set to 1 hour. According to CrowdStrike Spotlight documentation, the timestamp updates based on changes to any of the following vulnerability properties: status, remediation, evaluation_logic, suppression_info, cve.
+The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined with endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. These combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
+The source will fetch complete vulnerability instance data that has been updated within the duration of the polling interval, which by default is set to 1 hour. According to CrowdStrike Spotlight documentation, the timestamp updates are based on changes to any of the following vulnerability properties: status, remediation, evaluation_logic, suppression_info, and cve.
 
 ## Prerequisites
 
@@ -157,9 +157,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ## Troubleshooting
 
-### CrowdStrike Spotlight API Returns 500 Error Code
+### CrowdStrike Spotlight API returns 500 error code
 
-We recently observed an increasing number of an unexpected 500 errors from CrowdStrike Spotlight API. It usually happens after some successfull polling cycles. During paginating vulnerabilities CrowdStrike Spotlight API starts returning 500 error shown below:
+We recently observed an increasing number of unexpected 500 errors from CrowdStrike Spotlight API. It usually happens after some successful polling cycles. During paginating vulnerabilities CrowdStrike Spotlight API starts returning 500 error shown below:
 
 ```json
 {
@@ -176,7 +176,6 @@ We recently observed an increasing number of an unexpected 500 errors from Crowd
   ]
 }
 ```
+**Solution**
 
-If you are seeing this error, please contact CrowdStrike Spotlight support with trace id included in the error response.
-It is a CrowdStrike issue. We were informed that they are aware of this issue and plan to release a fix on their side.
-Currently we do not have any ETA.
+This issue is from CrowdStrike platform. If you come across this error, please contact CrowdStrike Spotlight support with trace id included in the error response.
