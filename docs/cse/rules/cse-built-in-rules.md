@@ -2573,7 +2573,7 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## RDP Error Messages
 
 
- When setting up an RDP connection, there are a number of  negotiation steps that happen.  If a connection is enrypted, not all of these can be analyzed.  Errors can indicate an operational issue or potential exploitation of a vulnerability in negotiation.
+ When setting up an RDP connection, there are a number of  negotiation steps that happen.  If a connection is encrypted, not all of these can be analyzed.  Errors can indicate an operational issue or potential exploitation of a vulnerability in negotiation.
 
 ## RDP Login from Localhost
 
