@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-analysis-services.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Analysis Services](https://learn.microsoft.com/en-us/azure/analysis-services/analysis-services-overview) is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. This integration helps in monitoring how your servers are performing and tracking server events like start, stop, pause, restart and delete.
+[Azure Analysis Services](https://learn.microsoft.com/en-us/azure/analysis-services/analysis-services-overview) is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. This integration monitors server performance and tracks server events like start, stop, pause, restart, and delete.
 
 ## Log and Metric types
 
