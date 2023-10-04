@@ -8,7 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. This combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
+The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined with endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. These combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
+The source will fetch complete vulnerability instance data that has been updated within the duration of the polling interval, which by default is set to 1 hour. According to CrowdStrike Spotlight documentation, the timestamp updates are based on changes to any of the following vulnerability properties: status, remediation, evaluation_logic, suppression_info, and cve.
 
 ## Prerequisites
 
@@ -85,7 +86,7 @@ To configure the CrowdStrike Spotlight Source:
 1. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 1. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
 1. In **Facet**, select the type of data to be returned for each vulnerability entity which allows to limit the response to just the information you want.
-1. (Optional) The **Polling Interval** is set for one hour by default, you can adjust it based on your needs. This sets how often the integration will fetch complete vulnerability instance data that has been created or updated within last hour.
+1. (Optional) The **Polling Interval** is set for one hour by default, you can adjust it based on your needs. This sets how often the integration will fetch complete vulnerability instance data that has been updated within most recent polling interval duration.
 1. When you are finished configuring the Source, click **Save**.
 
 ## Error types
@@ -153,3 +154,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   }
 }
 ```
+
+## Troubleshooting
+
+### CrowdStrike Spotlight API returns 500 error code
+
+We recently observed an increasing number of unexpected 500 errors from CrowdStrike Spotlight API. It usually happens after some successful polling cycles. During paginating vulnerabilities CrowdStrike Spotlight API starts returning 500 error shown below:
+
+```json
+{
+  "meta": {
+    "query_time": 1.52e-7,
+    "powered_by": "crowdstrike-api-gateway",
+    "trace_id": "custom_trace_id"
+  },
+  "errors": [
+    {
+      "code": 500,
+      "message": "Internal Server Error: Please provide trace-id='custom_trace_id' to support"
+    }
+  ]
+}
+```
+**Solution**
+
+This issue is from CrowdStrike platform. If you come across this error, please contact CrowdStrike Spotlight support with trace id included in the error response.

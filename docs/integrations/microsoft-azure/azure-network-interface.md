@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-network-interface.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Network Interface (NIC)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface) enables an Azure virtual machine (VM) to communicate with internet, Azure, and on-premises resources. This integration helps in monitoring packet and data throughputs.
+[Azure Network Interface (NIC)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface) enables an Azure virtual machine (VM) to communicate with internet, Azure, and on-premises resources. This integration helps in monitoring packet and data throughput.
 
 ## Metric types
 
@@ -39,6 +39,6 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 ## Troubleshooting
 
-### HTTP Logs and Metrics Source used by Azure Network Interface
+### HTTP Logs and Metrics Source used by Azure Functions
 
 To troubleshoot metrics collection, follow the instructions in [Collect Metrics from Azure Monitor > Troubleshooting metrics collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#troubleshooting-metrics-collection).
