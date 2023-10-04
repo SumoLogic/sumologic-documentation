@@ -18,6 +18,41 @@ const searchClient = algoliasearch('2SJPGMLW1Q', 'fb2f4e1fb40f962900631121cb3655
 
 // ...
 
+const search = instantsearch({
+  // ...
+  insights: true,
+});
+
+hits({
+  templates: {
+    item(hit, { html, components, sendEvent }) {
+      return html`
+        <div onClick="${() => sendEvent('click', hit, 'Product Clicked')}">
+          <h2>
+            ${components.Highlight({ attribute: 'name', hit })}
+          </h2>
+          <p>${hit.description}</p>
+        </div>
+      `;
+    },
+  },
+});
+
+hits({
+  templates: {
+    item(hit, { html, components, sendEvent }) {
+      return html`
+        <h2>${components.Highlight({ attribute: 'name', hit })}</h2>
+        <p>${hit.description}</p>
+        <button onClick="${() => sendEvent('conversion', hit, 'Purchase With One-Click')}">
+          One-Click Purchase
+        </button>
+      `;
+    },
+  },
+});
+
+
 function App() {
   return (
     <InstantSearch searchClient={searchClient} indexName="crawler_sumodocs">
