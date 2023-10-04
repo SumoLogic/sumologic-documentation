@@ -40,3 +40,4 @@ jobs:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
           ignore_words_list: "aks,atleast,cros,ddress,fiel,ist,ot,pullrequest,ser,shttp,fo,seldomly,delt,cruzer,plack,secur,te"
           path: docs
+          
