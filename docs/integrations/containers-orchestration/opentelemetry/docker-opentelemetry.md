@@ -72,12 +72,44 @@ Click on the **Download YAML File** button to get the yaml file.
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Linux">
+
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Docker instance that needs to be monitored.
 1. Place `Env` file in the `/etc/otelcol-sumo/env/` directory.
 1. Restart the collector using:
   ```
   sudo systemctl restart otelcol-sumo
   ```
+
+</TabItem>
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-with-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-with-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-with-env.md}
+
+</TabItem>
+</Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 

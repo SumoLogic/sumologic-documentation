@@ -65,9 +65,21 @@ Once the details are filled in, click on the **Download YAML File** button to ge
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
-Once you have downloaded the yaml file as described in the previous step, follow the below steps based on your platform.
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Windows"
+  values={[
+    {label: 'Windows', value: 'Windows'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Windows">
 
 1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using:
@@ -75,11 +87,28 @@ Once you have downloaded the yaml file as described in the previous step, follow
   Restart-Service -Name OtelcolSumo
   ```
 
-After successfully executing the above command, Sumo Logic will start receiving data from your host machine.
+</TabItem>
 
-Click **Next**. This will install the app (dashboards and monitors) to your Sumo Logic Org.
+<TabItem value="Chef">
 
-Dashboard panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+</Tabs>
+
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Queries
 
@@ -98,7 +127,6 @@ sumo.datasource=windows deployment.environment={{deployment.environment}} host.g
 | count as event_count by _timeslice, host, dest_user, dest_domain, src_user, src_domain, event_id, msg_summary
 | sort by _timeslice
 ```
-
 
 ## Sample Logs
 

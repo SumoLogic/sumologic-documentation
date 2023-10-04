@@ -149,7 +149,6 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 | sum(ERROR) as ERROR by _timeslice
 ```
 
-
 ## Viewing Memcached Dashboards
 
 ### Overview

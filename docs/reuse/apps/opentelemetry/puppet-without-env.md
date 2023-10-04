@@ -8,7 +8,6 @@
         notify => Service[otelcol-sumo],
       }
     ```
-
 3. [Apply the Puppet manifest](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/puppet/README.md). Every team typically has their established way of applying the Puppet manifest. The resulting Puppet manifest should look something like:
     ```
     node 'default' {

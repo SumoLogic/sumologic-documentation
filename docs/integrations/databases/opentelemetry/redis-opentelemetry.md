@@ -78,7 +78,6 @@ You can add any custom fields which you want to tag along with the data ingested
   defaultValue="Linux"
   values={[
     {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
     {label: 'Chef', value: 'Chef'},
     {label: 'Ansible', value: 'Ansible'},
