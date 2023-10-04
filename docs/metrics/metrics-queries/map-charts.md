@@ -7,7 +7,6 @@ description: A map chart visualizes metric query results by geographic location.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 ## Map Charts
 
 A map chart visualizes metric query results by geographic location.
