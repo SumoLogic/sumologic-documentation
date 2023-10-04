@@ -122,7 +122,7 @@ and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/a
 
 ## Troubleshoot
 
-Collecting realtime Slack messages from Slack channels and understanding the C2C polling interval is a common question. 
+Collecting real-time Slack messages from Slack channels and understanding the C2C polling interval is a common question. 
 
 The C2C is limited in the number of API calls it can make to the Slack API documented in the [Slack API rate limits page](https://api.slack.com/docs/rate-limits). The C2C will gather a list of your non-archived Slack channels and collect new messages from each channel for the polling interval. The default polling interval is 5 minutes. The rate limits on the Slack API for these endpoints use their "Web API Tier 3" limit, which is 50 requests per minute. 
 
