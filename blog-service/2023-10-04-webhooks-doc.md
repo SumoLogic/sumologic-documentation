@@ -11,13 +11,14 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We’re excited to announce the release of 31 new setup guides to our App Catalog, enabling you to connect various webhook-based services to Sumo Logic. These setup guides provide easy step-by-step configuration instructions for setting up data collection, allowing you to explore your data within Sumo Logic.
+We’re excited to announce the release of 32 new setup guides to our App Catalog, enabling you to connect various webhook-based services to Sumo Logic. These setup guides provide easy step-by-step configuration instructions for setting up data collection, allowing you to explore your data within Sumo Logic.
 
 The new setup guides for Webhook-based services are:
 
 - [Buddy](/docs/integrations/webhooks/buddy/)
 - [Bugsnag](/docs/integrations/webhooks/bugsnag/)
 - [ConfigCat](/docs/integrations/webhooks/configcat/)
+- [Datadog](/docs/integrations/saas-cloud/datadog)
 - [EMnify](/docs/integrations/webhooks/emnify/)
 - [Firefly](/docs/integrations/webhooks/firefly/)
 - [Flagsmith](/docs/integrations/webhooks/flagsmith/)
