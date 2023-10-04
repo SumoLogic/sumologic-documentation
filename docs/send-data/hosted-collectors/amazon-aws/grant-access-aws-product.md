@@ -53,22 +53,7 @@ This section has instructions for creating an S3 source and using the option Gen
 * AWS Metadata
 * Amazon S3
 * AWS S3 Archive
-* Amazon S3 Audit 
-
-Watch the following video to see the procedure. It uses an S3 source as an example. A step-by-step procedure follows.
-
-<Iframe url="https://www.youtube.com/embed/uKkKxAZgF3Y"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
+* Amazon S3 Audit
 
 To create a role automatically using a CloudFormation template:
 

@@ -23,9 +23,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 :::sumo Micro Lesson
 
-This video covers the Sumo Logic S3 event notifications integration, which combines scan based discovery and event based discovery into a unified integration that gives you the ability to maintain a low latency integration for new content and provide assurances that no data was missed or dropped.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2vtjPfHQK1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Watch this micro lesson video](https://www.youtube.com/embed/2vtjPfHQK1Q?rel=0) to learn more about our S3 event notifications integration, which combines scan based discovery and event-based discovery into a unified integration that gives you the ability to maintain a low latency integration for new content and provide assurances that no data was missed or dropped.
 
 :::
 
