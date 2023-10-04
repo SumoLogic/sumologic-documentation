@@ -72,7 +72,7 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox10 card">
     <div className="container">
-    <a href="docs/manage/security/installation-tokens"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Installation Tokens</h4></a>
+    <a href="/docs/manage/security/installation-tokens"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Installation Tokens</h4></a>
     <p>Learn how to use Installation Tokens to register Installed Collectors.</p>
   </div>
 </div>

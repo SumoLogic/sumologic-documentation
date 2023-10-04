@@ -114,7 +114,7 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 **Make sure all fields appear in the Scope you define.** When Field Extraction is applied to data, all fields must be present to have any fields indexed; even if one field isn't found in a message, that message is dropped from the results. In other words, it's all or nothing. For multiple sets of fields that are somewhat independent, make two rules.
 
-**Re-use field names in multiple FERs if scope is distinct and separate and not matching same messages.** To save space and allow for more FERs within your 200 field limit, you can re-use the field names as long as they are used in non-overlapping FERs. 
+**Reuse field names in multiple FERs if scope is distinct and separate and not matching same messages.** To save space and allow for more FERs within your 200 field limit, you can reuse the field names as long as they are used in non-overlapping FERs. 
 
 **Avoid targeting the same field name in the same message with multiple FERs.** When more than one FER targets the same message with the same field name, one of the rules will NOT apply. The rule applied to the specific field name is randomly selected. Don't use the same field names in multiple FERs that target the same messages.
 

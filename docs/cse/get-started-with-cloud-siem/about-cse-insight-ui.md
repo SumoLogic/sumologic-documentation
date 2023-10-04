@@ -115,7 +115,11 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
    * **Threat intelligence**. Signals that were fired by Threat Intel rules.
    * **File Analysis**. Signals that were triggered by [Yara file analysis rules](/docs/cse/rules/import-yara-rules).
-1. **Show Related**. Click this link to show Related Signals in addition to Attached Signals. 
+1. **Show Related**. Click this link to show Related Signals in addition to Attached Signals. If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
+    * A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
+    * A *Related Insight* is an Insight that a Related Signal is attached to.
+    <br/>Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
+    <br/><img src={useBaseUrl('img/cse/related-signal.png')} alt="Related signal" width="800"/>
 1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.
 
@@ -123,16 +127,14 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 
 Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
 
-<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" width="800"/>
+<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" width="600"/>
 
-If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights.
+1. **Remove** button. Removes multiple Signals selected with the checkbox. You cannot select all Signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of Signals is disabled as a minimum of 1 Signal must be attached to the Insight. Deselect 1 or more Signals to enable bulk removal.**
+1. **Checkbox**. Click to select multiple Signals for removal. 
+1. **Signal name**. Click to view Signal details.
+1. **Remove** button. Removes an individual Signal.
+1. **Entity**. The Entity associated with the Signal. Click to search for the Entity, or perform an action on the Entity.
 
-* A *Related Signal* is a Signal that isn’t part of the current Insight (it’s not attached), but fired on the same Entity as the current Insight’s attached Signals within 7 days of the current Insight’s attached Signals. 
-* A *Related Insight* is an Insight that a Related Signal is attached to.
-
-Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
-
-<img src={useBaseUrl('img/cse/related-signal.png')} alt="Related signal" width="800"/>
 
 ### Entities tab
 
