@@ -17,6 +17,10 @@ The MITRE ATT&CK Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org
 
 To determine your coverage, MITRE ATT&CK Coverage collects data from rules that have fired in the last 180 days. 
 
+:::note
+To view the MITRE ATT&CK Coverage page, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem-enterprise). 
+:::
+
 Watch this micro lesson to learn about MITRE ATT&CK Coverage.
 
 <Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
