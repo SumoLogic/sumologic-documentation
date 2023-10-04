@@ -20,7 +20,7 @@ For Azure Front Door, you can collect the following logs and metrics:
 
 For more information on logs schema, refer to the below documentations:
 
-* [Standard/Premimum tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#logs)
+* [Standard/Premium tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#logs)
 * [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#diagnostic-logging)
 
 * **Metrics**. Usage metrics from your CDN endpoint are in below namespaces:
@@ -28,7 +28,7 @@ For more information on logs schema, refer to the below documentations:
 
 For more information on supported dimensions, refer to the below documentations:
 
-* [Standard/Premimum tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#metrics).
+* [Standard/Premium tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#metrics).
 * [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#metrics).
 
 ## Setup

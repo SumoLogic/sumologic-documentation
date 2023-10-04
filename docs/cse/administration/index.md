@@ -106,4 +106,10 @@ Learn about onboarding tasks and best practices for Cloud SIEM Enterprise admini
   <p>Learn about Inventory Sources and the Inventory Data they collect.</p>
   </div>
 </div>
+<div className="box smallbox17 card">
+  <div className="container">
+  <a href="/docs/cse/administration/mitre-coverage"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>MITRE Coverage</h4></a>
+  <p>Learn how well you are prepared to detect adversary attacks based on the tactics and techniques in the MITRE ATT&CK Enterprise Matrix.</p>
+  </div>
+</div>
 </div>
