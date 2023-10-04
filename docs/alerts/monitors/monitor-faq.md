@@ -76,9 +76,4 @@ then selecting **Duplicate**. If your monitor still doesn't work, we recommend
 
 ## Can I disable a Monitor during scheduled maintenance or upgrade window?
 
-The Monitors page allows you to disable a Monitor so you're not alerted during specific times like scheduled maintenance or upgrade windows. Follow the below steps to disable a monitor. 
-
-1. Find and select the Monitor in the Monitors table. A three-dot icon appears on the right of the row.<br/> ![menu-option.png](/img/monitors/menu-option.png)
-1. Click the three-dot icon to view the menu options. You can select to Enable or Disable the monitor.
-
-Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
+Yes. See [Muting Schedules](/docs/alerts/monitors/muting-schedules) to learn how to pause alert notifications from monitors according to a schedule defined by you.
