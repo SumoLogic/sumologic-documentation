@@ -4,7 +4,7 @@ title: Metrics
 description: Sumo Logic Metrics can measure infrastructure, application performance or custom business and operational data.
 tags: [metrics, metric]
 ---
-
+ 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/metrics/metrics.png')} alt="icon" width="30"/>
