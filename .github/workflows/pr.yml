@@ -13,11 +13,11 @@ jobs:
           CI: true
           NODE_ENV: production
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         - name: Set up Node.js
           uses: actions/setup-node@v3
           with:
-            node-version: '18.x'
+            node-version: '20.x'
             cache: 'yarn'
         - name: Docusaurus Webpack cache
           uses: actions/cache@v3
@@ -33,7 +33,7 @@ jobs:
     spellcheck:
       runs-on: ubuntu-latest
       steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: codespell-project/actions-codespell@master
         name: Check spelling
         with:
