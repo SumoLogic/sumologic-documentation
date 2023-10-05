@@ -11,7 +11,7 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
 
 * **Free** accounts give you access to core Sumo Logic features, with a daily 500 MB data volume limit. Free accounts allow three users, with 4 GB of retention. For information about Free account features, see the "Free Accounts" column in the following table and the Important notes section on [Sumo Logic Free accounts](#important-notes-on-sumo-logic-free-accounts).
 :::tip
-Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Professional from within Sumo Logic.
+Free account holders can [upgrade](upgrade-cloud-flex-account.md) to a Professional account from within Sumo Logic.
 :::
 
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-free-accounts).  
