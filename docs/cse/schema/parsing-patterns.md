@@ -1,7 +1,6 @@
 ---
 id: parsing-patterns
 title: Parsing Patterns
-sidebar_label: Parsing Patterns
 description: Parsing patterns are predefined named regular expressions used in regex-based parsers. 
 ---
 
