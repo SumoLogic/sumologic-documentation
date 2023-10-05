@@ -67,9 +67,9 @@ The behavior is the same as for any other collection method.
 #### How do I provide a proxy setting for the Sumo Logic OpenTelemetry Collector to connect to the Sumo Logic backend?
 
 If your Collector fails to connect to Sumo Logic, you may need to configure a proxy setting for the Sumo Logic OpenTelemetry Collector so that it can connect to the Sumo Logic backend. The information how to install the proxy has been provided on the Install Collector page for the specific platform.
-* [Linux Proxy](/docs/send-data/opentelemetry-collector/install-collector-linux/#using-proxy)
-* [Windows Proxy](/docs/send-data/opentelemetry-collector/install-collector-windows/#using-proxy)
-* [macOS Proxy](/docs/send-data/opentelemetry-collector/install-collector-macos/#using-proxy)
+* [Linux Proxy](/docs/send-data/opentelemetry-collector/install-collector/linux/#using-proxy)
+* [Windows Proxy](/docs/send-data/opentelemetry-collector/install-collector/windows/#using-proxy)
+* [macOS Proxy](/docs/send-data/opentelemetry-collector/install-collector/macos/#using-proxy)
 
 #### On macOS, does the Sumo Logic OpenTelemetry Collector stop sending data after some time?
 

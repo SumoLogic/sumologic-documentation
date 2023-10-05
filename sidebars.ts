@@ -86,9 +86,21 @@ module.exports = {
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
            // 'send-data/opentelemetry-collector/quickstart',
-            'send-data/opentelemetry-collector/install-collector-linux',
-            'send-data/opentelemetry-collector/install-collector-macos',
-            'send-data/opentelemetry-collector/install-collector-windows',
+            {
+              type: 'category',
+              label: 'Install Collector',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/opentelemetry-collector/install-collector/index'},
+              items:[
+                'send-data/opentelemetry-collector/install-collector/linux',
+                'send-data/opentelemetry-collector/install-collector/macos',
+                'send-data/opentelemetry-collector/install-collector/windows',
+                'send-data/opentelemetry-collector/install-collector/ansible',
+                'send-data/opentelemetry-collector/install-collector/puppet',
+                'send-data/opentelemetry-collector/install-collector/chef',
+              ]
+            },
             {
               type: 'category',
               label: 'Data Source and Configurations',
@@ -2590,13 +2602,15 @@ integrations: [
             'cse/schema/schema-attributes',
             'cse/schema/attributes-map-to-records',
             'cse/schema/cse-record-types',
-            'cse/schema/parsing-language-reference-guide',
             'cse/schema/create-structured-log-mapping',
             'cse/schema/cse-normalized-classification',
             'cse/schema/field-mapping-security-event-sources',
             'cse/schema/parser-editor',
-            'cse/schema/username-and-hostname-normalization',
+            'cse/schema/parsing-language-reference-guide',
+            'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
+            'cse/schema/username-and-hostname-normalization',
+          
           ],
         },
         {
