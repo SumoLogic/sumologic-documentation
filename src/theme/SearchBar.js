@@ -23,34 +23,23 @@ const search = instantsearch({
   insights: true,
 });
 
-hits({
-  templates: {
-    item(hit, { html, components, sendEvent }) {
-      return html`
-        <div onClick="${() => sendEvent('click', hit, 'Product Clicked')}">
-          <h2>
-            ${components.Highlight({ attribute: 'name', hit })}
-          </h2>
-          <p>${hit.description}</p>
-        </div>
-      `;
-    },
-  },
+// When a search is performed in Algolia-powered search
+algolia.search(query).then(({ hits }) => {
+  // Track the search event in Google Analytics
+  gtag('event', 'search', {
+    'search_term': query,
+    'search_results_count': hits.length
+  });
 });
 
-hits({
-  templates: {
-    item(hit, { html, components, sendEvent }) {
-      return html`
-        <h2>${components.Highlight({ attribute: 'name', hit })}</h2>
-        <p>${hit.description}</p>
-        <button onClick="${() => sendEvent('conversion', hit, 'Purchase With One-Click')}">
-          One-Click Purchase
-        </button>
-      `;
-    },
-  },
-});
+// When a user clicks on a search result
+function trackClickResult(result) {
+  // Track the click event in Google Analytics
+  gtag('event', 'click_result', {
+    'result_title': result.title,
+    'result_url': result.url
+  });
+}
 
 
 function App() {
