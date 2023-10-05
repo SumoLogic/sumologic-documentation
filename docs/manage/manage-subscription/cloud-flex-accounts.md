@@ -16,7 +16,7 @@ Free account holders can [upgrade](upgrade-cloud-flex-account.md) to a Professio
 
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-free-accounts).  
 :::note
-Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
+Trials are limited to 30 days. If you need to extend your trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
 :::
 
 * **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Professional to an Enterprise account at any time.
