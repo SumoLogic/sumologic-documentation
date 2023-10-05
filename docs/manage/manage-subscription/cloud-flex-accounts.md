@@ -165,7 +165,7 @@ The following visual indicators apply:
 
 To switch between views and time interval displays, do the following:
 
-1. Log in to Sumo Logic and select **Administration** > **Account** in the left navigation pane. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
+1. Log in to Sumo Logic. From the left navigation pane, select **Administration** > **Account**. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
 1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
 1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/>![CloudFlex_Usage_BillingPeriod_menu.png](/img/subscriptions/uage-billing-period.png)
 <br/>The data display changes accordingly. 
