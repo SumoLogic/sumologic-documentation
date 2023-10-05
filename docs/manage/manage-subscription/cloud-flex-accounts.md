@@ -132,7 +132,7 @@ To view the Account page, do the following:
 1. Log in to your Sumo Logic Cloud Flex account.
 1. In the left navigation bar of the UI, select **Administration** > **Account**. The Account Overview tab of the Account page is shown by default.
 :::note
-You must have a role that grants you the Account Overview capability to view the Account Overview tab.
+You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/) to view the Account Overview tab.
 :::
 ![CloudFlex-AccountPage.png](/img/subscriptions/cloud-flex-account-page.png)
 :::note
