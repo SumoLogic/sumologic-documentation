@@ -183,6 +183,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
     {label: 'Ansible', value: 'Ansible'},
     {label: 'Puppet', value: 'Puppet'},
   ]}>
@@ -216,6 +217,11 @@ Once the details are filled, click on the **Download YAML File** button to get t
    ```sh
    otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
    ```
+</TabItem>
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
 </TabItem>
 <TabItem value="Ansible">
 

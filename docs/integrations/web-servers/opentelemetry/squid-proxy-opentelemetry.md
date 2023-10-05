@@ -60,6 +60,7 @@ You can add any custom fields which you want to tag along with the data ingested
   defaultValue="Linux"
   values={[
     {label: 'Linux', value: 'Linux'},
+    {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
     {label: 'Chef', value: 'Chef'},
     {label: 'Ansible', value: 'Ansible'},
@@ -73,6 +74,15 @@ You can add any custom fields which you want to tag along with the data ingested
   ```sh
   sudo systemctl restart otelcol-sumo
   ```
+
+</TabItem>
+<TabItem value="Windows">
+
+1. Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
+2. Restart the collector using: 
+   ```sh
+   Restart-Service -Name OtelcolSumo
+   ```
 
 </TabItem>
 <TabItem value="macOS">

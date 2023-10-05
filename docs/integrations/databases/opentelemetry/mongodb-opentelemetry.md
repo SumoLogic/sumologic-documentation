@@ -72,6 +72,7 @@ You can add any custom fields which you want to tag along with the data ingested
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
     {label: 'Ansible', value: 'Ansible'},
     {label: 'Puppet', value: 'Puppet'},
   ]}>
@@ -104,6 +105,11 @@ Restart-Service -Name OtelcolSumo
 
 </TabItem>
 
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
 <TabItem value="Ansible">
 
 {@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
