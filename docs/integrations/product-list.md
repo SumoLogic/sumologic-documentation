@@ -25,62 +25,47 @@ Types of integrations:
 * **OIF integrations**. Open Integration Framework integrations for automation. To find products with OIF integrations, search for the products in App Central for [Cloud SIEM](m/docs/cse/automation-service/automation-service-app-central/) or [Cloud SOAR](/docs/cloud-soar/automation/#app-central). 
 -->
 
-## Misc
-
-| Logo | Product | Integrations |
-| :-- | :-- | :-- |
-| <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/> | [1Password](https://1password.com/) | App: [1Password](/docs/integrations/1password/) <br/>Collector: [1Password Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) |
 
 ## A
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-| <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="Thumbnail icon" width="50"/>   | [Acquia](https://www.acquia.com/)  | App: [Acquia](/docs/integrations/saas-cloud/acquia/)	 | 
-| <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>   | Active Directory  | Apps: <br/>- [Active Directory JSON - Classic Collector](/docs/integrations/microsoft-azure/active-directory-json/) <br/>- [Active Directory JSON - OpenTelemetry Collector](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry/)<br/>- [Active Directory Legacy](/docs/integrations/microsoft-azure/active-directory-legacy/) 	 | 
-| <img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="Thumbnail icon" width="75"/>   | [Abnormal Security](https://abnormalsecurity.com/)  | Collector: [Abnormal Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	ActiveMQ	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	ActiveMQ - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Airtable	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Akamai Cloud Monitor	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Akamai DataStream	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Akamai Security Events	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Alert Logic	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon AppFlow	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon AppStream 2.0	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Athena	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Aurora MySQL	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Aurora PostgreSQL	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Chime	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Chime SDK	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon CloudFront	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon CloudSearch	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon CloudTrail	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Cognito	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Connect	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Data Lifecycle Manager	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon DocumentDB	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon DynamoDB	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon DynamoDB Accelerator (DAX)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon EC2 Auto Scaling	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon EC2 Elastic Graphics	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon EC2 Spot Fleet	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon ECS	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon ECS with Container Insights and CloudWatch	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon EKS - Control Plane	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Elastic Block Store (Amazon EBS)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Elastic File System (Amazon EFS)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon ElastiCache	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon EMR	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon EventBridge	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon GameLift	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon GuardDuty	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon GuardDuty	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon GuardDuty - Global Intelligence	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon GuardDuty - Global Intelligence	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon GuardDuty Benchmark	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Inspector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Inspector - Classic	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Kinesis - Streams	 | 
+| <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="Thumbnail icon" width="75"/>   | [Acquia](https://www.acquia.com/)  | App: [Acquia](/docs/integrations/saas-cloud/acquia/)	 | 
+| <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>   | [Active Directory](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10))  | Apps: <br/>- [Active Directory JSON - Classic Collector](/docs/integrations/microsoft-azure/active-directory-json/) <br/>- [Active Directory JSON - OpenTelemetry Collector](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry/)<br/>- [Active Directory Legacy](/docs/integrations/microsoft-azure/active-directory-legacy/) 	 | 
+| <img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="Thumbnail icon" width="100"/>   | [Abnormal Security](https://abnormalsecurity.com/)  | Collector: [Abnormal Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) | 
+|  <img src={useBaseUrl('img/integrations/containers-orchestration/activemq.png')} alt="Thumbnail icon" width="50"/>   |  [ActiveMQ](https://activemq.apache.org/) | 	Apps: <br/> - [ActiveMQ](/docs/integrations/containers-orchestration/activemq/)<br/> - [ActiveMQ - OTel Collector](/docs/integrations/containers-orchestration/opentelemetry/activemq-opentelemetry/)	 | 
+|  <img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="Thumbnail icon" width="50"/>   |  [Airtable](https://www.airtable.com/) | 	App: [Airtable](/docs/integrations/saas-cloud/airtable/) <br/>Collector: 	[Airtable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="75"/>   | [Akamai](https://www.akamai.com/)  | 	Apps: <br/> - [Akamai Cloud Monitor](/docs/integrations/saas-cloud/akamai-cloud-monitor/) <br/>- [Akamai DataStream](/docs/integrations/saas-cloud/akamai-datastream/) <br/> - [Akamai Security Events](/docs/integrations/security-threat-detection/akamai-security-events/) <br/>Collector: [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/) | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="Thumbnail icon" width="100"/>   | [Alert Logic](https://www.alertlogic.com/)  | 	App: [Alert Logic](/docs/integrations/security-threat-detection/alert-logic/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-appflow-logo.png')} alt="Thumbnail icon" width="50"/>   |[ Amazon AppFlow](https://aws.amazon.com/appflow/)  | App: [Amazon AppFlow](/docs/integrations/amazon-aws/amazon-appflow/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-appstream2-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon AppStream 2.0](https://aws.amazon.com/appstream2/)  | 	App: [Amazon AppStream 2.0](/docs/integrations/amazon-aws/amazon-appstream2/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-athena-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Athena](https://aws.amazon.com/athena/)  | App: [Amazon Athena](/docs/integrations/amazon-aws/amazon-athena/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Aurora](https://aws.amazon.com/rds/aurora/)  | Apps:<br/> - [Amazon Aurora MySQL](/docs/integrations/amazon-aws/aurora-mysql-ulm/)<br/> - [Amazon Aurora PostgreSQL ULM](/docs/integrations/amazon-aws/aurora-postgresql-ulm/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-chime-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Chime](https://aws.amazon.com/chime/)  | 	Apps: <br/>- [Amazon Chime](/docs/integrations/amazon-aws/amazon-chime/)<br/> -	[Amazon Chime SDK](/docs/integrations/amazon-aws/amazon-chimesdk/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="Thumbnail icon" width="50"/>   | [Amazon CloudFront](https://aws.amazon.com/cloudfront/)  | 	App: [Amazon CloudFront](/docs/integrations/amazon-aws/cloudfront/)	<br/>Collectors: <br/>- [Amazon CloudFront Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source/) <br/>- [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-cloudsearch-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon CloudSearch](https://aws.amazon.com/cloudsearch/)  | 	App: [Amazon CloudSearch](/docs/integrations/amazon-aws/amazon-cloudsearch/)	 | 
+|  <img src={useBaseUrl('img//integrations/cloud-security-monitoring-analytics/cloudtrail-security.png')} alt="Thumbnail icon" width="50"/>   | [Amazon CloudTrail](https://aws.amazon.com/cloudtrail/)  | 	App: [Amazon CloudTrail](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-cognito-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Cognito](https://aws.amazon.com/pm/cognito/)  | 	App: [Amazon Cognito](/docs/integrations/amazon-aws/amazon-cognito/)	 | 
+|  <img src={useBaseUrl('img//integrations/amazon-aws/amazon-connect-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Connect](https://aws.amazon.com/connect/)  | 	App: [Amazon Connect](/docs/integrations/amazon-aws/amazon-connect/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-data-lifecycle-manager-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Data Lifecycle Manager](https://docs.aws.amazon.com/dlm/)  | 	App: [Amazon Data Lifecycle Manager](/docs/integrations/amazon-aws/amazon-data-lifecycle-manager/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-documentdb-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon DocumentDB](https://aws.amazon.com/documentdb/)  | 	App: [Amazon DocumentDB](/docs/integrations/amazon-aws/amazon-documentdb/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="Thumbnail icon" width="50"/>   | [Amazon DynamoDB](https://aws.amazon.com/pm/dynamodb/)  | 	App: [Amazon DynamoDB](/docs/integrations/amazon-aws/dynamodb/)	 | 
+|  <img src={useBaseUrl('img//integrations/amazon-aws/amazon-dynamodb-accelerator-dax-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon DynamoDB Accelerator (DAX)](https://aws.amazon.com/dynamodb/dax/) | 	App: [Amazon DynamoDB Accelerator (DAX)](/docs/integrations/amazon-aws/amazon-dynamodb-accelerator-dax/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-auto-scaling-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon EC2 Auto Scaling](https://aws.amazon.com/ec2/autoscaling/) | 	App: [Amazon EC2 Auto Scaling](/docs/integrations/amazon-aws/amazon-ec2-auto-scaling/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-elastic-graphics-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon EC2 Elastic Graphics](https://aws.amazon.com/ec2/elastic-graphics/) | 	App: [Amazon EC2 Elastic Graphics](/docs/integrations/amazon-aws/amazon-ec2-elastic-graphics/)	 | 
+|  <img src={useBaseUrl('img//integrations/amazon-aws/amazon-ec2-spot-fleet-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Amazon EC2 Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html) | 	App: [Amazon EC2 Spot Fleet](/docs/integrations/amazon-aws/amazon-ec2-spot-fleet/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>   | [Amazon ECS](https://aws.amazon.com/ecs/)  | 	Apps: <br/>- [Amazon Elastic Container Service (ECS)](/docs/integrations/amazon-aws/elastic-container-service/)<br/>- [Amazon ECS with Container Insights and CloudWatch](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="Thumbnail icon" width="50"/>   | [Amazon EKS](https://aws.amazon.com/eks/)  | 	App: [Amazon EKS - Control Plane](/docs/integrations/amazon-aws/eks-control-plane/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-elastic-block-store-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Elastic Block Store](https://aws.amazon.com/ebs/)  | 	App: [Amazon Elastic Block Store (Amazon EBS)](/docs/integrations/amazon-aws/amazon-elastic-block-store/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-elastic-file-system-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Elastic File System](https://aws.amazon.com/efs/)  | 	App: [Amazon Elastic File System (Amazon EFS)](/docs/integrations/amazon-aws/amazon-elastic-file-system/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/elasticache.png')} alt="Thumbnail icon" width="50"/>   | [Amazon ElastiCache](https://aws.amazon.com/elasticache/)  | 	App: [Amazon ElastiCache](/docs/integrations/amazon-aws/elasticache/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-emr-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon EMR](https://aws.amazon.com/emr/)  | 	App: [Amazon EMR](/docs/integrations/amazon-aws/amazon-emr/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-eventbridge-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon EventBridge](https://aws.amazon.com/eventbridge/)  | 	App: [Amazon EventBridge](/docs/integrations/amazon-aws/amazon-eventbridge/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-gamelift-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon GameLift](https://aws.amazon.com/gamelift/)  | 	App: [Amazon GameLift](/docs/integrations/amazon-aws/amazon-gamelift/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/guardduty.png')} alt="Thumbnail icon" width="50"/>   | [Amazon GuardDuty](https://aws.amazon.com/guardduty/)  | 	Apps: <br/>- [Amazon GuardDuty](/docs/integrations/amazon-aws/guardduty/)	 <br/> -	[Amazon GuardDuty Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/amazon-guardduty/)<br/>- [Global Intelligence for Amazon GuardDuty](/docs/integrations/amazon-aws/global-intelligence-guardduty/)	<br/>-	[Amazon GuardDuty Benchmark](/docs/integrations/amazon-aws/guardduty-benchmark/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Inspector](https://aws.amazon.com/inspector/)  | 	Apps:<br/>- [Amazon Inspector](/docs/integrations/amazon-aws/inspector/)	<br/>- [Amazon Inspector - Classic](/docs/integrations/amazon-aws/inspector-classic/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon Kinesis](https://aws.amazon.com/kinesis/) | 	App: [Amazon Kinesis - Streams](/docs/integrations/amazon-aws/kinesis-streams/)	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Prometheus](https://aws.amazon.com/prometheus/)  | 	Collector: [Amazon MSK Prometheus metrics collection](/docs/send-data/collect-from-other-data-sources/amazon-msk-prometheus-metrics-collection/)	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon OpenSearch Service	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon RDS	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Amazon Redshift ULM	 | 
@@ -410,6 +395,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Observable Networks	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Okta	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	OneLogin	 | 
+| <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/> | [1Password](https://1password.com/) | App: [1Password](/docs/integrations/1password/) <br/>Collector: [1Password Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) |
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Opsgenie	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Oracle	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Oracle - OTel Collector	 | 
