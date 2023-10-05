@@ -2,25 +2,26 @@
 id: elasticache
 title: Amazon ElastiCache
 sidebar_label: Amazon ElastiCache
-description: The Sumo Logic App for Amazon ElastiCache Redis ULM is a unified logs and metrics (ULM) App that provides visibility into key event and performance analytics to enable proactive diagnosis and response to system and environment issues. The app provides preconfigured dashboards for high-level analysis of event status and trends, locations, and system health and performance metrics.
+description: The Sumo Logic app for Amazon ElastiCache Redis ULM is a unified logs and metrics (ULM) app that provides visibility into key event and performance analytics to enable proactive diagnosis and response to system and environment issues. The app provides preconfigured dashboards for high-level analysis of event status and trends, locations, and system health and performance metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/elasticache.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
+The Sumo Logic app for Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Log and Metric Types  
+## Log and Metric types  
+
 The Amazon ElastiCache app uses the following logs and metrics:
 * [Amazon ElastiCache Host-Level Metrics for individual cache nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
 * [Amazon ElastiCache Cache Engine metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)
 * [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
 
-### Sample Log Message
+### Sample log message
 
 ```json title="Sample CloudTrail Log Message"
 {
@@ -73,7 +74,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
 account=* region=* namespace=aws/elasticache metric=EngineCPUUtilization statistic=Average CacheClusterId=* CacheNodeId=* | avg by CacheClusterId, CacheNodeId, account, region, namespace
@@ -125,10 +126,10 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
    * **Fields**. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources)
    * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-   * **Enable Timestamp Parsing**. Select the check box.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format.** Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 
@@ -147,7 +148,6 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.com"
 ```
 
-
 **Parse Expression**
 
 ```sql
@@ -159,7 +159,6 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 | fields region, namespace, cacheclusterid, accountid
 ```
 
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
@@ -170,10 +169,7 @@ Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-
-**Parse Expression**:
-
-Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
+**Parse Expression**. Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
 
 ```sql
@@ -186,11 +182,11 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```
 
 
-## Installing the Amazon ElastiCache App
+## Installing the Amazon ElastiCache app
 
-This section has instructions for installing the Sumo Logic App for **Amazon ElastiCache** and descriptions of each of the app dashboards along with associated use cases.
+This section has instructions for installing the Sumo Logic app for **Amazon ElastiCache** and descriptions of each of the app dashboards along with associated use cases.
 
-Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic app to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -207,7 +203,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Amazon ElastiCache Dashboards  
+## Viewing Amazon ElastiCache dashboards  
 
 
 ### Host Performance Overview

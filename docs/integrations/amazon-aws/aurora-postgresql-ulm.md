@@ -2,29 +2,30 @@
 id: aurora-postgresql-ulm
 title: Amazon Aurora PostgreSQL ULM
 sidebar_label: Amazon Aurora PostgreSQL
-description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database.
+description: The Sumo Logic app for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Amazon Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With CloudTrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
+The Sumo Logic app for Amazon Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With CloudTrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
 
-The Sumo Logic App for Aurora PostgreSQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+The Sumo Logic app for Aurora PostgreSQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
 Amazon Aurora PostgreSQL is a relational database service built for the cloud. For more information, see the [Amazon Aurora PostgreSQL](https://aws.amazon.com/rds/aurora/details/postgresql-details/)
 
-This guide provides an overview of the Aurora PostgreSQL ULM App pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostgreSQL, and installing the App.
+This guide provides an overview of the Aurora PostgreSQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostgreSQL, and installing the app.
 
 ## Log and Metric types
-The Sumo Logic App for Aurora PostgreSQL ULM uses the following logs and metrics:
+
+The Sumo Logic app for Aurora PostgreSQL ULM uses the following logs and metrics:
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
 * [Aurora CloudWatch Metric](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Monitoring.html)
 
 Below are example logs and metrics collected from your Aurora PostgreSQL database as well as example queries.
 
-### Sample Log
+### Sample log
 
 <details><summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
 
@@ -122,7 +123,7 @@ Below are example logs and metrics collected from your Aurora PostgreSQL databas
 </details>
 
 
-### Sample Log Query
+### Sample log query
 
 The following log query is from the **Event Status Trend** panel of the **CloudTrail Event - Overview dashboard**.
 
@@ -146,8 +147,7 @@ The following log query is from the **Event Status Trend** panel of the **CloudT
 | transpose row _timeslice column eventStatus, eventName
 ```
 
-
-### Sample Metrics Query
+### Sample metrics query
 
 The following metrics query is from the **Volume Write IOPS** panel of the **Metric - Overview dashboard.**
 
@@ -157,14 +157,13 @@ metric=VolumeWriteIOPs DBClusterIdentifier=* Statistic=Average \
 | avg by DBClusterIdentifier
 ```
 
+## Collecting Logs and Metrics for the Aurora PostgreSQL ULM app
 
-## Collecting Logs and Metrics for the Aurora PostgreSQL ULM App
+The **Aurora PostgreSQL ULM app** includes predefined searches and dashboards that allow you to monitor logs and metrics for your Aurora MySQL database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-The **Aurora PostgreSQL ULM App** includes predefined searches and dashboards that allow you to monitor logs and metrics for your Aurora MySQL database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+The Aurora PostgreSQL ULM app is used for monitoring CloudTrail event Logs and CloudWatch Metrics. Metrics allow you to monitor database resource utilization and throughput performance. CloudTrail events help you monitor use of Aurora services and operations by users.
 
-The Aurora PostgreSQL ULM App is used for monitoring CloudTrail event Logs and CloudWatch Metrics. Metrics allow you to monitor database resource utilization and throughput performance. CloudTrail events help you monitor use of Aurora services and operations by users.
-
-This section provides instruction for collecting logs and metrics for the Sumo Logic App for Aurora PostgreSQL ULM.
+This section provides instruction for collecting logs and metrics for the Sumo Logic app for Aurora PostgreSQL ULM.
 
 
 ### Step 1: Collecting AWS CloudTrail events using AWS CloudTrail Source
@@ -175,18 +174,18 @@ To collect AWS CloudTrail events, do the following:
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
-   * **Name** - Enter a name to display for the new Source.
-   * **Description** - Enter an optional description.
-   * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
-   * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
-   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category** - Enter a source category, for example, AWS/CloudTrail.
-   * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**. Enter an optional description.
+   * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
+   * **Bucket Name**. Enter the exact name of your CloudTrail Aurora S3 bucket.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. DO NOT use a leading forward slash; see [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions)) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Source Category**. Enter a source category, for example, AWS/CloudTrail.
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing** - Select the checkbox to enable.
-   * **Time Zone** - Deselect Ignore time zone from log file and instead select UTC.
-   * **Timestamp Format** - Select Automatically detect the format.
-   * **Enable Multiline Processing** - Select the checkbox to enable, and select Infer Boundaries.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 3. Click **Save**.
 
 
@@ -206,9 +205,9 @@ To collect Aurora CloudWatch metrics, do the following:
    * **Access Key ID and Secret Access Key** - Enter your Amazon Access Key ID and Secret Access Key.
    * **Scan Interval** - Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
 
-## Installing the Aurora PostgreSQL ULM App
+## Installing the Aurora PostgreSQL ULM app
 
-Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic App for Aurora PostgreSQL ULM, and use its pre-configured searches and dashboards.
+Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic app for Aurora PostgreSQL ULM, and use its pre-configured searches and dashboards.
 
 {@import ../../reuse/apps/app-install.md}
 
