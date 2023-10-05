@@ -2456,9 +2456,9 @@
   "/cid/9006": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/aws-network-firewall",
   "/cid/9008": "/docs/alerts/webhook-connections/new-relic",
   "/cid/9010": "/docs/send-data/opentelemetry-collector",
-  "/cid/9011": "/docs/send-data/opentelemetry-collector/install-collector-linux",
-  "/cid/9012": "/docs/send-data/opentelemetry-collector/install-collector-macos",
-  "/cid/9013": "/docs/send-data/opentelemetry-collector/install-collector-windows",
+  "/cid/9011": "/docs/send-data/opentelemetry-collector/install-collector/linux",
+  "/cid/9012": "/docs/send-data/opentelemetry-collector/install-collector/macos",
+  "/cid/9013": "/docs/send-data/opentelemetry-collector/install-collector/windows",
   "/cid/9014": "/docs/send-data/opentelemetry-collector/troubleshooting",
   "/cid/9015": "/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship",
   "/cid/9016": "/docs/send-data/opentelemetry-collector/data-source-configurations",
@@ -3774,6 +3774,9 @@
   "/docs/integrations/app-development/opentelemetry/jira": "/docs/integrations/app-development/opentelemetry/jira-opentelemetry",
   "/docs/integrations/pci-compliance/setup": "/docs/integrations/pci-compliance",
   "/docs/logs": "/docs/search",
+  "/docs/send-data/opentelemetry-collector/install-collector-linux": "/docs/send-data/opentelemetry-collector/install-collector/linux",
+  "/docs/send-data/opentelemetry-collector/install-collector-macos": "/docs/send-data/opentelemetry-collector/install-collector/macos",
+  "/docs/send-data/opentelemetry-collector/install-collector-windows": "/docs/send-data/opentelemetry-collector/install-collector/windows",
   "/docs/manage/security/log-search-audit-index": "/docs/manage/security/search-audit-index",
   "/cid/-1": "/"
 }
