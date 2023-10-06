@@ -19,6 +19,9 @@ The Sophos Central Source ingests:
 :::note
 To link the endpoint data to the alert, you can map the `alert.ManagedAgent.ID` field from the alert response with the `endpointID` field from the endpoint response.
 :::
+:::note
+This Source is available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
+:::
 
 ## States
 
