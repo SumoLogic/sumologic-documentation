@@ -10,23 +10,20 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
 ## Cloud Flex - Account Types
 
 * **Free** accounts give you access to core Sumo Logic features, with a daily 500 MB data volume limit. Free accounts allow three users, with 4 GB of retention. For information about Free account features, see the "Free Accounts" column in the following table and the Important notes section on [Sumo Logic Free accounts](#important-notes-on-sumo-logic-free-accounts).
-
-    :::tip
-    Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Professional from within Sumo Logic.
-    :::
+:::tip
+Free account holders can [upgrade](upgrade-cloud-flex-account.md) to a Professional account from within Sumo Logic.
+:::
 
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-free-accounts).  
-
-    :::note
-    Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
-    :::
+:::note
+Trials are limited to 30 days. If you need to extend your trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
+:::
 
 * **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Professional to an Enterprise account at any time.
 * **Enterprise** accounts, the premier Sumo Logic log management solution, are built to fit your organization's needs for data volume, data retention, and user management requirements. Enterprise accounts include [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) and [SAML-based SSO](../security/saml/set-up-saml.md). 
-
-    :::note
-    [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets/) are only available for Enterprise accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
-    :::
+:::note
+[Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets/) are only available for Enterprise accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
+:::
 
 The following table provides a summary list of key features by Sumo Logic Cloud Flex package accounts. 
 
@@ -39,7 +36,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 | [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Field Extraction](/docs/manage/field-extractions) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
-| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) |  |  |  | ![check](/img/reuse/check.png) |
 | Log Data retention (Classic Accounts) | 7 days | 30 days | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Log Data storage (Cloud Flex Accounts) | 4GB	 | 30GB | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Log Data volume | 500MB per day | 1GB per day* | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -134,17 +131,13 @@ To view the Account page, do the following:
 
 1. Log in to your Sumo Logic Cloud Flex account.
 1. In the left navigation bar of the UI, select **Administration** > **Account**. The Account Overview tab of the Account page is shown by default.
-
-    :::note
-    You must have a role that grants you the Account Overview capability to view the Account Overview tab.
-    :::
-
+:::note
+You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/) to view the Account Overview tab.
+:::
 ![CloudFlex-AccountPage.png](/img/subscriptions/cloud-flex-account-page.png)
-
 :::note
 If you are your Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For information on these options, see [Manage Organization](manage-org-settings.md).
 :::
-
 ![manage-org-links.png](/img/subscriptions/manage-org-links.png)
 
 ## Monitoring account usage
@@ -172,16 +165,10 @@ The following visual indicators apply:
 
 To switch between views and time interval displays, do the following:
 
-1. Log in to Sumo Logic and select **Administration** > **Account** in the left navigation pane. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics.
-
-![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
-
+1. Log in to Sumo Logic. From the left navigation pane, select **Administration** > **Account**. The Account page appears with the Account Overview tab shown by default. The top panel shows account details and the bottom panel displays usage analytics. <br/>![CloudFlex-AccountPage.png](/img/subscriptions/pqs.png)
 1. To change the type of analytics you are viewing, in the **Usage (Daily Capacity)** panel click the arrow next to the view name and select the analytics type from the dropdown list. The display data changes accordingly. Repeat as needed to monitor all the areas of your account usage.
-1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.
-
-![CloudFlex_Usage_BillingPeriod_menu.png](/img/subscriptions/uage-billing-period.png)
-
-The data display changes accordingly. 
+1. To view data from a different billing period, click the arrow next the the **Billing period** and choose another period from the dropdown list.<br/>![CloudFlex_Usage_BillingPeriod_menu.png](/img/subscriptions/uage-billing-period.png)
+<br/>The data display changes accordingly. 
 
 ### Drilling into usage data 
 

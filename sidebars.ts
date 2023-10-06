@@ -2602,13 +2602,15 @@ integrations: [
             'cse/schema/schema-attributes',
             'cse/schema/attributes-map-to-records',
             'cse/schema/cse-record-types',
-            'cse/schema/parsing-language-reference-guide',
             'cse/schema/create-structured-log-mapping',
             'cse/schema/cse-normalized-classification',
             'cse/schema/field-mapping-security-event-sources',
             'cse/schema/parser-editor',
-            'cse/schema/username-and-hostname-normalization',
+            'cse/schema/parsing-language-reference-guide',
+            'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
+            'cse/schema/username-and-hostname-normalization',
+          
           ],
         },
         {
