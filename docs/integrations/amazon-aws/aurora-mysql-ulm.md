@@ -2,22 +2,22 @@
 id: aurora-mysql-ulm
 title: Amazon Aurora MySQL ULM
 sidebar_label: Amazon Aurora MySQL
-description: The Sumo Logic App for Amazon Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+description: The Sumo Logic app for Amazon Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="Thumbnail icon" width="50"/>
 
-[Amazon Aurora](https://aws.amazon.com/rds/aurora/details/mysql-details/) is a MySQL is a relational database built for the cloud. The Sumo Logic App for Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. The app allows you to monitor slow queries executing on the database, the number of connections made, identify users and client hosts, and client locations used to connect to database. The app also provides insights for queries executed per second, CPU utilization, free memory, network utilization, volume read and write IOPS, replica lags, latency, throughput, failed login and  connection attempts, and other health and performance related data.
+[Amazon Aurora](https://aws.amazon.com/rds/aurora/details/mysql-details/) is a MySQL is a relational database built for the cloud. The Sumo Logic app for Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. The app allows you to monitor slow queries executing on the database, the number of connections made, identify users and client hosts, and client locations used to connect to database. The app also provides insights for queries executed per second, CPU utilization, free memory, network utilization, volume read and write IOPS, replica lags, latency, throughput, failed login and  connection attempts, and other health and performance related data.
 
-The Sumo Logic App for Aurora MySQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+The Sumo Logic app for Aurora MySQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-This guide provides an overview of the Aurora MySQL ULM App pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora MySQL, and installing the App.
+This guide provides an overview of the Aurora MySQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora MySQL, and installing the app.
 
 ## Log and Metric types
 
-The Sumo Logic App for Aurora MySQL ULM uses the following logs and metrics. Click the link for more information about the log type:
+The Sumo Logic app for Aurora MySQL ULM uses the following logs and metrics. Click the link for more information about the log type:
 
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
 * [Aurora CloudWatch Logs](https://aws.amazon.com/blogs/database/monitor-amazon-rds-for-mysql-and-mariadb-logs-with-amazon-cloudwatch/)
@@ -28,7 +28,7 @@ The Sumo Logic App for Aurora MySQL ULM uses the following logs and metrics. Cli
 * [Aurora CloudWatch Metric](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Monitoring.html)
 
 
-### Sample Logs
+### Sample logs
 
 ```json title="AWS Cloud Trail log example"
 {
@@ -177,7 +177,7 @@ quantity = 50;","logStream":"auroramysql57dbcluster02","logGroup":
 "/aws/rds/cluster/auroramysql57dbcluster02-cluster/slowquery"}
 ```
 
-### Sample Queries
+### Sample queries
 
 This section provides an example of a log query and metrics query taken from panels in a dashboard.
 
@@ -203,25 +203,23 @@ DBInstanceIdentifier=* Statistic=Average | avg by DBInstanceIdentifier
 ```
 
 ​​
-## Collecting Logs and Metrics for the Aurora MySQL ULM App
+## Collecting Logs and Metrics for the Aurora MySQL ULM app
 
-The **Aurora MySQL ULM App** includes predefined searches and dashboards that allow you to monitor logs and metrics for your Aurora MySQL database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
+The **Aurora MySQL ULM app** includes predefined searches and dashboards that allow you to monitor logs and metrics for your Aurora MySQL database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
 The Aurora MySQL ULM is used for monitoring your database with CloudTrail event logs, and CloudWatch logs and metrics. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. Metrics allow you to monitor database resource utilization and throughput performance. CloudTrail events allow you to monitor the use of Aurora services and operations by users.
 
 This section provides instructions for collecting logs and metrics for ingest into Sumo Logic, and consists of the following steps:
 
-
 ### Step 1: Plan your source categories
 
-Before you configure log and metric sources for the Sumo Logic App for Aurora MySQL ULM, you must decide upon the source category to assign to each source.  Taking a hierarchical approach allows you to make use of wildcards when performing searches, as shown in the following examples:
+Before you configure log and metric sources for the Sumo Logic app for Aurora MySQL ULM, you must decide upon the source category to assign to each source.  Taking a hierarchical approach allows you to make use of wildcards when performing searches, as shown in the following examples:
 
 * For the AWS CloudTrail source for CloudTrail Events, you could specify a source category of AWS/CloudTrail
 * For the AWS CloudWatch Metric source to collect CloudWatch metrics, you could specify a source category of AWS/RDS/Metric.
 * For the AWS CloudWatch Logs source to collect various Aurora MySQL CloudWatch logs (Error, SlowQuery, Audit and General), you could specify a source category of AWS/RDS/Aurora/MySQL/Error, AWS/RDS/Aurora/MySQL/SlowQuery, AWS/RDS/Aurora/MySQL/Audit, AWS/RDS/Aurora/MySQL/General
 
-
-### Step 2: Collect AWS CloudTrail events using AWS CloudTrail Source  
+### Step 2: Collect AWS CloudTrail events using AWS CloudTrail source  
 
 This section provides instructions for setting up AWS CloudTrail Source to collect events for ingest into Sumo Logic.
 
@@ -231,19 +229,18 @@ To collect AWS CloudTrail events, do the following:
    * **Name**. Enter a name to display for the new Source.
    * **Description**.(Optional) Enter a description of the Source.
    * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
-   * **Bucket Name** - Enter the exact name of your CloudTrail Aurora S3 bucket.
+   * **Bucket Name**. Enter the exact name of your CloudTrail Aurora S3 bucket.
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter a source category, for example, AWS/CloudTrail.
-   * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the checkbox to enable.
-   * **Time Zone**. Deselect Ignore time zone from log file and instead select UTC.
-   * **Timestamp Format**. Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the checkbox to enable, and select **Infer Boundaries**.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 3. Click **Save**.
 
-
-### Step 3: Collect AWS CloudWatch logs for Aurora MySQL (Error, SlowQuery, Audit and General)
+### Step 3: Collect AWS CloudWatch logs for Aurora MySQL (Error, SlowQuery, Audit, and General)
 
 This section provides instructions for setting up the collection of AWS CloudWatch logs for ingest into Sumo Logic. To collect AWS CloudWatch logs, do the following:
 
@@ -259,7 +256,6 @@ This section provides instructions for setting up the collection of AWS CloudWat
    * server_audit_logs_upload
 7. Modify the cluster to specify the** Cluster Parameter group on cluster level** and the **Parameter Group on instance level**.
 8. Reboot the instances to make the changes effective.
-
 
 ### Step 4: Collect Aurora CloudWatch metrics using AWS CloudWatch Metric Source
 
@@ -277,10 +273,9 @@ To collect Aurora CloudWatch metrics, do the following:
    * **Scan Interval**. Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
 3. Click **Save**.
 
+## Installing the Aurora MySQL ULM app
 
-## Installing the Aurora MySQL ULM App
-
-Now that you've set up logs and metrics collection for Amazon Aurora MySQL, you can install the Sumo Logic App for Aurora MySQL ULM and use its pre-configured searches and [dashboards](#viewing-aurora-mysql-ulm-dashboards).
+Now that you've set up logs and metrics collection for Amazon Aurora MySQL, you can install the Sumo Logic app for Aurora MySQL ULM and use its pre-configured searches and [dashboards](#viewing-aurora-mysql-ulm-dashboards).
 
 {@import ../../reuse/apps/app-install.md}
 
@@ -290,7 +285,6 @@ Now that you've set up logs and metrics collection for Amazon Aurora MySQL, you 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
 
 ### Logs - Overview
 
@@ -303,8 +297,6 @@ Use this dashboard to:
 * Identify the breakdown of connection protocols. For more granular data, clicking the Connection Type Used panel to bring up the General Query Logs dashboard.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Overview.png')} alt="Aurora MySQL ULM" />
-
-
 
 ### Logs - Error Logs Analysis
 
@@ -320,7 +312,6 @@ Use this dashboard to:
 * Monitor database instance start up, ready for connection events.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Aurora-MySQL-ULM-Logs-Error-Logs-Analysis.png')} alt="Aurora MySQL ULM" />
-
 
 ### Logs - Slow Query
 
