@@ -53,6 +53,8 @@ named capture group like this:
 
 `%{<Pattern Name>:<field_name>}`
 
+For available patterns, see [Parsing Patterns](/docs/cse/schema/parsing-patterns).
+
 ## Mustache templates
 
 We use the Mustache template system to define string templates. String templates are used to format one or more values into a single new field value.

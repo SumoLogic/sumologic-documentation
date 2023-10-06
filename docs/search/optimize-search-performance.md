@@ -64,7 +64,7 @@ Here's a quick look at how to choose the right indexed search optimization tool.
 | Segregate data by sourceCategory | Yes |   |
 | Have aggregate data ready to query |   | Yes |
 | Use RBAC to deny or grant access to the data set | Yes | Yes |
-| Re-use the fields that I'm parsing for other searches against this same sourceCategory |   |   |
+| Reuse the fields that I'm parsing for other searches against this same sourceCategory |   |   |
 
 ## How is data added to Partitions and Scheduled Views?
 
