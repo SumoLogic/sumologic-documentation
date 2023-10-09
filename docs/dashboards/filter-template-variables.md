@@ -128,9 +128,7 @@ To edit a template variable, do the following:
 
     ![edit variable.png](/img/dashboards-new/filter-template-variables/edit-variable.png)
 
-1. Edit the variable as needed.  
-
-    ![edit variable dialog.png](/img/dashboards-new/filter-template-variables/edit-variable-dialog.png)
+1. Edit the variable as needed.</br><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/edit-template-variable-dialog.png')} alt="edit-template-variable-dialog" style={{border: '1px solid black'}} width="800"/> 
 
 1. Click **Save Template Variable** to apply your changes.
 
@@ -205,3 +203,8 @@ To use a metrics variable in a query working in advanced query mode, do the fol
 
 1. Locate the name of the variable you'd like to use in the dropdown list and copy it.
 1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.
+
+
+## Limitation
+
+- For log search with multi-value variables, do not add multi-value variables `{{variable}}` before the first pipe, instead you can add the variables after the first pipe to refine the search results or you can add the value by itself before the first pipe.
