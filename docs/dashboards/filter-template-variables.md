@@ -208,4 +208,4 @@ To use a metrics variable in a query working in advanced query mode, do the fol
 
 ## Limitation
 
-- For log search with multi-value variables, do not add multi-value variables `{{variable}}` before the first pipe, instead you can add the variables after the first pipe to refine the search results or you can add the value by itself before the first pipe.
+For log search with multi-value variables, do not add multi-value variables `{{variable}}` before the first pipe, instead you can add the variables after the first pipe to refine the search results or you can add the value by itself before the first pipe.
