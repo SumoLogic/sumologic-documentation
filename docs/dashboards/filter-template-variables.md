@@ -49,7 +49,7 @@ To add a Custom List variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.</br><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog_custom_list.png')} alt="Create-Template-Variable-dialog_custom_list" style={{border: '1px solid black'}} width="800" />
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog_custom_list.png')} alt="Create-Template-Variable-dialog_custom_list" style={{border: '1px solid black'}} width="800" />
 
 1. Select **Custom List** as the **Variable Type**.
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
@@ -76,7 +76,7 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.</br><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog-Metrics-Metadata.png')} alt="Create-Template-Variable-dialog-Metrics-Metadata" style={{border: '1px solid black'}} width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog-Metrics-Metadata.png')} alt="Create-Template-Variable-dialog-Metrics-Metadata" style={{border: '1px solid black'}} width="800"/>
 
 1. Select **Metrics Metadata Search** as the **Variable Type**.
 1. The **Fields (key)** is the metadata field you want to use as the filter.
@@ -102,7 +102,7 @@ To add a Logs Search variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.</br><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog-Logs-Search.png')} alt="Create-Template-Variable-dialog-Logs-Search" style={{border: '1px solid black'}} width="800"/>
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog-Logs-Search.png')} alt="Create-Template-Variable-dialog-Logs-Search" style={{border: '1px solid black'}} width="800"/>
 
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
@@ -128,7 +128,7 @@ To edit a template variable, do the following:
 
     ![edit variable.png](/img/dashboards-new/filter-template-variables/edit-variable.png)
 
-1. Edit the variable as needed.</br><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/edit-template-variable-dialog.png')} alt="edit-template-variable-dialog" style={{border: '1px solid black'}} width="800"/> 
+1. Edit the variable as needed.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/edit-template-variable-dialog.png')} alt="edit-template-variable-dialog" style={{border: '1px solid black'}} width="800"/> 
 
 1. Click **Save Template Variable** to apply your changes.
 
