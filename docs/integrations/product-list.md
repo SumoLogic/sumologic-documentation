@@ -157,23 +157,23 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Barracuda WAF	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Bitbucket	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Box	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="Thumbnail icon" width="100"/>   | [Barracuda WAF](https://www.barracuda.com/products/application-protection/web-application-firewall)  | 	Apps: <br/>- [Barracuda CloudGen Firewall](https://campus.barracuda.com/product/cloudgenfirewall/doc/91132156/sumo-logic-integration/)<br/>- [Barracuda WAF](/docs/integrations/security-threat-detection/barracuda-waf/)	 | 
+|  <img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="Thumbnail icon" width="50"/>   | [Bitbucket](https://bitbucket.org/product)  | App:	[Bitbucket](/docs/integrations/app-development/bitbucket/)	 | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Thumbnail icon" width="50"/>   | [Box](https://www.box.com/)  | 	App: [Box](/docs/integrations/saas-cloud/box/)<br/>Collector: [Box Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source/)	 | 
 
 ## C
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Carbon Black Cloud	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cassandra	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cassandra - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cato Networks	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	CIS AWS Foundations Benchmark	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cisco ASA	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cisco Meraki	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cisco Meraki - C2C	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cisco Umbrella	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="Thumbnail icon" width="50"/>   |  [Carbon Black Cloud](https://www.vmware.com/products/carbon-black-cloud) | App:	[Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) <br/>Collectors:	<br/>- [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source/) <br/>- [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source/) | 
+|  <img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="50"/>   | [Cassandra](https://cassandra.apache.org/)  | 	Apps: <br/>- [Cassandra](/docs/integrations/databases/cassandra/)	<br/>- [Cassandra - OpenTelemetry](/docs/integrations/databases/opentelemetry/cassandra-opentelemetry/) | 
+|  <img src={useBaseUrl('img/send-data/cato-logo.png')} alt="Thumbnail icon" width="50"/>   | [Cato Networks](https://www.catonetworks.com/)  | 	App: [Cato Networks](/docs/integrations/saas-cloud/cato-networks/)<br/>Collector: [Cato Networks Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/)	 | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="Thumbnail icon" width="50"/>   | [CIS Benchmarks for AWS](https://aws.amazon.com/what-is/cis-benchmarks/)  | 	App: [CIS AWS Foundations Benchmark](/docs/integrations/amazon-aws/cis-aws-foundations-benchmark/)	 | 
+|  <img src={useBaseUrl('img//send-data/cisco-amp.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco AMP (Cisco Secure Endpoint)](https://www.cisco.com/site/us/en/products/security/endpoint-security/secure-endpoint/index.htmlco.com/c/en/us/products/security/adaptive-security-appliance-asa-software) | 	Collector: [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco ASA](https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software) | 	App: [Cisco ASA](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/cisco-asa/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco Meraki](https://meraki.cisco.com/) | 	Apps: <br/>- [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki/)	 <br/>- [Cisco Meraki - C2C](/docs/integrations/saas-cloud/cisco-meraki-c2c/)	<br/>Collector: [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source/) | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/cisco-umbrella-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Cisco Umbrella](https://umbrella.cisco.com/) | 	App: [Cisco Umbrella](/docs/integrations/saas-cloud/cisco-umbrella/)	 | 
+|  <img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco Vulnerability Management](https://umbrella.cisco.com/) | 	Collector: [Cisco Vulnerability Management Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source/)	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Citrix Cloud	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cloud SIEM	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Cloudflare	 | 
