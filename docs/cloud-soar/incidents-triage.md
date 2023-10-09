@@ -375,24 +375,24 @@ Fields may be reorder in the Custom Fields section to change the order in which 
 
 | Field Type        | Description                                                                                       |
 |:------------------|:--------------------------------------------------------------------------------------------------|
-| Calculation       | Perform a calculation between two fields or between a field and a static value                    |
-| Checkbox          | Checkbox                                                                                          |
-| Color Picker      | Interactive color picker to select a color                                                        |
-| Date              | Date only picker                                                                                  |
-| Date & Time       | Date and time picker                                                                              |
-| Email Address     | Email address Available to use in actions which require a email input                             |
-| Filename          | Filename Available to use in actions which require a filename input                               |
-| Hash              | Hash value Available to use in actions which require a hash input                                 |
-| IP Address        | IP Address Available to use in actions which require a IP address input                           |
-| List              | Dropdown list                                                                                     |
-| Multi Select List | Multiselect list box                                                                              |
-| Numeric Textbox   | accepting numeric values only                                                                     |
-| Tags              | One or more user defined tags                                                                     |
-| Text              | Free text                                                                                         |
-| Time Interval     | Numeric time interval which can be used as a value in another calculated field                    |
-| Timezone          | Timezone list dropdown                                                                            |
-| URL               | URL Available to use in actions which require a URL input                                         |
-| User Details      | User details, such as a user name. Available to use in actions which require a user details input |
+| Calculation  | Perform a calculation between two fields or between a field and a static value. |
+| Checkbox   | Checkbox. |
+| Color Picker  | Interactive color picker to select a color. |
+| Date | Date only picker. |
+| Date & Time   | Date and time picker. |
+| Email Address | Email address Available to use in actions which require a email input.    |
+| Filename | Filename available to use in actions which require a filename input.   |
+| Hash | Hash value available to use in actions which require a hash input.  |
+| IP Address    | IP Address available to use in actions which require a IP address input.    |
+| List   | Dropdown list.  |
+| Multi Select List | Multiselect list box.  |
+| Numeric Textbox   | Accepting numeric values only.  |
+| Tags | One or more user defined tags.  |
+| Text | Free text. |
+| Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
+| Timezone   | Timezone list dropdown. |
+| URL | URL available to use in actions which require a URL input. |
+| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
 
 #### Using Custom Fields for SLAs
 
