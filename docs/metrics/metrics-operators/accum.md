@@ -12,7 +12,9 @@ values.
 
 ## Syntax
 
-`accum`
+```sql
+accum
+```
 
 ## Example
 

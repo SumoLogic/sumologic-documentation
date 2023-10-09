@@ -42,13 +42,13 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller.log`) are stored in the directory called `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of this logs directory.
 
-## Collecting Logs, Metrics and Installing App for Kafka
+## Collection configuration and app installation
 
-The process to set up collection for Kafka data is done through the following steps.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' alt="Collector" />
 
@@ -69,7 +69,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -109,7 +109,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 
 ## Sample Log Messages
@@ -156,7 +156,7 @@ sumo.datasource=kafka  metric=kafka.topic.partitions messaging.cluster.name={{m
 
 ## Viewing Kafka Dashboards
 
-**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables/).
+**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables/).
 
 ### Kafka - Overview
 

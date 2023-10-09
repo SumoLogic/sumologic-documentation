@@ -13,7 +13,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Jenkins App allows you to monitor multiple Jenkins master nodes from a single-pane of glass. The app supports freestyle and pipeline jobs as well as pipeline, maven  and multi-branch pipeline projects.
 
-Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
+Sumo Logic Jenkins plugin is compatible with Jenkins version 2.361.1. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
+
 
 
 ## Log and Metric Types
@@ -305,6 +306,11 @@ To create a new HTTP logs and metric source:
 
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin.
 
+:::note
+Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11. 
+To install the plugin with Java 8 and older version of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of Sumo Logic plugin.
+:::
+
 <details><summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
@@ -408,29 +414,12 @@ This section provides instructions for installing the Sumo Logic App for Jenkins
 
 Now that you have set up collection for Jenkins you can install the Sumo Logic App for Jenkins, and use its pre-configured searches and dashboards.
 
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    *  **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Jenkins Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 

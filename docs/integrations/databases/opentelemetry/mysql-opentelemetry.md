@@ -57,13 +57,14 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 1. Open `my.cnf` in a text editor.
 2. Set the following parameters in the `[mysqld]` section:
+
   ```sql
   [mysqld]
-      log_error = /var/log/mysql/error.log
-      slow_query_log=1
-      slow_query_log_file = /var/log/mysql/mysql-slow.log
-      long_query_time=2
-      long_query_time=2
+        log_error = /var/log/mysql/error.log
+        slow_query_log=1
+        slow_query_log_file = /var/log/mysql/mysql-slow.log
+        long_query_time=2
+        long_query_time=2
   ```
 
 [Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
@@ -75,13 +76,13 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 1. Save the `my.cnf` file.
 2. Restart the MySQL server: `sudo mysql.server restart`
 
-## Collecting Logs, Metrics, and installing App for MySQL
+## Collection configuration and app installation
 
-Here are the steps for collecting logs, metrics, and installing the app.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
-### Step 1 : Set up collector
+### Step 1: Set up collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Collector.png' alt="Collector" />
 
@@ -107,7 +108,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -151,7 +152,7 @@ For Linux platform, click **Download Environment Variables File** to get the fil
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Logs
 

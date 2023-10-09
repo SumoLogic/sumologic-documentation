@@ -101,7 +101,8 @@ To configure the CrowdStrike FDR Host Inventory API:
 8. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
 9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 10. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
-11. When you are finished configuring the Source, click **Save**.
+11. By default, **Polling Interval** is set to 24 hours.
+12. When you are finished configuring the Source, click **Save**.
 
 ## Error types
 
@@ -129,15 +130,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### Config Parameters
 
-| Parameter | Type | Required | Description | Access |
-|:---|:---|:---|:---|:---|
-| `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
-| `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
-| `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `region` | String | Yes | The Region of your CrowdStrike account. | modifiable |
-| `clientID` | String | Yes | The CrowdStrike Client ID you want to use to authenticate collection requests. | modifiable |
-| `clientSecret` | String | Yes | The CrowdStrike Client Secret you want to use to authenticate collection requests. | modifiable |
+| Parameter | Type | Required | Default | Description | Access |
+|:---|:---|:---|:---|:---| :--- |
+| `name` | String | Yes |  | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
+| `description` | String  | No | null | Type the description of the Source. | modifiable |
+| `category` | String | No | null | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
+| `region` | String | Yes |  | The Region of your CrowdStrike account. | modifiable |
+| `clientID` | String | Yes |  | The CrowdStrike Client ID you want to use to authenticate collection requests. | modifiable |
+| `clientSecret` | String | Yes |  | The CrowdStrike Client Secret you want to use to authenticate collection requests. | modifiable |
+| `pollingInterval` | Integer | No | 24 | This sets how often the Source checks for data. | modifiable |
 
 ### JSON example
 

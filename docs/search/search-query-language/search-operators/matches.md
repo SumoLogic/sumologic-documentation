@@ -87,7 +87,7 @@ _sourceCategory=Apache/Access
 | transpose row os column browser as *
 ```
 
-Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](/docs/dashboards-new/panels/column-charts):
+Produces aggregate results similar to the following, when you configure it to create a [stacked column chart](/docs/dashboards/panels/column-charts):
 
 ![Matches](/img/search/searchquerylanguage/search-operators/matches.png)
 
@@ -109,7 +109,7 @@ _sourceCategory=OS/Windows (error or warning)
 | sort _timeslice asc
 ```
 
-Produces results similar to the following, when you configure it to be visualized as a [linechart](/docs/dashboards-new/panels/line-charts):
+Produces results similar to the following, when you configure it to be visualized as a [linechart](/docs/dashboards/panels/line-charts):
 
 ![Matches Event](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
 

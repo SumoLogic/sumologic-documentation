@@ -65,6 +65,8 @@ For example, in Australia, DST goes into effect on October 2nd for Spring. For t
 
 In another example, if you had a 4h timeslice, you would usually see results at 12 a.m., 4 a.m., 8 a.m., 12 p.m., etc. But when the DST happens, the result after 12 a.m. could be either 3 a.m. or 5 a.m., depending on Fall or Spring.
 
+{@import ../../../reuse/alerts-timeslice.md}
+
 
 ### Basic examples
 

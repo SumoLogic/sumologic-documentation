@@ -105,9 +105,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | `description` | String  | No | Type the description of the Source. | modifiable |
 | `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
 | `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| delegatedUserEmail | String | Yes | Provide the super-administrator email address for the domain that granted access to the service account you created. | modifiable |
-| credentialsJson | String | Yes | Authentication service account's credentials to access Google Workspace Platform. | modifiable |
-| excludedAlertTypes | Array of Strings | No | Defines the types of alerts which the user want to exclude. | modifiable |
+| `delegatedUserEmail` | String | Yes | Provide the super-administrator email address for the domain that granted access to the service account you created. | modifiable |
+| `credentialsJson` | String | Yes | Authentication service account's credentials to access Google Workspace Platform. | modifiable |
+| `excludedAlertTypes` | Array of Strings | No | Defines the types of alerts which the user want to exclude. | modifiable |
 
 ### Example of Service account JSON
 

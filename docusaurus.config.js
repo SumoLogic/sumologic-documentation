@@ -28,11 +28,11 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
       async: true,
     },
     {
-      src: './src/helper/google-translate.js',
+      src: './src/helper/google-analytics.js',
       async: true,
     },
   ],
@@ -88,6 +88,12 @@ module.exports = {
               'caution',
             ],
           },
+        },
+        gtag: {
+          trackingID: [
+            'G-CVH19TBVSL',
+            'UA-16579649-3',
+          ],
         },
         googleAnalytics: {
           trackingID: 'UA-16579649-3',
@@ -145,6 +151,26 @@ module.exports = {
            type: 'rss',
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+         },
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
+         id: 'blog-csoar',
+         routeBasePath: 'release-notes-csoar',
+         path: './blog-csoar',
+         archiveBasePath: 'archive',
+         blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
+         blogSidebarTitle: 'All posts',
+         blogSidebarCount: 'ALL',
+         postsPerPage: 'ALL',
+         blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+         showReadingTime: false,
+         feedOptions: {
+           type: 'rss',
+           title: 'Sumo Logic Cloud SOAR Release Notes',
+           description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
       },
@@ -245,11 +271,6 @@ module.exports = {
         // activeregex controls the top nav content
         // icon uses Google Material name code https://fonts.google.com/icons?query=material
           {
-            to: 'https://www.sumologic.com/sign-up',
-            position: 'left',
-            className: 'header-trial',
-          },
-          {
             label: 'Guides',
             position: 'left',
             to: '#',
@@ -276,7 +297,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
-                label: 'App Catalog',
+                label: 'Apps and Integrations',
                 icon: 'apps',
               },
               {
@@ -287,7 +308,7 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'dashboards',
+                sidebarId: 'alerts',
                 label: 'Alerts',
                 icon: 'notifications',
               },
@@ -312,7 +333,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'security',
-                label: 'Cloud SIEM/SOAR',
+                label: 'Security',
                 icon: 'security',
               },
               {
@@ -359,6 +380,11 @@ module.exports = {
                 icon: 'rss_feed',
               },
               {
+                label: 'Cloud SOAR',
+                to: 'release-notes-csoar',
+                icon: 'rss_feed',
+              },
+              {
                 label: 'Collector',
                 to: 'release-notes-collector',
                 icon: 'rss_feed',
@@ -380,6 +406,16 @@ module.exports = {
             value: '<div id="google_translate_element"></div>',
           },
           {
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
+          },
+          {
+            to: 'https://support.sumologic.com/support/s/contactsupport',
+            position: 'right',
+            className: 'header-support',
+          },
+          {
             position: 'right',
             className: 'header-github-link',
             type: 'dropdown',
@@ -393,7 +429,7 @@ module.exports = {
               },
               {
                 label: 'Contribute to Docs',
-                to: '/docs/contributing',
+                href: '/docs/contributing',
                 icon: 'edit_note',
               },
             ]

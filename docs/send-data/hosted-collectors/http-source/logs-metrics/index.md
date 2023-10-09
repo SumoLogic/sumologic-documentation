@@ -25,7 +25,7 @@ As a best practice, Sumo Logic recommends batching data into each POST request t
 
 To configure an HTTP Logs and Metrics Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
 1. Enter a **Name** to display for the Source in the Sumo web application. Description is optional.
@@ -46,6 +46,12 @@ To configure an HTTP Logs and Metrics Source:
 1. **Processing Rules.** Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule. Processing rules are applied to log data, but not to metric data.
 1. When you are finished configuring the Source, click **Save**.
 1. When the URL associated with the source is displayed, copy the URL so you can use it to upload data.<br/> ![img](/img/send-data/http-source-address.png)
+
+:::note
+* Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to HTTP Endpoint have appropriate timestamps.
+* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
+:::
+
 
 ## Upload data to the HTTP Logs and Metrics Source
 

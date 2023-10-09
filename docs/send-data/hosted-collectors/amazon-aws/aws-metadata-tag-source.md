@@ -36,7 +36,7 @@ Tags are returned in your search results and can be referenced in queries. For i
 ## Set up an AWS Metadata Source
 
 1. Grant permission for Sumo Logic to describe EC2 instances. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
-1. In Sumo Logic select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Next to a Hosted Collector, click **Add Source**.
 1. Select **AWS Metadata**.
 1. Configure the following:

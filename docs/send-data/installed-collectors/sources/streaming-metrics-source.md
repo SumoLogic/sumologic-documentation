@@ -20,7 +20,7 @@ The procedure below assumes you will use an installed collector on each host fro
 Perform these steps on each host from which you want to collect metrics:
 
 1. Set up an [installed collector](/docs/send-data/installed-collectors). (Skip this step if you have already set up the collector.) 
-1. In Sumo select **Manage Data > Collection > Collection**.  
+1. In Sumo select **Manage Data** > **Collection** > **Collection**.  
 1. Click **Add**, and then **Add Source**.
 1. On the **Select Source for Collector** page, select **Streaming Metrics**. 
 1. On the source configuration page, supply the following fields:
@@ -37,6 +37,11 @@ Perform these steps on each host from which you want to collect metrics:
    1. **Fields.**  Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
 
 1. Click **Save**.
+
+:::note
+* Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped. Make sure that the Metrics sent to the Streaming Metrics source have appropriate timestamps.
+* Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
+:::
 
     ![streaming-metrics-source.png](/img/send-data/streaming-metrics-source.png)
 

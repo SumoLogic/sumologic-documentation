@@ -17,7 +17,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 
 Steps to configure a Hosted Collector:
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Click **Add Collector**.
 1. Click **Hosted** Collector.
 1. Provide a **Name** for the Collector. **Description** is optional.

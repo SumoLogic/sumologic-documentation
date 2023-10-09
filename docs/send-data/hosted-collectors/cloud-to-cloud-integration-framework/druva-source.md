@@ -14,14 +14,21 @@ The Druva source provides the ability to analyze and fetch event logs from the *
 This integration accesses the Druva inSync API to retrieve audit events. API documents can be found
 [here](https://developer.druva.com/docs/event-apis).
 
+## Data Sources
 
-## Prerequisites
+The Druva Source consumes event logs from the [Data Governance Cloud](https://developer.druva.com/reference/get_eventmanagement-v2-events) or [Data Governance GovCloud](https://developer.druva.com/reference/get_eventmanagement-v2-events-1) and sends it to Sumo Logic.
 
-Before you begin setting up Druva source, you must meet the following requirements:
-* An administrator account is required for **Druva inSync** Cloud.
-* Enable the **Export Events** option. To know the steps, see the [Configure Druva inSync](#configure-druva-insync-to-export-events) section.
-* Obtain access tokens by [authentication](#authentication).
+## Metadata Fields
 
+Metadata fields will be set, if the integration is configured with the SIEM forward option. See **Metadata Fields** table below:
+
+| Field Name | Value |
+| :--- | :--- |
+| _siemparser | /Parsers/System/Druva/Druva inSync Cloud |
+
+## Setup and Configuration
+
+In this configuration, you will set up the Druva account and configure it to be authorized and authenticated to use event logs from Druva inSync API. To enable export events and to obtain auth token, follow the directions below within your Druva environment.
 
 ### Configure Druva inSync to export events
 
@@ -30,7 +37,7 @@ You must be a Druva inSync Cloud administrator to enable the option to export ev
 :::
 
 To get the event logs, follow the steps to enable the **Export Events**:
-1. Log in to the Druva inSync Management Console with [inSync Cloud](https://login.druva.com/) account or [inSync GovCloud](https://loginfederal.druva.com/) account.
+1. Sign in to the Druva inSync Management Console with [inSync Cloud](https://login.druva.com/) account or [inSync GovCloud](https://loginfederal.druva.com/) account.
 2. On the [inSync Management Console](https://docs.druva.com/Endpoints/030_Set_up_inSync_for_Endpoints/010_Initial_Configuration/010_Sign_in_to_inSync_Management_Console/Sign_in_to_inSync_Management_Console) menu bar, click <img src={useBaseUrl('/img/send-data/druva-wheel-icon.png')} alt="druva-wheel-icon.png" width="20"/> icon > **Settings**. The Settings page appears.
 3. Click the **inSync APIs** tab.
 4. In the Events API settings area, click **Edit**. The Edit Events API Settings window appears.<br/><img src={useBaseUrl('/img/send-data/druva-events-api-settings.png')} alt="druva-events-api-settings.png" width="450"/>
@@ -39,7 +46,6 @@ To get the event logs, follow the steps to enable the **Export Events**:
 7. In the **Syslog facility** field, type a value between 1 and 23 to assign a Syslog facility ID for inSync events. The default value is 23.
 8. Click **Save**.
 
-
 ### Authentication
 
 Druva supports OAuth 2.0-based authentication for incoming requests. Every use of Druva APIs requires authentication to ensure that only authorized users can interact with Druva APIs.
@@ -47,12 +53,6 @@ Druva supports OAuth 2.0-based authentication for incoming requests. Every use o
 All requests to Druva APIs are authenticated using OAuth 2.0 access tokens which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
 
 The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **Base URL**. To get these, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
-
-
-## Data Sources
-
-The Druva Source consumes event logs from the [Data Governance Cloud](https://developer.druva.com/reference/get_eventmanagement-v2-events) or [Data Governance GovCloud](https://developer.druva.com/reference/get_eventmanagement-v2-events-1) and sends it to Sumo Logic.
-
 
 ## States
 
@@ -71,7 +71,6 @@ If the Source has any issues during any one of these states, it is placed in an 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
 On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
-
 
 ## Setup and configuration Source
 
@@ -102,7 +101,6 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
 | ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs.                                     | Yes                                                   | The Source will retry indefinitely.                               | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry indefinitely.                   | FirstPartyGenericError |
 
-
 ## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
@@ -112,7 +110,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | na |
 | `schemaRef` | JSON Object  | Yes | Use `{"type":"Druva"}` for Druva Source. | not modifiable |
 | `sourceType` | String | Yes | Use `Universal` for Druva Source. | not modifiable |
-
 
 ### Config Parameters
 
@@ -125,7 +122,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | `baseURL` | String | Yes | The base URL from which the customer wants to retrieve event data. | modifiable |
 | `clientID` | String | Yes | Client ID key of an application. | modifiable |
 | `secretKey` | String | Secret key of an application | modifiable |
-
 
 ### JSON Example
 

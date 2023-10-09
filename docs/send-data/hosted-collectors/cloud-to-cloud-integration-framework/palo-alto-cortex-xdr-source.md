@@ -33,7 +33,7 @@ Metadata fields will be set, if the integration is configured with the SIEM forw
 | `_siemVendor`	 |  Palo Alto Networks |
 | `_siemProduct` |	Cortex XDR |
 | `_siemFormat`	 |  JSON |
-| `_siemEventID` | 	{category} |
+| `_siemEventID` | 	Alert logs and associated event logs use {category} while incident logs use the static text `incident` |
 
 ## States
 

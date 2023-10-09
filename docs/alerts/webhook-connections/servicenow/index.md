@@ -23,9 +23,31 @@ From here, you can also:
 * To import and maintain real-time information about AWS and VMware virtual machine assets into the ServiceNow CMDB, see the [Service Graph Installation and Configuration Guide](https://store.servicenow.com/appStoreAttachments.do?sys_id=d06467ab1bdab4d051a62132604bcb5e).
 * For the Sumo Logic Cloud SIEM Enterprise (CSE) integration with the ServiceNow Security Incident Response (SIR) module, see [Security Incident Response (SIR) Integration](../../../cse/integrations/security-incident-response-integration.md).
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/alerts/webhook-connections/servicenow/launch-investigations"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Launch Investigations</h4></a>
+  <p>Learn how to launch ad-hoc investigations directly from search results in Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/alerts/webhook-connections/servicenow/set-up-searches"><img src={useBaseUrl('img/icons/operations/automated-detection.png')} alt="icon" width="40"/><h4>Set Up Searches</h4></a>
+  <p>Learn how to set up scheduled searches for ServiceNow integration.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/alerts/webhook-connections/servicenow/set-up-connections"><img src={useBaseUrl('img/icons/operations/microservices.png')} alt="icon" width="40"/><h4>Set Up Connections</h4></a>
+  <p>Learn how to set up connections for ServiceNow integration.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/alerts/webhook-connections/servicenow/set-up-security-incident-webhook"><img src={useBaseUrl('img/icons/security/security-capabilities.png')} alt="icon" width="40"/><h4>Set Up Security Incident Webhooks</h4></a>
+  <p>Learn to set up a ServiceNow Security Incident Webhook connection and create scheduled searches.</p>
+  </div>
+</div>
+</div>

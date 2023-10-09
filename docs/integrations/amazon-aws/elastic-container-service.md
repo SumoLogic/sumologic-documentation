@@ -9,16 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
+Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic app for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The app also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
-## Log and Metrics Types
-The App collects ECS logs and metrics for:
-* ECS CloudWatch Metrics. For details, see http://docs.aws.amazon.com/AmazonECS...ch-metrics.htm
-* ECS Events using AWS CloudTrail. For details, see http://docs.aws.amazon.com/AmazonECS...-in-cloudtrail
-   * The actions recorded by CloudTrail for ECS are listed here: http://docs.aws.amazon.com/AmazonECS...perations.html
+## Log and Metrics types
+
+The app collects ECS logs and metrics for:
+* [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html).
+* [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html).
+   * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
 
 
-### Sample Log Message
+### Sample log message
 
 <details><summary>Click to expand</summary>
 
@@ -273,7 +274,7 @@ The App collects ECS logs and metrics for:
 
 </details>
 
-### Sample Query
+### Sample query
 
 ```sql title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
@@ -289,16 +290,15 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 ## Collect Logs and Metrics for Amazon ECS
 
-This section has instructions for collecting logs and metrics for the Amazon ECS App.
-
+This section has instructions for collecting logs and metrics for the Amazon ECS app.
 
 ### Collect Metrics for Amazon ECS
 
-In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics).
+In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics). However, we also recommend taking a look at the [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/). For a comparison of the two options, please see [Kinesis Firehose source or CloudWatch source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source).
 
-1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 2. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. In the Sumo web app, select **Manage Data > Collection > Collection**.
+3. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5. Select Amazon CloudWatch Source for Metrics.
 6. **Name.** Enter a name to display for the new source.
@@ -307,7 +307,7 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 9. **Namespaces.** Select **AWS/ECS**.
 10. **Source Category.** Enter **ecs_metrics**.
 11. **AWS Access**. There are two options for AWS access:
-    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).  For role-based access enter the Role ARN that was provided by AWS after creating the role.
+    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For role-based access enter the Role ARN that was provided by AWS after creating the role.
     * **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
 12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 13. Click **Save**.
@@ -318,9 +318,9 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to collect ECS events.
 
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket, if you so choose.
-2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).
+2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In the Sumo web app, select **Manage Data > Collection > Collection**.
+4. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 6. Select AWS CloudTrail source.
 7. **Name.** Enter a name to display for the new Source.
@@ -330,20 +330,19 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-colle
 11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category.** Enter **ecs_event**.
     * **AWS Access**. There are two options for AWS access:
-        * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
+        * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
         * For Key access enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
     * **Scan Interval.** Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    * **Enable Timestamp Parsing.** Select the check box.
-    * **Time Zone.** Select **Ignore time zone from log file and instead use**, and select **UTC**.
-    * **Timestamp Format.** Select **Automatically detect the format**.
-    * **Enable Multiline Processing.** Select the check box, and select** Infer Boundaries**.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 12. Click **Save**.
 
 
+## Installing the Amazon ECS app
 
-## Installing the Amazon ECS App
-
-Now that you have set up collection for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon ECS, install the Sumo Logic app for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
@@ -363,7 +362,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the Amazon ECS Dashboards
+## Viewing the Amazon ECS dashboards
 
 ### Overview
 

@@ -23,17 +23,17 @@ The OpenTelemetry collector runs on the macOS machine, and uses the [Host Metric
 
 ## Fields Created in Sumo Logic for macOS
 
-Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
 
 - **`sumo.datasource`** - Has fixed value of **mac**.
 
-## Collecting Logs, Metrics, and installing macOS app
+## Collection configuration and app installation
 
-Here are the steps for collecting metrics and installing the app.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' alt="Collector" />
 
@@ -48,7 +48,7 @@ In this step, you will configure the yaml required for macOS Collection.
 
 ### Step 3: Send metrics to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command 
@@ -56,7 +56,7 @@ In this step, you will configure the yaml required for macOS Collection.
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Queries
 

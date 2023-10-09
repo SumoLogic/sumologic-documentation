@@ -19,7 +19,7 @@ We recommend using the Active Directory JSON App in combination with the Windows
 
 ## Fields creation in Sumo Logic for Active Directory
 
-Following are the [fields](https://help.sumologic.com/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
+Following are the [fields](/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
 
 **`sumo.datasource`** - Has fixed value of **activeDirectory**
 
@@ -34,15 +34,13 @@ Standard Windows event channels include:
 -   **System**
 -   **Application**
 
-## Collection Configuration and App Installation
+## Collection configuration and app installation
 
-{@import ../../../reuse/opentelemetry/config-app-install.md}
-
-As part of the setting up the collection process and app installation, you can select the App from App Catalog and click on Install App. Please follow the steps below:
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Collector.png' alt="Collector" />
 
@@ -58,12 +56,12 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 1. Copy the yaml at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
 2. Restart the collector using the command `Restart-Service -Name`.
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 
 ## Sample Log Messages

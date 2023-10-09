@@ -55,7 +55,7 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 
@@ -83,7 +83,10 @@ To configure a Salesforce Source:
 1. **User Token**: Enter the user token.  
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
-15. When you are finished configuring the Source, click **Submit**.
+ :::note
+ {@import ../../../reuse/collection-should-begin-note.md}
+ :::
+1. When you are finished configuring the Source, click **Submit**.
 
 ### Polling Interval and Salesforce API Rate Limits
 
@@ -224,6 +227,10 @@ To resolve this:
 1. Check **View Event Log Files**
 1. Save it
 
+:::note 
+If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
+:::
+
 **Error**: Object type ‘SetupAuditTrail’ is not supported
 
 To resolve this:
@@ -231,6 +238,10 @@ To resolve this:
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
 1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail
+
+:::note 
+If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
+:::
 
 **Error** : Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
@@ -273,3 +284,15 @@ To resolve this:
 To resolve this:
 
 1. Please create a support ticket with sumo logic to increase the memory for your container.
+
+**Error:** Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
+
+You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has value, but in other logs, it's completely empty. This could be because of a problem with permissions.
+
+To resolve this: 
+
+1. In Salesforce, go to **Setup\>Administration\>Users\>Profile**.
+1. Click the **Edit** button for the user's profile you set up for the Salesforce Source.
+1. In the **Administrative Permissions** section, check the box for **Manage Reports in Public Folders** permission.
+1. In the **General User Permissions** section, check the box for **View My Team's Dashboards** permission.
+1. Click the **Save** button

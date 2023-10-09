@@ -13,6 +13,6 @@ You can use the Observability Solution to monitor and troubleshoot different ty
 
 * **Custom or App Component Metrics**. You can use Telegraf to collect metrics from many different sources and send them to Sumo Logic. For more information, see our telegraf collection strategy.
 
-* **Tracing collection**. If you need complete end-to-end observability of business-critical user transactions, set up open telemetry-based traces collection.
+* **Tracing collection**. If you need complete end-to-end observability of business-critical user transactions, set up OpenTelemetry-based traces collection.
 
 After you have set up your collectors, you can begin [monitoring](monitoring.md).

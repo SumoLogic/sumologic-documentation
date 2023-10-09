@@ -4,7 +4,7 @@ title: Field Browser
 description: The Field Browser allows you to display or hide selected fields without having to parse them.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Field Browser appears on the left side of the **Messages** tab of the Search page for both aggregate and non-aggregate queries. The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
 
@@ -54,11 +54,21 @@ The Field Browser is limited for aggregate queries in the following ways:
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
 ## Guide contents
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
+  <p>Drilling down into a field from the Field Browser is seamless for non-aggregate queries.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
+  <p>Change the fields that are displayed in search results by showing or hiding in the Field Browser.</p>
+  </div>
+</div>
+</div>

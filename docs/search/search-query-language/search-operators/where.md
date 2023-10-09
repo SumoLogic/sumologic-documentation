@@ -27,8 +27,9 @@ This query will NOT work:
 
 Instead, separate the `where` operator from the preceding `parse` operator like this:
 
-`...| parse "seconds=*;" as time  | where time\> 5`
-
+```sql
+...| parse "seconds=*;" as time  | where time > 5
+```
 ## Syntax
 
 ```sql

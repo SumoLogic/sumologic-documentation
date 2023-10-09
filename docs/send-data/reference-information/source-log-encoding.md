@@ -46,10 +46,10 @@ Compressed files are decompressed before they are ingested, so they are ingested
 
 For more information, see [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
-## AWS S3 sources
+## Amazon S3 sources
 
-AWS S3 sources support the following encoding:
+Amazon S3 sources support the following encoding:
 
 * UTF-8
 
-For more information, see [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
+For more information, see [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).

@@ -18,7 +18,7 @@ save [append]\<myFolder/mySubFolder/myFileNam\>
 
 ## Rules
 
-* The file size limit for saved data is 500MB.
+* You can successfully query a lookup as long as the file size is less than 8MB, and you can save up to 500MB of data. If the file size exceeds 8MB, you will get the **File Too Big** error.
 * Queries that use the Save operator can't be [pinned](/docs/get-started/library#search-the-library).
 
 ## Examples

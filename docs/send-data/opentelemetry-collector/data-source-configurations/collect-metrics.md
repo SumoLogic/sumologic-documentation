@@ -69,6 +69,9 @@ service:
       exporters:
         - sumologic
 ```
+:::note
+You'll need to restart the collector process in order to apply changes.
+:::
 
 :::tip
 Refer to our [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about OpenTelemetry configuration.

@@ -296,7 +296,7 @@ To administer Sumo Logic accounts, users, and security, do the following:
 
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy.md), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](/docs/manage/security/access-keys.md), manage security polices ([audit index](/docs/manage/security/audit-index.md), [support account access,](/docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards-new/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy.md), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](/docs/manage/security/access-keys.md), manage security polices ([audit index](/docs/manage/security/audit-index.md), [support account access,](/docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Become a Sumo Pro user
 

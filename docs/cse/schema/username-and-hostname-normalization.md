@@ -5,6 +5,7 @@ sidebar_label: Username and Hostname Normalization
 description: Learn about how CSE normalizes usernames and hostnames during mapping and parsing.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic describes how CSE normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
 
@@ -49,7 +50,7 @@ If a name normalization configuration exists, the name attribute will be populat
 
 The name normalization feature can be enabled in the **Incoming Data** section under the **Entities** tab of the CSE configuration.  
 
-![Configuration.png](/img/cse/Configuration.png)
+<img src={useBaseUrl('img/cse/Configuration.png')} alt="Configuration" width="800"/>
 
 You can configure just username normalization, just hostname normalization, or both. We recommend you enable both. 
 
@@ -91,7 +92,7 @@ If no name normalization is configured, the system will continue to operate as i
 
 An example UI is provided for a case where the customer has a domain name `test.com` and an active directory domain named `test`. 
 
-![Example_UI.png](/img/cse/Example_UI.png)
+<img src={useBaseUrl('img/cse/Example_UI.png')} alt="Example UI" width="600"/>
 
 ### Example - single domain
 

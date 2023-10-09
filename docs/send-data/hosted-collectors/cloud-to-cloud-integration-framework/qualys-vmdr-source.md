@@ -57,7 +57,10 @@ To configure a Qualys VMDR Source:
 10. **Collect vulnerability data**. This option will fetch the list of hosts with the host's latest vulnerability data based on the host-based scan data available in the user’s account. We recommend leaving the polling interval at the default 1 hour.
 11. (Optional) **Collect KnowledgeBase Information**. This option is only available if you choose to collect vulnerability data. If selected, it will automatically download the vulnerability details from the Qualys KnowledgeBase for vulnerabilities detected within your environment.
 12. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
-13. When you are finished configuring the Source, click **Submit**.
+   * To forward Qualys VMDR assetInventory to CSE, it is recommended to create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/) with the following criteria:
+   * Scope: `_sourceCategory="<enter your source category here from Step 5>" "assetInventory"`
+   * Parse Expression: `"true" as _siemForward`
+14. When you are finished configuring the Source, click **Submit**.
 
 ### Error types
 
@@ -93,7 +96,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/api/2.0/fo/asset/host/vm/detection/</code>
    </td>
-   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic. API details are on page 480 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects a current list of new vulnerabilities detected for each computer. Each detection is sent as a separate log to Sumo Logic.<br />
+   Permissions - <code>Managers</code> view all VM scanned hosts in subscription. <code>Auditors</code> have no permission to view VM scanned hosts. <code>Unit Managers</code> view VM scanned hosts in the user’s assigned business unit. <code>Scanners</code> and <code>Readers</code> view VM scanned hosts in the user’s account.<br />
+   API details are on page 496 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
   <tr>
@@ -101,7 +106,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/api/2.0/fo/knowledge_base/vuln/</code>
    </td>
-   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment. API details are on page 200 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects the current vulnerability details from the Qualys KnowledgeBase for vulnerabilities when they are detected within your environment.<br />
+   Permissions - A subscription must be granted permission to run this API function. Roles <code>Manager</code>, <code>Unit Manager</code>, <code>Scanner</code>, <code>Reader</code> are granted a permission <code>Download vulnerability data from the KnowledgeBase</code>. Role <code>Auditor</code> has no such permission.<br />
+   API details are on page 209 in <a href="https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
   <tr>
@@ -109,7 +116,9 @@ When Sumo Logic detects an issue, it is tracked by Health Events. The following 
    </td>
    <td><code>/rest/2.0/search/am/asset/</code>
    </td>
-   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>. API details are on page 24 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>.<br />
+   Permissions - User must have the <code>GAV/CSAM</code> module and the <code>App API Enabled</code> option enabled for that role. Additionally, the user must have the <code>Allow user view access to all objects</code> checkbox enabled under <strong>Roles And Scopes</strong> within the user settings.<br/>
+   API details are on page 27 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.
    </td>
   </tr>
 </table>

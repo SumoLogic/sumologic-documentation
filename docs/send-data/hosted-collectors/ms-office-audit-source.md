@@ -90,7 +90,7 @@ You must configure a separate Source for each Office 365 application you want to
 During the configuration, you will need to authenticate to Microsoft using standard OAuth v2. The user who authenticates must have Microsoft Office 365 admin rights for the content that is being audited. Refer to the API references in this article for additional information on Microsoft admin rights.
 :::
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Click **Add Source** next to a Hosted Collector. If you dont already have a hosted collector, see [Set Up a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) for instructions on setting up a new Hosted Collector.
 1. Select **Office 365 Audit**. 
 1. Enter a name to identify the Source. **Description** is optional.
@@ -110,7 +110,7 @@ During the configuration, you will need to authenticate to Microsoft using sta
   :::note
   Sumo Logic never receives your Microsoft Office 365 credentials.
   :::
-1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule.md) you'd like for the new Source.
+1. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the new Source.
 1. When you are finished configuring the Source, click **Save**.
 
 ## Audit Index events
@@ -133,7 +133,6 @@ Here are a few important items:   
 * (From Microsoft) “When a subscription is created, it can take up to 12 hours for the first content blobs to become available for that subscription.”  We have found that data starts to arrive at Sumo Logic much sooner than this, but please wait this long before contacting Support.
 * (From Microsoft) “The content blobs are created by collecting and aggregating actions and events across multiple servers and data centers. As a result of this distributed process, the actions and events contained in the content blobs will not necessarily appear in the order in which they occurred. One content blob can contain actions and events that occurred prior to the actions and events contained in an earlier content blob. We are working to decrease the latency between the occurrence of actions and events and their availability within a content blob, but we cannot guarantee that they appear sequentially.”
 * There can be a significant delay between when an event occurs in O365, and when an audit log is available from Microsoft.  We receive the log files as soon as they are made available to us. The latency for log line available varies between content types, and from our observation, is not consistent. This is not within Sumo Logic’s control.  You may monitor this latency by querying the difference between the event time stamp and the receipt time stamp (when we processed the log message).
-* In your Office 365 logs, you might see intermittent messages that say `"Message":"Authorization has been denied for this request."` This is due to an authorization token synchronization defect that is being fixed and will be rolled out shortly. Until then, please ignore this message.
 
 ## OAuth 2.0 access token and subscription expiration
 

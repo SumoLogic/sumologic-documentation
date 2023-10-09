@@ -1,6 +1,6 @@
 ---
 id: about-sdo
-title: About Sumo Logic Software Development Optimization
+title: About the Sumo Logic Software Development Optimization
 sidebar_label: About SDO
 description: Learn how the Sumo Logic Software Development Optimization Solution (SDO) effectively manages and enhances development and production environments.
 ---

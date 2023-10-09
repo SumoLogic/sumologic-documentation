@@ -25,15 +25,15 @@ In search results, the transactionize operator adds transaction fields. The fiel
 
 ## Syntax
 
-* `transactionize \<field\>], \<field\>], \<field\>] [as\<fiel\>]`
-* `transactionize \<field\>] [as\<fiel\>] [\<subquer\>)]`  
-    where `\<subquer\>]` is executed on the results of the query for
+* `transactionize <field>, <field>, <field> [as <field>]`
+* `transactionize <field> [as <field>] [<subquery>]`  
+    where `[<subquery>]` is executed on the results of the query for
     each group, independently.
-* `transactionize \<field\>] [as\<fiel\>] \<parameter\>] [\<subquer\>)]`
+* `transactionize <field> [as <field>] <parameter> [<subquery>]`
 
 ### Parameters
 
-Parameters must follow the `as \<fiel\>]` clause, as shown in the above
+Parameters must follow the `as \<field\>]` clause, as shown in the above
 Syntax section. For example,   
 
 ```sql
@@ -60,7 +60,7 @@ Syntax section. For example, 
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
     * Run a second transactionize operator immediately after your first one. This will take the potentially ungrouped messages of your first transactionize search and group them correctly.  
          
-* Transactionize is not supported in [Dashboard Live mode](../../../dashboards/restricted-operators-dashboards.md#live-mode-restrictions).
+* Transactionize is not supported in [Dashboard Live mode](../../../dashboards-classic/restricted-operators-dashboards.md#live-mode-restrictions).
 * Transactionize is not supported in [Real Time scheduled searches](../../../alerts/scheduled-searches/create-real-time-alert.md).
 
 ## Example

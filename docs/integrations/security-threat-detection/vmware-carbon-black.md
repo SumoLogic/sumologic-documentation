@@ -23,7 +23,7 @@ Sumo Logic analyzes the following required VMware Carbon Black events for more e
 * VMware Carbon Black EDR Events
 * VMware Carbon Black Endpoint Standard Events
 
-Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](/docs/integrations/security-threat-detection/VMware-Carbon-Black#Collect_logs_for_VMware_Carbon_Black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
+Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [Collect Logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black#Collect-logs-for-VMware-Carbon-Black). For more information, see [Endpoint Detection Response](https://developer.carbonblack.com/reference/enterprise-response/) and [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) documentation.
 
 
 ## Collect Logs for VMware Carbon Black
@@ -40,92 +40,65 @@ This section provides instructions for adding a hosted collector, HTTP, and S3 s
 
 For more in-depth information, see [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) and [EDR](https://developer.carbonblack.com/reference/enterprise-response/) documentation.
 
-
 ### Step 1: Add a Hosted Collector
 
 **To add a hosted collector**, perform the steps as defined on the page[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-
 
 ### Step 2: Configure Collection for VMware Carbon Black EDR
 
 To configure collection, add an HTTP Source, get credentials for VMware Carbon Black, and configure the event forwarder.
 
-
 #### Add an HTTP Source for VMware Carbon Black EDR
 
-
-**To add an HTTP source for VMware Carbon Black EDR do the following:
+To add an HTTP source for VMware Carbon Black EDR, do the following:
 
 1. Add [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for VMware Carbon Black EDR.
 
-
-
 When you configure the HTTP Sources, make sure to save the HTTP Source Address URLs. You will need these URLs later.
 
-
-
 #### Get credentials from VMware Carbon Black EDR
-9
 
-
-**VMware Carbon Black EDR event forwarder requires a RabbitMQ Username and Password.** Copy RabbitMQUser and RabbitMQPassword from /etc/cb.conf from the **VMware Carbon Black** **EDR** server. These will be required in the next step.
-
+**VMware Carbon Black EDR event forwarder requires a RabbitMQ Username and Password.** Copy RabbitMQUser and RabbitMQPassword from /etc/cb.conf from the **VMware Carbon Black EDR** server. These will be required in the next step.
 
 #### Configure the event forwarder for VMware Carbon Black EDR
 
 
 This section provides instructions for configuring the collection of **VMware Carbon Black EDR** events.
 
-
 The steps in the following procedure should be done as the “root” user on your target Linux system.
 
-To configure the collection of VMware Carbon Black EDR events:**
+To configure the collection of VMware Carbon Black EDR events:
 
 1. If it isn't already present, install the CbOpenSource repository.
-
-
-```bash
-cd /etc/yum.repos.d
-curl -O https://opensource.carbonblack.com/release/x86_64/CbOpenSource.repo
-```
-
-
+   ```bash
+   cd /etc/yum.repos.d
+   curl -O https://opensource.carbonblack.com/release/x86_64/CbOpenSource.repo
+   ```
 1. Install the RPM with YUM.
-
-```bash
-yum install cb-event-forwarder
-```
-
+   ```bash
+   yum install cb-event-forwarder
+   ```
 1. Configure [cb-event-forwarder](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/)
-* If installing on a machine _other than the_ Carbon Black EDR server, copy the RabbitMQ username and password into the rabbit_mq_username and rabbit_mq_password variables in /etc/cb/integrations/event-forwarder/cb-event-forwarder.conf file. Also fill out the cb_server_hostname with the hostname or IP address where the Carbon Black EDR server can be reached.
-* If the cb-event-forwarder is forwarding events from a Carbon Black EDR cluster, the cb_server_hostname should be set to the hostname or IP address of the Carbon Black EDR master node. More details [here](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/).
-* Additionally set the following variables in the cb-event-forwarder.conf:
+   * If installing on a machine _other than the_ Carbon Black EDR server, copy the RabbitMQ username and password into the rabbit_mq_username and rabbit_mq_password variables in /etc/cb/integrations/event-forwarder/cb-event-forwarder.conf file. Also fill out the cb_server_hostname with the hostname or IP address where the Carbon Black EDR server can be reached.
+   * If the cb-event-forwarder is forwarding events from a Carbon Black EDR cluster, the cb_server_hostname should be set to the hostname or IP address of the Carbon Black EDR master node. More details [here](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/).
+   * Additionally set the following variables in the cb-event-forwarder.conf:
         - `output_type` as http
         - `output_format` as JSON or LEEF as required
         - `httpout` as the HTTP Source Address from the previous step
-
-* Ensure that the configuration is correct, by running (as root) the cb-event-forwarder in check mode:
-
-```bash
-/usr/share/cb/integrations/event-forwarder/cb-event-forwarder -check
-```
-
-    If everything is OK, you will see a message starting with "Initialized output”. If there are errors, they will appear on your screen.
-
-1. Start and stop the service.
-
-    Once the service is installed, it is managed by the Upstart init system in CentOS 6.x. You can control the service with the initctl command:
-
-* To start the service:
-```bash
-initctl start cb-event-forwarder
-```
-
-* To stop the service:
-```bash
-initctl stop cb-event-forwarder
-```
-
+   * Ensure that the configuration is correct, by running (as root) the cb-event-forwarder in check mode:
+      ```bash
+      /usr/share/cb/integrations/event-forwarder/cb-event-forwarder -check
+      ```
+   If everything is OK, you will see a message starting with "Initialized output”. If there are errors, they will appear on your screen.
+1. Start and stop the service. Once the service is installed, it is managed by the Upstart init system in CentOS 6.x. You can control the service with the initctl command:
+   * To start the service:
+   ```bash
+   initctl start cb-event-forwarder
+   ```
+   * To stop the service:
+   ```bash
+   initctl stop cb-event-forwarder
+   ```
 
 Once the service is installed, it is configured to start automatically on system boot.
 
@@ -140,7 +113,6 @@ To add an S3 source for VMware Carbon Black Cloud Endpoint Standard, do the foll
 2. Add an S3 for Cloud Endpoint Standard as per the below example. Populate the bucket name and path as created in the previous step.
 
 ### Configure VMware Carbon Black Cloud Endpoint Standard to send alerts and events to S3
-
 
 **VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) source.
 
@@ -157,7 +129,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findi
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
-For more information, see [Live Tail](/docs/search/Live-Tail).
+For more information, see [Live Tail](/docs/search/live-tail).
 
 
 ### Sample Log Messages
@@ -323,38 +295,14 @@ _sourceCategory="Labs/cb-edr-json" | parse regex "(?:process_name)(?:\"\:\"|=')
  count by process_name | sort by _count | limit 10
 ```
 
-
-
 ## Installing the VMware Carbon Black App
-
 
 This section demonstrates how to install the VMware Carbon Black EDR and Cloud Endpoint Standard App and has examples of each of the App dashboards. The VMware Carbon Black App dashboards are organized in the following categories, according to their function:
 
 * **[VMware Carbon Black Endpoint Detection and Response (EDR)](https://www.carbonblack.com/products/edr/)** is an incident response and threat hunting solution that continuously records and stores unfiltered endpoint data, allowing security professionals to track potential threats in real-time.
 * **[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** is a next-generation antivirus (NGAV) and endpoint detection and  EDR solution.
 
-
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing VMware Carbon Black Dashboards
 
@@ -373,7 +321,7 @@ You can use filters to drill down and examine the data on a granular level.
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 
@@ -513,7 +461,7 @@ Use this dashboard to:
 
 The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
 * Quickly review your infrastructure security status.

@@ -9,9 +9,9 @@ Sumo Logic requires access to the services in your AWS account(s) in order to co
 
 You can follow the instructions on this page to grant Sumo Logic access to the following AWS services:
 
-* AWS S3
+* Amazon S3
 * Amazon S3 Audit 
-* AWS Cloudwatch Metrics 
+* AWS CloudWatch Metrics 
 * AWS Kinesis Firehose for Metrics
 * AWS Metadata (Tag) 
 * AWS Elastic Load Balancing
@@ -53,22 +53,7 @@ This section has instructions for creating an S3 source and using the option Gen
 * AWS Metadata
 * Amazon S3
 * AWS S3 Archive
-* Amazon S3 Audit 
-
-Watch the following video to see the procedure. It uses an S3 source as an example. A step-by-step procedure follows.
-
-<Iframe url="https://www.youtube.com/embed/uKkKxAZgF3Y"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
+* Amazon S3 Audit
 
 To create a role automatically using a CloudFormation template:
 
@@ -211,9 +196,9 @@ This section also provides a policy that enables collection of data from encrypt
 
 You can add any of these policies to an existing IAM Role or User. For more information and instructions, see [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) and [Adding and removing IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html) in AWS help.
 
-#### AWS S3 Policy 
+#### Amazon S3 Policy 
 
-This policy supports the following Sumo Logic source types: [AWS S3 Source](aws-s3-source.md), [AWS S3 Audit Source](amazon-s3-audit-source.md), [AWS CloudFront Source](amazon-cloudfront-source.md), and [AWS ELB Source](aws-elastic-load-balancing-source.md).
+This policy supports the following Sumo Logic source types: [Amazon S3 Source](aws-s3-source.md), [Amazon S3 Audit Source](amazon-s3-audit-source.md), [AWS CloudFront Source](amazon-cloudfront-source.md), and [AWS ELB Source](aws-elastic-load-balancing-source.md).
 
 :::note
 Sumo Logic will verify the existence of the bucket using the `GetBucketAcl` API request, which will appear in CloudTrail with an AccessDenied response. Sumo Logic does not need the `GetBucketAcl` API request to collect data from S3 buckets.

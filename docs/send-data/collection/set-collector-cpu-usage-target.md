@@ -11,7 +11,7 @@ Once you have set a CPU target, if a collector hits the target, collection is sl
 It’s important to note that a CPU target is not a hard limit. Even with a target set, there’s a chance that the collector will exceed the limit. If you notice that a collector is consistently exceeding the target, you can increase the CPU target, install the collector on a more robust machine, or try using remote collection options.
 
 To set a CPU target:
-1. Select **Manage Data > Collection > Collection**.
+1. Select **Manage Data** > **Collection** > **Collection**.
 1. Click the collector name, or click the **Edit** link to the right of the collector name.
 1. Click **Advanced**.
 1. Choose an option from the **CPU Target** menu, then click **Save**.<br/> ![cpu target option](/img/collector/cpu-target-options.png)
@@ -41,7 +41,7 @@ The collector will always perform some level of work, whether it is scanning the
 
 The CPU Target value can be set in three ways:
 
-1. Update the **CPU Target** value by editing the collector under **Manage Data > Collection > Collection**.
+1. Update the **CPU Target** value by editing the collector under **Manage Data** > **Collection** > **Collection**.
 1. Update the collector configuration via the [Collector Management API](/docs/api/collector-management#Collector-API-Methods-and-Examples).  
 1. Either supply the **targetCPU** parameter to the [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) file or **-VtargetCPU** [command line argument](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) during the initial installation and registration of the collector.
 

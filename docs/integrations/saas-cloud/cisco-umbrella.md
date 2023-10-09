@@ -26,19 +26,19 @@ To know about the Sample Logs and Schema for Cisco Umbrella logs, [click here](h
 
 ```sql title="DNS Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*dnslogs*"
+| where _sourceName matches "*dnslogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,identity,identites_all,internal_ip,external_ip,action,query_type,response_code,domain_name,categories,first_identity_type_matched,all_identity_types,blocked_categories
 ```
 
 ```sql title="Proxy Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*proxylogs*"
+| where _sourceName matches "*proxylogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,policy_identity_label,internal_client_ip,external_client_ip,destination_ip,content_type,action,url,referer,user_agent,status_code,request_size,response_size,response_body_size,sha256,categories,av_detections,PUAs,AMP_disposition,AMP_malware_name,AMP_score,policy_identity_type,blocked_categories,identities,identity_types,request_method,DLP_status,certificate_errors,file_name,ruleset_ID,rule_ID,destination_list_IDs,isolate_action,file_action,warn_status
 ```
 
 ```sql title=Admin Logs"
 _sourceCategory=Labs/cisco_umbrella
-| where _sourcename matches "*auditlogs*"
+| where _sourceName matches "*auditlogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as  id, timestamp, email, user, type, action, ip, before, after
 ```
 
@@ -57,31 +57,18 @@ The Cisco Umbrella app offers logging to Amazon S3 as it has the ability to uplo
  <img src={useBaseUrl('img/integrations/saas-cloud/options-aws-s3.png')} alt="options aws s3 cisco" width="750"/>
 
 :::note
-If you're collecting from a Cisco Umbrella bucket, SNS Subscription Endpoint is not supported. For more information, see important note on using [Sumo Logic's AWS S3 source for the Cisco Managed s3 bucket](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#cisco-umbrella)
+If you're collecting from a Cisco Umbrella bucket, SNS Subscription Endpoint is not supported. For more information, see important note on using the [Sumo Logic Amazon S3 source for the Cisco-Managed S3 bucket](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#cisco-umbrella)
 :::
 
 By having all your logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage. Or, ingest the logs through your SIEM or another security tool to determine if any security events in these Umbrella logs coincide with events in other security tools.
 
 For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.com/managed-services/docs/msc-manage-logs).
 
-## Installing Cisco Umbrella Apps
+## Installing Cisco Umbrella App
 
-This section has instructions for installing the Cisco Umbrella App for Sumo and descriptions of each of the dashboards.
+This section has instructions for installing the Cisco Umbrella App for Sumo Logic.
 
-1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the App Catalog, search for and select the app.
-1. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently.For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    1. **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: `_sourceCategory=MyCategory`. 
-    3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-5. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the Cisco Umbrella Dashboards
 

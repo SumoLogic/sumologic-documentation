@@ -1,11 +1,10 @@
 ---
 id: collector-installation-error-messages
 title: Collector Installation Error Messages
-description: Use this information to help troubleshoot issues that arise during installation using any of the installation methods.
+description: Learn how to troubleshoot issues that arise during installation using any of the installation methods.
 ---
 
-
-For additional information, see Collector Management API.
+During the installation of the collector, you may encounter various issues or error messages. Here are some common error messages along with troubleshooting steps and their corresponding solutions.
 
 **Unable to start Sumo Logic Collector service**
 
@@ -85,3 +84,25 @@ Instead, you must use an access ID/access key to register the Collector.
 **collectors.collector.forbidden**
 
 The user is not authorized to modify the specified Collector. The user account must have the Collector Management or Admin role to be able to create a Collector.
+
+**Wrapper Process has not received any CPU time for x seconds**
+
+If the Wrapper detects that it was denied CPU for an extended period of time, you may see messages like the following from the Wrapper, the JVM, or both.
+
+```txt title="Error Log Example"
+INFO   | wrapper  | Wrapper Process has not received any CPU time for x seconds.
+                        Extending timeouts.
+INFO   | jvm 1    | JVM Process has not received any CPU time for x seconds.
+                        Extending timeouts.
+```
+
+These messages are warnings that, in this case, both the Wrapper and its JVM process were denied access to the CPU for a period of x seconds.
+
+To solve this issue and improve the resilience of the Wrapper and its JVM process when facing a lack of CPU, you can modify the `wrapper.conf` file by adding the following configurations at the end.
+
+  ```
+  wrapper.cpu.timeout=85
+  wrapper.ping.timeout=95
+  wrapper.startup.timeout=90
+  wrapper.shutdown.timeout=90
+  ```

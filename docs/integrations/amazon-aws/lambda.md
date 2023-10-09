@@ -133,7 +133,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | top 10 caller by Invocations
 ```
 
-```sql title="Error (Count)(Cloudwatch metric Based)"
+```sql title="Error (Count)(CloudWatch metric Based)"
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
@@ -143,21 +143,22 @@ This section provides instructions for setting up log and metric collection.
 
 ### Collect Amazon CloudWatch Logs
 
-Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
+Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch. You can choose any of them to collect logs.
+- **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended).
+- **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
-* You can configure collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo-provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
-* To configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function.md).
-* While configuring the cloud Watch log source, following Field can be added in the source:
-    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-    * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
-    * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
+* While configuring the cloudwatch log source, following Fields can be added in the source:
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
+    * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
+    * Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />
 
 ### Collect CloudTrail Lambda Data Events
 
 To configure a CloudTrail Source, perform these steps:
 
-1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
@@ -188,12 +189,14 @@ Continue with the process of [enabling Provisioned Concurrency configurations](#
 
 ### Enable Provisioned Concurrency configurations for Lambda functions
 
-AWS Lambda provides Provisoned Concurrency for greater control over the start up time for Lambda functions. When enabled, Provisioned Concurrency keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
+AWS Lambda provides Provisioned Concurrency for greater control over the start up time for Lambda functions. When enabled, [Provisioned Concurrency](https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html) keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
 
 To collect the metrics in Sumo Logic, follow the steps below:
 
-1. Jump to the [Collect Amazon Cloudwatch Metrics](#collect-amazon-cloudwatch-metrics) section and complete the steps as described.
+1. Jump to the [Collect Amazon CloudWatch Metrics](#collect-amazon-cloudwatch-metrics) section and complete the steps as described.
 2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management Console, as shown in the following example.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Configure-Provisioned-Concurrency.png')} alt="Configure Provisioned Concurrency" />
 
 Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
 
@@ -233,6 +236,7 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 
 These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metrics-queries), as shown in the following example:
 
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Search-Provisioned-Concurrency-Metrics.png')} alt="Search Provisioned Concurrency Metrics" />
 
 ### Field in Field Schema
 
@@ -310,7 +314,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     * Click **Add to Library**.
 

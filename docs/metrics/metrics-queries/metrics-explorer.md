@@ -9,17 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the Metrics Explorer UI and how to use it.
 
-:::tip
-If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](/docs/metrics/metrics-queries/metrics-explorer).
-:::
-
 ## About the UI
 
 The Metrics Explorer appears when you open a new metrics tab. The page
 has two modes:
 
-* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](/docs/metrics/metrics-queries/metrics-explorer).
-* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](/docs/metrics/metrics-queries/metrics-explorer).
+* **Basic**. Basic Mode provides a query builder UI: you can construct metric queries by selecting metadata fields, dimensions, metrics, and operators from pull-down lists. This makes it easier to create your search scope and to apply operators to the metrics that are returned. You’ll still want to understand the functionality of [metric operators](/docs/metrics/metrics-operators), but the Metrics Explorer helps you by prompting you with a list of available operators, and after you choose an operator, the options or qualifiers that the operator supports. For more information about the Basic UI, see [About Basic Mode UI](/docs/metrics/metrics-queries/metrics-explorer/#about-basic-mode-ui).
+* **Advanced**. In Advanced Mode, you can enter free-form metric queries. You can enter your entire query manually, but Advanced Mode will also prompt you with pull-down lists of metadata fields, dimensions, metrics, and operators. For more information, see [About the Advanced Mode UI](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui).
 
 If your query supports basic mode, you can freely move between basic and advanced mode to build and run your query.
 
@@ -31,14 +27,18 @@ If you use the Advanced Mode to build complex metrics, you can convert it to Bas
 
 Example of queries that *will not* convert:
 
-* `metric=CPU_Sys _sourcecategory=autocomplete | bottomk (5, avg + 3 * stddev)` This query is not supported because `bottomk` in basic mode only supports simple aggregators such as `avg` or `count`. It does not support arbitrary formulas.
-* `(metric=CPU_Sys OR metric=CPU_Idle) _sourcecategory=autocomplete` This query is not supported because basic mode does not support logical `OR` for the selector part of the query.
+* `metric=CPU_Sys _sourceCategory=autocomplete | bottomk (5, avg + 3 * stddev)` This query is not supported because `bottomk` in basic mode only supports simple aggregators such as `avg` or `count`. It does not support arbitrary formulas.
+* `(metric=CPU_Sys OR metric=CPU_Idle) _sourceCategory=autocomplete` This query is not supported because basic mode does not support logical `OR` for the selector part of the query.
 
 When converted, the filters convert allowing you to select and modify, make different selections, remove filters, and add operators as you would normally in Basic Mode.
 
 ![switch-modes.png](/img/metrics/metric-explorer-switch-modes.png)
 
 ## Switch to the Classic metrics UI
+
+:::info Classic Metrics Deprecation
+In late 2023, we're deprecating Classic Metrics and Classic Dashboards in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
+:::
 
 If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
 
@@ -62,7 +62,7 @@ The key components of the UI are:
 | B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
 | D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
-| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards-new/panels/modify-chart).  |
+| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards/panels/modify-chart).  |
 | F | The icons on the right of the **Panel Type** area allow you to add a query, hide a query, clear a query, enter advanced mode, and duplicate a query. |
 | G | The icons in this area allow you to add another query row, hide a query, and open the more options menu.
 | H | The icons in this area allow you to save and share metric queries. |
@@ -147,7 +147,7 @@ If the query editor mode can't be adjusted, it is changed to advanced mode so th
 
     ![click-in-metric-area.png](/img/metrics/click-in-metrici-area.png)
 
-1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourcecategory` metadata field. A dropdown list of values for the selected item appears.
+1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourceCategory` metadata field. A dropdown list of values for the selected item appears.
 
     ![filter-values.png](/img/metrics/filter-values.png)
 
@@ -162,7 +162,7 @@ If the query editor mode can't be adjusted, it is changed to advanced mode so th
 
     ![query-visualization.png](/img/metrics/query-visualization.png)
 
-1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer) syntax and a description of the operator.
+1. If you want to apply an operator, click **Add Operator** to the right of the **Filters** field. A list of metric operators appears. Note that when you hover over an operator, a tool tip displays the [Advanced Mode](/docs/metrics/metrics-queries/metrics-explorer/#about-advancedmode-ui) syntax and a description of the operator.
 
     ![delta-hover.png](/img/metrics/delta-hover.png)
 
@@ -202,7 +202,7 @@ To add an additional query:
 
 1. Click **Add Query** to the right of the query builder area. <br/>![add-query.png](/img/metrics/add-query.png)
 1. A new row, labeled #B, is added to the query builder area.
-1. Follow the steps in [Create a metric query](/docs/metrics/metrics-queries/metrics-explorer) to build another query, and click the run icon to run the query.
+1. Follow the steps in [Create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) to build another query, and click the run icon to run the query.
 1. Your visualization is updated to chart the additional query. <br/>![two-queries.png](/img/metrics/two-queries.png)
 
 ## Join metric queries

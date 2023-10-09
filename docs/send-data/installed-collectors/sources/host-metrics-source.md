@@ -25,7 +25,7 @@ When not using a root or administrator user you need to provide the necessary pe
 
 ## Host Metrics Source on EC2 instances
 
-A host metric source running on an Installed Collector on an AWS EC2 instances will automatically apply the following EC2 tags to the metric it collects:
+A host metric source running on an Installed Collector on an Amazon EC2 instance will automatically apply the following EC2 tags to the metric it collects:
 
 * InstanceID
 * Instance type
@@ -35,7 +35,7 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
 
 ## Manually Configure a Host Metrics Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source**.
 
     ![add-source2.png](/img/send-data/add-source2.png)
@@ -170,6 +170,6 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md).
+Collectors running on Amazon EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source.md).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.

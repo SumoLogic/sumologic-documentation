@@ -18,7 +18,7 @@ The Sumo Logic App for Workday provides insights into authentication activity, u
 
 The Sumo Logic App for Workday collects all logs in JSON format. It uses the following two types of logs:
 * SignOn Logs
-* Audit Logs
+* Activity Logs
 
 
 ### Sample Log Messages
@@ -47,7 +47,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 ```
 
 
-```txt title="Audit Logs"
+```txt title="Activity Logs"
 {
 	"activityAction":"READ",
 	"systemAccount":"wd-environments",
@@ -84,7 +84,7 @@ _sourceCategory=workday_logs and _sourceName=signonlogs
 
 Sumo Logic collects data from the User Activity and Signon Activity Reports via the Workday APIs. Once data collection is set up, the data in the Sumo Logic platform is analyzed via the Workday app in the Sumo Logic app catalog.
 
-User activity data is collected through the Workday Audit Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
+User activity data is collected through the Workday Activity Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
 
 ## Collecting Logs for the Workday App
 
@@ -187,14 +187,15 @@ For customers that do not make use of the Recruiting Functional Area, the standa
     * Browser Type
     * Device is Trusted
 6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**. After configuring all the fields you can verify all the fields using the [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
-7. Go to the **Advanced** tab and click the **Enable As Web Service** checkbox under **Web Service Options**.
-8. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
-9. Click **Done**. You can also test it by clicking the **Run** button.
-10. To get the Report URL, search for **Custom Signons and Attempted Signons Report** in the search bar and run the report.
-11. Click the **Actions** button and go to **Web Service** > View URLs.
-12. Click **OK** and copy the URL from **JSON** link. You will need this later while configuring the collection.
-
-From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should looks like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`
+7.  If you're configuring the [Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/), Go to the **Prompts** tab and look for the **Do Not Prompt at Runtime** column under the **Prompts Defaults** table. Make sure that checkboxes are disabled for the **From_Moment** and **To_Moment** rows.
+  <img src={useBaseUrl('img/integrations/saas-cloud/Workday-SignOn-Report-Prompts-Tab.png')} alt="workday custom sign-on report prompt tab" style={{border: '1px solid black'}} />
+8. Go to the **Advanced** tab and click the **Enable As Web Service** checkbox under **Web Service Options**.
+9. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
+10. Click **Done**. You can also test it by clicking the **Run** button.
+11. To get the Report URL, search for **Custom Signons and Attempted Signons Report** in the search bar and run the report.
+12. Click the **Actions** button and go to **Web Service > View URLs**.
+13. Click **OK** and copy the URL from **JSON** link. You will need this later while configuring the collection.
+From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should look like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`
 
 
 ### Step 2: Add a Hosted Collector and HTTP Source
@@ -519,14 +520,12 @@ Exception: Invalid config
 
 This section provides instructions on how to install the Workday App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-As part of this beta, the app will automatically be installed in the Sumo Logic account of your choice as part of the Admin recommended folder.
-
-Panels will start to fill automatically once you have configured the collection. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Workday Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview

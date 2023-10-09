@@ -9,7 +9,7 @@ This topic describes the CSE parsing language, which you can use to write custom
 
 ## What is parsing?
 
-Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](record-processing-pipeline.md) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
+Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](/docs/cse/schema/record-processing-pipeline) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
 Parsers are written in a specialized Sumo Parsing Language. The parser code resides in a a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
@@ -30,30 +30,7 @@ execution time.
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
 :::
 
-The parser engine also supports Grok, a system that introduces symbolic names for patterns to regular expressions (see also [Patterns](#patterns) section). You reference Grok symbolic names using this pattern:
-
-`%{<pattern_name>:<optional_group_name>}`
-
-The pattern name is replaced with the regular expression associated with that name and the entire result is wrapped with a named group capture.
-
-Grok patterns are used to make the use of complex regular expressions that match particular values, such as IP addresses, clearer and easier
-to read.
-
-The list of patterns supported can be found in the local and default config files, and `patterns.conf`.
-
-For example, given a string:
-
-`TEST 123`
-
-and the regex:
-
-`(?<login>\w+) (?<id>\d+)`
-
-we would get back this dictionary: 
-
-`{“login”: “TEST”,  “Id”: “123”}`
-
-You can find a regex debugger at[https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
+You can find a regex debugger at [https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
 
 :::note
 This debugger uses the GoLang RE2 library, but all RE2 libraries are based on the same codebase and it is a sufficient test mechanism.
@@ -75,6 +52,8 @@ In parsers, you refer to a pattern as `%{<Pattern Name>}`. You can use a patter
 named capture group like this:
 
 `%{<Pattern Name>:<field_name>}`
+
+For available patterns, see [Parsing Patterns](/docs/cse/schema/parsing-patterns).
 
 ## Mustache templates
 
@@ -191,7 +170,7 @@ You can declare your own variables in a parser. To ensure that a variable is not
 
 Messages are parsed to create a dictionary of field values, a start time, and an end time.
 
-When choosing a field name, avoid using non-alphanumeric characters unless that goes against the conventional practice or a well-known name. For instance, in PAN-firewall parser there is a field named `X-Forwarded-For`. That name was selected after the well-known protocol header. Any other name would not be as easily recognized. But, whenever possible, it’s preferable to stick with alphanumeric names so that they won’t need quoting when they are used in Sumo Platform features, such as CIP log and metric queries, action templates, and dashboards.
+When choosing a field name, avoid using non-alphanumeric characters unless that goes against the conventional practice or a well-known name. For instance, in PAN-firewall parser there is a field named `X-Forwarded-For`. That name was selected after the well-known protocol header. Any other name would not be as easily recognized. But, whenever possible, it’s preferable to stick with alphanumeric names so that they won’t need quoting when they are used in Sumo Platform features, such as Sumo Logic core platform log and metric queries, action templates, and dashboards.
 
 Field names beginning with `_$` (underscore followed by the dollar sign) aren’t saved in the field dictionary, but can be used to pass values from one part of the parsing process to another (from a parser to a transform, for instance).
 

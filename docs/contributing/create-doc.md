@@ -1,7 +1,6 @@
 ---
 id: create-doc
-title: Create and Publish Sumo Logic Document
-sidebar_label: Create a New Doc
+title: Create a New Doc
 description: Learn how to create a doc, write content in markdown, and submit your changes to our repo.
 ---
 
@@ -9,8 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Here's a high-level overview of how to create a new Sumo Logic doc.
 
-{@import ../reuse/doc-prerequisites.md}
+## Prerequisites
 
+{@import ../reuse/doc-prerequisites.md}
 
 ## Step 1: Fork the Sumo Docs repository
 
@@ -19,7 +19,7 @@ To create new doc, we recommend forking our repo, making changes in a new branch
 Feel free to reach out to the Docs Team to discuss. We're happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [Sumo Docs repository](https://github.com/SumoLogic/sumologic-documentation). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
-1. Review our README documentation guidelines.
+1. Review our [README](https://github.com/SumoLogic/sumologic-documentation#readme) documentation guidelines.
 1. Create a new branch from your forked repo using a name that best describes the work or references a GitHub issue number. For example: `<your initials>-apps-gitlab`.
 
 ## Step 2: Create a doc file
@@ -44,13 +44,12 @@ In your IDE, write the body of your doc.
 
 <details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
 
-* [Atom](https://atom.io): Create new branches, stage and commit, push and pull, resolve merge conflicts, view PRs and more - all from within your editor. The GitHub package comes bundled with Atom.
-* [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub and more.
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
    * Markdown All in One
    * Markdown Preview GitHub Styling
    * Markdown Preview Enhanced
-   * Markdown Preview Mermaid and Mermaid Markdown Syntax Highlighting for charts and graphs
+   * Markdown Preview Mermaid Support and Mermaid Markdown Syntax Highlighting for charts and graphs
+* [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
 * [iTerm2](https://iterm2.com/) - Terminal application for macOS. You can also install [Oh My Zsh](https://ohmyz.sh/) for theming.
 
 </details>
@@ -72,17 +71,36 @@ As an example, let's say you needed to add a Best Practices doc to the [**Send D
 
 Once you decide on placement, use the card HTML code in that doc to create a new entry.
 
-## Step 7: Preview your changes
+## Step 7: Create CID URL
+
+Because docs links appear throughout our product, and canonical links often change, we assign each doc a permalink URL containing a content ID (CID) number. The permalink URL does a 301 redirect to the canonical URL. This way, future changes to the canonical URL (such as a product name change) won't impact the Learn More links for the user. And it will save us code changes to the UI, providing great flexibility when we need to make quick changes.
+
+This URL is then placed in the UI in the appropriate place. For example, [https://help.sumologic.com/?cid=0071](https://help.sumologic.com/?cid=0071) links to a metrics page, which appears in the product in the **Metrics** section as a help link.
+
+To create a CID:
+1. In your GitHub authoring tool (like Atom or VS Code), open our [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
+1. Scroll down to the CIDs section, where the line items start with `"/cid/"`.
+1. Find an unused CID number, then add that value along with the canonical URL. For example:
+  ```json title="Example" {2}
+  "/cid/5120": "/docs/manage/users-roles/roles/create-manage-roles",
+  "/cid/5121": "/docs/example",
+  "/cid/5122": "/docs/get-started/library",
+  ```
+
+Ideally, although not required, this should be placed near URLs similar to the one you're adding.
+
+
+## Step 8: Preview your changes
 
 Next, you'll build and deploy a local instance of the Sumo Logic Docusaurus site.
 
-Our site is built using Docusaurus, a static site generator, which builds your site as simple static HTML, JavaScript and CSS files. To view our install installment requirements and preview your build, see [Building Locally](https://github.com/SumoLogic/sumologic-documentation#building-locally) in our README.
+Our site is built using Docusaurus, a static site generator, which builds your site as simple static HTML, JavaScript, and CSS files. To view our install installment requirements and preview your build, see [Building Locally](https://github.com/SumoLogic/sumologic-documentation#building-locally) in our README.
 
 We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.
 
-## Step 8: Submit your request
+## Step 9: Submit your request
 
-1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png). Use descriptive commit messages (and issue or ticket numbers, if applicable) detailing the content updates you are entering for content. One-line messages are fine for small changes, but bigger changes should look like this:
+1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png) Use descriptive commit messages (and issue or ticket numbers, if applicable) detailing the content updates you are entering for content. One-line messages are fine for small changes, but bigger changes should look like this:
   ```bash
   $ git commit -m "A brief summary of the commit
   >
@@ -90,11 +108,11 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
   ```
 1. Set permissions to allow maintainers to edit and update the PR ([learn more](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork)).
 1. Push your branch to the forked repo.
-1. Visit [our repo](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & Pull Request** for your branch, click this.<br/>![compare](/img/contributing/compare-pr.png)
+1. Visit [our repo](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & pull request** for your branch, click this.<br/>![compare](/img/contributing/compare-pr.png)
    * If you don't see it, create a new [PR](https://github.com/SumoLogic/sumologic-documentation/compare).
       1. Select `main` for the base branch. This is the branch all staging and production content builds from.
       1. Select your branch for the **compare**.
-      1. Click **Create Pull Request**.
+      1. Click **Create pull request**.
 1. On the Pull Request page, enter the following:
    * Make sure **base** branch is `main` and **compare** branch is the one you pushed.
    * Enter a title for the PR.
@@ -105,7 +123,7 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
    1. Add the GA release date to the title. For example, `AWS Integration release (GA: Jan 1, 2023)`.
    1. From the labels list, select the `hot🔥` label, signifying it's an extremely urgent PR.
    1. For internal Sumos only: after completion of all GitHub checks, send your PR link to the `#doc-int` and `#open-source` Slack channels for review.
-1. Click **Create Pull Request**.<br/> ![pull request](/img/contributing/pull-request.png)
+1. Click **Create pull request**.<br/> ![pull request](/img/contributing/pull-request.png)
 1. First-time contributors will be prompted in a comment to sign our Contributor License Agreement. We allow individual contributions and contributions made on behalf of companies.<br/> ![CLA bot](/img/contributing/clabot.png)
 
 ## What happens next?

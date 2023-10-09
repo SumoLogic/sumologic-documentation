@@ -4,6 +4,8 @@ title: Azure Blob Storage
 description: This Sumo integration provides a event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.
 ---
 
+import Iframe from 'react-iframe';
+
 Logs and metrics for most Azure services can be exported to Azure Storage Account as block blobs. This page describes a Sumo integration that provides an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic. 
 
 This solution is good for monitoring Azure services that do not support exporting logs to Azure Monitor, for example, Azure Web Apps and Azure Storage Accounts.
@@ -13,6 +15,19 @@ This solution is for newly created blobs only (not for existing blobs). 
 :::
 
 For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).
+
+Watch this tutorial for an overview of collecting logs from Azure Blob Storage.
+
+<Iframe url="https://www.youtube.com/embed/_-N3QGxrn9k?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 
 ## Azure information resources
 
@@ -74,11 +89,12 @@ For more information, see [Filtering events](https://docs.microsoft.com/en-us/az
 It is assumed that:
 
 * The Azure service updates the blob (adding new blocks) in small chunks and has been tested with block blobs.
+* Any JSON file in the JSON lines format that is uploaded into a storage account will result in JSON objects being extracted and sent to Sumo Logic.
 * Log files have a file extension of .csv, .json, .blob, or .log.
-  * In .csv files, it is assumed the delimiting character is a comma (,). The .csv files are converted to JSON and sent to Sumo.
-  * If the file is .json, the JSON objects are extracted and sent to Sumo.
-  * If the file is .blob, the JSON objects are extracted and sent to Sumo.
-  * If the file is .log, log lines are sent to Sumo as is.  
+  * In .csv files, it is assumed the delimiting character is a comma (,). The .csv files are converted to JSON and sent to Sumo Logic.
+  * If the file is .json, the JSON objects are extracted and sent to Sumo Logic.
+  * If the file is .blob, the JSON objects are extracted and sent to Sumo Logic.
+  * If the file is .log, log lines are sent to Sumo Logic as is.  
 :::
 
 For instructions, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).

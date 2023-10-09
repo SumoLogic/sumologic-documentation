@@ -36,9 +36,9 @@ VirusTotal enrichments are only added to Signals that are part of an Insight.
 
 ## Configure VirusTotal enrichment 
 1. Click the gear icon near the top of the CSE UI and choose **Enrichment**. 
-1. On the **Enrichment** page, click the pencil icon for VirusTotal.<br/><img src={useBaseUrl('img/cse/enrichment-page.png')} alt="enrichment-page.png" />
-2. On the **Edit VirusTotal Configuration** popup, enter your VirusTotal API Key, and click Update.<br/><img src={useBaseUrl('img/cse/edit.png')} alt="enrichment-page.png" /> 
+1. On the **Enrichment** page, click the pencil icon for VirusTotal.<br/><img src={useBaseUrl('img/cse/enrichment-page.png')} alt="enrichment-page.png" width="800" />
+2. On the **Edit VirusTotal Configuration** popup, enter your VirusTotal API Key, and click Update.<br/><img src={useBaseUrl('img/cse/edit.png')} alt="enrichment-page.png" width="400" /> 
 
 ## Example VirusTotal enrichment 
-<img src={useBaseUrl('img/cse/virus-total-enrichment.png')} alt="enrichment-page.png" /> 
+<img src={useBaseUrl('img/cse/virus-total-enrichment.png')} alt="enrichment-page.png" width="700" /> 
 

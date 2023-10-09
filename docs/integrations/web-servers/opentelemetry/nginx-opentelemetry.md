@@ -44,13 +44,13 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * Configure your Nginx server to expose status endpoint for collecting metrics: The receiver used gets stats from an Nginx Web Server instance using the status endpoint. In order to receive server statistics, you must configure the server's nginx.conf file to [enable status support](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/nginxreceiver#configuration).
 * Configure and retrieve access and error log files: Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/).
 
-## Collecting Logs, Metrics, and Installing Nginx App
+## Collection configuration and app installation
 
-The process to set up collection for Nginx data is done through the following steps.
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png' alt="Access" />
 
@@ -71,7 +71,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -111,7 +111,7 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Viewing Nginx Dashboards
 
@@ -169,7 +169,7 @@ The **Nginx - Threat Intel** dashboard provides an at-a-glance view of threats t
 
 Use this dashboard to:
 
-- Gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- Gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Threat-Intel.png' alt="Access" />
 

@@ -35,4 +35,40 @@ Cloud SOAR acts as the connective tissue between your existing tools to automate
 Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
 
 ### Comprehensive security portfolio
-Cloud SOAR is part of Sumo Logic’s comprehensive security portfolio including security monitoring and analytics and Cloud SIEM, to help your organization modernize security operations.
+Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
+
+## Support and compliance
+
+### Data retention
+
+This section lists the retention period for each type of data generated. 
+
+#### Default retention periods by data type
+
+Sumo Logic automatically deletes the following customer data according to the table retention period below, except for customers required to ensure HIPAA compliance (see second table).
+
+| Data type | Retention period |
+| :-- | :-- |
+| Incidents | 2 years |
+| Triage | 2 years |
+| Entities | 2 years |
+| Playbook and action executions | 2 years |
+
+For HIPAA-compliant customers, we delete data following the retention periods below. 
+
+:::info
+If you need to follow HIPAA compliance, it is important to explicitly communicate this when requesting Cloud SOAR activation.
+:::
+
+| Data type | Retention period |
+| :-- | :-- |
+| Incidents | 7 years |
+| Triage | 7 years |
+| Entities | 7 years |
+| Playbook and action executions | 7 years |
+
+#### Custom retention periods
+
+You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
+
+In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.

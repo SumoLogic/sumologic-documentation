@@ -33,11 +33,11 @@ rollingstd <field> [, window_length] [as <field>]
 Running a query such as:
 
 ```sql
-_sourcecategory=katta
+_sourceCategory=katta
 | timeslice by 1m
-| count by _timeslice,_sourcehost
+| count by _timeslice,_sourceHost
 | sort + _timeslice
-| rollingstd _count,1 by _sourcehost
+| rollingstd _count,1 by _sourceHost
 ```
 
 produces results like:
@@ -70,10 +70,10 @@ Before 5 values are available, the rollingstd operator takes an average
 of whatever is available. For example:
 
 ```sql
-_sourcecategory=katta
+_sourceCategory=katta
 | timeslice by 1m
-| count by _timeslice,_sourcehost
-| where _sourcehost="prod-katta-237"
+| count by _timeslice,_sourceHost
+| where _sourceHost="prod-katta-237"
 | sort + _timeslice
 | rollingstd _count,5
 ```

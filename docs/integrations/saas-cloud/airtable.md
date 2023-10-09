@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="50" />
 
 The Airtable App for Sumo Logic monitors and analyzes your organization's Airtable audit logs, providing insights into user activity, data trends, and security events. This app is based on the Airtable Audit Logs, which provide detailed information on all actions performed in your Airtable account.
+
 The Airtable App makes it simple to import data from your Airtable audit logs into Sumo Logic, where you can perform real-time analysis and build dashboards to visualize key metrics. You can monitor security events and gain insights into user activity across your organization.
 
 The Airtable App allows you to:
@@ -71,24 +72,9 @@ _sourceCategory="Labs/airtable"
 
 ## Installing the Airtable App
 
-Locate and install the app from the **App Catalog**. To see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) to create the source and use the same source category while installing the app.
 
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **Airtable App** using the steps described in the [Airtable Cloud-to-Cloud Source](docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Airtable Dashboards​
 

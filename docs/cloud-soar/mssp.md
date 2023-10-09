@@ -1,7 +1,7 @@
 ---
 id: mssp
 title: Cloud SOAR for MSSPs
-sidebar_label: Cloud SOAR for MSSPs
+sidebar_label: MSSP
 keywords:
     - SOAR
     - orchestration
@@ -51,14 +51,14 @@ This **Tenants** tab allows you to select the tenants for which the widget will 
 
 <img src={useBaseUrl('img/cloud-soar/edit-widget-tenants.png')} alt="edit-widget-tenants"/>
 
-For more information about Cloud SOAR dashboards, see [Dashboards](/docs/cloud-soar/main-menu.md#dashboards).
+For more information about Cloud SOAR dashboards, see [Dashboards](/docs/cloud-soar/main-menu#dashboards).
 
 ## Nodes Management
 
 The **Nodes Management** page shows the status of all paired child tenants and provides the following actions you can perform:
 
 * **Ping**. Active status check (PING).
-* **Connect**. Connec to to tenant.
+* **Connect**. Connect to tenant.
 * **Edit**. Edit the configuration of a tenant.
 * **Unpair**. Unpair a tenant.
 
@@ -80,7 +80,7 @@ You’ll be offered the option to push the Playbook to selected tenants, as desi
 
 <img src={useBaseUrl('img/cloud-soar/save-to-tenants.png')} alt="save-to-tenants"/>
 
-For more information, see [Playbook](/docs/cloud-soar/global-functions-menu.md#playbook).
+For more information, see [Playbook](/docs/cloud-soar/global-functions-menu#playbook).
 
 ## Custom Fields
 
@@ -96,4 +96,4 @@ When you mouse over the icons, you’ll see **Synchronized** and **Push Field**.
 
 <img src={useBaseUrl('img/cloud-soar/synchronized.png')} alt="synchronized"/>
 
-For more information about Custom Fields, see [Customization](/docs/cloud-soar/global-functions-menu.md#customization).
+For more information about Custom Fields, see [Customization](/docs/cloud-soar/global-functions-menu#customization).

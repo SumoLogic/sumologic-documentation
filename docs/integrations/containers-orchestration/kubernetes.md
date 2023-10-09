@@ -182,7 +182,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 ## Viewing Kubernetes Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Cluster Explorer
@@ -312,12 +312,12 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="K8s dashboards" />
 
 
-### Health Check
+### Collection Health Check
 
-The **Kubernetes - Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
+The **Kubernetes - Collection Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
 
 Use this dashboard to:  
-* Monitor the health of FluentD and FluentBit pods in your Kubernetes environment
+* Monitor the health of OpenTelemetry based collection in your Kubernetes environment.
   :::note 
   Currently, in default configurations, [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) is used instead of FluentD and Fluent Bit.
   :::

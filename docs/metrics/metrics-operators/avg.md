@@ -7,13 +7,13 @@ sidebar_label: avg
 
 The `avg` operator calculates the average of all matching time series. If grouping is specified, it calculates the average for each group.
 
-## avg Syntax
+## Syntax
 
 ```sql
 avg [by FIELD [, FIELD, ...]]
 ```
 
-## avg examples
+## Examples 
 
 ### Average value across all time series 
 

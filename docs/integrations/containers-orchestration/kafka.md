@@ -346,16 +346,16 @@ This section provides instructions for configuring log collection for Kafka runn
 At this point, Kafka logs should start flowing into Sumo Logic.
 
 
-#### Using Open Telemetry  
+#### Using OpenTelemetry  
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Kafka metric collection and the Filelog receiver for collecting Kafka logs. Sumo Logic OT distro runs on the same system as Kafka, and uses the Kafka Jolokia input plugin for Telegraf to obtain Kafka metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic using the Filelog receiver.
 
 ##### Configure Collection of Kafka Metrics and Logs  
 
 * Install sumologic-otel-collector by following the instructions for your operating system:
-  * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux)
-  * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos)
-  * [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows)
+  * [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux)
+  * [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos)
+  * [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows)
 * Configure and start `sumologic-otel-collector`.
 
 As part of collecting metrics data from Kafka, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for Telegraf to get data from otel and then send data to Sumo Logic.

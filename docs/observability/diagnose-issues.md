@@ -9,7 +9,7 @@ After you have identified an issue using the available monitoring tools, the nex
 
 ## Connect the dots with Entity Inspector
 
-You can use [Entity Inspector](../dashboards-new/drill-down-to-discover-root-causes.md) to connect the dots between your various data streams of logs, metrics, and traces. Using the guided experience, you can start from an alert and drill down to the root cause quickly.
+You can use [Entity Inspector](../dashboards/drill-down-to-discover-root-causes.md) to connect the dots between your various data streams of logs, metrics, and traces. Using the guided experience, you can start from an alert and drill down to the root cause quickly.
 
 ![entity-inspector.png](/img/observability/entity-inspector.png)
 
@@ -21,10 +21,10 @@ Observe apps and microservices using [Transaction Tracing](/docs/apm/traces) and
 
 ## Analyze Key Metrics quickly using Metrics Explorer 
 
-Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md) that comes with a new structured query builder, and an extended range of visualizations for ad-hoc analysis.  Mimicking the Dashboard (New) workflow, you now have the same unified experience in the main metrics tab.
+Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md) that comes with a new structured query builder, and an extended range of visualizations for ad-hoc analysis.  Mimicking the Dashboard workflow, you now have the same unified experience in the main metrics tab.
 
 ![metrics-explorer.png](/img/observability/metrics-explorer.png)
 
-## Benchmark KPIs with Rest of world
+## Benchmark KPIs with the rest of the world
 
 You can isolate or detect AWS errors using [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops). The service provides comparison benchmarks that on-call engineers can use to identify abnormal patterns and issues in your AWS service compared to the rest of the world, and then take action to remediate those issues.  

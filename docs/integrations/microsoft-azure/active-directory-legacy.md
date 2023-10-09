@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
 
-The Active Directory Legacy App allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
+The Sumo Logic app for Active Directory Legacy (2008+) allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory App in combination with the Windows App.
 
@@ -191,7 +191,7 @@ The **Frequency** option should be set according to your environment. We use a s
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -200,7 +200,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/active-directory-legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
+    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/active-directory-legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourceCategory=*adscripts*)`.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 

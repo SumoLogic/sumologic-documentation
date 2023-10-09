@@ -52,7 +52,7 @@ An Azure application with specific permissions is required for Sumo Logic to acc
 ### Create Client Secret
 
 1. Within your Azure application setup on the **App Registration** page, click **Certificates & secrets** from the left navigation pane and then click **New client secret**. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-1.png')} alt="ms-exchange-client-secret-step-1.png" width="700" />
-2. A right pane will slide out asking for a description and expiration for the secret. This secret is used by Sumo Logic to connect via OAuth 2.0 to establish continuous access to your Exchange Trace logs with an auto generated refresh token. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-2.png')} alt="ms-exchange-client-secret-step-2.png" width="550" />
+2. A right pane will slide out asking for a description and expiration for the secret. This secret is used by Sumo Logic to connect via OAuth 2.0 to establish continuous access to your Exchange Trace logs with an auto-generated refresh token. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-2.png')} alt="ms-exchange-client-secret-step-2.png" width="550" />
 3. Take note of the hidden value displayed on this page. After leaving this page, you will no longer be able to see this value from Azure. We recommend storing it in a protected password management vault. <br/> <img src={useBaseUrl('img/send-data/ms-exchange-client-secret-step-3.png')} alt="ms-exchange-client-secret-step-3.png" width="700" />
 
 ### Assign Azure Roles to Your Application
@@ -143,3 +143,11 @@ This API can return a 400 error code which could mean one of the following reaso
 
 1. "The provided authorization code or refresh token has expired due to inactivity". Regenerate your authorization code and use it shortly after generation to update your Sumo Logic C2C source. This token will expire if not used quickly.
 2. "Invalid request. Request is malformed or invalid". This response error can occur if other parts of the configuration are incorrect such as an invalid "Client Secret Value" or incorrect set permissions. Ensure all of the setup steps are followed and the source has the correct configuration.
+
+:::note intermittent JSON error
+When querying for the Microsoft Exchange trace log messages, Microsoft API may sporadically return a HTML webpage titled "Sign in to Outlook" instead of JSON events.
+
+This will force the health status of the source into an error state with the error text `invalid character '<' looking for beginning of value` as we try to JSON decode the data. The API will revert back to providing us the expected JSON events and collection will continue as there is no issue with the authentication, but it does cause the health status of the source to flip into an error state.
+
+Our source keeps track of a time cursor for events and will only move the time cursor forward once we have successfully received, decoded the JSON, and sent the logs into Sumo Logic before we move the time cursor forward to ensure there is no data loss. If you experience this issue, contact Microsoft support.
+:::

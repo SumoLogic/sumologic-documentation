@@ -53,11 +53,13 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
 4. Save the `server.cnf` file.
 5. Restart the MariaDB server: `systemctl restart mariadb`
 
-## Configure MariaDB Logs Collection
+## Collection configuration and app installation
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Collector.png' alt="Collector" />
 
@@ -111,7 +113,7 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Logs
 

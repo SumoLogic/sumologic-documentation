@@ -43,7 +43,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox1 card">
   <div className="container">
-  <a href="/docs/apm/real-user-monitoring/configure-data-collection"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector</h4></a>
+  <a href="/docs/send-data/hosted-collectors/configure-hosted-collector"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="30"/><h4>Configure a Hosted Collector</h4></a>
   <p>Set up Hosted Collectors so you can move data to Sumo Logic.</p>
   </div>
 </div>
@@ -81,6 +81,13 @@ The maximum number of Collectors allowed per organization is 10,000.
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-syslog-source"><img src={useBaseUrl('img/send-data/cloud-syslog.png')} alt="thumbnail icon" width="60"/><h4>Cloud Syslog Sources</h4></a>
   <p>Configure a cloud syslog source to send data to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox8 card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/webhook-sources/zoom"><img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="60"/>
+  <h4>Zoom Source</h4></a>
+  <p>Learn how to create HTTP Zoom source and enable events subscriptions.</p>
   </div>
 </div>
 </div>

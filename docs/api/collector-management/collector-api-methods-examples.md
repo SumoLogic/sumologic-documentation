@@ -3,6 +3,8 @@ id: collector-api-methods-examples
 title: Collector API Methods and Examples
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 
 :::caution
@@ -34,11 +36,7 @@ The Collector Management API allows you to manage Collectors and Sources from an
 
 ## Rate limiting
 
-* A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
-
-If a rate is exceeded, a rate limit exceeded 429 status code is returned.
-
+{@import ../../reuse/api-rate-limit.md}
 
 ## Response fields  
 
@@ -124,7 +122,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>Can be specified instead of <code>cutoffTimestamp</code> to provide a relative offset with respect to the current time. Example: use <code>"-1h"</code>, <code>"-1d"</code>, or <code>"-1w"</code> to collect data that's less than one hour, one day, or one week old, respectively.
+   <td>Can be specified instead of <code>cutoffTimestamp</code> to provide a relative offset with respect to the current time. Example: use <code>"-1h"</code>, <code>"-1d"</code>, or <code>"-1w"</code> to collect data that's less than one hour, one day, or one week old, respectively. (Note that if you set this property to a relative time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)
    </td>
    <td>Not modifiable
    </td>
@@ -138,7 +136,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>0 (collects all data)
    </td>
-   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch
+   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)  
    </td>
    <td>Modifiable
    </td>
@@ -286,7 +284,6 @@ The following table lists the API response fields for installed and hosted Colle
   </tr>
 </table>
 
-
 The following table lists additional response fields for Installed Collectors only.
 
 <table>
@@ -414,7 +411,6 @@ Get a list of Collectors with an optional limit and offset.
    </td>
   </tr>
 </table>
-
 
 
 #### Example  
@@ -865,7 +861,7 @@ Request:
 
 
 ```bash
-curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "If-Match: \"f58d12c6986f80d6ca25ed8a3943daa9\"" -T updated_collector.json https://api.sumologic.net/api/v1/collectors/15
+curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "If-Match: \"f58d12c6986f80d6ca25ed8a3943daa9\"" -T updated_collector.json https://api.sumologic.com/api/v1/collectors/15
 ```
 
 

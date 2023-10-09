@@ -1,6 +1,6 @@
 ---
 id: aws-s3-scan-interval-sources
-title: AWS S3 Scan Interval for Sources
+title: Amazon S3 Scan Interval for Sources
 sidebar_label: Amazon S3 Scan Interval
 description: A scan interval defines the waiting time between scans of the objects in your S3 bucket.
 ---
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
 
-When configuring an Amazon S3 Source, you'll set the scan interval, which defines the waiting time between scans of the objects in your S3 bucket. It's important to set an interval that is long enough to allow new files to be uploaded, but is not too short that scans are performed without any new files being available to upload.
+When configuring an [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source), you'll set the scan interval, which defines the waiting time between scans of the objects in your S3 bucket. It's important to set an interval that is long enough to allow new files to be uploaded, but is not too short that scans are performed without any new files being available to upload.
 
 A scan interval that's too long can cause a delay in new files being uploaded in a timely manner. A scan interval that's too short could cause additional charges to your AWS account. When Sumo Logic scans the contents of a bucket for new files, it will perform a number of listings, which may increase with the number of objects in the bucket. Sumo Logic can't determine if the data in your S3 bucket has changed without listing each object in every scan interval.  
 

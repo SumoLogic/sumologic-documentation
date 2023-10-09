@@ -19,9 +19,9 @@ With the Sumo Logic App for Miro, security teams can stay on top of potential se
 
 This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/reference/log-object) from Miro.
 
-## Sample Audit Logs
+## Sample Log Message
 
-```json
+```json title="Audit Log"
 {
       "type": "event",
       "event": "board_opened",
@@ -67,15 +67,15 @@ _sourceCategory=miro
 
 ## Set up collection
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) App to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) source and use the same source category while installing the app.
 
 ## Installing the Miro App
 
-This section has instructions for installing the Miro App for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Miro App for Sumo Logic.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+{@import ../../reuse/apps/app-install.md}
 
-1. From the **App Catalog**, search for and select the app.
+1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. Click **Add Integration**.
 1. Configure **Miro App** using the steps described in the [Miro Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/). If you already have set up your data, skip this step and click **Next**.
 1. Complete the following fields.
@@ -98,18 +98,12 @@ The **Miro - Overview** dashboard provides a comprehensive overview of events re
 
 The widgets allow you to track and analyze event-related information, including the total number of events, their distribution, team-wise breakdown, creation and opening of boards over time, and their geographical locations. The Recent File Event Summary and Recent Event Summary widgets provide a summary of the latest events for quick reference. A dashboard is a useful tool for monitoring and improving event management by providing quick access to relevant information.
 
-
-<!--
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro-Overview.png" />
--->
 
+### Miro - Security Events
 
-### Miro - Security Activity
+The **Miro - Security Events** dashboard provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Sign-in Security Events, Account(s) Created, Account(s) Deleted, User(s) Deactivated, User(s) Reactivated, Distribution of Sign-in Security Events, Sign-In over time by Authentication Methods, and Sign-in from Risky Geo-Locations.
 
-The **Miro - Security Activity** dashboard provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Total SignIn Security Events, Total Account(s) Created, Total Account(s) Deleted, Total User(s) Deactivated, Total User(s) Reactivated, Distribution of SignIn Security Events, Sign-In over time by Authentication Methods, and SignIn from Risky Geo-Locations.
+The widgets allow you to track and analyze your security events, including the number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of Sign-in Security Events widget provides an overview of sign-in patterns across different events, while the Sign-in over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The Sign-in from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
 
-The widgets allow you to track and analyze your security events, including the total number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of SignIn Security Events widget provides an overview of sign-in patterns across different events, while the SignIn over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The SignIn from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
-
-<!--
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Activity.png' alt="Miro-Security-Activity.png" />
--->
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro-Security-Events.png" />

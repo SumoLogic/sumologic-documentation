@@ -32,11 +32,13 @@ Cassandra has three main logs: system.log, debug.log, and gc.log which hold gene
 
 These logs by default live in `${CASSANDRA_HOME}/logs`, but most Linux distributions relocate logs to `/var/log/cassandra`. Operators can tune this location as well as what levels are logged using the provided logback.xml file. For more details on Cassandra logs, see[ this](https://cassandra.apache.org/doc/latest/troubleshooting/reading_logs.html) link.
 
-## Configure Cassandra Logs Collection
+## Collection configuration and app installation
+
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/opentelemetry/set-up-collector.md}
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Cassandra-OpenTelemetry/Cassandra-Collector.png' alt="Collector" />
 
@@ -53,7 +55,7 @@ You can add any custom fields which you want to be tagged with the data ingested
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/opentelemetry/send-logs-intro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 Linux:
 
@@ -63,7 +65,7 @@ Linux:
   sudo systemctl restart otelcol-sumo
   ```
 
-{@import ../../../reuse/opentelemetry/send-logs-outro.md}
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log
 

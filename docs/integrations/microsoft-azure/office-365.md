@@ -121,7 +121,7 @@ We recommend the following Source Category naming convention:
 
 ## Installing the Microsoft Office 365 App
 
-Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
 
 To install the app:
 

@@ -6,18 +6,15 @@ description: Learn how to configure sources and processing rules using JSON.
 
 Installed Collector and Hosted Collector sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
-:::important
-JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+:::caution Limitations
+This feature is **not supported** for our [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector).
 :::
 
-See the following topics for additional information:
-
- * [Collector Management API](/docs/api/collector-management)
- * [JSON Source Parameters for Hosted Collectors](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources)
- * [JSON Source Parameters for Installed Collectors](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)
- * [View or Download Collector or Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration)
-
 ## Defining a Source JSON file
+
+:::info
+JSON files must be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+:::
 
 When registering a Collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
 [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) or [sumo.conf](/docs/send-data/installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors) configuration file. These parameters are used the first time a collector is set up.
@@ -33,8 +30,8 @@ For more information on setting the `syncSources` parameter, see [Local Confi
 
 You can use JSON to configure multiple sources in either of the following ways:
 
- * Create a single JSON file with the configuration information for all the sources (sources.json).
- * Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
+* Create a single JSON file with the configuration information for all the sources (sources.json).
+* Create individual JSON files, one for each source, and then combine them in a single folder. You then configure the source folder instead of the individual sources.
 
 :::note
 The maximum number of Sources allowed on a Collector is 1,000.
@@ -84,7 +81,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [AWS CloudTrail Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-cloudtrail-source) | Polling
 | [AWS Elastic Load Balancing Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-elastic-load-balancing-source) | Polling |
 | [AWS Kinesis Firehose for Logs Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-kinesis-firehose-for-logs-source) | HTTP |
-| [AWS S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-s3-audit-source) | Polling |
+| [Amazon S3 Audit Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#amazon-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#aws-metadata-tag-source) | Polling |
 | [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) | Universal |
 | [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source) | Universal |
@@ -152,14 +149,15 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward). Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `hashAlgorithm` | string | No | md5 | Refer to [Hash Rules](/docs/send-data/collection/processing-rules/hash-rules/). You can also add available values ["MD5", "SHA-256"]. | modifiable |
 
 **When collection should begin**
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `cutoffTimestamp` | Long | No | 0 (collects all data) | Can be specified instead of cutoffRelativeTime to only collect data more recent than this timestamp, specified as milliseconds since epoch (13 digit). You can use this site to convert to epoch time: http://www.epochconverter.com/<br/>Times in the future are supported. For a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the `cutoffTimestamp` to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the `cutoffTimestamp`. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. | modifiable |
-| `cutoffRelativeTime` | String | No |  | Can be specified instead of `cutoffTimestamp` to provide a relative offset with respect to the current time.<br/>`time` can be either months (`M`), weeks (`w`), days (`d`), hours (`h`), or minutes (`m`). Use 0m to indicate the current time.Times in the future are not supported.<br/>Example: use -1h, -1d, or -1w to collect data that's less than one hour, one day, or one week old, respectively.<br/>For a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the cutoffRelativeTime to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the cutoffRelativeTime. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. | not modifiable |
+| `cutoffTimestamp` | Long | No | 0 (collects all data) | Can be specified instead of cutoffRelativeTime to only collect data more recent than this timestamp, specified as milliseconds since epoch (13 digit). You can use this site to convert to epoch time: http://www.epochconverter.com/<br/>Times in the future are supported. For a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the `cutoffTimestamp` to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the `cutoffTimestamp`. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.) | modifiable |
+| `cutoffRelativeTime` | String | No |  | Can be specified instead of `cutoffTimestamp` to provide a relative offset with respect to the current time.<br/>`time` can be either months (`M`), weeks (`w`), days (`d`), hours (`h`), or minutes (`m`). Use 0m to indicate the current time.Times in the future are not supported.<br/>Example: use -1h, -1d, or -1w to collect data that's less than one hour, one day, or one week old, respectively.<br/>For a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the cutoffRelativeTime to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the cutoffRelativeTime. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. (Note that if you set this property to a relative time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.) | not modifiable |
 
 ## Non-configurable parameters
 
@@ -338,14 +336,14 @@ To determine the sinkId for a data forwarding destination, you use the Sumo web 
 
 These instruction assume you have already created a data forwarding destination.
 
-1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-forwarding/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
+1. Follow the instructions in [Configure processing rules for data forwarding](/docs/manage/data-archiving/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step:
-   1. Select **Manage Data > Collection > Collection**. 
+   1. Select **Manage Data** > **Collection** > **Collection**. 
    1. Click the icon to the right of the source. The API usage information panel appears. Make a note of the sinkId in the filter section of the JSON.<br/>  ![sink id](/img/send-data/sinkId.png)
 1. Click the icon to the right of the Source. Make a note of the sinkId in the filter section of the JSON.
 1. Click Done to close the API usage information panel.
 1. Now that you have determined the sinkId for the data forwarding destination, delete the test rule.
-   1. Select **Manage Data > Collection > Collection**.
+   1. Select **Manage Data** > **Collection** > **Collection**.
    1. Navigate to the source to which you added the test rule.
    1. In the **Processing Rules** section of the page, click the delete icon to the right of the test rule. <br/>![proc rule](/img/send-data/proc-rule.png)
 

@@ -10,7 +10,7 @@ You can generate a new URL for an HTTP Source at any time. Generating a new UR
 
 To generate a new URL:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the **Manage Collection** page, click **Regenerate URL** next to the HTTP source.<br/> <img src={useBaseUrl('img/send-data/regenerate-url.png')} alt="HTTPregenURL"/>
 1. In the **HTTP Source Address** dialog box, click **Generate**.<br/> <img src={useBaseUrl('img/send-data/generate-new-url.png')} alt="http_source_dialog_generate.png" width="350"/>
 1. When asked to confirm the generation, click **OK**.

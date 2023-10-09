@@ -10,16 +10,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
-The Sumo Logic AWS API Gateway App provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
+The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
-## Log and Metric Types  
+## Log and Metric types  
 
 The AWS API Gateway app uses the following logs and metrics:
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 
 
-### Sample Log Message
+### Sample log message
 
 ```json title="Sample CloudTrail Log Message"
 {
@@ -64,7 +64,7 @@ The AWS API Gateway app uses the following logs and metrics:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Average Latency by API Name (Metric-based)"
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
@@ -104,7 +104,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md):
 1. **Name**. Enter a name to display the new Source.
 2. **Description**. Enter an optional description.
-3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
+3. **S3 Region**. Select the Amazon Region for your **API Gateway** S3 bucket.
 4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
 5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string.
   :::note NOTES
@@ -114,12 +114,11 @@ To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-
 7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources)
 9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-10. **Enable Timestamp Parsing**. Select the check box.
-11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
-12. **Timestamp Format.** Select Automatically detect the format.
-13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+10. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+11. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+12. **Timestamp Format.** Select **Automatically detect the format**.
+13. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 14. Click **Save**.
-
 
 ### Field in Field Schema
 
@@ -143,7 +142,7 @@ Parse Expression:
 | fields region, namespace, apiname, accountid
 ```
 
-### Centralized AWS CloudTrail Log Collection
+### Centralized AWS CloudTrail log Collection
 
 In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 ```sql
@@ -167,9 +166,9 @@ Enter a parse expression to create an `account` field that maps to the alias you
 ```
 
 
-## Installing the AWS API Gateway App
+## Installing the AWS API Gateway app
 
-Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic app to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -186,7 +185,7 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing AWS API Gateway Dashboards
+## Viewing AWS API Gateway dashboards
 
 ### Overview
 
@@ -222,10 +221,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Audit-Events.png')} alt="AWS API Gateway" />
 
 
-
 ### Latency and Cache
 
-**AWS API Gateway - Latency, Cache **dashboard provides insights into API Gateway performance including API requests, latency, API cache hits, and back-end cache misses.
+**AWS API Gateway - Latency, Cache** dashboard provides insights into API Gateway performance including API requests, latency, API cache hits, and back-end cache misses.
 
 Use this dashboard to:
 * Monitor the overall responsiveness of API calls (latency), comparing times (in milliseconds) between receiving a request from and returning a response to a client.
@@ -238,7 +236,7 @@ Use this dashboard to:
 
 ### 4xx and 5xx Errors
 
-**AWS API Gateway - 4xx and 5xx Errors **dashboard provides insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client-side errors, and server-side errors.
+**AWS API Gateway - 4xx and 5xx Errors** dashboard provides insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client-side errors, and server-side errors.
 
 Use this dashboard to:
 

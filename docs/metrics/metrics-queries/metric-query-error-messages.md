@@ -48,9 +48,9 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 *Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries, and 37000 for aggregate queries (queries that have an aggregate operator like `avg` and `max`). In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
+For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries, and 50,000 for aggregate queries (queries that have an aggregate operator like `avg` and `max`). In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
 
-When a single row of a query scans more than 37000 time series, more than 500M raw data points or more than 50M rollup data points, Sumo will stop after scanning the current time series, and aggregate the results based on the scanned inputs. A message like this appears when the input limit is reached:
+When a single row of a query scans more than 50,000 time series, more than 500M raw data points or more than 50M rollup data points, Sumo will stop after scanning the current time series, and aggregate the results based on the scanned inputs. A message like this appears when the input limit is reached:
 
 `This query is scanning too much data, the first (number of input time series scanned) time series were included.`
 

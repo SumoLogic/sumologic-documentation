@@ -47,10 +47,10 @@ When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Be
 
 To configure an Akamai SIEM API Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
-1. Select **Akamai SIEM API**. <br/>   ![Akamai source icon.png](/img/send-data/Akamai-source-icon.png)
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/>   ![Akamai SIEM API Source](/img/send-data/Akamai-SIEM-API-Source.png)
+1. Select **Akamai SIEM API**.<br/><img src={useBaseUrl('img/send-data/Akamai-source-icon.png')} alt="Thumbnail icon" width="90"/>
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/Akamai-SIEM-API-Source.png')} alt="Thumbnail icon" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`:Akamai
@@ -265,6 +265,7 @@ To configure an Akamai SIEM API Source:
    * **Option: Reset the offset token to start collection from current point in time**: In some cases, the Collector might enter a state where the offset token used to track what data has already been consumed might become invalid. This can occur if the Collector stops collecting for a period of time or if the credentials have expired. The Collector attempts to detect this condition and reset the offset token. It may be the case that manual intervention is needed to reset the offset token. In this case, you should select the **Reset the offset token to start collection from current point in time** so the Collector will start collecting from the current period in time.
    * **Option: Number of logs to pull per request**: This option controls the number of logs that are pulled for each request. The default value for this is 10,000, but in some environments it may be necessary to increase the number of logs pulled with each request. If the integration is falling behind in terms of its collection rate, this limit should be increased to pull more events with each request. Supported values are between 1,000 and 200,000, and if a value out of this range is specified the default value of 10,000 is used.
    * **Option: Poll Interval (in seconds)**: This option controls the poll interval for requesting events. This polling interval is only used when the previous requests indicate no more log data is available. The interval value must be at least 30, if anything lower is defined, 30 is automatically defined.
+1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
 1. When you are finished configuring the Source, click **Submit**.
 
 ## Error types

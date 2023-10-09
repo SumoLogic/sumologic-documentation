@@ -45,4 +45,4 @@ Additional details on how the Extension works:
 
 In case of Failure due to throttling or network issue, a failover mechanism to send logs to S3 bucket is also provided with Sumo Logic AWS Lambda extension. To see all the available parameters, visit [Sumo logic AWS Lambda Extension](collect-aws-lambda-logs-extension.md).
 
-The Logs that are sent to S3, then can be sent to Sumo Logic using the [Sumo Logic AWS S3 source](../hosted-collectors/amazon-aws/aws-s3-scan-interval-sources.md).
+The Logs that are sent to S3, then can be sent to Sumo Logic using the [Sumo Logic Amazon S3 source](../hosted-collectors/amazon-aws/aws-s3-scan-interval-sources.md).

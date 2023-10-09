@@ -42,6 +42,8 @@ jobs:
       AWS_EC2_METADATA_DISABLED: "true"
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:

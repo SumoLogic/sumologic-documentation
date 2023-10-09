@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100" />
 
-The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status. 
+The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status.
 
-The distribution of **Phishing Security Tests** by difficulty and long-running **Phishing Security Tests** panels offer insights into the difficulty level of the phishing tests and identify tests that have been running for an extended period. The app's **Phish Prone Percentage** dashboard panel helps you understand the percentage of users who are at higher risk of falling for a phishing attack. 
+The distribution of **Phishing Security Tests** by difficulty and long-running **Phishing Security Tests** panels offer insights into the difficulty level of the phishing tests and identify tests that have been running for an extended period. The app's **Phish Prone Percentage** dashboard panel helps you understand the percentage of users who are at higher risk of falling for a phishing attack.
 
 The **Geo Location of Failed Users** dashboard panel provides geographic insights into where failed users are located. The **Phishing Security Tests Summary** and **Phish Failures Summary** dashboard panels provide high-level summaries of the organization's testing performance. Finally, the **Top Failed Users** panel identifies users who have failed multiple tests and may require additional training.
 
@@ -124,24 +124,9 @@ email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment
 
 ## Installing the KnowBe4 App
 
-Locate and install the app from the **App Catalog**. To see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 Before you begin, collect logs from KnowBe4 and ingest them into Sumo Logic. Refer to the [KnowBe4 Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/) to create the source and use the same source category while installing the app.
 
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **KnowBe4 App** using the steps described in the [KnowBe4 Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/). If you already have set up your data, skip this step and click **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but you will be able to view full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing KnowBe4 Dashboards​
 

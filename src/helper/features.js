@@ -179,7 +179,7 @@ export const features4 = [
       description='SOAR description'>
       Modernize and automate your SOC for faster response times.
     </Translate>),
-    link: 'https://www.sumologic.com/solutions/cloud-soar',
+    link: 'docs/cloud-soar',
   },
 ];
 
@@ -211,7 +211,7 @@ export const features5 = [
       description='Dashboards description'>
       Create visualizations, monitors, and alerts for your apps.
     </Translate>),
-    link: 'docs/dashboards-new',
+    link: 'docs/dashboards',
   },
   {
     title: translate({

@@ -12,10 +12,10 @@ Often used in financial applications, calculating standard deviations also has v
 `stddev` calculates the standard deviation at each time interval across all the time series, resulting in one time series that contains the standard deviation per time slot. If you group the results by a dimension, the standard deviation for the time series in each group is calculated. The result is returned as a metric named _stddev_.
 
 
-## stddev syntax
+## Syntax
 
 ```sql
-metric query | stddev [by FIELD [, FIELD, ...]]
+stddev [by FIELD [, FIELD, ...]]
 ```
 
 `stddev` isn’t supported in queries that use the `quantize` operator.
@@ -24,16 +24,16 @@ metric query | stddev [by FIELD [, FIELD, ...]]
 
 **Example 1**
 
-This query returns the standard deviation of the `cpu_system` metric from the _prod_ deployment.
+This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment.
 
 ```sql
-dep=prod metric=cpu_system | stddev
+dep=prod metric=CPU_Sys | stddev
 ```
 
 **Example 2**
 
-This query returns the standard deviation of the `cpu_system` metric from the _prod_ deployment, grouped by the source that collected the metrics.
+This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment, grouped by the source that collected the metrics.
 
 ```sql
-dep=prod metric=cpu_system | stddev by _source
+dep=prod metric=CPU_Sys | stddev by _source
 ```

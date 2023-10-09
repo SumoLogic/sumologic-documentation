@@ -4,6 +4,7 @@ title: Processing Rules
 description: Use Sumo Logic processing rules to filter data at ingest and to forward data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Processing rules filter and can forward data sent to Sumo Logic from a Source. The rules affect only the data sent to Sumo Logic; logs and metrics on your end remain intact and unchanged. Data filtered by a Collector using Processing Rules does not count towards your daily data volume quota.
 
@@ -45,4 +46,42 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper" markdown="1">
+<div className="box smallbox1 card">
+  <div className="container">
+  <a href="/docs/send-data/collection/processing-rules/create-processing-rule/"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Create a Processing Rules</h4></a>
+  <p>Processing rules filter and can forward data sent to Sumo Logic from a Source.</p>
+  </div>
+</div>
+<div className="box smallbox2 card">
+  <div className="container">
+  <a href="/docs/send-data/collection/processing-rules/data-forwarding-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Data Forwarding Rules
+</h4></a>
+  <p>Data Forwarding rules forward data collected from an Installed Collector to non-Sumo Logic destinations.</p>
+  </div>
+</div>
+<div className="box smallbox3 card">
+  <div className="container">
+  <a href="/docs/send-data/collection/processing-rules/hash-rules/"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Hash Rules</h4></a>
+  <p>With a hash rule, an expression you choose will be replaced by a hash code.</p>
+  </div>
+</div>
+<div className="box smallbox4 card">
+  <div className="container">
+  <a href="/docs/send-data/collection/processing-rules/mask-rules/"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Mask Rules</h4></a>
+  <p>Create a mask rule to replace an expression with a mask string.</p>
+  </div>
+</div>
+<div className="box smallbox5 card">
+  <div className="container">
+  <a href="/docs/send-data/collection/processing-rules/include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Include and Exclude Rules</h4></a>
+  <p>Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic.</p>
+  </div>
+</div>
+<div className="box smallbox6 card">
+  <div className="container">
+  <a href="/docs/send-data/collection/processing-rules/metrics-include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Metrics Include and Exclude Rules</h4></a>
+  <p>Use metrics processing rules to specify what metrics a metrics source are sen to Sumo Logic.</p>
+  </div>
+</div>
+</div>

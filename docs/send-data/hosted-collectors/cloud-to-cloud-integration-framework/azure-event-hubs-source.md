@@ -28,6 +28,9 @@ This Source is available in the Fed deployment.
 
 ## Prerequisites
 
+The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to a event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
+
+
 1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/> ![AzureEventHubstep1.png](/img/send-data/AzureEventHubstep1.png)
 1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
 1. Create an Event Hub Instance.<br/> ![AzureEventHubstep4.png](/img/send-data/AzureEventHubstep4.png)
@@ -39,14 +42,14 @@ This Source is available in the Fed deployment.
     In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
 1. Copy the Shared Access Policy Key.<br/>  ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
     Copy the Primary/Secondary key associated with this policy.
-1. When [configuring the Azure Event Hubs Source](azure-event-hubs-source.md) in Sumo Logic, our input fields would be:
+1. When [configuring the Azure Event Hubs Source](#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
 
   | Field | Value  |
   |:----------------------------|:----------------------|
-  | Azure Event Hubs Namespace | cnctest              |
+  | Azure Event Hubs Namespace | cnctest.servicebus.windows.net |
   | Event Hubs Instance Name   | my-hub               |
   | Shared Access Policy Name  | SumoCollectionPolicy |
-  | Shared Access Policy Key   | mOsLf3RE…            |
+  | Shared Access Policy Key<br/>(use primary key)  | mOsLf3RE…            |
 
   ![azure-event-configs.png](/img/send-data/azure-event-configs.png)
 
@@ -76,10 +79,10 @@ When you create an Azure Event Hubs Source, you add it to a Hosted Collector. Be
 
 To configure an Azure Event Hubs Source:
 
-1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collectors page, click **Add Source** next to a **HostedCollector**.
 1. Select **Azure Event Hubs**.<br/> ![Azure Event Hubs Icon.png](/img/send-data/Azure-Event-Hubs-Icon.png)
-1. Enter a **Name** for the Source. The description is optional.<br/>  ![azure-event-hubs-input.png](/img/send-data/azure-event-hubs-input.png)
+1. Enter a **Name** for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/azure-event-hubs-input.png')} alt="azure-event-hubs-input" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Microsoft
@@ -113,6 +116,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
 
+## Exporting Platform Logs to Event Hub using Diagnostic settings
+To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose **Stream to an event hub** as the destination. Use the event hub namespace and event hub name configured in the **Prerequisites** section in the destination details section. You can use the default policy **RootManageSharedAccessKey** as the policy name.
+
+* [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
+  
 ### Restarting your Source
 
 {@import ../../../reuse/restart-c2c-source.md}
@@ -181,8 +189,3 @@ Azure Event Hubs Source JSON example:
     }
 }
 ```
-
-
-## Additional Information
-
-* [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)

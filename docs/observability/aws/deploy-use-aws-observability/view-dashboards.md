@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
-This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards-new/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 ## Working with Explore View
 
@@ -61,9 +61,9 @@ To investigate services in your AWS environment, do the following:
 
     ![AWS-Region-Overview.png](/img/observability/AWS-Region-Overview.png)
 
-1. From the expanded account and region combination, select a namespace/AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
+1. From the expanded account and region combination, select a namespace or AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
 
-![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
+    ![AWS-EC2-Metrics-Overview.png](/img/observability/AWS-EC2-Metrics-Overview.png)
 
 ## Drill down for root cause analysis
 
@@ -73,7 +73,7 @@ Select the graph data point you are interested in. In the following screenshot, 
 
 ![Drill_RCA.png](/img/observability/Drill_RCA.png)
 
-For details, see [Drill down to discover root causes](../../../dashboards-new/drill-down-to-discover-root-causes.md).
+For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
 
 ## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
 
@@ -96,17 +96,18 @@ Click a link for information on the individual app dashboards:
 * [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
 * [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
 * [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
+* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md/)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
+* [Amazon RDS Dashboards](../integrations/aws-rds-metrics.md)
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
 * [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)
 * [AWS Classic Load Balancer Dashboards](../integrations/aws-classic-load-balancer.md)
-* [Amazon RDS Dashboards](/docs/observability/aws/integrations/aws-rds-metrics.md)
 * [Amazon SNS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
-* [Amazon SQS Dashboards](/docs/observability/aws/integrations/amazon-sns.md)
+* [Amazon SQS Dashboards](../integrations/amazon-sqs.md)
 
 ## More Information
 
-* [Explore View](/docs/dashboards-new/explore-view.md)
+* [Explore View](/docs/dashboards/explore-view.md)

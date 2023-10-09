@@ -7,13 +7,9 @@ tags: [Reliability Management, SLO]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide provides an overview of Sumo Logic Reliability Management using Service Level Objectives (SLO).
+A reliable end user experience is the key goal for observability. In complex systems, apps, service, and infrastructure can fail in unpredictable ways, resulting in a storm of potentially meaningless alerts. Reliability, as formalized in Service Level Objectives (SLOs), helps developers focusing on monitoring and troubleshooting user experience by measuring what matters to end users.
 
-A reliable end user experience is the key goal for observability.
-
-In complex systems, apps, service, and infrastructure can fail in unpredictable ways, resulting in a storm of potentially meaningless alerts. Reliability, as formalized in Service Level Objectives (SLOs), helps developers focusing on monitoring and troubleshooting user experience by measuring what matters to end users.
-
-Sumo Logic Reliability Management helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
+This guide provides an overview of Sumo Logic Reliability Management using Service Level Objectives (SLO). This feature helps site reliability engineers (SREs) and product teams define and monitor SLOs through alerts and dashboards.
 
 import Iframe from 'react-iframe';
 
@@ -129,6 +125,11 @@ Throughput is the amount of processing time by a service or system. Depending on
 Availability indicates if a service is working and handling valid requests. Other systems, services, and even virtual storage all have potential metrics to track with SLIs. The other option gives you the ability to include different SLOs based on your specific business needs.
 
 
+## Data Retention
+
+SLO data is retained for 800 days. It is retained separately, regardless of underlying logs/metrics retention. You can access this data via [SLO dashboards](/docs/observability/reliability-management-slo/dashboards/) or your [logs](/docs/observability/reliability-management-slo/create-slo/#slo-as-log-messages).
+
+
 ## Accessing SLOs
 
 In Sumo Logic, select **Manage Data** > **Monitoring**, then select the **SLO** tab, where you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.
@@ -168,7 +169,3 @@ A preview runs the query in real-time to help test and refine results, with a ti
 #### Aggregation Queries
 
 You cannot use aggregate log queries to define your SLO because such queries summarize data and lose the concept of time. Aggregation occurs through the SLO backend and is not required in the query, for example, `avg(latency) < 500 ms` or `"successful event must have latency below 50ms"`.
-
-#### Quantize Queries
-
-Do not use quantize in queries, as it is handled by the SLO backend based on the window duration.
