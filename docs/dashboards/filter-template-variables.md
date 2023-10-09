@@ -4,6 +4,7 @@ title: Filtering Dashboards with Template Variables
 sidebar_label: Filtering with Template Variables
 description: Learn how to use template variables to dynamically filter dashboard data.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Template variables are a feature of Dashboard that allow you to analyze specific data on demand. They give you the ability to filter the data displayed on your dashboard so you can quickly troubleshoot a problem. Queries can be changed on the fly by choosing values for variables from dropdown lists without having to manually edit queries.
 
