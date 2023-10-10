@@ -1,14 +1,14 @@
 ---
 id: redshift-ulm
 title: Amazon Redshift ULM
-description: The Sumo Logic App for Amazon Redshift ULM helps you monitor activity in Amazon Redshift.
+description: The Sumo Logic app for Amazon Redshift ULM helps you monitor activity in Amazon Redshift.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/redshift.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Redshift is Amazon’s data warehousing service. The Sumo Logic App for Amazon Redshift ULM helps you monitor activity in Amazon Redshift. The app is a unified logs and metrics application with preconfigured dashboards provide insight into database connections, SQL command and statement execution, database user account events, CloudTrail events, and resource utilization by node and cluster.
+Amazon Redshift is Amazon’s data warehousing service. The Sumo Logic app for Amazon Redshift ULM helps you monitor activity in Amazon Redshift. The app is a unified logs and metrics application with preconfigured dashboards provide insight into database connections, SQL command and statement execution, database user account events, CloudTrail events, and resource utilization by node and cluster.
 
 ## Log Types
 
@@ -173,9 +173,9 @@ dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 ```
 
 
-## Collecting Logs and Metrics for the Amazon Redshift ULM App
+## Collecting Logs and Metrics for the Amazon Redshift ULM app
 
-This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM App.
+This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM app.
 
 ### Step 1. Plan source categories
 
@@ -210,10 +210,10 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
    * **Source Category**. AWS/Redshift/Audit
    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the checkbox.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format**. Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the checkbox, and select **Infer Boundaries**.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 
@@ -250,15 +250,15 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 3. Click **Save**.
 
 
-## Installing the Amazon Redshift ULM App
+## Installing the Amazon Redshift ULM app
 
-Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
+Now that you have configured log and metric collection, install the Sumo Logic app for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
 
 {@import ../../reuse/apps/app-install.md}
 
 ## Viewing Amazon Redshift Dashboards
 
-This section describes each of the dashboards in the Sumo Logic App for Amazon Redshift.
+This section describes each of the dashboards in the Sumo Logic app for Amazon Redshift.
 
 
 ### Overview

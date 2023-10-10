@@ -28,7 +28,7 @@ Note that the Match List has a **Target Column**, which you define when you crea
 
 Many of CSE’s built-in rules assume the existence of one or more standard Match Lists. A standard Match List is a list that you need to create and populate so that CSE can leverage it. CSE rules take advantage of about 20 standard Match Lists. One example of a standard Match list is the “vuln_scanners” list mentioned in the previous section. There are analogous Match Lists for other entity types, such as “business_ips”, “verified_domains”, and so on.
 
-When you create the standard Match Lists, it’s important to create them correctly: you need to use the exact name CSE has defined for the list, and you must specify the correct Target Column.  Y/docs/cse/match-lists-suppressed-lists/standard-match-lists/standard-match-lists) topic, which also lists the built-in rules that refer to Match List data.
+When you create the standard Match Lists, it’s important to create them correctly: you need to use the exact name CSE has defined for the list, and you must specify the correct Target Column. You can find that information in the [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists) topic, which also lists the built-in rules that refer to Match List data.
 
 If you don’t define one or more standard Match Lists, the rules that refer to the match list data will still function, but you’ll miss out on the benefit that Match Lists provide—a rule will have no way of knowing that a particular IP address, domain, or other entity in a message should not cause it to fire.
 

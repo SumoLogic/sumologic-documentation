@@ -20,7 +20,6 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Code42](https://support.code42.com/Administrator/Cloud/Monitoring_and_managing/Integrate_Code42_with_Sumo_Logic)
 * [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
-* [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
 * [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
