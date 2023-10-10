@@ -52,7 +52,7 @@ In this step, you will configure the yaml required for macOS Collection.
 
 <Tabs
   className="unique-tabs"
-  defaultValue="Windows"
+  defaultValue="macOS"
   values={[
     {label: 'macOS', value: 'macOS'},
     {label: 'Chef', value: 'Chef'},
