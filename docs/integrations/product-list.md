@@ -185,29 +185,35 @@ Types of integrations:
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="Thumbnail icon" width="50"/>   |  [Carbon Black Cloud](https://www.vmware.com/products/carbon-black-cloud) | App:	[Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) <br/>Collectors:	<br/>- [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source/) <br/>- [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source/) | 
 |  <img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="50"/>   | [Cassandra](https://cassandra.apache.org/)  | 	Apps: <br/>- [Cassandra](/docs/integrations/databases/cassandra/)	<br/>- [Cassandra - OpenTelemetry](/docs/integrations/databases/opentelemetry/cassandra-opentelemetry/) | 
+|  <img src={useBaseUrl('img/integrations/misc/catchpoint-logo.png')} alt="Thumbnail icon" width="50"/>   | [Catchpoint](https://www.catchpoint.com/)  | 	App: [Catchpoint](https://github.com/catchpoint/Integrations.SumoLogic/blob/main/README.md)	 |
 |  <img src={useBaseUrl('img/send-data/cato-logo.png')} alt="Thumbnail icon" width="50"/>   | [Cato Networks](https://www.catonetworks.com/)  | 	App: [Cato Networks](/docs/integrations/saas-cloud/cato-networks/)<br/>Collector: [Cato Networks Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/circleci-logo.png')} alt="Thumbnail icon" width="50"/>   | [CircleCI](https://circleci.com/)  | 	App: [CircleCI](https://circleci.com/docs/sumo-logic-integration/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="Thumbnail icon" width="50"/>   | [CIS Benchmarks for AWS](https://aws.amazon.com/what-is/cis-benchmarks/)  | 	App: [CIS AWS Foundations Benchmark](/docs/integrations/amazon-aws/cis-aws-foundations-benchmark/)	 | 
-|  <img src={useBaseUrl('img//integrations/security-threat-detection/cisco-amp-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco AMP (Cisco Secure Endpoint)](https://www.cisco.com/site/us/en/products/security/endpoint-security/secure-endpoint/index.htmlco.com/c/en/us/products/security/adaptive-security-appliance-asa-software) | 	Collector: [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/)	 | 
-|  <img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco ASA](https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software) | 	App: [Cisco ASA](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/cisco-asa/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco ASA](https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software) | 	App: [Cisco ASA](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/cisco-asa/)	<br/>Collector: [Cisco AMP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source/) | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco Meraki](https://meraki.cisco.com/) | 	Apps: <br/>- [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki/)	 <br/>- [Cisco Meraki - C2C](/docs/integrations/saas-cloud/cisco-meraki-c2c/)	<br/>Collector: [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source/) | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/cisco-umbrella-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Cisco Umbrella](https://umbrella.cisco.com/) | 	App: [Cisco Umbrella](/docs/integrations/saas-cloud/cisco-umbrella/)	 | 
 |  <img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="Thumbnail icon" width="50"/>   |  [Cisco Vulnerability Management](https://umbrella.cisco.com/) | 	Collector: [Cisco Vulnerability Management Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source/)	 | 
 |  <img src={useBaseUrl('img/send-data/citrix-logo.png')} alt="Thumbnail icon" width="50"/>   | [Citrix](https://www.citrix.com/)  | 	App: [Citrix Cloud](/docs/integrations/saas-cloud/citrix-cloud/)<br/>Collector: [Citrix Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/)	 | 
 |  <img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Thumbnail icon" width="50"/>   | [Cloudflare](https://www.cloudflare.com/)  | 	App: [Cloudflare](/docs/integrations/saas-cloud/cloudflare/)	 | 
 |  <img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="Thumbnail icon" width="75"/>   | [Code42 Incydr](https://www.code42.com/incydr/)  | App: [Code42 Incydr](https://support.code42.com/hc/en-us/articles/14827618219671-Integrate-Code42-with-Sumo-Logic)	<br/>Collector: [Code42 Incydr Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source/) | 
+|  <img src={useBaseUrl('img/integrations/misc/configcat-logo.png')} alt="Thumbnail icon" width="50"/>   | [ConfitCat](https://configcat.com/)  | App: [ConfitCat](/docs/integrations/webhooks/configcat/) | 
 |  <img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Thumbnail icon" width="50"/>   | [Couchbase](https://www.couchbase.com/)  | Apps:<br/>- [Couchbase](/docs/integrations/databases/couchbase/)	<br/>- [Couchbase - OpenTelemetry](/docs/integrations/databases/opentelemetry/couchbase-opentelemetry/) | 
+|  <img src={useBaseUrl('img/integrations/misc/cribl-logo.png')} alt="Thumbnail icon" width="50"/>   | [Cribl](https://cribl.io/)  | App:[Cribl](https://docs.cribl.io/stream/destinations-sumo-logic/) | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="Thumbnail icon" width="75"/>   | [CrowdStrike](https://www.crowdstrike.com/)  | App:	[CrowdStrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection/)	<br/>Collectors:<br/>- [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source/) <br/>- [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source/)<br/>- [CrowdStrike FDR Host Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source/) <br/>- [CrowdStrike Spotlight Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source/) | 
 |  <img src={useBaseUrl('img/send-data/cyberark.png')} alt="Thumbnail icon" width="50"/>   |  [CyberArk EPM](https://www.cyberark.com/products/endpoint-privilege-manager/) | Collector: [CyberArk EPM Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source/) | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/cybereason-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Cybereason](https://www.cybereason.com/) | App: [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)<br/>Collector: [Cybereason Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source/)	 | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="Thumbnail icon" width="50"/>   | [Cylance](https://www.blackberry.com/us/en/products/cylance-endpoint-security/cylance-is-blackberry-cybersecurity)  | 	App: [Cylance](/docs/integrations/security-threat-detection/cylance/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/cyral-logo.png')} alt="Thumbnail icon" width="50"/>   | [Cyral](https://cyral.com/)  | 	App: [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)	 | 
 
 ## D
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg')} alt="Thumbnail icon" width="50"/>   | [Datadog](https://www.datadoghq.com/)  | App: [Datadog](/docs/integrations/saas-cloud/datadog/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/delinea-logo.png')} alt="Thumbnail icon" width="50"/>   | [Delinea Secret Server](https://delinea.com/products/secret-server)  | App: [Delinea Secret Server](https://docs.delinea.com/online-help/secret-server/events-and-alerts/secure-syslog-cef/index.htm)	 | 
 |  <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="75"/>   | [Docker](https://www.docker.com/)  | 	Apps: <br/>- [Docker](/integrations/containers-orchestration/docker-community-edition/) <br/>- [Docker - OpenTelemetry](/docs/integrations/containers-orchestration/opentelemetry/docker-opentelemetry/)	<br/>- [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm/) | 
 |  <img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="50"/>   | [DocuSign](https://www.docusign.com/)  | App:	[DocuSign](/docs/integrations/saas-cloud/docusign/)	<br/>Collector: [DocuSign Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source/) | 
+|  <img src={useBaseUrl('img/integrations/misc/doppler-logo.png')} alt="Thumbnail icon" width="50"/>   | [Doppler](https://www.doppler.com/)  | App:	[Doppler](https://docs.doppler.com/docs/sumologic) | 
 |  <img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="Thumbnail icon" width="50"/>   |  [Dropbox](https://www.dropbox.com/) | App: [Dropbox](/docs/integrations/saas-cloud/dropbox/)	<br/>Collector: [Dropbox Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/) | 
 |  <img src={useBaseUrl('img/send-data/druva-logo.png')} alt="Thumbnail icon" width="75"/>   | Druva  | 	Apps:<br/>- [Druva](/docs/integrations/saas-cloud/druva/)	<br/>- [Druva Cyber Resilience](/docs/integrations/saas-cloud/druva-cyber-resilience/)	<br/>Collectors: <br/>- [Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) <br/>- [Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source/) | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="Thumbnail icon" width="50"/>   | [Duo](https://duo.com/)  | App: [Duo Security](/docs/integrations/security-threat-detection/duo-security/)	<br/>Collector: [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source/) | 
@@ -216,21 +222,27 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
+|  <img src={useBaseUrl('img/integrations/misc/egnyte-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Egnyte](https://www.egnyte.com/) | 	App: [Egnyte](https://helpdesk.egnyte.com/hc/en-us/articles/4407850661133-Egnyte-for-Sumo-Logic)	 | 
 |  <img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Thumbnail icon" width="50"/>   | [Elasticsearch](https://www.elastic.co/elasticsearch/)  | Apps:<br/>	- [Elasticsearch](/docs/integrations/databases/elasticsearch/)	 <br/>- [Elasticsearch - OpenTelemetry](/docs/integrations/databases/opentelemetry/elasticsearch-opentelemetry/)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Evident.io ESP	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/emnify-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Emnify](https://www.emnify.com/) | 	App: [Emnify](/docs/integrations/webhooks/emnify/)	 | 
+
 
 ## F
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	F5 - BIG-IP LTM	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Fastly	 | 
-|  <img src={useBaseUrl('img/integrations/security-threat-detection/fidelis-logo.png')} alt="Thumbnail icon" width="50"/>   | [Fidelis Halo](https://fidelissecurity.com/fidelis-halo/)  | 	App: [CloudPassage Halo](/docs/integrations/security-threat-detection/cloudpassage-halo/)	 | 
+|  <img src={useBaseUrl('/img/integrations/security-threat-detection/f5.png')} alt="Thumbnail icon" width="50"/>   | [F5 BIG-IP Local Traffic Manager](https://www.f5.com/products/big-ip-services/local-traffic-manager)  | 	App: [F5 - BIG-IP LTM](/docs/integrations/security-threat-detection/f5-big-ip-ltm/)	 | 
+|  <img src={useBaseUrl('/img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="50"/>   |  [Fastly](https://www.fastly.com/) | 	App: [Fastly](/docs/integrations/saas-cloud/fastly/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/fidelis-logo.png')} alt="Thumbnail icon" width="50"/>   | [Fidelis Halo (formerly CloudPassage Halo)](https://fidelissecurity.com/fidelis-halo/)  | 	App: [CloudPassage Halo](/docs/integrations/security-threat-detection/cloudpassage-halo/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/firefly-logo.png')} alt="Thumbnail icon" width="50"/>   | [Firefly](https://www.firefly.ai/)  | App: [Firefly](/docs/integrations/webhooks/firefly/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/flagsmith-logo.png')} alt="Thumbnail icon" width="50"/>   | [Flagsmith](https://www.flagsmith.com/)  | App: [Flagsmith](/docs/integrations/webhooks/flagsmith/) 	 | 
 
 ## G
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
+|  <img src={useBaseUrl('img/integrations/misc/gigamon-logo.png')} alt="Thumbnail icon" width="75"/>   | [Gigamon](https://www.gigamon.com/)  | Apps:<br/>- [Gigamon Application Metadata Intelligence](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)<br/>- [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT)
+	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	GitHub	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	GitLab	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Apache	 | 
@@ -239,54 +251,55 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Security Insights	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Tomcat	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Gmail Trace Logs	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google App Engine	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google BigQuery	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud AlloyDB for PostgreSQL	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud API Gateway	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud APIs	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Armor	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Audit	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Auto Scaler	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Backup for GKE	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud BigQuery BI Engine	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Bigtable	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Certificate Authority Service	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Certificate Manager	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Composer	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Dataflow	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Dataproc	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Dataproc Metastore	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Datastore	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Datastream	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Deploy	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Filestore	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Firebase	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Firestore	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Firewall	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Fleet Engine	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Functions	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud IAM	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Interconnect	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Load Balancing	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Logging	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Memorystore for Redis	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Net App Cloud Volumes Service	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Network Topology	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Pub Sub	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Router	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Run	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Spanner	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud SQL	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Storage	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Tasks	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud TPU	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Trace	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Traffic Director	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud Vertex AI	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud VPC	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Cloud VPN	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Compute Engine	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Google Kubernetes Engine (GKE)	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google App Engine](https://cloud.google.com/appengine) | 	App: Google App Engine	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google BigQuery](https://cloud.google.com/bigquery) | 	Google BigQuery	 | 
+|  <img src={useBaseUrl('img/integrations/misc/google-cloud-logo.png')} alt="Thumbnail icon" width="100"/>   |  [Google Cloud](https://cloud.google.com/products) | Apps:	GPC Metrics	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud AlloyDB for PostgreSQL](https://cloud.google.com/alloydb) | 	Google Cloud AlloyDB for PostgreSQL	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud API Gateway](https://cloud.google.com/api-gateway) | 	Google Cloud API Gateway	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud APIs](https://cloud.google.com/apis) | 	Google Cloud APIs	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Armor](https://cloud.google.com/armor)  | 	Google Cloud Armor	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Audit Logs](https://cloud.google.com/audit-logs) | 	Google Cloud Audit	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Auto Scaler | 	Google Cloud Auto Scaler	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Backup for GKE | 	Google Cloud Backup for GKE	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud BigQuery](https://cloud.google.com/bigquery)  | 	Google Cloud BigQuery BI Engine	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Bigtable](https://cloud.google.com/bigtable) | 	Google Cloud Bigtable	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Certificate Authority Service](https://cloud.google.com/certificate-authority-service)  | 	Google Cloud Certificate Authority Service	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Certificate Manager | 	Google Cloud Certificate Manager	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Composer](https://cloud.google.com/composer) | 	Google Cloud Composer	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Compute Engine](https://cloud.google.com/compute) | 	Google Compute Engine	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Dataflow](https://cloud.google.com/dataflow) | 	Google Cloud Dataflow	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Dataproc](https://cloud.google.com/dataproc)  | 	Google Cloud Dataproc	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | Google Cloud Dataproc Metastore  | 	Google Cloud Dataproc Metastore	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Datastore | 	Google Cloud Datastore	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Datastream](https://cloud.google.com/datastream)	 | 	Google Cloud Datastream	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Deploy](https://cloud.google.com/deploy) | 	Google Cloud Deploy	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Filestore](https://cloud.google.com/filestore)  | 	Google Cloud Filestore	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Firebase](https://firebase.google.com/) | 	Google Cloud Firebase	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Firestore](https://cloud.google.com/firestore) | 	Google Cloud Firestore	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Firewall](https://cloud.google.com/firewall)  | 	Google Cloud Firewall	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Fleet Engine | 	Google Cloud Fleet Engine	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Functions](https://cloud.google.com/functions)  | 	Google Cloud Functions	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud IAM](https://cloud.google.com/iam)  | 	Google Cloud IAM	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Interconnect | 	Google Cloud Interconnect	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Load Balancing](https://cloud.google.com/load-balancing) | 	Google Cloud Load Balancing	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Logging](https://cloud.google.com/logging) | 	Google Cloud Logging	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Memorystore](https://cloud.google.com/memorystore)  | 	Google Cloud Memorystore for Redis	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud NetApp Volumes](https://cloud.google.com/netapp-volumes)  | 	Google Cloud Net App Cloud Volumes Service	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud Network Topology | 	Google Cloud Network Topology	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Pub Sub](https://cloud.google.com/pubsub)  | 	Google Cloud Pub Sub	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | Google Cloud Router  | 	Google Cloud Router	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Run](https://cloud.google.com/run)  | 	Google Cloud Run	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Spanner](https://cloud.google.com/spanner) | 	Google Cloud Spanner	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud SQL](https://cloud.google.com/sql)  | 	Google Cloud SQL	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Storage](https://cloud.google.com/storage)  | 	Google Cloud Storage	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Tasks](https://cloud.google.com/tasks)  | 	Google Cloud Tasks	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud TPU](https://cloud.google.com/tpu)  | 	Google Cloud TPU	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | [Google Cloud Trace](https://cloud.google.com/trace)  | 	Google Cloud Trace	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Traffic Director](https://cloud.google.com/traffic-director) | 	Google Cloud Traffic Director	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud Vertex AI](https://cloud.google.com/vertex-ai) | 	Google Cloud Vertex AI	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Cloud VPC](https://cloud.google.com/vpc) | 	Google Cloud VPC	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  Google Cloud VPN | 	Google Cloud VPN	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine) | 	Google Kubernetes Engine (GKE)	 | 
 
 ## H
 
@@ -409,6 +422,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Networks 6	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Networks 8	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Networks 9	 | 
+|  <img src={useBaseUrl('img/integrations/misc/prisma-cloud-logo.png')} alt="Thumbnail icon" width="50"/>   | [Palo Alto Networks Prisma Cloud (formerly Evident.io ESP)](https://www.paloaltonetworks.com/prisma/cloud)  | 	App: [Evident.io ESP](/docs/integrations/security-threat-detection/evident-security-platform/)	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Linux	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Linux - OpenTelemetry	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Palo Alto Networks 10	 | 
