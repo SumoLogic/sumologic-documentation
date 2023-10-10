@@ -4,8 +4,9 @@ title: How to Use the Search Page
 description: Understand the basic components of the Search window and how they can help you investigate your issues.
 ---
 
+On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can adjust the size of the search query editor for better visibility into long queries and reduce the size of the editor while examining larger results, making it easier to navigate through your data. 
 
-On the Search page, you can enter [simple or complex queries](../search-basics/about-search-basics.md) to search your entire Sumo Logic data repository. You can save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
+You can also save and select searches from your [Library](/docs/get-started/library). After running a search, your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
 
 You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically](../../../alerts/scheduled-searches/schedule-search.md) and notify you of the results.
 
@@ -72,6 +73,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/search/get-started-with-search/search-page/log-level"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>View log-level distribution</h4></a>
   <p>View the filter log-level distribution in your Histogram results.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/search/get-started-with-search/search-page/log-message-inspector"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>View Log Message Inspector</h4></a>
+  <p>Know about Log Message Inspector to view information for all the parameter values associated with the query.</p>
   </div>
 </div>
 <div className="box smallbox card">

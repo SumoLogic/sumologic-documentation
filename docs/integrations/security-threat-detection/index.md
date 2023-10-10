@@ -20,6 +20,13 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/security-threat-detection/alert-logic">
+  <img src={useBaseUrl('img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="icon" width="150"/><h4>Alert Logic</h4></a>
+  <p>A guide to the Sumo Logic app for Alert Logic.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/integrations/security-threat-detection/barracuda-waf">
   <img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="icon" width="80"/><h4>Barracuda WAF</h4></a>
   <p>A guide to the Sumo Logic app for Barracuda WAF.</p>
@@ -53,13 +60,13 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="75"/><h4>CrowdStrike Falcon Endpoint Protection</h4></a>
+  <a href="/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="50"/><h4>CrowdStrike Falcon Endpoint Protection</h4></a>
   <p>A guide to the Sumo Logic app for CrowdStrike.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/cylance"><img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="75"/><h4>Cylance</h4></a>
+  <a href="/docs/integrations/security-threat-detection/cylance"><img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="50"/><h4>Cylance</h4></a>
   <p>A guide to the Sumo Logic app for Cylance.</p>
   </div>
 </div>
@@ -151,12 +158,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/twistlock"><img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="150"/><h4>Twistlock</h4></a>
   <p>A guide to the Sumo Logic app for Twistlock.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/integrations/security-threat-detection/zscaler-internet-access"><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="35"/><h4>Zscaler Internet Access</h4></a>
-  <p>A guide to the Sumo Logic app for Zscaler Internet Access.</p>
   </div>
 </div>
 <div className="box smallbox card">

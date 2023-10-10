@@ -1,5 +1,5 @@
 ---
-title: March 2, 2023 (Dashboards)
+title: Dashboards (Classic) Deprecation (Dashboards)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - dashboards new

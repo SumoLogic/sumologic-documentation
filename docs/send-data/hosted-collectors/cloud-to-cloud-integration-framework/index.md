@@ -35,7 +35,7 @@ For the Federal environments, a different set of Static IPs is available for eac
 | Deployment | Static IP addresses      |
 |:------------|:---------------------|
 | Fed C2C 1A | 50.19.6.130       |
-| Fed C2C 1B | 171.129.156.86    |
+| Fed C2C 1B | 174.129.156.86    |
 | Fed C2C 1C | 52.202.74.197      |
 | Fed C2C 1D | 100.25.65.170         |
 | Fed C2C 1E | 3.226.78.211   |
@@ -58,6 +58,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>1Password</h4></a>
   <p>Provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source"><img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="icon" width="100"/><h4>Abnormal Security Source</h4></a>
+  <p>Abnormal Security Source helps to collect abnormal threat log from the Abnormal Security platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -140,6 +146,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source"><img src={useBaseUrl('img/send-data/crest-logo.png')} alt="icon" width="125"/><h4>Cisco Vulnerability Management</h4></a>
+  <p>Provides a secure endpoint to receive assets data from Asset API and vulnerabilities data from Vulnerability API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source"><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="icon" width="100"/><h4>Citrix Cloud Source</h4></a>
   <p>Provides a secure endpoint to receive System Log data from the Citrix Cloud System Log API.</p>
   </div>
@@ -152,7 +164,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike</h4></a>
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source"><img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="icon" width="100"/><h4>Code42 Incydr</h4></a>
   <p>Learn how to collect alerts, file events, and audit logs from Code42 Incydr.</p>
   </div>
@@ -279,7 +290,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/ms-graph-azure-ad-reporting-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source"><img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="50"/><h4>Microsoft Graph Azure AD Reporting</h4></a>
   <p>Collects Directory Audit, Sign-in, and Provisioning data from MS Graph API Azure AD activity reports.</p>
   </div>
 </div>

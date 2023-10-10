@@ -50,7 +50,7 @@ You can create a scheduled search at the time you create a search, or edit a s
     | 3 hour - 12 hours  | 30 Days                |
     | More than 12 hours | More than 30 days      |
 
-    Consider adding an offset to your time range to ensure that all recent events are being indexed and scanned by the search. For example, a range of  -17m -2m would represent a 15 minute time-range offset by 2 minutes.
+    Consider adding an offset to your time range to ensure that all recent events are being indexed and scanned by the search. For example, a range of -20m -5m would represent a 15 minute time-range offset by 5 minutes.
 1. **Timezone for scheduled search.** Select the time zone you would like your scheduled search to use. The schedule's time is based on this time zone. This time zone is not related to the time zone of your data. If you don't make a selection, the scheduled search will use the time zone from your browser, which is the default selection
 1. **Send Notification.** Select the condition for when you want an alert sent.
    * **Every time a search is complete.** Select this option if you want an email with search results every time the search is run (depending on the frequency, you could get an email every 15 minutes, every hour, or once a day).

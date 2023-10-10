@@ -106,6 +106,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/integrations/saas-cloud/druva-cyber-resilience"><img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="dropbox-icon.png" width="45"/><h4>Druva Cyber Resilience</h4></a>
+  <p>Enhance your cybersecurity posture by providing real-time insights.</p>
+  </div>
+</div>
+<div className="box smallbox16 card">
+  <div className="container">
   <a href="/docs/integrations/saas-cloud/fastly"><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="40"/><h4>Fastly</h4></a>
   <p>Control how and where you serve content, and view performance analytics.</p>
   </div>
@@ -234,6 +240,12 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <div className="container">
   <a href="/docs/integrations/saas-cloud/symantec-web-security-service"><img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="140"/><h4>Symantec Web Security Service</h4></a>
   <p>Gain insights into the web traffic and identify potential security threats.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/integrations/saas-cloud/tenable"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="140"/><h4>Tenable</h4></a>
+  <p>Gain comprehensive visibility and actionable insights into your organization's security posture.</p>
   </div>
 </div>
 <div className="box smallbox card">

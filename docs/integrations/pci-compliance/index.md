@@ -18,9 +18,16 @@ With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requireme
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry">PCI Compliance for Linux - OpenTelemetry</a></h4>
+  <p>A guide to the Sumo Logic app for PCI Compliance for Linux.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-  <h4><a href="/docs/integrations/pci-compliance/setup">Sumo Logic PCI App Setup</a></h4>
-  <p>A guide to the Sumo Logic app for PCI App Setup.</p>
+  <h4><a href="/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry">PCI Compliance for Windows JSON - OpenTelemetry</a></h4>
+  <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON using OpenTelemetry.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -46,44 +53,30 @@ With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requireme
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry">PCI Compliance for Linux - OpenTelemetry</a></h4>
-  <p>A guide to the Sumo Logic app for PCI Compliance for Linux.</p>
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/pci-compliance/palo-alto-networks-9">PCI Compliance for Palo Alto Networks 9</a></h4>
+  <p>A guide to the Sumo Logic app for PCI Compliance for Palo Alto Networks 9.</p>
   </div>
 </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href="/docs/integrations/pci-compliance/palo-alto-networks-9">PCI Compliance for Palo Alto Networks 9</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Palo Alto Networks 9.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/pci-compliance/palo-alto-networks-10">PCI Compliance for Palo Alto Networks 10(Legacy)</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Palo Alto Networks 10(Legacy).</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href="/docs/integrations/microsoft-azure/windows-json-pci-compliance">PCI Compliance for Windows JSON</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
-      <h4><a href="docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry">PCI Compliance for Windows JSON - OpenTelemetry</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON using OpenTelemetry.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
-      <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
-      <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
-      </div>
-    </div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/pci-compliance/palo-alto-networks-10">PCI Compliance for Palo Alto Networks 10 (Legacy)</a></h4>
+  <p>A guide to the Sumo Logic app for PCI Compliance for Palo Alto Networks 10(Legacy).</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="55"/>
+  <h4><a href="/docs/integrations/microsoft-azure/windows-json-pci-compliance">PCI Compliance for Windows JSON</a></h4>
+  <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
+  <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
+  </div>
+</div>
 </div>

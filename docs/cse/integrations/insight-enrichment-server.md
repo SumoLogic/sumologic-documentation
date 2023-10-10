@@ -10,6 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CSE Insight Enrichment Server is a component that automatically enriches CSE Insights.  
 
+:::caution
+The Insight Enrichment Server is deprecated. Use the Automation Service instead for enrichments. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation-service/automation-service-automations#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+:::
+
 :::note
 This topic describes v1.5.0 of the non-FedRAMP version of the Insight Enrichment Server, and v1.0.3 for the FedRAMP version.
 :::
@@ -24,7 +28,7 @@ The Insight Enrichment Server periodically polls CSE for new Insights. If an Ins
 
 The enrichment shown below returned the IP address associated with the hostname that is the Entity for the Insight.
 
-<img src={useBaseUrl('img/cse//enrichment-1a.png')} alt="Example enrichment" width="800"/>
+<img src={useBaseUrl('img/cse/enrichment-1a.png')} alt="Example enrichment" width="800"/>
 
 ## Create configuration file
 

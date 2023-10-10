@@ -9,8 +9,9 @@ Automatic instrumentation of the .NET applications is a very easy task. The simp
 
 # .NET full auto-instrumentation vs library-instrumentation (partial auto)
 
-It is important to understand difference between two types of instrumentations that are available in .NET. 
-* **Fully automatic instrumentation** does not require code. 
+It is important to understand difference between two types of instrumentations that are available in .NET.
+
+* **Fully automatic instrumentation** does not require code.
 * **Partially automatic instrumentation**, which is called library instrumentation by the opentelemetry community, requires some initialization in the code. It is partial auto-instrumentation as traces are generated automatically depending on settings provided by developer(s) during the initialization phase.
 
 :::note
@@ -46,7 +47,7 @@ Register-OpenTelemetryForCurrentSession -OTelServiceName "MyServiceDisplayName"
 The final step is to configure the exporter endpoint, service and application name otherwise defaults will be used. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelagent.sumologic:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma-separated key=value pairs. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
 
@@ -102,7 +103,7 @@ Second, update `applicationHost.config`, which is located in `%SystemDrive%\Wind
 The final step is to configure the exporter endpoint, service and application name otherwise defaults will be used. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelagent.sumologic:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
@@ -149,7 +150,7 @@ services.AddOpenTelemetryTracing(builder => builder
 The final step is to configure the exporter endpoint, service and application name. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelagent.sumologic:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
@@ -206,7 +207,7 @@ To enable [.NET instrumentation](https://github.com/open-telemetry/opentelemetry
 
 `.AddAspNetInstrumentation()` adds .NET instrumentation. The service name and application attributes are set by the `.SetResourceBuilder()`which reads the values from `OTEL_RESOURCE_ATTRIBUTES` environment variable. An exporter has to be configured to send the spans. In this case, it is the [OpenTelemetryProtocol exporter](https://github.com/open-telemetry/opentelemetry-dotnet/tree/core-1.1.0/src/OpenTelemetry.Exporter.OpenTelemetryProtocol#otlp-exporter-for-opentelemetry-net) which is configured by the `.AddOtlpExporter()` method.
 
-```
+```cs
 public class MvcApplication : System.Web.HttpApplication
 {   
    private TracerProvider tracerProvider;
@@ -237,7 +238,7 @@ public class MvcApplication : System.Web.HttpApplication
 The final step is to configure the exporter endpoint, service and application name. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelagent.sumologic:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
@@ -257,15 +258,15 @@ and a small code change, in addition to the GrpcClient instrumentation `.AddGr
 
 * .NET Core code example:  
 
-   ```
+   ```cs
    services.AddOpenTelemetryTracing((builder) => builder
          .AddAspNetCoreInstrumentation()
          .AddGrpcClientInstrumentation()
    ```
-     
+
 * .NET code example:  
 
-   ```
+   ```cs
    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
          .AddAspNetInstrumentation()
          .AddGrpcClientInstrumentation()
@@ -275,7 +276,7 @@ and a small code change, in addition to the GrpcClient instrumentation `.AddGr
 
 Requires installation of the package:
 
-```
+```bash
 $ dotnet add package OpenTelemetry.Instrumentation.Http -v 1.0.0-rc9
 ```
 
@@ -285,16 +286,15 @@ and a small code change, in addition to the HttpClient instrumentation
 
 * .NET Core code example  
 
-    ```
+    ```cs
     services.AddOpenTelemetryTracing((builder) => builder
        .AddAspNetCoreInstrumentation()
        .AddHttpClientInstrumentation()
     ```  
-     
 
 * .NET code example  
 
-    ```
+    ```cs
     this.tracerProvider = Sdk.CreateTracerProviderBuilder()
            .AddAspNetInstrumentation()
            .AddHttpClientInstrumentation()
@@ -312,16 +312,15 @@ and a small code change, in addition to the Redis instrumentation `.AddRedisInst
 
 * .NET Core code example  
 
-   ```
+   ```cs
    services.AddOpenTelemetryTracing((builder) => builder
          .AddAspNetCoreInstrumentation()
          .AddRedisInstrumentation(connection)
    ```
-     
 
 * .NET code example  
 
-   ```
+   ```cs
    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
            .AddAspNetInstrumentation()
            .AddRedisInstrumentation(connection)
@@ -339,7 +338,7 @@ and a small code change, in addition to the SqlClient instrumentation `.AddSqlCl
 
 * .NET Core code example  
 
-   ```
+   ```cs
    services.AddOpenTelemetryTracing((builder) => builder
        .AddAspNetCoreInstrumentation()
        .AddSqlClientInstrumentation()
@@ -347,7 +346,7 @@ and a small code change, in addition to the SqlClient instrumentation `.AddSqlCl
 
 * .NET code example  
 
-   ```
+   ```cs
    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
            .AddAspNetInstrumentation()
            .AddSqlClientInstrumentation()

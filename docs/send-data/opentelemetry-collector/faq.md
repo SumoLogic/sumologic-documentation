@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 This document contains frequently asked questions about OpenTelemetry Collector.
 
 
-### Accessing the collector's configuration
+## Accessing the collector's configuration
 
 By default, the collector's configuration can be found in `/etc/otelcol-sumo/` directory.
 
@@ -22,9 +22,9 @@ On Windows, the Collector installation command must be run in PowerShell.
 
 To install the script manually on your OS, refer to one of the following docs:
 
-* [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux#manual-step-by-step-installation)
-* [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos#manual-step-by-step-installation)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows#manual-step-by-step-installation)
+* [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux#manual-step-by-step-installation)
+* [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos#manual-step-by-step-installation)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows#manual-step-by-step-installation)
 
 You will need to manage configuration files on your own.
 
@@ -98,9 +98,9 @@ See [Accessing the collector's metrics](#accessing-the-collectors-metrics) secti
 #### How do I uninstall the Sumo OpenTelemetry Collector?
 
 Refer to the Uninstall section in the following docs:
-* [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux/#uninstall)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows/#uninstall)
-* [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos/#uninstall)
+* [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstall)
+* [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos/#uninstall)
 
 
 ## Data ingestion and forwarding
@@ -186,7 +186,36 @@ The `sumologicexporter` sends data to Sumo in batches. If the batches are small,
 
 If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo Logic OpenTelemetry collector**) and have a custom `config.yaml` file to collect data, then you might see this error. Sumo Logic expects specific tags on the data, which the Sumo Logic Distribution for OpenTelemetry Collector creates by default.
 
+## HTTP checks
 
+#### Does Sumo OpenTelemetry support HTTP checks?
+
+Yes, our OpenTelemetry Collector supports HTTP checks, allowing you to ping public HTTPs URLs and monitor up/down status.
+
+Here's how it works: the OpenTelemetry [HTTP Check receiver][httpcheck_receiver_docs] produces metrics that can be ingested and then monitored to track non-200 responses, latency, and other errors. Below is a config sample.
+
+```yaml
+receivers:
+  httpcheck/my-public-sites:
+    collection_interval: 10s
+    targets:
+      - endpoint: https://www.sumologic.com
+      - endpoint: https://opentelemetry.io/blog
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - httpcheck/my-public-sites
+      processors:
+        - memory_limiter
+        - batch
+      exporters:
+        - sumologic
+```
+
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-ping.png')} alt="otel-ping.png" width="450" />
+
+[httpcheck_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/httpcheckreceiver/README.md
 
 ## Filtering metrics and logs
 

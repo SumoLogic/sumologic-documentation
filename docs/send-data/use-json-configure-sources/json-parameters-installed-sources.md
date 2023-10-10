@@ -44,7 +44,7 @@ the following parameters are for local file source. 
 | `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
 | `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
 
-Local File Source JSON example with `cutoffTimestamp`:
+Local File Source JSON example with `cutoffTimestamp`: 
 
 ```json
 {

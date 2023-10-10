@@ -1,5 +1,5 @@
 ---
-title: July 10, 2023 (Search)
+title: Automatic Log Level Detection (Search) 
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - log_level

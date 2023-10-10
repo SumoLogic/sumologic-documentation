@@ -1,11 +1,11 @@
 ---
 id: cse-apis
-title: Cloud SIEM Enterprise APIs
-sidebar_label: CSE APIs
-description: Learn how to access CSE APIs and API documentation.
+title: Cloud SIEM APIs
+sidebar_label: Cloud SIEM APIs
+description: Learn how to access Cloud SIEM APIs and API documentation.
 ---
 
-The Cloud SIEM Enterprise (CSE) APIs allow you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other CSE features.
+The Cloud SIEM APIs allow you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other CSE features.
 
 {@import ../../reuse/api-intro.md}
 

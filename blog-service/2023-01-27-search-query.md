@@ -1,5 +1,5 @@
 ---
-title: January 27, 2023 (Search)
+title: Frequent and Infrequent Data Tier Bug Fix (Search)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - search query optimization

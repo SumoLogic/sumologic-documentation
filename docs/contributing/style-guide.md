@@ -289,7 +289,7 @@ When the feature moves from Beta to GA, remove the **Beta** label and remove a d
 
 ## Code (Inline)
 
-* Use single backticks (\` \`) to format inline code, such as commands, API method names, and code. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
+Use single backticks (\` \`) to format inline code as monospace font. Example use cases include commands, operators, API method names, and error messages. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
 
 <Tabs
   className="unique-tabs"
@@ -316,6 +316,10 @@ Example: `_view = sumologic_slo_output`
 ## Code Blocks
 
 Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Format blocks of code by placing triple backticks before and after the code.
+
+:::note
+Code blocks are intended only for code snippets that users can copy, paste, and run in their own terminal. Do not use code block formatting for error messages (see [Code (Inline)](#code-inline)), as this isn't something you'd run in a terminal.
+:::
 
 If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
 
@@ -681,7 +685,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
    Use the following code to add a border to the image.
 
   ```
-   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid black'}} width="<insert-pixel-number>" /> 
+   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid black'}} width="<insert-pixel-number>" />
    ```
 1. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
    :::info
@@ -1180,25 +1184,25 @@ Add your release note in the appropriate blog folder ([blog-collector](https://g
 To add release notes without images:
 
 1. In the blog folder, create a new markdown file with the following name format: `YYYY-MM-DD-product.md`.
-1. Add the following frontmatter:
+1. Add the following frontmatter, swapping out these example values with your own.
     ```markdown
     ---
-    title: Product or Feature Name
-    tags: [apps, tracing]
+    title: New XYZ Feature
     hide_table_of_contents: true
     image: https://help.sumologic.com/img/sumo-square.png
     keywords:
-      - sumo logic
-      - service release notes
-      - open source
+      - alerts
     authors:
       - url: https://help.sumologic.com/release-notes-service/rss.xml
         image_url: /img/release-notes/rss-orange.png
     ---
     ```
-    * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags.
-    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+    * `title`. Title for release note.
+    :::note
+    For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
+    :::
+    * `tags`. Add a comma-separated list of existing tags.
+    * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Document the release notes. Add links, bullets, and images as needed.
 
 #### Long Release Notes
@@ -1218,9 +1222,9 @@ To add release notes with images:
     hide_table_of_contents: true
     ---
     ```
-    * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags.
-    * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
+    * `title`. Name of the release notes including Product or Feature
+    * `tags`. Add a comma-separated list of existing tags.
+    * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
 
 

@@ -59,11 +59,8 @@ To configure an Okta Source:
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional. <br/><img src={useBaseUrl('img/send-data/Okta-version.png')} alt="okta-connfig" style={{border: '1px solid black'}} width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
-   * `_siemVendor`: Okta
-   * `_siemProduct`: SSO
-   * `_siemFormat`: JSON
-   * `_siemEventID`: `<eventType>` Where `<eventType>` is the value of the field from the JSON event, such as user.session.start. See the list of possible event types.
-   * `_siemDataType`: Inventory (only for user inventory data)
+   * `_parser`: Set to `/Parsers/System/Okta/Okta`. 
+   * `_siemDataType`: Inventory (only for user inventory data).
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.

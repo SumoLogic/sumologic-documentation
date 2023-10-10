@@ -25,7 +25,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/security/2-step-verification-admins"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>2-Step Verification for Administrators</h4></a>
-  <p>Learn how to set up and manage 2-Step Verification across your   organization.</p>
+  <p>Learn how to set up and manage 2-Step Verification across your organization.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -72,7 +72,7 @@ In this section, we'll introduce the following concepts:
 </div>
     <div className="box smallbox card">
     <div className="container">
-    <a href="docs/manage/security/installation-tokens"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Installation Tokens</h4></a>
+    <a href="/docs/manage/security/installation-tokens"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Installation Tokens</h4></a>
     <p>Learn how to use Installation Tokens to register Installed Collectors.</p>
   </div>
 </div>

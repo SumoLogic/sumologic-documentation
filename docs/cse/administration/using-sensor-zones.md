@@ -32,8 +32,7 @@ Sensor zones will only apply to IP addresses in private address ranges.
 To define a sensor zone for a Source:
 
 1. In the Sumo Logic UI, navigate to the Source you want to update, at **Manage Data** > **Collection** > **Collection**.  
-2. In the **Fields/Metadata** area, define a [Field](/docs/manage/fields.md) named `_siemSensorZone` and set it to the desired value.
-<img src={useBaseUrl('img/cse/source.png')} alt="source.png" />
+2. In the **Fields/Metadata** area, define a [Field](/docs/manage/fields) named `_siemSensorZone` and set it to the desired value.<br/><img src={useBaseUrl('img/cse/source.png')} alt="source.png" width="600"/>
 3. Click **Save**.
 
 After you add the field, Records and inventory data from the Source will have the attribute `_siemSensorZone` set to the value you specified.
@@ -48,4 +47,4 @@ The following screenshot shows an Insight whose primary Entity has a sensor zone
 
 The screenshot below shows a CSE Record returned by a search in Sumo Logic. In the example record, no sensor zone has been added to the Record, so the value of `metadata_sensorZone` is _default_.
 
-<img src={useBaseUrl('img/cse/sensor-zone-cip.png')} alt="sensor-zone-cip.png" />
+<img src={useBaseUrl('img/cse/sensor-zone-cip.png')} alt="sensor-zone-cip.png" width="600" />

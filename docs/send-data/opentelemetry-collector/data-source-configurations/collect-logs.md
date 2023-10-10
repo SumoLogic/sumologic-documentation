@@ -10,6 +10,8 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
 * [Collecting logs from local files](#collecting-logs-from-local-files)
   * [Parsing JSON logs](#parsing-json-logs)
 * [Collecting logs from Windows Event Log](#collecting-logs-from-windows-event-log)
+  * [Collecting Application, Security and System channels](#collecting-application-security-and-system-channels)
+  * [Collect from Custom channels (Powershell, Sysmon)](#collect-from-custom-channels-powershell-sysmon)
 * [Collecting logs from Syslog](#collecting-logs-from-syslog)
   * [Parsing Syslog logs into structured logs](#parsing-syslog-logs-into-structured-logs)
   * [Collecting Syslog logs in format compatible with Sumo Logic Installed Collector](#collecting-syslog-logs-in-format-compatible-with-sumo-logic-installed-collector)
@@ -52,6 +54,10 @@ processors:
       - key: _sourceCategory
         value: application_logs_prod
         action: insert
+      - key: sumo.datasource
+        value: linux
+        action: insert
+  sumologic_schema/custom_files:
 
 service:
   pipelines:
@@ -63,6 +69,7 @@ service:
         - groupbyattrs/custom_files
         - resource/custom_files
         - resourcedetection/system
+        - sumologic_schema/custom_files
         - batch
       exporters:
         - sumologic
@@ -78,6 +85,7 @@ service:
    Restart-Service -Name OtelcolSumo
    ```
 
+
 Configuration details:
 
 * **receivers**:
@@ -89,6 +97,7 @@ Configuration details:
 * **processors**:
   * `groupbyattrs/custom_files` Moves the `log.file.path_resolved` attribute from log record level to resource level to reduce data duplication.
   * `resource/custom_files` Adds the `_sourceCategory` resource attribute with value `application_logs_prod`.
+  * `sumologic_schema/custom_files` Translates attributes to names understood by Sumo Logic apps, for example renames the resource attribute `log.file.path_resolved` to `_sourceName`.
 
 * **exporters**:
   * `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
@@ -133,6 +142,12 @@ processors:
   groupbyattrs/json_files:
     keys:
       - log.file.path_resolved
+  resource/json_files:
+    attributes:
+      - key: sumo.datasource
+        value: linux
+        action: insert
+  sumologic_schema/json_files:
 
 service:
   pipelines:
@@ -142,7 +157,9 @@ service:
       processors:
       - memory_limiter
       - groupbyattrs/json_files
+      - resource/json_files
       - resourcedetection/system
+      - sumologic_schema/json_files
       - batch
       exporters:
       - sumologic
@@ -151,6 +168,8 @@ service:
 ## Collecting logs from Windows Event Log
 
 Windows Log Event Receiver reads and parses logs from windows event log API to collect local events as you see on Windows Event Viewer.
+
+### Collecting Application, Security and System channels
 
 Following configuration demonstrates:
 
@@ -172,6 +191,9 @@ processors:
     attributes:
       - key: _sourceCategory
         value: windows_event_log_prod
+        action: insert
+      - key: sumo.datasource
+        value: windows
         action: insert
 
 service:
@@ -211,6 +233,57 @@ Configuration details:
 
 * **service**:
   * `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
+
+
+### Collect from Custom channels (Powershell, Sysmon)
+
+Following configuration demonstrates:
+
+* **Collect**: Collect Sysmon logs.
+* **Transform**: Set `_sourceCategory` field to `windows_event_log_prod_sysmon`.
+* **Export**: Send data to authenticated Sumo Logic organization.
+
+```yaml
+receivers:
+  windowseventlog/sysmon/localhost/1690233479:
+    channel: Microsoft-Windows-Sysmon/Operational 
+
+processors:
+  resource/windows_resource_attributes/localhost/1690233479:
+    attributes:
+      - key: _sourceCategory
+        value: windows_event_log_prod_sysmon
+        action: insert
+      - key: sumo.datasource
+        value: windows
+        action: insert
+
+service:
+  pipelines:
+    logs/windows/localhost/1690233479:
+      receivers:
+        -  windowseventlog/sysmon/localhost/1690233479
+      processors:
+        - memory_limiter
+        - resource/windows_resource_attributes/localhost/1690233479
+        - batch
+      exporters:
+        - sumologic
+```
+
+1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sysmon_windows.yaml`.
+2. Paste the above content into the file.
+3. Restart collector with following command:
+   ```bash title="Windows"
+   Restart-Service -Name OtelcolSumo
+   ```
+
+#### Configuration details
+
+* **receivers**: `windowseventlog/sysmon/localhost/1690233479:` Collect logs from sysmon channel with name “Microsoft-Windows-Sysmon/Operational”.
+* **processors**: `resource/windows_resource_attributes/localhost/1690233479` Adds the resource attribute `_sourceCategory` with value `windows_event_log_prod_sysmon`
+* **exporters**: `sumologic` Sends data to the registered Sumo Logic organization. This exporter is preconfigured in the `sumologic.yaml` file during installation.
+* **service**: `logs/custom_files:` Pipeline glues together the receivers with the processors and the exporters.
 
 For more details, see the [Windows Event Log receiver][windows_event_log_receiver_docs].
 
@@ -253,6 +326,9 @@ processors:
       - key: _sourceCategory
         value: syslog_event_log_prod
         action: insert
+      - key: sumo.datasource
+        value: linux
+        action: insert
 
 service:
   pipelines:
@@ -271,6 +347,11 @@ service:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above. 
 
 For more details, see the [Syslog receiver][syslog_receiver_docs].
 
@@ -298,6 +379,9 @@ processors:
       - key: _sourceCategory
         value: syslog_event_log_prod
         action: insert
+      - key: sumo.datasource
+        value: linux
+        action: insert
   sumologic_syslog/syslog_plain:
 
 service:
@@ -319,12 +403,21 @@ service:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
+4. You can validate if the configuration was successful by running the following command:
+   ```bash title="Linux"
+   sudo lsof -i:<port>
+   ```
+   Where `port` is the port specified in your config above.
 
 For more details, see the [TCP Log][tcp_log_receiver_docs] or [UDP Log][udp_log_receiver_docs] receiver.
 
 ## Collecting logs from SQL databases
 
 The [SQL Query receiver][sqlquery_receiver_docs] retrieves logs from SQL databases, including MySQL, Oracle and PostgreSQL. See below for configuration for a specific database engine.
+
+:::note
+This section describes the configuration to collect logs stored in DB tables using queries. If you intend to monitor database applications availability, performance, and resource utilization of MySQL database clusters, visit [Database Monitoring](/docs/integrations/databases) and find the database of your choice.
+:::
 
 ### Collecting logs from a MySQL database
 

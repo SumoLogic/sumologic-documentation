@@ -14,9 +14,15 @@ Cloud SIEM Enterprise (CSE) is a cloud-based security information and event mana
 * Integration with the Sumo Logic core platform.
 
 
-In this section, we'll introduce the following concepts:
+This section contains the following topics:
 
 <div className="box-wrapper">
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cse/introduction-to-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Introduction to Cloud SIEM</h4></a>
+  <p>Learn basic concepts about Cloud SIEM.</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/get-started-with-cloud-siem"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Get Started with Cloud SIEM</h4></a>

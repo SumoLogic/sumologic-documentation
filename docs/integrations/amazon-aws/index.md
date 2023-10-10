@@ -15,6 +15,76 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-appflow-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/amazon-appflow">Amazon AppFlow</a></h4>
+  <p>A guide to the Sumo Logic integration for Amazon AppFlow.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-appstream2-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/amazon-appstream2">Amazon AppStream 2.0</a></h4>
+  <p>A guide to the Sumo Logic integration for Amazon AppStream 2.0.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-athena-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/amazon-athena">Amazon Athena</a></h4>
+  <p>A guide to the Sumo Logic integration for Amazon Athena.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-amplify-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-amplify">AWS Amplify</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS Amplify.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-apprunner-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-apprunner">AWS App Runner</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS App Runner.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-appsync-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-appsync">AWS AppSync</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS AppSync.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-backup-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-backup">AWS Backup</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS Backup.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-certificate-manager-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-certificate-manager">AWS Certificate Manager</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS Certificate Manager.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-chatbot-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-chatbot">AWS Chatbot</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS Chatbot.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <img src={useBaseUrl('img/integrations/amazon-aws/aws-private-certificate-authority-logo.png')} alt="Thumbnail icon" width="50"/>
+  <h4><a href="/docs/integrations/amazon-aws/aws-private-certificate-authority">AWS Private Certificate Authority</a></h4>
+  <p>A guide to the Sumo Logic integration for AWS Private Certificate Authority.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <img src={useBaseUrl('img/integrations/amazon-aws/aws-aurora-logo.png')} alt="Thumbnail icon" width="50"/>
   <h4><a href="/docs/integrations/amazon-aws/aurora-mysql-ulm">Aurora MySQL ULM</a></h4>
   <p>A guide to the Sumo Logic app for Aurora MySQL ULM.</p>

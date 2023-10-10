@@ -1,5 +1,5 @@
 ---
-title: April 19, 2023 (Collection)
+title: Rapid7 - C2C (Collection)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - cloud-to-cloud

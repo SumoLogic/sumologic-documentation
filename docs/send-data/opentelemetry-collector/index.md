@@ -21,8 +21,8 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
 <div className="box-wrapper" >
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/install-collector-linux"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Install Collector on Linux</h4></a>
-      <p>Step-by-step instructions for installing the OpenTelemetry collector on Linux.</p>
+      <a href="/docs/send-data/opentelemetry-collector/install-collector"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/><h4>Install Collector</h4></a>
+      <p>Step-by-step instructions for installing the OpenTelemetry collector on Linux, Windows, macOS, and more.</p>
     </div>
   </div>
   <div className="box smallbox card">
@@ -40,7 +40,7 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
   <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/data-source-configurations">
-        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/>
         <h4>Data Source and Configurations</h4>
       </a>
       <p>Learn how to collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
@@ -48,13 +48,13 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
   </div>
   <div className="box smallbox card">
     <div className="container">
-      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Sumo Logic OTel vs OTel</h4></a>
+      <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
       <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Troubleshooting and FAQ</h4></a>
+    <a href="/docs/send-data/opentelemetry-collector/troubleshooting"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/><h4>Troubleshooting and FAQ</h4></a>
     <p>Find solutions to common issues and answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>
   </div>
