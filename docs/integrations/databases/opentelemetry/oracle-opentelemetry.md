@@ -90,57 +90,38 @@ To set up the performance metrics script on Linux and Windows for the Oracle app
   defaultValue="Linux"
   values={[
     {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
+    {label: 'Windows', value: 'Windows'} 
+    ]}>
 
 <TabItem value="Linux">
+  Configure a cron job to trigger the python script using crontab. Frequency of this job can be set following the instructions from [here](https://www.python-engineer.com/posts/cron-jobs-for-python/#crontab).
 
-Configure a cron job to trigger the python script using crontab. Frequency of this job can be set following the instructions from [here](https://www.python-engineer.com/posts/cron-jobs-for-python/#crontab).
+  * To find the python3 path, you can run: 
 
-* To find the python3 path, you can run: 
-  ```sh
-  which python3
-  ```
-* Here is the command which needs to be configured as part of cron to trigger the script:
-  ```sh
-  <frequency_expression> <output_of_which_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
-  ```
+    ```sh
+    which python3
+    ```
+  * Here is the command which needs to be configured as part of cron to trigger the script:
+
+    ```sh
+    <frequency_expression> <output_of_which_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
+    ```
 
 </TabItem>
+
 <TabItem value="Windows">
 
-* Find the location of python.exe by running:
-  ```
-  where python3
-  ```
-* Create a `.bat` file with the following arguments:
-  ```sh
-  @ECHO OFF
-  <output_of_where_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
-  ```
+  * Find the location of python.exe by running:
+    ```
+    where python3
+    ```
+  * Create a `.bat` file with the following arguments:
+    ```sh
+    @ECHO OFF
+    <output_of_where_python3> <path_to_cronJob.py> <path_to_oracle-perf-monitor.py> <timeout_in_seconds> <output_location_of_file>
+    ```
 
-The `.bat` file created above can then be triggered periodically using windows Task Scheduler following an example [here](https://www.thewindowsclub.com/how-to-schedule-batch-file-run-automatically-windows-7).
-
-</TabItem>
-<TabItem value="Chef">
-
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+  The `.bat` file created above can then be triggered periodically using windows Task Scheduler following an example [here](https://www.thewindowsclub.com/how-to-schedule-batch-file-run-automatically-windows-7).
 
 </TabItem>
 </Tabs>
@@ -192,15 +173,19 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Oracle instance which needs to be monitored.
 2. Place Env file in the following directory:
-   ```sh
-   /etc/otelcol-sumo/env/
-   ```
+
+```sh
+/etc/otelcol-sumo/env/
+```
+
 3. Restart the collector using:
-   ```sh
-   sudo systemctl restart otelcol-sumo
-   ```
+
+```sh
+sudo systemctl restart otelcol-sumo
+```
 
 </TabItem>
+
 <TabItem value="Windows">
 
 1. Copy the yaml file to **`C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`** folder in the machine which needs to be monitored.
@@ -214,9 +199,11 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Oracle instance which needs to be monitored.
 2. Restart the otelcol-sumo process using:
-   ```sh
-   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-   ```
+
+```sh
+otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+```
+
 </TabItem>
 <TabItem value="Chef">
 

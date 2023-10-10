@@ -107,11 +107,12 @@ You can add any custom fields which you want to tag along with the data ingested
 
 <TabItem value="Windows">
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using: 
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
+  1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+  2. Restart the collector using: 
+    ```sh
+    Restart-Service -Name OtelcolSumo
+    ```
+    
 </TabItem>
 
 <TabItem value="Chef">

@@ -69,11 +69,12 @@ You can add any custom fields which you want to be tagged with the data ingested
 
 <TabItem value="Linux">
 
-1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Cassandra instance which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
+  1. Copy the yaml to `/etc/otelcol-sumo/conf.d/` folder for the Cassandra instance which needs to be monitored.
+  2. Restart the collector using:
+    ```sh
+   sudo systemctl restart otelcol-sumo
+    ```
+
 </TabItem>
 
 <TabItem value="Chef">
@@ -100,7 +101,7 @@ You can add any custom fields which you want to be tagged with the data ingested
 ## Sample Log
 
 ```sql
-INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates
+  INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates
 ```
 
 ## Sample Query 
