@@ -21,6 +21,7 @@ The web interface autocomplete feature for log search variables has the follow
 * Only dashboards that were viewed in the last 3 days are updated.
 * Up to 10,000 log values and 1,000 metric values are displayed.
 * Values for template variables are based on the time range of the Dashboard.
+* For log search with multi-value variables, you can use a multi-variable in the **selector** but only in the form of `<field>={{variable}}`. Adding <field> matches `{{variable}}` will only work after the first pipe.
 
 ## Show and hide variables option
 
@@ -205,7 +206,3 @@ To use a metrics variable in a query working in advanced query mode, do the fol
 1. Locate the name of the variable you'd like to use in the dropdown list and copy it.
 1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.
 
-
-## Limitation
-
-For log search with multi-value variables, do not add multi-value variables `{{variable}}` before the first pipe, instead you can add the variables after the first pipe to refine the search results or you can add the value by itself before the first pipe.
