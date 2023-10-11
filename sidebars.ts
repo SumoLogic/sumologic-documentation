@@ -774,9 +774,19 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
-        'manage/security/audit-index',
-        'manage/security/audit-event-index',
-        'manage/security/audit-index-access',
+        {
+          type: 'category',
+          label: 'Audit Indexes',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/audit-indexes/index'},
+          items: [
+            'manage/security/audit-indexes/audit-index',
+            'manage/security/audit-indexes/audit-event-index',
+            'manage/security/audit-indexes/search-audit-index',
+            'manage/security/audit-indexes/audit-index-access',
+          ]
+        },
         'manage/security/create-allowlist-ip-cidr-addresses',
         'manage/security/data-access-level-shared-dashboards',
         'manage/security/enable-support-account',
@@ -800,7 +810,6 @@ module.exports = {
             'manage/security/saml/view-saml-debug-information',
           ]
         },
-        'manage/security/search-audit-index',
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
