@@ -17,11 +17,11 @@ This feature requires two parts to work:
 
 The web interface autocomplete feature for log search variables has the following limitations:
 
-* It is updated every night for the last 24 hours starting from 10PM PT to the previous day at 10PM PT. 
-* Only dashboards that were viewed in the last 3 days are updated.
-* Up to 10,000 log values and 1,000 metric values are displayed.
-* Values for template variables are based on the time range of the Dashboard.
-* For log search with multi-value variables, you can use a multi-variable in the **selector** but only in the form of `<field>={{variable}}`. Adding <field> matches `{{variable}}` will only work after the first pipe.
+- It is updated every night for the last 24 hours starting from 10PM PT to the previous day at 10PM PT. 
+- Only dashboards that were viewed in the last 3 days are updated.
+- Up to 10,000 log values and 1,000 metric values are displayed.
+- Values for template variables are based on the time range of the Dashboard.
+- For log search with multi-value variables, you can use a multi-variable in the **selector** but only in the form of `<field>={{variable}}`. Adding `field` matches `{{variable}}` will only work after the first pipe.
 
 ## Show and hide variables option
 
