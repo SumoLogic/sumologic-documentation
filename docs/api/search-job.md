@@ -724,6 +724,7 @@ Notice that the state of the sample search job is DONE GATHERING RESULTS. The fo
 | :-- | :-- | 
 | NOT STARTED	| Search job has not been started yet.| 
 | GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.| 
+| GATHERING RESULTS FROM SUBQUERIES | Search job is gathering results from the subqueries, before executing the main query.|
 | FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.| 
 | DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.| 
 | DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
