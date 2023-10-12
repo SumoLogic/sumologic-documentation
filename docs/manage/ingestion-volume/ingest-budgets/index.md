@@ -203,7 +203,7 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
 
 ### Audit ingest budgets
 
-The [Audit Index](/docs/manage/security/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
+The [Audit Index](/docs/manage/security/audit-indexes/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
 
 1. Approaching or exceeding capacity
 1. Resets
