@@ -250,7 +250,7 @@ All accounts are subject to throttling, regardless of plan type (Cloud Flex or C
 
 #### Setup
 
-Enable the Audit Volume Index. See [Enable and Manage the Audit Index](../security/audit-index.md) for instructions.
+Enable the Audit Index. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index#enable-the-audit-index) for instructions.
 
 #### Query
 
