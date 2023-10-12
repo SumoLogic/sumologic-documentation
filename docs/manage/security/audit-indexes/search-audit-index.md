@@ -48,7 +48,7 @@ Querying the index returns results only if the index is enabled.
 
 ## Index retention period
 
-By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../partitions-data-tiers/create-edit-partition.md).
+By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).
 
 ## Log Search Audit Index message fields
 
@@ -57,7 +57,7 @@ The following table provides details on the fields returned by the index:
 | Field  | Description |
 |:--|:--|
 | `time` | The time when the audit log was generated. |
-| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](../partitions-data-tiers/data-tiers.md). |
+| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers). |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
 | `data_scanned_bytes` | Amount of data scanned by the search query. This value is an approximation, as the scanned message bytes are captured at intermittent time intervals and then averaged over the query time range. It is important to note that this value may be less than the retrieved bytes in some cases due to the approximation. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
 | `execution_duration_ms` | Time taken to complete the search. |
