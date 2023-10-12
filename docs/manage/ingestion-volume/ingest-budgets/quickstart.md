@@ -4,7 +4,6 @@ title: Ingest Budgets Quickstart Tutorial
 description: Learn how to create and use Ingest Budgets.
 ---
 
-
 ## Availability
 
 | Account Type | Account Level|
@@ -40,7 +39,7 @@ Select the documentation link for your deployment:
 | US1 | https://api.sumologic.com/docs/#tag/ingestBudgetManagement |
 | US2 | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagement |
 
-## Step 1. Create an Ingest Budget
+## Step 1: Create an Ingest Budget
 
 Use a POST request to create an ingest budget. See the [API documentation for Ingest Budgets](#ingest-budgets-api-documentation) for further details.
 
@@ -113,7 +112,7 @@ which returns
 You will use the `id` value in the next request. This example's value is `0000000000000064`.
 :::
 
-## Step 2. Confirm the Budget was Created
+## Step 2: Confirm the Budget was Created
 
 Use a GET request to confirm its creation. See the [API documentation for Ingest Budgets](#ingest-budgets-api-documentation)
 for further details.
@@ -147,7 +146,7 @@ which returns
 }
 ```
 
-## Step 1. Assign a Collector to the Budget
+## Step 3: Assign a Collector to the Budget
 
 The following steps can be referenced in [Assign Collector to Ingest Budget](assign-collector-ingest-budget.md). You can use the Collection page in the Sumo web interface or the Collector API to assign the Collector.
 
@@ -252,7 +251,7 @@ Our updated file's content is:
 }
 ```
 
-## Step 1. Obtain the ETag value to identify Collector
+## Step 4: Obtain the ETag value to identify Collector
 
 To assign a Collector to a budget you'll need to make a PUT request with the [Collector Management API](/docs/api/collector-management). This request requires an "ETag" header value for verification. To get this value use a GET request for the Collector you want to assign and the response will have the value, like `< ETag: "a2c82c407ea4ae70ac4f6425b50942a1"`. You did this in step 2.
 
@@ -264,7 +263,7 @@ Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `15
 curl -v -u '<accessid:accesskey>' https://api.<your deployment>.sumologic.com/api/v1/collectors/150905330
 ```
 
-## Step 5. Assign Collector to the Budget
+## Step 5: Assign Collector to the Budget
 
 Use a PUT request with the [Collector Management API](/docs/api/collector-management) to update the Collector with the ingest budget assignment. Your PUT request needs to provide the "ETag" value from step 4 and the updated JSON file you created in step 3.
 
@@ -276,7 +275,7 @@ Customize `<accessid:accesskey>`, `a2c82c407ea4ae70ac4f6425b50942a1`, `updated_c
 curl -u \<accessid:accesske\>'  -X PUT -H "Content-Type: application/json" -H "If-Match: \"a2c82c407ea4ae70ac4f6425b50942a1\"" -T updated_collector.json https://api\<your deploymen\>.sumologic.com/api/v1/collectors/150905330`
 ```
 
-## Step 6. Verify Collector is assigned to Budget
+## Step 6: Verify Collector is assigned to Budget
 
 Use another GET request to verify the assignment.
 
