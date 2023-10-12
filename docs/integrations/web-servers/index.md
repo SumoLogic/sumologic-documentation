@@ -11,7 +11,7 @@ This guide has documentation for Sumo apps for web servers.
 
 
 <div className="box-wrapper">
-<div className="box smallbo card">
+<div className="box smallbox card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="70"/>
   <h4><a href="/docs/integrations/web-servers/apache">Apache</a></h4>
