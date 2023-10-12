@@ -110,7 +110,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Enhance your cybersecurity posture by providing real-time insights.</p>
   </div>
 </div>
-<div className="box smallbox16 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/fastly"><img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="40"/><h4>Fastly</h4></a>
   <p>Control how and where you serve content, and view performance analytics.</p>
