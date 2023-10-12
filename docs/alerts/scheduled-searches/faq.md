@@ -86,7 +86,7 @@ Failures could be related to the Scheduled Search query. Check the following pos
 Failures can be seen across many Scheduled Searches due to backend infrastructure issues at Sumo Logic, and nothing specific to that particular query. In this case, just wait until Sumo Logic service is restored and be ready to test your query for normal performance.
 
 * Check http://status.sumologic.com for outages impacting multiple customers and specific functionality such as searches, real time alerts, etc.
-* Sumo Logic reports Scheduled Search failures in the [Audit Index](/docs/manage/security/audit-index.md). You can determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to any infrastructure issues and will take action to address them as soon as possible. 
+* Sumo Logic reports Scheduled Search failures in the [Audit Index](/docs/manage/security/audit-indexes/audit-index.md). You can determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to any infrastructure issues and will take action to address them as soon as possible. 
 
 ### Other Issues
 
@@ -190,7 +190,7 @@ Scheduled Searches must run within the limits of a [timeout period](#how-to-prev
 
 When a Scheduled Search query fails Sumo Logic attempts to run the query again a few more times. If all attempts fail the scheduled search is temporarily or permanently suspended depending on the issue detected. The owner of the scheduled search will receive an email alert with details of the suspension including the reason.
 
-The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events.
+The [Audit Index](/docs/manage/security/audit-indexes/audit-index.md) stores events on your scheduled search events.
 
 ### Is there a limit on number of scheduled searches?
 
@@ -204,7 +204,7 @@ The following is an example of a temporary suspension email:
 
 ![suspension email.png](/img/alerts/suspension-email.png)
 
-The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
+The [Audit Index](/docs/manage/security/audit-indexes/audit-index.md) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
 
 ![temp sus.png](/img/alerts/temp-sus.png)
 
@@ -214,7 +214,7 @@ The following is an example of a permanent suspension email:
 
 ![permanent sus.png](/img/alerts/permanentsus.png)
 
-The [Audit Index](/docs/manage/security/audit-index.md) stores events on your scheduled search events. The following is an example of a permanent suspension log:
+The [Audit Index](/docs/manage/security/audit-indexes/audit-index.md) stores events on your scheduled search events. The following is an example of a permanent suspension log:
 
 ![perm sus.png](/img/alerts/perm-sus.png)
 

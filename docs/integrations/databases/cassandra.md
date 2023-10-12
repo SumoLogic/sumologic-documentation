@@ -496,9 +496,9 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
 #### Configure Metrics and Logs Collection  
 
 1. Install sumologic-otel-collector by following the instructions for your operating system:
-   * [Linux](/docs/send-data/opentelemetry-collector/install-collector-linux)
-   * [macOS](/docs/send-data/opentelemetry-collector/install-collector-macos)
-   * [Windows](/docs/send-data/opentelemetry-collector/install-collector-windows)
+   * [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux)
+   * [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos)
+   * [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows)
 2. Configure and start sumologic-otel-collector. As part of collecting metrics data from Cassandra, we will use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for Telegraf to get data from otel and then send data to Sumo Logic. Create or modify config.yaml. Sample config is [here](https://ot-distro.s3.amazonaws.com/config_cassandra.yaml). Please enter values for the following parameters.
    * Enter Sumo Logic collection details in the section; extensions > sumologic by referring to [these](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/extension/sumologicextension) instructions. Configure details like collector name, category, install token, endpoint etc.
    * In the input plugins section, that is `[[inputs.jolokia2_agent]]`:

@@ -89,7 +89,7 @@ You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-i
 
 ## How can I be alerted when throttling takes place?
 
-If the audit index is enabled you can set up a scheduled search to send an alert when throttling occurs. For more information, see [Audit Index](../security/audit-index.md).  
+If the audit index is enabled you can set up a scheduled search to send an alert when throttling occurs. For more information, see [Audit Index](/docs/manage/security/audit-indexes/audit-index).  
 
 ## Ingestion with file changes
 

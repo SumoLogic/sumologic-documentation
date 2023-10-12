@@ -13,7 +13,7 @@ description: The Audit Event Index provides event logs in JSON on your account's
 
 The **Audit Event Index** contains event logs in JSON format on account activities, allowing you to monitor and audit changes. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit) to visually display data from the Audit Event Index for monitoring and analysis.
 
-This index is improved and different from the [Audit Index](audit-index.md), and there is some overlap of audited events. The Audit Index provides event logs in plain text and audits when account limits are reached and operation failures, like throttling and scheduled search events.
+This index is improved and different from the [Audit Index](/docs/manage/security/audit-indexes/audit-index), and there is some overlap of audited events. The Audit Index provides event logs in plain text and audits when account limits are reached and operation failures, like throttling and scheduled search events.
 
 ## Documentation 
 
@@ -65,31 +65,31 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 
 | Product Feature | _sourceCategory Value  |
 | :-- | :-- |
-| [Access Keys](access-keys.md) | `accessKeys` |
+| [Access Keys](/docs/manage/security/access-keys/) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Collection](/docs/send-data/collection) | `collection` |
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
-| [Fields](/docs/manage/fields.md) | `fieldManagement` |
+| [Fields](/docs/manage/fields) | `fieldManagement` |
 | [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) | `ingestBudgets` |
-| [Installation Tokens](installation-tokens.md) | `token` |
-| [Logs-to-Metrics Rules](../../metrics/logs-to-metrics.md) | `metricExtractionRule` |
+| [Installation Tokens](/docs/manage/security/installation-tokens) | `token` |
+| [Logs-to-Metrics Rules](/docs/metrics/logs-to-metrics) | `metricExtractionRule` |
 | [Monitors](/docs/alerts/monitors) | `monitorLibrary` |
-| [Password Policy](set-password-policy.md) | `passwordPolicy` |
-| [Roles](../users-roles/roles/create-manage-roles.md) | `roles` |
+| [Password Policy](/docs/manage/security/set-password-policy) | `passwordPolicy` |
+| [Roles](/docs/manage/users-roles/roles/create-manage-roles) | `roles` |
 | [SAML](/docs/manage/security/saml) | `saml` |
 | [Scheduled Views](/docs/manage/scheduled-views) | `scheduledView` |
-| Security Policies: [Share Dashboards Outside of the Organization](../../dashboards-classic/share-dashboard-outside-org.md), [Data Access Level for Shared Dashboards](data-access-level-shared-dashboards.md), [Per User Concurrent Sessions Limit](set-limit-user-concurrent-sessions.md), and [User Session Timeout](set-max-web-session-timeout.md) | `orgSettings` |
-| Security Policy: [Support Account Access](enable-support-account.md) | `supportAccount` |
-| [Service Allowlist](create-allowlist-ip-cidr-addresses.md) | `serviceAllowlist` |
-| [Support Account](enable-support-account.md) | `supportAccount` |
+| Security Policies: [Share Dashboards Outside of the Organization](/docs/dashboards-classic/share-dashboard-outside-org), [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards), [Per User Concurrent Sessions Limit](/docs/manage/security/set-limit-user-concurrent-sessions), and [User Session Timeout](/docs/manage/security/set-max-web-session-timeout) | `orgSettings` |
+| Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
+| [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
+| [Support Account](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
-| [Transformation Rules](../../metrics/metrics-transformation-rules.md) | `transformationRules` |
+| [Transformation Rules](/docs/metrics/metrics-transformation-rules) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |
 | User Sessions | `userSessions` |
-| [2-Step Verification](about-2-step-verification.md) | `multiFactorAuthentication` |
+| [2-Step Verification](/docs/manage/security/about-two-step-verification) | `multiFactorAuthentication` |
 
 When performing create, update, and delete requests through Sumo Logic APIs, you can find the API accessID within the operator field of your related Audit Event Index messages.
 
@@ -99,8 +99,8 @@ When performing create, update, and delete requests through Sumo Logic APIs, you
 
 | Metadata Field | Assignment Description |
 | :-- | :-- |
-| _sourceCategory   | Value of the [common parameter](audit-event-index.md), `subsystem`. |
-| _sourceName | Value of the [common parameter](audit-event-index.md), `eventName`. |
+| _sourceCategory   | Value of the [common parameter](#common-parameters), `subsystem`. |
+| _sourceName | Value of the [common parameter](#common-parameters), `eventName`. |
 | _sourceHost | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
 
 ## Common parameters
@@ -150,4 +150,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](../partitions-data-tiers/create-edit-partition.md).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).

@@ -97,6 +97,9 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **On Entity**. Use the pull-down list to select one or more Entity fields, for example, an IP address, MAC address, hostname, and so on. When the rule is triggered, it will fire a Signal on each of the Entity fields you select.  
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
+:::note
+{@import ../../reuse/cse-rule-description-links.md}
+:::
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.

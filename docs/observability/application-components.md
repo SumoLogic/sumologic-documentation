@@ -13,6 +13,7 @@ Pre-configured dashboards available for application components solve many common
 
 :::caution Limitations
 This solution is currently supported for the following apps only:
+* [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -207,6 +208,7 @@ At the end of the console output, you should see two links, one for Apps Folder 
 ### Configure Metrics and Logs Collection
 
 Refer to the documentation for the app you're using. App Components Solution currently supports:
+* [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
