@@ -24,7 +24,7 @@ In this section, we'll introduce the following concepts and more:
 <div className="box smallbox2 card">
   <div className="container">
   <img src={useBaseUrl('img/connection-and-integration/aws-lambda.svg')} alt="Thumbnail icon" width="45"/>
-  <h4><a href="/docs/integrations/amazon-aws/">AWS Lambda</a></h4>
+  <h4><a href="/docs/alerts/webhook-connections/aws-lambda/">AWS Lambda</a></h4>
   </div>
 </div>
 <div className="box smallbox3 card">
