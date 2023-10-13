@@ -23,6 +23,7 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Name**. Displays the name of the scheduled view.
     * **Query**. The query that returns the data for the scheduled view.
     * **Search Mode**. Indicates the type of search mode, such as Manual Mode or Auto Parse Mode.
+    * **View ID**. Unique ID for each scheduled view, used for faster debugging and improved internal operation efficiency. With the view ID, you can collect the details and update the scheduled view directly using the API.
     * **Progress**. Indicates how up-to-date the scheduled view is.
     * **Data scanned to fill this scheduled view**. Provides trend information about the data scanned over time and displays the total data scanned for the selected time to run the query.
     * **Retention Period**. The period of time data in the scheduled view is retained.
@@ -30,4 +31,6 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 bucket, the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination.  
-    * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/> ![Scheduled Views page.png](/img/scheduled-views/sched-view-details.png)
+    * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid black'}} alt="sched-view-details" width="400"/>
+
+
