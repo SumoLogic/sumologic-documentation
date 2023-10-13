@@ -2,12 +2,12 @@
 id: normalized-authentication-rules
 title: Normalized Authentication Rules
 sidebar_label: Normalized Authentication Rules
-description: CSE's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.
+description: Cloud SIEM's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
+*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
 specific product or vendor.  
 
 ## Requirements and prerequisites
@@ -17,7 +17,7 @@ CloudTrail, VPN authentication services like Cisco ASA, and OS-based authenticat
 
 For the rules to support a particular product or service, the log mapping for that service must map several fields correctly.
 
-You can check whether a given data source is already supported by reviewing its log mapping in CSE. If it is, you’re good to go. If a mapping already exists for the data source, you can update it as described in this topic. If the data source doesn’t already have a mapping, you can create one.
+You can check whether a given data source is already supported by reviewing its log mapping in Cloud SIEM. If it is, you’re good to go. If a mapping already exists for the data source, you can update it as described in this topic. If the data source doesn’t already have a mapping, you can create one.
 
 The mapping requirements are:
 
@@ -49,7 +49,7 @@ This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requiremen
 
 ## About logon and domainLogon
 
-There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables CSE to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
+There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables Cloud SIEM to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
 
 This is done for several reasons:
 
@@ -57,7 +57,7 @@ This is done for several reasons:
 * To differentiate between instances where a user account’s credentials are definitively being used to log into a machine, such as a Windows interactive logon as reported in event code 4624, from instances where credentials are being checked for access to the domain, such as a Kerberos TGT request as reported in event code 4768.
 * To allow for different thresholds to be applied to domain access checks as these events tend to be more voluminous and difficult to attribute to a specific action. For example, a 4768 could be generated when Username1 logs in by typing credentials in on a keyboard or when another user accesses the same host using RDP with the credentials for Username1, but there would be no way of reliably determining which scenario occurred based on the 4768 log alone.
 
-CSE determines which value of of `normalizedAction` is appropriate for a given log message, using this logic:
+Cloud SIEM determines which value of of `normalizedAction` is appropriate for a given log message, using this logic:
 
 * Windows Event Codes 4768 and 4771 are statically assigned the value *domainLogon.*
 * Windows Event Code 4776 is statically assigned the value *logon* but logic is included in several of the normalized authentication rules to differentiate between an NTLM authentication to a domain controller and to a local account on a machine

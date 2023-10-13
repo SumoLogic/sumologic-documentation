@@ -2,12 +2,12 @@
 id: username-and-hostname-normalization
 title: Username and Hostname Normalization
 sidebar_label: Username and Hostname Normalization
-description: Learn about how CSE normalizes usernames and hostnames during mapping and parsing.
+description: Learn about how Cloud SIEM normalizes usernames and hostnames during mapping and parsing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes how CSE normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
+This topic describes how Cloud SIEM normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
 
 ## Details
 
@@ -48,7 +48,7 @@ If a name normalization configuration exists, the name attribute will be populat
 
 ## Configuration
 
-The name normalization feature can be enabled in the **Incoming Data** section under the **Entities** tab of the CSE configuration.  
+The name normalization feature can be enabled in the **Incoming Data** section under the **Entities** tab of the Cloud SIEM configuration.  
 
 <img src={useBaseUrl('img/cse/Configuration.png')} alt="Configuration" width="800"/>
 

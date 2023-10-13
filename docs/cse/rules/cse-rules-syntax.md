@@ -1,11 +1,11 @@
 ---
 id: cse-rules-syntax
-title: CSE Rules Syntax
+title: Cloud SIEM Rules Syntax
 sidebar_label: Rules Syntax
-description: Learn about the functions you can use when writing CSE Rules.
+description: Learn about the functions you can use when writing Cloud SIEM Rules.
 ---
 
-This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](/docs/cse/rules/about-cse-rules).
+This topic describes commonly used Cloud SIEM rules language functions. Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
 
 ## &&
 
@@ -49,7 +49,7 @@ The following expression divides `error_count` by `user_count`.
 
 The forward slash and asterisk characters (/*  */) comment out lines. 
 
-For CSE rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
+For Cloud SIEM rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
 
 **Syntax**
 
@@ -223,7 +223,7 @@ Checks if any HTTP header in the supplied map matches a given regex. 
  
 ## asciiToHex
 
-Casts an ASCII string to a hexadecimal string. This is equivalent to `toHex` in the CSE rules syntax.
+Casts an ASCII string to a hexadecimal string. This is equivalent to `toHex` in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -272,7 +272,7 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-CSE rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
+Cloud SIEM rules use `array_contains` statements to look for a value in a Record field. This is useful if you want to check a Record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
@@ -313,13 +313,13 @@ where:
 
 **Example**
 
-This example checks to see if the `listMatches` field contains the value “vuln_scanners” (the name of a CSE Match List). 
+This example checks to see if the `listMatches` field contains the value “vuln_scanners” (the name of a Cloud SIEM Match List). 
 
 `array_contains(listMatches, 'vuln_scanners')`
 
 ## base64Decode
 
-Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent to `fromBase64` in the CSE rules syntax.
+Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent to `fromBase64` in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -329,7 +329,7 @@ Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent
 
 ## base64Encode 
 
-Takes an ASCII string and converts it to a base64 string. This is equivalent to `toBase64` in the CSE rules syntax.
+Takes an ASCII string and converts it to a base64 string. This is equivalent to `toBase64` in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -416,7 +416,7 @@ Compares string values of two fields and returns a boolean result based on wheth
 `contains(<field1>, <field2>)`
 
 :::note
-Sumo Logic core platform supports additional two forms of `contains` syntax. CSE supports only the form shown here. 
+Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
 :::
 
 ## cos
@@ -481,7 +481,7 @@ Returns value of x in exp(x)-1, compensating for the roundoff in exp(x).
 
 ## floor
 
-Rounds down to the largest previous integer value. Returns the largest integer not greater than x. This is equivalent to `int` in the CSE rules syntax.
+Rounds down to the largest previous integer value. Returns the largest integer not greater than x. This is equivalent to `int` in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -518,7 +518,7 @@ Returns the distance between latitude and longitude values of two coordinates in
 
 ## hexToAscii 
 
-Converts a hexadecimal string to an ASCII string. This is equivalent to fromHex in the CSE rules syntax.
+Converts a hexadecimal string to an ASCII string. This is equivalent to fromHex in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -696,7 +696,7 @@ Checks if the input string is a valid IPv6 address.
 ## jsonArrayContains 
 
 Returns “true” if a specified field contains a particular value. This is
-equivalent to `array_contains` in the CSE rules syntax.
+equivalent to `array_contains` in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -709,7 +709,7 @@ equivalent to `array_contains` in the CSE rules syntax.
 ## jsonArraySize 
 
 Returns the length of a string. Returns -1 if null. This is equivalent
-to `size` in the CSE rules syntax.
+to `size` in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -731,8 +731,8 @@ You can use the `json` operator allows to extract:
 * Nested keys
 * Keys in arrays
 
-The primary use case for the `json` operator in CSE match expressions is
-to access unmapped message fields that are contained in the CSE `fields`
+The primary use case for the `json` operator in Cloud SIEM match expressions is
+to access unmapped message fields that are contained in the Cloud SIEM `fields`
 attribute.
 
 **Syntax**
@@ -752,14 +752,14 @@ attribute.
 * In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
  
 :::note
-Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
+Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
 :::
 
-* As part of the ingestion process, the `fields` field in CSE is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, CSE accepts `_raw` as an alias to `fields`.
+* As part of the ingestion process, the `fields` field in Cloud SIEM is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, Cloud SIEM accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
-* CSE doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
+* Cloud SIEM doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
 
   * `| json field=fields "foo.bar['baz']" as nestedKey`
   * `| json field=fields "foo[0]" as indexKey`
@@ -785,7 +785,7 @@ Currently, to use the `json` operator in CSE you must supply a field and an alia
 | where toInt(packets_sent) != toInt(packets_received)
 ```
 
-The second query shown above is equivalent to the following CSE syntax. 
+The second query shown above is equivalent to the following Cloud SIEM syntax. 
 
 `int(fields['packetsSent']) != int(fields['packetsReceived'])`
 
@@ -913,8 +913,8 @@ Can be used to match a string to a wildcard pattern or an RE2 compliant regex. T
 
 **Examples**
 
-* `where foo matches "*bar*"` (This example is equivalent to `foo LIKE '%bar%'` in the CSE rules syntax.)
-* `where foo matches /.*bar.*/` (This example is equivalent to `foo RLIKE '.*bar.*'` in the CSE rules syntax.)
+* `where foo matches "*bar*"` (This example is equivalent to `foo LIKE '%bar%'` in the Cloud SIEM rules syntax.)
+* `where foo matches /.*bar.*/` (This example is equivalent to `foo RLIKE '.*bar.*'` in the Cloud SIEM rules syntax.)
 
 ## num
 
@@ -1088,7 +1088,7 @@ Casts string data to the double data type.
 ## toFloat 
 
 Casts a string to a floating point number. This is equivalent to `float`
-in the CSE rules syntax.
+in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -1096,7 +1096,7 @@ in the CSE rules syntax.
 
 ## toInt 
 
-Casts a string to an integer. This is equivalent to `int` in the CSE
+Casts a string to an integer. This is equivalent to `int` in the Cloud SIEM
 rules syntax.
 
 **Syntax**
@@ -1114,7 +1114,7 @@ Casts string data to the long data type.
 ## toLowerCase 
 
 Converts a string to all lower case letters. This is equivalent to lower
-in the CSE rules syntax.
+in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -1135,7 +1135,7 @@ Converts angles from radians to degrees.
 ## toUpperCase 
 
 Converts a string to all uppercase letters. This is equivalent to upper
-in the CSE rules syntax.
+in the Cloud SIEM rules syntax.
 
 **Syntax**
 
@@ -1190,9 +1190,9 @@ Filters results based on the value of a boolean expression.  
 
 `| where jsonArrayContains(field, “vuln_scanner”)`  
 
-## Sumo Logic core platform literals supported in CSE
+## Sumo Logic core platform literals supported in Cloud SIEM
 
-The following Sumo Logic core platform literals are supported in CSE:
+The following Sumo Logic core platform literals are supported in Cloud SIEM:
 
 * Time-based suffixed literals (millisecond-based. i.e., 1s == 1000)
 

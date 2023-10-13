@@ -2,28 +2,28 @@
 id: inventory-sources-and-data
 title: Inventory Sources and Data
 sidebar_label: Inventory Sources and Data
-description: Inventory data is information about computers and users in your environment that CSE uses to provide context to Entities in the CSE UI.
+description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to Entities in the Cloud SIEM UI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about _inventory sources_ and the _inventory data_ they collect.
 
-Inventory data is information about computers and users in your environment that CSE uses to provide context to Entities in the CSE UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
+Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to Entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
 
-In addition to providing context to CSE Insights and Entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table)
+In addition to providing context to Cloud SIEM Insights and Entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table)
 
-## Inventory data in the CSE UI
+## Inventory data in the Cloud SIEM UI
 
-The screenshots in this section show how CSE presents inventory data in the UI.
+The screenshots in this section show how Cloud SIEM presents inventory data in the UI.
 
 This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
 
-<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="CSE image" width="400" />
+<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Cloud SIEM image" width="400" />
 
 This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
 
-<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="CSE image" width="400"/>
+<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="Cloud SIEM image" width="400"/>
 
 ## About inventory data sources
 
@@ -38,7 +38,7 @@ Some inventory sources provide user inventory information, some provide computer
 | [Armis API Integration Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) | Cloud-to-Cloud | Computer |
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Cloud-to-Cloud | Computer |
 | [CrowdStrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Cloud-to-Cloud | Computer |
-| [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
+| [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
 | [Cylance](/docs/integrations/security-threat-detection/cylance) | Cloud-to-Cloud | Computer | <!-- The link goes to an app article. There is no Cylance source article in our docs. -->
 | [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source) | Cloud-to-Cloud | User |
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source) | Cloud-to-Cloud | Computer and User |
@@ -107,7 +107,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 | osVersion | os_version |  | 
 
 
-### CSE AWS (EC2) Inventory Source - Computer
+### Cloud SIEM AWS (EC2) Inventory Source - Computer
 
 | Inventory Attribute | Data Source Field | Note |  
 | :-- | :-- | :-- |

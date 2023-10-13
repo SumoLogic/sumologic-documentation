@@ -90,7 +90,7 @@ To configure a SentinelOne Mgmt API Source:**
    ![SentinelOne create pane.png](/img/send-data/SentinalOne-create-pane.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: SentinelOne
    * `_siemProduct`: MGMT API
    * `_siemFormat`: JSON
