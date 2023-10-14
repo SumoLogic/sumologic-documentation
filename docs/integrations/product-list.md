@@ -75,8 +75,8 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>   | [Amazon SNS](https://aws.amazon.com/sns/)  | 	App: [Amazon SNS](/docs/integrations/amazon-aws/sns/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/sqs.png')} alt="Thumbnail icon" width="50"/>   | [Amazon SQS](https://aws.amazon.com/sqs/)  | 	App: [Amazon SQS](/docs/integrations/amazon-aws/sqs/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon VPC](https://aws.amazon.com/vpc/) | 	Apps: <br/>- [Amazon VPC Flow - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow/) <br/>- [Amazon VPC Flow Logs](/docs/integrations/amazon-aws/vpc-flow-logs/)	<br/>- [PCI Compliance for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/vpc-flow-logs-pci-compliance/) | 
-|  <img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="50"/>   | [Apache](https://www.apache.org/)  | 	Apps: <br/>- [Apache](/docs/integrations/web-servers/apache/)	 <br/>- [Apache - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/apache-opentelemetry/)	 | 
-|  <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="50"/>   | [Apache Tomcat](https://tomcat.apache.org/)  | 	Apps: <br/>- [Apache Tomcat](/docs/integrations/web-servers/apache-tomcat/)	 <br/>-	[Apache Tomcat - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry/)	 | 
+|  <img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="50"/>   | [Apache](https://www.apache.org/)  | 	Apps: <br/>- [Apache](/docs/integrations/web-servers/apache/)	 <br/>- [Apache - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/apache-opentelemetry/)	<br/>- [Global Intelligence for Apache](/docs/integrations/global-intelligence/apache/) | 
+|  <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="50"/>   | [Apache Tomcat](https://tomcat.apache.org/)  | 	Apps: <br/>- [Apache Tomcat](/docs/integrations/web-servers/apache-tomcat/)	 <br/>-	[Apache Tomcat - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/apache-tomcat-opentelemetry/)	<br/>- [Global Intelligence for Apache Tomcat](/docs/integrations/global-intelligence/apache-tomcat)  | 
 |  <img src={useBaseUrl('img/integrations/misc/acqua-logo.png')} alt="Thumbnail icon" width="75"/>   | [Acqua](https://www.aquasec.com/)	  | 	App: [Acqua](https://github.com/aquasecurity/Sumo-Logic-App/)	 | 
 |  <img src={useBaseUrl('img/integrations/misc/aria-logo.png')} alt="Thumbnail icon" width="50"/>   | [Aria](https://www.ariacybersecurity.com/cybersecurity-products/aria-packet-intelligence/)	  | 	App: [Aria](https://www.ariacybersecurity.com/aria-packet-intelligence-app/)	 | 
 |  <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="Thumbnail icon" width="75"/>   | [Armis](https://www.armis.com/)	  | 	App: [Armis](/docs/integrations/saas-cloud/armis/)	 | 
@@ -241,16 +241,10 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/misc/gigamon-logo.png')} alt="Thumbnail icon" width="75"/>   | [Gigamon](https://www.gigamon.com/)  | Apps:<br/>- [Gigamon Application Metadata Intelligence](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)<br/>- [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT)
-	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	GitHub	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	GitLab	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Apache	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Kubernetes DevOps	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Nginx	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Security Insights	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Global Intelligence for Tomcat	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Gmail Trace Logs	 | 
+|  <img src={useBaseUrl('img/integrations/misc/gigamon-logo.png')} alt="Thumbnail icon" width="75"/>   | [Gigamon](https://www.gigamon.com/)  | Apps:<br/>- [Gigamon Application Metadata Intelligence](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)<br/>- [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT) | 
+|  <img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="75"/>   | [GitHub](https://github.com/)  | 	App: [GitHub](/docs/integrations/app-development/github/)	 | 
+|  <img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="Thumbnail icon" width="50"/>   | [GitLab](https://about.gitlab.com/)  | 	App: [GitLab](/docs/integrations/app-development/gitlab/)	 | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Thumbnail icon" width="50"/>   |  [Gmail](https://www.google.com/gmail/about/) | 	App: [Gmail Trace Logs](/docs/integrations/saas-cloud/gmail-tracelogs)	<br/>Collector: [Gmail Trace Logs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source) | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google App Engine](https://cloud.google.com/appengine) | 	App: Google App Engine	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |  [Google BigQuery](https://cloud.google.com/bigquery) | 	Google BigQuery	 | 
 |  <img src={useBaseUrl('img/integrations/misc/google-cloud-logo.png')} alt="Thumbnail icon" width="100"/>   |  [Google Cloud](https://cloud.google.com/products) | Apps:	GPC Metrics	 | 
@@ -345,8 +339,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Kafka - OTel Collector	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Keeper Security	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	KnowBe4	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Kubernetes	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Kubernetes Control Plane	 | 
+|  <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="Thumbnail icon" width="50"/>   | [Kubernetes](https://kubernetes.io/)  | Apps:<br/>-	[Kubernetes](/docs/integrations/containers-orchestration/kubernetes)	<br/>- [Kubernetes Control Plane](/docs/integrations/containers-orchestration/kubernetes-control-plane) <br/>- [Global Intelligence for Kubernetes DevOps](/docs/integrations/global-intelligence/kubernetes-devops) <br/>(Some Kubernetes apps appear elsewhere on this page listed on the primary product they are associated with. See [Sumo Logic Apps for Kubernetes](/docs/observability/kubernetes/apps) for a complete list of Kubernetes apps.) | 
 
 ## L
 
@@ -391,7 +384,7 @@ Types of integrations:
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Netskope	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Netskope Legacy Collection	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx	 | 
+|  <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="50"/>   | [Nginx](https://www.nginx.com/)  | Apps: <br/>-	Nginx	<br/>- [Global Intelligence for Nginx](/docs/integrations/global-intelligence/nginx)  | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx - OTel Collector	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx (Legacy)	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx Ingress	 | 
