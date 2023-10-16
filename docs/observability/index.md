@@ -11,50 +11,50 @@ The Sumo Logic Observability solution provides tools that work together to ens
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/observability/about"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>About Observability</h4></a>
   <p>Learn about the Sumo Logic Observability Solution.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/observability/set-up-collection"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Set up collection</h4></a>
   <p>Use collectors to start sending critical signals to Sumo Logic.</p>
   </div>
 </div>
-    <div className="box smallbox3 card">
+    <div className="box smallbox card">
       <div className="container">
       <a href="/docs/observability/monitoring"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Monitoring</h4></a>
       <p>Set alerts that notify you about system state changes.</p>
       </div>
     </div>
-    <div className="box smallbox4 card">
+    <div className="box smallbox card">
       <div className="container">
       <a href="/docs/observability/root-cause-explorer"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Root Cause Explorer</h4></a>
       <p>Troubleshoot app and microservice incidents and isolate root causes.</p>
       </div>
     </div>
-    <div className="box smallbox5 card">
+    <div className="box smallbox card">
       <div className="container">
       <a href="/docs/observability/aws"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>AWS Observability</h4></a>
       <p>Simplify monitoring and troubleshooting of your AWS Cloud infrastructure.</p>
       </div>
     </div>
-    <div className="box smallbox6 card">
+    <div className="box smallbox card">
       <div className="container">
       <a href="/docs/observability/kubernetes"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Kubernetes Observability</h4></a>
       <p>End-to-end solution for deploying and monitoring your K8s environment.</p>
       </div>
     </div>
-    <div className="box smallbox7 card">
+    <div className="box smallbox card">
       <div className="container">
       <a href="/docs/observability/reliability-management-slo"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Reliability Management/SLOs</h4></a>
       <p>Create Reliability Management dashboards, configure queries, set SLIs, and more.</p>
       </div>
     </div>
-    <div className="box smallbox8 card">
+    <div className="box smallbox card">
       <div className="container">
       <a href="https://docs.sensu.io/sensu-go/latest/"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="35"/><h4>Sensu</h4></a>
       <p>Gain insight into traditional server closets, containers, apps, and more.</p>
