@@ -178,7 +178,7 @@ email_notifications_critiical = [
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
-## Upgrading Kubernetes App
+## Upgrading the Kubernetes App
 
 The current version of the app is not backward compatible with older Helm Chart versions. The below steps 
 1. Switch to [Admin Mode](/docs/manage/content-sharing/admin-mode/#switch-to-admin-mode). If you are not a `Content Administrator` you may have to contact Administrator within your organization to grant `Manage Content` role to your user.
