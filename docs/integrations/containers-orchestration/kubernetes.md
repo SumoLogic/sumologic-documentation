@@ -21,7 +21,7 @@ For an end-to-end solution for deploying, managing, monitoring, and administerin
 
 ## Supported versions
 
-The Sumo Logic Kubernetes App is compatible with the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). A list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
+The Sumo Logic Kubernetes App is compatible with the latest version of [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). A list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log and Metric Types
 
@@ -178,6 +178,13 @@ email_notifications_critiical = [
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
+## Upgrading Kubernetes App
+
+The current version of the app is not backward compatible with older Helm Chart versions. The below steps 
+1. Switch to [Admin Mode](/docs/manage/content-sharing/admin-mode/#switch-to-admin-mode). If you are not a `Content Administrator` you may have to contact Administrator within your organization to grant `Manage Content` role to your user.
+1. Go to `Library/Admin Recommended/Sumo Logic Integrations/Kubernetes` and rename the folder (for example Kubernetes-backup-Oct-2023) by clicking on the three button and choosing `Edit`.
+1. Go back to the App Catalog and reinstall the `Kubernetes` App again by following instructions in [Installing the Kubernetes App](/docs/integrations/containers-orchestration/kubernetes/#installing-the-kubernetes-app) section. If the tab was already open, then you may have to refesh the page.
+   
 
 ## Viewing Kubernetes Dashboards
 
