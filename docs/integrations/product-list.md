@@ -1,6 +1,6 @@
 ---
 id: product-list
-title: Products that Sumo Logic Integrates With 
+title: Product List 
 description: This article lists all the products that Sumo Logic integrates with.
 ---
 
@@ -12,11 +12,11 @@ description: This article lists all the products that Sumo Logic integrates with
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article lists all the products that Sumo Logic integrates with, including the types of integrations offered. 
+This article lists all the products that Sumo Logic integrates with, including the types of integrations we offer. 
 
 Types of integrations:
-* **Apps**. Pre-built applications with dashboards that provide quick information about the product. See [Apps/Integrations](/docs/integrations/) for available apps.
-* **Collectors**. Agents that collect data from the product. See [Send Data](/docs/send-data/) for available collectors.
+* **Apps**. Pre-built applications with dashboards that provide quick information about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps/Integrations](/docs/integrations/) for documentation about apps. 
+* **Collectors**. Agents that collect data from the product. See [Send Data](/docs/send-data/) for documentation about collectors.
 
 <!-- 
 * **Webhooks**. Automated connections to the product. See [Webhooks](/docs/integrations/webhooks/buddy/) and [Webhook Connections](/docs/alerts/webhook-connections/) for available webhooks. 
@@ -199,7 +199,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/misc/configcat-logo.png')} alt="Thumbnail icon" width="50"/>   | [ConfitCat](https://configcat.com/)  | App: [ConfitCat](/docs/integrations/webhooks/configcat/) | 
 |  <img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Thumbnail icon" width="50"/>   | [Couchbase](https://www.couchbase.com/)  | Apps:<br/>- [Couchbase](/docs/integrations/databases/couchbase/)	<br/>- [Couchbase - OpenTelemetry](/docs/integrations/databases/opentelemetry/couchbase-opentelemetry/) | 
 |  <img src={useBaseUrl('img/integrations/misc/cribl-logo.png')} alt="Thumbnail icon" width="50"/>   | [Cribl](https://cribl.io/)  | App:[Cribl](https://docs.cribl.io/stream/destinations-sumo-logic/) | 
-|  <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="Thumbnail icon" width="75"/>   | [CrowdStrike](https://www.crowdstrike.com/)  | App:	[CrowdStrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection/)	<br/>Collectors:<br/>- [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source/) <br/>- [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source/)<br/>- [CrowdStrike FDR Host Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source/) <br/>- [CrowdStrike Spotlight Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source/) | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="Thumbnail icon" width="75"/>   | [CrowdStrike](https://www.crowdstrike.com/)  | Apps:	<br/>- [CrowdStrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection/) <br/>- [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)	<br/>Collectors:<br/>- [CrowdStrike Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source/) <br/>- [Crowdstrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source/)<br/>- [CrowdStrike FDR Host Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source/) <br/>- [CrowdStrike Spotlight Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source/) | 
 |  <img src={useBaseUrl('img/send-data/cyberark.png')} alt="Thumbnail icon" width="50"/>   |  [CyberArk EPM](https://www.cyberark.com/products/endpoint-privilege-manager/) | Collector: [CyberArk EPM Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source/) | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/cybereason-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Cybereason](https://www.cybereason.com/) | App: [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason)<br/>Collector: [Cybereason Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source/)	 | 
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="Thumbnail icon" width="50"/>   | [Cylance](https://www.blackberry.com/us/en/products/cylance-endpoint-security/cylance-is-blackberry-cybersecurity)  | 	App: [Cylance](/docs/integrations/security-threat-detection/cylance/)	 | 
@@ -354,7 +354,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/misc/exchange-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Microsoft Exchange](https://www.microsoft.com/en-us/microsoft-365/exchange/email) | 	App: [Microsoft Exchange Trace Logs](/docs/integrations/saas-cloud/microsoft-exchange-trace-logs/)	<br/>Collector: [Microsoft Exchange Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs/) | 
 |  <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="Thumbnail icon" width="50"/>   | [Microsoft Graph](https://learn.microsoft.com/en-us/graph/overview)  | 	Apps: <br/>- [Microsoft Graph Azure AD Reporting](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting/)	<br/>- 	[Microsoft Graph Identity Protection](/docs/integrations/microsoft-azure/microsoft-graph-identity-protection/)	<br/>- [Microsoft Graph Security V1](/docs/integrations/saas-cloud/microsoft-graph-security-v1/)	<br/>- [Microsoft Graph Security V2](/docs/integrations/saas-cloud/microsoft-graph-security-v2/)	<br/>Collectors: <br/>- [Microsoft Graph Azure AD Reporting Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source/) <br/>- [Microsoft Graph Identity Protection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source/) <br/>- [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) | 
 |  <img src={useBaseUrl('/img/integrations/microsoft-azure/365.png')} alt="Thumbnail icon" width="50"/>   | [Microsoft 365](https://www.microsoft.com/en-us/microsoft-365) | 	App: [Microsoft Office 365](/docs/integrations/microsoft-azure/office-365/)	<br/>Collector: [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source/) | 
-|  <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="50"/>   |  [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2022) | 	Apps: <br/>- Microsoft SQL Server	<br/>- [Microsoft SQL Server - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry)	 <br/>- [Microsoft SQL Server for Linux - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry)	 | 
+|  <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="Thumbnail icon" width="50"/>   |  [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2022) | 	Apps: <br/>- [Microsoft SQL Server](/docs/integrations/microsoft-azure/sql-server/)	<br/>- [Microsoft SQL Server - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry)	 <br/>- [Microsoft SQL Server for Linux - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/sql-server-linux-opentelemetry)	 | 
 |  <img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Thumbnail icon" width="50"/>   | [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) | 	App: [Microsoft Teams](/docs/integrations/microsoft-azure/teams/)	 | 
 |  <img src={useBaseUrl('img/integrations/saas-cloud/mimecast-logo.png')} alt="Thumbnail icon" width="50"/>   | [Mimecast](https://www.mimecast.com/)  | 	Apps: <br/>- [Mimecast](/docs/integrations/saas-cloud/mimecast/)	<br/>- [Mimecast app for Sumo Logic](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Mimecast) <br/>Collector: [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/) | 
 |  <img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="Thumbnail icon" width="50"/>   | [Miro](https://miro.com/) | 	App: [Miro](/docs/integrations/saas-cloud/miro/)	<br/>Collector: [Miro Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) | 
@@ -390,69 +390,72 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PagerDuty V2	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PagerDuty V3	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Cortex XDR	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Firewall 10	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Firewall 9	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Networks 6	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Networks 8	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Palo Alto Networks 9	 | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="50"/>   |  [PagerDuty](https://www.pagerduty.com/) | 	Apps: <br/>- [PagerDuty V2](/docs/integrations/saas-cloud/pagerduty-v2/)	<br/>- [PagerDuty V3](/docs/integrations/saas-cloud/pagerduty-v3/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="Thumbnail icon" width="100"/>   |  [Palo Alto Networks](https://www.paloaltonetworks.com/) | Apps: <br/>- [Palo Alto Firewall 9](/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9/) <br/>- [Palo Alto Firewall 10](/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10/) <br/>- [Palo Alto Networks 6](/docs/integrations/security-threat-detection/palo-alto-networks-6/)	<br/>- [Palo Alto Networks 8](/docs/integrations/security-threat-detection/palo-alto-networks-8/)	<br/>- [Palo Alto Networks 9](/docs/integrations/security-threat-detection/palo-alto-networks-9/)	<br/>- [PCI Compliance for Palo Alto Networks 9](/docs/integrations/pci-compliance/palo-alto-networks-9/) <br/>- [PCI Compliance for Palo Alto Networks 10](/docs/integrations/pci-compliance/palo-alto-networks-10/) <br/>- [Palo Alto Cortex XDR](/docs/integrations/saas-cloud/palo-alto-cortex-xdr/) <br/>Collector: [Collect Logs from Palo Alto Networks Cortex Data Lake](/docs/send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex/) | 
 |  <img src={useBaseUrl('img/integrations/misc/prisma-cloud-logo.png')} alt="Thumbnail icon" width="50"/>   | [Palo Alto Networks Prisma Cloud (formerly Evident.io ESP)](https://www.paloaltonetworks.com/prisma/cloud)  | 	App: [Evident.io ESP](/docs/integrations/security-threat-detection/evident-security-platform/)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Linux	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Linux - OpenTelemetry	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Palo Alto Networks 10	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Palo Alto Networks 9	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance For Windows (JSON)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance For Windows (JSON)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance For Windows (Legacy)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance For Windows (Legacy)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PCI Compliance for Windows JSON - OpenTelemetry	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PostgreSQL	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	PostgreSQL - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Proofpoint on Demand	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Proofpoint TAP	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Puppet	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Puppet - OTel Collector	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/papertrail-logo.png')} alt="Thumbnail icon" width="50"/>   | [PaperTrail](https://www.papertrail.com/)  | 	App: [PaperTrail](/docs/integrations/webhooks/papertrail/)	 | 
+|  <img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="50"/>   | [PostgreSQL](https://www.postgresql.org/)  | 	Apps: <br/>- [PostgreSQL](/docs/integrations/databases/postgresql/)	 <br/>- [PostgreSQL - OpenTelemetry](/docs/integrations/databases/opentelemetry/postgresql-opentelemetry/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/postman-logo.png')} alt="Thumbnail icon" width="50"/>   | [Postman](https://www.postman.com/)  | 	App: [Postman](/docs/integrations/webhooks/postman/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="Thumbnail icon" width="75"/>   | [Prisma Cloud (formerly Twistlock)](https://www.securitycompass.com/integrations/prisma-cloud-formerly-twistlock/)  | 	App: [Twistlock](/docs/integrations/security-threat-detection/twistlock/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/prometheus-logo.png')} alt="Thumbnail icon" width="50"/>   | [Prometheus](https://prometheus.io/)  | 	Collector: [Prometheus](/docs/send-data/collect-from-other-data-sources/collect-prometheus-metrics/)	 | 
+|  <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Thumbnail icon" width="100"/>   | [Proofpoint](https://www.proofpoint.com/us)  | Apps: <br/>- [Proofpoint on Demand](/docs/integrations/saas-cloud/proofpoint-on-demand/) <br/>- [Proofpoint TAP](/docs/integrations/saas-cloud/proofpoint-tap/)	<br/>Collectors: <br/>- [Proofpoint On Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/) <br/>- [Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) | 
+|  <img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Thumbnail icon" width="50"/>   | [Puppet](https://www.puppet.com/)  | 	Apps: <br/>- [Puppet](/docs/integrations/app-development/puppet/)	<br/>- [Puppet - OpenTelemetry](/docs/integrations/app-development/opentelemetry/puppet-opentelemetry/) | 
+|  <img src={useBaseUrl('img/integrations/webhooks/pusher-logo.png')} alt="Thumbnail icon" width="50"/>   | [Pusher](https://pusher.com/)  | 	App: [Pusher](/docs/integrations/webhooks/pusher/) |
 
 ## Q
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Qualys VMDR	 | 
+|  <img src={useBaseUrl('/img/integrations/saas-cloud/qualys-icon.png')} alt="Thumbnail icon" width="75"/>   | [Qualys VMDR](https://www.qualys.com/apps/vulnerability-management-detection-response/) | 	App: [Qualys VMDR](/docs/integrations/saas-cloud/qualys-vmdr/)	<br/>Collector: [Qualys VMDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/) | 
 
 ## R
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	RabbitMQ	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	RabbitMQ - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Rapid7	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Redis	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Redis - OTel Collector	 | 
+|  <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="50"/>   | [RabbitMQ](https://www.rabbitmq.com/)  | 	Apps: <br/>- [RabbitMQ](/docs/integrations/containers-orchestration/rabbitmq/)	<br/>- [RabbitMQ - OpenTelemetry](/docs/integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry/)  | 
+|  <img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="Thumbnail icon" width="75"/>   | [Rapid7](https://www.rapid7.com/)  | 	App: [Rapid7](/docs/integrations/saas-cloud/rapid7/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/red-hat-openshift-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Red Hat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) | 	App: [Red Hat OpenShift](https://docs.openshift.com/acs/3.74/integration/integrate-with-sumologic.html)	<br/>Collector: [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | 
+|  <img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Thumbnail icon" width="50"/>   | [Redis](https://redis.io/)  | 	Apps: <br/>- [Redis](/docs/integrations/databases/redis/)	<br/>- [Redis - OpenTelemetry](/docs/integrations/databases/opentelemetry/redis-opentelemetry/) 	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/rollbar-logo.png')} alt="Thumbnail icon" width="50"/>   | [Rollbar](https://rollbar.com/)  | 	App: [Rollbar](/docs/integrations/webhooks/rollbar/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/ruby-on-rails-logo.png')} alt="Thumbnail icon" width="75"/>   | [Ruby on Rails](https://rubyonrails.org/)  | Collector: [Ruby on Rails](/docs/send-data/collect-from-other-data-sources/collect-ruby-on-rails-logs/)	 | 
+
 
 ## S
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	SailPoint	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Salesforce	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Security Analytics	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	SentinelOne	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Slack	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Squid Proxy	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Squid Proxy - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Strimzi Kafka	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Symantec Web Security Service	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} alt="Thumbnail icon" width="75"/>   | [SailPoint](https://www.sailpoint.com/)  | 	App: [SailPoint](/docs/integrations/security-threat-detection/sailpoint/)	<br/>Collector: [SailPoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source/) | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="50"/>   |  [Salesforce](https://www.salesforce.com/) | 	App: [Salesforce](/docs/integrations/saas-cloud/salesforce/) <br/>Collector: [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source/) | 
+|  <img src={useBaseUrl('img/integrations/misc/saucelabs-logo.png')} alt="Thumbnail icon" width="50"/>   | [Sauce Labs](https://saucelabs.com/)  | App: [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/sendGrid-logo.png')} alt="Thumbnail icon" width="50"/>   | [SendGrid](https://sendgrid.com/)  | App: [SendGrid](/docs/integrations/webhooks/sendgrid/)	 | 
+|  <img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="Thumbnail icon" width="50"/>   |  [SentinelOne](https://www.sentinelone.com/) | 	App: [SentinelOne](/docs/integrations/saas-cloud/sentinelone/)	<br/>Collectors: <br/>- [Collect Logs for SentinelOne](send-data/collect-from-other-data-sources/collect-logs-sentinelone/) <br/>- [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source/) | 
+|  <img src={useBaseUrl('img/integrations/webhooks/signl4-logo.png')} alt="Thumbnail icon" width="50"/>   | [SIGNL4](https://www.signl4.com/)  | App: [SIGNL4](/docs/integrations/webhooks/signl4/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/sentry-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Sentry](https://sentry.io/welcome/) | 	App: [Sentry](/docs/integrations/webhooks/sentry/)	 | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/>   |  [Slack](https://slack.com/) | 	App: [Slack](/docs/integrations/saas-cloud/slack/)	<br/>Collector: [Slack Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) | 
+|  <img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="Thumbnail icon" width="50"/>   |  [Sophos](https://www.sophos.com/en-us) | App: [Sophos Central](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/)	<br/>Collector: [Sophos Central Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) | 
+|  <img src={useBaseUrl('img/integrations/misc/spinnaker-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Spinnaker](https://spinnaker.io/) | 	App: [Spinnaker](https://docs.armory.io/continuous-deployment/armory-admin/observe/integrations-sumologic/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Split](https://www.split.io/) | 	App: [Split](/docs/integrations/webhooks/split/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/splunk-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Splunk](https://www.splunk.com/) | 	Collector: [Import Raw Data from Splunk](/docs/send-data/collect-from-other-data-sources/import-raw-data-splunk/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/squadcast-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Squadcase](https://www.squadcast.com/) | 	[Squadcast](/docs/integrations/webhooks/squadcast/)	 | 
+|  <img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="50"/>   |  [Squid Cache](http://www.squid-cache.org/) | 	Apps: <br/>- [Squid Proxy](/docs/integrations/web-servers/squid-proxy/)	<br/>- [Squid Proxy - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/squid-proxy-opentelemetry/) | 
+|  <img src={useBaseUrl('img/integrations/misc/stackrox-logo.png')} alt="Thumbnail icon" width="50"/>   |  [StackRox](https://www.stackrox.io/) | 	Collector: [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/statsd-logo.png')} alt="Thumbnail icon" width="50"/>   |  [StatsD](https://www.datadoghq.com/blog/statsd/) | 	Collector: [Collect StatsD Metrics](/docs/send-data/collect-from-other-data-sources/collect-statsd-metrics/)	 | 
+|  <img src={useBaseUrl('img/integrations/containers-orchestration/strimzi.png')} alt="Thumbnail icon" width="75"/>   |  [Strimzi](https://strimzi.io/) | 	[Strimzi Kafka](/docs/integrations/containers-orchestration/strimzi-kafka/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/stripe-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Stripe](https://stripe.com/) | 	App: [Stripe](/docs/integrations/webhooks/stripe/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/superwise-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Superwise](https://superwise.ai/) | 	App: [Superwise](/docs/integrations/webhooks/superwise/)	 | 
+|  <img src={useBaseUrl('/img/send-data/symantec-logo.svg')} alt="Thumbnail icon" width="75"/>   |  [Symantec Web Security](https://www.broadcom.com/products/cybersecurity/network/web-protection/cloud-secure-web-gateway) | 	App: [Symantec Web Security Service](/docs/integrations/saas-cloud/symantec-web-security-service/) <br/>Collector: [Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) | 
 
 ## T
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Tenable	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Threat Intel Quick Analysis	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Trend Micro Deep Security	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Twistlock and Twistlock Classic	 | 
+|  <img src={useBaseUrl('img/integrations/misc/tanium-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Tanium](https://www.tanium.com/) | 	Collector: [Tanium](https://community.tanium.com/s/article/How-can-I-send-Tanium-data-to-Sumo-Logic)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/telegraf-logo.png')} alt="Thumbnail icon" width="75"/>   | [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/)  | 	Collectors: [Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/)	 | 
+|  <img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="Thumbnail icon" width="75"/>   | [Tenable](https://www.tenable.com/)  | 	App: [Tenable](/docs/integrations/saas-cloud/tenable/)	<br/>Collector: [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) | 
+|  <img src={useBaseUrl('img/integrations/misc/terraform-logo.png')} alt="Thumbnail icon" width="50"/>   | [Terraform](https://www.terraform.io/)  | 	App: [Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/tessian-logo.png')} alt="Thumbnail icon" width="50"/>   | [Tessian](https://www.tessian.com/)  | 	App: [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian#tessian-for-sumo-logic)	 | 
+|  <img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Thumbnail icon" width="50"/>   | [Trellix](https://www.trellix.com/en-us/index.html)  | 	Collector: [Trellix mVision ePO Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/)	 | 
+|  <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg')} alt="Thumbnail icon" width="75"/>   |  [Trend Micro](https://www.trendmicro.com/en_us/business.html) | 	App: [Trend Micro Deep Security](/docs/integrations/security-threat-detection/trend-micro-deep-security/)	 |  
 
 ## V
 
@@ -468,7 +471,7 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows	 | 
+|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | Windows | 	Apps: <br/>- Windows	<br/>- PCI Compliance For Windows (JSON) <br/>- PCI Compliance for Windows JSON - OpenTelemetry  <br/>- PCI Compliance For Windows (Legacy) | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows - OpenTelemetry	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows - OTel Collector	 | 
 |  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows (Legacy)	 | 
