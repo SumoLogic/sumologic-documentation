@@ -366,26 +366,25 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Netskope	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Netskope Legacy Collection	 | 
-|  <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="50"/>   | [Nginx](https://www.nginx.com/)  | Apps: <br/>-	Nginx	<br/>- [Global Intelligence for Nginx](/docs/integrations/global-intelligence/nginx)  | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx (Legacy)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx Ingress	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx Plus	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Nginx Plus Ingress	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Thumbnail icon" width="50"/>   | [Netlify](https://www.netlify.com/)  | App: [Netlify](/docs/integrations/webhooks/netlify/)	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Thumbnail icon" width="50"/>   | [Netskope](https://www.netskope.com/)  | 	Apps: <br/>- [Netskope](/docs/integrations/security-threat-detection/netskope/) <br/>- [Netskope Legacy](/docs/integrations/security-threat-detection/netskope-legacy-collection/)  <br/> Collectors: <br/>- [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) <br/>- [Netskope WebTx Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source/) | 
+|  <img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="50"/>   | [Nginx](https://www.nginx.com/)  | Apps: <br/>-	[Nginx](/docs/integrations/web-servers/nginx/) <br/>- [Nginx (Legacy)](/docs/integrations/web-servers/nginx-legacy/) <br/>- [Nginx Ingress](/docs/integrations/web-servers/nginx-ingress/)	<br/>- [Nginx - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/nginx-opentelemetry/)  <br/>- [Global Intelligence for Nginx](/docs/integrations/global-intelligence/nginx)  | 
+|  <img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Thumbnail icon" width="50"/>   |  [Nginx Plus](https://www.nginx.com/products/nginx/) | Apps: <br/>- [Nginx Plus](/docs/integrations/web-servers/nginx-plus/) <br/>- [Nginx Plus Ingress](docs/integrations/web-servers/nginx-plus-ingress/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/nobl9-logo.png')} alt="Thumbnail icon" width="50"/>   | [Nobl9](https://www.nobl9.com/)  | App: [Nobl9](/docs/integrations/webhooks/nobl9/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/nucleon-logo.png')} alt="Thumbnail icon" width="50"/>   | [Nucleon](https://nucleoncyber.com/)  | App: [Nucleon](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Nucleon)	| 
+|  <img src={useBaseUrl('img/integrations/misc/nxlog-logo.png')} alt="Thumbnail icon" width="50"/>   | [NXLog](https://nxlog.co/)  | App: [NXLog](https://docs.nxlog.co/userguide/integrate/sumo-logic.html)	| 
 
 ## O
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Observable Networks	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Okta	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	OneLogin	 | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="Thumbnail icon" width="50"/>   | [Observable Networks](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html)  | 	App: [Observable Networks](/docs/integrations/security-threat-detection/observable-networks/)	 | 
+|  <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="50"/>   | [Okta](https://www.okta.com/)  | 	App: [Okta](/docs/integrations/saml/okta/)	<br/>Collector: [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) | 
+|  <img src={useBaseUrl('img/integrations/saml/onelogin.png')} alt="Thumbnail icon" width="50"/>   | [OneLogin](https://www.onelogin.com/)  | 	App: [OneLogin](/docs/integrations/saml/onelogin/)	 | 
 | <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/> | [1Password](https://1password.com/) | App: [1Password](/docs/integrations/1password/) <br/>Collector: [1Password Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Opsgenie	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Oracle	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Oracle - OTel Collector	 | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="50"/>   |  [Opsgenie](https://www.atlassian.com/software/opsgenie) | 	App: [Opsgenie](/docs/integrations/saas-cloud/opsgenie/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/opsramp-logo.png')} alt="Thumbnail icon" width="75"/>   | [OpsRamp](https://www.opsramp.com/)  | 	App: [OpsRamp](https://docs.opsramp.com/integrations/a2r/3rd-party/sumologic/)	 | 
+|  <img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Thumbnail icon" width="75"/>   |  [Oracle Database](https://www.oracle.com/database/) | 	Apps: <br/>- [Oracle](/docs/integrations/databases/oracle/)	<br/>- [Oracle - OpenTelemetry](/docs/integrations/databases/opentelemetry/oracle-opentelemetry/)  <br/>Collector:  [Collect Logs from Oracle Cloud Infrastructure](/docs/send-data/collect-from-other-data-sources/collect-logs-oracle-cloud-infrastructure/) |  
 
 ## P
 
