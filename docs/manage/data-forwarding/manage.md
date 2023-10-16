@@ -27,4 +27,4 @@ If you’d like to start or stop forwarding data, you can activate or deactivat
 
 ## Audit logging for data forwarding
 
-Sumo Logic logs audit events for both system and user data forwarding events. For more information, see [Audit Event Index](/docs/manage/security/audit-event-index.md).
+Sumo Logic logs audit events for both system and user data forwarding events. For more information, see [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md).

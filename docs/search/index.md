@@ -86,7 +86,7 @@ Logs collected by Sumo Logic are indexed in Partitions and Scheduled Views. In a
 * Scheduled Views speed the search process subsets of your data by functioning as a pre-aggregated index. See how to [Run a Search Against a Scheduled View](/docs/manage/scheduled-views/run-search-against-scheduled-view).
 * Health Events monitor the health of your Collectors and Sources. See how to [Search Health Events](/docs/manage/health-events).
 * Archive allows you to forward log data from Installed Collectors to Amazon S3 buckets to collect at a later time. See how to [Search ingested Archive data](/docs/manage/data-archiving/archive).
-* Audit and Event Audit provide information on the internal events that occur in Sumo Logic. See how to search the Audit and [Audit Event Index](/docs/manage/security/audit-event-index).
+* Audit and Event Audit provide information on the internal events that occur in Sumo Logic. See how to search the Audit and [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index).
 * Data Volume gives you visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for details.
 
 ## Data Tiers

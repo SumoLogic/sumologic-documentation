@@ -42,8 +42,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/security/audit-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit Index</h4></a>
-  <p>Learn how to get information on the internal events that occur in Sumo Logic.</p>
+  <a href="/docs/manage/security/audit-indexes"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit Indexes</h4></a>
+  <p>Learn how to use audit indexes to query for events in Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">

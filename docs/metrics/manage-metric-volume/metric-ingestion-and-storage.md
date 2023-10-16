@@ -8,7 +8,7 @@ This page has information about how Sumo Logic stores raw and rolled up metrics 
 
 ## Metric ingestion
 
-Sumo Logic does not store metrics data points that are more than 24 hours in the past or that are more than 24 hours in the future.
+Sumo Logic stores metrics data points with timestamps that are within a window of -24 hours through +24 hours compared to the current time. Metrics data points with a timestamp outside this window will not be stored.
 
 
 ## Metric retention

@@ -43,7 +43,7 @@ For the Federal environments, a different set of Static IPs is available for eac
 
 ## Integrations
 
-The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta. You are invited to request new Sources for the Cloud-to-Cloud Integration Framework from our [Ideas Portal](https://ideas.sumologic.com/ideas).
+The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta. 
 
 ## Versions
 
