@@ -183,7 +183,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 The current version of the app is not backward compatible with older Helm Chart versions. The below steps 
 1. Switch to [Admin Mode](/docs/manage/content-sharing/admin-mode/#switch-to-admin-mode). If you are not a `Content Administrator` you may have to contact Administrator within your organization to grant `Manage Content` role to your user.
 1. Go to `Library/Admin Recommended/Sumo Logic Integrations/Kubernetes` and rename the folder (for example Kubernetes-backup-Oct-2023) by clicking on the three button and choosing `Edit`.
-1. Go back to the App Catalog and reinstall the `Kubernetes` App again by following instructions in [Installing the Kubernetes App](/docs/integrations/containers-orchestration/kubernetes/#installing-the-kubernetes-app) section. If the tab was already open, then you may have to refesh the page.
+1. Go back to the App Catalog and reinstall the `Kubernetes` App again by following instructions in [Installing the Kubernetes App](/docs/integrations/containers-orchestration/kubernetes/#installing-the-kubernetes-app) section. If the tab was already open, you may have to refresh the page.
    
 
 ## Viewing Kubernetes Dashboards
