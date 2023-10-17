@@ -204,7 +204,7 @@ ln -s /run/podman/podman.sock /var/run/docker.sock
 
 #### Change automation bridge configuration
 
-- Change automation bridge configuration file /usr/lib/systemd/system/automation-bridge-worker@.service
+Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
 
 ```systemd
 Setting User=root 
