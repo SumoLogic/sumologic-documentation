@@ -190,7 +190,7 @@ If you are using CyberArk, you must add the following certificates provided by C
 
 #### Enable Podman socket
 
-- Run following commands:
+1. Run the following commands:
 
 ```bash
 systemctl enable podman.socket && systemctl start podman.socket
