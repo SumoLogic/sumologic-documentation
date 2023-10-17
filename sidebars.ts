@@ -2456,7 +2456,7 @@ integrations: [
  },
 ],
 
-// OTHER FEATURES: SDO, CSE, SOAR
+// OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
       type: 'category',
@@ -2483,7 +2483,7 @@ integrations: [
     },
     {
       type: 'category',
-      label: 'Cloud SIEM Enterprise',
+      label: 'Cloud SIEM',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},

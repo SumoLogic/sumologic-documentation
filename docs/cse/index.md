@@ -1,12 +1,12 @@
 ---
 slug: /cse
-title: Cloud SIEM Enterprise
-tags: [cse, cloud siem, security]
+title: Cloud SIEM
+tags: [cloud siem, security]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM Enterprise (CSE) is a cloud-based security information and event management (SIEM) system that provides the following functionality: 
+Cloud SIEM is a cloud-based security information and event management (SIEM) system that provides the following functionality: 
 
 * Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
 * Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.
@@ -32,7 +32,7 @@ This section contains the following topics:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Records, Signals, Entities, and Insights</h4></a>
-  <p>Learn about Insight generation, working with Entities, and how to query CSE Records.</p>
+  <p>Learn about Insight generation, working with Entities, and how to query Cloud SIEM Records.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -44,25 +44,25 @@ This section contains the following topics:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/rules"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Rules</h4></a>
-  <p>Learn how to write rules, rules syntax, and CSE built-in rules.</p>
+  <p>Learn how to write rules, rules syntax, and Cloud SIEM built-in rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/schema"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Schema</h4></a>
-  <p>Learn about CSE Schema v3, schema attributes, and the Record processing pipeline.</p>
+  <p>Learn about Cloud SIEM Schema v3, schema attributes, and the Record processing pipeline.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/sensors"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Sensors</h4></a>
-  <p>CSE Sensors collect log and event data from your infrastructure and applications.</p>
+  <p>Cloud SIEM Sensors collect log and event data from your infrastructure and applications.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Integrations</h4></a>
-  <p>CSE integration with Sumo Logic and threat intel sources, and leveraging the CSE Insight Enrichment Server.</p>
+  <p>Cloud SIEM integration with Sumo Logic and threat intel sources, and leveraging the Cloud SIEM Insight Enrichment Server.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -42,8 +42,8 @@ Scheduled searches are standard saved searches that are executed on a schedule y
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/alerts/scheduled-searches/generate-cse-signals"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Generate CSE Signals With a Scheduled Search</h4></a>
-  <p>Learn how to create a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal.</p>
+  <a href="/docs/alerts/scheduled-searches/generate-cse-signals"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Generate Cloud SIEM Signals With a Scheduled Search</h4></a>
+  <p>Learn how to create a scheduled search that will trigger a Cloud SIEM Signal.</p>
   </div>
 </div>
 <div className="box smallbox card">

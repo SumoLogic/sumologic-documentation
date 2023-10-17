@@ -2,7 +2,7 @@
 id: attributes-map-to-records
 title: Attributes You Can Map to Records
 sidebar_label: Mappable Attributes
-description: Learn what CSE schema attributes you can map to Records.
+description: Learn what Cloud SIEM schema attributes you can map to Records.
 ---
 
 
