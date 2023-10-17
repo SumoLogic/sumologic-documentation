@@ -105,7 +105,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/amazon-aws/aws-datasync-logo.png')} alt="Thumbnail icon" width="50"/>   | [AWS DataSync](https://aws.amazon.com/datasync/)  | 	App: [AWS DataSync](/docs/integrations/amazon-aws/aws-datasync/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/aws-direct-connect-logo.png')} alt="Thumbnail icon" width="50"/>   | [AWS Direct Connect](https://aws.amazon.com/directconnect/)  | 	App: [AWS Direct Connect](/docs/integrations/amazon-aws/aws-direct-connect/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="Thumbnail icon" width="50"/>   | [AWS DynamoDB](https://aws.amazon.com/pm/dynamodb/)  | 	App: [Amazon DynamoDB](/docs/integrations/amazon-aws/dynamodb/)	 | 
-|  <img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>   | [AWS EC2](https://aws.amazon.com/pm/ec2/)  | 	Apps: <br/>- [AWS EC2 CW Metrics](/docs/integrations/amazon-aws/ec2-cloudwatch-metrics/)	<br/>- [AWS EC2 Host Metrics](/docs/integrations/amazon-aws/ec2-host-metrics/) <br/>Collector: [AWS Metadata (Tag) Source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/) | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>   | [AWS EC2](https://aws.amazon.com/pm/ec2/)  | 	Apps: <br/>- [AWS EC2 CW Metrics](/docs/integrations/amazon-aws/ec2-cloudwatch-metrics/)	<br/>- [AWS EC2 Host Metrics](/docs/integrations/amazon-aws/ec2-host-metrics/) <br/>Collectors: <br/>- [AWS Metadata (Tag) Source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/) <br/>- [CSE AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/aws-elastic-beanstalk-logo.png')} alt="Thumbnail icon" width="50"/>   | [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)  | 	App: [AWS Elastic Beanstalk](/docs/integrations/amazon-aws/aws-elastic-beanstalk/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="50"/>   | [AWS Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)  | Apps:	<br/>- [AWS Elastic Load Balancing](/docs/integrations/amazon-aws/elastic-load-balancing/)<br/>- [AWS Elastic Load Balancer - Application](/docs/integrations/amazon-aws/elastic-load-balancer-app/)	<br/>- [AWS Elastic Load Balancer - Classic](/docs/integrations/amazon-aws/elastic-load-balancing-classic/)<br/>- [Threat Intel for AWS](/docs/integrations/amazon-aws/threat-intel/) <br/>Collector: [AWS Elastic Load Balancing Source](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source/) | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/aws-global-accelerator-logo.png')} alt="Thumbnail icon" width="50"/>   | [AWS Global Accelerator](https://aws.amazon.com/global-accelerator/)  | App: [AWS Global Accelerator](/docs/integrations/amazon-aws/aws-global-accelerator/)	 | 
@@ -311,6 +311,7 @@ Types of integrations:
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="75"/>   | [IIS](https://www.iis.net/)  | Apps: <br/>- [IIS 7](/docs/integrations/microsoft-azure/iis-7/) <br/>- [IIS 10](/docs/integrations/web-servers/iis-10/)	 <br/>- [IIS 10 - OTel Collector](/docs/integrations/web-servers/opentelemetry/iis-10-opentelemetry/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/ilert-logo.png')} alt="Thumbnail icon" width="50"/>   | [iLert](https://www.ilert.com/)  | App: [iLert](/docs/integrations/webhooks/ilert/)	 |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/imperva.png')} alt="Thumbnail icon" width="50"/>   | [Imperva FlexProtect (formerly Incapsula)](https://docs.imperva.com/bundle/cloud-application-security/page/more/aws-plan.htm)  | 	App: [Imperva Incapsula](/docs/integrations/security-threat-detection/imperva-incapsula/)	 | 
 |  <img src={useBaseUrl('img/integrations/saas-cloud/istio.png')} alt="Thumbnail icon" width="50"/>   | [Istio](https://istio.io/)  | 	App: [Istio](/docs/integrations/saas-cloud/istio/)	 | 
 
@@ -318,7 +319,7 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('/img/integrations/app-development/jenkins.png')} alt="Thumbnail icon" width="50"/>   | [Jenkins](https://www.jenkins.io/)  | App: [Jenkins](/docs/integrations/app-development/jenkins/)	 | 
+|  <img src={useBaseUrl('img/integrations/app-development/jenkins.png')} alt="Thumbnail icon" width="50"/>   | [Jenkins](https://www.jenkins.io/)  | App: [Jenkins](/docs/integrations/app-development/jenkins/)	 | 
 |  <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="75"/>   | [JFrog Artifactory](https://jfrog.com/artifactory/)  | Apps:	<br/>- [Artifactory	(6 and 7) - Classic](/docs/integrations/app-development/jfrog-artifactory/) <br/>- [Artifactory - OpenTelemetry](/docs/integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry/) | 
 |  <img src={useBaseUrl('img/integrations/app-development/jfrog-xray.png')} alt="Thumbnail icon" width="50"/>   | [JFrog Xray](https://jfrog.com/help/r/get-started-with-the-jfrog-platform/jfrog-xray)  | 	App: [JFrog Xray](/docs/integrations/app-development/jfrog-xray/)	 | 
 |  <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>   | [Jira](https://www.atlassian.com/software/jira)  | 	Apps: <br/>- [Jira](/docs/integrations/app-development/jira/) <br/>- [Jira Cloud](/docs/integrations/app-development/jira-cloud/)	<br/>- [Jira - OpenTelemetry](/docs/integrations/app-development/opentelemetry/jira-opentelemetry/) | 
@@ -347,6 +348,7 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
+|  <img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="50"/>   | [macOS](https://www.apple.com/macos)  | App: [macOS OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry/)	 | 
 |  <img src={useBaseUrl('img/integrations/webhooks/mailgun-logo.png')} alt="Thumbnail icon" width="50"/>   | [Mailgun](https://www.mailgun.com/)  | App: [Mailgun](/docs/integrations/webhooks/mailgun/)	 | 
 |  <img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="50"/>   | [MariaDB](https://mariadb.org/)  | Apps: <br/>- [MariaDB](/docs/integrations/databases/mariadb/)	<br/>- [MariaDB - OpenTelemetry](/docs/integrations/databases/opentelemetry/mariadb-opentelemetry/) 	 | 
 |  <img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Thumbnail icon" width="50"/>   | [Memcached](https://memcached.org/)  | 	Apps: <br/>- [Memcached](/docs/integrations/databases/memcached/)	 <br/>- [Memcached - OpenTelemetry](/docs/integrations/databases/opentelemetry/memcached-opentelemetry/) 	 | 
@@ -360,6 +362,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="Thumbnail icon" width="50"/>   | [Miro](https://miro.com/) | 	App: [Miro](/docs/integrations/saas-cloud/miro/)	<br/>Collector: [Miro Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) | 
 |  <img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="75"/>   | [MongoDB](https://www.mongodb.com/)  | 	Apps: <br/>- [MongoDB](/docs/integrations/databases/mongodb/) <br/>- [MongoDB - OpenTelementry](/docs/integrations/databases/opentelemetry/mongodb-opentelemetry/)	 | 
 |  <img src={useBaseUrl('img/integrations/databases/mongodbatlas.png')} alt="Thumbnail icon" width="75"/>   | [MongoDB Atlas](https://www.mongodb.com/atlas)  | 	App: [MongoDB Atlas](/docs/integrations/databases/mongodb-atlas/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/mparticle-logo.png')} alt="Thumbnail icon" width="50"/>   | [mParticle](https://www.mparticle.com/)  | 	App: [mParticle](/docs/integrations/webhooks/mparticle/)	 | 
 |  <img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="50"/>   | [MySQL](https://www.mysql.com/)  | 	Apps: <br/>- [MySQL](/docs/integrations/databases/mysql/)	<br/>- [MySQL - OpenTelemetry](/docs/integrations/databases/opentelemetry/mysql-opentelemetry/)	 | 
 
 ## N
@@ -417,6 +420,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/misc/red-hat-openshift-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Red Hat OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) | 	App: [Red Hat OpenShift](https://docs.openshift.com/acs/3.74/integration/integrate-with-sumologic.html)	<br/>Collector: [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | 
 |  <img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Thumbnail icon" width="50"/>   | [Redis](https://redis.io/)  | 	Apps: <br/>- [Redis](/docs/integrations/databases/redis/)	<br/>- [Redis - OpenTelemetry](/docs/integrations/databases/opentelemetry/redis-opentelemetry/) 	 | 
 |  <img src={useBaseUrl('img/integrations/webhooks/rollbar-logo.png')} alt="Thumbnail icon" width="50"/>   | [Rollbar](https://rollbar.com/)  | 	App: [Rollbar](/docs/integrations/webhooks/rollbar/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/rsyslog-logo.png')} alt="Thumbnail icon" width="75"/>   | [rsyslog](https://www.rsyslog.com/)  | 	App: [rsyslog](/docs/send-data/hosted-collectors/cloud-syslog-source/rsyslog/)	 | 
 |  <img src={useBaseUrl('img/integrations/misc/ruby-on-rails-logo.png')} alt="Thumbnail icon" width="75"/>   | [Ruby on Rails](https://rubyonrails.org/)  | Collector: [Ruby on Rails](/docs/send-data/collect-from-other-data-sources/collect-ruby-on-rails-logs/)	 | 
 
 
@@ -444,6 +448,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/webhooks/stripe-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Stripe](https://stripe.com/) | 	App: [Stripe](/docs/integrations/webhooks/stripe/)	 | 
 |  <img src={useBaseUrl('img/integrations/webhooks/superwise-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Superwise](https://superwise.ai/) | 	App: [Superwise](/docs/integrations/webhooks/superwise/)	 | 
 |  <img src={useBaseUrl('/img/send-data/symantec-logo.svg')} alt="Thumbnail icon" width="75"/>   |  [Symantec Web Security](https://www.broadcom.com/products/cybersecurity/network/web-protection/cloud-secure-web-gateway) | 	App: [Symantec Web Security Service](/docs/integrations/saas-cloud/symantec-web-security-service/) <br/>Collector: [Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) | 
+|  <img src={useBaseUrl('img/integrations/misc/syslog-ng-logo.png')} alt="Thumbnail icon" width="75"/>   | [syslog-ng](https://www.syslog-ng.com/)  | 	App: [syslog-ng](/docs/send-data/hosted-collectors/cloud-syslog-source/syslog-ng/)	 | 
 
 ## T
 
@@ -457,32 +462,36 @@ Types of integrations:
 |  <img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Thumbnail icon" width="50"/>   | [Trellix](https://www.trellix.com/en-us/index.html)  | 	Collector: [Trellix mVision ePO Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source/)	 | 
 |  <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg')} alt="Thumbnail icon" width="75"/>   |  [Trend Micro](https://www.trendmicro.com/en_us/business.html) | 	App: [Trend Micro Deep Security](/docs/integrations/security-threat-detection/trend-micro-deep-security/)	 |  
 
+## U
+
+| Logo | Product | Integrations |
+| :-- | :-- | :-- |
+|  <img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Thumbnail icon" width="50"/>   | [Uptime](https://uptime.com/)  | 	App: [Uptime](/docs/integrations/webhooks/uptime/)	 | 
+
 ## V
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Varnish	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Varnish - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	VMware	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	VMware (Legacy)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	VMware Carbon Black	 | 
+|  <img src={useBaseUrl('img/integrations/web-servers/varnish-cache.png')} alt="Thumbnail icon" width="75"/>   | [Varnish](https://www.varnish-software.com/)  | Apps: <br/>- [Varnish](/docs/integrations/web-servers/varnish/) <br/>- [Varnish - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/varnish-opentelemetry/)	 | 
+|  <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="Thumbnail icon" width="50"/>   | [VMware](https://www.vmware.com/)  | 	Apps: <br/>- [VMware](/docs/integrations/containers-orchestration/vmware/) <br/>- [VMware Legacy](/docs/integrations/containers-orchestration/vmware-legacy/)	<br/>- [VMware Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black/) <br/>Collectors: <br/>- [VMware AirWatch](/docs/send-data/collect-from-other-data-sources/vmware-airwatch-integration/)	<br/>- [VMware vRealize Log Insight](/docs/send-data/collect-from-other-data-sources/vmware-vrealize-log-insight/) <br/>- [VMware vRealize Operations Manager 8 Enterprise](/docs/send-data/collect-from-other-data-sources/collect-metrics-vrealize-operations-manager/) | 
+|  <img src={useBaseUrl('img/integrations/misc/vmware-tanzu-logo.png')} alt="Thumbnail icon" width="50"/>   | [VMware Tanzu](https://tanzu.vmware.com/tanzu)  | 	App: [VMware Tanzu](https://docs.vmware.com/en/Sumo-Logic-Nozzle-for-VMware-Tanzu/services/sumologic-nozzle-vmware-tanzu/index.html)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/votiro-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Votiro](https://votiro.com/) | App: [Votiro](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Votiro#votiro)	 | 
 
 ## W
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   | Windows | 	Apps: <br/>- Windows	<br/>- PCI Compliance For Windows (JSON) <br/>- PCI Compliance for Windows JSON - OpenTelemetry  <br/>- PCI Compliance For Windows (Legacy) | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows - OpenTelemetry	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows - OTel Collector	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows (Legacy)	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows JSON	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Windows Performance	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Workday	 | 
+|  <img src={useBaseUrl('img/send-data/webex-logo.png')} alt="Thumbnail icon" width="75"/>   | [Webex](https://www.webex.com/)  | 	Collector: [Webex Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/webex-source/)	 | 
+|  <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>   | Windows | 	Apps:  <br/>- [Windows Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/windows/) <br/>- [Windows - Cloud Security Monitoring and Analytics - OpenTelemetry](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry/) <br/>- [Windows JSON](/docs/integrations/microsoft-azure/windows-json/)  <br/>- [Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/)  <br/>- [Windows Performance](/docs/integrations/microsoft-azure/performance/) <br/>- [Windows Legacy](/docs/integrations/microsoft-azure/windows-legacy/) <br/>- [PCI Compliance For Windows (JSON)](/docs/integrations/microsoft-azure/windows-json-pci-compliance/) <br/>- [PCI Compliance for Windows JSON - OpenTelemetry](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry/)  <br/>- [PCI Compliance For Windows (Legacy)](/docs/integrations/microsoft-azure/windows-legacy-pci-compliance/)  | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>   | [Workday](https://www.workday.com/)  | 	App: [Workday](/docs/integrations/saas-cloud/workday/)	<br/>Collector: [Workday Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/) | 
 
 ## Z
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Zoom	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Zscaler Internet Access	 | 
-|  <img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/>   |   | 	Zscaler Private Access  |
+|  <img src={useBaseUrl('img/integrations/webhooks/zebrium-rcaas-logo.png')} alt="Thumbnail icon" width="50"/>   | [Zebrium](https://www.zebrium.com/)  | App: [Zebrium RCaaS](/docs/integrations/webhooks/zebrium-rcaas/)	 | 
+|  <img src={useBaseUrl('img/integrations/webhooks/zenduty-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Zenduty](https://www.zenduty.com/) | App: [Zenduty](/docs/integrations/webhooks/zenduty/)	 | 
+|  <img src={useBaseUrl('img/send-data/zero-networks-icon.png')} alt="Thumbnail icon" width="50"/>   |  [Zero Networks](https://zeronetworks.com/) | Collector: [Zero Networks Segment Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source/)	 | 
+|  <img src={useBaseUrl('img/integrations/misc/zerofox-logo.png')} alt="Thumbnail icon" width="50"/>   | [ZeroFox](https://www.zerofox.com/) | 	App: [ZeroFox](https://drive.google.com/file/d/13svc5FP0WP3WAES6DvXhK1O8WRiPenf3/edit)	 | 
+|  <img src={useBaseUrl('img/integrations/saas-cloud/zoom.png')} alt="Thumbnail icon" width="50"/>   | [Zoom](https://zoom.us/)  | 	App: [Zoom](/docs/integrations/saas-cloud/zoom/)	<br/>Collector: [Zoom Source](/docs/send-data/hosted-collectors/webhook-sources/zoom/) | 
+|  <img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="Thumbnail icon" width="75"/>   |   | 	Apps: <br/>- [Zscaler Internet Access](/docs/integrations/security-threat-detection/zscaler-internet-access/)	<br/>- [Zscaler Private Access](/docs/integrations/security-threat-detection/zscaler-private-access/)  |
