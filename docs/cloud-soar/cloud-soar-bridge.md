@@ -186,16 +186,13 @@ If you are using CyberArk, you must add the following certificates provided by C
 #### Enable Podman socket
 
 1. Run the following commands:
-
-```bash
-systemctl enable podman.socket && systemctl start podman.socket
-```
-
+    ```bash
+    systemctl enable podman.socket && systemctl start podman.socket
+    ```
 1. Create a symbolic link:
-
-```bash
-ln -s /run/podman/podman.sock /var/run/docker.sock
-```
+    ```bash
+    ln -s /run/podman/podman.sock /var/run/docker.sock
+    ```
 
 #### Change automation bridge configuration
 
@@ -224,4 +221,6 @@ PrivateDevices=yes
 WantedBy=multi-user.target
 ```
 
->ATTENTION!: This is the current solution and it needs to run service as root.
+:::important
+This is the current solution and it needs to run service as root.
+:::
