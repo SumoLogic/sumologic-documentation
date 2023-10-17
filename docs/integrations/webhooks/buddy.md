@@ -49,7 +49,7 @@ Follow the below steps to configure the Buddy webhook:
     - **TRIGGER ON EVENTS**. Select the type of events that will cause this webhook to execute.
     - **ENABLE IN PROJECTS**. Select the projects for which you want the events to be sent to Sumo Logic.
 5. Click **Save Changes**.
-6. Verify Buddy events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel: `_sourcecategory=webhook/buddy`
+6. Verify Buddy events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's search panel: `_sourceCategory=webhook/buddy`
 
 :::info
 - For detailed information about webhook creation, refer to [Buddy documentation](https://buddy.works/docs/integrations/webhooks).

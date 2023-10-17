@@ -137,7 +137,7 @@ No. No results in your Dashboards can mean that nothing has been identified by C
 
 #### I searched a threat feed for a hash IOC that I know exists, but it wasn't found. Why?
 
-It could be a case-sensitivity issue. In Sumo, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/toLowerCase-toUpperCase).
+It could be a case-sensitivity issue. In Sumo, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase).
 
 
 #### What are different Indicators of Compromise (IOC) types available?

@@ -149,7 +149,8 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
-| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `filters` | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward). Review the [Rules and Limitations](/docs/send-data/collection/processing-rules/include-and-exclude-rules) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable |
+| `hashAlgorithm` | string | No | md5 | Refer to [Hash Rules](/docs/send-data/collection/processing-rules/hash-rules/). You can also add available values ["MD5", "SHA-256"]. | modifiable |
 
 **When collection should begin**
 

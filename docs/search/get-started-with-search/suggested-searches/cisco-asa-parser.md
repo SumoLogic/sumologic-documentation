@@ -12,7 +12,7 @@ Be sure to [save your search](../search-basics/save-search.md) queries if you 
 
 These are a few valuable search queries you can enter in the Search field when you want to discover details about your Cisco ASA traffic.
 
-The **`_sourceCategory`** fields shown in these sample queries are based on Sumo Logic's recommendations for [adding metadata to Sources](/docs/send-data/collection/edit-source.md). To re-use these queries, type the Category you entered for the relevant Source after `"_sourceCategory="` or use an asterisk wildcard (`*`) instead.
+The **`_sourceCategory`** fields shown in these sample queries are based on Sumo Logic's recommendations for [adding metadata to Sources](/docs/send-data/collection/edit-source.md). To reuse these queries, type the Category you entered for the relevant Source after `"_sourceCategory="` or use an asterisk wildcard (`*`) instead.
 
 ## Top Denied Sources
 

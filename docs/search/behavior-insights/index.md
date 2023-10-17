@@ -17,20 +17,20 @@ Modeled after our LogReduce log summarization feature, the LogReduce Values and 
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper" >
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/behavior-insights/logexplain"><h4>LogExplain</h4></a>
   <p>This operator finds the root cause of outliers in logs based on conditions you specify.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/behavior-insights/logexplain"><h4>LogReduce Keys</h4></a>
   <p>Clusters JSON logs based on keys providing an at-a-glance summary of patterns in logs based on their schema while ignoring specific values.</p>
   </div>
 </div>
-<div className="box smallbox3 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/behavior-insights/logreduce-values"><h4>LogReduce Values</h4></a>
   <p>Clusters JSON logs using the values of keys.</p>

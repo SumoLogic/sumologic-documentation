@@ -66,10 +66,11 @@ type you select. A field whose name does not match a CSE attribute will not be p
 ## Scheduling the search
 
 1. After creating and saving your search, click the save icon.<br/><img src={useBaseUrl('img/alerts/save-as.png')} alt="Save the search" width="800"/>
-  :::note
-  The required fields (`normalizedseverity`, `stage`, and fields for entities) need to come after the `where` and `count` operators, otherwise an error will occur when saving the scheduled search.
-  :::
-1. The **Save Item** popup appears. <br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="600"/>
+1. The **Save Item** popup appears. 
+   :::note
+   The name of your scheduled search will appear as the signal name in Cloud SIEM.
+   ::: 
+   <br/><img src={useBaseUrl('img/alerts/save-item.png')} alt="Save as scheduled search" width="600"/>
 1. Click **Schedule this search**.
 1. The **Save Item** popup prompts you to select a run frequency.<br/> ![run-frequency.png](/img/alerts/run-freq-signal-gen.png)
 1. Select a frequency from the pull-down list and click **Save**.  Scheduling a run frequency that matches your query time range will reduce overlapping searches and duplicate alerts. When you have a search scheduled to run over the same results as a previously scheduled search you would trigger an alert on the same data. 

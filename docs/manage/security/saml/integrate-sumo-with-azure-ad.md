@@ -4,6 +4,8 @@ title: Integrate Sumo with Azure AD
 description: Enable Single Sign-On (SSO) to Sumo Logic with Azure Active Directory (AD).
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Availability
 
 | Account Type | Account Level |
@@ -84,10 +86,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
     2. **X.509 Certificate**. Use a text editor to open the certificate file you downloaded in substep 12 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). Copy and paste the contents of the file into the field.   
 1. **Attribute Mapping.** Select **Use SAML subject.**
 1. **Configure SP-initiated Login.** (Optional) This step has instructions for setting up SP-initiated login. When SP-initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings#change-account-subdomain) section of the **Manage Organization** topic.
-
-   1. Click **SP Initiated Login Configuration** in the **Optional Settings** section of the SAML configuration page if not already selected. When you click this option, the following configurations appear.    
-
-        ![sp-init-settings.png](/img/security/sp-init-settings.png)
+   1. Under the SAML configuration page > **Optional Settings** section, select **SP Initiated Login Configuration**. When you click this option, the following configurations will appear. <br/><img src={useBaseUrl('/img/security/sp-init-settings.png')} alt="SP-initiated login" style={{border: '1px solid black'}} width="300" />
    1. **Authn Request URL.** Enter the **Login URL** that you noted in the substep 13 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad).
    1. **Disable Requested Authn Context**. Checkmark this option.
    1. **Select Binding Type**. Click **Post**.

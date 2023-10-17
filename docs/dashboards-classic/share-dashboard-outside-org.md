@@ -84,7 +84,7 @@ If you would like to embed the shared dashboard in a web page, you can get an i
 
 ## Logging for externally-shared dashboards
 
-If you have the [Audit Index](/docs/manage/security/audit-index.md) enabled, Sumo logs key sharing events. 
+If you have the [Audit Index](/docs/manage/security/audit-indexes/audit-index.md) enabled, Sumo logs key sharing events. 
 
 When a user shares a dashboard outside of the organization, Sumo logs the following information:
 
