@@ -47,6 +47,15 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
     </div>
   </div>
   <div className="box smallbox card">
+  <div className="container">
+    <a href="/docs/send-data/opentelemetry-collector/data-transformations">
+      <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25" />
+      <h4>String Hashing and Masking</h4>
+    </a>
+    <p>Learn how to perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.</p>
+  </div>
+</div>
+  <div className="box smallbox card">
     <div className="container">
       <a href="/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/><h4>Sumo Logic OTel</h4></a>
       <p>Understand the relationship between the Sumo Logic OpenTelemetry Collector and the OpenTelemetry upstream project.</p>
