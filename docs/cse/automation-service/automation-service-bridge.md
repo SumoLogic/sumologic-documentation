@@ -206,7 +206,7 @@ ln -s /run/podman/podman.sock /var/run/docker.sock
 
 Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
 
-```systemd
+```bash title="systemd"
 Setting User=root 
 
 [Unit]
