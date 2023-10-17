@@ -1,8 +1,8 @@
 ---
 slug: /cse/integrations
-title: CSE Integrations
-sidebar_label: CSE Integrations
-description: Learn about the integration of CSE with the Sumo Logic platform, how to integrate threat intel sources, and leveraging the CSE Insight Enrichment Server.
+title: Cloud SIEM Integrations
+sidebar_label: Cloud SIEM Integrations
+description: Learn about the integration of Cloud SIEM with the Sumo Logic platform, how to integrate threat intel sources, and leveraging the Cloud SIEM Insight Enrichment Server.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +19,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations/insight-enrichment-server"><img src={useBaseUrl('img/icons/integrations.png')} alt="icon" width="40"/><h4>Insight Enrichment Server</h4></a>
-  <p>Learn how to automatically enrich CSE Insights.</p>
+  <p>Learn how to automatically enrich Cloud SIEM Insights.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -31,13 +31,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations/integrate-cse-with-taxii-feed"><img src={useBaseUrl('img/icons/integrations.png')} alt="icon" width="40"/><h4>TAXII Feed</h4></a>
-  <p>Learn how to integrate CSE with a TAXII threat intelligence feed.</p>
+  <p>Learn how to integrate Cloud SIEM with a TAXII threat intelligence feed.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/integrations/security-incident-response-integration"><img src={useBaseUrl('img/icons/integrations.png')} alt="icon" width="40"/><h4>Security Incident Response (SIR)</h4></a>
-  <p>Learn to install and configure the integration between Sumo Logic CSE and ServiceNow's SIR.</p>
+  <p>Learn to install and configure the integration between Sumo Logic Cloud SIEM and ServiceNow's SIR.</p>
   </div>
 </div>
 <div className="box smallbox card">

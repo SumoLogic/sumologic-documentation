@@ -2,30 +2,30 @@
 id: tags-insights-signals-entities-rules
 title: Using Tags with Insights, Signals, Entities, and Rules
 sidebar_label: Using Tags
-description: Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag.
+description: Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these Cloud SIEM items. You can also search for and filter items by tag.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## What are tags?
 
-Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag.
+Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these Cloud SIEM items. You can also search for and filter items by tag.
 
 There are two types of tags: 
 
 * **Schema keys**. These are predefined key-value pairs, which are useful for ensuring that users use  consistent values when assigning tags to items. There are two built-in schema tags: **Tactic** and **Technique**, which relate to the Mitre ATT&CK framework.
 
-    You can create your own schema tags as well, as described in [Create a Custom Tag Schema](/docs/cse/administration/create-a-custom-tag-schema/). You can optionally configure a URL for each value in a custom tag schema. If you do, a user will be able to open that URL from the tag’s Action menu when it’s presented in the CSE UI. See [Tag Actions](#tag-actions) below for an example.
+    You can create your own schema tags as well, as described in [Create a Custom Tag Schema](/docs/cse/administration/create-a-custom-tag-schema/). You can optionally configure a URL for each value in a custom tag schema. If you do, a user will be able to open that URL from the tag’s Action menu when it’s presented in the Cloud SIEM UI. See [Tag Actions](#tag-actions) below for an example.
 
-    You can assign schema key tags to custom Rules you’ve developed.  For  built-in rules, you can assign or delete new  schema tags, but you can’t change or remove the tags that come with the rule. You can also assign schema key tags to Insights, both CSE-generated and custom.    
-* **Keyword tags**. These are arbitrary labels that you define yourself. You can assign keyword tags to custom Rules, Entities, and Insights, both CSE-generated and custom. You can’t remove or change the tags that come with built-in rules. 
+    You can assign schema key tags to custom Rules you’ve developed.  For  built-in rules, you can assign or delete new  schema tags, but you can’t change or remove the tags that come with the rule. You can also assign schema key tags to Insights, both Cloud SIEM-generated and custom.    
+* **Keyword tags**. These are arbitrary labels that you define yourself. You can assign keyword tags to custom Rules, Entities, and Insights, both Cloud SIEM-generated and custom. You can’t remove or change the tags that come with built-in rules. 
 
 A tag attached to a Rule is applied to Signals that the Rule generates. Similarly, tags applied to a Signal are applied to the Insights the Signal contributes to. All of the tags applied to an Insight's contributing Signals are aggregated, de-duplicated, and applied to the Insight. Note that an item is tagged when it is created. So, if you add a tag to a rule, Signals and Insights created before you updated the rule will not have that tag applied.
 
 ## Tags and types
 
-Some items that support tags in CSE can be tagged explicitly from the
-CSE UI. Some can inherit tags from another item. The table below
+Some items that support tags in Cloud SIEM can be tagged explicitly from the
+Cloud SIEM UI. Some can inherit tags from another item. The table below
 summarizes this behavior.
 
 | Type                     | Supports explicit tag assignment? | Items inherit tags from...      |
@@ -70,16 +70,16 @@ difference is where you do the tagging. 
 
 ### UI for tagging an Entity
 
-1. Click the **Entities** tab at the top of the CSE UI.
+1. Click the **Entities** tab at the top of the Cloud SIEM UI.
 1. Navigate to the Entity to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
 2. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-entity.png')} alt="Tag an Entity" width="350"/>
 
-### UI for tagging an CSE-generated Insight
+### UI for tagging an Cloud SIEM-generated Insight
 
 Note that in addition to tags that you manually assign to an Insight, an Insight will inherit any tags that were applied to the content that went into the Insight—the entity and the rule(s) or custom insight definitions that created the included signals—will automatically be inherited (and aggregated) by the Insight. 
 
-1. Click the **Insight** tab at the top of the CSE UI.
+1. Click the **Insight** tab at the top of the Cloud SIEM UI.
 1. Navigate to the Insight to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
 1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-insight.png')} alt="Tag an Insight" width="350"/>

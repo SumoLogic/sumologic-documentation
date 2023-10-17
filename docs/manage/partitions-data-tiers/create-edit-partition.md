@@ -79,7 +79,7 @@ By default, Sumo Logic internal partitions, like `sumologic_audit_events`, `sumo
 :::
 * You can change the data forwarding configuration.
 * You cannot change the name of partition, reuse a partition name, or change the target Data Tier.  
-* Security partitions can’t be edited. Sumo Logic stores CSE Records in seven partitions, one for each CSE Record type. The names of the Sumo Logic partitions that contain CSE Records begin with the string `sec_record_`.  If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note however, that no user can edit or remove a security partition.
+* Security partitions can’t be edited. Sumo Logic stores Cloud SIEM Records in seven partitions, one for each Cloud SIEM Record type. The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`.  If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note however, that no user can edit or remove a security partition.
 
 ### Changing a partition's routing expression
 

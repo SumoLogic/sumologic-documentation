@@ -23,8 +23,8 @@ Roles and capabilities are managed on the Sumo Logic platform. For instructions,
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab. 
 1. Click **Add Role**.
-1. In the **Create New Role** dialog, scroll down to [**Cloud SIEM Enterprise**](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise). 
-1. Select **View Cloud SIEM Enterprise**. <br/><img src={useBaseUrl('img/cse/cloud-siem-role-capabilities.png')} alt="Cloud SIEM role capability categories" style={{border: '1px solid black'}} width="250"/>
+1. In the **Create New Role** dialog, scroll down to [**Cloud SIEM**](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise). 
+1. Select **View Cloud SIEM**. <br/><img src={useBaseUrl('img/cse/cloud-siem-role-capabilities.png')} alt="Cloud SIEM role capability categories" style={{border: '1px solid black'}} width="250"/>
 1. Select capabilities from the categories:
    *  **Insights**. Provides capabilities to manage [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). 
    *  **Content**. Provides capabilities to manage elements such as [rules](/docs/cse/rules/), [match lists](/docs/cse/match-lists-suppressed-lists/), [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/), and more.

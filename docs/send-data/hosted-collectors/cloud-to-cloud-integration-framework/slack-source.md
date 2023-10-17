@@ -36,7 +36,7 @@ The source collects the following API endpoints and routes.
 Each Slack API endpoint specifies a [tier rate limit](https://api.slack.com/docs/rate-limits) limiting the C2C in the number of calls it can make to Slack.
 
 ## Metadata Fields
-The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM Enterprise, is not currently supported.
+The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM, is not currently supported.
 
 ## Setup and Configuration Overview
 The Slack source can collect data from Slack's [Web API](https://api.slack.com/web) and

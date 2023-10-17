@@ -44,7 +44,7 @@ Following are features available with our security solutions. If you have any qu
 
 <!-- The following table is hidden. We're using the image instead. We'll keep the table hidden in case we want to use it in the future instead of the image.
 
-   | Feature | Cloud Infrastructure Security | Cloud SIEM | Cloud SOAR |
+| Feature | Cloud Infrastructure Security | Cloud SIEM | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
 | Log collection | x | x | x |
 | App catalog (out-of-the-box analytics) | x | x | x |
