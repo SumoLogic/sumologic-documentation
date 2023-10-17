@@ -19,16 +19,14 @@ Docs cover all product features and should be your first resource when you have 
 
 ## Support
 
-If you haven't found the answer to your question in the online Help, go to **Help** > **Support** (in product).
+If you haven't found the answer to your question in our online help documentation:
 
-![Help - Support.png](/img/get-started/Help-Support.png)
+1. Go to **Help** > **Support** (in product).<br/>![Help - Support.png](/img/get-started/Help-Support-product.png)
+1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/>![Help - Support.png](/img/get-started/Help-Support.png)
 
-You'll be taken to [Sumo Logic Support](https://support.sumologic.com/). Log in with your account and you can access resources including Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
+On this site, you can log in with your account to access resources like Sumo Logic announcements, release notes, Knowledge Base articles, and more. You can also access the Sumo Logic Community in order to ask questions of fellow users.
 
-:::sumo
-For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
-:::
-
+:::sumo Contacting Support
 Depending on your account type, you can also log a ticket with our support engineers.
 
 <Iframe url="https://www.youtube.com/embed/9tpq1XFhcMU"
@@ -42,11 +40,17 @@ Depending on your account type, you can also log a ticket with our support engin
         allowfullscreen
         />
 
+:::
+
+
+### Terms and conditions
+
+For Sumo Logic terms and conditions, see https://www.sumologic.com/support-terms.
 
 ## Training and Certification
 
 Sumo Logic provides free training. With our Self-Paced program, you can take Sumo Logic courses at your own pace, anywhere, without time constraints. For more information, see:
-* [Training and Certification](/docs/get-started/certification-faq)
+* [Training and Certification](/docs/get-started/training-certification-faq)
 * [Upcoming training classes](https://www.sumologic.com/training/)
 
 ## Community

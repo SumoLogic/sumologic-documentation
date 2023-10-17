@@ -17,8 +17,8 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-  <div className="box smallbox1 card">
+<div className="box-wrapper" >
+  <div className="box smallbox card">
     <div className="container">
       <a href="/docs/manage/data-archiving/archive">
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
@@ -27,7 +27,7 @@ In this section, we'll introduce the following concepts:
       <p>Learn to archive data to S3 for future ingestion and retrieval.</p>
     </div>
   </div>
-  <div className="box smallbox2 card">
+  <div className="box smallbox card">
     <div className="container">
       <a href="/docs/manage/data-archiving/installed-collectors">
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />

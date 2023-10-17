@@ -70,7 +70,7 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. **Name**. Enter a name to display for the Source in the Sumo Logic web application.<br/><img src={useBaseUrl('img/send-data/cyberark-source.png')} alt="cyberark-source.png" width="400"/>
 1. **Description**. (Optional)
 1. **Source Category**. Enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the Forward to SIEM option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the Forward to SIEM option the following metadata fields are set:
    * `_siemVendor`—Cyber-Ark
    * `_siemProduct`—EPM
    * `_siemFormat`—JSON

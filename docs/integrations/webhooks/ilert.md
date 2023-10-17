@@ -56,7 +56,7 @@ Follow the steps to configure the iLert Webhook.
 7. Click **Save**.
 8. Verify iLert events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
 ```sql
-`_sourcecategory=webhook/ilert`
+`_sourceCategory=webhook/ilert`
 ```
 
 :::info

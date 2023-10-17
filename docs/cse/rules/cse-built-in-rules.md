@@ -1,15 +1,15 @@
 ---
 id: cse-built-in-rules
-title: CSE Built-In Rules
+title: Cloud SIEM Built-In Rules
 sidebar_label: Built-In Rules
-description: See a list and descriptions of CSE's built-in rules.
+description: See a list and descriptions of Cloud SIEM's built-in rules.
 ---
 
 <!--
 Content of this page comes from https://github.com/jasklabs/content-catalog/blob/master/rules/html_rules.html
 -->
 
-This page lists and describes CSE's built-in rules.
+This page lists and describes Cloud SIEM's built-in rules.
 
 ## .NET Framework Remote Code Execution Vulnerability
 
@@ -825,7 +825,7 @@ GORAT is the modular backdoor portion of the REDFLARE framework. This rule looks
 ## CVE-2021-44228 Log4j2 Java Library 0-Day Attempt
 
 
- Apache Log4j2 &lt;=2.14.1 using JNDI features has an exploit allowing attackers to perform unauthenticated, remote code execution on a Java application that logs user input. This CSE rule looks for attackers attempting to input the string "jndi:" into a field that the application may log to trigger the payload download and execution. This does NOT indicate the application is vulnerable and downloaded the malicious payload, but it does show a hostile actor attempting the attack method.
+ Apache Log4j2 &lt;=2.14.1 using JNDI features has an exploit allowing attackers to perform unauthenticated, remote code execution on a Java application that logs user input. This Cloud SIEM rule looks for attackers attempting to input the string "jndi:" into a field that the application may log to trigger the payload download and execution. This does NOT indicate the application is vulnerable and downloaded the malicious payload, but it does show a hostile actor attempting the attack method.
 
 ## Chromium Browser History Access by Non-Browser Process
 
@@ -2573,7 +2573,7 @@ PXELoot (PAL) is a C# tool designed to aid in the discovery and exploitation of 
 ## RDP Error Messages
 
 
- When setting up an RDP connection, there are a number of  negotiation steps that happen.  If a connection is enrypted, not all of these can be analyzed.  Errors can indicate an operational issue or potential exploitation of a vulnerability in negotiation.
+ When setting up an RDP connection, there are a number of  negotiation steps that happen.  If a connection is encrypted, not all of these can be analyzed.  Errors can indicate an operational issue or potential exploitation of a vulnerability in negotiation.
 
 ## RDP Login from Localhost
 
@@ -3083,7 +3083,7 @@ SharpStomp is a C# utility that can be used to timestomp the specified file's cr
 ## Sumo Logic Scheduled Searches
 
 
- This rule passes through Sumo Logic core platform scheduled search hits to CSE as signals.
+ This rule passes through Sumo Logic core platform scheduled search hits to Cloud SIEM as signals.
 
 ## Sunburst Suspicious File Writes
 

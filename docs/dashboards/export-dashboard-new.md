@@ -22,3 +22,4 @@ To export a Dashboard follow these steps:
 
 * Panels are exported the way they are displayed prior to export. For table panels that require scrolling, only the rows in view will show in the exported file. We recommend building your panels where all rows are visible without the need to scroll. 
 * Chart panels with more legend labels than can be displayed are not visible in the exported file.
+* PDF export will timeout after 5 minutes. So, make sure that all panels load in less than 5 minutes when viewing a dashboard.

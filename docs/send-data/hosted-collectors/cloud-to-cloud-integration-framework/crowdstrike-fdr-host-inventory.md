@@ -91,7 +91,7 @@ To configure the CrowdStrike FDR Host Inventory API:
 3. Select **CrowdStrike FDR Host Inventory** icon.<br/><img src={useBaseUrl('/img/send-data/crowdstrike-fdr-host-inventory-icon.png')} alt="crowdstrike-fdr-host-inventory-icon.png" width="120" />
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional. <br/>   <img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-config-main.png')} alt="crowdstrike-fdr-host-inventory-config-main.png" width="400" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise as inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
+6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM as inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
   * `_siemVendor`: CrowdStrike
   * `_siemProduct`: FDR Host Inventory
   * `_siemDataType`: Inventory  

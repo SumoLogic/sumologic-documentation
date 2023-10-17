@@ -112,7 +112,7 @@ To configure a Google Workspace User Inventory source:
 1. Select **Google Workspace: User Inventory**.<br/><img src={useBaseUrl('img/send-data/google-workspace-icon.png')} alt="google-workspace-icon.png" width="100" />
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('/img/send-data/google-workspace.png')} style={{border: '1px solid black'}} alt="google-workspace.png" width="400" />  
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise and become part of User Inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM and become part of User Inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Google
    * `_siemProduct`: Workspace
    * `_siemDataType`: Inventory
