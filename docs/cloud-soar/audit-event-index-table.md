@@ -12,6 +12,7 @@
 | [Incident](docs/cloud-soar/incidents-triage)                              | `oarIncidents`            |
 | [Incident Artifact](docs/cloud-soar/incidents-triage/#incident-artifacts) | `oarIncidentArtifacts`    |
 | [Incident Attachment](docs/cloud-soar/main-menu/#attachments)             | `oarIncidentAttachments`  |
+| [Incident Investigator](docs/cloud-soar/incidents-triage)                 | `oarIncidentInvestigators`  |
 | [Incident Note](docs/cloud-soar/incidents-triage/#notes)                  | `oarIncidentNotes`        |
 | [Incident Template](docs/cloud-soar/automation/#incident-templates)       | `oarIncidentTemplates`    |
 | [Integration](docs/cloud-soar/automation/#integrations)                   | `oarIntegrations`         |
@@ -19,7 +20,6 @@
 | [Notification](docs/cloud-soar/global-functions-menu/#notifications)      | `oarNotifications`        |
 | [Playbook Execution](docs/cloud-soar/automation/#playbook-execution)      | `oarPlaybookExecutions`   |
 | [Playbook Revision](docs/cloud-soar/automation/#playbook-template)        | `oarPlaybookRevisions`    |
-| [Queue](docs/cloud-soar/global-functions-menu/#queue-settings)            | `oarQueues`               |
 | [Report](docs/cloud-soar/incidents-triage/#incident-report)               | `oarReports`              |
 | [Setting](docs/cloud-soar/global-functions-menu/#settings)                | `oarSettings`             |
 | [Task](docs/cloud-soar/incidents-triage/#tasks)                           | `oarTasks`                |
