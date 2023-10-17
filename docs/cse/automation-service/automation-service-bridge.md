@@ -7,8 +7,6 @@ description: Learn how to install a bridge for the Automation Service to allow r
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-{@import ../../reuse/automation-service-la-note.md}
-
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
 ## Requirements 
@@ -32,7 +30,14 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 | :-- | :-- | :-- |
 | sumo-logic-api-url | TCP| 443| 
 | siem-cloud-url | 	TCP| 	443| 
-| 926226587429.dkr.ecr.us-west-2.amazonaws.com| 	TCP| 	443| 
+| 926226587429.dkr.ecr.us-west-2.amazonaws.com | TCP| 443| 
+| 926226587429.dkr.ecr.us-east-1.amazonaws.com | TCP| 443|
+| 926226587429.dkr.ecr.ap-southeast-2.amazonaws.com | TCP| 443|
+| 926226587429.dkr.ecr.eu-central-1.amazonaws.com | TCP| 443|
+| 926226587429.dkr.ecr.ap-south-1.amazonaws.com | TCP| 443|
+| 926226587429.dkr.ecr.ap-northeast-1.amazonaws.com | TCP| 443|
+| 926226587429.dkr.ecr.ca-central-1.amazonaws.com | TCP| 443|
+| 926226587429.dkr.ecr.eu-west-1.amazonaws.com | TCP| 443|
 | index.docker.io* | 	TCP| 	443| 
 | registry-1.docker.io* | 	TCP| 	443| 
 | auth.docker.io* | 	TCP| 	443| 
@@ -172,7 +177,7 @@ ps faux |grep automation-bridge
 
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cse/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+On the SOAR instance, under **Automation > Bridge**, a list of live bridge agents will be displayed along with their status.
 
 ### Configuring the automation bridge for CyberArk
 

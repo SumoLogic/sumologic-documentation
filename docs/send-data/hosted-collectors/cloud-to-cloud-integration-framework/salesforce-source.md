@@ -284,3 +284,15 @@ To resolve this:
 To resolve this:
 
 1. Please create a support ticket with sumo logic to increase the memory for your container.
+
+**Error:** Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
+
+You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has value, but in other logs, it's completely empty. This could be because of a problem with permissions.
+
+To resolve this: 
+
+1. In Salesforce, go to **Setup\>Administration\>Users\>Profile**.
+1. Click the **Edit** button for the user's profile you set up for the Salesforce Source.
+1. In the **Administrative Permissions** section, check the box for **Manage Reports in Public Folders** permission.
+1. In the **General User Permissions** section, check the box for **View My Team's Dashboards** permission.
+1. Click the **Save** button

@@ -113,7 +113,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
   | Network Security | networksecurity.googleapis.com |
   | Net App | netapp.com.googleapis.com |
   | Cloudvolumes Net App | cloudvolumesgcp-api.netapp.com |
-  | VPN Access | vpcaccess.googleapis.com |
+  | VPC Access | vpcaccess.googleapis.com |
 
   </details>
 
@@ -146,7 +146,7 @@ The scan interval defines how long Sumo Logic waits between calls to the GCP API
 
 Google reports GCP metrics at different granularities (1-minute and 5-minute intervals), so setting a scan interval that is too short could lead to excessive querying. Setting an interval that is too long can delay the update frequency of new metrics appearing in Sumo Logic.
 
-Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by Google Cloud Platform. See [Enable and Manage the Audit Index](/docs/manage/security/audit-index.md) for details.
+Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by Google Cloud Platform. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index.md) for details.
 
 ### Costs for using GCP Metric Sources  
 

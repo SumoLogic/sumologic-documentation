@@ -1,7 +1,7 @@
 ---
 id: sns
 title: Amazon SNS
-description: The Sumo Logic App for Amazon SNS is a unified logs and metrics app that provides insights into the operations and utilization of your SNS service.
+description: The Sumo Logic app for Amazon SNS is a unified logs and metrics app that provides insights into the operations and utilization of your SNS service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,14 +10,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
-The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metrics provides a unified logs and metrics app that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
+The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metrics provides a unified logs and metrics app that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 
-## Log and Metrics Types
-The Sumo Logic App for Amazon SNS uses:
+## Log and Metrics types
+
+The Sumo Logic app for Amazon SNS uses:
 * SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
 * SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
 
-### Sample Log Message
+### Sample log message
 
 ```
 {
@@ -45,7 +46,7 @@ eventCategory:"Management"
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
@@ -72,7 +73,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
-## Collecting Logs and Metrics for the Amazon SNS App
+## Collecting Logs and Metrics for the Amazon SNS app
 
 ### Collecting Metrics for Amazon SNS  
 
@@ -96,10 +97,10 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
     * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-    * **Enable Timestamp Parsing**. Select the check box.
-    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    * **Timestamp Format**. Select Automatically detect the format.
-    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+    * **Timestamp Format.** Select **Automatically detect the format**.
+    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 ### Field in Field Schema
@@ -144,7 +145,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`
 * **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
-```
+```sql
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -153,9 +154,9 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 | fields account
 ```
 
-## Installing the Amazon SNS App
+## Installing the Amazon SNS app
 
-Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SNS, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -175,7 +176,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-## Viewing Amazon SNS Dashboards
+## Viewing Amazon SNS dashboards
 
 ### Overview
 

@@ -82,10 +82,19 @@ Use Sumo Logic's countless data integrations and out-of-the box applications ens
 
 ## Pre-built apps for audit and compliance
 
-[Install](/docs/get-started/apps-integrations) the following apps for audit and compliance:
+[Install](/docs/get-started/apps-integrations) the following apps for compliance:
 * [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
-* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
+
+Following are some of the apps you can [install](/docs/get-started/apps-integrations) for auditing:
+* [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
 * [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
+* [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
+* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
+* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
+* [**Sumo Logic Audit**](/docs/integrations/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
+* [**Sumo Logic Enterprise Audit**](/docs/integrations/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
+* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
+
 
 ### Use case: PCI compliance
 
