@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bug Fixes
 
-* When an Entity normalization lookup table was deleted and then re-created in the Sumo platform, the configuration in CSE was not automatically updated, causing the normalization to fail. 
+* When an Entity normalization lookup table was deleted and then re-created in the Sumo platform, the configuration in Cloud SIEM was not automatically updated, causing the normalization to fail. 
 * Match lists with custom columns were not working properly during record processing.
 * The Network Blocks section was missing from the Entity details panel.
 * Links for schema tags were not displaying in the UI properly.

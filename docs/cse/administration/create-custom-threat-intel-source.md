@@ -8,9 +8,9 @@ description: Learn how to create and manage custom threat sources.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about setting up a *custom threat intelligence source* in CSE, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
+This topic has information about setting up a *custom threat intelligence source* in Cloud SIEM, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
 
-You can set up and populate custom threat intelligence sources interactively from the CSE UI, by uploading a .csv file, or using CSE APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
+You can set up and populate custom threat intelligence sources interactively from the Cloud SIEM UI, by uploading a .csv file, or using Cloud SIEM APIs. You can populate the sources with IP addresses, hostnames, URLs, email addresses, and file hashes.
 
 Watch this micro lesson to learn more about Cloud SIEM threat intelligence.
 
@@ -33,19 +33,19 @@ You can also add threat intelligence sources in the core Sumo Logic platform. Se
 :::
 -->
 
-### How CSE uses indicators
+### How Cloud SIEM uses indicators
 
-When CSE encounters an indicator from your threat source in an incoming
+When Cloud SIEM encounters an indicator from your threat source in an incoming
 Record it adds relevant information to the Record. Because threat intelligence
 information is persisted within Records, you can reference it downstream
-in both rules and search. The built-in rules that come with CSE
+in both rules and search. The built-in rules that come with Cloud SIEM
 automatically create a Signal for Records that have been enriched in
 this way.
 
 Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Turning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
-*About CSE Rules* topic.
+*About Cloud SIEM Rules* topic.
 
-### Create a threat intelligence source from CSE UI
+### Create a threat intelligence source from Cloud SIEM UI
 
 1. Click the Content menu and select **Threat Intelligence**.
 1. Click **Add Source** on the **Threat Intelligence** page. <br/><img src={useBaseUrl('img/cse/threat-intel-page2.png')} alt="Threat Intelligence page" width="800"/>
@@ -78,7 +78,7 @@ Your new source should now appear on the **Threat Intelligence** page.
 ### Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
-save time by creating a .csv file and uploading it to CSE. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="Import indicators" width="400"/>
+save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="Import indicators" width="400"/>
 
 #### Create a CSV file
 
@@ -108,5 +108,5 @@ value,description,expires,active
 
 ### Manage sources and indicators using APIs
 
-You can use CSE threat intelligence APIs to create and manage indicators and custom threat sources. For information about CSE APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).  
+You can use Cloud SIEM threat intelligence APIs to create and manage indicators and custom threat sources. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).  
  
