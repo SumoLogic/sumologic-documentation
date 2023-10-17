@@ -96,7 +96,7 @@ To configure a SentinelOne Mgmt API Source:**
    * `_siemFormat`: JSON
    * `_siemEventID`: The type of data ingested. Values include `activities - {id}`, `threats - {id}`, or `agents`. Agents has a `_siemDataType` of `Inventory`.
 :::note
-If you entered actions in Supported APIs to collect above, the `_siemDataType` field will be set to `Inventory`.
+If you entered `agents` in Supported APIs to collect above, the `_siemDataType` field will be set to `Inventory`.
 :::
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
