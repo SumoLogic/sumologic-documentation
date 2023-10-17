@@ -196,7 +196,7 @@ If you are using CyberArk, you must add the following certificates provided by C
 systemctl enable podman.socket && systemctl start podman.socket
 ```
 
-- Create a symbolic link:
+1. Create a symbolic link:
 
 ```bash
 ln -s /run/podman/podman.sock /var/run/docker.sock
