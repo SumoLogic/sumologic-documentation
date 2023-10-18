@@ -24,7 +24,7 @@ Updates:
 * Terraform solution is now updated to use AWS provider version v5.
 * Updated SAM apps used in solution.
   * sumologic-s3-logging-auto-enable - Semantic  v1.0.6
-  * sumologic-loggroup-connector - 1.0.9
+  * sumologic-loggroup-connector - Semantic  v1.0.9
 
 Bug Fixes:
 * Fixed “Lambda timeout as failure” in lambda dashboards.
