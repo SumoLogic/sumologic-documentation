@@ -220,5 +220,5 @@ WantedBy=multi-user.target
 ```
 
 :::important
-This is the current solution and it needs to run service as root.
+This is the current solution and it needs to run service as `root`.
 :::
