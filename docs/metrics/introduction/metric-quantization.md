@@ -232,9 +232,12 @@ If the `quantize` operator in your query is preceded by another metrics operator
 
 #### Quantize with no rollup type specified  
 
-If your metric query uses the `quantize` operator without specifying a rollup type, internally, Sumo Logic uses the default `avg` rollup.
+If your metrics query uses the `quantize` operator without specifying a rollup type, internally, Sumo Logic uses the default `avg` rollup.
+
 For example, given this query:
+
 ```sql
 metric=CPU_Idle | quantize to 15m
 ```
-15 minute interval and `avg` rollup will be used.
+
+15-minute interval and `avg` rollup will be used.
