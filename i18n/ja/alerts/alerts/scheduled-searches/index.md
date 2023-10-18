@@ -34,7 +34,7 @@ Fields are returned in lowercase in scheduled search results.
 
 ## Scheduled Search Alert Types
 
-When you create a scheduled search, you can configure several different alert types including email, Script Action, ServiceNow Connection, Webhook, Save to Index, Real Time Alerts, and CLoud SIEM Enterprise (CSE) Signals.
+When you create a scheduled search, you can configure several different alert types including email, Script Action, ServiceNow Connection, Webhook, Save to Index, Real Time Alerts, and CLoud SIEM Signals.
 
 ### Email
 
@@ -88,9 +88,9 @@ When an alert condition is satisfied, Sumo Logic sends an email (or triggers a s
 
 For instructions, see [Create a Alert](create-real-time-alert.md).
 
-### CSE Signal
+### Cloud SIEM Signal
 
-You can trigger the creation of a CSE Signal with a scheduled search. Signals are otherwise generated when the conditions of a CSE rule are satisfied by a Record. Signals are correlated with other Signals to create a [CSE Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).
+You can trigger the creation of a Cloud SIEM Signal with a scheduled search. Signals are otherwise generated when the conditions of a Cloud SIEM rule are satisfied by a Record. Signals are correlated with other Signals to create a [Cloud SIEM Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).
  
 
-For instructions, see [Generate CSE Signals With a Scheduled Search](generate-cse-signals.md).
+For instructions, see [Generate Cloud SIEM Signals With a Scheduled Search](generate-cse-signals.md).

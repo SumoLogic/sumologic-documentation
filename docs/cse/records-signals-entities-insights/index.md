@@ -1,10 +1,10 @@
 ---
 slug: /cse/records-signals-entities-insights
 title: Records, Signals, Entities, and Insights
-description: Learn about Insight generation, working with Entities, and how to query CSE Records.
+description: Learn about Insight generation, working with Entities, and how to query Cloud SIEM Records.
 ---
 
-Learn about Insight generation, working with Entities, and how to query CSE Records. 
+Learn about Insight generation, working with Entities, and how to query Cloud SIEM Records. 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -32,7 +32,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/view-manage-entities"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>View and Manage Entities</h4></a>
-  <p>Learn about all the Entities in CSE and their Activity Scores.</p>
+  <p>Learn about all the Entities in Cloud SIEM and their Activity Scores.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -44,7 +44,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/create-custom-entity-type"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Custom Entity Types</h4></a>
-  <p>Learn how to create custom Entity types in CSE.</p>
+  <p>Learn how to create custom Entity types in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -62,25 +62,25 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/view-records-signal"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>View Records for a Signal</h4></a>
-  <p>Learn how to view Records associated with a Signal in CSE.</p>
+  <p>Learn how to view Records associated with a Signal in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/about-signal-suppression"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Signal Suppression</h4></a>
-  <p>Learn about ways to suppress and exclude CSE Signals from the Insight generation process.</p>
+  <p>Learn about ways to suppress and exclude Cloud SIEM Signals from the Insight generation process.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Search Sumo Logic for CSE Records</h4></a>
-  <p>Learn to search the Sumo Logic platform for Records and Signals that have been forwarded from CSE.</p>
+  <a href="/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Search Sumo Logic for Cloud SIEM Records</h4></a>
+  <p>Learn to search the Sumo Logic platform for Records and Signals that have been forwarded from Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Using Tags</h4></a>
-  <p>Learn how to add context to CSE items, and search and filter items by tag.</p>
+  <p>Learn how to add context to Cloud SIEM items, and search and filter items by tag.</p>
   </div>
 </div>
 </div>

@@ -164,7 +164,7 @@ The Usage Details panel contains the following usage categories:
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
 * **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
 * **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
-* **CSE Ingest**. Credits used for logs ingested into Cloud SIEM Enterprise (CSE).
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 

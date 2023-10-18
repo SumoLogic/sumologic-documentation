@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Windows Active Directory Inventory Source collects inventory data from [Active Directory Database](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/). This includes information such as computer names, user names, email addresses, and location information.
 
-[Cloud SIEM Enterprise](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data to help provide additional context and build a more complete profile of your network, for example, by connecting the dots between a location, and the servers, workstations, and users in that location.
+[Cloud SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data to help provide additional context and build a more complete profile of your network, for example, by connecting the dots between a location, and the servers, workstations, and users in that location.
 
 :::note
 The Installed Collector with the Windows Active Directory Inventory Source can be installed on a Domain Controller or a server that is a member of the domain.  
@@ -26,7 +26,7 @@ The following information is collected:
 * Email address
 * Departments to which employee belongs
 * Employee’s manager
-* Security groups to which the employee is assigned, which allows Cloud SIEM Enterprise to determine the privileges the user has on the company network
+* Security groups to which the employee is assigned, which allows Cloud SIEM to determine the privileges the user has on the company network
 
 :::note
 Install a single Active Directory Source to collect inventory data from the entire AD domain.

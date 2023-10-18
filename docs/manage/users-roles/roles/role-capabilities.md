@@ -123,13 +123,13 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Observability | Configure | Configure playbook execution information. |   
 
 
-## Cloud SIEM Enterprise
+## Cloud SIEM
 
-[Cloud SIEM Enterprise](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
+[Cloud SIEM](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
-| View Cloud SIEM Enterprise | | Users with a role that grants this capability will see a **Cloud SIEM Enterprise** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
+| View Cloud SIEM | | Users with a role that grants this capability will see a **Cloud SIEM** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
 | Insights | Comment on Insights | Add comments to [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui). |
 | Insights | Create Insights	| Create Insights.|
 | Insights | Delete Insights	| Delete Insights.|

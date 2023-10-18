@@ -11,7 +11,7 @@ This topic has information about custom Insight resolutions and how to create an
 
 ## About Insight resolutions
 
-When you close an Insight, CSE prompts you to select a resolution that indicates why you closed it. There are four built-in resolutions:
+When you close an Insight, Cloud SIEM prompts you to select a resolution that indicates why you closed it. There are four built-in resolutions:
 
 * Duplicate — The insight has triggered before on the same entity and is a duplicate.
 * False Positive—An insight triggered and it is legitimate activity.
@@ -22,7 +22,7 @@ You can define custom *sub-resolutions* for any of the built-in resolutions. Thi
 
 ## Create a custom sub-resolution
 
-1. Click the gear icon at the top of the CSE UI and choose **Resolutions** under **Workflow**.
+1. Click the gear icon at the top of the Cloud SIEM UI and choose **Resolutions** under **Workflow**.
 1. On the **Insight Resolutions** page, click **Create**. <br/><img src={useBaseUrl('img/cse/resolutions-link.png')} alt="Resolutions menu" width="800"/>
 1. The **Create Insight Resolution** page appears.
     1. **Name**. Enter a meaningful name for the new resolution.

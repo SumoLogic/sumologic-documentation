@@ -22,7 +22,7 @@ We are excited to announce the new Entity Relationship Graph. With this feature,
 This feature is available to all customers but is currently in **Beta**. If you encounter any issues with this feature, report them to Sumo Logic Support. We appreciate your feedback.
 :::
 
-The Entity Relationship Graph (and the Related Entities list) displays all Entities involved in the Insight (those referred to in a record in a Signal in the Insight) as well as additional Entity relationships (for example, if CSE detects an IP address may also have had a specific hostname at the time the Insight was generated). 
+The Entity Relationship Graph (and the Related Entities list) displays all Entities involved in the Insight (those referred to in a record in a Signal in the Insight) as well as additional Entity relationships (for example, if Cloud SIEM detects an IP address may also have had a specific hostname at the time the Insight was generated). 
 
 However, unlike the Related Entities list, the graph can visualize additional Entity relationships that existed outside of the Insight during a specified time frame. 
 
@@ -48,6 +48,6 @@ For more information about how to use the Entity Relationship Graph, see the [on
 
 ### Bug Fixes
 
-* In some cases, CSE was unable to properly extract the user name from an AWS ARN.
+* In some cases, Cloud SIEM was unable to properly extract the user name from an AWS ARN.
 * A recent change caused checkboxes to malfunction in Firefox.
 * On the Entity Timeline record details, the timestamp wasn’t displaying properly.

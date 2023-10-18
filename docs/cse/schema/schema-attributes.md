@@ -1,14 +1,14 @@
 ---
 id: schema-attributes
-title: CSE Schema Attributes
+title: Cloud SIEM Schema Attributes
 sidebar_label: Attributes
-description: Learn about CSE schema attributes.
+description: Learn about Cloud SIEM schema attributes.
 ---
 <!--
 Content of this page comes from https://github.com/jasklabs/content-catalog/blob/master/schema/html_attributes.html
 -->
 
-This topic defines the attributes in CSE Schema v3.
+This topic defines the attributes in Cloud SIEM Schema v3.
 
 <h2>
  accountId
@@ -9808,7 +9808,7 @@ In cases where the log data has a source or destination context, there are situa
     </strong>
    </td>
    <td>
-    CSE mapper name which normalizes the record.
+    Cloud SIEM mapper name which normalizes the record.
    </td>
   </tr>
   <tr>
@@ -9855,7 +9855,7 @@ In cases where the log data has a source or destination context, there are situa
     </strong>
    </td>
    <td>
-    Universally unique identifier for CSE normalization mappers.
+    Universally unique identifier for Cloud SIEM normalization mappers.
    </td>
   </tr>
   <tr>
@@ -14230,7 +14230,7 @@ The logs using this field will all be a form of pass through content. Messages t
     </strong>
    </td>
    <td>
-    UID for the parsed record in Sumo Logic CSE.
+    UID for the parsed record in Sumo Logic Cloud SIEM.
    </td>
   </tr>
   <tr>
