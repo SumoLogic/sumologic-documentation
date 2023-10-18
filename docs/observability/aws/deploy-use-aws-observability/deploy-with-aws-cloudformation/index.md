@@ -125,7 +125,7 @@ The below tables displays the response for each text box in this section.
 | Regex for AWS Log Groups | Default Value: <b>lambda\|rds</b> <br/> With default value, log group names matching with lambda or rds will be subscribed and ingesting cloudwatch logs into sumo logic.<br/> Enter a regex for matching log group names. For more information, see [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination.md) in the *Auto-Subscribe AWS Log Groups to a Lambda Function topic*.<br/>
 :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
-  * For auto-subscribing all log groups, please use regex `.*`.
+  * Use regex `.*` for auto-subscribing all log groups.
 ::: |
 
 
