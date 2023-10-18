@@ -3,7 +3,7 @@
 Following a recent back-end update, all contributors with a local clone or fork of our repository are required to run `yarn install`. This does not apply to [direct page edits](https://help.sumologic.com/docs/contributing/edit-doc/#minor-edits).
 
 - [ ] Yes, I've run `yarn install`
-- [ ] No, does not apply to me / forked repo
+- [ ] No, does not apply to me
 
 ## Purpose of this pull request
 
