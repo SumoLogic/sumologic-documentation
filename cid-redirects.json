@@ -1379,6 +1379,7 @@
   "/docs/api/tokens": "/docs/api/token-management",
   "/docs/api/roles": "/docs/api/role-management",
   "/docs/api/users": "/docs/api/user-management",
+  "/docs/observability/aws/integrations/aws-rds-metrics": "/docs/observability/aws/integrations/aws-rds",
   "/Dashboards-and-Alerts/Dashboards": "/docs/dashboards",
   "/Dashboards-and-Alerts/Dashboards/01-About-Dashboards": "/docs/dashboards/about",
   "/Dashboards-and-Alerts/Dashboards/Chart-Panel-Types": "/docs/dashboards-classic/chart-panel-types",

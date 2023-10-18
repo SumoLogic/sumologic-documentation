@@ -9,6 +9,28 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.7.0, 08-Nov-2023
+
+AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Feature:
+* Added new dashboards to support MySQL and AuroraMySQL Databases. RDS app update
+
+Updates:
+* All python lambda runtimes have been updated to python3.11 along with libraries updated.
+* All nodeJS lambda runtimes have been update to NodeJS18.x along with libraries updated.
+* Terraform solution is now updated to use AWS provider version v5.
+* Updated SAM apps used in solution
+  * sumologic-s3-logging-auto-enable - 1.0.6
+  * sumologic-loggroup-connector - 1.0.9
+
+Bug Fixes:
+* Fixed “Lambda timeout as failure” in lambda dashboards.
+* Fixed “Incorrect host count” in ALB dashboards.
+
+
 ## v2.6.1, 18-July-2023
 
 AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml`
