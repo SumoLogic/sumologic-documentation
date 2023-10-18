@@ -185,3 +185,46 @@ If you are using CyberArk, you must add the following certificates provided by C
 * `RootCA_new.crt`
 * `client_new.crt`
 * `client_new.pem`
+
+### Configuring automation bridge with Podman
+
+#### Enable Podman socket
+
+1. Run the following commands:
+    ```bash
+    systemctl enable podman.socket && systemctl start podman.socket
+    ```
+1. Create a symbolic link:
+    ```bash
+    ln -s /run/podman/podman.sock /var/run/docker.sock
+    ```
+
+#### Change automation bridge configuration
+
+Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
+
+```bash title="systemd"
+Setting User=root 
+
+[Unit]
+Description=Automation-bridge worker %i
+
+[Service]
+User=root
+EnvironmentFile=/etc/opt/automation-bridge/automation-bridge.conf
+ExecStart=/opt/automation-bridge/bin/automation-bridge -f /opt/automation-bridge/etc/user-configuration.conf -n %H-%i
+ExecStop=/bin/kill -s TERM  $MAINPID
+Restart=on-failure
+TimeoutStartSec=10
+RestartSec=10
+##
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+:::important
+This is the current solution and it needs to run service as root.
+:::
