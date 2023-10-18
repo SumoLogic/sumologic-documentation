@@ -23,7 +23,7 @@ Updates:
 * All nodeJS lambda runtimes have been update to NodeJS18.x along with libraries updated.
 * Terraform solution is now updated to use AWS provider version v5.
 * Updated SAM apps used in solution
-  * sumologic-s3-logging-auto-enable - 1.0.6
+  * sumologic-s3-logging-auto-enable - Semantic  v1.0.6
   * sumologic-loggroup-connector - 1.0.9
 
 Bug Fixes:
