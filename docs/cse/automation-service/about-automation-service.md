@@ -78,7 +78,7 @@ Before you can access the Automation Service, you must first [configure role cap
    * From Cloud SIEM:
      1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
      1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
-     1. At the top of the screen click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>.
+     1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. The Automation Service screen displays, showing a list of available [playbooks](/docs/cse/automation-service/automation-service-playbooks#view-playbooks). Playbooks run actions provided by integrations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Open a playbook to see the actions it runs. Click an action to view the integration resource that provides it.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="800"/>
 1. To [view integrations](/docs/cse/automation-service/automation-service-integrations#view-integrations), click **Integrations** in the left navigation bar.<br/><img src={useBaseUrl('img/cse/automations-integrations-list.png')} alt="Integrations list" width="800"/>
