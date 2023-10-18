@@ -27,7 +27,7 @@ Updates:
   * sumologic-loggroup-connector - Semantic  v1.0.9
 
 Bug Fixes:
-* Fixed “Lambda timeout as failure” in lambda dashboards.
+* Fixed “Lambda timeout as failure” in the Lambda dashboards.
 * Fixed “Incorrect host count” in the ALB dashboards.
 
 
