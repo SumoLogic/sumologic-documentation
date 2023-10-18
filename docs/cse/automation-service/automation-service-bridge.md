@@ -204,8 +204,6 @@ If you are using CyberArk, you must add the following certificates provided by C
 Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
 
 ```bash title="systemd"
-Setting User=root 
-
 [Unit]
 Description=Automation-bridge worker %i
 
@@ -225,6 +223,7 @@ PrivateDevices=yes
 [Install]
 WantedBy=multi-user.target
 ```
+
 :::important
 This is the current solution and it needs to run service as root.
 :::
