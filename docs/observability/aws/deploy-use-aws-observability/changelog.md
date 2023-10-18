@@ -28,7 +28,7 @@ Updates:
 
 Bug Fixes:
 * Fixed “Lambda timeout as failure” in lambda dashboards.
-* Fixed “Incorrect host count” in ALB dashboards.
+* Fixed “Incorrect host count” in the ALB dashboards.
 
 
 ## v2.6.1, 18-July-2023
