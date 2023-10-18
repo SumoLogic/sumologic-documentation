@@ -31,9 +31,9 @@ We refer to your estimates of ingest capacity required for each product variable
 
 Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration > Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
-## About CSE provisioning
+## About Cloud SIEM provisioning
 
-You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information, see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+You can enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. For more information, see [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
 
 ## Requirements for creating and managing orgs
 
@@ -55,7 +55,7 @@ POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will b
 * 5 GB Infrequent tier ingest
 * 5,000 metric data points per minute (DPM) 
 * 5 GB traces ingestion
-* 5 GB Cloud SIEM Enterprise (CSE) ingest
+* 5 GB Cloud SIEM ingest
 
 :::note
 The credits associated with the trial org allocations don’t impact the parent org’s credits allocation.
@@ -101,11 +101,11 @@ After you create a child org, you can’t delete it.
 3. **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent tier.
 4.  **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
 5.  **Tracing**. Enter estimated daily ingestion of traces.
-6.  **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM Enterprise (CSE).
-   1. If you enable CSE, the CSE Log Ingest field appears.
+6.  **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
+   1. If you enable Cloud SIEM, the Cloud SIEM Log Ingest field appears.
    2. Enter a value in GB.
       :::note
-      Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+      Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
       :::
 7.  As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented. <br/> <img src={useBaseUrl('img/subscriptions/calculator.png')} alt="calculator" width="450"/>
 1.  Click **Use This Allocation**.
@@ -130,8 +130,8 @@ To deactivate a POV Trial org
 1. Click the row for the trial org you want to deactivate.
 1. Click the three-dot more options menu and choose **Deactivate**. <br/> ![deactivate.png](/img/subscriptions/deactivate.png)
 
-## Monitor CSE provisioning
-Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+## Monitor Cloud SIEM provisioning
+Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" />
 
@@ -150,7 +150,7 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
-* **CSE Ingest**. Credits used for logs ingested into Cloud SIEM Enterprise (CSE).
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage) usage.<br/> <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />
 

@@ -13,14 +13,14 @@ description: Provides information on the internal events that occur in Sumo Logi
 
 The **Audit Index** provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
 
-This index is different from the [Audit Event Index](audit-event-index.md), and there is some
+This index is different from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
 
 Before you can use the audit index, an administrator must enable it. When the audit index is enabled, Sumo logs messages to it once every five minutes. Note that data does not backfill.
 
 :::note
 All users can access the data contained within the audit index, but only administrators can enable and disable auditing.
-::::
+:::
 
 ## Enable the audit index
 
@@ -28,7 +28,7 @@ All users can access the data contained within the audit index, but only adminis
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
-Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](../ingestion-volume/log-ingestion.md).
+Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion).
 :::
 
 ## Query the audit index
@@ -164,7 +164,7 @@ yields the following throttling notification.
 
 AWS automatically throttles CloudWatch data if the limits that Amazon sets for the associated APIs are exceeded.  If you have a high volume of metrics data points in your account, it is likely that Amazon will throttle your CloudWatch data.
 
-If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for instructions on setting the CloudWatch scan interval. 
+If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for instructions on setting the CloudWatch scan interval. 
 
 When the scan interval is increased, a message is added to the audit log. No action is required by the Sumo Logic user. 
 
@@ -253,7 +253,7 @@ _sourceCategory=support_account_activity
 The table below shows the value of the class and action fields for support account events.
 
 :::note
-Support account events are logged only if you have [enabled a support account](enable-support-account.md).
+Support account events are logged only if you have [enabled a support account](/docs/manage/security/enable-support-account).
 :::
 
 | Class | Actions |
@@ -297,4 +297,4 @@ The table below shows the value of the `class` and `action` fields for metric 
 
 ### Index retention period
 
-By default, the retention period of the Audit Index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../partitions-data-tiers/create-edit-partition.md).
+By default, the retention period of the Audit Index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).

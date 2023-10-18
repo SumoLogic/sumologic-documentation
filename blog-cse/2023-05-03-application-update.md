@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Cloud SIEM Insight Trainer
 
-We are excited to announce the release of Cloud SIEM Insight Trainer, a dashboard packaged with the CSE Application.
+We are excited to announce the release of Cloud SIEM Insight Trainer, a dashboard packaged with the Cloud SIEM Application.
 
 Many security teams spend time every week tuning their SIEM to improve detections and focus SOC analyst attention on the most serious threats. Insight Trainer utilizes machine learning to provide Rule tuning recommendations and severity adjustments to significantly reduce the burden of manual tuning. Insight Trainer learns Rule severity adjustments from your Insights' history that reduces false positive, and optionally, 
 "No Action" Insights. 

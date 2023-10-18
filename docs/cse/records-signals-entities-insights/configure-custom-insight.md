@@ -5,14 +5,14 @@ sidebar_label: Custom Insights
 description: Learn how to set up Custom Insight configurations, which you can use to automatically generate Insights on some basis other than Entity Activity Scores.
 keywords:
   - custom insight
-  - cse
+  - cloud siem
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-As described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, CSE automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want CSE to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated whenever a particular set of Signals are fired in a particular order. 
+As described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, Cloud SIEM automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want Cloud SIEM to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated whenever a particular set of Signals are fired in a particular order. 
 
-This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes CSE to generate Insights based purely on one or more Signals being fired. 
+This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes Cloud SIEM to generate Insights based purely on one or more Signals being fired. 
 
 ## Ways to define a Custom Insight
 
@@ -21,7 +21,7 @@ There are two ways you can define a Custom Insight. You can specify that the Ins
 * One or more selected rules fire a Signal.
 * Signals whose name matches a specified wildcard expression are fired. 
 
-Which method should you use? The difference is whether you’re going to create an Insight based on the name of the rule that fired the Signal, or based on the name of the Signal that was fired. Typically, Signals that a rule generates have the same name as the Signal. That is not the case with CSE’s normalized rules. That’s because normalized rules, for example [Normalized Threat rules](/docs/cse/rules/normalized-threat-rules/), are written to work with multiple data sources. The names of the Signals that a normalized rule fires vary by data source. So, if you want your
+Which method should you use? The difference is whether you’re going to create an Insight based on the name of the rule that fired the Signal, or based on the name of the Signal that was fired. Typically, Signals that a rule generates have the same name as the Signal. That is not the case with Cloud SIEM’s normalized rules. That’s because normalized rules, for example [Normalized Threat rules](/docs/cse/rules/normalized-threat-rules/), are written to work with multiple data sources. The names of the Signals that a normalized rule fires vary by data source. So, if you want your
 Custom Insight configuration to generate Insights for Signals fired by normalized rules, you should base it on Signal names, rather than rule names.
 
 When the conditions of a Custom Insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an Insight will be generated for each Entity involved. In other words, if each of the Signals in a Custom Insight configuration fired on a different Entity, an Insight will be created on each of those Entities. The generated Insights will include not only the Signals that it fired on, but also any related Signals. 
