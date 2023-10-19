@@ -380,7 +380,7 @@ Fields may be reorder in the Custom Fields section to change the order in which 
 | Color Picker  | Interactive color picker to select a color. |
 | Date | Date only picker. |
 | Date & Time   | Date and time picker. |
-| Email Address | Email address Available to use in actions which require a email input.    |
+| Email Address | Email address available to use in actions which require a email input.    |
 | Filename | Filename available to use in actions which require a filename input.   |
 | Hash | Hash value available to use in actions which require a hash input.  |
 | IP Address    | IP Address available to use in actions which require a IP address input.    |
