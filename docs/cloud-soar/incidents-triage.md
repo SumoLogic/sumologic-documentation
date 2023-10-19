@@ -383,7 +383,7 @@ Fields may be reorder in the Custom Fields section to change the order in which 
 | Email Address | Email address available to use in actions which require a email input.    |
 | Filename | Filename available to use in actions which require a filename input.   |
 | Hash | Hash value available to use in actions which require a hash input.  |
-| IP Address    | IP Address available to use in actions which require a IP address input.    |
+| IP Address    | IP address available to use in actions which require a IP address input.    |
 | List   | Dropdown list.  |
 | Multi Select List | Multiselect list box.  |
 | Numeric Textbox   | Accepting numeric values only.  |
