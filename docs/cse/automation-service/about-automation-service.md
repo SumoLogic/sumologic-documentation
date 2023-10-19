@@ -73,7 +73,7 @@ Before you can access the Automation Service, you must first [configure role cap
      1. Go to the main menu.
      1. Click **Automation**. <br/><img src={useBaseUrl('img/cse/automation-menu-in-nav-bar.png')} alt="Automation menu option in the nav bar" width="200"/> 
      :::note
-     The **Automation** option appears in the main menu only if you have Cloud SIEM installed. If you also have Cloud SOAR installed, a **Cloud SOAR**  option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
+     The **Automation** option appears in the main menu only if you have Cloud SIEM installed. If you also have Cloud SOAR installed, a **Cloud SOAR** option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
      :::
    * From Cloud SIEM:
      1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
