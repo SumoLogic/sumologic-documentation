@@ -7,7 +7,7 @@ description: Configure an HTTP source to ingest AWS GuardDuty log messages and s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting AWS GuardDuty log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting AWS GuardDuty log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
 ## Step 1: Configure collection
 
@@ -23,12 +23,12 @@ In this step, you configure an HTTP Source to collect AWS GuardDuty log messages
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If all sources in this collector will be AWS VPC Flow sources, add an additional field with key `_parser` and value */Parsers/System/AWS/GuardDuty*.
 1. Click **Save**.
 
 :::note
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
 :::
 
 ### Configure an HTTP Source
@@ -42,7 +42,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-1. **SIEM Processing.** Click the checkbox to configure the source to forward log messages to CSE.
+1. **SIEM Processing.** Click the checkbox to configure the source to forward log messages to Cloud SIEM.
 1. **Fields.** If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/AWS/GuardDuty*.
 12. **Advanced Options for Logs**.
     1. Specify **Format** as *yyyy-MM-dd'T'HH:mm:ss.SSS'Z'*
@@ -73,8 +73,8 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 ## Step 4: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mapping link" width="400"/>
+1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mapping link" width="400"/>
 1. On the **Log Mappings** page search for "GuardDuty" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/guardduty-record-volume.png')} alt="GuardDuty record volume" width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for GuardDuty security records..<br/><img src={useBaseUrl('img/cse/guardduty-search.png')} alt="GuardDuty search" width="400"/>

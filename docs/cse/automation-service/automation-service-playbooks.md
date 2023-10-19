@@ -34,7 +34,7 @@ Before you create your own playbook, first [view playbooks](#view-playbooks) to 
 
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/). 
 
-1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
+1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.
 1. Click **Manage Playbooks**. Previous-created playbooks will display. <br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>

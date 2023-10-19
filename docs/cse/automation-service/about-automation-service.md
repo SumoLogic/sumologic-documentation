@@ -7,9 +7,9 @@ description: Get an overview of how the Automation Service allows you to automat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes the Automation Service for Cloud SIEM Enterprise (CSE).
+This topic describes the Automation Service for Cloud SIEM.
 
-The Automation Service for Cloud SIEM Enterprise (CSE) uses [Cloud SOAR automation](/docs/cloud-soar/automation/) capabilities to allow you to define and automate smart actions, including enrichments and notifications. These actions can be automatically triggered when certain events occur in CSE, helping you to quickly investigate, understand, and react to potential security threats.
+The Automation Service for Cloud SIEM uses [Cloud SOAR automation](/docs/cloud-soar/automation/) capabilities to allow you to define and automate smart actions, including enrichments and notifications. These actions can be automatically triggered when certain events occur in Cloud SIEM, helping you to quickly investigate, understand, and react to potential security threats.
 
 You can interact with the service through [automations](/docs/cse/automation-service/automation-service-automations), which execute playbooks. [Playbooks](/docs/cse/automation-service/automation-service-playbooks)  are composed of one or more [actions](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) with a workflow that could include parallel actions and logic steps. Actions are included with [integrations](/docs/cse/automation-service/automation-service-integrations). Sumo Logic provides a number of integrations, actions, and playbooks with the service that you can customize. You can also create your own.
 
@@ -36,7 +36,7 @@ import Iframe from 'react-iframe';
 
 The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service only supports automated enrichment, notification, and custom action types. 
-* Automation Service playbooks can only be triggered from CSE.
+* Automation Service playbooks can only be triggered from Cloud SIEM.
 * The Automation Service does not include the incident and case management features from Cloud SOAR.
 * Playbooks, integrations, and actions in this version may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
 
@@ -150,7 +150,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
-   * Cloud SIEM Enterprise
+   * Cloud SIEM
      * Configuration
        * View Automations
        * Manage Automations
@@ -182,7 +182,7 @@ To use [integrations](/docs/cse/automation-service/automation-service-integratio
 
 ### API and Terraform support
 
-The [CSE API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
+The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
 * `GET /automations`. Get the list of automations
 * `POST /automations`. Create an automation
 * `POST /automations/execute`. Run one or more automations against one or more Entities/Insights

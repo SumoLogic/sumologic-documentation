@@ -6,7 +6,7 @@ description: Learn how to view Records associated with a Signal.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-CSE uses rules to evaluate incoming Records, and when the conditions of a rule are met, generates a Signal. This topic explains how to view Records associated with a Signal in CSE. 
+Cloud SIEM uses rules to evaluate incoming Records, and when the conditions of a rule are met, generates a Signal. This topic explains how to view Records associated with a Signal in Cloud SIEM. 
 
 ## View attached Records for a Signal
 
