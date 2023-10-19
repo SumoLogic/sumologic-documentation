@@ -61,7 +61,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/observability/aws/integrations/aws-rds"><img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="icon" width="40"/><h4>AWS RDS Metrics</h4></a>
+  <a href="/docs/observability/aws/integrations/aws-rds"><img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="icon" width="40"/><h4>AWS RDS</h4></a>
   <p>Learn how to get visibility into your Amazon RDS metrics collected with a CloudWatch metrics source.</p>
   </div>
 </div>

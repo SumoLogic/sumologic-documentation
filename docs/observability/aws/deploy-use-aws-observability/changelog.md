@@ -16,7 +16,7 @@ AWS Observability Solution (S3 Link for cloudformation template):`https://sumolo
 AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 New Feature:
-* RDS app - Added new dashboards to support MySQL and AuroraMySQL Databases. 
+* RDS app - Added support to analyze MySQL and AuroraMySQL Databases cloudwatch logs.
 
 Updates:
 * All python lambda runtimes have been updated to python3.11 along with libraries updated.
@@ -27,8 +27,8 @@ Updates:
   * sumologic-loggroup-connector - Semantic  v1.0.9
 
 Bug Fixes:
-* Fixed “Lambda timeout as failure” in the Lambda dashboards.
-* Fixed “Incorrect host count” in the ALB dashboards.
+* AWS Lambda app updated - Consistent handling of time-out error messages.
+* AWS Application Load Balancer app - Updated metric panel queries to precisely handle available dimensions.
 
 
 ## v2.6.1, 18-July-2023
