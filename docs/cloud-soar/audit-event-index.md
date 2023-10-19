@@ -7,8 +7,7 @@ description: Learn how to search the Audit Event Index for Cloud SOAR log events
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Audit Event Index** provides event logs in JSON format on your account activity allowing you to monitor and audit changes. 
-By default, the Audit Event Index is enabled for Cloud SOAR and Enterprise accounts.
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) provides event logs in JSON format on your account activity allowing you to monitor and audit changes. By default, the Audit Event Index is enabled for Cloud SOAR and Enterprise accounts.
 
 <!--
 // Uncomment this part as soon as it is available.
@@ -38,14 +37,14 @@ Searching the Audit Event Index is the same as running a normal search against y
 You specify the `_index` metadata field with one of these values: 
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
-* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic, for example, Automation Actions start events, rules triggered, and so on.
+* `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic. For example, this index contains Automation Actions start events, rules triggered, and so on.
 
 ## Cloud SOAR Audited events
 
 This Audit Event Index has detailed JSON logs for the following features. 
-To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. 
+To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value. 
 
-For Cloud SOAR events, every `_sourceCategory` related to a feature has the prefix `oar`, so to limit the events returned to Cloud SOAR only, you can use:
+For Cloud SOAR events, every `_sourceCategory` related to a feature has the prefix `oar`. So to limit the events returned to Cloud SOAR only, you can use:
 
 ```sql
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=oar*
@@ -65,7 +64,34 @@ _index=sumologic_system_events _sourceCategory=oarAutomationActions
 
 The table below shows the `_sourceCategory` that is assigned to event logs by Cloud SOAR feature.
 
-{@import ./audit-event-index-table.md}
+| Product Feature | _sourceCategory Value |
+|:--|:--|
+| [App Central Packages](/docs/cloud-soar/automation/#app-central)  | `oarAppCentralPackages`   |
+| [Automation Action](/docs/cloud-soar/automation/#action) | `oarAutomationActions`  |
+| [Automation Daemon/Rules](/docs/cloud-soar/automation/#rules)  | `oarDaemons`  |
+| [Custom Field](/docs/cloud-soar/incidents-triage/#custom-fields) | `oarCustomFields`  |
+| [Dashboard](/docs/cloud-soar/main-menu/#dashboards)  | `oarDashboards` |
+| Email | `oarEmails`  |
+| [Entity](/docs/cloud-soar/main-menu/#entities)  | `oarEntities` |
+| [Folder](/docs/cloud-soar/incidents-triage/#incident-vip-section)  | `oarFolders`  |
+| [Group](/docs/cloud-soar/global-functions-menu/#groups)  | `oarGroups` |
+| [Incident](/docs/cloud-soar/incidents-triage)  | `oarIncidents`   |
+| [Incident Artifact](/docs/cloud-soar/incidents-triage/#incident-artifacts) | `oarIncidentArtifacts`    |
+| [Incident Attachment](/docs/cloud-soar/main-menu/#attachments)  | `oarIncidentAttachments`  |
+| [Incident Investigator](/docs/cloud-soar/incidents-triage) | `oarIncidentInvestigators`  |
+| [Incident Note](/docs/cloud-soar/incidents-triage/#notes)  | `oarIncidentNotes`  |
+| [Incident Template](/docs/cloud-soar/automation/#incident-templates)  | `oarIncidentTemplates`    |
+| [Integration](/docs/cloud-soar/automation/#integrations)   | `oarIntegrations`  |
+| [Integration Resource](/docs/cloud-soar/automation/#integrations)   | `oarIntegrationResources` |
+| [Notification](/docs/cloud-soar/global-functions-menu/#notifications)  | `oarNotifications`|
+| [Playbook Execution](/docs/cloud-soar/automation/#playbook-execution)  | `oarPlaybookExecutions`   |
+| [Playbook Revision](/docs/cloud-soar/automation/#playbook-template)  | `oarPlaybookRevisions`    |
+| [Report](/docs/cloud-soar/incidents-triage/#incident-report) | `oarReports` |
+| [Setting](/docs/cloud-soar/global-functions-menu/#settings) | `oarSettings`  |
+| [Task](/docs/cloud-soar/incidents-triage/#tasks)  | `oarTasks`  |
+| [Triage](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriage` |
+| [Triage Attachment](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriageAttachments`  |
+| [Widget](/docs/cloud-soar/main-menu/#custom-reports)  | `oarWidgets`  |
 
 ## _sourceName and _sourceHost assignment
 
@@ -75,7 +101,7 @@ logs as follows.
 | Metadata Field | Assignment Description |
 |:--|:--|
 | `_sourceName` | Value of the common parameter, `eventName`. |
-| `_sourceHost` | The remote IP address of the host that made the request. If not available the value will be `no_sourceHost`. |
+| `_sourceHost` | The remote IP address of the host that made the request. If not available, the value will be `no_sourceHost`. |
 
 ## Common parameters
 
@@ -96,17 +122,14 @@ area and provide details of the event.
 
 To search the Audit Event Index for logs that describe Cloud SOAR events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.
-
-   ![new log search UI buttons.png](/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png)
-
+1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**. <br/><img src={useBaseUrl('/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png')} alt="New log search" width="400"/>
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_system_events or _index=sumologic_audit_events) _sourceCategory=oar*
     | where subsystem contains "Playbook"
     ```
-3. Choose the time range for your search.
-4. Click **Start** to run the search.
+1. Choose the time range for your search.
+1. Click **Start** to run the search.
 
 ## Example event log
 
