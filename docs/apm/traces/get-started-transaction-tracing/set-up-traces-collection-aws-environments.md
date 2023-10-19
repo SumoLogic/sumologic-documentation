@@ -42,7 +42,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ecs-ec2-deployment.yaml
     ```
 
-1. Download the Sumo Logic Distrubtion for OpenTelemetry Collector configuration file:
+1. Download the Sumo Logic Distribution for OpenTelemetry Collector configuration file:
 
     ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/config.yaml
