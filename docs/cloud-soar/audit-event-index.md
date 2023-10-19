@@ -7,7 +7,7 @@ description: Learn how to search the Audit Event Index for Cloud SOAR log events
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Audit Event Index** provides event logs in JSON format on your account activity so you to monitor and audit changes. 
+The **Audit Event Index** provides event logs in JSON format on your account activity allowing you to monitor and audit changes. 
 By default, the Audit Event Index is enabled for Cloud SOAR and Enterprise accounts.
 
 <!--
@@ -45,7 +45,7 @@ You specify the `_index` metadata field with one of these values:
 This Audit Event Index has detailed JSON logs for the following features. 
 To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. 
 
-For Cloud SOAR events, every feature name has the prefix `oar`, so to limit the events returned to Cloud SOAR-related events only, you can use:
+For Cloud SOAR events, every `_sourceCategory` related to a feature has the prefix `oar`, so to limit the events returned to Cloud SOAR only, you can use:
 
 ```sql
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=oar*
