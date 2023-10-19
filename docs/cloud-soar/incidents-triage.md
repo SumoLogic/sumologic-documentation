@@ -116,7 +116,7 @@ The Incident Details section contains all the important information that makes u
 
 ### Overview
 
-The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, please see [Custom Fields](#custom-fields).
+The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, see [Custom Fields](#custom-fields).
 
 ### Operations
 
