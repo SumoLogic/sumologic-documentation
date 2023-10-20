@@ -1062,7 +1062,7 @@ output:
     - path : 'exit_condition'
 ```
 
-Other example (using action's input)
+Other example (using action's input):
 
 ```
 integration: 'Testing Purpose'
