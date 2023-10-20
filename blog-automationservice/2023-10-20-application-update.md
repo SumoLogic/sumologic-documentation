@@ -11,13 +11,11 @@ image: https://help.sumologic.com/img/sumo-square.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Changes and Enhancements ##
-* Automation Bridge: ECR docker images are now replicated in all AWS regions
-* App Central: introduced Tags attribute for playbooks
-* Audit Logs: enabled events forwarding to Sumo Logic Log Analytics 
-* Playbooks: improved status field update and granularity
-<br/>
-<br/>
-## Bug fixes ##
-* Playbooks: fixed possibility to add new playbook type
-* Playbooks: fixed killing playbook update status
+### Changes and Enhancements
+* Automation Bridge: ECR docker images are now replicated in all AWS regions.
+* App Central: Introduced Tags attribute for playbooks.
+* Audit Logs: Enabled events forwarding to Sumo Logic Log Analytics. 
+* Playbooks: Improved status field update and granularity.
+
+### Bug fixes
+* Playbooks: Fixed possibility to add new playbook type, and fixed killing playbook update status.

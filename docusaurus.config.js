@@ -395,6 +395,11 @@ module.exports = {
                 icon: 'rss_feed',
               },
               {
+                label: 'Automation Service',
+                to: 'release-notes-automationservice',
+                icon: 'rss_feed',
+              },
+              {
                 label: 'Cloud SIEM',
                 to: 'release-notes-cse',
                 icon: 'rss_feed',
@@ -402,11 +407,6 @@ module.exports = {
               {
                 label: 'Cloud SOAR',
                 to: 'release-notes-csoar',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Automation Service',
-                to: 'release-notes-automationservice',
                 icon: 'rss_feed',
               },
               {
