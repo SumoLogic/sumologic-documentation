@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
-## Requirements 
+## Requirements
 
 ### Hardware requirements
 
-* OS: 
+* OS:
    * Ubuntu (18.04/20.04)
    * CentOS 7
    * RedHat 8
@@ -28,9 +28,9 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 | DESTINATION | PROTOCOL | PORT |
 | :-- | :-- | :-- |
-| sumo-logic-api-url | TCP| 443| 
-| siem-cloud-url | 	TCP| 	443| 
-| 926226587429.dkr.ecr.us-west-2.amazonaws.com | TCP| 443| 
+| sumo-logic-api-url | TCP| 443|
+| siem-cloud-url | 	TCP| 	443|
+| 926226587429.dkr.ecr.us-west-2.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.us-east-1.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.ap-southeast-2.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.eu-central-1.amazonaws.com | TCP| 443|
@@ -38,22 +38,22 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 | 926226587429.dkr.ecr.ap-northeast-1.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.ca-central-1.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.eu-west-1.amazonaws.com | TCP| 443|
-| index.docker.io* | 	TCP| 	443| 
-| registry-1.docker.io* | 	TCP| 	443| 
-| auth.docker.io* | 	TCP| 	443| 
-| production.cloudflare.docker.com* | 	TCP| 	443| 
-| long-endpoint1-events.sumologic.net | 	TCP| 	443| 
+| index.docker.io* | 	TCP| 	443|
+| registry-1.docker.io* | 	TCP| 	443|
+| auth.docker.io* | 	TCP| 	443|
+| production.cloudflare.docker.com* | 	TCP| 	443|
+| long-endpoint1-events.sumologic.net | 	TCP| 	443|
 
 \* Needed only to connect to docker hub.
 
 ## Install Docker
 
 1. Install Docker-CE following the [installation instructions in Docker Docs](https://docs.docker.com/engine/install/). Install at least version 20.10 (do not use nightly build).
-1. As soon as the docker daemon is installed, start it with: 
+1. As soon as the docker daemon is installed, start it with:
    ```
    systemctl start docker
    ```
-1. Enable it on boot: 
+1. Enable it on boot:
    ```
    systemctl enable docker
    ```
@@ -66,7 +66,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
    ```
    [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:8080" 
+   Environment="HTTP_PROXY=http://proxy.example.com:8080"
    Environment="HTTPS_PROXY=http://proxy.example.com:8080"
    ```
 1. Reload the systemd daemon with:
@@ -204,8 +204,6 @@ If you are using CyberArk, you must add the following certificates provided by C
 Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
 
 ```bash title="systemd"
-Setting User=root 
-
 [Unit]
 Description=Automation-bridge worker %i
 
@@ -225,6 +223,7 @@ PrivateDevices=yes
 [Install]
 WantedBy=multi-user.target
 ```
+
 :::important
-This is the current solution and it needs to run service as root.
+This is the current solution and it needs to run service as `root`.
 :::

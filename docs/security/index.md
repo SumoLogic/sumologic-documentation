@@ -1,7 +1,7 @@
 ---
 slug: /security
 title: Sumo Logic Security Solutions
-tags: [security, cloud security analytics, cloud siem, cloud soar]
+tags: [security, cloud infrastructure security, cloud siem, cloud soar]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,9 +12,10 @@ Sumo Logic's security solutions support the entire spectrum of security use case
 
 | Security log management and analytics | Threat detection and investigation | Threat response |
 | :-- | :-- | :-- |
-| [Cloud Security Analytics](/docs/cloud-security-analytics/) | [Cloud SIEM](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
+| [Cloud Infrastructure Security](/docs/cloud-infrastructure-security/) | [Cloud SIEM](/docs/cse/) | [Cloud SOAR](/docs/cloud-soar/) |
 | Provides cloud-native security log management **for security analysts** to collect and store security logs, and use built-in analytics to detect and respond to threats in real-time. Built natively in the cloud, the dynamic scaling platform makes it fast to gain deep security insights with pre-built applications that include out-of-the-box dashboards, queries, and full coverage for your entire cloud infrastructure. | Gives **SOC (security operations center) analysts** prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions. | Fully automates triage, investigation, and remediation of threats **for any security professional**. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR). |
 
+<!-- 
 ## Choose your solution
 
 Getting started with security at Sumo Logic is easy at any level. Watch the following micro lesson to learn about Sumo Logic's security solutions.
@@ -31,18 +32,19 @@ Getting started with security at Sumo Logic is easy at any level. Watch the foll
      />
 
 import Iframe from 'react-iframe';
+-->
 
 ## Security feature comparison
 
-<img src={useBaseUrl('img/security/practitioner_messaging_feature_overlaps_venn diagram_opt_01A.png')} alt="Feature comparison Venn diagram" width="600"/>
+<img src={useBaseUrl('img/security/practitioner_messaging_feature_overlaps_venn_diagram_opt_02A.png')} alt="Feature comparison Venn diagram" width="700"/>
 
 Following are features available with our security solutions. If you have any questions on availability or a free trial, you can reach out to your Sumo Logic account team.
 
-<img src={useBaseUrl('img/security/practitioner_messaging_feature_matrix_chart_v01.png')} alt="Feature comparison table" width="800"/>
+<img src={useBaseUrl('img/security/practitioner_messaging_feature_matrix_chart_v02.png')} alt="Feature comparison table" width="800"/>
 
 <!-- The following table is hidden. We're using the image instead. We'll keep the table hidden in case we want to use it in the future instead of the image.
 
-   | Feature | Cloud Security Analytics | Cloud SIEM | Cloud SOAR |
+| Feature | Cloud Infrastructure Security | Cloud SIEM | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
 | Log collection | x | x | x |
 | App catalog (out-of-the-box analytics) | x | x | x |

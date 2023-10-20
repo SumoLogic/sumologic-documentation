@@ -2,18 +2,18 @@
 id: audit-and-compliance
 title: Audit and Compliance
 sidebar_label: Audit and Compliance
-description: Learn how to use Cloud Security Analytics to assist with audit and compliance. 
+description: Learn how to use Cloud Infrastructure Security to assist with audit and compliance. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use Cloud Security Analytics for audit and compliance, you can use [pre-built apps](#pre-built-apps-for-audit-and-compliance), or [build your own queries](#build-queries-for-audit-and-compliance).
+To use Cloud Infrastructure Security for audit and compliance, you can use [pre-built apps](#pre-built-apps-for-audit-and-compliance), or [build your own queries](#build-queries-for-audit-and-compliance).
 
 ## About audit and compliance
 
-Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/cloud-security-analytics/threat-detection-and-investigation/), are also recommended.
+Meeting compliance standards, enforced by various governments and organizations, is usually the first step in securing and protecting your apps, data, and end users. However, in most cases, additional security measures, such as [threat monitoring](/docs/cloud-infrastructure-security/threat-detection-and-investigation/), are also recommended.
 
-A compliance audit is an inspection of an organization to check whether compliance standards are being met. Cloud Security Analytics supports two types of audits:
+A compliance audit is an inspection of an organization to check whether compliance standards are being met. Cloud Infrastructure Security supports two types of audits:
 * **Internal audit**. Conducted by members of your own organization, as a practice to make sure that you’ll pass the inspection. 
 * **External audit**. Where a government or other independent authority checks your data to make sure you’re meeting compliance standards.
 
@@ -54,7 +54,7 @@ Following are the basic steps involved in implementing an audit and compliance p
 
 #### Step 1: Centralize data collection
 
-Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/cloud-security-analytics/data-lake/) for speed and effectiveness of analysis.
+Capture and collect a wide range of organizational data from wherever it originates, and centralize in a [data lake](/docs/cloud-infrastructure-security/data-lake/) for speed and effectiveness of analysis.
 
 #### Step 2: Increase visibility
 
@@ -74,7 +74,7 @@ Retain data for as long as you need it to perform your audit and compliance proc
 
 #### Step 6: Monitor in real-time
 
-Cloud Security Analytics monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
+Cloud Infrastructure Security monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
 
 #### Step 7: Create a unified system
 
@@ -143,7 +143,7 @@ For example, there may be log messages on destination `port 80`. While these mig
 
 ## Build queries for audit and compliance
 
-You can use Cloud Security Analytics to build queries to assist you in audit and compliance tasks. 
+You can use Cloud Infrastructure Security to build queries to assist you in audit and compliance tasks. 
 
 ### Use case: Audit AWS root for compliance
 
@@ -159,7 +159,7 @@ The root account generally has unrestricted access to resources in an account. A
 
 ### Perform a query for AWS root activity
 
-To use Cloud Security Analytics to start an audit of AWS root for compliance, perform these steps:
+To use Cloud Infrastructure Security to start an audit of AWS root for compliance, perform these steps:
 
 1. Near the top of the Sumo Logic UI, click **+ New > Log search** to open a new Sumo Logic search.
 1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three dot icon on the right side of the query builder, then select **Advanced Mode**.
