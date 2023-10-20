@@ -11,4 +11,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We’re excited to announce the release our new view ID feature to our scheduled view, enabling for faster debugging and improved internal operation efficiency. [Learn more](/docs/manage/scheduled-views/view-list-scheduled-views).
+We’re excited to announce the release of our new view ID feature to our scheduled view, which enables faster debugging and improved internal operation efficiency. [Learn more](/docs/manage/scheduled-views/view-list-scheduled-views).
