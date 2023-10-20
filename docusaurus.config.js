@@ -176,26 +176,6 @@ module.exports = {
       },
     ],
     ['@docusaurus/plugin-content-blog',
-      {
-         id: 'blog-automationservice',
-         routeBasePath: 'release-notes-automationservice',
-         path: './blog-automationservice',
-         archiveBasePath: 'archive',
-         blogTitle: 'Sumo Logic Automation Service Release Notes',
-         blogSidebarTitle: 'All posts',
-         blogSidebarCount: 'ALL',
-         postsPerPage: 'ALL',
-         blogDescription: 'New and enhanced Automation Service features, bug fixes, changes to the application, and more.',
-         showReadingTime: false,
-         feedOptions: {
-           type: 'rss',
-           title: 'Sumo Logic Automation Service Release Notes',
-           description: 'New and enhanced Automation Service features, bug fixes, changes to the application, and more.',
-           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-         },
-      },
-    ],
-    ['@docusaurus/plugin-content-blog',
        {
           id: 'blog-developer',
           routeBasePath: 'release-notes-developer',
@@ -392,11 +372,6 @@ module.exports = {
               {
                 label: 'Service',
                 to: 'release-notes-service',
-                icon: 'rss_feed',
-              },
-              {
-                label: 'Automation Service',
-                to: 'release-notes-automationservice',
                 icon: 'rss_feed',
               },
               {
