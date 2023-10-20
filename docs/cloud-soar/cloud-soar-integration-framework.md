@@ -412,7 +412,7 @@ YAML example:
    - path : 'exit_condition'
 ```
 
-Or using strings array
+Or using strings array:
 
 ```
  integration: 'Incident tools'
