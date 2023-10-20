@@ -2,14 +2,14 @@
 id: aws-vpc-flow
 title: AWS VPC Flow - Cloud SIEM
 sidebar_label: AWS VPC Flow
-description: Configure collection and ingestion of VPC Flow logs from an S3 bucket to be parsed by CSE's AWS VPC Flow system parser.
+description: Configure collection and ingestion of VPC Flow logs from an S3 bucket to be parsed by Cloud SIEM's AWS VPC Flow system parser.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting AWS VPC Flow log messages from AWS S3 and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting AWS VPC Flow log messages from AWS S3 and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
-Sumo Logic CSE supports the default AWS VPC Flow log format which includes all version 2 fields. See [AWS VPC flow log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.tml#flow-logs-fields) for more details.
+Sumo Logic Cloud SIEM supports the default AWS VPC Flow log format which includes all version 2 fields. See [AWS VPC flow log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.tml#flow-logs-fields) for more details.
 
 ## Step 1: Enable AWS VPC Flow Logs
 
@@ -34,11 +34,11 @@ In this step, you configure an HTTP Source to collect AWS VPC Flow log messages.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If all sources in this collector will be AWS VPC Flow sources, add an additional field with key `_parser` and value */Parsers/System/AWS/AWS VPC Flow*.
 
 :::note
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
 :::
 
 ### Configure an AWS S3 Source
@@ -55,7 +55,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. **Path Expression**. The path expression of the log file(s) in S3, can contain wildcards to include multiple log files.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields**.
-    1. If you are not forwarding all sources in the hosted collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to CSE.
+    1. If you are not forwarding all sources in the hosted collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/AWS/AWS VPC Flow*.
 1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-vpc-flow-logs))  is a prerequisite for role-based access.
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.<br/><img src={useBaseUrl('img/cse/role-arn.png')} alt="Role ARN" width="500>"/>
@@ -68,7 +68,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ## Step 3: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mapping link" width="400>"/>
 1. On the **Log Mappings** page search for "AWS VPC Flow" and check under **Record Volume**. 

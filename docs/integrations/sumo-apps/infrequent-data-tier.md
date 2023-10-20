@@ -100,7 +100,7 @@ If no results are returned even for longer time ranges, it means you don't have 
 Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
 
 :::note required step
-Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
+Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
 {@import ../../reuse/apps/app-install.md}

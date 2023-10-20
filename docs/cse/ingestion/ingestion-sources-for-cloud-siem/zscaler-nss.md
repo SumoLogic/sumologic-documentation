@@ -2,12 +2,12 @@
 id: zscaler-nss
 title: ZScaler NSS - Cloud SIEM
 sidebar_label: ZScaler NSS
-description: Configure collection of ZScaler NSS log messages to be parsed by CSE's system parser for ZScaler NSS.
+description: Configure collection of ZScaler NSS log messages to be parsed by Cloud SIEM's system parser for ZScaler NSS.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting ZScaler NSS log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting ZScaler NSS log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
 ## Step 1: Configure collection
 
@@ -27,10 +27,10 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Zscaler/Zscaler Nanolog Streaming Service/Zscaler Nanolog Streaming Service-LEEF*. This will cause all sources on the collector to use the specified parser.
     :::note
-    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
     :::
 1. Click **Save**.
 
@@ -48,7 +48,7 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 1. **Port**. Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](#step-2-configure-zscaler-nss) below.
 1. **Fields**. 
-    1. If you have not configured the Installed Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
+    1. If you have not configured the Installed Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you have not configured the Installed Collector to parse all sources in the collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Zscaler/Zscaler Nanolog Streaming Service/Zscaler Nanolog Streaming Service-LEEF.* 
 1. Click **Save**.
 
@@ -58,8 +58,8 @@ In this step, you configure ZScaler NSS to send log messages to the Sumo Logic 
 
 ## Step 3: Verify Ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log  Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
+1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log  Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
 1. On the **Log Mappings** page search for "Nanolog Streaming Service" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/zscaler-nss-record-volume.png')} alt="Zscaler record volume" width="600"/>   
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for ZScaler NSS security Records. <br/><img src={useBaseUrl('img/cse/zscaler-nss-search.png')} alt="Zscaler NSS search" width="400"/> 

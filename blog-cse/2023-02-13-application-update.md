@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To assist analysts detect potential security issues as early as possible, a new panel has been added to the Heads Up Display (HUD):
 
-<img src={useBaseUrl('img/release-notes/cse/Active-Entities-Panel-CSE-HUD.png')} alt="Screenshot of the new Active Entities panel in CSE"/>
+<img src={useBaseUrl('img/release-notes/cse/Active-Entities-Panel-CSE-HUD.png')} alt="Screenshot of the new Active Entities panel in Cloud SIEM"/>
 
 This panel lists the top five most active entities, ranked by **Signal Severity Total**. This metric, which was introduced with the Related Entities enhancement last year, is the total sum of the severities of all unique Signals the Entity appears in during the current Insight detection window (typically, the past 14 days).
 
@@ -34,7 +34,7 @@ Analysts can use this tool to investigate what appears to be risky activity and 
 * [New] When looking at Signals in the new `sec_signal` index, attributes and values in array fields are now properly supported by auto-parsing, syntax like `count by`, and features like ***right-click* > filter selected value**.
 * [New] An attribute `attackStage` has been added to the new `sec_signal` index. This attribute summarizes the Mitre attack stage represented by the rule which triggered the signal. The value is defined the same way as the `attack_stage` attribute included in the older Signal forwarding feature.
 * [Updated] The `subResolution` attribute is now included in the Insight payload for **http v2** actions.
-* [Updated] The way Release Notes are listed in the CSE UI is changing. There is no longer a “bell” item on the top menu; it has been replaced with a link to the Release Notes page in the Help menu. In addition, Release Notes are now directly visible in the UI when they are published.
+* [Updated] The way Release Notes are listed in the Cloud SIEM UI is changing. There is no longer a “bell” item on the top menu; it has been replaced with a link to the Release Notes page in the Help menu. In addition, Release Notes are now directly visible in the UI when they are published.
 * [New] When executing a context action on a Signal, fields will now be passed to the context action if they are available based on the record(s) in context. 
 
 ### Bug Fixes ###

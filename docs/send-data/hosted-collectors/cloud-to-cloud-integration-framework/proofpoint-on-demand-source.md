@@ -62,7 +62,7 @@ To configure a Proofpoint On Demand Source:
 3. Select **Proofpoint On Demand**. <br/>   ![proofpoint icon.png](/img/send-data/proofpoint-icon.png)
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/> ![proofpoint on demand input window.png](/img/send-data/proofpoint-on-demand-input-window.png)
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+6. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Proofpoint
    * `_siemProduct`: POD
    * `_siemFormat`: JSON

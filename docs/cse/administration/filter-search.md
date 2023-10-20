@@ -21,7 +21,7 @@ When you click in the **Filters** bar, a dropdown list of filters appears. After
 <img src={useBaseUrl('img/cse/filter-options.png')} alt="Sumo Logic thumbnail logo" width="250"/>
 
 ## Search items
-You also enter a search string or regex in the **Filter** bar, and press Return to run a search. Note that CSE's regular expression engine will return items that contain text matching the complete string. The engine implicitly adds anchors  (`^` and `$`) to the beginning and end of your regex.
+You also enter a search string or regex in the **Filter** bar, and press Return to run a search. Note that Cloud SIEM's regular expression engine will return items that contain text matching the complete string. The engine implicitly adds anchors  (`^` and `$`) to the beginning and end of your regex.
 
 You can use `not` to search for items that do not contain a particular keyword, for example:
 

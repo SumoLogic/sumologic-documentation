@@ -2,14 +2,14 @@
 id: normalized-threat-rules
 title: Normalized Threat Rules
 sidebar_label: Normalized Threat Rules
-description: CSE's built-in threat rules pass alerts from a security product to the Signal generation process, and are normalized work across multiple security products.
+description: Cloud SIEM's built-in threat rules pass alerts from a security product to the Signal generation process, and are normalized work across multiple security products.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about CSE’s built-in normalized threat rules.
+This topic has information about Cloud SIEM’s built-in normalized threat rules.
 
-## Normalized threat rules pass alerts to CSE
+## Normalized threat rules pass alerts to Cloud SIEM
 
 The first key fact about normalized threat rules is this: they exist to process messages that describe a security event that has already
 occurred. 
@@ -51,7 +51,7 @@ Log sources that issue intrusion-related messages include:
 * Symantec Endpoint Protection Exploit Prevention/HIPS
 * IPS/IDS Appliances
 
-CSE provides the following normalized intrusion rules:
+Cloud SIEM provides the following normalized intrusion rules:
 
 * Intrusion Scan - Targeted - This rule looks for an intrusion product detecting an internal IP sending different exploits to another external IP in a short timeframe.
 * Intrusion Sweep - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short timeframe.
@@ -81,7 +81,7 @@ Log sources that issue malware-related messages include:
 * Trend Micro Antivirus
 * Symantec Endpoint Protection Scanning/Antivirus
 
-CSE provides the following normalized malware rules:
+Cloud SIEM provides the following normalized malware rules:
 
 * Malware Outbreak - Same malware signature on multiple hosts in a short timeframe.
 * Persistent Malware Infection - Single host with multiple malware infections with the same signature in a short timeframe.
@@ -102,6 +102,6 @@ Log sources that issue behavior-related messages include:
 * Varonis UBA
 * G Suite Alert Center    
 
-CSE provides the following normalized direct rule:
+Cloud SIEM provides the following normalized direct rule:
 
 * Normalized Security Signal - Passes through an alert from an endpoint security product and adjusts the severity accordingly based on the severity provided in the log.
