@@ -195,7 +195,7 @@ Both the integration definition file and the action definition file are YAML fil
      * d: DAYS
      * h: HOURS
      * m: MINUTES
-   * **expire* ** [String] format <int\><interval type\>: Time after the first run to stop scheduling or specify an action's input i.e. input.expire. The last result will be kept :
+   * **expire* ** [String] format <int\><interval type\>: Time after the first run to stop scheduling or specify an action's input, for example, `input.expire`. The last result will be kept :
      * d: DAYS
      * h: HOURS
      * m: MINUTES
