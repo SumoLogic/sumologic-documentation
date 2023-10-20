@@ -435,7 +435,7 @@ Or using strings array:
    - path : 'exit_condition'
 ```
 
-Or using action's input
+Or using action's input:
 
 *NOTE: if you use an action's input this input field should be required = true*
 
