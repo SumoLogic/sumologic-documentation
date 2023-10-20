@@ -1741,7 +1741,7 @@ module.exports = {
                 'observability/aws/integrations/aws-ec2-host-metrics',
                 'observability/aws/integrations/aws-lambda',
                 'observability/aws/integrations/aws-network-load-balancer',
-                'observability/aws/integrations/aws-rds',
+                'observability/aws/integrations/amazon-rds',
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',

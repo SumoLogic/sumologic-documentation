@@ -1,7 +1,7 @@
 ---
-id: aws-rds
-title: AWS RDS
-sidebar_label: AWS RDS
+id: amazon-rds
+title: Amazon RDS
+sidebar_label: Amazon RDS
 description: The Sumo Logic App for AWS Observability RDS provides visibility into your Amazon Relational Database Service (RDS) for CloudWatch logs, CloudTrail logs, and CloudWatch metrics collected with CloudWatch metrics source, CloudWatch Log source, and CloudTrail source.
 ---
 
