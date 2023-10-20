@@ -437,7 +437,9 @@ Or using strings array:
 
 Or using action's input:
 
-*NOTE: if you use an action's input this input field should be required = true*
+:::note
+If you use an action's input, this input field should be `required = true*`.
+:::
 
 ```
 integration: 'Testing Purpose'
