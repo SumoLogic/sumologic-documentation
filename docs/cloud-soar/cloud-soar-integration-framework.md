@@ -188,7 +188,7 @@ Both the integration definition file and the action definition file are YAML fil
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
 * **exit_condition**: Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
    * **path* ** [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
-   * **string* ** [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input i.e. input.matchString. 
+   * **string* ** [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`. 
 * **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container. 
 * **scheduled**:
    * **every* ** [String] format <int\><interval type\>: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
