@@ -4,6 +4,7 @@ title: Filtering Dashboards with Template Variables
 sidebar_label: Filtering with Template Variables
 description: Learn how to use template variables to dynamically filter dashboard data.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Template variables are a feature of Dashboard that allow you to analyze specific data on demand. They give you the ability to filter the data displayed on your dashboard so you can quickly troubleshoot a problem. Queries can be changed on the fly by choosing values for variables from dropdown lists without having to manually edit queries.
 
@@ -16,10 +17,11 @@ This feature requires two parts to work:
 
 The web interface autocomplete feature for log search variables has the following limitations:
 
-* It is updated every night for the last 24 hours starting from 10PM PT to the previous day at 10PM PT. 
-* Only dashboards that were viewed in the last 3 days are updated.
-* Up to 10,000 log values and 1,000 metric values are displayed.
-* Values for template variables are based on the time range of the Dashboard.
+- It is updated every night for the last 24 hours starting from 10PM PT to the previous day at 10PM PT. 
+- Only dashboards that were viewed in the last 3 days are updated.
+- Up to 10,000 log values and 1,000 metric values are displayed.
+- Values for template variables are based on the time range of the Dashboard.
+- For log search with multi-value variables, you can use a multi-variable in the **selector** but only in the form of `<field>={{variable}}`. `Adding <field> matches {{variable}}` will only work after the first pipe.
 
 ## Show and hide variables option
 
@@ -49,14 +51,15 @@ To add a Custom List variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
-
-![Create Template Variable dialog.png](/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog.png)
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog_custom_list.png')} alt="Create-Template-Variable-dialog_custom_list" style={{border: '1px solid black'}} width="800" />
 
 1. Select **Custom List** as the **Variable Type**.
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
-1. Optional: Provide a **Default Value** for the variable.
-1. Optional: Toggle ON **Include the option to select all values (\*) **to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Default Value**. Provide a **Default Value** for the variable.
+1. (Optional) **Allow multiple values**. Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
+  :::note
+  You can add a maximum of 20 values.
+  :::
 1. Click **Create Template Variable** to apply the variable to the dashboard. 
 
 ### Add a Metrics Metadata Search variable
@@ -75,16 +78,16 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
-
-    ![dashboard new metrics metadata search variable.png](/img/dashboards-new/filter-template-variables/dashboard-new-metrics-metadata-search-variable.png)
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog-Metrics-Metadata.png')} alt="Create-Template-Variable-dialog-Metrics-Metadata" style={{border: '1px solid black'}} width="800"/>
 
 1. Select **Metrics Metadata Search** as the **Variable Type**.
-1. The **Fields (key)** is the metadata field you want to use as the
-    filter.
-1. Optional: **Filters** allow you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
-1. Optional: Toggle ON **Include the option to select all values (\*)** to include a wildcard asterisk (\*) in the available options.
-1. Optional: Provide a **Default Value** for the variable.
+1. The **Fields (key)** is the metadata field you want to use as the filter.
+1. (Optional) **Filters**. Allows you to filter the scope of your data before choosing the field you want to use. Click in the **Filter** input, begin typing, and choose a filter from the pop-up list. A list of valid values appears. Select a value for the filter, and add other filters as needed.
+1. (Optional) **Allow multiple values**. Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
+    :::note
+    You can add a maximum of 20 values.
+    :::
+1. (Optional) **Default Value**. Provide a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
 ### Add a Logs Search variable
@@ -101,14 +104,15 @@ To add a Logs Search variable to a dashboard, do the following:
 
     ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
-1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.
-
-    ![Variable for logs search.png](/img/dashboards-new/filter-template-variables/Variable-for-logs-search.png)
+1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (_), are not allowed in value names.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Create-Template-Variable-dialog-Logs-Search.png')} alt="Create-Template-Variable-dialog-Logs-Search" style={{border: '1px solid black'}} width="800"/>
 
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
-1. Optional: Toggle ON **Include the option to select all values** to include a wildcard asterisk (\*) in the available options.
+1. (Optional) **Allow multiple values**: Variables will be single value by default, by toggling ON you can add more than one values. By default, * will be used if no values are added after toggling ON.
+    :::note
+    You can add a maximum of 20 values.
+    :::
 1. Optional: Enter a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
@@ -126,9 +130,7 @@ To edit a template variable, do the following:
 
     ![edit variable.png](/img/dashboards-new/filter-template-variables/edit-variable.png)
 
-1. Edit the variable as needed.  
-
-    ![edit variable dialog.png](/img/dashboards-new/filter-template-variables/edit-variable-dialog.png)
+1. Edit the variable as needed.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/edit-template-variable-dialog.png')} alt="edit-template-variable-dialog" style={{border: '1px solid black'}} width="800"/> 
 
 1. Click **Save Template Variable** to apply your changes.
 
@@ -203,3 +205,4 @@ To use a metrics variable in a query working in advanced query mode, do the fol
 
 1. Locate the name of the variable you'd like to use in the dropdown list and copy it.
 1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.
+
