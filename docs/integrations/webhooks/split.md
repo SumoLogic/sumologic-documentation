@@ -165,8 +165,3 @@ The **Split - Overview** dashboard offers transparency into actions performed by
 The **Split - Users and Groups** dashboard offers concise statistical summaries pertaining to Split users and groups, including administrative actions taken concerning them.
 
 <img src={useBaseUrl('img/integrations/webhooks/Split-Users_and_Groups.png')} style={{border: '1px solid black'}} alt="Split-Users_and_Groups"/>
-
-:::info
-- For detailed information about webhook creation, refer to the [Split Webhook - audit log](https://help.split.io/hc/en-us/articles/360020957991-Webhook-audit-log), [Split Webhook - admin audit logs](https://help.split.io/hc/en-us/articles/360051384832-Webhook-admin-audit-logs) and [Split Webhook - impressions](https://help.split.io/hc/en-us/articles/360020700232-Webhook-impressions) documentation.
-- For support, contact [Split](https://www.split.io/support/).
-:::
