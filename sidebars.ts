@@ -2455,7 +2455,6 @@ integrations: [
    ],
  },
 ],
-
 // OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
@@ -2801,6 +2800,28 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
+      ],
+    },
+  ],
+  // Platform services
+  platformservices: [
+    {
+      type: 'category',
+      label: 'Platform Services',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'platform-services/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Automation Service Platform',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/automation-service/index'},
+          items: [
+            'platform-services/automation-service/about-automation-service-platform',
+          ],
+        },
       ],
     },
   ],

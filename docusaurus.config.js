@@ -342,6 +342,12 @@ module.exports = {
                 label: 'Dashboards',
                 icon: 'dashboard',
               },
+              {
+                type: 'docSidebar',
+                sidebarId: 'platformservices',
+                label: 'Platform Services',
+                icon: 'swap_horiz',
+              },
             ]
           },
           {
