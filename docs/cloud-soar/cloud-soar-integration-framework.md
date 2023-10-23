@@ -135,13 +135,17 @@ Both the integration definition file and the action definition file are YAML fil
 * **output* **: Expected fields from results.
    * **path* ** [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
-   { country: "US",
-   response_code: 1,
-   as_owner: "CloudFlare, Inc.",
-   detected_urls: {
-   url: "http://google.com/",
-   positives: 2
-   }}
+   { 
+       country: "US",
+       response_code: 1,
+       as_owner: "CloudFlare, Inc.",
+       detected_urls: [
+          {
+             url: "http://google.com/",
+             positives: 2
+          }
+      ]
+  }
    ```
    The following `output:path` attributes should be added:
      * `country`
@@ -149,7 +153,8 @@ Both the integration definition file and the action definition file are YAML fil
      * `as_owner`
      * `detected_urls.[].url`
      * `detected_urls.[].positives`
-   * **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+     * `detected_urls.[0].positives`(you can also specify array index)
+* **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
 * **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
    * **display_name* ** [String]: Column name. 
    * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
@@ -182,17 +187,15 @@ Both the integration definition file and the action definition file are YAML fil
 * **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
 * **exit_condition**: Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-   * **path* ** [String]: Result path where to search in JSON structure as `table_view` section.
-   * **string* ** [String]: Result path of string to check if is equal to result value. 
+   * **path* ** [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
+   * **string* ** [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`. 
 * **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container. 
 * **scheduled**:
-   * **every* ** [String] format <int\><interval type\>: Time interval between one run and the next one (for example, 10s, 5d, etc.):
-     * s: SECONDS
+   * **every* ** [String] format <int\><interval type\>: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
      * d: DAYS
      * h: HOURS
      * m: MINUTES
-   * **expire* ** [String] format <int\><interval type\>: Time after the first run to stop scheduling. The last result will be kept:
-     * s: SECONDS
+   * **expire* ** [String] format <int\><interval type\>: Time after the first run to stop scheduling or specify an action's input, for example, `input.expire`. The last result will be kept :
      * d: DAYS
      * h: HOURS
      * m: MINUTES
@@ -392,7 +395,7 @@ All available actions are:
 YAML example:
 
 ```
- integration: \'Incident tools\'*
+ integration: 'Incident tools'
  name: 'intervallo date loop'
  type: Scheduled
  script:
@@ -409,15 +412,101 @@ YAML example:
    - path : 'exit_condition'
 ```
 
+Or using strings array:
+
+```
+ integration: 'Incident tools'
+ name: 'intervallo date loop'
+ type: Scheduled
+ script:
+    code: |
+        [......]
+ exit_condition:
+   - path: 'exit_condition'
+     string: 
+        - 'Open'
+        - 'Pending'
+        - 'Waiting'
+ re-execution: 'force'  
+ scheduled: 
+     - every: '10s'
+       expire: '120s'
+ output:
+   - path : 'exit_condition'
+```
+
+Or using action's input:
+
+:::note
+If you use an action's input, this input field should be `required = true*`.
+:::
+
+```
+integration: 'Testing Purpose'
+name: 'testing Scheduled'
+type: Scheduled
+script:
+ code: |
+    [...]
+exit_condition:
+  - path: 'input.exit_condition_path'
+    string: "input.exit_condition_string"
+scheduled:
+  - every: 'input.scheduler_every'
+    expire: 'input.scheduler_expire'
+fields:
+  - id: scheduler_every
+    label: 'scheduler rate'
+    type: text
+    required: true
+    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+  - id: scheduler_expire
+    label: 'schedul expiration'
+    type: text
+    required: true
+    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+  - id: exit_condition_path
+    label: 'output path'
+    type: text
+    required: true
+    hint: "output path to check"
+  - id: exit_condition_string
+    label: 'string to check'
+    type: tag
+    required: true
+    hint: "string to check"
+output:
+  - path : '[]."ip-dst_string"'
+  - path : '[].{Name: name, ID: _id, Address: address, FriendName: friends.[].name}'
+  - path : '[].tags.[] | unique()'
+  - path : '[].tags.[]'
+  - path : '[].guid | join(,)'
+  - path : '[].guid | join(SEPARATOR)'
+  - path : '[].guid'
+  - path : '[]._id'
+  - path : '[].guid'
+  - path : '[].isActive'
+  - path : '[].balance'
+  - path : '[].picture'
+  - path : '[].eyeColor'
+  - path : '[].name'
+  - path : '[].age'
+  - path : '[].gender'
+  - path : '[].company'
+  - path : '[].email'
+  - path : '[].phone'
+  - path : '[].address'
+  - path : '[].friends'
+```
+
 Field notes:
 * **re-execution**<br/>By default, if the previous action run is not yet finished, the next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
 * **exit_condition**<br/>Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions:
-   * **exit_condition: path**<br/>It's where to search in JSON structure as `table_view` section.
-   * **exit_condition: string**<br/>Value to check in path.
+   * **exit_condition: path**<br/>It's where to search in JSON structure as `table_view` section or an action's input.
+   * **exit_condition: string**<br/>Value to check in path, or you can use an action's input.
 * **scheduled**<br/>Specify the time interval between one run and the next and action expiration.
-   * **scheduled: EVERY**<br/>The time interval between one run and the next.
-   * **scheduled: EXPIRE**<br/>The time after the first run to stop scheduling. The last result will be kept. Time interval:
-     * s => SECONDS
+   * **scheduled: EVERY**<br/>The time interval between one run and the next, or you can use an action's input.
+   * **scheduled: EXPIRE**<br/>The time after the first run to stop scheduling, or you can use an action's input. The last result will be kept. Time interval:
      * d => DAYS
      * h => HOURS
      * m => MINUTES
@@ -729,7 +818,6 @@ output:
       type: string
     - path: '[].local_destination_ip'
       type: string
-signature: '4fbf0ab65bde0eba04875da80457b8915645485a399f16100f80fa17a7dd70bae9183afea233a3a9846336f7def5ab0ffd05b28c637d6fe4001203c29396eeb2'
 ```
 
 ### Trigger definition file (Incident Tools)
@@ -894,7 +982,7 @@ code:
     print(json.dumps(dictionary, default=lambda val: str(val)))
 exit_condition:
   - path: 'exit_condition'
-string: 'false'
+    string: 'false'
 re-execution: 'force'
 scheduled:
   - every: '10s'
@@ -911,6 +999,195 @@ output:
     - path : 'array.[].amount'
     - path : 'array.[].amount2'
     - path : 'exit_condition'
+```
+
+Other example (using strings array)
+
+```
+integration: 'Incident tools'
+name: 'intervallo date loop'
+type: Scheduled
+script:
+code:
+    import json
+    import argparse
+    from datetime import datetime
+    import sys
+    import time
+    class EnvDefault(argparse.Action):
+      def __init__(self, required=True, default=None, **kwargs):
+        envvar = kwargs.get("dest")
+        default = os.environ.get(envvar, default) if envvar in os.environ else default
+        required = False if required and default else required
+        super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+      def __call__(self, parser, namespace, values, option_string=None):
+        setattr(namespace, self.dest, values)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--cloudSoarTaskDetails', help='cloudSoarTaskDetails', required=False, action=EnvDefault)
+    parser.add_argument('--days', help='days', required=False, action=EnvDefault)
+    args, unknown = parser.parse_known_args()
+    time.sleep(20)
+    dictionary = {
+        'exit_condition': 'true',
+        'array': [{
+            'amount': '23',
+            'amount2': 11,
+            'days': args.days,
+            'start': str(datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S")),
+            'end': str(datetime.utcnow().strftime("%m/%d/%Y, %H:%M:%S"))
+        }]
+    }
+    print(json.dumps(dictionary, default=lambda val: str(val)))
+exit_condition:
+  - path: 'exit_condition'
+    string: 
+     - 'false'
+     - 'null'
+     - 'waiting'
+re-execution: 'force'
+scheduled:
+  - every: '10s'
+    expire: '120s'
+fields:
+    - id: days
+      label: 'intervallo giorni'
+      type: number
+      required: true
+output:
+    - path : 'array.[].start'
+    - path : 'array.[].end'
+    - path : 'array.[].days'
+    - path : 'array.[].amount'
+    - path : 'array.[].amount2'
+    - path : 'exit_condition'
+```
+
+Other example (using action's input):
+
+```
+integration: 'Testing Purpose'
+name: 'testing Scheduled'
+type: Scheduled
+script:
+ code: |
+    import json
+    import argparse
+    from datetime import datetime
+    import sys
+    import os
+    import time
+    class EnvDefault(argparse.Action):
+        def __init__(self, required=True, default=None, **kwargs):
+            envvar = kwargs.get("dest")
+            default = os.environ.get(envvar, default) if envvar in os.environ else default
+            required = False if required and default else required
+            super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+        def __call__(self, parser, namespace, values, option_string=None):
+            setattr(namespace, self.dest, values)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--days', help='days', required=False, action=EnvDefault)
+    parser.add_argument('--protocol', help='protocol', required=False, action=EnvDefault)
+    parser.add_argument('--closingReasonID', help='closingReasonID', required=False, action=EnvDefault)
+    args, unknown = parser.parse_known_args()
+    days = args.days
+    asd = [
+        {
+            "_id": "5fda1d0faa3f39c44361b84e",
+            "index": 0,
+            "days": days,
+            "guid": "900c39df-837f-4394-a463-f0dffdb5420e",
+            "isActive": False,
+            "balance": "$2,434.45",
+            "picture": "http://placehold.it/32x32",
+            "age": 37,
+            "eyeColor": "brown",
+            "name": "Lindsey Mcknight",
+            "gender": "male",
+            "company": "PORTALIS",
+            "email": "lindseymcknight@portalis.com",
+            "phone": "+1 (868) 490-3497",
+            "address": "566 Bainbridge Street, Waterloo, Nebraska, 1714",
+            "about": "Sunt quis culpa enim eiusmod ullamco tempor enim. Culpa nisi nostrud quis nisi commodo mollit mollit irure. Duis sunt reprehenderit duis labore dolor dolor ullamco Lorem eiusmod. Nulla nulla excepteur ipsum dolor qui reprehenderit laborum elit esse nulla do incididunt. Ea qui tempor sunt veniam magna do ea laborum qui ut. Veniam veniam ut consequat duis. Commodo incididunt duis culpa mollit eu.\r\n",
+            "registered": "2015-12-30T12:58:10 -01:00",
+            "latitude": -78.618655,
+            "longitude": -148.652818,
+            "tags": [
+                "et",
+                "do",
+                "ut",
+                "excepteur",
+                "dolore",
+                "cillum",
+                "laborum"
+            ],
+            "friends": [
+                {
+                    "id": 0,
+                    "name": "Herman Sharp"
+                },
+                {
+                    "id": 1,
+                    "name": "Foreman Berger"
+                },
+                {
+                    "id": 2,
+                    "name": "Loretta Blair"
+                }
+            ],
+            "greeting": "Hello, Lindsey Mcknight! You have 3 unread messages.",
+            "favoriteFruit": "apple"
+        }
+    ]
+    print(json.dumps(asd))
+exit_condition:
+  - path: 'input.exit_condition_path'
+    string: "input.exit_condition_string"
+scheduled:
+  - every: 'input.scheduler_every'
+    expire: 'input.scheduler_expire'
+fields:
+  - id: scheduler_every
+    label: 'scheduler rate'
+    type: text
+    required: true
+    hint: "schedul rate i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+  - id: scheduler_expire
+    label: 'schedul expiration'
+    type: text
+    required: true
+    hint: "schedul expiration i.e 1m 5m 1d (supported placeholder m=minutes, h=hours, d=days)"
+  - id: exit_condition_path
+    label: 'output path'
+    type: text
+    required: true
+    hint: "output path to check"
+  - id: exit_condition_string
+    label: 'string to check'
+    type: tag
+    required: true
+    hint: "string to check"
+output:
+  - path : '[]."ip-dst_string"'
+  - path : '[].{Name: name, ID: _id, Address: address, FriendName: friends.[].name}'
+  - path : '[].tags.[] | unique()'
+  - path : '[].tags.[]'
+  - path : '[].guid | join(,)'
+  - path : '[].guid | join(SEPARATOR)'
+  - path : '[].guid'
+  - path : '[]._id'
+  - path : '[].guid'
+  - path : '[].isActive'
+  - path : '[].balance'
+  - path : '[].picture'
+  - path : '[].eyeColor'
+  - path : '[].name'
+  - path : '[].age'
+  - path : '[].gender'
+  - path : '[].company'
+  - path : '[].email'
+  - path : '[].phone'
+  - path : '[].address'
+  - path : '[].friends'
 ```
 
 ### Trigger webhook definition file
