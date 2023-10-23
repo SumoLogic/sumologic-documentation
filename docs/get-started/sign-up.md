@@ -74,19 +74,6 @@ Do not use a Google or Yahoo email account to create your Sumo Logic account.
 
 Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
 
-### Billing
-
-An account that is within its limits is defined as using Reserved Capacity.
-
-Each day you will be billed for your plan’s daily ingest data volume. For example, if your plan is Professional - 10GB/Day, your daily Reserved ingest is 10GB. Each day you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be changed for usage for this difference at the on-demand rate.
-
-The Total Reserved Capacity (usage) is: (the actual number of days in the billing cycle) X (plan daily ingest volume).
-
-For example, for 10GB/Day:
-
-- If the billing cycle is 30 days, the Reserved Capacity is 300GB.
-- If the billing cycle is 31 days, the Reserved Capacity is 310GB.
-
 These accounts have the following limitations:
 
 - Because signing up through AWS Marketplace creates a new Sumo Logic organization, this option is not available for customers with existing Sumo Logic accounts.

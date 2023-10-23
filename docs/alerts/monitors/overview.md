@@ -32,7 +32,7 @@ If, for example, the detection window of your alert is one day it will be evalu
 * Log Monitors use the [role search filter](/docs/manage/users-roles/roles/construct-search-filter-for-role) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago. This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Enterprise and Trial plan customers can have up to 1,000 Log Monitors.
-* Essentials and Professional plan customers can have up to 300 Log Monitors.
+* Essentials plan customers can have up to 300 Log Monitors.
 * Free Trial customers can have up to 50 Log Monitors.
 
 #### Auto-resolving notifications
@@ -48,7 +48,7 @@ Log monitors in a triggered state can auto-resolve.
 
 * Metrics Monitors delay execution by one minute.
 * Enterprise and Trial plan customers can have up to 1,500 Metric Monitors.
-* Essentials and Professional plan customers can have up to 500 Metrics Monitors.
+* Essentials plan customers can have up to 500 Metrics Monitors.
 * Free Trial customers can have up to 50 Metrics Monitors.
 
 ## Notifications
