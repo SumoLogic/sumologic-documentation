@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Netlify offers a comprehensive solution for managing and optimizing web development and deployment processes. It provides insights into high-level web deployment metrics and essential data such as sites, branches, and repositories. Additionally, the app offers deeper insights into deployment operations, helping identify bottlenecks, resolve issues, and analyze performance metrics. It also focuses on version control and development productivity, offering key metrics to assess development activities, deployment status, and environmental transitions. This integration enables users to make data-driven decisions, optimize web development strategies, and maintain efficient and productive web projects.
 
-Netlify is a web development platform for building fast and dynamic websites, e-commerce stores and web applications. You can use a webhook in the Netlify platform to forward site deployment events from the Netlify platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor deploy processes including events such as deploy started, succeeded, failed, deleted, locked, unlocked, request status changes, and transitions between previously successful and failed deploys in Sumo Logic. For more details, refer to the [Netlify Documentation](https://docs.netlify.com/).
+Netlify is a web development platform for building fast and dynamic websites, e-commerce stores, and web applications. You can use a webhook in the Netlify platform to forward site deployment events from the Netlify platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor deploy processes including events such as deploy started, succeeded, failed, deleted, locked, unlocked, request status changes, and transitions between previously successful and failed deploys in Sumo Logic. For more details, refer to the [Netlify Documentation](https://docs.netlify.com/).
 
 ## Event types
 
@@ -89,7 +89,7 @@ The Sumo Logic App for Netlify ingests site deployment events into Sumo Logic th
     "id": "nf_team_dev",
     "cdn_tier": "reg"
   },
-  "committer": "Parth",
+  "committer": "AlokGem",
   "skipped_log": null,
   "manual_deploy": false,
   "file_tracking_optimization": true,
@@ -128,7 +128,7 @@ This section has instructions for collecting logs for the Sumo Logic Netlify web
 
 Follow the below steps to configure the Hosted Collector to receive Netlify events:
 
-1. In the Sumo Logic portal, create a new [Hosted Collector](https://help.sumologic.com/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add a [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 2. Configure **Source Category** in the HTTP Source - for example, `webhook/netlify` - for the Netlify integration.
 3. Copy and save the endpoint URL of the source.
 
@@ -166,9 +166,9 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 4. In the **Configure** section of respective app, complete the following fields.
     1. **Key.** Select either of these options for the data source.
         * Choose **Source Category**, and select a source category from the list for **Default Value**.
-        * Choose **Custom**, and enter a custom metadata field beginning with an underscore. Insert it's value in **Default Value**.
+        * Choose **Custom**, and enter a custom metadata field beginning with an underscore. Insert its value in **Default Value**.
 5. Click on **Next**. You will be redirected to **Preview & Done** section.
-Given App will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
+Your app will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
 Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
 
 ## Netlify Dashboards
