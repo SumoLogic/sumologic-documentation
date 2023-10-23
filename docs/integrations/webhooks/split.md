@@ -8,20 +8,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/split-logo.png')} alt="Thumbnail icon" width="50"/>
 
-The Split App for Sumo Logic enables you to seamlessly monitor feature flagging, experiment results, and user behavior, enabling data-driven decision-making and fostering a more agile and competitive development process. This app is based on Split Webhook, which provides seamless integration between Split and Sumo Logic.
+The Split app for Sumo Logic enables you to seamlessly monitor feature flagging, experiment results, and user behavior, enabling data-driven decision making and fostering a more agile and competitive development process. This app is based on Split Webhook, which provides seamless integration between Split and Sumo Logic.
 
 Split is a feature delivery platform that combines the quick and dependable nature of feature flags with data-driven insights to assess the effects of each feature. You can use a webhook in the Split platform to forward activities related events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor user activities, admin changes in the tools used by the whole team, and impressions in Sumo Logic. For more details, refer to the [Split Documentation](https://docs.split.io/docs).
 
 ## Event types
 
-The Sumo Logic App for Split ingests Split events into Sumo Logic through an outgoing webhook available in Split. The following event types are ingested through the Split webhook:
+The Sumo Logic app for Split ingests Split events into Sumo Logic through an outgoing webhook available in the Split. The following event types are ingested through the Split webhook:
 - Audit logs
 - Admin audit logs
 - Impressions
 
-## Log Types
+## Log types
 
-### Sample Log Message
+### Sample log message
 
 ```json
 {
@@ -85,7 +85,7 @@ The Sumo Logic App for Split ingests Split events into Sumo Logic through an out
 }
 ```
 
-### Sample Query
+### Sample query
 
 ```sql
 _sourceCategory=webhook/split type auditLogType
@@ -133,7 +133,7 @@ Follow the below steps to configure the Split webhook.
 - For support, contact [Split](https://www.split.io/support/).
 :::
 
-### Installing the App
+### Installing the Split app
 
 To install the app, do the following:
 
@@ -145,27 +145,26 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 4. In the **Configure** section of respective app, complete the following fields.
     1. **Key.** Select either of these options for the data source.
         * Choose **Source Category**, and select a source category from the list for **Default Value**.
-        * Choose **Custom**, and enter a custom metadata field beginning with an underscore. Insert it's value in **Default Value**.
+        * Choose **Custom**, and enter a custom metadata field beginning with an underscore. Insert its value in **Default Value**.
 5. Click on **Next**. You will be redirected to **Preview & Done** section.
 
-Given App will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
+Your app will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
 
 Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
 
-## Split Dashboards
+## Viewing Split dashboards
 
 ### Overview
 
-**Split - Overview** dashboard offers transparency into actions performed by both administrators and team members, delivering valuable insights into audit events, their distribution, and statistics categorized by their respective types.
+The **Split - Overview** dashboard offers transparency into actions performed by both administrators and team members, delivering valuable insights into audit events, their distribution, and statistics categorized by their respective types.
 
-<img src={useBaseUrl('img/integrations/webhooks/Split-Overview.png')} alt="Split-Overview" />
-static/img/integrations/webhooks/Split-Overview.png
+<img src={useBaseUrl('img/integrations/webhooks/Split-Overview.png')} style={{border: '1px solid black'}} alt="Split-Overview"/>
 
 ### Users and Groups
 
-**Split - Users and Groups** dashboard offers concise statistical summaries pertaining to Split users and groups, including administrative actions taken concerning them.
+The **Split - Users and Groups** dashboard offers concise statistical summaries pertaining to Split users and groups, including administrative actions taken concerning them.
 
-<img src={useBaseUrl('img/integrations/webhooks/Split-Users_and_Groups.png')} alt="Split-Users_and_Groups" />
+<img src={useBaseUrl('img/integrations/webhooks/Split-Users_and_Groups.png')} style={{border: '1px solid black'}} alt="Split-Users_and_Groups"/>
 
 :::info
 - For detailed information about webhook creation, refer to the [Split Webhook - audit log](https://help.split.io/hc/en-us/articles/360020957991-Webhook-audit-log), [Split Webhook - admin audit logs](https://help.split.io/hc/en-us/articles/360051384832-Webhook-admin-audit-logs) and [Split Webhook - impressions](https://help.split.io/hc/en-us/articles/360020700232-Webhook-impressions) documentation.
