@@ -16,9 +16,9 @@ Netlify is a web development platform for building fast and dynamic websites, e-
 
 The Sumo Logic App for Netlify ingests site deployment events into Sumo Logic through an outgoing webhook available in Netlify. For more information on supported events that are ingested through the Netlify webhook, see the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/)
 
-## Log Types
+## Log types
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -112,7 +112,7 @@ The Sumo Logic App for Netlify ingests site deployment events into Sumo Logic th
   "expires_at": null
 }
 ```
-### Sample Queries
+### Sample queries
 ```sql
 _sourceCategory="webhook/netlify" "name"
 | json "id", "state", "name", "created_at", "updated_at", "user_id", "build_id", "error_message", "branch", "locked", "title", "commit_message", "context", "deploy_time", "manual_deploy", "public_repo", "committer", "published_at" as id, state, name, createdAt, updatedAt, userId, buildId, errorMessage, branch, locked, title, commitMessage, context, deployTime, manualDeploy, publicRepo, committer, publishedAt nodrop
@@ -156,7 +156,7 @@ Follow the below steps to configure the Netlify webhook.
 - For support, [contact Netlify](https://www.netlify.com/support/).
 :::
 
-### Installing the App
+### Installing the Netlify app
 To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for and select the app.
@@ -170,18 +170,18 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Your app will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
 Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
 
-## Netlify Dashboards
+##  Viewing Netlify Dashboards
 ### Netlify - Overview
 The ***Netlify - Overview*** dashboard offers a comprehensive snapshot of your web deployment ecosystem, providing a detailed insight into critical metrics. With panels tracking Targeted Sites, Branches, and Public Repos, you can effectively manage your web projects. Monitor Total Deployment Triggers, deployment status, errors, deletions, and analyze branch-specific data through Branches by Site. Gain valuable insights into Notifications Generated and their distribution by states, while also delving into deployment specifics by context, process, and repository type. This dashboard keeps you informed with real-time updates on Recent Notifications, empowering you to proactively manage and optimize your web development and hosting operations.
 
-<img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} alt="Netlify-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify-Overview"/>
 
 ### Netlify - Build and Deploy Details
 The ***Netlify - Build and Deploy Details*** dashboard offers a comprehensive view of deployment operations, allowing efficient management and optimization of web projects. With insights into Transaction Operations, Deployment Trends by Site, Context, Process, and Status, users can closely monitor deployments' performance. Tracking the Top 10 Longest Deployments provides valuable insights into potential bottlenecks and a comprehensive view of the deployment process. Additionally, monitor the Deployment Status and Environment to ensure smooth transitions from development to production. Gain insights into the 7-day comparison of deployment activities, aiding in performance evaluation and future planning. Analysis of error messages facilitates efficient troubleshooting, while Recent Error Notifications keep users informed for real-time issue resolution. This dashboard equips users with the tools to make informed decisions, streamline deployment processes, and ensure the smooth operation of web projects.
 
-<img src={useBaseUrl('img/integrations/webhooks/Netlify_BuildAndDeployDetails.png')} alt="Netlify - Build and Deploy Details"/>
+<img src={useBaseUrl('img/integrations/webhooks/Netlify_BuildAndDeployDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Build and Deploy Details"/>
 
 ### Netlify - Commit Details
 The ***Netlify - Commit Details*** dashboard offers a comprehensive insight into your development workflow, focusing on critical aspects of version control and deployment. Keep a close eye on your team's progress and productivity with panels tracking Commits Over Time and Commits by Repo, providing valuable metrics to assess development activity and patterns. Analyze trends in Commits by Repo aiding in performance evaluation and future planning. With visibility into Commits by Branch, this dashboard enables you to fine-tune your development strategies and maintain an efficient and productive development environment.
 
-<img src={useBaseUrl('img/integrations/webhooks/Netlify_CommitDetails.png')} alt="Netlify - Commit Details"/>
+<img src={useBaseUrl('img/integrations/webhooks/Netlify_CommitDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Commit Details"/>
