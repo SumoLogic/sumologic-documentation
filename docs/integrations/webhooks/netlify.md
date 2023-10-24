@@ -7,7 +7,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Thumbnail icon" width="50"/>
 
-## Overview
 
 The Sumo Logic app for Netlify offers a comprehensive solution for managing and optimizing web development and deployment processes. It provides insights into high-level web deployment metrics and essential data such as sites, branches, and repositories. Additionally, the app offers deeper insights into deployment operations, helping identify bottlenecks, resolve issues, and analyze performance metrics. It also focuses on version control and development productivity, offering key metrics to assess development activities, deployment status, and environmental transitions. This integration enables users to make data-driven decisions, optimize web development strategies, and maintain efficient and productive web projects.
 
