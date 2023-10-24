@@ -17,7 +17,7 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 
 The Threat Intel for AWS App utilizes AWS logs and VPC Flow Logs.
 
-The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 
 ### Configure Collectors and Sources
