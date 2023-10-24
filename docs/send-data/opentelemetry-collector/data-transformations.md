@@ -1,6 +1,7 @@
 ---
 id: data-transformations
 title: OpenTelemetry - String Hashing and Masking using Transform Processor and OTTL
+sidebar_label: String Hashing and Masking
 description: Learn how to perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.
 ---
 
@@ -8,9 +9,9 @@ OpenTelemetry provides the Transform Processor and OTTL (OpenTelemetry Transform
 
 You can find more detailed information about the available OTTL functions and their usage in the [OTTL Functions README](https://github.com/rnishtala-sumo/opentelemetry-collector-contrib/blob/ottl-replace-pattern/pkg/ottl/ottlfuncs/README.md).
 
-### Hashing Examples
+## Hashing examples
 
-#### Example 1: Hashing a Password in Log Body
+### Example 1: Hashing a password in log body
 
 ```yaml
 processors:
@@ -41,7 +42,7 @@ The configuration consists of two sections: `attributes/extract` and `transform/
 
   - The `replace_pattern` function is applied to the `message` attribute. If the value matches the pattern `"password=(test)"`, the matched section is replaced with the hashed `password` attribute.
 
-#### Example 2: Hashing a Kubernetes Name
+### Example 2: Hashing a Kubernetes name
 
 ```yaml
 processors:
@@ -74,11 +75,13 @@ The provided configuration consists of two processors: `attributes/extract`, `tr
 
 These transformations ensure that the `k8s_name` attribute is first hashed using SHA256, prefixed with `"k8s."`, and then used to replace occurrences of the pattern `^kube_([0-9A-Za-z]+_)` in the `message` attribute.
 
-Note: The Transform Processor in OpenTelemetry supports various hashing digests such as SHA256, SHA1, and FNV. You can choose the appropriate digest based on your requirements.
+:::note
+The Transform Processor in OpenTelemetry supports various hashing digests such as SHA256, SHA1, and FNV. You can choose the appropriate digest based on your requirements.
+:::
 
-### Masking Examples
+## Masking examples
 
-#### Example 1: Masking Attributes Based on a Regular Expression
+### Example 1: Masking attributes based on a regular expression
 
 ```yaml
 processors:
@@ -91,7 +94,7 @@ processors:
 
 In this example, the `replace_all_matches` function is used to mask sensitive attributes based on a regular expression. All attribute values matching the regex `.*password` are replaced with `***`, providing a masked representation.
 
-#### Example 2: Masking and Reformatting a Specific Field
+### Example 2: Masking and reformatting a specific field
 
 ```yaml
 processors:
