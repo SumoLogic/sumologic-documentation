@@ -14,27 +14,65 @@ You can find more detailed information about the available OTTL functions and th
 
 ```yaml
 processors:
-  transform:
+  attributes/extract:
+  actions:
+    - key: message
+      pattern: "^password=(?P<password>\\w+)$"
+      action: extract
+
+  transform/replace:
     log_statements:
       - context: log
         statements:
-          - replace_pattern(body, "password=([^\\s]*)", "$$1", "password=", SHA256)
+          - set(attributes["password"], SHA256(attributes["password"]))
+          - set(attributes["password"], Concat(["passwd", attributes["password"]], "="))
+          - replace_pattern(attributes["message"], "password=(test)", attributes["password"])
 ```
 
-In this example, the `replace_pattern` function is used to hash the value of a password in the log body. The pattern `password=([^\\s]*)` captures the password value after `password=`. The matching section is replaced with the hash value of the captured group (`$$1`), utilizing the SHA256 hash function. The replacement is then prefixed with `"password="`, preserving the original prefix.
+The configuration consists of two sections: `attributes/extract` and `transform/replace`, representing attribute extraction and transformation operations, respectively.
+
+- In the `attributes/extract` section, the `actions` key specifies the extraction action. In this example, the action extracts the password from an attribute value using a regular expression pattern. The pattern `^password=(?P<password>\\w+)$` captures the password value after `password=` and assigns it to the `password` attribute.
+
+- The `transform/replace` section defines a transformation operation using the Transform Processor. Within the `log_statements` context, the following statements are executed:
+
+  - The `set` function is used to hash the `password` attribute using the SHA256 hash algorithm. The resulting hash value replaces the original `password` value.
+
+  - The `set` function is used to concatenate the string prefix `"hashed"` with the hashed `password`. This creates a new `password` value with the prefix included.
+
+  - The `replace_pattern` function is applied to the `message` attribute. If the value matches the pattern `"password=(test)"`, the matched section is replaced with the hashed `password` attribute.
 
 #### Example 2: Hashing a Kubernetes Name
 
 ```yaml
 processors:
-  transform:
+  attributes/extract:
+  actions:
+    - key: message
+      pattern: "^kube=(?P<k8s_name>\\w+)$"
+      action: extract
+
+  transform/replace:
     log_statements:
       - context: log
         statements:
-          - replace_pattern(name, "^kube_([0-9A-Za-z]+_)", "$$1.", "k8s.", SHA1)
+          - set(attributes["k8s_name"], SHA256(attributes["k8s_name"]))
+          - set(attributes["k8s_name"], Concat(["k8s.", attributes["k8s_name"]], "="))
+          - replace_pattern(attributes["message"], "^kube_([0-9A-Za-z]+_)", attributes["k8s_name"])
 ```
 
-In this example, the `replace_pattern` function is used to hash a section of the Kubernetes name matching the specified pattern. The captured group (`$$1`) is replaced with its SHA1 hash value. Additionally, `k8s.` is added as a prefix to the hash value.
+The provided configuration consists of two processors: `attributes/extract`, `transform/replace`.
+
+- In the `attributes/extract` processor, an extraction action is defined for the `message` attribute using the pattern `^kube=(?P<k8s_name>\\w+)`. This pattern captures the value after `"kube="` and assigns it to the `k8s_name` attribute.
+
+- In the `transform/replace` processor, within the `log_statements` context, several statements are executed:
+
+  - The `set` function is used to hash the `k8s_name` attribute using the SHA256 hashing algorithm. The resulting hash value replaces the original value of the `k8s_name` attribute.
+
+  - The `set` function is then used to concatenate the string prefix `"k8s."` with the hashed `k8s_name`, followed by `"="`. This creates a new value for the `k8s_name` attribute, prefixed with `"k8s="`.
+
+  - The `replace_pattern` function is applied to the `message` attribute. It matches the pattern `^kube_([0-9A-Za-z]+_)` and replaces it with the value of the hashed `k8s_name` attribute.
+
+These transformations ensure that the `k8s_name` attribute is first hashed using SHA256, prefixed with `"k8s."`, and then used to replace occurrences of the pattern `^kube_([0-9A-Za-z]+_)` in the `message` attribute.
 
 Note: The Transform Processor in OpenTelemetry supports various hashing digests such as SHA256, SHA1, and FNV. You can choose the appropriate digest based on your requirements.
 
