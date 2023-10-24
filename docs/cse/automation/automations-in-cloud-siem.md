@@ -1,13 +1,13 @@
 ---
-id: automation-service-automations
-title: Automations
-sidebar_label: Automations
+id: automations-in-cloud-siem
+title: Automations in Cloud SIEM
+sidebar_label: Automations in Cloud SIEM
 description: Learn how automations run playbooks to add enrichments and create notifications for either Insights or Entities.  
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Automations run playbooks to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
+Cloud SIEM automations run playbooks to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
 
 :::note
 {@import ../../reuse/action-limits.md}

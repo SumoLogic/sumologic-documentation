@@ -2690,6 +2690,17 @@ integrations: [
             'cse/administration/mitre-coverage',
           ],
         },
+        {
+          type: 'category',
+          label: 'Automation',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cse/automation/index'},
+          items: [
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+          ],
+        },
       ],
     },
     {
@@ -2803,7 +2814,6 @@ integrations: [
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
             'platform-services/automation-service/about-automation-service',
-            'platform-services/automation-service/automation-service-automations',
             'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',

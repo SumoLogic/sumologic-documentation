@@ -83,4 +83,10 @@ This section contains the following topics:
   <p>Learn how to set up user accounts and roles, Actions, Network Blocks, custom Insight status and sub-resolutions, and more.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cse/administration"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Use the Automation Service with Cloud SIEM</h4></a>
+  <p>Learn how to use the Automation Service to create notifications and enrichments in Cloud SIEM.</p>
+  </div>
+</div>
 </div>

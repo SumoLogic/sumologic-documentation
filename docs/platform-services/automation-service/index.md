@@ -1,5 +1,5 @@
 ---
-slug: /cse/automation-service
+slug: /platform-services/automation-service
 title: Automation Service
 sidebar_label: Automation Service 
 description: Learn how to use the Automation Service to automate smart actions, including enrichments and notifications. 
