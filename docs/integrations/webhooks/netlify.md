@@ -171,7 +171,8 @@ Your app will be installed in **Installed Apps** folder and Panels of dashboard 
 Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
 
 ##  Viewing Netlify dashboards
-### Netlify - Overview
+### Overview
+
 The ***Netlify - Overview*** dashboard offers a comprehensive snapshot of your web deployment ecosystem, providing a detailed insight into critical metrics. With panels tracking Targeted Sites, Branches, and Public Repos, you can effectively manage your web projects. Monitor Total Deployment Triggers, deployment status, errors, deletions, and analyze branch-specific data through Branches by Site. Gain valuable insights into Notifications Generated and their distribution by states, while also delving into deployment specifics by context, process, and repository type. This dashboard keeps you informed with real-time updates on Recent Notifications, empowering you to proactively manage and optimize your web development and hosting operations.
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify-Overview"/>
