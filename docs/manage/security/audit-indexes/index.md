@@ -21,26 +21,26 @@ Availability of the indexes differs according to your account type. To enable ac
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/security/audit-indexes/audit-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit Index</h4></a>
   <p>Collect event logs in plain text on account activities, such as account management, user activity, scheduled searches, and alerting.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/security/audit-indexes/audit-event-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Audit Event Index</h4></a>
   <p>Collect event logs in JSON format on account activities for a wide range of actions.</p>
   </div>
 </div>
-<div className="box smallbox3 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/security/audit-indexes/search-audit-index"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Search Audit Index</h4></a>
   <p>Collect event logs on search activities in your account.</p>
   </div>
 </div>
-<div className="box smallbox4 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/security/audit-indexes/audit-index-access"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Grant Access to Data in Audit Indexes</h4></a>
   <p>Use role capabilities to grant access to data in audit indexes.</p>
