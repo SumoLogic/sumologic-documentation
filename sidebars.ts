@@ -2699,6 +2699,7 @@ integrations: [
           items: [
             'cse/automation/about-automation-service-and-cloud-siem',
             'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
           ],
         },
       ],
@@ -2817,7 +2818,6 @@ integrations: [
             'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
-            'platform-services/automation-service/automation-service-examples',
             'platform-services/automation-service/automation-service-integration-framework',
             'platform-services/automation-service/automation-service-bridge',
           ],

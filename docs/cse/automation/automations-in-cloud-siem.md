@@ -7,7 +7,7 @@ description: Learn how automations run playbooks to add enrichments and create n
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM automations run playbooks to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
+Cloud SIEM automations run playbooks in the [Automation Service](/docs/platform-services/automation-service/) to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
 
 :::note
 {@import ../../reuse/action-limits.md}
@@ -15,20 +15,20 @@ Cloud SIEM automations run playbooks to add enrichments and create notifications
 
 ## Overview: Configure an automation
 
-This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation. For examples, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
+This section gives you an overview of how to set up an automation in Cloud SIEM. This process assumes you want to create your own playbook to use in an automation. For examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
 
 :::info
-Before you can configure an automation, you must [configure the connection](#configure-the-connection-for-an-integration-resource) for the integration resources you want the automation to use.
+Before you can configure an automation, you must [configure the connection](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) for the integration resources you want the automation to use.
 :::
 
 ### Step 1: Get actions for the playbook
 
 The first thing you need to do is decide what actions you want to use in your playbook. 
 
-1. Open the [integration](/docs/cse/automation-service/automation-service-integrations#view-integrations) that has actions you want the playbook to run.
+1. Open the [integration](/docs/platform-services/automation-service/automation-service-integrations) that has actions you want the playbook to run.
 1. Note the names of the actions you want to use, including their resource name. You'll need these to add the actions to your playbook. 
 1. If you want to customize an action:
-   1. Click the [duplication button](/docs/cse/automation-service/automation-service-integrations#duplicate-an-integration) on the integration to create a customizable integration. The name of the duplicated integration will end in **(1)**.
+   1. Click the [duplication button](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration) on the integration to create a customizable integration. The name of the duplicated integration will end in **(1)**.
    1. To customize the action in the duplicated integration, click the **Edit** button on the action.
 
 
@@ -36,9 +36,12 @@ The first thing you need to do is decide what actions you want to use in your pl
 
 Now that you have the names of the actions you want to use, you can add them to your playbook.
 
-1. [Create a new playbook](/docs/cse/automation-service/automation-service-playbooks#create-a-new-playbook).
+1. [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks#create-a-new-playbook). When you create a playbook, select the **Type** as **CSE** so you can run the playbook from a Cloud SIEM automation. 
+    :::tip
+    You cannot run a playbook for a Cloud SIEM automation unless it is type **CSE**. 
+    :::
 1. Click **Add Node**.
-1. Choose [**Action**](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) as the type of node to add.
+1. Choose [**Action**](/docs/platform-services/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) as the type of node to add.
 1. In the **Action** field, select the name an action you identified in Step 1. 
 1. As soon as you choose the action, the **Resource** field displays the name of the resource. Verify that the name of the resource matches what you noted in Step 1. 
 1. Fill out the rest of the fields in the **Add Node** dialog to configure the action to behave the way you want.
@@ -51,7 +54,7 @@ Now that you have the names of the actions you want to use, you can add them to 
 
 Now that the playbook is configured, you can add it to an automation.
 
-1. [Create a new automation](/docs/cse/automation-service/automation-service-automations#create-an-automation).
+1. [Create a new automation](#create-an-automation).
 1. Select the playbook you created in Step 2.
 1. In **Expects attributes for**,  select **Entity** or **Insight**.
 1. Select whether you want to automatically run the automation when an Insight is created or closed, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
@@ -60,9 +63,9 @@ Now that the playbook is configured, you can add it to an automation.
 
 ### Step 4: Run the automation
 
-Now that you've created the automation, it is ready to run. If you set the automation to run when an Insight is created or closed, it runs [automatically](/docs/cse/automation-service/automation-service-automations#run-an-automation-automatically). 
+Now that you've created the automation, it is ready to run. If you set the automation to run when an Insight is created or closed, it runs [automatically](#run-an-automation-automatically). 
 
-If you configured the automation to [run manually](/docs/cse/automation-service/automation-service-automations#run-an-automation-manually), you can run it from an Insight or an Entity:
+If you configured the automation to [run manually](#run-an-automation-manually), you can run it from an Insight or an Entity:
 * Insights
    1. Open an Insight.
    1. Click **Actions**.
@@ -79,7 +82,7 @@ If you configured the automation to [run manually](/docs/cse/automation-service/
 :::
 
 ## View automations
-1. Click the **Configuration** button (gear icon) at the top of the UI.
+1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.
 1. View the list of available automations. (If no automations display, you must first [create an automation](#create-an-automation)).<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/> 
 
@@ -87,12 +90,12 @@ To view the automations that have run on Insights or Entities, see [View results
 
 ## Create an automation
 
-The following procedure provides a brief introduction to how to create an automation. For detailed examples, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
+The following procedure provides a brief introduction to how to create an automation. For detailed examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/).
 
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.
 1. At the top of the automations screen, click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
-1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined, and its type must be set to **CSE** before associating it with an automation. (You can set the type as **CSE** when you [create a new playbook](/docs/cse/automation-service/automation-service-playbooks#create-a-new-playbook).)<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
+1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined, and its type must be set to **CSE** before associating it with an automation. (You can set the type as **CSE** when you [create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook).)<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
 1. In **Expects attributes for** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. 
 1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected. 
 1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.
@@ -147,7 +150,7 @@ In this example:
 
 ## View results of an automation
 
-If an automation is set to run when an Insight is created or closed, it [runs automatically](/docs/cse/automation-service/automation-service-automations#run-an-automation-automatically). You can also [run an automation manually](/docs/cse/automation-service/automation-service-automations#run-an-automation-manually). 
+If an automation is set to run when an Insight is created or closed, it [runs automatically](#run-an-automation-automatically). You can also [run an automation manually](#run-an-automation-manually). 
 
 ### View automations on Insights and Entities
 
@@ -217,11 +220,11 @@ Though you can create your own playbooks, the Automation Service provides the fo
 
 To continue getting the same behavior found in the legacy actions and enrichments, in addition to using installed playbooks, you can add the corresponding new actions to playbooks you create. 
 
-For directions to add an action to a playbook, see [Add an action node to a playbook](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook). For examples, see [Automation Examples](/docs/cse/automation-service/automation-service-examples). 
+For directions to add an action to a playbook, see [Add an action node to a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook). For examples, see [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/). 
 
 #### Legacy actions 
 
-In place of the following legacy actions, use the corresponding actions from [integrations](/docs/cse/automation-service/automation-service-integrations/) in the Automation Service. 
+In place of the following legacy actions, use the corresponding actions from [integrations](/docs/platform-services/automation-service/automation-service-integrations/) in the Automation Service. 
 
 Legacy action | Description | Corresponding action <br/>in the Automation Service | Additional instructions |
 | :-- | :-- | :-- | :-- |
