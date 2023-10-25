@@ -181,7 +181,8 @@ The ***Netlify - Build and Deploy Details*** dashboard offers a comprehensive vi
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_BuildAndDeployDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Build and Deploy Details"/>
 
-### Netlify - Commit Details
+### Commit Details
+
 The ***Netlify - Commit Details*** dashboard offers a comprehensive insight into your development workflow, focusing on critical aspects of version control and deployment. Keep a close eye on your team's progress and productivity with panels tracking Commits Over Time and Commits by Repo, providing valuable metrics to assess development activity and patterns. Analyze trends in Commits by Repo aiding in performance evaluation and future planning. With visibility into Commits by Branch, this dashboard enables you to fine-tune your development strategies and maintain an efficient and productive development environment.
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_CommitDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Commit Details"/>
