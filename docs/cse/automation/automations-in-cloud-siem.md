@@ -13,6 +13,71 @@ Cloud SIEM automations run playbooks to add enrichments and create notifications
 {@import ../../reuse/action-limits.md}
 :::
 
+## Overview: Configure an automation
+
+This section gives you an overview of how to set up an automation. This process assumes you want to create your own playbook to use in an automation. For examples, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
+
+:::info
+Before you can configure an automation, you must [configure the connection](#configure-the-connection-for-an-integration-resource) for the integration resources you want the automation to use.
+:::
+
+### Step 1: Get actions for the playbook
+
+The first thing you need to do is decide what actions you want to use in your playbook. 
+
+1. Open the [integration](/docs/cse/automation-service/automation-service-integrations#view-integrations) that has actions you want the playbook to run.
+1. Note the names of the actions you want to use, including their resource name. You'll need these to add the actions to your playbook. 
+1. If you want to customize an action:
+   1. Click the [duplication button](/docs/cse/automation-service/automation-service-integrations#duplicate-an-integration) on the integration to create a customizable integration. The name of the duplicated integration will end in **(1)**.
+   1. To customize the action in the duplicated integration, click the **Edit** button on the action.
+
+
+### Step 2: Add the actions to the playbook
+
+Now that you have the names of the actions you want to use, you can add them to your playbook.
+
+1. [Create a new playbook](/docs/cse/automation-service/automation-service-playbooks#create-a-new-playbook).
+1. Click **Add Node**.
+1. Choose [**Action**](/docs/cse/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) as the type of node to add.
+1. In the **Action** field, select the name an action you identified in Step 1. 
+1. As soon as you choose the action, the **Resource** field displays the name of the resource. Verify that the name of the resource matches what you noted in Step 1. 
+1. Fill out the rest of the fields in the **Add Node** dialog to configure the action to behave the way you want.
+1. Click **Create**. The node is added to the playbook.
+1. Repeat to add more actions to the playbook. If desired, add conditions.
+1. Click **Save** to save your changes.
+1. When you're ready to let the playbook be used in automations, click **Publish**. 
+
+### Step 3: Add the playbook to an automation
+
+Now that the playbook is configured, you can add it to an automation.
+
+1. [Create a new automation](/docs/cse/automation-service/automation-service-automations#create-an-automation).
+1. Select the playbook you created in Step 2.
+1. In **Expects attributes for**,  select **Entity** or **Insight**.
+1. Select whether you want to automatically run the automation when an Insight is created or closed, or to run it manually. (For the purposes of this overview, select **Manually Done**.)
+1. Select **Enabled**.
+1. Click **Add to List**.
+
+### Step 4: Run the automation
+
+Now that you've created the automation, it is ready to run. If you set the automation to run when an Insight is created or closed, it runs [automatically](/docs/cse/automation-service/automation-service-automations#run-an-automation-automatically). 
+
+If you configured the automation to [run manually](/docs/cse/automation-service/automation-service-automations#run-an-automation-manually), you can run it from an Insight or an Entity:
+* Insights
+   1. Open an Insight.
+   1. Click **Actions**.
+   1. Select the automation from one of the following, depending on whether the automation expects attributes for Insights or Entities:
+      * **Insight Automation**. Displays a list of all enabled Insight automations configured to run manually.
+      * **Entity Automation**. Displays a **Run Automations** option. Click **Run Automations** to open a dialog enabling you to select one or more Entity automations to run. 
+* Entities
+   1. Open an Entity.
+   1. Click **Automations** under the Entity's name. 
+   1. Select an option under **Entity Automation**. 
+
+:::note
+{@import ../../reuse/action-limits.md}
+:::
+
 ## View automations
 1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations**, select **Automation**.

@@ -136,3 +136,6 @@ To use [integrations](/docs/cse/automation-service/automation-service-integratio
 1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
+### Actions limit
+
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 50 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
