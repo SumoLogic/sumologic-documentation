@@ -34,7 +34,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/sumo-apps/cse"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Cloud SIEM</h4></a>
-  <p>Gives visibility into what’s going on in your Cloud SIEM Enterprise.</p>
+  <p>Gives visibility into what’s going on in your Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">

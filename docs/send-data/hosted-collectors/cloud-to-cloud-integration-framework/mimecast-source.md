@@ -58,7 +58,7 @@ To configure a Mimecast Source:
 1. Select **Mimecast**.<br/><img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="70"/>
 1. Enter a **Name** for the Source. The description is optional.<br/><img src={useBaseUrl('img/send-data/mimecast-add-apis-input.png')} alt="Mimecast-config-page" style={{border: '1px solid black'}} width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Mimecast
    * `_siemProduct`: Mimecast
    * `_siemFormat`: JSON

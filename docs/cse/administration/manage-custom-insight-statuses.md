@@ -13,7 +13,7 @@ This page has information about creating and managing custom Insight statuses.
 
 To view Insight statuses:
 
-1. Click the gear icon near the top of the CSE UI and choose **Workflow** under **Users**.
+1. Click the gear icon near the top of the Cloud SIEM UI and choose **Workflow** under **Users**.
 1. This screenshot of the **Workflow** page shows the three Insight statuses that are preconfigured:
     * **New**
     * **In Progress**
@@ -25,7 +25,7 @@ Preconfigured Insight statuses cannot be edited or deleted. You can however crea
 
 To create a custom Insight status:
 
-1. Click the gear icon near the top of the CSE UI and choose **Workflow** under **Users**.
+1. Click the gear icon near the top of the Cloud SIEM UI and choose **Workflow** under **Users**.
 1. On the **Workflow** page, click **Create Status**.
 1. On the **New Status** popup, enter a name and description for the status.  <br/><img src={useBaseUrl('img/cse/new-status.png')} alt="New status" width="400"/>
 1. Click **Create**.
@@ -40,7 +40,7 @@ To change the order that the statuses appear in the **Status** dropdown, you can
 
 To change the order of Insight statuses:
 
-1. Click the gear icon near the top of the CSE UI and choose **Workflow** under **Users**.
+1. Click the gear icon near the top of the Cloud SIEM UI and choose **Workflow** under **Users**.
 1. On the **Workflow** page, each status that can be moved has a handle to the left of its name.  <br/><img src={useBaseUrl('img/cse/reorder-icons.png')} alt="Reorder icons" width="600"/>
 1. To move a status to a different location on the list, use your mouse to drag it to the desired location.
 

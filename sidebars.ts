@@ -1742,7 +1742,7 @@ module.exports = {
                 'observability/aws/integrations/aws-ec2-host-metrics',
                 'observability/aws/integrations/aws-lambda',
                 'observability/aws/integrations/aws-network-load-balancer',
-                'observability/aws/integrations/aws-rds-metrics',
+                'observability/aws/integrations/amazon-rds',
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
@@ -2457,7 +2457,7 @@ integrations: [
  },
 ],
 
-// OTHER FEATURES: SDO, CSE, SOAR
+// OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
       type: 'category',
@@ -2470,21 +2470,21 @@ integrations: [
     },
     {
       type: 'category',
-      label: 'Cloud Security Analytics',
+      label: 'Cloud Infrastructure Security',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'cloud-security-analytics/index'},
+      link: {type: 'doc', id: 'cloud-infrastructure-security/index'},
       items: [
-        'cloud-security-analytics/introduction-to-cloud-security-analytics',
-        'cloud-security-analytics/data-lake',
-        'cloud-security-analytics/audit-and-compliance',
-        'cloud-security-analytics/threat-detection-and-investigation',
-        'cloud-security-analytics/application-security',
+        'cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
+        'cloud-infrastructure-security/data-lake',
+        'cloud-infrastructure-security/audit-and-compliance',
+        'cloud-infrastructure-security/threat-detection-and-investigation',
+        'cloud-infrastructure-security/application-security',
       ],
     },
     {
       type: 'category',
-      label: 'Cloud SIEM Enterprise',
+      label: 'Cloud SIEM',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},
@@ -2728,6 +2728,7 @@ integrations: [
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
         'cloud-soar/cloud-soar-apis',
+        'cloud-soar/audit-event-index',
       ],
     },
   ],

@@ -2,14 +2,14 @@
 id: tailor-global-rule
 title: Tailor a Global Rule
 sidebar_label: Tailor a Global Rule
-description: You can override selected fields in all CSE rule types. After you have overridden a field, you can revert to the original field value.
+description: You can override selected fields in all Cloud SIEM rule types. After you have overridden a field, you can revert to the original field value.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for tailoring global (built-in) rules in CSE. 
+This topic has instructions for tailoring global (built-in) rules in Cloud SIEM. 
 
-You can override selected rule fields in all CSE rule types: Match, Threshold, Chain and Aggregation. After you have overridden a field, you can revert to the original field value.
+You can override selected rule fields in all Cloud SIEM rule types: Match, Threshold, Chain and Aggregation. After you have overridden a field, you can revert to the original field value.
 
 :::note
 You cannot override fields in legacy rules—rules whose ID looks like LEGACY-*xxxxxxx*.

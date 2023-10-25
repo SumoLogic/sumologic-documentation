@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
-## Requirements 
+## Requirements
 
 ### Hardware requirements
 
-* OS: 
+* OS:
    * Ubuntu (18.04/20.04)
    * CentOS 7
    * RedHat 8
@@ -28,9 +28,9 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 | DESTINATION | PROTOCOL | PORT |
 | :-- | :-- | :-- |
-| sumo-logic-api-url | TCP| 443| 
-| siem-cloud-url | 	TCP| 	443| 
-| 926226587429.dkr.ecr.us-west-2.amazonaws.com | TCP| 443| 
+| sumo-logic-api-url | TCP| 443|
+| siem-cloud-url | 	TCP| 	443|
+| 926226587429.dkr.ecr.us-west-2.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.us-east-1.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.ap-southeast-2.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.eu-central-1.amazonaws.com | TCP| 443|
@@ -38,22 +38,22 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 | 926226587429.dkr.ecr.ap-northeast-1.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.ca-central-1.amazonaws.com | TCP| 443|
 | 926226587429.dkr.ecr.eu-west-1.amazonaws.com | TCP| 443|
-| index.docker.io* | 	TCP| 	443| 
-| registry-1.docker.io* | 	TCP| 	443| 
-| auth.docker.io* | 	TCP| 	443| 
-| production.cloudflare.docker.com* | 	TCP| 	443| 
-| long-endpoint1-events.sumologic.net | 	TCP| 	443| 
+| index.docker.io* | 	TCP| 	443|
+| registry-1.docker.io* | 	TCP| 	443|
+| auth.docker.io* | 	TCP| 	443|
+| production.cloudflare.docker.com* | 	TCP| 	443|
+| long-endpoint1-events.sumologic.net | 	TCP| 	443|
 
 \* Needed only to connect to docker hub.
 
 ## Install Docker
 
 1. Install Docker-CE following the [installation instructions in Docker Docs](https://docs.docker.com/engine/install/). Install at least version 20.10 (do not use nightly build).
-1. As soon as the docker daemon is installed, start it with: 
+1. As soon as the docker daemon is installed, start it with:
    ```
    systemctl start docker
    ```
-1. Enable it on boot: 
+1. Enable it on boot:
    ```
    systemctl enable docker
    ```
@@ -66,7 +66,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
    ```
    [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:8080" 
+   Environment="HTTP_PROXY=http://proxy.example.com:8080"
    Environment="HTTPS_PROXY=http://proxy.example.com:8080"
    ```
 1. Reload the systemd daemon with:
@@ -129,7 +129,7 @@ An example of a configuration file would be:
 {
    "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
    "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
-   "SIEM_URL":"https://YOUR_CSE_URL/sec",
+   "SIEM_URL":"https://YOUR_CLOUD_SIEM_URL/sec",
    "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
@@ -166,7 +166,7 @@ If you are not using the SIEM:
 
 ### Configuring the automation bridge for high availability
 
-You may elect to deploy and register multiple bridges to your CSE tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
+You may elect to deploy and register multiple bridges to your Cloud SIEM tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 
@@ -185,3 +185,45 @@ If you are using CyberArk, you must add the following certificates provided by C
 * `RootCA_new.crt`
 * `client_new.crt`
 * `client_new.pem`
+
+### Configuring automation bridge with Podman
+
+#### Enable Podman socket
+
+1. Run the following commands:
+    ```bash
+    systemctl enable podman.socket && systemctl start podman.socket
+    ```
+1. Create a symbolic link:
+    ```bash
+    ln -s /run/podman/podman.sock /var/run/docker.sock
+    ```
+
+#### Change automation bridge configuration
+
+Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
+
+```bash title="systemd"
+[Unit]
+Description=Automation-bridge worker %i
+
+[Service]
+User=root
+EnvironmentFile=/etc/opt/automation-bridge/automation-bridge.conf
+ExecStart=/opt/automation-bridge/bin/automation-bridge -f /opt/automation-bridge/etc/user-configuration.conf -n %H-%i
+ExecStop=/bin/kill -s TERM  $MAINPID
+Restart=on-failure
+TimeoutStartSec=10
+RestartSec=10
+##
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+:::important
+This is the current solution and it needs to run service as `root`.
+:::

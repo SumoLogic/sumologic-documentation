@@ -2,11 +2,11 @@
 id: products-with-log-mappings
 title: Products with Log Mappings - Cloud SIEM
 sidebar_label: Products with Log Mappings
-description: See the product and services that CSE supports with log mappings and parsers.
+description: See the product and services that Cloud SIEM supports with log mappings and parsers.
 ---
 
 This topic lists products and services, organized by vendor, for
-which CSE provides built-in log mapping and parsing support. 
+which Cloud SIEM provides built-in log mapping and parsing support. 
 
 ## Adaxes
 

@@ -26,7 +26,7 @@ The enhancements include:
 
 ## Threat indicators
 
-Threat indicators, if set, will be displayed throughout the CSE UI either as a full label or as a colored icon depending on the location:
+Threat indicators, if set, will be displayed throughout the Cloud SIEM UI either as a full label or as a colored icon depending on the location:
 
 | Label | Description | Icon |
 |:--|:--|:--|
