@@ -158,7 +158,7 @@ Follow the below steps to configure the Netlify webhook.
 
 ### Installing the Netlify app
 
-This section has instructions for installing the Sumo Logic app for Stripe.
+This section has instructions for installing the Sumo Logic app for Netlify.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
