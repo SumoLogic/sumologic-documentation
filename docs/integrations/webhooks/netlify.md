@@ -177,7 +177,8 @@ The ***Netlify - Overview*** dashboard offers a comprehensive snapshot of your w
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify-Overview"/>
 
-### Netlify - Build and Deploy Details
+### Build and Deploy Details
+
 The ***Netlify - Build and Deploy Details*** dashboard offers a comprehensive view of deployment operations, allowing efficient management and optimization of web projects. With insights into Transaction Operations, Deployment Trends by Site, Context, Process, and Status, users can closely monitor deployments' performance. Tracking the Top 10 Longest Deployments provides valuable insights into potential bottlenecks and a comprehensive view of the deployment process. Additionally, monitor the Deployment Status and Environment to ensure smooth transitions from development to production. Gain insights into the 7-day comparison of deployment activities, aiding in performance evaluation and future planning. Analysis of error messages facilitates efficient troubleshooting, while Recent Error Notifications keep users informed for real-time issue resolution. This dashboard equips users with the tools to make informed decisions, streamline deployment processes, and ensure the smooth operation of web projects.
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_BuildAndDeployDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Build and Deploy Details"/>
