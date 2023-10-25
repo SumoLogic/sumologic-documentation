@@ -112,7 +112,7 @@ The Sumo Logic App for Netlify ingests site deployment events into Sumo Logic th
   "expires_at": null
 }
 ```
-### Sample queries
+### Sample query
 ```sql
 _sourceCategory="webhook/netlify" "name"
 | json "id", "state", "name", "created_at", "updated_at", "user_id", "build_id", "error_message", "branch", "locked", "title", "commit_message", "context", "deploy_time", "manual_deploy", "public_repo", "committer", "published_at" as id, state, name, createdAt, updatedAt, userId, buildId, errorMessage, branch, locked, title, commitMessage, context, deployTime, manualDeploy, publicRepo, committer, publishedAt nodrop
