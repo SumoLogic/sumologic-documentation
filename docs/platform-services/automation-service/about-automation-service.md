@@ -2,11 +2,25 @@
 id: about-automation-service
 title: About the Automation Service
 sidebar_label: About the Automation Service
-description: Get an overview of how the Automation Service allows you to automate smart actions, including enrichments and notifications. 
+description: Get an overview of how the Automation Service allows you to automate actions. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
+
+To use the Automation Service, execute playbooks to run actions in a workflow. Actions are provided by integrations with Sumo Logic and third-party vendors. The Automation Service has number of integrations, actions, and playbooks that you can customize. You can also create your own.
+
+You can use the Automation Service to provide automation for the following:
+* **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to create notifications and add enrichments for Insights and Entities, speeding the time to respond to security incidents.
+
+## Automation Service UI
+
+The Automation Service UI is composed of:
+* **App Central**.
+* **Playbooks**.
+* **Integrations**.
+* **Bridge**. 
 
 ## Access the Automation Service
 

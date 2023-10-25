@@ -2666,6 +2666,18 @@ integrations: [
         },
         {
           type: 'category',
+          label: 'Automation',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cse/automation/index'},
+          items: [
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Administration',
           collapsible: true,
           collapsed: true,
@@ -2688,18 +2700,6 @@ integrations: [
             'cse/administration/using-sensor-zones',
             'cse/administration/inventory-sources-and-data',
             'cse/administration/mitre-coverage',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Automation',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cse/automation/index'},
-          items: [
-            'cse/automation/about-automation-service-and-cloud-siem',
-            'cse/automation/automations-in-cloud-siem',
-            'cse/automation/cloud-siem-automation-examples',
           ],
         },
       ],

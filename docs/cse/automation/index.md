@@ -24,4 +24,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to create automations that run playbooks to add enrichments and create notifications for either Insights or Entities.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cse/automation/cloud-siem-automation-examples"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Cloud SIEM Automation Examples</h4></a>
+  <p>See examples that show you how to create automations for different situations. </p>
+  </div>
+</div>
 </div>
