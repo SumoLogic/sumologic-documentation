@@ -157,20 +157,14 @@ Follow the below steps to configure the Netlify webhook.
 :::
 
 ### Installing the Netlify app
-To install the app, do the following:
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click on **Install App**.
-3. Click on **Next** in **Setup Data** section.
-4. In the **Configure** section of respective app, complete the following fields.
-    1. **Key.** Select either of these options for the data source.
-        * Choose **Source Category**, and select a source category from the list for **Default Value**.
-        * Choose **Custom**, and enter a custom metadata field beginning with an underscore. Insert its value in **Default Value**.
-5. Click on **Next**. You will be redirected to **Preview & Done** section.
-Your app will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
-Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
+This section has instructions for installing the Sumo Logic app for Stripe.
+{@import ../../reuse/apps/app-install-v2.md}
 
 ##  Viewing Netlify dashboards
+All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
+You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
+You can use template variables to drill down and examine the data on a granular level. For more information, see Filter with template variables.
+
 ### Overview
 
 The ***Netlify - Overview*** dashboard offers a comprehensive snapshot of your web deployment ecosystem, providing a detailed insight into critical metrics. With panels tracking Targeted Sites, Branches, and Public Repos, you can effectively manage your web projects. Monitor Total Deployment Triggers, deployment status, errors, deletions, and analyze branch-specific data through Branches by Site. Gain valuable insights into Notifications Generated and their distribution by states, while also delving into deployment specifics by context, process, and repository type. This dashboard keeps you informed with real-time updates on Recent Notifications, empowering you to proactively manage and optimize your web development and hosting operations.
