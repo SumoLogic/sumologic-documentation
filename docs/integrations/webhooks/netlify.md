@@ -157,13 +157,14 @@ Follow the below steps to configure the Netlify webhook.
 :::
 
 ### Installing the Netlify app
+
 This section has instructions for installing the Sumo Logic app for Stripe.
+
 {@import ../../reuse/apps/app-install-v2.md}
 
-##  Viewing Netlify dashboards
-All dashboards have a set of filters that you can apply to the entire dashboard. Use these filters to drill down and examine the data to a granular level.
-You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
-You can use template variables to drill down and examine the data on a granular level. For more information, see Filter with template variables.
+## Viewing Netlify dashboards
+
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
