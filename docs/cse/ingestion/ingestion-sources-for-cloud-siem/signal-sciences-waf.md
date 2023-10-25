@@ -2,12 +2,12 @@
 id: signal-sciences-waf
 title: Signal Sciences WAF - Cloud SIEM
 sidebar_label: Signal Sciences WAF
-description: Lean how to collect Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by CSE.
+description: Lean how to collect Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
 ## Step 1: Configure collection
 
@@ -22,9 +22,9 @@ In this step, you configure an HTTP Source to collect Signal Sciences WAF log me
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field  called `_sourceCategory`.
-1. **Fields**. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+1. **Fields**. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
 :::note
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
 :::
 
 ### Configure an HTTP Source
@@ -38,7 +38,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](#step-2-configure-signal-sciences-waf) below.
-1. **SIEM Processing.** Click the checkbox to configure the source to forward log messages to CSE.
+1. **SIEM Processing.** Click the checkbox to configure the source to forward log messages to Cloud SIEM.
 1. **Advanced Options for Logs**. For information about the optional advance options you can configure, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/).
 1. Click **Save**.
 1. Make a note of the HTTP Source URL that is displayed. You’ll supply it in [Step 2](#step-2-configure-signal-sciences-waf) below.
@@ -53,9 +53,9 @@ In this step you configure Signal Sciences WAF to send log messages to the Sumo 
 
 For more information on Generic Webhooks refer to the [Generic Webhooks](https://docs.fastly.com/signalsciences/integrations/generic-webhooks/) page in Fastly help.
 
-## Step 3: CSE Ingest Configuration
+## Step 3: Cloud SIEM Ingest Configuration
 
-In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
+In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. Click the gear icon, and select **Sumo Logic** under **Integrations**.  <br/><img src={useBaseUrl('img/cse/gear-sumo-link.png')} alt="Sumo Logic link" width="400"/>
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
@@ -69,9 +69,9 @@ In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source ca
 
 ## Step 4: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
+1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
 1. On the **Log Mappings** page search for "Signal Sciences" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/signal-sciences-record-volume.png')} alt="Signal Sciences record volume" width="600"/> 
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records.  
      

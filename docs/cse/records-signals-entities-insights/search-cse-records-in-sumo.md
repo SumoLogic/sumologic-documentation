@@ -1,24 +1,24 @@
 ---
 id: search-cse-records-in-sumo
-title: Searching for CSE Records in Sumo Logic
-sidebar_label: Search Sumo Logic for CSE Records
-description: Learn how to search the Sumo Logic platform for CSE Records.
+title: Searching for Cloud SIEM Records in Sumo Logic
+sidebar_label: Search Sumo Logic for Cloud SIEM Records
+description: Learn how to search the Sumo Logic platform for Cloud SIEM Records.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about how to search the Sumo Logic platform for Records and Signals that have been forwarded from CSE. For more information about performing log searches in Sumo Logic, see [Search Basics](/docs/search/get-started-with-search/search-basics).
+This topic has information about how to search the Sumo Logic platform for Records and Signals that have been forwarded from Cloud SIEM. For more information about performing log searches in Sumo Logic, see [Search Basics](/docs/search/get-started-with-search/search-basics).
 
-## Partitions with CSE data
-This section has information about the Sumo Logic partitions that contain CSE data.
+## Partitions with Cloud SIEM data
+This section has information about the Sumo Logic partitions that contain Cloud SIEM data.
 
-### Partitions for CSE Records
+### Partitions for Cloud SIEM Records
 
-In CSE, normalized Records are categorized by [Record type](/docs/cse/schema/cse-record-types/), for example, Audit, Authentication, Network, NetworkDHCP, and so on.
+In Cloud SIEM, normalized Records are categorized by [Record type](/docs/cse/schema/cse-record-types/), for example, Audit, Authentication, Network, NetworkDHCP, and so on.
 
 In Sumo Logic, Records are stored in partitions, which are indexes that enable better search performance. The table below shows which partition each Record type is stored in. Note that some partitions contain multiple Record types.
 
-| CSE Record type                   | Sumo Logic partition      |
+| Cloud SIEM Record type                   | Sumo Logic partition      |
 |:-----------------------------------|:---------------------------|
 | Audit                             | sec_record_audit          |
 | AuditChange                       | sec_record_audit          |
@@ -44,7 +44,7 @@ There is a separate partition for forwarded raw messages for which Records were 
 
 ### Partition for unparsed or unmapped messages
 
-| CSE Record Type | Sumo Logic partition |
+| Cloud SIEM Record Type | Sumo Logic partition |
 |:-----------------|:----------------------|
 | FailedRecord    | sec_record_failure   |
 
@@ -54,25 +54,25 @@ Within a FailedRecord, `fields.reason` will contain the reason why the FailedRec
 _index=sec_record_failure | fields %fields.reason
 ```
 
-### Partition for CSE Signals
+### Partition for Cloud SIEM Signals
 
-CSE Signals are retained in the **sec_signal** partition. Signals are saved in JSON format, and support search by keyword and nested attributes.
+Cloud SIEM Signals are retained in the **sec_signal** partition. Signals are saved in JSON format, and support search by keyword and nested attributes.
 
 The **sec_signal** partition is automatically generated, and its contents are retained for two years, at no additional cost.
 
 ## About the Security Record Details view
 
-When you query CSE Records or Signalsin a Sumo Logic log search tab, the contents of each Record or Signal are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it can't be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
+When you query Cloud SIEM Records or Signalsin a Sumo Logic log search tab, the contents of each Record or Signal are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it can't be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
 
 <img src={useBaseUrl('img/cse/security-record-details.png')} alt="Security records details" width="600"/>
 
 
 ## Search Records or from the Partitions page
 
-If you have the **View Partitions** role capability, you can search CSE partitions from the **Partitions** page in the Sumo Logic UI.
+If you have the **View Partitions** role capability, you can search Cloud SIEM partitions from the **Partitions** page in the Sumo Logic UI.
 
 1. Go to **Manage Data > Logs > Partitions**.
-1. The partitions that contain CSE Records begin with the string "sec_record".<br/><img src={useBaseUrl('img/cse/security-partitions.png')} alt="Security partitions" width="800"/>  
+1. The partitions that contain Cloud SIEM Records begin with the string "sec_record".<br/><img src={useBaseUrl('img/cse/security-partitions.png')} alt="Security partitions" width="800"/>  
 2. To search for all content in the partition, click the icon that appears next to a Partition name when you hover over a row.  
 3. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the logs created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](#search-all-record-partitions), below.
 
@@ -128,7 +128,7 @@ _index = sec_record_audit OR _index = sec_record_network
 
 ## Search all Record partitions
 
-To search all Records in all of the in partitions that contain CSE Records, use an asterisk (`*`)wildcard.
+To search all Records in all of the in partitions that contain Cloud SIEM Records, use an asterisk (`*`)wildcard.
 
 ```sql
 _index = sec_record_*
@@ -144,7 +144,7 @@ _index = sec_record_network objectType=NetworkHTTP
 
 ## Return a count of Records by Record type 
 
-You can use the count operator to aggregate your query results. In the following query, we use the asterisk wildcard to search across all partitions that contain CSE Records, and count the results by `objectType`, which contains the Record type. The following query returns the count of Records of each type. 
+You can use the count operator to aggregate your query results. In the following query, we use the asterisk wildcard to search across all partitions that contain Cloud SIEM Records, and count the results by `objectType`, which contains the Record type. The following query returns the count of Records of each type. 
 
 ```
 _index = sec_record_*
@@ -154,13 +154,13 @@ _index = sec_record_*
 
 ## Search by keyword
 
-You can search CSE fields by keyword, for example:
+You can search Cloud SIEM fields by keyword, for example:
 
 `_index=sec_record_authentication kerberos`
 
 ### Referencing nested JSON fields
 
-The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
+The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the Cloud SIEM schema.
 
 <img src={useBaseUrl('img/cse/nested-fields.png')} alt="Nested fields" width="800"/>
 
@@ -178,4 +178,4 @@ _index=sec_record_authentication
     ```
     _index = sec_record_* srcDevice_ip=*
     ```  
-* The partitions that contain CSE Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) in the same query.
+* The partitions that contain Cloud SIEM Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) in the same query.

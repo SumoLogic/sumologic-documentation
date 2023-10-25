@@ -16,7 +16,7 @@ When designing your deployment, it’s important to consider how logs will be in
 
 ## Account caps for storage and ingestion
 
-Sumo Logic imposes account caps on uploads to better protect your account from using On-Demand Capacity.
+Sumo Logic imposes account caps on uploads to better protect your account from exceeding data limits.
 
 * Storage usage is calculated by taking the average of your total storage usage in the current billing cycle. For example, if your storage limit is 500TB, you will be charged for extra on-demand storage only if the average of your total storage for the month exceeds 500TB at the end of your billing cycle, or if there is an excessive spike in usage (see the next bullet item).
 * Storage usage can exceed between 4 times to 10 times the daily maximum (depending on account size). Even if the cap is exceeded, log data is kept safely at the Collector level until quota is made available, at which time the data is ingested. 
@@ -60,7 +60,7 @@ Throttling is enabled across all Collectors in an account. Sumo Logic measures t
 Throttling is not related to the monthly quota for an account. An account can be throttled when it exceeds the multiplier of the per-minute ingestion rate while being well within the monthly ingestion quota.
 :::
 
-Throttling is in place to protect both our customers and Sumo Logic from sudden and unexpectedly large increases in volume, which could result in your account using On-Demand Capacity, as well as ingest performance problems on the service side.
+Throttling is in place to protect both our customers and Sumo Logic from sudden and unexpectedly large increases in volume, as well as ingest performance problems on the service side.
 
 The multiplier for the per day average ingestion total varies based on the account size. 
 

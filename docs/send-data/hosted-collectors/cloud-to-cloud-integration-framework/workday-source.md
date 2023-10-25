@@ -78,7 +78,7 @@ To configure a Workday Source, follow the steps below:
 
 5. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata/) is stored in a searchable field called `_sourceCategory`.
 
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse/). When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include the below fields as custom log metadata Fields):
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include the below fields as custom log metadata Fields):
    * `_siemVendor`: Workday
    * `_siemProduct`: Workday
    * `_siemFormat`: JSON

@@ -12,10 +12,10 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about Outlier rules and how to create them in the CSE UI.
+This topic has information about Outlier rules and how to create them in the Cloud SIEM UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About Outlier rules
@@ -26,9 +26,9 @@ Outlier rules allow you to generate a Signal when behavior by an Entity (such as
 * Spike in EC2 instance creation
 * Abnormal volume of data sent to third-party storage
 
-An Outlier rule is different from other CSE rule types in that the threshold for firing a signal is learned from the baseline. The rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
+An Outlier rule is different from other Cloud SIEM rule types in that the threshold for firing a signal is learned from the baseline. The rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
 
-For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, CSE builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, CSE creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
+For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, Cloud SIEM creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
 
 Watch this micro lesson to learn about Outlier rules.
 
@@ -46,7 +46,7 @@ Watch this micro lesson to learn about Outlier rules.
 import Iframe from 'react-iframe'; 
 
 ## Example rule
-The screenshot below shows an Outlier rule in the CSE rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
+The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
 
 <img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition"/>
 
@@ -71,7 +71,7 @@ The settings in the **If Triggered** section are divided into two subsections, o
 **Outlier Model Configuration**
 1. **Detect an outlier for**. Select the aggregate function that applies to the field in the matched Records to build a normal behavior baseline on.
 1. **of the record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
-1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining Record fields within the field window. For the expression, you can use the syntax described in [CSE Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
+1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining Record fields within the field window. For the expression, you can use the syntax described in [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
 1. **Minimum Count Value** (default value 1). Enter the absolute minimum value below which an Outlier Signal will not be generated.
 

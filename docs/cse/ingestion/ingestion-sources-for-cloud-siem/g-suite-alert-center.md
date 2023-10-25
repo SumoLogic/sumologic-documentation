@@ -2,7 +2,7 @@
 id: g-suite-alert-center
 title: G Suite Alert Center - Cloud SIEM
 sidebar_label: G Suite Alert Center
-description: Collect log messages from G Suite Alert Center to be parsed by CSE's system parser for G Suite Alert Center.
+description: Collect log messages from G Suite Alert Center to be parsed by Cloud SIEM's system parser for G Suite Alert Center.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,10 +21,10 @@ In this step, you configure an HTTP Source to collect G Suite Alert Center log m
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If all sources in this collector will be G Suite Alert Center, add an additional field with key `_parser` and value */Parsers/System/Google/G Suite Alert Center*.
     :::note
-    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
     :::
 
 ### Configure an HTTP Source
@@ -47,7 +47,7 @@ In this step, you configure an HTTP Source to collect G Suite Alert Center log m
 
 ## Step 2: Verify ingestion
 
-1. In this step, you verify that your logs are successfully making it into CSE. 
+1. In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
 1. On the Log Mappings page search for "G Suite Alert Center" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/gsuite-record-volume.png')} alt="GSuite record volume" width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for G Suite Alert Center security records. <br/><img src={useBaseUrl('img/cse/gsuite-search.png')} alt="GSuite search" width="400"/> 

@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Entity Groups Inventory Enhancements
 
-We are happy to announce some important enhancements to the [Entity Group](/docs/cse/records-signals-entities-insights/create-an-entity-group/) feature in Cloud SIEM Enterprise (CSE).
+We are happy to announce some important enhancements to the [Entity Group](/docs/cse/records-signals-entities-insights/create-an-entity-group/) feature in Cloud SIEM.
 
 With this release, Entity Groups can now use *any* attribute available in your inventory data - including non-normalized attributes. (Previously, only the `group` attribute was available.) Non-normalized attributes can be used by adding the `fields.` prefix. 
 

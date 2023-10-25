@@ -14,7 +14,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | View Collectors	| View collectors and sources that have already been installed or added.|
 | Manage Collectors	| [View and manage](/docs/send-data) installed and hosted collectors as well as sources. |
 | Manage Ingest Budgets	| Allows you to manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different collectors, but not creating or deleting them.|
-| Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid using [On-Demand Capacity](/docs/manage/manage-subscription/cloud-flex-accounts#account-limitations-and-guidelines), and to determine when you need to upgrade your account.|
+| Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid exceeding your data limits, and to determine when you need to upgrade your account.|
 | View Field Extraction Rules	| View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which accelerate your search process by automatically parsing fields as log messages are ingested.|
 | View Fields	| View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs.|
 | Manage Fields	| Manage fields. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View Field Extraction Rules capabilities.|
@@ -123,13 +123,13 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Observability | Configure | Configure playbook execution information. |   
 
 
-## Cloud SIEM Enterprise
+## Cloud SIEM
 
-[Cloud SIEM Enterprise](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
+[Cloud SIEM](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
-| View Cloud SIEM Enterprise | | Users with a role that grants this capability will see a **Cloud SIEM Enterprise** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
+| View Cloud SIEM | | Users with a role that grants this capability will see a **Cloud SIEM** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
 | Insights | Comment on Insights | Add comments to [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui). |
 | Insights | Create Insights	| Create Insights.|
 | Insights | Delete Insights	| Delete Insights.|
