@@ -2,12 +2,12 @@
 id: data-lake
 title: Security Data Lake
 sidebar_label: Security Data Lake
-description: Learn about using Cloud Security Analytics as your security data lake. 
+description: Learn about using Cloud Infrastructure Security as your security data lake. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use your Sumo Logic environment as a security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis using Cloud Security Analytics. 
+You can use your Sumo Logic environment as a security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis using Cloud Infrastructure Security. 
 
 ## About data lakes
 
@@ -75,7 +75,7 @@ Sumo Logic uses role-based access control (RBAC), data classification, retention
 
 #### Step 7: Analyze security data
 
-Once you connect your data sources in Sumo Logic, you can start analyzing security data. Cloud Security Analytics is built on a security-first principle. It is designed to analyze security data with real-time threat detection, compliance reporting, and dashboards. Our cloud-native architecture unifies security events and investigations across multiple cloud platforms, including AWS, Azure, and Google Cloud Platform.
+Once you connect your data sources in Sumo Logic, you can start analyzing security data. Cloud Infrastructure Security is built on a security-first principle. It is designed to analyze security data with real-time threat detection, compliance reporting, and dashboards. Our cloud-native architecture unifies security events and investigations across multiple cloud platforms, including AWS, Azure, and Google Cloud Platform.
 
 #### Step 8: Monitor your data
 
@@ -83,7 +83,7 @@ With security data flowing in, you can continuously monitor and analyze your dat
 
 ## Collect logs from external data lakes​
 
-You can collect logs from external data lakes and use that data in Cloud Security Analytics. See the following articles for more information:
+You can collect logs from external data lakes and use that data in Cloud Infrastructure Security. See the following articles for more information:
 * [Amazon Security Lake Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-security-lake-source)
 * [Collect Logs from Palo Alto Networks Cortex Data Lake](/docs/send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex)
 

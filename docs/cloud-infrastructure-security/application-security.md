@@ -2,12 +2,12 @@
 id: application-security
 title: Application Security
 sidebar_label: Application Security
-description: Learn about using Cloud Security Analytics for application security. 
+description: Learn about using Cloud Infrastructure Security for application security. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-To use Cloud Security Analytics for application security, you can use [pre-built apps](#pre-built-apps-for-application-security), or create your own queries.
+To use Cloud Infrastructure Security for application security, you can use [pre-built apps](#pre-built-apps-for-application-security), or create your own queries.
 
 ## About application security
 
@@ -19,7 +19,7 @@ An IT team must see its full security posture to give applications the protectio
 
 ### Protecting applications during the CI/CD lifecycle
 
-Cloud Security Analytics offers full-stack visibility throughout the following phases of the CI/CD lifecycle, so you can monitor security, increase reliability, and speed up processes all in one place:
+Cloud Infrastructure Security offers full-stack visibility throughout the following phases of the CI/CD lifecycle, so you can monitor security, increase reliability, and speed up processes all in one place:
 * **Coding**. Manage access to sources of code and building environments.
 * **Building and testing**. Ensure code does not introduce vulnerabilities before it is executed.
 * **Deploying and running**. Identify outage causes quickly to limit downtime.
@@ -27,7 +27,7 @@ Cloud Security Analytics offers full-stack visibility throughout the following p
 
 #### Coding
 
-Code environment and repository access should be monitored from a central location, such as a [data lake](/docs/cloud-security-analytics/data-lake/), enabling DevSecOps teams to see data from all applications in one place for complete visibility. This enhances a team’s capabilities to glean extra information from logs by adding contextual relationships to data and distinguishing static code.
+Code environment and repository access should be monitored from a central location, such as a [data lake](/docs/cloud-infrastructure-security/data-lake/), enabling DevSecOps teams to see data from all applications in one place for complete visibility. This enhances a team’s capabilities to glean extra information from logs by adding contextual relationships to data and distinguishing static code.
 
 Build tools and code repositories can become entry points for malicious code. With poisoned pipeline execution (PPE), attackers insert unauthorized code into these environments, which runs as part of the CI/CD lifecycle to infect the larger application. Visualizing who is in
 these environments, when and where they are accessing them, and what changes they are making helps identify problematic user behavior. Sumo Logic’s consolidated log data uses additional context to enrich access information, helping identify unauthorized access and code insertion. 

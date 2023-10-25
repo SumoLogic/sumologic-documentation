@@ -3783,5 +3783,11 @@
   "/docs/manage/security/audit-event-index": "/docs/manage/security/audit-indexes/audit-event-index",
   "/docs/manage/security/search-audit-index": "/docs/manage/security/audit-indexes/search-audit-index",
   "/docs/manage/security/audit-index-access": "/docs/manage/security/audit-indexes/audit-index-access",
-  "/cid/-1": "/"
+  "/cid/-1": "/",
+  "/docs/cloud-security-analytics": "/docs/cloud-infrastructure-security",
+  "/docs/cloud-security-analytics/introduction-to-cloud-security-analytics": "/docs/cloud-infrastructure-security/introduction-to-cloud-infrastructure-security",
+  "/docs/cloud-security-analytics/data-lake": "/docs/cloud-infrastructure-security/data-lake",
+  "/docs/cloud-security-analytics/audit-and-compliance": "/docs/cloud-infrastructure-security/audit-and-compliance",
+  "/docs/cloud-security-analytics/threat-detection-and-investigation": "/docs/cloud-infrastructure-security/threat-detection-and-investigation",
+  "/docs/cloud-security-analytics/application-security": "/docs/cloud-infrastructure-security/application-security"
 }
