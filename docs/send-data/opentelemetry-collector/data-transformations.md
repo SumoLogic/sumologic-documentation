@@ -33,13 +33,9 @@ processors:
 The configuration consists of two sections: `attributes/extract` and `transform/replace`, representing attribute and transform processing, respectively.
 
 - In the `attributes/extract` section, the `actions` key specifies the extraction action. In this example, the action extracts the password from an attribute value using a regular expression pattern. The pattern `^password=(?P<password>\\w+)$` captures the password value after `password=` and assigns it to the `password` attribute.
-
 - The `transform/replace` section defines a transformation operation using the Transform Processor. Within the `log_statements` context, the following statements are executed:
-
   - The `set` function is used to hash the `password` attribute using the SHA256 hash algorithm. The resulting hash value replaces the original `password` value.
-
   - The `set` function is used to concatenate the string prefix `"hashed"` with the hashed `password`. This creates a new `password` value with the prefix included.
-
   - The `replace_pattern` function is applied to the `message` attribute. If the value matches the pattern `"password=(test)"`, the matched section is replaced with the hashed `password` attribute.
 
 ### Example 2: Hashing an attribute
@@ -89,6 +85,6 @@ processors:
 
 In this example, the `replace_pattern` function is used to mask and reformat the `attributes["name"]` field. If the field value matches the regex pattern `^kubernetes_([0-9A-Za-z]+_)`, the matched section is replaced with `k8s.` and the captured group value (`$$1`).
 
-Please refer to the [OTTL Functions README](https://github.com/rnishtala-sumo/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md) for more details on the available OTTL functions and their usage.
+Refer to the [OTTL Functions README](https://github.com/rnishtala-sumo/opentelemetry-collector-contrib/blob/main/pkg/ottl/ottlfuncs/README.md) for more details on the available OTTL functions and their usage.
 
 By incorporating these examples into your OpenTelemetry configuration, you can easily apply string hashing and masking techniques, leveraging supported digest algorithms (such as SHA256, SHA1, and FNV), and ensuring the protection of sensitive information within your telemetry data.
