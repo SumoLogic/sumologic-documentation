@@ -200,7 +200,6 @@ Follow the below steps to configure the Squadcast webhook.
 
 ### Installing the Squadcast app
 
-This section has instructions for installing the Sumo Logic app for Squadcast.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
