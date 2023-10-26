@@ -18,7 +18,7 @@ The Sumo Logic App for Netlify ingests site deployment events into Sumo Logic th
 
 ## Log types
 
-### Sample log messages
+### Sample log message
 
 ```json
 {
