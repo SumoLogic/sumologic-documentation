@@ -105,7 +105,6 @@ _sourceCategory=webhook/hasura
 
 ### Installing the Hasura app
 
-This section has instructions for installing the Sumo Logic app for Hasura.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
