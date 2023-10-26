@@ -1,7 +1,7 @@
 ---
 id: automation-service-integration-framework
-title: Automation Service Integration Framework
-sidebar_label: Automation Service Integration Framework
+title: Integration Framework for the Automation Service
+sidebar_label: Integration Framework
 description: Learn about the framework used for integrations. 
 ---
 

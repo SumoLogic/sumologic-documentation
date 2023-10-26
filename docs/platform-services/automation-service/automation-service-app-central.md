@@ -1,6 +1,6 @@
 ---
 id: automation-service-app-central
-title: App Central for the Automation Service
+title: App Central in the Automation Service
 sidebar_label: App Central
 description: Learn how to use App Central to get new applications and tools. 
 ---

@@ -1,6 +1,6 @@
 ---
 id: automation-service-playbooks
-title: Playbooks
+title: Playbooks in the Automation Service
 sidebar_label: Playbooks
 description: Learn about playbooks. A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.   
 ---

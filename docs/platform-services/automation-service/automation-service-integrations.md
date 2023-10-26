@@ -1,6 +1,6 @@
 ---
 id: automation-service-integrations
-title: Integrations
+title: Integrations in the Automation Service
 sidebar_label: Integrations
 description: Learn how integrations are connectors to applications from industry-leading network and security vendors.   
 ---

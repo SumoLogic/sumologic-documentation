@@ -1,7 +1,7 @@
 ---
 id: about-automation-service
 title: About the Automation Service
-sidebar_label: About the Automation Service
+sidebar_label: About
 description: Get an overview of how the Automation Service allows you to automate actions. 
 ---
 
