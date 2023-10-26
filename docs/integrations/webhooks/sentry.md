@@ -559,7 +559,6 @@ Follow the below steps to configure the Sentry Webhook.
 
 ### Installing the Sentry app
 
-This section has instructions for installing the Sumo Logic app for Sentry.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
