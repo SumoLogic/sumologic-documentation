@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic is pleased to announce two enhancements to Cloud SIEM related to custom Insight statuses.
 
-First, the In Progress status can now be disabled (not deleted). Many customers create multiple statuses that all represent an "In Progress" state so this option can help reduce confusion in those cases.
+First, the In Progress status can now be disabled (not deleted). Many customers create multiple statuses that all represent an "In Progress" state, so this option can help reduce confusion in those cases.
 
 Second, while Cloud SIEM has long supported custom Insight statuses, Insights in any custom status have been reported together (as one group on the HUD or using the same color in other instances). To improve this experience, custom statuses can now be assigned a unique color:
 
