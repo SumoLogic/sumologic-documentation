@@ -12,7 +12,7 @@ Integrations are connectors to applications from industry-leading network and se
 Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service. 
 
 :::info
-Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
+Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
 :::
 
 :::note
@@ -21,7 +21,11 @@ Before you can use actions from an integration resource, you must [configure the
 
 ## View integrations
 
-The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Central](/docs/cse/automation-service/automation-service-app-central/#install-an-integration-from-app-central), or [create a custom integration](/docs/cse/automation-service/automation-service-examples/).
+The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central).
+
+:::tip
+You can also create a custom integration. For an example, see how to [create a custom integration for Cloud SIEM](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+:::
 
 1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations**, select **Automation**.
