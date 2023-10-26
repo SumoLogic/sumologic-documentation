@@ -110,7 +110,6 @@ Follow the below steps to configure the Mailgun webhook.
 
 ### Installing the Mailgun app
 
-This section has instructions for installing the Sumo Logic app for Mailgun.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
