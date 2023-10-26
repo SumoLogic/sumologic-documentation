@@ -115,7 +115,6 @@ Follow the steps to configure the iLert Webhook.
 
 ### Installing the iLert app
 
-This section has instructions for installing the Sumo Logic app for iLert.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
