@@ -135,7 +135,6 @@ Follow the below steps to configure the Split webhook.
 
 ### Installing the Split app
 
-This section has instructions for installing the Sumo Logic app for Split.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
