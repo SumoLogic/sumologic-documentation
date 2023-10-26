@@ -106,7 +106,6 @@ Follow the below steps to configure the Stripe webhook.
 
 ### Installing the Stripe app
 
-This section has instructions for installing the Sumo Logic app for Stripe.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
