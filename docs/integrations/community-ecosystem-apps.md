@@ -41,7 +41,7 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [Citrix Netscaler VPN](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/VPN) (Rating: None)
 * [Citrix XenServer](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/XenServer) (Rating: None)
 * [CloudFlare](https://github.com/SumoLogic/sumologic-content/tree/master/Cloudflare) (Rating: None)
-* [ExtraHop Reveal](https://github.com/SumoLogic/sumologic-content/tree/master/Extrahop%20Reveal(X)) (Rating: None)
+* [ExtraHop Reveal](https://github.com/SumoLogic/sumologic-content/tree/master/ExtraHop%20Reveal(x)%20360) (Rating: None)
 * [Fortinet Fortigate Firewall](https://github.com/SumoLogic/sumologic-content/tree/master/Fortinet/Fortigate_Firewall) (Rating: 4.5)
 * [F5 Distributed Cloud Services](https://github.com/SumoLogic/sumologic-content/tree/master/F5) (Rating: 4)
 * [GCP Loud Balancer Metrics](https://github.com/SumoLogic/sumologic-content/tree/master/GCP/Load_Balancer_Metrics) (Rating: 4)
