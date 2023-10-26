@@ -2,14 +2,14 @@
 id: linux-os-syslog
 title: Linux OS Syslog - Cloud SIEM
 sidebar_label: Linux OS Syslog
-description: Configure a syslog source to ingest Linux OS log messages to be parsed by CSE’s system parser for Linux OS Syslog.
+description: Configure a syslog source to ingest Linux OS log messages to be parsed by Cloud SIEM’s system parser for Linux OS Syslog.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting Linux OS Syslog log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Linux OS Syslog log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
-Current distributions of Linux write logs using Rsyslog and Systemd-journal. CSE currently supports Rsyslog and Systemd-journal logging in Linux.
+Current distributions of Linux write logs using Rsyslog and Systemd-journal. Cloud SIEM currently supports Rsyslog and Systemd-journal logging in Linux.
 
 ## Supported Linux distributions and processes
 
@@ -57,8 +57,8 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
     source. The string that you supply will be saved in a metadata field
     called `_sourceCategory`. 
 1. **Fields**. 
-    * If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
-    * If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Linux/Linux OS Syslog*. This will cause all sources on the collector to use the specified parser. It’s also possible to configure individual sources to forward to CSE, as described in the following section
+    * If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
+    * If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Linux/Linux OS Syslog*. This will cause all sources on the collector to use the specified parser. It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section
 1. Click **Save**.
 
 ### Configure a Syslog Source
@@ -77,7 +77,7 @@ In this step, you configure a Syslog Source to collect Linux OS log messages. Yo
 1. **Port**. Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](#step-2-configure-linux-os) below.
 1. **Fields**. 
-    * If you have not configured the Installed Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
+    * If you have not configured the Installed Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     * If you have not configured the Installed Collector to parse all sources in the collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Linux/Linux OS Syslog*. 
 1. Click **Save**.
 
@@ -87,8 +87,8 @@ In this step, you configure forwarding to the the Syslog Source. Follow the ins
 
 ## Step 3: Verify Ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
+1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
 1. On the **Log Mappings** page search for "Linux OS" and check under  **Record Volume.** A list of mappers for Linux OS Syslog will appear and you can see if logs are coming in. <br/><img src={useBaseUrl('img/cse/record-volume.png')} alt="Record volume" width="600"/>
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Linux OS security records.<br/><img src={useBaseUrl('img/cse/search.png')} alt="Search" width="400"/>  

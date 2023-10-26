@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-cosmos-db-for-postgresql.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Cosmos DB for PostgreSQL](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction) is a managed service for PostgreSQL powered by the Citus open source extension which enables you to build highly scalable relational apps. This integration helps in identifying configurations errors, analysing executed statements, and monitoring resource usage of individual nodes in a cluster.
+[Azure Cosmos DB for PostgreSQL](https://learn.microsoft.com/en-us/azure/cosmos-db/postgresql/introduction) is a managed service for PostgreSQL powered by the Citus open source extension which enables you to build highly scalable relational apps. This integration helps in identifying configurations errors, analyzing executed statements, and monitoring resource usage of individual nodes in a cluster.
 
 ## Log and Metric types
 

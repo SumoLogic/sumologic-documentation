@@ -106,7 +106,7 @@ Sumo Logic will never decrease the quantization interval that you specify. We’
 
 #### How Sumo chooses rollup table and quantization interval
 
-If you don't specify a rollup type in your query, Sumo Logic will run the query using the `avg` rollup, unless the query contains a `max` or `min` aggregation after the first pipe, in which case the query will run against the `max` or `min` rollup respectively.
+If you don't specify a rollup type in your query, Sumo Logic will run the query using the `avg` rollup.
 
 The table below shows how Sumo Logic selects a quantization interval based on query time range, in the case that you do not specify those options explicitly using the `quantize` operator.
 
@@ -232,58 +232,12 @@ If the `quantize` operator in your query is preceded by another metrics operator
 
 #### Quantize with no rollup type specified  
 
-If your metric query uses the `quantize` operator without specifying a rollup type, internally, Sumo Logic produces the default rollup, (typically, `avg`).
+If your metrics query uses the `quantize` operator without specifying a rollup type, internally, Sumo Logic uses the default `avg` rollup.
 
-
-<table>
-  <tr>
-   <td><strong>Query</strong>
-   </td>
-   <td><strong>What Happens</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><code>metric=CPU_Idle | quantize to 1m</code>
-   </td>
-   <td>Use <code>avg</code> rollup.
-   </td>
-  </tr>
-  <tr>
-   <td><code>metric=CPU_Idle | quantize to 1m | min</code>
-   </td>
-   <td>Use <code>min</code> rollup.
-   </td>
-  </tr>
-  <tr>
-   <td><code>metric=CPU_Idle | quantize to 1m | max</code>
-   </td>
-   <td>Use <code>max</code> rollup.
-   </td>
-  </tr>
-  <tr>
-   <td><code>metric=CPU_Idle | quantize to 1m | sum</code>
-   </td>
-   <td>Use <code>avg</code> rollup.
-   </td>
-  </tr>
-  <tr>
-   <td><code>metric=CPU_Idle | quantize to 1m | count</code>
-   </td>
-   <td>Use <code>avg</code> rollup.
-   </td>
-  </tr>
-  <tr>
-   <td><code>metric=CPU_Idle | quantize to 1m | avg</code>
-   </td>
-   <td>Use <code>avg</code> rollup.
-   </td>
-  </tr>
-</table>
-
-#### Quantize operator is followed by a parse operator
-
-The descriptive points might be passed through without change. For example, the `parse` operator changes time series metadata but lets data points through unchanged. For example:
+For example, given this query:
 
 ```sql
-metric=CPU_Idle | quantize to 5s | parse field=_sourceHost * as host | avg by cluster
+metric=CPU_Idle | quantize to 15m
 ```
+
+15-minute interval and `avg` rollup will be used.

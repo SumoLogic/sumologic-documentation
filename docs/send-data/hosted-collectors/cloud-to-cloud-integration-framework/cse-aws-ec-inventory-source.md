@@ -1,22 +1,22 @@
 ---
 id: cse-aws-ec-inventory-source
-title: CSE AWS EC2 Inventory Source
-sidebar_label: CSE AWS EC2 Inventory
+title: Cloud SIEM AWS EC2 Inventory Source
+sidebar_label: Cloud SIEM AWS EC2 Inventory
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/>
 
-The CSE AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
+The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
-For information on how inventory data is used in Cloud SIEM Enterprise, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
+For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
 ## Inventory data mapped
 
-The table below shows the AWS source fields that CSE maps to CSE schema attributes.
+The table below shows the AWS source fields that Cloud SIEM maps to Cloud SIEM schema attributes.
 
-| CSE schema attribute | AWS source field |
+| Cloud SIEM schema attribute | AWS source field |
 | :-- | :-- |
 |`ip` |`PublicIpAddress`. If null, then `PrivateIpAddress`|
 |`hostname` |`PublicDnsName`. If null, then `PrivateDnsName`|
@@ -28,15 +28,15 @@ The [IAM policy](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-polici
 
 ## States
 
-The CSE AWS EC2 Inventory Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
+The Cloud SIEM AWS EC2 Inventory Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing Health Events.
 
-The CSE AWS EC2 Inventory Source goes through the following states when created:
+The Cloud SIEM AWS EC2 Inventory Source goes through the following states when created:
 
 1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
 1. **Started**. A collection task is created on the Hosted Collector.
 1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with CSE AWS EC2 Inventory.
-1. **Collecting**. The Source is actively collecting data from CSE AWS EC2 Inventory.
+1. **Authenticated**. The Source successfully authenticated with Cloud SIEM AWS EC2 Inventory.
+1. **Collecting**. The Source is actively collecting data from Cloud SIEM AWS EC2 Inventory.
 
 If the Source has any issues during any one of these states, it is placed in an **Error** state.
 
@@ -44,18 +44,18 @@ When you delete the Source, it is placed in a **Stopping** state. When it has 
 
 On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
 
-## Create a CSE AWS EC2 Inventory Source
+## Create a Cloud SIEM AWS EC2 Inventory Source
 
-When you create a CSE AWS EC2 Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Cloud SIEM AWS EC2 Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a CSE AWS EC2 Inventory Source:
+To configure a Cloud SIEM AWS EC2 Inventory Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS EC2 Inventory**.<br/>![EC2 inventory icon.png](/img/send-data/EC2-inventory-icon.png)
 1. Enter a **Name** for the Source. The description is optional. <br/><img src={useBaseUrl('/img/send-data/AWS-EC2-input-pane.png')} alt="AWS EC2 input pane" style={{border: '1px solid black'}} width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`: Amazon
     * `_siemProduct`: AWS EC2 Inventory
     * `_siemDataType`: Inventory
@@ -91,8 +91,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter | Type | Required | Description | Access |
 |:--|:--|:--|:--|:--|
 | config | JSON Object | Yes | Contains the configuration parameters for the Source. | n/a |
-| schemaRef | JSON Object | Yes | Use `{"type":"CSE AWS EC2 Inventory"}`. | not modifiable |
-| sourceType | String | Yes | Use `Universal` for CSE AWS EC2 Inventory Source. | not modifiable |
+| schemaRef | JSON Object | Yes | Use `{"type":"Cloud SIEM AWS EC2 Inventory"}`. | not modifiable |
+| sourceType | String | Yes | Use `Universal` for Cloud SIEM AWS EC2 Inventory Source. | not modifiable |
 
 ### Config Parameters
 
@@ -134,7 +134,7 @@ The following table shows the ****config**** parameters.
       "state":"Collecting"
     },
     "schemaRef":{
-      "type":"CSE AWS EC2 Inventory"
+      "type":"Cloud SIEM AWS EC2 Inventory"
     },
     "sourceType":"Universal"
   }
@@ -163,7 +163,7 @@ The following table shows the ****config**** parameters.
       "state":"Collecting"
     },
     "schemaRef":{
-      "type":"CSE AWS EC2 Inventory"
+      "type":"Cloud SIEM AWS EC2 Inventory"
     },
     "sourceType":"Universal"
   }

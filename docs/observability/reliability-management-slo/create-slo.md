@@ -127,7 +127,7 @@ Follow the instructions below based on the query type:
 
 ## Create an SLO from Log Search page
 
-You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and re-use queries from existing dashboard panels.
+You can create SLOs directly from your Sumo Logic log search. This allows you to validate queries, quickly create SLOs, and reuse queries from existing dashboard panels.
 
 1. Enter a new **Log search** query (or use an existing one).<br/><img src={useBaseUrl('img/observability/log-search.png')} alt="log search" />
 1. Click the **More Actions** (kebab icon) dropdown menu.<br/><img src={useBaseUrl('img/observability/slo-more-actions-kebab.png')} alt="More Actions" width="400"/>
@@ -268,7 +268,7 @@ You can see the list of all saved filter views by clicking on the funnel icon.
 
 <img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="ListOfSavedFilters.png" />
 
-You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon. 
+You can make further modifications to a saved filter view later using kebab menu options next to the funnel icon.
 
 <img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="MenuOptionsForAnExistingFilter.png" />
 

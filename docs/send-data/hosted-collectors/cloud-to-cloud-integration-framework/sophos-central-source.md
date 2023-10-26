@@ -20,7 +20,7 @@ The Sophos Central Source ingests:
 To link the endpoint data to the alert, you can map the `alert.ManagedAgent.ID` field from the alert response with the `endpointID` field from the endpoint response.
 :::
 :::note
-This Source is not available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
+This Source is available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
 :::
 
 ## States
@@ -67,7 +67,7 @@ To configure a Sophos Central Source:
 1. Select **Sophos Central**.<br/><img src={useBaseUrl('img/send-data/sophos-central-source-icon.png')} alt="sophos-central-source-icon" width="100"/>
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/sophos-central-source.png')} alt="sophos-central-source" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Sophos
    * `_siemProduct`: Sophos Central
    * `_siemFormat`: JSON

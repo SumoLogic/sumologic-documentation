@@ -15,7 +15,7 @@ To view details about a Partition:
     ![view-edit-partition-pane.png](/img/partitions-data-tiers/view-edit-partition-pane.png)
 
     :::note
-    The information displayed for partitions that contain CSE Records varies from other partitions. You can tell if a partition contains CSE Records from its name: The names of the Sumo Logic partitions that contain CSE Records begin with the string `sec_record_`.  The detailed view for security partitions does not display Data Tier or a routing expression. Note also that you can’t edit a security partition, or configure data forwarding for it. CSE users can search security partitions, as described in [Searching for CSE Records in Sumo Logic](../../cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
+    The information displayed for partitions that contain Cloud SIEM Records varies from other partitions. You can tell if a partition contains Cloud SIEM Records from its name: The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`.  The detailed view for security partitions does not display Data Tier or a routing expression. Note also that you can’t edit a security partition, or configure data forwarding for it. Cloud SIEM users can search security partitions, as described in [Searching for Cloud SIEM Records in Sumo Logic](../../cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
     :::
 
  

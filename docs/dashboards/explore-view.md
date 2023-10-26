@@ -158,7 +158,9 @@ https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@clus
 
 ## Troubleshooting with Explore
 
-Explore navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+Explore navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This section walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+
+:::sumo micro lesson
 
 <Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
         width="854px"
@@ -170,6 +172,8 @@ Explore navigation capabilities allow you to quickly locate the object that need
         allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
+        
+:::
 
 ### Step 1: Analyzing the cluster
 
