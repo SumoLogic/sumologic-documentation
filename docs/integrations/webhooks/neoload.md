@@ -119,7 +119,6 @@ Follow the steps to configure the NeoLoad webhook.
 
 ### Installing the NeoLoad app
 
-This section has instructions for installing the Sumo Logic app for NeoLoad.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
