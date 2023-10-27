@@ -1,26 +1,12 @@
 ---
 id: rbac-for-indexes
-title: Index Based Search Filter
+title: Index Based and Advanced Search Filters
 description: The index based search filter allows you to use rule permissions to determine who gets access to certain indexes.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<!-- When the beta period is done, use the following to update the screen image and step 6 of /docs/manage/users-roles/roles/create-manage-roles/
-
-<img src={useBaseUrl('img/users-roles/create-new-role-index-based.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
-
-1. **Search Filter**. Use this option to control what log data users with this role can access. A search filter for a role defines what log data a user with that role can access. You can define an **Index based** filter to allow access to search indexes, or an **Advanced filter** to allow access only to the logs that match the search filter. You can filter for index keywords, wildcards, metadata fields, and logical operators. Sumo prepends the search filter to each query that a user with the role runs. The search filter is invisible to the user, but limits the log results that are returned. See [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role) for details and examples on constructing search filters for roles. 
-
- -->
-
-<!-- When the beta period is done, incorporate the following content into /docs/manage/users-roles/roles/construct-search-filter-for-role/ -->
 
 You can restrict access to specific data using roles. When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) filters to allow access to data based on [indexes](/docs/manage/partitions-data-tiers/), or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria. This ensures that users only see the data they are supposed to.
 
