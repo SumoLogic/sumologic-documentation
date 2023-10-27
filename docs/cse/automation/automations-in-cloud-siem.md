@@ -238,7 +238,7 @@ Legacy action | Description | Corresponding action <br/>in the Automation Servic
 
 #### Legacy enrichments
 
-In place of the following legacy enrichments, use the corresponding actions from [integrations](/docs/cse/automation-service/automation-service-integrations/) in the Automation Service. 
+In place of the following legacy enrichments, use the corresponding actions from [integrations](/docs/platform-services/automation-service/automation-service-integrations/) in the Automation Service. 
 
 | Legacy enrichment | PowerShell alternative in the Automation Service | Python alternative in the Automation Service | 
 | :-- | :-- | :-- |

@@ -11,7 +11,7 @@ A playbook is a predefined set of actions and conditional statements that run in
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-To run a playbook, add it to an automation. For where in Sumo Logic you can use the Automation Service to run automations, see [Where you can run automations](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations).  
+To run a playbook, add it to an automation. For places in Sumo Logic where you can use add playbooks to automations, see [Where you can run automations](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations).  
 
 :::note
 {@import ../../reuse/action-limits.md}

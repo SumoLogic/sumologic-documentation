@@ -23,9 +23,9 @@ Automations are accessible through the **Configuration** menu, under **Integrati
 
 The Automation Service does not include the full capabilities of Cloud SOAR. For example, the Automation Service only supports enrichment, nofification, and custom action types, and Automation Service playbooks can only be triggered from Cloud SIEM. There is also a limit to the number of actions you can run per hour. However, if you do have Cloud SOAR, then once you have upgraded to the Fall 2023 release of Cloud SOAR (currently in Beta), Cloud SIEM will use it to run automations instead of the Automation Service, giving Cloud SIEM access to the full capabilities of Cloud SOAR. 
 
-Over time, the legacy Insight Actions and Cloud SIEM Enrichment Service features will be deprecated in favor of this new service. (The new service includes integrations and actions corresponding to the legacy Insight Actions and can run existing Enrichment Service PowerShell scripts. The online documentation has [more information about migrating](/docs/cse/automation-service/automation-service-automations/#replace-legacy-actions-and-enrichments).) Note that the Automation Service is not yet available in the FedRAMP environment. 
+Over time, the legacy Insight Actions and Cloud SIEM Enrichment Service features will be deprecated in favor of this new service. (The new service includes integrations and actions corresponding to the legacy Insight Actions and can run existing Enrichment Service PowerShell scripts. The online documentation has [more information about migrating](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).) Note that the Automation Service is not yet available in the FedRAMP environment. 
 
-There is much more information about the Automation Service and how to use it in the [online documentation](/docs/cse/automation-service/).
+There is much more information about the Automation Service and how to use it in the [online documentation](/docs/cse/automation/about-automation-service-and-cloud-siem/).
 
 ### Minor Changes and Enhancements
 

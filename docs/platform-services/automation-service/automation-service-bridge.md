@@ -88,11 +88,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### Ubuntu
 
-1. Access the Automation Service:
-   1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-   1. Under **Integrations**, select **Automation**.
-   1. At the top of the screen, click **Manage Playbooks**.
-1. Click **?** in the upper-right.
+1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
+1. Click **?** in the upper-right corner of the UI.
 1. In the **Automation Bridge Manual** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine.
@@ -103,11 +100,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
 
 ### CentOS/RedHat
 
-1. Access the Automation Service:
-   1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-   1. Under **Integrations**, select **Automation**.
-   1. At the top of the screen, click **Manage Playbooks**.
-1. Click **?** in the upper-right.
+1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
+1. Click **?** in the upper-right  corner of the UI.
 1. In the **Automation Bridge Manual** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine.
@@ -166,7 +160,7 @@ If you are not using the SIEM:
 
 ### Configuring the automation bridge for high availability
 
-You may elect to deploy and register multiple bridges to your Cloud SIEM tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
+You may elect to deploy and register multiple bridges to your tenant for high availability. To cluster automation bridges together logically within the Automation Service and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 
@@ -177,7 +171,9 @@ ps faux |grep automation-bridge
 
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-On the SOAR instance, under **Automation > Bridge**, a list of live bridge agents will be displayed along with their status.
+On the **Bridge** tab in the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui), a list of live bridge agents will be displayed along with their status.
+
+<img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} alt="Bridge screen" width="800"/>
 
 ### Configuring the automation bridge for CyberArk
 

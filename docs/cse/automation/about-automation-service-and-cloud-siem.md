@@ -17,6 +17,8 @@ You interact with the Automation Service through [automations in Cloud SIEM](/do
 Before you can create automations in Cloud SIEM, you must first [configure role capabilities](#configure-role-capabilities-for-cloud-siem-automation).
 :::
 
+<!-- Micro lesson is commented out until it is adjusted to show that the Automation Service is no longer under Cloud SIEM.
+
 Watch this micro lesson to learn more about using the Automation Service to create automations in Cloud SIEM.
 
 <Iframe url="https://www.youtube.com/embed/kJawCYJhS4M?rel=0"
@@ -31,6 +33,8 @@ Watch this micro lesson to learn more about using the Automation Service to crea
      />
 
 import Iframe from 'react-iframe';
+
+-->
 
 ## Differences compared to Cloud SOAR
 

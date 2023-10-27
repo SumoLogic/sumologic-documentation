@@ -18,11 +18,11 @@ You can use the Automation Service to run automations for the following:
 
 ## Automation Service UI
 
-The Automation Service UI is composed of:
-* [**App Central**](/docs/platform-services/automation-service/automation-service-app-central). A central repository of integrations and playbooks you can install to your environment.<br/><img src={useBaseUrl('img/platform-services/app-central-main-screen.png')} alt="App Central screen" width="800"/> 
-* [**Playbooks**](/docs/platform-services/automation-service/automation-service-playbooks). Workflows you can run to perform automations. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" width="800"/>
-* [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations.md). Integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} alt="Integrations screen" width="800"/>
-* [**Bridges**](/docs/platform-services/automation-service/automation-service-bridge.md). Connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} alt="Bridge screen" width="800"/>
+The Automation Service UI is composed of the following tabs:
+* [**App Central**](/docs/platform-services/automation-service/automation-service-app-central). Displays a central repository of integrations and playbooks you can install to your environment.<br/><img src={useBaseUrl('img/platform-services/app-central-main-screen.png')} alt="App Central screen" width="800"/> 
+* [**Playbook**](/docs/platform-services/automation-service/automation-service-playbooks). Shows playbooks, which are workflows you can run to perform automations. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" width="800"/>
+* [**Integration**](/docs/platform-services/automation-service/automation-service-integrations.md). Lists integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} alt="Integrations screen" width="800"/>
+* [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge.md). Shows connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} alt="Bridge screen" width="800"/>
 
 ## Access the Automation Service
 

@@ -11,6 +11,8 @@ import Iframe from 'react-iframe';
 
 App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components. 
 
+<!-- Micro lesson is commented out until it is adjusted to show that App Central is no longer under Cloud SIEM but is part of the Automation Service.
+
 Watch this micro lesson to learn how to use App Central.
 
 <Iframe url="https://www.youtube.com/embed/cfJtReLrMFg?rel=0"
@@ -23,6 +25,8 @@ Watch this micro lesson to learn how to use App Central.
      allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
      allowfullscreen
      />
+
+-->
 
 ## Permissions
 
@@ -70,7 +74,7 @@ Integrations in App Central display a version number. The version indicates when
 
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.
 
-While [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks//) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
+While [Playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) in the Automation Service UI show the playbooks installed to your environment, the **Playbooks** tab in App Central shows you additional playbooks you can install.
 
 ### Install a playbook from App Central
 
