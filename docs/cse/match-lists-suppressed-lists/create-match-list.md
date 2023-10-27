@@ -10,15 +10,15 @@ This topic has information about Match Lists, their purpose and usage, and how t
 
 ## About Match Lists
 
-Match Lists are lists of important indicators and identifiers configured by a CSE analyst. Match Lists are typically used to define “allow lists” of items, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
+Match Lists are lists of important indicators and identifiers configured by a Cloud SIEM analyst. Match Lists are typically used to define “allow lists” of items, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
 Here’s a use case for using a Match List to define an allow list:  Vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. You can create a Match List called “vuln_scanners” that contains the IP addresses of your scanners.
 
 :::tip
-There’s no reason you can’t use a Match List to define “deny lists” of items. However, CSE’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
+There’s no reason you can’t use a Match List to define “deny lists” of items. However, Cloud SIEM’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
 :::
 
-Here’s an example of a Match List in the CSE UI, at **Content > Match Lists**. It is a list of trusted domains.  
+Here’s an example of a Match List in the Cloud SIEM UI, at **Content > Match Lists**. It is a list of trusted domains.  
 
 <img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
 
@@ -26,9 +26,9 @@ Note that the Match List has a **Target Column**, which you define when you crea
 
 ## Built-in rules refer to standard Match List names
 
-Many of CSE’s built-in rules assume the existence of one or more standard Match Lists. A standard Match List is a list that you need to create and populate so that CSE can leverage it. CSE rules take advantage of about 20 standard Match Lists. One example of a standard Match list is the “vuln_scanners” list mentioned in the previous section. There are analogous Match Lists for other entity types, such as “business_ips”, “verified_domains”, and so on.
+Many of Cloud SIEM’s built-in rules assume the existence of one or more standard Match Lists. A standard Match List is a list that you need to create and populate so that Cloud SIEM can leverage it. Cloud SIEM rules take advantage of about 20 standard Match Lists. One example of a standard Match list is the “vuln_scanners” list mentioned in the previous section. There are analogous Match Lists for other entity types, such as “business_ips”, “verified_domains”, and so on.
 
-When you create the standard Match Lists, it’s important to create them correctly: you need to use the exact name CSE has defined for the list, and you must specify the correct Target Column.  Y/docs/cse/match-lists-suppressed-lists/standard-match-lists/standard-match-lists) topic, which also lists the built-in rules that refer to Match List data.
+When you create the standard Match Lists, it’s important to create them correctly: you need to use the exact name Cloud SIEM has defined for the list, and you must specify the correct Target Column. You can find that information in the [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists) topic, which also lists the built-in rules that refer to Match List data.
 
 If you don’t define one or more standard Match Lists, the rules that refer to the match list data will still function, but you’ll miss out on the benefit that Match Lists provide—a rule will have no way of knowing that a particular IP address, domain, or other entity in a message should not cause it to fire.
 
@@ -36,13 +36,13 @@ As necessary, you can also create custom Match Lists.
 
 ## How are Match Lists used?
 
-When CSE processes an incoming message, it compares the entries in each Match List that you’ve created to message fields that are of the same type as the Target Column of the Match List. For example, given a Match List whose Target Column is `Domain`,  CSE will compare items on that list only to message fields that contain domains.
+When Cloud SIEM processes an incoming message, it compares the entries in each Match List that you’ve created to message fields that are of the same type as the Target Column of the Match List. For example, given a Match List whose Target Column is `Domain`,  Cloud SIEM will compare items on that list only to message fields that contain domains.
 
 When a Record contains a value that exactly matches one or more Match Lists (partial matches are not supported), two fields in the Record get populated:
 
-* `listMatches`. CSE adds the names of the Match Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the `SourceIP` address in the “vuln_scanners” Match List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`
+* `listMatches`. Cloud SIEM adds the names of the Match Lists that the Record matched, and the column values of those lists. For example, if an IP address in a Record matches the `SourceIP` address in the “vuln_scanners” Match List, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`
 
-* `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, and assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, and assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.   
 
@@ -52,11 +52,11 @@ In a rule, you look for matches by extending  a rule expression with an `array_
  
 If any of the IP addresses within the Record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of `['vuln_scanners']`. Thus, the check above will effectively prevent Signals from firing for those rules on the scanner IP addresses.
 
-For more information about referring to Match List data in rules, see [Match Lists](/docs/cse/rules/about-cse-rules#match-lists) in the *About CSE Rules* topic.
+For more information about referring to Match List data in rules, see [Match Lists](/docs/cse/rules/about-cse-rules#match-lists) in the *About Cloud SIEM Rules* topic.
 
 ## Match List or Threat Intel: which to use?
 
-CSE has another feature that is similar to Match Lists: Threat Intel. Like Match Lists, Threat Intel lists are lists of indicators and identifiers configured by a CSE analyst. When deciding whether to put an indicator on a Match List or a Threat Intel list, consider the following.
+Cloud SIEM has another feature that is similar to Match Lists: Threat Intel. Like Match Lists, Threat Intel lists are lists of indicators and identifiers configured by a Cloud SIEM analyst. When deciding whether to put an indicator on a Match List or a Threat Intel list, consider the following.
 
 Threat Intel lists are intended specifically for negative identifiers that should definitely fire a Signal. So, whenever a rule detects a Record field that matches an item on a Threat Intel list, it *always* results in a Signal. If that’s what you want to occur when a particular identifier is encountered in a Record, you should put that identifier on an Threat Intel list. But, if you *don’t* want a match to invariably result in a Signal, the item should be on a Match List. For example, you might use a Match List for negative indicators that should fire a Signal only if a secondary condition is also met.
 
@@ -67,17 +67,17 @@ Another difference between Match Lists and Threat Intel lists is the **Target Co
 A Match List can contain up to 100,000 items.
 
 ## Matching behavior
-When comparing a field value to items on a Match List, CSE generally requires an exact match. There are two exceptions to that rule.
+When comparing a field value to items on a Match List, Cloud SIEM generally requires an exact match. There are two exceptions to that rule.
 
 *  Match Lists that contain IP addresses can list either explicit IP addresses, CIDR blocks of IP addresses, (for example `1.2.3.4/24`), or both.
 * Match Lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a Record. Note that the converse is not the case: `mail.google.com` in a list won’t match `google.com`.
 
 ## Create a Match List
 
-Perform the steps below to create a Match List in CSE.
+Perform the steps below to create a Match List in Cloud SIEM.
 
 :::tip
-You can also create and manage Match Lists with CSE's REST [API](/docs/cse/administration/cse-apis).
+You can also create and manage Match Lists with Cloud SIEM's REST [API](/docs/cse/administration/cse-apis).
 :::
 
 1. Go to **Content > Match List** and click **Create**. <br/><img src={useBaseUrl('img/cse/match-list-create-icon.png')} alt="Create match list" width="800"/>
@@ -139,7 +139,7 @@ Sumo Logic recommends the following conventions and best practices for using M
 
 ### Use Match Lists
 
-Use the Match List feature early on to get the most value from CSE. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue. 
+Use the Match List feature early on to get the most value from Cloud SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue. 
 
 Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists). 
 

@@ -90,13 +90,13 @@ To configure a SentinelOne Mgmt API Source:**
    ![SentinelOne create pane.png](/img/send-data/SentinalOne-create-pane.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: SentinelOne
    * `_siemProduct`: MGMT API
    * `_siemFormat`: JSON
    * `_siemEventID`: The type of data ingested. Values include `activities - {id}`, `threats - {id}`, or `agents`. Agents has a `_siemDataType` of `Inventory`.
 :::note
-If you entered actions in Supported APIs to collect above, the `_siemDataType` field will be set to `Inventory`.
+If you entered `agents` in Supported APIs to collect above, the `_siemDataType` field will be set to `Inventory`.
 :::
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -113,8 +113,8 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
 | ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
 
 ### Restarting your Source
 

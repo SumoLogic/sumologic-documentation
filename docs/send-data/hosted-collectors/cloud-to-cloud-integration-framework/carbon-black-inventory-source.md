@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Carbon Black Inventory Source provides a secure endpoint to receive data from the [CB Devices API](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/). It securely stores the required authentication, scheduling, and state tracking information.
 
-[See how inventory data is used in Cloud SIEM Enterprise](/docs/cse/records-signals-entities-insights/view-manage-entities.md).
+[See how inventory data is used in Cloud SIEM](/docs/cse/records-signals-entities-insights/view-manage-entities.md).
 
 ## Authentication
 
@@ -48,7 +48,7 @@ To configure a Carbon Black Inventory Source:
 1. Select **Carbon Black Inventory**.<br/>  ![cb inventory icon.png](/img/send-data/cb-inventory-icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/> ![CB inventory create pane.png](/img/send-data/CB-inventory-create-pane.png)
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`: CarbonBlack
     * `_siemProduct`: Inventory
     * `_siemFormat`: JSON

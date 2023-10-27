@@ -7,21 +7,21 @@ description: Learn how to extract inventory data from your data sources
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic explains how you can extract inventory data from logs in Sumo Logic and send it to CSE. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
+This topic explains how you can extract inventory data from logs in Sumo Logic and send it to Cloud SIEM. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
 
-CSE uses _inventory data_—information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
+Cloud SIEM uses _inventory data_—information about hosts and users in your environment—to provide context to Signals. Inventory data can also be used in Entity Groups to set attributes on Entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of Signals (using criticality), and for further context in Signals.
 
-Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
+Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
 
 ## How it works
 
-In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches/index.md) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
+In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start
 
-Identify your source of inventory data and review the [CSE inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different CSE inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
 ## Limitations
@@ -34,7 +34,7 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
 1. Go to **Manage Data** > **Collection** > **Collection** in the Sumo Logic UI.
-2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="add-source-link.png" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="select-source.png" />
 5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="http-source.png" />
@@ -42,7 +42,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 7. **Description**. (Optional)
 8. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
 9. **Source Category**. Enter a string to tag the output collected from the source, for example, _cse/custom/inventory_. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-10. **SIEM Processing**. Click the checkbox to configure the source to forward log messages to CSE.
+10. **SIEM Processing**. Click the checkbox to configure the source to forward log messages to Cloud SIEM.
 11. **Fields**. Click **+Add Field**, and add a field whose name is `_siemdatatype` with value _inventory_.
 12. Click **Save**
 13. Copy the URL that appears. You will need this to create the Webook in the next step.
@@ -62,7 +62,7 @@ In this step you create a WebHook that points to the HTTP source.
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [CSE inventory schema](#cse-inventory-schema) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cse-inventory-schema) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
@@ -81,9 +81,9 @@ In this step, you schedule the search you created above to send results to the W
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check **Send a separate alert for each search result**.
     9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="save-item-4.png" width="450"/>
 
-## CSE inventory schema
+## Cloud SIEM inventory schema
 
-This section defines the attributes in the CSE inventory schema for hosts and users. Note that the same attributes can be used for either host or user inventory data.
+This section defines the attributes in the Cloud SIEM inventory schema for hosts and users. Note that the same attributes can be used for either host or user inventory data.
 
 
 ### Host inventory attributes
@@ -275,7 +275,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 
 
-* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields to scope your search.
+* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
 
 
 

@@ -46,12 +46,12 @@ messaging_cluster=* messaging_system="kafka" \
 
 ## Metrics
 
-The list of metrics collected can be found [here](docs/integrations/containers-orchestration/kafka/#kafka-metrics).
+The list of metrics collected can be found [here](/docs/integrations/containers-orchestration/kafka/#kafka-metrics).
 
 
 ## Collecting Logs and Metrics for Strimzi Kafka Pods
 
-Collection architecture is similar to Kafka and described [here](docs/integrations/containers-orchestration/strimzi-kafka/#configure-collection-for-kafka).
+Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#configure-collection-for-kafka).
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Strimzi Kafka.
 

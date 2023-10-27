@@ -26,7 +26,7 @@ While you might be able to do some of the tasks in this checklist on your own, m
 Before onboarding, it’s important that you understand how your data will be used in Cloud SIEM. Doing so makes the engagement process with Professional Services run more smoothly. Before meeting with Professional Services:
 
 * Know your data sources. It becomes easier to start the engagement with Professional Services if you know the data sources that are in scope for Cloud SIEM.
-* Be familiar with the data flow. Before meeting with Professional Services, you should be familiar with how data moves from the Sumo Logic core platform to Cloud SIEM. For more information, see [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices).
+* Be familiar with the data flow. Before meeting with Professional Services, you should be familiar with how data moves from the Sumo Logic core platform to Cloud SIEM. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices).
 * Know the use cases. If you are aware of the rules, dashboards, and alerts that you are interested in within Cloud SIEM, it helps Professional Services plan setup. For example, in some cases you may not need custom rules and can rely on out-of-the-box rules in Cloud SIEM.
 * Be familiar with components of Cloud SIEM. Get to know about components such as entity tagging, network blocks, match lists, and threat intel.
 
@@ -38,9 +38,9 @@ Work with Professional Services to perform the tasks in the following sections t
 
 ### Provision Cloud SIEM 
 
-Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, you will see a link labeled Cloud SIEM Enterprise on the left side of the Sumo Logic navigation list.
+Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, you will see a link labeled Cloud SIEM on the left side of the Sumo Logic navigation list.
 
-<img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM Enterprise menu option" width="300"/> 
+<img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" width="300"/> 
 
 To further set up your instance, you may consider setting up a custom sub-domain. You can also enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
@@ -56,13 +56,13 @@ Perform the following steps to set up users in Cloud SIEM.
 
 Cloud SIEM access is controlled through the unified role-based access controls (RBAC). We recommend creating two Cloud SIEM Roles starting out with the following capabilities, but you are welcome to adjust them to your company needs:
 * **Cloud SIEM Analyst**<br/>Add the following capabilities:
-   * Cloud SIEM Enterprise
-      * View Cloud SIEM Enterprise
+   * Cloud SIEM 
+      * View Cloud SIEM 
       * Insights
          * Comment on Insights
-* **Cloud SIEM Administrator**<br/>Add the following capabilities (add all capabilities under Cloud SIEM Enterprise):
-   * Cloud SIEM Enterprise
-      * View Cloud SIEM Enterprise
+* **Cloud SIEM Administrator**<br/>Add the following capabilities (add all capabilities under Cloud SIEM):
+   * Cloud SIEM
+      * View Cloud SIEM
          * Insights
          * Content
          * Configuration
@@ -71,7 +71,7 @@ Also make sure to verify that Cloud SIEM users have necessary access permissions
 
 See: 
 * [Create and Manage Roles](/docs/manage/users-roles/roles/create-manage-roles/)
-* The [Cloud SIEM Enterprise](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise) section of the [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/) article
+* The [Cloud SIEM](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise) section of the [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities/) article
 
 #### Set up username and domain normalization
 
@@ -90,7 +90,7 @@ Professional Services will work closely with you to forward data to Cloud SIEM. 
 Begin forwarding data to Cloud SIEM using our [ingest guides](/docs/cse/ingestion/). Sending data to the Cloud SIEM Data tier consumes credits, and credit consumption can be tracked by enabling the Metrics Data Volume Index and installing the Data Volume app.
 
 See:
-* [CSE Ingestion](/docs/cse/ingestion/)
+* [Cloud SIEM Ingestion](/docs/cse/ingestion/)
 * [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
 * [Sumo Logic Data Volume App](/docs/integrations/sumo-apps/data-volume/)
 
@@ -100,16 +100,16 @@ Cloud SIEM Insights are stored within two audit partitions. These partitions als
 * `_index=sumologic_audit_events`
 * `_index=sumologic_system_events`
 
-See: The [Search the Audit Event Index](/docs/manage/security/audit-event-index#search-the-audit-event-index) section of the [Audit Event Index](/docs/manage/security/audit-event-index/) article
+See: The [Search the Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index#search-the-audit-event-index) section of the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) article
 
 #### Create parsers
 
 When messages are sent to Cloud SIEM, they are processed through the records data pipeline (parsers to log mappers) for parsing and normalization into the Cloud SIEM schema. Each data source should be configured with the out-of-the-box parser built for that data type, and adhere to other ingestion best practices. If Sumo Logic doesn’t provide an out-of-the-box parser or log mapper for some of your sources, we can help you create the parsers. You’ll need to specify `_siemForward` and `_parser` fields as needed, or use the **Forward to SIEM** checkbox where possible when configuring sources. 
 
 See: 
-* [CSE Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/)
+* [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/)
 * [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline/)
-* [CSE Schema Attributes](/docs/cse/schema/schema-attributes/)
+* [Cloud SIEM Schema Attributes](/docs/cse/schema/schema-attributes/)
 * [Parser Editor](/docs/cse/schema/parser-editor/)
 
 #### Forward inventory data to Cloud SIEM
@@ -141,7 +141,7 @@ You can configure Crowdstrike threat indicator matches from the Threat Intel Qui
 
 See: 
 * [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
-* [Generate CSE Signals With a Scheduled Search](/docs/alerts/scheduled-searches/generate-cse-signals/)
+* [Generate Cloud SIEM Signals With a Scheduled Search](/docs/alerts/scheduled-searches/generate-cse-signals/)
 
 ## Initial configuration
 
@@ -212,7 +212,7 @@ Perform the following tasks to create actions to run in Cloud SIEM.
 
 You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, JIRA, Slack, etc.), or to send an email to analysts when they are assigned Insights.
 
-See: [Create CSE Actions](/docs/cse/administration/create-cse-actions/)
+See: [Create Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/)
 
 #### Create Context Actions
 
@@ -221,7 +221,7 @@ A Context Action is an option that a Cloud SIEM analyst can use to query an exte
 You could also create a Context Action to show users’ Google activity. For example, install the Google Workspace app and set up the User Activity dashboard. Then create a context action to pivot directly to the dashboard from Cloud SIEM usernames. 
 
 See: 
-* [Create CSE Context Actions](/docs/cse/administration/create-cse-context-actions/)
+* [Create Cloud SIEM Context Actions](/docs/cse/administration/create-cse-context-actions/)
 * The [User Activity](/docs/integrations/google/workspace/install-app-dashboards/#user-activity) section of the [Google Workspace App and Dashboards](/docs/integrations/google/workspace/install-app-dashboards/) article
 
 ### Configure rules
@@ -233,9 +233,9 @@ Perform the following tasks to set up the rules that fire signals.
 Create custom rules as needed depending on your situation. Before you create custom rules, however, check built-in rules to ensure that there isn’t already a rule available to cover your needs. If you want to be alerted when custom rules are disabled, you can create an action.
 
 See: 
-* [CSE Rules](/docs/cse/rules/)
-* [CSE Built-In Rules](/docs/cse/rules/cse-built-in-rules/)
-* [Create CSE Actions](/docs/cse/administration/create-cse-actions/)
+* [Cloud SIEM Rules](/docs/cse/rules/)
+* [Cloud SIEM Built-In Rules](/docs/cse/rules/cse-built-in-rules/)
+* [Create Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/)
 
 #### Create rule tuning expressions
 

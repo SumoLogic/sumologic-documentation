@@ -2,12 +2,12 @@
 id: carbon-black
 title: Carbon Black Cloud - Cloud SIEM
 sidebar_label: Carbon Black Cloud
-description: Configure collection of Carbon Black Cloud logs messages from an S3 bucket to be parsed by CSE's system parser for Carbon Black Cloud.
+description: Configure collection of Carbon Black Cloud logs messages from an S3 bucket to be parsed by Cloud SIEM's system parser for Carbon Black Cloud.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has instructions for collecting Carbon Black Cloud log messages and sending them to Sumo Logic to be ingested by CSE.
+This page has instructions for collecting Carbon Black Cloud log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
 VMware does NOT recommend setting up a Cloud-to-Cloud integration for Carbon Black Cloud and instead recommends collecting logs in an S3 bucket as an intermediary, as described below.
 
@@ -27,11 +27,11 @@ In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log m
 6. **Description**. (Optional)
 7. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 8. **Fields**.
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is _true_. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is _true_. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     2. If all sources in this collector will be Carbon Black Cloud sources, add an additional field with key `_parser` and value _/Parsers/System/VMware/Carbon Black Cloud_.
 
 
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
 
 
 #### Configure an AWS S3 Source
@@ -56,7 +56,7 @@ The bucket you designate for Carbon Black Cloud data must be exclusively used fo
 14. **Path Expression**. The path expression of the log file(s) in S3, can contain wildcards to include multiple log files.
 15. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 16. **Fields**.
-    * If you are not forwarding all sources in the hosted collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is _true_. This will ensure all logs for this source are forwarded to CSE.
+    * If you are not forwarding all sources in the hosted collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is _true_. This will ensure all logs for this source are forwarded to Cloud SIEM.
     * Add another field named `_parser` with value _/Parsers/System/VMware/Carbon Black Cloud_
 17. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#Step-1-Configure-collection))  is a prerequisite for role-based access
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.<br/> <img src={useBaseUrl('img/cse/role-arn.png')} alt="add-hosted-collector" />
@@ -73,7 +73,7 @@ In this step you configure Carbon Black Cloud to send log messages to an S3 buck
 
 ### Step 3: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE.
+In this step, you verify that your logs are successfully making it into Cloud SIEM.
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**. <br/> <img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="add-hosted-collector" />
 2. On the **Log Mappings** page search for Carbon Black Cloud and check under **Record Volume**.<br/> <img src={useBaseUrl('img/cse/carbon-black-records.png')} alt="carbon-black-records" />

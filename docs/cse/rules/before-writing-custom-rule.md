@@ -7,7 +7,7 @@ description: Learn how to plan a custom rule and prototype rule expressions in t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about writing custom CSE rules.
+This topic has information about writing custom Cloud SIEM rules.
 
 :::tip
 Before you create a custom rule, check to see if there is a [built-in rule](/docs/cse/rules/cse-built-in-rules) that meets or comes close to meeting your need. You can easily tailor built-in rules using [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions).
@@ -19,12 +19,12 @@ By tuning and using a built-in rule, you avoid the effort of writing a rule, and
 
 The following topics provide information that’s relevant to the process of writing a custom rule:
 
-* [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline). This topic describes how CSE creates Records for incoming messages. It provides facts about how message fields are mapped to CSE schema attributes; about the attributes CSE adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
+* [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline). This topic describes how Cloud SIEM creates Records for incoming messages. It provides facts about how message fields are mapped to Cloud SIEM schema attributes; about the attributes Cloud SIEM adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
 * [Schema Attributes](/docs/cse/schema/schema-attributes). This topic defines the Record attributes you can reference in rules.
-* [CSE Rules Syntax](/docs/cse/rules/cse-rules-syntax). This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
-* [Searching for CSE Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo). This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
+* [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax). This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
+* [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo). This topic explains how to search Cloud SIEM Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
 
-### Use case analysis and rule type selection
+## Step 1: Perform use case analysis and select rule type
 
 The first step is determining your use case. In part, this involves deciding what behavior you want the rule to detect, and which of your data sources will provide evidence of that behavior. 
 
@@ -32,11 +32,11 @@ In addition to what you're looking for, and where you can find it, you’ll deci
 
 Review the standard [rule types](/docs/cse/rules/about-cse-rules#rule-types) to determine if any of them can address your use case. 
 
-## Review the log mapping for your source
+## Step 2: Review the log mapping for your source
 
 Before you write a rule, you’ll want to verify what attributes are available in the Records created from the target data source. You can do this by reviewing the log mapping for the data source.  
 
-Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You know, maybe because you’ve checked Microsoft documentation, that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the CSE log mapping for that event, assuming there is one.
+Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You know, maybe because you’ve checked Microsoft documentation, that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the Cloud SIEM log mapping for that event, assuming there is one.
 
 To find and review a log mapping:
 
@@ -44,12 +44,12 @@ To find and review a log mapping:
 1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results when we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.
 <br/><img src={useBaseUrl('img/cse/matching-mappings.png')} alt="Mapping mappings" width="800"/>
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping. <br/><img src={useBaseUrl('img/cse/selected-mapping-top.png')} alt="Selected mapping" width="500"/>
-1. The **Fields** section of the page shows how raw message fields are mapped to CSE schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. 
+1. The **Fields** section of the page shows how raw message fields are mapped to Cloud SIEM schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. 
 <br/><img src={useBaseUrl('img/cse/selected-mapping-bottom.png')} alt="Selected mapping bottom" width="500"/>
 
-Now that we understand the mapping in CSE, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
+Now that we understand the mapping in Cloud SIEM, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
 
-### Create query in Sumo Logic
+## Step 3: Create the query in Sumo Logic
 
 In this step, we’ll create the query that will serve as the rule expression when we create the rule.
 
@@ -87,7 +87,7 @@ _index=sec_record_*
 
 Now that we’ve sorted out the usernames formats and values we want to exclude, we’ve removed \| count by `user_username` from the query.
 
-Let’s say there is a field of interest in our raw messages—`EventData.ProcessName`—that isn’t mapped to a CSE schema attribute. We want to parse that field out of the message so we can use it in our logic as well. We only want our rule to fire if a user with an anomalous logon ran an .exe process after successfully logging in. You can see all of the fields in the raw message in the **Messages** tab of your search results.
+Let’s say there is a field of interest in our raw messages—`EventData.ProcessName`—that isn’t mapped to a Cloud SIEM schema attribute. We want to parse that field out of the message so we can use it in our logic as well. We only want our rule to fire if a user with an anomalous logon ran an .exe process after successfully logging in. You can see all of the fields in the raw message in the **Messages** tab of your search results.
 
 <img src={useBaseUrl('img/cse/messages-tab.png')} alt="Messages tab" width="800"/>
 
@@ -107,3 +107,12 @@ You can use an expression like this example in any rule type. Here is an examp
 
 <img src={useBaseUrl('img/cse/example-in-editor.png')} alt="Example in editor" width="500"/>
 
+## Degraded rules
+
+A degraded rule is one that has had a portion of the rule shut off to prevent it from exceeding a processing limit. If you write a custom rule that becomes degraded, you must tune the rule to correct the problem.
+
+For example, rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, the particular value will be ignored, but the rest of the rule is still be used. In this case, Cloud SIEM might display a message like this:
+
+`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
+
+To resolve a degraded rule issue, create a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions/) to address the portion of the rule causing the rule degradation.

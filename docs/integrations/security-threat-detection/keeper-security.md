@@ -34,11 +34,11 @@ To configure a collector for Keeper Security, follow the instructions in the [Ho
 You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 To configure an HTTP source for Keeper, do the following:
+
 1. Go to the [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/) page.
 2. Select the hosting service appropriate for your environment.
 3. Follow the instructions for adding an **HTTP Log Source**, using the default options.
-
-1. Copy the **HTTP Source Address** when prompted.
+4. Copy the **HTTP Source Address** when prompted.
 
 
 ### Step 3: Send Keeper logs to Sumo Logic
@@ -51,7 +51,7 @@ To send Keeper logs to Sumo Logic, do the following:
 2. Select the **External Logging** tab.
 3. Click the Sumo Logic **Setup** button.
 4. In the Sync Settings dialog, enter the **HTTP Source Address** from [step 4](#HTTP-Source-Address) of the previous task.
-1. Continue with [verifying logging](#Step_4:_Verify_logging).
+5. Continue with [verifying logging](#Step_4:_Verify_logging).
 
 
 ### Step 4: Verify logging

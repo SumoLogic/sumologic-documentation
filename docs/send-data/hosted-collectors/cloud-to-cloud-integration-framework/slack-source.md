@@ -33,8 +33,10 @@ The source collects the following API endpoints and routes.
 | Web API   | admin.teams:read | [admin.teams.list](https://api.slack.com/methods/admin.teams.list)           | N/A       | N/A       | N/A       | Collected  |
 | Audit API | auditlogs:read   | [audit-logs](https://api.slack.com/admins/audit-logs-call)                   | N/A       | N/A       | N/A       | Collected  |
 
+Each Slack API endpoint specifies a [tier rate limit](https://api.slack.com/docs/rate-limits) limiting the C2C in the number of calls it can make to Slack.
+
 ## Metadata Fields
-The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM Enterprise, is not currently supported.
+The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM, is not currently supported.
 
 ## Setup and Configuration Overview
 The Slack source can collect data from Slack's [Web API](https://api.slack.com/web) and
@@ -117,3 +119,13 @@ and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/a
 3. Provide a name for the source
 4. Select the Slack collection API you want to collect logs from (Web or Audit)
 5. Paste your Slack App access token from the previous steps
+
+## Troubleshoot
+
+Collecting real-time Slack messages from Slack channels and understanding the C2C polling interval is a common question. 
+
+The C2C is limited in the number of API calls it can make to the Slack API documented in the [Slack API rate limits page](https://api.slack.com/docs/rate-limits). The C2C will gather a list of your non-archived Slack channels and collect new messages from each channel for the polling interval. The default polling interval is 5 minutes. The rate limits on the Slack API for these endpoints use their "Web API Tier 3" limit, which is 50 requests per minute. 
+
+This means if you have 1000 active Slack channels, it will take the C2C a minimum of 20 minutes to iterate through all the channels checking for new messages. The poll cycle will not start again until last one finishes. Let's say the poll cycle starts at 10:00 and does not complete until 10:20, then the next poll cycle will start immediately at 10:20. Additionally more time may be added if the C2C has to paginate to gather more than 1000 Slack messages from a single channel. 
+
+Each page adds to the overall number of API calls needed and adds time due to the Slack API rate limits. Sumo Logic recommends you archive any Slack channels no longer used. This will prevent the C2C from checking for new messages in channels without activity.

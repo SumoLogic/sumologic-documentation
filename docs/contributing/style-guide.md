@@ -289,7 +289,7 @@ When the feature moves from Beta to GA, remove the **Beta** label and remove a d
 
 ## Code (Inline)
 
-* Use single backticks (\` \`) to format inline code, such as commands, API method names, and code. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
+Use single backticks (\` \`) to format inline code as monospace font. Example use cases include commands, operators, API method names, and error messages. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
 
 <Tabs
   className="unique-tabs"
@@ -316,6 +316,10 @@ Example: `_view = sumologic_slo_output`
 ## Code Blocks
 
 Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Format blocks of code by placing triple backticks before and after the code.
+
+:::note
+Code blocks are intended only for code snippets that users can copy, paste, and run in their own terminal. Do not use code block formatting for error messages (see [Code (Inline)](#code-inline)), as this isn't something you'd run in a terminal.
+:::
 
 If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
 

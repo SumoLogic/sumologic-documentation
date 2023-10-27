@@ -7,11 +7,15 @@ description: Learn about playbooks. A playbook is a predefined set of actions an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-{@import ../../reuse/automation-service-la-note.md}
-
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
+
+To run a playbook, add it to an automation. See [Create an automation](/docs/cse/automation-service/automation-service-automations/#create-an-automation). 
+
+:::note
+{@import ../../reuse/action-limits.md}
+:::
 
 ## View playbooks
 
@@ -30,7 +34,7 @@ Before you create your own playbook, first [view playbooks](#view-playbooks) to 
 
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/). 
 
-1. Click the **Configuration** button (gear icon) at the top of the CSE UI.
+1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.
 1. Click **Manage Playbooks**. Previous-created playbooks will display. <br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>

@@ -66,7 +66,7 @@ To configure A Tenable Source:
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    * `_siemVendor`: Tenable
    * `_siemProduct`: Cloud API
