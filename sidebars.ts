@@ -1763,6 +1763,51 @@ module.exports = {
             'observability/kubernetes/about',
             'observability/kubernetes/quickstart',
             'observability/kubernetes/collection-setup',
+            {
+              type: 'category',
+              label: 'Helm Chart',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'observability/kubernetes/helm-chart/index'},
+              items: [
+                {
+                  type: 'category',
+                  label: 'v4.0.0',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'observability/kubernetes/helm-chart/v4.0.0/index'},
+                  items: [
+                    'observability/kubernetes/helm-chart/v4.0.0/a',
+                    'observability/kubernetes/helm-chart/v4.0.0/b',
+                    'observability/kubernetes/helm-chart/v4.0.0/c',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'v3.16.2',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'observability/kubernetes/helm-chart/v3.16.2/index'},
+                  items: [
+                    'observability/kubernetes/helm-chart/v3.16.2/a',
+                    'observability/kubernetes/helm-chart/v3.16.2/b',
+                    'observability/kubernetes/helm-chart/v3.16.2/c',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'v3.3.0',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'observability/kubernetes/helm-chart/v3.3.0/index'},
+                  items: [
+                    'observability/kubernetes/helm-chart/v3.3.0/a',
+                    'observability/kubernetes/helm-chart/v3.3.0/b',
+                    'observability/kubernetes/helm-chart/v3.3.0/c',
+                  ],
+                },
+              ],
+            },
             'observability/kubernetes/apps',
             'observability/kubernetes/monitoring',
             'observability/kubernetes/alerts',
@@ -2621,7 +2666,7 @@ integrations: [
             'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
-          
+
           ],
         },
         {
