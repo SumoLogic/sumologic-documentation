@@ -183,7 +183,7 @@ Certified users become technical experts on setting up, managing and optimizing 
 -->
 
 
-**Sumo Logic Certified - Cloud Security Analytics**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
+**Sumo Logic Certified - Cloud Infrastructure Security**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
 
 <!--
 In this course, you'll create starter SOC queries as dashboard panels. These advanced operator queries help you monitor user activity across the globe, failed logins, land speed violations, brute force attacks, and more. You will create parameterized lookup tables for easy panel or dashboard pivots. You will learn how to export the starter SOC dashboard you created for use in your own environment. Lastly, you will be able to detect and investigate IOCs with the use of our embedded CrowdStrike database, which monitors malicious IPs addresses, and apply scheduled views as a best practice.

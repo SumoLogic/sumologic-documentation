@@ -30,9 +30,9 @@ We refer to your estimates of ingest capacity required for each product variable
 
 Users that have the required role capabilities (described in the following section) can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration** > **Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
-## About CSE provisioning
+## About Cloud SIEM provisioning
 
-You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information, see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+You can enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. For more information, see [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
 
 ## Requirements for creating and managing orgs
 
@@ -77,11 +77,11 @@ After you create a child org, you can’t delete it.
 4. **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent tier.
 5. **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
 6. **Tracing**. Enter estimated daily ingestion of traces.
-7. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM Enterprise (CSE).
-   1. If you enable CSE, the CSE Log Ingest field appears.
+7. **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
+   1. If you enable Cloud SIEM, the Cloud SIEM Log Ingest field appears.
    1. Enter a value in GB.
       :::note
-      Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+      Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
       :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/>
 2. To see a breakdown of the required credits, click **View Breakdown**. <br/> <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
@@ -98,8 +98,8 @@ To change an org's credits allocation:
 3. The **Credits Calculator** appears.
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
 
-## Monitor CSE provisioning
-Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+## Monitor Cloud SIEM provisioning
+Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" />
 
@@ -118,7 +118,7 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
-* **CSE Ingest**. Credits used for logs ingested into Cloud SIEM Enterprise (CSE).
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
   <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />

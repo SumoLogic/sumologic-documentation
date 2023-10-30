@@ -7,15 +7,15 @@ description: Learn how to write a match rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about Match rules and how to create them in the CSE UI.
+This topic has information about Match rules and how to create them in the Cloud SIEM UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About Match rules
 
-A Match rule is the simplest type of CSE rule. Each time a single Record matches the rule expression, a Signal is fired. 
+A Match rule is the simplest type of Cloud SIEM rule. Each time a single Record matches the rule expression, a Signal is fired. 
 
 A Match rule doesn’t allow you to define other conditions for Signal, like requiring multiple Records to match the rule expression, or looking for events of the different types within a timespan.
 
@@ -52,7 +52,7 @@ import Iframe from 'react-iframe'; 
 
 ## Configure "Then Create a Signal" settings
 
-1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **using the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
     :::note
     * When you're configuring a Threshold and Chain rule, you don't supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
@@ -89,10 +89,10 @@ import Iframe from 'react-iframe'; 
 
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE.
+After creating a rule expression, you can test it against existing Records in Cloud SIEM.
 
 1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
+1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
 1. If no matches were returned, try changing the time range.
 
 :::note

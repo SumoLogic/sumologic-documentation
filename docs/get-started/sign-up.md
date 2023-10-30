@@ -76,12 +76,9 @@ Select the plan that fits your usage requirements. The first 30 days are free of
 
 ### Billing
 
-Accounts have two capacities that affect billing:
+An account that is within its limits is defined as using Reserved Capacity.
 
-- An account that is within its limits is defined as using Reserved Capacity.
-- An account that is over its limits is defined as using On-Demand Capacity.
-
-Each day you will be billed for your plan’s daily ingest data volume. For example, if your plan is Professional - 10GB/Day, your daily Reserved ingest is 10GB. Each day you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be changed for usage for this difference at the On-Demand Capacity rate.
+Each day you will be billed for your plan’s daily ingest data volume. Each day you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be changed for usage for this difference at the on-demand rate.
 
 The Total Reserved Capacity (usage) is: (the actual number of days in the billing cycle) X (plan daily ingest volume).
 

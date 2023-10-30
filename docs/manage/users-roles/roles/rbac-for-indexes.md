@@ -1,26 +1,12 @@
 ---
 id: rbac-for-indexes
-title: Index Based Search Filter
+title: Index Based and Advanced Search Filters
 description: The index based search filter allows you to use rule permissions to determine who gets access to certain indexes.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<!-- When the beta period is done, use the following to update the screen image and step 6 of /docs/manage/users-roles/roles/create-manage-roles/
-
-<img src={useBaseUrl('img/users-roles/create-new-role-index-based.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
-
-1. **Search Filter**. Use this option to control what log data users with this role can access. A search filter for a role defines what log data a user with that role can access. You can define an **Index based** filter to allow access to search indexes, or an **Advanced filter** to allow access only to the logs that match the search filter. You can filter for index keywords, wildcards, metadata fields, and logical operators. Sumo prepends the search filter to each query that a user with the role runs. The search filter is invisible to the user, but limits the log results that are returned. See [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role) for details and examples on constructing search filters for roles. 
-
- -->
-
-<!-- When the beta period is done, incorporate the following content into /docs/manage/users-roles/roles/construct-search-filter-for-role/ -->
 
 You can restrict access to specific data using roles. When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use **Search Filter** options to extend the existing data access control. You can select [**Index based**](#index-based) filters to allow access to data based on [indexes](/docs/manage/partitions-data-tiers/), or you can select [**Advanced filter**](#advanced-filter) to define a dataset to allow access based on search criteria. This ensures that users only see the data they are supposed to.
 
@@ -62,7 +48,7 @@ An advanced filter allows access only to the logs that match the search filter.
 1. Under **Search Filter**, select **Advanced filter**.
 1. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. You can create only one filter for each.
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
-   * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
+   * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
    * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
 1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
 

@@ -129,7 +129,7 @@ To configure a Box Source:
 3. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" />
 4. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" />
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM Enterprise](/docs/cse).
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).
 
 When configured with the **Forward to SIEM** option, the following metadata fields are set:
 
