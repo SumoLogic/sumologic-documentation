@@ -65,7 +65,7 @@ ASP.NET application that runs on IIS requires two additional steps.
 
 #### Step 1. Setup IIS instrumentation
 
-This step requires to execute following command in powerhell.
+This step requires to execute following command in powershell.
 
 ```powershell
 # Setup IIS instrumentation
