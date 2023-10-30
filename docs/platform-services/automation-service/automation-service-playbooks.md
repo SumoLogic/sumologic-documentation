@@ -1,6 +1,6 @@
 ---
 id: automation-service-playbooks
-title: Playbooks
+title: Playbooks in the Automation Service
 sidebar_label: Playbooks
 description: Learn about playbooks. A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.   
 ---
@@ -11,7 +11,7 @@ A playbook is a predefined set of actions and conditional statements that run in
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-To run a playbook, add it to an automation. See [Create an automation](/docs/cse/automation-service/automation-service-automations/#create-an-automation). 
+To run a playbook, add it to an automation. For places in Sumo Logic where you can use add playbooks to automations, see [Where you can run automations](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations).  
 
 :::note
 {@import ../../reuse/action-limits.md}
@@ -19,27 +19,26 @@ To run a playbook, add it to an automation. See [Create an automation](/docs/cse
 
 ## View playbooks
 
-The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install playbooks from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-a-playbook-from-app-central).
 
-1. Click the **Configuration** button (gear icon) at the top of the UI.
-1. Under **Integrations**, select **Automation**.
-1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
+1. Click **Playbook** in the left navigation bar. <br/>The list of playbooks dipslays.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
-1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/cse/automation-service/automation-service-integrations) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
+1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/platform-services/automation-service/automation-service-integrations/) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/cse/automation-service/automation-service-app-central/#install-a-playbook-from-app-central) that does what you need.
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-a-playbook-from-app-central) that does what you need.
 
-The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/). 
+:::tip
+The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/). 
+:::
 
-1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations**, select **Automation**.
-1. Click **Manage Playbooks**. Previous-created playbooks will display. <br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
+1. Click **Playbook** in the left navigation bar. Previous-created playbooks will display. 
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type** as **CSE** to run the playbook from an automation. (For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, etc.)
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, you must select **CSE**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, etc.)
 1. Click **Save**. The new playbook appears in the list of available playbooks.
 1. To configure the new playbook, select
 it from the list and click the **Edit** button at the bottom of the
@@ -52,10 +51,14 @@ screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} 
 
 ## Add an action node to a playbook
 
-An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. For examples of adding actions to playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
+An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. 
+
+:::tip
+For examples of adding actions to playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/). 
+:::
 
 :::info
-Before you can add action nodes to a playbook, you must [configure the connection](/docs/cse/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) for each integration resource that actions originate from.
+Before you can add action nodes to a playbook, you must [configure the connection](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) for each integration resource that actions originate from.
 :::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
@@ -65,7 +68,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 1. Give the node a **Name** that identifies the action being taken.
 1. Select the **Type** of action as **Enrichment** or **Notification**. 
 1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="600"/> 
-1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/cse/automation-service/automation-service-integrations#view-integrations).
+1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations).
 1. Once you have entered all the information requested, click **Create**. The action node is added to the playbook.
 1. Repeat the steps to add other action nodes. 
 1. [Add condition nodes](#add-a-condition-node-to-a-playbook) if desired. 
@@ -74,7 +77,11 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 
 ## Add a condition node to a playbook
 
-Define a conditional statement to be met before the next node can be executed. For examples of adding conditions to playbooks, see [Automation examples](/docs/cse/automation-service/automation-service-examples/).
+Define a conditional statement to be met before the next node can be executed. 
+
+:::tip
+For examples of adding conditions to playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/). 
+:::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>

@@ -73,8 +73,8 @@ This section contains the following topics:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cse/automation-service"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Automation Service</h4></a>
-  <p>Learn how the Automation Service helps you automate smart actions.</p>
+  <a href="/docs/cse/automation"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Automation</h4></a>
+  <p>Learn how to configure automations to create notifications and enrichments in Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
