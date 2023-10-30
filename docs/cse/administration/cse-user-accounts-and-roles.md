@@ -28,7 +28,7 @@ Roles and capabilities are managed on the Sumo Logic platform. For instructions,
 1. Select capabilities from the categories:
    *  **Insights**. Provides capabilities to manage [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). 
    *  **Content**. Provides capabilities to manage elements such as [rules](/docs/cse/rules/), [match lists](/docs/cse/match-lists-suppressed-lists/), [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/), and more.
-   *  **Configuration**. Provides capabilities to manage administrative elements such as [mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping/), [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [automations](/docs/cse/automation-service/), and more.
+   *  **Configuration**. Provides capabilities to manage administrative elements such as [mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping/), [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/), [automations](/docs/cse/automation/), and more.
 
 For descriptions of the capabilities in each category, see [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise).
 

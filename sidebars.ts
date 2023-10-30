@@ -2457,7 +2457,6 @@ integrations: [
    ],
  },
 ],
-
 // OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
@@ -2669,19 +2668,14 @@ integrations: [
         },
         {
           type: 'category',
-          label: 'Automation Service',
+          label: 'Automation',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'cse/automation-service/index'},
+          link: {type: 'doc', id: 'cse/automation/index'},
           items: [
-            'cse/automation-service/about-automation-service',
-            'cse/automation-service/automation-service-automations',
-            'cse/automation-service/automation-service-app-central',
-            'cse/automation-service/automation-service-playbooks',
-            'cse/automation-service/automation-service-integrations',
-            'cse/automation-service/automation-service-examples',
-            'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
           ],
         },
         {
@@ -2803,6 +2797,33 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
+      ],
+    },
+  ],
+  // Platform services
+  platformservices: [
+    {
+      type: 'category',
+      label: 'Platform Services',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'platform-services/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/automation-service/index'},
+          items: [
+            'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/automation-service-app-central',
+            'platform-services/automation-service/automation-service-playbooks',
+            'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-bridge',
+            'platform-services/automation-service/automation-service-integration-framework',
+          ],
+        },
       ],
     },
   ],
