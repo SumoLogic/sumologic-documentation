@@ -15,7 +15,7 @@ Health events allow you to keep track of the health of your Collectors, Sourc
 
 This framework includes the following:
 
-* Health event logs indexed in the [Audit Event Index](security/audit-event-index.md).
+* Health event logs indexed in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index).
 * A [health events table](#health-events-table) on the Alerts page.
 * A health status column on the [Collection page](#collection-page).
 
@@ -28,9 +28,9 @@ Alerts for specific health events are easy to create in the Health Events Tabl
 
 ## Health events
 
-Health events are created when an issue is detected with a Collector or Source. Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [Audit Event Index](security/audit-event-index.md). For details on what information is available in a health event, see the [common parameters](#common-parameters) table.
+Health events are created when an issue is detected with a Collector or Source. Events are indexed and searchable in a separate partition named **sumologic_system_events** in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md). For details on what information is available in a health event, see the [common parameters](#common-parameters) table.
 
-The [Audit Event Index](security/audit-event-index.md) lists all of the possible Health Events.
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md) lists all of the possible Health Events.
 
 ### Health events table
 

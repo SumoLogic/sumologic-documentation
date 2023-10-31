@@ -67,8 +67,7 @@ To efficiently manage ingestion into your Sumo Logic account, familiarize yourse
 
 ### Account Capacity Limitations
 
-* An account that is within its limits is defined as using **Reserved Capacity.**
-* An account that is over its limits is defined as using **On-Demand Capacity**.
+An account that is within its limits is defined as using **Reserved Capacity.**
 
 ### Collection Limitations
 

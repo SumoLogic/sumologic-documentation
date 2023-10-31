@@ -89,7 +89,7 @@ To configure a Netskope Source:
 1. Select **Netskope**.<br/> ![Netscope icon.png](/img/send-data/Netscope-icon.png)
 1. Enter a **Name** for the Source. The description is optional.<br/> ![Netskope June 2021 with event filters.png](/img/send-data/Netskope-event-filters.png)
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
    * `_siemVendor`: Netskope
    * `_siemProduct`: Security Cloud
    * `_siemFormat`: JSON

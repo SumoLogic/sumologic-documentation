@@ -7,10 +7,10 @@ description: Learn how to write an Aggregation rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about CSE Aggregation rules and how to write them.
+This topic has information about Cloud SIEM Aggregation rules and how to write them.
 
 :::tip
-If you are new to writing your own CSE rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
+If you are new to writing your own Cloud SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
 :::
 
 ## About Aggregation rules
@@ -78,10 +78,10 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 1. **that match the following condition**. Enter one or more boolean expressions, based on the results of the configured aggregations, which when true will cause the rule to fire a Signal. For example, given the following expression, a rule will fire a Signal when the sum of `Aggregation-1` and `Aggregation-2` is greater than 1.  `Aggregation-1 + Aggregation-2 > 1`
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE.
+After creating a rule expression, you can test it against existing Records in Cloud SIEM.
 
 1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
+1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
 1. If no matches were returned, try changing the time range.
 
 :::note
@@ -134,4 +134,4 @@ Click **Submit** to save the rule.
 ### Duplicate Signals?
 If you determine that a Threshold, Chain, or Aggregation rule is firing identical Signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than Match rules, because they support time duration conditions. For example, a Threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).
+To successfully apply a rule across a sliding time window, Cloud SIEM evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).

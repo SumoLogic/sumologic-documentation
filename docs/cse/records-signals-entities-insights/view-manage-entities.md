@@ -1,16 +1,16 @@
 ---
 id: view-manage-entities
 title: View and Manage Entities
-description: The Entities page lists all of the Entities in CSE and their Activity Scores.
+description: The Entities page lists all of the Entities in Cloud SIEM and their Activity Scores.
 keywords:
-    - CSE
+    - Cloud SIEM
     - entity
     - entities
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about the **Entities** page in CSE UI, which lists all of the Entities in CSE and their Activity Scores, and the **Entities > Details** page, which presents information about a particular Entity, including Signals and Insights associated with the Entity.
+This topic has information about the **Entities** page in Cloud SIEM UI, which lists all of the Entities in Cloud SIEM and their Activity Scores, and the **Entities > Details** page, which presents information about a particular Entity, including Signals and Insights associated with the Entity.
 
 The **Entities** page is useful for monitoring Entities that are close to having an Insight created. On the **Entities > Details** page, you can view Signals and Insights for an Entity, and, as desired, manually create an Insight from Signals associated with the Entity.
 
@@ -33,7 +33,7 @@ import Iframe from 'react-iframe'; 
 
 ## About Entities
 
-In CSE, an Entity is a unique actor that a Signal fired upon. CSE has a number of built-in Entity types:
+In Cloud SIEM, an Entity is a unique actor that a Signal fired upon. Cloud SIEM has a number of built-in Entity types:
 
 * Command
 * Domain
@@ -50,11 +50,11 @@ In CSE, an Entity is a unique actor that a Signal fired upon. CSE has a number o
 
 You can create custom Entity types as well. For more information, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
 
-When a Signal is fired, if an Entity doesn’t already exist in CSE for the item that the Signal fired on, CSE creates an Entity for it. For more information about Entities and Signal and Insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
+When a Signal is fired, if an Entity doesn’t already exist in Cloud SIEM for the item that the Signal fired on, Cloud SIEM creates an Entity for it. For more information about Entities and Signal and Insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
 
 ## About the Entities list page
 
-To view the **Entities** page, click **Entities** at the top of the CSE UI.
+To view the **Entities** page, click **Entities** at the top of the Cloud SIEM UI.
 
 <img src={useBaseUrl('img/cse/entities-icon.png')} alt="Entities icon" width="800"/>
 
@@ -65,7 +65,7 @@ Here’s a screenshot of the Entities page.
 
 | Letter | Description |
 |:--|:--|
-| a | This area shows the total number of unique Entities in CSE. |
+| a | This area shows the total number of unique Entities in Cloud SIEM. |
 | b | In the **Filters** area, you can filter the list of Entities by Activity Score, Hostname, IP Address, Username, Tags, Type, and Suppressed. |
 | c | In this area you can sort Entities by Activity Score, Name, or Type.  |
 | d | The Import Metadata option allows you to upload a .csv file of updates to Entity tags, suppression state, and Criticality, as described in [Update Multiple Entities](#update-multiple-entities). |
@@ -88,15 +88,15 @@ the Entity appears.
 | b | **Tags**. Lists any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity. |
 | c | **Criticality**. An Entity’s [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here. |
 | d | **Metadata**. This section lists the contents of enrichment fields  that were added during Record processing. |
-| e | **Inventory**. If the selected Entity is standard Entity type (as opposed to a custom Entity type), this area provides selected information about the Inventory object associated with the Entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. CSE joins inventory data on demand with data from Entities in Insights data to provide context to Signals. |
+| e | **Inventory**. If the selected Entity is standard Entity type (as opposed to a custom Entity type), this area provides selected information about the Inventory object associated with the Entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. Cloud SIEM joins inventory data on demand with data from Entities in Insights data to provide context to Signals. |
 | f | **Notes**. Contains any notes added to the Entity.|
 | g | **Audit Log**. This area will list any audit events that have been logged for the Entity. An audit log is generated each time an Entity is suppressed or unsuppressed.|
 | h | **Recent Activity**. Provides a count of how many Signals or Insights included the Entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
 | i | **Activity tab**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
-| j | **Enrichments** tab. If you use CSE’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
+| j | **Enrichments** tab. If you use Cloud SIEM’s automation as a service, Entity enrichments obtained from Cloud SOAR may be available on this tab.   |
 | k | **Entity Timeline**. A timeline appears for the Entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | l | **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below. |
-| m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the CSE UI.) |
+| m | The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an Insight. (The Detection Window is the period over which Cloud SIEM evaluates Signals, which is 14 days, by default. The Detection Window is configured on the **Content > Custom Insights** page in the Cloud SIEM UI.) |
 | n | The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity.  |
 
 ## About the Entity Timeline tab
@@ -131,7 +131,7 @@ or Criticality for one or more Entities.
 
 ### Update Entities from the UI
 
-1. Click **Entities** at the top of the CSE UI.
+1. Click **Entities** at the top of the Cloud SIEM UI.
 1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" width="800"/>
 1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/><br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" width="800"/> 
 1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below:
@@ -166,7 +166,7 @@ or Criticality for one or more Entities.
 
 ### Import Entity updates from a CSV file
 
-You can update Entities by uploading a .csv file to CSE. 
+You can update Entities by uploading a .csv file to Cloud SIEM. 
 
 #### CSV file format
 
@@ -198,8 +198,8 @@ Note that:
 | `type` | **This field is required for Format 2.**<br/>Identifies the type of Entity, one of:<br/>`_ip`<br/>`_hostname`<br/>`_username`<br/>`_mac`<br/>`_process`<br/>`_command`<br/>`_hash`<br/>`_domain`<br/>`_useragent`<br/>`_email`<br/>`_url`<br/>`_file`<br/>`<CustomEntityTypeId>` |
 | `value` | **This field is required for Format 2.**<br/>The value of the Entity, for example, for an IP address:<br/>`1.2.3.4` |
 | `sensor_zone` | Identifies the sensor zone for the Entity. <br/><br/>Don’t include this column if you are specifying Entity sensor zones in the `id` column, as described above. |
-| `suppressed` | When *true*, CSE suppresses the Entity. |
-| `criticality` | Assigns a Criticality to the Entity. (An Entity’s Criticality is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration.) You can only specify a Criticality that has already been configured in CSE. Allowable values:<br/>`default`<br/>`<CustomCriticality>` |
+| `suppressed` | When *true*, Cloud SIEM suppresses the Entity. |
+| `criticality` | Assigns a Criticality to the Entity. (An Entity’s Criticality is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration.) You can only specify a Criticality that has already been configured in Cloud SIEM. Allowable values:<br/>`default`<br/>`<CustomCriticality>` |
 | `tags` | The tags to assign to the target. This column can’t be present if the file contains a tags_to_add or tags_to_remove column.<br/>Specify a schema key tag as `key:value`.<br/>To assign multiple tags, enclose them in double quotes. For example:<br/>`"<tag>,<tag>,<tag>"` or `"<key>:<value>,<key>:<value>"` |
 | `tags_to_add` | The tag to assign to the target Entity. This column can’t be present if the file contains a tags column.<br/>Specify a schema key tag as `key:value`. |
 | `tags_to_remove` | The tag to remove from the target Entity. This column can’t be present if the file contains a tags column.<br/>Specify a schema key tag as `key:value`. |

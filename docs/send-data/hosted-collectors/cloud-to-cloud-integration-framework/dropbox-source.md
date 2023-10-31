@@ -73,7 +73,7 @@ To configure a **Dropbox Source
 1. Select **Dropbox**.<br/><img src={useBaseUrl('img/send-data/dropbox-icon.png')} alt="dropbox-icon" width="100"/>
 1. Enter a **Name** for the Source. The **description** is optional.<br/><img src={useBaseUrl('img/send-data/dropbox-input.png')} alt="dropbox-input" width="400"/>
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`: Dropbox
     * `_siemProduct`: Dropbox
     * `_siemFormat`: JSON
