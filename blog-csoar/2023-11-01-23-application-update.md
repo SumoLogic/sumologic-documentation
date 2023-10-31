@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Sumo Logic On-Premises SOAR Solution End-of-Life
 
-As of **November 15, 2023**, Sumo Logic's on-premises SOAR solution no longer receives support or updates, and Sumo Logic Engineering no longer develops, repairs, maintains, or tests the software. 
+As of **November 15, 2023**, Sumo Logic's on-premises SOAR solution no longer receives updates, and Sumo Logic Engineering no longer develops, repairs, maintains, or tests the software. 
 
 On **December 1, 2024**, Sumo Logic’s on-premises SOAR solution reaches its end-of-life and is obsolete. Beginning on that date, it no longer receives applicable support entitled by active support contracts or by applicable warranty terms and conditions. 
 
