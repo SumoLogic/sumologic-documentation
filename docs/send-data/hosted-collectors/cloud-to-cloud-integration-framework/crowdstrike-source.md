@@ -71,7 +71,7 @@ To configure a CrowdStrike Source:
 1. Select **CrowdStrike**.<br/>  ![crowdstrike icon.png](/img/send-data/crowdstrike-icon.png)
 1. Enter a **Name** for the Source. The description is optional. <br/>  ![crowdstrike src 10.png](/img/send-data/crowdstrike-src.png)
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`: CrowdStrike
     * `_siemProduct`: Falcon Endpoint Protection (CNC)
     * `_siemFormat`: JSON

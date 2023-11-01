@@ -2,14 +2,14 @@
 id: zscaler-private-access
 title: Zscaler Private Access - Cloud SIEM
 sidebar_label: Zscaler Private Access
-description: Configure an HTTP source to ingest Zscaler Private Access log messages and send them to CSE’s Zscaler Private Access system parser.
+description: Configure an HTTP source to ingest Zscaler Private Access log messages and send them to Cloud SIEM’s Zscaler Private Access system parser.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting Zscaler Private Access (ZPA) log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Zscaler Private Access (ZPA) log messages and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
-Sumo Logic CSE supports ZPA logs sent as JSON.
+Sumo Logic Cloud SIEM supports ZPA logs sent as JSON.
 
 ## Step 1: Configure Sumo Logic core platform collection
 
@@ -26,10 +26,10 @@ Otherwise, create a new collector as described in [Configure a Hosted Collector]
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If all sources in this collector will be Zscaler Private Access sources, add an additional field with key `_parser` and value */Parsers/System/Zscaler/Zscaler Private Access/Zscaler Private Access-JSON*.
     :::note
-    It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+    It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
     :::
 
 ### Configure an HTTP Source
@@ -54,8 +54,8 @@ In this step you configure Zscaler Private Access to send log messages to Sumo L
 
 ## Step 3: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
+1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
 1. On the **Log Mappings** page search for "ZPA" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/zscaler-record-volume.png')} alt="Zscaler record volume" width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for "ZPA" security records. <br/><img src={useBaseUrl('img/cse/zscaler-search.png')} alt="Zscaler search" width="400"/>

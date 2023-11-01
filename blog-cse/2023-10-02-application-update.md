@@ -15,15 +15,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### MITRE ATT&amp;CK&reg; Threat Coverage Explorer
 
-We are excited to announce a new feature in Cloud SIEM Enterprise (CSE), the MITRE ATT&amp;CK&reg; Threat Coverage Explorer. This interactive tool gives you the ability to see how Rules, Signals, and log sources map to adversary actions using the [MITRE ATT&amp;CK&reg; Matrix for Enterprise](https://attack.mitre.org/).
+We are excited to announce a new feature in Cloud SIEM, the MITRE ATT&amp;CK&reg; Threat Coverage Explorer. This interactive tool gives you the ability to see how Rules, Signals, and log sources map to adversary actions using the [MITRE ATT&amp;CK&reg; Matrix for Enterprise](https://attack.mitre.org/).
 
 <img src={useBaseUrl('img/release-notes/cse/Mitre-Explorer.png')} alt="MITRE ATT&amp;CK&reg; Threat Coverage Explorer"/>
 
-The MITRE Explorer can be used to identify gaps in coverage and understand the impact of specific log sources and Rules to the overall threat coverage and value of CSE.
+The MITRE Explorer can be used to identify gaps in coverage and understand the impact of specific log sources and Rules to the overall threat coverage and value of Cloud SIEM.
 
 The tool can be accessed in the Content Menu. It supports three different views:
 * Recent Activity - Your environment's actual coverage (Rules that generated Signals) over the past six months
-* All Community Activity - All CSE customers' anonymized and aggregated coverage over the past six months.
+* All Community Activity - All Cloud SIEM customers' anonymized and aggregated coverage over the past six months.
 * Theoretical Coverage - Potential coverage if all rules are enabled and all log sources are connected.
 
 The MITRE Explorer uses the built-in MITRE tactic, technique, and sub-technique tags to track coverage, so if custom Rules are tagged appropriately, they will also be included. 

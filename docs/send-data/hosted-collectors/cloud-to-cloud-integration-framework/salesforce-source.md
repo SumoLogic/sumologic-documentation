@@ -19,7 +19,7 @@ This Source is available in the [Fed deployment](/docs/api/getting-started/#sum
 The Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
 
 1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards.  The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
-1. Create a dedicated user and profile for the integration as referred to in [Salesforce documentation](https://help.salesforce.com/articleView?id=000331470&type=1&mode=1).
+1. Create a dedicated user and profile for the integration as referred to in [Create User Profiles](https://help.salesforce.com/s/articleView?id=sf.emergency_response_admin_userprofiles.htm&type=5) and [Add a Single User](https://help.salesforce.com/s/articleView?id=sf.adding_new_users.htm&type=5) sections of the Salesforce Documentation.
 1. Go to the profile created in Step 1 and provide the following permissions required by the source:
 
    * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**  
@@ -65,7 +65,7 @@ To configure a Salesforce Source:
    ![IMG.png](/img/send-data/salesforce-source.png)
 
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the Forward to SIEM option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
+1. **Forward to SIEM.** Check the checkbox to forward your data to Cloud SIEM. When configured with the Forward to SIEM option the following metadata fields are set automatically by the integration (Do not include below fields as custom log metadata Fields):
 
    * `_siemVendor`: Salesforce
    * `_siemProduct`: Salesforce

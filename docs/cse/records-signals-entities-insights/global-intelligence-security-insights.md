@@ -6,7 +6,7 @@ description: Insight Confidence scores, predicted by Sumo Logic’s Global Intel
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes Global Intelligence for Security Insights, implemented in CSE as Global Confidence scores. This feature helps security analysts triage and prioritize Insights.
+This page describes Global Intelligence for Security Insights, implemented in Cloud SIEM as Global Confidence scores. This feature helps security analysts triage and prioritize Insights.
 
 Watch this micro lesson to learn more about Global Intelligence for Insights.
 
@@ -28,7 +28,7 @@ An Insight’s Global Confidence score represents a level of confidence, predict
 
 <img src={useBaseUrl('img/cse/closeup.png')} alt="Global confidence score example" width="400"/>
 
-The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM Enterprise customers—so it can generate a Confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the CSE installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
+The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM customers—so it can generate a Confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the Cloud SIEM installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
 
 :::tip Fear not
 All information used by the model is anonymized and no customer-confidential information is processed or retained.

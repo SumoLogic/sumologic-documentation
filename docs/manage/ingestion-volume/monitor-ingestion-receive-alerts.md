@@ -6,15 +6,11 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling.
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex accounts](/docs/manage/manage-subscription/cloud-flex-accounts/). To monitor ingestion for Cloud Flex Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#monitoring-account-usage) in the Cloud Flex Credits Accounts article.
 
-With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs only, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
+With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
 Some of the alerts are based on your billing period or ingest plan limit. You must make the appropriate changes for the alert to function and return valid results. The alerts approximate ingest rates and might not precisely match the actual ingest volume used for invoicing purposes.
-
-:::important
-The searches provided in this document are not compatible with [Cloud Flex Credits](/docs/manage/manage-subscription) accounts.
-:::
 
 ## Monthly plan limit alert
 
@@ -250,7 +246,7 @@ All accounts are subject to throttling, regardless of plan type (Cloud Flex or C
 
 #### Setup
 
-Enable the Audit Volume Index. See [Enable and Manage the Audit Index](../security/audit-index.md) for instructions.
+Enable the Audit Index. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index#enable-the-audit-index) for instructions.
 
 #### Query
 
