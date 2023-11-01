@@ -43,7 +43,7 @@ The {AppName} App uses...
 
 \Any steps like permissions or roles that the user should have for configuring the collection steps\
 
-## Collection cofiguration and app installation
+## Collection configuration and app installation
 
 \This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_App_Engine/01Collect-Logs-for-the-Google-App-Engine-App#Collection_process_for_GCP_services).\
 
