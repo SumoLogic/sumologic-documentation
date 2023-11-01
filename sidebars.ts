@@ -333,7 +333,8 @@ module.exports = {
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/hosted-collectors/ms-office-audit-source',
+                'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
+                'send-data/hosted-collectors/microsoft-source/ms-azure-event-hubs-source',
               ],
             },
             {
@@ -2620,7 +2621,7 @@ integrations: [
             'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
-          
+
           ],
         },
         {
