@@ -27,15 +27,31 @@ The {AppName} App uses...
 
 /Enter a list of log types, usually hyperlinked to vendor docs./
 
-### Sample Log Message
+## Sample Log and Metrics messages
 
-```json
+### Log message
+
+```json title="Log message"
 \<add your log message here\>
 ```
 
-### Sample Query
+### Metric message
 
-```sql
+```json title="Metric message"
+\<add your log message here\>
+```
+
+## Sample query
+
+### Log query
+
+```sql title="Log query"
+\<add your query here\>
+```
+
+### Metric query
+
+```sql title="Metric query"
 \<add your query here\>
 ```
 
