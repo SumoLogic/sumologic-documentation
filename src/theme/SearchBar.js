@@ -51,3 +51,28 @@ function App() {
     </InstantSearch>
   );
 }
+
+import debounce from 'lodash.debounce';
+
+function googleAnalyticsMiddleware() {
+  const sendEventDebounced = debounce(() => {
+    gtag('event', 'page_view', {
+      page_location: window.location.pathname + window.location.search,
+    });
+  }, 3000);
+
+  return {
+    onStateChange() {
+      sendEventDebounced();
+    },
+    subscribe() {},
+    unsubscribe() {},
+  };
+}
+
+const search = instantsearch({
+  searchClient,
+  indexName,
+});
+
+search.use(googleAnalyticsMiddleware);
