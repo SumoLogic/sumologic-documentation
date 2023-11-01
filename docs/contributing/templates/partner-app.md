@@ -27,17 +27,17 @@ The {AppName} App uses...
 
 /Enter a list of log types, usually hyperlinked to vendor docs./
 
-    ### Sample Log Message
+### Sample Log Message
 
-    ```json
-    \<add your log message here\>
-    ```
+```json
+\<add your log message here\>
+```
 
-    ### Sample Query
+### Sample Query
 
-    ```sql
-    \<add your query here\>
-    ```
+```sql
+\<add your query here\>
+```
 
 ## Prerequisites (Optional)
 
@@ -47,17 +47,17 @@ The {AppName} App uses...
 
 \This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_App_Engine/01Collect-Logs-for-the-Google-App-Engine-App#Collection_process_for_GCP_services).\
 
-    ### Step 1. 
+### Step 1. 
 
-    <step description>
+/step description/
 
-    ### Step 2. 
+### Step 2. 
 
-    <step description>
+/step description/
 
-    ### Step n. 
+### Step n. 
 
-    <step description>
+/step description/
 
 ## Install the {AppName} app
 
@@ -67,24 +67,24 @@ The {AppName} App uses...
 
 {@import ../../reuse/filter-dashboards.md}
 
-    ### Dashboard 1
+### Dashboard 1
 
-    \Descriptions of each app dashboard.\
-    \This section has dashboard description, use cases, and screenshot for each dashboard.\
+\Descriptions of each app dashboard.\
+\This section has dashboard description, use cases, and screenshot for each dashboard.\
 
-    The Overview Dashboard provides a quick snapshot of ....
+The Overview Dashboard provides a quick snapshot of ....
 
-    Use this dashboard to:
-        - \use-case-1\
-        - \use-case-2\
+ Use this dashboard to:
+- \use-case-1\
+- \use-case-2\
 
-    ### Dashboard 2
+### Dashboard 2
 
-    View stats and metrics related to ...
+View stats and metrics related to ...
 
-    Use this dashboard to:
-        - \use-case-1\
-        - \use-case-2\
+Use this dashboard to:
+- \use-case-1\
+- \use-case-2\
 
 ## Support 
 
