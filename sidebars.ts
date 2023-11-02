@@ -115,6 +115,7 @@ module.exports = {
               ]
             },
             'send-data/opentelemetry-collector/performance-benchmarks',
+            'send-data/opentelemetry-collector/data-transformations',
             'send-data/opentelemetry-collector/troubleshooting',
             'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
@@ -637,6 +638,7 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
+            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -2455,7 +2457,6 @@ integrations: [
    ],
  },
 ],
-
 // OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
@@ -2667,19 +2668,14 @@ integrations: [
         },
         {
           type: 'category',
-          label: 'Automation Service',
+          label: 'Automation',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'cse/automation-service/index'},
+          link: {type: 'doc', id: 'cse/automation/index'},
           items: [
-            'cse/automation-service/about-automation-service',
-            'cse/automation-service/automation-service-automations',
-            'cse/automation-service/automation-service-app-central',
-            'cse/automation-service/automation-service-playbooks',
-            'cse/automation-service/automation-service-integrations',
-            'cse/automation-service/automation-service-examples',
-            'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
           ],
         },
         {
@@ -2801,6 +2797,34 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
+        'manage/users-roles/roles/rbac-for-indexes'
+      ],
+    },
+  ],
+  // Platform services
+  platformservices: [
+    {
+      type: 'category',
+      label: 'Platform Services',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'platform-services/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/automation-service/index'},
+          items: [
+            'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/automation-service-app-central',
+            'platform-services/automation-service/automation-service-playbooks',
+            'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-bridge',
+            'platform-services/automation-service/automation-service-integration-framework',
+          ],
+        },
       ],
     },
   ],

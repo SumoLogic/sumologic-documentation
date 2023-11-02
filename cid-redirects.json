@@ -1659,7 +1659,7 @@
   "/cid/1156": "/docs/get-started/apps-integrations",
   "/cid/1160": "/docs/send-data/installed-collectors/sources/streaming-metrics-source",
   "/cid/11987": "/docs/manage/partitions-data-tiers/data-tiers",
-  "/cid/12001": "/docs/cse/automation-service/automation-service-playbooks",
+  "/cid/12001": "/docs/platform-services/automation-service/automation-service-playbooks",
   "/cid/123456": "/docs/get-started/apps-integrations",
   "/cid/12809": "/docs/integrations/security-threat-detection/sailpoint",
   "/cid/129210839": "/docs/alerts/webhook-connections/servicenow",
@@ -3718,7 +3718,7 @@
   "/docs/global-intelligence/nginx/collect-logs-nginx": "/docs/integrations/global-intelligence/nginx",
   "/docs/integrations/cloud-security-monitoring-analytics/ueba": "/docs/integrations/cloud-security-monitoring-analytics",
   "/docs/integrations/security-threat-detection/ueba": "/docs/integrations/cloud-security-monitoring-analytics",
-  "/docs/cse/integrations/automation-service": "/docs/cse/automation-service",
+  "/docs/cse/integrations/automation-service": "/docs/cse/automation",
   "/docs/cse/integrations/automation-service-enrichments": "/docs/cse/integrations/enrichments-and-indicators",
   "/docs/cse/ingestion/auth0": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/auth0",
   "/docs/cse/ingestion/aws-application-load-balancer": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/aws-application-load-balancer",
@@ -3789,5 +3789,14 @@
   "/docs/cloud-security-analytics/data-lake": "/docs/cloud-infrastructure-security/data-lake",
   "/docs/cloud-security-analytics/audit-and-compliance": "/docs/cloud-infrastructure-security/audit-and-compliance",
   "/docs/cloud-security-analytics/threat-detection-and-investigation": "/docs/cloud-infrastructure-security/threat-detection-and-investigation",
-  "/docs/cloud-security-analytics/application-security": "/docs/cloud-infrastructure-security/application-security"
+  "/docs/cloud-security-analytics/application-security": "/docs/cloud-infrastructure-security/application-security",
+  "/docs/cse/automation-service/": "/docs/cse/automation",
+  "/docs/cse/automation-service/about-automation-service": "/docs/cse/automation/about-automation-service-and-cloud-siem",
+  "/docs/cse/automation-service/automation-service-automations": "/docs/cse/automation/automations-in-cloud-siem",
+  "/docs/cse/automation-service/automation-service-examples": "/docs/cse/automation/cloud-siem-automation-examples",
+  "/docs/cse/automation-service/automation-service-app-central": "/docs/platform-services/automation-service/automation-service-app-central",
+  "/docs/cse/automation-service/automation-service-playbooks": "/docs/platform-services/automation-service/automation-service-playbooks",
+  "/docs/cse/automation-service/automation-service-integrations": "/docs/platform-services/automation-service/automation-service-integrations",
+  "/docs/cse/automation-service/automation-service-bridge": "/docs/platform-services/automation-service/automation-service-bridge",
+  "/docs/cse/automation-service/automation-service-integration-framework": "/docs/platform-services/automation-service/automation-service-integration-framework"
 }

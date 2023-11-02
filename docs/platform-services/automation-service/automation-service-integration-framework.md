@@ -1,7 +1,7 @@
 ---
 id: automation-service-integration-framework
-title: Automation Service Integration Framework
-sidebar_label: Automation Service Integration Framework
+title: Integration Framework for the Automation Service
+sidebar_label: Integration Framework
 description: Learn about the framework used for integrations. 
 ---
 
@@ -25,7 +25,7 @@ You can also share this new action and use it to extend the functionality of the
 
 ## Integration framework file formats
 
-Both the integration definition file and the action definition file are YAML files. The following sections highlight the formats for each file type. [Example files](#example-files) below contains samples of completed integration definition and action definition files as a reference. To see YAML files used in a working integration, see [Configure a custom integration](/docs/cse/automation-service/automation-service-examples#advanced-example-configure-a-custom-integration).
+Both the integration definition file and the action definition file are YAML files. The following sections highlight the formats for each file type. [Example files](#example-files) below contains samples of completed integration definition and action definition files as a reference. To see YAML files used in a working integration, see an example for Cloud SIEM in [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
 ### Integration definition file format
 
@@ -311,7 +311,7 @@ To export an action, click on the **Export** button below the action name.
 
 ##  Example files
 
-Following are example definition and action files for integrations. To see an explanation of the file contents, see [Integration framework file formats](#integration-framework-file-formats) above. To see integration definition and action files used in a working integration, see [Configure a custom integration](/docs/cse/automation-service/automation-service-examples#advanced-example-configure-a-custom-integration).
+Following are example definition and action files for integrations. To see an explanation of the file contents, see [Integration framework file formats](#integration-framework-file-formats) above. To see integration definition and action files used in a working integration for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
 ### Integration definition file (VirusTotal)
 
