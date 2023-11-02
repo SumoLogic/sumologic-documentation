@@ -6,6 +6,12 @@ description: The Azure Event Hubs Source provides a secure endpoint to receive d
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
 The Azure platform can be configured to export logs to one or more Event Hub destinations. Platform logs include:
