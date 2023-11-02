@@ -116,6 +116,8 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 | ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | ThirdPartyGenericError |
 | FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which retries will be attempted every 60 minutes. | FirstPartyGenericError |
 
+** You may receive an error: `At least one receiver for the endpoint is created with epoch of '0', and so non-epoch receiver is not allowed. Either reconnect with a higher epoch, or make sure all epoch receivers are closed or disconnected.` This indicates Sumo Logic cannot pull from the even hub because it detects another solution pulling from it. See [this Microsoft documentation](https://techcommunity.microsoft.com/t5/azure-paas-blog/eventhub-the-behavior-of-eph-sdk-behavior-of-epoch/ba-p/3888275) for more information. You'll need to create a new event hub instance where Sumo Logic is the primary consumer. 
+
 ## Exporting Platform Logs to Event Hub using Diagnostic settings
 To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose **Stream to an event hub** as the destination. Use the event hub namespace and event hub name configured in the **Prerequisites** section in the destination details section. You can use the default policy **RootManageSharedAccessKey** as the policy name.
 
