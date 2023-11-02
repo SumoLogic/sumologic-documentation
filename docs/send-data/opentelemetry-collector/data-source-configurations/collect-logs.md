@@ -541,7 +541,7 @@ Make sure you are using collector version `v0.78.0-sumo-0` or higher.
 
 ## Collecting logs from other sources
 
-The full list of receivers available can be found on [Sumo Logic OpenTelemetry Collector page][collector_components_docs]. When the Sumo Logic OpenTelemetry Collector does not support collecting logs from a source, the [Monitoring Job Receiver (Beta)][monitoring_job_receiver_docs] can be used as a catch-all.
+You can find the full list of receivers available on the [Sumo Logic OpenTelemetry Collector][collector_components_docs] page. When the Sumo Logic OpenTelemetry Collector does not support collecting logs from a source, the [Monitoring Job Receiver (Beta)][monitoring_job_receiver_docs] can be used as a catch-all.
 
 The Monitoring Job Receiver can be configured to execute a script or command on the collector host. The standard output and error streams from that command will be collected as log record(s).
 
