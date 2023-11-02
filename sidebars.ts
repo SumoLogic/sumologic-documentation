@@ -2620,7 +2620,7 @@ integrations: [
             'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
-
+          
           ],
         },
         {
