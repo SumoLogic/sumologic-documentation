@@ -15,10 +15,10 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 
 | Category | Capability | Standard Product | FedRAMP Moderate (FED) |
 | :-- | :-- | :-- | :-- |
-| Abilities - Platform | [Alert response](/docs/alerts/monitors/alert-response/) | x | x | 
-| Abilities - Platform  | [App catalog](/docs/get-started/apps-integrations/) | x | x | 
-| Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification-faq/) | x | x | 
-| Abilities - Solutions | [Application observability](/docs/observability/monitoring/) | x | x <br/> *Logs, Events, Metrics included. Tracing not included.* | 
+| Abilities - Platform | [Alert response](/docs/alerts/monitors/alert-response/) | X | X | 
+| Abilities - Platform  | [App catalog](/docs/get-started/apps-integrations/) | X | X | 
+| Abilities - Platform | [Training: Learn and certification](/docs/get-started/training-certification-faq/) | X | X | 
+| Abilities - Solutions | [Application observability](/docs/observability/monitoring/) | X | X <br/> *Logs, Events, Metrics included. Tracing not included.* | 
 | Abilities - Solutions | [AWS observability](/docs/observability/aws/) | X | X <br/>*Root Cause Explorer not included.*| 
 | Abilities - Solutions | [Cloud Infrastructure Security](/docs/cloud-infrastructure-security/) | X | X | 
 | Abilities - Solutions | [Cloud SIEM](/docs/cse/) | X | X | 
@@ -40,7 +40,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection | [Installed collectors](/docs/send-data/installed-collectors/) | X | X | 
 | Collection | [Open Telemetry collector](/docs/send-data/opentelemetry-collector/) | X | X <br/>*OS support: Linux only.* <br/>*UI: No workflow to add collector.* | 
 | Collection - Amazon Web Services | [Amazon CloudFront](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source/) | X | X | 
-| Collection - Amazon Web Services | [Amazon S3](docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) | X | X | 
+| Collection - Amazon Web Services | [Amazon S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) | X | X | 
 | Collection - Amazon Web Services | [Amazon S3 Audit](/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source/) | X | X | 
 | Collection - Amazon Web Services | [AWS CloudTrail](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) | X | X | 
 | Collection - Amazon Web Services | [AWS CloudWatch Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics/) | X | X | 
