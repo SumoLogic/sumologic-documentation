@@ -5,7 +5,7 @@ sidebar_label: Restricted Operators in Dashboards
 description: Learn more about the restrictions when you use operators with dashboards.
 ---
 
-This page has information about some restrictions when you use operators with dashboards.
+This page has information about restrictions and rules about using [Sumo Logic search operators](/docs/search/search-query-language) with dashboards.
 
 ## Dashboard restrictions
 
