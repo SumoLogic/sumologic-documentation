@@ -19,13 +19,13 @@ Copy this file and edit it for your App integration.
 
 (Introduction about the app)
 
-/Add the description from the app description above/
+\Add the description from the app description above\
 
 ## Log types and metrics 
 
 The {AppName} App uses...
 
-/Enter a list of log types, usually hyperlinked to vendor docs./
+\Enter a list of log types, usually hyperlinked to vendor docs.\
 
 ## Sample Log and Metrics messages
 
@@ -57,7 +57,7 @@ The {AppName} App uses...
 
 ## Prerequisites (Optional)
 
-\Any steps like permissions or roles that the user should have for configuring the collection steps\
+\Any steps like permissions or roles that the user should have for configuring the collection steps.\
 
 ## Collection configuration and app installation
 
@@ -65,15 +65,15 @@ The {AppName} App uses...
 
 ### Step 1. 
 
-/step description/
+\step description\
 
 ### Step 2. 
 
-/step description/
+\step description\
 
 ### Step n. 
 
-/step description/
+\step description\
 
 ## Install the {AppName} app
 
