@@ -48,7 +48,7 @@ The following search modifier cannot be used in Auto refresh.
 
 ## Include only after the first group-by phrase
 
-The following operators can be used in Dashboard Panels, but in the search they must be included after the first "group-by" phrase: 
+You can use the following operators in dashboard panels:
 
 * Accum
 * Backshift
