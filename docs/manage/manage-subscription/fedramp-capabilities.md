@@ -11,9 +11,9 @@ Sumo Logic is FedRAMP® Moderate Authorized, providing the observability and sec
 
 For information about the FedRAMP certification of Sumo Logic’s solution, see [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338) (package ID FR1918740338). 
 
-The following table shows the capabilities included with Sumo Logic’s FedRAMP solution compared to Sumo Logic's commercial product.
+The following table shows the capabilities included with Sumo Logic’s FedRAMP solution compared to Sumo Logic's standard product offering.
 
-| Category | Capability | Commercial Product | FedRAMP Moderate (FED) |
+| Category | Capability | Standard Product | FedRAMP Moderate (FED) |
 | :-- | :-- | :-- | :-- |
 | Abilities - Platform | [Alert response](/docs/alerts/monitors/alert-response/) | x | x | 
 | Abilities - Platform  | [App catalog](/docs/get-started/apps-integrations/) | x | x | 
