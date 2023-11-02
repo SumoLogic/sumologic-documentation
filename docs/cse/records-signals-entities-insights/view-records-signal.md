@@ -15,5 +15,5 @@ Click the plus sign (+) for a Record to view its details. Click the **Timestamp*
 <img src={useBaseUrl('img/cse/attached-records.png')} alt="View attached records" width="800"/>
 
 :::note
-Only a single record is attached to the Signal itself. Any other involved records are retrieved via log search. If the records are past their retention period, they no longer appear in the UI. In the API and `sec_signal` index, only the single attached record is included, along with a list of any other entities that were seen on the involved records (in `involvedEntities`). You must [perform a log search](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partition-for-cloud-siem-signals) to find the other involved records.
+Only a single record is attached to the Signal itself. Any other involved records are retrieved via log search. If the records are past their retention period, they no longer appear in the UI. In the API and `sec_signal` index, only the single attached record is included, along with a list of any other entities that were seen on the involved records (in `involvedEntities`). You must [perform a log search](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partition-for-cloud-siem-signals) to find the other involved records.
 :::
