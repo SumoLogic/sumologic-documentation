@@ -545,7 +545,7 @@ You can find the full list of receivers available on the [Sumo Logic OpenTelemet
 
 The Monitoring Job Receiver can be configured to execute a script or command on the collector host. The standard output and error streams from that command will be collected as log record(s).
 
-:::important  Prefer purpose-built receivers to Monitoring Jobs.
+:::important Prefer purpose-built receivers to Monitoring Jobs
 When available, prefer purpose-built receivers like `sqlquery` to monitoring jobs receiver. This example monitoring job configuration runs SQL queries using the `psql` tool for demonstration purposes as it is well understood.
 :::
 
