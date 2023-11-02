@@ -9,12 +9,12 @@ Following a recent back-end update, all contributors with a local clone or fork 
 
 This pull request...
 
-<!-- Enter the GitHub Issue number or the Jira project and number (ABC-123) -->
+<!-- Enter the GitHub Issue number or the Jira project and number (e.g., SUMO-12345) -->
 
 ## Select the type of change:
 <!-- What types of changes does your code introduce? Select the checkbox after creating the PR. -->
 
-- [ ] Minor Changes - Typos, formatting, slight revisions
-- [ ] Update Content - Revisions and updating sections
+- [ ] Minor Changes - Typos, formatting, slight revisions, .clabot
+- [ ] Update Content - Revisions, updating sections
 - [ ] New Content - New features, sections, pages, tutorials
-- [ ] Site and Tools - Updates, maintenance, and new packages for the site, Gatsby, React, etc
+- [ ] Site and Tools - Updates, maintenance, dependencies, new packages for the site (Docusaurus, Gatsby, React, etc.)
