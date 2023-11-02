@@ -5,7 +5,7 @@ sidebar_label: Restricted Operators in Dashboards
 description: Learn more about the restrictions when you use operators with dashboards.
 ---
 
-This page has information about some restrictions when you use operators with dashboards.
+This page has information about restrictions and rules about using [Sumo Logic search operators](/docs/search/search-query-language) with dashboards.
 
 ## Dashboard restrictions
 
@@ -48,7 +48,7 @@ The following search modifier cannot be used in Auto refresh.
 
 ## Include only after the first group-by phrase
 
-The following operators can be used in Dashboard Panels, but in the search they must be included after the first "group-by" phrase: 
+You can use the following operators in dashboard panels:
 
 * Accum
 * Backshift
@@ -66,4 +66,4 @@ The following operators can be used in Dashboard Panels, but in the search they 
 
 You can use the [count_frequent](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
 
-Sumo Logic provides support for optimization to improve the efficiency of searches in Interactive dashboards. See [Optimize Panels in Interactive Dashboards](/docs/dashboards/dashboard-optimization.md).
+Sumo Logic provides support for optimization to improve the efficiency of searches in Interactive dashboards. See [Optimize Panels in Interactive Dashboards](/docs/dashboards/dashboard-optimization).

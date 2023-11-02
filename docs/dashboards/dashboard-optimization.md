@@ -22,12 +22,10 @@ The icon in the upper right corner of each Dashboard Panel shows the current op
 
 ## Optimization timeslice and time range requirements 
 
-* Timeslice—The timeslice must be a factor or multiple of 15. For example:
-
-  * If less than 15 minutes: 1m, 3m, 5m
-  * If greater than 15 minutes: 15m, 30m, 45m, 60m, 75m, and so on.
-
-* Timerange—The time range on the dashboard panel must be at least 1 one hour.
+* **Timeslice**. The timeslice must be a factor or multiple of 15. For example:
+   * If less than 15 minutes: 1m, 3m, 5m.
+   * If greater than 15 minutes: 15m, 30m, 45m, 60m, 75m, and so on.
+* **Timerange**. The time range on the dashboard panel must be at least 1 hour.
 
 ## Optimization limitations
 
@@ -52,6 +50,4 @@ Before the first group by, only the following operators are supported:
 * Fields
 * Timeslice
 
-There is no restriction on the operators after the first group by. For
-example, you can add lookup after the first group by function, but not
-before.
+There is no restriction on the operators after the first group by. For example, you can add lookup after the first group by function, but not before.
