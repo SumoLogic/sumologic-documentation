@@ -50,6 +50,4 @@ Before the first group by, only the following operators are supported:
 * Fields
 * Timeslice
 
-There is no restriction on the operators after the first group by. For
-example, you can add lookup after the first group by function, but not
-before.
+There is no restriction on the operators after the first group by. For example, you can add lookup after the first group by function, but not before.
