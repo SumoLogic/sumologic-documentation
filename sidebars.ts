@@ -2829,4 +2829,3 @@ integrations: [
     },
   ],
 }
-
