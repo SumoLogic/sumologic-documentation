@@ -549,7 +549,7 @@ The Monitoring Job Receiver can be configured to execute a script or command on 
 When available, prefer purpose-built receivers like `sqlquery` to monitoring jobs receiver. This example monitoring job configuration runs SQL queries using the `psql` tool for demonstration purposes as it is well understood.
 :::
 
-This configuration configures the controller to execute the `psql` command and collects the output text as logs. See the [monitoring job documentation][monitoring_job_receiver_docs] for configuration specifics including advanced output processing with features like multi-line log detection, timestamp and field parsing.
+This configuration configures the controller to execute the `psql` command and collects the output text as logs. See the [Monitoring Job Receiver documentation][monitoring_job_receiver_docs] for configuration specifics including advanced output processing with features like multi-line log detection, timestamp, and field parsing.
 
 ```yaml
 receivers:
