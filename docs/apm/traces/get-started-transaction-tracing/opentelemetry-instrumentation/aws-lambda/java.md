@@ -18,14 +18,14 @@ To obtain tracing data from AWS Lambda functions developed in Java, you can use 
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda layer
 
-You can instrument your AWS Java Lambda function using the [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.24.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.24.0/java). By default, calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
+You can instrument your AWS Java Lambda function using the [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.30.1](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.30.1/java). By default, calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
 
 ### Lambda function requirements
 
 You'll need the following:
 * Java8 (Corretto) or Java11 (Corretto)
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
@@ -56,7 +56,10 @@ You'll need the following:
 
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one, if needed.
+   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md). You can use an existing Source or create a new one, if needed.
+    :::note
+    `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. Please switch from HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md) and use `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    :::
 
     ![img](/img/traces/lambda-java3.png)
 
