@@ -18,7 +18,7 @@ The icon in the upper right corner of each Dashboard Panel shows the current op
 | Icon  | Description |
 |:--|:--|
 | ![icon_info.png](/img/dashboards/icon_info.png) | No optimization errors. Click the icon to display information about the Panel. |
-| ![icon_caution_25x23.png](/img/dashboards/icon_caution.png) | The Panel can’t be optimized. |
+| ![icon_caution_25x23.png](/img/dashboards/icon_caution.png) | The panel can’t be optimized. |
 
 ## Optimization timeslice and time range requirements 
 
