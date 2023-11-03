@@ -77,7 +77,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Cloud APIs | [MS Graph Identity Protection](/docs/integrations/microsoft-azure/microsoft-graph-identity-protection/) | X | X | 
 | Collection - Cloud APIs | [Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) | X | X <br/>*Available upon request within 5 business days.* | 
 | Collection - Cloud APIs | [Netskope WebTx](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source/) | X | X <br/>*Available upon request within 5 business days.* | 
-| Collection - Cloud APIs | [Office 365 Audit](/docs/send-data/hosted-collectors/ms-office-audit-source/) | X | X | 
+| Collection - Cloud APIs | [Office 365 Audit](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/) | X | X | 
 | Collection - Cloud APIs | [Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) | X | X <br/>*Available upon request within 5 business days* | 
 | Collection - Cloud APIs | [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) | X | X <br/>*Available upon request within 5 business days.* | 
 | Collection - Cloud APIs | [Proofpoint On Demand](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/) | X | X <br/>*Available upon request within 5 business days.* | 
