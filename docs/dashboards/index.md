@@ -38,12 +38,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/dashboards/dashboard-optimization"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Dashboard Optimization</h4></a>
-  <p>Learn about the dashboard optimization to improve the efficiency of Dashboard searches</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/dashboards/panels"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Dashboard Panels</h4></a>
   <p>Learn about the various Dashboard panels and the types of data best suited for each.</p>
   </div>
