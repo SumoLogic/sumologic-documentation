@@ -22,7 +22,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
 * Python version between 3.7 and 3.10
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you'll need an endpoint URL from an [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 
 ### Deployment
 
@@ -112,7 +112,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 * Docker
 * Python version between 3.7 and 3.10
-* HTTP Traces Source endpoint URL -  To send spans from the instrumented Lambda function to Sumo  Logic you'll need an endpoint URL from an [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 
 ### Lambda function image changes
 

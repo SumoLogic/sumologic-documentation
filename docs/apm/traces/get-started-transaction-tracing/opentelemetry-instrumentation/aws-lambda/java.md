@@ -153,7 +153,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 * Docker
 * Java 1.8+
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic, you'll need an endpoint URL from an [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source).
+* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
 
 ### Lambda function image changes
 
