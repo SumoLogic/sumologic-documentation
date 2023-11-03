@@ -9,7 +9,7 @@ To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including
 
 ## Prerequisites
 
-* [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
+* [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 * An installed and configured [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) tool.
 
 | Account Type | Account Level         |
@@ -53,7 +53,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
    * `AWS_REGION`. Your ECS Cluster deployment region.
    * `TEMPLATE_PATH`. Path to the template file from the first step.
    * `CONFIG_FILE_PATH`. Path to the config file from the second step.
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md) from prerequisites section.
+   * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) from prerequisites section.
 
 1. It is necessary to provide the configuration to the Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
 
@@ -100,7 +100,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
    * `AWS_REGION`. Your ECS Cluster deployment region
    * `TEMPLATE_PATH`. Path to the template file from the first step
    * `CONFIG_FILE_PATH`. Path to the config file from the second step
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md)
+   * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp)
    * `SECURITY_GROUPS`. It is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as `sg-xyz,sg-xyz`.  
     :::note
     The Sumo Logic Distribution for OpenTelemetry Collector can receive data from various receivers - these ports should be configured in the Security Group:
@@ -137,7 +137,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Set up the following environment variables that are needed to perform a deployment.
    * `AWS_REGION`. Your ECS Cluster deployment region
    * `TEMPLATE_PATH`. Path to the template file from the first step
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
+   * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
    * `SSH_KEY_NAME`. [Amazon EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) needed to ssh to the EC2 instance
    * `AMI_ID`. an Amazon image ID, depends on the region. To obtain it go to [EC2 Launch Instances](https://console.aws.amazon.com/ec2/v2/home#LaunchInstanceWizard:) and get AMI ID for **Amazon Linux 2 AMI** image, such as, `ami-0a6dc7529cd559185`. Note that the AMI ID depends on the region.
 
