@@ -2,9 +2,16 @@
 id: armis-api-source
 title: Armis API Integration Source
 sidebar_label: Armis API
+tags:
+  - cloud-to-cloud
+  - armis-api
 description: Learn how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/img/c2c/armis-api/example.json';
+import MyComponentSource from '!!raw-loader!/img/c2c/armis-api/example.json';
+import TerraformExample from '!!raw-loader!/img/c2c/armis-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
@@ -12,39 +19,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
 The Source integration ingests alert and device data from the Armis platform.
 
-## Prerequisites
+## Data collected
 
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  Alerts data |
+| 5 min |  Device data |
+
+## Setup
+
+### Vendor configuration
+
+:::note
 To collect alerts and device logs from Armis platform, you must have an authorized Armis account. Armis APIs use an authorization token to make authorized calls to the API. This section demonstrates how to obtain a token from the Armis (UI).
-
-## Rules
-
-* JSON is the only supported log format
-* Data is collected in five minute intervals.
-
-## States
-
-The Armis API integration Source is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
-When you create an Armis API Source, it goes through the following stages:
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with Armis APIs.
-1. **Collecting**. The Source is actively collecting data from Armis APIs .
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.<br/>![Azure Event Hubs error.png](/img/send-data/Azure-Event-Hubs-error.png)
-
-Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.<br/>![health error generic.png](/img/send-data/azure_health_error_generic.png)
-
-## Data Sources
-
-The Armis API Integration consumes the following data sources and send it to Sumo Logic.
-* Collect alert data from the alert API and will be forwarded to Sumo Logic as SIEM data.
-* Collect device data from the device API and will be forwarded to Sumo Logic as Inventory data.
-
-## Setup and Configuration
+:::
 
 In this configuration, you will set up an Armis source account and configure it to be authorized and authenticated to use device logs and alerts from Armis API.
 To obtain an Armis auth token, follow the steps below:
@@ -54,15 +42,15 @@ To obtain an Armis auth token, follow the steps below:
 1. Click **Show** to view the secret key.<br/> <img src={useBaseUrl('img/send-data/show-secretkey.png')} alt="show-secretkey.png" width="700" />
 1. A popup window will be displayed. Copy and paste the secret key to a folder location. Remember, you will need to enter this key while creating the **Armis Cloud-to-Cloud Source**.<br/><img src={useBaseUrl('img/send-data/show-key.png')} alt="show-key.png" width="400" />
 
-## Create an Armis Source
+### Source configuration
 
 When you create an Armis Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Armis Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Armis**.<br/> <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="150" />
-1. Enter a **Name** for the Source. The description is optional.<br/> <img src={useBaseUrl('img/send-data/armis-config-main.png')} alt="armis-config-main" width="450" />
+1. Search for and select **Armis**.
+1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
@@ -89,44 +77,29 @@ To configure an Armis Source:
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
-### Error types
-
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
-
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
-|:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
-
-### Restarting your Source
-
-{@import ../../../reuse/restart-c2c-source.md}
-
-
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
-| Parameter | Type | Required | Description | Access |
+| Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. |
-| `schemaRef` | JSON Object  | Yes | Use `{"type":"Armis"}` for Armis Source. | not modifiable |
-| `sourceType` | String | Yes | Use `Universal` for Armis Source. | not modifiable |
+| schemaRef | JSON Object  | `{"type":"Armis"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Config Parameters
+### Configuration Object
 
-| Parameter | Type | Required | Description | Access |
-|:--|:--|:--|:--|:--|
-| `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
-| `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
-| `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `instanceUrl` | String | Yes | Armis Instance URL | modifiable |
-| `apiSecretKey` | String | Yes | Armis API secret key | modifiable |
-| `apiType` | Array | Yes | You may use either or both sources of data, i.e. Alerts and devices. |
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| instanceUrl | String | Yes | `null`| Armis Instance URL | modifiable |
+| apiSecretKey | String | Yes | `null`| Armis API secret key | modifiable |
+| apiType | Array | Yes | `null`| You may use either or both sources of data, i.e. Alerts and devices. |
 
-Armis Source JSON example:
+### JSON example
 
 ```json
 {
@@ -153,3 +126,10 @@ Armis Source JSON example:
     }
 }
 ```
+### Terraform example
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+:::

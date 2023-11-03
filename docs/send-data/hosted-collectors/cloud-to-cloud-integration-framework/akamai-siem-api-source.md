@@ -2,9 +2,16 @@
 id: akamai-siem-api-source
 title: Akamai SIEM API Source
 sidebar_label: Akamai SIEM API
+tags:
+  - cloud-to-cloud
+  - akamai-siem-api
 description: The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the V1 SIEM API.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/img/c2c/akamai-siem-api/example.json';
+import MyComponentSource from '!!raw-loader!/img/c2c/akamai-siem-api/example.json';
+import TerraformExample from '!!raw-loader!/img/c2c/akamai-siem-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
@@ -15,33 +22,19 @@ The Akamai SIEM API Source provides a secure endpoint to receive security events
 This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Contact Sumo Logic support for alternative collection techniques if your Source exceeds this rate.
 :::
 
-## States
+## Data collected
 
-An Akamai SIEM API Source tracks errors, reports its health, and start-up progress. You’re informed, in real time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events.md).
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  [Security events](https://developer.akamai.com/api/cloud_security/siem/v1.html)|
 
-An Akamai SIEM API Source goes through the following states when created:
+## Setup
 
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with Symantec.
-1. **Collecting**. The Source is actively collecting data from Symantec.
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/> ![Akamai health error.png](/img/send-data/Akamai-health-error.png)
-
-Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings.<br/> ![hover c2c error.png](/img/send-data/hover-c2c-error.png)
-
-You can click on the status icon to open a Health Events panel with details on each detected issue.
-
-## Prerequisite and Authentication
+### Vendor configuration
 
 The Akamai SIEM API Source requires you to provide a **Client Token**, **Client Secret**, **Access Token**, **Akamai API Host**, and at least one **Config ID**. To get these, follow the instructions from Akamai's documentation to [Set up SIEM integration](https://developer.akamai.com/tools/integrations/siem).
 
-## Create an Akamai SIEM API Source
+### Source configuration
 
 When you create an Akamai SIEM API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
@@ -49,8 +42,8 @@ To configure an Akamai SIEM API Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
-1. Select **Akamai SIEM API**.<br/><img src={useBaseUrl('img/send-data/Akamai-source-icon.png')} alt="Thumbnail icon" width="90"/>
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.<br/><img src={useBaseUrl('img/send-data/Akamai-SIEM-API-Source.png')} alt="Thumbnail icon" width="400"/>
+1. Select **Akamai SIEM API**.
+1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
     * `_siemVendor`:Akamai
@@ -268,53 +261,48 @@ To configure an Akamai SIEM API Source:
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
 1. When you are finished configuring the Source, click **Submit**.
 
-## Error types
+## Metadata fields
 
-When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemVendor` | `Akamai` | Set when **Forward To SIEM** is checked. |
+| `_siemProduct` | `SIEM` | Set when **Forward To SIEM** is checked. |
+| `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
+| `_siemEventID` | `akamai_siem` | This is the value from the `type` field of the event. Set when **Forward To SIEM** is checked and specific to the API collected. |
 
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
-|:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
-
-### Restarting your Source
-
-{@import ../../../reuse/restart-c2c-source.md}
-
-## JSON configuration
+## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
-| Parameter | Type | Required? | Description | Access|
-|:-------|:-----------|:-------|:--------|:----|
-| config | JSON Object  | Yes | Contains the [configuration parameters](#config-parameters) for the Source. |   |
-| schemaRef | JSON Object  | Yes | Use `{"type":"Akamai SIEM API"}` for a Akamai SIEM API Source. | not modifiable |
-| sourceType | String | Yes | Use `Universal` for a Akamai SIEM API Source. | not modifiable |
+| Parameter | Type | Value | Required | Description |
+|:--|:--|:--|:--|:--|
+| schemaRef | JSON Object  | `{"type":"Akamai SIEM API"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
 #### Config Parameters
 
 The following table shows the **config** parameters for a Akamai SIEM API Source.
 
-| Parameter | Type | Required? | Default |Description | Access|
+| Parameter | Type | Required | Default | Description | Example |
 |:-------|:----------|:----|:------|:-----------|:----|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | modifiable |
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `clientSecret` | String | No |  | The Client Secret you want to use to authenticate collection requests. | modifiable |
-| `clientToken` | String | Yes |  | The Client Token for the Client Secret that you want to use to authenticate collection requests. | modifiable |
-| `accessToken` | String | Yes |  | The Access Token you want to use to authenticate collection requests. | modifiable |
-| `host` | String | Yes |  | The custom hostname applied to your credentials, it looks like: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net` | modifiable |
-| `configIds` | Array of strings | Yes |  | Provide at least one Configuration ID you got when you turned on the SIEM integration in Akamai. | modifiable |
-| `disablePostProcess` | Boolean | No | False | When `true` event logs are collected as is from Akamai. When `false` you need to specify the `splitOnRules` and `decodeHttp` parameters. | modifiable |
-| `splitOnRules` | Boolean | No unless `disablePostProcess` is set to true | False | Duplicate Events once for each rule associated with the event. Sets if the event is duplicated once for each rule triggered in the attack data. | modifiable |
-| `decodeHttp` | Boolean | No unless `disablePostProcess` is set to true | True | Decode httpMessage fields. Sets if the httpMessage fields are URL decoded. | modifiable |
-| `resetOffset` | Boolean | No | False | Reset the offset token to start collection from current point in time. | modifiable |
-| `limit` | Integer | No | 10000 | The number of logs to pull per request. Can be a maximum of 200000 and a minimum of 1000. | modifiable |
-| `pollInterval` | Integer | No | 30 | The poll interval in seconds. Can be a maximum of 600 and a minimum of 15. | modifiable |
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| clientSecret | String | No | `null` | The Client Secret you want to use to authenticate collection requests. | modifiable |
+| clientToken | String | Yes | `null` | The Client Token for the Client Secret that you want to use to authenticate collection requests. | modifiable |
+| accessToken | String | Yes | `null` | The Access Token you want to use to authenticate collection requests. | modifiable |
+| host | String | Yes | `null` | The custom hostname applied to your credentials, it looks like: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net` | modifiable |
+| configIds | Array of strings | Yes |`null`  | Provide at least one Configuration ID you got when you turned on the SIEM integration in Akamai. | modifiable |
+| disablePostProcess | Boolean | No | False | When `true` event logs are collected as is from Akamai. When `false` you need to specify the `splitOnRules` and `decodeHttp` parameters. | modifiable |
+| splitOnRules | Boolean | No unless `disablePostProcess` is set to true | False | Duplicate Events once for each rule associated with the event. Sets if the event is duplicated once for each rule triggered in the attack data. | modifiable |
+| decodeHttp | Boolean | No unless `disablePostProcess` is set to true | True | Decode httpMessage fields. Sets if the httpMessage fields are URL decoded. | modifiable |
+| resetOffset | Boolean | No | False | Reset the offset token to start collection from current point in time. | modifiable |
+| limit | Integer | No | 10000 | The number of logs to pull per request. Can be a maximum of 200000 and a minimum of 1000. | modifiable |
+| pollInterval | Integer | No | 30 | The poll interval in seconds. Can be a maximum of 600 and a minimum of 15. | modifiable |
 
-Akamai SIEM API Source JSON example:
+### JSON example
 
 ```json
 {
@@ -346,3 +334,10 @@ Akamai SIEM API Source JSON example:
   }
 }
 ```
+### Terraform example
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+:::
