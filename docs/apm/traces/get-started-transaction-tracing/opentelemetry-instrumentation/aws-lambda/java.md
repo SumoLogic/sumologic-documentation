@@ -99,27 +99,27 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region amd64 (x86_64
 
 | AWS Region | ARN |
 |:--|:--|
-|   af-south-1       |   arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   ap-east-1        |   arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-northeast-2   |   arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ca-central-1     |   arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1     |
-|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1     |
-|   eu-north-1       |   arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   eu-south-1       |   arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   eu-west-3        |   arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   me-south-1       |   arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   sa-east-1        |   arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-west-1        |   arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
+|   af-south-1       |   arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   ap-east-1        |   arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-northeast-2   |   arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ca-central-1     |   arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2     |
+|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2     |
+|   eu-north-1       |   arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   eu-south-1       |   arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   eu-west-3        |   arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   me-south-1       |   arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   sa-east-1        |   arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-west-1        |   arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
 
 ### Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
@@ -127,21 +127,21 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region arm64 archit
 
 | AWS Region | ARN |
 |:--|:--|
-|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1       |
-|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1     |
-|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
+|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2       |
+|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2     |
+|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
 
 ## Sumo Logic OTel Lambda container instrumentation
 
-[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.24.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.24.0/java) also provides packed [OpenTelemetry Java](https://github.com/open-telemetry/opentelemetry-java) libraries for container-based Lambda functions.
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.30.1](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.30.1/java) also provides packed [OpenTelemetry Java](https://github.com/open-telemetry/opentelemetry-java) libraries for container-based Lambda functions.
 
 :::note
 The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
@@ -157,7 +157,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 ### Lambda function image changes
 
-1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture,  [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.24.0/opentelemetry-java-wrapper-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.24.0/opentelemetry-java-wrapper-arm64.zip).
+1. Download and extract Sumo Logic Distribution for OpenTelemetry Java Lambda Layer archive with instrumentation packages specific for your architecture,  [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.30.1/opentelemetry-java-wrapper-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.30.1/opentelemetry-java-wrapper-arm64.zip).
 
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. See the Dockerfile example:
 
