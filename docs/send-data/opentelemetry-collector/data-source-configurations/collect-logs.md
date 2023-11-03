@@ -20,9 +20,8 @@ The Sumo Logic Distribution for OpenTelemetry Collector provides various receive
   * [Collecting logs from an Oracle database](#collecting-logs-from-an-oracle-database)
   * [Collecting logs from a PostgreSQL database](#collecting-logs-from-a-postgresql-database)
   * [Troubleshooting the SQL Query receiver](#troubleshooting-the-sql-query-receiver)
-* [Collecting logs from other sources](#collecting-logs-from-other-sources)
 
-You can find the full list of receivers on our [Sumo Logic OpenTelemetry Collector page][collector_components_docs].
+You can find the full list of receivers on our [Sumo Logic OpenTelemetry Collector page](https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components).
 
 :::tip Additional information
 See [Additional Configurations Reference](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/) for more details about configuring the Sumo Logic OpenTelemetry Collector.
@@ -539,45 +538,6 @@ If you can see the following logs from the collector after applying the configur
 
 Make sure you are using collector version `v0.78.0-sumo-0` or higher.
 
-## Collecting logs from other sources
-
-You can find the full list of receivers available on the [Sumo Logic OpenTelemetry Collector][collector_components_docs] page. When the Sumo Logic OpenTelemetry Collector does not support collecting logs from a source, the [Monitoring Job Receiver (Beta)][monitoring_job_receiver_docs] can be used as a catch-all.
-
-The Monitoring Job Receiver can be configured to execute a script or command on the collector host. The standard output and error streams from that command will be collected as log record(s).
-
-:::important Prefer purpose-built receivers to Monitoring Jobs
-When available, prefer purpose-built receivers like `sqlquery` to monitoring jobs receiver. This example monitoring job configuration runs SQL queries using the `psql` tool for demonstration purposes as it is well understood.
-:::
-
-This configuration configures the controller to execute the `psql` command and collects the output text as logs. See the [Monitoring Job Receiver documentation][monitoring_job_receiver_docs] for configuration specifics including advanced output processing with features like multi-line log detection, timestamp, and field parsing.
-
-```yaml
-receivers:
-  monitoringjob/logs_table:
-    schedule:
-        interval: 10m
-    exec:
-        command: psql
-        arguments:
-            - '--csv'
-            - '-c'
-            - "select log_id, log_text from logs_table WHERE log_time > (NOW() - interval '10 minutes');"
-service:
-  pipelines:
-    logs/postgresql:
-      receivers:
-        - monitoringjob/logs_table
-      processors:
-        - memory_limiter
-        - resourcedetection/system
-        - batch
-      exporters:
-        - sumologic
-```
-
-
-
-[collector_components_docs]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main#components
 [filelog_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/filelogreceiver/README.md
 [json_parser_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/pkg/stanza/docs/operators/json_parser.md
 [windows_event_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/windowseventlogreceiver/README.md
@@ -585,4 +545,3 @@ service:
 [tcp_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/tcplogreceiver/README.md
 [udp_log_receiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/udplogreceiver/README.md
 [sqlquery_receiver_docs]: https://github.com/dmolenda-sumo/opentelemetry-collector-contrib/blob/sqlquery-receiver-add-logs-v0.78.0/receiver/sqlqueryreceiver/README.md
-[monitoring_job_receiver_docs]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/pkg/receiver/jobreceiver/README.md
