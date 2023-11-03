@@ -38,7 +38,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Administration - Users and Roles | [Users](/docs/manage/users-roles/users/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
 | Collection | [Hosted collectors](/docs/send-data/hosted-collectors/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
 | Collection | [Installed collectors](/docs/send-data/installed-collectors/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
-| Collection | [Open Telemetry collector](/docs/send-data/opentelemetry-collector/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*OS support: Linux only.* <br/>*UI: No workflow to add collector.* | 
+| Collection | [OpenTelemetry collector](/docs/send-data/opentelemetry-collector/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*OS support: Linux only.* <br/>*UI: No workflow to add collector.* | 
 | Collection - Amazon Web Services | [Amazon CloudFront](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
 | Collection - Amazon Web Services | [Amazon S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
 | Collection - Amazon Web Services | [Amazon S3 Audit](/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)| 
