@@ -924,7 +924,6 @@ module.exports = {
         'dashboards/create-dashboard-new',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
-        `dashboards/dashboard-optimization`,
         {
           type: 'category',
           label: 'Panels',
