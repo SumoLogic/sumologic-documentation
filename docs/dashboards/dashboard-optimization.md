@@ -13,7 +13,7 @@ When a query has loaded for five minutes without completing, Sumo creates a sche
 
 ## Optimization icons
 
-The icon in the upper right corner of each Dashboard Panel shows the current optimization status of that Panel.
+The icon in the upper right corner of each dashboard panel shows the current optimization status of that panel.
 
 | Icon  | Description |
 |:--|:--|
