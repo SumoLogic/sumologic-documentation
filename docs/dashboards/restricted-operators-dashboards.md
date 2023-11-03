@@ -62,6 +62,14 @@ You can use the following operators in dashboard panels:
 * Total
 * Transaction By Flow
 
+```sql title="Example"
+"error"
+| timeslice 1d
+| count by _timeslice
+| sort by _timeslice asc
+| accum _count as running_total
+```
+
 ## Notes
 
 You can use the [count_frequent](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
