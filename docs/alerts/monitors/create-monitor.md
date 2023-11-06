@@ -268,7 +268,7 @@ When a trigger condition is met, you can send notifications to other people and 
 
 To add notifications, click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
-<img src={useBaseUrl('img/monitors/monitor-notifications-input.png')} alt="monitor notifications input.png" width="500"/>
+<img src={useBaseUrl('img/monitors/monitor-notifications-input.png')} alt="monitor notifications input.png" style={{border: '1px solid black'}} width="500"/>
 
 1. Set your **Preferred Notification Time Zone** for your monitor's alert email notifications. If you don't select anything, it will default to the time zone specified in your user preferences.
 1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
