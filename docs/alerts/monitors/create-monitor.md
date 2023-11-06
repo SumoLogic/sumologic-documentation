@@ -262,20 +262,20 @@ Alert Name allows you to customize the name that appears on the Alert Page. By d
 ### Evaluation Delay
 Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.<br/> ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)<br/>If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
-## Step 3: Notifications
-When a trigger condition is met you can send notifications to other people and services. To add notifications, click on the **Add Notification** button. You can add more than one notification channel for a Monitor.<br/>  ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
+## Step 3: Notifications (optional)
 
-Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
+When a trigger condition is met, you can send notifications to other people and services. Metrics monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log monitors always group notifications.
 
-The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
-* **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
-* **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
+To add notifications, click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
+<img src={useBaseUrl('img/monitors/monitor-notifications-input.png')} alt="monitor notifications input.png" width="500"/>
+
+1. Set your **Preferred Notification Time Zone** for your monitor's alert email notifications. If you don't select anything, it will default to the time zone specified in your user preferences.
+1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
+   * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
+   * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 1. Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification.  You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
-   :::tip
-   See the [Notifications section](#notifications) for details on alert and recovery notifications.
-   :::
-   If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
+   * If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
 ## Step 4: Monitor Details
