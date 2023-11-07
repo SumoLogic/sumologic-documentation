@@ -37,13 +37,4 @@ This section describes how to install the \<App Name\> app for Sumo Logic and de
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing \<App Name\> dashboards
-
-{@import ../../reuse/filter-dashboards.md}
-
-## \<Dashboard name\>
-
-\<Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.\> Use this dashboard to:
-
-* Enter a list of features. Example below.
 
