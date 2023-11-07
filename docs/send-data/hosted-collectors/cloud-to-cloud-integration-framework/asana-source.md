@@ -59,8 +59,9 @@ To configure an Asana Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Enter the Personal Access Token (PAT) from the Asana platform.
 1. Enter the unique workspace ID for the users service account.
+1. When you are finished configuring the Source, click **Save**.
 
-### JSON Configuration
+## JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
@@ -78,8 +79,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| personalAccessToken | String | Yes | `null` | Personal Access Token from the Asana platform. | modifiable |
-| workspaceID | String | Yes | `null` | This will be the unique workspace id for the users service account. | modifiable |
+| personalAccessToken | String | Yes | `null` | Personal Access Token from the Asana platform. |  |
+| workspaceID | String | Yes | `null` | This will be the unique workspace id for the users service account. |  |
 
 ### JSON example
 

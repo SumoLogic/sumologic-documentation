@@ -34,41 +34,24 @@ You need to create and register a service application within the [Azure Activ
 The following steps show you how to create a service application:
 
 1. Log into the [Azure Active Directory Portal](https://aad.portal.azure.com/)
-
 1. Select **Azure Active Directory** in the left menu.
-
     <img src={useBaseUrl('/img/send-data/ms_graph_azure_portal.png')} alt="ms_graph_azure_portal" width="800" style={{border: '1px solid black'}} />
-
-1. Select **App Registrations**.
-
+1. Select **App Registrations**.<br/>
     <img src={useBaseUrl('/img/send-data/2a_ms_graph_app_registration.png')} alt="2a_ms_graph_app_registration" width="400" style={{border: '1px solid black'}} />
-
 1. Select **New Registration**. Go through the [registration process](https://docs.microsoft.com/en-us/graph/auth-register-app-v2), providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
-
     <img src={useBaseUrl('/img/send-data/ms_graph_new_registration.png')} alt="ms_graph_new_registration" width="800"style={{border: '1px solid black'}} />
-
 1. After the application is registered ensure you copy the **Application (client) ID** and **Directory (tenant) ID** displayed on the **Overview** page. These are needed when creating the Source in Sumo Logic.
-
     <img src={useBaseUrl('/img/send-data/3_ms_graph_app_settings.png')} alt="3_ms_graph_app_settings" width="800"style={{border: '1px solid black'}} />
-
 1. Within the application configuration page, select **Certificates and Secrets** and create an [Application Client Secret Key](https://docs.microsoft.com/en-us/graph/notifications-integration-app-registration#app-certificates-and-secrets).
-
     <img src={useBaseUrl('/img/send-data/4_ms_graph_app_client_secret.png')} alt="4_ms_graph_app_client_secret" width="800"style={{border: '1px solid black'}} />
-
 1. Copy the Client Secret value, you'll need it when creating the Source in Sumo Logic.
-
     <img src={useBaseUrl('/img/send-data/5_ms_graph_app_client_secret_created.png')} alt="5_ms_graph_app_client_secret_created" width="800"style={{border: '1px solid black'}} />
-
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
-
     You need to find and select the **SecurityAlert.Read.All**, **SecurityAlert.ReadWrite.All**, **SecurityIncident.Read.All**, **SecurityIncident.ReadWrite.All** and **SecurityEvents.Read.All** permissions. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) to view all available security permissions.
-
     :::note
     An Administrator must approve (grant) these permissions before the Source will function.
     :::
-
     <img src={useBaseUrl('/img/send-data/6_ms_graph_app_add_permissions.png')} alt="6_ms_graph_app_add_permissions" width="800"style={{border: '1px solid black'}} />
-
 1. Follow the steps below to enable the Application permission role.
    - In the Manage menu, select App roles.
    - Click the **Create app role** tab.
@@ -78,7 +61,6 @@ The following steps show you how to create a service application:
       - **Description**. Enter a brief description.
       - Select the checkbox to enable the app role.
     - Click **Apply**.
-
     <img src={useBaseUrl('/img/send-data/7_ms_graph_app_add_role.png')} alt="7_ms_graph_app_add_role" width="800"style={{border: '1px solid black'}} />
 
 ### Source configuration

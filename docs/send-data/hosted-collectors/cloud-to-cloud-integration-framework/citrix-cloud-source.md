@@ -24,15 +24,9 @@ The Citrix Cloud source collects the system, operation, and session logs using t
 | :--- | :--- |
 | 5 min |  [System Log](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) |
 | 5 min |  [Item usage](https://developer.1password.com/docs/events-api/reference/#post-apiv1itemusages) |
-| 5 min |  Operation Log
-- [Config Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetOperations)
-- [Low-Level Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations) |
-
-- **[System Log API](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords)**. This API provides logs related to the administrator and secures client operations. It allows you to monitor activities in the Citrix Cloud, providing insights into what changes are made and who initiated those changes.
-- **Operation Log API**. This API provides logs related to configuration changes within a customer site. Two types of logs are available:
-   - **[Config Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetOperations)**. This API provides logs that give a high-level summary of configuration operations within a customer site.
-   - **[Low-Level Operation Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations)**. This API provides detailed logs about specific configuration operations and offers in-depth insights into the low-level details of a particular operation.
-- **[Session Log API](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview)**. TThis API provides details about all the sessions in the Citrix Cloud, captured through the Citrix Monitor Service.
+| 5 min |  [Config Operation Log](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetOperations) |
+| 5 min | [Low-Level Operation Log](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/apis/ConfigLog-APIs/ConfigLog_GetLowLevelOperations) |
+| 5 min |  [Session Log](https://developer.cloud.com/citrixworkspace/citrix-daas/accessing-monitor-service-data-in-citrix-cloud/docs/overview) |
 
 ## Setup
 
@@ -44,7 +38,7 @@ The Citrix Cloud source collects the system, operation, and session logs using t
    - To collect System logs from the Citrix Cloud platform, you must have an authorized Citrix Cloud account.
    - Citrix Cloud APIs use an OAuth 2.0 authorization token to make authorized API calls.
 - The Operation and Session logs are obtained using the [Citrix DaaS REST API](https://developer.cloud.com/citrixworkspace/citrix-daas/citrix-daas-rest-apis/docs/overview).
-   - To collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. Make sure this by signing in to the Citrix Cloud platform and checking the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, then you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" />
+   - To collect these logs, one needs to have a Citrix Cloud account with the DaaS Service enabled. Make sure this by signing in to the Citrix Cloud platform and checking the home page. Look for the presence of the DaaS service in the **My Services** section. If it is not listed, then you need to purchase this service to collect the Operation and Session Logs. <br/> <img src={useBaseUrl('img/send-data/daas-service-enabled.png')} alt="daas-service-enabled" width="800" style={{border: '1px solid black'}} />
 
 In this configuration, you will set up the Citrix Cloud source account and configure it to be authorized and authenticated to use system logs and alerts from Citrix Cloud API.
 To obtain the Citrix Cloud auth token, you will need the following parameters:
@@ -69,11 +63,9 @@ The **API security token** is used to authenticate with Citrix Cloud API. After 
 To get the **Citrix Cloud API token**, follow the steps below:
 1. From the Citrix Cloud Console, navigate to the <img src={useBaseUrl('img/send-data/navigation-button.png')} alt="<navigation-button.png>" width="30" /> menu icon.
 1. Select the **Identity and Access Management** option from the menu.<br/><img src={useBaseUrl('img/send-data/access-management.png')} alt="<access-management.png>" width="650" />
-
   :::note
   If this option does not appear, you may not have adequate permissions to create an API client. Contact your administrator to get the required permissions.
   :::
-
 1. Select the **API Access** tab.<br/><img src={useBaseUrl('img/send-data/api-access.png')} alt="<api-access.png>" width="650" />
 1. Give a name to your Secure Client, and click **Create Client**.<br/><img src={useBaseUrl('img/send-data/create-client.png')} alt="<create-client.png>" width="650" />
 1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#set-up-citrix-cloud-source). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
@@ -86,7 +78,7 @@ When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before 
 To configure the Citrix Cloud API:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **Citrix Cloud** icon. 
+1. Search for and select **Citrix Cloud**. 
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
@@ -125,7 +117,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | customerID | String | Yes | `null`| Customer ID of the environment. |  |
 | clientID | String | Yes | `null`| Client ID for the API client. |  |
 | clientSecret | String | Yes | `null`| Client Secret for the API client. |  |
-| supportedAPI | Array | Yes | `null`| Select any of the given data sources or all the data sources, such as System Logs, Operation Logs, Monitor Data Session Logs. |  |
+| supportedAPI | Array | Yes | | Select any of the given data sources or all the data sources, such as System Logs, Operation Logs, Monitor Data Session Logs. |  |
 
 ### JSON example
 

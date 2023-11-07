@@ -60,14 +60,13 @@ To add domain-wide delegation to your service account using the client ID or Key
 #### Adding OAuth Scope
 
 OAuth Scope enables delegated access to a user's resources on a service, such as Google, without exposing the user's credentials to the third-party application. By adding the necessary OAuth scopes, you are specifying the level of access the service account has to your resources, while also ensuring security and privacy.
-1. From the [Google admin console](https://console.cloud.google.com/projectselector2/iam-admin), go to **Security** section, then click **API Controls**. <br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope1.png')} alt="google_workspace_adding_scope1.png" width="800" />
+1. From the [Google admin console](https://console.cloud.google.com/projectselector2/iam-admin), go to **Security** section, then click **API Controls**.<br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope1.png')} alt="google_workspace_adding_scope1.png" width="800" />
 1. To add the OAuth scopes, locate the settings under **Manage Domain Wide Delegation** section. <br/><img src={useBaseUrl('img/send-data/manage-domainwide-delegation.png')} alt="manage-domainwide-delegation.png" width="700" />
 1. Click **Add new**.
 1. In the **Client ID** field, paste the client ID you copied in step 5 of the [Creating Service Account](#creating-service-account) section.
 1. In the **OAuth Scopes** field, enter a comma-delimited list of the scopes required by your application. <br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope2.png')} alt="google_workspace_adding_scope2.png" width="600" />.
 
- You can add any of the following OAuth scopes. Note the ones you select, you'll need to provide them when configuring the Sumo Logic Google Workspace Source.
-
+You can add any of the following OAuth scopes. Note the ones you select, you'll need to provide them when configuring the Sumo Logic Google Workspace Source.
   ```
    https://www.googleapis.com/auth/admin.directory.user
    https://www.googleapis.com/auth/admin.directory.user.readonly

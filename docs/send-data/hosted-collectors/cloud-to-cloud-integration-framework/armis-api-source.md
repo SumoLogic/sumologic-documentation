@@ -30,10 +30,6 @@ The Source integration ingests alert and device data from the Armis platform.
 
 ### Vendor configuration
 
-:::note
-To collect alerts and device logs from Armis platform, you must have an authorized Armis account. Armis APIs use an authorization token to make authorized calls to the API. This section demonstrates how to obtain a token from the Armis (UI).
-:::
-
 In this configuration, you will set up an Armis source account and configure it to be authorized and authenticated to use device logs and alerts from Armis API.
 To obtain an Armis auth token, follow the steps below:
 1. Log into the [Armis](https://armis.com/) application.
@@ -47,7 +43,7 @@ To obtain an Armis auth token, follow the steps below:
 When you create an Armis Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Armis Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Armis**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -56,28 +52,24 @@ To configure an Armis Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
 1. In **Instance URL**, enter the Armis hostname.
-
    :::info
    Armis Instance URL is the Armis hostname. For example, `https://armis-instance.armis.com`.
    :::
-
-8. In **Secret Key**, enter your API secret key that you have generated in [Setup and Configuration](#setup-and-configuration) section.
-9. In **Armis API selection**. Choose the data sources from which you want to ingest data. The integration provides the option to you to select either one or both of the data sources.
+1. In **Secret Key**, enter your API secret key that you have generated in [Setup and Configuration](#setup-and-configuration) section.
+1. In **Armis API selection**. Choose the data sources from which you want to ingest data. The integration provides the option to you to select either one or both of the data sources.
    * If **Alert API** is selected, the integration will fetch alert data.
      * Permission `Alert>Read` must be provided to fetch alert data.
      * Data for an alert will be fetched every 5 minutes.
    * If **Device API** is selected, the integration will fetch device data.
      * Permission `Device>Read` must be provided to fetch device data.
      * Data for the device will be fetched every 24 hours.
-
   :::note
   This step is mandatory, ensure you select one data source.
   :::
-
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
-### JSON configuration
+## JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
@@ -95,9 +87,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| instanceUrl | String | Yes | `null`| Armis Instance URL | modifiable |
-| apiSecretKey | String | Yes | `null`| Armis API secret key | modifiable |
-| apiType | Array | Yes | `null`| You may use either or both sources of data, i.e. Alerts and devices. |
+| instanceUrl | String | Yes | `null`| Armis Instance URL |  |
+| apiSecretKey | String | Yes | `null`| Armis API secret key |  |
+| apiType | Array | Yes | | You may use either or both sources of data, i.e. Alerts and devices. |
 
 ### JSON example
 

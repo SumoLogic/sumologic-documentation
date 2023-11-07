@@ -98,8 +98,7 @@ To configure an Azure Event Hubs Source:
 | `_siemProduct` | `Azure` | Set when **Forward To SIEM** is checked. |
 | `_siemVendor` | `Microsoft` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<metadata.eventType>` | Where `metadata.eventType` is populated from the field in the event JSON, such as Administrative or Resource Health. See more information about the available event types for the Azure platform in Activity Log Categories and Resource Log Categories.
-Logs that do not contain a category field are assigned category UNKNOWN. |
+| `_siemEventID` | `<metadata.eventType>` | Where `metadata.eventType` is populated from the field in the event JSON, such as Administrative or Resource Health. See more information about the available event types for the Azure platform in Activity Log Categories and Resource Log Categories. Logs that do not contain a category field are assigned category UNKNOWN. |
 
 ## JSON schema
 
@@ -126,11 +125,11 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | consumer_group | String | Yes | $Default | If needed, specify a custom consumer group name. When using a custom Consumer Group make sure that it exists for the Event Hub instance. |  |
 | receive_with_latest_offset | Boolean | Yes | True | Receive data with the latest offset or from the timestamp. |  |
 | receive_from_timestamp | Boolean | No  | `null` | Set to true when receive_with_latest_offset is false. |  |
-| timeZone | String | No | null | Type the time zone you'd like the source to use in TZ database format. Example: `"America/Los_Angeles"`. See [time zone format](/docs/send-data/use-json-configure-sources) for details. |  |
+| timeZone | String | No | null | Type the time zone you'd like the source to use in TZ database format. | `"America/Los_Angeles"`. See [time zone format](/docs/send-data/use-json-configure-sources) for details. |
 | forceTimeZone | Boolean | No | false | Type `true` to force the Source to use a specific time zone, otherwise type `false` to use the time zone found in the logs. The default setting is false. |  |
 | automaticDateParsing | Boolean | No | true | Determines if timestamp information is parsed or not. Type `true` to enable automatic parsing of dates (the default setting); type `false` to disable. If disabled, no timestamp information is parsed at all. |  |
 | autoParseTimeFormat | Boolean | No | true | Sets if the timestamp format is automatically detected by Sumo Logic. If `autoParseTimeFormat` is set to false, then `defaultDateFormats` must be specified. |  |
-| defaultDateFormats | Object | array | No | `null` | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. For example, `INFO(.*)`<br/>For an example, see [Timestamp example](/docs/send-data/use-json-configure-sources), below.<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference). |  |
+| defaultDateFormats | array | No | `null` | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. | For example, `INFO(.*)`<br/> For an example, see [Timestamp example](/docs/send-data/use-json-configure-sources), below.<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference). |
 
 ### JSON example
 

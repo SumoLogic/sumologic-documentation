@@ -72,14 +72,12 @@ To configure a Cato Networks Source:
 1. Enter the **API Key** for Cato Networks account.
 1. Enter the **Account ID** for Cato Networks account.
 1. Select the **Data Types**. You can select one or both of the data sources.
-   - If **All** is selected, the integration will fetch both security and audit events. By default, **All ** will be selected.
+   - If **All** is selected, the integration will fetch both security and audit events. By default, **All** will be selected.
    - If **Security Events** is selected, the integration will fetch security data.
    - If **Audit Events** is selected, the integration will fetch audit data.
-    :::note
-    Data from the source will be fetched every 5 minutes.
-    :::
+1. When you are finished configuring the Source, click **Save**.
 
-### JSON Configuration
+## JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 

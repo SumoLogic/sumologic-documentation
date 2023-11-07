@@ -28,15 +28,11 @@ The Google Workspace AlertCenter Source consumes data from the [Alerts API](http
 
 The Source periodically fetches data from the API. The polling interval is 5 minutes.
 
+## Setup
 
+### Vendor configuration
 
-## Configuration overview
-
-In this configuration, you'll set up a Google service account, and configure the Google Workspace AlertCenter source  to use this account to authenticate and be authorized to access the Google Alerts API.
-
-## Step 1: Create service account Credentials
-
-To create Google Workspace AlertCenter service account credentials:
+Follow the below steps to create Google Workspace AlertCenter service account credentials:
 
 1. From [Google Cloud console](https://console.cloud.google.com), select your project or create a new one.
 1. Enable **Google Workspace Alert Center API** for the Alert API. To locate this setting, you can search for "Google Workspace Alert Center API" in the search bar. Then select the **Enable** button. <br/><img src={useBaseUrl('img/send-data/google_workspace_alert_center_API_sdk.png')} alt="api-sdk" width="450"/>

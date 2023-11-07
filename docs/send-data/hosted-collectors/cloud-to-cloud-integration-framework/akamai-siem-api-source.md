@@ -32,7 +32,7 @@ This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volu
 
 ### Vendor configuration
 
-The Akamai SIEM API Source requires you to provide a **Client Token**, **Client Secret**, **Access Token**, **Akamai API Host**, and at least one **Config ID**. To get these, follow the instructions from Akamai's documentation to [Set up SIEM integration](https://developer.akamai.com/tools/integrations/siem).
+The Akamai SIEM API Source requires you to provide a **Client Token**, **Client Secret**, **Access Token**, **Akamai API Host**, and at least one **Config ID**. To get these, follow the instructions from Akamai's documentation to [set up SIEM integration](https://developer.akamai.com/tools/integrations/siem).
 
 ### Source configuration
 
@@ -42,14 +42,10 @@ To configure an Akamai SIEM API Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
-1. Select **Akamai SIEM API**.
+1. Search for and select **Akamai SIEM API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
-    * `_siemVendor`:Akamai
-    * `_siemProduct`:SIEM
-    * `_siemFormat`:JSON
-    * `_siemEventID`: `<type>` This is the value from the `type` field of the event. This is typically `akamai_siem`.
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. **Client Token**, **Client Secret**, **Access Token**, and **Akamai API Host**. Provide the Akamai SIEM API authentication credentials you want to use to [authenticate](#prerequisite-and-authentication)) collection requests. The **Akamai API Host** is the custom hostname applied to your credentials, it looks something like this: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net`.
 1. **Config IDs**. Provide at least one Security Configuration ID you got when you turned on the SIEM integration in Akamai. This was done in the [prerequisite and authentication](#prerequisite-and-authentication) section.
 1. **Parsing Options**. Select if you want to **Enable post processing** or **Disable all parsing**. The post processing options are **Decode httpMessage fields** and **Duplicate Events once for each rule associated with the event**. We recommend both parsing options when **Forward to SIEM** is enabled.
@@ -280,7 +276,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-#### Config Parameters
+### Config Parameters
 
 The following table shows the **config** parameters for a Akamai SIEM API Source.
 

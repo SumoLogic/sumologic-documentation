@@ -25,7 +25,7 @@ If you want to explicitly allow the static IP addresses used for this Source o
 | Polling Interval | Data |
 | :--- | :--- |
 | 5 min |  [Users](https://docs.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0) |
-| 5 min |  [Users](https://docs.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0) |
+| 5 min |  [Devices](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-overview?view=graph-rest-1.0) |
 
 ## Setup
 
@@ -39,29 +39,17 @@ Use the following steps to create a service application:
 
 1. Sign in to the [Azure Active Directory Portal](https://aad.portal.azure.com/)
 1. Then select **Azure Active Directory** in the left menu.
-
     ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
-
-1. Then select **App Registrations**.
-
+1. Then select **App Registrations**.<br/>
     ![Azure AD step 3 red box.png](/img/send-data/Azure-AD-step-3-red-box.png)
-
 1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
-
     ![Azure new registration in step 4.png](/img/send-data/Azure-new-registration-in-step-4.png)
-
 1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Azure AD Inventory Source.
-
     ![Azure created app in step 5.png](/img/send-data/Azure-created-app-in-step-5.png)
-
 1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.
-
     ![Azure AD step 6.png](/img/send-data/Azure-AD-step-6.png)
-
 1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Azure AD Inventory Source.
-
     ![Azure AD step 7.png](/img/send-data/Azure-AD-step-7.png)
-
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
 From there, select (or search for) the following permissions under type **Application permissions**. An Administrator must approve (grant) these permissions before the integration will function.
@@ -135,10 +123,10 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | tenant_id | String | Yes | `null` | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. |  |
 | secret_key | String | Yes |`null`  | Provide the Application Client Secret Value you created in Azure. | |
 | application_id | String | Yes | `null` | Provide the Application (client) ID you got after you registered (created) the Azure Application. |  |
-| supported_apis | Array of strings | Yes | `null` | Define one or more of the available APIs to collect: Devices, and Users. For example, for both you'd use: ["Devices","Users"] |  |
+| supported_apis | Array of strings | Yes | `null` | Define one or more of the available APIs to collect: Devices, and Users.| ["Devices","Users"] |
 | userSignInActivity | Boolean | No | False | Select the checkbox to include the sign in activity information in your user response. |  |
 
-### JSON Example
+### JSON example
 
 ```json
 {

@@ -108,6 +108,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
     }
 }
 ```
+### Terraform example
+
 ## Troubleshooting
 
 After configuring your source, you should check the status of the source in the **Collectors** page > **Status** column. If the source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
@@ -123,8 +125,6 @@ After configuring your source, you should check the status of the source in the 
 To resolve these errors:
 - Make sure the **Base URL** matches your domain.
 - Make sure correct **Client ID or Secret Key** is used to configure the source.
-
-### Terraform example
 
 ## FAQ
 
