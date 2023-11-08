@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic is FedRAMP® Moderate Authorized, providing the observability and security that federal agencies and commercial entities require to ensure their applications are reliable and secure. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site.
 
-For information about the FedRAMP certification of Sumo Logic’s solution, see [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338) (package ID FR1918740338). 
+For information about the FedRAMP certification of Sumo Logic’s solution, see [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338) (package ID FR1918740338).
 
 The following table shows the capabilities included with Sumo Logic’s FedRAMP solution compared to Sumo Logic's standard product offering.
 
