@@ -15,4 +15,4 @@ To install the app:
 1. Click **Next**.
 1. Look for the dialog confirming that your app was installed successfully.<br/><img src="/img/get-started/library/app-success.png" alt="app-success.png" width="80%" />
 
-Once an app is installed, it will appear in your **Personal** folder or the folder that you specified. From here, you can share it with other users in your organization. Dashboard panels will automatically start to fill with data received since the panel was created, with data matching the time range query. Results won't be available immediately, but within about 20 minutes, you'll see completed graphs and maps.
+Once an app is installed, it will appear in your **Personal** folder or the folder that you specified. From here, you can share it with other users in your organization. Dashboard panels will automatically start to fill with data matching the time range query received since you created the panel. Results won't be available immediately, but within about 20 minutes, you'll see completed graphs and maps.
