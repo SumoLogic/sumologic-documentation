@@ -501,17 +501,17 @@ module.exports = {
 };
 
 
-export default {
-  markdown: {
-    format: 'detect',
-    mermaid: true,
-    preprocessor: ({filePath, fileContent}) => {
-      return fileContent.replaceAll('{{MY_VAR}}', 'MY_VALUE');
-    },
-    mdx1Compat: {
-      comments: true,
-      admonitions: true,
-      headingIds: true,
-    },
-  },
-};
+
+// Attempt to fix Docusaurus v3 MDX/Mermaid breaking changes
+
+//export default {
+  //markdown: {
+  //  format: 'detect',
+  //  mermaid: true,
+  //  mdx1Compat: {
+  //    comments: true,
+  //    admonitions: true,
+  //    headingIds: true,
+  //  },
+  //},
+//};
