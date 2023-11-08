@@ -17,4 +17,4 @@ As of **November 15, 2023**, Sumo Logic's on-premises SOAR solution no longer re
 
 Effective **December 1, 2024**, Sumo Logic’s on-premises SOAR solution reaches end-of-life and becomes obsolete. Beginning on that date, it no longer receives applicable support entitled by active support contracts or by applicable warranty terms and conditions. 
 
-To continue to utilize Sumo Logic’s SOAR capabilities, use our SaaS product, [Cloud SOAR](/docs/cloud-soar/). 
+To upgrade to Sumo Logic’s [Cloud SOAR](/docs/cloud-soar/) offering, reach out to your Sumo Logic representative.
