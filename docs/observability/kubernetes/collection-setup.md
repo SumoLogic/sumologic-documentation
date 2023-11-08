@@ -7,7 +7,7 @@ description: This page provides an overview of Kubernetes collection process for
 
 This page provides an overview of the collection process for Kubernetes environments.
 
-Sumo Logic collects logs, events, metrics, and security data with the [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), Prometheus, and Falco. These collectors are all open source collectors that are maintained by the Cloud Native Computing Foundation (CNCF). The collected data streams through the OpenTelemetry pipelines for metadata enrichment. Sumo Logic tags the container, pod, node, and cluster, as well as identifying the service, namespace, and deployment.
+Sumo Logic collects logs, events, metrics, and security data using the [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) and Falco, both of which are open source collectors. The collected data streams through the OpenTelemetry pipelines for metadata enrichment. Sumo Logic then tags the container, pod, node, and cluster, as well as identifying the service, namespace, and deployment.
 
 ![K8s.png](/img/kubernetes/K8s-architecture.png)
 
