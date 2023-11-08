@@ -1915,6 +1915,7 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
+        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
