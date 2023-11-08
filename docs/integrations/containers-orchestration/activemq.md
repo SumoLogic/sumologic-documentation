@@ -207,7 +207,7 @@ Enter values for the following parameters (marked `CHANGE_ME` above):
       * `environment` - This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `messaging_cluster` - Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-  :::caution Do not modify these values
+  :::warning Do not modify these values
 
   Modifying these values will cause the Sumo Logic apps to not function correctly.
 
@@ -243,7 +243,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-   :::caution Do not modify these values
+   :::warning Do not modify these values
 
    Modifying these values will cause the Sumo Logic apps to not function correctly.
 
@@ -398,7 +398,7 @@ This section provides instructions for configuring metrics collection for the Su
   * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3 (Install Telegraf). Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-  :::caution Do not modify these values
+  :::warning Do not modify these values
 
   Modifying these values set by this Telegraf configuration will cause the Sumo Logic apps to not function correctly.   
   * `data_format - "prometheus"` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.

@@ -136,7 +136,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
         * `environment` - This is the deployment environment where the Nginx farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm `- Enter a name to identify this Nginx farm. This farm name will be shown in the Sumo Logic dashboards.  
 
-:::caution Do not modify these values
+:::warning Do not modify these values
 
 Modifying these values will cause the Sumo Logic apps to not function correctly.
 
@@ -172,7 +172,7 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
      * `environment` - This is the deployment environment where the Nginx farm identified by the value of `servers` resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
      * `Webserver_farm` - Enter a name to identify this Nginx farm. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
 
-   :::caution Do not modify these values
+   :::warning Do not modify these values
 
    Modifying these values will cause the Sumo Logic apps to not function correctly.
    * `component “webserver”` - This value is used by Sumo Logic apps to identify application components.

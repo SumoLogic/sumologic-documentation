@@ -166,7 +166,7 @@ annotations:
         * `environment`. This is the deployment environment where the HAProxy cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `proxy_cluster`. Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-    :::caution Do not modify the other values
+    :::warning Do not modify the other values
     Modifying these values will cause the Sumo Logic apps to function incorrectly
      * `telegraf.influxdata.com/class: sumologic-prometheus` - Instructs the Telegraf operator what output to use.
      * `prometheus.io/scrape: "true"` - Ensures our Prometheus will scrape the metrics.
@@ -197,7 +197,7 @@ This section explains the steps to collect HAProxy logs from a Kubernetes enviro
    * `environment`. This is the deployment environment where the HAProxy cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
    * `proxy_cluster`. Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-   :::caution Do not modify the other values
+   :::warning Do not modify the other values
    Do not modify the other values
    Modifying these values will cause the Sumo Logic apps to function incorrectly
     * `component: “proxy”`. This value is used by Sumo Logic apps to identify application components.

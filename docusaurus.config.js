@@ -6,8 +6,8 @@
 
 const fs = require('fs')
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+const lightCodeTheme = require('./src/utils/prismLight');
+const darkCodeTheme = require('./src/utils/prismDark');
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -74,7 +74,6 @@ module.exports = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
-            tag: ':::',
             keywords: [
               'sumo',
               'secondary',
@@ -85,7 +84,6 @@ module.exports = {
               'tip',
               'warning',
               'important',
-              'caution',
             ],
           },
         },
@@ -500,4 +498,20 @@ module.exports = {
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
       },
     }),
+};
+
+
+export default {
+  markdown: {
+    format: 'detect',
+    mermaid: true,
+    preprocessor: ({filePath, fileContent}) => {
+      return fileContent.replaceAll('{{MY_VAR}}', 'MY_VALUE');
+    },
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
 };

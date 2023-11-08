@@ -17,7 +17,7 @@ Observable Networks is a provider of network security technology and advanced th
 
 For more information, please visit [http://www.observable.net/](http://www.observable.net/).
 
-:::caution
+:::warning
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 

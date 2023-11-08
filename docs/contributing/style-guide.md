@@ -160,7 +160,7 @@ This is some vital information.
 This action is dangerous and could result in data loss.
 :::
 
-:::caution
+:::warning
 This could note important and problematic information.
 :::
 
@@ -189,7 +189,7 @@ This is some vital information.
 This action is dangerous and could result in data loss.
 :::
 
-:::caution
+:::warning
 This could note important and problematic information.
 :::
 

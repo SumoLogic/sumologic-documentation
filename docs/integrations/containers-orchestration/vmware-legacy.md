@@ -350,7 +350,7 @@ Once you are satisfied with the time it takes for collecting data for a segment,
 
 ## Install the VMware (Legacy) App
 
-:::caution
+:::warning
 A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 :::
 

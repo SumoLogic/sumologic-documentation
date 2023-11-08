@@ -4,7 +4,7 @@ title: Kubernetes Fluentd plugin
 description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
-:::warning solution deprecated
+:::danger solution deprecated
 The configuration described on this page is deprecated. We recommend using our [comprehensive Kubernetes solution](/docs/observability/kubernetes) instead.  
 :::
 

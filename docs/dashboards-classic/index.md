@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
 
-:::caution
+:::warning
 We strongly recommend using our upgraded [Dashboards](/docs/dashboards), which allows you to analyze metrics and log data on the same dashboard in a streamlined user experience. Sumo Logic will cease updates and support for Classic Dashboards.
 :::
 

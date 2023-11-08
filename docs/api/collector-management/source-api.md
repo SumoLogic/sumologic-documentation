@@ -8,7 +8,7 @@ The Collector Management API allows you to manage Collectors and Sources from an
 
 You cannot use the Source API to create Microsoft Office 365 sources, Google Audit sources, or any other sources that require OAuth-based authentication with another vendor.
 
-:::caution
+:::warning
 Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the below documentation.
 :::
 

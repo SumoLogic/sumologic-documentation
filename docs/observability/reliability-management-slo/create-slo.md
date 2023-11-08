@@ -153,7 +153,7 @@ Critical Monitors are great candidates to convert to SLOs. From the **Monitors**
 
 As an example, say you have an existing Monitor that fires a **Critical** alert if the latency of a customer-critical service exceeds 500ms. By creating an SLO directly through this specific Monitor, those thresholds will automatically carry over into the new SLO, saving you time and effort.
 
-:::caution Prerequisite
+:::warning Prerequisite
 Your Monitor must be in an **active** state.
 :::
 

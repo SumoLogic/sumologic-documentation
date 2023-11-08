@@ -224,7 +224,7 @@ In this section, we will configure a collection of login and audit logs  from Wo
 
 #### Deploy the Sumo Logic Workday SAM Application in your AWS environment (DEPRECATED)
 
-:::warning solution deprecated
+:::danger solution deprecated
 
 See [Configure the script on a Linux machine](#configure-the-script-on-a-linux-machine) instead.
 
@@ -253,7 +253,7 @@ To deploy the Sumo Logic Workday SAM Application, do the following:
 
 #### Configure script-based collection for Workday (DEPRECATED)
 
-:::warning solution deprecated
+:::danger solution deprecated
 
 See [Configure the script on a Linux machine](#configure-the-script-on-a-linux-machine) instead.
 

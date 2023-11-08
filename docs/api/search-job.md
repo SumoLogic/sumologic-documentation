@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
-:::caution
+:::warning
 Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 

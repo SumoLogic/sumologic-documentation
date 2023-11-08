@@ -130,7 +130,7 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
    :::note
    If the timestamp format is in epoch time, enter **epoch** in the **Format** field.
    :::
-   :::caution requirements
+   :::warning requirements
    * Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).
    * When you specify a custom format, provide us with the timestamp format (and optionally a regex) to help locate the desired timestamp in your log line format. If you don't provide a locator, we’ll scan the entire log message for a timestamp matching the given format by default. You can also test some sample log lines and see if we can parse the new format.
    * When providing multiple custom formats, specify the most common format first. The Collector will process each custom format in the order provided. Once a timestamp is located, no further timestamp checking is done.

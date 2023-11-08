@@ -64,7 +64,7 @@ To obtain a Netskope REST API v2 auth token, do the following:
 
 ### Netskope REST API v1 (Deprecated)
 
-:::caution Deprecated
+:::warning Deprecated
 This is used only for Sumo Logic Netskope source v1.3.1 or lower, please upgrade to v2.0.0.
 :::
 

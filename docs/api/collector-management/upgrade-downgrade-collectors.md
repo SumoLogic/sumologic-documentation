@@ -10,7 +10,7 @@ The upgrade may automatically be done in increments. In this case, you may exper
 
 There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
 
-:::caution
+:::warning
 Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the below documentation.
 :::
 

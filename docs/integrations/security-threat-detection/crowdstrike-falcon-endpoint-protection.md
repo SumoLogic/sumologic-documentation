@@ -186,7 +186,7 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
-:::caution
+:::warning
 To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.

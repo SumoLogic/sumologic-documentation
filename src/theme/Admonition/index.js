@@ -115,14 +115,14 @@ const AdmonitionConfigs = {
       </Translate>
     ),
   },
-  caution: {
+  warning: {
     infimaClassName: 'warning',
-    iconComponent: CautionIcon,
+    iconComponent: WarningIcon,
     label: (
       <Translate
-        id="theme.admonition.caution"
-        description="The default label used for the Caution admonition (:::caution)">
-        caution
+        id="theme.admonition.warning"
+        description="The default label used for the Warning admonition (:::warning)">
+        warning
       </Translate>
     ),
   },
