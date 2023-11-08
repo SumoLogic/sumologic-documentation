@@ -6,17 +6,20 @@ sidebar_label: Azure Event Hubs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
-If you're using our new Cloud-to-Cloud source collection, see [Migrating from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+:::note
+Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
 :::
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
 
-The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
+This cloud-to-cloud Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
-Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection source has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
+:::tip Migrating to C2C
+See [Migrating from Azure Function-Based Collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+:::
 
 The Azure platform can be configured to export logs to one or more Event Hub destinations. Platform logs include:
+
 * [Resource Logs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/resource-logs-schema)
 * [Activity Logs](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-schema)
 
@@ -29,7 +32,6 @@ This Source is available in the Fed deployment.
 ## Prerequisites
 
 The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to a event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
-
 
 1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/> ![AzureEventHubstep1.png](/img/send-data/AzureEventHubstep1.png)
 1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
@@ -120,7 +122,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 To create the diagnostic settings in Azure portal, refer to the [documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#create-diagnostic-settings) and choose **Stream to an event hub** as the destination. Use the event hub namespace and event hub name configured in the **Prerequisites** section in the destination details section. You can use the default policy **RootManageSharedAccessKey** as the policy name.
 
 * [Tutorial to Stream Azure Active Directory logs to an Azure event hub](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/tutorial-azure-monitor-stream-logs-to-event-hub)
-  
+
 ### Restarting your Source
 
 {@import ../../../reuse/restart-c2c-source.md}
