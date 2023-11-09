@@ -52,9 +52,7 @@ In this step, you will configure the yaml file required for Windows event logs a
 
 Any custom fields can be tagged along with the data in this step.
 
-Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-YAML.png' alt="YAML" />
+#### Enable process metric collection (Optional)
 
 By default, the collector will not be sending process metrics to Sumo Logic this is because the number of processes running on a host can be very large, this may result in significant increase in Data Points per Minute (DPM).
 
@@ -73,6 +71,8 @@ process:
     match_type: <strict|regexp>
 ```
 :::
+
+Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-YAML.png' alt="YAML" />
 
 ### Step 3: Send logs to Sumo
 
