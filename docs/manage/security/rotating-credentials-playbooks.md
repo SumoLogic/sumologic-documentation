@@ -14,7 +14,7 @@ If you are rotating your access credentials due to the potential security incide
 
 ## Rotating Sumo Logic access keys playbook
 
-Use the playbooks below to assist you in rotating your Sumo Logic access keys.
+Use the playbooks below to assist you in rotating your Sumo Logic [access keys](/docs/manage/security/access-keys/).
 
 ### Rotate Sumo Logic access keys
 To properly rotate an access key:
