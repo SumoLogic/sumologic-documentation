@@ -65,7 +65,7 @@ process:
 ```
 :::
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png' alt="YAML" />
+Click on the **Download YAML File** button to get the yaml file.<br/><img src='img/integrations/hosts-operating-systems/Mac-YAML.png' alt="Mac-YAML" width="600"/>
 
 ### Step 3: Send metrics to Sumo
 

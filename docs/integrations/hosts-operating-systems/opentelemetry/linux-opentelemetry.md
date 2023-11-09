@@ -89,7 +89,9 @@ process:
 ```
 :::
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png' alt="YAML" />
+<img src='img/integrations/hosts-operating-systems/Linux-YAML.png' alt="Linux-YAML" width="400"/>
+
+Click on the **Download YAML File** button to get the yaml file.<br/><img src='img/integrations/hosts-operating-systems/Linux-YAML.png' alt="Linux-YAML" width="600"/>
 
 ### Step 3: Send logs and metrics to Sumo
 
