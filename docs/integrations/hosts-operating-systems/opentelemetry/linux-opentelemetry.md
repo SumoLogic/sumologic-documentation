@@ -66,18 +66,23 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png' alt="YAML" />
 
-:::note 
+By default, the collector will not be sending process metrics to Sumo Logic this is because the number of processes running on a host can be very large, this may result in significant increase in Data Points per Minute (DPM).
 
+(Optional) Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
+- **Name of process**. Add the list of process names.
+- **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
+- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
+
+:::note 
 By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.  
 
-By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM). If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
+If the process list needs to be edited in future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
 ```sh
 process:
   include:
     names: [ <process name1>, <process name2> ... ]
     match_type: <strict|regexp>
 ```
-
 :::
 
 ### Step 3: Send logs and metrics to Sumo
