@@ -1,0 +1,55 @@
+---
+id: rotating-credentials-playbooks
+title: Rotating Access Credentials Playbooks
+sidebar_label: Rotating Access Credentials Playbooks
+---
+
+:::note
+If you are rotating your Access Credentials due to the Security Incident announced in our Security Response Center, and require additional information, please refer to the details listed in the [Security Response Center](https://www.sumologic.com/security-response-center/) site, or contact our Support team via opening a ticket using our [Support Console](https://support.sumologic.com/support/s/). 
+:::
+
+# Rotating Sumo Logic Access Keys Playbook
+
+Use the playbooks below to assist you in rotating your Sumo Logic Access Keys.
+
+## Rotate Sumo Logic Access Keys
+To properly rotate an access key:
+1. Identify the access keys that need to be retired/rotated. These can be located in **Administration > Security > Access Keys** in Sumo Logic.
+2. Identify where the access keys are used in any scripts/apps.
+3. Create a new access key in Sumo and ensure that it is activated.
+4. Replace old key in any scripts/apps with new access key.
+5. Verify that any scripts/apps continue to work with new access key.
+6. In Sumo UI, deactivate or delete old access key.
+
+## Request Support to Disable Access Keys for You
+Sumo Logic Customer Support Engineers can disable your access keys internally.
+**HOWEVER**, doing so unilaterally will break workflows in your environment that utilize those keys. If you would like our Customer Support Engineers to disable your access keys internally, please submit a Support Ticket using our [Support Console](https://support.sumologic.com/support/s/).
+
+## Monitoring Access Keys
+As a best practice, create a Scheduled Search for tracking usage of Access Keys via API, using the following query. We recommend that these results are set as a Scheduled Search (which may be emailed to the correct contacts as a Saved Search), and to periodically review them for possible suspicious activity from unknown IP addresses.
+
+```
+_index=sumologic_audit_events accessId api
+| json "operator.interface" as interface nodrop
+| json "subsystem" nodrop
+| json "eventName" nodrop
+| json "operator.email" as user nodrop
+| json "operator.accessId" as id nodrop
+| json "operator.sourceIp" as ip nodrop
+| formatDate(_messageTime, "yyyy-MM-dd HH:mm:ss") as date
+| count as Total by date, ip, user, id, subsystem, eventname 
+| order by date
+```
+
+# Rotate Third-party Credentials Used In Webhook Connections Playbook
+
+Use the playbooks below to assist you in rotating any Third-party Credentials used in Webhook Connections. This includes general outbound webhooks and outbound connections to other services (Slack, Jira, PagerDuty, etc).
+
+## Rotating Third-party Credentials Used In Webhook Connections
+To properly rotate these credentials:
+1. Identify the credentials that need to be retired/rotated. These can be located in Manage Data > Monitoring > Connections > Selecting any Connections defined in your Sumo Logic Account.
+2. For the Connections you have defined, create new access credentials where necessary (i.e. API keys, passwords, authorization headers, etc).
+3. Replace the old access credentials with the newly created access credentials.
+4. Delete the old access credentials in the corresponding services you are making Connections to.
+
+For more details on configuring specific Webhook Connections, please see our Help Docs on [Webhook Connections](https://help-opensource.sumologic.com/docs/alerts/webhook-connections/) for the corresponding Webhooks that you use in Sumo Logic.
