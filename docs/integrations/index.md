@@ -151,7 +151,7 @@ Watch this tutorial to learn how to use the App Catalog.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/partner-ecosystem-apps"><img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="70"/><h4>Community Ecosystem Apps</h4></a>
+  <a href="/docs/integrations/community-ecosystem-apps"><img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="70"/><h4>Community Ecosystem Apps</h4></a>
   <p>Community Ecosystem Apps Listing and program description.</p>
   </div>
 </div>
