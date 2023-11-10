@@ -9,15 +9,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This article lists all the products that Sumo Logic integrates with, including the types of integrations we offer. 
 
 Types of integrations:
-* **Apps**. Pre-built applications with dashboards that provide quick information about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps/Integrations](/docs/integrations/) for documentation about apps. 
+* **Apps**. Pre-built applications with dashboards that provide quick information about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/) for documentation about apps. 
 * **Collectors**. Agents that collect data from the product. See [Send Data](/docs/send-data/) for documentation about collectors.
 * **Partner integrations**. Apps and integrations that are provided by members of our partner network. See [Partner Ecosystem Apps](/docs/integrations/partner-ecosystem-apps/) and [Partner Integrations for Sumo Logic](/docs/integrations/partner-integrations/) for more information. 
 * **Webhooks**. Automated connections from the product to Sumo Logic. See [Webhooks](/docs/integrations/webhooks/buddy/) and [Webhook Connections](/docs/alerts/webhook-connections/) for available webhooks. 
 
 <!-- 
-* **Parsers**. Scripts that parse logs and normalize them into structured records. Use the [parser editor](/docs/cse/schema/parser-editor/) to see products with a parser. 
+* **Community apps**. Apps provided by internal and external users and our creator community. See [Sumo Logic Community Ecosystem Apps](/docs/integrations/community-ecosystem-apps/) for more information.
 * **Mappings**. Scripts that map messages fields to Record attributes in Cloud SIEM. Use [Log Mappings](/docs/cse/ingestion/view-mappers-for-product/) to see products with mappings.
 * **OIF integrations**. Open Integration Framework integrations for automation. To find products with OIF integrations, search for the products in App Central for [Cloud SIEM](m/docs/cse/automation-service/automation-service-app-central/) or [Cloud SOAR](/docs/cloud-soar/automation/#app-central). 
+* **Parsers**. Scripts that parse logs and normalize them into structured records. Use the [parser editor](/docs/cse/schema/parser-editor/) to see products with a parser. 
 -->
 
 
