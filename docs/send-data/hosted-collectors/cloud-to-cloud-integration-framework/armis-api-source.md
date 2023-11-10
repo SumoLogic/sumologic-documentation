@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | instanceUrl | String | Yes | `null`| Armis Instance URL |  |
 | apiSecretKey | String | Yes | `null`| Armis API secret key |  |
-| apiType | Array | Yes | | You may use either or both sources of data, i.e. Alerts and devices. |
+| apiType | Array | Yes | | You may use either or both sources of data, that is, Alerts and devices. |
 
 ### JSON example
 
