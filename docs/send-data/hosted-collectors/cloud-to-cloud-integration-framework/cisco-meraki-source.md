@@ -88,8 +88,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | baseURL | String | Yes | `null` | Region URL of the Cisco Meraki application. |  |
-| apiSecretKey | String | Yes | `null` | Cisco Meraki API secret key |  |
-| merakiOrg | String | Yes | `null` | Cisco Meraki Organization ID |  |
+| apiSecretKey | String | Yes | `null` | Cisco Meraki API secret key. |  |
+| merakiOrg | String | Yes | `null` | Cisco Meraki Organization ID. |  |
 | pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
 ### JSON example
