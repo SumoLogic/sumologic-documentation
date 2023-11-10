@@ -28,22 +28,18 @@ Third party apps or services can be configured to send event data to Event Hubs 
 
 ## Scaling Event Hubs
 
-There are two factors which influence scaling with Event Hubs.
-  1. **Throughput units** (standard tier) or **Processing units** (premium tier) - Configured while creating Event hubs namespace
-  2. **Partitions** - Configured while creating Event hubs instance in an Event Hubs namespace.
+There are two factors that influence scaling with Event Hubs:
+* **Throughput units** (standard tier) or **Processing units** (premium tier). Configured while creating Event hubs namespace.
+* **Partitions**. Configured while creating Event hubs instance in an Event Hubs namespace.
 
+| Expected EPS | Throughput Unit (TU) [Max 40] | Partitions [Max 32] |
+|:---|:---|:---|
+| 1mb/sec | 1 TU  | 1+ |
+| 2mb/sec | 2 TU  | 2+ |
+| 10mb/sec | 10 TU  | 10+ |
+| 32mb/sec | 32 TU  | 32 |
 
- | Expected EPS | Throughput Unit (TU) [Max 40] |Partitions [Max 32] |
-  |:---|:---|:---|
-  | 1mb/sec | 1 TU  | 1+ |
-  | 2mb/sec | 2 TU  | 2+ |
-  | 10mb/sec | 10 TU  | 10+ |
-  | 32mb/sec | 32 TU  | 32 |
-
-
-* Please note that TU/PUs are shared across an Event Hub namespace, if you have multiple Event hubs in a name space consider increasing the TU/PU units.
-* If volume goes above 32 mb/sec, consider splitting the data in multiple Event Hubs namespace.
-
+Throughput units (TUs) and Processing units (PUs) are shared across an Event Hub namespace. If you have multiple Event hubs in a name space, consider increasing the TU/PU units. If your volume exceeds 32 mb/sec, consider splitting the data in multiple Event Hubs namespaces.
 
 ## Prerequisites
 
