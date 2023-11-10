@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This article lists all the products that Sumo Logic integrates with, including the types of integrations we offer. 
 
 Types of integrations:
-* **Apps**. Pre-built applications with dashboards that provide quick information about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/) for documentation about apps. 
+* **Apps**. Pre-built applications with dashboards that provide quick information about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/) for more information. 
 * **Collectors**. Agents that collect data from the product. See [Send Data](/docs/send-data/) for documentation about collectors.
 * **Partner integrations**. Apps and integrations that are provided by members of our partner network. See [Partner Ecosystem Apps](/docs/integrations/partner-ecosystem-apps/) and [Partner Integrations for Sumo Logic](/docs/integrations/partner-integrations/) for more information. 
 * **Webhooks**. Automated connections from the product to Sumo Logic. See [Webhooks](/docs/integrations/webhooks/buddy/) and [Webhook Connections](/docs/alerts/webhook-connections/) for available webhooks. 
