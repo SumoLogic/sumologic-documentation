@@ -25,6 +25,26 @@ The Azure platform can be configured to export logs to one or more Event Hub des
 
 Third party apps or services can be configured to send event data to Event Hubs as well, including [Auth0](https://auth0.com/docs/logs/streams/azure-event-grid).
 
+
+## Scaling Event Hubs
+
+There are two factors which influence scaling with Event Hubs.
+  1. **Throughput units** (standard tier) or **Processing units** (premium tier) - Configured while creating Event hubs namespace
+  2. **Partitions** - Configured while creating Event hubs instance in an Event Hubs namespace.
+
+
+ | Expected EPS | Throughput Unit (TU) [Max 40] |Partitions [Max 32] |
+  |:---|:---|:---|
+  | 1mb/sec | 1 TU  | 1+ |
+  | 2mb/sec | 2 TU  | 2+ |
+  | 10mb/sec | 10 TU  | 10+ |
+  | 32mb/sec | 32 TU  | 32 |
+
+
+* Please note that TU/PUs are shared across an Event Hub namespace, if you have multiple Event hubs in a name space consider increasing the TU/PU units.
+* If volume goes above 32 mb/sec, consider splitting the data in multiple Event Hubs namespace.
+
+
 ## Prerequisites
 
 The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to an event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
