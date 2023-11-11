@@ -13,12 +13,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-[AWS PrivateLink](https://aws.amazon.com/privatelink) provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet.
+Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet. 
 
-To send data to Sumo Logic through AWS PrivateLink, you'll need to configure an internal endpoint in your VPC for Installed Collectors to send data to.
+Following sources are supported for AWS PrivateLink: 
 
+- **Installed Collector sources**. Data collected on Installed collectors deployed on customer VPC and sent to the Sumo Logic.
+- **HTTPs sources**. Data sent by the applications hosted in customers VPC and sent over to Sumologic using [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) and Kinesis Firehose Source for Logs and Metrics.
+
+The following sources are not supported for AWS PrivateLink: 
+
+- Cloud Syslog 
+- AWS S3
+- AWS Cloudwatch source
+- Sumo Logic OpenTelemtry Distro
+- OTLP sources
+- RUM sources
 
 ## Enable PrivateLink for ALB
+
+To send data to Sumo Logic through AWS PrivateLink, you'll need to configure an internal endpoint in your VPC for Installed Collectors to send data to.
 
 With the NLB-created and ALB-registered as a target, requests over AWS PrivateLink to the NLB are forwarded to the ALB.
 

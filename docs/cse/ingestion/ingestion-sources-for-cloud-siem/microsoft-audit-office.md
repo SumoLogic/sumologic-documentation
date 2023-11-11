@@ -30,7 +30,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 ### Configure Office 365 Audit Source
 
 
-1. To configure Microsoft office 365 audit source, see [Configure a Microsoft Office 365 Audit source](/docs/send-data/hosted-collectors/ms-office-audit-source/#configure-a-microsoft-office-365-audit-source). 
+1. To configure Microsoft office 365 audit source, see [Configure a Microsoft Office 365 Audit source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#configure-a-microsoft-office-365-audit-source). 
 1. **Fields**.
     1. If you have not configured the Hosted Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you are not parsing all sources in the hosted collector with the same parser, click **+Add Field** and add a field named `_parser` with value */Parsers/System/Microsoft/Office 365*.

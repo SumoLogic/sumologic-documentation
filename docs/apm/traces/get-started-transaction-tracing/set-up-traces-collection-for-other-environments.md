@@ -34,7 +34,7 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 
 ### Step 1 - Generating OTLP/HTTP Endpoint
 
-Create new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
+Create new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Step 2 - Prepare config file
 
