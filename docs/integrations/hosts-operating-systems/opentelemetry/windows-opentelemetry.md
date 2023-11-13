@@ -54,7 +54,7 @@ Any custom fields can be tagged along with the data in this step.
 
 #### Enable process metric collection (Optional)
 
-By default, the collector will not be sending process metrics to Sumo Logic this is because the number of processes running on a host can be very large, this may result in significant increase in Data Points per Minute (DPM).
+By default, the collector will not send process metrics to Sumo Logic. This is because the number of processes running on a host can be very large, which would result in a significant increase in Data Points per Minute (DPM).
 
 Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
 - **Name of process**. Add the list of process names.
