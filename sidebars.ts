@@ -1825,6 +1825,7 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
+      'integrations/product-list',
     {
       type: 'category',
       label: 'Amazon and AWS',
