@@ -47,7 +47,7 @@ In this step, you will configure the yaml required for macOS Collection.
 
 By default, the collector will not be sending process metrics to Sumo Logic this is because the number of processes running on a host can be very large, this may result in significant increase in Data Points per Minute (DPM).
 
-(Optional) Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
+Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
 - **Name of process**. Add the list of process names.
 - **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
 - **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
