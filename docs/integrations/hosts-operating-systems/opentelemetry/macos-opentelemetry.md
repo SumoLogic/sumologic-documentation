@@ -55,7 +55,7 @@ Click the **Enable process metric collection** checkbox to collect (process leve
 <img src='img/integrations/hosts-operating-systems/process-metric-collection.png' alt="process-metric-collection" width="400"/>
 
 :::note
-If the process list needs to be edited in future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
+If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
 
 ```sh
 process:
