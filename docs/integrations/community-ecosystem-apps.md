@@ -55,6 +55,7 @@ The overall ratings for content are listed on a scale of 0 to 5, with 5 being th
 * [Palo Alto Cortex XDR](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/Cortex_XDR) (Rating: 3.5)
 * [Proofpoint Targeted Attack Protection (TAP)](https://github.com/SumoLogic/sumologic-content/tree/master/Proofpoint/Proofpoint_TAP) (Rating: 4)
 * [Sophos Central](https://github.com/SumoLogic/sumologic-content/tree/master/Sophos/Sophos-Central) (Rating: None)
+* [Sumo Logic Audit](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Audit) (Rating: None)
 * [Sumo Logic Traces](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo_Logic_Native/Traces) (Rating: 4)
 * [Symantec Web Security Service (WSS)](https://github.com/SumoLogic/sumologic-content/tree/master/Symantec/WSS) (Rating: 4)
 * [Tenable.io](https://github.com/SumoLogic/sumologic-content/tree/master/Tenable/Tenable_IO) (Rating: 4.5)
