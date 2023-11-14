@@ -61,7 +61,7 @@ Click the **Enable process metric collection** checkbox to collect (process leve
 - **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
 - **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
 
-<img src='img/integrations/hosts-operating-systems/process-metric-collection.png' alt="process-metric-collection" width="400"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/process-metric-collection.png')} alt="process-metric-collection" style={{border:'1px solid black'}} width="550"/>
 
 :::note
 If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
@@ -74,7 +74,7 @@ process:
 ```
 :::
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src='img/integrations/hosts-operating-systems/Windows-YAML.png' alt="Windows-YAML" width="600"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send logs to Sumo
 
