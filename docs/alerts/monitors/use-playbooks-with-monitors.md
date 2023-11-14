@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This article describes how to use automated playbooks with monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Automated playbooks are provided by the [Automation Service](/docs/platform-services/automation-service).  
 
-For example, suppose that a monitor detects anomalous behavior that indicates a possible security breach. The monitor could automatically run an automated playbook when the alert is triggered. For a walkthrough of how to configure this kind of monitor, see [Example smart alert](#example-smart-alert---anomaly-detection) below.
+For example, suppose that a monitor detects anomalous behavior that indicates a possible security breach. The monitor could automatically run an automated playbook when the alert is triggered. For a walkthrough of how to configure this kind of monitor, see [Example smart alert](#example-smart-alert) below.
 
 ## Add an automated playbook to a monitor
 
@@ -25,11 +25,11 @@ For example, suppose that a monitor detects anomalous behavior that indicates a 
 1. To see the actions that will run when you add a playbook to the monitor, click **Manage Playbooks** to examine the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). Examine the actions carefully to determine if they are the kind of actions you want to run when the alert is triggered. 
 1. (Optional). Click **Manage Playbooks** to [create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook). Then select the new playbook for the monitor.
 
-## Example smart alert - Anomaly detection
+## Example "smart alert"
 
-In this example, we'll show you how to configure a "smart alert", a monitor that automatically runs a playbook when the alert is triggered. In this example, we'll use the Anomaly detection method to look for suspicious patterns of activity.
+In this example, we'll show you how to configure a "smart alert", a monitor that automatically runs a playbook when anomalies are detected. 
 
-The Anomaly method lets you uncover unusual behavior identified by anomaly detection. In this method, Sumo Logic applies advanced analytics techniques, including machine learning and behavioral analytics, to detect anomalies and identify suspicious patterns of activity. This method establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected.  
+Smart alerts use the Anomaly detection method. This method uses advanced analytics techniques, including machine learning and behavioral analytics, to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected.  
 
 1. Follow the steps in [Create a New Monitor](/docs/alerts/monitors/create-monitor/) to get to [Step 1](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** dialog.
 1. Select the **Logs** monitor type.
