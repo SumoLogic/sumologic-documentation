@@ -45,7 +45,7 @@ Once you've configured your Hosted Collector, the next step is to configure a So
 <div className="box smallbox card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/send-data/hosted-collectors/ms-office-audit-source">Microsoft Sources</a></h4>
+  <h4><a href="/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source">Microsoft Sources</a></h4>
   <p>Collect data from Microsoft Office 365 Audit.</p>
   </div>
 </div>

@@ -37,7 +37,7 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
 
 <br/>
 
-Once you've set up collection, you can start [analyzing your traces in Sumo Logic](/docs/apm/traces/view-and-investigate-traces.md).
+Once you've set up collection, you can start [analyzing your traces in Sumo Logic](/docs/apm/traces/view-and-investigate-traces).
 
 
 ## Step 2: Instrument Your App with OpenTelemetry
