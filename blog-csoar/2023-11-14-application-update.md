@@ -15,7 +15,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### Changes and Enhancements 
 * Added documentation for [Cloud SOAR Audit Logging](/docs/cloud-soar/audit-event-index/)
 
-
 ### Bug fixes 
 * Actions: Fixed run action causing page reload when response data is too large.
 * Playbooks: Removed Resource from inputs when selecting an Internal integration when adding or editing a node.
