@@ -1,7 +1,7 @@
 ---
 id: ms-azure-event-hubs-source
-title: Azure Event Hubs for Logs - Beta
-description: The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs.
+title: Azure Event Hubs Source for Logs - Beta
+description: The Azure Event Hubs Source for Logs (Beta) provides a secure endpoint to receive data from Azure Event Hubs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,6 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+:::note
+For higher data ingestion speed and scalability, this collection method is preferred over our similar [Azure Event Hubs cloud-to-cloud source collection method](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source).
+:::
+
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
 The Azure platform can be configured to export logs to one or more Event Hub destinations. Platform logs include:
@@ -21,18 +25,34 @@ The Azure platform can be configured to export logs to one or more Event Hub des
 
 Third party apps or services can be configured to send event data to Event Hubs as well, including [Auth0](https://auth0.com/docs/logs/streams/azure-event-grid).
 
+
+## Scaling Event Hubs
+
+There are two factors that influence scaling with Event Hubs:
+* **Throughput units** (standard tier) or **Processing units** (premium tier). Configured while creating Event hubs namespace.
+* **Partitions**. Configured while creating Event hubs instance in an Event Hubs namespace.
+
+| Expected EPS | Throughput Unit (TU) [Max 40] | Partitions [Max 32] |
+|:---|:---|:---|
+| 1mb/sec | 1 TU  | 1+ |
+| 2mb/sec | 2 TU  | 2+ |
+| 10mb/sec | 10 TU  | 10+ |
+| 32mb/sec | 32 TU  | 32 |
+
+Throughput units (TUs) and Processing units (PUs) are shared across an Event Hub namespace. If you have multiple Event hubs in a name space, consider increasing the TU/PU units. If your volume exceeds 32 mb/sec, consider splitting the data in multiple Event Hubs namespaces.
+
 ## Prerequisites
 
 The Event Hub doesn't have to be in the same subscription as the resource sending logs if the user who configures the setting has appropriate Azure role-based access control access to both subscriptions. By using Azure Lighthouse, it's also possible to have diagnostic settings sent to an event hub in another Azure Active Directory tenant. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional so you may have to configure multiple Azure Event Hubs Sources. More details about destination limitations and permissions are described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step1.png')} alt="azure event hub" />
-2. Create an Event Hubs namespace. In this example, Namespace is set to `cnctest`:<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step2.png')} alt="azure event hub" width="300"/> <br/><img src={useBaseUrl('img/send-data/azure-event-hub-step3.png')} alt="azure event hub" />
-3. Create an Event Hub Instance.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step4.png')} alt="azure event hub" />
-    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: `RootManageSharedAccessKey`. In this example, Event Hub Instance is set to `my-hub`.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step5.png')} alt="azure event hub" />
-4. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the Listen claim to the newly created Event Hub Instance. In this example, Event Hub Instance is set to `SumoCollectionPolicy`.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step6.png')} alt="azure event hub" />
-<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step7.png')} alt="azure event hub" />
-<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step8.png')} alt="azure event hub" />
-5. Copy the **Shared access policies** Key. Copy the **Primary key** associated with this policy.<br/><img src={useBaseUrl('img/send-data/azure-event-hub-step9.png')} alt="azure event hub" />
+1. [Create an Event Hub using the Azure portal](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create) by navigating to Event Hubs in the Azure Portal.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep1.png')} alt="azure event hub" />
+2. Create an Event Hubs namespace. In this example, Namespace is set to `cnctest`:<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep2.png')} alt="azure event hub" width="300"/> <br/><img src={useBaseUrl('img/send-data/AzureEventHubstep3.png')} alt="azure event hub" />
+3. Create an Event Hub Instance.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep4.png')} alt="azure event hub" />
+    * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: `RootManageSharedAccessKey`. In this example, Event Hub Instance is set to `my-hub`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep5.png')} alt="azure event hub" />
+4. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the Listen claim to the newly created Event Hub Instance. In this example, Event Hub Instance is set to `SumoCollectionPolicy`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep6.png')} alt="azure event hub" />
+<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep7.png')} alt="azure event hub" />
+<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep8.png')} alt="azure event hub" />
+5. Copy the **Shared access policies** Key. Copy the **Primary key** associated with this policy.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep9.png')} alt="azure event hub" />
 6. When [configuring the Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
 
   | Field | Value |
@@ -42,7 +62,7 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
   | Shared Access Policy Name | `SumoCollectionPolicy` |
   | Shared Access Policy Key (use primary key) | `mOsLf3RE...` |
 
-  <img src={useBaseUrl('img/send-data/azure-event-hub-configs.png')} alt="azure event hub" />
+  <img src={useBaseUrl('img/send-data/azure-event-configs.png')} alt="azure event hub" />
 
 ## Create an Azure Event Hubs Source
 
@@ -73,7 +93,7 @@ To configure an Azure Event Hubs Source:
     * 72h ago
     * 7 days ago
 13. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-14. Advanced Options for Logs.
+14. **Advanced Options for Logs**.
     * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
     * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference/) for more information.  
