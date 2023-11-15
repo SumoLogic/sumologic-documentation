@@ -12,9 +12,44 @@ description: Learn how to use Automation Service playbooks with monitors.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to use automated playbooks with monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Automated playbooks are provided by the [Automation Service](/docs/platform-services/automation-service).  
+This article describes how to use automated playbooks with monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event. 
 
-For example, suppose that a monitor detects anomalous behavior that indicates a possible security breach. The monitor could automatically run an automated playbook when the alert is triggered. For a walkthrough of how to configure this kind of monitor, see [Create a "smart alert"](#create-a-smart-alert) below.
+To add a playbook to a monitor, see [Add an automated playbook to a monitor](#add-an-automated-playbook-to-a-monitor) below.
+
+To create a monitor to detect suspicious behavior (anomalies), see [Create a "smart alert"](#create-a-smart-alert) below.
+
+## Prerequisites
+
+Automated playbooks are provided by the [Automation Service](/docs/platform-services/automation-service). To use automated playbooks with monitors, you must perform tasks to enable the Automation Service. See the [prerequisites for the Automation Service](/docs/platform-services/automation-service/about-automation-service/#prerequisites).
+
+## Access playbooks for monitors
+
+When working with monitors, use the following ways to open playbooks in the Automation Service.
+
+### When creating a monitor
+
+1. [Create a monitor](/docs/alerts/monitors/create-monitor).
+1. Go to the **Monitor Details** section.
+1. Beneath the **Playbook** field, click the **Manage Playbooks** button. <br/>Playbooks are displayed in the Automation Service.
+
+For more information, see [Add an automated playbook to a monitor](/docs/alerts/monitors/use-playbooks-with-monitors#add-an-automated-playbook-to-a-monitor) below.
+
+### When viewing an alert
+
+1. On the [alert page](/docs/alerts/monitors/alert-response/#alert-page), open an alert that has attached playbooks.
+1. Click the **Playbook** button. The attached playbooks are displayed.
+1. Click the name of an attached playbook. <br/>The playbook is opened in the Automation Service.
+
+For more information, see [View playbooks for an alert](/docs/alerts/monitors/use-playbooks-with-monitors#view-playbooks-for-an-alert) below.
+
+### From the main menu
+
+If you have Cloud SIEM installed, you can also access playbooks from the main menu.
+
+1. To to the main menu.
+1. Select **Automation**. <br/>Playbooks are displayed in the Automation Service.
+
+For more information, see [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
 
 ## Add an automated playbook to a monitor
 
@@ -23,9 +58,8 @@ For example, suppose that a monitor detects anomalous behavior that indicates a 
 1. In [Step 4](/docs/alerts/monitors/create-monitor/#step-4-monitor-details) of the **New Monitor** window, select one of the following:
    *  **Insert custom playbook**. Insert your own playbook. This could be anything from a custom script you have developed to run when the alert is triggered, to a set of instructions to the analyst about how to resolve the alert. 
    * **Select an automated playbook**. In the field provided, select a playbook from [playbooks in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid black'}} width="800" />
-1. To see the actions that will run when you add a playbook to the monitor, click **Manage Playbooks** to examine the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). Examine the actions carefully to determine if they are the kind of actions you want to run when the alert is triggered. 
-1. (Optional). Click **Manage Playbooks** to [create a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook). Then select the new playbook for the monitor.
-1. Click **Save** to create the monitor.
+1. Click **Manage Playbooks** to open playbooks in the Automation Service (optional). From here, you can view the selected playbook and look at its actions to determine if they are the ones you want to run when the alert is triggered. You can also edit the playbook, or if you want, [create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook) to use in the monitor.  
+1. Click **Save** to save the monitor settings.
 
 When the monitor triggers an alert, the selected playbook runs automatically.
 
@@ -33,7 +67,7 @@ When the monitor triggers an alert, the selected playbook runs automatically.
 
 Once a monitor triggers an alert with one or more attached playbooks, you can view the playbooks for the alert. 
 
-1. Open the alert on the [alert page](/docs/alerts/monitors/alert-response/#alert-page).
+1. Open an alert on the [alert page](/docs/alerts/monitors/alert-response/#alert-page) that has attached playbooks.
 1. Click the **Playbook** button. The attached playbooks are displayed. <br/><img src={useBaseUrl('img/monitors/view-playbooks-on-alert.png')} alt="View playbooks for an alert" style={{border: '1px solid black'}} width="800" />
 1. Hover your mouse over the icon to the right of the playbook name to view the status of the playbooks:
 
@@ -71,3 +105,14 @@ When the monitor detects anomalous activity, it triggers an alert that runs the 
 
 You can also run playbooks that prompt for user interaction. See [View playbooks for an alert](#view-playbooks-for-an-alert) above. 
 
+## Configure playbooks in the Automation Service for monitors
+
+Write
+
+### Create playbooks to be used by monitors
+
+Write
+
+### Create integrations to be used by monitors
+
+Write
