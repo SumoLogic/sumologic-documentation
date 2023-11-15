@@ -46,7 +46,7 @@ For more information, see [View playbooks for an alert](/docs/alerts/monitors/us
 
 If you have Cloud SIEM installed, you can also access playbooks from the main menu.
 
-1. To to the main menu.
+1. Go to the main menu.
 1. Select **Automation**. <br/>Playbooks are displayed in the Automation Service.
 
 For more information, see [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
