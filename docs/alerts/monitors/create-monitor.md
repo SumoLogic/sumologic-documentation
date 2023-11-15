@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic shows you how to create a monitor. 
 
 
-<details><summary><strong>New Monitor</strong> dialog (expand to view)</summary>
+<details><summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
 
 <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
 
