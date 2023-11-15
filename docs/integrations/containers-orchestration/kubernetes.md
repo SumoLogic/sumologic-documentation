@@ -91,7 +91,7 @@ To install the app, do the following:
 4. Click **Add Integration**.
 5. On the next configuration page, titled **Install App**, follow the instructions (Add Repo, Monitor & Alert Installation, Install Helm chart). When you're done, click **Next**.
    :::note 
-   Helm chart installation via command line is required in order to install the Kubernetes app properly and see the dashboards in the next step. 
+   Helm chart installation via command line is required in order to install the Kubernetes app and see the dashboards in the next step. 
    :::
 6. (Optional) On the next configuration step, titled **Preview & Done**, click the blue **Explore Dashboards** button or **Open Dashboards in Library** to check out your Kubernetes dashboards. Here, you'll also be given the options to add another cluster, configure Kubernetes monitors, or manage your collectors.
 
