@@ -8,7 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic shows you how to create a monitor. 
 
-Use the **New Monitor** dialog to create a monitor:
 
 <details><summary><strong>New Monitor</strong> dialog (expand to view)</summary>
 
