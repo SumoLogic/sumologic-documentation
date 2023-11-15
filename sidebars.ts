@@ -1687,7 +1687,6 @@ module.exports = {
           link: {type: 'doc', id: 'observability/aws/index'},
           items: [
             'observability/aws/about',
-            'observability/aws/quickstart',
             {
               type: 'category',
               label: 'Deploy and Use AWS Observability',

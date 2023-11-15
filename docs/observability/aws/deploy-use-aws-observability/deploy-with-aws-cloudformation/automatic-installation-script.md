@@ -9,6 +9,9 @@ Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-temp
 
 This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#Appendix-I)). For more advanced use cases, when any of the default needs to be adjusted, please fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) installation steps.
 
+:::tip Multi-account and region
+If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md).
+:::
 
 ## Prerequisite
 
@@ -16,6 +19,14 @@ AWS CLI should be pre-installed on the system where the script is supposed to be
 
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
 * [Configure AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) to use AWS profiles.
+* Select/Change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution.
+
+    <details><summary>Example: How to change your default AWS region to us-west-1?</summary>
+    Run the following command with AWS region as us-west-1.
+    <p></p>
+    <code>aws configure set region us-west-1</code>
+    </details>
+
 
 
 ## Input Parameters  
@@ -38,6 +49,7 @@ The script above will take only two inputs - Sumo access Id and Sumo Access Key.
 Below is an example to run the powershell script with the required parameters
 
 ```
+$uri="https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1";$path=".\DeployAWSOWin.ps1";(New-Object System.Net.WebClient).DownloadFile($uri, $path);
 .\DeployAWSOWin.ps1 <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 ```
 
@@ -46,7 +58,11 @@ Below is an example to run the powershell script with the required parameters
 Below is an example to run posix script with required parameters
 
 ```
-sh DeployAWSOPosix.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
+wget "https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh"
+
+chmod +x DeployAWSOPosix.sh
+
+./DeployAWSOPosix.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 ```
 
 ## Appendix I
