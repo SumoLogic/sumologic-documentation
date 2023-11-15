@@ -53,7 +53,7 @@ For more information, see [Access the Automation Service](/docs/platform-service
 
 ## Add an automated playbook to a monitor
 
-1. [Open the New Monitor window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window). 
+1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window). 
 1. Perform [Step 1](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), [Step 2](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional), and [Step 3](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window.
 1. In [Step 4](/docs/alerts/monitors/create-monitor/#step-4-monitor-details) of the **New Monitor** window, select one of the following:
    *  **Insert custom playbook**. Insert your own playbook. This could be anything from a custom script you have developed to run when the alert is triggered, to a set of instructions to the analyst about how to resolve the alert. 
