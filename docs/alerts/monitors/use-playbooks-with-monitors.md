@@ -90,7 +90,7 @@ Monitors that generate smart alerts use the **Anomaly** detection method. This m
 
 To create a monitor that generates smart alerts:
 
-1. [Open the New Monitor window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
+1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
 1. Go to [Step 1: Trigger Conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** window.
 1. Select the **Logs** monitor type.
 1. Select **Anomaly** under **Detection Method**. <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid black'}} width="800" />
