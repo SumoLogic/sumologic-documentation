@@ -1,5 +1,5 @@
 ---
-title: November 14, 2023 - Application Update
+title: November 15, 2023 - Application Update
 hide_table_of_contents: false
 keywords:
   - sumo logic
@@ -17,8 +17,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bug fixes 
 * Actions: Fixed run action causing page reload when response data is too large.
-* Playbooks: Removed Resource from inputs when selecting an Internal integration when adding or editing a node.
+* Playbooks: Removed Resource from inputs when selecting an Internal integration in add or edit node.
 * Playbooks actions: Fixed boolean values processed as null.
 #### Cloud SOAR
-* Fixed ApiV3 to change incident investigators for incorrect owner ID or if you use Group ID.
+* Fixed ApiV3 change incident owner when using incorrect owner ID or with a Group ID.
 * Fixed "Incident Tools" action Add Note issue.
