@@ -50,17 +50,17 @@ The following search modifier cannot be used in Auto refresh.
 
 You can use the following operators in dashboard panels:
 
-* Accum
-* Backshift
-* Diff
-* Join
-* Limit
-* RollingStd
-* Smooth
-* Sort
-* Top
-* Total
-* Transaction By Flow
+* `[Accum](/docs/search/search-query-language/search-operators/accum/)`
+* `[Backshift](/docs/search/search-query-language/search-operators/backshift/)`
+* `[Diff](/docs/search/search-query-language/search-operators/diff/)`
+* `[Join](/docs/search/search-query-language/search-operators/join/)`
+* `[Limit](/docs/search/search-query-language/search-operators/limit/)`
+* `[RollingStd](/docs/search/search-query-language/search-operators/rollingstd/)`
+* `[Smooth](/docs/search/search-query-language/search-operators/smooth/)`
+* `[Sort](/docs/search/search-query-language/search-operators/sort/)`
+* `[Top](/docs/search/search-query-language/search-operators/top/)`
+* `[Total](/docs/search/search-query-language/search-operators/total/)`
+* `[Transaction](/docs/search/search-query-language/transaction-analytics/transaction-operator/)` By Flow
 
 ```sql title="Example"
 "error"
