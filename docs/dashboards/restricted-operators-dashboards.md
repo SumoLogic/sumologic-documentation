@@ -9,7 +9,7 @@ This page has information about restrictions and rules about using [Sumo Logic s
 
 ## Dashboard restrictions
 
-The following operators can't be used with dashboards:
+The following operators cannot be used with dashboards:
 
 * `Details`
 * [`LogReduce`](/docs/search/logreduce/logreduce-operator)
