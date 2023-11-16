@@ -11,13 +11,13 @@ This page has information about restrictions and rules about using [Sumo Logic s
 
 The following operators can't be used with dashboards:
 
-* Details
-* LogReduce
-* LogCompare
-* Parse multi
-* Sample (internal-use operator)
-* Save
-* Transaction
+* `Details`
+* [`LogReduce`](/docs/search/logreduce/logreduce-operator)
+* [`LogCompare`](/docs/search/logcompare)
+* [`Parse multi`](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex/#parse-multi)
+* `Sample` (internal-use operator)
+* [`Save`](/docs/search/search-query-language/search-operators/save)
+* [`Transaction`](/docs/search/search-query-language/transaction-analytics/transaction-operator/)
 
 ## Auto refresh restrictions
 
