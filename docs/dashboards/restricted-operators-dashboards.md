@@ -21,7 +21,7 @@ The following operators cannot be used with dashboards:
 
 ## Auto refresh restrictions
 
-The following operators can't be used in Auto refresh:
+The following operators cannot be used in Auto refresh:
 
 * `Compare With` can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice)
 * `Details`
