@@ -23,24 +23,24 @@ The following operators can't be used with dashboards:
 
 The following operators can't be used in Auto refresh:
 
-* Compare With can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice)
-* Details
-* First, Last - instead use the **withtime** option, see [most_recent and least_recent](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
-* Join
-* LogReduce
-* LogCompare
-* Now
-* Outlier will omit the first N (window size) data points in results because those data points are used in the training phase.
-* Parse Using
-* queryStartTime()
-* queryEndTime()
-* Save
-* Sessionize
-* Subquery
-* Threat Intel
-* Trace
-* Timeslice greater than 1 day
-* Transactionize
+* `Compare With` can be used when your query's aggregate operation is grouped by a [timeslice](/docs/search/search-query-language/search-operators/timeslice)
+* `Details`
+* [`First`, `Last`](/docs/search/search-query-language/group-aggregate-operators/first-last/) - instead use the **withtime** option, see [`most_recent` and `least_recent`](/docs/search/search-query-language/group-aggregate-operators/most-recent-least-recent).
+* [`Join`](/docs/search/search-query-language/search-operators/join/)
+* [`LogReduce`](/docs/search/logreduce/logreduce-operator/)
+* [`LogCompare`](/docs/search/logcompare/)
+* [`Now`](/docs/search/search-query-language/search-operators/now)
+* [`Outlier`](/docs/search/search-query-language/search-operators/outlier/) will omit the first N (window size) data points in results because those data points are used in the training phase.
+* `Parse Using`
+* [`queryStartTime()`](/docs/search/search-query-language/search-operators/querystarttime)
+* [`queryEndTime()`](/docs/search/search-query-language/search-operators/queryendtime)
+* [`Save`](/docs/search/search-query-language/search-operators/save/)
+* `Sessionize`
+* [`Subquery`](/docs/search/subqueries)
+* `Threat Intel`
+* [`Trace`](/docs/search/search-query-language/search-operators/trace)
+* [`Timeslice`](/docs/search/search-query-language/search-operators/timeslice) greater than 1 day
+* [`Transactionize`](/docs/search/search-query-language/transaction-analytics/transactionize-operator/)
 
 The following search modifier cannot be used in Auto refresh.
 
