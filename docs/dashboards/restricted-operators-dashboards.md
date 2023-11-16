@@ -44,7 +44,7 @@ The following operators can't be used in Auto refresh:
 
 The following search modifier cannot be used in Auto refresh.
 
-* _dataTier
+* `_dataTier`
 
 ## Include only after the first group-by phrase
 
