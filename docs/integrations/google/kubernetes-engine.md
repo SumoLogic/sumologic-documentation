@@ -281,7 +281,7 @@ To install the app, do the following:
 2. From the **App Catalog**, search for app and select it.
 3. To install the app, click **Add to Library** and complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source.**  For **GKE Log Source**, leave Source Category selected, and enter the value of source category which you used while configuring the Google Cloud Platform (GCP) Source.
+    2. **Data Source.** For **GKE Log Source**, leave Source Category selected, and enter the value of source category which you used while configuring the Google Cloud Platform (GCP) Source.
     3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 4. Click **Add to Library**.
 

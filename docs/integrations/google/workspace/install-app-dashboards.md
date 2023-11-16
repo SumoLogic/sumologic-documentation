@@ -23,7 +23,7 @@ To install the app, do the following:
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * Select either of the following options for the **Google Workspace App Audit Log source:**
       * **Source Category,** and select the Source Category from the list.
-      * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (_sourceCategory=google_app*).
+      * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=google_app*`).
    * If you have not already, and do not intend to collect Google Workspace Alert Center logs, leave the Source Category in the Google Workspace App Alert Center Log source as blank. Otherwise, select one of the following options for the **Google** **Workspace App Alert Center Log source:**
      * **Source Category,** and select the Source Category from the list.
      * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=workspace_alerts`).<br/><img src={useBaseUrl('img/integrations/google/google-workspace-app.png')} alt="Google Workspace app" />
