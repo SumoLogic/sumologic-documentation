@@ -22,3 +22,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 #### Cloud SOAR
 * Fixed ApiV3 change incident owner when using incorrect owner ID or with a Group ID.
 * Fixed "Incident Tools" action Add Note issue.
+* Fixed Playbooks "Run Test" against an Incident where modal remained with infinite loader.
