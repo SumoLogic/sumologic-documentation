@@ -29,7 +29,7 @@ import Iframe from 'react-iframe'; 
 
 <!-- Add this note at the GA release of the "Threat Intelligence Indicators tab" feature.
 :::note
-You can also add threat intelligence sources in the core Sumo Logic platform. See [Threat Intelligence Indicators](/docs/manage/threat-intelligence-indicators).
+You can also add threat intelligence sources in the core Sumo Logic platform. See [Threat Intelligence Indicators](/docs/platform-services/threat-intelligence-indicators).
 :::
 -->
 
