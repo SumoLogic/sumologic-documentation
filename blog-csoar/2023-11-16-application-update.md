@@ -1,5 +1,5 @@
 ---
-title: November 15, 2023 - Application Update
+title: November 16, 2023 - Application Update
 hide_table_of_contents: false
 keywords:
   - sumo logic
