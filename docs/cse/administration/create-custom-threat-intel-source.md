@@ -27,7 +27,13 @@ Watch this micro lesson to learn more about Cloud SIEM threat intelligence.
 
 import Iframe from 'react-iframe'; 
 
-### How Cloud SIEM uses indicators
+<!-- Add this note at the GA release of the "Threat Intelligence Indicators tab" feature.
+:::note
+You can also add threat intelligence sources in the core Sumo Logic platform. See [Threat Intelligence Indicators](/docs/manage/threat-intelligence-indicators).
+:::
+-->
+
+## How Cloud SIEM uses indicators
 
 When Cloud SIEM encounters an indicator from your threat source in an incoming
 Record it adds relevant information to the Record. Because threat intelligence
@@ -39,7 +45,7 @@ this way.
 Rule authors can also write rules that look for threat intelligence information in Records. To leverage the information in a rule, you can extend your custom rule expression, or add a Rule Turning Expression to a built-in rule. For a more detailed explanation of how to use threat intelligence information in rules, see [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) in the
 *About Cloud SIEM Rules* topic.
 
-### Create a threat intelligence source from Cloud SIEM UI
+## Create a threat intelligence source from Cloud SIEM UI
 
 1. Click the Content menu and select **Threat Intelligence**.
 1. Click **Add Source** on the **Threat Intelligence** page. <br/><img src={useBaseUrl('img/cse/threat-intel-page2.png')} alt="Threat Intelligence page" width="800"/>
@@ -49,7 +55,7 @@ Rule authors can also write rules that look for threat intelligence information 
 
 Your new source should now appear on the **Threat Intelligence** page.
 
-### Enter indicators manually
+## Enter indicators manually
 
 1. On the **Threat Intelligence** page, click the name of the source you want to update.  <br/><img src={useBaseUrl('img/cse/click-name.png')} alt="Click name" width="800"/>
 1. The **Details** page lists any indicators that have previously been added and have not expired. Click **Add Indicator**. <br/><img src={useBaseUrl('img/cse/threat-details.png')} alt="Threat details" width="800"/>
@@ -69,12 +75,12 @@ Your new source should now appear on the **Threat Intelligence** page.
         time.
     1. Click **Add**.
 
-### Upload a file of indicators 
+## Upload a file of indicators 
 
 If you have a large number of indicators to add to your source, you can
 save time by creating a .csv file and uploading it to Cloud SIEM. <br/><img src={useBaseUrl('img/cse/import-indicators.png')} alt="Import indicators" width="400"/>
 
-#### Create a CSV file
+### Create a CSV file
 
 The .csv file can contain up to three columns, which are described below. 
 
@@ -100,7 +106,7 @@ value,description,expires,active
     1. Drag your file onto the import popup, or click to navigate to the file, and then click Import.
     1. Optionally, you can enter an expiration for the indicators on the list. If you do, it will override any expirations that are defined in the file. Enter the expiration in any ISO date format. For example: `2022-12-31`
 
-### Manage sources and indicators using APIs
+## Manage sources and indicators using APIs
 
 You can use Cloud SIEM threat intelligence APIs to create and manage indicators and custom threat sources. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/).  
  
