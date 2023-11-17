@@ -5,8 +5,7 @@ keywords:
   - sumo logic
   - cloud soar
   - automation service
- 
-tags: [cloud soar release notes,automation service , application update]
+tags: [cloud soar release notes, automation service, application update]
 image: https://help.sumologic.com/img/sumo-square.png
 ---
 
