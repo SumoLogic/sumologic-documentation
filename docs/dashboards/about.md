@@ -81,7 +81,7 @@ Live mode restrictions do not apply to Dashboard. 
 * A Dashboard can have up to 100 queries.
 * Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard from the Search page.
-* Dashboard queries cannot return more than 1440 data points. If the dashboard panel is wider than 1440 pixels, additional resolution in data will be down-sampled in order to render on the screen.
+* Dashboard queries cannot return more than 1440 data points.
   
 ## Rules
 
