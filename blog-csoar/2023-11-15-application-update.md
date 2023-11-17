@@ -19,6 +19,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Playbooks: Removed Resource from inputs when selecting an Internal integration in add or edit node.
 * Playbooks actions: Fixed boolean values processed as null.
 #### Cloud SOAR
-* Fixed ApiV3 change incident owner when using incorrect owner ID or with a Group ID.
+* Fixed API v3 change incident owner when using incorrect owner ID or with a Group ID.
 * Fixed "Incident Tools" action Add Note issue.
 * Fixed Playbooks "Run Test" against an Incident where modal remained with infinite loader.
