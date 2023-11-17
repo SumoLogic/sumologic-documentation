@@ -37,4 +37,4 @@ For example, you could put the following in a Rule description field: `Follow [t
 ### Bug Fixes
 
 * Users were unable to define rules with names that had been previously used (but deleted).
-* Links from the legend for the new Insights by Status panel on the HUD were not enabled properly.
+* Links from the legend for the new **Insights by Status** panel on the HUD were not enabled properly.
