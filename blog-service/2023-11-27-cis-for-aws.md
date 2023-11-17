@@ -19,4 +19,6 @@ Here are some of the key features the new app offers:
 * **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
 * **Resource risk summary**. See a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. Get an action plan for addressing the most important areas of concern.
 
+In addition to being able to install the app from the App Catalog, you can also install it as a free trial.
+
 Check out our technical documentation [here](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws) to learn how you can set up and use the Cloud Infrastructure Security for AWS app.

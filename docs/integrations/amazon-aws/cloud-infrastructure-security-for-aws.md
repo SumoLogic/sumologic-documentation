@@ -8,7 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg')} alt="AWS" width="60"/>
 
-
 The Cloud Infrastructure Security for AWS app provides a unified security and compliance audit view of your AWS infrastructure, and insight into threat activity across the environment. It leverages native AWS tools and telemetry to accelerate the work of security and reliability management. 
 
 Key features of the app include:
@@ -17,27 +16,7 @@ Key features of the app include:
 * **Suspicious activity assessment**. See activity identified by anomaly detection across users, web interactions, networks, and Identity Access Management (IAM).
 * **Resource risk summary**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
 
-## About the app
-
 Data presented in the app’s dashboards is normalized from log sources into AWS Elastic Common Schema (ECS) format, providing seamless data presentation of all your AWS data. 
-
-### Recommended workflow
-
-To most efficiently use the app to address security concerns, we recommend the following workflow:
-1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention. 
-1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
-1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation. 
-1. Review the [Resource Risk Dashboard](#resource-risk-dashboard) for a summary of all the resources that pose risk. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
-
-### View resource risk details
-
-You can click a resource on any dashboard to view details about its risk in the [Resource Risk Dashboard](#resource-risk-dashboard):
-1. Click a resource in a dashboard. A summary of that resource’s data appears in a panel.
-1. In the panel under **Linked Dashboards**, select **Resource Risk Dashboard**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-linked-dashboard.png')} alt="Linked dashboard" width="600"/>
-1. The selected resource’s data appears in the **Resource Risk Dashboard**, broken down by the types of data collected. This lets you see at a glance all the different risks presented by the resource. Note at the top of the dashboard that the filters specify the resource.
-1. Click items in the action plan section to address them. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-resource-data.png')} alt="Resource data" width="600"/>
-
-### Alerts
 
 Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the app. To see monitors for the app, go to **Manage Data > Monitoring** and select the **Cloud Infrastructure Security** folder. 
 
@@ -118,17 +97,18 @@ The app collects logs from different AWS sources to produce data in the dashboar
 
 ## Install the Cloud Infrastructure Security for AWS app
 
-This section has instructions for installing the Cloud Infrastructure Security for AWS app.
-
-### Install from the App Catalog
+Install the app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage. 
 
 1. From the **App Catalog**, search for and select the app.
-1. Click **Install App**. 
-1. Follow the on-screen directions to connect to your AWS instance and set up log collection.
-
-### Install from the trial workflow
-
-Follow the directions in [Sign up through Sumo Logic](/docs/get-started/sign-up/#sign-up-through-sumo-logic) to start a free trial. When prompted, select the Cloud Infrastructure Security for AWS app.
+1. Click **Install App**. The following screen appears. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="eploy Cloud Infrastructure for AWS screen" style={{border: '1px solid black'}} width="700"/>
+1. In the **Deploy Cloud Infrastructure for AWS** screen, perform the following steps:
+   1. **Select Region**. Select the AWS region where you want to deploy the solution. 
+    :::warning
+    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
+    :::
+   1. **Check AWS Role Permission**. Click the button to sign in to AWS and perform a check to see if you have permissions to install the solution. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions.
+   1. **Deploy AWS**. Click the **Deploy AWS Security** button to deploy the solution.  
+   
 
 ## Cloud Infrastructure Security for AWS app dashboards​
 
@@ -160,9 +140,17 @@ The **Active Threats: AWS Storage** dashboard provides threat counts related to 
 
 The **Resource Risk** dashboard provides a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. It also has an **Action Plan** panel so you can access resources that need attention.
 
-You can also use this dashboard to show details of a single resource. See [View resource risk details](#view-resource-risk-details) above.
+You can also use this dashboard to show details of a single resource. See [View resource risk details](#view-resource-risk-details) below.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-resource-risk-dashboard.png')} alt="Resource Risk dashboard" width="600"/>
+
+#### View resource risk details
+
+You can click a resource on any dashboard to view details about its risk in the [Resource Risk Dashboard](#resource-risk-dashboard):
+1. Click a resource in a dashboard. A summary of that resource’s data appears in a panel.
+1. In the panel under **Linked Dashboards**, select **Resource Risk Dashboard**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-linked-dashboard.png')} alt="Linked dashboard" width="600"/>
+1. The selected resource’s data appears in the **Resource Risk Dashboard**, broken down by the types of data collected. This lets you see at a glance all the different risks presented by the resource. Note at the top of the dashboard that the filters specify the resource.
+1. Click items in the action plan section to address them. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-resource-data.png')} alt="Resource data" width="600"/>
 
 ### Security Control Failures dashboard
 
@@ -200,8 +188,11 @@ The **Suspicious Web Activity** dashboard shows suspicious activity on the Web. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-web-activity.png')} alt="Suspicious Web Activity dashboard" width="600"/>
 
+## Recommended dashboards workflow
 
-
-
-
+To most efficiently use the app to address security concerns, we recommend the following workflow:
+1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention. 
+1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
+1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation. 
+1. Review the [Resource Risk Dashboard](#resource-risk-dashboard) for a summary of all the resources that pose risk. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
 
