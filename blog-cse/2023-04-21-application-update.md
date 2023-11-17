@@ -39,7 +39,7 @@ Automation results are accessible from Insight and Entity detail pages.
 The Automation Service currently has **Limited Availability**. This means that it is fully functional and supported in production environments, but not automatically deployed to every customer. If you would like it deployed to your environment, please contact Sumo Logic and we will enable it for you.
 :::
 
-There is much more information about the Automation Service and how to use it in the [online documentation](/docs/cse/automation-service/).
+There is much more information about the Automation Service and how to use it in the [online documentation](/docs/cse/automation/about-automation-service-and-cloud-siem/).
 
 ### Threat Indicators
 

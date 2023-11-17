@@ -175,6 +175,6 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Configuration | Manage Favorite Fields	| Add and remove favorite fields by clicking the star icon next to the fields in Cloud SIEM Records.|
 | Configuration | View Entity Groups	| View [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).|
 | Configuration | Manage Entity Groups	| Create, edit, and delete Entity Groups.|
-| Configuration | View Automations | View [automations](/docs/cse/automation-service/automation-service-automations/). |
+| Configuration | View Automations | View [automations](/docs/cse/automation/automations-in-cloud-siem/). |
 | Configuration | Manage Automations | Create, edit, and delete automations. |
 | Configuration | Execute Automations | Run automations. |

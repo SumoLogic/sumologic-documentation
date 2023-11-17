@@ -259,4 +259,4 @@ See: [Improve Rules with Insight Trainer](/docs/cse/rules/insight-trainer/)
 
 The Automation Service allows you to automate smart actions, including enrichments and notifications. You can run automations manually, or at Insight creation or closure.
 
-See: [Automation Service](/docs/cse/automation-service/)
+See: [Automation](/docs/cse/automation/)

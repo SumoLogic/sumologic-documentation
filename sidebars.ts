@@ -115,6 +115,7 @@ module.exports = {
               ]
             },
             'send-data/opentelemetry-collector/performance-benchmarks',
+            'send-data/opentelemetry-collector/data-transformations',
             'send-data/opentelemetry-collector/troubleshooting',
             'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
@@ -332,7 +333,7 @@ module.exports = {
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/hosted-collectors/ms-office-audit-source',
+                'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },
             {
@@ -637,6 +638,7 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
+            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -677,6 +679,7 @@ module.exports = {
         'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
+        'manage/manage-subscription/fedramp-capabilities',
       ]
     },
     {
@@ -1741,7 +1744,7 @@ module.exports = {
                 'observability/aws/integrations/aws-ec2-host-metrics',
                 'observability/aws/integrations/aws-lambda',
                 'observability/aws/integrations/aws-network-load-balancer',
-                'observability/aws/integrations/aws-rds-metrics',
+                'observability/aws/integrations/amazon-rds',
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
@@ -1822,6 +1825,7 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
+      'integrations/product-list',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -2455,7 +2459,6 @@ integrations: [
    ],
  },
 ],
-
 // OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
@@ -2469,16 +2472,16 @@ integrations: [
     },
     {
       type: 'category',
-      label: 'Cloud Security Analytics',
+      label: 'Cloud Infrastructure Security',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'cloud-security-analytics/index'},
+      link: {type: 'doc', id: 'cloud-infrastructure-security/index'},
       items: [
-        'cloud-security-analytics/introduction-to-cloud-security-analytics',
-        'cloud-security-analytics/data-lake',
-        'cloud-security-analytics/audit-and-compliance',
-        'cloud-security-analytics/threat-detection-and-investigation',
-        'cloud-security-analytics/application-security',
+        'cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
+        'cloud-infrastructure-security/data-lake',
+        'cloud-infrastructure-security/audit-and-compliance',
+        'cloud-infrastructure-security/threat-detection-and-investigation',
+        'cloud-infrastructure-security/application-security',
       ],
     },
     {
@@ -2667,19 +2670,14 @@ integrations: [
         },
         {
           type: 'category',
-          label: 'Automation Service',
+          label: 'Automation',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'cse/automation-service/index'},
+          link: {type: 'doc', id: 'cse/automation/index'},
           items: [
-            'cse/automation-service/about-automation-service',
-            'cse/automation-service/automation-service-automations',
-            'cse/automation-service/automation-service-app-central',
-            'cse/automation-service/automation-service-playbooks',
-            'cse/automation-service/automation-service-integrations',
-            'cse/automation-service/automation-service-examples',
-            'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
           ],
         },
         {
@@ -2727,6 +2725,7 @@ integrations: [
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
         'cloud-soar/cloud-soar-apis',
+        'cloud-soar/audit-event-index',
       ],
     },
   ],
@@ -2800,6 +2799,34 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
+        'manage/users-roles/roles/rbac-for-indexes'
+      ],
+    },
+  ],
+  // Platform services
+  platformservices: [
+    {
+      type: 'category',
+      label: 'Platform Services',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'platform-services/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/automation-service/index'},
+          items: [
+            'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/automation-service-app-central',
+            'platform-services/automation-service/automation-service-playbooks',
+            'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-bridge',
+            'platform-services/automation-service/automation-service-integration-framework',
+          ],
+        },
       ],
     },
   ],

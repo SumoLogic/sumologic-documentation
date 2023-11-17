@@ -6,10 +6,14 @@ description: Learn how to use the Parser Editor to configure and test a custom p
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
-This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers.
+This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers. 
 
-For information about the Sumo Logic Cloud SIEM parsing language, see [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide).
+See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
+* [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
+* [Parsing Patterns](/docs/cse/schema/parsing-patterns) 
+* [Parser Troubleshooting](/docs/cse/schema/parser-troubleshooting-tips)
 
 :::note
 The instructions that follow assume that you have already written your parser code.
@@ -181,3 +185,42 @@ This section explains how to configure a Sumo Logic core platform source to send
 1. Click **+Add Field**. 
 1. Two blank fields appear, below any Fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
 <br/>An orange icon indicates that the `_parser` field has not been created in your Sumo Logic core platform org yet.
+
+## Parser templates
+
+We provide a number of parsers to extract data for normalization. However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers. 
+
+### Access parser templates
+
+1. Go to **Manage Data > Logs**.
+1. Select the **Parsers** tab.
+1. Open the **System** folder.
+1. Scroll down to the **Parser Templates** folder and open it. 
+1. Browse the templates. Available formats include:
+   * CEF
+   * CSV
+   * JSON
+   * Key value
+   * LEEF
+   * Unstructured (regular expression)
+   * Windows XML
+   * XML
+
+<img src={useBaseUrl('img/cse/parser-templates.png')} alt="Parser templates" style={{border: '1px solid black'}} width="800" />
+
+### What's inside the templates
+
+The parser templates cover common log formats and scenarios. Each template has two versions, one with verbose commentary on each component of the parser, and another without commentary that you can duplicate and use to quickly start creating a custom parser.
+
+Watch the following video for a walkthrough of the parser templates.
+
+<Iframe url="https://www.youtube.com/embed/GFzovRGhtDU?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />

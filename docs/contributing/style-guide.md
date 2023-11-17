@@ -486,7 +486,11 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 ## Contractions
 
-Using contractions contributes to our goals of striking a conversational, friendly tone. Use common contractions, like “don’t”, “won’t”, and “you’ll”. Avoid less common contractions, like “should’ve”, or “it’ll”. Do not use negative contractions (don't, can't, shouldn't), as they can be easily mistaken for the opposite meaning. Spell out those words.
+Using contractions contributes to our goals of striking a conversational, friendly tone. 
+
+It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
+
+Avoid less common contractions, like “should’ve”, or “it’ll”.
 
 ## Downloadable files
 
@@ -907,75 +911,36 @@ Ensure parallel grammatical structure - that is, start each bullet with the same
 
 ## Links
 
-For docs links, use relative file paths. For everything else (external links), use absolute URL paths.
+When linking to Sumo Logic docs, use relative file paths. For external links, use absolute URL paths.
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
+Whenever possible, use link text that’s relevant - such as the page title - rather than just "click here". If the link title is too long, you can either edit the title or summarize the content in a few words.
 
-<TabItem value="Markdown">
-
-**Linking to other headers in the same file:**
+#### Linking to other headers in the same file
 
 ```md
 Here's how to make a [table](#tables).
 ```
 
-**Linking to files in the same folder:**
+#### Linking to files in the same folder
 
 ```md
-* Check out our [glossary](glossary.md).
-   <br/>or
-* Check out our [glossary](./glossary.md).
-   <br/>or
+* Check out our [glossary](glossary.md); or
+* Check out our [glossary](./glossary.md); or
 * Check out our [glossary](/docs/contributing/glossary).
 ```
 
-**Linking to files in other parent folders:**
+#### Linking to files in other parent folders
 
 ```md
-* Learn how to [sign up with Sumo](../get-started/sign-up.md).
-   <br/>or
+* Learn how to [sign up with Sumo](../get-started/sign-up.md); or
 * Learn how to [sign up with Sumo](/docs/get-started/sign-up).
 ```
 
-**Linking to external URLs:**
+#### Linking to external URLs
 
 ```md
 For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
 ```
-
-</TabItem>
-<TabItem value="Result">
-
-**Linking to other headers in the same file:**
-
-Here's how to make a [table](#tables).
-
-**Linking to files in the same folder:**
-
-* Check out our [glossary](glossary.md).
-   <br/>or
-* Check out our [glossary](./glossary.md).
-   <br/>or
-* Check out our [glossary](/docs/contributing/glossary).
-
-**Linking to files in other parent folders:**
-
-* Learn how to [sign up with Sumo](../get-started/sign-up.md).
-   <br/>or
-* Learn how to [sign up with Sumo](/docs/get-started/sign-up).
-
-**Linking to external URLs:**
-
-For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
-
-</TabItem>
-</Tabs>
 
 
 ## Markdown
