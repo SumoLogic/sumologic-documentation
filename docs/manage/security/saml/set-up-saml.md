@@ -63,11 +63,11 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 1. Go to **Administration** > **Security** > **SAML**.
 1. Select an existing configuration, or click the plus (**+**) icon to create a new configuration. <br/>![saml-config-list.png](/img/security/saml-config-list.png) 
 1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/saml-add-configuration.png')} alt="Add configuration" style={{border: '1px solid black'}} width="600" />
-1. **Configuration Name**: Enter a name to identify the SSO policy (or another name used internally to describe the policy).
-1. **Debug Mode**: Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
-1. **Issuer**: Enter the unique URL assigned to your organization by the SAML IdP. <br/>ADFS example: `http://adfs.myserver.tld/adfs/services/trust`
-1. **X.509 Certificate**: Copy and paste your organization's X.509 certificate, which is used to verify signatures in SAML assertions. For ADFS, the certificate required is the Token-signing ADFS X.509 certificate.
-1. **Attribute Mapping**: Depending on your IdP, select: 
+1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
+1. **Debug Mode**. Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
+1. **Issuer**. Enter the unique URL assigned to your organization by the SAML IdP. <br/>ADFS example: `http://adfs.myserver.tld/adfs/services/trust`
+1. **X.509 Certificate**:.Copy and paste your organization's X.509 certificate, which is used to verify signatures in SAML assertions. For ADFS, the certificate required is the Token-signing ADFS X.509 certificate.
+1. **Attribute Mapping**. Depending on your IdP, select: 
    * **Use SAML subject**
    * **Use SAML attribute** and type the email attribute name in the text box.
 1. **Optional Settings**. See the [Optional configurations](#optional-configurations) section below for directions.
@@ -103,7 +103,7 @@ In the steps below, you provide the information necessary for Sumo to issue a SP
 1. **Disable Requested Authn Context**. If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element
 1. (Optional) **Sign Authn Request**. If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo. 
    :::note
-   The X-509 certificate provided for Authn Request signing can also be used to configure encrypted assertions. For details, see your IdP documentation for instructions on how to configure encrypted assertions. 
+   The X-509 certificate provided for Authn Request signing can also be used to configure encrypted assertions. For details, see your IdP documentation for instructions on how to configure encrypted assertions.
    :::
 1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
 
@@ -159,8 +159,7 @@ Click the **Download Metadata XML** button while you [review a SAML configuratio
 
 You can get the metadata XML for a SAML configuration using the [getSamlMetadata](https://api.sumologic.com/docs/#operation/getSamlMetadata) API in the [SAML Configuration](https://api.sumologic.com/docs/#tag/samlConfigurationManagement) resource. Run the API from your API endpoint. To find your API endpoint, see [API Authentication, Endpoints, and Security](https://help.sumologic.com/docs/api/getting-started/).
 
-If you need to give your identity provider a URL that contains the metadata XML for a SAML configuration, run the [getIdentityProviders](https://api.sumologic.com/docs/#operation/getIdentityProviders) API. This will give you a list of all SAML configurations in your organization and includes the metadata URL for each  configuration. In the response from the API, look for `metadataURL` entries. For example: 
+If you need to give your identity provider a URL that contains the metadata XML for a SAML configuration, run the [getIdentityProviders](https://api.sumologic.com/docs/#operation/getIdentityProviders) API. This will give you a list of all SAML configurations in your organization and includes the metadata URL for each  configuration. In the response from the API, look for `metadataURL` entries. For example:
 `"metadataUrl": "https://api.sumologic.com/api/v1/saml/identityProviders/00000000361130F7/metadata"`
 
 The configuration ID for the SAML configuration is embedded in the URL. In the preceding example, the configuration ID is `00000000361130F7`.
-
