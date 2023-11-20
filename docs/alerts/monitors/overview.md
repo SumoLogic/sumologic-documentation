@@ -39,8 +39,8 @@ If, for example, the detection window of your alert is one day it will be evalu
 
 Log monitors in a triggered state can auto-resolve.
 
-* **Static Fields Log monitors** will trigger/resolve based on the value of a field returned by their search. If no data is returned by the query, then chart data is not ingested. If it has been 24 hours or more since a trigger condition was matched, then no data results in the monitor/group getting resolved.
-* **Missing Data monitors** will auto-resolve if it has not seen any data for 7 consecutive days.
+* **Static Fields Log monitors** will trigger/resolve based on the value of a field returned by their search. If no data is returned by the query, then chart data is not ingested. If it has been a full detection window or more since a trigger condition was matched, then no data results in the monitor/group getting resolved.
+* **Missing Data monitors** will auto-resolve if it has not seen any data for the last 24 consecutive hours.
    * Non-grouped monitors will trigger again after auto-resolving if there is still no data.
    * Grouped monitors will be removed and no longer considered after being auto-resolved, unless data for this group is seen again.
 

@@ -73,7 +73,7 @@ The maximum number of Collectors allowed per organization is 10,000.
 </div>
   <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/ms-office-audit-source"><img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="40"/><h4>Microsoft Sources</h4></a>
+  <a href="/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source"><img src={useBaseUrl('img/send-data/office_365_48.png')} alt="Thumbnail icon" width="40"/><h4>Microsoft Sources</h4></a>
   <p>Collect Audit Log content types to track and monitor usage of MS 365.</p>
   </div>
 </div>

@@ -22,9 +22,9 @@ Open the [Alert List](alert-response.md) to view all of the triggered alerts fr
 
 At the top of the page, you can:
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
-* **Add** > **New Folder**: create a folder to organize your Monitors.
-* **Add** > **New Monitor**: create a [new Monitor](#add-a-monitor).
-* **Add** > **Import**: import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
+* **Add** > **New Folder**. Create a folder to organize your Monitors.
+* **Add** > **New Monitor**. Create a [new Monitor](#add-a-monitor).
+* **Add** > **Import**. Import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
 
 :::important
 The **Import** function is provided for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
@@ -46,9 +46,9 @@ In the details pane, you'll see the following details for a Monitor:
 * **Type**. Shows the type of Monitor, either Logs or Metrics.
 * **Path**. Shows the Library location where the monitor is located.
 * **Query**. It is used to track your data. 
-* **Trigger Conditions** Thresholds value that must met for Monitor to trigger an alert. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time. . Applicable values include Critical, Warning, and Missing Data.
+* **Trigger Conditions** Thresholds value that must met for Monitor to trigger an alert. These values are set when you create a monitor and can be based on a variety of metrics such as CPU usage, network latency, application response time. Applicable values include Critical, Warning, and Missing Data.
 * **Notifications**. These are configured on the Monitor.
-* The timestamp and user that **Created** and last **Modified** the Monitor.
+* The timestamp and user that **Created** and last **Modified** the Monitor. The alert response page will show alert details in the time zone designated in your user preferences.
 
 ### View in Metrics Explorer
 

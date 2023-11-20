@@ -333,7 +333,7 @@ module.exports = {
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/hosted-collectors/ms-office-audit-source',
+                'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },
             {
@@ -679,6 +679,7 @@ module.exports = {
         'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
+        'manage/manage-subscription/fedramp-capabilities',
       ]
     },
     {
@@ -1825,6 +1826,7 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
+      'integrations/product-list',
     {
       type: 'category',
       label: 'Amazon and AWS',

@@ -1,7 +1,6 @@
 ---
 id: alert-response
 title: Alert Response
-sidebar_label: Alert Response
 description: Quickly investigate and resolve issues you've been alerted about with the context provided by Sumo Logic.
 ---
 
@@ -19,7 +18,7 @@ import Iframe from 'react-iframe';
 
 :::sumo Micro Lesson
 
-Using Alert Response.
+Learn how to use Alert Response.
 
 <Iframe url="https://www.youtube.com/embed/3FHomBuFyV8?rel=0"
         width="854px"
@@ -80,11 +79,12 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 
 ### Translating Thresholds
 
- Threshold translating allows you to open the Alert Response Page in the **Metrics Explorer** that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
+Threshold translating allows you to open the Alert Response Page in the **Metrics Explorer** that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Explorer chart.
 
- For example, when you open an alert response page in Metrics Explorer, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Explorer view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
+For example, when you open an alert response page in Metrics Explorer, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Explorer view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
 
- To view the Alert Response chart in Metrics Explorer, follow the steps Below:
+To view the Alert Response chart in Metrics Explorer, follow the steps below:
+
 1. Navigate to the **Alert lists** and select the alert for which you want to view the corresponding metrics and threshold values.
 1. Open the **Alert Response Page**.
 1. Click the **View in Metrics Explorer** button for that alert. You can click on either of the two buttons, and they both function the same way.
