@@ -104,3 +104,7 @@ precede each line with either a number and a period or an asterisk `*`.
 This will be displayed in the Text Panel as:
 
 ![Combined list](/img/dashboards/markdown_combined_list.png)
+
+:::info
+To know more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
+:::
