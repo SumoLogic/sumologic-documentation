@@ -145,17 +145,17 @@ Configure a logout page if you would like to point Sumo users to a particular UR
 
 {@import ../../../reuse/saml.md}
 
-## Export metadata XML
+## Download metadata XML
 
-Sometimes, you may have a need to export the metadata XML from one of your SAML configurations. For example, you may need to provide the XML to an identity provider for their configuration. Following are ways to export the metadata XML.
+Sometimes, you may have a need to download the metadata XML from one of your SAML configurations. For example, you may need to provide the XML to an identity provider for their configuration. Following are ways to download the metadata XML.
 
-### Export metadata XML with View Metadata XML button
+### Download metadata XML with Download Metadata XML button
 
-When you click the **View Metadata XML** button while you [review a SAML configuration](#review-saml-configuration), the contents of the metadata XML file appear in a browser window. From this window, you can copy the XML. 
+Click the **Download Metadata XML** button while you [review a SAML configuration](#review-saml-configuration) to download the XML as a file named `metadata.xml`. 
 
-<img src={useBaseUrl('img/security/view-metadata-xml-button.png')} alt="View Metadata XML button" style={{border: '1px solid black'}} width="400" />
+<img src={useBaseUrl('img/security/download-metadata-xml-button.png')} alt="View Metadata XML button" style={{border: '1px solid black'}} width="400" />
 
-### Export metadata XML with the API
+### Download metadata XML with the API
 
 You can get the metadata XML for a SAML configuration using the [getSamlMetadata](https://api.sumologic.com/docs/#operation/getSamlMetadata) API in the [SAML Configuration](https://api.sumologic.com/docs/#tag/samlConfigurationManagement) resource. Run the API from your API endpoint. To find your API endpoint, see [API Authentication, Endpoints, and Security](https://help.sumologic.com/docs/api/getting-started/).
 
