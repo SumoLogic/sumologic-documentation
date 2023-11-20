@@ -20,6 +20,10 @@ DocuSign pioneered the development of e-signature technology, and today DocuSign
 
 The DocuSign provides a secure endpoint to receive customer event data from the [DocuSign Monitor API](https://developers.docusign.com/docs/monitor-api/reference/monitor/dataset/getstream/). DocuSign Monitor helps organizations protect their agreements with round-the-clock activity tracking. The Monitor API delivers this activity tracking information directly to existing security stacks or data visualization tools—enabling teams to detect unauthorized activity, investigate incidents, and quickly respond to verified threats.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -152,6 +156,26 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "docusign_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "DocuSign"
+  }
+  config = jsonencode({
+         "name": "DocuSign",
+         "description": "Test Source",
+         "category": "source_category",
+         "env": "dev",
+         "userId": "9cfb472b-ef1f-4116-8df2-17c538xxxxxx",
+         "integrationKey": "215c96c6-19a6-48e9-955f-253593xxxxxx",
+         "rsaPrivateKey": "-----BEGIN RSA PRIVATE KEY----- xxxxxxx xxxxxxx xxxxx== -----END RSA PRIVATE KEY-----"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

@@ -20,6 +20,10 @@ Workday is a cloud-based enterprise resource planning (ERP) system that enables 
 
 The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -44,11 +48,7 @@ To configure a Workday Source, follow the steps below:
 3. Select for and select **Workday**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
 5. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata/) is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). When configured with the **Forward to SIEM** option the following metadata fields are set automatically by the integration (Do not include the below fields as custom log metadata Fields):
-   * `_siemVendor`: Workday
-   * `_siemProduct`: Workday
-   * `_siemFormat`: JSON
-   * `_siemEventID`: SignOnLogs or ActivityLogs
+6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
 7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -134,6 +134,32 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "workday_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Workday"
+  }
+  config = jsonencode({
+      "name": "Workday Test",
+      "description": "Testing the workday source",
+      "category": "General",
+      "signOnReportURL": "https://wd2-impl-services1.workday.com...-_Copy",
+      "isuUsername": "SumoLogic",
+      "isuPassword": "**********",
+      "refreshTokenURL": "https://wd2-impl-services1.workday.com...token",
+      "clientID": "sldfsjdflk230sdflnk2342cxcoijs0",
+      "clientSecret": "**********",
+      "refreshToken": "**********",
+      "restApiURL": "https://wd2-impl-services1.workday.com...activityLogging",
+      "backfillDays": 1,
+      "pollingIntervalMinutes": 10
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Troubleshooting
 

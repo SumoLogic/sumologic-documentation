@@ -17,6 +17,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Dropbox Source provides a secure endpoint to receive team events from the [Get Events API](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -118,6 +122,26 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "dropbox_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Dropbox"
+  }
+  config = jsonencode({
+      "access_code":"********",
+      "name":"dropbox",
+      "app_secret":"********",
+      "app_key":"abcdefg1234567",
+      "fields":{
+        "_siemForward":false
+      }
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

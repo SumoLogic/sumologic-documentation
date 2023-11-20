@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://developer.services.mimecast.com/apis). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -114,6 +118,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "mimecast-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Mimecast"
+  }
+  config = jsonencode({
+    "name": "Mimecast",
+    "description": "Mimecast",
+    "category": "Mimecast",
+    "clientID": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+    "clientSecret": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
+    "dataCollection": [
+      "siem",
+      "dlp",
+      "auditEvent",
+      "holdMessageList"
+    ]
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Troubleshooting
 

@@ -20,6 +20,10 @@ JumpCloud's open directory platform unifies your technology stack across identit
 
 JumpCloud Directory Insights Source is used to collect Directory Insights Events from the JumpCloud platform using the REST API and send it to Sumo Logic.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -100,6 +104,25 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "jumpcloud-directory-insights-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "JumpCloud Directory Insights"
+  }
+  config = jsonencode({
+            "name": "JumpCloud Directory Insights",
+            "description": "Collect Events from JumpCloud Directory Insights Product",
+            "category": "jumpcloud-directory-insights",
+            "apiKey": "ebf7b9d6e1****************",
+            "orgID": "64949312***************",
+            "service": "all"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Troubleshooting
 

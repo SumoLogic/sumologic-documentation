@@ -16,7 +16,7 @@ The Okta Source provides a secure endpoint to receive event data from the Okta�
 It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Setup
@@ -101,6 +101,30 @@ eventTypes | String | No | `null` | Comma separated list of events to collect. R
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "okta-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Okta"
+  }
+  config = jsonencode({
+      "name":"Okta",
+      "description":"East field",
+      "domain":"mydomain.okta.com",
+      "users":true,
+      "collectAll":true,
+      "apiKey":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"eastTeamF",
+      "pollingInterval":300
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The KnowBe4 API integration collects user events data into Sumo Logic for storage, analysis, and alerting. It ingests events data from the [Events API](https://developer.knowbe4.com/rest/userEvents#tag/Events/operation/listEvents), phishing security tests from the [Phishing Security Tests API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get), and recipient results from the [Recipient Results API](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1%7Bpst_id%7D~1recipients/get).
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -136,6 +140,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "knowbe4-api-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "KnowBe4 KMSAT"
+  }
+  config = jsonencode({
+  		"name": "KnowBe4",
+ 	 	"description": "Test Source",
+  		"category": "source_category",
+  		"region": "US",
+  		"apiKey": "************",
+		"dataTypes": [
+    		         "phishingTests"
+  		],
+		"phishingPollInterval": 1
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Limitations
 

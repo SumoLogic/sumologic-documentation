@@ -22,7 +22,7 @@ The Tenable Source provides a secure endpoint to ingest audit-log events, vulner
    * The Asset Export API first [exports assets](https://developer.tenable.com/reference/exports-assets-request-export) that are used to initiate export jobs. Next, it gets the export [status](https://developer.tenable.com/reference/exports-assets-request-export) and then [downloads exported assets](https://developer.tenable.com/reference/exports-assets-download-chunk) in a chunk.
 
 :::note
-This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -128,6 +128,28 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "tenable_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Tenable"
+  }
+  config = jsonencode({
+            "name": "Tenable",
+            "description": "East field",
+            "access_key": "********",
+            "secret_key": "********",
+            "supported_apis": ["Vulnerability Data","Audit Logs","Asset Data"],
+            "fields": {
+                "_siemForward": false
+            },
+            "category": "eastTeamF"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

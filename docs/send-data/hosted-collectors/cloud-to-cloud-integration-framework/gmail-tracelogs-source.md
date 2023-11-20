@@ -24,6 +24,10 @@ You'll need to use our [Google BigQuery source](/docs/send-data/hosted-collector
 
 The Gmail Trace Logs integration pulls the Gmail log from the BigQuery using BigQuery Library APIs and ingests them into the Sumo Logic to store, analyze, and alert.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -127,6 +131,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "gmail_trace _logs_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Gmail Trace Logs"
+  }
+  config = jsonencode({
+            "name":"Gmail Trace Log",
+            "category":"gmail",
+            "projectId":"Product123",
+            "datasetId":"Product123",
+            "privateKey":"*****************",
+            "tokenURI":"dshjfgbkjlafdhbdhfvhjksdg",
+            "clientEmail":"product123@gmail.com",
+            "dataLocation":"US",
+            "startTime":"24 Hours ago"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

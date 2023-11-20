@@ -22,6 +22,10 @@ The Akamai SIEM API Source provides a secure endpoint to receive security events
 This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Contact Sumo Logic support for alternative collection techniques if your Source exceeds this rate.
 :::
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -331,6 +335,33 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "akamai_SIEM_API" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Akamai SIEM API"
+  }
+  config = jsonencode({
+      "name":"akamai test",
+      "splitOnRules":true,
+      "clientToken":"********",
+      "host":"********.luna.akamaiapis.net",
+      "configIds":["74215"],
+      "decodeHttp":true,
+      "fields":{
+        "_siemForward":false
+      },
+      "resetOffset":false,
+      "clientSecret":"********",
+      "limit":10000,
+      "pollInterval":30,
+      "accessToken":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

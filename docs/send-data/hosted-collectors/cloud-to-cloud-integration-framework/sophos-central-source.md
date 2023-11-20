@@ -23,7 +23,7 @@ To link the endpoint data to the alert, you can map the `alert.ManagedAgent.ID` 
 :::
 
 :::note
-This Source is available in the [Fed deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints).
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -55,11 +55,7 @@ To configure a Sophos Central Source:
 1. Select **Sophos Central**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse). When configured with the **Forward to SIEM** option the following metadata fields are set:
-   * `_siemVendor`: Sophos
-   * `_siemProduct`: Sophos Central
-   * `_siemFormat`: JSON
-   * `_siemEventID`: `<eventId>` Where `<eventId>` is populated by the alert category. This will be one of the following values: azure, adSync, applicationControl, appReputation, blockListed, connectivity, cwg, denc, downloadReputation, endpointFirewall, fenc, forensicSnapshot, general, iaas, iaasAzure, isolation, malware, mtr, mobiles, policy, protection, pua, runtimeDetections, security, smc, systemHealth, uav, uncategorized, updating, utm, virt, wireless, or xgEmail.
+1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse). 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -88,7 +84,6 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | schemaRef | JSON Object  | `{"type":"Sophos Central"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
-
 
 ### Configuration Object
 
@@ -130,6 +125,29 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "sophos_central_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Sophos Central"
+  }
+  config = jsonencode({
+      "name":"Sophos",
+      "description":"East field",
+      "clientId":"********",
+      "clientSecret":"********",
+      "supported_apis": ["Events", "Alerts"],
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"eastTeamF",
+      "pollingInterval":300
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

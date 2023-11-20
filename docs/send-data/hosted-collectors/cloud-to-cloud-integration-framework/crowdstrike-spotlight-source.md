@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined with endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. These combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
 The source will fetch complete vulnerability instance data that has been updated within the duration of the polling interval, which by default is set to 1 hour. According to CrowdStrike Spotlight documentation, the timestamp updates are based on changes to any of the following vulnerability properties: status, remediation, evaluation_logic, suppression_info, and cve.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -135,6 +139,31 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "crowdstrike-spotlight_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Crowdstrike Spotlight"
+  }
+  config = jsonencode({
+      "name":"crowdstrike-spotlight",
+      "apiBaseUrl":"api.crowdstrike.com",
+      "clientId":"********",
+      "clientSecret":"********",      
+      "evaluationLogic":true,
+      "hostInfo":true,
+      "remediation":true,
+      "cve":true,      
+      "pollingInterval":1,
+      "fields":{
+        "_siemForward":false
+      } 
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Troubleshooting
 

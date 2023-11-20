@@ -23,6 +23,10 @@ The Cybereason API documentation is not public and can only be accessed by part
 
 If you want to explicitly allow the static IP addresses used for this Source on Cybereason see our [table of static IP addresses by deployment](cloud-to-cloud-source-versions.md).
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -152,6 +156,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "cybereason_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Cybereason"
+  }
+  config = jsonencode({
+      "back_collection_hours":720,
+      "name":"test cybereason",
+      "domain":"mydomain.cybereason.net",
+      "client_password":"********",
+      "polling_interval":300,
+      "fields":{
+        "_siemForward":false
+      },
+      "dup_users":true,
+      "category":"c2c/cybereason",
+      "client_user":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

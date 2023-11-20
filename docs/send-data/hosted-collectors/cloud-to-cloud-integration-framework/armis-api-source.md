@@ -19,6 +19,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
 The Source integration ingests alert and device data from the Armis platform.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -119,6 +123,31 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "armis_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Armis"
+  }
+  config = jsonencode({
+            "name": "armis",
+            "description": "description",
+            "category": "source_category",
+            "instanceURL": "http://armis-instance.armis.com",
+            "secretKey": "*********",
+            "apiType": [
+                "alertLogs",
+                "deviceLogs"
+            ],
+            "fields": {
+                "_siemForward": false
+            }
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

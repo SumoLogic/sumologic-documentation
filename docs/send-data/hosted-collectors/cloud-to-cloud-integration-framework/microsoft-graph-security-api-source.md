@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -154,6 +158,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "microsoft-graph-security-api-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Microsoft Graph Security API"
+  }
+  config = jsonencode({
+      "name":"Graph Security",
+      "tenant_id":"********",
+      "polling_interval":5,
+      "secret_key":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"graph-api",
+      "application_id":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

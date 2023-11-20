@@ -17,6 +17,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The SailPoint Source provides a secure endpoint to receive Events and User Inventory data from the [IdentityNow V3 API](https://developer.sailpoint.com/apis/v3/). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -124,6 +128,27 @@ See how to [create processing rules using JSON](/docs/send-data/use-json-config
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "sailpoint_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "SailPoint"
+  }
+  config = jsonencode({
+      "name": "Sail",
+      "org_name": "TenantName",
+      "supported_apis": ["Events", "Users"],
+      "client_id": "********",
+      "client_secret": "********",
+      "fields": {
+           "_siemForward": true
+      }
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

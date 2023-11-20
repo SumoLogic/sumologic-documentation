@@ -21,6 +21,10 @@ The Carbon Black Cloud Source provides a secure endpoint to receive data from 
 The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic Amazon S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black).
 :::
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Setup
 
 ### Vendor configuration
@@ -115,6 +119,29 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "carbon_black_cloud_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Carbon Black Cloud"
+  }
+  config = jsonencode({
+      "api_id":"********",
+      "name":"CB Cloud",
+      "domain":"defense.conferdeploy.net",
+      "org_key":"ABCDEFG1",
+      "polling_interval":300,
+      "api_key":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"c2c/cb_cloud"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

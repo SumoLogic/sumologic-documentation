@@ -17,6 +17,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cisco Webex is a cloud-based video conferencing and collaboration product suite, which comprises software including Webex Meetings, Webex Teams, and Webex Devices. This Webex source collects admin audit events and webhooks (meetings, rooms, messages, and memberships) data and sends it to Sumo Logic.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -146,6 +150,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "webex_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Webex"
+  }
+  config = jsonencode({
+      "name":"Webex- sandbox",
+      "authorizationCode":"********",
+      "clientId":"********",
+      "collectAll":false,
+      "orgId":"********",
+      "eventCategories":["LOGINS","LOGOUT","ORG_SETTINGS"],
+      "fields":{
+        "_siemForward":false
+      },
+      "clientSecret":"********",
+      "category":"sandbox/webex/audit"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

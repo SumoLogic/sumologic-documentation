@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
-This Source is available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -118,6 +118,29 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "duo_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Duo"
+  }
+  config = jsonencode({
+      "name":"Duo",
+      "description":"East field",
+      "domain":"api-********.duosecurity.com",
+      "integration_key":"********",
+      "secret_key":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"eastTeamF",
+      "polling_interval":300
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

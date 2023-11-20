@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Citrix Cloud source collects the system, operation, and session logs using the Citrix Cloud API and Citrix DaaS REST API to Sumo Logic. Citrix Cloud is a workspace management platform for IT administrators to design, deliver, and manage virtual desktops and applications, and other services, such as file sharing, on any device.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -150,6 +154,34 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "citrix_cloud_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Citrix Cloud"
+  }
+  config = jsonencode({
+         "name": "Citrix Cloud Source",
+         "description": "Description",
+         "category": "Source Category",
+         "baseUrl": "https://api-us.cloud.com",
+         "customerId":"customer_id",
+         "clientId":"client_id",
+         "clientSecret":"client_secret",
+         "supportedAPIs":[
+            "systemLogs",
+            "operationLogs",
+            "sessionLogs",
+         ],
+         "fields":{
+            "_siemForward":false
+         }
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Troubleshooting
 

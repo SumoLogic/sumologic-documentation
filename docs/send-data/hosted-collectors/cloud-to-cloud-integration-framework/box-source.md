@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -106,6 +110,24 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "box_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Box"
+  }
+  config = jsonencode({
+      "name":"box-test-1",
+      "fields":{
+        "_siemForward":false
+      },
+      "credentialsJson":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

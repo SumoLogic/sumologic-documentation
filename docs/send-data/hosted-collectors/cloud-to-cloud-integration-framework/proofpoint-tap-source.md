@@ -24,7 +24,7 @@ The Proofpoint integration supports the following four event types:
  * Clicks Blocked
 
 :::note
-This Source is available in the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints).
+This source is available in the [Fed deployment](/docs/api/troubleshooting#deployments-and-sumo-logic-endpoints).
 
 The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in their [documentation](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). The integration will only be able to fetch a maximum of the last 7 days data. So there is a chance of data loss if the C2C stops functioning for more than a 7-day time interval.
 :::
@@ -257,6 +257,31 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "proofpoint_tap_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Proofpoint"
+  }
+  config = jsonencode({
+      "name":"Proofpoint",
+      "description":"East field",
+      "domain":"tap-api-v2.proofpoint.com",
+      "api_secret":"********",
+      "service_principal":"********",
+      "split_recipients":true,
+      "split_message_parts":false,
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"eastTeamF",
+      "pollingInterval":300
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

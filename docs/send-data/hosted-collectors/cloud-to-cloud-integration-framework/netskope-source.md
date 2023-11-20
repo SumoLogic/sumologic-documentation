@@ -28,7 +28,7 @@ The following event types are available to collect:
 * page
 
 :::note
-This Source is available in the Fed deployment.
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -146,6 +146,26 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "netskope-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Netskope"
+  }
+  config = jsonencode({
+      "name":"YL-Netskope",
+      "eventTypes":["page","application","infrastructure","audit"],
+      "fields":{
+        "_siemForward":false
+      },
+      "apiToken":"********",
+      "tenantID":"partners"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

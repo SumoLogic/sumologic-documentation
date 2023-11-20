@@ -14,6 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Cloud’s BigQuery is a fully managed enterprise data warehouse that helps you to manage and analyze your data, which also provides built-in features such as ML, geospatial analysis, and business intelligence. The Google BigQuery integration gets data from a [Google BigQuery](https://cloud.google.com/bigquery) table via a provided query.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -181,6 +185,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "google_bigQuery_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Google BigQuery"
+  }
+  config = jsonencode({
+        "name":"MyBigQuerySource",
+        "checkpointField":"timestamp_usec",
+        "timeField":"timestamp_usec",
+        "checkpointStart":"0",
+        "query":"select message_info,event_info,event_info.timestamp_usec as timestamp_usec from `bigquery-dev-382704.BigQueryTest.GmailTest` where event_info.timestamp_usec > %CHECKPOINT%  LIMIT 2",
+        "projectId":"********",
+        "fields":{
+            "_siemForward":false
+            },
+        "pollingInterval":"2m",
+        "credentialsJson":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

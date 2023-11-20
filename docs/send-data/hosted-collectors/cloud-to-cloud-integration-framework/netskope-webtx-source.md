@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Netskope WebTx API](https://docs.netskope.com/en/transaction-event-fields.html) integration ingests Web Transaction logs from Netskope Event Stream.
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -114,6 +118,27 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "netskope-webtx-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Netskope WebTx"
+  }
+  config = jsonencode({
+      "name":"webtx-test",
+      "subscriptionPath":"projects/webtx-test",
+      "startFromBeginning":false,
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"webtx",
+      "credentialsJson":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

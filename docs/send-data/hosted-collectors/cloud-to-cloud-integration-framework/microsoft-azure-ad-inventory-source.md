@@ -20,6 +20,10 @@ The Microsoft Azure AD Inventory Source collects user and device data from t
 
 If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](cloud-to-cloud-source-versions.md).
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -152,6 +156,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "microsoft-azure-ad-inventory-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Microsoft Azure AD Inventory"
+  }
+  config = jsonencode({
+            "name": "Azure AD Inventory",
+            "tenant_id": "TenantID",
+            "supported_apis": ["Devices", "Users"],
+            "secret_key": "********",
+            "application_id": "ApplicationID",
+            "userSignInActivity": false,
+            "fields": {
+                "_siemForward": false
+            }
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

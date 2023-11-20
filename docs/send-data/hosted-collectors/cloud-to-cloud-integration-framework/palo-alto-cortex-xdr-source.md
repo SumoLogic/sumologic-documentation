@@ -21,6 +21,10 @@ By using the Cortex XDR Source Integration, you can easily access and analyze da
 
 The Cortex XDR Source Integration is a valuable Source for security teams that want to enhance their threat detection capabilities and streamline their incident response process. It helps you to effectively monitor your security posture, identify threats in real-time, and respond quickly to potential attacks.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -157,6 +161,30 @@ The following table shows theÂ **config** parameters for a Palo Alto Cortex XDRÂ
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "palo-alto-cortex-XDR-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Palo Alto Cortex XDR"
+  }
+  config = jsonencode({
+            "name": "Cortex XDR",
+            "fields": {
+                "_siemForward": false
+            },
+            "api_key": "***********",
+            "api_id": "*",
+            "fqdn": "palo-test.com",
+            "polling_interval": 600,
+            "ingest_events": true,
+            "dup_alerts": true,
+            "collect_incidents": true
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

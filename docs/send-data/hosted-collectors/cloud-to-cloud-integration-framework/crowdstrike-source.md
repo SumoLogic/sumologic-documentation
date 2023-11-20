@@ -24,7 +24,7 @@ The CrowdStrike API documentation is not public and can only be accessed by par
 The types of events are defined in the [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
 :::note
-This Source is available in the Fed deployment.
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -130,6 +130,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "crowdstrike_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "CrowdStrike"
+  }
+  config = jsonencode({
+      "name":"CrowdStrike",
+      "description":"East field",
+      "domain":"api.crowdstrike.com",
+      "secretKey":"********",
+      "clientID":"123",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"eastTeam"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

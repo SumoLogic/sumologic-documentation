@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The AWS Cost Explorer Source collects cost and usage reports from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You have the option to collect from one or more specific [AWS cost types](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) and set how often reports are collected.
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -132,6 +136,30 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "AWS_cost_explorer_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "AWS Cost Explorer"
+  }
+  config = jsonencode({
+      "accessID":"********",
+      "name":"billing200",
+      "description":"billing200",
+      "fields":{
+        "_siemForward":false,
+        "account":"prod"
+      },
+      "accessKey":"********",
+      "granularity":["daily","monthly"],
+      "costMetrics":["AmortizedCost","BlendedCost","NetAmortizedCost","NetUnblendedCost","UnblendedCost"],
+      "category":"aws/billing"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

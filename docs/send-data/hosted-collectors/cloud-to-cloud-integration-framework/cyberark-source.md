@@ -19,6 +19,10 @@ The CyberArk Endpoint Privilege Manager (EPM) is a security solution that helps 
 
 The integration with CyberArk EPM's API allows for retrieving administrative, detailed raw, policy audit, and policy audit raw events from every set in the environment. The [API documentation](https://docs.cyberark.com/Product-Doc/OnlineHelp/EPM/Latest/en/Content/LandingPages/LPDeveloper.htm) provides guidance on accessing and utilizing this information. This integration facilitates retrieving various audit events, including administrative actions, policy violations, and application usage, to generate alerts, reports, and remediation actions that enhance the organization's security posture.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 The CyberArk EPM ingests sets, admin audit events, detailed raw events, aggregated policy audit events, and policy audit raw events from the CyberArk API and sends data to Sumo Logic.
@@ -130,6 +134,29 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "cyberark_test_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "CyberArk Test"
+  }
+  config = jsonencode({
+			"name": "CyberArk Test",
+			"username": "user@sumologic.com",
+			"password": "Sumo@123",
+			"application_id": "sumologic-c2c",
+			"epm_server": "https://in.epm.cyberark.com",
+			"ratelimit": true,
+			"detailed_raw_events": false,
+			"aggregated_policy_audits": false,
+			"policy_audit_raw_events": false,
+			"polling_interval": 30
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## API Limitations
 

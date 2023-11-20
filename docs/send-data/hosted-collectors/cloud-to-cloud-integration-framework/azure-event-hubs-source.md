@@ -21,7 +21,7 @@ The Azure Event Hubs Source provides a secure endpoint to receive data from Az
 Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection source has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
 
 :::note
-This Source is available in the Fed deployment.
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -165,6 +165,37 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "azure_event_hubs_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Azure Event Hubs"
+  }
+  config = jsonencode({
+            "name": "Azure Event Hubs",
+            "description": "East field",
+            "namespace": "namespace",
+            "hub_name": "hub name",
+            "access_policy_name": "policyName",
+            "access_policy_key": "********",
+            "consumer_group": "groupName",
+            "fields": {
+                "_siemForward": false
+            },
+            "category": "eastTeamF",
+            "receive_with_latest_offset": true,
+            "automaticDateParsing": true,
+            "autoParseTimeFormat": false,
+            "defaultDateFormats": [{
+                "format": "dd-MM-yyyy",
+                "locator": "INFO(.*)"
+            }]
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

@@ -19,6 +19,10 @@ The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive ev
 
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -159,6 +163,57 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "cloud_siem_aws_ec2_inventory_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Cloud SIEM AWS EC2 Inventory"
+  }
+  config = jsonencode({
+      "name":"AWS Inventory",
+      "fields":{
+        "_siemForward":true
+      },
+      "category":"aws/inventory",
+      "limitToRegions":["all"],
+      "authentication":{
+        "type": "AWSRoleBasedAuthentication",
+        "roleARN": "arn:aws:iam::9568827XXXX:role/C2C_EC2InventoryTest"
+      },
+      "polling_interval":600
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
+
+
+resource "sumologic_cloud_to_cloud_source" "cloud_siem_aws_ec2_inventory_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Cloud SIEM AWS EC2 Inventory"
+  }
+  config = jsonencode({
+      "name":"AWS Inventory",
+      "fields":{
+        "_siemForward":true
+      },
+      "category":"aws/inventory",
+      "limitToRegions":["all"],
+      "authentication":{
+        "type": "S3BucketAuthentication",
+        "awsId": "XXXXXXSVHNHFXXXXXXX",
+        "awsKey": "XXXXXtrrIqHvXgMYJEQcwLfEQtyNXXXXXXXX"
+      },
+      "polling_interval":600
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
+
 
 ## FAQ
 

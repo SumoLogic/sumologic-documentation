@@ -19,6 +19,10 @@ The Carbon Black Inventory Source provides a secure endpoint to receive data f
 
 [See how inventory data is used in Cloud SIEM](/docs/cse/records-signals-entities-insights/view-manage-entities.md).
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Setup
 
 ### Vendor configuration
@@ -111,6 +115,29 @@ The following table shows the **config** parameters for a Carbon Black Invent
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "carbon_black_inventory_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Carbon Black Inventory"
+  }
+  config = jsonencode({
+      "api_id":"********",
+      "name":"CB Inv E",
+      "domain":"defense.conferdeploy.net",
+      "org_key":"ABCDEFG1",
+      "polling_interval":600,
+      "api_key":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"c2c/cb_inv"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

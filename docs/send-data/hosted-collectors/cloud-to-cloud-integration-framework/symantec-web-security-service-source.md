@@ -22,6 +22,10 @@ The Symantec Web Security Service Source provides a secure endpoint to receive W
 * Logs are ingested in batches of 1,000.
 * Logs are polled every five minutes.
 
+:::note
+This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -124,6 +128,26 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "symantec_web_security_service_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Symantec Web Security Service"
+  }
+  config = jsonencode({
+      "name":"Symantec WSS",
+      "apiUsername":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "category":"c2c/sym",
+      "apiPassword":"********"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

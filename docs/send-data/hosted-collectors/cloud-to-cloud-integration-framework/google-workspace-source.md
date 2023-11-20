@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Google Workspace User Inventory source collects a list of users from the Google Workspace [Users API](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -160,6 +164,29 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "google-workspace-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Google Workspace User Inventory"
+  }
+  config = jsonencode({
+    "type": "service_account",
+    "project_id": "sample_project",
+    "private_key_id": "asdfgh1234556",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nsample_private_key\n-----END PRIVATE KEY-----\n",
+    "client_email": "sample_project@sample_service_account.com",
+    "client_id": "12345678",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sample_url.com"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

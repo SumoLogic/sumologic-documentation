@@ -17,6 +17,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Zero Networks is a cybersecurity company that provides cloud-based security solutions for your networks and endpoints. Segment is a solution that aims to provide comprehensive network security by implementing zero-trust principles. With Segment, Zero Networks provides a cloud-based platform that allows you to create micro-segments across the network. These micro-segments are small, isolated portions of the network that are tightly controlled and can only be accessed by authorized users and devices.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -100,6 +104,23 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ```
 
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "zero_networks_segment_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Zero Networks Segment"
+  }
+  config = jsonencode({
+      "name": "zero-networks-segment",
+      "apiKey": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyzxxxxxxxxxxxx",
+      "collectNetworkActivities": true,
+      "networkActivityFilter": "[{\"id\":\"state\",\"includeValues\":[\"4\"]}]"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 

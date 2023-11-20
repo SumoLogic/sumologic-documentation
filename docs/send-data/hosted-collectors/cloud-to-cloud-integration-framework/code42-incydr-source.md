@@ -19,6 +19,10 @@ The Code42 Incydr is an insider risk management solution that allows you to dete
 
 Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -109,6 +113,30 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "code42incydr_source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "Code42Incydr"
+  }
+  config = jsonencode({
+    "name": "Code42",
+    "description": "Code42",
+    "category": "code42",
+    "baseURL": "https://api.us.code42.com",
+    "clientID": "key-xxxx0316-xxxx-492d-xxxx-308184abxxx3",
+    "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
+    "dataCollection": [
+      "auditEvents",
+      "alerts",
+      "fileEvents"
+    ]
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## Troubleshooting
 

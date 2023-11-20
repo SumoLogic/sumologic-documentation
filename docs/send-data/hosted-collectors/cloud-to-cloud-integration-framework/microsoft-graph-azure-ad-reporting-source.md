@@ -22,6 +22,10 @@ Data is polled every five minutes and can take a couple of minutes to be searcha
 
 If you want to explicitly allow the static IP addresses used for this Source on your firewall see our [table of static IP addresses by deployment](cloud-to-cloud-source-versions.md).
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
@@ -144,6 +148,27 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 }
 ```
 ### Terraform example
+
+resource "sumologic_cloud_to_cloud_source" "microsoft-graph-azure-ad-reporting-source" {
+  collector_id = sumologic_collector.collector.id
+  schema_ref = {
+    type = "MS Graph Azure AD Reporting"
+  }
+  config = jsonencode({
+      "name":"ms-azure-ad-reporting-test",
+      "tenant_id":"c9b18390-9cd7-4f5f-bfa5-46a50fef83f9",
+      "supported_apis":["Directory Audit","Signin","Provisioning"],
+      "secret_key":"********",
+      "fields":{
+        "_siemForward":false
+      },
+      "application_id":"5a03f2a8-4de9-4243-9d27-32c8f3921466"
+  })
+}
+resource "sumologic_collector" "collector" {
+  name        = "my-collector"
+  description = "Just testing this"
+}
 
 ## FAQ
 
