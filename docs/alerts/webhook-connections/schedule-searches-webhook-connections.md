@@ -9,7 +9,7 @@ description: Create a Scheduled Search to send alerts to a third-party tool via 
 
 ## Limitation
 
-- No more than 512 records returned by a scheduled search run are used for webhook connection.
+No more than 512 records returned by a scheduled search run are used for webhook connection.
 
 ## Create scheduled searches for webhook connections
 
