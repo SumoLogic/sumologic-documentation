@@ -141,7 +141,7 @@ Install the app to use the pre-configured dashboards that provide visibility int
       * **Delivery bucket prefix**. Enter the log delivery S3 bucket prefix. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-5.png')} alt="CloudTrail configuration" style={{border: '1px solid black'}} width="700"/> 
    1. For Security Hub configuration:
       * Under **6.1 Security Hub Service Configuration**, in **Security Hub Regions**, enter regions from which Security Hub Data should be sent.
-      * Undr **6.2 Security Hub Sumo Log Source configuration**, in **Create Sumo Logic HTTP logs source**, select **Yes** to create Sumo Logic HTTP log source to collect Security Hub logs, or select **No** to skip creation.
+      * Under **6.2 Security Hub Sumo Log Source configuration**, in **Create Sumo Logic HTTP logs source**, select **Yes** to create Sumo Logic HTTP log source to collect Security Hub logs, or select **No** to skip creation.
       * **Sumo Logic HTTP logs source category name**. Provide an existing source category name from the Security Hub logs. This is used for app installation. Required when **Security Hub HTTP LogSource** is set to **No**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-6.png')} alt="Security Hub configuration" style={{border: '1px solid black'}} width="700"/> 
    1. For firewall configuration:
       * Under **7.1 AWS Firewall Manager Policy Regions Configuration**, in **AWS WAF Policy Regions**, enter regions from which AWS WAF data should be sent.
