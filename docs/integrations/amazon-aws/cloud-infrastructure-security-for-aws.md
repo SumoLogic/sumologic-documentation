@@ -88,7 +88,7 @@ _sourceCategory=Labs/AWS/CloudTrail ("ConsoleLogin" and "Failed authentication")
 
 ## Collecting logs for Cloud Infrastructure Security for AWS
 
-The app collects logs from different AWS sources to produce data in the dashboards. When you install the app, data will be collected from sources including:
+The app collects logs from different AWS sources to produce data in the dashboards. When you install the app, data will be collected from sources, including:
 * [Amazon CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html) 
 * [Amazon GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
 * [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
