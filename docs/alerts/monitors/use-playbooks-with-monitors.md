@@ -12,7 +12,7 @@ description: Learn how to use Automation Service playbooks with monitors.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to use automated playbooks with monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event. 
+This article describes how to use automated playbooks with monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to a incident. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event. 
 
 To add a playbook to a monitor, see [Add an automated playbook to a monitor](#add-an-automated-playbook-to-a-monitor) below.
 
@@ -20,7 +20,7 @@ To create a monitor to detect suspicious behavior (anomalies), see [Create an an
 
 ## Prerequisites
 
-Automated playbooks are provided by the [Automation Service](/docs/platform-services/automation-service). To use automated playbooks with monitors, you must perform tasks to enable the Automation Service. See the [prerequisites for the Automation Service](/docs/platform-services/automation-service/about-automation-service/#prerequisites).
+Automated playbooks are managed by the [Automation Service](/docs/platform-services/automation-service). To use automated playbooks with monitors, you must perform tasks to enable the Automation Service. See the [prerequisites for the Automation Service](/docs/platform-services/automation-service/about-automation-service/#prerequisites).
 
 ## Access playbooks for monitors
 
@@ -41,15 +41,6 @@ For more information, see [Add an automated playbook to a monitor](/docs/alerts/
 1. Click the name of an attached playbook. <br/>The playbook is opened in the Automation Service.
 
 For more information, see [View playbooks for an alert](/docs/alerts/monitors/use-playbooks-with-monitors#view-playbooks-for-an-alert) below.
-
-### From the main menu
-
-If you have [Cloud SIEM](/docs/cse) installed, you can also access playbooks from the main menu.
-
-1. Go to the main menu.
-1. Select **Automation**. <br/>Playbooks are displayed in the Automation Service.
-
-For more information, see [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
 
 ## Add an automated playbook to a monitor
 
@@ -98,7 +89,7 @@ To create a monitor that generates smart alerts:
 1. Select **Anomaly** under **Detection Method**. <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid black'}} width="800" />
 1. In **Query**, [provide a query](/docs/alerts/monitors/create-monitor/#provide-a-query-logs-and-metrics-only) for the logs to be monitored for anomalous behavior.
 1. In the **Critical** tab under **Trigger Type**, select the parameters for the alert trigger:
-   * **Detection Window**. Select the duration of time to watch for anomalies (either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, or 24 hours). Ensure that detection window is 5-10 times longer than the timeslice used in the log query. 
+   * **Detection Window**. Select the duration of time to watch for anomalies (either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, or 24 hours). Ensure that the detection window is 5-10 times longer than the timeslice used in the log query. 
    * **Detector Sensitivity**. Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Low sensitivity will result in more alerts, and high sensitivity will result in fewer alerts. Use low sensitivity if you do not want to miss out on most anomalies.  
    * **Minimum Anomaly Count**. Enter the minimum number of anomalies to detect during the detection window before triggering an alert. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. 
 1. Perform [Step 2: Advanced Settings](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional) and [Step 3: Notifications](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window. 
