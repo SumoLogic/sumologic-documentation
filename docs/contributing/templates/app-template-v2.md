@@ -83,7 +83,7 @@ Example: [Split source configuration](/docs/integrations/webhooks/split/#source-
 
 The **Split - Overview** dashboard provides a quick snapshot of ....
 
-#example: The **Split - Overview** dashboard offers transparency into actions performed by both administrators and team members, delivering valuable insights into audit events, their distribution, and statistics categorized by their respective types.
+<!-- example: The **Split - Overview** dashboard offers transparency into actions performed by both administrators and team members, delivering valuable insights into audit events, their distribution, and statistics categorized by their respective types. -->
 
 ### Dashboard 2 (example: Users and Groups)
 
