@@ -137,7 +137,7 @@ Install the app to use the pre-configured dashboards that provide visibility int
       * **Path expression for logs**. The path expression must match the folder structure for CloudTrail logs (for example, `AWSLogs/*/CloudTrail/*`).
       * **Sumo Logic CloudTrail logs source category name**. Required when the flag is set to **No**. Provide the name of an existing Sumo Logic source category that's collecting CloudTrail logs. This is also used for Threat Intel for AWS app installation.
       * Under **5.3 CloudTrail S3 bucket configuration**, in **Create an S3 bucket for CloudTrail logs**, choose **Yes** to create an S3 bucket for CloudTrail logs.
-      * **Name of existing S3 bucket that contains the CloudTrail logs**. Provide the name of an existing S3 bucket that contains CloudTrail logs. Required when the flag is set to **No**.  The existing bucket must be in same AWS Region as the log-archiving account. 
+      * **Name of existing S3 bucket that contains the CloudTrail logs**. Provide the name of an existing S3 bucket that contains CloudTrail logs. Required when the flag is set to **No**. The existing bucket must be in same AWS Region as the log-archiving account. 
       * **Delivery bucket prefix**. Enter the log delivery S3 bucket prefix. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-5.png')} alt="CloudTrail configuration" style={{border: '1px solid black'}} width="700"/> 
    1. For Security Hub configuration:
       * Under **6.1 Security Hub Service Configuration**, in **Security Hub Regions**, enter regions from which Security Hub Data should be sent.
