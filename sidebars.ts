@@ -950,6 +950,7 @@ module.exports = {
           ],
         },
         'dashboards/locate-deviations-time-series',
+        'dashboards/restricted-operators-dashboards',
         'dashboards/set-custom-time-ranges',
         'dashboards/scheduled-report',
         'dashboards/export-dashboard-new',
