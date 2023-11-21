@@ -181,7 +181,7 @@ The **Active Threats: AWS APIs** dashboard shows threats identified from AWS API
 
 #### Active Threats: AWS Resources
 
-The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser. It shows findings by resource, trend, resource type, category, and country. Like the [Risk Overview](#resource-risk-dashboard) dashboard, this dashboard has an **Action Plan** panel so you can access suggested resources that need attention.
+The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser. It shows findings by resource, trend, resource type, category, and country. This dashboard has an **Action Plan** panel so you can access suggested resources that need attention. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
 
