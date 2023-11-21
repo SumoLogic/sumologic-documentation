@@ -97,6 +97,8 @@ Live mode restrictions do not apply to Dashboard. 
 
 Your dashboard can automatically refresh its panels to the latest information. You have the ability to configure the refresh interval rate by clicking the dropdown arrow next to the refresh icon.
 
+There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).
+
 ![auto refresh dropdown options.png](/img/dashboards-new/about-dashboard-new/auto-refresh-dropdown-options.png)
 
 A list of the refresh interval rates is provided for you to select from.
