@@ -14,7 +14,7 @@ Key features of the app include:
 * **Active threat monitoring**. See threats in APIs, resources, and storage.
 * **Security compliance failure identification**. See areas in your environment that need to be addressed because they do not comply with required security standards.
 * **Suspicious activity assessment**. See activity identified by anomaly detection across users, web interactions, networks, and Identity Access Management (IAM).
-* **Resource risk summary**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
+* **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
 
 Data presented in the app’s dashboards is normalized from log sources into AWS Elastic Common Schema (ECS) format, providing seamless data presentation of all your AWS data. 
 
@@ -100,14 +100,69 @@ The app collects logs from different AWS sources to produce data in the dashboar
 Install the app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage. 
 
 1. From the **App Catalog**, search for and select the app.
-1. Click **Install App**. The following screen appears. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="eploy Cloud Infrastructure for AWS screen" style={{border: '1px solid black'}} width="700"/>
+1. Click **Install App**.  
 1. In the **Deploy Cloud Infrastructure for AWS** screen, perform the following steps:
    1. **Select Region**. Select the AWS region where you want to deploy the solution. 
     :::warning
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
    1. **Check AWS Role Permission**. Click the button to sign in to AWS and perform a check to see if you have permissions to install the solution. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions.
-   1. **Deploy AWS**. Click the **Deploy AWS Security** button to deploy the solution.  
+   1. **Deploy AWS**. Click the **Deploy AWS Security** button to deploy the solution.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid black'}} width="700"/>
+1. In **Quick Create Stack**, fill out the fields to create the stack from the CloudFormation template.
+   1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid black'}} width="700"/> 
+   1. In **1. Sumo Logic Configuration**, fill out the following:
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment of the Sumo Logic apps: au, ca, de, eu, jp, us2, us1, in, or fed.
+      * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the access key.
+      * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
+      * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under Account.
+      * **Delete Sumo Logic resources when stack is deleted**. Choose **false** if you do not want to remove the collector, sources, and Sumo Logic apps when the stack is deleted. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-1.png')} alt="Sumo Logic configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. In **2. AWS Organization configuration**, fill out the following:
+      * **Security-tooling account ID**. Enter your security-tooling account ID.
+      * **Log-archiving account ID**. Enter your log-archiving account ID.
+      * **Security-tooling and log-archiving account Region**. Enter your security-tooling and log-archiving account Region if it's different from the default.
+      * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. In **3. AWS Service configuration**, fill out the following:
+      * **Publish AWS GuardDuty data to Sumo**. Ensure AWS GuardDuty Service is enabled. Choose **No** otherwise.
+      * **Publish AWS CloudTrail data to Sumo**. Ensure AWS CloudTrail Service is enabled. Choose **No** otherwise.
+      * **Publish AWS Security Hub data to Sumo**. Ensure AWS Security Hub Service is enabled. Choose **No** otherwise.
+      * **Publish AWS WAF data to Sumo**. Ensure AWS WAF Service is enabled. Choose **No** otherwise.
+      * **Publish AWS Network Firewall data to Sumo**. Ensure AWS Network Firewall Service is enabled. Choose **No** otherwise.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-3.png')} alt="AWS service configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. For GuardDuty configuration:
+      * Under **4.1 GuardDuty service configuration**, for **GuardDuty Regions** enter regions from which GuardDuty Data should be sent.
+      * Under **4.2 GuardDuty Sumo log source configuration**, in **Create Sumo Logic HTTP logs source** choose **Yes** to create the Sumo Logic HTTP log source to collect GuardDuty logs, or choose **No** to skip creation.
+      * **Sumo Logic HTTP logs source category name**. Provide an existing source category name from the GuardDuty logs. This is used for app installation. Required when **Create Sumo Logic HTTP logs source** is set to **No**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-4.png')} alt="GuardDuty configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. For CloudTrail configuration:
+      * Under **5.1 CloudTrail service configuration**, in **CloudTrail Regions**, enter regions from which CloudTrail Data should be sent.
+      * Under **5.2 CloudTrail Sumo log source configuration**, under **Create Sumo Logic S3 logs source for CloudTrail**, choose **Yes** to create the Sumo Logic S3 log source to collect CloudTrail logs, or choose **No** to skip creation.
+      * **Path expression for logs**. The path expression must match the folder structure for CloudTrail logs (for example, `AWSLogs/*/CloudTrail/*`).
+      * **Sumo Logic CloudTrail logs source category name**. Required when the flag is set to **No**. Provide the name of an existing Sumo Logic source category that's collecting CloudTrail logs. This is also used for Threat Intel for AWS app installation.
+      * Under **5.3 CloudTrail S3 bucket configuration**, in **Create an S3 bucket for CloudTrail logs**, choose **Yes** to create an S3 bucket for CloudTrail logs.
+      * **Name of existing S3 bucket that contains the CloudTrail logs**. Provide the name of an existing S3 bucket that contains CloudTrail logs. Required when the flag is set to **No**.  The existing bucket must be in same AWS Region as the log-archiving account. 
+      * **Delivery bucket prefix**. Enter the log delivery S3 bucket prefix. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-5.png')} alt="CloudTrail configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. For Security Hub configuration:
+      * Under **6.1 Security Hub Service Configuration**, in **Security Hub Regions**, enter regions from which Security Hub Data should be sent.
+      * Undr **6.2 Security Hub Sumo Log Source configuration**, in **Create Sumo Logic HTTP logs source**, select **Yes** to create Sumo Logic HTTP log source to collect Security Hub logs, or select **No** to skip creation.
+      * **Sumo Logic HTTP logs source category name**. Provide an existing source category name from the Security Hub logs. This is used for app installation. Required when **Security Hub HTTP LogSource** is set to **No**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-6.png')} alt="Security Hub configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. For firewall configuration:
+      * Under **7.1 AWS Firewall Manager Policy Regions Configuration**, in **AWS WAF Policy Regions**, enter regions from which AWS WAF data should be sent.
+      * **AWS Network Firewall Policy Regions**. Enter regions from which AWS Network Firewall data should be sent.
+      * Under **7.2 Firewall Manager Details - Kinesis Firehose Delivery Stream Source WAF Configuration**, in **Create a Kinesis Firehose Delivery Stream Source for WAF**, select **Yes** to create Kinesis Delivery Stream Source for WAF, or select **No** to skip creation.
+      * **Sumo Logic AWS Kinesis Firehose Logs WAF Source Category Name**. Enter the name if a source category from Sumo Logic if it already exists. To create a new source category, use the default name provided.
+      * **Amazon Kinesis Data Firehose delivery stream name**. Enter the Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivery stream name.
+      * Under **7.3 Firewall Manager Details - S3 Source Network Firewall Configuration**, in **Create Sumo Logic Amazon S3 Logs Source for Network Firewall**, select **Yes** to create a Sumo Logic Amazon S3 Log Source with the provided bucket name. Select **No** to skip creation.
+      * **Sumo Logic Amazon S3 Logs Source Category Name for Network Firewall**. Enter the name of a source category from Sumo Logic if it already exists. To create a new source category, use the default name provided.
+      * Under **7.4 Firewall Manager - S3 Bucket Configuration**, in **Create AWS S3 Bucket**, select **Yes** to create a new S3 bucket in AWS S3. Select **No** to use an existing S3 bucket from AWS S3 which has Network Firewall Logs.
+      * **Network Firewall Delivery Bucket Prefix**. Enter the Network Firewall Log Delivery S3 bucket prefix.
+      * **Name of existing S3 Bucket which contains the Network Firewall Logs**. Provide an existing S3 Bucket name which contains Network Firewall Logs. Required when flag is set to **No**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7.png')} alt="Firewall configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. For Quick Start configuration:
+      * Under **8. AWS Quick Start configuration**, in **Quick Start S3 bucket name**, enter the name of the S3 bucket for your copy of the Quick Start assets. Keep the default name unless you are customizing the template. Changing the name updates code references to point to a new Quick Start location. This name can include numbers, lowercase letters, uppercase letters, and hyphens, but do not start or end with a hyphen (-). See https://aws-quickstart.github.io/option1.html.
+      * **Quick Start S3 key prefix**. Enter the S3 key prefix that is used to simulate a directory for your copy of the Quick Start assets. Keep the default prefix unless you are customizing the template. Changing this prefix updates code references to point to a new Quick Start location. This prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slashes (/). End with a forward slash. See https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html and https://aws-quickstart.github.io/option1.html.
+      * **Quick Start S3 bucket Region**. Enter the AWS Region where the Quick Start S3 bucket (QSS3BucketName) is hosted. When using your own bucket, you must specify this value.
+      * **Quick Start Version**. Enter the version of the Quick Start. Do not change.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-8.png')} alt="Quick start configuration" style={{border: '1px solid black'}} width="700"/> 
+   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. 
+   1. Under **Capabilities and transforms**, select the acknowledgement boxes.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid black'}} width="700"/> 
+1. Click **Create Stack**. The stack is created, and the app is installed.
+1. Select an option to start using the app. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-finish-installation.png')} alt="App hub page" style={{border: '1px solid black'}} width="700"/>
    
 
 ## Cloud Infrastructure Security for AWS app dashboards​
@@ -126,7 +181,7 @@ The **Active Threats: AWS APIs** dashboard shows threats identified from AWS API
 
 #### Active Threats: AWS Resources
 
-The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser. It shows findings by resource, trend, resource type, category, and country. Like the [Resource Risk Dashboard](#resource-risk-dashboard), this dashboard has an **Action Plan** panel so you can access suggested resources that need attention.
+The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser. It shows findings by resource, trend, resource type, category, and country. Like the [Risk Overview](#resource-risk-dashboard) dashboard, this dashboard has an **Action Plan** panel so you can access suggested resources that need attention.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
 
@@ -136,21 +191,20 @@ The **Active Threats: AWS Storage** dashboard provides threat counts related to 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" width="600"/>
 
-### Resource Risk dashboard
+### Risk Overview dashboard
 
-The **Resource Risk** dashboard provides a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. It also has an **Action Plan** panel so you can access resources that need attention.
+The **Risk Overview** dashboard provides a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. It also shows AWS API events by time, and has an **Action Plan** panel so you can access resources that need attention.
 
 You can also use this dashboard to show details of a single resource. See [View resource risk details](#view-resource-risk-details) below.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-resource-risk-dashboard.png')} alt="Resource Risk dashboard" width="600"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-risk-overview.png')} alt="Risk Overview dashboard" width="600"/>
 
 #### View resource risk details
 
-You can click a resource on any dashboard to view details about its risk in the [Resource Risk Dashboard](#resource-risk-dashboard):
+You can click a resource on any dashboard to view details about its risk in the [Risk Overview](#risk-overview-dashboard) dashboard:
 1. Click a resource in a dashboard. A summary of that resource’s data appears in a panel.
-1. In the panel under **Linked Dashboards**, select **Resource Risk Dashboard**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-linked-dashboard.png')} alt="Linked dashboard" width="600"/>
-1. The selected resource’s data appears in the **Resource Risk Dashboard**, broken down by the types of data collected. This lets you see at a glance all the different risks presented by the resource. Note at the top of the dashboard that the filters specify the resource.
-1. Click items in the action plan section to address them. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-resource-data.png')} alt="Resource data" width="600"/>
+1. In the panel under **Linked Dashboards**, select **Risk Overview**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-linked-dashboard.png')} alt="Linked dashboard" width="600"/>
+1. The selected resource’s data appears in the **Risk Overview** dashboard, broken down by the types of data collected. This lets you see at a glance all the different risks presented by the resource. Note at the top of the dashboard that the filters specify the resource.
 
 ### Security Control Failures dashboard
 
@@ -178,7 +232,7 @@ The **Suspicious Network Activity** dashboard shows suspicious activity on netwo
 
 The **Suspicious User Activity** dashboard shows suspicious activity that users perform in the cloud. It shows failed console logins, console logins without MFA, console logins from risky geo locations, root account logins, unauthorized AWS API requests, and impossible travel events. 
 
-To see all events a particular user has been involved with, click a user on a panel (a honeycomb cell), and then on the resulting panel under **Linked Dashboards** click **Resource Risk Dashboard**. For details, see [View resource risk details](#view-resource-risk-details) above.
+To see all events a particular user has been involved with, click a user on a panel (a honeycomb cell), and then on the resulting panel under **Linked Dashboards** click **Risk Overview**. For details, see [View resource risk details](#view-resource-risk-details).
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-user-activity.png')} alt="Suspicious User Activity dashboard" width="600"/>
 
@@ -194,5 +248,5 @@ To most efficiently use the app to address security concerns, we recommend the f
 1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention. 
 1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
 1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation. 
-1. Review the [Resource Risk Dashboard](#resource-risk-dashboard) for a summary of all the resources that pose risk. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
+1. Review the [Risk Overview](#risk-overview-dashboard) dashboard for a summary of all the resources that pose risk. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
 

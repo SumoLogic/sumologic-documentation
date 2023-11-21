@@ -17,7 +17,7 @@ Here are some of the key features the new app offers:
 * **Active threat monitoring**. See active threats in APIs, resources, and storage.
 * **Security compliance failure identification**. See areas in your environment that need to be addressed because they do not comply with required security standards.
 * **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
-* **Resource risk summary**. See a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. Get an action plan for addressing the most important areas of concern.
+* **Risk overview**. See a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. Get an action plan for addressing the most important areas of concern.
 
 In addition to being able to install the app from the App Catalog, you can also install it as a free trial.
 
