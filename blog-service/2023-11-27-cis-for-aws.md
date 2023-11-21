@@ -11,7 +11,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We’re excited to announce the release of the Cloud Infrastructure for Security app. This app provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
+We’re excited to announce the release of the Cloud Infrastructure Security for AWS app. This app provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
 
 Here are some of the key features the new app offers: 
 * **Active threat monitoring**. See active threats in APIs, resources, and storage.
