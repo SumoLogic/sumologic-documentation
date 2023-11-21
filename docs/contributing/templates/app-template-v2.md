@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Data collected
 
-\Add all the data sources and respective pollig iterval information\
+\Add all the data sources and respective polling interval information\
 
 | Polling Interval | Data |
 | :--- | :--- |
