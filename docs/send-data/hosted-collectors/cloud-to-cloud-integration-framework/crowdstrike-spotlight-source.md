@@ -18,6 +18,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined with endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. These combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
 The source will fetch complete vulnerability instance data that has been updated within the duration of the polling interval, which by default is set to 1 hour. According to CrowdStrike Spotlight documentation, the timestamp updates are based on changes to any of the following vulnerability properties: status, remediation, evaluation_logic, suppression_info, and cve.
 
+:::important
+The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
+:::
+
 :::note
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
@@ -27,10 +31,6 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | Polling Interval | Data |
 | :--- | :--- |
 | 5 min |  [Vulnerabilities data](https://falcon.crowdstrike.com/documentation/98/spotlight-apis) |
-
-:::important
-The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
-:::
 
 ## Setup
 
@@ -112,58 +112,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"crowdstrike-spotlight",
-      "apiBaseUrl":"api.crowdstrike.com",
-      "clientId":"********",
-      "clientSecret":"********",      
-      "evaluationLogic":true,
-      "hostInfo":true,
-      "remediation":true,
-      "cve":true,      
-      "pollingInterval":1,
-      "fields":{
-        "_siemForward":false
-      }      
-    },
-    "schemaRef":{
-      "type":"Crowdstrike Spotlight"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/crowdstrike-spotlight/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "crowdstrike-spotlight_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Crowdstrike Spotlight"
-  }
-  config = jsonencode({
-      "name":"crowdstrike-spotlight",
-      "apiBaseUrl":"api.crowdstrike.com",
-      "clientId":"********",
-      "clientSecret":"********",      
-      "evaluationLogic":true,
-      "hostInfo":true,
-      "remediation":true,
-      "cve":true,      
-      "pollingInterval":1,
-      "fields":{
-        "_siemForward":false
-      } 
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/crowdstrike-spotlight/example.tf)
 
 ## Troubleshooting
 
@@ -193,5 +150,5 @@ This issue is from CrowdStrike platform. If you come across this error, please c
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

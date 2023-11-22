@@ -26,11 +26,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | Polling Interval | Data |
 | :--- | :--- |
 | 5 min |  [Admin Audit Events](https://developer.webex.com/docs/api/v1/admin-audit-events/list-admin-audit-events) |
-| 5 min |  [Webhooks](https://developer.webex.com/docs/webhooks)
-  - Meeting
-  - Rooms
-  - Messages
-  - Memberships |
+| 5 min |  [Webhooks](https://developer.webex.com/docs/webhooks) - Meeting, Rooms, Messages, and Memberships |
 
 ## Setup
 
@@ -122,61 +118,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"Webex- sandbox",
-      "authorizationCode":"********",
-      "clientId":"********",
-      "collectAll":false,
-      "orgId":"********",
-      "eventCategories":["LOGINS","LOGOUT","ORG_SETTINGS"],
-      "fields":{
-        "_siemForward":false
-      },
-      "clientSecret":"********",
-      "category":"sandbox/webex/audit"
-    },
-    "schemaRef":{
-      "type":"Webex"
-    },
-    "state":{
-      "state":"Pending"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/webex/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "webex_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Webex"
-  }
-  config = jsonencode({
-      "name":"Webex- sandbox",
-      "authorizationCode":"********",
-      "clientId":"********",
-      "collectAll":false,
-      "orgId":"********",
-      "eventCategories":["LOGINS","LOGOUT","ORG_SETTINGS"],
-      "fields":{
-        "_siemForward":false
-      },
-      "clientSecret":"********",
-      "category":"sandbox/webex/audit"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/webex/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

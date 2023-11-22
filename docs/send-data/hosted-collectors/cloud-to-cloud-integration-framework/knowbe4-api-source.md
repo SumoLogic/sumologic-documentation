@@ -117,51 +117,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config": {
-  		"name": "KnowBe4",
- 	 	"description": "Test Source",
-  		"category": "source_category",
-  		"region": "US",
-  		"apiKey": "************",
-		"dataTypes": [
-    		         "phishingTests"
-  		],
-		"phishingPollInterval": 1
-          },
-        "schemaRef": {
-            "type": "KnowBe4 KMSAT"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/knowbe4-api/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "knowbe4-api-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "KnowBe4 KMSAT"
-  }
-  config = jsonencode({
-  		"name": "KnowBe4",
- 	 	"description": "Test Source",
-  		"category": "source_category",
-  		"region": "US",
-  		"apiKey": "************",
-		"dataTypes": [
-    		         "phishingTests"
-  		],
-		"phishingPollInterval": 1
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/knowbe4-api/example.tf)
 
 ## Limitations
 
@@ -172,5 +136,5 @@ There are two limitations to access KnowBe4 APIs:
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

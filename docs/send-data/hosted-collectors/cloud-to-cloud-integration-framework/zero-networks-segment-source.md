@@ -84,48 +84,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version": "v1",
-  "source": {
-    "config": {
-      "name": "zero-networks-segment",
-      "apiKey": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyzxxxxxxxxxxxx",
-      "collectNetworkActivities": true,
-      "networkActivityFilter": "[{\"id\":\"state\",\"includeValues\":[\"4\"]}]"
-    },
-    "schemaRef": {
-      "type": "Zero Networks Segment"
-    },
-    "sourceType": "Universal"
-  }
-}
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-```
+[Download example](/img/c2c/zero-networks-segment/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "zero_networks_segment_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Zero Networks Segment"
-  }
-  config = jsonencode({
-      "name": "zero-networks-segment",
-      "apiKey": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyzxxxxxxxxxxxx",
-      "collectNetworkActivities": true,
-      "networkActivityFilter": "[{\"id\":\"state\",\"includeValues\":[\"4\"]}]"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/zero-networks-segment/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
 ## Limitations

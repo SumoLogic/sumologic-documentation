@@ -132,57 +132,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Microsoft Graph Security API"
-    },
-    "state":{
-      "state":"Authenticated"
-    },
-    "config":{
-      "name":"Graph Security",
-      "tenant_id":"********",
-      "polling_interval":5,
-      "secret_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"graph-api",
-      "application_id":"********"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/microsoft-graph-security-api/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "microsoft-graph-security-api-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Microsoft Graph Security API"
-  }
-  config = jsonencode({
-      "name":"Graph Security",
-      "tenant_id":"********",
-      "polling_interval":5,
-      "secret_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"graph-api",
-      "application_id":"********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/microsoft-graph-security-api/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

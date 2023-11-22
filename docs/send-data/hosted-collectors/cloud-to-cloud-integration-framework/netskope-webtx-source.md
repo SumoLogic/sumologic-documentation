@@ -93,55 +93,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ## JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "state":{
-    "config":{
-      "name":"webtx-test",
-      "subscriptionPath":"projects/webtx-test",
-      "startFromBeginning":false,
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"webtx",
-      "credentialsJson":"********"
-    },
-    "schemaRef":{
-      "type":"Netskope WebTx"
-    },
-    "sourceType":"Universal"
-  }
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/netskope-webtx/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "netskope-webtx-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Netskope WebTx"
-  }
-  config = jsonencode({
-      "name":"webtx-test",
-      "subscriptionPath":"projects/webtx-test",
-      "startFromBeginning":false,
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"webtx",
-      "credentialsJson":"********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/netskope-webtx/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

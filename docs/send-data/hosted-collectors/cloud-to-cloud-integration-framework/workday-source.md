@@ -107,59 +107,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version": "v1",
-  "source": {
-    "config": {
-      "name": "Workday Test",
-      "description": "Testing the workday source",
-      "category": "General",
-      "signOnReportURL": "https://wd2-impl-services1.workday.com...-_Copy",
-      "isuUsername": "SumoLogic",
-      "isuPassword": "**********",
-      "refreshTokenURL": "https://wd2-impl-services1.workday.com...token",
-      "clientID": "sldfsjdflk230sdflnk2342cxcoijs0",
-      "clientSecret": "**********",
-      "refreshToken": "**********",
-      "restApiURL": "https://wd2-impl-services1.workday.com...activityLogging",
-      "backfillDays": 1,
-      "pollingIntervalMinutes": 10
-    },
-    "schemaRef": {
-      "type": "Workday"
-    },
-    "sourceType": "Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/workday/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "workday_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Workday"
-  }
-  config = jsonencode({
-      "name": "Workday Test",
-      "description": "Testing the workday source",
-      "category": "General",
-      "signOnReportURL": "https://wd2-impl-services1.workday.com...-_Copy",
-      "isuUsername": "SumoLogic",
-      "isuPassword": "**********",
-      "refreshTokenURL": "https://wd2-impl-services1.workday.com...token",
-      "clientID": "sldfsjdflk230sdflnk2342cxcoijs0",
-      "clientSecret": "**********",
-      "refreshToken": "**********",
-      "restApiURL": "https://wd2-impl-services1.workday.com...activityLogging",
-      "backfillDays": 1,
-      "pollingIntervalMinutes": 10
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/workday/example.tf)
 
 ## Troubleshooting
 
@@ -233,5 +189,5 @@ To resolve this:
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

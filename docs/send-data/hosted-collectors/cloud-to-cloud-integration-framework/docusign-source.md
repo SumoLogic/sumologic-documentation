@@ -49,8 +49,8 @@ In this configuration, you will set up the DocuSign account and configure it to 
 
 To get the User ID, follow the steps below:
 1. Log in to **DocuSign** account.
-2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
-3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="400" />
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
+3. Locate and copy the **User ID** available under **My Account Information**. <br/> <img src={useBaseUrl('img/send-data/docusign-user-id.png')} alt="<docusign-user-id.png>" width="800" />
 :::note
 You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
 :::
@@ -60,10 +60,10 @@ You'll need to provide your DocuSign User ID while creating the [DocuSign Cloud-
 You must first create an app to get integration key and configure RSA Key Pair and Redirect URI. This key is required to get access token which will be used to authenticate DocuSign API. To create an app follow the steps below:
 
 1. Sign in to your **DocuSign** account.
-2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="400" />
-3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="400" />
+2. Go to the **My Apps & Keys** page. <br/> <img src={useBaseUrl('img/send-data/docusign-home.png')} alt="<docusign-home.png>" width="600" />
+3. Navigate to **ADD APP AND INTEGRATION KEY**. <br/> <img src={useBaseUrl('img/send-data/docusign-add-app-integration-key.png')} alt="<docusign-add-app-integration-key.png>" width="700" />
 4. Enter value for **App Name** in a dialog box, and click on **CREATE APP**. <br/> <img src={useBaseUrl('img/send-data/docusign-create-app.png')} alt="<docusign-create-app.png>" width="400" />
-5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="400" />
+5. After creating your app, you'll be redirected to the app configuration page. Copy **Integration Key**. <br/> <img src={useBaseUrl('img/send-data/docusign-integration-key.png')} alt="<docusign-integration-key.png>" width="700" />
   :::note
   You'll need to provide your integration key while requesting [application consent](#app-consent) and creating the [DocuSign Cloud-to-Cloud Source](#set-up-docusign-source).
   :::
@@ -135,50 +135,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-   "api.version": "v1",
-   "source": {
-      "config": {
-         "name": "DocuSign",
-         "description": "Test Source",
-         "category": "source_category",
-         "env": "dev",
-         "userId": "9cfb472b-ef1f-4116-8df2-17c538xxxxxx",
-         "integrationKey": "215c96c6-19a6-48e9-955f-253593xxxxxx",
-         "rsaPrivateKey": "-----BEGIN RSA PRIVATE KEY----- xxxxxxx xxxxxxx xxxxx== -----END RSA PRIVATE KEY-----"
-      },
-      "schemaRef": {
-         "type": "DocuSign"
-      },
-      "sourceType": "Security"
-   }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/docusign/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "docusign_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "DocuSign"
-  }
-  config = jsonencode({
-         "name": "DocuSign",
-         "description": "Test Source",
-         "category": "source_category",
-         "env": "dev",
-         "userId": "9cfb472b-ef1f-4116-8df2-17c538xxxxxx",
-         "integrationKey": "215c96c6-19a6-48e9-955f-253593xxxxxx",
-         "rsaPrivateKey": "-----BEGIN RSA PRIVATE KEY----- xxxxxxx xxxxxxx xxxxx== -----END RSA PRIVATE KEY-----"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/docusign/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

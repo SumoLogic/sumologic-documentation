@@ -95,62 +95,23 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | clientId | String | Yes | `null` | Provide the Sophos Client ID you want to use to authenticate collection requests. |  |
 | clientSecret` | String | Yes | `null` | Provide the Sophos Secrete you want to use to authenticate collection requests. |  |
-| supported_apis | Array of strings | Yes | `null`  | Define one or more of the available APIs to collect: Events, and Alerts.<br/>For example, for both you'd use: `["Events","Alerts"]` |  |
+| supported_apis | Array of strings | Yes | `null`  | Define one or more of the available APIs to collect: Events, and Alerts.| `["Events","Alerts"]` |
 | pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Sophos Central"
-    },
-    "config":{
-      "name":"Sophos",
-      "description":"East field",
-      "clientId":"********",
-      "clientSecret":"********",
-      "supported_apis": ["Events", "Alerts"],
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/sophos-central/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "sophos_central_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Sophos Central"
-  }
-  config = jsonencode({
-      "name":"Sophos",
-      "description":"East field",
-      "clientId":"********",
-      "clientSecret":"********",
-      "supported_apis": ["Events", "Alerts"],
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/sophos-central/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

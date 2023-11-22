@@ -49,11 +49,9 @@ To configure a Duo Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-
 :::note
 If you are using the Duo Federal edition service when connecting APIs, it's recommended to use `duofederal.com` instead of the default `duosecurity.com` domain. Our Duo C2C lets you allow to configure the API domain as it contains the specific customer ID information. For example, you can use `api-xxxx-duosecurity.com` or `api-xxxx-duofederal.com` if the Duo Federal edition service has been opted in. For more information, refer to the [Duo Federal Edition Guide](https://duo.com/docs/duo-federal-guide#duo-service-connectivity).
 :::
-
 1. **Duo Domain**. Provide your **API hostname**, such as `api-********.duosecurity.com`.
 1. **Integration Key**. Provide the Duo Integration Key you want to use to authenticate collection requests.
 1. **Secret Key**. Provide the Duo Secret Key you want to use to authenticate collection requests. 
@@ -94,56 +92,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Duo"
-    },
-    "config":{
-      "name":"Duo",
-      "description":"East field",
-      "domain":"api-********.duosecurity.com",
-      "integration_key":"********",
-      "secret_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "polling_interval":300
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/duo/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "duo_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Duo"
-  }
-  config = jsonencode({
-      "name":"Duo",
-      "description":"East field",
-      "domain":"api-********.duosecurity.com",
-      "integration_key":"********",
-      "secret_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "polling_interval":300
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/duo/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

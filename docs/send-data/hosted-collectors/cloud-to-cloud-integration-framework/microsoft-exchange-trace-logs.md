@@ -137,5 +137,5 @@ Our source keeps track of a time cursor for events and will only move the time c
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

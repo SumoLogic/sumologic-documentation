@@ -93,50 +93,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Proofpoint On Demand"
-    },
-    "config":{
-      "name":"PoD",
-      "api_secret":"********",
-      "supported_events":["message","maillog"],
-      "fields":{
-        "_siemForward":false
-      },
-      "cluster_id":"********"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/proofpoint-on-demand/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "proofpoint_on_demand_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Proofpoint On Demand"
-  }
-  config = jsonencode({
-      "name":"PoD",
-      "api_secret":"********",
-      "supported_events":["message","maillog"],
-      "fields":{
-        "_siemForward":false
-      },
-      "cluster_id":"********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/proofpoint-on-demand/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

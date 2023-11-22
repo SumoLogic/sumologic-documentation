@@ -10,8 +10,8 @@ description: Learn how to collect abnormal threat logs from the Abnormal Securit
 
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/img/c2c/abormal-security/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/abormal-security/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/abormal-security/example.tf';
+import MyComponentSource from '!!raw-loader!/img/c2c/abnormal-security/example.json';
+import TerraformExample from '!!raw-loader!/img/c2c/abnormal-security/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/abnormal-security-logo.png')} alt="abnormal-security-logo" width="90" />
@@ -94,5 +94,5 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

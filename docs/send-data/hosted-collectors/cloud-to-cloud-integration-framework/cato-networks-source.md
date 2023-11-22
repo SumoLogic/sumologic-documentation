@@ -105,56 +105,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version": "v1",
-  "source": {
-    "config": {
-     {
-        "name": "cato-network",
-        "description": "sample description",
-        "accountID": "1774",
-        "apiKey": "***********",
-        "dataTypes": [
-          "securityEvents",
-          "auditEvents",
-          "all",
-        ],
-      }
-    },
-    "schemaRef": {
-      "type": "Cato Networks"
-    },
-    "sourceType": "Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/cato-networks/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "cato_networks_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Cato Networks"
-  }
-  config = jsonencode({
-        "name": "cato-network",
-        "description": "sample description",
-        "accountID": "1774",
-        "apiKey": "***********",
-        "dataTypes": [
-          "securityEvents",
-          "auditEvents",
-          "all",
-        ],
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/cato-networks/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

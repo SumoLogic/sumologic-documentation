@@ -121,52 +121,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "schemaRef": {
-            "type": "MS Graph Identity Protection"
-        },
-        "config": {
-            "name": "MS Graph Identity",
-            "tenant_id": "TenantID",
-            "supported_apis": ["RiskyUsers", "RiskDetections"],
-            "secret_key": "********",
-            "application_id": "ApplicationID",
-            "fields": {
-                "_siemForward": false
-            }
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/microsoft-graph-identity-protection/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "microsoft-graph-identity-protection-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "MS Graph Identity Protection"
-  }
-  config = jsonencode({
-            "name": "MS Graph Identity",
-            "tenant_id": "TenantID",
-            "supported_apis": ["RiskyUsers", "RiskDetections"],
-            "secret_key": "********",
-            "application_id": "ApplicationID",
-            "fields": {
-                "_siemForward": false
-            }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/microsoft-graph-identity-protection/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

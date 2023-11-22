@@ -107,62 +107,18 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"AWS Cost Explorer"
-    },
-    "config":{
-      "accessID":"********",
-      "name":"billing200",
-      "description":"billing200",
-      "fields":{
-        "_siemForward":false,
-        "account":"prod"
-      },
-      "accessKey":"********",
-      "granularity":["daily","monthly"],
-      "costMetrics":["AmortizedCost","BlendedCost","NetAmortizedCost","NetUnblendedCost","UnblendedCost"],
-      "category":"aws/billing"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/aws-cost-explorer/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "AWS_cost_explorer_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "AWS Cost Explorer"
-  }
-  config = jsonencode({
-      "accessID":"********",
-      "name":"billing200",
-      "description":"billing200",
-      "fields":{
-        "_siemForward":false,
-        "account":"prod"
-      },
-      "accessKey":"********",
-      "granularity":["daily","monthly"],
-      "costMetrics":["AmortizedCost","BlendedCost","NetAmortizedCost","NetUnblendedCost","UnblendedCost"],
-      "category":"aws/billing"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/aws-cost-explorer/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

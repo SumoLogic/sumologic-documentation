@@ -4,6 +4,7 @@ title: Carbon Black Cloud Source
 sidebar_label: Carbon Black Cloud
 tags:
     - carbon-black-cloud
+    - cloud-to-cloud
 description: The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs.
 ---
 
@@ -92,59 +93,18 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "api_id":"********",
-      "name":"CB Cloud",
-      "domain":"defense.conferdeploy.net",
-      "org_key":"ABCDEFG1",
-      "polling_interval":300,
-      "api_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"c2c/cb_cloud"
-    },
-    "schemaRef":{
-      "type":"Carbon Black Cloud"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/carbon-black-cloud/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "carbon_black_cloud_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Carbon Black Cloud"
-  }
-  config = jsonencode({
-      "api_id":"********",
-      "name":"CB Cloud",
-      "domain":"defense.conferdeploy.net",
-      "org_key":"ABCDEFG1",
-      "polling_interval":300,
-      "api_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"c2c/cb_cloud"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/carbon-black-cloud/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

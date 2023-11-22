@@ -105,54 +105,18 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "schemaRef": {
-            "type": "Tenable"
-        },
-        "config": {
-            "name": "Tenable",
-            "description": "East field",
-            "access_key": "********",
-            "secret_key": "********",
-            "supported_apis": ["Vulnerability Data","Audit Logs","Asset Data"],
-            "fields": {
-                "_siemForward": false
-            },
-            "category": "eastTeamF"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/tenable/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "tenable_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Tenable"
-  }
-  config = jsonencode({
-            "name": "Tenable",
-            "description": "East field",
-            "access_key": "********",
-            "secret_key": "********",
-            "supported_apis": ["Vulnerability Data","Audit Logs","Asset Data"],
-            "fields": {
-                "_siemForward": false
-            },
-            "category": "eastTeamF"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/tenable/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

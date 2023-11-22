@@ -84,45 +84,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config":{
-            "name": "Druva Cyber Resilience",
-            "description": "Collect Realize Events from Druva Cyber Resilience Product",
-            "category": "druva-cyber-resilience",
-            "baseURL": "https://apis.druva.com",
-            "clientID": "testclientid",
-            "secretKey": "*********"
-        },
-        "schemaRef": {
-            "type": "Druva Cyber Resilience"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/druva-cyber-resilience/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "druva_cyber_resilience_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Druva Cyber Resilience"
-  }
-  config = jsonencode({
-            "name": "Druva Cyber Resilience",
-            "description": "Collect Realize Events from Druva Cyber Resilience Product",
-            "category": "druva-cyber-resilience",
-            "baseURL": "https://apis.druva.com",
-            "clientID": "testclientid",
-            "secretKey": "*********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/druva-cyber-resilience/example.tf)
 
 ## Troubleshooting
 
@@ -145,5 +115,5 @@ If the source is configured with either an invalid **Base URL**, **Client ID**, 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

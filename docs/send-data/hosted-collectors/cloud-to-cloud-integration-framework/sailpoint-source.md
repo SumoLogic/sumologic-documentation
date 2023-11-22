@@ -76,7 +76,7 @@ To configure a Duo Source:
 | `_siemProduct` | `Events, Users	SailPoint` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
 | `_siemEventID` | Events	`<technicalName>` | Set when **Forward To SIEM** is checked and specific to the API collected. |
-| `_siemDataType` | `Users	Inventory` | |
+| `_siemDataType` | `Users	Inventory` | Set when **Forward To SIEM** is checked.  |
 
 ## JSON schema
 
@@ -103,55 +103,20 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 See how to [create processing rules using JSON](/docs/send-data/use-json-configure-sources).
 
-### JSON example:
+### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"SailPoint"
-    },
-    "config":{
-      "name": "Sail",
-      "org_name": "TenantName",
-      "supported_apis": ["Events", "Users"],
-      "client_id": "********",
-      "client_secret": "********",
-      "fields": {
-           "_siemForward": true
-      }
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/sailpoint/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "sailpoint_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "SailPoint"
-  }
-  config = jsonencode({
-      "name": "Sail",
-      "org_name": "TenantName",
-      "supported_apis": ["Events", "Users"],
-      "client_id": "********",
-      "client_secret": "********",
-      "fields": {
-           "_siemForward": true
-      }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/sailpoint/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

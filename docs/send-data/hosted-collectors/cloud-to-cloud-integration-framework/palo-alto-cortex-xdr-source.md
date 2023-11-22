@@ -135,59 +135,18 @@ The following table shows theÂ **config** parameters for a Palo Alto Cortex XDRÂ
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "schemaRef": {
-            "type": "Palo Alto Cortex XDR"
-        },
-        "config": {
-            "name": "Cortex XDR",
-            "fields": {
-                "_siemForward": false
-            },
-            "api_key": "***********",
-            "api_id": "*",
-            "fqdn": "palo-test.com",
-            "polling_interval": 600,
-            "ingest_events": true,
-            "dup_alerts": true,
-            "collect_incidents": true
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/palo-alto-cortex-xdr/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "palo-alto-cortex-XDR-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Palo Alto Cortex XDR"
-  }
-  config = jsonencode({
-            "name": "Cortex XDR",
-            "fields": {
-                "_siemForward": false
-            },
-            "api_key": "***********",
-            "api_id": "*",
-            "fqdn": "palo-test.com",
-            "polling_interval": 600,
-            "ingest_events": true,
-            "dup_alerts": true,
-            "collect_incidents": true
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/palo-alto-cortex-xdr/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

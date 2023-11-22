@@ -4,6 +4,7 @@ title: Carbon Black Inventory Source
 sidebar_label: Carbon Black Inventory
 tags:
     - carbon-black-inventory
+    - cloud-to-cloud
 description: The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API.
 ---
 
@@ -88,59 +89,18 @@ The following table shows the **config** parameters for a Carbon Black Invent
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Carbon Black Inventory"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "config":{
-      "api_id":"********",
-      "name":"CB Inv E",
-      "domain":"defense.conferdeploy.net",
-      "org_key":"ABCDEFG1",
-      "polling_interval":600,
-      "api_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"c2c/cb_inv"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/carbon-black-inventory/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "carbon_black_inventory_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Carbon Black Inventory"
-  }
-  config = jsonencode({
-      "api_id":"********",
-      "name":"CB Inv E",
-      "domain":"defense.conferdeploy.net",
-      "org_key":"ABCDEFG1",
-      "polling_interval":600,
-      "api_key":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"c2c/cb_inv"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/carbon-black-inventory/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

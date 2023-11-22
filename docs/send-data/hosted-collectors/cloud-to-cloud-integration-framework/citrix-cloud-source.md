@@ -52,7 +52,7 @@ To obtain the Citrix Cloud auth token, you will need the following parameters:
 The **Base URL** is the URL where your **Citrix Cloud** account is located. To get the base URL, follow the steps below:
 1. Log in to the **Citrix Cloud** application.
 2. At the top of the browser, you will see the **Base URL** inside the address bar. <br/> <img src={useBaseUrl('img/send-data/citrix-cloud-base-url.png')} alt="<citrix-cloud-base-url.png>" width="600" />
-3. Choose the Base URL from the table below. The following table contains the base URLs based on the location of your **Citrix Cloud** account:
+3. Choose the Base URL from the table below. The following table contains the base URLs based on the location of your **Citrix Cloud** account:<br/>
 
   | Server location | Server located at  | Base URLs |
   | :---|:---|:---|
@@ -125,63 +125,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-   "api.version": "v1",
-   "source": {
-      "config": {
-         "name": "Citrix Cloud Source",
-         "description": "Description",
-         "category": "Source Category",
-         "baseUrl": "https://api-us.cloud.com",
-         "customerId":"customer_id",
-         "clientId":"client_id",
-         "clientSecret":"client_secret",
-         "supportedAPIs":[
-            "systemLogs",
-            "operationLogs",
-            "sessionLogs",
-         ],
-         "fields":{
-            "_siemForward":false
-         }
-      },
-      "schemaRef":{
-         "type":"Citrix Cloud"
-      },
-      "sourceType":"Universal"
-   }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/citrix-cloud/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "citrix_cloud_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Citrix Cloud"
-  }
-  config = jsonencode({
-         "name": "Citrix Cloud Source",
-         "description": "Description",
-         "category": "Source Category",
-         "baseUrl": "https://api-us.cloud.com",
-         "customerId":"customer_id",
-         "clientId":"client_id",
-         "clientSecret":"client_secret",
-         "supportedAPIs":[
-            "systemLogs",
-            "operationLogs",
-            "sessionLogs",
-         ],
-         "fields":{
-            "_siemForward":false
-         }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/citrix-cloud/example.tf)
 
 ## Troubleshooting
 
@@ -267,5 +219,5 @@ Make sure that you have used the correct `customerId` is used to configure the s
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

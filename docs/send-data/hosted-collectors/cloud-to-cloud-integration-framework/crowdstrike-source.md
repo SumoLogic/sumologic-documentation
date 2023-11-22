@@ -107,54 +107,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"CrowdStrike"
-    },
-    "config":{
-      "name":"CrowdStrike",
-      "description":"East field",
-      "domain":"api.crowdstrike.com",
-      "secretKey":"********",
-      "clientID":"123",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeam"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/crowdstrike/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "crowdstrike_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "CrowdStrike"
-  }
-  config = jsonencode({
-      "name":"CrowdStrike",
-      "description":"East field",
-      "domain":"api.crowdstrike.com",
-      "secretKey":"********",
-      "clientID":"123",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeam"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/crowdstrike/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

@@ -83,46 +83,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config": {
-            "name": "JumpCloud Directory Insights",
-            "description": "Collect Events from JumpCloud Directory Insights Product",
-            "category": "jumpcloud-directory-insights",
-            "apiKey": "ebf7b9d6e1****************",
-            "orgID": "64949312***************",
-            "service": "all"
-        },
-        "schemaRef": {
-            "type": "JumpCloud Directory Insights"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/jumpcloud-directory-insights/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "jumpcloud-directory-insights-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "JumpCloud Directory Insights"
-  }
-  config = jsonencode({
-            "name": "JumpCloud Directory Insights",
-            "description": "Collect Events from JumpCloud Directory Insights Product",
-            "category": "jumpcloud-directory-insights",
-            "apiKey": "ebf7b9d6e1****************",
-            "orgID": "64949312***************",
-            "service": "all"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/jumpcloud-directory-insights/example.tf)
 
 ## Troubleshooting
 
@@ -140,5 +109,5 @@ After configuring your source, you should check the status of the source in the 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

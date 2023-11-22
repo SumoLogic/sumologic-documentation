@@ -97,72 +97,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Crowdstrike FDR"
-    },
-    "config":{
-      "automaticDateParsing":true,
-      "name":"FDR test",
-      "forceTimeZone":false,
-      "description":"Example config",
-      "secretAccessKey":"********",
-      "SqsQueueURL":"https://sqs.us-west-1.amazonaws.com/***/***",
-      "multilineEnabled":false,
-      "accessKeyId":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"Sumo/FDR",
-      "timestampFormatAutoDetection":false,
-      "s3Region":"us-west-1",
-      "startTime": 0
-      "useAutolineMatching":true
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/crowdstrike-fdr/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "crowdstrike_FDR_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Crowdstrike FDR"
-  }
-  config = jsonencode({
-      "automaticDateParsing":true,
-      "name":"FDR test",
-      "forceTimeZone":false,
-      "description":"Example config",
-      "secretAccessKey":"********",
-      "SqsQueueURL":"https://sqs.us-west-1.amazonaws.com/***/***",
-      "multilineEnabled":false,
-      "accessKeyId":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"Sumo/FDR",
-      "timestampFormatAutoDetection":false,
-      "s3Region":"us-west-1",
-      "startTime": 0
-      "useAutolineMatching":true
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/crowdstrike-fdr/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

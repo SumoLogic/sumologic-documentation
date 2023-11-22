@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="120" />
 
-The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), knowledgeBase data from [KnowledgeBase API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf)
+The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), knowledgeBase data from [KnowledgeBase API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
 :::note
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
@@ -59,7 +59,7 @@ To configure a Qualys VMDR Source:
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
 ### What specific API routes does this C2C collect?

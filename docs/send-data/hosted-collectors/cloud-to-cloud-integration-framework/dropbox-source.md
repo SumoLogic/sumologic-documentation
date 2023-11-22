@@ -38,29 +38,23 @@ You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Lo
 1. Open the new app and click **Permissions** and enable **events.read** in **Team Scopes **of the app and then click **Submit**.
 1. Copy the provided **App Key** and **App Secret** values, you'll provide these to the Sumo Logic Dropbox Source and are needed in the next step.
 1. Replace **APP_KEY** with your App Key in the following URL.
-
     ```
     https://www.dropbox.com/oauth2/authorize?client_id=APP_KEY&token_access_type=offline&response_type=code
     ```
-
 1. Load the modified URL and you'll see the sign in page of Dropbox. Sign in with your Dropbox Business account credentials to obtain the access code. Then click the **Allow** button. Copy the Access Code to provide to the Sumo Logic Dropbox Source.
 
 ### Source configuration
 
-When you create a Dropbox Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/).
+When you create a Dropbox source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/).
 
-To configure a **Dropbox Source
+To configure a Dropbox source:
 
 1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Dropbox**.
 1. Enter a **Name** for the Source. The **description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
-    * `_siemVendor`: Dropbox
-    * `_siemProduct`: Dropbox
-    * `_siemFormat`: JSON
-    * `_siemEventID`: `{event_type..tag}`
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -101,50 +95,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "access_code":"********",
-      "name":"dropbox",
-      "app_secret":"********",
-      "app_key":"abcdefg1234567",
-      "fields":{
-        "_siemForward":false
-      }
-    },
-    "schemaRef":{
-      "type":"Dropbox"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/dropbox/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "dropbox_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Dropbox"
-  }
-  config = jsonencode({
-      "access_code":"********",
-      "name":"dropbox",
-      "app_secret":"********",
-      "app_key":"abcdefg1234567",
-      "fields":{
-        "_siemForward":false
-      }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/dropbox/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

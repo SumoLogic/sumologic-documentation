@@ -104,53 +104,18 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Symantec Web Security Service"
-    },
-    "config":{
-      "name":"Symantec WSS",
-      "apiUsername":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"c2c/sym",
-      "apiPassword":"********"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/symantec-web-security-service/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "symantec_web_security_service_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Symantec Web Security Service"
-  }
-  config = jsonencode({
-      "name":"Symantec WSS",
-      "apiUsername":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"c2c/sym",
-      "apiPassword":"********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/symantec-web-security-service/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

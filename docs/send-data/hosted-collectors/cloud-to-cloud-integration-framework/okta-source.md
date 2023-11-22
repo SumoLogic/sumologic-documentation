@@ -8,6 +8,10 @@ keywords:
 description: The Okta Source provides a secure endpoint to receive event data from the Okta System Log API.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/img/c2c/okta/example.json';
+import MyComponentSource from '!!raw-loader!/img/c2c/okta/example.json';
+import TerraformExample from '!!raw-loader!/img/c2c/okta/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
@@ -35,9 +39,7 @@ To configure an Okta Source:
 1. Select **Okta**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
-   * `_parser`: Set to `/Parsers/System/Okta/Okta`. 
-   * `_siemDataType`: Inventory (only for user inventory data).
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -48,6 +50,13 @@ To configure an Okta Source:
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_parser` | `/Parsers/System/Okta/Okta` | Set when **Forward To SIEM** is checked. |
+| `_siemDataType` | `Inventory` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 
@@ -76,60 +85,20 @@ eventTypes | String | No | `null` | Comma separated list of events to collect. R
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Okta"
-    },
-    "config":{
-      "name":"Okta",
-      "description":"East field",
-      "domain":"mydomain.okta.com",
-      "users":true,
-      "collectAll":true,
-      "apiKey":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/okta/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "okta-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Okta"
-  }
-  config = jsonencode({
-      "name":"Okta",
-      "description":"East field",
-      "domain":"mydomain.okta.com",
-      "users":true,
-      "collectAll":true,
-      "apiKey":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/okta/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
 ## Limitation

@@ -304,67 +304,18 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "state":{
-      "state":"Collecting"
-    },
-    "schemaRef":{
-      "type":"Akamai SIEM API"
-    },
-    "config":{
-      "name":"akamai test",
-      "splitOnRules":true,
-      "clientToken":"********",
-      "host":"********.luna.akamaiapis.net",
-      "configIds":["74215"],
-      "decodeHttp":true,
-      "fields":{
-        "_siemForward":false
-      },
-      "resetOffset":false,
-      "clientSecret":"********",
-      "limit":10000,
-      "pollInterval":30,
-      "accessToken":"********"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/akamai-siem-api/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "akamai_SIEM_API" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Akamai SIEM API"
-  }
-  config = jsonencode({
-      "name":"akamai test",
-      "splitOnRules":true,
-      "clientToken":"********",
-      "host":"********.luna.akamaiapis.net",
-      "configIds":["74215"],
-      "decodeHttp":true,
-      "fields":{
-        "_siemForward":false
-      },
-      "resetOffset":false,
-      "clientSecret":"********",
-      "limit":10000,
-      "pollInterval":30,
-      "accessToken":"********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/akamai-siem-api/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

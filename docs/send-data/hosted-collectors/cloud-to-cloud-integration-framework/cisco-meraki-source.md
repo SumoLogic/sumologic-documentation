@@ -121,5 +121,5 @@ You may receive the follow error below if you enter an invalid Cisco Meraki orga
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

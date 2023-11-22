@@ -1,6 +1,9 @@
 ---
 id: azure-event-hubs-source
 title: Azure Event Hubs Source
+tags:
+  - cloud-to-cloud
+  - azure-event-hubs
 sidebar_label: Azure Event Hubs
 ---
 
@@ -43,7 +46,7 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
 1. Create an Event Hubs namespace. In this example, Namespace is set to **cnctest**:<br/>![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)<br/> ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
 1. Create an Event Hub Instance.<br/> ![AzureEventHubstep4.png](/img/send-data/AzureEventHubstep4.png)
     * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey** <br/>![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
-    In this example, Event Hub Instance is set to **my-hub**.
+    <br/>In this example, Event Hub Instance is set to <strong>my-hub</strong>.
 1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:<br/>  ![AzureEventHubstep6.png](/img/send-data/AzureEventHubstep6.png)<br/>
     ![AzureEventHubstep7.png](/img/send-data/AzureEventHubstep7.png)<br/>
     ![AzureEventHubstep8.png](/img/send-data/AzureEventHubstep8.png)<br/>
@@ -118,8 +121,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| namespace` | String | Yes | `null` | Your Azure Event Hubs Namespace name. |  |
-| hub_name` | String | Yes	 | `null` | The Azure Event Hubs Instance Name. |  |
+| namespace | String | Yes | `null` | Your Azure Event Hubs Namespace name. |  |
+| hub_name | String | Yes	 | `null` | The Azure Event Hubs Instance Name. |  |
 | access_policy_name | String | Yes | `null` | Your Shared Access Policy Name. The Shared Access Policy requires the Listen claim. |  |
 | access_policy_key | String | Yes |`null`  | Your Shared Access Policy Key. The Shared Access Policy requires the Listen claim. |  |
 | consumer_group | String | Yes | $Default | If needed, specify a custom consumer group name. When using a custom Consumer Group make sure that it exists for the Event Hub instance. |  |
@@ -133,72 +136,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "schemaRef": {
-            "type": "Azure Event Hubs"
-        },
-        "config": {
-            "name": "Azure Event Hubs",
-            "description": "East field",
-            "namespace": "namespace",
-            "hub_name": "hub name",
-            "access_policy_name": "policyName",
-            "access_policy_key": "********",
-            "consumer_group": "groupName",
-            "fields": {
-                "_siemForward": false
-            },
-            "category": "eastTeamF",
-            "receive_with_latest_offset": true,
-            "automaticDateParsing": true,
-            "autoParseTimeFormat": false,
-            "defaultDateFormats": [{
-                "format": "dd-MM-yyyy",
-                "locator": "INFO(.*)"
-            }]
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/azure-event-hubs/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "azure_event_hubs_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Azure Event Hubs"
-  }
-  config = jsonencode({
-            "name": "Azure Event Hubs",
-            "description": "East field",
-            "namespace": "namespace",
-            "hub_name": "hub name",
-            "access_policy_name": "policyName",
-            "access_policy_key": "********",
-            "consumer_group": "groupName",
-            "fields": {
-                "_siemForward": false
-            },
-            "category": "eastTeamF",
-            "receive_with_latest_offset": true,
-            "automaticDateParsing": true,
-            "autoParseTimeFormat": false,
-            "defaultDateFormats": [{
-                "format": "dd-MM-yyyy",
-                "locator": "INFO(.*)"
-            }]
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/azure-event-hubs/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

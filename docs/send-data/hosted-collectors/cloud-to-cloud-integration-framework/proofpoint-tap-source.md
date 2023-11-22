@@ -231,60 +231,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Proofpoint"
-    },
-    "config":{
-      "name":"Proofpoint",
-      "description":"East field",
-      "domain":"tap-api-v2.proofpoint.com",
-      "api_secret":"********",
-      "service_principal":"********",
-      "split_recipients":true,
-      "split_message_parts":false,
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/proofpoint-tap/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "proofpoint_tap_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Proofpoint"
-  }
-  config = jsonencode({
-      "name":"Proofpoint",
-      "description":"East field",
-      "domain":"tap-api-v2.proofpoint.com",
-      "api_secret":"********",
-      "service_principal":"********",
-      "split_recipients":true,
-      "split_message_parts":false,
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/proofpoint-tap/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

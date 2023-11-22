@@ -122,53 +122,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"YL-Netskope",
-      "eventTypes":["page","application","infrastructure","audit"],
-      "fields":{
-        "_siemForward":false
-      },
-      "apiToken":"********",
-      "tenantID":"partners"
-    },
-    "schemaRef":{
-      "type":"Netskope"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/netskope/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "netskope-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Netskope"
-  }
-  config = jsonencode({
-      "name":"YL-Netskope",
-      "eventTypes":["page","application","infrastructure","audit"],
-      "fields":{
-        "_siemForward":false
-      },
-      "apiToken":"********",
-      "tenantID":"partners"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/netskope/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

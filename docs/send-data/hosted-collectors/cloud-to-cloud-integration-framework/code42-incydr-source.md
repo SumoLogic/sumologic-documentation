@@ -88,55 +88,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config": {
-  "name": "Code42",
-  "description": "Code42",
-  "category": "code42",
-  "baseURL": "https://api.us.code42.com",
-  "clientID": "key-xxxx0316-xxxx-492d-xxxx-308184abxxx3",
-  "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
-  "dataCollection": [
-    "auditEvents",
-    "alerts",
-    "fileEvents"
-  ]
-},
-        "schemaRef": {
-            "type": "Code42Incydr"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/code42-incydr/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "code42incydr_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Code42Incydr"
-  }
-  config = jsonencode({
-    "name": "Code42",
-    "description": "Code42",
-    "category": "code42",
-    "baseURL": "https://api.us.code42.com",
-    "clientID": "key-xxxx0316-xxxx-492d-xxxx-308184abxxx3",
-    "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
-    "dataCollection": [
-      "auditEvents",
-      "alerts",
-      "fileEvents"
-    ]
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/code42-incydr/example.tf)
 
 ## Troubleshooting
 
@@ -157,5 +117,5 @@ To resolve these errors:
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

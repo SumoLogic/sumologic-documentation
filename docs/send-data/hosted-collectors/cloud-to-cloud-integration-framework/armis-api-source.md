@@ -37,7 +37,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 In this configuration, you will set up an Armis source account and configure it to be authorized and authenticated to use device logs and alerts from Armis API.
 To obtain an Armis auth token, follow the steps below:
 1. Log into the [Armis](https://armis.com/) application.
-1. Navigate to **Settings** > **API Management** on your Armis application.<br/> <img src={useBaseUrl('img/send-data/armis-settings.png')} alt="armis-settings.png" width="900" />
+1. Navigate to **Settings** > **API Management** on your Armis application.<br/> <img src={useBaseUrl('img/send-data/armis-settings.png')} alt="armis-settings.png" width="900" style={{border:'1px solid black'}} />
 1. Create a new API secret key if you haven't created one yet by clicking the **Create** button from the API Management page.<br/> <img src={useBaseUrl('img/send-data/create-api.png')} alt="create-api.png" width="=700" />
 1. Click **Show** to view the secret key.<br/> <img src={useBaseUrl('img/send-data/show-secretkey.png')} alt="show-secretkey.png" width="700" />
 1. A popup window will be displayed. Copy and paste the secret key to a folder location. Remember, you will need to enter this key while creating the **Armis Cloud-to-Cloud Source**.<br/><img src={useBaseUrl('img/send-data/show-key.png')} alt="show-key.png" width="400" />
@@ -97,60 +97,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config": {
-            "name": "armis",
-            "description": "description",
-            "category": "source_category",
-            "instanceURL": "http://armis-instance.armis.com",
-            "secretKey": "*********",
-            "apiType": [
-                "alertLogs",
-                "deviceLogs"
-            ],
-            "fields": {
-                "_siemForward": false
-            }
-        },
-        "schemaRef": {
-            "type": "Armis"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/armis-api/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "armis_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Armis"
-  }
-  config = jsonencode({
-            "name": "armis",
-            "description": "description",
-            "category": "source_category",
-            "instanceURL": "http://armis-instance.armis.com",
-            "secretKey": "*********",
-            "apiType": [
-                "alertLogs",
-                "deviceLogs"
-            ],
-            "fields": {
-                "_siemForward": false
-            }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/armis-api/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

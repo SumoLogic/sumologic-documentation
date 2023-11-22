@@ -73,7 +73,7 @@ Personal Microsoft accounts are not supported.
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
 
-## Create a Microsoft Azure AD Inventory Source
+### Source configuration
 
 When you create a Microsoft Azure AD Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
@@ -132,55 +132,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "schemaRef": {
-            "type": "Microsoft Azure AD Inventory"
-        },
-        "config": {
-            "name": "Azure AD Inventory",
-            "tenant_id": "TenantID",
-            "supported_apis": ["Devices", "Users"],
-            "secret_key": "********",
-            "application_id": "ApplicationID",
-            "userSignInActivity": false,
-            "fields": {
-                "_siemForward": false
-            }
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/microsoft-azure-ad-inventory/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "microsoft-azure-ad-inventory-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Microsoft Azure AD Inventory"
-  }
-  config = jsonencode({
-            "name": "Azure AD Inventory",
-            "tenant_id": "TenantID",
-            "supported_apis": ["Devices", "Users"],
-            "secret_key": "********",
-            "application_id": "ApplicationID",
-            "userSignInActivity": false,
-            "fields": {
-                "_siemForward": false
-            }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/microsoft-azure-ad-inventory/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

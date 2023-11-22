@@ -44,19 +44,12 @@ You need to have a Cybereason username and password as well as your customer-spe
 When you create a Cybereason Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Cybereason Source:
-
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **Cybereason**.
+1. Search for and select **Cybereason**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. When configured with the **Forward to SIEM** option the following metadata fields are set:
-
-   * `_siemVendor`: Cybereason
-   * `_siemProduct`: Endpoint Security
-   * `_siemFormat`: JSON
-   * `_siemEventID`: `<eventType>` Where `event_type` is the value of the field malopDetectionType from the JSON event.
-
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -128,61 +121,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Cybereason"
-    },
-    "config":{
-      "back_collection_hours":720,
-      "name":"test cybereason",
-      "domain":"mydomain.cybereason.net",
-      "client_password":"********",
-      "polling_interval":300,
-      "fields":{
-        "_siemForward":false
-      },
-      "dup_users":true,
-      "category":"c2c/cybereason",
-      "client_user":"********"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/cybereason/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "cybereason_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Cybereason"
-  }
-  config = jsonencode({
-      "back_collection_hours":720,
-      "name":"test cybereason",
-      "domain":"mydomain.cybereason.net",
-      "client_password":"********",
-      "polling_interval":300,
-      "fields":{
-        "_siemForward":false
-      },
-      "dup_users":true,
-      "category":"c2c/cybereason",
-      "client_user":"********"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/cybereason/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

@@ -93,55 +93,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-    "api.version": "v1",
-    "source": {
-        "config": {
-  "name": "Mimecast",
-  "description": "Mimecast",
-  "category": "Mimecast",
-  "clientID": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
-  "clientSecret": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
-  "dataCollection": [
-    "siem",
-    "dlp",
-    "auditEvent",
-    "holdMessageList"
-  ]
-},
-        "schemaRef": {
-            "type": "Mimecast"
-        },
-        "sourceType": "Universal"
-    }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/mimecast/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "mimecast-source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Mimecast"
-  }
-  config = jsonencode({
-    "name": "Mimecast",
-    "description": "Mimecast",
-    "category": "Mimecast",
-    "clientID": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
-    "clientSecret": "XXXgXXXXXXXxfkNsaXXXXo8VqkXXXixRf5VlnwcXXXXXchX",
-    "dataCollection": [
-      "siem",
-      "dlp",
-      "auditEvent",
-      "holdMessageList"
-    ]
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/mimecast/example.tf)
 
 ## Troubleshooting
 
@@ -161,5 +121,5 @@ To resolve these errors:
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

@@ -39,14 +39,14 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Log in to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} alt="asana-login" width="400" />
+1. Log in to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid black'}} alt="asana-login" width="400" />
 1. After logging in, click the **Apps** tab from with your admin console.
 1. Click **Service accounts**.
 1. Click the **Add service account** button.
-1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/add_service_account.png')} alt="add_service_account" width="800" />
-1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/pat.png')} alt="pat" width="400" />
+1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/add_service_account.png')} style={{border:'1px solid black'}} alt="add_service_account" width="800" />
+1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/pat.png')} style={{border:'1px solid black'}} alt="pat" width="400" />
 1. Click **Save changes** to save the PAT token for your service account.
-1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/workspace_id.png')} alt="workspace_id" width="700" />
+1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/workspace_id.png')} style={{border:'1px solid black'}} alt="workspace_id" width="700" />
 
 ### Source configuration
 
@@ -88,46 +88,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-	"api.version":"v1",
-	"source":{
-		"config":{
-			"name":"Asana",
-			"description":"Test Source",
-			"category":"source_category",
-			"personalAccessToken":"****************************",
-			"workspaceID":"1204094735693514"
-		},
-		"schemaRef":{
-			"type":"Asana"
-		},
-		"sourceType":"Security"
-	}
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/asana/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "asana_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Asana"
-  }
-  config = jsonencode({
-			"name":"Asana",
-			"description":"Test Source",
-			"category":"source_category",
-			"personalAccessToken":"****************************",
-			"workspaceID":"1204094735693514"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/asana/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

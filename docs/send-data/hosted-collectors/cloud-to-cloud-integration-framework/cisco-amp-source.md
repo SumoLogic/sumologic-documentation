@@ -83,55 +83,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Cisco AMP"
-    },
-    "config":{
-      "name":"Cisco",
-      "description":"East field",
-      "clientId":"********",
-      "apiKey":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/cisco-amp/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "cisco_AMP_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Cisco AMP"
-  }
-  config = jsonencode({
-      "name":"Cisco",
-      "description":"East field",
-      "clientId":"********",
-      "apiKey":"********",
-      "fields":{
-        "_siemForward":false
-      },
-      "category":"eastTeamF",
-      "pollingInterval":300
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/cisco-amp/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

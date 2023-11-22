@@ -8,9 +8,12 @@ tags:
 description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the EC2 describe instances API.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/cse-aws-ec-inventory/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/cse-aws-ec-inventory/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/cse-aws-ec-inventory/example.tf';
+import ExampleJSON1 from '/img/c2c/cse-aws-ec-inventory/example1.json';
+import ExampleJSON2 from '/img/c2c/cse-aws-ec-inventory/example2.json';
+import MyComponentSource1 from '!!raw-loader!/img/c2c/cse-aws-ec-inventory/example1.json';
+import TerraformExample1 from '!!raw-loader!/img/c2c/cse-aws-ec-inventory/example1.tf';
+import MyComponentSource2 from '!!raw-loader!/img/c2c/cse-aws-ec-inventory/example2.json';
+import TerraformExample2 from '!!raw-loader!/img/c2c/cse-aws-ec-inventory/example2.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/>
@@ -33,7 +36,7 @@ This source is not available in the [Fed deployment](/docs/api/getting-started#s
 
 ### Vendor configuration
 
-### Inventory data mapped
+#### Inventory data mapped
 
 The table below shows the AWS source fields that Cloud SIEM maps to Cloud SIEM schema attributes.
 
@@ -43,7 +46,7 @@ The table below shows the AWS source fields that Cloud SIEM maps to Cloud SIEM s
 |`hostname` |`PublicDnsName`. If null, then `PrivateDnsName`|
 |`uniqueId` | `AccountId` from `ARN-InstanceId` |
 
-## Authentication
+#### Authentication
 
 The [IAM policy](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) needs the `ec2:DescribeInstances` and `ec2:DescribeImages` permissions.
 
@@ -105,118 +108,26 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json title="JSON example for Role Based Authentication"
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"AWS Inventory",
-      "fields":{
-        "_siemForward":true
-      },
-      "category":"aws/inventory",
-      "limitToRegions":["all"],
-      "authentication":{
-        "type": "AWSRoleBasedAuthentication",
-        "roleARN": "arn:aws:iam::9568827XXXX:role/C2C_EC2InventoryTest"
-      },
-      "polling_interval":600
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "schemaRef":{
-      "type":"Cloud SIEM AWS EC2 Inventory"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource1}</CodeBlock>
 
-```json title="JSON example for Key Authentication"
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"AWS Inventory",
-      "fields":{
-        "_siemForward":true
-      },
-      "category":"aws/inventory",
-      "limitToRegions":["all"],
-      "authentication":{
-        "type": "S3BucketAuthentication",
-        "awsId": "XXXXXXSVHNHFXXXXXXX",
-        "awsKey": "XXXXXtrrIqHvXgMYJEQcwLfEQtyNXXXXXXXX"
-      },
-      "polling_interval":600
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "schemaRef":{
-      "type":"Cloud SIEM AWS EC2 Inventory"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+[Download example](/img/c2c/cse-aws-ec-inventory/example1.json)
+
+<CodeBlock language="json">{MyComponentSource2}</CodeBlock>
+
+[Download example](/img/c2c/cse-aws-ec-inventory/example2.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "cloud_siem_aws_ec2_inventory_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Cloud SIEM AWS EC2 Inventory"
-  }
-  config = jsonencode({
-      "name":"AWS Inventory",
-      "fields":{
-        "_siemForward":true
-      },
-      "category":"aws/inventory",
-      "limitToRegions":["all"],
-      "authentication":{
-        "type": "AWSRoleBasedAuthentication",
-        "roleARN": "arn:aws:iam::9568827XXXX:role/C2C_EC2InventoryTest"
-      },
-      "polling_interval":600
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample1}</CodeBlock>
 
+[Download example](/img/c2c/cse-aws-ec-inventory/example1.tf)
 
-resource "sumologic_cloud_to_cloud_source" "cloud_siem_aws_ec2_inventory_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Cloud SIEM AWS EC2 Inventory"
-  }
-  config = jsonencode({
-      "name":"AWS Inventory",
-      "fields":{
-        "_siemForward":true
-      },
-      "category":"aws/inventory",
-      "limitToRegions":["all"],
-      "authentication":{
-        "type": "S3BucketAuthentication",
-        "awsId": "XXXXXXSVHNHFXXXXXXX",
-        "awsKey": "XXXXXtrrIqHvXgMYJEQcwLfEQtyNXXXXXXXX"
-      },
-      "polling_interval":600
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample2}</CodeBlock>
 
+[Download example](/img/c2c/cse-aws-ec-inventory/example2.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

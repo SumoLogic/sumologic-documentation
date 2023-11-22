@@ -79,7 +79,7 @@ To configure a SentinelOne Mgmt API Source:**
 | `_siemProduct` | `MGMT API` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
 | `_siemEventID` | `activities - {id}`, `threats - {id}`, or `agents` | Set when **Forward To SIEM** is checked and specific to the API collected. |
-| `_siemDataType` | `Inventory` |  |
+| `_siemDataType` | `Inventory` | Set when **Forward To SIEM** is checked. |
 
 :::note
 If you entered `agents` in Supported APIs to collect above, the `_siemDataType` field will be set to `Inventory`.
@@ -109,53 +109,18 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"SentinelOne",
-      "supported_apis":["activities","agents","threats"],
-      "api_secret":"********",
-      "base_url":"https://usea1-partners.sentinelone.net/",
-      "fields":{
-        "_siemForward":false
-      }
-    },
-    "schemaRef":{
-      "type":"SentinelOne Mgmt API"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/sentinelone-mgmt-api/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "sentinelone_mgmt_api_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "SentinelOne Mgmt API"
-  }
-  config = jsonencode({
-      "name":"SentinelOne",
-      "supported_apis":["activities","agents","threats"],
-      "api_secret":"********",
-      "base_url":"https://usea1-partners.sentinelone.net/",
-      "fields":{
-        "_siemForward":false
-      }
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/sentinelone-mgmt-api/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

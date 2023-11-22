@@ -101,61 +101,25 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | projectId | String | Yes | `null` | The project ID is the globally unique identifier for your project. For example, `pelagic-quanta-364805`. |  |
 | datasetId | String | Yes | `null` | The Dataset ID is the project-wise unique identifier for your dataset. For example, `gmaillogsbigquery`. |  |
 | privateKey | String | Yes | `null` | The Private Key is part of Service Account JSON, it is a security key which is required for authentication. |  |
-| clientEmail | String | No | `null` | User email collected from the Google Cloud Console. | modifiable |
+| clientEmail | String | No | `null` | User email collected from the Google Cloud Console. |  |
 | tokenUri | String | Yes | `null` | The Token URI is part of Service Account JSON, it is used for generating the token. |  |
 | startTime | String | Yes | `null` | This sets how many hours the Source checks for new data. The default is 24 hours. |  |
 | dataLocation | String | Yes | `null` | Dataset ID is the project-wise unique identifier for your dataset. |  |
 
 ### JSON example
 
-```json
-{
-   "api.version":"v1",
-   "source":{
-        "config":{
-            "name":"Gmail Trace Log",
-            "category":"gmail",
-            "projectId":"Product123",
-            "datasetId":"Product123",
-            "privateKey":"*****************",
-            "tokenURI":"dshjfgbkjlafdhbdhfvhjksdg",
-            "clientEmail":"product123@gmail.com",
-            "dataLocation":"US",
-            "startTime":"24 Hours ago"
-        },
-        "schemaRef":{
-            "type":"Gmail Trace Logs"
-        },
-        "sourceType":"Universal"
-   }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/gmail-tracelogs/example.json)
+
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "gmail_trace _logs_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Gmail Trace Logs"
-  }
-  config = jsonencode({
-            "name":"Gmail Trace Log",
-            "category":"gmail",
-            "projectId":"Product123",
-            "datasetId":"Product123",
-            "privateKey":"*****************",
-            "tokenURI":"dshjfgbkjlafdhbdhfvhjksdg",
-            "clientEmail":"product123@gmail.com",
-            "dataLocation":"US",
-            "startTime":"24 Hours ago"
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/gmail-tracelogs/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::

@@ -79,54 +79,25 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| apiKey | String | Yes | `null` | API key used for Authorization.  | modifiable |
-| clientID | String | Yes | `null` | Client ID of your account. | modifiable |
-| clientSecret | String | Yes | `null` | Client Secret of your account. | modifiable |
-| pollingInterval | Integer | No | `5 minutes` | Choose how often the Source checks for new data (In minutes). | modifiable |
+| apiKey | String | Yes | `null` | API key used for Authorization.  |  |
+| clientID | String | Yes | `null` | Client ID of your account. |  |
+| clientSecret | String | Yes | `null` | Client Secret of your account. |  |
+| pollingInterval | Integer | No | `5 minutes` | Choose how often the Source checks for new data (In minutes). |  |
 
 ### JSON example
 
-```json
-{
-  "api.version": "v1",
-  "source": {
-    "config": {
-      "name": "Trellix",
-      "clientID": "xxxxxxxxxxxxxx",
-      "clientSecret": "******",
-      "apiKey": "*******",
-      "pollingInterval": 5
-    },
-    "schemaRef":{
-      "type": "Trellix mVision ePO"
-    },
-    "sourceType": "Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/img/c2c/trellix-mvisio-epo/example.json)
 
 ### Terraform example
 
-resource "sumologic_cloud_to_cloud_source" "trellix_source" {
-  collector_id = sumologic_collector.collector.id
-  schema_ref = {
-    type = "Trellix"
-  }
-  config = jsonencode({
-      "name": "Trellix",
-      "clientID": "xxxxxxxxxxxxxx",
-      "clientSecret": "******",
-      "apiKey": "*******",
-      "pollingInterval": 5
-  })
-}
-resource "sumologic_collector" "collector" {
-  name        = "my-collector"
-  description = "Just testing this"
-}
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/img/c2c/trellix-mvisio-epo/example.tf)
 
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
