@@ -6,7 +6,7 @@ description: The Cloud Infrastructure Security for AWS app provides visibility i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="100"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
 The Cloud Infrastructure Security for AWS app provides a unified security and compliance audit view of your AWS infrastructure, and insight into threat activity across the environment. It leverages native AWS tools and telemetry to accelerate the work of security and reliability management. 
 
