@@ -20,7 +20,7 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
     No more than 365 days can be selected as the start date.
     :::
 1. **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of Default Partition**. For more information, see [Manage Indexes with Variable Retention](../partitions-data-tiers/manage-indexes-variable-retention.md).
-1. **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/amazon-s3-bucket.md). The results from the Scheduled View  are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. See [File Format](../data-forwarding/amazon-s3-bucket.md) for details on how the file objects are structured.
+1. **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/amazon-s3-bucket.md). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. See [File Format](../data-forwarding/amazon-s3-bucket.md) for details on how the file objects are structured.
 1. Click **Save**.
 
 The view begins to index data as soon as you create it. Allow a few hours for the indexing to complete. If you've chosen to index a large amount of data and/or have chosen a long date range for the view, it could take a bit longer.
