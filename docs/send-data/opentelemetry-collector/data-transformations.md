@@ -13,8 +13,18 @@ You can find more detailed information about the available OTTL functions and th
 
 ### Example 1: Hashing a password in log body
 
+Consider the following example log
+
+```username=user password=test```
+
 ```yaml
 processors:
+  transform/setattribute:
+    log_statements:
+      - context: log
+        statements:
+          - set(attributes["message"], body)
+
   attributes/extract:
   actions:
     - key: message
@@ -27,16 +37,23 @@ processors:
         statements:
           - set(attributes["password"], SHA256(attributes["password"]))
           - set(attributes["password"], Concat(["passwd", attributes["password"]], "="))
-          - replace_pattern(attributes["message"], "password=([0-9A-Za-z]+_)", attributes["password"])
+          - replace_pattern(body, "password=([0-9A-Za-z]+_)", attributes["password"])
+          - delete_key(attributes, "message")
 ```
 
 The configuration consists of two sections: `attributes/extract` and `transform/replace`, representing attribute and transform processing, respectively.
 
+- The `transform/setattribute` processor sets the `message` record attribute.
+
 - In the `attributes/extract` section, the `actions` key specifies the extraction action. In this example, the action extracts the password from an attribute value using a regular expression pattern. The pattern `^password=(?P<password>\\w+)$` captures the password value after `password=` and assigns it to the `password` attribute.
+
 - The `transform/replace` section defines a transformation operation using the Transform Processor. Within the `log_statements` context, the following statements are executed:
+
   - The `set` function is used to hash the `password` attribute using the SHA256 hash algorithm. The resulting hash value replaces the original `password` value.
+
   - The `set` function is used to concatenate the string prefix `"hashed"` with the hashed `password`. This creates a new `password` value with the prefix included.
-  - The `replace_pattern` function is applied to the `message` attribute. If the value matches the pattern `"password=(test)"`, the matched section is replaced with the hashed `password` attribute.
+
+  - The `replace_pattern` function is applied to the log body. If the value matches the pattern `"password=([0-9A-Za-z]+_)"`, the matched section is replaced with the hashed `password` attribute.
 
 ### Example 2: Hashing an attribute
 
