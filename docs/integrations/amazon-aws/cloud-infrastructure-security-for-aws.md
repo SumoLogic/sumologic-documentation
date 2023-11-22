@@ -31,7 +31,7 @@ The Cloud Infrastructure Security for AWS app utilizes the following log types:
 
 ## Sample log message
 
-```
+```json
 { 
   "eventVersion":"1.01",
   "userIdentity":{ 
