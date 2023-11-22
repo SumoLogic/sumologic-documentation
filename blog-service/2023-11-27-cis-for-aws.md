@@ -11,14 +11,21 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We’re excited to announce the release of the Cloud Infrastructure Security for AWS app. This app provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
+We’re excited to announce a preview of Cloud Infrastructure Security for AWS. This solution unifies views of active threats, security control failures, and suspicious activity across your AWS environment to give you security posture visibility at a glance.  
 
-Here are some of the key features the new app offers: 
-* **Active threat monitoring**. See active threats in APIs, resources, and storage.
-* **Security compliance failure identification**. See areas in your environment that need to be addressed because they do not comply with required security standards.
-* **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
+Here are some of the key features the new solution offers: 
 * **Risk overview**. See a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. Get an action plan for addressing the most important areas of concern.
+* **Active threats**. See active threats in APIs, resources, and storage.
+* **Misconfigurations**. See areas in your environment that need to be addressed because they fail best practice security controls.
+* **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
 
-In addition to being able to install the app from the App Catalog, you can also install it as a free trial.
+Check out our technical documentation [here](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws) to learn how you can set up and use Cloud Infrastructure Security for AWS.
 
-Check out our technical documentation [here](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws) to learn how you can set up and use the Cloud Infrastructure Security for AWS app.
+:::note
+To use the solution, you are required to sign up and activate Amazon GuardDuty and AWS Security Hub.
+:::
+
+### Known preview limitations
+
+* The CloudFormation template only supports one AWS region (with multiple AWS accounts) during preview. You are encouraged to get started with one AWS region. 
+* Pre-built monitors are not installed.

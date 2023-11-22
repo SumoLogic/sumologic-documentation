@@ -1,30 +1,44 @@
 ---
 id: cloud-infrastructure-security-for-aws
 title: Cloud Infrastructure Security for AWS
-description: The Cloud Infrastructure Security for AWS app provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
+description: Cloud Infrastructure Security for AWS provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-The Cloud Infrastructure Security for AWS app provides a unified security and compliance audit view of your AWS infrastructure, and insight into threat activity across the environment. It leverages native AWS tools and telemetry to accelerate the work of security and reliability management. 
+Cloud Infrastructure Security for AWS provides a unified view of threats, misconfigurations, and threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
-Key features of the app include:
-* **Active threat monitoring**. See threats in APIs, resources, and storage.
-* **Security compliance failure identification**. See areas in your environment that need to be addressed because they do not comply with required security standards.
-* **Suspicious activity assessment**. See activity identified by anomaly detection across users, web interactions, networks, and Identity Access Management (IAM).
+Key features of the solution include:
 * **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
+* **Active threats**. See threats in resources and AWS API calls.
+* **Security control failures**. See misconfigurations  in your environment that may leave you vulnerable to attackers.
+* **Suspicious activity**. See activity identified by anomaly detection across users, web interactions, networks, and Identity Access Management (IAM).
 
-Data presented in the app’s dashboards is normalized from log sources into AWS Elastic Common Schema (ECS) format, providing seamless data presentation of all your AWS data. 
+Entities  presented in the dashboards are normalized from log sources into [AWS Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/master/ecs-reference.html), to provide seamless pivots between dashboards during threat investigations. 
 
-Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the app. To see monitors for the app, go to **Manage Data > Monitoring** and select the **Cloud Infrastructure Security** folder. 
+Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the solution. To see monitors for the solution, go to **Manage Data > Monitoring** and select the **Cloud Infrastructure Security for AWS** folder. 
+
+Watch the following micro lesson to learn about Cloud Infrastructure Security for AWS.
+
+<Iframe url="https://www.youtube.com/embed/JD9tNfCW7uo?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## Log types
 
-The Cloud Infrastructure Security for AWS app utilizes the following log types:
+Cloud Infrastructure Security for AWS utilizes the following log types:
 * [Amazon CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html) 
-* [Amazon GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
+* [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
 * [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
 * [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html)
 * [AWS Web Application Firewall (WAF)](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) 
@@ -88,22 +102,22 @@ _sourceCategory=Labs/AWS/CloudTrail ("ConsoleLogin" and "Failed authentication")
 
 ## Collecting logs for Cloud Infrastructure Security for AWS
 
-The app collects logs from different AWS sources to produce data in the dashboards. When you install the app, data will be collected from sources, including:
+Cloud Infrastructure Security for AWS collects logs from different AWS sources to produce data in the dashboards. When you install the solution, data will be collected from sources, including:
 * [Amazon CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html) 
-* [Amazon GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
+* [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
 * [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
 * [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html)
 * [AWS Web Application Firewall (WAF)](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html)
 
-## Install the Cloud Infrastructure Security for AWS app
+## Install Cloud Infrastructure Security for AWS
 
-Install the app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage. 
+Install Cloud Infrastructure Security for AWS to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of usage. 
 
-1. From the **App Catalog**, search for and select the app.
+1. From the **App Catalog**, search for and select **Cloud Infrastructure Security for AWS**.
 1. Click **Install App**.  
 1. In the **Deploy Cloud Infrastructure for AWS** screen, perform the following steps:
    1. **Select Region**. Select the AWS region where you want to deploy the solution. 
-    :::warning
+    :::important
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
    1. **Check AWS Role Permission**. Click the button to sign in to AWS and perform a check to see if you have permissions to install the solution. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions.
@@ -166,31 +180,9 @@ Install the app to use the pre-configured dashboards that provide visibility int
 1. Select an option to start using the app. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-finish-installation.png')} alt="App hub page" style={{border: '1px solid black'}} width="800"/>
    
 
-## Cloud Infrastructure Security for AWS app dashboards​
+## Cloud Infrastructure Security for AWS dashboards​
 
 {@import ../../reuse/filter-dashboards.md}
-
-### Active threats dashboards
-
-The Active Threats dashboards show data on threats that require attention. Review these dashboards to see threats identified in AWS APIs, resources, and storage.
-
-#### Active Threats: AWS APIs
-
-The **Active Threats: AWS APIs** dashboard shows threats identified from AWS APIs. It shows threats count and trend, and threats by resource, actor, events, and geo location. 
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-apis.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
-
-#### Active Threats: AWS Resources
-
-The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser. It shows findings by resource, trend, resource type, category, and country. This dashboard has an **Action Plan** panel so you can access suggested resources that need attention. 
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
-
-#### Active Threats: AWS Storage
-
-The **Active Threats: AWS Storage** dashboard provides threat counts related to AWS S3 buckets. It shows threats count and trend, and threats by resource, actor, and geo location.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" width="600"/>
 
 ### Risk Overview dashboard
 
@@ -207,15 +199,32 @@ You can click a resource on any dashboard to view details about its risk in the 
 1. In the panel under **Linked Dashboards**, select **Risk Overview**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-linked-dashboard.png')} alt="Linked dashboard" width="600"/>
 1. The selected resource’s data appears in the **Risk Overview** dashboard, broken down by the types of data collected. This lets you see at a glance all the different risks presented by the resource. Note at the top of the dashboard that the filters specify the resource.
 
+### Active threats dashboards
+
+The Active Threats dashboards show data on threats that require attention. Review these dashboards to see threats identified in AWS APIs, resources, and storage.
+
+#### Active Threats: AWS APIs
+
+The **Active Threats: AWS APIs** dashboard shows threats identified from AWS APIs by correlating it with threat intelligence data. It shows threats count and trend, and threats by resource, actor, events, and geo location. 
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-apis.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
+
+#### Active Threats: AWS Resources
+
+The **Active Threats: AWS Resources** dashboard shows threats identified in AWS resources such as EC2 and IAMUser as reported by Amazon GuardDuty. It shows findings by resource, trend, resource type, category, and country. This dashboard has an **Action Plan** panel so you can access suggested resources that need attention through the AWS console. 
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
+
 ### Security Control Failures dashboard
 
-The **Security Control Failures** dashboard shows resources that need to be addressed because they do not comply with required security standards. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures. 
+The **Security Control Failures** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures.png')} alt="Security Control Failures dashboard" width="600"/>
 
 ### Suspicious Activity dashboards
 
-The Suspicious Activity dashboards show data on events identified by anomaly detection that indicate out-of-the ordinary patterns that may require attention. Review these dashboards to see activity identified in configurations, Identity and Access Management (IAM), networks, users, and on the Web. 
+The Suspicious Activity dashboards show data on events identified by anomaly detection that indicate out-of-the ordinary patterns that may require attention. Review these dashboards to see activity identified in configurations, Identity and Access Management (IAM), networks, users, and on the Web. It prioritizes activity by z-score threshold, labeled `risk.calculated_level`, which measures how unusual it is.
+
 
 #### Suspicious Config and IAM Activity
 
@@ -243,11 +252,12 @@ The **Suspicious Web Activity** dashboard shows suspicious activity on the Web. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-web-activity.png')} alt="Suspicious Web Activity dashboard" width="600"/>
 
-## Recommended dashboards workflow
+## Recommended investigations workflow
 
 To most efficiently use the app to address security concerns, we recommend the following workflow:
+1. Look at the [Risk Overview](#risk-overview-dashboard) dashboard to get an overall picture of the security posture of your environment. Pivot or browse to other dashboards to see details in each area.
 1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention. 
 1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
 1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation. 
-1. Review the [Risk Overview](#risk-overview-dashboard) dashboard for a summary of all the resources that pose risk. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
+1. Pivot into the [Risk Overview](#risk-overview-dashboard) dashboard for specific resources that have issues to see any related activity. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
 
