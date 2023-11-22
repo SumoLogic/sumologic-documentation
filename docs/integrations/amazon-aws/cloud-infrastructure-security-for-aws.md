@@ -9,6 +9,12 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
+:::info
+**Preview**<br/>The Cloud Security Infrastructure for AWS solution is in a preview release, and has the following limitations:
+* The CloudFormation template only supports one AWS region (with multiple AWS accounts) during preview. You are encouraged to get started with one AWS region. 
+* Pre-built monitors are not installed.
+:::
+
 Cloud Infrastructure Security for AWS provides a unified view of threats, misconfigurations, and threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
@@ -117,13 +123,13 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
 
 #### Prerequisites
 
-* You must have access to data from the following AWS products, since Cloud Infrastructure Security for AWS uses data from these sources in its dashboards:
+* **AWS data**. You must have access to data from the following AWS products, since Cloud Infrastructure Security for AWS uses data from these sources in its dashboards:
    * [Amazon CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html) 
    * [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
    * [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
    * [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html)
    * [AWS Web Application Firewall (WAF)](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) 
-* Make sure you have access to the [Sumo Logic console](/docs/get-started/sumo-logic-ui/) and as a user that is associated with Sumo Logic role and required role capabilities.
+* **Sumo Logic console**. Make sure you have access to the [Sumo Logic console](/docs/get-started/sumo-logic-ui/) and as a user that is associated with Sumo Logic role and required role capabilities.
 * **Role capabilities**. Make sure you have a Sumo Logic role that have the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/):
   * Manage field extraction rules
   * Manage connections
@@ -141,7 +147,7 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
   * Create access keys
 * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic [Access ID and Access Key](/docs/manage/security/access-keys/), which enable you to use Sumo Logic APIs. Make sure you have the role capabilities listed above before generating the Access ID and Key.
 * **AWS credentials**. To deploy the solution, you will need to log onto the [AWS Console]([AWS Console](https://console.aws.amazon.com/console/)). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). 
-* The Cloud Infrastructure Security for AWS solution comes with pre-packaged alerts in the form of Sumo Logic Monitors. To understand more about their capabilities please visit the [Monitors](/docs/alerts/monitors/) page.
+* **Monitors**. The Cloud Infrastructure Security for AWS solution comes with pre-packaged alerts in the form of Sumo Logic Monitors. To understand more about their capabilities please visit the [Monitors](/docs/alerts/monitors/) page.
 
 #### Deployment options
 
@@ -177,7 +183,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
    1. **Deploy AWS**. Click the **Deploy AWS Security** button.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid black'}} width="700"/>
-1. Sign in the the [AWS Console](https://console.aws.amazon.com/console/). 
+1. Sign in the [AWS Console](https://console.aws.amazon.com/console/). 
 1. In **Quick Create Stack**, fill out the fields to create the stack from the CloudFormation template.
    1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid black'}} width="700"/> 
    1. Scroll down to the **Parameters** section. 
@@ -227,7 +233,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
       * Under **7.4 Firewall Manager - S3 Bucket Configuration**, in **Create AWS S3 Bucket**, select **Yes** if you do not already have an S3 bucket in AWS S3. Select **No** to use an existing S3 bucket from AWS S3 which has Network Firewall Logs.
       * **Network Firewall Delivery Bucket Prefix**. Enter the Network Firewall Log Delivery S3 bucket prefix.
       * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7.png')} alt="Firewall configuration" style={{border: '1px solid black'}} width="700"/> 
-   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary lambdas, S3 buckets, Kenesis streams, and other objects, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid black'}} width="700"/> 
+   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid black'}} width="700"/> 
    1. Under **Capabilities and transforms**, select the acknowledgement boxes.
    1. Click **Create Stack**. The stack is created, and the solution is installed.
 1. Click **Start Using Sumo**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-start-using-sumo.png')} alt="Start Using Sumo button" style={{border: '1px solid black'}} width="400"/>
