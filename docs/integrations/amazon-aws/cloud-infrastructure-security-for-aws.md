@@ -176,7 +176,6 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     :::important
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
-   1. **Check AWS Role Permission**. Click the button to sign in to AWS and perform a check to see if you have permissions to install the solution. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions.
    1. **Deploy AWS**. Click the **Deploy AWS Security** button.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid black'}} width="700"/>
 1. Sign in the the [AWS Console](https://console.aws.amazon.com/console/). 
 1. In **Quick Create Stack**, fill out the fields to create the stack from the CloudFormation template.
@@ -228,12 +227,73 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
       * Under **7.4 Firewall Manager - S3 Bucket Configuration**, in **Create AWS S3 Bucket**, select **Yes** if you do not already have an S3 bucket in AWS S3. Select **No** to use an existing S3 bucket from AWS S3 which has Network Firewall Logs.
       * **Network Firewall Delivery Bucket Prefix**. Enter the Network Firewall Log Delivery S3 bucket prefix.
       * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7.png')} alt="Firewall configuration" style={{border: '1px solid black'}} width="700"/> 
-   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. 
-   1. Under **Capabilities and transforms**, select the acknowledgement boxes.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid black'}} width="700"/> 
-1. Click **Create Stack**. The stack is created, and the solution is installed.
+   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary lambdas, S3 buckets, Kenesis streams, and other objects, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid black'}} width="700"/> 
+   1. Under **Capabilities and transforms**, select the acknowledgement boxes.
+   1. Click **Create Stack**. The stack is created, and the solution is installed.
 1. Click **Start Using Sumo**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-start-using-sumo.png')} alt="Start Using Sumo button" style={{border: '1px solid black'}} width="400"/>
 1. Select an option to start using the solution. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-finish-installation.png')} alt="App hub page" style={{border: '1px solid black'}} width="800"/>
    
+### Troubleshoot installation
+
+Installation of Cloud Infrastructure Security for AWS uses an AWS CloudFormation template. While deploying using the template, you may receive error messages such as `CREATE_FAILED` status or `ROLLBACK_COMPLETE` status for various reasons. This section provides information on how to troubleshoot such AWS CloudFormation installation failures.
+
+#### Determine the cause of a CloudFormation installation failure
+
+This section walks you through the process of troubleshooting an AWS CloudFormation installation failure.
+
+To debug an AWS CloudFormation installation failure, do the following:
+
+1. After the stack rollback is complete and the status is ROLLBACK_COMPLETE, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="Troubleshooting 1" style={{border: '1px solid black'}} width="800"/>
+1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example. <br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} alt="Troubleshooting 2" style={{border: '1px solid black'}} width="800"/>
+1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason. <br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} alt="Troubleshooting 3" style={{border: '1px solid black'}} width="800"/>
+1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Troubleshooting 4" style={{border: '1px solid black'}} width="500"/>
+1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} alt="Troubleshooting 5" style={{border: '1px solid black'}} width="800"/>
+
+#### Optimize CloudTrail log ingest
+
+By default, the Cloud Infrastructure Security for AWS solution collects AWS CloudTrail logs for all AWS services. To reduce ingestion volume, you can define processing rules that limit log collection to only the logs that are relevant to dashboards provided by the solution.
+
+Define the processing rules for the Sumo Logic AWS CloudTrail Source that was created when you ran the CloudFormation template.
+
+For instructions, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule/). Create the following rules, selecting Include messages that match as the rule type, using these regular expressions:
+
+```
+.*\"eventSource\":\"elasticloadbalancing\.amazonaws\.com\".*
+.*\"eventSource\":\"dynamodb\.amazonaws\.com\".*
+.*\"eventSource\":\"ec2\.amazonaws\.com\".*
+.*\"eventSource\":\"rds\.amazonaws\.com\".*
+.*\"eventSource\":\"lambda\.amazonaws\.com\".*
+.*\"eventSource\":\"apigateway\.amazonaws\.com\".*
+.*\"eventSource\":\"ecs\.amazonaws\.com\".*
+.*\"eventSource\":\"elasticache\.amazonaws\.com\".*
+.*\"eventsource\":\"sns\.amazonaws\.com\".*
+.*\"eventsource\":\"sqs\.amazonaws\.com\".*
+```
+
+#### Common errors
+
+Below are some common errors that can occur while using the CloudFormation template. 
+
+| Error | Description | Resolution |
+|:--|:--|:--|
+| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | Do not install the AWS CloudFormation template in multiple regions or accounts with the same Access Key and Access ID. |
+| S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in  S3, or <br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it. |- Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
+| The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
+
+#### Roll back the Cloud Infrastructure Security for AWS Solution
+
+When you roll back the solution, all the resources that were created with the AWS CloudFormation stack are deleted. The resources deleted with a rollback include dashboards, collectors, sources, S3 buckets, Lambda functions, IAM roles, bucket policy, SNS topic, and SNS subscriptions. 
+
+Rolling back the solution deletes the main AWS CloudFormation stack, including the nested stack and associated Sumo Logic and AWS resources. The following rollback guidelines apply:
+
+* Sumo Logic resources are deleted based on the “Delete Sumo Logic Resources when the stack is deleted” flag provided during the AWS CloudFormation configuration. These resources include dashboards, collectors, and sources.
+* AWS resources are deleted by default, regardless of the flag provided. These resources include S3 buckets, Lambda functions, IAM roles, bucket policy, SNS topic, and SNS subscription.
+
+To uninstall the Cloud Infrastructure Security solution:
+
+1. Log in to your AWS account and go to [CloudFormation](https://console.aws.amazon.com/cloudformation/home).
+1. Select the main stack you want to delete.
+1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} alt="Delete stack" style={{border: '1px solid black'}} width="800"/>
 
 ## Cloud Infrastructure Security for AWS dashboards​
 
