@@ -81,8 +81,8 @@ Live mode restrictions do not apply to Dashboard. 
 * A Dashboard can have up to 100 queries.
 * Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard from the Search page.
-* A warning message will be displayed if the number of records returned from the lookup table is more than 1440.
-
+* Dashboard queries cannot return more than 1440 data points.
+  
 ## Rules
 
 * Auto Refresh applies to the whole dashboard, you can't configure it by panel.
