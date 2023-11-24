@@ -106,5 +106,5 @@ This will be displayed in the Text Panel as:
 ![Combined list](/img/dashboards/markdown_combined_list.png)
 
 :::info
-To know more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
+To learn more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
 :::
