@@ -22,12 +22,6 @@ To make text bold, surround the phrase in `** **`. For example, `**This text wil
 
 You can combine bold and italic syntax if you'd like.
 
-## Code formatting/block
-
-To make a snippet of text display as code, surround the phrase with: `‘ ‘ `
-
-To make a block of code, surround the content with: `‘‘‘ ‘‘‘`
-
 ## Headings
 
 Text can be set to one of six levels, by preceding the text with #:
