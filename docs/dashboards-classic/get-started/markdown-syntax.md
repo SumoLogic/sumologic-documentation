@@ -7,7 +7,7 @@ id: markdown-syntax
 The following Markdown Syntax options are supported in Dashboards. When your syntax is supported, you'll see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 
 :::important
-Images in Text Panels are not supported.
+Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.
 :::
 
 ## Basic text
