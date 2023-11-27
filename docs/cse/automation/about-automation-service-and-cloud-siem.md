@@ -98,7 +98,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
        * View Automations
        * Manage Automations
        * Execute Automations
-1. Add Automation Service capabilities. See [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities) in [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/). 
+1. [Add Automation Service role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities). 
 1. Follow the directions to [access the Automation Service](#access-the-automation-service-from-cloud-siem) to verify that you can see the **Automation** option in the **Configuration** menu.
 
 ## Support and compliance
