@@ -9,6 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud Infrastructure Security is a cloud-native, enterprise-grade solution composed of security apps, customizable dashboards, and tools to analyze your security data. It leverages Sumo Logic's core functionality, including data collection, ingestion, and storage, to produce findings that help protect your attack surfaces from threats.
 
+To get the most out of Cloud Infrastructure Security, use apps custom-built for the solution, like the [Cloud Infrastructure Security for AWS app](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws/). This app provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
+
 You can use Cloud Infrastructure Security for:
 * [Security data lake](/docs/cloud-infrastructure-security/data-lake/). Store your structured and unstructured data in a centralized repository so it can be easily accessed for analytics.
 * [Audit and compliance](/docs/cloud-infrastructure-security/audit-and-compliance/). Audit your systems to ensure they are in compliance with the rules set by governments and regulatory organizations. This helps protect end users and keep information private and secure, in addition to outlining protocols in the event of a breach.
