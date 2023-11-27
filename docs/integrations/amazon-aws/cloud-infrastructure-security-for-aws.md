@@ -26,7 +26,7 @@ Key features of the solution include:
 * **Security control failures**. See misconfigurations  in your environment that may leave you vulnerable to attackers.
 * **Suspicious activity**. See activity identified by anomaly detection across users, web interactions, networks, and Identity Access Management (IAM).
 
-Entities  presented in the dashboards are normalized from log sources into [AWS Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/master/ecs-reference.html), to provide seamless pivots between dashboards during threat investigations. 
+Entities presented in the dashboards are normalized from log sources into [AWS Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/master/ecs-reference.html), to provide seamless pivots between dashboards during threat investigations. 
 
 Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the solution. To see monitors for the solution, go to **Manage Data > Monitoring** and select the **Cloud Infrastructure Security for AWS** folder. 
 
@@ -149,8 +149,8 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
   * Manage Entity Type Configs
   * Create access keys
 * **Sumo Logic Access ID and Key**. When you deploy the solution, you’ll need to supply a Sumo Logic [Access ID and Access Key](/docs/manage/security/access-keys/), which enable you to use Sumo Logic APIs. Make sure you have the role capabilities listed above before generating the Access ID and Key.
-* **AWS credentials**. To deploy the solution, you will need to log onto the [AWS Console]([AWS Console](https://console.aws.amazon.com/console/)). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). 
-* **Monitors**. The Cloud Infrastructure Security for AWS solution comes with pre-packaged alerts in the form of Sumo Logic Monitors. To understand more about their capabilities please visit the [Monitors](/docs/alerts/monitors/) page.
+* **AWS credentials**. To deploy the solution, you will need to log onto the [AWS Console](https://console.aws.amazon.com/console). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). 
+* **Monitors**. The Cloud Infrastructure Security for AWS solution comes with pre-packaged alerts in the form of Sumo Logic Monitors. To learn more about their capabilities, visit the [Monitors](/docs/alerts/monitors/) page.
 
 #### Deployment options
 
@@ -252,10 +252,10 @@ This section walks you through the process of troubleshooting an AWS CloudForma
 
 To debug an AWS CloudFormation installation failure, do the following:
 
-1. After the stack rollback is complete and the status is ROLLBACK_COMPLETE, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="Troubleshooting 1" style={{border: '1px solid black'}} width="800"/>
+1. After the stack rollback is complete and the status is `ROLLBACK_COMPLETE`, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="Troubleshooting 1" style={{border: '1px solid black'}} width="800"/>
 1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example. <br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} alt="Troubleshooting 2" style={{border: '1px solid black'}} width="800"/>
 1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason. <br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} alt="Troubleshooting 3" style={{border: '1px solid black'}} width="800"/>
-1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Troubleshooting 4" style={{border: '1px solid black'}} width="500"/>
+1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Troubleshooting 4" style={{border: '1px solid black'}} width="400"/>
 1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} alt="Troubleshooting 5" style={{border: '1px solid black'}} width="800"/>
 
 #### Optimize CloudTrail log ingest
