@@ -94,7 +94,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
     * User
 1. **Inventory Key**. Select an attribute to use from the **Inventory Type** selected above. You can use second-level unnormalized inventory attributes in this field (for example, `fields.foo.bar`). Select **groups** if you want to use an existing Entity Group attribute. 
 1. **Source**. Select an inventory source from the pull-down list.
-1. **Value**. Enter a value for the attribute selected in the **Inventory Key** field above. You can use wildcards in this field (for example, `*OU=TCH,OU=PAR,OU=EUR*`). <br/>If **groups** was selected in the **Inventory Key** field, enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group. 
+1. **Value**. Enter a value for the attribute selected in the **Inventory Key** field above. You can use REGEX expressions in this field (for example, `[a-zA-Z]*OU=TCH,OU=PAR,OU=EUR[a-zA-Z]*`). <br/>If **groups** was selected in the **Inventory Key** field, enter the name of the group in the inventory system that contains the entities you want to add to the Entity Group. 
    :::note
    **Value** refers to a normalized attribute. The name of the raw attribute varies depending on the inventory source. And if you are entering a value for a group, keep in mind that just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
    :::
