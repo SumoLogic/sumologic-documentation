@@ -12,6 +12,9 @@ import Iframe from 'react-iframe';
 :::info
 **Preview**<br/>The Cloud Security Infrastructure for AWS solution is in a preview release, and has the following limitations:
 * The CloudFormation template only supports one AWS region (with multiple AWS accounts) during preview. You are encouraged to get started with one AWS region. 
+* E-mail notifications for installation errors are not enabled.
+* After initial installation, data collection may be delayed.
+* If you have already installed the [Amazon Security Quickstart](/docs/integrations/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources.
 * Pre-built monitors are not installed.
 :::
 
