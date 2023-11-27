@@ -23,7 +23,7 @@ Key features of the solution include:
 * **Security control failures**. See misconfigurations  in your environment that may leave you vulnerable to attackers.
 * **Suspicious activity**. See activity identified by anomaly detection across users, web interactions, networks, and Identity Access Management (IAM).
 
-Entities  presented in the dashboards are normalized from log sources into [AWS Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/master/ecs-reference.html), to provide seamless pivots between dashboards during threat investigations. 
+Entities presented in the dashboards are normalized from log sources into [AWS Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/master/ecs-reference.html), to provide seamless pivots between dashboards during threat investigations. 
 
 Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the solution. To see monitors for the solution, go to **Manage Data > Monitoring** and select the **Cloud Infrastructure Security for AWS** folder. 
 
