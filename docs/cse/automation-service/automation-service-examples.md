@@ -97,9 +97,7 @@ The following example shows how to configure a notification that sends an email 
 1. Edit the Sumo Logic CIP resource:
    1. Click the **Configuration** button (gear icon) at the top of the UI.
    1. Under **Integrations**, select **Automation**.
-   1. From the Automation screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-    :::note
-    {@import ../../reuse/cse-launch-csoar-automation.md}   
+   1. From the Automation screen, click **Manage Playbooks**.
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic CIP**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" width="600"/>
