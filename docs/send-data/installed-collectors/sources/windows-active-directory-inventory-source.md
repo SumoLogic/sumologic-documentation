@@ -26,7 +26,7 @@ The following information is collected:
 * Email address
 * Departments to which employee belongs
 * Employee’s manager
-* Security groups to which the employee is assigned, which allows Cloud SIEM Enterprise to determine the privileges the user has on the company network
+* Security groups to which the employee is assigned, which allows Cloud SIEM to determine the privileges the user has on the company network
 
 :::note
 Install a single Active Directory Source to collect inventory data from the entire AD domain.

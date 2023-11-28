@@ -277,6 +277,8 @@ workstation from the network.
 
 Define the question to be answered and the authorizer of the user choice selection and click ****Create**** to finalize.
 
+### Playbook Execution
+
 The results of execution - successes, failures, and outcomes - are
 visible the Playbook's individual node details. The results of
 enrichment, containment and custom Playbook actions undertaken on
