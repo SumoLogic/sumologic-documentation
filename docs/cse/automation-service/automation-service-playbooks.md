@@ -24,9 +24,6 @@ The following procedure describes how to view playbooks already installed in you
 1. Click the **Configuration** button (gear icon) at the top of the UI.
 1. Under **Integrations**, select **Automation**.
 1. From the **Automation** screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-   :::note
-   {@import ../../reuse/cse-launch-csoar-automation.md}     
-   :::
 1. View the list of playbooks available to run in automations.<br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} alt="Opened playbook" width="800"/>
 1. Click the elements in the playbook to see their details. For example, click actions (the boxes in the flow) to see the [integration](/docs/cse/automation-service/automation-service-integrations) resources that provide the actions.<br/><img src={useBaseUrl('img/cse/automations-action-example.png')} alt="Action example" width="600"/>
