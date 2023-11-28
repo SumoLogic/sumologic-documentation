@@ -176,7 +176,7 @@ To interact with most of the Automation Service features, you must have at least
 To use [integrations](/docs/cse/automation-service/automation-service-integrations), you must configure the connection for their resources.
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/>
-1. Click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
+1. Click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/> 
 1. Click **Integrations** in the left navigation bar.
 1. Select the integration whose resource you want to configure the connection for.
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
