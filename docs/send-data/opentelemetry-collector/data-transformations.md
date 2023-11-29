@@ -15,7 +15,7 @@ You can find more detailed information about the available OTTL functions and th
 
 Consider the following example log
 
-```username=user password=test```
+`username=user password=test`
 
 ```yaml
 processors:
