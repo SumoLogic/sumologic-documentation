@@ -1,5 +1,5 @@
 ---
-id: kubernetes
+slug: /send-data/collect-from-other-data-sources/kubernetes
 title: Kubernetes
 description: Sumo Logic offers a comprehensive Kubernetes Solution, however, if you only want to know how to set up collection you can follow our deployment guide referenced in this document.
 ---
