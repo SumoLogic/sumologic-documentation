@@ -15,11 +15,9 @@ authors:
 
 We are excited to annouce a bunch of improvements to our AWS Observability solution.  
 
-* **AWS Observability Hub**. A landing page to access all the capabilities of the AWS Observability solution including the Out of box dashboards, alerts, and perforamnce benachmark reports all from a single place.
-* **Log Searches for Troubleshooting**. Quickly troubleshoot issues within your AWS enviroment with pre baked log seaches. No need to learn the query syntax. These new searches can be accessed from the new hub page.
+* **AWS Observability Hub**. A landing page to access all the capabilities of the Sumo Logic AWS Observability solution, including the out-of-the-box dashboards, alerts, and performance benchmark reports, all from a single place.
+* **Log Searches for Troubleshooting**. Quickly troubleshoot issues within your AWS environment with pre-baked log searches. No need to learn the query syntax. These new searches can be accessed from the new hub page.
 
-To learn more about the AWS Observability solution and to setup it up, check out our documentation [here](/docs/observability/aws/). 
+To learn more about the AWS Observability solution and how to set it up, check out our documentation [here](/docs/observability/aws/). 
 
-:::note
-To access these new capabilities you just have to install the AWS Observability solution. If you have one already installed, congraulations, you will gain access to these new features automatically. 
-:::
+NOTE: To access these new capabilities you just have to install the AWS Observability solution. If you have one already installed, congratulations! You'll gain access to these new features automatically. 
