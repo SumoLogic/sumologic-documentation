@@ -13,7 +13,7 @@ You can find more detailed information about the available OTTL functions and th
 
 ### Example 1: Hashing a password in log body
 
-Consider the following example log
+Consider the following example log.
 
 `username=user password=test`
 
