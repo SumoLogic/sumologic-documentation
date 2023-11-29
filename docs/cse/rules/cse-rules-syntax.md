@@ -506,16 +506,21 @@ Extracts the network prefix from an IPv4 address. 
 
 ## hasThreatMatch
 
+Finds fields in Records matching values in [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists. 
+
 **Syntax**
 
 `hasThreatMatch([<fields>], <optional_filtering_predicate>)`
 
 Parameters:
-* `<fields>` is a list of comma separated field names (at least one is required).
-* `<optional_filtering_predicate>`  is an optional simple boolean expression on the threat indicator fields. 
-
+* `<fields>` is a list of comma separated field names. At least one field name is required.
+* `<optional_filtering_predicate>` is an optional simple boolean expression on the threat indicator fields. Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.
 
 **Examples**
+
+`hasThreatMatch([srcDevice_ip])`
+
+`hasThreatMatch([srcDevice_ip, dstDevice_ip])`
 
 `hasThreatMatch([srcDevice_ip], confidence > 50)`
 
