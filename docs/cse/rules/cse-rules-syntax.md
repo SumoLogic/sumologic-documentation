@@ -504,6 +504,25 @@ Extracts the network prefix from an IPv4 address. 
 
 `getCIDRPrefix("10.10.1.35", "24") // "10.10.1.0"`
 
+## hasThreatMatch
+
+**Syntax**
+
+`hasThreatMatch([<fields>], <optional_filtering_predicate>)`
+
+Parameters:
+* `<fields>` is a list of comma separated field names (at least one is required).
+* `<optional_filtering_predicate>`  is an optional simple boolean expression on the threat indicator fields. 
+
+
+**Examples**
+
+`hasThreatMatch([srcDevice_ip], confidence > 50)`
+
+`hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”s1”)`
+
+`hasThreatMatch([srcDevice_ip], source=”s2” OR (source=”s2” confidence > 50 AND))`
+
 ## haversine
 
 Returns the distance between latitude and longitude values of two coordinates in kilometers.
