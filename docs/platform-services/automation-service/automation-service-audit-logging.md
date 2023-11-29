@@ -56,8 +56,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Au
 
 ## _sourceName and _sourceHost assignment
 
-The `_sourceName` and `_sourceHost` fields are assigned to audit event
-logs as follows.
+The `_sourceName` and `_sourceHost` fields are assigned to audit event logs as follows.
 
 | Metadata Field | Assignment Description |
 |:--|:--|
