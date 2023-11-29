@@ -4,9 +4,10 @@ image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps
   - app catalog
-  - AWS Observability
-  - AWS Monitoring
-  - AWS Troubleshooting
+  - aws observability
+  - awso
+  - aws monitoring
+  - aws troubleshooting
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
