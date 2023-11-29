@@ -219,6 +219,11 @@ module.exports = {
       {
         redirects: Object.entries(cidRedirects).map(
           ([key, value]) => ({ from: key, to: value })
+        ).concat(
+          {
+            from: "/docs/send-data/kubernetes",
+            to: "/docs/send-data/kubernetes/v4"
+          }
         )
       },
     ],

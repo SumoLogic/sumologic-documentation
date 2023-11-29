@@ -12,7 +12,7 @@ import Iframe from 'react-iframe';
 
 This guide will walk you through setting up the [Sumo Logic Kubernetes solution](https://github.com/SumoLogic/sumologic-kubernetes-collection) in a few easy steps. This will:
 
-* Install the [Sumo Logic Kubernetes Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) in your Kubernetes environment
+* Install the [Sumo Logic Kubernetes Helm Chart](/docs/send-data/kubernetes/v4) in your Kubernetes environment
 * Set up data collection for your Kubernetes environment (orchestration, infrastructure, and app data)
 * Install the relevant app dashboards to view data from your Kubernetes environment and share them with others in your org
 * Install the necessary alert monitors to get alerted of any issues
