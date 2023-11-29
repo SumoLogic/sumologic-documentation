@@ -40,7 +40,6 @@ import Iframe from 'react-iframe';
 
 Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the following ways:
 * In Cloud SIEM, the Automation Service only supports automated enrichment, notification, and custom action types. 
-* Only Automation Service playbooks of the type **CSE** can be triggered from Cloud SIEM.
 * Using the Automation Service with Cloud SIEM does not include the incident and case management features from Cloud SOAR.
 * Playbooks, integrations, and actions in the Automation Service may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
 
@@ -65,7 +64,7 @@ Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the foll
 
 ## Access the Automation Service from Cloud SIEM
 
-An [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem) runs a playbook of type **CSE** in the Automation Service, which runs actions that are provided by integrations. This section shows you how to access each of these elements in the [Automation Service](/docs/platform-services/automation-service/). 
+An [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem) runs a playbook in the Automation Service, which runs actions that are provided by integrations. This section shows you how to access each of these elements in the [Automation Service](/docs/platform-services/automation-service/). 
 
 :::info
 Before you can access the Automation Service from Cloud SIEM, you must first [configure role capabilities](#configure-role-capabilities-for-cloud-siem-automation).
