@@ -21,6 +21,4 @@ We are excited to announce several improvements to our AWS Observability solutio
 
 To learn more about the AWS Observability solution and how to set it up, check out our documentation [here](/docs/observability/aws/). 
 
-:::note
-To access these new capabilities, you just have to install the AWS Observability solution. If you have one already installed, congratulations! You'll gain access to these new features automatically. 
-:::
+NOTE: To access these new capabilities, you just have to install the AWS Observability solution. If you have one already installed, congratulations! You'll gain access to these new features automatically. 
