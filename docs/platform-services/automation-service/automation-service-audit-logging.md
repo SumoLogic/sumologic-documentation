@@ -64,8 +64,7 @@ The `_sourceName` and `_sourceHost` fields are assigned to audit event logs as f
 
 ## Common parameters
 
-Each audit event log has common keys that categorize it to a product
-area and provide details of the event.
+Each audit event log has common keys that categorize it to a product area and provide details of the event.
 
 | Parameter | Description | Data Type |
 |:--|:--|:--|
