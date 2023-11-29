@@ -541,7 +541,7 @@ When you create an incident from an Insight, you can map the Insight attributes 
 | `tags[]` | `Tags` |
 
 :::note
-You cannot add additional required attributes to the incident template when creating incidents from Insights, or an error will result. Only those attributes sent over with Insights can be used as required attributes on the template. 
+When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template. 
 :::
 
 ### Working with Events
