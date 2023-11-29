@@ -9,6 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) provides event logs in JSON format on your account activity allowing you to monitor and audit changes. By default, the Audit Event Index is enabled for Cloud SOAR and Enterprise accounts.
 
+:::note
+Audit logging for the Automation Service uses the same logging as Cloud SOAR, since the Automation Service is based on core functionality in Cloud SOAR. See [Automation Service Audit Logging](/docs/platform-services/automation-service/automation-service-audit-logging/).
+:::
+
 <!--
 // Uncomment this part as soon as it is available.
 

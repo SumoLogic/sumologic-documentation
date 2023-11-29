@@ -2825,6 +2825,7 @@ integrations: [
             'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
             'platform-services/automation-service/automation-service-integration-framework',
           ],
