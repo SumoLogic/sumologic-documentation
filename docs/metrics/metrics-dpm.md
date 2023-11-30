@@ -20,7 +20,11 @@ You can view your data volume for metrics by navigating to **Manage Data > Metri
 Understanding the volume of metrics that you are ingesting is important because when you exceed the DPM limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 
 While you can also see metrics DPM breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics DPM screen to get more detailed information.
- 
+
+:::note
+To see data volume you need to have [Audit Index](/docs/manage/security/audit-indexes/audit-event-index) enabled.
+:::
+ 
 ## View Metrics DPM
 
 Navigate to **Manage Data > Metrics > Metrics DPM**.
