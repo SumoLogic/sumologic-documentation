@@ -385,13 +385,33 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Kubernetes',
+          label: 'Kubernetes Helm Chart',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'send-data/kubernetes/index'},
+          link: {type: 'doc', id: 'send-data/kubernetes/v4/index'},
           items: [
-            'send-data/kubernetes/helm-chart-overview',
-            'send-data/kubernetes/install-helm-chart',
+            {
+              type: 'category',
+              label: 'v4 (latest)',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/kubernetes/v4/index'},
+              items: [
+                'send-data/kubernetes/v4/helm-chart-overview',
+                'send-data/kubernetes/v4/install-helm-chart',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'v3',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'send-data/kubernetes/v3/index'},
+              items: [
+                'send-data/kubernetes/v3/helm-chart-overview',
+                'send-data/kubernetes/v3/install-helm-chart',
+              ],
+            },
           ],
         },
         {
