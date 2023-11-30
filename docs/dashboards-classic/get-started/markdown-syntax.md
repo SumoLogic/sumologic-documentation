@@ -7,7 +7,7 @@ id: markdown-syntax
 The following Markdown Syntax options are supported in Dashboards. When your syntax is supported, you'll see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 
 :::important
-Images in Text Panels are not supported.
+Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.
 :::
 
 ## Basic text
@@ -21,12 +21,6 @@ To make text italic, surround the phrase in `* *`. For example, `*This text will
 To make text bold, surround the phrase in `** **`. For example, `**This text will be bold**`
 
 You can combine bold and italic syntax if you'd like.
-
-## Code formatting/block
-
-To make a snippet of text display as code, surround the phrase with: `‘ ‘ `
-
-To make a block of code, surround the content with: `‘‘‘ ‘‘‘`
 
 ## Headings
 
@@ -104,3 +98,7 @@ precede each line with either a number and a period or an asterisk `*`.
 This will be displayed in the Text Panel as:
 
 ![Combined list](/img/dashboards/markdown_combined_list.png)
+
+:::info
+To learn more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
+:::

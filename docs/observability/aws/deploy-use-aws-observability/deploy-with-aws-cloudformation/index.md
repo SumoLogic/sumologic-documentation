@@ -239,8 +239,7 @@ Below are some common errors that can occur while using the CloudFormation templ
 | Error | Description | Resolution |
 |:--|:--|:--|
 | The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | Do not install the AWS CloudFormation template in multiple regions or accounts with the same Access Key and Access ID. |
-| S3 Bucket already exists. | The error can occur if:<br/>An S3 bucket with the same name exists in  S3, or<br/>
-The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it.	Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. | Remove the AWS CloudFormation Stack which references the S3 bucket. |
+| S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it. | - Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
 | The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
 
 ### Rolling back the AWS Observability Solution
