@@ -26,7 +26,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Audit Logs](Airtable API)|
+| 24 hours |  Audit Logs |
 
 ## Setup
 

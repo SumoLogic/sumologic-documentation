@@ -26,6 +26,12 @@ The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtainin
 This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
+## Data collected
+
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  Events data |
+
 ## Setup
 
 ### Vendor configuration

@@ -30,7 +30,7 @@ This source is not available in the [Fed deployment](/docs/api/getting-started#s
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Event data](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html) |
+| 10 hours |  [Event data](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html) |
 
 ## Setup
 

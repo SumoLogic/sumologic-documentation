@@ -23,8 +23,8 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 |:------------------|:----------------------------------------------|
-| Every 24 Hours   | [Get Organizations](https://developer.cisco.com/meraki/api-latest/#!get-organizations)                            |
-| Every 24 Hours   | [Get Organization Networks](https://developer.cisco.com/meraki/api-latest/#!get-organization-networks)                    |
+| Every 12 Hours   | [Get Organizations](https://developer.cisco.com/meraki/api-latest/#!get-organizations)                            |
+| Every 12 Hours   | [Get Organization Networks](https://developer.cisco.com/meraki/api-latest/#!get-organization-networks)                    |
 | Every 15 Minutes | [Get Organization Appliance Security Events](https://developer.cisco.com/meraki/api-v1/#!get-organization-appliance-security-events)  |
 | Every 15 Minutes | [Get Organization Configuration Changes](https://developer.cisco.com/meraki/api-v1/#!get-organization-configuration-changes)       |
 | Every 15 Minutes | [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events)                           |

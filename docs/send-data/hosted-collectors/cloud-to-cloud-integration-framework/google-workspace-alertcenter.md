@@ -26,11 +26,11 @@ This topic has information about the Google Workspace AlertCenter Cloud-to-Cloud
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
-## Data Sources
+## Data collected
 
-The Google Workspace AlertCenter Source consumes data from the [Alerts API](https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/list).
-
-The Source periodically fetches data from the API. The polling interval is 5 minutes.
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 minutes | [Alerts data](https://developers.google.com/admin-sdk/alertcenter/reference/rest/v1beta1/alerts/list) |
 
 ## Setup
 

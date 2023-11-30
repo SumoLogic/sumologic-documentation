@@ -25,7 +25,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Event data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 1 hour |  [Event data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
 
 ### Polling Interval and Salesforce API Rate Limits
 

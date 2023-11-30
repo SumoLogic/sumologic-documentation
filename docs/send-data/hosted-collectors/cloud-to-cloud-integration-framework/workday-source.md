@@ -28,8 +28,8 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  Activity Logs |
-| 5 min |  Sign On Logs |
+| 10 mins |  Activity Logs |
+| 10 mins |  Sign On Logs |
 
 ## Setup
 

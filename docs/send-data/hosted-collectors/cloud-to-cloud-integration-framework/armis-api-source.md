@@ -28,7 +28,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | Polling Interval | Data |
 | :--- | :--- |
 | 5 min |  Alerts data |
-| 5 min |  Device data |
+| 24 hours |  Device data |
 
 ## Setup
 

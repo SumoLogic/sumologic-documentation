@@ -19,7 +19,16 @@ This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Inte
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
-## Data Sources
+## Data collected
+
+| Polling Interval | Data |
+| :--- | :--- |
+| 24 hours | Web Team Info |
+| 24 hours | Web Users List |
+| 24 hours | Conversations List |
+| 5 mins | Web Team Access Logs |
+| 5 mins | Messages |
+| 5 mins | Audit Logs |
 
 The Slack Source uses the following Slack APIs to ingest web and audit events.
 

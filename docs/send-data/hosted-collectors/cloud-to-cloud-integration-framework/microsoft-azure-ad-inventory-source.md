@@ -28,8 +28,8 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Users](https://docs.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0) |
-| 5 min |  [Devices](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-overview?view=graph-rest-1.0) |
+| 12 hours |  [Users](https://docs.microsoft.com/en-us/graph/api/user-list?view=graph-rest-1.0) |
+| 12 hours |  [Devices](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-overview?view=graph-rest-1.0) |
 
 ## Setup
 

@@ -39,6 +39,10 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 The Tenable source is configured with a Tenable IO Access and Secret Key. Your account must have `ADMINISTRATOR [64]` user permissions.
 :::
 
+### Vendor configuration
+
+You need to have a Tenable account to generate Access Key and Secret Key. Follow the instruction in the [Tenable documentation](https://developer.tenable.com/docs/authorization) to generate Access Key and Secret Key.
+
 ### Source configuration
 
 When you create a Tenable source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).

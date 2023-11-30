@@ -35,7 +35,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Event data](https://docs.netskope.com/en/get-events-data.html) |
+| 5 sec |  [Event data](https://docs.netskope.com/en/get-events-data.html) |
 
 ## Setup
 

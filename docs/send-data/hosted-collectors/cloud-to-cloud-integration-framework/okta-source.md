@@ -23,6 +23,13 @@ It securely stores the required authentication, scheduling, and state tracking i
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
+## Data collected
+
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  System Log |
+| 24 hours |  Users/Users Group |
+
 ## Setup
 
 ### Vendor configuration

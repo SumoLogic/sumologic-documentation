@@ -15,9 +15,11 @@ The Miro Source API integration ingests audit logs obtained from the [Audit log 
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
-## Data Sources
+## Data collected
 
-The Miro API integration consumes data of the Audit Logs and sends it to Sumo Logic. The polling interval time for integration is 5 minutes.
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  Audit Logs |
 
 ## Prerequisite
 

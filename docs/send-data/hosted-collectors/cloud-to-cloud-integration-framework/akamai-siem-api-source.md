@@ -30,7 +30,7 @@ This source is not available in the [Fed deployment](/docs/api/getting-started#s
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Security events](https://developer.akamai.com/api/cloud_security/siem/v1.html)|
+| 30 seconds |  [Security events](https://developer.akamai.com/api/cloud_security/siem/v1.html)|
 
 ## Setup
 

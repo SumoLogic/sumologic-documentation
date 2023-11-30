@@ -25,10 +25,14 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min | [Assets](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf) |
-| 5 min | [Vulnerabilities](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) |
+| 1 hour | [Assets](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf) |
+| 24 hours | [Vulnerabilities](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) |
 
 ## Setup
+
+### Vendor configuration
+
+Identify your Qualys API server URLs and Qualys API Gateway URL as mentioned in the [Qualys documentation](https://www.qualys.com/platform-identification).
 
 ### Source configuration
 

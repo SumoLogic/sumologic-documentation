@@ -30,7 +30,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Vulnerabilities data](https://falcon.crowdstrike.com/documentation/98/spotlight-apis) |
+| 1 hour |  [Vulnerabilities data](https://falcon.crowdstrike.com/documentation/98/spotlight-apis) |
 
 ## Setup
 

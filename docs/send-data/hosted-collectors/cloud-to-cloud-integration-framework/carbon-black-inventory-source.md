@@ -24,6 +24,12 @@ The Carbon Black Inventory Source provides a secure endpoint to receive data f
 This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
+## Data collected
+
+| Polling Interval | Data |
+| :--- | :--- |
+| 10 hours |  [Device data](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/devices-api/) |
+
 ## Setup
 
 ### Vendor configuration

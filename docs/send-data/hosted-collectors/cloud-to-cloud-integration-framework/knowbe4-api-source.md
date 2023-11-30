@@ -27,7 +27,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | Polling Interval | Data |
 | :--- | :--- |
 | 5 min |  [User Event](https://developer.knowbe4.com/rest/userEvents#tag/Introduction) |
-| 5 min |  [Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) |
+| 24 hours |  [Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) |
 
 :::note
 C2C will skip the record if `started_at` data is not in the format of `yyyy-MM-ddTHH:mm:ss.SSSZ`.
