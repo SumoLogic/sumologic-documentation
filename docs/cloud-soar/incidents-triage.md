@@ -520,6 +520,30 @@ through `opt_8` and delete the field `opt_8`, the next field added will
 still become `opt_9`. It is important to remember these field numbers, as
 they will be used when the API is invoked.
 
+#### Attributes sent from Cloud SIEM
+
+You can ingest Cloud SIEM Insights into Cloud SOAR for incident triage using the `GetInsight` Cloud SOAR API. The following Insight attributes are returned. 
+
+When you create an incident from an Insight, you can map the Insight attributes to fields in Cloud SOAR as follows:
+
+| Attribute in Cloud SIEM | Field in Cloud SOAR | 
+| :-- | :-- | 
+| `assignee` | `Insight Assignee` (custom field) |
+| `created` | `Start time` |
+| `description` | `Additional Info` |
+| `entity.value` | `Primary Entity` (custom field) |
+| `entity.type` | `Entity Type` (custom field) |
+| `id` | `Insight ID` (custom field) |
+| `involvedEntities[].value` | `Involved Entities` (custom field) |
+| `readableId` | `Incident ID` (custom field) |
+| `severity` | `Severity` |
+| `status.displayName` | `Status` |
+| `tags[]` | `Tags` |
+
+:::note
+When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template. 
+:::
+
 ### Working with Events
 
 The Triage module is accessible from the Incidents section by clicking on Triage (or the name of the module if you have renamed it from the default of **Triage**). All events which have not been converted to an Incident will be displayed in a sortable table on the Triage main screen. Events may be sorted by any column values by clicking on the appropriate column.
