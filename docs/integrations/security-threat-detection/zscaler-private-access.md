@@ -144,7 +144,7 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 ## Installing the Zscaler Private Access App
 
-Now that you have set up collection for HAProxy, you can install the HAProxy App to use the pre-configured searches and dashboard that provide insight into your data.
+Now that you have set up collection for ZPA, you can install the ZPA App to use the pre-configured searches and dashboard that provide insight into your data.
 
 {@import ../../reuse/apps/app-install.md}
 
