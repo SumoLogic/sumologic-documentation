@@ -26,7 +26,7 @@ This Source is available in the [Fed deployment](/docs/api/getting-started/#sum
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 mins |  [System Log data]((https://developer.cisco.com/docs/secure-endpoint/?api_host=api.amp.cisco.com&api_version=v1#!introduction/secure-endpoint-api)) |
+| 5 mins |  [System Log data](https://developer.cisco.com/docs/secure-endpoint/?api_host=api.amp.cisco.com&api_version=v1#!introduction/secure-endpoint-api) |
 
 ## Setup
 
