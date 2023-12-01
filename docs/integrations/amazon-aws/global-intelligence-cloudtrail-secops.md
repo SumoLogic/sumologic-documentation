@@ -44,7 +44,8 @@ Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs. When this a
 
 :::info Important Notes
 
-<details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to two different Indexes and one Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
+<details>
+<summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to two different Indexes and one Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
 
 * To reduce false positives, the benchmarks and application filter out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware.
 * Security posture requirements may vary between AWS accounts for a given customer. For example, development accounts might have less strict controls than production accounts. The app supports filtering findings by AWS account ID to facilitate AWS account level posture assessment.

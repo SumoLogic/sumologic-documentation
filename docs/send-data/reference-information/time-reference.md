@@ -155,7 +155,8 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
 1. Click **Save** to save your custom timestamp formats.
 
 :::info Using our Classic UI?
-<details><summary>How to specify timestamp format in the Classic (Legacy) UI.</summary>
+<details>
+<summary>How to specify timestamp format in the Classic (Legacy) UI.</summary>
 
 1. Do one of the following:
    * If you're configuring a new Source, proceed to the next step.

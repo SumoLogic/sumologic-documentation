@@ -21,7 +21,8 @@ The app collects ECS logs and metrics for:
 
 ### Sample log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {

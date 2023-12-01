@@ -245,7 +245,8 @@ Sumo Logic supports collecting logs both via Syslog and a local log file. Utiliz
 
 Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
-<details><summary>Method A: Configure MariaDB to log to a local file.</summary>
+<details>
+<summary>Method A: Configure MariaDB to log to a local file.</summary>
 
 MariaDB logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector.
 
@@ -271,13 +272,15 @@ long_query_time=2
 
 </details>
 
-<details><summary>Method B: Configure a Sumo Logic Collector</summary>
+<details>
+<summary>Method B: Configure a Sumo Logic Collector</summary>
 
 To collect logs directly from the MariaDB machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 </details>
 
-<details><summary>Method C: Configure a Source</summary>
+<details>
+<summary>Method C: Configure a Source</summary>
 
 This section demonstrates how to configure sources for Error Logs and Slow Query Logs.
 

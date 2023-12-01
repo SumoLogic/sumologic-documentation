@@ -287,7 +287,8 @@ This section explains the steps to collect MySQL logs from a Kubernetes environm
 
 1. Follow the steps in [Method A](#Option_A:_Collect_MySQL_logs_written_to_standard_output) or [Method B](#Option_B:_Collect_MySQL_logs_written_to_log_files), depending on whether your logs are being written to standard output or to log files.
 
-<details><summary>Method 1: Collect MySQL logs written to standard output</summary>
+<details>
+<summary>Method 1: Collect MySQL logs written to standard output</summary>
 
 If your MySQL Helm chart/pod is writing the logs to standard output, follow these steps:
 
@@ -314,7 +315,8 @@ The Sumo Logic Kubernetes Collection process will automatically capture the logs
 
 </details>
 
-<details><summary>Method B: Collect MySQL logs written to log files</summary>
+<details>
+<summary>Method B: Collect MySQL logs written to log files</summary>
 
 This method is recommend for Slow Query Logs. If your MySQL helm chart/pod is writing its logs to log files, you can use a sidecar to send log files to standard out. To do so:
 

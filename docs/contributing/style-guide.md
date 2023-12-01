@@ -445,7 +445,8 @@ You can use an [expander](https://docusaurus.io/docs/next/markdown-features#deta
 You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
 
 ```html title="Copy and fill out for expanders"
-<details><summary>Title for the expander</summary>
+<details>
+<summary>Title for the expander</summary>
 
 Place long lists or lots of content in this section. The reader can expand/collapse as needed.
 
@@ -699,7 +700,8 @@ You can use a link to a file embedding the entire file, or embed a range of code
    :::
 1. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
 
-  <details><summary>More about <code>alt text</code></summary>
+  <details>
+<summary>More about <code>alt text</code></summary>
 
   Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
@@ -996,7 +998,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 * To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
 * To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-document`.
 
-<details><summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
+<details>
+<summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
 
 ```js title="sidebars.ts"
 //Contribution guide for documentation
@@ -1029,7 +1032,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 
 * To add a category, or dropdown list of documentation, use the following format:
 
-<details><summary>Example: add sidebar category example with additional section</summary>
+<details>
+<summary>Example: add sidebar category example with additional section</summary>
 
 ```js title="sidebars.ts"
     {
@@ -1060,7 +1064,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 
 * To add a dedicated sidebar, use the following format:
 
-<details><summary>Example: adding a dedicated sidebar for a guide</summary>
+<details>
+<summary>Example: adding a dedicated sidebar for a guide</summary>
 
 ```js title="sidebars.ts"
 module.exports = {

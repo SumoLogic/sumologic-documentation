@@ -41,7 +41,8 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 }
 ```
 
-<details><summary>Docker stats message (click to expand)</summary>
+<details>
+<summary>Docker stats message (click to expand)</summary>
 
 ```json title="Docker stats message"
 {

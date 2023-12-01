@@ -218,7 +218,8 @@ The following table explains the configuration file parameters and their usage.
 
 ### Sample Log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {

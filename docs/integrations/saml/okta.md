@@ -18,7 +18,8 @@ The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System
 
 ### Sample Log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {

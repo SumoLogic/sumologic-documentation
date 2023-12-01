@@ -143,7 +143,8 @@ Now that you have set up collection for AWS CloudTrail, install the Sumo Logic A
 
 :::info
 
-<details><summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
+<details>
+<summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
 
 ### Scan interval issues
 

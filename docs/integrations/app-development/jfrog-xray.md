@@ -136,7 +136,8 @@ To add a hosted collector and HTTP source:
 
 This section covers the various ways in which to collect logs from JFrog Xray and send them to Sumo Logic. The logs are then shown in dashboards as part of the JFrog Xray App. You can configure a Sumo Logic collector for JFrog Xray in Amazon Web Services (AWS) using AWS Lambda service, or use a script on a Linux machine with a cron job. Choose the method that best suits your environment:
 
-<details><summary>Method A: Sumo Logic JFrog Xray SAM application</summary>
+<details>
+<summary>Method A: Sumo Logic JFrog Xray SAM application</summary>
 
 In this collection method, you deploy the SAM application, which creates the necessary resources in your AWS account.
 
@@ -166,7 +167,8 @@ To configure collection for multiple JFrog Xray instances, do the following:
 
 </details>
 
-<details><summary>Method B: Sumo Logic JFrog Xray Script-based collection</summary>
+<details>
+<summary>Method B: Sumo Logic JFrog Xray Script-based collection</summary>
 
 This section provides instructions for configuring script based collection for the Sumo Logic JFrog Xray App.
 

@@ -239,7 +239,8 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 1. **Install Telegraf if you haven’t already. **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
+<details>
+<summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
 
 ```sql
 [[inputs.win_perf_counters]]

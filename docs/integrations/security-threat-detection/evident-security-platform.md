@@ -23,7 +23,8 @@ For details on the log format and definitions, refer to Evident.io documentation
 
 ### Sample Log Message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {

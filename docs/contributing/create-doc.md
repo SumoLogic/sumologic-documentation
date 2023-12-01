@@ -42,7 +42,8 @@ In your IDE, write the body of your doc.
 
 :::tip Recommended authoring tools
 
-<details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
+<details>
+<summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
 
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
    * Markdown All in One

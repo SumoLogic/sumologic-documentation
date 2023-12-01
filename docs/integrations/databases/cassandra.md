@@ -303,7 +303,8 @@ Both the methods require the Jolokia agent to collect metrics. The steps to conf
 
 Below we have defined both the ways in which collection can be configured.
 
-<details><summary>Method A: Using Telegraf and Installed Collector</summary>
+<details>
+<summary>Method A: Using Telegraf and Installed Collector</summary>
 
 We use the Telegraf operator for Cassandra metric collection and Sumo Logic Installed Collector for collecting Cassandra logs. The diagram below illustrates the components of the Cassandra collection in a non-Kubernetes environment. Telegraf runs on the same system as Cassandra, and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to obtain Cassandra metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Cassandra on the other hand are sent to a Sumo Logic Local File source.
 
@@ -489,7 +490,8 @@ At this point, Cassandra logs should start flowing into Sumo Logic.
 
 </details>
 
-<details><summary>Method B: Using OpenTelemetry</summary>
+<details>
+<summary>Method B: Using OpenTelemetry</summary>
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and filelog receiver for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic.
 

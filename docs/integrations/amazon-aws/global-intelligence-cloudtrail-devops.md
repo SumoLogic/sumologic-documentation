@@ -90,7 +90,8 @@ state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
 
 ### Sample Query
 
-<details><summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
+<details>
+<summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
 
 ```sql
 // id=@config_lambda_categorical_values

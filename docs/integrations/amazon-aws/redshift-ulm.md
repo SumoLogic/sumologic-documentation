@@ -32,7 +32,8 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 '2018-05-21T06:20:09Z UTC [ db=dev user=himanshu pid=64458 userid=35 xid=5143208 ]' LOG: drop user testuser3
 ```
 
-<details><summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
+<details>
+<summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
 
 ```json title="Amazon CloudTrail Redshift Log Sample"
 {

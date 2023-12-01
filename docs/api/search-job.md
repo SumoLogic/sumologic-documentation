@@ -405,7 +405,8 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 **Method**: `POST` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs`
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -600,7 +601,8 @@ curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs
 ```
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -633,7 +635,8 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 **Method:** `GET` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -680,7 +683,8 @@ curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/js
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 ```
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -754,7 +758,8 @@ The search job status informs the user about the number of found messages. The m
 **Method:** `GET`  <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/messages?offset=<OFFSET>&limit=<LIMIT>`
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -814,13 +819,15 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 --user <ACCESSID>:<ACCESSKEY> 'https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80/messages?offset=0&limit=10'
 ```
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
 </details>
 
-<details><summary>This is the formatted result document (click to expand)</summary>
+<details>
+<summary>This is the formatted result document (click to expand)</summary>
 
 ```json
 {
@@ -970,7 +977,8 @@ The search job status informs the user as to the number of produced records, if 
 **Method: `GET`** <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/records?offset=<OFFSET>&limit=<LIMIT>`
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -1072,7 +1080,8 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
 **Method:** `DELETE` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 
@@ -1111,7 +1120,8 @@ curl -b cookies.txt -c cookies.txt -X DELETE
 https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 ```
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 

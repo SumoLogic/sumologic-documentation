@@ -337,7 +337,8 @@ Follow the instructions to set up log collection:
    * **warning** (only very important / critical messages are logged)
 2. **Configure Redis to log to a local file or syslog**. As part of this step, you will make a decision on how to export Redis logs and then accordingly configure your Redis cluster.
 
-<details><summary>Option A: Configure Redis logs to go to log files</summary>
+<details>
+<summary>Option A: Configure Redis logs to go to log files</summary>
 
 With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/installed-collectors/sources/local-file-source) Sumo Logic Installed collector.
 
@@ -359,7 +360,8 @@ After determining the location of conf file modify the **redis.conf** configurat
 
 </details>
 
-<details><summary>Option B: Configure Redis logs to stream data to a Syslog source</summary>
+<details>
+<summary>Option B: Configure Redis logs to stream data to a Syslog source</summary>
 
 With this option, Redis logs can be streamed to the [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) of a Sumo Logic Installed Collector.
 
