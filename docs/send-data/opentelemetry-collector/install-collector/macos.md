@@ -266,7 +266,7 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-Here are some basic troubleshooting steps on MacOS.
+Here are some basic troubleshooting steps on macOS.
 
 To verify that the Launchd daemon has been installed:
 
