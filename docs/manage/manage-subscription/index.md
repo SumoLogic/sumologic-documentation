@@ -71,4 +71,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to delete your org from Sumo Logic when on a Free or Trial account.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/manage-subscription/fedramp-capabilities"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>FedRAMP Capabilities</h4></a>
+  <p>Learn the capabilities included with Sumo Logic’s FedRAMP solution.</p>
+  </div>
+</div>
 </div>

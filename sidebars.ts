@@ -331,7 +331,7 @@ module.exports = {
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/hosted-collectors/ms-office-audit-source',
+                'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },
             {
@@ -636,6 +636,7 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
+            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -676,6 +677,7 @@ module.exports = {
         'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
+        'manage/manage-subscription/fedramp-capabilities',
       ]
     },
     {
@@ -946,6 +948,7 @@ module.exports = {
           ],
         },
         'dashboards/locate-deviations-time-series',
+        'dashboards/restricted-operators-dashboards',
         'dashboards/set-custom-time-ranges',
         'dashboards/scheduled-report',
         'dashboards/export-dashboard-new',
@@ -1821,6 +1824,7 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
+      'integrations/product-list',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1911,6 +1915,7 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
+        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
@@ -2454,7 +2459,6 @@ integrations: [
    ],
  },
 ],
-
 // OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
@@ -2666,19 +2670,14 @@ integrations: [
         },
         {
           type: 'category',
-          label: 'Automation Service',
+          label: 'Automation',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'cse/automation-service/index'},
+          link: {type: 'doc', id: 'cse/automation/index'},
           items: [
-            'cse/automation-service/about-automation-service',
-            'cse/automation-service/automation-service-automations',
-            'cse/automation-service/automation-service-app-central',
-            'cse/automation-service/automation-service-playbooks',
-            'cse/automation-service/automation-service-integrations',
-            'cse/automation-service/automation-service-examples',
-            'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
           ],
         },
         {
@@ -2800,6 +2799,34 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
+        'manage/users-roles/roles/rbac-for-indexes'
+      ],
+    },
+  ],
+  // Platform services
+  platformservices: [
+    {
+      type: 'category',
+      label: 'Platform Services',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'platform-services/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/automation-service/index'},
+          items: [
+            'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/automation-service-app-central',
+            'platform-services/automation-service/automation-service-playbooks',
+            'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-bridge',
+            'platform-services/automation-service/automation-service-integration-framework',
+          ],
+        },
       ],
     },
   ],

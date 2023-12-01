@@ -102,14 +102,14 @@ This section provides instructions for configuring log collection for the Micros
 To collect logs for the Microsoft Office 365 App, do the following:
 
 1. One [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. One [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
+2. One [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
     * Office 365 Azure AD logs
     * Office 365 Exchange logs
     * Office 365 SharePoint logs
     * Office 365 General logs
     * Office 365 Data Loss Prevention (DLP) event logs
 
-For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source.md).
+For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md).
 
 We recommend the following Source Category naming convention:
 * **Azure AD:** O365/Azure
