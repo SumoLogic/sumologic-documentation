@@ -8,7 +8,7 @@ Ingest budgets control the daily volume of log data sent to Sumo Logic. Log dat
 
 Ingest budgets automatically reset their capacity utilization tracking every 24 hours based on the time and time zone you specify. For example, you can schedule an ingest budget to refresh every day at 02:00 in the America/Los_Angeles time zone. You can manually [reset an ingest budget](#reset-ingest-budget) at any time.
 
-An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset. To track and schedule alerts on ingest budget capacity-usage and resets see [audit ingest budgets](#audit-index-queries).
+An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset. To track and schedule alerts on ingest budget capacity-usage and resets see [audit ingest budgets](#audit-index-budgets).
 
 ## Availability
 

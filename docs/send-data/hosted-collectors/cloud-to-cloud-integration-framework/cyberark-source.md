@@ -63,10 +63,18 @@ To configure a CyberArk EPM Source, follow the steps below:
     * For the US datacenter, the dispatch server URL is `https://login.epm.cyberark.com`.
     * For the EU datacenter, the dispatch server URL is `https://eu.epm.cyberark.com`.
 1. **Application ID**. An application ID is a unique identifier that helps an API recognize which application or program is accessing it. It's like a name tag that allows the API to keep track of different applications using it. For example, *sumologic*.
-1. **Rate Limit C2C**. This option removes the request limitations imposed on the CyberArk C2C source, allowing it to make as many requests as possible. By default, the request limitations are set to 5 requests per minute for admin audit events and 1000 requests per 5 minutes for detailed raw and aggregated policy audit events. If you need to make more requests than the default limits allow, you can contact the CyberArk support team to request the limitations be removed.
-1. **Collect detailed raw events**. This option enables the CyberArk C2C Source to collect detailed raw events from the CyberArk EPM (Endpoint Privilege Manager).
-1. **Collect aggregated policy audit events**. This option enables the C2C Source to collect aggregated policy audit events from the CyberArk EPM (Endpoint Privilege Manager).
-1. **Collect policy audit raw events**. This option enables the C2C Source to collect policy audit raw events from the CyberArk EPM.
+1. **Adjust Rate Limit for Admin Audit Events**. This option allows to customize the number of requests the CyberArk C2C source can make to [AdminAudit](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetAdminAuditData.htm) endpoint. By default, it's set to 5 requests every 60 seconds, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm).
+	1. **Number of Calls (optional)**: The number of calls in the given time frame. This field is pre-filled with 5.
+	1. **Per Second(s) (optional)**: The duration of the time frame. This field is pre-filled with 60.
+1. **Collect Detailed Raw Events**. This option enables the CyberArk C2C Source to collect detailed raw events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Detailed Raw Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetDetailedRawEvents.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm). Use below options to adjust this settings.
+	1. **Number of Calls (optional)**: The number of calls in the given time frame. This field is pre-filled with 1000.
+	1. **Per Second(s) (optional)**: The duration of the time frame. This field is pre-filled with 300.
+1. **Collect Aggregated Policy Audit Events**. This option enables the C2C Source to collect aggregated policy audit events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Aggregated Policy Audit Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetAggregatedPolicyAudits.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm). Use below options to adjust this settings.
+	1. **Number of Calls (optional)**: The number of calls in the given time frame. This field is pre-filled with 1000.
+	1. **Per Second(s) (optional)**: The duration of the time frame. This field is pre-filled with 300.
+1. **Collect Policy Audit Raw Events**. This option enables the C2C Source to collect policy audit raw events from the CyberArk EPM. By default, the source can make 1000 requests every 5 minutes to [Policy Audit Raw Events](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/GetPolicyAuditRawEventDetails.htm) endpoint, as stated in the [CyberArk API documentation](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm). Use below options to adjust this settings.
+	1. **Number of Calls (optional)**: The number of calls in the given time frame. This field is pre-filled with 1000.
+	1. **Per Second(s) (optional)**: The duration of the time frame. This field is pre-filled with 300.
 1. **Polling Interval**. The polling interval is the frequency at which the CyberArk C2C Source will check for updates from the CyberArk EPM (Endpoint Privilege Manager). This field is pre-filled with 600.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -123,7 +131,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 * **Session Timeout**. The session timeout for all APIs is part of the session token and is defined by the Timeout for inactive session Server Configuration parameter.
 
-* **Remove Request Limitations**. It's important to note that the CyberArk C2C Source enforces limitations on the number of requests that can be made to the server by default. In addition, the server may have its own limit on how many calls can be made within a minute. For more information, refer to the [API Limitations documentation](https://docs.cyberark.com/Product-Doc/OnlineHelp/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm#LimitationsfornewAPIs).  
+* **Adjust Request Limitations**. The CyberArk C2C source has default restrictions on the number of requests to the CyberArk EPM Server, as explained in the [CyberArk API Limitations](https://docs.cyberark.com/EPM/Latest/en/Content/WebServices/WebServicesIntro.htm#APIlimitations) documentation. However, if your server has its custom limit for requests per second(s), you can use the provided options when configuring the source.
 
 :::note
 When setting the poll frequency, it's recommended to consider these limitations and set the frequency to a reasonable value to ensure that the C2C operates efficiently without overwhelming the server.

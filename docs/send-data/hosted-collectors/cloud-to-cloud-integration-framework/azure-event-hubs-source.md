@@ -13,15 +13,17 @@ import MyComponentSource from '!!raw-loader!/img/c2c/azure-event-hubs/example.js
 import TerraformExample from '!!raw-loader!/img/c2c/azure-event-hubs/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::info
-If you're using our new Cloud-to-Cloud source collection, see [Migrating from Azure function-based collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+:::note
+Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
 :::
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
 
-The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
+This cloud-to-cloud Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
-Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection source has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
+:::tip Migrating to C2C
+See [Migrating from Azure Function-Based Collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
+:::
 
 :::note
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
