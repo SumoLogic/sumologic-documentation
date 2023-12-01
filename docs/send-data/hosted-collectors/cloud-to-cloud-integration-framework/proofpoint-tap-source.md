@@ -29,21 +29,24 @@ This source is available in the [Fed deployment](/docs/api/troubleshooting#depl
 The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in their [documentation](https://help.proofpoint.com/Threat_Insight_Dashboard/API_Documentation/SIEM_API). The integration will only be able to fetch a maximum of the last 7 days data. So there is a chance of data loss if the C2C stops functioning for more than a 7-day time interval.
 :::
 
+## Data collected
 
-## Prerequisite
+| Polling Interval | Data |
+| :--- | :--- |
+| 300 seconds |  Clicks |
+| 300 seconds |  Messages |
+
+## Setup
+
+### Vendor configuration
 
 The integration must be configured with a service credential (`Service Principal`) and API secret key.
 
-The integration supports two types of event collection:
-
- * `clicks` - collect Clicks blocked events and Clicks permitted events.
- * `messages` - collect Messages blocked events and Messages permitted events.
-
-## Copy log options
+#### Copy log options
 
 There are two options to be aware of, **Copy logs for each recipient** and **Copy logs for each MessagePart**. With both options enabled, the integration creates and ingests four total events, for one original event.
 
-### Copy logs for each recipient
+#### Copy logs for each recipient
 
 If this is enabled, the integration will create a duplicate log, one for each recipient listed in the `recipients` section of a message. For example, with the following event:  
 
@@ -136,7 +139,7 @@ If this is enabled, the integration will create a duplicate log, one for each re
 
 Two total event logs would be created, one with the `recipient` field of `clark.kent@pharmtech.zz` and one with the `recipient` field of `diana.prince@pharmtech.zz`. If this option is disabled, the above event will be ingested without any changes.
 
-### Copy logs for each MessagePart
+#### Copy logs for each MessagePart
 
 This will create duplicate logs, one for each value within `MessageParts`. Take the above message. If enabled, the integration will log two events. One with `MessageParts` of:  
 

@@ -28,7 +28,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Events data](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Overview)|
+| 5 min |  [Events data](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html#section/Overview) |
 
 ## Setup
 
@@ -59,9 +59,7 @@ To configure a JumpCloud Directory Insights source:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
-
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|

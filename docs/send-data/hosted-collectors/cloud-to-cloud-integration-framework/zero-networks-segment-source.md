@@ -37,8 +37,8 @@ The Zero Networks Segment source requires you to provide the API key and Network
 - Sign in to the Zero Networks platform and create an API Key.
 - (Optional) Follow the below steps to create Network Activity Filters:
   1. Go to **Activities** page.
-  2. Under **Network** tab, apply the required filters.
-  3. Copy the filters from the URL.<br/><img src={useBaseUrl('img/send-data/filters.png')} alt="zero-networks-filters" width="700" />
+  1. Under **Network** tab, apply the required filters.
+  1. Copy the filters from the URL.<br/><img src={useBaseUrl('img/send-data/filters.png')} alt="zero-networks-filters" width="700" />
 
 ### Source configuration
 

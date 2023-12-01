@@ -60,7 +60,7 @@ Druva supports OAuth 2.0-based authentication for incoming requests. Every use o
 
 All requests to Druva APIs are authenticated using OAuth 2.0 access tokens which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
 
-The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **Base URL**. To get these, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
+The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **API Endpoint URL**. To get these, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 
 ### Source configuration
 
@@ -76,7 +76,7 @@ To configure a Druva Source:
 1. (Optional) **Fields**. Click the **+Add** to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Base URL**. Choose the base url from the drop-down menu as per your requirements — [Data Governance Cloud](https://apis.druva.com) and [Data GovernanceGov Cloud](https://govcloudapis.druva.com).
+1. **API Endpoint URL**. Enter your API Endpoint URL. To get API Endpoint URL, follow the instructions from [Create and Manage Druva API Credentials](https://developer.druva.com/docs/migration-process).
 1. **Client ID**. Enter your Client ID. To get Client ID, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 1. When you are finished configuring the Source, click **Save**.

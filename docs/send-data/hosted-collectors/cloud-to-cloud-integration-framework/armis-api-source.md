@@ -59,7 +59,7 @@ To configure an Armis Source:
    :::info
    Armis Instance URL is the Armis hostname. For example, `https://armis-instance.armis.com`.
    :::
-1. In **Secret Key**, enter your API secret key that you have generated in [Setup and Configuration](#setup-and-configuration) section.
+1. In **Secret Key**, enter your API secret key that you have generated in [Vendor configuration](#vendor-configuration) section.
 1. In **Armis API selection**. Choose the data sources from which you want to ingest data. The integration provides the option to you to select either one or both of the data sources.
    * If **Alert API** is selected, the integration will fetch alert data.
      * Permission `Alert>Read` must be provided to fetch alert data.

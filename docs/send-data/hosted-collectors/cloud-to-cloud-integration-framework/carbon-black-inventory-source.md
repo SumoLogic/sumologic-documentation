@@ -52,7 +52,7 @@ To configure a Carbon Black Inventory Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **CB Cloud Domain**. Enter your Carbon Black domain, such as `dev-prod05.conferdeploy.net`. See [this knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use.
-1. **API Key**. Enter the Carbon Black API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the [Authentication](#authentication) section.
+1. **API Key**. Enter the Carbon Black API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the [Vendor configuration](#vendor-configuration) section.
 1. **API ID**. Enter your Carbon Black API ID correlated to your API key.
 1. **Org Key**. Enter your Carbon Black Org key, found in your Carbon Black product console under **Settings > API Access > API Keys.**
 1. The **Polling Interval** is set to 300 seconds by default, you can adjust it based on your needs.
@@ -88,7 +88,7 @@ The following table shows the **config** parameters for a Carbon Black Invent
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | domain | String | Yes |  `null` | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-api/ta-p/67346) to determine which domain to use. |  |
-| api_key | String | Yes |  `null` | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Authentication section](/docs/send-data/use-json-configure-sources). |  |
+| api_key | String | Yes |  `null` | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs. |  |
 | api_id | String | Yes |  `null` | The Carbon Black Cloud API ID correlated to your API key. |  |
 | org_key | String | Yes |  `null` | Your Carbon Black Cloud Org key, found in your Carbon Black product console under Settings > API Access > API Keys. |  |
 | pollingInterval | Integer | No |  300 | This sets how many seconds the Source checks for new data. The default is 60 seconds. |  |

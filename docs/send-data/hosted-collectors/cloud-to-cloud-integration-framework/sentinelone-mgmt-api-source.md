@@ -37,7 +37,7 @@ The SentinelOne Mgmt API Source requires authentication with a token associat
 
 To generate an API token:
 
-1. Log in to the SentinelOne Management Console with Admin user credentials.
+1. Sign in to the SentinelOne Management Console with Admin user credentials.
 1. In the Management Console, click **Settings**.
 1. In the **Settings** view, click **Users**.
 1. Click **New User**.

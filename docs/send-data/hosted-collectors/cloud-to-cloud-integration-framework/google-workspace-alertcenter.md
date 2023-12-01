@@ -70,7 +70,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
 1. **Delegated User Email.** Enter the admin email address for the domain.
-1. **Google Workspace AlertCenter Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#step-1-create-service-account-credentials).
+1. **Google Workspace AlertCenter Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#vendor-configuration).
 1. **Exclude Alert Types**. (Optional) Enter the data alert types and scope that you don't want to send to Sumo Logic.
 :::note
 All alert types are selected by default unless you exclude some of the alert types in the config JSON schema.
