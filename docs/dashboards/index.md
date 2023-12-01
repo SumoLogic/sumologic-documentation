@@ -86,6 +86,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/dashboards/restricted-operators-dashboards"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Restricted Operators in Dashboards</h4></a>
+  <p>Learn about the restrictions when you use operators with dashboards.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/dashboards/share-dashboard-new"><img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="40"/><h4>Sharing Dashboards</h4></a>
   <p>Learn how to share a custom dashboard with colleagues.</p>
   </div>

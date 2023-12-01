@@ -4,26 +4,21 @@ title: Product List
 description: This article lists all the products that Sumo Logic integrates with.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This article lists all the products that Sumo Logic integrates with, including the types of integrations we offer. 
 
 Types of integrations:
-* **Apps**. Pre-built applications with dashboards that provide quick information about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps/Integrations](/docs/integrations/) for documentation about apps. 
+* **Apps**. Pre-built applications with dashboards that provide robust analytics about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/) for more information. 
 * **Collectors**. Agents that collect data from the product. See [Send Data](/docs/send-data/) for documentation about collectors.
 * **Partner integrations**. Apps and integrations that are provided by members of our partner network. See [Partner Ecosystem Apps](/docs/integrations/partner-ecosystem-apps/) and [Partner Integrations for Sumo Logic](/docs/integrations/partner-integrations/) for more information. 
 * **Webhooks**. Automated connections from the product to Sumo Logic. See [Webhooks](/docs/integrations/webhooks/buddy/) and [Webhook Connections](/docs/alerts/webhook-connections/) for available webhooks. 
 
 <!-- 
-* **Parsers**. Scripts that parse logs and normalize them into structured records. Use the [parser editor](/docs/cse/schema/parser-editor/) to see products with a parser. 
+* **Community apps**. Apps provided by internal and external users and our creator community. See [Sumo Logic Community Ecosystem Apps](/docs/integrations/community-ecosystem-apps/) for more information.
 * **Mappings**. Scripts that map messages fields to Record attributes in Cloud SIEM. Use [Log Mappings](/docs/cse/ingestion/view-mappers-for-product/) to see products with mappings.
 * **OIF integrations**. Open Integration Framework integrations for automation. To find products with OIF integrations, search for the products in App Central for [Cloud SIEM](m/docs/cse/automation-service/automation-service-app-central/) or [Cloud SOAR](/docs/cloud-soar/automation/#app-central). 
+* **Parsers**. Scripts that parse logs and normalize them into structured records. Use the [parser editor](/docs/cse/schema/parser-editor/) to see products with a parser. 
 -->
 
 
@@ -54,7 +49,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-auto-scaling-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon EC2 Auto Scaling](https://aws.amazon.com/ec2/autoscaling/) | 	App: [Amazon EC2 Auto Scaling](/docs/integrations/amazon-aws/amazon-ec2-auto-scaling/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-elastic-graphics-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Amazon EC2 Elastic Graphics](https://aws.amazon.com/ec2/elastic-graphics/) | 	App: [Amazon EC2 Elastic Graphics](/docs/integrations/amazon-aws/amazon-ec2-elastic-graphics/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-ec2-spot-fleet-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Amazon EC2 Spot Fleet](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet.html) | 	App: [Amazon EC2 Spot Fleet](/docs/integrations/amazon-aws/amazon-ec2-spot-fleet/)	 | 
-|  <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>   | [Amazon ECS](https://aws.amazon.com/ecs/)  | 	Apps: <br/>- [Amazon ECS (With Container Insights and Traces)](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/) <br/>- [Amazon ECS (Without Container Insights and Traces)](/docs/integrations/amazon-aws/elastic-container-service/)	<br/>- Collectors: <br/>- [Collect AWS ECS Fargate Container Logs](/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection/) <br/>- [Collect Logs from AWS Fargate](/docs/send-data/collect-from-other-data-sources/collect-logs-aws-fargate/) | 
+|  <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>   | [Amazon ECS](https://aws.amazon.com/ecs/)  | 	Apps: <br/>- [Amazon ECS (With Container Insights and Traces)](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/) <br/>- [Amazon ECS (Without Container Insights and Traces)](/docs/integrations/amazon-aws/elastic-container-service/)	<br/>Collectors: <br/>- [Collect AWS ECS Fargate Container Logs](/docs/send-data/collect-from-other-data-sources/aws-fargate-log-collection/) <br/>- [Collect Logs from AWS Fargate](/docs/send-data/collect-from-other-data-sources/collect-logs-aws-fargate/) | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="Thumbnail icon" width="50"/>   | [Amazon EKS](https://aws.amazon.com/eks/)  | 	App: [Amazon EKS - Control Plane](/docs/integrations/amazon-aws/eks-control-plane/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-elastic-block-store-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Elastic Block Store](https://aws.amazon.com/ebs/)  | 	App: [Amazon Elastic Block Store (Amazon EBS)](/docs/integrations/amazon-aws/amazon-elastic-block-store/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/amazon-elastic-file-system-logo.png')} alt="Thumbnail icon" width="50"/>   | [Amazon Elastic File System](https://aws.amazon.com/efs/)  | 	App: [Amazon Elastic File System (Amazon EFS)](/docs/integrations/amazon-aws/amazon-elastic-file-system/)	 | 
@@ -85,7 +80,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/send-data/asana-icon.png')} alt="Thumbnail icon" width="50"/>   | [Asana](https://asana.com/)  | 	App: [Asana](/docs/integrations/saas-cloud/asana/)	<br/>Collector: [Asana Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/) | 
 |  <img src={useBaseUrl('img/integrations/misc/automation-anywhere-logo.png')} alt="Thumbnail icon" width="50"/>   | [Automation Anywhere](https://www.automationanywhere.com/)  | 	Partner integration: [Automation Anywhere](https://docs.automationanywhere.com/bundle/enterprise-v2019/page/enterprise-cloud/topics/control-room/administration/settings/setting-up-sumo-logic.html)	 | 
 |  <img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Thumbnail icon" width="50"/>   | [Auth0](https://auth0.com/)  | 	App: [Auth0](/docs/integrations/saml/auth0/)	<br/>Collector: [Auth0 - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/auth0/) <br/>Partner integration: [Auth0](https://auth0.com/docs/customize/log-streams/sumo-logic-dashboard) | 
-|  <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg')} alt="Thumbnail icon" width="50"/>   | [AWS](https://aws.amazon.com/)  | App: [Threat Intel for AWS](/docs/integrations/amazon-aws/threat-intel/) <br/>Also see [AWS Observability](/docs/observability/aws/). |
+|  <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg')} alt="Thumbnail icon" width="50"/>   | [AWS](https://aws.amazon.com/)  | Apps: <br/>- [Cloud Infrastructure Security for AWS](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws) <br/>- [Threat Intel for AWS](/docs/integrations/amazon-aws/threat-intel/) <br/>Also see [AWS Observability](/docs/observability/aws/). |
 |  <img src={useBaseUrl('img/integrations/amazon-aws/aws-amplify-logo.png')} alt="Thumbnail icon" width="50"/>   | [AWS Amplify](https://aws.amazon.com/amplify/)  | App:	[AWS Amplify](/docs/integrations/amazon-aws/aws-amplify/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="Thumbnail icon" width="50"/>   | [AWS API Gateway](https://aws.amazon.com/api-gateway/)  | 	App: [AWS API Gateway](/docs/integrations/amazon-aws/api-gateway/)	 | 
 |  <img src={useBaseUrl('img/integrations/amazon-aws/aws-apprunner-logo.png')} alt="Thumbnail icon" width="50"/>   | [AWS App Runner](https://aws.amazon.com/apprunner/)  | 	App: [AWS App Runner](/docs/integrations/amazon-aws/aws-apprunner/)	 | 
@@ -443,6 +438,7 @@ Types of integrations:
 |  <img src={useBaseUrl('img/integrations/misc/saucelabs-logo.png')} alt="Thumbnail icon" width="50"/>   | [Sauce Labs](https://saucelabs.com/)  | Partner integration: [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)	 | 
 |  <img src={useBaseUrl('img/integrations/webhooks/sendGrid-logo.png')} alt="Thumbnail icon" width="50"/>   | [SendGrid](https://sendgrid.com/)  | Webhook: [SendGrid](/docs/integrations/webhooks/sendgrid/)	 | 
 |  <img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="Thumbnail icon" width="50"/>   |  [SentinelOne](https://www.sentinelone.com/) | 	App: [SentinelOne](/docs/integrations/saas-cloud/sentinelone/)	<br/>Collectors: <br/>- [Collect Logs for SentinelOne](/docs/send-data/collect-from-other-data-sources/collect-logs-sentinelone/) <br/>- [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source/) <br/>- [SentinelOne - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/sentinelone/) | 
+|  <img src={useBaseUrl('img/integrations/misc/sensu-logo.png')} alt="Thumbnail icon" width="75"/>   | [Sensu](https://sensu.io/)  | Partner integration: [Send data to Sumo Logic with Sensu](https://docs.sensu.io/sensu-go/latest/observability-pipeline/observe-process/send-data-sumo-logic/) | 
 |  <img src={useBaseUrl('img/integrations/webhooks/signl4-logo.png')} alt="Thumbnail icon" width="50"/>   | [SIGNL4](https://www.signl4.com/)  | Webhooks: <br/>- [SIGNL4](/docs/integrations/webhooks/signl4/)	<br/>- [Webhook Connection for SIGNL4](/docs/alerts/webhook-connections/signl4/) | 
 |  <img src={useBaseUrl('img/integrations/webhooks/sentry-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Sentry](https://sentry.io/welcome/) | 	Webhook: [Sentry](/docs/integrations/webhooks/sentry/)	 | 
 |  <img src={useBaseUrl('img/integrations/misc/service-now-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Service Now](https://www.servicenow.com/) | 	Webhook: [Service Now](/docs/alerts/webhook-connections/servicenow/) | 

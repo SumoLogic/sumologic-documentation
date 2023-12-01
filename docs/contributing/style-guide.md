@@ -486,7 +486,11 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 ## Contractions
 
-Using contractions contributes to our goals of striking a conversational, friendly tone. Use common contractions, like “don’t”, “won’t”, and “you’ll”. Avoid less common contractions, like “should’ve”, or “it’ll”. Do not use negative contractions (don't, can't, shouldn't), as they can be easily mistaken for the opposite meaning. Spell out those words.
+Using contractions contributes to our goals of striking a conversational, friendly tone. 
+
+It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
+
+Avoid less common contractions, like “should’ve”, or “it’ll”.
 
 ## Downloadable files
 

@@ -232,6 +232,12 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    announcementBar: {
+      id: 'announcementBar',
+      content: `📣 <a href="https://www.sumologic.com/aws-reinvent" target="_blank"><b>Visit Sumo Logic at AWS re:Invent 2023</b></a> 📣`,
+      backgroundColor: '#faf9e1',
+      textColor: '#000000',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options

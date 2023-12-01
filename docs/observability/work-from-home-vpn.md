@@ -112,7 +112,7 @@ When you build your own searches and dashboards consider these VPN monitoring be
 
 ## Community Resources
 
-The Work from Home Solution includes Remote Access apps for Cisco Meraki, Zscaler Web Security, and Zoom. In addition, the following VPN solutions are now also available on our GitHub repository:
+The Work from Home Solution includes Remote Access apps for Cisco Meraki, Zscaler Internet Access, Zscaler Private Access, and Zoom. In addition, the following VPN solutions are now also available on our GitHub repository:
 
 * [Palo Alto Networks GlobalProtect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/GlobalProtect)
 * [Cisco AnyConnect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Cisco/ASA)

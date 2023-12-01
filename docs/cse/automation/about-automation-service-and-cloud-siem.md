@@ -40,7 +40,6 @@ import Iframe from 'react-iframe';
 
 Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the following ways:
 * In Cloud SIEM, the Automation Service only supports automated enrichment, notification, and custom action types. 
-* Only Automation Service playbooks of the type **CSE** can be triggered from Cloud SIEM.
 * Using the Automation Service with Cloud SIEM does not include the incident and case management features from Cloud SOAR.
 * Playbooks, integrations, and actions in the Automation Service may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
 
@@ -65,7 +64,7 @@ Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the foll
 
 ## Access the Automation Service from Cloud SIEM
 
-An [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem) runs a playbook of type **CSE** in the Automation Service, which runs actions that are provided by integrations. This section shows you how to access each of these elements in the [Automation Service](/docs/platform-services/automation-service/). 
+An [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem) runs a playbook in the Automation Service, which runs actions that are provided by integrations. This section shows you how to access each of these elements in the [Automation Service](/docs/platform-services/automation-service/). 
 
 :::info
 Before you can access the Automation Service from Cloud SIEM, you must first [configure role capabilities](#configure-role-capabilities-for-cloud-siem-automation).
@@ -88,26 +87,18 @@ To learn how to create automations in Cloud SIEM that run playbooks from the Aut
 
 ### Configure role capabilities for Cloud SIEM automation
 
-Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. To get access to the Automation Service:
+Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab. 
-1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
+1. Click **Add Role** to create a new role for users of Cloud SIEM automation. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
    * Cloud SIEM
      * Configuration
        * View Automations
        * Manage Automations
        * Execute Automations
-   * Cloud SOAR
-     * View Cloud SOAR
-     * Automation Playbooks
-       * Access
-       * Configure
+1. [Add Automation Service role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities). 
 1. Follow the directions to [access the Automation Service](#access-the-automation-service-from-cloud-siem) to verify that you can see the **Automation** option in the **Configuration** menu.
-
-:::note
-To interact with most of the Automation Service features, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
-:::
 
 ## Support and compliance
 
