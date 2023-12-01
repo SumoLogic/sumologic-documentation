@@ -339,7 +339,7 @@ system/otelcol-sumo = {
 }
 ```
 
-The output should include `active count = 1` and `state = running`, this means the daemon is running.
+The output should include `active count = 1` and `state = running`. This means the daemon is running.
 
 To verify that the collector process is running:
 
