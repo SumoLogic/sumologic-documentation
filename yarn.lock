@@ -2706,11 +2706,6 @@
     "@mdx-js/mdx" "^3.0.0"
     vfile "^6.0.0"
 
-"@mdx-js/react@^1.6.21":
-  version "1.6.22"
-  resolved "https://registry.npmjs.org/@mdx-js/react/-/react-1.6.22.tgz"
-  integrity sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==
-
 "@mdx-js/react@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-3.0.0.tgz#eaccaa8d6a7736b19080aff5a70448a7ba692271"
@@ -9582,6 +9577,11 @@ mimic-response@^4.0.0:
   resolved "https://registry.npmjs.org/mimic-response/-/mimic-response-4.0.0.tgz"
   integrity sha512-e5ISH9xMYU0DzrT+jl8q2ze9D6eWBto+I8CNpe+VI+K2J/F/k3PdkdTdz4wvGVH4NTpo+NRYTVIuMQEMMcsLqg==
 
+min-indent@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
+  integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
+
 mini-css-extract-plugin@^2.7.6:
   version "2.7.6"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-2.7.6.tgz#282a3d38863fddcd2e0c220aaed5b90bc156564d"
@@ -11031,13 +11031,14 @@ relateurl@^0.2.7:
   resolved "https://registry.npmjs.org/relateurl/-/relateurl-0.2.7.tgz"
   integrity sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==
 
-remark-code-import@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/remark-code-import/-/remark-code-import-0.3.0.tgz"
-  integrity sha512-OAidTyShEroWMVP/WDEeth+DtbpnfCiOA03sDK86/EH+tukTxZaKakzSM5YlU9pb38v9NAX6FztZTazXunSKjQ==
+remark-code-import@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/remark-code-import/-/remark-code-import-1.2.0.tgz#2f879c05909eb5f7cf5a1236bab415010eec69dd"
+  integrity sha512-fgwLruqlZbVOIhCJFjY+JDwPZhA4/eK3InJzN8Ox8UDdtudpG212JwtRj6la+lAzJU7JmSEyewZSukVZdknt3Q==
   dependencies:
+    strip-indent "^4.0.0"
     to-gatsby-remark-plugin "^0.1.0"
-    unist-util-visit "^2.0.1"
+    unist-util-visit "^4.1.0"
 
 remark-directive@^3.0.0:
   version "3.0.0"
@@ -11084,7 +11085,7 @@ remark-gfm@^4.0.0:
 
 remark-import-partial@^0.0.2:
   version "0.0.2"
-  resolved "https://registry.npmjs.org/remark-import-partial/-/remark-import-partial-0.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/remark-import-partial/-/remark-import-partial-0.0.2.tgz#6cd5daefcb9f801ff2b71fb8f3c579b4a5dc9dcc"
   integrity sha512-HuIcpGITU/PK+fZvYYamayCH/jlsoB2Uxj1QaGBgTYtcpozvJQth+PKp9NUZpksUldGAmJf59IyMJgczMpbhwg==
   dependencies:
     unist-util-visit "2.0.2"
@@ -11909,6 +11910,13 @@ strip-final-newline@^3.0.0:
   resolved "https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-3.0.0.tgz"
   integrity sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==
 
+strip-indent@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-4.0.0.tgz#b41379433dd06f5eae805e21d631e07ee670d853"
+  integrity sha512-mnVSV2l+Zv6BLpSD/8V87CW/y9EmmbYzGCIavsnsI6/nwn26DwffM/yztm30Z/I2DY9wdS3vXVCMnHDgZaVNoA==
+  dependencies:
+    min-indent "^1.0.1"
+
 strip-json-comments@^3.1.0, strip-json-comments@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
@@ -12487,16 +12495,7 @@ unist-util-visit@2.0.2:
     unist-util-is "^4.0.0"
     unist-util-visit-parents "^3.0.0"
 
-unist-util-visit@^2.0.1:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-2.0.3.tgz"
-  integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
-  dependencies:
-    "@types/unist" "^2.0.0"
-    unist-util-is "^4.0.0"
-    unist-util-visit-parents "^3.0.0"
-
-unist-util-visit@^4.0.0:
+unist-util-visit@^4.0.0, unist-util-visit@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-4.1.2.tgz#125a42d1eb876283715a3cb5cceaa531828c72e2"
   integrity sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg==

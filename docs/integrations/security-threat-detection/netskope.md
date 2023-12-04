@@ -28,7 +28,8 @@ To collect logs from the Netskope platform, use the [new Cloud to Cloud Integrat
 
 ### Sample Log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {

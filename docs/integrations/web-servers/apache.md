@@ -683,7 +683,8 @@ Use this dashboard to:
 
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-<details><summary>Click to expand. Here are the alerts available for Apache.</summary>
+<details>
+<summary>Click to expand. Here are the alerts available for Apache.</summary>
 
 <table>
   <tr>
@@ -767,7 +768,8 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 ## Apache Metrics
 
-<details><summary>Click to expand. Here are the metrics available for Apache.</summary>
+<details>
+<summary>Click to expand. Here are the metrics available for Apache.</summary>
 
 <table><small>
   <tr>

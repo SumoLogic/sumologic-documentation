@@ -32,7 +32,8 @@ The Jenkins App uses the following Log Types:
 
 ### Sample Log Messages
 
-<details><summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
+<details>
+<summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
 
 ```json title="Authentication"
 {
@@ -311,7 +312,8 @@ Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.3
 To install the plugin with Java 8 and older version of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of Sumo Logic plugin.
 :::
 
-<details><summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
+<details>
+<summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
@@ -322,7 +324,8 @@ This section shows you how to update the version of the Jenkins plugin you have 
 
 </details>
 
-<details><summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
+<details>
+<summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
 
 This section shows you how to install the Jenkins plugin, if this is your first time using sumologic publisher.
 
@@ -335,7 +338,8 @@ To perform a first time installation, do the following:
 
 </details>
 
-<details><summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
+<details>
+<summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
 
 This section shows you how to manually install the Jenkins plugin.
 

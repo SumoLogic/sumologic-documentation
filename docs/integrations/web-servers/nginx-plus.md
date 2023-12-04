@@ -175,7 +175,8 @@ This section provides instructions for configuring log collection for the Sumo L
    * If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 3. **Configure a Source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Nginx Plus machine, use an Installed Collector and a Local File Source.
 
@@ -198,7 +199,8 @@ To collect logs directly from your Nginx Plus machine, use an Installed Collecto
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 

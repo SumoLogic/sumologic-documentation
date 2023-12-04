@@ -16,7 +16,8 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 
 ### Sample Log Message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -151,7 +152,8 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 
 ### Sample Query
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```sql title="Threat details"
 _sourceCategory=aws/guardduty

@@ -69,7 +69,8 @@ To configure a RUM HTTP Traces source:
    * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. Make sure provided URLs are valid JavaScript flavor regexes. Some examples are `/^https:\/\/api.mydomain.com\/apiv3\/.*/` and `/^https:\/\/www.3rdparty.com\/.*/.`
     :::warning **Propagate Trace Header Cors Urls**
     Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
-    <details><summary><strong>Click here</strong> to review our recommendations</summary>
+    <details>
+<summary><strong>Click here</strong> to review our recommendations</summary>
     This list is empty by default, which means trace context propagation&#8212;allowing creation of end to and front end to backend traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports <a href="https://www.w3.org/TR/trace-context">W3C Trace Context</a> HTTP headers. <br/><br/>To propagate tracing context to create front-end to back-end traces, set domain(s) to propagate W3C tracing context to. You must also configure your servers/APIs to accept and return following CORS headers in its response - for example: <code>Access-Control-Allow-Headers: traceparent, tracestate</code>.
     Valid cross-origin resources must include the prefix <code>http://</code> or <code>https://</code> and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
     </details>

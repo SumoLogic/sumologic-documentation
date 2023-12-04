@@ -120,7 +120,8 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 
 This example query is from the **Allowed Network Activity by Direction** panel of the **Accepted and Rejected Traffic** dashboard.
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```sql
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow

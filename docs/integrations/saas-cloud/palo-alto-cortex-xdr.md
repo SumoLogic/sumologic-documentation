@@ -21,7 +21,8 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 ## Sample log messages
 
-<details><summary>View Sample Log Message</summary>
+<details>
+<summary>View Sample Log Message</summary>
 
 ```json title="Alert Message"
 {
@@ -131,7 +132,8 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 ## Sample Query
 
-<details><summary>View sample queries</summary>
+<details>
+<summary>View sample queries</summary>
 
 ```sql title="Alerts Triggered"
 _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"

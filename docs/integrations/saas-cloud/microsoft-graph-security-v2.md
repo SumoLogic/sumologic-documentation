@@ -28,7 +28,8 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 
 ### Sample log message
 
-<details><summary>Sample Alert Log (click to expand)</summary>
+<details>
+<summary>Sample Alert Log (click to expand)</summary>
 
 ```json title="Sample Alert Log"
 {

@@ -245,7 +245,8 @@ Nginx app supports the default access logs and error logs format.
     2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector).
 4. **Configure a local file source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.  
 
@@ -275,7 +276,8 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 

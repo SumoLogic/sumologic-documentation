@@ -239,7 +239,8 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. **Configure a local file source**. Choose one of the options:
 
-<details><summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
+<details>
+<summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
 
 To collect logs directly from your Couchbase machine, use an Installed Collector and Multi Local File Source. Repeat the below steps for each log source: audit log, query log, error log, access log.
 
@@ -281,7 +282,8 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
 
 </details>
 
-<details><summary>4B. <strong>For a Hosted Collector</strong> (click to expand)</summary>
+<details>
+<summary>4B. <strong>For a Hosted Collector</strong> (click to expand)</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 

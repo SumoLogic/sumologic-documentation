@@ -100,7 +100,8 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
   ```
 3. Add annotations on your Squid Proxy pods.
 
-<details><summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
+<details>
+<summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
 ```sql
 annotations:
@@ -366,7 +367,8 @@ Squid Proxy app supports the default access logs and cache logs format.
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 4. **Configure a local file source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
@@ -396,7 +398,8 @@ environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -441,7 +444,8 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
    1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
    2. Configure and start Telegraf: as part of collecting metrics data from Telegraf, we'll use the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
+<details>
+<summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
 ```sql
 [[inputs.snmp]]]

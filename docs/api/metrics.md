@@ -47,7 +47,8 @@ To execute a metrics query, send a JSON request to the endpoint.
 
 **Example endpoint:** [https://api.sumologic.com/api/v1/metrics/results](https://api.sumologic.com/api/v1/metrics/results)
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 

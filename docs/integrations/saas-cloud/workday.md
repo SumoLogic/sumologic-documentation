@@ -228,7 +228,8 @@ In this section, we will configure a collection of login and audit logs  from Wo
 
 See [Configure the script on a Linux machine](#configure-the-script-on-a-linux-machine) instead.
 
-<details><summary>Deploy the SAM application to create the necessary resources in your AWS account.</summary>
+<details>
+<summary>Deploy the SAM application to create the necessary resources in your AWS account.</summary>
 
 To deploy the Sumo Logic Workday SAM Application, do the following:
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
@@ -257,7 +258,8 @@ To deploy the Sumo Logic Workday SAM Application, do the following:
 
 See [Configure the script on a Linux machine](#configure-the-script-on-a-linux-machine) instead.
 
-<details><summary>Learn how to configure script-based log collection for the Sumo Logic Workday App.</summary>
+<details>
+<summary>Learn how to configure script-based log collection for the Sumo Logic Workday App.</summary>
 
 The sumologic-workday script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 

@@ -166,7 +166,8 @@ To set up collection for traces:
 
 ### Sample log message
 
-<details><summary>Click to expand.</summary>
+<details>
+<summary>Click to expand.</summary>
 
 ```json
 {

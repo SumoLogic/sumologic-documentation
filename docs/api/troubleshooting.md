@@ -14,7 +14,8 @@ This guide provides information to help you troubleshoot errors you may find whe
 
 ## Deployments and Sumo Logic Endpoints
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../reuse/api-endpoints.md}
 

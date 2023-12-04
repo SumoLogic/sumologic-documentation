@@ -147,7 +147,8 @@ To restart your source using the Sumo Management API, follow the instructions be
 * Method: POST
 * Example endpoint: `https://api.sumologic.com/api/v1/collectors/{collector_id}/sources/{source_id}/action/restart`.
 
-<details><summary>Which API endpoint should I use?</summary>
+<details>
+<summary>Which API endpoint should I use?</summary>
 
 {@import ../../../reuse/api-endpoints.md}
 

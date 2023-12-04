@@ -245,7 +245,8 @@ If you subscribe from a monitor folder, all nested monitors and folders within t
 
 For example, if you create a subscription on “Monitor A”, and then move it to subscribed “Folder B”, “Monitor A” will have two subscriptions because it’s directly subscribed and inherits subscription from its parent folder ("Folder B").
 
-<details><summary>Click to see examples</summary>
+<details>
+<summary>Click to see examples</summary>
 
 #### Example 1
 

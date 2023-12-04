@@ -5,11 +5,12 @@ description: Learn how to create a Sumo Logic monitor.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import AlertsTimeslice from '../../reuse/alerts-timeslice.md';
 
 This topic shows you how to create a monitor. 
 
-
-<details><summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
+<details>
+<summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
 
 <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
 
@@ -34,7 +35,7 @@ This topic shows you how to create a monitor.
 
 Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
-{@import ../../reuse/alerts-timeslice.md}
+<AlertsTimeslice/>
 
 #### From your Metrics Explorer
 
@@ -93,7 +94,8 @@ The first step when you create a new monitor is to set the trigger conditions.
 
 Specify the **Trigger Type**. A Monitor can have one critical, warning, and missing data trigger condition, each with one or more notification destinations. Triggers have different options depending on the query and alert type. Click the **Expand** button next to the query type you're using for configuration details.
 
-<details><summary><strong>Logs Trigger Types</strong> (expand to view)</summary>
+<details>
+<summary><strong>Logs Trigger Types</strong> (expand to view)</summary>
 
 #### Logs Trigger Types
 
@@ -200,7 +202,8 @@ Recover
 
 </details>
 
-<details><summary><strong>Metrics Trigger Types</strong> (expand to view)</summary>
+<details>
+<summary><strong>Metrics Trigger Types</strong> (expand to view)</summary>
 
 #### Metrics Trigger Types
 

@@ -27,7 +27,8 @@ Below are example logs and metrics collected from your Aurora PostgreSQL databas
 
 ### Sample log
 
-<details><summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
+<details>
+<summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
 
 ```json
 {

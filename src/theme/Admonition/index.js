@@ -43,7 +43,7 @@ function InfoIcon() {
     </svg>
   );
 }
-function CautionIcon() {
+function WarningIcon() {
   return (
     <svg viewBox="0 0 16 16">
       <path

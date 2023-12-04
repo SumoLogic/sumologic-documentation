@@ -33,7 +33,8 @@ The Sumo Logic `mongodbatlas` collector enhances logs by adding a few metadata f
 
 Some logs are not available for some cluster tier. Check the [MongoDB docs](https://docs.atlas.mongodb.com/reference/free-shared-limitations/). Some log types like for mongos instances are available for shared cluster only.
 
-<details><summary>Sample database log, audit log, alerts log, organization events log, and project events log (<strong>click here to expand</strong>)</summary>
+<details>
+<summary>Sample database log, audit log, alerts log, organization events log, and project events log (<strong>click here to expand</strong>)</summary>
 
 ```json title="Database Log"
 {
@@ -129,7 +130,8 @@ For more information, see [https://www.mongodb.com/docs/atlas/reference/api/even
 
 This section provides examples of the metric types utilized by the MongoDB Atlas app.
 
-<details><summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
+<details>
+<summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
 
 #### Process Metrics
 
@@ -204,7 +206,8 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Events panel.
 
-<details><summary>Sample query (<strong>click here to expand</strong>)</summary>
+<details>
+<summary>Sample query (<strong>click here to expand</strong>)</summary>
 
 ```sql
 (_sourceCategory="Labs/mongodbatlas6/logs" ) | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
@@ -443,7 +446,8 @@ You configure Webhooks for real-time alerts. This section explains how to config
 
 This section is common for both [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) and [script-based collection](#Configure_script_based_collection_for_mongodb-atlas).
 
-<details><summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
+<details>
+<summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
 
 <table><small>
   <tr>
