@@ -106,11 +106,9 @@ Follow the instructions for setting up [Cloud to Cloud Integration for 1Password
 
 ## Installing the 1Password App
 
-{@import ../reuse/apps/app-install-v2.md}
+{@import ../reuse/apps/app-install.md}
 
 ## Viewing 1Password Dashboards
-
-{@import ../reuse/apps/view-dashboards.md}
 
 ### Overview
 1Password - Overview provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.
