@@ -153,7 +153,7 @@ parse regex "(?<Unit_Name>[^ ]+) NF(?<Log>.*)"
 | parse field=Log " * * * * * * * * *" as Log_Level, Protocol, Source_Ip, Source_Port, Destination_Ip, Destination_Port, ACL_Policy, ACL_Name, Log_Details
 ```
 
-## Install the Barracuda WAF App
+## Install the Barracuda WAF app
 
 This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
 
