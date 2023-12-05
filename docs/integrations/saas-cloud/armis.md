@@ -199,7 +199,7 @@ This section explains how to collect logs from Armis API and ingest them into Su
 
 {@import ../../reuse/apps/view-dashboards.md}
 
-### Overview
+### Alerts Overview Dashboard
 
 **Armis - Alerts Overview** dashboard. The dashboard provides a comprehensive analysis of alerts, by categorizing them based on their severity, status, type, and presenting a trend of alerts over a specified period of time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Alerts-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
 
