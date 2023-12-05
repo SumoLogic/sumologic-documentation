@@ -510,23 +510,26 @@ Finds fields in Records matching values in [Threat Intelligence](/docs/cse/rules
 
 **Syntax**
 
-`hasThreatMatch([<fields>], <optional_filtering_predicate>)`
+`hasThreatMatch([<fields>], <optional_filtering_predicate>, <optional_validity_strategy>)`
 
 Parameters:
 * `<fields>` is a list of comma separated field names. At least one field name is required.
 * `<optional_filtering_predicate>` is an optional simple boolean expression on the threat indicator fields. Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.
+* `<optional_validity_strategy>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+   * `active_indicators`. Match active indicators only.
+   * `expired_indicators`. Match expired indicators only.
+   * `all_indicators`. Match all indicators.
+
 
 **Examples**
 
-`hasThreatMatch([srcDevice_ip])`
-
-`hasThreatMatch([srcDevice_ip, dstDevice_ip])`
-
-`hasThreatMatch([srcDevice_ip], confidence > 50)`
-
-`hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”s1”)`
-
-`hasThreatMatch([srcDevice_ip], source=”s2” OR (source=”s2” confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip])`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
+* `hasThreatMatch([srcDevice_ip], confidence > 50)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”s1”)`
+* `hasThreatMatch([srcDevice_ip], source=”s2” OR (source=”s2” confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], active_indicators)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
 
 ## haversine
 
