@@ -88,7 +88,7 @@ Now that you have configured Akamai DataStream 2 logs, install the Sumo Logic Ap
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Akamai DataStream Dashboards​
+## Viewing Akamai DataStream dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
