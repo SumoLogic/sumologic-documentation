@@ -13,6 +13,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
 * Playbooks: Added ability to dynamically select an authorizer in UserChoice node.
+#### Cloud SOAR
+* Contextual menu now contains Open link in new tab action if URL is highlighted.
 #### Automation Service 
 * The Automation Service now permits you to execute Containment and Scheduled actions. App Central has been updated accordingly.
 
