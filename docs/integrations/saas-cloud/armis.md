@@ -195,7 +195,7 @@ This section explains how to collect logs from Armis API and ingest them into Su
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing the Armis Dashboards​
+## Viewing the Armis dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
