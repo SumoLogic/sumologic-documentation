@@ -67,7 +67,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | :-- | :-- |
 | [Access Keys](/docs/manage/security/access-keys/) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
-| [Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR](/docs/cloud-soar/audit-event-index/) | `oar` |
+| [Automation Service](/docs/platform-services/automation-service/automation-service-audit-logging/) and [Cloud SOAR](/docs/cloud-soar/audit-event-index/) | `oar*` |
 | [Collection](/docs/send-data/collection) | `collection` |
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
