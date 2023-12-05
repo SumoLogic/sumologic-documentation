@@ -408,7 +408,7 @@ The following table shows the **config** parameters for a Box Source.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Box Dashboards
+## Viewing Box dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
