@@ -17,11 +17,11 @@ Threat intelligence, often abbreviated as *threat intel*, is information that he
 
 Threat intelligence indicators can help a security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
 
-You can add threat intelligence indicators from a number of sources, including CrowdStrike, TAXII, ThreatQ, iDefense, and many others. And threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. (For information about how to add additional threat intelligence indicators for Cloud SIEM, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source).)
-
 ## Threat Intelligence tab
 
-Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. To access the tab, go to **Manage Data > Logs > Threat Intelligence**.
+Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. You can add threat intelligence indicators from a number of sources, including CrowdStrike, TAXII, ThreatQ, iDefense, and many others. And threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. (For information about how to add additional threat intelligence indicators for Cloud SIEM, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source).)
+
+To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat Intelligence**.
 
 <img src={useBaseUrl('img/platform-services/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid black'}} width="800" />
 
@@ -32,7 +32,7 @@ Use the **Threat Intelligence** tab to add and manage threat intelligence indica
 1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
-## Add threat intelligence indicators
+### Add threat intelligence indicators
 
 To add threat intelligence indicators, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
 
@@ -70,7 +70,7 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. Click **Upload** to upload the file.
 1. Click **Import**. 
 
-## Delete indicators
+### Delete threat intelligence indicators
 
 1. Select a source. Details of the source appear in a sidebar.
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
@@ -78,3 +78,29 @@ To add threat intelligence indicators, you must upload files containing the indi
    * **Delete all indicators**. Remove all indicators from the source. 
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add threat intelligence indicators](#add-threat-intelligence-indicators) above.
 1. Click **Delete**. 
+
+## Cloud SIEM hasThreatMatch function 
+
+The Cloud SIEM `hasThreatMatch` rules language function finds fields in Cloud SIEM Records matching values in [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists. For other rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
+
+**Syntax**
+
+`hasThreatMatch([<fields>], <optional_filtering_predicate>, <optional_validity_strategy>)`
+
+Parameters:
+* `<fields>` is a list of comma separated field names. At least one field name is required.
+* `<optional_filtering_predicate>` is an optional simple boolean expression on the threat indicator fields. Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.
+* `<optional_validity_strategy>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+   * `active_indicators`. Match active indicators only.
+   * `expired_indicators`. Match expired indicators only.
+   * `all_indicators`. Match all indicators.
+
+**Examples**
+
+* `hasThreatMatch([srcDevice_ip])`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
+* `hasThreatMatch([srcDevice_ip], confidence > 50)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”s1”)`
+* `hasThreatMatch([srcDevice_ip], source=”s2” OR (source=”s2” confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], active_indicators)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
