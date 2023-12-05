@@ -19,18 +19,25 @@ If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/ab
 :::
 
 ## About Outlier rules
-Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. For example, an Outlier rule might look for the events like the following:
+
+Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. 
+
+For each Outlier rule, you create a filter condition to look for out-of-the-ordinary behavior that could indicate risk. For example, an Outlier rule might look for the events like the following:
 
 * Spike in login failures from a user
 * Abnormal number of high severity endpoint alerts
 * Spike in EC2 instance creation
 * Abnormal volume of data sent to third-party storage
 
-An Outlier rule is different from other Cloud SIEM rule types in that the threshold for firing a signal is learned from the baseline. The rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
+When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being 30 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. Data for the baseline is retained by default for 90 days. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
 
-For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, Cloud SIEM creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
+After the baseline period completes, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of Record values, and creates a Signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a Signal when outlier behavior is detected:
 
-Watch this micro lesson to learn about Outlier rules.
+<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" width="600"/>
+
+After your rule starts generating Signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many Signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few Signals are generated, set the threshold higher. Among other things, also evaluate if the Signals from outliers are generating enough Insights. To [generate an Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), by default the combined severity scores of Signals need to be 12 or higher. Change the severity level in the Outlier rule to ensure that it is high enough to generate enough Signals to trigger Insights for investigation.
+
+Watch this micro lesson to learn more about Outlier rules.
 
 <Iframe url="https://www.youtube.com/embed/1HEUPWpDA_o?rel=0"
         width="854px"
