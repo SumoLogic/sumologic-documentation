@@ -161,7 +161,7 @@ Now that you have configured log collection for Barracuda WAF, install the Sumo 
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Barracuda WAF Dashboards 
+## Viewing Barracuda WAF dashboards 
 
 ### Dashboard organization
 
