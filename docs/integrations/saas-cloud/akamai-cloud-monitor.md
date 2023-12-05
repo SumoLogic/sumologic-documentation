@@ -187,7 +187,7 @@ Now that you have configured Akamai logs, install the Sumo Logic App for Akamai 
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Akamai Cloud Monitor Dashboards
+## Viewing Akamai Cloud Monitor dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
