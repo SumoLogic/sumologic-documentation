@@ -153,17 +153,13 @@ parse regex "(?<Unit_Name>[^ ]+) NF(?<Log>.*)"
 | parse field=Log " * * * * * * * * *" as Log_Level, Protocol, Source_Ip, Source_Port, Destination_Ip, Destination_Port, ACL_Policy, ACL_Name, Log_Details
 ```
 
+## Installing the Barracuda WAF App
 
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Install the Barracuda WAF App
+## Viewing Barracuda WAF Dashboards 
 
-This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
-
-Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and dashboards.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Barracuda WAF Dashboards   
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Dashboard organization
 
