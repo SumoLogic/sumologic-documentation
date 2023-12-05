@@ -70,7 +70,7 @@ sourceCategory="citrixCloudSource"
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Citrix Cloud Dashboards 
+## Viewing Citrix Cloud dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
