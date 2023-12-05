@@ -14,13 +14,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### Changes and Enhancements
 * Playbooks: Added ability to dynamically select an authorizer in UserChoice node.
 #### Automation Service 
-* Now the Automation Service permits to execute also Containment and Scheduled actions. App Central has been updated accordingly.
+* The Automation Service now permits you to execute Containment and Scheduled actions. App Central has been updated accordingly.
 
 ### Bug fixes 
-* Fixed: Selecting a timestamp while testing integrations results in wrong timestamp to be used.
-* Fixed: Boolean values are processed as null in actions/playbooks.
-* Fixed: Issue using playbooks placeholder in textArea for Incident fields.
-* Fixed: Issue related to edit a playbook and publishing causing empty playbook.
+* Selecting a timestamp while testing integrations no longer results in the wrong timestamp being used.
+* Boolean values are no longer processed as null in actions/playbooks.
+* There is no longer an issue using a playbooks placeholder in the textArea for Incident fields.
+* Editing a playbook and publishing no longer causes an empty playbook.
 #### Cloud SOAR
-* Playbooks: Fixed Incident Fields not available in Condition Nodes (ie: "NULL").
-* Entities: Fixed file type not displayed for entities File.
+* In playbooks, Incident fields are now available in condition nodes (they are no longer "NULL").
+* The file type is now displayed for Entities files.
