@@ -90,7 +90,7 @@ To enable the Cloudflare Logpush service:
 
 Once connected, Cloudflare lists Sumo Logic as a connected service under Logs > Logpush. Edit or remove connected services from here.
 
-## Installing the Cloudflare App
+## Installing the Cloudflare app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
