@@ -404,7 +404,7 @@ The following table shows the **config** parameters for a Box Source.
 ```
 
 
-## Installing the Box App
+## Installing the Box app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
