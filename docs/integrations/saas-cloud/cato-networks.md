@@ -94,7 +94,7 @@ _sourceName="source" admin
 
 Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/) source and use the same source category while installing the app.
 
-## Installing the Cato Networks App
+## Installing the Cato Networks app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
