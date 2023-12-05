@@ -19,6 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Playbooks: Improved status field update and granularity.
 #### Cloud SOAR 
 * Incident closing note: It is now part of APIv3 response and available as Read Only field in Incident Overview page.
+* Contextual menu now contains Open link in new tab action if URL is highlighted
 
 ### Bug fixes 
 #### Cloud SOAR 
