@@ -103,7 +103,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 
 ### Distributed Tracing customization
 
-See the [Configure tracing using MeshConfig and Pod annotations](https://istio.io/latest/docs/tasks/observability/distributed-tracing/configurability/mesh-and-proxy-config/) guide for information to configure any advanced capabilities on span data generation from Istio, such as probabilistic sampling, extending the length of some fields, or adding custom metadata/annotations to spans.
+See the [Configure tracing using MeshConfig and Pod annotations](https://istio.io/latest/docs/tasks/observability/distributed-tracing/mesh-and-proxy-config/) guide for information to configure any advanced capabilities on span data generation from Istio, such as probabilistic sampling, extending the length of some fields, or adding custom metadata/annotations to spans.
 
 ## Troubleshooting
 
