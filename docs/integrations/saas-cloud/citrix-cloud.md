@@ -66,7 +66,7 @@ sourceCategory="citrixCloudSource"
 | top 50 time,name,message,access_type by time
 ```
 
-## Installing the Citrix Cloud App
+## Installing the Citrix Cloud app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
