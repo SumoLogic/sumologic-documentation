@@ -103,8 +103,8 @@ There are limits to how many alerts can be enabled - for details, see the [Alert
 
 ### Method A: Import a JSON file
 
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx%20Ingress/nginx_ingress.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx%20Ingress/nginx_ingress.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx Ingress farms, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx_ingress` with `<Your Custom Filter>`. Custom filter examples:
+1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-ingress/nginxingress.json) that describes the monitors.
+2. The JSON file contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx Ingress farms, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx_ingress` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific farm, your custom filter would be:  ‘`webserver_farm=nginx-ingress.01`‘
    * For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
    * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1`** AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)

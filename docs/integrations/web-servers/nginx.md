@@ -375,8 +375,8 @@ To view the full list, see [Nginx](#nginx-alerts). There are limits to how many 
 
 ### Method A: Importing a JSON file
 
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx/nginx.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx/nginx.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx` with `<Your Custom Filter>`. Custom filter examples:
+1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx/nginx.json) that describes the monitors.
+2. This JSON file contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific farm, your custom filter would be, `webserver_farm=nginx-standalone.01`.
    * For alerts applicable to all farms that start with nginx-standalone, your custom filter would be, `webserver_system=nginx-standalone*`.
    * For alerts applicable to a specific farm within a production environment, your custom filter would be,`webserver_farm=nginx-1` and `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
