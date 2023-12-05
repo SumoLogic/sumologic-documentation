@@ -98,7 +98,7 @@ Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-co
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Cato Networks Dashboards 
+## Viewing Cato Networks dashboards 
 
 {@import ../../reuse/apps/view-dashboards.md}
 ### Events
