@@ -29,7 +29,7 @@ To collect logs from the Duo Security App, use the new [Cloud to Cloud Integrati
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Duo Security Dashboards 
+## Viewing Duo Security dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
