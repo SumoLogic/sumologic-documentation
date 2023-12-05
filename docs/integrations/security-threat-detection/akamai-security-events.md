@@ -95,7 +95,7 @@ This section has instructions for installing the Sumo Logic App for Akamai Secur
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Akamai Security Events Dashboards
+## Viewing Akamai Security Events dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
