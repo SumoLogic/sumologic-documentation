@@ -191,7 +191,7 @@ _sourceCategory=ArmisDashboards id
 
 This section explains how to collect logs from Armis API and ingest them into Sumo Logic. Refer to the [Armis API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
 
-## Installing the Armis App
+## Installing the Armis app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
