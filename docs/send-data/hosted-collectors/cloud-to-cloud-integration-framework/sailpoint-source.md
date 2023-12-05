@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="100"/>
 
-The SailPoint Source provides a secure endpoint to receive Events and User Inventory data from the [IdentityNow V3 API](https://developer.sailpoint.com/apis/v3/). It securely stores the required authentication, scheduling, and state tracking information.
+The SailPoint Source provides a secure endpoint to receive Events and User Inventory data from the [IdentityNow V3 API](https://developer.sailpoint.com/idn/api/v3). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
 This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
@@ -34,7 +34,7 @@ This source is not available in the [Fed deployment](/docs/api/getting-started#s
 
 You need a SailPoint Admin account generated `Client ID` and `Client Secret Key` as well as the customer-specific organization name, such as, `{organization}.identitynow.com`.
 
-To generate a [personal access token](https://developer.sailpoint.com/docs/authentication.html#personal-access-tokens) from the IdentityNow UI, perform the following steps after logging into your IdentityNow instance:
+To generate a [personal access token](https://developer.sailpoint.com/idn/api/v3/create-personal-access-token/#create-personal-access-token) from the IdentityNow UI, perform the following steps after logging into your IdentityNow instance:
 
 1. Select **Preferences** from the dropdown menu under your username, then **Personal Access Tokens** on the left. You can also go straight to the page using this URL, replacing `{tenant}` with your IdentityNow tenant: `https://{tenant}.identitynow.com/ui/d/user-preferences/personal-access-tokens`
 1. Click **New Token** and enter a meaningful description to help differentiate the token from others.

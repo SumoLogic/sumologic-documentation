@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section has instructions for collecting AWS VPC Flow log messages from AWS S3 and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
-Sumo Logic Cloud SIEM supports the default AWS VPC Flow log format which includes all version 2 fields. See [AWS VPC flow log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.tml#flow-logs-fields) for more details.
+Sumo Logic Cloud SIEM supports the default AWS VPC Flow log format which includes all version 2 fields. See [AWS VPC flow log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-fields) for more details.
 
 ## Step 1: Enable AWS VPC Flow Logs
 
