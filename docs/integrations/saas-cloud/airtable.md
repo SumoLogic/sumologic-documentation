@@ -76,7 +76,7 @@ Before you begin, collect logs from Airtable API and ingest them into Sumo Logic
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Airtable Dashboards​
+## Viewing Airtable dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
