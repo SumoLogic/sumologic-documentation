@@ -578,9 +578,6 @@ Only set this up if you want to be able to use the Slack App in User Choice resp
 If your new resources are configured correctly, and Instant Messaging displays a "Success" message for the configured workspace, you can [Use the Slack app in User Choice](#use-the-slack-app-in-user-choice). 
 
 ### Configure Slack for Cloud SOAR - Delivery 2
-:::note
-Only set this up if you want to be able to use the Slack App in User Choice responses.
-:::
 
 With the Cloud SOAR Slack integration for Delivery 2, you will be able to directly manage User Choices from your Slack workspace within the playbooks.
 
