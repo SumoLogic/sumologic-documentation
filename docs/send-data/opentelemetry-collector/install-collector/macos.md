@@ -266,4 +266,92 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-For information on troubleshooting and solutions, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+Here are some basic troubleshooting steps on macOS.
+
+To verify that the Launchd daemon has been installed:
+
+```console
+$ sudo launchctl list | grep otelcol-sumo
+54109	0	otelcol-sumo
+```
+
+To verify that the daemon is running:
+
+```console
+$ sudo launchctl print system/otelcol-sumo
+system/otelcol-sumo = {
+	active count = 1
+	path = /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+	type = LaunchDaemon
+	state = running
+
+	program = /usr/local/bin/otelcol-sumo
+	arguments = {
+		/usr/local/bin/otelcol-sumo
+		--config
+		/etc/otelcol-sumo/sumologic.yaml
+		--config
+		glob:/etc/otelcol-sumo/conf.d/*.yaml
+	}
+
+	stdout path = /var/log/otelcol-sumo/otelcol-sumo.log
+	stderr path = /var/log/otelcol-sumo/otelcol-sumo.log
+	default environment = {
+		PATH => /usr/bin:/bin:/usr/sbin:/sbin
+	}
+
+	environment = {
+		SUMOLOGIC_INSTALLATION_TOKEN=(redacted) =>
+		XPC_SERVICE_NAME => otelcol-sumo
+	}
+
+	domain = system
+	username = _otelcol-sumo
+	group = _otelcol-sumo
+
+	minimum runtime = 10
+	exit timeout = 5
+	runs = 1
+	pid = 54109
+	immediate reason = speculative
+	forks = 2
+	execs = 1
+	initialized = 1
+	trampolined = 1
+	started suspended = 0
+	proxy started suspended = 0
+	last exit code = (never exited)
+
+	spawn type = daemon (3)
+	jetsam priority = 40
+	jetsam memory limit (active) = (unlimited)
+	jetsam memory limit (inactive) = (unlimited)
+	jetsamproperties category = daemon
+	submitted job. ignore execute allowed
+	jetsam thread limit = 32
+	cpumon = default
+	probabilistic guard malloc policy = {
+		activation rate = 1/1000
+		sample rate = 1/0
+	}
+
+	properties = keepalive | runatload | inferred program
+}
+```
+
+The output should include `active count = 1` and `state = running`. This means the daemon is running.
+
+To verify that the collector process is running:
+
+```shell
+$ ps aux | grep '[o]telcol-sumo'
+_otelcol-sumo    55368   0.0  0.2 409731808 125232   ??  Ss   12:25PM   0:00.21 /usr/local/bin/otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config glob:/etc/otelcol-sumo/conf.d/*.yaml
+```
+
+To check the logs from the collector:
+
+```shell
+cat /var/log/otelcol-sumo/otelcol-sumo.log
+```
+
+For more information on troubleshooting and solutions, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).

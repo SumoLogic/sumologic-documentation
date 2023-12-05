@@ -142,7 +142,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-[Public Message logs](https://api.slack.com/methods/channels.history)
+[Public Message logs](https://api.slack.com/methods)
 ```json
 {
   "type": "message",
@@ -180,7 +180,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-[Access logs	](https://api.slack.com/methods/team.accessLogs)
+[Access logs](https://api.slack.com/methods/team.accessLogs)
 ```json
 {
   "user_id": "e65b0476",
