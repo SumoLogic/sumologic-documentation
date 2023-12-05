@@ -253,7 +253,7 @@ This section provides instructions on how to install the Acquia App, as well as 
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Acquia Dashboards
+## Viewing Acquia dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
