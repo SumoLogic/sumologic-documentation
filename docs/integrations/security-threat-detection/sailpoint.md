@@ -15,8 +15,8 @@ SailPoint is an identity management solution that helps organizations manage emp
 
 The SailPoint Source ingests:
 
-* Events from the [Search API Endpoint](https://developer.sailpoint.com/apis/v3/#operation/search).
-* Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/apis/v3/#operation/getPublicIdentities).
+* Events from the [Search API Endpoint](https://developer.sailpoint.com/idn/api/v3/search).
+* Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/idn/api/v3/get-public-identities).
 
 
 ### Sample Log Messages

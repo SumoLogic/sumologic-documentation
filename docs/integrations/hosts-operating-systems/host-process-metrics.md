@@ -22,10 +22,10 @@ We use the Telegraf agent for Host and Process metrics collection. Telegraf runs
 The following input plugins are used by Sumo Logic
 
 For Linux:
-* [net](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NET_README.md)
+* [net](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/README.md)
 * [Diskio](https://github.com/influxdata/telegraf/tree/release-1.15/plugins/inputs/diskio)
 * [Disk](https://github.com/influxdata/telegraf/tree/release-1.15/plugins/inputs/disk)
-* [Netstat](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NETSTAT_README.md)
+* [Netstat](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/netstat/README.md)
 * [Mem](https://github.com/influxdata/telegraf/tree/release-1.15/plugins/inputs/mem)
 * [CPU](https://github.com/influxdata/telegraf/blob/release-1.15/plugins/inputs/cpu/README.md)
 * [System](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/system)
@@ -33,9 +33,9 @@ For Linux:
 * [Process](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/processes)
 
 For Windows:
-* [net](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NET_README.md)
+* [net](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/README.md)
 * [Disk](https://github.com/influxdata/telegraf/tree/release-1.15/plugins/inputs/disk)
-* [Netstat](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/NETSTAT_README.md)
+* [Netstat](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/netstat/README.md)
 * [Mem](https://github.com/influxdata/telegraf/tree/release-1.15/plugins/inputs/mem)
 * [CPU](https://github.com/influxdata/telegraf/blob/release-1.15/plugins/inputs/cpu/README.md)
 * [System](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/system)
