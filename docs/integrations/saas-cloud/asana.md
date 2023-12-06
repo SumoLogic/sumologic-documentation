@@ -69,7 +69,6 @@ To set up [Cloud to Cloud Integration Asana Source](/docs/send-data/hosted-colle
 
 ## Installing the Asana app
 
-This section describes how to install the Asana app for Sumo Logic and description of the dashboard. You'll also need to configure the [Asana Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/asana-source/).
 
 {@import ../../reuse/apps/app-install-v2.md}
 
