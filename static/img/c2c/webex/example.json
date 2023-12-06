@@ -1,0 +1,25 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name":"Webex- sandbox",
+        "authorizationCode":"********",
+        "clientId":"********",
+        "collectAll":false,
+        "orgId":"********",
+        "eventCategories":["LOGINS","LOGOUT","ORG_SETTINGS"],
+        "fields":{
+          "_siemForward":false
+        },
+        "clientSecret":"********",
+        "category":"sandbox/webex/audit"
+      },
+      "schemaRef":{
+        "type":"Webex"
+      },
+      "state":{
+        "state":"Pending"
+      },
+      "sourceType":"Universal"
+    }
+  }
