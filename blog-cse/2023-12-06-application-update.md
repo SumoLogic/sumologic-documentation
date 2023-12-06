@@ -36,7 +36,7 @@ For full details, see the [Automation Service documentation](/docs/platform-serv
 
 When writing Rules and Rule Tuning Expressions, it's possible to write an expression that is syntatically correct (and passes validation) but that will still fail when executed. There are two specific cases we have identified:
 * Using a non-normalized field that does not exist in the log records (schema fields will always exist)
-* Introducing a type mismatch (i.e. matching a string to an integer value)
+* Introducing a type mismatch (that is, matching a string to an integer value)
 
 If you test a Rule (from the Rules Details page), an error will be displayed in these cases, but the error is not obvious and not clear, and the normal editor validation does not catch these kinds of errors. 
 
