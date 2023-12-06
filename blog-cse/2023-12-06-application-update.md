@@ -42,7 +42,7 @@ If you test a Rule (from the Rules Details page), an error will be displayed in 
 
 In addition, while the Cloud SIEM Rules engine does not generate runtime errors in these cases (there just isn't a match), the Log Search engine *does* generate errors and refuses to return any results in these cases.
 
-A few weeks ago, we made a change to Signal and Insight detail pages, where for multi-signal Rules (such as Chain Rules), where we would attach a subset of rules on the details page and the user would have to go to the `Queried Records` tab to view any other potentially related records, we combined those views and began showing both the attached and queried records on the main page. Unfortunately, the way the new design worked, no records were displayed if the queried record log search failed. 
+A few weeks ago, we made a change to Signal and Insight detail pages, where for multi-signal Rules (such as Chain Rules), where we would attach a subset of rules on the details page and the user would have to go to the **Queried Records** tab to view any other potentially related records, we combined those views and began showing both the attached and queried records on the main page. Unfortunately, the way the new design worked, no records were displayed if the queried record log search failed. 
 
 As a result of these issues, we have made two changes:
 * On the Rules Details page, if the test (a log search) returns an error, instead of saying "No Records Found," the screen will say, "Check the Rule/Tuning Expressions." 
