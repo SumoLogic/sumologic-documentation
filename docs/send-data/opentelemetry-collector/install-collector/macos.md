@@ -266,13 +266,13 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-For general Sumo Otelcol troubleshooting, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
 
 Here are some troubleshooting steps specific to macOS.
 
 ### Error `/Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory` when uninstalling collector
 
-If you are trying to uninstall the collector on macOS and you are getting an error similar to the following:
+If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
 
 ```console
 $ sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
@@ -282,7 +282,8 @@ Going to uninstall otelcol-sumo.
 main: line 785: /Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory
 ```
 
-This means you have installed the collector before the installation script used packages in MacOS.
+This means that you've installed the collector before the installation script was able to use packages in macOS.
+
 To uninstall, use an older version of the installation script:
 
 ```shell
