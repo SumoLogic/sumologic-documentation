@@ -53,7 +53,7 @@ To add a panel with a table chart:
 
 ## URL Links in table chart panels
 
-When you create a table chart panel, and if your query looks for URLs then use [tourl](/docs/search/search-query-language/search-operators/tourl/) operator to display the URL in the table as working links.
+When you create a table chart panel, and if your query looks for URLs, then use the [`tourl`](/docs/search/search-query-language/search-operators/tourl/) operator to display the URL in the table as working links.
 
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
