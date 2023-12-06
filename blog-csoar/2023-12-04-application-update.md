@@ -15,6 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Playbooks: Added ability to dynamically select an authorizer in UserChoice node.
 #### Automation Service 
 * The Automation Service now permits you to execute Containment and Scheduled actions. App Central has been updated accordingly.
+* Manual playbook interaction through: user choice node and manual action.
 
 ### Bug fixes 
 * Selecting a timestamp while testing integrations no longer results in the wrong timestamp being used.
