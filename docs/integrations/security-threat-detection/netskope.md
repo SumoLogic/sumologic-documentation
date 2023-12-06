@@ -111,7 +111,7 @@ This section demonstrates how to install the Netskope App, and provides examples
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Netskope Dashboards
+## Viewing Netskope dashboards
 
 The Netskope dashboards are grouped by their component in the following two category folders:
 
