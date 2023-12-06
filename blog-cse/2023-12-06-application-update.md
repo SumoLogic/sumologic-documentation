@@ -53,6 +53,6 @@ Note that fixing the rule expression(s) will not fix any Signals or Insights tha
 Other tips:
 * A malformed tuning expression will affect any rule that it is associated with, whether provided by Sumo Logic or custom-written.
 * We highly recommend using only schema fields in your rule and tuning expressions.
-  * Sumo Logic's parsers and mappers are updated weekly so please contact Support if you need to add a mapping from the raw log format to the normalized schema.
-  * Sumo Logic's schema is extensible so please contact Support if there's a field you'd like to add.
+  * Sumo Logic's parsers and mappers are updated weekly, so please contact Support if you need to add a mapping from the raw log format to the normalized schema.
+  * Sumo Logic's schema is extensible, so please contact Support if there's a field you'd like to add.
 
