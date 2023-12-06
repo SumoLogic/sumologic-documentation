@@ -87,7 +87,7 @@ This topic describes features and options that give you administration over acco
   <p>Accelerate the search process for data subsets by functioning as a pre-aggregated index.</p>
   </div>
 </div>
-<div className="box smallbox13 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/security"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Security</h4></a>
   <p>Learn how to set up security for Sumo Logic accounts.</p>
