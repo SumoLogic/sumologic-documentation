@@ -6,7 +6,7 @@ sidebar_label: App Template #example: Split
 tags:
   - apps
   - app-name  #example: Split
-description: Description goes here. #example:  The Sumo Logic App for the Split app enables you to seamlessly monitor feature flagging, experiment results, and user behavior, enabling data-driven decision making and fostering a more agile and competitive development process.
+description: Description goes here. #example: The Sumo Logic App for Split enables you to seamlessly monitor feature flagging, experiment results, and user behavior, enabling data-driven decision making and fostering a more agile and competitive development process.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
