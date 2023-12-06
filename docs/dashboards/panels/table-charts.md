@@ -4,7 +4,6 @@ title: Table Charts
 description: Table charts are the default chart type in the Aggregates tab.
 ---
 
-
 Table charts are the default chart type in the **Aggregates** tab. They are useful for listing the type and number of events that have occurred, such as the type of error that occurs the most in your system. To create a table chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
 For example, you'd use the following query to create a simple table chart:
@@ -54,7 +53,7 @@ To add a panel with a table chart:
 
 ## URL Links in table chart panels
 
-If your query looks for URLs, when you create a table chart panel, the URLs displayed in the table will be displayed as working links.
+When you create a table chart panel, and if your query looks for URLs then use [tourl](/docs/search/search-query-language/search-operators/tourl/) operator to display the URL in the table as working links.
 
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
