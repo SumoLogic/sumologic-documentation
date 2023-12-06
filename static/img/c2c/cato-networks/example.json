@@ -1,0 +1,20 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+          "name": "cato-network",
+          "description": "sample description",
+          "accountID": "1774",
+          "apiKey": "***********",
+          "dataTypes": [
+            "securityEvents",
+            "auditEvents",
+            "all"
+          ]
+      },
+      "schemaRef": {
+        "type": "Cato Networks"
+      },
+      "sourceType": "Universal"
+    }
+}
