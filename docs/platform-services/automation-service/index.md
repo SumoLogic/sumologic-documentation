@@ -38,6 +38,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/platform-services/automation-service/automation-service-audit-logging/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Automation Service Audit Logging</h4></a>
+  <p>Learn how to search the Audit Event Index for Automation Service log events. </p>
+  </div>
+</div>  
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/platform-services/automation-service/automation-service-bridge/"><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="icon" width="40"/><h4>Bridge for the Automation Service</h4></a>
   <p>Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment. </p>
   </div>
