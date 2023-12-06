@@ -1,0 +1,23 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "armis",
+            "description": "description",
+            "category": "source_category",
+            "instanceURL": "http://armis-instance.armis.com",
+            "secretKey": "*********",
+            "apiType": [
+                "alertLogs",
+                "deviceLogs"
+            ],
+            "fields": {
+                "_siemForward": false
+            }
+        },
+        "schemaRef": {
+            "type": "Armis"
+        },
+        "sourceType": "Universal"
+    }
+}
