@@ -15,7 +15,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known targets for compromise. You can import files containing threat intelligence indicators directly into Sumo Logic to aid in security analysis. 
 
-Threat intelligence indicators can help a security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
+Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
+
+## Prerequisites
+
+### Role capabilities
+
+To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/). 
+
+1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
+1. Click the **Roles** tab.
+1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
+Add the following capabilities:
+   * **Threat Intel**
+       * **View Threat Intel Data Store**
+       * **Manage Threat Intel Data Store**
+
+<!-- At GA, add these role capabilities to the "Role Capabilities" article. -->
+
+### STIX/TAXII 2.0 collector
+
+To use threat intelligence indicators, you must first install and configure the [STIX/TAXII 2.0 collector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/). This collector helps correlate data from logs to threat intelligence indicators. <!-- Add the link to the collector once it is available. -->
 
 ## Threat Intelligence tab
 
@@ -79,9 +99,20 @@ To add threat intelligence indicators, you must upload files containing the indi
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add threat intelligence indicators](#add-threat-intelligence-indicators) above.
 1. Click **Delete**. 
 
-## Cloud SIEM hasThreatMatch function 
+## Search for threats using threat intelligence indicators
 
-The Cloud SIEM `hasThreatMatch` rules language function finds fields in Cloud SIEM Records matching values in [Threat Intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists. For other rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
+### threat_lookup log search operator 
+
+When you perform a [log search](/docs/search/), you can use use the `threat_lookup` search operator to search logs for matches in threat intelligence indicators. 
+
+:::note
+You can also use the [`threatIP` search operator](/docs/search/search-query-language/search-operators/threatip/) to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
+:::
+
+
+### Cloud SIEM hasThreatMatch function 
+
+You can use the Cloud SIEM `hasThreatMatch` function when you write [Cloud SIEM rules](/docs/cse/rules/) to search incoming Records in Cloud SIEM for matches to threat intelligence indicators. It can match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists as well as threat indicators added to the [Threat Intelligence tab](#threat-intelligence-tab). For other Cloud SIEM rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
 
 **Syntax**
 
