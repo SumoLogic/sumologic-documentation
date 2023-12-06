@@ -107,7 +107,7 @@ to_user, app_session_id  nodrop
 This section demonstrates how to install the Netskope App, and provides examples and descriptions for each of the dashboards. The Netskope App has the following components:
 
 * **Application Usage:** Insights into application usage; specifically by devices, users, users and traffic patterns.
-* **Security Alerts:** Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
+* **Security Alerts**. Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
 
 {@import ../../reuse/apps/app-install-v2.md}
 
