@@ -102,14 +102,14 @@ to_user, app_session_id  nodrop
 ```
 
 
-## Installing the Netskope App
+## Installing the Netskope app
 
 This section demonstrates how to install the Netskope App, and provides examples and descriptions for each of the dashboards. The Netskope App has the following components:
 
 * **Application Usage:** Insights into application usage; specifically by devices, users, users and traffic patterns.
 * **Security Alerts:** Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Netskope Dashboards
 
@@ -118,15 +118,7 @@ The Netskope dashboards are grouped by their component in the following two cate
 * Application Usage
 * Security Alerts
 
-### Dashboard filters
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Application Overview
 
