@@ -17,7 +17,7 @@ The Automation Service has been updated to include several new enhancements:
 
 * **Containment** action types are now supported. Typically, these actions will perform some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall. Many integrations in App Central now include containment actions.
 * **User Choice** nodes (and manual steps) are now supported. When executing a playbook if a user choice node is encountered, the execution will pause until a user selects an option. For example, after enrichment, a user could be asked whether to proceed with a containment action or to perform additional enrichment first. When a playbook is paused at a user choice node, the status of that playbook will say `Waiting user interaction`.
-* In the initial release of the Automation Service, playbooks would not appear in the `Create New Automation` Cloud SIEM dialog unless they defined as type `CSE`. This restriction has been lifted; all playbooks will now appear in the dropdown.
+* In the initial release of the Automation Service, playbooks would not appear in the **Create New Automation** Cloud SIEM dialog unless they defined as type `CSE`. This restriction has been lifted; all playbooks will now appear in the dropdown.
 
 For full details, see the [Automation Service documentation](/docs/platform-services/automation-service/).
 
