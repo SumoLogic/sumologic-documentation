@@ -96,10 +96,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | merakiOrg | String | Yes | `null` | Cisco Meraki Organization ID. |  |
 | pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
-### JSON example
-
-### Terraform example
-
 ## Troubleshooting
 You may receive the follow error below if you enter an invalid Cisco Meraki organization ID in your configuration. Please follow the steps in the section [Gather Meraki Organization IDs](#gather-meraki-organization-ids) to ensure you are using an ID for a Meraki organization returned in that query.
 
