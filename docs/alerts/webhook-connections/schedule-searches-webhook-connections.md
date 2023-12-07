@@ -7,9 +7,17 @@ description: Create a Scheduled Search to send alerts to a third-party tool via 
 
 [Scheduled searches](/docs/alerts/scheduled-searches) are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a Webhook Connection.
 
+## Limitation
+
+No more than 512 records returned by a scheduled search run are used for webhook connection.
+
+## Create scheduled searches for webhook connections
+
 You can create a brand new search, or you can base a search on an existing saved or scheduled search. If you'd like to use an existing search, you'll need to save the query as a new search to not override the search's current schedule.
 
+:::info
 Before setting up a scheduled search for Webhooks, configure a Webhook Connection. For more information, see [Set Up Webhook Connections](set-up-webhook-connections.md).
+:::
 
 The payload for each scheduled search can be customized (depending on the tool you're connecting to). Customizing payload does not affect the payload you defined in the Connection—it's at the search level.
 

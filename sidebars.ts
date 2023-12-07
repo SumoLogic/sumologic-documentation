@@ -292,8 +292,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
@@ -951,6 +949,7 @@ module.exports = {
           ],
         },
         'dashboards/locate-deviations-time-series',
+        'dashboards/restricted-operators-dashboards',
         'dashboards/set-custom-time-ranges',
         'dashboards/scheduled-report',
         'dashboards/export-dashboard-new',
@@ -1826,6 +1825,7 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
+      'integrations/product-list',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1916,6 +1916,7 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
+        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
@@ -2823,6 +2824,7 @@ integrations: [
             'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
             'platform-services/automation-service/automation-service-integration-framework',
           ],

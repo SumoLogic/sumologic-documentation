@@ -28,7 +28,7 @@ All users can access the data contained within the audit index, but only adminis
 1. Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
-Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion).
+Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. In your Sumo Logic account, this data will count against your data volume quota. For more information, see [Manage Ingestion](/docs/manage/ingestion-volume/log-ingestion).
 :::
 
 ## Query the audit index

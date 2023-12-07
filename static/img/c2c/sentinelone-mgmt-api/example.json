@@ -1,0 +1,21 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name":"SentinelOne",
+        "supported_apis":["activities","agents","threats"],
+        "api_secret":"********",
+        "base_url":"https://usea1-partners.sentinelone.net/",
+        "fields":{
+          "_siemForward":false
+        }
+      },
+      "schemaRef":{
+        "type":"SentinelOne Mgmt API"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

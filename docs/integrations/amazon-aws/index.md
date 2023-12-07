@@ -396,4 +396,14 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
     <img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
     <h4><a href="/docs/integrations/amazon-aws/threat-intel">AWS Foundations Benchmark App</a></h4>
     <p>A guide to the Sumo Logic app for AWS Threat Intel.</p>
-</div>    </div></div>                                                                                                     
+</div>    
+</div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg')} alt="Thumbnail icon" width="50"/>
+    <h4><a href="/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws">Cloud Infrastructure Security for AWS</a></h4>
+    <p>A guide to our Cloud Infrastructure Security for AWS app.</p>
+    </div>    
+  </div>
+</div>
+
