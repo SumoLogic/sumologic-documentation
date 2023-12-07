@@ -8,7 +8,7 @@ To install the app, do the following:
     1. **Key.** Select either of these options for the data source.
         * Choose **Source Category**, and select a source category from the list for **Default Value**.
         * Choose **Custom**, and enter a custom metadata field. Insert its value in **Default Value**.
-1. Click on **Next**. You will be redirected to **Preview & Done** section.
+1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 Your app will be installed in the **Installed Apps** folder and dashboard panels will start to fill automatically.
 
