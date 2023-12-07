@@ -124,7 +124,7 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 {@import ../../reuse/apps/view-dashboards.md}
 
-###  Dropbox Dashboard Overview
+###  Overview
 
 **Dropbox - Overview**.
 This dashboard provides valuable insights on the activities of active members, uniquely linked applications, and login events. It also offers a summary of user agent activity, analyzes the distribution of all event categories within Dropbox, displays the geolocations of all events, identifies the most frequent event types within important event categories, and tracks recently added team members.
