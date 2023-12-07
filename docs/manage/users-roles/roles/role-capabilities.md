@@ -22,8 +22,8 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Manage S3 Data Forwarding	| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket.|
 | Manage Content	| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library.|
 | Manage Apps | Install and manage [apps](/docs/integrations). |
-| View Connections | View [connections](docs/alerts/webhook-connections/) on the **Connections** page. |
 | Manage Connections | Manage the [connections](docs/alerts/webhook-connections/) that allow you to send alerts to other tools. |
+| View Connections | View [connections](docs/alerts/webhook-connections/) on the **Connections** page. |
 | View Scheduled Views	| [View Scheduled Views](/docs/manage/scheduled-views).|
 | Manage Scheduled Views	| View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Schedule Views capability, users with that role will also have View Scheduled Views capability.|
 | View Partitions	| View [partitions](/docs/manage/partitions-data-tiers).|
