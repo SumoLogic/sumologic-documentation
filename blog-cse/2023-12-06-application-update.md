@@ -23,7 +23,7 @@ For full details, see the [Automation Service documentation](/docs/platform-serv
 
 ### Minor Changes and Enhancements
 
-* [New] Entity Groups now support second-level unnormalized attributes **(fields.*attribute*.*attribute*)**.
+* [New] Entity Groups now support second-level unnormalized attributes (`fields.<attribute>.<attribute>`).
 * [New] Log Mappings can now be enabled or disabled via API using the `PUT /log-mappings/{*id*}/enabled` endpoint.
 * [New] The `Record Count` field on Sumo Logic-provided Chain Rules can now be overridden (like other Rule fields).
 
