@@ -48,7 +48,6 @@ A CrowdStrike Source authenticates with an OAuth2 API key. These are created in 
 * Detections
 * Event Streams
 * Hosts
-* Host Groups
 
 ### Source configuration
 
