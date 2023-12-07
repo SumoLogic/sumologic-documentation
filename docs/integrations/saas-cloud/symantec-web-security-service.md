@@ -64,13 +64,13 @@ _sourceCategory=swssDev
 
 To set up [Cloud to Cloud Integration Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) for the Symantec Web Security Service App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Web Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
 
-## Installing the Symantec Web Security Service App​
+## Installing the Symantec Web Security Service app
 
-This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Symantec Web Security Service dashboards
 
-## Viewing Symantec Web Security Service Dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Symantec Web Security Service - Security Overview
 
