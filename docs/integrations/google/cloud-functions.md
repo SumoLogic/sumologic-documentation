@@ -9,16 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/functions.png')} alt="thumbnail icon" width="50"/>
 
-The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
+The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures with help of audit logs and metrics.
 
-## Log Types
+## Data Types
 
-This app uses the following logs:
+This app uses the following :
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Cloud Functions.
-* Google Cloud Functions Logs - Debug information of function executions.
+* [Google Cloud Function Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#cloud_functions) - Debug information of function executions.
+* [Google Cloud Function metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudfunctions)
 
 
-### Sample Query
+### Sample Log Query
 
 ```sql title="Created Resources Over Time"
 _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textPayload\":\"Function execution took"
@@ -31,6 +32,11 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 | compare with timeshift 1d 7 avg
 ```
 
+### Sample Metric Query
+```sql title="Number of Errors"
+cloud.provider=gcp project_id={{project_id}} region={{region}} cloud.platform={{cloud.platform}} function_name =* metric=function/execution_count statistic=average !status=ok | sum 
+```
+
 ## Collecting Logs for the Google Cloud Functions App
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions App.
@@ -39,7 +45,7 @@ This section describes the Sumo pipeline for ingesting logs from Google Cloud Pl
 
 The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
 
-The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
+The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Google Cloud Loggings [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
 <img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="Google integrations" />
 
@@ -47,12 +53,12 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**.
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
-3. Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+3. Create an export of GCP logs from Google Log Router. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
 See the following sections for configuration instructions.
 
 :::note
-Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
+Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Logs router and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 :::
 
 ### Configure a Google Cloud Platform Source
@@ -124,6 +130,12 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    5. Click **Create Sync**.
 
 
+## Collecting Metric for the Google Cloud Functions App
+
+For metric collection in sumo use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/). Here are the steps involved
+
+1. Setup Google Service Account following the steps [here](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account)
+2. Setup a GCP Metric source in Sumo Logic following the instruction from [here](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account). While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
 
 ## Installing the Google Cloud Functions App
 
@@ -136,9 +148,9 @@ Now that you have set up collection for Google Cloud Functions, install the Sumo
 You can use the pre-configured searches and dashboards for visibility into your environment with visual displays of real-time performance analytics and overall usage.
 
 
-### Overview
+### Google Cloud Function - Performance Overview
 
-See an overview of Google Cloud Function processing; including daily executions; execution by status, execution outliers by function, and the top 10 functions by executions, average latency, and error status.
+This panel is based on cloud function metrics. See an overview of Google Cloud Function performance including - active functions, number of function execution, number of errors, function distribution by trigger type and number of errors, execution count by project/region, trigger type and error status. Dashboard also list the function by average time execution and memory consumption.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-functions-overview.png')} alt="Google Cloud Functions dashboards" />
 
@@ -161,55 +173,19 @@ See an overview of Google Cloud Function processing; including daily executions;
 **Execution Status. **A bar chart with the count of execution statuses in the last 24 hours.
 
 
-### Statistics
+### Google Cloud Function - Audit Events
 
-See statistical summaries of function executions, latency, errors, and failures.
+This dashboard works with Google Cloud Audit logs, where Admin activity [audit logs of cloud function are used](https://cloud.google.com/functions/docs/monitoring/audit-logging). The panels here list recent audit log events along with any unauthorized  audit event, listing audit event with time and any error audit event along with error code and error message.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-functions-statistics.png')} alt="Google Cloud Functions dashboards" />
 
-**Function Statistics by Project. **A table with function statistics by project in the last 24 hours.
 
-**Average Latency (ms), Error Statuses Over Time. **A line chart that shows a count of average latency over the last 24 hours. And a column chart with a count of error status in the last 24 hours.
+### Google Cloud Function - Performance Details
 
-**Function Executions Over Time. **A line chart showing the count of function executions in the last 24 hours.
-
-**Top 10 Functions by Executions. **A table listing the top 10 functions by executions in the last 24 hours.
-
-**Function Average Latency Over Time. **A line chart showing a count of average function latency in the last 24 hours.
-
-**Top 10 Functions by Average Latency (ms). **A table listing the top 10 functions by executions in the last 24 hours.
-
-**Function Error Status Over Time. **A line chart showing a count of function error statuses in the last 24 hours.
-
-**Top 10 Functions by Error Status. **A table listing the top 10 functions by error statuses in the last 24 hours.
-
-**Failures Over Time. **A line chart showing a count of failures in the last 24 hours.
-
-**Recent Failures. **A table that shows recent failures over the last 24 hours, including function, severity, and the text.
-
-**Error Statuses. **A bar chart that shows the count of error statuses in the last 24 hours.
-
-
-### Advanced Metrics
-
-See trends over time and outliers for executions per hour, average latency per hour, and error status per hour.
+This panel is based on cloud function metrics. See trends over time for instance count(active and idle), number of executions, execution time, User memory, and outgoing traffic along with execution distribution with status and timeshift comparison of execution time and number of execution.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-functions-advanced-metrics.png')} alt="Google Cloud Functions dashboards" />
 
-**Executions per Hour - Outlier. **A line chart that shows when the count of executions per hour varies by a statistically significant amount, three or more standard deviations, from the running average, over the last 24 hours.
 
-**Executions per Hour - Trend. **A line chart that shows the count of executions per hour over the last 24 hours, along with a prediction in the trend of counts of executions.
-
-**Executions per Hour by Project. **A column chart that shows the count of executions per hour by project, over the last 24 hours.
-
-**Average Latency (ms) per Hour - Outlier. **A line chart that shows when the count of average latency per hour varies by a statistically significant amount, three or more standard deviations, from the running average, over the last 24 hours.
-
-**Average Latency (ms) per Hour - Trend. **A line chart that shows the count of average latency per hour over the last 24 hours, along with a prediction in the trend of counts of average latency.
-
-**Latency (ms) Box Plot. **A box plot chart with maximum, upper quartile, median, lower quartile, minimum count of latency in the last 24 hours.
-
-**Error Statuses per Hour - Outlier. **A line chart that shows when the count of error statuses per hour varies by a statistically significant amount, three or more standard deviations, from the running average, over the last 24 hours.
-
-**Error Statuses per Hour - Trend. **A line chart that shows the count of error statuses per hour over the last 24 hours, along with a prediction in the trend of counts of average latency.
-
-**Error Statuses per Hour by Project. **A column chart that shows the count of error statuses per hour by project, over the last 24 hours.
+### Google Cloud Function - Platform Logs
+This dashboard works with Google Cloud platform logs of cloud function. Cloud Functions writes logs to this stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. Based on these logs we have panels giving insights into - execution status, listing top function with  number of execution, average latency, error status and recent failures. 
