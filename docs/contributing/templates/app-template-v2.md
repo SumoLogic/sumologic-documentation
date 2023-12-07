@@ -23,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Example:
 | Polling Interval | Data |
-| --- | --- |
+| :--- | :--- |
 | 5 min |  [Team Events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events) |
 
 ## Log types
