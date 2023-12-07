@@ -11,6 +11,6 @@ To install the app, do the following:
         * Choose **Custom**, and enter a custom metadata field. Insert its value in **Default Value**.
 1. Click on **Next**. You will be redirected to **Preview & Done** section.
 
-Your app will be installed in **Installed Apps** folder and Panels of dashboard will start to fill automatically.
+Your app will be installed in the **Installed Apps** folder and dashboard panels will start to fill automatically.
 
 Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
