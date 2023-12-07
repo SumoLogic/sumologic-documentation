@@ -266,16 +266,50 @@ List of breaking changes specific to Sumo Logic Distribution of OpenTelemetry Co
 
 ## Troubleshooting
 
-Here are some basic troubleshooting steps on macOS.
+For general Sumo Logic OTel Collector troubleshooting, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
 
-To verify that the Launchd daemon has been installed:
+Here are some troubleshooting steps specific to macOS.
+
+### Error `/Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory` when uninstalling collector
+
+If you're trying to uninstall the collector on macOS, and you see an error similar to the following:
+
+```console
+$ sudo curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+Detected OS type:	darwin
+Detected architecture:	arm64
+Going to uninstall otelcol-sumo.
+main: line 785: /Library/Application Support/otelcol-sumo/uninstall.sh: No such file or directory
+```
+
+This means that you've installed the collector before the installation script was able to use packages in macOS.
+
+To uninstall, use an older version of the installation script:
+
+```shell
+sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.80.0-sumo-0/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+```
+
+The output should be similar to this:
+
+```console
+$ sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.80.0-sumo-0/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 48284  100 48284    0     0  64169      0 --:--:-- --:--:-- --:--:-- 64169
+Going to remove Otelcol binary, user, file storage and configurations.
+Uninstallation completed
+```
+
+### Verify that the `launchd` daemon has been installed
 
 ```console
 $ sudo launchctl list | grep otelcol-sumo
 54109	0	otelcol-sumo
 ```
 
-To verify that the daemon is running:
+### Verify that the `launchd` daemon is running
 
 ```console
 $ sudo launchctl print system/otelcol-sumo
@@ -341,17 +375,17 @@ system/otelcol-sumo = {
 
 The output should include `active count = 1` and `state = running`. This means the daemon is running.
 
-To verify that the collector process is running:
+### Verify that the collector process is running
 
 ```shell
 $ ps aux | grep '[o]telcol-sumo'
 _otelcol-sumo    55368   0.0  0.2 409731808 125232   ??  Ss   12:25PM   0:00.21 /usr/local/bin/otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config glob:/etc/otelcol-sumo/conf.d/*.yaml
 ```
 
-To check the logs from the collector:
+### View logs from the collector
 
 ```shell
 cat /var/log/otelcol-sumo/otelcol-sumo.log
 ```
 
-For more information on troubleshooting and solutions, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+For more troubleshooting, refer to [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
