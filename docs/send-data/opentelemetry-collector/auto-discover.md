@@ -8,7 +8,7 @@ description: Learn how to enable Auto Discovery to detect services that are inst
 Sumo Logic OpenTelemetry collectors can now detect services that are installed on the server on which the collector is running. Once the services are discovered, you can evaluate the information on Sumo Logic platform and proceed with the onboarding of applications. It's a useful improvement that will give you more confidence in monitoring and observability of your systems.
 
 :::note
-- Auto discover feature is supported only in Linux and MacOS operating systems.
+- Auto Discovery is supported only in Linux and macOS operating systems.
 - Minimum collector version required to use this feature is `v0.89.0-sumo-0`.
 :::
 
