@@ -92,19 +92,19 @@ Now that you have configured Akamai DataStream 2 logs, install the Sumo Logic Ap
 
 {@import ../../reuse/apps/view-dashboards.md}
 
-### Akamai DataStream - Overview
+### Overview
 
 The **Akamai DataStream - Overview** dashboard displays the geo location of requests, requests from risky locations, cache hit ratio trend, URLs causing issues, and user agent breakdown.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Overview.png')} alt="Akamai-DataStream-Overview"/>
 
-### Akamai DataStream - Performance and Qos Monitoring
+### Performance and Qos Monitoring
 
 The **Akamai DataStream - Performance and Qos Monitoring** dashboard analyze response time and provides analysis between response time and requests, DNS lookup delay by geolocations, and shows transfer time by the requested path.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Akamai-DataStream-Performance-and-Qos-Monitoring.png')} alt="Akamai-DataStream-Performance-and-Qos-Monitoring"/>
 
-### Akamai DataStream - Requests Type
+### Requests Type
 
 The **Akamai DataStream - Requests Type** dashboard provides details about visitor platforms, breakdown of browsers and OS, cache hit ratio by content type, and requests with errors.
 
