@@ -281,7 +281,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 {@import ../../reuse/apps/view-dashboards.md}
 
-### Linux - Security Monitoring - Overview
+### Security Monitoring - Overview
 
 **Dashboard description:** This dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
 
@@ -290,7 +290,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Monitoring-Overview.png')} alt="Linux Security dashboards" />
 
 
-### Linux - Security Analytics - Login Activity
+### Security Analytics - Login Activity
 
 **Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
@@ -299,7 +299,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Login-Activity.png')} alt="Linux Security dashboards" />
 
 
-### Linux - Security Analytics - Privileged Activity
+### Security Analytics - Privileged Activity
 
 **Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
@@ -308,7 +308,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Privileged-Activity.png')} alt="Linux Security dashboards" />
 
 
-### Linux - Security Monitoring - User, Service, and System Monitoring
+### Security Monitoring - User, Service, and System Monitoring
 
 **Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
