@@ -1,6 +1,6 @@
 ---
 id: auto-discover
-title: Auto Discover
+title: Auto Discovery
 sidebar_label: Auto Discover
 description: Learn how to enable auto discover to detect services that are installed on the server on which the collector is running.
 ---
