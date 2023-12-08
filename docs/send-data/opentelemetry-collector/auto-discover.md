@@ -2,7 +2,7 @@
 id: auto-discover
 title: Auto Discovery
 sidebar_label: Auto Discover
-description: Learn how to enable auto discover to detect services that are installed on the server on which the collector is running.
+description: Learn how to enable Auto Discovery to detect services that are installed on the server on which the collector is running.
 ---
 
 Sumo Logic OpenTelemetry collectors can now detect services that are installed on the server on which the collector is running. Once the services are discovered, you can evaluate the information on Sumo Logic platform and proceed with the onboarding of applications. It's a useful improvement that will give you more confidence in monitoring and observability of your systems.
