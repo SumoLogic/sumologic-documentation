@@ -14,7 +14,7 @@ Sumo Logic OpenTelemetry collectors can now detect services that are installed o
 
 ## View discovered services
 
-Auto Discovery feature is enabled by default on all the OpenTelemetry collectors for the supported version. Below are the **Auto Discoverable Services** provided by Sumo Logic.
+Auto Discovery is enabled by default on all the OpenTelemetry collectors for the supported version. Below are the **Auto Discoverable Services** provided by Sumo Logic.
 - Apache
 - MySQL
 - Ngnix
