@@ -99,22 +99,70 @@ To add threat intelligence indicators, you must upload files containing the indi
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add threat intelligence indicators](#add-threat-intelligence-indicators) above.
 1. Click **Delete**. 
 
-## Search for threats using threat intelligence indicators
+## Search for threats
 
-### threat_lookup log search operator 
+Once you [add threat intelligence indicators](#add-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using:
+* [`threat_lookup` search operator](#threat_lookup)
+* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch)
 
-When you perform a [log search](/docs/search/), you can use use the `threat_lookup` search operator to search logs for matches in threat intelligence indicators. 
+### threat_lookup search operator
 
-:::note
-You can also use the [`threatIP` search operator](/docs/search/search-query-language/search-operators/threatip/) to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
-:::
+The `threat_lookup` search operator allows you to search logs for matches in threat intelligence indicators. Note that you can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
 
+#### Syntax
 
-### Cloud SIEM hasThreatMatch function 
+```
+threat_lookup [source=<source_value>] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
+```
 
-You can use the Cloud SIEM `hasThreatMatch` function when you write [Cloud SIEM rules](/docs/cse/rules/) to search incoming Records in Cloud SIEM for matches to threat intelligence indicators. It can match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists as well as threat indicators added to the [Threat Intelligence tab](#threat-intelligence-tab). For other Cloud SIEM rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
+Response fields:
+* confidence
+* fields
+* imported
+* indicator
+* valid_from
+* valid_until
+* source
+* threat_type
+* type
+* updated
 
-**Syntax**
+#### Examples
+
+```
+index=sec_record* objectType=NetworkProxy 
+| threat_lookup dstDevice_ip 
+| where _threatLookup.confidence > 50 
+| timeslice 1h 
+| count by _timeslice
+```
+```
+index=sec_record* objectType=NetworkProxy 
+| threat_lookup source=FreeTAXII dstDevice_ip 
+| where _threatLookup.confidence > 50 
+| timeslice 1h 
+| count by _timeslice
+```
+```
+index=sec_record* objectType=NetworkProxy 
+| threat_lookup dstDevice_ip, srcDevice_ip 
+| where _threatLookup.confidence > 50 
+| timeslice 1h 
+| count by _timeslice
+```
+```
+index=sec_record* objectType=NetworkProxy 
+| threat_lookup  source=FreeTAXII dstDevice_ip, srcDevice_ip 
+| where _threatLookup.confidence > 50 
+| timeslice 1h 
+| count by _timeslice
+```
+
+### hasThreatMatch Cloud SIEM rules language function
+
+The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. It can match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists as well as threat indicators added to the [Threat Intelligence tab](#threat-intelligence-tab). For other Cloud SIEM rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
+
+#### Syntax
 
 `hasThreatMatch([<fields>], <optional_filtering_predicate>, <optional_validity_strategy>)`
 
@@ -126,7 +174,7 @@ Parameters:
    * `expired_indicators`. Match expired indicators only.
    * `all_indicators`. Match all indicators.
 
-**Examples**
+#### Examples
 
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
