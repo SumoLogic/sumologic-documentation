@@ -32,7 +32,7 @@ For the discovered services, you can set up data collection with guided onboardi
 1. In Sumo Logic, select **Manage Data > Collection > OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the **Done** page, you can see services discovered which are updated in real time.
-1. On clicking the application tile of interest, you will be taken to the App catalog to complete the data setup.
+1. On clicking the application tile of interest, you will be taken to the App Catalog to complete the data setup.
 
 ### OpenTemetry collector list page
 
