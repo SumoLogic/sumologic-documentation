@@ -41,7 +41,7 @@ You can also review the applications discovered per collector on the collector l
 1. In Sumo Logic, select **Manage Data > Collection > OpenTelemetry Collection**.
 1. Click on the collector from the list which will open the Collector Inspector view.  
 1. Select **Discovered Service(s)** tab to review all the services discovered.
-1. On clicking the application tile of interest, you will be taken to the App catalog to complete the data setup.
+1. On clicking the application tile of interest, you will be taken to the App Catalog to complete the data setup.
 
 
 
