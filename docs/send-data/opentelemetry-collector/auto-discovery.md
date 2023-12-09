@@ -1,9 +1,10 @@
 ---
-id: auto-discover
+id: auto-discovery
 title: Auto Discovery
 sidebar_label: Auto Discovery
 description: Learn how to enable Auto Discovery to detect services that are installed on the server on which the collector is running.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic OpenTelemetry collectors can now detect services that are installed on the server on which the collector is running. Once the services are discovered, you can evaluate the information on Sumo Logic platform and proceed with the onboarding of applications. It's a useful improvement that will give you more confidence in monitoring and observability of your systems.
 
@@ -25,14 +26,16 @@ Auto Discovery is enabled by default on all the OpenTelemetry collectors for the
 - Docker
 - RabbitMQ
 
-For the discovered services, you can set up data collection with guided onboarding steps. 
+For the discovered services, you can set up data collection with guided onboarding steps. Below are the two different ways by which you can install and setup the OTEL Auto discover apps.
 
-### Add a new collector
+### Collector installation completion page
 
 1. In Sumo Logic, select **Manage Data > Collection > OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the **Done** page, you can see services discovered which are updated in real time.
-1. On clicking the application tile of interest, you will be taken to the App Catalog to complete the data setup.
+1. [Install the OpenTelemetry collector](https://help.sumologic.com/docs/send-data/opentelemetry-collector/install-collector/).
+1. On the **Done** page, you can see services discovered which are updated in real time.<br/><img src={useBaseUrl('img/send-data/collector-installation-completion-page.png')} alt="collector-installation-completion-page" style={{border:'1px solid black'}} width="700" />
+1. On clicking the application of interest in **Auto Discovered Service(s)** section, you will be taken to the **Configure App** section.
+1. Fill up the details to complete the collection configuration and app installation.
 
 ### OpenTemetry collector list page
 
@@ -40,8 +43,9 @@ You can also review the applications discovered per collector on the collector l
 
 1. In Sumo Logic, select **Manage Data > Collection > OpenTelemetry Collection**.
 1. Click on the collector from the list which will open the Collector Inspector view.  
-1. Select **Discovered Service(s)** tab to review all the services discovered.
-1. On clicking the application tile of interest, you will be taken to the App Catalog to complete the data setup.
+1. Select **Discovered Service(s)** tab to review all the services discovered.<br/><img src={useBaseUrl('img/send-data/collector-list-page.png')} alt="collector-list-page" style={{border:'1px solid black'}} width="800" />
+1. On clicking the application of interest, you will be taken to the **Configure App** section.
+1. Fill up the details to complete the collection configuration and app installation.
 
 
 
