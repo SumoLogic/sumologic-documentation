@@ -26,7 +26,7 @@ Auto Discovery is enabled by default on all the OpenTelemetry collectors for the
 - Docker
 - RabbitMQ
 
-For the discovered services, you can set up data collection with guided onboarding steps. Below are the two different ways by which you can install and setup the OTEL Auto discover apps.
+For the discovered services, you can set up data collection with guided onboarding steps. Below are the two different ways by which you can install and setup the OTEL Auto discovery apps.
 
 ### Collector installation completion page
 
