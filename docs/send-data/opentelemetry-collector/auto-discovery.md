@@ -37,7 +37,7 @@ For the discovered services, you can set up data collection with guided onboardi
 1. On clicking the application of interest in **Auto Discovered Service(s)** section, you will be taken to the **Configure App** section.
 1. Fill up the details to complete the collection configuration and app installation.
 
-### OpenTemetry collector list page
+### OpenTelemetry collector list page
 
 You can also review the applications discovered per collector on the collector list page.
 
