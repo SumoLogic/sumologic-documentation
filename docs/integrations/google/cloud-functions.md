@@ -19,7 +19,7 @@ The Sumo Logic app for Google Cloud Functions uses the following logs and metric
 * [Google Cloud Function metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudfunctions)
 
 
-### Sample Log Query
+### Sample log query
 
 ```sql title="Created Resources Over Time"
 _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textPayload\":\"Function execution took"
@@ -32,7 +32,7 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 | compare with timeshift 1d 7 avg
 ```
 
-### Sample Metric Query
+### Sample metric query
 ```sql title="Number of Errors"
 cloud.provider=gcp project_id={{project_id}} region={{region}} cloud.platform={{cloud.platform}} function_name =* metric=function/execution_count statistic=average !status=ok | sum 
 ```
@@ -130,12 +130,12 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    5. Click **Create Sync**.
 
 
-## Collecting Metric for the Google Cloud Functions App
+## Collecting Metric for the Google Cloud Functions app
 
-For metric collection in sumo use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/). Here are the steps involved
+For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
-1. Setup Google Service Account following the steps [here](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account)
-2. Setup a GCP Metric source in Sumo Logic following the instruction from [here](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account). While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
+1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
+2. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
 
 ## Installing the Google Cloud Functions App
 
@@ -148,9 +148,9 @@ Now that you have set up collection for Google Cloud Functions, install the Sumo
 You can use the pre-configured searches and dashboards for visibility into your environment with visual displays of real-time performance analytics and overall usage.
 
 
-### Google Cloud Function - Performance Overview
+### Performance Overview
 
-This panel is based on cloud function metrics. See an overview of Google Cloud Function performance including - active functions, number of function execution, number of errors, function distribution by trigger type and number of errors, execution count by project/region, trigger type and error status. Dashboard also list the function by average time execution and memory consumption.
+The **Google Cloud Function - Performance Overview** dashboard uses the cloud function metrics. This dashboard provides an overview of Google Cloud Function performance including - active functions, number of function executions, number of errors, function distribution by trigger type and number of errors, execution count by project/region, trigger type, and error status. This dashboard also lists the function by average time execution and memory consumption.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-functions-overview.png')} alt="Google Cloud Functions dashboards" />
 
@@ -173,19 +173,19 @@ This panel is based on cloud function metrics. See an overview of Google Cloud F
 **Execution Status. **A bar chart with the count of execution statuses in the last 24 hours.
 
 
-### Google Cloud Function - Audit Events
+### Audit Events
 
-This dashboard works with Google Cloud Audit logs, where Admin activity [audit logs of cloud function are used](https://cloud.google.com/functions/docs/monitoring/audit-logging). The panels here list recent audit log events along with any unauthorized  audit event, listing audit event with time and any error audit event along with error code and error message.
+The **Google Cloud Function - Audit Events** dashboard uses the Google Cloud Admin activity [audit logs of cloud function](https://cloud.google.com/functions/docs/monitoring/audit-logging). The panels here list the recent audit log events, unauthorized audit events, audit events over time, and error audit events with error codes and error messages.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-functions-statistics.png')} alt="Google Cloud Functions dashboards" />
 
 
-### Google Cloud Function - Performance Details
+### Performance Details
 
-This panel is based on cloud function metrics. See trends over time for instance count(active and idle), number of executions, execution time, User memory, and outgoing traffic along with execution distribution with status and timeshift comparison of execution time and number of execution.
+The **Google Cloud Function - Performance Details** dashboard is based on cloud function metrics. See trends over time for instance count (active and idle), number of executions, execution time, User memory, and outgoing traffic along with execution distribution, with status and timeshift comparison of execution time and number of executions.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-functions-advanced-metrics.png')} alt="Google Cloud Functions dashboards" />
 
 
-### Google Cloud Function - Platform Logs
-This dashboard works with Google Cloud platform logs of cloud function. Cloud Functions writes logs to this stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. Based on these logs we have panels giving insights into - execution status, listing top function with  number of execution, average latency, error status and recent failures. 
+### Platform Logs
+The **Google Cloud Function - Platform Logs** dashboard uses Google Cloud platform logs of cloud function, which writes logs to the stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. Based on these logs, we have panels giving insights into - execution status, listing top functions with a number of executions, average latency, error status, and recent failures. 
