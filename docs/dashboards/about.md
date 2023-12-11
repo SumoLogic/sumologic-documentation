@@ -66,7 +66,6 @@ The following operators can't be used with Dashboard:
 * Details
 * LogReduce
 * LogCompare
-* Parse multi
 * Save
 * Transaction
 
@@ -87,7 +86,6 @@ Live mode restrictions do not apply to Dashboard. 
 
 * Auto Refresh applies to the whole dashboard, you can't configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
-* Panels with an [absolute time range](/docs/search/get-started-with-search/search-basics/time-range-expressions) are not supported.
 * If the requested refresh interval is not possible, you'll get an error message indicating the actual refresh rate is slower than requested. This can be due to one of the following reasons:
    * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
    * An operator is not supported at this refresh interval.
