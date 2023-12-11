@@ -65,14 +65,15 @@ Following are the capabilities you can assign when you [create roles](create-ma
 
 | Capability | Description |
 | :-- | :-- |
-| Share dashboards with the allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
-| Share dashboards with the world	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Dashboards With The World	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Washboards With The Allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
+
 
 ## User Management
 
 | Capability | Description |
 | :-- | :-- |
-| Manage users and roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
+| Manage Users And Roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
 
 ## Automation Service
 
@@ -130,16 +131,9 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
-| View Cloud SOAR | | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
-| App Central | Access | Access [App Central](/docs/cloud-soar/automation#app-central). |  
-| App Central | Export | Export from App Central. |  
-| Integrations | Access | Access [Integrations](/docs/cloud-soar/automation#integrations). |  
-| Integrations | Configure | Configure Integrations. |  
-| Automation Playbooks | Access | Access [playbooks](/docs/cloud-soar/automation#playbook).  |  
-| Automation Playbooks | Configure | Configure playbooks. |  
-| Bridge Monitoring | Access | Access [Bridge monitoring](/docs/cloud-soar/global-functions-menu/#audit-and-information). |
-| Observability | Access | Access playbook execution information.  |   
-| Observability | Configure | Configure playbook execution information. |   
+| View Cloud SOAR | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
+| Settings General | Access Cloud SOAR settings. |
+| Configure | Configure Cloud SOAR. |
 
 
 ## Cloud SIEM
