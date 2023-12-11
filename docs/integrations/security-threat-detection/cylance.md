@@ -216,7 +216,6 @@ You can use filters to drill down and examine the data on a granular level.
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-
 ### Overview
 
 The **Cylance - Overview Dashboard** a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
