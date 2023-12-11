@@ -5,6 +5,7 @@ sidebar_label: TAXII
 tags:
   - cloud-to-cloud
   - taxii
+  - stix
 description: The TAXII source provides a secure endpoint to collect indicators from threat intel services using the TAXII/STIX 1.1 specification.
 ---
 
