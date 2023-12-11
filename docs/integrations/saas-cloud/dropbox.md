@@ -126,23 +126,18 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 ### Overview
 
-**Dropbox - Overview**.
-This dashboard provides valuable insights on the activities of active members, uniquely linked applications, and login events. It also offers a summary of user agent activity, analyzes the distribution of all event categories within Dropbox, displays the geolocations of all events, identifies the most frequent event types within important event categories, and tracks recently added team members.
+**Dropbox - Overview** dashboard provides valuable insights on the activities of active members, uniquely linked applications, and login events. It also offers a summary of user agent activity, analyzes the distribution of all event categories within Dropbox, displays the geolocations of all events, identifies the most frequent event types within important event categories, and tracks recently added team members.
 
 Moreover, the dashboard provides an overview of all events related to internal and external sharing within the team, including the sharing of files and folders with external domains. Overall, this dashboard offers comprehensive information about the team's activity and facilitates efficient monitoring of various important events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-overview.png')} alt="dropbox-overview.png" width="900"/>
 
 ### File Statistics
 
-**Dropbox - File Statistics**.
-This dashboard offers visibility into team members' file operations, including the most frequent file operations, geolocations of file operations, linked apps, and user activity. Additionally, it displays recent file operations along with associated assets.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-file-statistics.png')} alt="dropbox-file-statistics" width="900"/>
+**Dropbox - File Statistics** dashboard offers visibility into team members' file operations, including the most frequent file operations, geolocations of file operations, linked apps, and user activity. Additionally, it displays recent file operations along with associated assets.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-file-statistics.png')} alt="dropbox-file-statistics" width="900"/>
 
 ### Logins, Devices & Sessions
 
-**Dropbox - Logins, Devices & Sessions**.
-
-This dashboard provides visibility into login geolocations, including risky countries, and displays a table view of successful device links. It also presents the distribution of team-linked and user-linked apps. Additionally, the dashboard lists users with frequent device IP changes and frequent failed login attempts to monitor for potential breaches.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-logins-devices-sessions.png')} alt="dropbox-logins-devices-sessions" width="900"/>
+**Dropbox - Logins, Devices & Sessions** dashboard provides visibility into login geolocations, including risky countries, and displays a table view of successful device links. It also presents the distribution of team-linked and user-linked apps. Additionally, the dashboard lists users with frequent device IP changes and frequent failed login attempts to monitor for potential breaches.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-logins-devices-sessions.png')} alt="dropbox-logins-devices-sessions" width="900"/>
 
 ### Team Admin Actions
 
-**Dropbox - Team Admin Actions**.
-This dashboard displays the most frequent actions performed by administrators and provides a table view of the top active admins along with their respective countries. It also shows all recent admin activities for easy monitoring.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-team-admin-actions.png')} alt="dropbox-team-admin-actions" width="900"/>
+**Dropbox - Team Admin Actions** dashboard displays the most frequent actions performed by administrators and provides a table view of the top active admins along with their respective countries. It also shows all recent admin activities for easy monitoring.<br/><img src={useBaseUrl('img/integrations/saas-cloud/dropbox-team-admin-actions.png')} alt="dropbox-team-admin-actions" width="900"/>

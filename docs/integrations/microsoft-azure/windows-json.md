@@ -109,7 +109,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 :::
 
 
-### Windows - Overview
+### Overview
 
 The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
@@ -121,7 +121,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Overview.png')} alt="Windows JSON dashboards" />
 
-### Windows - Default
+### Default
 
 The **Windows - Default** dashboard provides information about the start and stop operations for Windows services, Windows events, operations events, and Errors and Warnings.
 
@@ -133,7 +133,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Default.png')} alt="Windows JSON dashboards" />
 
-### Windows - Login Status
+### Login Status
 
 The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
 
@@ -144,7 +144,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_LoginStatus.png')} alt="Windows JSON dashboards" />
 
-### Windows - Event Errors
+### Event Errors
 
 The **Windows - Event Errors** dashboards provide insights into error keyword trends and outliers.
 
@@ -156,7 +156,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_EventErrors.png')} alt="Windows JSON dashboards" />
 
 
-### Windows - Application
+### Application
 
 The **Windows - Application** dashboard provides detailed information about install, uninstall, and event trends.
 
