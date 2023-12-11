@@ -74,6 +74,25 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | :-- | :-- |
 | Manage users and roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
 
+## Automation Service
+
+| Capability | Description |
+| :-- | :-- |
+| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Access | Access your tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).|
+| Task Access all | Access all user tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Edit | Configure tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Reassign | Assign tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) to users. |
+| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
+| App Central Export | Export contents of integrations and playbooks from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
+| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
+| Integrations Configure | Create and edit [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
+| Playbooks Access | View [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Bridge Monitoring Access | Monitor [Bridge](/docs/platform-services/automation-service/automation-service-bridge/) operations. |
+| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. | 
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | 
+
 ## Alerting
 
 Folder-level permissions are available if your org has fine-grained Monitor permissions enabled. If you'd like to use this feature, contact Sumo Logic Support to have it enabled.

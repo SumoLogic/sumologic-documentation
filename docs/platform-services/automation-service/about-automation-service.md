@@ -54,20 +54,21 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
-   * Automation Service
-      * Task Access
-      * Task Access all
-      * Task Edit
-      * Task Reassign
-      * App Central Access
-      * App Central Export
-      * Integrations Access
-      * Integrations Configure
-      * Playbooks Access
-      * Playbooks Configure
-      * Bridge Monitoring Access
-      * Observability Access
-      * Observability Configure
+   * **Automation Service**
+      * **Task View**
+      * **Task Access**
+      * **Task Access all**
+      * **Task Edit**
+      * **Task Reassign**
+      * **App Central Access**
+      * **App Central Export**
+      * **Integrations Access**
+      * **Integrations Configure**
+      * **Playbooks Access**
+      * **Playbooks Configure**
+      * **Bridge Monitoring Access**
+      * **Observability Access**
+      * **Observability Configure**
 
 ### Configure the connection for an integration resource
 
