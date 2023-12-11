@@ -209,32 +209,11 @@ To set up [Cloud to Cloud Integration Rapid7 Source](/docs/send-data/hosted-coll
 
 ## Installing the Rapid7 app​
 
-This section has instructions for installing the Sumo Logic app for Rapid7.
+{@import ../../reuse/apps/app-install-v2.md}
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure the **Rapid7** app using the steps described in the [Rapid7 Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
+## Viewing Rapid7 dashboards​​
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-Dashboard panels will start to fill automatically. It's important to note that each panel fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but within 20 minutes, you'll see full graphs and maps.
-
-## Viewing Rapid7 Dashboards​​
-
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+{@import ../../reuse/apps/view-dashboards.md}
 ### Assets Overview
 
 The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the assets within the Rapid7 source. It presents a comprehensive view of the total asset count, highlighting the top 10 vulnerable assets based on their risk score and the number of associated vulnerabilities. Additionally, this dashboard offers valuable information about the leading operating systems among assets, the distribution of assets by type, the geographic location of assets, and a summary of recent assets based on their most recent scan time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Assets-Overview.png')} alt="Rapid7-Assets-Overview" width="750"/>

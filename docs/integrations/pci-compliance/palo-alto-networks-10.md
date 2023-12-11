@@ -166,16 +166,13 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 
 </details>
 
-## Installing the PCI for Palo Alto Networks 10 App
+## Installing the PCI for Palo Alto Networks 10 app
 
-Now that you have set up collection for PCI for Palo Alto Networks 10 app, you can install app and use the preconfigured searches and dashboards that provide insight into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-This app supports PAN-OS v10.
+## Viewing PCI for Palo Alto Networks 10 dashboards
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing PCI for Palo Alto Networks 10 Dashboards
-
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### PCI Req 01 - Accepted and Rejected Traffic
 

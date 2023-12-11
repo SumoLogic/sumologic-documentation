@@ -57,20 +57,13 @@ For more information on local or remote Windows Event Log Source configuration, 
 Make sure to set the Source Category when configuring the Windows Event Log source. For example: OS/Windows/Events.
 
 
-## Installing the PCI Compliance for Windows JSON App
+## Installing the PCI Compliance for Windows JSON app
 
-This section provides instructions for installing the PCI Compliance for Windows JSON App, along with examples of each of the App dashboards. The PCI Compliance for Windows JSON App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and dashboards that provide insight into your data.  
+## Viewing PCI Compliance for Windows JSON dashboards
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing PCI Compliance for Windows JSON Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring
 
