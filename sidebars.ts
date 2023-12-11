@@ -62,6 +62,7 @@ module.exports = {
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
             'contributing/templates/c2c-source',
+            'contributing/templates/app-template-v2',
           ]
         }
       ],
@@ -291,8 +292,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
