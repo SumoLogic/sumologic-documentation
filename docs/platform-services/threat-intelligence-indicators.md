@@ -112,7 +112,7 @@ The `threat_lookup` search operator allows you to search logs for matches in thr
 #### Syntax
 
 ```
-threat_lookup [source=<source_value>] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
+threat_lookup [source=<source_value>] [include=<all|active|expired>] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
 ```
 
 Response fields:
@@ -158,19 +158,27 @@ index=sec_record* objectType=NetworkProxy
 | count by _timeslice
 ```
 
+```
+index=sec_record* objectType=NetworkProxy 
+| threatlookup  source=FreeTAXII  include=active dstDevice_ip, srcDevice_ip 
+| where _threatLookup.confidence > 50 
+| timeslice 1h 
+| count by _timeslice
+```
+
 ### hasThreatMatch Cloud SIEM rules language function
 
 The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. It can match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists as well as threat indicators added to the [Threat Intelligence tab](#threat-intelligence-tab). For other Cloud SIEM rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
 
 #### Syntax
 
-`hasThreatMatch([<fields>], <optional_filtering_predicate>, <optional_validity_strategy>)`
+`hasThreatMatch([<fields>], <optional_filtering_predicate>, <indicators>)`
 
 Parameters:
-* `<fields>` is a list of comma separated field names. At least one field name is required.
+* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
 * `<optional_filtering_predicate>` is an optional simple boolean expression on the threat indicator fields. Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.
-* `<optional_validity_strategy>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
-   * `active_indicators`. Match active indicators only.
+* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+   * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
    * `all_indicators`. Match all indicators.
 
@@ -179,7 +187,7 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”s1”)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”FreeTAXII”)`
 * `hasThreatMatch([srcDevice_ip], source=”s2” OR (source=”s2” confidence > 50 AND))`
 * `hasThreatMatch([srcDevice_ip], active_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
