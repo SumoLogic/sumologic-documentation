@@ -62,7 +62,7 @@ See the following sections to learn how to add the following node types:
 
 ### Add an action node to a playbook
 
-An action node in a playbook runs an operation. String actions together in the playbook to perform a workflow.  
+An action node in a playbook runs an operation. You can string actions together in the playbook to perform a workflow.  
 
 :::tip
 For examples of adding actions to playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/). 
