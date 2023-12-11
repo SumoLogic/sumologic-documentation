@@ -404,6 +404,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/taxii"><img src={useBaseUrl('img/send-data/taxii_logo.png')} alt="icon" width="60"/><h4>TAXII</h4></a>
+        <p>Learn to collect indicators from threat intel services using the TAXII/STIX 1.1 specification.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source"><img src={useBaseUrl('img/send-data/tenable-logo.png')} alt="icon" width="190"/><h4>Tenable</h4></a>
         <p>Learn to ingest audit-log events, vulnerability, and asset data from the Tenable.io APIs.</p>
         </div>

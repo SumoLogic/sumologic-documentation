@@ -1,0 +1,18 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "Test TAXII 1.1",
+            "userSourceID": "1234",
+            "discoveryURL": "https://otx.alienvault.com/taxii/discovery",
+            "useBasicAuth": true,
+            "pollingInterval": "1h",
+            "httpBasicUsername": "sample-username",
+            "httpBasicPassword": "sample-password"
+        },
+        "schemaRef": {
+            "type": "TAXII"
+        },
+        "sourceType": "Universal"
+    }
+}
