@@ -26,7 +26,7 @@ This source is not available in the [Fed deployment](/docs/api/getting-started#s
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 1 hour |  Indictor |
+| 1 hour |  Indicators |
 
 ## Setup
 
