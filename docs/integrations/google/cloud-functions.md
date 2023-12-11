@@ -13,7 +13,7 @@ The Google Cloud Functions App enables you to monitor your usage of Google Cloud
 
 ## Log and Metric types
 
-This app uses the following :
+The Sumo Logic app for Google Cloud Functions uses the following logs and metrics:
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Cloud Functions.
 * [Google Cloud Function Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#cloud_functions) - Debug information of function executions.
 * [Google Cloud Function metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudfunctions)
