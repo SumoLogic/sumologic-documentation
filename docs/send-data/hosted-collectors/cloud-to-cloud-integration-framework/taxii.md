@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/taxii_logo.png')} alt="icon" width="50"/>
 
-The TAXII source provides a secure endpoint to collect indicators from threat intel services using the TAXII/STIX 1.1 specification and send them to Sumo Logic Threat Intelligence.
+The Sumo Logic TAXII source provides a secure endpoint to collect indicators from threat intel services using the STIX/TAXII 1.1 specification and sends them to Sumo Logic Threat Intelligence.
 
 :::note
 This source is not available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
