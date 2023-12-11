@@ -119,8 +119,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 results further by selecting an **AND/OR** operator to define another
 condition.
 1. Click **Update**.
-1. When you create a new condition, you need to define what happens
-when their results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
+1. When you create a new condition, you need to define what happens when the results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
 
 ### Add a task node to a playbook
 
