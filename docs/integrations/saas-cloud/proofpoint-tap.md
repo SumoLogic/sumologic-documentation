@@ -165,11 +165,7 @@ To set up [Cloud to Cloud Integration Proofpoint TAP Source](/docs/send-data/hos
 
 ## Viewing Proofpoint TAP dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following dashboards. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Messages Overview
 
