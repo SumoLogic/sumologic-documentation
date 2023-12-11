@@ -45,4 +45,4 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources), or [Sumo Logic Terraform Resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) if you are using Terraform,for more details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to use JSON to configure sources](/docs/send-data/use-json-configure-sources), or [Sumo Logic Terraform Resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) if you are using Terraform,for more details.
