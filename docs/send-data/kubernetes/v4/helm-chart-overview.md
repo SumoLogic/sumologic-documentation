@@ -1,6 +1,6 @@
 ---
-slug: /send-data/kubernetes/v4
-title: Sumologic Kubernetes Helm Chart
+slug: /send-data/kubernetes/v4/helm-chart-overview
+title: Sumo Logic Kubernetes Helm Chart
 sidebar_label: Overview
 description: This page provides an overview of the Sumo Logic Kubernetes Helm Chart.
 ---

@@ -387,14 +387,13 @@ module.exports = {
           label: 'Kubernetes Helm Chart',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'send-data/kubernetes/v4/helm-chart-overview'},
+          link: {type: 'doc', id: 'send-data/kubernetes/index'},
           items: [
             {
               type: 'category',
               label: 'v4 (latest)',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'send-data/kubernetes/v4/helm-chart-overview'},
               items: [
                 'send-data/kubernetes/v4/helm-chart-overview',
                 'send-data/kubernetes/v4/install-helm-chart',
