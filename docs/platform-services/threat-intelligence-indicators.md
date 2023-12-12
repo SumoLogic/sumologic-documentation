@@ -188,6 +188,6 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”FreeTAXII”)`
-* `hasThreatMatch([srcDevice_ip], source=”s2” OR (source=”s2” confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], source=”s1” OR (source=”s2” confidence > 50 AND))`
 * `hasThreatMatch([srcDevice_ip], active_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
