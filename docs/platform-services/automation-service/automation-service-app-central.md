@@ -32,6 +32,8 @@ Watch this micro lesson to learn how to use App Central.
 
 To view App Central, [access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service) and click **App Central** in the left navigation bar. 
 
+Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
+
 ## App Central UI 
 
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" width="800"/>
