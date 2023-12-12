@@ -1,22 +1,17 @@
 ---
 id: use-playbooks-with-monitors
-title: Use Automated Playbooks with Monitors
+title: Playbooks in Monitors
+sidebar_label: Playbooks in Monitors
 description: Learn how to use Automation Service playbooks with monitors.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to use automated playbooks with monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to a incident. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event. 
+This article describes how to configure automated playbooks in monitors. A [playbook](/docs/platform-services/automation-service/automation-service-playbooks/) is a predefined set of actions and conditional statements that run in an automated workflow to respond to an event. For example, suppose that a monitor detects suspicious behavior that could indicate a security problem. When the monitor sends the alert, it could also run an automated playbook to respond to the event. 
 
 To add a playbook to a monitor, see [Add an automated playbook to a monitor](#add-an-automated-playbook-to-a-monitor) below.
 
-To create a monitor to detect suspicious behavior (anomalies), see [Create an anomaly monitor](#create-an-anomaly-monitor) below.
+To create a monitor to detect suspicious behavior (anomalies), see [Create an anomaly monitor that runs a playbook](#create-an-anomaly-monitor-that-runs-a-playbook) below.
 
 ## Prerequisites
 
@@ -73,7 +68,9 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
 1. If you have an action marked as **Waiting Owner**, perform the steps needed to complete the **Action Task**. When done, click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.<br/><img src={useBaseUrl('img/monitors/playbook-complete-task.png')} alt="Playbook awaiting user interaction" width="300" />
 1. Address any other actions in the playbook that need attention. For example, click and open any failed actions to see why they failed and to determine what you need to do to get them to complete successfully. 
 
-## Create an anomaly monitor
+## Create an anomaly monitor that runs a playbook
+
+You can create a monitor that triggers an alert when unusual behavior is encountered (an anomaly) and runs a playbook in response.
 
 An anomaly monitor is triggered when unusual conditions  are detected. Anomaly monitors leverage a machine learning model to detect anomalies and identify unusual patterns of activity. The output of the machine learning model are baselines for normal behavior, in the form of lower and upper thresholds, so that deviations from baselines signal unusual activity and trigger alerts. 
 
@@ -81,7 +78,7 @@ An anomaly monitor is triggered when unusual conditions  are detected. Anomaly m
 Outlier monitors are under the detector type for **Anomaly** monitors because outlier monitors use anomaly detection on in-query data. 
 :::
 
-To create a monitor that generates smart alerts:
+To create a monitor that generates alerts that run a playbook:
 
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
 1. Go to [Step 1: Trigger Conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** window.
