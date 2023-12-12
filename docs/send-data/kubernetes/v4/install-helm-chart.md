@@ -1,5 +1,5 @@
 ---
-slug: /send-data/kubernetes/v4/install-helm-chart
+id: install-helm-chart
 title: Sumo Logic Kubernetes Helm Chart Installation
 sidebar_label: Installation
 description: Learn how to install the Sumo Logic Kubernetes Helm Chart.
@@ -13,8 +13,7 @@ This page describes how to install the Sumo Logic Kubernetes Helm Chart.
 
 ### Helm
 
-The Sumo Logic Kubernetes Collection solution is packaged as a Helm Chart. See the [official documentation][install_helm] for installation
-instructions for the Helm binary.
+The Sumo Logic Kubernetes Collection solution is packaged as a Helm Chart. See the [official documentation][install_helm] for installation instructions for the Helm binary.
 
 ### Add Helm Chart repository
 
