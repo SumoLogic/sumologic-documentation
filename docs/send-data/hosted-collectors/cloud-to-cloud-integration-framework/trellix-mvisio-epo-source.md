@@ -8,9 +8,9 @@ tags:
 description: Learn how to collect event logs using the Trellix mVision ePO.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/trellix-mvisio-epo/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/trellix-mvisio-epo/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/trellix-mvisio-epo/example.tf';
+import ExampleJSON from '/files/c2c/trellix-mvisio-epo/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/trellix-mvisio-epo/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/trellix-mvisio-epo/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="trellix-logo" width="70" />
@@ -88,13 +88,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/trellix-mvisio-epo/example.json)
+[Download example](/files/c2c/trellix-mvisio-epo/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/trellix-mvisio-epo/example.tf)
+[Download example](/files/c2c/trellix-mvisio-epo/example.tf)
 
 ## FAQ
 

@@ -9,9 +9,9 @@ tags:
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/1password/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/1password/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/1password/example.tf';
+import ExampleJSON from '/files/c2c/1password/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/1password/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/1password/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src="https://app_icons.s3.amazonaws.com/1Password.png" alt="Thumbnail icon" width="80"/>
@@ -101,13 +101,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/1password/example.json)
+[Download example](/files/c2c/1password/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/1password/example.tf)
+[Download example](/files/c2c/1password/example.tf)
 
 ## Troubleshooting
 

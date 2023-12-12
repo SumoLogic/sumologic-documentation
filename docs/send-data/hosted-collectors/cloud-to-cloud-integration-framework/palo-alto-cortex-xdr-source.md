@@ -8,9 +8,9 @@ description: The Cortex Cloud-to-Cloud Source Integration allows you to ingest a
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/palo-alto-cortex-xdr/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/palo-alto-cortex-xdr/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/palo-alto-cortex-xdr/example.tf';
+import ExampleJSON from '/files/c2c/palo-alto-cortex-xdr/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
@@ -137,13 +137,13 @@ The following table shows theÂ **config** parameters for a Palo Alto Cortex XDRÂ
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/palo-alto-cortex-xdr/example.json)
+[Download example](/files/c2c/palo-alto-cortex-xdr/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/palo-alto-cortex-xdr/example.tf)
+[Download example](/files/c2c/palo-alto-cortex-xdr/example.tf)
 
 ## FAQ
 
