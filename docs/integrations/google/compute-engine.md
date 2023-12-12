@@ -10,17 +10,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/ce.png')} alt="thumbnail icon" width="75"/>
 
-Google Compute Engine is the Infrastructure as a Service component of Google Cloud Platform that delivers virtual machines running in Google's data centers and worldwide fiber network. The Sumo Logic App for Google Compute Engine helps you monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, and message severity along with performance metrics monitoring CPU, network, disk and quotas for your Google Compute Engine infrastructure.
+Google Compute Engine is an Infrastructure as a Service (IaaS) component of Google Cloud Platform that delivers virtual machines running in Google's data centres and worldwide fibre network. The Sumo Logic app for Google Compute Engine helps you to monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, and message severity along with performance metrics monitoring CPU, network, disk, and quotas for your Google Compute Engine infrastructure.
 
-## Log and Metrics Types
+## Log and metrics types
 The Sumo Logic app for Google Cloud Functions uses the following logs and metrics:
 
-* [Google Cloud Audit Logs for Compute Engine](https://cloud.google.com/compute/docs/logging/audit-logging). These logs provide information about Compute Engine API calls, operations.
+* [Google Cloud Audit Logs for Compute Engine](https://cloud.google.com/compute/docs/logging/audit-logging) - These logs provide information about Compute Engine API calls and operations.
 * [Compute Engine Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#compute_engine)
 * [Google Compute Engine Metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-compute)
 
 
-### Sample Log Query
+### Sample log query
 ```bash title="Top 10 User"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | json "message.data.resource.type" as type
@@ -35,13 +35,13 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | limit 10
 ```
 
-### Sample Metric Query
+### Sample metric query
 
 ```bash title="Avg CPU Utilization"
 project_id=* region=* cloud.platform=gcp_cloudsql database_id=* metric=database/cpu/utilization  statistic=average | eval _value*100 | avg 
 ```
 
-## Collecting Logs for Google Compute Engine
+## Collecting logs for Google Compute Engine
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Compute Engine.
 
@@ -64,7 +64,7 @@ See the following sections for configuration instructions.
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Logs router.
 :::
 
-### Configure a Google Cloud Platform Source
+### Configure a Google Cloud Platform source
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
@@ -80,11 +80,11 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
-5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
+5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceHost`. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
 6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
 7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
-  * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-  * ![green check circle.png](/img/reuse/green-check-circle.png) If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
+  * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+  * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
 8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />
   * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
@@ -125,8 +125,8 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="Google integrations" />
 2. Click **Create Sink**.<br/><img src={useBaseUrl('img/integrations/google/sink.png')} alt="Google integrations" />
 3. As part of **Create logs routing sink**, add the following information.
-  1. Enter a Sink Name. For example, "gce-vm-instance".
-  2. Select "Cloud Pub/Sub" as the **Sink Service**.
+  1. Enter the **Sink Name**. For example, `gce-vm-instance`.
+  2. Select **Cloud Pub/Sub** as the **Sink Service**.
   3. Set **Sink Destination** to the Pub/Sub topic you created in the Google Cloud Platform Source procedure. For example, "pub-sub-logs".
   4. In **Choose logs to include in sink** section for `resource_type`, replace `"<resource_variable>"` with `"gce_instance"`.
   5. Click **Create Sync**.
@@ -135,57 +135,57 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
 :::
 
-## Installing the Google Compute Engine App
+## Installing the Google Compute Engine app
 
 Now that you have set up collection for Google Compute Engine, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Google Compute Engine Dashboards
+## Viewing Google Compute Engine dashboards
 
-### Google Cloud Compute Engine - Audit Logs
-This dashboard works with Compute Engine audit logs. These audit log include admin activity operation and data access audit logs. [Here](https://cloud.google.com/sql/docs/audit-logging#audited_operations) is the list operation tracked using audit log for Compute Engine. The dashboard include panels for event location, operation distribution, severity distribution, top users, recent error activities, start/stop events, instance insert/deletion events. 
+### Audit Logs
+The **Google Cloud Compute Engine - Audit Logs** dashboard works with Compute Engine audit logs. These audit logs include admin activity operation and data access audit logs. [Here](https://cloud.google.com/sql/docs/audit-logging#audited_operations) is the list of operations tracked using the audit log for Compute Engine. The dashboard includes panels for event location, operation distribution, severity distribution, top users, recent error activities, start/stop events, and instance insert/deletion events. 
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-overview.png')} alt="Google Compute Engine dashboards" />
 
 
-### Google Cloud Compute Engine - CPU
-See the CPU related metric for compute instances like CPU utilization - with comparison to 1 day and 1 week time shift, along with CPU usage time, CPU schedule wait time. 
+### CPU
+The **Google Cloud Compute Engine - CPU** dashboard provides the CPU-related metric for compute instances like CPU utilization - with comparison to one-day and one-week time shifts, along with CPU usage time, and CPU scheduling wait time. 
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-activity.png')} alt="Google Compute Engine dashboards" />
 
 
-### Google Cloud Compute Engine - Disk
-This dashboard can be used for monitoring metric related to different disk attached to respective compute instances. Filter for both disk and instance are available in this dashbaord. You can monitor - read/write operation count, read/write byte count along with trends for it, average disk IO latency and IO queue depth.
+### Disk
+The **Google Cloud Compute Engine - Disk** dashboard is used to monitor metrics related to different disks attached to respective compute instances. Filters for both disk and instance are available in this dashboard. This dashboard helps to monitor the read/write operation count, read/write byte count along with trends for it, average disk IO latency, and IO queue depth.
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-severity.png')} alt="Google Compute Engine dashboards" />
 
 
-### Google Cloud Compute Engine - Guest Performance
-This dashboards works on Guest metrics. For getting guest metrics for GCE instance you must enable the [Container-Optimized OS Health Monitoring](https://cloud.google.com/container-optimized-os/docs/how-to/monitoring) feature; for more information, see [Container-Optimized OS](https://cloud.google.com/container-optimized-os/docs). You can monitor - disk queue length, CPU usage time, memory bytes used, CPU load - 1m/5m/15m, Bytes for file system, Memory bytes, operation count (read/write) along with CPU details like - runnable task count and visible vCPU. 
+### Guest Performance
+The **Google Cloud Compute Engine - Guest Performance** dashboard works on Guest metrics. For collecting guest metrics for GCE instance, you must enable the [Container-Optimized OS Health Monitoring](https://cloud.google.com/container-optimized-os/docs/how-to/monitoring) feature; for more information, see [Container-Optimized OS](https://cloud.google.com/container-optimized-os/docs). You can monitor - disk queue length, CPU usage time, memory bytes used, CPU load - 1m/5m/15m, Bytes for the file system, Memory bytes, operation count (read/write) along with CPU details like - runnable task count and visible vCPU. 
 
 
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-users.png')} alt="Google Compute Engine dashboards" />
 
 
-### Google Cloud Compute Engine - Network
-With this dashboard you can monitor network related metrics like - send bytes, received bytes, sent packets, received packets and there respective trends. Along with this you can also monitor firewall bytes dropped trend  and packets dropped by firewall.
+### Network
+The **Google Cloud Compute Engine - Network** dashboard helps you monitor the network-related metrics like send bytes, received bytes, sent packets, and received packets with respective trends. Along with this, you can also monitor firewall bytes dropped trend and packets dropped by the firewall.
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-users.png')} alt="Google Compute Engine dashboards" />
 
-### Google Cloud Compute Engine - Performance Overview
-This dashbaord can be used to monitor the general performance of running compute instances in you Google Cloud. This dashboard can be used to monitor - average CPU utilization, number of active instance, send/received bytes, send/received packets, CPU utilization by instance, bytes dropped by firewall by instance, CPU details, disk read/write operation.  
+### Performance Overview
+The **Google Cloud Compute Engine - Performance Overview** dashboard provides information about the general performance of running compute instances in your Google Cloud. This dashboard provides insights into the average CPU utilization, number of active instances, sent/received bytes, sent/received packets, CPU utilization by instance, bytes dropped by firewall by instance, CPU details, and disk read/write operation.  
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-users.png')} alt="Google Compute Engine dashboards" />
 
-### Google Cloud Compute Engine - Platform Logs
-This dashbord is based on Compute Engine Platform logs. With this dashboard you can track the recent error messsages, recent warning message along with top error/warning messages. You can also monitor platform log severity distribution along with severty trend.
+### Platform Logs
+The **Google Cloud Compute Engine - Platform Logs** dashboard is based on Compute Engine Platform logs. With this dashboard, you can track the recent error messages and recent warning messages, along with top error/warning messages. You can also monitor platform log severity distribution along with severity trends.
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-users.png')} alt="Google Compute Engine dashboards" />
 
-### Google Cloud Compute Engine - Quota Overview
-This dashboard is based on significant quota related metric for Compute engine. This includes - VPC related quota like - instance usage, IP aliases, subnet range, static route per vpc as well as aggregated. Other quotas like - regional concurrent operation, global concurrent operation and inter region egress bandwidth can also be monitored. 
+### Quota Overview
+The **Google Cloud Compute Engine - Quota Overview** dashboard is based on significant quota-related metrics for the Compute engine. This dashboard provides insights into VPC-related quotas like instance usage, IP aliases, subnet range, and static route per VPC as well as aggregated. You can also monitor other quotas like regional concurrent operation, global concurrent operation, and inter-region egress bandwidth.
 
 <img src={useBaseUrl('img/integrations/google/google-compute-engine-users.png')} alt="Google Compute Engine dashboards" />
 

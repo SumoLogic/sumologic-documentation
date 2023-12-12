@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/sql.png')} alt="thumbnail icon" width="50"/>
 
-The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs along with CPU disk memory utilization,Disk input/output operations, replication lag, received/send bytes and connections.  
+The Sumo Logic app for Google Cloud SQL helps you to monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs, along with CPU disk memory utilization, Disk input/output operations, replication lag, received/sent bytes, and connections.  
 
 ## Log and Metric Types
 
@@ -19,7 +19,7 @@ The App uses:
 * [Google Cloud SQL Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#cloud_sql) - Logs errors on databases.
 * [Google Cloud SQL metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudsql) - Metric related to cloud sql
 
-### Sample Log Query
+### Sample log query
 
 ```bash title="Created Resources Over Time"
 _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
@@ -34,13 +34,13 @@ _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 | count as creations by _timeslice, resource_type
 | transpose row _timeslice column resource_type
 ```
-### Sample Metric Query
+### Sample metric query
 ```bash title="CPU Utilization"
 project_id=* region=* cloud.platform=gcp_cloudsql database_id=* metric=database/cpu/utilization  statistic=average | eval _value*100 | avg 
 ```
 
 
-## Collecting Logs for Google Cloud SQL
+## Collecting logs for Google Cloud SQL
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud SQL.
 
@@ -138,49 +138,49 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 :::
 
 
-## Collecting Metric for the Google Cloud Functions App
+## Collecting metric for the Google Cloud Functions app
 For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
 1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
 2. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **CloudSQL** as the service from dropdown to get the Google Cloud SQL metrics.
 
 
-## Installing the Google Cloud SQL App
+## Installing the Google Cloud SQL app
 
 Now that you have set up the collection for Google Cloud SQL, install the Sumo Logic App Google Cloud SQL to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Google Cloud SQL Dashboards
+## Viewing Google Cloud SQL dashboards
 
-### Google Cloud SQL - Audit Logs
-This dashboard works with Cloud SQL audit logs. These audit log include admin activity as well as Data access audit logs. [Here](https://cloud.google.com/sql/docs/audit-logging#audited_operations) is the list operation tracked using audit log for Cloud SQL. The dashboard include panels for geolocation of activity, operation by instance, created/deleted resource over time, messages with severity over time, Authorization failure and recent error audit operations.
+### Audit Logs
+The **Google Cloud SQL - Audit Logs** dashboard works with Cloud SQL audit logs. These audit logs include admin activity as well as Data access audit logs. [Here](https://cloud.google.com/sql/docs/audit-logging#audited_operations) is the list of operations tracked using audit log for Cloud SQL. This dashboard includes panels for geolocation of activity, operation by instance, created/deleted resources over time, messages with severity over time, Authorization failure, and recent error audit operations.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-sql-overview.png')} alt="Google Cloud SQL dashboards" />
 
 
-### Google Cloud SQL - DB Instance
-This dashboard works with Google Cloud SQL metrics. See critical performance metrics for your cloud sql instance like CPU/memory/disk utilization, number of connections, received and send bytes, CPU usage time, memory utilization distribution trend. You can use filter the data for respective database instance performance using "database_id" filter.
+### DB Instance
+The **Google Cloud SQL - DB Instance** dashboard works with Google Cloud SQL metrics. This dashboard provides critical performance metrics for your cloud SQL instance, like CPU/memory/disk utilization, number of connections, received and sent bytes, CPU usage time, and memory utilization distribution trend. You can filter the data for respective database instance performance using the **database_id** filter.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-sql-activity.png')} alt="Google Cloud SQL dashboards" />
 
-### Google Cloud SQL - MySQL - Error Logs
-This is a MySQL specific instance dashboard, which works with Google Cloud SQL MySQL instance error logs. You can monitor failed auth attemps with details, user location for failed auth attempts, host info for failed auth attempts, crash recovery attempts, server start/shutdown event over time, stopped server details, top warnings and log level trends.
+### MySQL - Error Logs
+The **Google Cloud SQL - MySQL - Error Logs** is a MySQL-specific instance dashboard which works with Google Cloud SQL MySQL instance error logs. You can monitor failed authorization attempts with details, user location for failed authorization attempts, host info for failed authorization attempts, crash recovery attempts, server start/shutdown events over time, stopped server details, top warnings, and log-level trends.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-sql-users.png')} alt="Google Cloud SQL dashboards" />
 
 
-### Google Cloud SQL - MySQL - Slow Query Logs
-This is a MySQL specific instance dashboard, which works with Google Cloud SQL MySQL instance slow query logs. You can monitor number of slow queries, average execution time, slow query trend, slow query by command type, slow query by host and top sql command causing slow queries.
+### MySQL - Slow Query Logs
+The **Google Cloud SQL - MySQL - Slow Query Logs** is a MySQL-specific instance dashboard which works with Google Cloud SQL MySQL instance slow query logs. This dashboard helps you to monitor the number of slow queries, average execution time, slow query trend, slow query by command type, slow query by host, and top SQL command causing slow queries.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-sql-failures.png')} alt="Google Cloud SQL dashboards" />
 
-### Google Cloud SQL - MySQL Performance
-This dashboard works with Google Cloud SQL metrics for MySQL database. This dashboard gives overview for number of queries, number of questions, InnoDB data fsyncs, open tables, replica lag, sent and received bytes and other innoDB and replication related MySQL metrics. 
+### MySQL Performance
+The **Google Cloud SQL - MySQL Performance** dashboard works with Google Cloud SQL metrics for the MySQL database. This dashboard provides an overview of a number of queries, the number of questions, InnoDB data syncs, open tables, replica lag, sent and received bytes, and other InnoDB and replication-related MySQL metrics. 
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-sql-failures.png')} alt="Google Cloud SQL dashboards" />
 
-### Google Cloud SQL - Performance Overview
-This dashboard works with Google Cloud SQL metrics. This dashboard gives overview of average disk/CPU/memory utilization across all Cloud SQL instances, number of connection, disk input/output operations count, memory used along with database status.
+### Performance Overview
+The **Google Cloud SQL - Performance Overview** dashboard works with Google Cloud SQL metrics. This dashboard provides an overview of the average disk/CPU/memory utilization across all Cloud SQL instances, the number of connections, disk input/output operations count, and memory used along with the database status.
 
 <img src={useBaseUrl('img/integrations/google/google-cloud-sql-failures.png')} alt="Google Cloud SQL dashboards" />
