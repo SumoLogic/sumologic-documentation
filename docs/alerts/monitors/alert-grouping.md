@@ -79,7 +79,7 @@ A user wants to create a monitor to track CPU and be notified if any node within
 A user wants to create a monitor to track errors and be notified if any service in a given env has more than 100 errors.
 
 * **Query**: `error`
-* **Group Condition**: service, env<br/><img src={useBaseUrl('img/monitors/usecase3.png')} alt="alert-grouping" />
+* **Group Condition**: service, env<br/><img src={useBaseUrl('img/monitors/usecase3.png')} alt="alert-grouping" style={{border: '1px solid black'}} width="800" />
 * **Alert Evaluation Logic**: If count of `errors` for any service,env is greater than `100`, then an alert notification will be generated for that service within a given environment (if it was not already generated).
 * **Recovery Evaluation Logic**:
     * If count of errors for any service is less than or equal to `100`, then recover the alert for that particular service within a given environment.
@@ -92,7 +92,7 @@ A user wants to create a monitor to track errors and be notified if any service 
 A user wants to create a monitor to track latency from log messages, and wants to get notified if any service has more than 2-second latency.
 
 * **Query**: `* | parse Latency:*s as latency` (parse out latency field from logs)
-* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase4.png')} alt="alert-grouping" />
+* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase4.png')} alt="alert-grouping" style={{border: '1px solid black'}} width="800" />
 * **Alert Evaluation Logic**: If Latency field for any service is greater than 2 seconds, then an alert notification will be generated for that service (if it was not already generated).
 * **Recovery Evaluation Logic**:
     * If Latency field for any service is less than 2 seconds, then recover the alert for that particular service.
@@ -105,7 +105,7 @@ A user wants to create a monitor to track latency from log messages, and wants t
 A user wants to get an alert if all hosts from a given service has stopped sending data. User wants one part per service.
 
 * **Query**: `metric=CPU_sys`
-* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase5.png')} alt="alert-grouping" />
+* **Group Condition**: service <br/><img src={useBaseUrl('img/monitors/usecase5.png')} alt="alert-grouping" style={{border: '1px solid black'}} width="800" />
 * **Alert Evaluation Logic**: If all the hosts stop sending data (`CPU_sys` metric is not being sent) then generate an alert for a given service, then an alert notification will be generated for that service (if it was not already generated). The list of hosts for a service will be computed and updated on a periodic basis.
 * **Recovery Evaluation Logic:**
     * If any of the hosts for a given service start sending the data, then resolve the alert.
@@ -124,7 +124,7 @@ This alert can be useful if you suspect that one of your collectors has stopped 
    | round(total_bytes / 1024 / 1024) as total_mbytes
    | fields total_mbytes, collector
    ```
-* **Group Condition**: `collector` <br/><img src={useBaseUrl('img/monitors/Suggested-Monitors.png')} alt="alert-grouping" />
+* **Group Condition**: `collector` <br/><img src={useBaseUrl('img/monitors/Suggested-Monitors.png')} alt="alert-grouping" style={{border: '1px solid black'}} width="800" />
 
 
 ## FAQ
