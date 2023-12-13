@@ -8,9 +8,9 @@ tags:
 description: Learn how to collect alerts, file events, and audit logs from the Code42 Incydr.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/code42-incydr/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/code42-incydr/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/code42-incydr/example.tf';
+import ExampleJSON from '/files/c2c/code42-incydr/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/code42-incydr/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/code42-incydr/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="code42-incydr-icon" width="100" />
@@ -90,13 +90,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/code42-incydr/example.json)
+[Download example](/files/c2c/code42-incydr/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/code42-incydr/example.tf)
+[Download example](/files/c2c/code42-incydr/example.tf)
 
 ## Troubleshooting
 

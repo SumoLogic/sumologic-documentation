@@ -9,9 +9,9 @@ description: The Okta Source provides a secure endpoint to receive event data fr
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/okta/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/okta/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/okta/example.tf';
+import ExampleJSON from '/files/c2c/okta/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/okta/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/okta/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
@@ -94,13 +94,13 @@ eventTypes | String | No | `null` | Comma separated list of events to collect. R
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/okta/example.json)
+[Download example](/files/c2c/okta/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/okta/example.tf)
+[Download example](/files/c2c/okta/example.tf)
 
 ## FAQ
 

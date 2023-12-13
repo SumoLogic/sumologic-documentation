@@ -9,9 +9,9 @@ description: Configure Google Workspace AlertCenter Cloud-to-Cloud connector.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/google-workspace-alertcenter/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/google-workspace-alertcenter/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/google-workspace-alertcenter/example.tf';
+import ExampleJSON from '/files/c2c/google-workspace-alertcenter/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/google-workspace-alertcenter/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/google-workspace-alertcenter/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
@@ -108,13 +108,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/google-workspace-alertcenter/example.json)
+[Download example](/files/c2c/google-workspace-alertcenter/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/google-workspace-alertcenter/example.tf)
+[Download example](/files/c2c/google-workspace-alertcenter/example.tf)
 
 ## FAQ
 
