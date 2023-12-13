@@ -15,7 +15,7 @@ To use the Automation Service, execute playbooks to run actions in a workflow. A
 
 You can use the Automation Service to run automations for the following:
 * **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to respond to security incidents.
-* **Monitors**. Use [playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run automated workflows in response to alerts. 
+* **Monitors**. Use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run workflows in response to alerts. 
 
 ## Automation Service UI
 
