@@ -11,8 +11,6 @@ This topic shows you how to create a monitor.
 
 <details><summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
 
-<!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
-
  <img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid black'}} width="800"/>
 
  </details>
@@ -326,11 +324,23 @@ To add notifications, click the **Add Notification** button. You can add more 
    * If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
-## Step 4: Monitor details
+## Step 4: Playbook
 
-The fourth step when you create a new monitor is to configure details.
+The fifth step when you create a new monitor is to add playbooks.
 
-<!-- At "smart alerts" GA, add a screenshot that shows the new playbook UI elements (radio buttons "Insert custom playbook" and "Select automated playbook", and the "Manage Playbooks" button). -->
+<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="
+Playbook" style={{border: '1px solid black'}} width="800"/>
+
+In this step you can add a **Playbook** to run in response to an alert. For more information, see [Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/).
+
+1. **Text Playbook**. Enter instructions for how to handle the alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported.
+1. **Automated Playbooks**. Select an existing playbook from the Automation Service to run when an alert is fired. 
+1. **Add Playbook**. If desired, you can add playbooks to run sequentially.
+1. Click **Manage Playbooks** button to manage the playbooks in the Automation Service. 
+
+## Step 5: Monitor details
+
+The fifth step when you create a new monitor is to configure monitor details.
 
 <img src={useBaseUrl('img/monitors/new-monitor-details.png')} alt="
 Monitor details" style={{border: '1px solid black'}} width="800"/>
@@ -338,12 +348,6 @@ Monitor details" style={{border: '1px solid black'}} width="800"/>
 1. Enter a **Monitor Name** and the **Location** where you want to save it.
 1. (Optional) Add one or more **Tags**. [Learn more here](/docs/alerts/monitors/settings#tags).
 1. (Optional) Add a **Description**.
-1. (Optional) Create or select an existing **Playbook**, which allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported.
-<!--  At "smart alerts" GA, add the following:
-<br/>Select one of the following: 
-   * **Insert custom playbook**. Input your own playbook to run when the alert is fired. 
-   * **Select automated playbook**. Select an existing playbook from the Automation Service to run when an alert is fired. Click **Manage Playbooks** button to manage the playbooks. See [Use Playbooks with Monitors](/docs/alerts/monitors/use-playbooks-with-monitors) for more information.
--->
 
 ## Other Configurations
 

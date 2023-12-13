@@ -15,7 +15,7 @@ To create a monitor to detect suspicious behavior (anomalies), see [Create an an
 
 ## Prerequisites
 
-Automated playbooks are managed by the [Automation Service](/docs/platform-services/automation-service). To use automated playbooks with monitors, you must perform tasks to enable the Automation Service. See the [prerequisites for the Automation Service](/docs/platform-services/automation-service/about-automation-service/#prerequisites).
+Automated playbooks are managed by the [Automation Service](/docs/platform-services/automation-service). To use automated playbooks with monitors, you must perform tasks to enable the Automation Service. See [Prerequisites](/docs/platform-services/automation-service/about-automation-service/#prerequisites) for the Automation Service.
 
 ## Access playbooks for monitors
 
