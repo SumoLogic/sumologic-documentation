@@ -382,7 +382,25 @@ module.exports = {
             },
           ],
         },
-        'send-data/collect-from-other-data-sources/kubernetes',
+        {
+          type: 'category',
+          label: 'Kubernetes Helm Chart',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/kubernetes/index'},
+          items: [
+            {
+              type: 'category',
+              label: 'v4 (latest)',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v4/helm-chart-overview',
+                'send-data/kubernetes/v4/install-helm-chart',
+              ],
+            },
+          ],
+        },
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -460,7 +478,6 @@ module.exports = {
             'send-data/collect-from-other-data-sources/docker-collection-methods',
             'send-data/collect-from-other-data-sources/integrate-halo-event-logs',
             'send-data/collect-from-other-data-sources/collect-logs-heroku',
-            'send-data/collect-from-other-data-sources/kubernetes',
             'send-data/collect-from-other-data-sources/kubernetes-fluentd-plugin',
             'send-data/collect-from-other-data-sources/collect-logs-oracle-cloud-infrastructure',
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
@@ -2623,7 +2640,6 @@ integrations: [
             'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
-          
           ],
         },
         {

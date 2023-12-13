@@ -22,7 +22,8 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Manage S3 Data Forwarding	| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket.|
 | Manage Content	| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library.|
 | Manage Apps | Install and manage [apps](/docs/integrations). |
-| Manage Connections | Manage the [connections](/docs/manage/connections-integrations) that allow you to send alerts to other tools. |
+| Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. |
+| View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. |
 | View Scheduled Views	| [View Scheduled Views](/docs/manage/scheduled-views).|
 | Manage Scheduled Views	| View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Schedule Views capability, users with that role will also have View Scheduled Views capability.|
 | View Partitions	| View [partitions](/docs/manage/partitions-data-tiers).|
@@ -65,14 +66,34 @@ Following are the capabilities you can assign when you [create roles](create-ma
 
 | Capability | Description |
 | :-- | :-- |
-| Share dashboards with the allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
-| Share dashboards with the world	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Dashboards With The World	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Washboards With The Allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
+
 
 ## User Management
 
 | Capability | Description |
 | :-- | :-- |
-| Manage users and roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
+| Manage Users And Roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
+
+## Automation Service
+
+| Capability | Description |
+| :-- | :-- |
+| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Access | Access your tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).|
+| Task Access all | Access all user tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Edit | Configure tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Reassign | Assign tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) to users. |
+| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
+| App Central Export | Export contents of integrations and playbooks from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
+| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
+| Integrations Configure | Create and edit [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
+| Playbooks Access | View [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Bridge Monitoring Access | Monitor [Bridge](/docs/platform-services/automation-service/automation-service-bridge/) operations. |
+| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. | 
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | 
 
 ## Alerting
 
@@ -111,16 +132,9 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
-| View Cloud SOAR | | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
-| App Central | Access | Access [App Central](/docs/cloud-soar/automation#app-central). |  
-| App Central | Export | Export from App Central. |  
-| Integrations | Access | Access [Integrations](/docs/cloud-soar/automation#integrations). |  
-| Integrations | Configure | Configure Integrations. |  
-| Automation Playbooks | Access | Access [playbooks](/docs/cloud-soar/automation#playbook).  |  
-| Automation Playbooks | Configure | Configure playbooks. |  
-| Bridge Monitoring | Access | Access [Bridge monitoring](/docs/cloud-soar/global-functions-menu/#audit-and-information). |
-| Observability | Access | Access playbook execution information.  |   
-| Observability | Configure | Configure playbook execution information. |   
+| View Cloud SOAR | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
+| Settings General | Access Cloud SOAR settings. |
+| Configure | Configure Cloud SOAR. |
 
 
 ## Cloud SIEM
