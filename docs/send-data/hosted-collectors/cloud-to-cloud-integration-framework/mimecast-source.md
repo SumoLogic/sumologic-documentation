@@ -39,6 +39,8 @@ The integration must be configured with the Client ID and Secret Key. Also, the 
 
 Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Secret Key.
 
+** NOTE: Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo via the above channels. See [Enhanced logging](/https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/). 
+
 ### Source configuration
 
 When you create a Mimecast Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
