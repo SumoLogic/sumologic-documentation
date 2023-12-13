@@ -68,7 +68,6 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
 | `_siemVendor` | `1Password` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `1Password` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |

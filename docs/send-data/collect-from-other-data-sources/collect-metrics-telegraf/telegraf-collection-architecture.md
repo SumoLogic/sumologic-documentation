@@ -34,7 +34,6 @@ Some applications may not expose their metrics for another system to access, in 
 * To collect JMX metrics from a Java application, you'd need to configure the application to use [Jolokia](https://jolokia.org/agent.html), a JMX-HTTP bridge. For more information, see [Collecting Metrics for JMX](/docs/integrations/app-development/jmx/#collecting-metrics-for-jmx).
 
 You select an existing HTTP Source on a Hosted Collection as the destination for the Telegraf-collected metrics, or configure a new collector and source, as desired. 
-:::
 
 ## Telegraf in a Kubernetes deployment
 
@@ -69,12 +68,10 @@ Sumo Logic Distribution for OpenTelemetry Collector enriches the metrics with me
 
 ### Configuration process
 
-1. To start collecting metrics from a Telegraf-supported application input plugin, you'll need to install the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection),
-   which packages up all of these components as part of the collection process for the [Sumo Logic Kubernetes Solution](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+1. To start collecting metrics from a Telegraf-supported application input plugin, you'll need to install the [Sumo Logic Kubernetes Collection Helm Chart](/docs/send-data/kubernetes), which packages up all of these components as part of the collection process for the Sumo Logic Kubernetes Solution.
   :::info What is Helm?
   Helm is a Kubernetes package and operations manager. Helm charts simplify the process of deploying components to Kubernetes environments.
   :::
-
 1. Enable the Telegraf Operator by setting `telegraf-operator.enabled=true` in configuration for the Sumo Logic Kubernetes Collection Helm Chart.
 
   For example, suppose you're running Nginx in your Kubernetes cluster, and you've enabled the status module for Nginx.

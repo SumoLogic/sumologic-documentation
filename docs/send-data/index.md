@@ -36,7 +36,7 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collect-from-other-data-sources/kubernetes"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes</h4></a>
+  <a href="/docs/send-data/kubernetes"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes</h4></a>
   <p>Learn how to collect Kubernetes logs, metrics, and events.</p>
   </div>
 </div>
