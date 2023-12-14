@@ -10,9 +10,9 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### Minor Changes and Enhancements
+### Minor changes and enhancements
 
-* [New] A new attribute section has been added to Signal and Insight details returned by the API endpoints `GET /signals/{id}` and `GET /insights/{id}` that will include the log search string (along with start and end times) that you can use to retrieve the queried records for a given Signal. The stanza looks like this:
+* [New] A new attribute section has been added to Signal and Insight details returned by the API endpoints `GET /signals/{id}` and `GET /insights/{id}`. The section will include the log search string (along with start and end times) that you can use to retrieve the queried records for a given Signal. The stanza looks like this:
 
     ```
     "recordSearchDetails": {
@@ -22,7 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     },
     ```
 
-### Bug Fixes
+### Bug fixes
 
 * Some users were seeing duplicate schema tags (with an extra "s" at the end) in the UI.
 * In some scenarios, the UI would react slowly when users attempted to enter comments for Insights.
