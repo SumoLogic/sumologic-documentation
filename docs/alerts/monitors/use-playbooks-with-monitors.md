@@ -67,7 +67,7 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
 
 ## Create an anomaly monitor that runs an automated playbook
 
-You can create a monitor that triggers a "smart alert", an alert that runs an automated playbook in response to unusual behavior (an anomaly). 
+You can create a monitor that triggers an alert that in turn runs an automated playbook in response to unusual behavior (an anomaly).  
 
 An anomaly monitor is triggered when unusual conditions  are detected. Anomaly monitors leverage a machine learning model to detect anomalies and identify unusual patterns of activity. The output of the machine learning model are baselines for normal behavior, in the form of lower and upper thresholds, so that deviations from baselines signal unusual activity and trigger alerts. 
 
