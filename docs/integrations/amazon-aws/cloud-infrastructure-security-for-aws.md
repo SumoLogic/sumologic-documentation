@@ -9,15 +9,6 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-:::info
-**Preview**<br/>The Cloud Security Infrastructure for AWS solution is in a preview release, and has the following limitations:
-* The CloudFormation template only supports one AWS region (with multiple AWS accounts) during preview. You are encouraged to get started with one AWS region. 
-* E-mail notifications for installation errors are not enabled.
-* After initial installation, data collection may be delayed.
-* If you have already installed the [Amazon Security Quickstart](/docs/integrations/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources.
-* Pre-built monitors are not installed.
-:::
-
 Cloud Infrastructure Security for AWS provides a unified view of threats, misconfigurations, and threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
@@ -154,7 +145,7 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
 
 #### Deployment options
 
-For the preview, you can deploy Cloud Security Infrastructure for AWS to a single AWS account and region. 
+You can deploy Cloud Security Infrastructure for AWS to a single AWS account and region or multiple accounts and regions. 
 
 Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. 
 
