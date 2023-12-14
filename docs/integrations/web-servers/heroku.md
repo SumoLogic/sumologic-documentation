@@ -192,21 +192,13 @@ d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
 
 These custom app **_sourceNames** will appear as values in the dashboard filter variable ``log_drain`` for the Heroku app dashboards.
 
-## Installing the Heroku App
+## Installing the Heroku app
 
-This section provides instructions for installing the Heroku App.
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection for Heroku, you can install the Heroku App to use the preconfigured searches and Dashboards that provide insight into your data.
+## Viewing Zscaler Private Access dashboards
 
-{@import ../../reuse/apps/app-install.md}
-
-:::note
-While using the **Sumo Add-on**, the value **_sourceCategory=heroku** should be used while installing the app.
-:::
-
-## Viewing Heroku Dashboards
-
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

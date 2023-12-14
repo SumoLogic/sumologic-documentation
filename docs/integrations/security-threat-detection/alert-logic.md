@@ -47,15 +47,13 @@ _sourceCategory=alertlogic
 
 Follow the instructions for setting up [Webhook connection](https://docs.alertlogic.com/configure/connections/webhook.htm#CreatetheUniversalwebhookconnectionintheAlertLogicconsole) to Sumo Logic from your Alert Logic console. The Sumo Logic app for Alert Logic uses the  [Incident schema](https://docs.alertlogic.com/configure/connections/templated/incident.htm) for queries and dashboards.
 
-## Installing the Alert Logic app​
+## Installing the Alert Logic app
 
-This section has instructions for installing the Sumo Logic app for Alert Logic.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Zscaler Private Access dashboards
 
-## Viewing Alert Logic dashboards​
-
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

@@ -52,15 +52,13 @@ _sourceCategory=Tenable
 
 To set up [Cloud to Cloud Integration Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) for the Tenable app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Tenable source category, which you will need to use when installing the app. By following these steps, you can ensure that your Tenable app is properly integrated and configured to collect and analyze your Tenable data.
 
-## Installing the Tenable app​
+## Installing the Tenable app
 
-This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Zscaler Private Access dashboards
 
-## Viewing Tenable dashboards​
-
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
