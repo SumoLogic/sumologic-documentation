@@ -26,7 +26,7 @@ This source is available in the [Fed deployment](https://hub.cloudquery.io/plugi
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 24 hours |  [Data service table data](https://developer.code42.com/api) |
+| 24 hours |  [Data service table data](https://hub.cloudquery.io/plugins/source/cloudquery/aws/v22.19.2/docs) |
 
 ## Setup
 
