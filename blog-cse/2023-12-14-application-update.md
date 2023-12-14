@@ -2,7 +2,6 @@
 title: December 14, 2023 - Application Update
 keywords:
   - cloud siem
-  - automation service
 tags: [application update]
 authors:
   - url: https://help.sumologic.com/release-notes-cse/rss.xml
