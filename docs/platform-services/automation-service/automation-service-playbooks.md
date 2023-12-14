@@ -38,20 +38,31 @@ The following procedure provides a brief introduction to how to create a playboo
 1. Click **Playbook** in the left navigation bar. Previous-created playbooks will display. 
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} alt="New playbook button" width="500"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, you must select **CSE**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, etc.)
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **CSE**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, etc.)
 1. Click **Save**. The new playbook appears in the list of available playbooks.
 1. To configure the new playbook, select
 it from the list and click the **Edit** button at the bottom of the
 screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" width="600"/><br/>Opening the playbook will present a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
-1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>Choose from the following options:
-   * [**Action**](#add-an-action-node-to-a-playbook): Automatically take specific actions such as enriching data or taking containment steps.
-   * [**Condition**](#add-a-condition-node-to-a-playbook): Use conditional statements to define what actions should be taken in response to previous inputs.
-   * **Playbook**: Call other playbooks in response to conditional
- statements.
+1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/>
 
-## Add an action node to a playbook
+See [Add nodes to a playbook](/docs/platform-services/automation-service/automation-service-playbooks/#add-nodes-to-a-playbook) for next steps.
 
-An action node in a playbook runs an enrichment or notification operation. String actions together in the playbook to perform a workflow. 
+
+## Add nodes to a playbook
+
+You can add nodes to a playbook when you either create a new playbook, or edit an existing playbook. To add a node to a playbook, click on the **+** in the **Start** node of the playbook. A *node* is a step in a playbook. Nodes run in the order they are placed in a playbook. When all nodes run without error, the playbook is considered to have executed successfully.
+
+See the following sections to learn how to add the following node types:
+   * [**Action**](#add-an-action-node-to-a-playbook). Automatically take specific actions such as enriching data or taking containment steps.
+   * [**Condition**](#add-a-condition-node-to-a-playbook). Use conditional statements to define what actions should be taken in response to previous inputs.
+   * [**Playbook**](#add-a-playbook-node-to-a-playbook). Call other playbooks in response to conditional statements.
+   * [**Task**](#add-a-task-node-to-a-playbook). Assign a task to an individual.
+   * [**User Choice**](#add-a-user-choice-node-to-a-playbook). Pause playbook execution until a user selects an option. 
+
+
+### Add an action node to a playbook
+
+An action node in a playbook runs an operation. You can string actions together in the playbook to perform a workflow.  
 
 :::tip
 For examples of adding actions to playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/). 
@@ -63,10 +74,20 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
-1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/>
 1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} alt="Add action node" width="600"/>  
-1. Give the node a **Name** that identifies the action being taken.
-1. Select the **Type** of action as **Enrichment** or **Notification**. 
+1. Give a **Node name** that identifies the action being taken.
+1. Select **Manual execution** if the node will require manual intervention to run. For example, an analyst may need to add information before executing the node.
+1. Select the [**Integration**](/docs/platform-services/automation-service/automation-service-integrations/) to supply the action for the node. 
+1. Select the **Type** of action:
+   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall. 
+   * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+   * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
+   * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
+   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed. 
+   :::note
+   The **Type** drop-down menu shows only the action types available in the selected integration.
+   :::
 1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" width="600"/> 
 1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations).
 1. Once you have entered all the information requested, click **Create**. The action node is added to the playbook.
@@ -75,7 +96,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 1. When you are done configuring your playbook, click **Save** at the bottom of the window.<br/><img src={useBaseUrl('img/cse/automations-save-playbook-button.png')} alt="Save the playbook" width="250"/> 
 1. When you are ready to allow the playbook to be used in automations, click the **Publish** button at the bottom of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} alt="Publish the playbook" width="250"/> 
 
-## Add a condition node to a playbook
+### Add a condition node to a playbook
 
 Define a conditional statement to be met before the next node can be executed. 
 
@@ -85,7 +106,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
 1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
-1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/><br/>   
+1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" width="500"/>
 1. Click **Create**. The empty condition appears on the playbook.
 1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from the previous action.
@@ -98,5 +119,60 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 results further by selecting an **AND/OR** operator to define another
 condition.
 1. Click **Update**.
-1. When you create a new condition, you need to define what happens
-when their results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
+1. When you create a new condition, you need to define what happens when the results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
+
+### Add a task node to a playbook
+
+Define a task to assign to an individual, such as a security analyst. 
+
+1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
+1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
+1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/>   
+1. Select **Task**. The task node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-task-node.png')} alt="Add task node" width="500"/>
+1. Give the node a **Title** that will display in the playbook.
+1. Type a **Description** of the task the owner will perform.  <br/>If desired, you can click the variable icon <img src={useBaseUrl('img/cse/automations-placeholder-icon.png')} alt="Placeholder icon" width="20"/> and click in the resulting box to display a list of variables you can add to the description, such as for Cloud SOAR [**Incident**](/docs/cloud-soar/incidents-triage/), [**Incident Artifacts**](/docs/cloud-soar/incidents-triage/#incident-artifacts), and [**Triage**](/docs/cloud-soar/incidents-triage/#triage).
+1. For **Authorizer**, select the user assigning the task.
+1. For **Owner**, select the user assigned the task.
+1. In **Due date**, enter the number of days from the time when the action is run before the task is due.
+1. Select **mandatory** if the task must be performed in order for the playbook to continue.
+1. In **Actual effort**, enter the number of days expected to complete the task. (The owner will subsequently record the actual number of days spent on the effort.)
+1. In **Progress**, select percent toward completion, for example, 10%, 20%, and so on. (The owner will subsequently record their progress.)
+1. Select the **Priority** (Low, Normal, Important, or Urgent).
+1. Click **Create**. 
+
+Following is an example of a task node in a running playbook. Click the **Task** node to view more about its status. Status information opens in a box to the left. In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task.
+
+<img src={useBaseUrl('img/cse/automations-example-task-node.png')} alt="Example task node" width="700"/>
+
+If a user has an action marked as **Waiting Owner**, they must perform the steps needed to complete the **Action Task**. When done, they click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.
+
+<img src={useBaseUrl('img/cse/automations-complete-task.png')} alt="Complete task" width="300"/>
+
+### Add a user choice node to a playbook
+
+When a user choice node is encountered, the execution will pause until a user selects an option. For example, after enrichment, a user could be asked whether to proceed with a containment action or to perform additional enrichment first. When a playbook is paused at a user choice node, the status of that playbook will say **Waiting user interaction**. 
+
+1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
+1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
+1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/>   
+1. Select **User Choice**. The user choice node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-user-choice-node.png')} alt="Add user choice node" width="500"/>
+1. Type a **Question** for the user. The answers they can choose from are provided by the **Answers** field.<br/>If desired, you can click the variable icon <img src={useBaseUrl('img/cse/automations-placeholder-icon.png')} alt="Placeholder icon" width="20"/> and click in the resulting box to display a list of variables you can add to the description, such as for Cloud SOAR [**Incident**](/docs/cloud-soar/incidents-triage/), [**Incident Artifacts**](/docs/cloud-soar/incidents-triage/#incident-artifacts), and [**Triage**](/docs/cloud-soar/incidents-triage/#triage).
+1. In **Answers**, enter selections that the user can choose from. By default, **success** and **failure** are provided. 
+1. For **Authorizer**, select the authorizer of the user choice.
+1. Select **Expires** if you want the user choice to expire after a set amount of time so that the playbook can proceed when no choice is made. If you do not select **Expires**, the playbook does not proceed until the user makes a choice. If you select **Expires**, fill out additional fields for the amount of time to pass before expiration, and the **Default answer** to automatically be chosen at the end of the expiration period.
+1. Click **Create**. 
+
+Following is an example of a user choice node. Note the the node branches to the next node depending on the user's answer. 
+
+<img src={useBaseUrl('img/cse/automations-example-user-choice-node.png')} alt="Example user choice node" width="500"/>
+
+### Add a playbook node to a playbook
+
+Define a playbook to run inside another playbook. For example, you may want to call another playbook in response to a [condition](#add-a-condition-node-to-a-playbook) statement.
+
+1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
+1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} alt="Start node" width="100"/><br/>
+1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} alt="Add node" width="400"/>   
+1. Select **Playbook**. The playbook node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-playbook-node.png')} alt="Add playbook node" width="500"/>
+1. In the **Playbook** drop-down menu, select the playbook to run.
+1. Click **Create**. 

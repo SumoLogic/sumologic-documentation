@@ -32,9 +32,6 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
    1. In the **New playbook** dialog, give your playbook a **Name**. 
    1. For **Type**, enter **CSE**. 
-    :::tip
-    You cannot run a playbook for a Cloud SIEM automation unless it is type **CSE**. 
-    :::
    1. Enter a **Description**.
    1. Click **Create**.
 1. Add the “IP Reputation V3” action to the playbook:
@@ -111,9 +108,6 @@ The following example shows how to configure a notification that sends an email 
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
    1. In the **New playbook** dialog, give your playbook a **Name**, such as **Notification for a log search**. 
    1. For **Type**, enter **CSE**. 
-    :::tip
-    You cannot run a playbook for a Cloud SIEM automation unless it is type **CSE**. 
-    :::
    1. Enter a **Description**.
    1. Click **Create**.
 1. Add the "Search Sumo Logic" action to the playbook:
@@ -205,9 +199,6 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
     1. Give your playbook a **Name**, such as **Custom Enrichment with IP Quality Score**.
     1. For **Type**, select **CSE**. 
-       :::tip
-       You cannot run a playbook for a Cloud SIEM automation unless it is type **CSE**. 
-       ::: 
     1. Enter a **Description**.
     1. Click **Create**.
 1. Select the input parameters for the playbook:
@@ -315,9 +306,6 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="400"/>
    1. In the **New playbook** dialog, give your playbook a **Name**. 
    1. For **Type**, enter **CSE**. 
-    :::tip
-    You cannot run a playbook for a Cloud SIEM automation unless it is type **CSE**. 
-    :::
    1. Enter a **Description**.
    1. Click **Create**.
 1. Add the “IP Reputation V3” action to the playbook:

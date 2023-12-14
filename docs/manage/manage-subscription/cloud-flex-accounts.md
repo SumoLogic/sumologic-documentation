@@ -31,7 +31,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 |:-- | :-- | :-- | :-- | :-- |
 | Audit Index |  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Audit Event Index |  | ![check](/img/reuse/check.png) |  | ![check](/img/reuse/check.png) |
-| [Collector Management API](https://github.com/SumoLogic/sumo-api-doc/wiki/collectors) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| [Collector Management API](/docs/api/collector-management) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | Dashboards - Live Mode  | 7 days | 30 days | 30 days | 30 days |
 | [Data Forwarding](/docs/manage/data-forwarding) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |

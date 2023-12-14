@@ -62,6 +62,7 @@ module.exports = {
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
             'contributing/templates/c2c-source',
+            'contributing/templates/app-template-v2',
           ]
         }
       ],
@@ -291,8 +292,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
@@ -383,7 +382,25 @@ module.exports = {
             },
           ],
         },
-        'send-data/collect-from-other-data-sources/kubernetes',
+        {
+          type: 'category',
+          label: 'Kubernetes Helm Chart',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/kubernetes/index'},
+          items: [
+            {
+              type: 'category',
+              label: 'v4 (latest)',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v4/helm-chart-overview',
+                'send-data/kubernetes/v4/install-helm-chart',
+              ],
+            },
+          ],
+        },
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -461,7 +478,6 @@ module.exports = {
             'send-data/collect-from-other-data-sources/docker-collection-methods',
             'send-data/collect-from-other-data-sources/integrate-halo-event-logs',
             'send-data/collect-from-other-data-sources/collect-logs-heroku',
-            'send-data/collect-from-other-data-sources/kubernetes',
             'send-data/collect-from-other-data-sources/kubernetes-fluentd-plugin',
             'send-data/collect-from-other-data-sources/collect-logs-oracle-cloud-infrastructure',
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
@@ -950,6 +966,7 @@ module.exports = {
           ],
         },
         'dashboards/locate-deviations-time-series',
+        'dashboards/restricted-operators-dashboards',
         'dashboards/set-custom-time-ranges',
         'dashboards/scheduled-report',
         'dashboards/export-dashboard-new',
@@ -1915,6 +1932,7 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
+        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
@@ -2621,7 +2639,6 @@ integrations: [
             'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
-          
           ],
         },
         {
@@ -2822,6 +2839,7 @@ integrations: [
             'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
             'platform-services/automation-service/automation-service-integration-framework',
           ],

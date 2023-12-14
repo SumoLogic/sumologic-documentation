@@ -2,28 +2,39 @@
 id: webex-source
 title: Webex Source
 sidebar_label: Webex
+tags:
+  - cloud-to-cloud
+  - webex
 description: Learn how to collect admin audit events using Webex API.
 ---
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/files/c2c/webex/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/webex/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/webex/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/webex-logo.png')} alt="webex-logo" width="120" />
 
 Cisco Webex is a cloud-based video conferencing and collaboration product suite, which comprises software including Webex Meetings, Webex Teams, and Webex Devices. This Webex source collects admin audit events and webhooks (meetings, rooms, messages, and memberships) data and sends it to Sumo Logic.
 
-## Data Source
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
 
-- [Admin Audit Events](https://developer.webex.com/docs/api/v1/admin-audit-events/list-admin-audit-events)
-- [Webhooks](https://developer.webex.com/docs/webhooks)
-  - Meeting
-  - Rooms
-  - Messages
-  - Memberships
+## Data collected
 
-## Set up and Configuration
+| Polling Interval | Data |
+| :--- | :--- |
+| 5 min |  [Admin Audit Events](https://developer.webex.com/docs/api/v1/admin-audit-events/list-admin-audit-events) |
+| 5 min |  [Webhooks](https://developer.webex.com/docs/webhooks) - Meeting, Rooms, Messages, and Memberships |
+
+## Setup
+
+### Vendor configuration
 
 In this configuration, you will create a new [Webex Integration App](https://developer.webex.com/docs/integrations) in [Webex Develops Portal](https://developer.webex.com/) and generate a Client ID, Client Secret, and OAuth 2.0 authorization code.
 
-### Create a New Webex Integration app
+#### Create a New Webex Integration app
 
 A Webex Integration app with specific permissions is required for Sumo Logic to access Admin Audit Events from Webex. Follow the below instructions to create a new Webex Integration app.
 
@@ -40,7 +51,7 @@ A Webex Integration app with specific permissions is required for Sumo Logic to 
 1. Copy and save the **Client ID** and **Client Secret**.
 1. Copy and save the **OAuth Authorization URL**. <br/><img src={useBaseUrl('img/send-data/oauth-authorization.png')} alt="oauth-authorization" style={{border: '1px solid black'}} width="600" />
 
-### OAuth 2.0 Authorization Code
+#### OAuth 2.0 Authorization Code
 
 Follow the below instructions to generate OAuth 2.0 Authorization Code.
 
@@ -53,7 +64,7 @@ Follow the below instructions to generate OAuth 2.0 Authorization Code.
    https://localhost/?code={{REDACTED_AUTHORIZATION_CODE}}&state=set_state_here
    ```
 
-### Organization ID
+#### Organization ID
 
 Follow the below instructions to colllect your Organization ID.
 
@@ -62,30 +73,15 @@ Follow the below instructions to colllect your Organization ID.
 3. Navigate to the **Info** tab.
 4. Copy and save the **Organization ID**. <br/><img src={useBaseUrl('img/send-data/organization-id.png')} alt="organization-id" style={{border: '1px solid black'}} width="800" />
 
-## States
-
-Webex Source is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
-When you create an Webex Source, it goes through the following stages:
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with Webex.
-1. **Collecting**. The Source is actively collecting data from Webex.
-
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
-
-When you delete the source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.
-
-## Create Webex Source
+### Source configuration
 
 When you create an Webex source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure an Webex source:
 1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Webex**.<br/> <img src={useBaseUrl('img/send-data/webex-icon.png')} alt="webex-icon" style={{border: '1px solid black'}} width="140" />
-1. Enter a **Name** for the Source. The description is optional. <br/><img src={useBaseUrl('img/send-data/webex-cofig-page.png')} alt="webex-config-main.png" style={{border: '1px solid black'}} width="400" />
+1. Search for and select **Webex**.
+1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -95,71 +91,45 @@ To configure an Webex source:
 1. **OAuth 2.0 Authorization Code**. Enter the **OAuth 2.0 Authorization Code** collected from the [URL](#oauth-20-authorization-code).
 1. **Organization ID**. Enter the **Org ID** fcollected from the [Webex Control Hub PortalURL](#organization-id).
 1. **Select Event Categories for Audit Logs**. You have the option to **Collect all events** or **Select events**, where you can specify the exact event categories you would like to collect from the admin audit logs. You can also select from the pre-defined list or type in event categories.
-1. Click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
-### Error Types
-
-When Sumo Logic detects an issue, it is tracked by Health Events. The following table shows the three possible error types, the reason for the error, if the source attempts to retry, and the name of the event log in the Health Event Index.
-
-| Type | Reason | Retries | Retry Behavior | Health Event Name |
-|:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third-party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
-
-### Restarting your Source
-
-{@import ../../../reuse/restart-c2c-source.md}
-
-### JSON Configuration
+## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
-| Parameter | Type | Required | Description | Access |
+| Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| `config` | JSON Object  | Yes | Contains the [configuration-parameters](#config-parameters) of the Source. | n/a |
-| `schemaRef` | JSON Object  | Yes | Use `{"type":"Webex"}` for Webex Source. | not modifiable |
-| `sourceType` | String | Yes | Use `Universal` for Webex Source. | not modifiable |
+| schemaRef | JSON Object  | `{"type":"Webex"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
-### Config Parameters
+### Configuration Object
 
-| Parameter | Type | Required | Description | Access |
-|:---|:---|:---|:---|:---|
-| `name` | String | Yes | Type the desired name of the Source and it must be unique per Collector. This value is assigned to the `metadata field _source`.  | modifiable |
-| `description` | String  | No | Type the description of the Source. | modifiable |
-| `category` | String | No | Type the category of the source. This value is assigned to the metadata field `_sourceCategory`. | modifiable |
-| `fields` | JSON Object | No | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
-| `clientId` | String | Yes | Client ID of the Webex Integration created for Sumo Logic from the new Webex Integration app. | modifiable |
-| `clientSecret` | String | Yes | Client Secret of the Webex Integration created for Sumo Logic from the new Webex Integration app. | modifiable |
-| `code` | String | Yes | Code of the Webex Integration created for Sumo Logic. | modifiable |
-| `orgId` | String | Yes | Orgaization Id of the customers Webex account from where you want to collect the audit event from. | modifiable |
+| Parameter | Type | Required | Default | Description | Example |
+|:--|:--|:--|:--|:--|:--|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| clientId | String | Yes | `null` | Client ID of the Webex Integration created for Sumo Logic from the new Webex Integration app. |  |
+| clientSecret | String | Yes | `null` | Client Secret of the Webex Integration created for Sumo Logic from the new Webex Integration app. |  |
+| code | String | Yes | `null` | Code of the Webex Integration created for Sumo Logic. |  |
+| orgId | String | Yes | `null` | Orgaization Id of the customers Webex account from where you want to collect the audit event from. |  |
 
-### JSON Example
+### JSON example
 
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "config":{
-      "name":"Webex- sandbox",
-      "authorizationCode":"********",
-      "clientId":"********",
-      "collectAll":false,
-      "orgId":"********",
-      "eventCategories":["LOGINS","LOGOUT","ORG_SETTINGS"],
-      "fields":{
-        "_siemForward":false
-      },
-      "clientSecret":"********",
-      "category":"sandbox/webex/audit"
-    },
-    "schemaRef":{
-      "type":"Webex"
-    },
-    "state":{
-      "state":"Pending"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/files/c2c/webex/example.json)
+
+### Terraform example
+
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/files/c2c/webex/example.tf)
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::
