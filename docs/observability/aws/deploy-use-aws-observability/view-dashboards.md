@@ -14,7 +14,24 @@ This feature is available in the following account plans.
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
-This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This page shows you how to intuitively navigate through your AWS environment using AWS Observability Hub and [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+
+
+## AWS Observability Hub
+The Hub is designed to provide easy navigation to all features and functions of the AWS Observability at one place. You can navigate to the Dashboards, Monitors (for alerting), and pre-baked log searches for troubleshooting that come with AWS Observability solution from the Hub.   
+
+You can access the Hub by clicking on the **Home** button and selecting **AWS Observability** tab from the top menu bar.
+
+The Hub has five pages
+
+1. **Explore you AWS Environment**: This page provides you access to the Out of box dashboards that help you monitor your AWS Environment.
+2. **Troubleshoot with Logs**: This page provides some pre-canned log searches to help you get started with troubleshooting issues within your AWS environment using logs.
+3. **View and Configure Alerts**: This page provides you access to the out of box monitors that will alert you about issues within your AWS environment.
+4. **Explore Intelligent Benchmark Dashboards**: This page provides you access to our out of box global benchmark dashboards that help you compare your AWS environment with Sumo benchmark and identify issues.
+5. **Invite your teammates**: This page allows you to quickly add other users to your Sumo Logic account. 
+
+![AWS Observability Hub.png](/img/observability/aws_observability_hub_page.jpg)
+
 
 ## Working with Explore View
 
