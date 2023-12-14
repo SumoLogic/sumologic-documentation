@@ -158,6 +158,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source"><img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="icon" width="80"/><h4>CloudQuery Source</h4></a>
+  <p>Learn how to collect inventory from the AWS APIs.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions"><img src={useBaseUrl('img/icons/business/SaaS.png')} alt="icon" width="50"/><h4>Cloud-to-Cloud Versions</h4></a>
   <p>Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection.</p>
   </div>
