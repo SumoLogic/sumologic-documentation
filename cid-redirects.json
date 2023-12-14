@@ -1436,6 +1436,7 @@
   "/Traces/HTTP_Traces_Source": "/docs/apm/traces/get-started-transaction-tracing/http-traces-source",
   "/docs/integrations/microsoft-azure/iis-10-legacy": "/docs/integrations/web-servers/iis-10",
   "/docs/integrations/security-threat-detection/zscaler-web-security": "/docs/integrations/security-threat-detection/zscaler-internet-access",
+  "/docs/observability/aws/quickstart": "/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/automatic-installation-script",
   "/cid/0011": "/docs/manage/field-extractions/create-field-extraction-rule",
   "/cid/0071": "/docs/metrics/introduction/get-started-metrics",
   "/cid/1": "/docs/search/get-started-with-search/build-search/search-syntax-overview",
