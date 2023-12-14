@@ -46,7 +46,7 @@ To configure a CloudQueryr Source:
 1. **AWS Access Key ID**. Enter the Access Key ID collected from the [AWS Management Console](#vendor-configuration).
 1. **AWS Secret Access Key**. Enter the Secret Access Key collected from the [AWS Management Console](#vendor-configuration).
 1. **Regions**. Identify and enter your Region based on your Base URL.
-1. **Sevices**. Enter the type of service from which the data needs to be collected.
+1. **Services**. Enter the type of service from which the data needs to be collected.
 1. By default, **Polling Interval** is set to 24 hours.
 1. When you are finished configuring the Source, click **Save**.
 
