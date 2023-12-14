@@ -315,16 +315,16 @@ To add notifications, click the **Add Notification** button. You can add more 
    * If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
-## Step 4: Playbook
+## Step 4: Playbook (optional)
 
-The fifth step when you create a new monitor is to add playbooks.
+The fourth step when you create a new monitor is to add playbooks.
 
 <img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="
 Playbook" style={{border: '1px solid black'}} width="800"/>
 
 In this step you can add a **Playbook** to run in response to an alert. 
 
-1. **Text Playbook**. Enter instructions for how to handle the alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported.
+1. **Text Playbook**. Enter instructions for how to handle the alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported. For an example, see [Alert details](/docs/alerts/monitors/alert-response/#alert-details).
 1. **Automated Playbooks**. Select an existing playbook from the Automation Service to run when an alert is fired. For more information, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/).
 1. **Add Playbook**. If desired, you can add more automated playbooks to run sequentially.
 1. Click **Manage Playbooks** to manage the automated playbooks in the Automation Service. 
@@ -339,6 +339,7 @@ Monitor details" style={{border: '1px solid black'}} width="800"/>
 1. Enter a **Monitor Name** and the **Location** where you want to save it.
 1. (Optional) Add one or more **Tags**. [Learn more here](/docs/alerts/monitors/settings#tags).
 1. (Optional) Add a **Description**.
+1. When you're done creating the monitor, click **Save**. 
 
 ## Other Configurations
 
