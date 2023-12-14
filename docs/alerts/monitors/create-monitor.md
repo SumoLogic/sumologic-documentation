@@ -67,10 +67,13 @@ The first step when you create a new monitor is to set the trigger conditions.
    * **Logs**. Creates alerts based on a [log search](/docs/search/). 
    * **Metrics**. Creates alerts based on [metrics queries](/docs/metrics/metrics-queries/).
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
-1. Select a **Detection Method**. The detection methods that appear depend on the monitor type selected.<br/>Logs:<br/><img src={useBaseUrl('img/monitors/monitor-detection-methods2.png')} alt="icon" width="200"/> <br/>Metrics: <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="icon" width="200"/> 
+1. Select a **Detection Method**:
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
    * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. Sumo Logic applies advanced analytics techniques, including machine learning and behavioral analytics, to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. To automatically respond when an anomaly alert is triggered, see [Create an anomaly monitor that runs an automated playbook](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook).
    * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
+   :::note
+   The detection methods that are available to select depend on the monitor type. For the **Logs** monitor type, the **Static** and **Anomaly** detection methods are available, and for the **Metrics** monitor type, the **Static** and **Outlier** are available. For the **SLO** monitor type, no detection methods are available.
+   :::
 
 ### Provide a query (logs and metrics only)
 
