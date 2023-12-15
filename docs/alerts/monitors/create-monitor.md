@@ -324,7 +324,7 @@ The fourth step when you create a new monitor is to add playbooks.
 
 <img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Playbook" style={{border: '1px solid black'}} width="800"/>
 
-In this step you can add a **Playbook** to run in response to an alert. 
+In this step, you can add a **Playbook** to run in response to an alert. 
 
 1. **Text Playbook**. Enter instructions for how to handle the alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported. For an example, see [Alert details](/docs/alerts/monitors/alert-response/#alert-details).
 1. **Automated Playbooks**. Select an existing playbook from the Automation Service to run when an alert is fired. For more information, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/).
