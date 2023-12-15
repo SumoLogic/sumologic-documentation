@@ -196,7 +196,7 @@ These custom app **_sourceNames** will appear as values in the dashboard filter 
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Zscaler Private Access dashboards
+## Viewing Heroku Dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
