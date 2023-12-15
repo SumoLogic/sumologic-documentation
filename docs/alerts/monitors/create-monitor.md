@@ -322,8 +322,7 @@ To add notifications, click the **Add Notification** button. You can add more 
 
 The fourth step when you create a new monitor is to add playbooks.
 
-<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="
-Playbook" style={{border: '1px solid black'}} width="800"/>
+<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Playbook" style={{border: '1px solid black'}} width="800"/>
 
 In this step you can add a **Playbook** to run in response to an alert. 
 
