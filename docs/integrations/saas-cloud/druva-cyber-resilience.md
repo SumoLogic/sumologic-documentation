@@ -68,7 +68,7 @@ To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](/docs/send-
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Zscaler Private Access dashboards
+## Viewing Druva Cyber Resilience dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
