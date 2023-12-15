@@ -51,7 +51,7 @@ Follow the instructions for setting up [Webhook connection](https://docs.alertlo
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Zscaler Private Access dashboards
+## Viewing Alert Logic dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
