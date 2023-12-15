@@ -42,7 +42,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window). 
 1. Perform [Step 1](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), [Step 2](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional), and [Step 3](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window.
 1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click **Automated Playbooks** to select a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/) to run when an alert is fired. <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid black'}} width="800" />
-1.  (Optional) Click **Manage Playbooks** to see playbooks in the Automation Service. From here you can view the playbook you selected above and look at its actions to determine if they are the ones you want to run when the alert is triggered. You can also edit the playbook, or if you want, create a new playbook to use in the monitor.  
+1. (Optional) Click **Manage Playbooks** to see playbooks in the Automation Service. From here, you can view the playbook you selected above and look at its actions to determine if they are the ones you want to run when the alert is triggered. You can also edit the playbook, or if you want, create a new playbook to use in the monitor.  
 
 After you add a playbook to the monitor, when the monitor triggers an alert, the selected playbook runs automatically.
 
