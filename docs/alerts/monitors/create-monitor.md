@@ -63,17 +63,16 @@ The first step when you create a new monitor is to set the trigger conditions.
 
 ### Select monitor type and detection method
 
-1. Select a **Monitor Type**. <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="275"/>
+1. Select a **Monitor Type**: <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
    * **Logs**. Creates alerts based on a [log search](/docs/search/). 
    * **Metrics**. Creates alerts based on [metrics queries](/docs/metrics/metrics-queries/).
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
-1. Select a **Detection Method**:
+1. Select a **Detection Method**. The methods available depend on whether you choose **Logs** or **Metrics** as the monitor type (there is no detection type for **SLO**): <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="425"/> 
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
    * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. Sumo Logic applies machine learning techniques to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. To automatically respond when an anomaly alert is triggered, see [Create an anomaly monitor that runs an automated playbook](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook).
+1. If you chose the **Anomaly** detection method, choose the detector type: <br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anamoly.png')} alt="Detector types" width="600"/>
    * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
-   :::note
-   The detection methods that are available to select depend on the monitor type. For the **Logs** monitor type, the **Static** and **Anomaly** detection methods are available, and for the **Metrics** monitor type, the **Static** and **Outlier** detection types are available. For the **SLO** monitor type, no detection methods are available.
-   :::
+   * **Cluster** allows you to detect clusters of key indicators, which can reveal grouped patterns of suspicious behavior.
 
 ### Provide a query (logs and metrics only)
 
