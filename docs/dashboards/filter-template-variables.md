@@ -118,22 +118,13 @@ To use a variable in a logs query, do the following:
 
 Wrap string literal variables in quotes `"{\<variable_nam\>}}"`. If your values are text you need to wrap the variable in quotes.
 
-When including the option to select all values, use the [matches](/docs/search/search-query-language/search-operators/matches) operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
+`*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
 
 For example,
 
 ```sql
 _sourceCategory=query
 | where type = {{_type}}
-| count_distinct(type)
-```
-
-changed to use `matches` and wrapped the string literal variable in
-quotes:
-
-```sql
-_sourceCategory=query
-| where type matches "{{_type}}"
 | count_distinct(type)
 ```
 
