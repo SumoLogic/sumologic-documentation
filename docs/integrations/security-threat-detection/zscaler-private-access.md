@@ -141,13 +141,18 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 1. At this point, ZPA should start sending logs to Sumo Logic.
 
-## Installing the Zscaler Private Access app
 
-{@import ../../reuse/apps/app-install-v2.md}
+## Installing the Zscaler Private Access App
 
-## Viewing Zscaler Private Access dashboards
+Now that you have set up collection for ZPA, you can install the ZPA App to use the pre-configured searches and dashboard that provide insight into your data.
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/apps/app-install.md}
+
+## Viewing ZPA Dashboards  
+
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
+:::
 
 ### Overview
 

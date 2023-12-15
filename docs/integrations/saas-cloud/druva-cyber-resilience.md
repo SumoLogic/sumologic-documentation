@@ -64,13 +64,15 @@ _source="Milan_Druva_Cyber_Resilience_v0.0.1"
 
 To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
 
-## Installing the Druva Cyber Resilience app
+## Installing the Druva Cyber Resilience app​
 
-{@import ../../reuse/apps/app-install-v2.md}
+This section has instructions for installing the Druva app for Sumo Logic.
+
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Druva Cyber Resilience dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
