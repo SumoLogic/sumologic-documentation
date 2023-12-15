@@ -56,7 +56,7 @@ To set up [Cloud to Cloud Integration Tenable Source](/docs/send-data/hosted-col
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Zscaler Private Access dashboards
+## Viewing Tenable dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
