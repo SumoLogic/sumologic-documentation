@@ -54,12 +54,12 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
      * **Contact Email**. Enter your email id.   
    * API (Enable OAuth Settings)   
      *  Make sure **Enable OAuth Settings** is checked.
-     *  Provide the  **Callback URL**, For Example, https://login.salesforce.com/services/oauth2/callback
+     *  Provide the **Callback URL**.
      *  Select OAuth Scope. Access and manage your data (API)    
      *  Select **Save** and then **Continue.**
      *  After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret") which you will use to configure the Salesforce source.
 1. Ensure that you have your Salesforce user token (aka security token) handy as it will be used while configuring the Source.
-   * In case, you don’t remember your user token, you can reset it. For more details see the [Reset Your Security     Token](https://help.salesforce.com/articleView?id=user_security_token.htm&type=5) document.
+   * In case, you don’t remember your user token, you can reset it. For more details see the [Reset Your Security Token](https://help.salesforce.com/articleView?id=user_security_token.htm&type=5) document.
    * When a user resets their password, a new security token is sent automatically to their email address.
 
 ### Source configuration
@@ -171,7 +171,7 @@ To resolve this:
 1. Check **View Event Log Files**
 1. Save it
 
-:::note 
+:::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
@@ -183,7 +183,7 @@ To resolve this:
 1. Edit specific Profile which is assigned to the user
 1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail
 
-:::note 
+:::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
