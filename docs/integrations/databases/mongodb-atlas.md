@@ -322,7 +322,7 @@ This task makes the following assumptions:
    ```
 2. To deploy the script on a Linux machine, do the following:
    1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
-   2. Log in to a Linux machine (compatible with either Python 3.7 or Python 2.7.
+   2. Log in to a Linux machine (compatible with either Python 3.11 or Python 2.7.
    3. Do one of the following:
       * For Python 2, run the following command:
   	  ```bash
