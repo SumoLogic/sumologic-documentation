@@ -20,7 +20,7 @@ The hub has the following pages:
 
 ![AWS Observability Hub.png](/img/observability/aws_observability_hub_page.jpg)
 
-AWS Observability Solution feature is available in the following account plans.
+The AWS Observability Solution feature is available in the following account plans.
 
 | Account Type | Account Level               |
 |:--------------|:-------------------------------|
