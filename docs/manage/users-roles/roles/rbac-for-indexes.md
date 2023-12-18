@@ -1,19 +1,19 @@
 ---
 id: rbac-for-indexes
-title: Index Based and Advanced Search Filters
-description: The index based search filter allows you to use rule permissions to determine who gets access to certain indexes.
+title: Index Access and Advanced Search Filters
+description: Index access search filtering allows you to use rule permissions to determine who gets access to certain indexes.
 ---
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can restrict access to specific data using roles. When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can use [advanced search filter options](#view-the-advanced-search-filter-options) to extend the existing data access control. You can also select [index based](#index-based) filters to allow access to data based on [indexes](/docs/manage/partitions-data-tiers/). This ensures that users only see the data they are supposed to.
+When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can restrict access to data in logs using advanced search filters, and you can also restrict access to the [indexes](/docs/manage/partitions-data-tiers/) you specify. This ensures that users only see the data they are supposed to. 
 
-Follow this process to define a search filter:
+Follow this process to restrict access using advanced filters and indexes:
 
 1. Identify the dataset you would like to control access to. Test it out using a [search query](/docs/search/get-started-with-search/).
-2. When you create a role, define the dataset by selecting the indexes through the **Index based** option, or field-specific filters through the **Advanced filter** option.   
+2. When you create a role, define the dataset to give access to using [advanced search filters](#configure-advanced-search-filter-options) and [index access](#configure-index-access).   
 3. Verify the dataset access is correct using [emulation](#test-search-filters).
 4. [Assign the role](/docs/manage/users-roles/roles/add-remove-users-role/) to the relevant users.
 
@@ -33,24 +33,23 @@ When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#crea
 
 Following are examples for advanced filtering:
 * Let’s say you want to deny access to all logs that contain `error` in log analytics, and contain `malicious=high` in security logs. Select **Log Analytics data filter** and add `!error` to the filter, and then select **Security data filter** and add `!malicious=high` to the filter. 
-* Let’s say you want to deny access to all error logs in log analytics, and deny access to all audit indexes. In this case, you will have to create two roles. For role 1, select **Advanced filter > Log Analytics filter** and add `!error` to the filter. For role 2, select **Index based > Deny few indexes** and select all audit indexes.  
+* Let’s say you want to deny access to all error logs in log analytics, and deny access to all audit indexes. In this case, you will have to create two roles. For role 1, select **Advanced filter > Log Analytics filter** and add `!error` to the filter. For role 2, select **Index Access > Deny few indexes** and select all audit indexes.  
 
 Keep in mind that these are examples only, and you must adapt them for use in your environment. For more filter examples, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
 
+## Configure index access 
 
-## Index based 
-
-An index based search filter allows or denies access to [search indexes](/docs/manage/partitions-data-tiers/). 
+An index filter allows or denies access to [search indexes](/docs/manage/partitions-data-tiers/). 
 
 1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
-1. Under **Search Filter**, select **Index based**.
+1. In the **Create New Role** pane, navigate to **Index Access**.
 1. Select one of the following:
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 
    * **Deny few indexes**. Deny access to the selected indexes. 
-1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appear.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index based filter" style={{border: '1px solid black'}} width="400"/>
+1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appear.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index filter" style={{border: '1px solid black'}} width="400"/>
    
-### Index based filter example
+### Index filter example
 
 For example, let’s say you want to deny access to partition and security indexes. In our example environment, the `accessLogs` and `authenticationLogs` indexes give access to partitions, and the “sec_*” indexes give access to security information. To deny access to these indexes, click **Deny few indexes** and select those indexes. 
 
@@ -58,5 +57,5 @@ For example, let’s say you want to deny access to partition and security index
 
 1. Go to **Administration** > **Users and Roles** > **Roles**. 
 1. Select a role with search filtering defined. 
-1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index based search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index based filter" style={{border: '1px solid black'}} width="400"/>
+1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
 1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
