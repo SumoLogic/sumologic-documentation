@@ -24,7 +24,7 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
 
-To open Explore and AWS Observability View, go to [AWS Observibility tab](/docs//observability/aws) in home page or do the following:
+To open Explore and AWS Observability View, go to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
 
 1. Sign in to Sumo Logic and click **+ New** on the top menu bar.
 1. From the dropdown menu, choose **Explore**. 
