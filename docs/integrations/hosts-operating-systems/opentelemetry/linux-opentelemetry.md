@@ -66,7 +66,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
-:::note 
+:::note Note
 
 By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.  
 
