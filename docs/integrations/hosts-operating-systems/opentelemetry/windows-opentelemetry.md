@@ -44,7 +44,7 @@ Standard Windows event channels include:
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -52,19 +52,12 @@ In this step, you will configure the yaml file required for Windows event logs a
 
 Any custom fields can be tagged along with the data in this step.
 
-#### Enable process metric collection (Optional)
+Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
 
-By default, the collector will not send process metrics to Sumo Logic. This is because the number of processes running on a host can be very large, which would result in a significant increase in Data Points per Minute (DPM).
-
-Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
-- **Name of process**. Add the list of process names.
-- **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
-- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
-
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/process-metric-collection.png')} alt="process-metric-collection" style={{border:'1px solid black'}} width="550"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 :::note
-If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
+By default the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) . If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
 
 ```sh
 process:
@@ -74,17 +67,48 @@ process:
 ```
 :::
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid black'}} width="800"/>
-
 ### Step 3: Send logs to Sumo
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Windows"
+  values={[
+    {label: 'Windows', value: 'Windows'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Windows">
+
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
+
+</TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+</Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 

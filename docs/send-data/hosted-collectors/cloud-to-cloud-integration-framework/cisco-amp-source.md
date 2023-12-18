@@ -9,9 +9,9 @@ description: The Cisco AMP Source for Sumo Logic provides a secure endpoint to r
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/cisco-amp/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/cisco-amp/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/cisco-amp/example.tf';
+import ExampleJSON from '/files/c2c/cisco-amp/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/cisco-amp/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/cisco-amp/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cisco-amp.png')} alt="icon" width="90"/>
@@ -91,13 +91,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/cisco-amp/example.json)
+[Download example](/files/c2c/cisco-amp/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/cisco-amp/example.tf)
+[Download example](/files/c2c/cisco-amp/example.tf)
 
 ## FAQ
 

@@ -8,9 +8,9 @@ sidebar_label: Azure Event Hubs
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/azure-event-hubs/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/azure-event-hubs/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/azure-event-hubs/example.tf';
+import ExampleJSON from '/files/c2c/azure-event-hubs/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/azure-event-hubs/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/azure-event-hubs/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
@@ -140,13 +140,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/azure-event-hubs/example.json)
+[Download example](/files/c2c/azure-event-hubs/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/azure-event-hubs/example.tf)
+[Download example](/files/c2c/azure-event-hubs/example.tf)
 
 ## FAQ
 

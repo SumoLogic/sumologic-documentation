@@ -200,7 +200,7 @@ This section explains the steps to collect ActiveMQ metrics from a Kubernetes en
 Enter values for the following parameters (marked `CHANGE_ME` above):
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
-      * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx)  HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
+      * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx)  HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
       * `username`: The Username of ActiveMQ’s admin account . The default is “admin”.
       * `password`:  The password of ActiveMQ's admin account. The default is “admin”.
    * In the tags section, `[inputs.jolokia2_agent.tags]`:
@@ -296,7 +296,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
 </TabItem>
 <TabItem value="non-k8s">
 
-In non-Kubernetes environments, we use the Telegraf operator for ActiveMQ metric collection and Sumo Logic Installed Collector for collecting ActiveMQ logs. The diagram below illustrates the components of the ActiveMQ collection in a non-Kubernetes environment. Telegraf runs on the same system as ActiveMQ, and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2/examples/activemq.conf) to obtain ActiveMQ metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from ActiveMQ on the other hand are sent to a Sumo Logic Local File source.
+In non-Kubernetes environments, we use the Telegraf operator for ActiveMQ metric collection and Sumo Logic Installed Collector for collecting ActiveMQ logs. The diagram below illustrates the components of the ActiveMQ collection in a non-Kubernetes environment. Telegraf runs on the same system as ActiveMQ, and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) to obtain ActiveMQ metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from ActiveMQ on the other hand are sent to a Sumo Logic Local File source.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/nonk8s-diagram.png')} alt="non k8s-diagram" />
 
@@ -307,7 +307,7 @@ This section provides instructions for configuring metrics collection for the Su
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
-4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2/examples/activemq.conf) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
+4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Before you configure telegraf, you will need to:
       * **Enable reads metrics** from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting `useJmx="true"` in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
        ```xml
@@ -389,7 +389,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 * Enter values for the following parameters (marked in `CHANGE_ME` above):
   * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
-    * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx) HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
+    * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx) HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
     * `username`: The Username of ActiveMQ’s admin account . The default is “admin”.
     * `password`:  The password of ActiveMQ's admin account. The default is “admin”.
   * In the tags section, which is `[inputs.jolokia2_agent.tags]`
@@ -406,7 +406,7 @@ This section provides instructions for configuring metrics collection for the Su
   * `messaging_system: "activemq"` - In the input plugins sections. In other words, this value identifies the messaging system.
   :::
 
-  * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+  * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 

@@ -7,7 +7,7 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic. To obtain telemetry data from AWS Lambda functions developed in Python language you can use the [Sumo Logic Distribution for OpenTelemetry Python Lambda](https://github.com/SumoLogic-Labs/sumo-opentelemetry-lambda/tree/main/python).
+This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic. To obtain telemetry data from AWS Lambda functions developed in Python language you can use the [Sumo Logic Distribution for OpenTelemetry Python Lambda](https://github.com/SumoLogic/sumologic-otel-lambda/tree/main/python).
 
 Sumo Logic OTel Python Lambda layer supports:
 
