@@ -56,7 +56,7 @@ A restart is required for traffic collection to take effect.
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' alt="Artifactory-Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' style={{border:'1px solid black'}} alt="Artifactory-Collector" />
 
 ### Step 2: Configure integration
 
@@ -73,7 +73,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png' alt="Artifactory-YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png' style={{border:'1px solid black'}} alt="Artifactory-YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 

@@ -35,7 +35,7 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -44,7 +44,7 @@ In this step, you will configure the yaml required for macOS Collection.
 1. (Optional) You can add a custom tag, if desired. (There are no parameters required for the macOS app to install.)
 2. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send metrics to Sumo
 

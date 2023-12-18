@@ -37,7 +37,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ## Step 2: Configure integration
 
@@ -49,7 +49,7 @@ The files are typically located in `/var/log/squid/access.log`. Refer to the [Pr
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ## Step 3: Send logs to Sumo
 
