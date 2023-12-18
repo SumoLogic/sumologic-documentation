@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
 
-You can access the AWS observability solution through a centrlized page by clicking on the **Home** button and selecting the **AWS Observability** tab from the top menu bar. This page is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution. 
+You can access our AWS Observability solution by a centralized page by clicking on the **Home** button and selecting the **AWS Observability** tab from the top menu bar. This page is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution. 
 
 The hub has the following pages:
 
