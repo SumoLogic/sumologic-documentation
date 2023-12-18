@@ -27,7 +27,7 @@ Roles-Based Access Control permissions apply to all Live Tail queries.
 
 The following image shows a Live Tail session for `_sourceCategory=Apache/Access`:
 
-![live tail](/img/search/livetail/about-live-tail/LiveTail.png)
+![live tail](/img/search/livetail/about-live-tail/livetail.png)
 
 Live Tail features include [multiple](multiple-live-tails.md) Live Tail sessions, opening your Live Tail session in a [new "pop-out" window](multiple-live-tails.md), [highlighting](live-tail-highlighting.md) up to eight keywords in order to make searching easier, and changing the [preferences](live-tail-preferences.md) of your Live Tail display, including line spacing, message text size, and message color. 
 
