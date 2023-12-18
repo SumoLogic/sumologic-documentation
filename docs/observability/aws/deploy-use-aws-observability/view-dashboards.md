@@ -16,23 +16,6 @@ This feature is available in the following account plans.
 
 This page shows you how to intuitively navigate through your AWS environment using AWS Observability Hub and [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
-
-## AWS Observability hub
-
-The hub is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution.   
-
-You can access the hub by clicking on the **Home** button and selecting the **AWS Observability** tab from the top menu bar.
-
-The hub has the following pages:
-* **Explore your AWS Environment**. Provides you access to dashboards that help you monitor your AWS environment.
-* **Troubleshoot with Logs**. Provides log searches to help you get started troubleshooting issues within your AWS environment.
-* **View and Configure Alerts**. Provides you access to monitors that will alert you about issues within your AWS environment.
-* **Explore Intelligent Benchmark Dashboards**. Provides you access to our global benchmark dashboards to help you compare your AWS environment with Sumo benchmarks and identify issues.
-* **Invite your teammates**. Allows you to quickly add other users to your Sumo Logic account. 
-
-![AWS Observability Hub.png](/img/observability/aws_observability_hub_page.jpg)
-
-
 ## Working with Explore View
 
 The AWS Observability Solution comprises an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. These locations are composed of AWS Regions and Availability Zones. 
@@ -41,9 +24,9 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
 
-To open Explore and AWS Observability View, do the following:
+To open Explore and AWS Observability View, go to [AWS Observibility tab](/docs//observability/aws) in home page or do the following:
 
-1. Log in to Sumo Logic and click **+ New** on the top menu bar.
+1. Sign in to Sumo Logic and click **+ New** on the top menu bar.
 1. From the dropdown menu, choose **Explore**. 
 
     ![Explorer.png](/img/observability/Explorer.png)
