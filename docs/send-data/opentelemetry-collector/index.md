@@ -34,6 +34,15 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
       <p>Learn how to collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
     </div>
   </div>
+      <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/send-data/opentelemetry-collector/auto-discovery">
+        <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/>
+        <h4>Auto Discovery</h4>
+      </a>
+      <p>Learn how to enable Auto Discovery to detect services that are installed on the server on which the collector is running.</p>
+    </div>
+  </div>
   <div className="box smallbox card">
     <div className="container">
     <a href="/docs/send-data/opentelemetry-collector/performance-benchmarks"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Performance Benchmarks</h4></a>

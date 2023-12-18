@@ -77,7 +77,7 @@ When you configure the webhook, enter the URL for the [HTTP source you created](
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -90,7 +90,7 @@ Path of the different log file configured to capture Jira logs is needed to be g
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -103,6 +103,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -127,15 +130,36 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+
 <TabItem value="macOS">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Jira instance that needs to be monitored.
 2. Restart the otelcol-sumo process using:
+
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+
 </Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}

@@ -2,7 +2,7 @@
 id: jfrog-artifactory-opentelemetry
 title: JFrog Artifactory - OpenTelemetry Collector
 sidebar_label: JFrog Artifactory - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for JFrog Artifactory.
+description: Learn about the Sumo Logic OpenTelemetry app for JFrog Artifactory.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,21 +11,21 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="80"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Artifactory provides insight into your [JFrog Artifactory](https://jfrog.com/artifactory/) binary repository. The App provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity. Artifactory logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+The Sumo Logic app for Artifactory provides insight into your [JFrog Artifactory](https://jfrog.com/artifactory/) binary repository. The app provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity. Artifactory logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Schematics.png' alt="Artifactory-Schematics" />
 
 ## Fields creation in Sumo Logic for Artifactory
 
-Following are the Tags which will be created as part of Artifactory App install if not already present.
+Following are the Tags which will be created as part of Artifactory app install if not already present.
 
 * `sumo.datasource`. Has fixed value of **artifactory**
 
 ## Prerequisites
 
-This section provides instructions for configuring log collection for Artifactory for the Sumo Logic App.
+This section provides instructions for configuring log collection for Artifactory for the Sumo Logic app.
 
-The Sumo Logic App for Artifactory collects data from the following logs:
+The Sumo Logic app for Artifactory collects data from the following logs:
 
 - `artifactory.log`. The main Artifactory log file that contains data on Artifactory server activity.
 - `access.log`. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
@@ -56,7 +56,7 @@ A restart is required for traffic collection to take effect.
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' alt="Artifactory-Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' style={{border:'1px solid black'}} alt="Artifactory-Collector" />
 
 ### Step 2: Configure integration
 
@@ -73,9 +73,9 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png' alt="Artifactory-YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png' style={{border:'1px solid black'}} alt="Artifactory-YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
@@ -86,6 +86,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -115,6 +118,25 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+
 </Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
