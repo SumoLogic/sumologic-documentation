@@ -105,16 +105,16 @@ helm upgrade --install collection sumologic/sumologic \
 
 Using OTLP HTTP is recommended:
 
-* OTLP HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4318`
+* OTLP HTTP: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:4318`
 
 Alternatively, if required, you can use other supported formats as well:
 
-* Jaeger GRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
-* Jaeger Thrift HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14268`
-* Jaeger Thrift Compact (UDP): `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:6831`
-* Zipkin: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:9411/api/v2/spans`
-* OTLP gRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
-* OTLP HTTP/**deprecated:** `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
+* Jaeger GRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
+* Jaeger Thrift HTTP: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:14268`
+* Jaeger Thrift Compact (UDP): `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:6831`
+* Zipkin: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:9411/api/v2/spans`
+* OTLP gRPC: `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
+* OTLP HTTP/**deprecated:** `<RELEASE_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
 
 For example, when the default release name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
 
@@ -154,7 +154,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
 ### How to verify traces are installed and working
 
 * There are no Kubernetes errors in the namespace sumologic.
-* There are running pods `<CHART_NAME>-sumologic-otelcol-instrumentation-<hash>, <CHART_NAME>-sumologic-traces-gateway-<hash>, <CHART_NAME>-sumologic-traces-sampler-<hash>`
+* There are running pods `<RELEASE_NAME>-sumologic-otelcol-instrumentation-<hash>, <RELEASE_NAME>-sumologic-traces-gateway-<hash>, <RELEASE_NAME>-sumologic-traces-sampler-<hash>`
 * Kubernetes metadata tags such as `pod` and `replicaset` should be applied to all spans.
 * The OpenTelemetry Collector can export metrics, which include information such as the number of spans exported. Several metrics starting with `otelcol_` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.
 * **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):

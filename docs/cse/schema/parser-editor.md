@@ -6,10 +6,14 @@ description: Learn how to use the Parser Editor to configure and test a custom p
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
-This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers.
+This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers. 
 
-For information about the Sumo Logic CSE parsing language, see [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide).
+See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
+* [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
+* [Parsing Patterns](/docs/cse/schema/parsing-patterns) 
+* [Parser Troubleshooting](/docs/cse/schema/parser-troubleshooting-tips)
 
 :::note
 The instructions that follow assume that you have already written your parser code.
@@ -17,7 +21,7 @@ The instructions that follow assume that you have already written your parser co
 
 ## Check parser code for mapping hints
 
-Your parser code must contain statements that tell CSE what log mapping to use when creating Records from the field dictionary the parser creates for log messages. 
+Your parser code must contain statements that tell Cloud SIEM what log mapping to use when creating Records from the field dictionary the parser creates for log messages. 
 
 Make sure your parser code includes `MAPPER` statements that specify the vendor, product, and the event ID that the log messages to be parsed contain, and a `FORMAT` statement that defines the message format.
 
@@ -110,7 +114,7 @@ following categories:
 
 ## Create a local configuration for a system parser
 
-You can customize any of the system parsers that are built into CSE. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations — that's the part of the page labeled **Local Configuration**. The [parsing language statements](/docs/cse/schema/parsing-language-reference-guide#attributes-used-in-all-stanza-types) you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
+You can customize any of the system parsers that are built into Cloud SIEM. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations — that's the part of the page labeled **Local Configuration**. The [parsing language statements](/docs/cse/schema/parsing-language-reference-guide#attributes-used-in-all-stanza-types) you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
 
 `START_TIME_FIELD = eventTime`
 
@@ -159,13 +163,13 @@ org.
 1. Choose **Import** from the three-dot more options menu.
 1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import" width="600"/>
 
-## Setting CSE log mapping information
+## Setting Cloud SIEM log mapping information
 
 In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create Records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
 
 With some CloudTrail logs messages, you might want to create a different [Record type](/docs/cse/schema/cse-record-types), depending on the event ID in a message. In some cases, an Authorization Record is appropriate, while in others, an Audit or Audit Change Record would be a better fit. 
 
-In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a CSE Record) will vary, depending on the Event ID in the message. For example, you may want to map data into the CSE schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
+In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a Cloud SIEM Record) will vary, depending on the Event ID in the message. For example, you may want to map data into the Cloud SIEM schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
 
 To create your mapping, see [Creating a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping). After setting up the mapping or mappings, complete the steps in [Configuring a source to use a parser](#configuring-a-source-to-use-a-parser), below.
 
@@ -181,3 +185,42 @@ This section explains how to configure a Sumo Logic core platform source to send
 1. Click **+Add Field**. 
 1. Two blank fields appear, below any Fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. <br/><img src={useBaseUrl('img/cse/new-field.png')} alt="New field" width="500"/>
 <br/>An orange icon indicates that the `_parser` field has not been created in your Sumo Logic core platform org yet.
+
+## Parser templates
+
+We provide a number of parsers to extract data for normalization. However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers. 
+
+### Access parser templates
+
+1. Go to **Manage Data > Logs**.
+1. Select the **Parsers** tab.
+1. Open the **System** folder.
+1. Scroll down to the **Parser Templates** folder and open it. 
+1. Browse the templates. Available formats include:
+   * CEF
+   * CSV
+   * JSON
+   * Key value
+   * LEEF
+   * Unstructured (regular expression)
+   * Windows XML
+   * XML
+
+<img src={useBaseUrl('img/cse/parser-templates.png')} alt="Parser templates" style={{border: '1px solid black'}} width="800" />
+
+### What's inside the templates
+
+The parser templates cover common log formats and scenarios. Each template has two versions, one with verbose commentary on each component of the parser, and another without commentary that you can duplicate and use to quickly start creating a custom parser.
+
+Watch the following video for a walkthrough of the parser templates.
+
+<Iframe url="https://www.youtube.com/embed/GFzovRGhtDU?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />

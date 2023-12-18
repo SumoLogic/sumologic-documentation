@@ -14,7 +14,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | View Collectors	| View collectors and sources that have already been installed or added.|
 | Manage Collectors	| [View and manage](/docs/send-data) installed and hosted collectors as well as sources. |
 | Manage Ingest Budgets	| Allows you to manage [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different collectors, but not creating or deleting them.|
-| Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid using [On-Demand Capacity](/docs/manage/manage-subscription/cloud-flex-accounts#account-limitations-and-guidelines), and to determine when you need to upgrade your account.|
+| Manage Data Volume Feed	| Enable and manage the [data volume index](/docs/manage/ingestion-volume/data-volume-index) for your account to avoid exceeding your data limits, and to determine when you need to upgrade your account.|
 | View Field Extraction Rules	| View [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule), which accelerate your search process by automatically parsing fields as log messages are ingested.|
 | View Fields	| View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs.|
 | Manage Fields	| Manage fields. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View Field Extraction Rules capabilities.|
@@ -22,7 +22,8 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Manage S3 Data Forwarding	| Manage [S3 data forwarding](/docs/manage/data-forwarding/amazon-s3-bucket) from Sumo Logic to an S3 bucket.|
 | Manage Content	| Manage the content for your organization. This provides access to [Admin Mode](/docs/manage/content-sharing/admin-mode) in the Library.|
 | Manage Apps | Install and manage [apps](/docs/integrations). |
-| Manage Connections | Manage the [connections](/docs/manage/connections-integrations) that allow you to send alerts to other tools. |
+| Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. |
+| View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. |
 | View Scheduled Views	| [View Scheduled Views](/docs/manage/scheduled-views).|
 | Manage Scheduled Views	| View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Schedule Views capability, users with that role will also have View Scheduled Views capability.|
 | View Partitions	| View [partitions](/docs/manage/partitions-data-tiers).|
@@ -55,7 +56,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Create Access Keys	| Create your own [access keys](/docs/manage/security/access-keys/) on the [Account Preferences](/docs/get-started/account-settings-preferences) page.|
 | Manage Access Keys	| Set up, activate, deactivate, or delete access keys for your organization.|
 | Manage Support Account Access	| Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization.|
-| Manage Audit Data Feed	| Enable and manage the [Audit Index](/docs/manage/security/audit-index), which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.|
+| Manage Audit Data Feed	| Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.|
 | Manage SAML	| Provision and manage [SAML](/docs/manage/security/saml) for single sign-on to your Sumo Logic accounts.|
 | Manage Share Dashboards Outside of Organization	| [Share a dashboard](/docs/dashboards-classic/share-dashboard-outside-org) with users who don't have access to Sumo Logic.|
 | Manage Organization Settings	| Configure a [concurrent user sessions limit](/docs/manage/security/set-limit-user-concurrent-sessions) and enable the [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards/) security policy.|
@@ -65,14 +66,34 @@ Following are the capabilities you can assign when you [create roles](create-ma
 
 | Capability | Description |
 | :-- | :-- |
-| Share dashboards with the allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
-| Share dashboards with the world	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Dashboards With The World	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Washboards With The Allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
+
 
 ## User Management
 
 | Capability | Description |
 | :-- | :-- |
-| Manage users and roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
+| Manage Users And Roles	| Access the web app pages to manage [users](/docs/manage/users-roles/users) and [roles](/docs/manage/users-roles/roles).|
+
+## Automation Service
+
+| Capability | Description |
+| :-- | :-- |
+| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Access | Access your tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/).|
+| Task Access all | Access all user tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Edit | Configure tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Task Reassign | Assign tasks in [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/) to users. |
+| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
+| App Central Export | Export contents of integrations and playbooks from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). |
+| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
+| Integrations Configure | Create and edit [integrations](/docs/platform-services/automation-service/automation-service-integrations/). |
+| Playbooks Access | View [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
+| Bridge Monitoring Access | Monitor [Bridge](/docs/platform-services/automation-service/automation-service-bridge/) operations. |
+| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. | 
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | 
 
 ## Alerting
 
@@ -111,25 +132,18 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
-| View Cloud SOAR | | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
-| App Central | Access | Access [App Central](/docs/cloud-soar/automation#app-central). |  
-| App Central | Export | Export from App Central. |  
-| Integrations | Access | Access [Integrations](/docs/cloud-soar/automation#integrations). |  
-| Integrations | Configure | Configure Integrations. |  
-| Automation Playbooks | Access | Access [playbooks](/docs/cloud-soar/automation#playbook).  |  
-| Automation Playbooks | Configure | Configure playbooks. |  
-| Bridge Monitoring | Access | Access [Bridge monitoring](/docs/cloud-soar/global-functions-menu/#audit-and-information). |
-| Observability | Access | Access playbook execution information.  |   
-| Observability | Configure | Configure playbook execution information. |   
+| View Cloud SOAR | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
+| Settings General | Access Cloud SOAR settings. |
+| Configure | Configure Cloud SOAR. |
 
 
-## Cloud SIEM Enterprise
+## Cloud SIEM
 
-[Cloud SIEM Enterprise](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
+[Cloud SIEM](/docs/cse/) capabilities only appear in the Roles UI if Cloud SIEM has been [enabled](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/#provision-cloud-siem) for your account. For more information about how to assign Cloud SIEM capabilities, see [Cloud SIEM User Accounts and Roles](/docs/cse/administration/cse-user-accounts-and-roles/).
 
 | Capability category | Capability | Description |
 | :-- | :-- | :-- |
-| View Cloud SIEM Enterprise | | Users with a role that grants this capability will see a **Cloud SIEM Enterprise** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
+| View Cloud SIEM | | Users with a role that grants this capability will see a **Cloud SIEM** link in the left-nav bar of the Sumo Logic UI. When a user clicks on the link, the Cloud SIEM [Heads-Up Display (HUD)](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/) will open. |
 | Insights | Comment on Insights | Add comments to [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui). |
 | Insights | Create Insights	| Create Insights.|
 | Insights | Delete Insights	| Delete Insights.|
@@ -175,6 +189,6 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Configuration | Manage Favorite Fields	| Add and remove favorite fields by clicking the star icon next to the fields in Cloud SIEM Records.|
 | Configuration | View Entity Groups	| View [Entity Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).|
 | Configuration | Manage Entity Groups	| Create, edit, and delete Entity Groups.|
-| Configuration | View Automations | View [automations](/docs/cse/automation-service/automation-service-automations/). |
+| Configuration | View Automations | View [automations](/docs/cse/automation/automations-in-cloud-siem/). |
 | Configuration | Manage Automations | Create, edit, and delete automations. |
 | Configuration | Execute Automations | Run automations. |

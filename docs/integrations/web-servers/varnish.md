@@ -280,7 +280,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 * `data_format=“prometheus”` - In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
 * `Component=“cache”` - In the input plugins section, which is, `[[inputs.varnish]]` - This value is used by Sumo Logic apps to identify application components.
 * `cache_system: “varnish”` - In the input plugins sections. In other words, this value identifies the cache system
-* For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+* For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 

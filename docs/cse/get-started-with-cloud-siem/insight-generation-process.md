@@ -2,14 +2,14 @@
 id: insight-generation-process
 title: Insight Generation Process
 sidebar_label: Insight Generation
-description: Learn how CSE correlates Signals by entity to create Insights.
+description: Learn how Cloud SIEM correlates Signals by entity to create Insights.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page explains CSE's Insight generation process. 
+This page explains Cloud SIEM's Insight generation process. 
 
-The concept of an *entity* is central to the process CSE uses to correlate Signals and create Insights. So, what is an entity? In CSE, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about Entities and Entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
+The concept of an *entity* is central to the process Cloud SIEM uses to correlate Signals and create Insights. So, what is an entity? In Cloud SIEM, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about Entities and Entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
 
 Watch this micro lesson to learn how Insights are created.
 
@@ -29,7 +29,7 @@ import Iframe from 'react-iframe'; 
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [Record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
+During the next step of the [Record processing flow](/docs/cse/schema/record-processing-pipeline)—log mapping—message fields are mapped to Cloud SIEM schema attributes. During this process, each entity field from a message is mapped to one of the following Cloud SIEM schema entity attributes:
 
 | Entity Type | Schema Attributes |
 |:----- |:----- |
@@ -57,15 +57,15 @@ When you write a rule, you select one or more *On Entity* attributes in the **Th
 
 ## Entities are created when rules fire
 
-CSE creates an Entity when a Rule generates a Signal, unless the Entity already exists in CSE. When a Record matches the conditions of a rule, CSE generates a separate Signal for each On Entity attribute from the Record.   
+Cloud SIEM creates an Entity when a Rule generates a Signal, unless the Entity already exists in Cloud SIEM. When a Record matches the conditions of a rule, Cloud SIEM generates a separate Signal for each On Entity attribute from the Record.   
 
 The **Signals** page shows the Entity associated with each Signal.
 
 <img src={useBaseUrl('img/cse/signal-llist.png')} alt="Signals" width="800"/>
 
-## Viewing entities in CSE UI
+## Viewing entities in Cloud SIEM UI
 
-You can view the entities that have been extracted from messages on the **Entities** page in the CSE UI.
+You can view the entities that have been extracted from messages on the **Entities** page in the Cloud SIEM UI.
 
 <img src={useBaseUrl('img/cse/entity-list-page.png')} alt="Entities page" width="800"/>
 
@@ -85,23 +85,23 @@ Here are a couple practical examples:
 
 The severities of the `RDP Brute Force Attempt bad` and the `RDP Brute Force Attempt worse` Signals would be included in the entity’s Activity Score.
 
-By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold) for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
+By default, when an entity’s Activity Score exceeds the threshold of 12, Cloud SIEM generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold) for Insight generation. When Cloud SIEM creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
 
-After CSE fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below. 
+After Cloud SIEM fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](#redundant-signal-suppression), below. 
 
 ### Example of an Entity that has reached Activity Score threshold
 
 In the screenshot below, the **Details** pane on the left shows that the Insight was created for the entity “192.168.1.1”, an IP address. The right side of the page shows the three Signals that contributed to the Insight. You can see each of the Signals relate to the IP address for which the Insight was created; in the Record underlying each of the Signals, is mapped to the `srcDevice_ip` schema attribute. 
 
-The severity of each Signal is also shown. CSE generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
+The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
 
 <img src={useBaseUrl('img/cse/insight.png')} alt="Insight" width="800"/>
 
 ### Redundant Signal suppression
 
-Under certain circumstances, CSE suppresses Signals to preventgeneration of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
+Under certain circumstances, Cloud SIEM suppresses Signals to preventgeneration of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
 
-This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. CSE prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or up to 72 hours if Signals for the Signal-Entity combination are firing continuously.   
+This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. Cloud SIEM prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or up to 72 hours if Signals for the Signal-Entity combination are firing continuously.   
 
 **Example 1**
 
@@ -111,7 +111,7 @@ If Signal A fires on Entity X at hour 0 and continues to fire once every 30 minu
 
 Signal B fires on Entity Y fires at hour 0, and doesn’t fire again until hour 13. The Signal that fired at hour 13 will not be suppressed, and will be analyzed by the Insight engine.  
 
-Signals that are suppressed appear in the CSE UI as “suppressed”. Suppressed Signals are displayed in the CSE UI for 90 days.
+Signals that are suppressed appear in the Cloud SIEM UI as “suppressed”. Suppressed Signals are displayed in the Cloud SIEM UI for 90 days.
 
 :::note
 Prototype Signals, which are are not included in Insights, are not suppressed.
@@ -122,9 +122,9 @@ Prototype Signals, which are are not included in Insights, are not suppressed.
 The severity of an Insight is indicated as Low, Medium, High, or Critical. Note that there are only two situations in which an Insight can have the Critical severity level:
 
 * You can assign a severity of Critical to a [Custom Insight](/docs/cse/records-signals-entities-insights/configure-custom-insight) configuration.
-* You can change the severity of an Insight from the severity it was assigned by CSE at generation time. In the [Insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) pane, click the icon that appears next to **Severity** to display the severity levels, and select a new level. 
+* You can change the severity of an Insight from the severity it was assigned by Cloud SIEM at generation time. In the [Insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) pane, click the icon that appears next to **Severity** to display the severity levels, and select a new level. 
 
-Insights that are generated by the CSE Insight generation algorithm will only have severity levels of Low, Medium, or High. Severity is a function of the Entity Activity Score of the Insight’s Entity.
+Insights that are generated by the Cloud SIEM Insight generation algorithm will only have severity levels of Low, Medium, or High. Severity is a function of the Entity Activity Score of the Insight’s Entity.
 
 By default the threshold Entity Activity Score for Insight generation is 12.The table below shows how severity values map to Activity Scores, if you haven’t changed the threshold value.   
 

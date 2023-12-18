@@ -115,7 +115,7 @@ If you're using CircleCI for Build and Deploy, do the following:
    * `CIRCLE_TOKEN = <API personal token created in CircleCi>`
    * `JOB_HTTP_SOURCE = <url of job-collector source created above in step 3>`
    * `WORKFLOW_HTTP_SOURCE = <url of workflow-collector source created above in step 3>`
-1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip).
+1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://github.com/SumoLogic/sumologic-orb/blob/main/src/examples/workflow-collector.yml).
 1. Navigate to **Manage Data** > **Logs** page. We select the Field Extraction Rules tab.
 1. [Create two FERs](/docs/manage/field-extractions/create-field-extraction-rule.md) for CircleCI build and deploy events. The parse expression and the scope of the FERs is available [here](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 

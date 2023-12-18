@@ -2,7 +2,7 @@
 id: microsoft-windows
 title: Microsoft Windows - Cloud SIEM
 sidebar_label: Microsoft Windows
-description: Configure collection of Windows Event Log messages and send them to the CSE Windows Event Log mapper.
+description: Configure collection of Windows Event Log messages and send them to the Cloud SIEM Windows Event Log mapper.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,10 +25,10 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-   1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+   1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
    1. If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field link**, and add a field whose name is `_parser` with the value */Parsers/System/Microsoft/Windows-JSON*. This will cause all sources on the collector to use the specified parser.
   :::note
-  It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+  It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
   :::
 
 ### Configure a Local Windows Event Log Source
@@ -43,7 +43,7 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 1. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields**. 
-    1. If you have *not* configured the Installed Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
+    1. If you have *not* configured the Installed Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     1. If you have *not* configured the Installed Collector to parse all sources in the collector with the same parser, click the +Add Field link, and add a field whose name is `_parser` with the value */Parsers/System/Microsoft/Windows-JSON*.
 1. **Event Format**. Select **Collect using JSON format**.
 1. **Windows Event Types**. Select the desired event types. You can  also specify Custom Event Channels in the box below.
@@ -57,7 +57,7 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 
 ## Step 3: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>  
 1. On the **Log Mappings** page search for "Windows" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/windows-record-volume.png')} alt="Windows record volume" width="600"/>

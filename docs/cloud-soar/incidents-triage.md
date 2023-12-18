@@ -116,7 +116,7 @@ The Incident Details section contains all the important information that makes u
 
 ### Overview
 
-The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, please see [**Custom Fields**](#Custom-Fields-1).
+The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, see [Custom Fields](#custom-fields).
 
 ### Operations
 
@@ -308,6 +308,8 @@ sliding the **Autorun** button to **On**.
 
 <img src={useBaseUrl('img/cloud-soar/image128.png')} alt="New Incident Editor" width="800"/>
 
+### Incident Artifacts
+
 When creating an incident manually, the investigator may already have
 artifacts that they would like to add to the incident. The Incident
 Artifact section allows for the manual entry of new artifacts. To add a
@@ -316,7 +318,7 @@ the data and add its value. Once completed, click **Next**.
 
 <img src={useBaseUrl('img/cloud-soar/image129.png')} alt="Add artifact" width="800"/>
 
-### Incident Artifacts
+### Parent/Child Relationships
 
 You have the option to create manual Parent/Child relationships between the new incident and any previous incident created in Cloud SOAR. Click the **Advanced** button at the bottom of the screen to select an existing incident to group together.
 
@@ -371,26 +373,26 @@ Fields may be reorder in the Custom Fields section to change the order in which 
 
 #### Custom Field Types
 
-Field Type | Description
-:------ | :------
-Calculation | Perform a calculation between two fields or between a field and a static value
-Checkbox | Checkbox
-Color Picker | Interactive color picker to select a color
-Date | Date only picker
-Date & Time | Date and time picker
-Email Address | Email address Available to use in actions which require a email input
-Filename | Filename Available to use in actions which require a filename input
-Hash | Hash value Available to use in actions which require a hash input
-IP Address | IP Address Available to use in actions which require a IP address input
-List | Dropdown list
-Multi Select List | Multiselect list box
-Numeric Textbox | accepting numeric values only
-Tags | One or more user defined tags
-Text | Free text
-Time Interval | Numeric time interval which can be used as a value in another calculated field
-Timezone | Timezone list dropdown
-URL | URL Available to use in actions which require a URL input
-User Details | User details, such as a user name. Available to use in actions which require a user details input
+| Field Type        | Description                                                                                       |
+|:------------------|:--------------------------------------------------------------------------------------------------|
+| Calculation  | Perform a calculation between two fields or between a field and a static value. |
+| Checkbox   | Checkbox. |
+| Color Picker  | Interactive color picker to select a color. |
+| Date | Date only picker. |
+| Date & Time   | Date and time picker. |
+| Email Address | Email address available to use in actions which require a email input.    |
+| Filename | Filename available to use in actions which require a filename input.   |
+| Hash | Hash value available to use in actions which require a hash input.  |
+| IP Address    | IP address available to use in actions which require a IP address input.    |
+| List   | Dropdown list.  |
+| Multi Select List | Multiselect list box.  |
+| Numeric Textbox   | Accepting numeric values only.  |
+| Tags | One or more user defined tags.  |
+| Text | Free text. |
+| Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
+| Timezone   | Timezone list dropdown. |
+| URL | URL available to use in actions which require a URL input. |
+| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
 
 #### Using Custom Fields for SLAs
 
@@ -517,6 +519,30 @@ number will not be reused. For example, if you have defined `opt_1`
 through `opt_8` and delete the field `opt_8`, the next field added will
 still become `opt_9`. It is important to remember these field numbers, as
 they will be used when the API is invoked.
+
+#### Attributes sent from Cloud SIEM
+
+You can ingest Cloud SIEM Insights into Cloud SOAR for incident triage using the `GetInsight` Cloud SOAR API. The following Insight attributes are returned. 
+
+When you create an incident from an Insight, you can map the Insight attributes to fields in Cloud SOAR as follows:
+
+| Attribute in Cloud SIEM | Field in Cloud SOAR | 
+| :-- | :-- | 
+| `assignee` | `Insight Assignee` (custom field) |
+| `created` | `Start time` |
+| `description` | `Additional Info` |
+| `entity.value` | `Primary Entity` (custom field) |
+| `entity.type` | `Entity Type` (custom field) |
+| `id` | `Insight ID` (custom field) |
+| `involvedEntities[].value` | `Involved Entities` (custom field) |
+| `readableId` | `Incident ID` (custom field) |
+| `severity` | `Severity` |
+| `status.displayName` | `Status` |
+| `tags[]` | `Tags` |
+
+:::note
+When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template. 
+:::
 
 ### Working with Events
 

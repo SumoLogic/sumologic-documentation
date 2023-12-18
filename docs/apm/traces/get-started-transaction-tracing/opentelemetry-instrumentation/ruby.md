@@ -87,7 +87,7 @@ The final step is to configure the exporter host and service name. This can be d
    OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318
    ```
 
-   This should be OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
+   This should be OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 
 * Configure the service name. Ensure the string value represents its business logic, such as `FinanceServiceCall`.  This will appear as a tracing service name in Sumo Logic.
 

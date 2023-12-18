@@ -62,6 +62,7 @@ module.exports = {
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
             'contributing/templates/c2c-source',
+            'contributing/templates/app-template-v2',
           ]
         }
       ],
@@ -115,6 +116,7 @@ module.exports = {
               ]
             },
             'send-data/opentelemetry-collector/performance-benchmarks',
+            'send-data/opentelemetry-collector/data-transformations',
             'send-data/opentelemetry-collector/troubleshooting',
             'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
@@ -290,8 +292,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
@@ -332,7 +332,7 @@ module.exports = {
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/hosted-collectors/ms-office-audit-source',
+                'send-data/hosted-collectors/microsoft-source/ms-office-audit-source',
               ],
             },
             {
@@ -382,7 +382,25 @@ module.exports = {
             },
           ],
         },
-        'send-data/collect-from-other-data-sources/kubernetes',
+        {
+          type: 'category',
+          label: 'Kubernetes Helm Chart',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/kubernetes/index'},
+          items: [
+            {
+              type: 'category',
+              label: 'v4 (latest)',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v4/helm-chart-overview',
+                'send-data/kubernetes/v4/install-helm-chart',
+              ],
+            },
+          ],
+        },
         {
           type: 'category',
           label: 'Use JSON to Configure Sources',
@@ -460,7 +478,6 @@ module.exports = {
             'send-data/collect-from-other-data-sources/docker-collection-methods',
             'send-data/collect-from-other-data-sources/integrate-halo-event-logs',
             'send-data/collect-from-other-data-sources/collect-logs-heroku',
-            'send-data/collect-from-other-data-sources/kubernetes',
             'send-data/collect-from-other-data-sources/kubernetes-fluentd-plugin',
             'send-data/collect-from-other-data-sources/collect-logs-oracle-cloud-infrastructure',
             'send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex',
@@ -637,6 +654,7 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
+            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -677,6 +695,7 @@ module.exports = {
         'manage/manage-subscription/manage-org-settings',
         'manage/manage-subscription/beta-opt-in',
         'manage/manage-subscription/close-cancel-sumo-account',
+        'manage/manage-subscription/fedramp-capabilities',
       ]
     },
     {
@@ -774,9 +793,19 @@ module.exports = {
         'manage/security/2-step-verification-admins',
         'manage/security/2-step-verification-users',
         'manage/security/access-keys',
-        'manage/security/audit-index',
-        'manage/security/audit-event-index',
-        'manage/security/audit-index-access',
+        {
+          type: 'category',
+          label: 'Audit Indexes',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/audit-indexes/index'},
+          items: [
+            'manage/security/audit-indexes/audit-index',
+            'manage/security/audit-indexes/audit-event-index',
+            'manage/security/audit-indexes/search-audit-index',
+            'manage/security/audit-indexes/audit-index-access',
+          ]
+        },
         'manage/security/create-allowlist-ip-cidr-addresses',
         'manage/security/data-access-level-shared-dashboards',
         'manage/security/enable-support-account',
@@ -800,7 +829,6 @@ module.exports = {
             'manage/security/saml/view-saml-debug-information',
           ]
         },
-        'manage/security/search-audit-index',
         'manage/security/set-password-policy',
         'manage/security/set-limit-user-concurrent-sessions',
         'manage/security/set-max-web-session-timeout',
@@ -938,6 +966,7 @@ module.exports = {
           ],
         },
         'dashboards/locate-deviations-time-series',
+        'dashboards/restricted-operators-dashboards',
         'dashboards/set-custom-time-ranges',
         'dashboards/scheduled-report',
         'dashboards/export-dashboard-new',
@@ -1675,7 +1704,6 @@ module.exports = {
           link: {type: 'doc', id: 'observability/aws/index'},
           items: [
             'observability/aws/about',
-            'observability/aws/quickstart',
             {
               type: 'category',
               label: 'Deploy and Use AWS Observability',
@@ -1732,7 +1760,7 @@ module.exports = {
                 'observability/aws/integrations/aws-ec2-host-metrics',
                 'observability/aws/integrations/aws-lambda',
                 'observability/aws/integrations/aws-network-load-balancer',
-                'observability/aws/integrations/aws-rds-metrics',
+                'observability/aws/integrations/amazon-rds',
                 'observability/aws/integrations/amazon-ecs',
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
@@ -1813,6 +1841,7 @@ integrations: [
     collapsed: false,
     link: {type: 'doc', id: 'integrations/index'},
     items: [
+      'integrations/product-list',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1903,6 +1932,7 @@ integrations: [
         'integrations/amazon-aws/threat-intel',
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
+        'integrations/amazon-aws/cloud-infrastructure-security-for-aws',
       ],
      },
      {
@@ -2446,8 +2476,7 @@ integrations: [
    ],
  },
 ],
-
-// OTHER FEATURES: SDO, CSE, SOAR
+// OTHER FEATURES: SDO, Cloud SIEM, SOAR
   security: [
     {
       type: 'category',
@@ -2460,21 +2489,21 @@ integrations: [
     },
     {
       type: 'category',
-      label: 'Cloud Security Analytics',
+      label: 'Cloud Infrastructure Security',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'cloud-security-analytics/index'},
+      link: {type: 'doc', id: 'cloud-infrastructure-security/index'},
       items: [
-        'cloud-security-analytics/introduction-to-cloud-security-analytics',
-        'cloud-security-analytics/data-lake',
-        'cloud-security-analytics/audit-and-compliance',
-        'cloud-security-analytics/threat-detection-and-investigation',
-        'cloud-security-analytics/application-security',
+        'cloud-infrastructure-security/introduction-to-cloud-infrastructure-security',
+        'cloud-infrastructure-security/data-lake',
+        'cloud-infrastructure-security/audit-and-compliance',
+        'cloud-infrastructure-security/threat-detection-and-investigation',
+        'cloud-infrastructure-security/application-security',
       ],
     },
     {
       type: 'category',
-      label: 'Cloud SIEM Enterprise',
+      label: 'Cloud SIEM',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'cse/index'},
@@ -2610,7 +2639,6 @@ integrations: [
             'cse/schema/parsing-patterns',
             'cse/schema/parser-troubleshooting-tips',
             'cse/schema/username-and-hostname-normalization',
-          
           ],
         },
         {
@@ -2658,19 +2686,14 @@ integrations: [
         },
         {
           type: 'category',
-          label: 'Automation Service',
+          label: 'Automation',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'cse/automation-service/index'},
+          link: {type: 'doc', id: 'cse/automation/index'},
           items: [
-            'cse/automation-service/about-automation-service',
-            'cse/automation-service/automation-service-automations',
-            'cse/automation-service/automation-service-app-central',
-            'cse/automation-service/automation-service-playbooks',
-            'cse/automation-service/automation-service-integrations',
-            'cse/automation-service/automation-service-examples',
-            'cse/automation-service/automation-service-integration-framework',
-            'cse/automation-service/automation-service-bridge',
+            'cse/automation/about-automation-service-and-cloud-siem',
+            'cse/automation/automations-in-cloud-siem',
+            'cse/automation/cloud-siem-automation-examples',
           ],
         },
         {
@@ -2718,6 +2741,7 @@ integrations: [
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
         'cloud-soar/cloud-soar-apis',
+        'cloud-soar/audit-event-index',
       ],
     },
   ],
@@ -2791,6 +2815,35 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
+        'manage/users-roles/roles/rbac-for-indexes'
+      ],
+    },
+  ],
+  // Platform services
+  platformservices: [
+    {
+      type: 'category',
+      label: 'Platform Services',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'platform-services/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Automation Service',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/automation-service/index'},
+          items: [
+            'platform-services/automation-service/about-automation-service',
+            'platform-services/automation-service/automation-service-app-central',
+            'platform-services/automation-service/automation-service-playbooks',
+            'platform-services/automation-service/automation-service-integrations',
+            'platform-services/automation-service/automation-service-audit-logging',
+            'platform-services/automation-service/automation-service-bridge',
+            'platform-services/automation-service/automation-service-integration-framework',
+          ],
+        },
       ],
     },
   ],
