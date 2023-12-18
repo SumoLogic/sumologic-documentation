@@ -9,9 +9,9 @@ description: The Mimecast source collects SIEM, DLP, Audit, and Hold Message Li
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/mimecast/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/mimecast/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/mimecast/example.tf';
+import ExampleJSON from '/files/c2c/mimecast/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/mimecast/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/mimecast/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="icon" width="50"/>
@@ -38,6 +38,10 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 The integration must be configured with the Client ID and Secret Key. Also, the user account associated with your Mimecast credentials needs to have `basic administrator` access.
 
 Refer to the [Mimecast documentation](https://developer.services.mimecast.com/api-overview#application-registration-credential-management) for guidance to create the Client ID and Secret Key.
+
+:::note
+Enhanced logging needs to be enabled on the Mimecast side in order for the expected logs to be created and sent to Sumo Logic via the above channels. See [Understanding SIEM Logs](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) in the Mimecast documentation. 
+:::
 
 ### Source configuration
 
@@ -95,13 +99,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/mimecast/example.json)
+[Download example](/files/c2c/mimecast/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/mimecast/example.tf)
+[Download example](/files/c2c/mimecast/example.tf)
 
 ## Troubleshooting
 

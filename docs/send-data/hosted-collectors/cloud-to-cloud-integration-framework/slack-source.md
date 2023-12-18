@@ -6,9 +6,9 @@ description: Install the Slack Source for Sumo Logic.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/slack/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/slack/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/slack/example.tf';
+import ExampleJSON from '/files/c2c/slack/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/slack/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/slack/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
@@ -140,13 +140,13 @@ To configure a Duo Source:
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/slack/example.json)
+[Download example](/files/c2c/slack/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/slack/example.tf)
+[Download example](/files/c2c/slack/example.tf)
 
 ## Troubleshoot
 

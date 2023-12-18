@@ -8,9 +8,9 @@ tags:
 description: The Dropbox Source provides a secure endpoint to receive team events from the Get Events API.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/dropbox/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/dropbox/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/dropbox/example.tf';
+import ExampleJSON from '/files/c2c/dropbox/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/dropbox/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/dropbox/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/dropbox-icon.svg')} alt="dropbox-icon.png" width="50"/>
@@ -97,13 +97,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/dropbox/example.json)
+[Download example](/files/c2c/dropbox/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/dropbox/example.tf)
+[Download example](/files/c2c/dropbox/example.tf)
 
 ## FAQ
 
