@@ -313,7 +313,7 @@ This section provides instructions for configuring logs and metrics collection f
    * Here’s an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in Elasticsearch, then enter `default` for `db_cluster`. There are additional values set by the Telegraf configuration, which we recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
      * `data_format - “prometheus”` In the output plugins section (`[[outputs.sumologic]]`), metrics are sent in the Prometheus format to Sumo Logic
      * `component: “database”` - In the input plugins section (`[[inputs.Elasticsearch]]`), this value is used by Sumo Logic apps to identify application components.
-     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 6. After you've finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Elasticsearch metrics should start flowing into Sumo Logic.

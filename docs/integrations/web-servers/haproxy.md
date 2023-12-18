@@ -293,7 +293,7 @@ Please enter values for the following parameters (marked `CHANGEME` above):
 * `proxy_system: “haproxy”` - In the input plugins section: `[[inputs.Haproxy]]` - This value identifies the proxy system.
 * `component: “proxy”` - In the input plugins section: This value identifies application components.
 
-For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
